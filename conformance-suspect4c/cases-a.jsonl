@@ -1,0 +1,18 @@
+{"id": "fn-empty", "source": "[[footnote]]@@@@[[/footnote]]"}
+{"id": "fn-ws", "source": "[[footnote]]  @@@@  [[/footnote]]"}
+{"id": "fn-six", "source": "[[footnote]]@@@@@@[[/footnote]]"}
+{"id": "bib-empty", "source": "[[bibliography]]\n: lab : @@@@\n[[/bibliography]]"}
+{"id": "toc-adj", "source": "[[toc]]\n\n+ @@@@\n\n+ Second"}
+{"id": "toc-fn", "source": "[[toc]]\n\n+ Title [[footnote]]body[[/footnote]]"}
+{"id": "toc-raw", "source": "[[toc]]\n\n+ @@a <b>c</b>@@\n\n+ Second"}
+{"id": "toc-ufffd", "source": "[[toc]]\n\n+ Hello\n\nalpha �"}
+{"id": "idx", "source": "@@@@\n\nalpha **bold** �"}
+{"id": "idx-after", "source": "alpha **bold** �\n\n@@@@"}
+{"id": "idx-base", "source": "alpha **bold** �"}
+{"id": "idx-raw", "source": "@@x@@\n\nalpha **bold** �"}
+{"id": "fn-free", "source": "[[footnote]][[[@@x@@]]][[/footnote]]"}
+{"id": "bq-start", "source": "> quoted"}
+{"id": "inc-open", "source": "see [[["}
+{"id": "inc-raw", "source": "@@hello@@"}
+{"id": "inc-quote", "source": "> quoted line"}
+{"id": "inc-emptyraw", "source": "@@@@"}

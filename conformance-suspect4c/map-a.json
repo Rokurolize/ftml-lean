@@ -1,0 +1,92 @@
+{
+ "fn-empty": {
+  "fullname": "muse-probe-suspect4c-fn-empty",
+  "source": "[[footnote]]@@@@[[/footnote]]",
+  "action": "exists"
+ },
+ "fn-ws": {
+  "fullname": "muse-probe-suspect4c-fn-ws",
+  "source": "[[footnote]]  @@@@  [[/footnote]]",
+  "action": "exists"
+ },
+ "fn-six": {
+  "fullname": "muse-probe-suspect4c-fn-six",
+  "source": "[[footnote]]@@@@@@[[/footnote]]",
+  "action": "exists"
+ },
+ "bib-empty": {
+  "fullname": "muse-probe-suspect4c-bib-empty",
+  "source": "[[bibliography]]\n: lab : @@@@\n[[/bibliography]]",
+  "action": "exists"
+ },
+ "toc-adj": {
+  "fullname": "muse-probe-suspect4c-toc-adj",
+  "source": "[[toc]]\n\n+ @@@@\n\n+ Second",
+  "action": "exists"
+ },
+ "toc-fn": {
+  "fullname": "muse-probe-suspect4c-toc-fn",
+  "source": "[[toc]]\n\n+ Title [[footnote]]body[[/footnote]]",
+  "action": "created"
+ },
+ "toc-raw": {
+  "fullname": "muse-probe-suspect4c-toc-raw",
+  "source": "[[toc]]\n\n+ @@a <b>c</b>@@\n\n+ Second",
+  "action": "created"
+ },
+ "toc-ufffd": {
+  "fullname": "muse-probe-suspect4c-toc-ufffd",
+  "source": "[[toc]]\n\n+ Hello\n\nalpha �",
+  "action": "created"
+ },
+ "idx": {
+  "fullname": "muse-probe-suspect4c-idx",
+  "source": "@@@@\n\nalpha **bold** �",
+  "action": "created"
+ },
+ "idx-after": {
+  "fullname": "muse-probe-suspect4c-idx-after",
+  "source": "alpha **bold** �\n\n@@@@",
+  "action": "created"
+ },
+ "idx-base": {
+  "fullname": "muse-probe-suspect4c-idx-base",
+  "source": "alpha **bold** �",
+  "action": "created"
+ },
+ "idx-raw": {
+  "fullname": "muse-probe-suspect4c-idx-raw",
+  "source": "@@x@@\n\nalpha **bold** �",
+  "action": "created"
+ },
+ "fn-free": {
+  "fullname": "muse-probe-suspect4c-fn-free",
+  "source": "[[footnote]][[[@@x@@]]][[/footnote]]",
+  "action": "created"
+ },
+ "bq-start": {
+  "fullname": "muse-probe-suspect4c-bq-start",
+  "source": "> quoted",
+  "action": "created"
+ },
+ "inc-open": {
+  "fullname": "muse-probe-suspect4c-inc-open",
+  "source": "see [[[",
+  "action": "created"
+ },
+ "inc-raw": {
+  "fullname": "muse-probe-suspect4c-inc-raw",
+  "source": "@@hello@@",
+  "action": "created"
+ },
+ "inc-quote": {
+  "fullname": "muse-probe-suspect4c-inc-quote",
+  "source": "> quoted line",
+  "action": "created"
+ },
+ "inc-emptyraw": {
+  "fullname": "muse-probe-suspect4c-inc-emptyraw",
+  "source": "@@@@",
+  "action": "created"
+ }
+}

@@ -1,0 +1,4 @@
+module style element from the full anonymous page, outside #page-content:
+<style>
+@@hello@@
+</style>

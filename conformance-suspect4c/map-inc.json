@@ -1,0 +1,27 @@
+{
+ "inc-free": {
+  "fullname": "muse-probe-suspect4c-inc-free",
+  "source": "[[include muse-probe-suspect4c-inc-open]]\nPage]]]",
+  "action": "created"
+ },
+ "inc-mod": {
+  "fullname": "muse-probe-suspect4c-inc-mod",
+  "source": "[[module nosuchmod]]\n[[include muse-probe-suspect4c-inc-raw]]\n[[/module]]",
+  "action": "created"
+ },
+ "inc-bq": {
+  "fullname": "muse-probe-suspect4c-inc-bq",
+  "source": "[[include muse-probe-suspect4c-inc-quote]]\n> next line",
+  "action": "created"
+ },
+ "inc-idx": {
+  "fullname": "muse-probe-suspect4c-inc-idx",
+  "source": "[[include muse-probe-suspect4c-inc-emptyraw]]\n\nalpha **bold** �",
+  "action": "created"
+ },
+ "inc-css": {
+  "fullname": "muse-probe-suspect4c-inc-css",
+  "source": "[[module css]]\n[[include muse-probe-suspect4c-inc-raw]]\n[[/module]]",
+  "action": "created"
+ }
+}

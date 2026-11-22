@@ -1,0 +1,182 @@
+{
+ "fn-empty": {
+  "fullname": "muse-probe-suspect4c-fn-empty",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>\n</div>",
+  "html_sha256": "9a433756f6c93079ca2faf49d827011e130ad08752d11db407983fc244a3c003",
+  "source": "[[footnote]]@@@@[[/footnote]]",
+  "source_sha256": "b85a33fe7c5a7d745c6f62f2a5efb01766dd07371345bb721f016aa2ba0771f0",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "fn-ws": {
+  "fullname": "muse-probe-suspect4c-fn-ws",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>\n</div>",
+  "html_sha256": "9a433756f6c93079ca2faf49d827011e130ad08752d11db407983fc244a3c003",
+  "source": "[[footnote]]  @@@@  [[/footnote]]",
+  "source_sha256": "a8808225f7f337c02f69f3647f4819d9455e643ec3f1d209e67043c81237eb7c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "fn-six": {
+  "fullname": "muse-probe-suspect4c-fn-six",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. @@</div>\n</div>",
+  "html_sha256": "33daab3585b7cfee9d5a519acc4d6d9ca37535c9aa5f1315e116e8529a982453",
+  "source": "[[footnote]]@@@@@@[[/footnote]]",
+  "source_sha256": "e5112fa08e4898c7e32dd20a9f84100d599ba4d4163eb3819be64522568da6d2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bib-empty": {
+  "fullname": "muse-probe-suspect4c-bib-empty",
+  "html": "<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n<div class=\"bibitem\" id=\"bibitem-1\">1.</div>\n</div>",
+  "html_sha256": "6af1459e22cb0f72b700ca96831adf263a789ebb79fa294cca08c8d8e5d09a7f",
+  "source": "[[bibliography]]\n: lab : @@@@\n[[/bibliography]]",
+  "source_sha256": "fc1c2723300f399fd4d80c56cf7a215087b20b51d069759235421883c68ecc4d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "toc-adj": {
+  "fullname": "muse-probe-suspect4c-toc-adj",
+  "html": "<table style=\"margin:0; padding:0\">\n<tr>\n<td style=\"margin:0; padding:0\">\n<div id=\"toc\">\n<div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div>\n<div class=\"title\">Table of Contents</div>\n<div id=\"toc-list\">\n<div style=\"margin-left: 1em;\"><a href=\"#toc0\"></a></div>\n<div style=\"margin-left: 1em;\"><a href=\"#toc1\">Second</a></div>\n</div>\n</div>\n</td>\n</tr>\n</table>\n<h1 id=\"toc0\"></h1>\n<h1 id=\"toc1\"><span>Second</span></h1>",
+  "html_sha256": "a01099e2f69e198c02900621b7e7b474f0363aad5a3700ee59bfd3173ce442e0",
+  "source": "[[toc]]\n\n+ @@@@\n\n+ Second",
+  "source_sha256": "c095a526dc92c7f73005e2fdd9faa6f106f0936b73b357459912241b1598450b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "toc-fn": {
+  "fullname": "muse-probe-suspect4c-toc-fn",
+  "html": "<table style=\"margin:0; padding:0\">\n<tr>\n<td style=\"margin:0; padding:0\">\n<div id=\"toc\">\n<div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div>\n<div class=\"title\">Table of Contents</div>\n<div id=\"toc-list\">\n<div style=\"margin-left: 1em;\"><a href=\"#toc0\">Title1</a></div>\n</div>\n</div>\n</td>\n</tr>\n</table>\n<h1 id=\"toc0\"><span>Title<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></span></h1>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. body</div>\n</div>",
+  "html_sha256": "64ab002783fa1accc69cf2b61e7947f582f8d46684423707ee38b5bdcedb69f7",
+  "source": "[[toc]]\n\n+ Title [[footnote]]body[[/footnote]]",
+  "source_sha256": "a267d467d42be0caa337bad74f0c1c29e4f50fa9c23d220280c67e7eb1c2fd3a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "toc-raw": {
+  "fullname": "muse-probe-suspect4c-toc-raw",
+  "html": "<table style=\"margin:0; padding:0\">\n<tr>\n<td style=\"margin:0; padding:0\">\n<div id=\"toc\">\n<div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div>\n<div class=\"title\">Table of Contents</div>\n<div id=\"toc-list\">\n<div style=\"margin-left: 1em;\"><a href=\"#toc0\">a&#32;&lt;b&gt;c&lt;/b&gt;</a></div>\n<div style=\"margin-left: 1em;\"><a href=\"#toc1\">Second</a></div>\n</div>\n</div>\n</td>\n</tr>\n</table>\n<h1 id=\"toc0\"><span><span style=\"white-space: pre-wrap;\">a&#32;&lt;b&gt;c&lt;/b&gt;</span></span></h1>\n<h1 id=\"toc1\"><span>Second</span></h1>",
+  "html_sha256": "6acdf4753159e83aa7d0344e9228075dae8ea2e253a271623ce5fbf070e4bdb6",
+  "source": "[[toc]]\n\n+ @@a <b>c</b>@@\n\n+ Second",
+  "source_sha256": "2dfdfaf0363db72e367e5d662ec68b9db62707e1f59fd5791e6600e892bbfed2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "toc-ufffd": {
+  "fullname": "muse-probe-suspect4c-toc-ufffd",
+  "html": "<table style=\"margin:0; padding:0\">\n<tr>\n<td style=\"margin:0; padding:0\">\n<div id=\"toc\">\n<div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div>\n<div class=\"title\">Table of Contents</div>\n<div id=\"toc-list\">\n<div style=\"margin-left: 1em;\"><a href=\"#toc0\">Hello</a></div>\n</div>\n</div>\n</td>\n</tr>\n</table>\n<h1 id=\"toc0\"><span>Hello</span></h1>\n<p>alpha 8</p>",
+  "html_sha256": "cc5b70dbfe469e90120128a497fd2b2afda31b3cd78fa5a85e4a4c9e72fdee25",
+  "source": "[[toc]]\n\n+ Hello\n\nalpha �",
+  "source_sha256": "ff6cde74c2eeb89926d3732b370a6f97c7ea74174f86ef2812899f6dbfd2d384",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "idx": {
+  "fullname": "muse-probe-suspect4c-idx",
+  "html": "<p>alpha <strong>bold</strong> 5</p>",
+  "html_sha256": "eee3069bdd59d75a16ec17ae42b6bb4c7d7e04536cdb7a7658bf4c3503ee16c7",
+  "source": "@@@@\n\nalpha **bold** �",
+  "source_sha256": "7bccfcddfe7ebe42e702918eff2b03103174f5982c4dad08de8fbce5763a2d72",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "idx-after": {
+  "fullname": "muse-probe-suspect4c-idx-after",
+  "html": "<p>alpha <strong>bold</strong> 3415</p>",
+  "html_sha256": "e1aacfebe7e328137ce0be96eb1068497b81fc89b2dccf4f7a019deda6152121",
+  "source": "alpha **bold** �\n\n@@@@",
+  "source_sha256": "64043cb745cabe9d5d44bb5227bde2e9f6839da26daf8e52e6111c1ff3366cf4",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "idx-base": {
+  "fullname": "muse-probe-suspect4c-idx-base",
+  "html": "<p>alpha <strong>bold</strong> 2</p>",
+  "html_sha256": "6f4baaec4c5d1545aa9f8b4816b51bc56b267af00c66e3bba1d2ae1c88a86ccf",
+  "source": "alpha **bold** �",
+  "source_sha256": "e5590efafff8ed0673136c75c1d3cf812d903df6a223f4d0c5543e6439556a66",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "idx-raw": {
+  "fullname": "muse-probe-suspect4c-idx-raw",
+  "html": "<p><span style=\"white-space: pre-wrap;\">x</span></p>\n<p>alpha <strong>bold</strong> 5</p>",
+  "html_sha256": "439b33ca4bf166170673e7495ac909f686b3a6eebdccabfbb90422871aa5ff1e",
+  "source": "@@x@@\n\nalpha **bold** �",
+  "source_sha256": "49bad512a9b7b11d9d20c7dc56fe99b05083f11fa77dd754416d9eed2d00edef",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "fn-free": {
+  "fullname": "muse-probe-suspect4c-fn-free",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. [[[<span style=\"white-space: pre-wrap;\">x</span>]]]</div>\n</div>",
+  "html_sha256": "96804eb465e6b87fe3b323dcdbffabe5688b5628d8b5ee4e48a82fd2fc4a985f",
+  "source": "[[footnote]][[[@@x@@]]][[/footnote]]",
+  "source_sha256": "e71be343f1c04d39ba0a20387f8bd076b99f5d826f42fd5f759ac4757a464b2f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bq-start": {
+  "fullname": "muse-probe-suspect4c-bq-start",
+  "html": "<blockquote>\n<p>quoted</p>\n</blockquote>",
+  "html_sha256": "fe4848f114745df376dbbe1c712be31f7acd39e2f207997f977a90c5d68a6f35",
+  "source": "> quoted",
+  "source_sha256": "3b632f070f61c51b49a42cdc6b4a7436c1506e071b8c2d5e43f263234714480d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "inc-open": {
+  "fullname": "muse-probe-suspect4c-inc-open",
+  "html": "<p>see [[[</p>",
+  "html_sha256": "7bad701636970766ff2f0fbbe50e39d9d3ecb44ca04771751d26663e6baf3f4f",
+  "source": "see [[[",
+  "source_sha256": "f7b589a094d658a129a05f0c5f42cba6b91f9124f3064d36c90c2bc150fd6248",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "inc-raw": {
+  "fullname": "muse-probe-suspect4c-inc-raw",
+  "html": "<p><span style=\"white-space: pre-wrap;\">hello</span></p>",
+  "html_sha256": "e225be5e661d83dd43b8971f878f2d784db49b6439227612986c292e1dc8f434",
+  "source": "@@hello@@",
+  "source_sha256": "6979775e6d5747ec35736248c53e0d5506d45f07c33a04795a5cc614ba432292",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "inc-quote": {
+  "fullname": "muse-probe-suspect4c-inc-quote",
+  "html": "<blockquote>\n<p>quoted line</p>\n</blockquote>",
+  "html_sha256": "5cd935db9b5748fbba03fa2f2b7dc9620a62f84f6079938fdb308abea22fa765",
+  "source": "> quoted line",
+  "source_sha256": "bd33025bd7973b6cc96cdf6f4c0cd2815c2f063ea8de54e374bf88e8edb3b30a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "inc-emptyraw": {
+  "fullname": "muse-probe-suspect4c-inc-emptyraw",
+  "html": "",
+  "html_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source": "@@@@",
+  "source_sha256": "e8151b2c92fd188cec72b573a289fefc9d06d3116ba4eb2c8a8719ebf15c1270",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

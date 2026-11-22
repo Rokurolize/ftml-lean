@@ -1,0 +1,104 @@
+{
+ "fn-empty": {
+  "src": "[[footnote]]@@@@[[/footnote]]",
+  "stdout": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. </div></div>\n",
+  "stderr": "PHP Warning:  Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nWarning: Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nPHP Warning:  Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php on line 87\nWarning: Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php on line 87\nPHP Warning:  Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\nWarning: Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\n",
+  "code": 0
+ },
+ "fn-ws": {
+  "src": "[[footnote]]  @@@@  [[/footnote]]",
+  "stdout": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. </div></div>\n",
+  "stderr": "PHP Warning:  Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nWarning: Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nPHP Warning:  Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php on line 87\nWarning: Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php on line 87\nPHP Warning:  Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\nWarning: Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\n",
+  "code": 0
+ },
+ "fn-six": {
+  "src": "[[footnote]]@@@@@@[[/footnote]]",
+  "stdout": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. @@</div></div>\n",
+  "stderr": "PHP Warning:  Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nWarning: Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nPHP Warning:  Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php on line 87\nWarning: Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php on line 87\nPHP Warning:  Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\nWarning: Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\n",
+  "code": 0
+ },
+ "fn-bare": {
+  "src": "[[footnote]][[/footnote]]",
+  "stdout": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>\n",
+  "stderr": "PHP Warning:  Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nWarning: Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nPHP Warning:  Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php on line 87\nWarning: Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php on line 87\nPHP Warning:  Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\nWarning: Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\n",
+  "code": 0
+ },
+ "fn-text": {
+  "src": "[[footnote]]hello[[/footnote]]",
+  "stdout": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. hello</div></div>\n",
+  "stderr": "PHP Warning:  Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nWarning: Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nPHP Warning:  Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php on line 87\nWarning: Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php on line 87\nPHP Warning:  Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\nWarning: Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\n",
+  "code": 0
+ },
+ "bib-empty": {
+  "src": "[[bibliography]]\n: lab : @@@@\n[[/bibliography]]",
+  "stdout": "<div class=\"bibitems\"><div class=\"title\">Bibliography</div><div class=\"bibitem\" id=\"bibitem-1\">1. </div></div>\n",
+  "stderr": "PHP Warning:  Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Bibliography.php on line 44\nWarning: Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Bibliography.php on line 44\nPHP Warning:  Undefined array key \"bibitems\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Bibliography.php on line 45\nWarning: Undefined array key \"bibitems\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Bibliography.php on line 45\n",
+  "code": 0
+ },
+ "bib-text": {
+  "src": "[[bibliography]]\n: lab : hello\n[[/bibliography]]",
+  "stdout": "<div class=\"bibitems\"><div class=\"title\">Bibliography</div><div class=\"bibitem\" id=\"bibitem-1\">1. hello</div></div>\n",
+  "stderr": "PHP Warning:  Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Bibliography.php on line 44\nWarning: Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Bibliography.php on line 44\nPHP Warning:  Undefined array key \"bibitems\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Bibliography.php on line 45\nWarning: Undefined array key \"bibitems\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Bibliography.php on line 45\n",
+  "code": 0
+ },
+ "toc-adj": {
+  "src": "[[toc]]\n\n+ @@@@\n\n+ Second\n",
+  "stdout": "<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\">\n\t<div style=\"margin-left: 1em;\"><a href=\"#toc0\"></a></div>\n\t<div style=\"margin-left: 1em;\"><a href=\"#toc1\">Second</a></div>\n</div></div></td></tr></table>\n\n\n<h1 id=\"toc0\"><span></span></h1>\n\n<h1 id=\"toc1\"><span>Second</span></h1>\n\n",
+  "stderr": "PHP Warning:  Undefined array key \"headline_id\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Heading.php on line 91\nWarning: Undefined array key \"headline_id\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Heading.php on line 91\n",
+  "code": 0
+ },
+ "toc-raw": {
+  "src": "[[toc]]\n\n+ @@a <b>c</b>@@\n\n+ Second\n",
+  "stdout": "<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\">\n\t<div style=\"margin-left: 1em;\"><a href=\"#toc0\">a&#32;&lt;b&gt;c&lt;/b&gt;</a></div>\n\t<div style=\"margin-left: 1em;\"><a href=\"#toc1\">Second</a></div>\n</div></div></td></tr></table>\n\n\n<h1 id=\"toc0\"><span><span style=\"white-space: pre-wrap;\">a&#32;&lt;b&gt;c&lt;/b&gt;</span></span></h1>\n\n<h1 id=\"toc1\"><span>Second</span></h1>\n\n",
+  "stderr": "PHP Warning:  Undefined array key \"headline_id\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Heading.php on line 91\nWarning: Undefined array key \"headline_id\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Heading.php on line 91\n",
+  "code": 0
+ },
+ "toc-fn": {
+  "src": "[[toc]]\n\n+ Title [[footnote]]body[[/footnote]]\n",
+  "stdout": "<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\">\n\t<div style=\"margin-left: 1em;\"><a href=\"#toc0\">Title1</a></div>\n</div></div></td></tr></table>\n\n\n<h1 id=\"toc0\"><span>Title<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></span></h1>\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. body</div></div>\n",
+  "stderr": "PHP Warning:  Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nWarning: Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nPHP Warning:  Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php on line 87\nWarning: Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php on line 87\nPHP Warning:  Undefined array key \"headline_id\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Heading.php on line 91\nWarning: Undefined array key \"headline_id\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Heading.php on line 91\nPHP Warning:  Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\nWarning: Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\nPHP Warning:  Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\nWarning: Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\n",
+  "code": 0
+ },
+ "fn-free": {
+  "src": "[[footnote]][[[@@x@@]]][[/footnote]]",
+  "stdout": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. [[[<span style=\"white-space: pre-wrap;\">x</span>]]]</div></div>\n",
+  "stderr": "PHP Warning:  Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nWarning: Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nPHP Warning:  Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php on line 87\nWarning: Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php on line 87\nPHP Warning:  Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\nWarning: Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\n",
+  "code": 0
+ },
+ "idx": {
+  "src": "@@@@\n\nalpha **bold** �",
+  "stdout": "<p>alpha <strong>bold</strong> 5</p>\n",
+  "stderr": "",
+  "code": 0
+ },
+ "idx-base": {
+  "src": "alpha **bold** �",
+  "stdout": "<p>alpha <strong>bold</strong> 2</p>\n",
+  "stderr": "",
+  "code": 0
+ },
+ "idx-mid": {
+  "src": "alpha � **bold**",
+  "stdout": "<p>alpha <strong>bold</strong></p>\n",
+  "stderr": "",
+  "code": 0
+ },
+ "bq-start": {
+  "src": "> quoted",
+  "stdout": "<blockquote><p>quoted</p>\n\n</blockquote>\n\n",
+  "stderr": "",
+  "code": 0
+ },
+ "only-raw": {
+  "src": "@@@@",
+  "stdout": "<p></p>\n\n\n",
+  "stderr": "",
+  "code": 0
+ },
+ "fn-two": {
+  "src": "[[footnote]]@@@@[[/footnote]]\n\n[[footnote]]z[[/footnote]]",
+  "stdout": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><sup class=\"footnoteref\"><a id=\"footnoteref-2\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-2')\">2</a></sup></p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. </div><div class=\"footnote-footer\" id=\"footnote-2\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-2')\">2</a>. z</div></div>\n",
+  "stderr": "PHP Warning:  Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nWarning: Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nPHP Warning:  Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php on line 87\nWarning: Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php on line 87\nPHP Warning:  Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\nWarning: Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\nPHP Warning:  Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\nWarning: Undefined array key \"label\" in /home/roku/.local/state/wikijump/muse-bhl/cursor-suspect4-c/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Footnote.php on line 40\n",
+  "code": 0
+ }
+}

@@ -1,0 +1,52 @@
+{
+ "inc-free": {
+  "fullname": "muse-probe-suspect4c-inc-free",
+  "html": "<p>see <a class=\"newpage\" href=\"/page\">Page</a></p>",
+  "html_sha256": "c9cdacf81801f6940100a7167a9d2aee83f1410170e67fbfd3aec4417c39bd46",
+  "source": "[[include muse-probe-suspect4c-inc-open]]\nPage]]]",
+  "source_sha256": "6ebf493a80b7c89d89f775c4c7bf8dcaf08270fac47db4b9bcf549a8852b7c90",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "inc-mod": {
+  "fullname": "muse-probe-suspect4c-inc-mod",
+  "html": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>",
+  "html_sha256": "b3e0122b100fe4f72c5544f83517a9ebb084d7e196270f9423657d7ad6758e9b",
+  "source": "[[module nosuchmod]]\n[[include muse-probe-suspect4c-inc-raw]]\n[[/module]]",
+  "source_sha256": "92ef92f5d9ccd2ed9d7ddfee67d5857434d7740a4563626fa74916d89a79e581",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "inc-bq": {
+  "fullname": "muse-probe-suspect4c-inc-bq",
+  "html": "<blockquote>\n<p>quoted line</p>\n</blockquote>\n<blockquote>\n<p>next line</p>\n</blockquote>",
+  "html_sha256": "d52d46c09cc6cd8d39496007e3b45369101c0a975698c86bc864358062ed505a",
+  "source": "[[include muse-probe-suspect4c-inc-quote]]\n> next line",
+  "source_sha256": "c50bf904f59cf58fc4a8892904248f66cb151e2dd03dc36e8477f9ccde64467d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "inc-idx": {
+  "fullname": "muse-probe-suspect4c-inc-idx",
+  "html": "<p>alpha <strong>bold</strong> 5</p>",
+  "html_sha256": "eee3069bdd59d75a16ec17ae42b6bb4c7d7e04536cdb7a7658bf4c3503ee16c7",
+  "source": "[[include muse-probe-suspect4c-inc-emptyraw]]\n\nalpha **bold** �",
+  "source_sha256": "669b4ac54aa60244eef8f529d828d83b576a34f6b2968d86b2009953ae373e7d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "inc-css": {
+  "fullname": "muse-probe-suspect4c-inc-css",
+  "html": "",
+  "html_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source": "[[module css]]\n[[include muse-probe-suspect4c-inc-raw]]\n[[/module]]",
+  "source_sha256": "99192394f013b2a8b43c1e0d9896722a553c9d8ac6cc381355df1d2b54023840",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}
