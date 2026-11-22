@@ -1,0 +1,222 @@
+{
+ "r2b-math-uppercase-TYPE-valid": {
+  "fullname": "muse-probe-round5b-r2-r2b-math-uppercase-type-valid",
+  "html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+  "html_sha256": "e504bd63f5c257493a0bd835e3359b4574ca995dfdaf283fa88623fea08d5a1f",
+  "source": "[[math TYPE=\"gather\"]]\nx\n[[/math]]",
+  "source_sha256": "0d6ef79b141bd0958ef83d97a436a3f72fdfa710e537229d5107c1a3dc77a536",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-math-type-uppercase-value": {
+  "fullname": "muse-probe-round5b-r2-r2b-math-type-uppercase-value",
+  "html": "<div class=\"error-block\">Unsupported math environment \"ALIGN\"</div>",
+  "html_sha256": "3a1c92cadde893ae78f499225f35ac58d14e1a180d6cfd614a9c6d191d49843e",
+  "source": "[[math type=\"ALIGN\"]]\nx\n[[/math]]",
+  "source_sha256": "b3a00c132aa9839f3ccd546250de5d0f8cf2dbb45e2e9542d5f6a181971a05f2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-math-type-entity": {
+  "fullname": "muse-probe-round5b-r2-r2b-math-type-entity",
+  "html": "<div class=\"error-block\">Unsupported math environment \"a&amp;b\"</div>",
+  "html_sha256": "7db8b32006011d0e7f5f8acad5a03c4c5063401fad33bec3af3ff458b235b551",
+  "source": "[[math type=\"a&b\"]]\nx\n[[/math]]",
+  "source_sha256": "ebef7871fd538578ea0a23b82f6443ea51a7c16d3829adfc41c14bef1507cae2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-mathinline-date-only": {
+  "fullname": "muse-probe-round5b-r2-r2b-mathinline-date-only",
+  "html": "<p><span class=\"math-inline\">$$</span></p>",
+  "html_sha256": "8119dd8e254d13e759b9ee65895322c26e3e6e9fd2c600c47fb9e0ed1270506a",
+  "source": "[[$[[date 0]]$]]",
+  "source_sha256": "b490aaddc005a557fdc4b84f477b9d29a70bfb99efd82f41fc93ec86cd289438",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-mathinline-quote-escape": {
+  "fullname": "muse-probe-round5b-r2-r2b-mathinline-quote-escape",
+  "html": "<p><span class=\"math-inline\">$&quot;a&quot; 'b'$</span></p>",
+  "html_sha256": "44bbc67ceb58823cec1822521d268296ef0f394fe4c056f6828b56c6b0eea7db",
+  "source": "[[$ \"a\" 'b' $]]",
+  "source_sha256": "e34cf8a6ed96724ecfa36663b66887d5dffa12f7aa40c7c20a9638bcfcba6e8f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-mathinline-nonascii": {
+  "fullname": "muse-probe-round5b-r2-r2b-mathinline-nonascii",
+  "html": "<p><span class=\"math-inline\">$é &amp; α$</span></p>",
+  "html_sha256": "3ebaa87bb44f0fc4611886d6a10f805d759fe84435c300e1ec833d007d5b7fda",
+  "source": "[[$ é & α $]]",
+  "source_sha256": "d32a0c0f354fd988301d0f643a3fabb07030cb6f40ba3c7239e4f7026dd1b79e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-mathinline-code-token": {
+  "fullname": "muse-probe-round5b-r2-r2b-mathinline-code-token",
+  "html": "<p><span class=\"math-inline\">$[[code X]]$</span></p>",
+  "html_sha256": "0ba330e85ee957f68aacd49e91eaf08e92b6ac2804128d62bd3e857f6c030453",
+  "source": "[[$ [[code X]] $]]",
+  "source_sha256": "864251541c919548c54c68f89fcfe9658bed8a734314162770e1d92fe7a274bd",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-email-claimed-url": {
+  "fullname": "muse-probe-round5b-r2-r2b-email-claimed-url",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#�3�</span></p>",
+  "html_sha256": "fa00ffe43f3a14741384cfba4fddf5cfd95a8569b56ee3a6123fd8b1f5d8385a",
+  "source": "[a@b.com http://example.com]",
+  "source_sha256": "e2dd88e3df44a647a1021753aed2c42bdccfcd6d853a585d966b6648d3391bbd",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-email-claimed-raw": {
+  "fullname": "muse-probe-round5b-r2-r2b-email-claimed-raw",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#�1�</span></p>",
+  "html_sha256": "eff00ed810f59094287c14d03dffb52694effc5c12cc8b6e42f4d0afbc635e5d",
+  "source": "[a@b.com @@raw@@]",
+  "source_sha256": "e21239977e54f1d4303d56858e2b5c5707b6312dffd00fdc2f3394ce1252d53f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-email-bytewise-ee": {
+  "fullname": "muse-probe-round5b-r2-r2b-email-bytewise-ee",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#�é�</span></p>",
+  "html_sha256": "3290578359d7f5267ce0d9a2cd100e5339e32262153f63ca5902bf95e14a4dc0",
+  "source": "[a@b.com éé]",
+  "source_sha256": "0e2e50e97609b712a96726d7bd0a1daa63c2297dd7348377f7b87eb0392361d5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-email-bytewise-cafe": {
+  "fullname": "muse-probe-round5b-r2-r2b-email-bytewise-cafe",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#��fac</span></p>",
+  "html_sha256": "1daf748b744f47c3d902761d0a095598b6fddd962d636f6b7592118d5586ebe0",
+  "source": "[a@b.com café]",
+  "source_sha256": "97be906d2cc01d42e0ec5cc0ca4ce7c0df5e88800c2c492f46b04fdc6e80c606",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-email-label-at": {
+  "fullname": "muse-probe-round5b-r2-r2b-email-label-at",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#war||</span></p>",
+  "html_sha256": "1d957140860cad397961a6b305b63e32fb0e178ed61c1e7a27ec19afd317e4a2",
+  "source": "[a@b.com @@raw]",
+  "source_sha256": "e493f65c8c07c49944fb8144a0b50fb4cab12c491d69185ac00cae18f7f1fbaf",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-email-claimed-multidigit": {
+  "fullname": "muse-probe-round5b-r2-r2b-email-claimed-multidigit",
+  "html": "<p><span style=\"white-space: pre-wrap;\">a</span> <span style=\"white-space: pre-wrap;\">b</span> <span style=\"white-space: pre-wrap;\">c</span> <span style=\"white-space: pre-wrap;\">d</span> <span style=\"white-space: pre-wrap;\">e</span> <span style=\"white-space: pre-wrap;\">f</span> <span style=\"white-space: pre-wrap;\">g</span> <span style=\"white-space: pre-wrap;\">h</span> <span style=\"white-space: pre-wrap;\">i</span> <span style=\"white-space: pre-wrap;\">j</span> <span style=\"white-space: pre-wrap;\">k</span> <span style=\"white-space: pre-wrap;\">l</span> <span class=\"wiki-email\">moc.b|a#�51�</span></p>",
+  "html_sha256": "89f199ed32fd8e7356d0fb795fe25070bb0b6b2e10628d5f481e9397c8762722",
+  "source": "@@a@@ @@b@@ @@c@@ @@d@@ @@e@@ @@f@@ @@g@@ @@h@@ @@i@@ @@j@@ @@k@@ @@l@@ [a@b.com http://example.com]",
+  "source_sha256": "3d5d6f025ade9c49a36a85bd6624c4333ac164fa867f0e9ae4fe601e61c9569a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-url-lower-pct": {
+  "fullname": "muse-probe-round5b-r2-r2b-url-lower-pct",
+  "html": "<p><a href=\"https://example.com/%c3%a9\">https://example.com/%c3%a9</a></p>",
+  "html_sha256": "e81a38e6c96a203513d6ec41eb14f1182d0391d72cc1df3525cb5761867dc697",
+  "source": "https://example.com/%c3%a9",
+  "source_sha256": "e5ccb52616ae26ff30c6677c07207b2ae7926fbd11eb6ff673dab94b9a464cba",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-url-fragment": {
+  "fullname": "muse-probe-round5b-r2-r2b-url-fragment",
+  "html": "<p><a href=\"http://example.com/a#frag\">http://example.com/a#frag</a></p>",
+  "html_sha256": "790bfcca90cd4832a8243749acab5f064b3f6a36ddf80a943d5ae14129e68106",
+  "source": "http://example.com/a#frag",
+  "source_sha256": "3f9dd3d3531149b332b1f1a56f431f58d58e590cf1792db6f7bb5e2f70838762",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-freelink-anchor-label": {
+  "fullname": "muse-probe-round5b-r2-r2b-freelink-anchor-label",
+  "html": "<p><a class=\"newpage\" href=\"/foo#frag\">shown</a></p>",
+  "html_sha256": "eb53849405ae235f33dc4f00f238b0434e194fd6b83b6d2434cc770d09d83026",
+  "source": "[[[foo#frag|shown]]]",
+  "source_sha256": "97abb33ea3eaf6b3d7f459df85cee29bbc5ee8eff9a9bac630f6df50664cb82e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-interwiki-pl-site": {
+  "fullname": "muse-probe-round5b-r2-r2b-interwiki-pl-site",
+  "html": "<p><a href=\"https://pl.wikipedia.org/wiki/A&B\" onclick=\"window.open(this.href, '_blank'); return false;\">A&amp;B</a></p>",
+  "html_sha256": "a0fc7fa3e47c210aa948e77842ba25c7a966faf41b356854c854af5dab28fca3",
+  "source": "[wikipedia.pl:A&B]",
+  "source_sha256": "d6ece7b159ea16e637b94e47a8fa342aa6c5fd8ce6549fb84ebdb2a10bc0a28d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-image-nonascii-src": {
+  "fullname": "muse-probe-round5b-r2-r2b-image-nonascii-src",
+  "html": "<img src=\"http://x/caf%C3%A9.png\" alt=\"café.png\" class=\"image\" />",
+  "html_sha256": "cdc20ae4c4b0ed2b34f10cd4012cea5e92823eccf1a076c4025ea0d2db6292aa",
+  "source": "[[image http://x/café.png]]",
+  "source_sha256": "36c14f259327872bf829179bea6d17620e43890070356fcc5c634a8f285e4c4a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-image-alt-quote": {
+  "fullname": "muse-probe-round5b-r2-r2b-image-alt-quote",
+  "html": "<img src=\"http://x/y.png\" alt=\"a&quot;b&amp;c\" class=\"image\" />",
+  "html_sha256": "dee4f7eab112879bf2aefeae3785e3253ce89e0cded4c687e19384abf5eab97c",
+  "source": "[[image http://x/y.png alt=\"a\\\"b&c\"]]",
+  "source_sha256": "26974a3f1644397eea643d0dbf40da57ff055fe2963978df8461b18df47ae144",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-embed-data-scheme": {
+  "fullname": "muse-probe-round5b-r2-r2b-embed-data-scheme",
+  "html": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "html_sha256": "0d94a629bbda9bb7b87fcaf86579d5195ffef1ffcfd644fd09babead0f4c04b0",
+  "source": "[[embed]]<iframe src=\"http://x/y\" data-x=\"javascript:alert(1)\"></iframe>[[/embed]]",
+  "source_sha256": "2ee3c229bf9a8612238924d0b73e369a60fe532a24f265c23e01a33b11c7b823",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-embed-datasrc": {
+  "fullname": "muse-probe-round5b-r2-r2b-embed-datasrc",
+  "html": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "html_sha256": "0d94a629bbda9bb7b87fcaf86579d5195ffef1ffcfd644fd09babead0f4c04b0",
+  "source": "[[embed]]<iframe data-src=\"javascript:alert(1)\"></iframe>[[/embed]]",
+  "source_sha256": "82d2a9d65a42d13f418c674c972fd7f067ac41c9412cc21b8643e8b0a14f09b5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2b-image-link-nonascii": {
+  "fullname": "muse-probe-round5b-r2-r2b-image-link-nonascii",
+  "html": "<a href=\"http://x/caf%C3%A9\"><img src=\"http://x/y.png\" alt=\"y.png\" class=\"image\" /></a>",
+  "html_sha256": "af6dc58516a7e5462e06c72d969c6d17743fed814524223984d076bcedf79c11",
+  "source": "[[image http://x/y.png link=\"http://x/café\"]]",
+  "source_sha256": "e70e9e6ce15845b8d5eba644871e6484a8473b10aad95b07a552f86f594bd045",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

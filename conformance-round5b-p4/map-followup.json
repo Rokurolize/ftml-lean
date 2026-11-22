@@ -1,0 +1,22 @@
+{
+ "R5B-P4-F01": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-f01",
+  "source": "[[bibliography]]\n: lab : @@@@\n@@@@\n[[/bibliography]]",
+  "action": "created"
+ },
+ "R5B-P4-F02": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-f02",
+  "source": "[[footnote]]@@@@\n @@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R5B-P4-F03": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-f03",
+  "source": "[[footnote]]@@@@\n\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R5B-P4-F04": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-f04",
+  "source": "[[footnote]]x\ny[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ }
+}

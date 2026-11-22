@@ -1,0 +1,20 @@
+{"id":"s01-li-failed-close","output":"<ul>\n<li>A<li>B<br \/>"}
+{"id":"s02-list-emptyraw-retrim","output":"<ul>\n<li> <\/li>\n<\/ul><br \/>\n"}
+{"id":"s03-list-scored-wsclass","output":"<ul>\n<li>aAFTER<\/li>\n<\/ul>"}
+{"id":"s04-fl-ws-pipe-label","output":"<p>A <a class=\"newpage\" href=\"\/x\">Label<\/a> B<\/p>\n\n"}
+{"id":"s05-fl-vt-upper-pipe","output":"<p>A <a class=\"newpage\" href=\"\/cafe\">\u00c9tiquette<\/a> B<\/p>\n\n"}
+{"id":"s06-fl-nbsp-colonchain","output":"<p>A <a class=\"newpage\" href=\"\/cate:sub\">L<\/a> B<\/p>\n\n"}
+{"id":"s07-math-type-other-attrs","output":"<p>[[math a TYPE=&quot;align&quot; style=&quot;s&quot; data-x=&quot;1&quot;]]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"s08-math-type-lower-and-upper","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"s09-mathinline-date-email","output":"<p><span class=\"math-inline\">$x [a@b.com http:\/\/example.com] y$<\/span><\/p>\n\n"}
+{"id":"s10-div-id-wsclass","output":"<div id=\"u-\" class=\"\"><p>body<\/p>\n\n<\/div>"}
+{"id":"s11-div-id-dupdata","output":"<div id=\"u-\" data-foo=\"2\"><p>X<\/p>\n\n<\/div>"}
+{"id":"s12-div-id-placeholder-class","output":"<div id=\"u-\" class=\"\"><p>X<\/p>\n\n<\/div>"}
+{"id":"s13-fn-in-list-retrim","output":"<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1<\/a><\/sup> B<\/li>\n<\/ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes<\/div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1<\/a>.<\/div><\/div>"}
+{"id":"s14-fn-in-quote-retrim","output":"<div class=\"footnotes-footer\"><div class=\"title\">Footnotes<\/div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1<\/a>.<\/div><\/div>"}
+{"id":"s15-fn-two-runs-tab","output":"<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1<\/a><\/sup><\/p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes<\/div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1<\/a>.<\/div><\/div>"}
+{"id":"s16-bib-two-runs-u3000","output":"<div class=\"bibitems\"><div class=\"title\">Bibliography<\/div><div class=\"bibitem\" id=\"bibitem-1\">1. \u3000<\/div><\/div>"}
+{"id":"s17-raw-4c3-plus-empty","output":"<p>ZQ@@@<\/p>\n\n<p><\/p>\n\n"}
+{"id":"s18-tableadv-dup-data","output":"<table data-foo=\"2\">\n<tr>\n<td>C<\/td>\n<\/tr>\n<\/table>"}
+{"id":"s19-email-mixed-label","output":"<p><span class=\"wiki-email\">moc.b|a#\ufffd723\ufffd X<\/span><\/p>\n\n"}
+{"id":"s20-email-intervening-code","output":"\n<div class=\"code\">\n<pre><code>x<\/code><\/pre><\/div>\n\n<p><span class=\"wiki-email\">moc.b|a#\ufffd543\ufffd<\/span><\/p>\n\n"}

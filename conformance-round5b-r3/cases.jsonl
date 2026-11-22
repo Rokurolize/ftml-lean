@@ -1,0 +1,16 @@
+{"id": "R3B-01", "source": "[[footnote]]@@@@ @@@@ @@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3B-02", "source": "[[footnote]]@@@@\t@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3B-03", "source": "[[footnote]]@@@@\n@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3B-04", "source": "[[footnote]]alpha @@@@ @@@@ beta[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3B-05", "source": "[[footnote]]hello  @@@@  [[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3B-06", "source": "[[footnote]]@@@@ @@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3B-07", "source": "[[bibliography]]\n: lab : @@@@ @@@@ @@@@\n[[/bibliography]]"}
+{"id": "R3B-08", "source": "[[bibliography]]\n: lab : @@@@\t@@@@\n[[/bibliography]]"}
+{"id": "R3B-09", "source": "[[bibliography]]\n: lab : alpha @@@@ @@@@ beta\n[[/bibliography]]"}
+{"id": "R3B-10", "source": "[[toc]]\n\n+ a@@x@@b\n\n+ Plain"}
+{"id": "R3B-11", "source": "[[f<toc]]\n\n+ One"}
+{"id": "R3B-12", "source": "[[# Foo.Bar%20]]"}
+{"id": "R3B-13", "source": "[[a href=\"/x\" id=\"foo\" class=\"c\" data-Z=\"v\"]]link[[/a]]"}
+{"id": "R3B-14", "source": "[[a_ href=\"/x\"]]line1\nline2[[/a]]"}
+{"id": "R3B-15", "source": "[[footnote]]a[[/footnote]]\n[[footnoteblock title=\"A & B <x>\"]]"}
+{"id": "R3B-16", "source": "[[footnote]]   [[/footnote]]\n[[footnoteblock]]"}

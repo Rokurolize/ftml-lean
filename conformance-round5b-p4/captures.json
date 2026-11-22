@@ -1,0 +1,212 @@
+{
+ "R5B-P4-C01": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c01",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>\n</div>",
+  "html_sha256": "9a433756f6c93079ca2faf49d827011e130ad08752d11db407983fc244a3c003",
+  "source": "[[footnote]]@@@@\t@@@@[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "d726d8fedb4374512b73b78e1a5fe4d7041acf760186be52e0f5b2dacb96f40c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C02": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c02",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br /></div>\n</div>",
+  "html_sha256": "2dd69a97242cf0ef6919dc0302b248b92358824ceeba915a03f2338b0b654941",
+  "source": "[[footnote]]@@@@\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "71cedf8bb09db2e4bcf6ee5797d3ffceeba733f963074c691bd31573ff5ca071",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C03": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c03",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>\n</div>",
+  "html_sha256": "9a433756f6c93079ca2faf49d827011e130ad08752d11db407983fc244a3c003",
+  "source": "[[footnote]]@@@@  @@@@[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "475ac004e3360c7cd72d88815ce146331283dfed8aedb8f11850cf88bb3be01b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C04": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c04",
+  "html": "<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n<div class=\"bibitem\" id=\"bibitem-1\">1.</div>\n</div>",
+  "html_sha256": "6af1459e22cb0f72b700ca96831adf263a789ebb79fa294cca08c8d8e5d09a7f",
+  "source": "[[bibliography]]\n: lab : @@@@\t@@@@\n[[/bibliography]]",
+  "source_sha256": "aa459c571f492de0ef5b0ef87cbd84a5d8179d6a1261d3d0e55fca8caf084833",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C05": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c05",
+  "html": "<p>alpha ZQ@@@</p>",
+  "html_sha256": "0ad04cd7d7a1723dd8c0bbc03532f84a2284d8721cff95d032350732c503a356",
+  "source": "alpha � @@@@ZQ@@@",
+  "source_sha256": "f78753c23a8328277e5d512397d3939798f61811734b545585663ea9b922377f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C06": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c06",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. x146 </div>\n        \n    \n            <!-- mobile bottom 320x50 -->\n<script>\n\n$j( function(){\n\n    if(isUAMobile && screen.width < 400 && screen.height > 600) {\n        var $o = $j('<div id=\"wad-tier3-mobile-anchor\" class=\"wd-adunit wd-ad-np wd-adunit-mobile_anchor\"></div>');\n        $j('body').append($o);\n        $j('body').css('margin-bottom', '200px');\n\n        var res = function(){\n            $o = $j('#wad-tier3-mobile-anchor');\n            if($o.length > 0){\n                $o.show();\n                var $w = $j(window);\n                var scale = $w.width() / 320;\n                $o.css('transform', 'scale('+scale+')');\n            } else {\n                $o.hide();\n            }\n        }\n\n        res();\n        setInterval(res, 1000);\n\n        window['nitroAds'].createAd('wad-tier3-mobile-anchor', {\n          \"refreshLimit\": 1,\n          \"refreshTime\": 30,\n          \"renderVisibleOnly\": false,\n          \"refreshVisibleOnly\": true,\n          \"format\": \"display\",\n          \"sizes\": [ [ 320, 50 ] ],\n          \"report\": {\n            \"enabled\": true,\n            \"wording\": \"Report Ad\",\n            \"position\": \"bottom-right\"\n          }\n                  });\n    }\n});\n</script>\n        \n    \n\n\n\n\n\n\n        \n    \n                        <!-- wikidot_bottom_300x250 -->\n<div id=\"wad-tier3-below-content\" class=\"wd-adunit wd-ad-np wd-adunit-below_content\"></div>\n<script>\nwindow['nitroAds'].createAd('wad-tier3-below-content', {\n  \"refreshTime\": 30,\n  \"renderVisibleOnly\": false,\n  \"refreshVisibleOnly\": true,\n  \"sizes\": [ [ 300, 250 ] ],\n  \"report\": {\n    \"enabled\": true,\n    \"wording\": \"Report Ad\",\n    \"position\": \"bottom-right\"\n  }\n  });\n</script>\n                    \n    \n\n\n          \n          <div class=\"page-info-break\"></div>\n          <div class=\"page-options-container\"></div>\n          <div id=\"action-area\" style=\"display: none;\"></div>\n        </div>",
+  "html_sha256": "36ee968434029493b50e233bddfb17ef6332784d37358da6f61a780f06818d64",
+  "source": "[[footnote]]x�@@@@[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "5233703ea8b76c297d0f4bd6e956d66d9da2836b11722ceec64f407b9ce09524",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C07": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c07",
+  "html": "<p>alpha beta</p>",
+  "html_sha256": "a13bfbe9d29f939ba7214abcec35264fdbdcfdb9749e6395630a168fc77b5f67",
+  "source": "alpha � @@@@ @@@@ beta",
+  "source_sha256": "8a3a55ca6d4f6580fd3af3a87e0f15688f427e6de581e4e068f8a5666a1f0d3c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C08": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c08",
+  "html": "<p>alpha</p>",
+  "html_sha256": "b25fb3108bcecb38f2d91c87313ef5e5f714229f06ae192daf028b09b70b5b34",
+  "source": "@@@@ alpha",
+  "source_sha256": "3a288662ff39d6f13e6a2ab94f28952f92b695dacea2100d859599632d2ab44c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C09": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c09",
+  "html": "<p>alpha bravo</p>",
+  "html_sha256": "2b0b44bd703e422655eb53ba21c44af4fa868c966d4f3bfa819ee1202488cc6b",
+  "source": "alpha @@@@ @@@@ bravo",
+  "source_sha256": "ea405bb546681189ad1c9e6b04d6b8b60334cab9313ae02f40db3a93fc40daa9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C10": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c10",
+  "html": "<p>alpha &#8230;. bravo</p>",
+  "html_sha256": "1d75988734bad07bece259d9c6eef78159eb7e28b9e9be5983a8e21ce99dd940",
+  "source": "alpha .... bravo",
+  "source_sha256": "a00a20932f0742206a6b0c799ae5e70dbd487d983420454dced06b28cd5e5548",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C11": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c11",
+  "html": "<p>alpha &#8212;&#8212; bravo</p>",
+  "html_sha256": "d5d30d65d133728334ba37069b60af5f12b9c6b286e14e0eaff71057bf4dec22",
+  "source": "alpha ---- bravo",
+  "source_sha256": "5b2bd025f366e80a63e56397f5fc69c0da43d3a71a12bff470bded600ef39251",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C12": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c12",
+  "html": "<p>1 kg and 2 m</p>",
+  "html_sha256": "0f3e4b6a2fe052031e8d3d48a4085d1286cf56a354ae7778fa586f21445a15d9",
+  "source": "1  kg and 2  m",
+  "source_sha256": "f752861afc1bbfa6b4b046182950364f76db22b092aece230b7f2a9bd7941141",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C13": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c13",
+  "html": "<p>&#171;one&#187; and &#171;two&#187;</p>",
+  "html_sha256": "879f3700cfb3261dd244f3b4aef8648c85090e59702a8c56990a2d2bd41b2b7f",
+  "source": "<<one>> and <<two>>",
+  "source_sha256": "5d4c61e884942d76c7c16e91baeb8a0a026ea347944f8e603655f2a1ee1f48ab",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C14": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c14",
+  "html": "<p><span class=\"odate time_0 format_ago%20%25Y\">01 Jan 1970 00:00</span></p>",
+  "html_sha256": "de9d8955e190f023ff1d9d79cf2be0d7672106feb94146036cfadb169bbb4995",
+  "source": "[[date 0 format=\"%g %Y\"]]",
+  "source_sha256": "6a8e38603b7be59030cd63ac4e88df038f665bf5f877a1b7db0a5d9bb7ba7d92",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C15": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c15",
+  "html": "<p><span class=\"odate time_-9223372036854775808\">27 Jan -292277022657 08:29</span> <span class=\"odate time_1\">01 Jan 1970 00:00</span></p>",
+  "html_sha256": "a5fff03238879618b4deeb9d6fb02e01583261c09bd045883da652f23342bd2f",
+  "source": "[[date -9223372036854775809]] [[date 0000000000000000000000000001]]",
+  "source_sha256": "7cfc40a864d7f6484d19928d2009ac6e1ff70fe578380a14fc4438506fbd8eb0",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C16": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c16",
+  "html": "<p><span class=\"odate time_0 format_caf%C3%A9%20%E2%82%AC\">01 Jan 1970 00:00</span></p>",
+  "html_sha256": "5983abfa498289dc8fe70fc09610289738dd63d61271dc248a04a66252357a16",
+  "source": "[[date 0 format=\"café €\"]]",
+  "source_sha256": "0b318cda0e9b06e7446f7cbc6920a2cf84907feb8a66ca1f64da2b53fe973803",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C17": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c17",
+  "html": "<p>alpha<br />\nbravo</p>",
+  "html_sha256": "b86016fe6a526de62f8f474314de26b463fb03f8f137b1139736e015bc166b7a",
+  "source": "alpha\nbravo",
+  "source_sha256": "f8b8bb8a99c48715ef17a0c75ca4c74f6e97053e97076c3d28724de904b842b9",
+  "saved_source_matches": false,
+  "stable": true,
+  "valid": false
+ },
+ "R5B-P4-C18": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c18",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. x</div>\n</div>",
+  "html_sha256": "61db33ae0b6c1887e841d639377c273f64750f5fa0058def5aeb9afef6eb1352",
+  "source": "[[footnote]]@@@@ x @@@@[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "c58a26398297fb0b790698f73ae308f0e30a77715b4f7a1dd25ee290f0540b40",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C19": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c19",
+  "html": "<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n<div class=\"bibitem\" id=\"bibitem-1\">1. x13</div>\n</div>\n        \n    \n            <!-- mobile bottom 320x50 -->\n<script>\n\n$j( function(){\n\n    if(isUAMobile && screen.width < 400 && screen.height > 600) {\n        var $o = $j('<div id=\"wad-tier3-mobile-anchor\" class=\"wd-adunit wd-ad-np wd-adunit-mobile_anchor\"></div>');\n        $j('body').append($o);\n        $j('body').css('margin-bottom', '200px');\n\n        var res = function(){\n            $o = $j('#wad-tier3-mobile-anchor');\n            if($o.length > 0){\n                $o.show();\n                var $w = $j(window);\n                var scale = $w.width() / 320;\n                $o.css('transform', 'scale('+scale+')');\n            } else {\n                $o.hide();\n            }\n        }\n\n        res();\n        setInterval(res, 1000);\n\n        window['nitroAds'].createAd('wad-tier3-mobile-anchor', {\n          \"refreshLimit\": 1,\n          \"refreshTime\": 30,\n          \"renderVisibleOnly\": false,\n          \"refreshVisibleOnly\": true,\n          \"format\": \"display\",\n          \"sizes\": [ [ 320, 50 ] ],\n          \"report\": {\n            \"enabled\": true,\n            \"wording\": \"Report Ad\",\n            \"position\": \"bottom-right\"\n          }\n                  });\n    }\n});\n</script>\n        \n    \n\n\n\n\n\n\n        \n    \n                        <!-- wikidot_bottom_300x250 -->\n<div id=\"wad-tier3-below-content\" class=\"wd-adunit wd-ad-np wd-adunit-below_content\"></div>\n<script>\nwindow['nitroAds'].createAd('wad-tier3-below-content', {\n  \"refreshTime\": 30,\n  \"renderVisibleOnly\": false,\n  \"refreshVisibleOnly\": true,\n  \"sizes\": [ [ 300, 250 ] ],\n  \"report\": {\n    \"enabled\": true,\n    \"wording\": \"Report Ad\",\n    \"position\": \"bottom-right\"\n  }\n  });\n</script>\n                    \n    \n\n\n          \n          <div class=\"page-info-break\"></div>\n          <div class=\"page-options-container\"></div>\n          <div id=\"action-area\" style=\"display: none;\"></div>",
+  "html_sha256": "91c7109d5aa5893396e1250d5567339b3e092638fc58b93faeb6e2347bdb2264",
+  "source": "[[bibliography]]\n: lab : x�@@@@\n[[/bibliography]]",
+  "source_sha256": "45698b5c1eaf4612b32a9deab5754db7046784c23ccabd1e758290b443b5064b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C20": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c20",
+  "html": "<p>alpha 1 beta</p>",
+  "html_sha256": "01317ac498385fcd87e9067386ca15864336990e3e77e2b45a6201dd772189ca",
+  "source": "alpha �@@@@ beta",
+  "source_sha256": "aa1e29bdceb6b1e42e89b20a6233cc34ba3b909b502ffd348096a74ac38b75a8",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5B-P4-C21": {
+  "fullname": "muse-probe-round5b-p4-r5b-p4-c21",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. &nbsp;</div>\n</div>",
+  "html_sha256": "5d8bfe088644992c73f89349201a37a284c3ea65b701eea62c684dad43b87254",
+  "source": "[[footnote]]@@@@ @@@@[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "dc77daa0711f563a3a5f335a2cfc39dadd2629253ec5df397c2c6b7d3bca303e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

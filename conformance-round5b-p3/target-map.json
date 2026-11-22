@@ -1,0 +1,17 @@
+{
+ "t-fold": {
+  "fullname": "muse-probe-round5b-p3-t-fold",
+  "source": "A={$a} B={$b}",
+  "action": "created"
+ },
+ "t-text": {
+  "fullname": "muse-probe-round5b-p3-t-text",
+  "source": "SPLICED",
+  "action": "created"
+ },
+ "t-arg": {
+  "fullname": "muse-probe-round5b-p3-t-arg",
+  "source": "V={$data-Foo}",
+  "action": "created"
+ }
+}

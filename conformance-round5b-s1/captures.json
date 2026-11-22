@@ -1,0 +1,202 @@
+{
+ "s01-li-failed-close": {
+  "fullname": "muse-probe-round5b-s1-s01-li-failed-close",
+  "html": "<ul>\n<li>A[[LI]]B[[/LI]]<br />\n[[/UL]]</li>\n</ul>",
+  "html_sha256": "c4d87f83bea9dd4b152ee152a824e4523dad20eb3199c959c7a70a4be10a4c58",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]",
+  "source_sha256": "f519e283b30cdb7091ec13c64547901b3e752b0adf19d50db065bcf05269d344",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s02-list-emptyraw-retrim": {
+  "fullname": "muse-probe-round5b-s1-s02-list-emptyraw-retrim",
+  "html": "<ul>\n<li></li>\n</ul>\n<br />",
+  "html_sha256": "b9cd3059d58da7d6bb3794a6900a119ed4575881b757d57b472c833063a30996",
+  "source": "[[ul]]\n[[li]]@@@@ @@@@[[/li]]\n[[/ul]]",
+  "source_sha256": "1b3dd88ae7a775fb87bc7a0e44f65c8b5eba33a4ef5c2d99c3caf08a9a27ad3e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s03-list-scored-wsclass": {
+  "fullname": "muse-probe-round5b-s1-s03-list-scored-wsclass",
+  "html": "<ul>\n<li>aAFTER</li>\n</ul>",
+  "html_sha256": "b31ee83ca409b9f50e621fd2df8a4b48d8069ad64c68f7a6bc61ebaf52ced707",
+  "source": "[[UL_ class=\" \"]]\n[[li]]a[[/li]]\n[[/OL]]AFTER",
+  "source_sha256": "6fececbd9ea4bfd1ecbe35d2726e8e25cd755d4004a5ce6355e0fb9420f81dd5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s04-fl-ws-pipe-label": {
+  "fullname": "muse-probe-round5b-s1-s04-fl-ws-pipe-label",
+  "html": "<p>A <a class=\"newpage\" href=\"/x\">Label</a> B</p>",
+  "html_sha256": "17bbcc3c98c068e0e2d115970d9fbfa3ce9c103490b337d3fad3744f7f13fe21",
+  "source": "A [[[　_default:x|Label]]] B",
+  "source_sha256": "60aad329d9a5de726593b9e5c8ef368076768bbf41080c5fbeabe661561ead21",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s05-fl-vt-upper-pipe": {
+  "fullname": "muse-probe-round5b-s1-s05-fl-vt-upper-pipe",
+  "html": "<p>A <a class=\"newpage\" href=\"/cafe\">Étiquette</a> B</p>",
+  "html_sha256": "392e721585277d65722612549084a8f59c2ae1e691182126b24d59c27aa2f49b",
+  "source": "A [[[\u000b_DEFAULT:Café|Étiquette]]] B",
+  "source_sha256": "0083cf901410681f84a37cf1ccf6a7587c26dab62537e8a839271911f27fc0a8",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s06-fl-nbsp-colonchain": {
+  "fullname": "muse-probe-round5b-s1-s06-fl-nbsp-colonchain",
+  "html": "<p>A <a class=\"newpage\" href=\"/cate:sub\">L</a> B</p>",
+  "html_sha256": "ef0c7f910b4701b9693237ceffad587ed3bdbade0204ad0d6bc04ba731fbcb74",
+  "source": "A [[[ _default:caté:sub|L]]] B",
+  "source_sha256": "1f8a46b0609d04dffa3c644551b69213412abfaf90ee7cffcb28e8a7cc5d2213",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s07-math-type-other-attrs": {
+  "fullname": "muse-probe-round5b-s1-s07-math-type-other-attrs",
+  "html": "<p>[[math a TYPE=&quot;align&quot; style=&quot;s&quot; data-x=&quot;1&quot;]]<br />\nx<br />\n[[/math]]</p>",
+  "html_sha256": "4ba77cb5308df7bc3c105c56cedec13577411c512f8f75a650cb58d90c3e27be",
+  "source": "[[math a TYPE=\"align\" style=\"s\" data-x=\"1\"]]\nx\n[[/math]]",
+  "source_sha256": "7a2718690b0ea07455f5db376a22e51b0813ad2d498eb5310a900b589baea589",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s08-math-type-lower-and-upper": {
+  "fullname": "muse-probe-round5b-s1-s08-math-type-lower-and-upper",
+  "html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+  "html_sha256": "e504bd63f5c257493a0bd835e3359b4574ca995dfdaf283fa88623fea08d5a1f",
+  "source": "[[math type=\"gather\" TYPE=\"align\"]]\nx\n[[/math]]",
+  "source_sha256": "91eeec14b8b7f1d4ef20f739ef1fe6cf99b0ca681776dbf365bb55425f7cf697",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s09-mathinline-date-email": {
+  "fullname": "muse-probe-round5b-s1-s09-mathinline-date-email",
+  "html": "<p><span class=\"math-inline\">$x [a@b.com http://example.com] y$</span></p>",
+  "html_sha256": "82791b6e38469b6b8a6c1fd5ee76bf331c35e4305a4368af4d7e79d8edcea5d5",
+  "source": "[[$x [a@b.com http://example.com] y$]]",
+  "source_sha256": "64a64275be8a0aa2d69a071981ab8b7ad488b7babd84fa4a3977bb8c57a79611",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s10-div-id-wsclass": {
+  "fullname": "muse-probe-round5b-s1-s10-div-id-wsclass",
+  "html": "<div id=\"u-\" class=\"\">\n<p>body</p>\n</div>",
+  "html_sha256": "4a2845db64a962707d16f7cb8b756c1a1c0cda4e8b689117e6a52dcb6cd8b42d",
+  "source": "[[div id=\"   \" class=\" \"]]\nbody\n[[/div]]",
+  "source_sha256": "e0a2aaf226ea36d3e9fda60ff56d836a6631dc2e30f8ecce168721d131a920e3",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s11-div-id-dupdata": {
+  "fullname": "muse-probe-round5b-s1-s11-div-id-dupdata",
+  "html": "<div id=\"u-\" data-foo=\"2\">\n<p>X</p>\n</div>",
+  "html_sha256": "b18294e4f588b151503fe73244885ec3255c595c71eac0cdcc7bcf2c63fa2b5d",
+  "source": "[[div id=\"   \" data-Foo=\"1\" data-foo=\"2\"]]\nX[[/div]]",
+  "source_sha256": "7b26cd57e66830754ad51816b1c4440526927a04f9a954f9d477d3be8a7358bc",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s12-div-id-placeholder-class": {
+  "fullname": "muse-probe-round5b-s1-s12-div-id-placeholder-class",
+  "html": "<div id=\"u-\" class=\"\">\n<p>X</p>\n</div>",
+  "html_sha256": "6ef4bcd7fb880ba77916578a5b701844c648a21a45e9f47a1d352762eb801d89",
+  "source": "[[div id=\"   \" class=\"@@@@\"]]\nX[[/div]]",
+  "source_sha256": "53d6787f27f045f7764f6fdcf4174663558e2576a4a29823b595149ea067ea9e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s13-fn-in-list-retrim": {
+  "fullname": "muse-probe-round5b-s1-s13-fn-in-list-retrim",
+  "html": "<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup> B</li>\n</ul>\n<br />\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>\n</div>",
+  "html_sha256": "50bd2fdb0786e2e9eaf3f906e53b2149ea228f2e72062307a9e001b7a1a946be",
+  "source": "[[ul]]\n[[li]]A [[footnote]]@@@@ @@@@[[/footnote]] B[[/li]]\n[[/ul]]\n[[footnoteblock]]",
+  "source_sha256": "6859498f3888a5db5a70fe472e668d661befd93bd3c7d0714ae7afd8e88b7477",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s14-fn-in-quote-retrim": {
+  "fullname": "muse-probe-round5b-s1-s14-fn-in-quote-retrim",
+  "html": "<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>\n</div>",
+  "html_sha256": "df1ead72831a6c93f7644c8ff0d08b324760ece2a283acd1173df0d5cb2df9dd",
+  "source": "> [[footnote]]@@@@ @@@@[[/footnote]]\n\n[[footnoteblock]]",
+  "source_sha256": "d6e051ff9d69f2f3422ab3b5b6faf6e204f6622ba22ef979b49720c6aa382ade",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s15-fn-two-runs-tab": {
+  "fullname": "muse-probe-round5b-s1-s15-fn-two-runs-tab",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>\n</div>",
+  "html_sha256": "9a433756f6c93079ca2faf49d827011e130ad08752d11db407983fc244a3c003",
+  "source": "[[footnote]]@@@@\t@@@@[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "d726d8fedb4374512b73b78e1a5fe4d7041acf760186be52e0f5b2dacb96f40c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s16-bib-two-runs-u3000": {
+  "fullname": "muse-probe-round5b-s1-s16-bib-two-runs-u3000",
+  "html": "<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n<div class=\"bibitem\" id=\"bibitem-1\">1. 　</div>\n</div>",
+  "html_sha256": "064777061ab80235ceeebc3657c54075a312f2c495d87b999076f444caca5ac7",
+  "source": "[[bibliography]]\n: lab : @@@@　@@@@\n[[/bibliography]]",
+  "source_sha256": "042174d30ead5d86f582bae45998b5d4cd4534f90e739f09f67d1fa6b8ec1d9e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s17-raw-4c3-plus-empty": {
+  "fullname": "muse-probe-round5b-s1-s17-raw-4c3-plus-empty",
+  "html": "<p>ZQ@@@</p>",
+  "html_sha256": "29fbfbf5229fe9bd5af4a053dac639dbcf2ad8c47ded64f90ee6042dfe2f84dd",
+  "source": "@@@@ZQ@@@\n\n@@@@",
+  "source_sha256": "46a34a1f4c1bd353341eb2504cb6ffdc4b1e4d14492b2d902de01a0ec2014a29",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s18-tableadv-dup-data": {
+  "fullname": "muse-probe-round5b-s1-s18-tableadv-dup-data",
+  "html": "<table data-foo=\"2\">\n<tr>\n<td>C</td>\n</tr>\n</table>",
+  "html_sha256": "0fc2f09824202d9d658b688d75b3912274661c9c260d09ce2e34187fc36f5142",
+  "source": "[[table data-Foo=\"1\" data-foo=\"2\"]]\n[[row]]\n[[cell]]\nC\n[[/cell]]\n[[/row]]\n[[/table]]",
+  "source_sha256": "501721293b87448cb272939ede8a218703ee86c226302c1078181d201ad11b42",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s19-email-mixed-label": {
+  "fullname": "muse-probe-round5b-s1-s19-email-mixed-label",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#�3� X</span></p>",
+  "html_sha256": "1b89c6918583de1cdc0626e2ad9a9a2e97f10e9aff480744de925e72a3542166",
+  "source": "[a@b.com X http://example.com]",
+  "source_sha256": "7e7b881d03df82c2944c2d38eaf9e28e3e19711358c6fc029e4bb555d8cf7aea",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s20-email-intervening-code": {
+  "fullname": "muse-probe-round5b-s1-s20-email-intervening-code",
+  "html": "<div class=\"code\">\n<pre><code>x</code></pre></div>\n<p><span class=\"wiki-email\">moc.b|a#�4�</span></p>",
+  "html_sha256": "7c3ca7cc840e5e0052935616cda215e21c88c7735d11e012e7fbae9830f1bdd6",
+  "source": "[[code]]x[[/code]]\n\n[a@b.com http://example.com]",
+  "source_sha256": "95641b25a9d7668b07b99af4826dddeb75d2626ea217a356c5cd237918e30147",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

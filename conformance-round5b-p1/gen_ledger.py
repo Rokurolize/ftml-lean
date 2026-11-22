@@ -1,0 +1,160 @@
+#!/usr/bin/env python3
+# Single source of truth for R5B-P1 LEDGER.md and cases.jsonl.
+# Written before any probe page was created or captured. Runs only in this unit dir.
+import json, os
+
+U = os.path.dirname(os.path.abspath(__file__))
+S = []
+
+def add(id, family, construct, why, confirm, clear, source, reprobe=None):
+    S.append(dict(id=id, family=family, construct=construct, why=why,
+                  confirm=confirm, clear=clear, source=source, reprobe=reprobe))
+
+# ---------------- List: REFCORR8 siblings plus coordinator parity candidate ----------------
+add("LA-ABS", "List",
+    "coordinator parity candidate: uppercase [[UL]] item absorption where a [[LI]] appears only after the first failed closer",
+    "Mandated by the coordinator from /home/roku/.local/state/wikijump/muse-bhl/wj-completeness-review/LISTCASE-FIX-RESULT.md, whose named open item says the item absorption after a failed closer does NOT work in the ftml-side fix: the precomputed li pairing scan counts any-case [[/ul]] closes as decrementing list depth, so a head after the first failed closer never pairs and the second [[LI]] stays literal inside item A. Live's exact stack rule instead stores the raw-cased opener and lowercases only the closer, so the [[UL]] never closes and the later [[LI]]B[[/LI]] opens a second item of the still-open list; the reference PHP liPattern at List.php:533 is case-insensitive and its synthetic branch at List.php:444-459 strips every [[/ul]] closer and keeps all [[/li]] items, so it should already form two items. This case is a fresh probe, not a re-run of the upstream ftml measurement.",
+    "CONFIRM if live forms two <li> items A and B inside one unclosed <ul> (the second [[LI]] absorbed as a real item) while the reference or mirror leaves the second [[LI]]B[[/LI]] literal inside item A, e.g. <li>A[[LI]]B[[/LI]]; that is a rule-level item-absorption difference.",
+    "CLEAR if live and reference both absorb the second [[LI]] as a second item of the unclosed list, or both keep it literal, after the standard mask; a difference only in trailing break or closing-tag framing is an owned surface, not a divergence.",
+    '[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]')
+
+add("LB-S1IN", "List",
+    "REFCORR8 C-R5-S1-01 sibling: raw-case attributed outer opener whose INNER opener is uppercase instead of lowercase",
+    "The REFCORR8 C-R5-S1-01 normalization at List.php:274-282 requires a lowercase nested opener (the third group is \\[\\[(?:ul|ol)\\]\\] with no /i flag). Changing that inner [[ol]] to an uppercase [[OL]] blocks the normalization, so the paired-stack pass alone decides the shape and may emit one nested list instead of the two sibling lists live forms. The gate was applied to one spelling of the inner opener only, a genuine new sibling of the corrected shape.",
+    "CONFIRM if live emits two sibling lists (<ul>...</ul><ol>...</ol>) while the reference emits one nested list with the inner <ol> inside the outer item, a rule-level container-order difference.",
+    "CLEAR if live and reference both emit the same sibling/nested ordering after the standard mask.",
+    '[[UL class="c"]]\n[[li]]a\n[[OL]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]AFTER')
+
+add("LC-S1TAIL", "List",
+    "REFCORR8 C-R5-S1-02 sibling: depth-two cross-case closer shape with trailing prose after the final outer closer",
+    "The REFCORR8 C-R5-S1-02 normalization at List.php:288-298 is anchored with \\s*$ at the end of the source, so appending TAIL after the final [[/ul]] prevents the rewrite. The reference then falls back to the ordinary paired-stack path while live's raw-case stack still absorbs the cross-case closer, an ordering accident specific to the anchor of the new normalization.",
+    "CONFIRM if live keeps the none-item inner list with literal trailing closers and TAIL as bare prose while the reference forms a nested closed list or paragraph-wraps TAIL, a rule-level structural difference.",
+    "CLEAR if live and reference produce the same list/closer/TAIL structure after the standard mask.",
+    '[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b[[/li]]\n[[/UL]]AFTER\n[[/ol]]\n[[/li]]\n[[/ul]]TAIL')
+
+add("LD-SCOREDTAIL", "List",
+    "REFCORR8 C-R5-P1-3 sibling: uppercase scored opener with non-whitespace trailing text after its closer",
+    "The REFCORR8 unclosed gate at List.php:435 requires trim($tailAfterCloser7) === '' even for the newly admitted raw-case scored opener (opUpper7). A scored [[UL_]] whose would-be closer is followed by AFTER makes the tail non-empty, so the reference builds a closed list and leaves AFTER as a separate paragraph; live's raw-case stack never closes the opener and absorbs AFTER into the last item. The correction changed this gate's disjunct, so this sibling is re-probed with a ledger reason.",
+    "CONFIRM if live emits an unclosed list with AFTER glued into its last item while the reference emits a closed </ul> and a separate AFTER paragraph, a rule-level boundary difference.",
+    "CLEAR if live and reference both close the list and separate AFTER, or both absorb it, after the standard mask.",
+    '[[UL_]]\n[[li]]a[[/li]]\n[[/ul]]\nAFTER',
+    reprobe="REFCORR8 replaced the unscored-only gate !$op['scored'] with (!$op['scored'] || $opUpper7) and added absorb-tail trimming for raw-case scored openers; the trailing-text branch of that changed mechanism was not in the original C-R5-P1-3 probe.")
+
+add("LE-EMPTYITEM", "List",
+    "uppercase synthetic opener whose only [[LI]] item is empty: dissolved-empty branch versus a real empty item",
+    "In buildExplicitListBlock the liPattern at List.php:533 matches an empty [[LI]][[/LI]] pair, but formatExplicitLiItem at List.php:738-740 returns '' for an empty item and survivingCount becomes zero, so List.php:603-605 returns the explicit_empty dissolved token and the opener is removed. The REFCORR8 prose-degrade branch at List.php:404-408 only fires when NO [[li]] item exists, so an empty item takes the dissolved path instead; live may still build an unclosed list with a real empty item.",
+    "CONFIRM if live emits a <ul> with an empty <li> or a literal [[UL]] marker while the reference emits bare/empty content with no list, a rule-level element-presence difference.",
+    "CLEAR if live and reference both dissolve the pair to no list after the standard mask.",
+    '[[UL]]\n[[LI]][[/LI]]\n[[/UL]]')
+
+add("LF-DATAUP", "List",
+    "REFCORR8 Div last-wins sibling: duplicate data-* keys differing only in case on an explicit list opener",
+    "Div.php:132-139 was changed by REFCORR8 from first-wins to last-wins for case-variant data-* keys, but buildListAttrs at List.php:1028-1035 already assigns $dataAttrs[$dkey] unconditionally and is last-wins. The two container families must agree after the correction; a divergence here would mean the sibling shape was missed. This is a fresh code-reading sibling, not a re-run of the round-5 D3 case.",
+    "CONFIRM if live keeps the first authored value data-x=\"1\" while the reference keeps the last data-x=\"2\", or the reverse; any rule-level attribute value difference confirms.",
+    "CLEAR if live and reference both emit data-x=\"2\" (last-authored wins) after the standard mask.",
+    '[[ul data-X="1" data-x="2"]]\n[[li]]a[[/li]]\n[[/ul]]')
+
+# ---------------- Div parse: REFCORR8 whitespace-only and duplicate data-* siblings ----------------
+add("DA-STYLEWS", "Div/Container",
+    "REFCORR8 C-R5-P1-1 sibling: whitespace-only STYLE value on an otherwise empty div",
+    "The REFCORR8 authoredValue map at Div.php:118-139 is applied equally to class, style, role and type, so a whitespace-only style normalizes to the empty string but keeps its key and the pair is not vanished. The original C-R5-P1-1 probe covered only class. A style-only empty div exercises the same newly changed mechanism with a different attribute name and a different renderer path.",
+    "CONFIRM if live emits a real <div style=\"\"></div> while the reference suppresses the pair to a bare leading break, or if live drops the style key while the reference keeps it; either is a rule-level suppression/attribute difference.",
+    "CLEAR if live and reference both keep the empty div with style=\"\" after the standard mask.",
+    '[[div style=" "]]\n[[/div]]\nX',
+    reprobe="REFCORR8 added the authoredValue map that decides whether a value normalizing to empty is unset; only its class spelling was probed in round 5.")
+
+add("DB-DATAEMPTY", "Div/Container",
+    "REFCORR8 C-R5-P1-2 sibling: case-variant duplicate data-* where the LAST authored value is literally empty",
+    "Div.php:138-139 assigns $args[$lkey] with the last value and records authoredValue[$lkey] = ($value !== ''); the unset loop at Div.php:165-169 then removes the key when the value trims empty and authoredValue is falsy. With data-Foo=\"1\" first and data-foo=\"\" last, the last-wins value is empty and the map flag is false, so the reference drops the attribute entirely even though an earlier authored value was non-empty. The interaction of the new last-wins tie-break with the pre-existing empty-unset was not measured.",
+    "CONFIRM if live keeps a data-foo attribute (either the empty last value or the earlier value \"1\") while the reference drops it, a rule-level attribute-presence difference.",
+    "CLEAR if live and reference both drop data-foo after the standard mask.",
+    '[[div data-Foo="1" data-foo=""]]\nX[[/div]]',
+    reprobe="REFCORR8 changed the collision tie-break from first-wins to last-wins; the empty-last-value interaction with the unset loop is a new mechanism introduced by that change.")
+
+add("DC-DATATRIPLE", "Div/Container",
+    "REFCORR8 C-R5-P1-2 sibling: three case-variant data-* keys in one div head",
+    "The corrected collision branch at Div.php:132-139 lowercases each data-* key and overwrites unconditionally, so three keys data-Foo, data-foo and DATA-FOO all fold to data-foo and the third value should win while PHP array overwrite keeps the first insertion position. The round-5 probe had exactly two variants; a three-way collision tests whether the last-wins rule is a general fold or an accidental property of a pair.",
+    "CONFIRM if live keeps a value other than the third-authored \"3\", or emits more than one data-foo attribute, while the reference keeps data-foo=\"3\".",
+    "CLEAR if live and reference both emit exactly data-foo=\"3\" after the standard mask.",
+    '[[div data-Foo="1" data-foo="2" DATA-FOO="3"]]\nX[[/div]]',
+    reprobe="REFCORR8 changed the duplicate-key tie-break; a three-way collision is a new sibling of the two-key case.")
+
+add("DD-IDTAB", "Div/Container",
+    "REFCORR8 C-R5-R1-1 sibling: whitespace-only id containing a tab, mapped to the bare u- shell",
+    "isolateId at Div.php:68-85 collapses any whitespace run including tabs and returns the bare u- shell for a whitespace-only value, and the corrected render at Render/Xhtml/Div.php:63 now clears a value only when it carries a 0xFF placeholder, so the shell is emitted verbatim. The round-5 R1 probe used spaces only; a tab exercises the /\\s+/u branch of the same newly changed render mechanism.",
+    "CONFIRM if live emits id=\"u-\" while the reference emits id=\"\" or a different id value, a rule-level attribute value difference.",
+    "CLEAR if live and reference both emit id=\"u-\" after the standard mask.",
+    '[[div id=" \t "]]\nbody\n[[/div]]',
+    reprobe="REFCORR8 narrowed the render clear from 0xFF-or-bare-u- to 0xFF only; the whitespace-to-u- path is the changed mechanism.")
+
+add("DE-IDLIT", "Div/Container",
+    "REFCORR8 C-R5-R1-1 sibling: an authored literal id=\"u-\" rather than a whitespace-derived shell",
+    "The corrected render clear at Render/Xhtml/Div.php:63 no longer special-cases a value equal to u-, so an author who literally writes id=\"u-\" now keeps that value. isolateId at Div.php:81-83 returns the collapsed value unchanged when it already begins with u-, so the parse and render paths both preserve it. This was not distinguished from the whitespace-derived shell in round 5.",
+    "CONFIRM if live emits id=\"u-\" while the reference clears it to id=\"\", or if the two sides differ on whether the id key is present.",
+    "CLEAR if live and reference both emit id=\"u-\" after the standard mask.",
+    '[[div id="u-"]]\nbody\n[[/div]]',
+    reprobe="REFCORR8 removed the bare-u- disjunct from the render clear; a literally authored u- id travels the same changed arm.")
+
+# ---------------- Genuinely new code-reading shapes in the remaining block families ----------------
+add("BB-LEADSPACE", "Blockquote",
+    "quote marker preceded by one literal space rather than starting at column zero or byte zero",
+    "Blockquote's outer regex requires a leading LF immediately followed by the > marker, so a single space before the marker prevents the whole line from being claimed and it stays literal text. Round 5 covered first-byte markers and in-run depth-two no-space rows; the one-space-indented marker is a new sibling with a different capture boundary and no correction has touched it.",
+    "CONFIRM if live forms a <blockquote> from ' > q' while the reference leaves '&gt; q' as literal text, a rule-level container decision.",
+    "CLEAR if live and reference both leave the space-prefixed marker literal after the standard mask.",
+    'X\n\n > q\n\nY')
+
+add("NN-3LF", "Paragraph/Newline",
+    "three consecutive newlines between prose lines (odd separator run)",
+    "Paragraph's lazy regex /^.*?\\n\\s*?\\n/m at Paragraph.php:67 consumes exactly two of a three-LF run as one separator, leaving one LF for Newline to turn into a <br /> or for Tighten to delete. Round 5 probed four LFs (an even run) and cleared it; an odd three-LF run has a different residual and is a genuinely new code-reading shape.",
+    "CONFIRM if live forms an empty <p></p> or an extra <br /> from the three-LF run while the reference forms exactly two <p> elements with no break, a rule-level paragraph/break count difference.",
+    "CLEAR if live and reference both form exactly <p>a</p> and <p>b</p> with no break after the standard mask.",
+    'a\n\n\nb')
+
+add("TT-UNPAIREDAT", "Tabview/Collapsible",
+    "tab title carrying an UNPAIRED @@ marker, which the paired-@@ test at Tabview.php:112 does not blank",
+    "_tabTitle blanks a title only when it matches @@.*@@ or @<.*>@ or carries a 0xFF byte; an unpaired x@@y therefore survives as a literal label. Round 5 covered a real U+FFFD title and cleared it; the unpaired raw-marker title is a new code-reading shape that probes whether live treats a lone @@ as markup or text.",
+    "CONFIRM if live renders an empty tab anchor for x@@y while the reference renders the literal label x@@y, a rule-level title decision.",
+    "CLEAR if live and reference both render the literal label x@@y after the standard mask.",
+    '[[tabview]]\n[[tab x@@y]]X[[/tab]]\n[[/tabview]]')
+
+
+def md_escape(s):
+    return s.replace('|', '\\|').replace('\t', '\\t').replace('\n', '\\n').replace('\r', '\\r')
+
+families = {}
+for r in S:
+    families.setdefault(r['family'], []).append(r['id'])
+
+lines = []
+lines.append('# R5B-P1 pre-probe ledger — PARSE-SIDE BLOCK RULES, round 5b')
+lines.append('')
+lines.append('Unit R5B-P1, family seam PARSE-SIDE BLOCK RULES, post-REFCORR8 canonical ground at commit b909f33 (base e53e7234 plus adopted REFCORR8 fixes; build green). Every row below was written before any probe page was created or captured; cases.jsonl is generated from these same records by this script so a source identity cannot drift from the prose. Live Wikidot behavior is definitional, intent is a hypothesis only, and a suspicion is confirmed only by a valid, stable, source-matching capture that disagrees with the reference or the mirror on a rule-level value after the campaign-standard mask. Serving-layer and Stage 2 frame surfaces are clearances, never confirmations.')
+lines.append('')
+lines.append('Seed discipline: the corrected REFCORR8 reference code was read first (List.php paired-stack, normalization rewrites, synthetic degrade/unclosed gates and buildListAttrs; Div.php authoredValue, data-* last-wins and isolateId; Render/Xhtml/Div.php narrowed clear). LA-ABS is the coordinator-supplied parity candidate from wj-completeness-review/LISTCASE-FIX-RESULT.md and was composed after reading that result file. Re-probed round-5 shapes each carry an explicit reason because the corresponding REFCORR8 patch changed their mechanism; no REFCORR7-closed shape is re-probed as-is. No row is added after probing without a new ledger row and its own probe.')
+lines.append('')
+lines.append('| ID | Family | Construct | Why the reference looks wrong | Decisive CONFIRM bytes | Decisive CLEAR bytes | Source (\\n = LF) |')
+lines.append('|----|--------|-----------|-------------------------------|------------------------|----------------------|-------------------|')
+for r in S:
+    lines.append('| %s | %s | %s | %s | %s | %s | `%s` |' % (
+        r['id'], r['family'], md_escape(r['construct']), md_escape(r['why']),
+        md_escape(r['confirm']), md_escape(r['clear']), md_escape(r['source'])))
+lines.append('')
+for r in S:
+    lines.append('## %s — %s' % (r['id'], r['construct']))
+    lines.append('')
+    lines.append('Why: %s Pre-probe prediction: %s Alternative outcome: %s Source: `%s`.' % (
+        md_escape(r['why']), r['confirm'], r['clear'], md_escape(r['source'])))
+    if r.get('reprobe'):
+        lines.append('Re-probe reason: %s' % r['reprobe'])
+    lines.append('')
+lines.append('Rule-group coverage: %s.' % ', '.join(
+    '%s=%s' % (f, ','.join(ids)) for f, ids in families.items()))
+lines.append('')
+open(os.path.join(U, 'LEDGER.md'), 'w', encoding='utf-8').write('\n'.join(lines))
+
+with open(os.path.join(U, 'cases.jsonl'), 'w', encoding='utf-8') as f:
+    for r in S:
+        f.write(json.dumps({'id': r['id'], 'source': r['source']}, ensure_ascii=False) + '\n')
+
+print('wrote LEDGER.md and cases.jsonl with %d suspicions in %d families' %
+      (len(S), len(families)))

@@ -1,0 +1,682 @@
+[
+ {
+  "id": "r2b-math-uppercase-TYPE-valid",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": false,
+  "ref_canon": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>",
+  "live_canon": "<span class=\"equation-number\">(1)</span><div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [
+    "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>"
+   ],
+   "divs": [],
+   "text": "The equation has not been processed correctly. Most prabably it has syntax error(s)."
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "(1) \\begin{equation} x \\end{equation}"
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-math-uppercase-type-valid"
+ },
+ {
+  "id": "r2b-math-type-uppercase-value",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<div class=\"error-block\">Unsupported math environment \"ALIGN\"</div>",
+  "live_canon": "<div class=\"error-block\">Unsupported math environment \"ALIGN\"</div>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [
+    "<div class=\"error-block\">Unsupported math environment \"ALIGN\"</div>"
+   ],
+   "divs": [],
+   "text": "Unsupported math environment \"ALIGN\""
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [
+    "<div class=\"error-block\">Unsupported math environment \"ALIGN\"</div>"
+   ],
+   "divs": [],
+   "text": "Unsupported math environment \"ALIGN\""
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-math-type-uppercase-value"
+ },
+ {
+  "id": "r2b-math-type-entity",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": false,
+  "ref_canon": "<div class=\"error-block\">Unsupported math environment \"a&b\"</div>",
+  "live_canon": "<div class=\"error-block\">Unsupported math environment \"a&amp;b\"</div>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [
+    "<div class=\"error-block\">Unsupported math environment \"a&b\"</div>"
+   ],
+   "divs": [],
+   "text": "Unsupported math environment \"a&b\""
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [
+    "<div class=\"error-block\">Unsupported math environment \"a&amp;b\"</div>"
+   ],
+   "divs": [],
+   "text": "Unsupported math environment \"a&amp;b\""
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-math-type-entity"
+ },
+ {
+  "id": "r2b-mathinline-date-only",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><span class=\"math-inline\">$$</span></p>",
+  "live_canon": "<p><span class=\"math-inline\">$$</span></p>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [
+    "<span class=\"math-inline\">$$</span>"
+   ],
+   "err": [],
+   "divs": [],
+   "text": "$$"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [
+    "<span class=\"math-inline\">$$</span>"
+   ],
+   "err": [],
+   "divs": [],
+   "text": "$$"
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-mathinline-date-only"
+ },
+ {
+  "id": "r2b-mathinline-quote-escape",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><span class=\"math-inline\">$&quot;a&quot; 'b'$</span></p>",
+  "live_canon": "<p><span class=\"math-inline\">$&quot;a&quot; 'b'$</span></p>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [
+    "<span class=\"math-inline\">$&quot;a&quot; 'b'$</span>"
+   ],
+   "err": [],
+   "divs": [],
+   "text": "$&quot;a&quot; 'b'$"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [
+    "<span class=\"math-inline\">$&quot;a&quot; 'b'$</span>"
+   ],
+   "err": [],
+   "divs": [],
+   "text": "$&quot;a&quot; 'b'$"
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-mathinline-quote-escape"
+ },
+ {
+  "id": "r2b-mathinline-nonascii",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><span class=\"math-inline\">$é &amp; α$</span></p>",
+  "live_canon": "<p><span class=\"math-inline\">$é &amp; α$</span></p>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [
+    "<span class=\"math-inline\">$é &amp; α$</span>"
+   ],
+   "err": [],
+   "divs": [],
+   "text": "$é &amp; α$"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [
+    "<span class=\"math-inline\">$é &amp; α$</span>"
+   ],
+   "err": [],
+   "divs": [],
+   "text": "$é &amp; α$"
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-mathinline-nonascii"
+ },
+ {
+  "id": "r2b-mathinline-code-token",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><span class=\"math-inline\">$[[code X]]$</span></p>",
+  "live_canon": "<p><span class=\"math-inline\">$[[code X]]$</span></p>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [
+    "<span class=\"math-inline\">$[[code X]]$</span>"
+   ],
+   "err": [],
+   "divs": [],
+   "text": "$[[code X]]$"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [
+    "<span class=\"math-inline\">$[[code X]]$</span>"
+   ],
+   "err": [],
+   "divs": [],
+   "text": "$[[code X]]$"
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-mathinline-code-token"
+ },
+ {
+  "id": "r2b-email-claimed-url",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": false,
+  "ref_canon": "<p><span class=\"wiki-email\">moc.b|a#�901�</span></p>",
+  "live_canon": "<p><span class=\"wiki-email\">moc.b|a#�3�</span></p>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [
+    "<span class=\"wiki-email\">moc.b|a#�901�</span>"
+   ],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "moc.b|a#�901�"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [
+    "<span class=\"wiki-email\">moc.b|a#�3�</span>"
+   ],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "moc.b|a#�3�"
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-email-claimed-url"
+ },
+ {
+  "id": "r2b-email-claimed-raw",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": false,
+  "ref_canon": "<p><span class=\"wiki-email\">moc.b|a#�421�</span></p>",
+  "live_canon": "<p><span class=\"wiki-email\">moc.b|a#�1�</span></p>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [
+    "<span class=\"wiki-email\">moc.b|a#�421�</span>"
+   ],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "moc.b|a#�421�"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [
+    "<span class=\"wiki-email\">moc.b|a#�1�</span>"
+   ],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "moc.b|a#�1�"
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-email-claimed-raw"
+ },
+ {
+  "id": "r2b-email-bytewise-ee",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><span class=\"wiki-email\">moc.b|a#�é�</span></p>",
+  "live_canon": "<p><span class=\"wiki-email\">moc.b|a#�é�</span></p>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [
+    "<span class=\"wiki-email\">moc.b|a#�é�</span>"
+   ],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "moc.b|a#�é�"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [
+    "<span class=\"wiki-email\">moc.b|a#�é�</span>"
+   ],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "moc.b|a#�é�"
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-email-bytewise-ee"
+ },
+ {
+  "id": "r2b-email-bytewise-cafe",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><span class=\"wiki-email\">moc.b|a#��fac</span></p>",
+  "live_canon": "<p><span class=\"wiki-email\">moc.b|a#��fac</span></p>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [
+    "<span class=\"wiki-email\">moc.b|a#��fac</span>"
+   ],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "moc.b|a#��fac"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [
+    "<span class=\"wiki-email\">moc.b|a#��fac</span>"
+   ],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "moc.b|a#��fac"
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-email-bytewise-cafe"
+ },
+ {
+  "id": "r2b-email-label-at",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><span class=\"wiki-email\">moc.b|a#war||</span></p>",
+  "live_canon": "<p><span class=\"wiki-email\">moc.b|a#war||</span></p>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [
+    "<span class=\"wiki-email\">moc.b|a#war||</span>"
+   ],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "moc.b|a#war||"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [
+    "<span class=\"wiki-email\">moc.b|a#war||</span>"
+   ],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "moc.b|a#war||"
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-email-label-at"
+ },
+ {
+  "id": "r2b-email-claimed-multidigit",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": false,
+  "ref_canon": "<p><span style=\"white-space: pre-wrap;\">a</span><span style=\"white-space: pre-wrap;\">b</span><span style=\"white-space: pre-wrap;\">c</span><span style=\"white-space: pre-wrap;\">d</span><span style=\"white-space: pre-wrap;\">e</span><span style=\"white-space: pre-wrap;\">f</span><span style=\"white-space: pre-wrap;\">g</span><span style=\"white-space: pre-wrap;\">h</span><span style=\"white-space: pre-wrap;\">i</span><span style=\"white-space: pre-wrap;\">j</span><span style=\"white-space: pre-wrap;\">k</span><span style=\"white-space: pre-wrap;\">l</span><span class=\"wiki-email\">moc.b|a#�302�</span></p>",
+  "live_canon": "<p><span style=\"white-space: pre-wrap;\">a</span><span style=\"white-space: pre-wrap;\">b</span><span style=\"white-space: pre-wrap;\">c</span><span style=\"white-space: pre-wrap;\">d</span><span style=\"white-space: pre-wrap;\">e</span><span style=\"white-space: pre-wrap;\">f</span><span style=\"white-space: pre-wrap;\">g</span><span style=\"white-space: pre-wrap;\">h</span><span style=\"white-space: pre-wrap;\">i</span><span style=\"white-space: pre-wrap;\">j</span><span style=\"white-space: pre-wrap;\">k</span><span style=\"white-space: pre-wrap;\">l</span><span class=\"wiki-email\">moc.b|a#�51�</span></p>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [
+    "<span class=\"wiki-email\">moc.b|a#�302�</span>"
+   ],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "a b c d e f g h i j k l moc.b|a#�302�"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [
+    "<span class=\"wiki-email\">moc.b|a#�51�</span>"
+   ],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "a b c d e f g h i j k l moc.b|a#�51�"
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-email-claimed-multidigit"
+ },
+ {
+  "id": "r2b-url-lower-pct",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"https://example.com/%c3%a9\">https://example.com/%c3%a9</a></p>",
+  "live_canon": "<p><a href=\"https://example.com/%c3%a9\">https://example.com/%c3%a9</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"https://example.com/%c3%a9\">https://example.com/%c3%a9</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "https://example.com/%c3%a9"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"https://example.com/%c3%a9\">https://example.com/%c3%a9</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "https://example.com/%c3%a9"
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-url-lower-pct"
+ },
+ {
+  "id": "r2b-url-fragment",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"http://example.com/a#frag\">http://example.com/a#frag</a></p>",
+  "live_canon": "<p><a href=\"http://example.com/a#frag\">http://example.com/a#frag</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"http://example.com/a#frag\">http://example.com/a#frag</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "http://example.com/a#frag"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"http://example.com/a#frag\">http://example.com/a#frag</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "http://example.com/a#frag"
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-url-fragment"
+ },
+ {
+  "id": "r2b-freelink-anchor-label",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"/foo#frag\">shown</a></p>",
+  "live_canon": "<p><a href=\"/foo#frag\">shown</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/foo#frag\">shown</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "shown"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/foo#frag\">shown</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "shown"
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-freelink-anchor-label"
+ },
+ {
+  "id": "r2b-interwiki-pl-site",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"https://pl.wikipedia.org/wiki/A&B\" onclick=\"window.open(this.href, '_blank'); return false;\">A&amp;B</a></p>",
+  "live_canon": "<p><a href=\"https://pl.wikipedia.org/wiki/A&B\" onclick=\"window.open(this.href, '_blank'); return false;\">A&amp;B</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"https://pl.wikipedia.org/wiki/A&B\" onclick=\"window.open(this.href, '_blank'); return false;\">A&amp;B</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "A&amp;B"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"https://pl.wikipedia.org/wiki/A&B\" onclick=\"window.open(this.href, '_blank'); return false;\">A&amp;B</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "A&amp;B"
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-interwiki-pl-site"
+ },
+ {
+  "id": "r2b-image-nonascii-src",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<img alt=\"café.png\" class=\"image\" src=\"http://x/caf%C3%A9.png\">",
+  "live_canon": "<img alt=\"café.png\" class=\"image\" src=\"http://x/caf%C3%A9.png\">",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"café.png\" class=\"image\" src=\"http://x/caf%C3%A9.png\">"
+   ],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": ""
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"café.png\" class=\"image\" src=\"http://x/caf%C3%A9.png\">"
+   ],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": ""
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-image-nonascii-src"
+ },
+ {
+  "id": "r2b-image-alt-quote",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<img alt=\"a&quot;b&amp;c\" class=\"image\" src=\"http://x/y.png\">",
+  "live_canon": "<img alt=\"a&quot;b&amp;c\" class=\"image\" src=\"http://x/y.png\">",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"a&quot;b&amp;c\" class=\"image\" src=\"http://x/y.png\">"
+   ],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": ""
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"a&quot;b&amp;c\" class=\"image\" src=\"http://x/y.png\">"
+   ],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": ""
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-image-alt-quote"
+ },
+ {
+  "id": "r2b-embed-data-scheme",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": true,
+  "ref_canon": "<p><div class=\"error-block\">Sorry, no match for the embedded content.</div></p>",
+  "live_canon": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [
+    "<div class=\"error-block\">Sorry, no match for the embedded content.</div>"
+   ],
+   "divs": [],
+   "text": "Sorry, no match for the embedded content."
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [
+    "<div class=\"error-block\">Sorry, no match for the embedded content.</div>"
+   ],
+   "divs": [],
+   "text": "Sorry, no match for the embedded content."
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-embed-data-scheme"
+ },
+ {
+  "id": "r2b-embed-datasrc",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": true,
+  "ref_canon": "<p><div class=\"error-block\">Sorry, no match for the embedded content.</div></p>",
+  "live_canon": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [
+    "<div class=\"error-block\">Sorry, no match for the embedded content.</div>"
+   ],
+   "divs": [],
+   "text": "Sorry, no match for the embedded content."
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [
+    "<div class=\"error-block\">Sorry, no match for the embedded content.</div>"
+   ],
+   "divs": [],
+   "text": "Sorry, no match for the embedded content."
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-embed-datasrc"
+ },
+ {
+  "id": "r2b-image-link-nonascii",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<a href=\"http://x/caf%C3%A9\"><img alt=\"y.png\" class=\"image\" src=\"http://x/y.png\"></a>",
+  "live_canon": "<a href=\"http://x/caf%C3%A9\"><img alt=\"y.png\" class=\"image\" src=\"http://x/y.png\"></a>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"y.png\" class=\"image\" src=\"http://x/y.png\">"
+   ],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": ""
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"y.png\" class=\"image\" src=\"http://x/y.png\">"
+   ],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": ""
+  },
+  "capture_id": "muse-probe-round5b-r2-r2b-image-link-nonascii"
+ }
+]

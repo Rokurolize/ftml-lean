@@ -1,0 +1,36 @@
+wrote /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/coord-units/R5B-R2/comparison.json rows 22 {'DIFF': 7, 'CLEAR': 15}
+r2b-math-uppercase-TYPE-valid DIFF
+  ref : '<div class="error-block">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>'
+  live: '<span class="equation-number">(1)</span><div class="math-equation" id="equation-1">\\begin{equation} x \\end{equation}</div>'
+  sig ref : {'anchors': [], 'imgs': [], 'emails': [], 'math': [], 'err': ['<div class="error-block">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>'], 'divs': [], 'text': 'The equation has not been processed correctly. Most prabably it has syntax error(s).'}
+  sig live: {'anchors': [], 'imgs': [], 'emails': [], 'math': [], 'err': [], 'divs': [], 'text': '(1) \\begin{equation} x \\end{equation}'}
+r2b-math-type-entity DIFF
+  ref : '<div class="error-block">Unsupported math environment "a&b"</div>'
+  live: '<div class="error-block">Unsupported math environment "a&amp;b"</div>'
+  sig ref : {'anchors': [], 'imgs': [], 'emails': [], 'math': [], 'err': ['<div class="error-block">Unsupported math environment "a&b"</div>'], 'divs': [], 'text': 'Unsupported math environment "a&b"'}
+  sig live: {'anchors': [], 'imgs': [], 'emails': [], 'math': [], 'err': ['<div class="error-block">Unsupported math environment "a&amp;b"</div>'], 'divs': [], 'text': 'Unsupported math environment "a&amp;b"'}
+r2b-email-claimed-url DIFF
+  ref : '<p><span class="wiki-email">moc.b|a#�901�</span></p>'
+  live: '<p><span class="wiki-email">moc.b|a#�3�</span></p>'
+  sig ref : {'anchors': [], 'imgs': [], 'emails': ['<span class="wiki-email">moc.b|a#�901�</span>'], 'math': [], 'err': [], 'divs': [], 'text': 'moc.b|a#�901�'}
+  sig live: {'anchors': [], 'imgs': [], 'emails': ['<span class="wiki-email">moc.b|a#�3�</span>'], 'math': [], 'err': [], 'divs': [], 'text': 'moc.b|a#�3�'}
+r2b-email-claimed-raw DIFF
+  ref : '<p><span class="wiki-email">moc.b|a#�421�</span></p>'
+  live: '<p><span class="wiki-email">moc.b|a#�1�</span></p>'
+  sig ref : {'anchors': [], 'imgs': [], 'emails': ['<span class="wiki-email">moc.b|a#�421�</span>'], 'math': [], 'err': [], 'divs': [], 'text': 'moc.b|a#�421�'}
+  sig live: {'anchors': [], 'imgs': [], 'emails': ['<span class="wiki-email">moc.b|a#�1�</span>'], 'math': [], 'err': [], 'divs': [], 'text': 'moc.b|a#�1�'}
+r2b-email-claimed-multidigit DIFF
+  ref : '<p><span style="white-space: pre-wrap;">a</span><span style="white-space: pre-wrap;">b</span><span style="white-space: pre-wrap;">c</span><span style="white-space: pre-wrap;">d</span><span style="white-space: pre-wrap;">e</span><span style="white-space: pre-wrap;">f</span><span style="white-space: pre-wrap;">g</span><span style="white-space: pre-wrap;">h</span><span style="white-space: pre-wrap;">i</span><span style="white-space: pre-wrap;">j</span><span style="white-space: pre-wrap;">k</span><span style="white-space: pre-wrap;">l</span><span class="wiki-email">moc.b|a#�302�</span></p>'
+  live: '<p><span style="white-space: pre-wrap;">a</span><span style="white-space: pre-wrap;">b</span><span style="white-space: pre-wrap;">c</span><span style="white-space: pre-wrap;">d</span><span style="white-space: pre-wrap;">e</span><span style="white-space: pre-wrap;">f</span><span style="white-space: pre-wrap;">g</span><span style="white-space: pre-wrap;">h</span><span style="white-space: pre-wrap;">i</span><span style="white-space: pre-wrap;">j</span><span style="white-space: pre-wrap;">k</span><span style="white-space: pre-wrap;">l</span><span class="wiki-email">moc.b|a#�51�</span></p>'
+  sig ref : {'anchors': [], 'imgs': [], 'emails': ['<span class="wiki-email">moc.b|a#�302�</span>'], 'math': [], 'err': [], 'divs': [], 'text': 'a b c d e f g h i j k l moc.b|a#�302�'}
+  sig live: {'anchors': [], 'imgs': [], 'emails': ['<span class="wiki-email">moc.b|a#�51�</span>'], 'math': [], 'err': [], 'divs': [], 'text': 'a b c d e f g h i j k l moc.b|a#�51�'}
+r2b-embed-data-scheme DIFF
+  ref : '<p><div class="error-block">Sorry, no match for the embedded content.</div></p>'
+  live: '<div class="error-block">Sorry, no match for the embedded content.</div>'
+  sig ref : {'anchors': [], 'imgs': [], 'emails': [], 'math': [], 'err': ['<div class="error-block">Sorry, no match for the embedded content.</div>'], 'divs': [], 'text': 'Sorry, no match for the embedded content.'}
+  sig live: {'anchors': [], 'imgs': [], 'emails': [], 'math': [], 'err': ['<div class="error-block">Sorry, no match for the embedded content.</div>'], 'divs': [], 'text': 'Sorry, no match for the embedded content.'}
+r2b-embed-datasrc DIFF
+  ref : '<p><div class="error-block">Sorry, no match for the embedded content.</div></p>'
+  live: '<div class="error-block">Sorry, no match for the embedded content.</div>'
+  sig ref : {'anchors': [], 'imgs': [], 'emails': [], 'math': [], 'err': ['<div class="error-block">Sorry, no match for the embedded content.</div>'], 'divs': [], 'text': 'Sorry, no match for the embedded content.'}
+  sig live: {'anchors': [], 'imgs': [], 'emails': [], 'math': [], 'err': ['<div class="error-block">Sorry, no match for the embedded content.</div>'], 'divs': [], 'text': 'Sorry, no match for the embedded content.'}

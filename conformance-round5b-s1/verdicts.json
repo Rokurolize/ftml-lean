@@ -1,0 +1,187 @@
+[
+ {
+  "id": "s01-li-failed-close",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]",
+  "fullname": "muse-probe-round5b-s1-s01-li-failed-close",
+  "html_sha256": "c4d87f83bea9dd4b152ee152a824e4523dad20eb3199c959c7a70a4be10a4c58",
+  "raw_comparison_verdict": "CANDIDATE",
+  "verdict": "CONFIRMED",
+  "candidate": "C-R5B-S1-01",
+  "reason": "rule-level list-item structure: live keeps the post-failed-closer [[LI]]B[[/LI]] literal inside item A, reference forms a second <li>B item",
+  "confirm_bytes_live": "<ul>\n<li>A[[LI]]B[[/LI]]<br />\n[[/UL]]</li>\n</ul>",
+  "confirm_bytes_ref": "<ul>\n<li>A<li>B<br />"
+ },
+ {
+  "id": "s02-list-emptyraw-retrim",
+  "source": "[[ul]]\n[[li]]@@@@ @@@@[[/li]]\n[[/ul]]",
+  "fullname": "muse-probe-round5b-s1-s02-list-emptyraw-retrim",
+  "html_sha256": "b9cd3059d58da7d6bb3794a6900a119ed4575881b757d57b472c833063a30996",
+  "raw_comparison_verdict": "CLEARED",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s03-list-scored-wsclass",
+  "source": "[[UL_ class=\" \"]]\n[[li]]a[[/li]]\n[[/OL]]AFTER",
+  "fullname": "muse-probe-round5b-s1-s03-list-scored-wsclass",
+  "html_sha256": "b31ee83ca409b9f50e621fd2df8a4b48d8069ad64c68f7a6bc61ebaf52ced707",
+  "raw_comparison_verdict": "CLEARED",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s04-fl-ws-pipe-label",
+  "source": "A [[[　_default:x|Label]]] B",
+  "fullname": "muse-probe-round5b-s1-s04-fl-ws-pipe-label",
+  "html_sha256": "17bbcc3c98c068e0e2d115970d9fbfa3ce9c103490b337d3fad3744f7f13fe21",
+  "raw_comparison_verdict": "CLEARED",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s05-fl-vt-upper-pipe",
+  "source": "A [[[\u000b_DEFAULT:Café|Étiquette]]] B",
+  "fullname": "muse-probe-round5b-s1-s05-fl-vt-upper-pipe",
+  "html_sha256": "392e721585277d65722612549084a8f59c2ae1e691182126b24d59c27aa2f49b",
+  "raw_comparison_verdict": "CLEARED",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s06-fl-nbsp-colonchain",
+  "source": "A [[[ _default:caté:sub|L]]] B",
+  "fullname": "muse-probe-round5b-s1-s06-fl-nbsp-colonchain",
+  "html_sha256": "ef0c7f910b4701b9693237ceffad587ed3bdbade0204ad0d6bc04ba731fbcb74",
+  "raw_comparison_verdict": "CLEARED",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s07-math-type-other-attrs",
+  "source": "[[math a TYPE=\"align\" style=\"s\" data-x=\"1\"]]\nx\n[[/math]]",
+  "fullname": "muse-probe-round5b-s1-s07-math-type-other-attrs",
+  "html_sha256": "4ba77cb5308df7bc3c105c56cedec13577411c512f8f75a650cb58d90c3e27be",
+  "raw_comparison_verdict": "CLEARED",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s08-math-type-lower-and-upper",
+  "source": "[[math type=\"gather\" TYPE=\"align\"]]\nx\n[[/math]]",
+  "fullname": "muse-probe-round5b-s1-s08-math-type-lower-and-upper",
+  "html_sha256": "e504bd63f5c257493a0bd835e3359b4574ca995dfdaf283fa88623fea08d5a1f",
+  "raw_comparison_verdict": "CANDIDATE",
+  "verdict": "CLEARED",
+  "reason": "serving surface: no-op LatexRenderer PNG error block; tokens-mode reference token type is equation, the same environment value live serves",
+  "reference_token_type": "equation",
+  "live_environment": "equation"
+ },
+ {
+  "id": "s09-mathinline-date-email",
+  "source": "[[$x [a@b.com http://example.com] y$]]",
+  "fullname": "muse-probe-round5b-s1-s09-mathinline-date-email",
+  "html_sha256": "82791b6e38469b6b8a6c1fd5ee76bf331c35e4305a4368af4d7e79d8edcea5d5",
+  "raw_comparison_verdict": "CLEARED",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s10-div-id-wsclass",
+  "source": "[[div id=\"   \" class=\" \"]]\nbody\n[[/div]]",
+  "fullname": "muse-probe-round5b-s1-s10-div-id-wsclass",
+  "html_sha256": "4a2845db64a962707d16f7cb8b756c1a1c0cda4e8b689117e6a52dcb6cd8b42d",
+  "raw_comparison_verdict": "CLEARED",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s11-div-id-dupdata",
+  "source": "[[div id=\"   \" data-Foo=\"1\" data-foo=\"2\"]]\nX[[/div]]",
+  "fullname": "muse-probe-round5b-s1-s11-div-id-dupdata",
+  "html_sha256": "b18294e4f588b151503fe73244885ec3255c595c71eac0cdcc7bcf2c63fa2b5d",
+  "raw_comparison_verdict": "CLEARED",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s12-div-id-placeholder-class",
+  "source": "[[div id=\"   \" class=\"@@@@\"]]\nX[[/div]]",
+  "fullname": "muse-probe-round5b-s1-s12-div-id-placeholder-class",
+  "html_sha256": "6ef4bcd7fb880ba77916578a5b701844c648a21a45e9f47a1d352762eb801d89",
+  "raw_comparison_verdict": "CLEARED",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s13-fn-in-list-retrim",
+  "source": "[[ul]]\n[[li]]A [[footnote]]@@@@ @@@@[[/footnote]] B[[/li]]\n[[/ul]]\n[[footnoteblock]]",
+  "fullname": "muse-probe-round5b-s1-s13-fn-in-list-retrim",
+  "html_sha256": "50bd2fdb0786e2e9eaf3f906e53b2149ea228f2e72062307a9e001b7a1a946be",
+  "raw_comparison_verdict": "CLEARED",
+  "verdict": "CLEARED",
+  "reason": "serving/frame only; rule-level signature equal"
+ },
+ {
+  "id": "s14-fn-in-quote-retrim",
+  "source": "> [[footnote]]@@@@ @@@@[[/footnote]]\n\n[[footnoteblock]]",
+  "fullname": "muse-probe-round5b-s1-s14-fn-in-quote-retrim",
+  "html_sha256": "df1ead72831a6c93f7644c8ff0d08b324760ece2a283acd1173df0d5cb2df9dd",
+  "raw_comparison_verdict": "CLEARED",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s15-fn-two-runs-tab",
+  "source": "[[footnote]]@@@@\t@@@@[[/footnote]]\n[[footnoteblock]]",
+  "fullname": "muse-probe-round5b-s1-s15-fn-two-runs-tab",
+  "html_sha256": "9a433756f6c93079ca2faf49d827011e130ad08752d11db407983fc244a3c003",
+  "raw_comparison_verdict": "CLEARED",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s16-bib-two-runs-u3000",
+  "source": "[[bibliography]]\n: lab : @@@@　@@@@\n[[/bibliography]]",
+  "fullname": "muse-probe-round5b-s1-s16-bib-two-runs-u3000",
+  "html_sha256": "064777061ab80235ceeebc3657c54075a312f2c495d87b999076f444caca5ac7",
+  "raw_comparison_verdict": "CLEARED",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s17-raw-4c3-plus-empty",
+  "source": "@@@@ZQ@@@\n\n@@@@",
+  "fullname": "muse-probe-round5b-s1-s17-raw-4c3-plus-empty",
+  "html_sha256": "29fbfbf5229fe9bd5af4a053dac639dbcf2ad8c47ded64f90ee6042dfe2f84dd",
+  "raw_comparison_verdict": "CLEARED",
+  "verdict": "CLEARED",
+  "reason": "serving/frame only; rule-level signature equal"
+ },
+ {
+  "id": "s18-tableadv-dup-data",
+  "source": "[[table data-Foo=\"1\" data-foo=\"2\"]]\n[[row]]\n[[cell]]\nC\n[[/cell]]\n[[/row]]\n[[/table]]",
+  "fullname": "muse-probe-round5b-s1-s18-tableadv-dup-data",
+  "html_sha256": "0fc2f09824202d9d658b688d75b3912274661c9c260d09ce2e34187fc36f5142",
+  "raw_comparison_verdict": "CLEARED",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s19-email-mixed-label",
+  "source": "[a@b.com X http://example.com]",
+  "fullname": "muse-probe-round5b-s1-s19-email-mixed-label",
+  "html_sha256": "1b89c6918583de1cdc0626e2ad9a9a2e97f10e9aff480744de925e72a3542166",
+  "raw_comparison_verdict": "CLEARED",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s20-email-intervening-code",
+  "source": "[[code]]x[[/code]]\n\n[a@b.com http://example.com]",
+  "fullname": "muse-probe-round5b-s1-s20-email-intervening-code",
+  "html_sha256": "7c3ca7cc840e5e0052935616cda215e21c88c7735d11e012e7fbae9830f1bdd6",
+  "raw_comparison_verdict": "CLEARED",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ }
+]

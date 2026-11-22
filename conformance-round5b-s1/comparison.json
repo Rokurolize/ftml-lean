@@ -1,0 +1,799 @@
+[
+ {
+  "id": "s01-li-failed-close",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]",
+  "fullname": "muse-probe-round5b-s1-s01-li-failed-close",
+  "live_canon": "<ul><li>A[[LI]]B[[/LI]]<br> [[/UL]]</li></ul>",
+  "ref_canon": "<ul><li>A<li>B<br>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "A[[LI]]B[[/LI]] [[/UL]]"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [
+    "<ul>",
+    "<li>",
+    "<li>"
+   ],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "A B"
+  },
+  "live_html": "<ul>\n<li>A[[LI]]B[[/LI]]<br />\n[[/UL]]</li>\n</ul>",
+  "ref_html": "<ul>\n<li>A<li>B<br />",
+  "html_sha256": "c4d87f83bea9dd4b152ee152a824e4523dad20eb3199c959c7a70a4be10a4c58",
+  "verdict": "CANDIDATE",
+  "first_diff": 9,
+  "live_context": "<ul><li>A[[LI]]B[[/LI]]<br> [[/UL]]</li></ul>",
+  "ref_context": "<ul><li>A<li>B<br>"
+ },
+ {
+  "id": "s02-list-emptyraw-retrim",
+  "source": "[[ul]]\n[[li]]@@@@ @@@@[[/li]]\n[[/ul]]",
+  "fullname": "muse-probe-round5b-s1-s02-list-emptyraw-retrim",
+  "live_canon": "<ul><li></li></ul><br>",
+  "ref_canon": "<ul><li></li></ul><br>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": ""
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": ""
+  },
+  "live_html": "<ul>\n<li></li>\n</ul>\n<br />",
+  "ref_html": "<ul>\n<li> </li>\n</ul><br />\n",
+  "html_sha256": "b9cd3059d58da7d6bb3794a6900a119ed4575881b757d57b472c833063a30996",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s03-list-scored-wsclass",
+  "source": "[[UL_ class=\" \"]]\n[[li]]a[[/li]]\n[[/OL]]AFTER",
+  "fullname": "muse-probe-round5b-s1-s03-list-scored-wsclass",
+  "live_canon": "<ul><li>aAFTER</li></ul>",
+  "ref_canon": "<ul><li>aAFTER</li></ul>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "aAFTER"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "aAFTER"
+  },
+  "live_html": "<ul>\n<li>aAFTER</li>\n</ul>",
+  "ref_html": "<ul>\n<li>aAFTER</li>\n</ul>",
+  "html_sha256": "b31ee83ca409b9f50e621fd2df8a4b48d8069ad64c68f7a6bc61ebaf52ced707",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s04-fl-ws-pipe-label",
+  "source": "A [[[　_default:x|Label]]] B",
+  "fullname": "muse-probe-round5b-s1-s04-fl-ws-pipe-label",
+  "live_canon": "A <a href=\"/x\">Label</a> B",
+  "ref_canon": "A <a href=\"/x\">Label</a> B",
+  "live_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">Label</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "A Label B"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">Label</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "A Label B"
+  },
+  "live_html": "<p>A <a class=\"newpage\" href=\"/x\">Label</a> B</p>",
+  "ref_html": "<p>A <a class=\"newpage\" href=\"/x\">Label</a> B</p>\n\n",
+  "html_sha256": "17bbcc3c98c068e0e2d115970d9fbfa3ce9c103490b337d3fad3744f7f13fe21",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s05-fl-vt-upper-pipe",
+  "source": "A [[[\u000b_DEFAULT:Café|Étiquette]]] B",
+  "fullname": "muse-probe-round5b-s1-s05-fl-vt-upper-pipe",
+  "live_canon": "A <a href=\"/cafe\">Étiquette</a> B",
+  "ref_canon": "A <a href=\"/cafe\">Étiquette</a> B",
+  "live_sig": {
+   "hrefs": [
+    "/cafe"
+   ],
+   "anchors": [
+    "<a href=\"/cafe\">Étiquette</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "A Étiquette B"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "/cafe"
+   ],
+   "anchors": [
+    "<a href=\"/cafe\">Étiquette</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "A Étiquette B"
+  },
+  "live_html": "<p>A <a class=\"newpage\" href=\"/cafe\">Étiquette</a> B</p>",
+  "ref_html": "<p>A <a class=\"newpage\" href=\"/cafe\">Étiquette</a> B</p>\n\n",
+  "html_sha256": "392e721585277d65722612549084a8f59c2ae1e691182126b24d59c27aa2f49b",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s06-fl-nbsp-colonchain",
+  "source": "A [[[ _default:caté:sub|L]]] B",
+  "fullname": "muse-probe-round5b-s1-s06-fl-nbsp-colonchain",
+  "live_canon": "A <a href=\"/cate:sub\">L</a> B",
+  "ref_canon": "A <a href=\"/cate:sub\">L</a> B",
+  "live_sig": {
+   "hrefs": [
+    "/cate:sub"
+   ],
+   "anchors": [
+    "<a href=\"/cate:sub\">L</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "A L B"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "/cate:sub"
+   ],
+   "anchors": [
+    "<a href=\"/cate:sub\">L</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "A L B"
+  },
+  "live_html": "<p>A <a class=\"newpage\" href=\"/cate:sub\">L</a> B</p>",
+  "ref_html": "<p>A <a class=\"newpage\" href=\"/cate:sub\">L</a> B</p>\n\n",
+  "html_sha256": "ef0c7f910b4701b9693237ceffad587ed3bdbade0204ad0d6bc04ba731fbcb74",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s07-math-type-other-attrs",
+  "source": "[[math a TYPE=\"align\" style=\"s\" data-x=\"1\"]]\nx\n[[/math]]",
+  "fullname": "muse-probe-round5b-s1-s07-math-type-other-attrs",
+  "live_canon": "[[math a TYPE=&quot;align&quot; style=&quot;s&quot; data-x=&quot;1&quot;]]<br> x<br> [[/math]]",
+  "ref_canon": "[[math a TYPE=&quot;align&quot; style=&quot;s&quot; data-x=&quot;1&quot;]]<br> x<br> [[/math]]",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "[[math a TYPE=&quot;align&quot; style=&quot;s&quot; data-x=&quot;1&quot;]] x [[/math]]"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "[[math a TYPE=&quot;align&quot; style=&quot;s&quot; data-x=&quot;1&quot;]] x [[/math]]"
+  },
+  "live_html": "<p>[[math a TYPE=&quot;align&quot; style=&quot;s&quot; data-x=&quot;1&quot;]]<br />\nx<br />\n[[/math]]</p>",
+  "ref_html": "<p>[[math a TYPE=&quot;align&quot; style=&quot;s&quot; data-x=&quot;1&quot;]]<br />\nx<br />\n[[/math]]</p>\n\n",
+  "html_sha256": "4ba77cb5308df7bc3c105c56cedec13577411c512f8f75a650cb58d90c3e27be",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s08-math-type-lower-and-upper",
+  "source": "[[math type=\"gather\" TYPE=\"align\"]]\nx\n[[/math]]",
+  "fullname": "muse-probe-round5b-s1-s08-math-type-lower-and-upper",
+  "live_canon": "<span class=\"equation-number\">(1)</span><div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+  "ref_canon": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class=\"math-equation\" id=\"equation-1\">"
+   ],
+   "tables": [],
+   "spans": [
+    "<span class=\"equation-number\">(1)</span>"
+   ],
+   "error": [],
+   "text": "(1) \\begin{equation} x \\end{equation}"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class=\"error-block\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [
+    "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>"
+   ],
+   "text": "The equation has not been processed correctly. Most prabably it has syntax error(s)."
+  },
+  "live_html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+  "ref_html": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>",
+  "html_sha256": "e504bd63f5c257493a0bd835e3359b4574ca995dfdaf283fa88623fea08d5a1f",
+  "verdict": "CANDIDATE",
+  "first_diff": 1,
+  "live_context": "<span class=\"equation-number\">(1)</span><div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+  "ref_context": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>"
+ },
+ {
+  "id": "s09-mathinline-date-email",
+  "source": "[[$x [a@b.com http://example.com] y$]]",
+  "fullname": "muse-probe-round5b-s1-s09-mathinline-date-email",
+  "live_canon": "<span class=\"math-inline\">$x [a@b.com http://example.com] y$</span>",
+  "ref_canon": "<span class=\"math-inline\">$x [a@b.com http://example.com] y$</span>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [
+    "<span class=\"math-inline\">$x [a@b.com http://example.com] y$</span>"
+   ],
+   "error": [],
+   "text": "$x [a@b.com http://example.com] y$"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [
+    "<span class=\"math-inline\">$x [a@b.com http://example.com] y$</span>"
+   ],
+   "error": [],
+   "text": "$x [a@b.com http://example.com] y$"
+  },
+  "live_html": "<p><span class=\"math-inline\">$x [a@b.com http://example.com] y$</span></p>",
+  "ref_html": "<p><span class=\"math-inline\">$x [a@b.com http://example.com] y$</span></p>\n\n",
+  "html_sha256": "82791b6e38469b6b8a6c1fd5ee76bf331c35e4305a4368af4d7e79d8edcea5d5",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s10-div-id-wsclass",
+  "source": "[[div id=\"   \" class=\" \"]]\nbody\n[[/div]]",
+  "fullname": "muse-probe-round5b-s1-s10-div-id-wsclass",
+  "live_canon": "<div class id=\"u-\"><p>body</p></div>",
+  "ref_canon": "<div class id=\"u-\"><p>body</p></div>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class id=\"u-\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "body"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class id=\"u-\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "body"
+  },
+  "live_html": "<div id=\"u-\" class=\"\">\n<p>body</p>\n</div>",
+  "ref_html": "<div id=\"u-\" class=\"\"><p>body</p>\n\n</div>",
+  "html_sha256": "4a2845db64a962707d16f7cb8b756c1a1c0cda4e8b689117e6a52dcb6cd8b42d",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s11-div-id-dupdata",
+  "source": "[[div id=\"   \" data-Foo=\"1\" data-foo=\"2\"]]\nX[[/div]]",
+  "fullname": "muse-probe-round5b-s1-s11-div-id-dupdata",
+  "live_canon": "<div data-foo=\"2\" id=\"u-\"><p>X</p></div>",
+  "ref_canon": "<div data-foo=\"2\" id=\"u-\"><p>X</p></div>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div data-foo=\"2\" id=\"u-\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "X"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div data-foo=\"2\" id=\"u-\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "X"
+  },
+  "live_html": "<div id=\"u-\" data-foo=\"2\">\n<p>X</p>\n</div>",
+  "ref_html": "<div id=\"u-\" data-foo=\"2\"><p>X</p>\n\n</div>",
+  "html_sha256": "b18294e4f588b151503fe73244885ec3255c595c71eac0cdcc7bcf2c63fa2b5d",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s12-div-id-placeholder-class",
+  "source": "[[div id=\"   \" class=\"@@@@\"]]\nX[[/div]]",
+  "fullname": "muse-probe-round5b-s1-s12-div-id-placeholder-class",
+  "live_canon": "<div class id=\"u-\"><p>X</p></div>",
+  "ref_canon": "<div class id=\"u-\"><p>X</p></div>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class id=\"u-\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "X"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class id=\"u-\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "X"
+  },
+  "live_html": "<div id=\"u-\" class=\"\">\n<p>X</p>\n</div>",
+  "ref_html": "<div id=\"u-\" class=\"\"><p>X</p>\n\n</div>",
+  "html_sha256": "6ef4bcd7fb880ba77916578a5b701844c648a21a45e9f47a1d352762eb801d89",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s13-fn-in-list-retrim",
+  "source": "[[ul]]\n[[li]]A [[footnote]]@@@@ @@@@[[/footnote]] B[[/li]]\n[[/ul]]\n[[footnoteblock]]",
+  "fullname": "muse-probe-round5b-s1-s13-fn-in-list-retrim",
+  "live_canon": "<ul><li>A<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup> B</li></ul><br><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>",
+  "ref_canon": "<ul><li>A<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup> B</li></ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>",
+  "live_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "A 1 B Footnotes 1 ."
+  },
+  "ref_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "A 1 B Footnotes 1 ."
+  },
+  "live_html": "<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup> B</li>\n</ul>\n<br />\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>\n</div>",
+  "ref_html": "<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup> B</li>\n</ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>",
+  "html_sha256": "50bd2fdb0786e2e9eaf3f906e53b2149ea228f2e72062307a9e001b7a1a946be",
+  "verdict": "CLEARED",
+  "reason": "serving/frame only; rule-level signature equal"
+ },
+ {
+  "id": "s14-fn-in-quote-retrim",
+  "source": "> [[footnote]]@@@@ @@@@[[/footnote]]\n\n[[footnoteblock]]",
+  "fullname": "muse-probe-round5b-s1-s14-fn-in-quote-retrim",
+  "live_canon": "<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>",
+  "ref_canon": "<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>",
+  "live_sig": {
+   "hrefs": [
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "Footnotes 1 ."
+  },
+  "ref_sig": {
+   "hrefs": [
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "Footnotes 1 ."
+  },
+  "live_html": "<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>\n</div>",
+  "ref_html": "<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>",
+  "html_sha256": "df1ead72831a6c93f7644c8ff0d08b324760ece2a283acd1173df0d5cb2df9dd",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s15-fn-two-runs-tab",
+  "source": "[[footnote]]@@@@\t@@@@[[/footnote]]\n[[footnoteblock]]",
+  "fullname": "muse-probe-round5b-s1-s15-fn-two-runs-tab",
+  "live_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>",
+  "ref_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>",
+  "live_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "1 Footnotes 1 ."
+  },
+  "ref_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "1 Footnotes 1 ."
+  },
+  "live_html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>\n</div>",
+  "ref_html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>",
+  "html_sha256": "9a433756f6c93079ca2faf49d827011e130ad08752d11db407983fc244a3c003",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s16-bib-two-runs-u3000",
+  "source": "[[bibliography]]\n: lab : @@@@　@@@@\n[[/bibliography]]",
+  "fullname": "muse-probe-round5b-s1-s16-bib-two-runs-u3000",
+  "live_canon": "<div class=\"bibitems\"><div class=\"title\">Bibliography</div><div class=\"bibitem\" id=\"bibitem-1\">1. </div></div>",
+  "ref_canon": "<div class=\"bibitems\"><div class=\"title\">Bibliography</div><div class=\"bibitem\" id=\"bibitem-1\">1. </div></div>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class=\"bibitems\">",
+    "<div class=\"title\">",
+    "<div class=\"bibitem\" id=\"bibitem-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "Bibliography 1."
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class=\"bibitems\">",
+    "<div class=\"title\">",
+    "<div class=\"bibitem\" id=\"bibitem-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "Bibliography 1."
+  },
+  "live_html": "<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n<div class=\"bibitem\" id=\"bibitem-1\">1. 　</div>\n</div>",
+  "ref_html": "<div class=\"bibitems\"><div class=\"title\">Bibliography</div><div class=\"bibitem\" id=\"bibitem-1\">1. 　</div></div>",
+  "html_sha256": "064777061ab80235ceeebc3657c54075a312f2c495d87b999076f444caca5ac7",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s17-raw-4c3-plus-empty",
+  "source": "@@@@ZQ@@@\n\n@@@@",
+  "fullname": "muse-probe-round5b-s1-s17-raw-4c3-plus-empty",
+  "live_canon": "ZQ@@@",
+  "ref_canon": "<p>ZQ@@@</p><p></p>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "ZQ@@@"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "ZQ@@@"
+  },
+  "live_html": "<p>ZQ@@@</p>",
+  "ref_html": "<p>ZQ@@@</p>\n\n<p></p>\n\n",
+  "html_sha256": "29fbfbf5229fe9bd5af4a053dac639dbcf2ad8c47ded64f90ee6042dfe2f84dd",
+  "verdict": "CLEARED",
+  "reason": "serving/frame only; rule-level signature equal"
+ },
+ {
+  "id": "s18-tableadv-dup-data",
+  "source": "[[table data-Foo=\"1\" data-foo=\"2\"]]\n[[row]]\n[[cell]]\nC\n[[/cell]]\n[[/row]]\n[[/table]]",
+  "fullname": "muse-probe-round5b-s1-s18-tableadv-dup-data",
+  "live_canon": "<table data-foo=\"2\"><tr><td>C</td></tr></table>",
+  "ref_canon": "<table data-foo=\"2\"><tr><td>C</td></tr></table>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [
+    "<table data-foo=\"2\">"
+   ],
+   "spans": [],
+   "error": [],
+   "text": "C"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [
+    "<table data-foo=\"2\">"
+   ],
+   "spans": [],
+   "error": [],
+   "text": "C"
+  },
+  "live_html": "<table data-foo=\"2\">\n<tr>\n<td>C</td>\n</tr>\n</table>",
+  "ref_html": "<table data-foo=\"2\">\n<tr>\n<td>C</td>\n</tr>\n</table>",
+  "html_sha256": "0fc2f09824202d9d658b688d75b3912274661c9c260d09ce2e34187fc36f5142",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s19-email-mixed-label",
+  "source": "[a@b.com X http://example.com]",
+  "fullname": "muse-probe-round5b-s1-s19-email-mixed-label",
+  "live_canon": "<span class=\"wiki-email\">moc.b|a#�N� X</span>",
+  "ref_canon": "<span class=\"wiki-email\">moc.b|a#�N� X</span>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [
+    "<span class=\"wiki-email\">moc.b|a#�3� X</span>"
+   ],
+   "error": [],
+   "text": "moc.b|a#�3� X"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [
+    "<span class=\"wiki-email\">moc.b|a#�723� X</span>"
+   ],
+   "error": [],
+   "text": "moc.b|a#�723� X"
+  },
+  "live_html": "<p><span class=\"wiki-email\">moc.b|a#�3� X</span></p>",
+  "ref_html": "<p><span class=\"wiki-email\">moc.b|a#�723� X</span></p>\n\n",
+  "html_sha256": "1b89c6918583de1cdc0626e2ad9a9a2e97f10e9aff480744de925e72a3542166",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s20-email-intervening-code",
+  "source": "[[code]]x[[/code]]\n\n[a@b.com http://example.com]",
+  "fullname": "muse-probe-round5b-s1-s20-email-intervening-code",
+  "live_canon": "<div class=\"code\"><pre><code>x</code></pre></div><p><span class=\"wiki-email\">moc.b|a#�N�</span></p>",
+  "ref_canon": "<div class=\"code\"><pre><code>x</code></pre></div><p><span class=\"wiki-email\">moc.b|a#�N�</span></p>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class=\"code\">"
+   ],
+   "tables": [],
+   "spans": [
+    "<span class=\"wiki-email\">moc.b|a#�4�</span>"
+   ],
+   "error": [],
+   "text": "x moc.b|a#�4�"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class=\"code\">"
+   ],
+   "tables": [],
+   "spans": [
+    "<span class=\"wiki-email\">moc.b|a#�543�</span>"
+   ],
+   "error": [],
+   "text": "x moc.b|a#�543�"
+  },
+  "live_html": "<div class=\"code\">\n<pre><code>x</code></pre></div>\n<p><span class=\"wiki-email\">moc.b|a#�4�</span></p>",
+  "ref_html": "\n<div class=\"code\">\n<pre><code>x</code></pre></div>\n\n<p><span class=\"wiki-email\">moc.b|a#�543�</span></p>\n\n",
+  "html_sha256": "7c3ca7cc840e5e0052935616cda215e21c88c7735d11e012e7fbae9830f1bdd6",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ }
+]

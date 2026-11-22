@@ -1,0 +1,14 @@
+{"id": "R5BR1-D1", "source": "[[div id=\"u-\"]]\nbody\n[[/div]]"}
+{"id": "R5BR1-D2", "source": "[[div id=\"\t\"]]\nbody\n[[/div]]"}
+{"id": "R5BR1-D3", "source": "[[div id=\" foo\"]]\nbody\n[[/div]]"}
+{"id": "R5BR1-D4", "source": "[[div id=\"a  b\"]]\nbody\n[[/div]]"}
+{"id": "R5BR1-P1", "source": "[[div class=\"a [[size 12px]]x[[/size]] c\"]]\nbody\n[[/div]]"}
+{"id": "R5BR1-P2", "source": "[[div id=\"[[size 12px]]x[[/size]]\"]]\nbody\n[[/div]]"}
+{"id": "R5BR1-P3", "source": "[[div id=\"   \" class=\"a [[size 12px]]x[[/size]] c\"]]\nbody\n[[/div]]"}
+{"id": "R5BR1-P4", "source": "[[div data-x=\"[[size 12px]]x[[/size]]\"]]\nbody\n[[/div]]"}
+{"id": "R5BR1-S1", "source": "[[span class=\"a [[size 12px]]x[[/size]] c\"]]y[[/span]]"}
+{"id": "R5BR1-Z1", "source": "[[size SMALL]]x[[/size]]"}
+{"id": "R5BR1-C1", "source": "[[collapsible show=\"0\" hide=\"0\"]]body[[/collapsible]]"}
+{"id": "R5BR1-T1", "source": "[[tabview]][[tab title=\"a [[size 12px]]x[[/size]] b\"]]one[[/tab]][[/tabview]]"}
+{"id": "R5BR1-L1", "source": "[[ul class=\"a&b\"]]\n[[li]]x[[/li]]\n[[/ul]]"}
+{"id": "R5BR1-H1", "source": "~~~~\ntext"}

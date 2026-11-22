@@ -1,0 +1,16 @@
+{"id": "p3b-01-raw-5-3", "source": "@@@@@ZQ@@@"}
+{"id": "p3b-02-raw-3-3", "source": "@@@ZQ@@@"}
+{"id": "p3b-03-raw-4-5", "source": "@@@@ZQ@@@@@"}
+{"id": "p3b-04-raw-4-2", "source": "@@@@ZQ@@"}
+{"id": "p3b-05-tableadv-row-data", "source": "[[table]]\n[[row data-Foo=\"R\"]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3b-06-tableadv-upper-prefix", "source": "[[table DATA-Foo=\"UP\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3b-07-tableadv-data-underscore", "source": "[[table data-Foo_Bar=\"UB\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3b-08-tableadv-upper-class", "source": "[[table Class=\"UP\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3b-09-include-cascade", "source": "[[include muse-probe-round5b-p3-t-fold | a={$b} | b=BB]]"}
+{"id": "p3b-10-include-trailing", "source": "[[include muse-probe-round5b-p3-t-text]]X"}
+{"id": "p3b-11-include-argkey", "source": "[[include muse-probe-round5b-p3-t-arg | data-Foo=DV]]"}
+{"id": "p3b-12-module-upper-closer", "source": "[[module nosuchmod]]\n[[code]]CODEX[[/code]]\n[[/MODULE]]"}
+{"id": "p3b-13-form-raw-body", "source": "[[form]]\n@@RAWF@@\n[[/form]]"}
+{"id": "p3b-14-table-span", "source": "PRE\n||A||||||B||\nPOST"}
+{"id": "p3b-15-image-double-star", "source": "[[image IMGX.png link=\"**http://example.com/x\"]]"}
+{"id": "p3b-16-file-empty-anchor", "source": "[[file page/x.png|]]"}

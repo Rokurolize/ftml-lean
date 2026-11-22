@@ -1,0 +1,25 @@
+{"id": "R5BP2-01", "source": "[[[\f_default:x]]]"}
+{"id": "R5BP2-02", "source": "[[[\r_default:x]]]"}
+{"id": "R5BP2-03", "source": "[[[\u2028_default:x]]]"}
+{"id": "R5BP2-04", "source": "[[[\t\u00a0\u3000\u000b _default:x]]]"}
+{"id": "R5BP2-05", "source": "[[[\ufeff_default:x]]]"}
+{"id": "R5BP2-06", "source": "[[[*_default:x]]]"}
+{"id": "R5BP2-07", "source": "[[[\u0000_default:x]]]"}
+{"id": "R5BP2-08", "source": "[[math a tYpE=\"align\"]]\nx\n[[/math]]"}
+{"id": "R5BP2-09", "source": "[[math a Type=\"align\"]]\nx\n[[/math]]"}
+{"id": "R5BP2-10", "source": "[[math a type=\"align\" TYPE=\"align\"]]\nx\n[[/math]]"}
+{"id": "R5BP2-11", "source": "[[math a TYPE=align]]\nx\n[[/math]]"}
+{"id": "R5BP2-12", "source": "[[$x [a@b.com [[date 0]]] y$]]"}
+{"id": "R5BP2-13", "source": "[[$x [[date 0]] [[date 1]] y$]]"}
+{"id": "R5BP2-14", "source": "[[$x [[date]] y$]]"}
+{"id": "R5BP2-15", "source": "HTTP://example.com"}
+{"id": "R5BP2-16", "source": "[a@b.com d@e]"}
+{"id": "R5BP2-17", "source": "[[code]]foo[[/code]]\n[a@b.com http://example.com]"}
+{"id": "R5BP2-18", "source": "[[form]]foo[[/form]]\n[a@b.com http://example.com]"}
+{"id": "R5BP2-19", "source": "[[[some page]]]\n[a@b.com http://example.com]"}
+{"id": "R5BP2-20", "source": "[[module ListPages]]\n[a@b.com http://example.com]"}
+{"id": "R5BP2-21", "source": "[!-- comment --]\n[a@b.com http://example.com]"}
+{"id": "R5BP2-22", "source": "[a@b.com http://example.com]\n[http://after.example.com After]"}
+{"id": "R5BP2-23", "source": "[a@b.com http://example.com] and [*http://other.example.com other]"}
+{"id": "R5BP2-24", "source": "[a@b.com http://example.com extra]"}
+{"id": "R5BP2-25", "source": "[a@b.com x @@raw@@ y]"}

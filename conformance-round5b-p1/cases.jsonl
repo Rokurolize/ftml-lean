@@ -1,0 +1,14 @@
+{"id": "LA-ABS", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]"}
+{"id": "LB-S1IN", "source": "[[UL class=\"c\"]]\n[[li]]a\n[[OL]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]AFTER"}
+{"id": "LC-S1TAIL", "source": "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b[[/li]]\n[[/UL]]AFTER\n[[/ol]]\n[[/li]]\n[[/ul]]TAIL"}
+{"id": "LD-SCOREDTAIL", "source": "[[UL_]]\n[[li]]a[[/li]]\n[[/ul]]\nAFTER"}
+{"id": "LE-EMPTYITEM", "source": "[[UL]]\n[[LI]][[/LI]]\n[[/UL]]"}
+{"id": "LF-DATAUP", "source": "[[ul data-X=\"1\" data-x=\"2\"]]\n[[li]]a[[/li]]\n[[/ul]]"}
+{"id": "DA-STYLEWS", "source": "[[div style=\" \"]]\n[[/div]]\nX"}
+{"id": "DB-DATAEMPTY", "source": "[[div data-Foo=\"1\" data-foo=\"\"]]\nX[[/div]]"}
+{"id": "DC-DATATRIPLE", "source": "[[div data-Foo=\"1\" data-foo=\"2\" DATA-FOO=\"3\"]]\nX[[/div]]"}
+{"id": "DD-IDTAB", "source": "[[div id=\" \t \"]]\nbody\n[[/div]]"}
+{"id": "DE-IDLIT", "source": "[[div id=\"u-\"]]\nbody\n[[/div]]"}
+{"id": "BB-LEADSPACE", "source": "X\n\n > q\n\nY"}
+{"id": "NN-3LF", "source": "a\n\n\nb"}
+{"id": "TT-UNPAIREDAT", "source": "[[tabview]]\n[[tab x@@y]]X[[/tab]]\n[[/tabview]]"}

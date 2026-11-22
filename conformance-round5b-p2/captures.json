@@ -1,0 +1,252 @@
+{
+ "R5BP2-01": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-01",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[\f_default:x]]]",
+  "source_sha256": "bddc22a2d9ed66a81c47c1325877596228c288bc74506e4ef946aa166c1a6a91",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-02": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-02",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[\n_default:x]]]",
+  "source_sha256": "37e6e260fa975ca9ab5d43cb7d2f22cce834b02b921f40516cdd2244cbc2723e",
+  "saved_source_matches": false,
+  "stable": true,
+  "valid": false
+ },
+ "R5BP2-03": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-03",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[ _default:x]]]",
+  "source_sha256": "e99f77d672cd6dd6bf8de7269f71eb0517714ffb5b0dae9247d42e2869e6ac1b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-04": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-04",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[\t 　\u000b _default:x]]]",
+  "source_sha256": "6b21f28a5091bcdb30948e3cf167c66c4659fda5302ee649e1a47b4bf1ba20b6",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-05": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-05",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[﻿_default:x]]]",
+  "source_sha256": "0fd5033895feb058e76b3899cf0bc8eed1f0c6b19fde20da07364bd0fdb8ddac",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-06": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-06",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[*_default:x]]]",
+  "source_sha256": "af526dbf50bf343d1a4eed6e05059c2b78a8f153324696d4b5f88db7f2326d51",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-07": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-07",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[_default:x]]]",
+  "source_sha256": "039ba46252cf023750b48d0cd8c45ca388ecc3dbc510fb7ac6bcf9a763b22270",
+  "saved_source_matches": false,
+  "stable": true,
+  "valid": false
+ },
+ "R5BP2-08": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-08",
+  "html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+  "html_sha256": "e504bd63f5c257493a0bd835e3359b4574ca995dfdaf283fa88623fea08d5a1f",
+  "source": "[[math a tYpE=\"align\"]]\nx\n[[/math]]",
+  "source_sha256": "1516d0370bb5a909c892529b2355a1bd9615f802f644bd0321457845edd8154c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-09": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-09",
+  "html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+  "html_sha256": "e504bd63f5c257493a0bd835e3359b4574ca995dfdaf283fa88623fea08d5a1f",
+  "source": "[[math a Type=\"align\"]]\nx\n[[/math]]",
+  "source_sha256": "383eee012507974cdad4c3b1106112db0b7bd2b36ff298d26611b69fa2ac5fe5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-10": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-10",
+  "html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+  "html_sha256": "e504bd63f5c257493a0bd835e3359b4574ca995dfdaf283fa88623fea08d5a1f",
+  "source": "[[math a type=\"align\" TYPE=\"align\"]]\nx\n[[/math]]",
+  "source_sha256": "3b838ee80cbe1c84f4c2d639cc5c49baea57545b3a4f90e8af3e66aff8ebcc47",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-11": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-11",
+  "html": "<p>[[math a TYPE=align]]<br />\nx<br />\n[[/math]]</p>",
+  "html_sha256": "4cee3ed46b84adae614ef819295670881f5ee194019617f07075a821a9bf593b",
+  "source": "[[math a TYPE=align]]\nx\n[[/math]]",
+  "source_sha256": "7f8dd730f47bde5e4a32712abce102ce2a25f86957834bb24c77cce36911ae4f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-12": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-12",
+  "html": "<p><span class=\"math-inline\">$$</span></p>",
+  "html_sha256": "8119dd8e254d13e759b9ee65895322c26e3e6e9fd2c600c47fb9e0ed1270506a",
+  "source": "[[$x [a@b.com [[date 0]]] y$]]",
+  "source_sha256": "22540659f4b4b6ba373f5676173f8816817696e0e570aa76ace5c87d99206bac",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-13": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-13",
+  "html": "<p><span class=\"math-inline\">$$</span></p>",
+  "html_sha256": "8119dd8e254d13e759b9ee65895322c26e3e6e9fd2c600c47fb9e0ed1270506a",
+  "source": "[[$x [[date 0]] [[date 1]] y$]]",
+  "source_sha256": "a688c9786b805ddb6b55d2339161329073cdac448dca57206db94441d41b72d6",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-14": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-14",
+  "html": "<p><span class=\"math-inline\">$x [[date]] y$</span></p>",
+  "html_sha256": "6eba0878d7a86a9fc352603dc39d9ec5276ee1948a6d0b1632aed883c481d91c",
+  "source": "[[$x [[date]] y$]]",
+  "source_sha256": "a74cac8354aeb2fce24df6a1fae9822447626cf6cf24ac59d1983e3bb8c9d580",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-15": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-15",
+  "html": "<p>HTTP://example.com</p>",
+  "html_sha256": "674bab6051f2102011b6856c7f491cbab6d0253ff4ab7ce3c213ee38d82c0033",
+  "source": "HTTP://example.com",
+  "source_sha256": "4f0ee91e024443be0394f788619eff5eb125303e7474086666de5cc9874d965f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-16": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-16",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#e|d</span></p>",
+  "html_sha256": "3ec8cd15383ae38a9154a44704922410610fd1aa6b5567ae11abc8952bf65ab6",
+  "source": "[a@b.com d@e]",
+  "source_sha256": "35f910ac6263c34afee6eb2b2cb3c7a11084774ae0b308ea496b4d09af7da137",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-17": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-17",
+  "html": "<div class=\"code\">\n<pre><code>foo</code></pre></div>\n<br />\n<span class=\"wiki-email\">moc.b|a#�3�</span>",
+  "html_sha256": "6f4631b209d1d116faccd76275b3bd7f6fd94cf03ea8832f6ad8d5ed4cac1200",
+  "source": "[[code]]foo[[/code]]\n[a@b.com http://example.com]",
+  "source_sha256": "952b4cc9e6708c42446383d7ea33ab31c66825d54a24dee017d99de63857cea7",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-18": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-18",
+  "html": "<p>[[form]]foo[[/form]]<br />\n<span class=\"wiki-email\">moc.b|a#�4�</span></p>",
+  "html_sha256": "4adabd3c3847ae218406edd58583072152ab1f0b0d23ef75b0019de0fc664452",
+  "source": "[[form]]foo[[/form]]\n[a@b.com http://example.com]",
+  "source_sha256": "5e78b0dfa8b0d6aa91200cf004c98d123161aa3548df5cce1ce441e95a473670",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-19": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-19",
+  "html": "<p><a class=\"newpage\" href=\"/some-page\">some page</a><br />\n<span class=\"wiki-email\">moc.b|a#�5�</span></p>",
+  "html_sha256": "12a8eaab413f41ff3493695cf3afa490ddb64fe03bfa9351e28e6c64b173c8ff",
+  "source": "[[[some page]]]\n[a@b.com http://example.com]",
+  "source_sha256": "514e3388bf0870cbebb6c11dce330118dd4eabc828980dd29c23251124296310",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-20": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-20",
+  "html": "<div class=\"list-pages-box\">    <div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p2-r5bp2-25\">probe R5BP2-25</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386754 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:32</span></p>\n<p><span class=\"wiki-email\">moc.b|a#y �1� x</span></p>\n</div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p2-r5bp2-24\">probe R5BP2-24</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386738 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:32</span></p>\n<p><span class=\"wiki-email\">moc.b|a#artxe �9�</span></p>\n</div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p2-r5bp2-23\">probe R5BP2-23</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386701 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:31</span></p>\n<p><span class=\"wiki-email\">moc.b|a#�01�</span> and <a href=\"http://other.example.com\" target=\"_blank\">other</a></p>\n</div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p2-r5bp2-22\">probe R5BP2-22</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386684 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:31</span></p>\n<p><span class=\"wiki-email\">moc.b|a#�11�</span><br />\n<a href=\"http://after.example.com\">After</a></p>\n</div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p4-r5b-p4-f04\">probe R5B-P4-F04</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386681 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:31</span><sup class=\"footnoteref\"><a id=\"footnoteref-34572-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-34572-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-34572-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-34572-1')\">1</a>. x<br />\ny</div>\n</div>\n</div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p4-r5b-p4-f03\">probe R5B-P4-F03</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386668 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:31</span></p>\n<p>[[footnote]]</p>\n</div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p2-r5bp2-21\">probe R5BP2-21</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386665 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:31</span></p>\n<p><span class=\"wiki-email\">moc.b|a#�9�</span></p>\n</div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p4-r5b-p4-f02\">probe R5B-P4-F02</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386653 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:30</span><sup class=\"footnoteref\"><a id=\"footnoteref-749163-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-749163-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-749163-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-749163-1')\">1</a>.<br /></div>\n</div>\n</div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p2-r5bp2-20\">probe R5BP2-20</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386648 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:30</span></p>\n<p><span class=\"wiki-email\">moc.b|a#�9�</span></p>\n</div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p4-r5b-p4-f01\">probe R5B-P4-F01</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386637 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:30</span></p>\n<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n<div class=\"bibitem\" id=\"bibitem-628593-1\">1.</div>\n</div>\n</div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p2-r5bp2-19\">probe R5BP2-19</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386631 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:30</span></p>\n<p><a class=\"newpage\" href=\"/some-page\">some page</a><br />\n<span class=\"wiki-email\">moc.b|a#�11�</span></p>\n</div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p2-r5bp2-18\">probe R5BP2-18</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386616 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:30</span></p>\n<p>[[form]]foo[[/form]]<br />\n<span class=\"wiki-email\">moc.b|a#�01�</span></p>\n</div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p2-r5bp2-17\">probe R5BP2-17</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386600 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:30</span></p>\n<div class=\"code\">\n<pre><code>foo</code></pre></div>\n<br />\n<span class=\"wiki-email\">moc.b|a#�9�</span></div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p2-r5bp2-16\">probe R5BP2-16</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386584 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:29</span></p>\n<p><span class=\"wiki-email\">moc.b|a#e|d</span></p>\n</div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p2-r5bp2-15\">probe R5BP2-15</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386568 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:29</span></p>\n<p>HTTP://example.com</p>\n</div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p2-r5bp2-14\">probe R5BP2-14</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386531 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:28</span></p>\n<p><span class=\"math-inline\">$x [[date]] y$</span></p>\n</div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p2-r5bp2-13\">probe R5BP2-13</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386515 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:28</span></p>\n<p><span class=\"math-inline\">$$</span></p>\n</div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p2-r5bp2-12\">probe R5BP2-12</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386498 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:28</span></p>\n<p><span class=\"math-inline\">$$</span></p>\n</div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p2-r5bp2-11\">probe R5BP2-11</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386481 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:28</span></p>\n<p>[[math a TYPE=align]]<br />\nx<br />\n[[/math]]</p>\n</div>\n<div class=\"list-pages-item\">\n\n\n<h1><span><a href=\"/muse-probe-round5b-p2-r5bp2-10\">probe R5BP2-10</a></span></h1>\n<p>by <span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=8955132&amp;amp;size=small&amp;amp;timestamp=1795386895\" alt=\"scpaiueouiuiuiui\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=8955132)\" /></a><a href=\"https://www.wikidot.com/user:info/scpaiueouiuiuiui\" onclick=\"WIKIDOT.page.listeners.userInfo(8955132); return false;\">scpaiueouiuiuiui</a></span> <span class=\"odate time_1795386465 format_%25O%20ago%20%28%25e%20%25b%20%25Y%2C%20%25H%3A%25M%29\">22 Nov 2026 22:27</span></p>\n<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-325845-1\">\\begin{equation} x \\end{equation}</div>\n</div>\n    \n    <div class=\"pager\" data-lp-key=\"p\"><span class=\"pager-no\">page 1 of 1419</span><span class=\"current\">1</span><span class=\"target\"><a href=\"/muse-probe-round5b-p2-r5bp2-20/p/2\">2</a></span><span class=\"target\"><a href=\"/muse-probe-round5b-p2-r5bp2-20/p/3\">3</a></span><span class=\"dots\">...</span><span class=\"target\"><a href=\"/muse-probe-round5b-p2-r5bp2-20/p/1418\">1418</a></span><span class=\"target\"><a href=\"/muse-probe-round5b-p2-r5bp2-20/p/1419\">1419</a></span><span class=\"target\"><a href=\"/muse-probe-round5b-p2-r5bp2-20/p/2\">next &raquo;</a></span></div>\n    \n    </div>\n<p><span class=\"wiki-email\">moc.b|a#�4�</span></p>",
+  "html_sha256": "1a597b2bd2ac1827b9b82ce5d50d0319e9b96167622763dd311811016fab6262",
+  "source": "[[module ListPages]]\n[a@b.com http://example.com]",
+  "source_sha256": "df9ec1abf9cd73ddca8c24397e83e86e0ee4446149bd75ffc7a26b5e3a90029b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-21": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-21",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#�3�</span></p>",
+  "html_sha256": "fa00ffe43f3a14741384cfba4fddf5cfd95a8569b56ee3a6123fd8b1f5d8385a",
+  "source": "[!-- comment --]\n[a@b.com http://example.com]",
+  "source_sha256": "c61c27adda14c2155bcae667be4cecc0c57543597a1449bcae03c65449ce90b4",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-22": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-22",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#�5�</span><br />\n<a href=\"http://after.example.com\">After</a></p>",
+  "html_sha256": "2c569149518a654ff1809558cf715f9038e1d449982092414fe810d3ed257307",
+  "source": "[a@b.com http://example.com]\n[http://after.example.com After]",
+  "source_sha256": "5bf836d45585ff5f083b27ee6edf88fda6f9221582e4a5bd2f552f89d4b23665",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-23": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-23",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#�4�</span> and <a href=\"http://other.example.com\" target=\"_blank\">other</a></p>",
+  "html_sha256": "9aae389053ae46c6e64153efe571bb4332ddc23d6a67c550223890e4fd019d3e",
+  "source": "[a@b.com http://example.com] and [*http://other.example.com other]",
+  "source_sha256": "7607c67283cee26d1673038ceb80f99988ad774eaec8a6810da691b1eec5fa40",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-24": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-24",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#artxe �3�</span></p>",
+  "html_sha256": "dc83431b84c5fe55ca3cac6981110f00e74cc33b09996e20241571269b5db718",
+  "source": "[a@b.com http://example.com extra]",
+  "source_sha256": "424a96ad3269989ad456862cbc6df2ba4faec07d176ea2e3eb1e48743f43522b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5BP2-25": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-25",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#y �1� x</span></p>",
+  "html_sha256": "61dc92f6971383a43b3e7efdf01f9b916c6d355fbd8e69285c067dc88143111d",
+  "source": "[a@b.com x @@raw@@ y]",
+  "source_sha256": "5695a6b60271b42231eb5837aafcb8d0c98886491d01949714e516159b9ed880",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

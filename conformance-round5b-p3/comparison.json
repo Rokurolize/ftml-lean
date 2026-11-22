@@ -1,0 +1,154 @@
+{
+ "summary": {
+  "agree": 11,
+  "differ": 5,
+  "invalid": 0,
+  "missing": 0
+ },
+ "rows": [
+  {
+   "id": "p3b-01-raw-5-3",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5b-p3-p3b-01-raw-5-3",
+   "reference": "<p>@ZQ@@@</p>",
+   "live": "<p>@ZQ@@@</p>",
+   "live_sha256": "06b996eb74e7391faa00d7c2f43bc56401f099b83fcd846b1104789ae8a02994",
+   "source": "@@@@@ZQ@@@"
+  },
+  {
+   "id": "p3b-02-raw-3-3",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5b-p3-p3b-02-raw-3-3",
+   "reference": "<p><span style=\"white-space: pre-wrap;\">@ZQ</span>@</p>",
+   "live": "<p><span style=\"white-space: pre-wrap;\">@ZQ</span>@</p>",
+   "live_sha256": "a27e591117651f5d0ecb280bb7b542dac9865d90f858d9335d9354bb2c07edcf",
+   "source": "@@@ZQ@@@"
+  },
+  {
+   "id": "p3b-03-raw-4-5",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5b-p3-p3b-03-raw-4-5",
+   "reference": "<p>ZQ@</p>",
+   "live": "<p>ZQ@</p>",
+   "live_sha256": "4789820bd34ae73d794e10e306ad0db8a29d8cd1d822d01b57f136cf9b9d3407",
+   "source": "@@@@ZQ@@@@@"
+  },
+  {
+   "id": "p3b-04-raw-4-2",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5b-p3-p3b-04-raw-4-2",
+   "reference": "<p>ZQ</p>",
+   "live": "<p>ZQ@@</p>",
+   "live_sha256": "177007760e16ebf18923a8f002cf3a3d53474fec77c526a439f2ca63855a6a03",
+   "source": "@@@@ZQ@@"
+  },
+  {
+   "id": "p3b-05-tableadv-row-data",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5b-p3-p3b-05-tableadv-row-data",
+   "reference": "<table> <tr data-foo=\"R\"> <td>CELLX</td> </tr> </table>",
+   "live": "<table> <tr data-foo=\"R\"> <td>CELLX</td> </tr> </table>",
+   "live_sha256": "d8ae5938eac207b56b30fb31a75b514c960787dd19eb8c7c462128c2db8438da",
+   "source": "[[table]]\n[[row data-Foo=\"R\"]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"
+  },
+  {
+   "id": "p3b-06-tableadv-upper-prefix",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5b-p3-p3b-06-tableadv-upper-prefix",
+   "reference": "<table> <tr> <td>CELLX</td> </tr> </table>",
+   "live": "<table> <tr> <td>CELLX</td> </tr> </table>",
+   "live_sha256": "e71ade1a36ca580cde1c249dc85c138ed353c32d33307fb79a05c60332c42ca3",
+   "source": "[[table DATA-Foo=\"UP\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"
+  },
+  {
+   "id": "p3b-07-tableadv-data-underscore",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5b-p3-p3b-07-tableadv-data-underscore",
+   "reference": "<table> <tr> <td>CELLX</td> </tr> </table>",
+   "live": "<table data-foo_bar=\"UB\"> <tr> <td>CELLX</td> </tr> </table>",
+   "live_sha256": "97e0c65f8d32a5991ce5d2be851630242f0054f319f9f499437260baec56595b",
+   "source": "[[table data-Foo_Bar=\"UB\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"
+  },
+  {
+   "id": "p3b-08-tableadv-upper-class",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5b-p3-p3b-08-tableadv-upper-class",
+   "reference": "<table> <tr> <td>CELLX</td> </tr> </table>",
+   "live": "<table> <tr> <td>CELLX</td> </tr> </table>",
+   "live_sha256": "e71ade1a36ca580cde1c249dc85c138ed353c32d33307fb79a05c60332c42ca3",
+   "source": "[[table Class=\"UP\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"
+  },
+  {
+   "id": "p3b-09-include-cascade",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5b-p3-p3b-09-include-cascade",
+   "reference": "<p>A=BB B=BB</p>",
+   "live": "<p>A=BB B=BB</p>",
+   "live_sha256": "11a3cbca965af45f3cd0d79d29d36450d83cf685a813d40b8ef4be8be84e1af4",
+   "source": "[[include muse-probe-round5b-p3-t-fold | a={$b} | b=BB]]"
+  },
+  {
+   "id": "p3b-10-include-trailing",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5b-p3-p3b-10-include-trailing",
+   "reference": "<p>[[include muse-probe-round5b-p3-t-text]]X</p>",
+   "live": "<p>[[include muse-probe-round5b-p3-t-text]]X</p>",
+   "live_sha256": "79386bee6214a274c4f3a4b49c7605a64e4a84bdd07dee84d576fcc0e8a05565",
+   "source": "[[include muse-probe-round5b-p3-t-text]]X"
+  },
+  {
+   "id": "p3b-11-include-argkey",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5b-p3-p3b-11-include-argkey",
+   "reference": "<p>V=DV</p>",
+   "live": "<p>V=DV</p>",
+   "live_sha256": "89d781b17c31317ad024fea1a5cf549c83878fb6b8a45e4cfe82e51b25546de7",
+   "source": "[[include muse-probe-round5b-p3-t-arg | data-Foo=DV]]"
+  },
+  {
+   "id": "p3b-12-module-upper-closer",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5b-p3-p3b-12-module-upper-closer",
+   "reference": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div> <div class=\"code\"> <pre><code>CODEX</code></pre></div> <br> [[/module]]",
+   "live": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div> <div class=\"code\"> <pre><code>CODEX</code></pre></div> <br> [[/MODULE]]",
+   "live_sha256": "e9bb810f32aadf640dfe19742ced125e44c794c6fff158d6810ba2ecb1f06ec6",
+   "source": "[[module nosuchmod]]\n[[code]]CODEX[[/code]]\n[[/MODULE]]"
+  },
+  {
+   "id": "p3b-13-form-raw-body",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5b-p3-p3b-13-form-raw-body",
+   "reference": "<p><span style=\"white-space: pre-wrap;\">[[form]]</span><br> <span style=\"white-space: pre-wrap;\">@@RAWF@@</span><br> <span style=\"white-space: pre-wrap;\">[[/form]]</span></p>",
+   "live": "<p><span style=\"white-space: pre-wrap;\">[[form]]</span><br> <span style=\"white-space: pre-wrap;\">@@RAWF@@</span><br> <span style=\"white-space: pre-wrap;\">[[/form]]</span></p>",
+   "live_sha256": "2a699073c57da135a36c1f926044948135e516e3f46b8ebb012ef7bb5ae15525",
+   "source": "[[form]]\n@@RAWF@@\n[[/form]]"
+  },
+  {
+   "id": "p3b-14-table-span",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5b-p3-p3b-14-table-span",
+   "reference": "<p>PRE<br> <table class=\"wiki-content-table\"> <tr> <td>A</td> <td colspan=\"3\">B</td> </tr> </table></p> <p>POST</p>",
+   "live": "PRE<br> <table class=\"wiki-content-table\"> <tr> <td>A</td> <td colspan=\"3\">B</td> </tr> </table> <p>POST</p>",
+   "live_sha256": "c4400f96f8e1f21142f30b570ca296449ef7bb9e8a45b8a2d9ec202483286a5b",
+   "source": "PRE\n||A||||||B||\nPOST"
+  },
+  {
+   "id": "p3b-15-image-double-star",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5b-p3-p3b-15-image-double-star",
+   "reference": "<p>[[image IMGX.png link=&quot;*<a href=\"http://example.com/x\" target=\"_blank\">http://example.com/x</a>&quot;]]</p>",
+   "live": "<p>[[image IMGX.png link=&quot;*<a href=\"http://example.com/x\" target=\"_blank\">http://example.com/x</a>&quot;]]</p>",
+   "live_sha256": "8f9830a4ac35b205bd80b0a3f168f35ad66b89261b7bf8e22f0b3fcbab056a7b",
+   "source": "[[image IMGX.png link=\"**http://example.com/x\"]]"
+  },
+  {
+   "id": "p3b-16-file-empty-anchor",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5b-p3-p3b-16-file-empty-anchor",
+   "reference": "<p><a href=\"/local--files/page/x.png|\">page/x.png|</a></p>",
+   "live": "<p><a href=\"https://sandbox-for-codex.wdfiles.com/local--files/page/x.png|\">page/x.png|</a></p>",
+   "live_sha256": "40b684d3abb9f8865ffab954b46f8553447424585aef3d96d28ab00752715a2f",
+   "source": "[[file page/x.png|]]"
+  }
+ ]
+}

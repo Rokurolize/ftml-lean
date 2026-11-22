@@ -1,0 +1,22 @@
+{"id":"r2b-math-uppercase-TYPE-valid","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"r2b-math-type-uppercase-value","output":"<div class=\"error-block\">Unsupported math environment \"ALIGN\"<\/div>"}
+{"id":"r2b-math-type-entity","output":"<div class=\"error-block\">Unsupported math environment \"a&b\"<\/div>"}
+{"id":"r2b-mathinline-date-only","output":"<p><span class=\"math-inline\">$$<\/span><\/p>\n\n"}
+{"id":"r2b-mathinline-quote-escape","output":"<p><span class=\"math-inline\">$&quot;a&quot; &#39;b&#39;$<\/span><\/p>\n\n"}
+{"id":"r2b-mathinline-nonascii","output":"<p><span class=\"math-inline\">$\u00e9 &amp; \u03b1$<\/span><\/p>\n\n"}
+{"id":"r2b-mathinline-code-token","output":"<p><span class=\"math-inline\">$[[code X]]$<\/span><\/p>\n\n"}
+{"id":"r2b-email-claimed-url","output":"<p><span class=\"wiki-email\">moc.b|a#\ufffd901\ufffd<\/span><\/p>\n\n"}
+{"id":"r2b-email-claimed-raw","output":"<p><span class=\"wiki-email\">moc.b|a#\ufffd421\ufffd<\/span><\/p>\n\n"}
+{"id":"r2b-email-bytewise-ee","output":"<p><span class=\"wiki-email\">moc.b|a#\ufffd\u00e9\ufffd<\/span><\/p>\n\n"}
+{"id":"r2b-email-bytewise-cafe","output":"<p><span class=\"wiki-email\">moc.b|a#\ufffd\ufffdfac<\/span><\/p>\n\n"}
+{"id":"r2b-email-label-at","output":"<p><span class=\"wiki-email\">moc.b|a#war||<\/span><\/p>\n\n"}
+{"id":"r2b-email-claimed-multidigit","output":"<p><span style=\"white-space: pre-wrap;\">a<\/span> <span style=\"white-space: pre-wrap;\">b<\/span> <span style=\"white-space: pre-wrap;\">c<\/span> <span style=\"white-space: pre-wrap;\">d<\/span> <span style=\"white-space: pre-wrap;\">e<\/span> <span style=\"white-space: pre-wrap;\">f<\/span> <span style=\"white-space: pre-wrap;\">g<\/span> <span style=\"white-space: pre-wrap;\">h<\/span> <span style=\"white-space: pre-wrap;\">i<\/span> <span style=\"white-space: pre-wrap;\">j<\/span> <span style=\"white-space: pre-wrap;\">k<\/span> <span style=\"white-space: pre-wrap;\">l<\/span> <span class=\"wiki-email\">moc.b|a#\ufffd302\ufffd<\/span><\/p>\n\n"}
+{"id":"r2b-url-lower-pct","output":"<p><a href=\"https:\/\/example.com\/%c3%a9\">https:\/\/example.com\/%c3%a9<\/a><\/p>\n\n"}
+{"id":"r2b-url-fragment","output":"<p><a href=\"http:\/\/example.com\/a#frag\">http:\/\/example.com\/a#frag<\/a><\/p>\n\n"}
+{"id":"r2b-freelink-anchor-label","output":"<p><a class=\"newpage\" href=\"\/foo#frag\">shown<\/a><\/p>\n\n"}
+{"id":"r2b-interwiki-pl-site","output":"<p><a href=\"https:\/\/pl.wikipedia.org\/wiki\/A&B\" onclick=\"window.open(this.href, '_blank'); return false;\">A&amp;B<\/a><\/p>\n\n"}
+{"id":"r2b-image-nonascii-src","output":"<img src=\"http:\/\/x\/caf%C3%A9.png\" alt=\"caf\u00e9.png\" class=\"image\" \/>"}
+{"id":"r2b-image-alt-quote","output":"<img src=\"http:\/\/x\/y.png\" alt=\"a&quot;b&amp;c\" class=\"image\" \/>"}
+{"id":"r2b-embed-data-scheme","output":"<p><div class=\"error-block\">Sorry, no match for the embedded content.<\/div><\/p>\n\n"}
+{"id":"r2b-embed-datasrc","output":"<p><div class=\"error-block\">Sorry, no match for the embedded content.<\/div><\/p>\n\n"}
+{"id":"r2b-image-link-nonascii","output":"<a href=\"http:\/\/x\/caf%C3%A9\"><img src=\"http:\/\/x\/y.png\" alt=\"y.png\" class=\"image\" \/><\/a>"}

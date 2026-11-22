@@ -1,0 +1,20 @@
+{"id": "s01-li-failed-close", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]"}
+{"id": "s02-list-emptyraw-retrim", "source": "[[ul]]\n[[li]]@@@@ @@@@[[/li]]\n[[/ul]]"}
+{"id": "s03-list-scored-wsclass", "source": "[[UL_ class=\" \"]]\n[[li]]a[[/li]]\n[[/OL]]AFTER"}
+{"id": "s04-fl-ws-pipe-label", "source": "A [[[　_default:x|Label]]] B"}
+{"id": "s05-fl-vt-upper-pipe", "source": "A [[[\u000b_DEFAULT:Café|Étiquette]]] B"}
+{"id": "s06-fl-nbsp-colonchain", "source": "A [[[ _default:caté:sub|L]]] B"}
+{"id": "s07-math-type-other-attrs", "source": "[[math a TYPE=\"align\" style=\"s\" data-x=\"1\"]]\nx\n[[/math]]"}
+{"id": "s08-math-type-lower-and-upper", "source": "[[math type=\"gather\" TYPE=\"align\"]]\nx\n[[/math]]"}
+{"id": "s09-mathinline-date-email", "source": "[[$x [a@b.com http://example.com] y$]]"}
+{"id": "s10-div-id-wsclass", "source": "[[div id=\"   \" class=\" \"]]\nbody\n[[/div]]"}
+{"id": "s11-div-id-dupdata", "source": "[[div id=\"   \" data-Foo=\"1\" data-foo=\"2\"]]\nX[[/div]]"}
+{"id": "s12-div-id-placeholder-class", "source": "[[div id=\"   \" class=\"@@@@\"]]\nX[[/div]]"}
+{"id": "s13-fn-in-list-retrim", "source": "[[ul]]\n[[li]]A [[footnote]]@@@@ @@@@[[/footnote]] B[[/li]]\n[[/ul]]\n[[footnoteblock]]"}
+{"id": "s14-fn-in-quote-retrim", "source": "> [[footnote]]@@@@ @@@@[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "s15-fn-two-runs-tab", "source": "[[footnote]]@@@@\t@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "s16-bib-two-runs-u3000", "source": "[[bibliography]]\n: lab : @@@@　@@@@\n[[/bibliography]]"}
+{"id": "s17-raw-4c3-plus-empty", "source": "@@@@ZQ@@@\n\n@@@@"}
+{"id": "s18-tableadv-dup-data", "source": "[[table data-Foo=\"1\" data-foo=\"2\"]]\n[[row]]\n[[cell]]\nC\n[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "s19-email-mixed-label", "source": "[a@b.com X http://example.com]"}
+{"id": "s20-email-intervening-code", "source": "[[code]]x[[/code]]\n\n[a@b.com http://example.com]"}

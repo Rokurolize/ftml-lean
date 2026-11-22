@@ -1,0 +1,156 @@
+LA-ABS -> muse-probe-round5b-p1-la-abs stable=True saved_source_matches=True valid=True
+LB-S1IN -> muse-probe-round5b-p1-lb-s1in stable=True saved_source_matches=True valid=True
+LC-S1TAIL -> muse-probe-round5b-p1-lc-s1tail stable=True saved_source_matches=True valid=True
+LD-SCOREDTAIL -> muse-probe-round5b-p1-ld-scoredtail stable=True saved_source_matches=True valid=True
+LE-EMPTYITEM -> muse-probe-round5b-p1-le-emptyitem stable=True saved_source_matches=True valid=True
+LF-DATAUP -> muse-probe-round5b-p1-lf-dataup stable=True saved_source_matches=True valid=True
+DA-STYLEWS -> muse-probe-round5b-p1-da-stylews stable=True saved_source_matches=True valid=True
+DB-DATAEMPTY -> muse-probe-round5b-p1-db-dataempty stable=True saved_source_matches=True valid=True
+DC-DATATRIPLE -> muse-probe-round5b-p1-dc-datatriple stable=True saved_source_matches=True valid=True
+DD-IDTAB -> muse-probe-round5b-p1-dd-idtab stable=True saved_source_matches=True valid=True
+DE-IDLIT -> muse-probe-round5b-p1-de-idlit stable=True saved_source_matches=True valid=True
+BB-LEADSPACE -> muse-probe-round5b-p1-bb-leadspace stable=True saved_source_matches=True valid=True
+NN-3LF -> muse-probe-round5b-p1-nn-3lf stable=True saved_source_matches=True valid=True
+TT-UNPAIREDAT -> muse-probe-round5b-p1-tt-unpairedat stable=True saved_source_matches=True valid=True
+{
+ "LA-ABS": {
+  "fullname": "muse-probe-round5b-p1-la-abs",
+  "html": "<ul>\n<li>A[[LI]]B[[/LI]]<br />\n[[/UL]]</li>\n</ul>",
+  "html_sha256": "c4d87f83bea9dd4b152ee152a824e4523dad20eb3199c959c7a70a4be10a4c58",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]",
+  "source_sha256": "f519e283b30cdb7091ec13c64547901b3e752b0adf19d50db065bcf05269d344",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "LB-S1IN": {
+  "fullname": "muse-probe-round5b-p1-lb-s1in",
+  "html": "<ul>\n<li>a<br /></li>\n<li>bAFTER</li>\n</ul>",
+  "html_sha256": "3cf40033da45bc13a6ad2b8ac7443ff3af232dc42d190440f5e0ded07bce41e3",
+  "source": "[[UL class=\"c\"]]\n[[li]]a\n[[OL]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]AFTER",
+  "source_sha256": "07bfbc92243f9ad047e7b714c8b7a373adc5c34dc4b8a20f8627048f47f947b4",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "LC-S1TAIL": {
+  "fullname": "muse-probe-round5b-p1-lc-s1tail",
+  "html": "<ul>\n<li>a<br />\n<ol>\n<li style=\"list-style: none\">[[li]]b</li>\n</ol>\nAFTER</li>\n</ul>\n[[/li]]<br />\n[[/ul]]TAIL",
+  "html_sha256": "c9fa4489ee306561657566f7ab7ddc67348246f4c2b9c67e9758effc9abb9495",
+  "source": "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b[[/li]]\n[[/UL]]AFTER\n[[/ol]]\n[[/li]]\n[[/ul]]TAIL",
+  "source_sha256": "4e9e1dab6b0940f321d61107c552fa63ea9a222bcfb8d6c72adec36d606a04be",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "LD-SCOREDTAIL": {
+  "fullname": "muse-probe-round5b-p1-ld-scoredtail",
+  "html": "<ul>\n<li>aAFTER</li>\n</ul>",
+  "html_sha256": "b31ee83ca409b9f50e621fd2df8a4b48d8069ad64c68f7a6bc61ebaf52ced707",
+  "source": "[[UL_]]\n[[li]]a[[/li]]\n[[/ul]]\nAFTER",
+  "source_sha256": "5bee619bff13fd3be983335feda9dc1c7230985f532a458ec7da73b166a1c63e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "LE-EMPTYITEM": {
+  "fullname": "muse-probe-round5b-p1-le-emptyitem",
+  "html": "<ul>\n<li><br />",
+  "html_sha256": "4fa118e2d100e3f6f99283cb6a71681dbbf391dc6142053ab8450bad165fe6b7",
+  "source": "[[UL]]\n[[LI]][[/LI]]\n[[/UL]]",
+  "source_sha256": "b87771d708064834b0105a9663b385ed39b15cb926da3577839b83a652ee894e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "LF-DATAUP": {
+  "fullname": "muse-probe-round5b-p1-lf-dataup",
+  "html": "<ul data-x=\"2\">\n<li>a</li>\n</ul>\n<br />",
+  "html_sha256": "cee34f7f57d895f73c7fb57a365a0bad631c8f92b12918e41bab4db0c160b591",
+  "source": "[[ul data-X=\"1\" data-x=\"2\"]]\n[[li]]a[[/li]]\n[[/ul]]",
+  "source_sha256": "8319f718ec69e42015acc385b593829b5db653ad52a69bb07fbf9473f32c3a35",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "DA-STYLEWS": {
+  "fullname": "muse-probe-round5b-p1-da-stylews",
+  "html": "<div style=\"\"></div>\n<br />\nX",
+  "html_sha256": "2b6620fd6342bf38ca872f6292f9936859ff8edbb7f134fea4d9ee02a3164ed3",
+  "source": "[[div style=\" \"]]\n[[/div]]\nX",
+  "source_sha256": "9015997b697d55e5e286a93d040e07d6db2d8385565905ec5d4951ac821bc149",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "DB-DATAEMPTY": {
+  "fullname": "muse-probe-round5b-p1-db-dataempty",
+  "html": "<div data-foo=\"\">\n<p>X</p>\n</div>",
+  "html_sha256": "7ccf9ed208916165e2f5aa66de662c1c5d4f7d3f30d25f8e8b9d0fa4957adf2a",
+  "source": "[[div data-Foo=\"1\" data-foo=\"\"]]\nX[[/div]]",
+  "source_sha256": "712616d367d8bf7ee67f4562c01158b29a5738cb98b6da2f1a1b9e09c92ab33c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "DC-DATATRIPLE": {
+  "fullname": "muse-probe-round5b-p1-dc-datatriple",
+  "html": "<div data-foo=\"2\">\n<p>X</p>\n</div>",
+  "html_sha256": "0670e39fb5547ae0b2eadf6a42ac80fb3a35e47c126a2b9a52ee3a6e8fa41089",
+  "source": "[[div data-Foo=\"1\" data-foo=\"2\" DATA-FOO=\"3\"]]\nX[[/div]]",
+  "source_sha256": "1cb32f3c7d18952b999153638110bb2c366101e1f6c1f2245e54b3577433f528",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "DD-IDTAB": {
+  "fullname": "muse-probe-round5b-p1-dd-idtab",
+  "html": "<div id=\"u-\">\n<p>body</p>\n</div>",
+  "html_sha256": "f1ad87bc749dd882348960ce72a4772667b35d3ca82f7d0177cab58395320736",
+  "source": "[[div id=\" \t \"]]\nbody\n[[/div]]",
+  "source_sha256": "33aee2db8af1b372e595ea855d50ec0fee80c7a3816383cf39122bf4ee5fa53b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "DE-IDLIT": {
+  "fullname": "muse-probe-round5b-p1-de-idlit",
+  "html": "<div id=\"u-\">\n<p>body</p>\n</div>",
+  "html_sha256": "f1ad87bc749dd882348960ce72a4772667b35d3ca82f7d0177cab58395320736",
+  "source": "[[div id=\"u-\"]]\nbody\n[[/div]]",
+  "source_sha256": "507b61413e185200c0df729dddfe115b45bc37f6beae6434cb4acca6af1b26c8",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "BB-LEADSPACE": {
+  "fullname": "muse-probe-round5b-p1-bb-leadspace",
+  "html": "<p>X</p>\n<p>&gt; q</p>\n<p>Y</p>",
+  "html_sha256": "388c598e7353ec35cfc2fd671769e702817b6c44395ea94ae84ceb7c2477ab24",
+  "source": "X\n\n > q\n\nY",
+  "source_sha256": "00559b3211821aa0b07b1e97f60dd3fed6120436569e9e78685dfb0c22d43059",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "NN-3LF": {
+  "fullname": "muse-probe-round5b-p1-nn-3lf",
+  "html": "<p>a</p>\n<p>b</p>",
+  "html_sha256": "5de5a59361cc476cfde5f0974ca3679ea6d0bf294a35db9c3c556051add5370a",
+  "source": "a\n\n\nb",
+  "source_sha256": "2282b3efda183ac2a3e762d8cf310bda78e79126b43846b41e1875fd043463cb",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "TT-UNPAIREDAT": {
+  "fullname": "muse-probe-round5b-p1-tt-unpairedat",
+  "html": "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common--javascript/yahooui/tabview-min.js\"></script>\n<div id=\"wiki-tabview-300b15c9a61d4837b49ff21709995a53\" class=\"yui-navset\">\n<ul class=\"yui-nav\">\n<li class=\"selected\"><a href=\"javascript:;\"><em>x@@y</em></a></li>\n</ul>\n<div class=\"yui-content\">\n<div id=\"wiki-tab-0-0\">\n<p>X</p>\n</div>\n</div>\n</div>\n<script type=\"text/javascript\">\n//<![CDATA[\nOZONE.dom.onDomReady(function(){\n        var tabView300b15c9a61d4837b49ff21709995a53 = new YAHOO.widget.TabView('wiki-tabview-300b15c9a61d4837b49ff21709995a53');\n                }, \"dummy-ondomready-block\");\n        \n//]]>\n</script>",
+  "html_sha256": "4d50ec74f409eea696c2bf265c1f87ee4b9c868678c011f36ad53e2c49de48c3",
+  "source": "[[tabview]]\n[[tab x@@y]]X[[/tab]]\n[[/tabview]]",
+  "source_sha256": "707f7bfb051749ce0e6fffa91b0b5bd4caf52235d6cb77695a8d7ec105f685d3",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

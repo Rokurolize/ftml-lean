@@ -1,0 +1,127 @@
+{
+ "R5BP2-01": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-01",
+  "source": "[[[\f_default:x]]]",
+  "action": "exists"
+ },
+ "R5BP2-02": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-02",
+  "source": "[[[\r_default:x]]]",
+  "action": "create-failed-unstorable-control-byte"
+ },
+ "R5BP2-03": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-03",
+  "source": "[[[ _default:x]]]",
+  "action": "created"
+ },
+ "R5BP2-04": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-04",
+  "source": "[[[\t 　\u000b _default:x]]]",
+  "action": "created"
+ },
+ "R5BP2-05": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-05",
+  "source": "[[[﻿_default:x]]]",
+  "action": "created"
+ },
+ "R5BP2-06": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-06",
+  "source": "[[[*_default:x]]]",
+  "action": "created"
+ },
+ "R5BP2-07": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-07",
+  "source": "[[[\u0000_default:x]]]",
+  "action": "create-failed-unstorable-control-byte"
+ },
+ "R5BP2-08": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-08",
+  "source": "[[math a tYpE=\"align\"]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "R5BP2-09": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-09",
+  "source": "[[math a Type=\"align\"]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "R5BP2-10": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-10",
+  "source": "[[math a type=\"align\" TYPE=\"align\"]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "R5BP2-11": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-11",
+  "source": "[[math a TYPE=align]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "R5BP2-12": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-12",
+  "source": "[[$x [a@b.com [[date 0]]] y$]]",
+  "action": "created"
+ },
+ "R5BP2-13": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-13",
+  "source": "[[$x [[date 0]] [[date 1]] y$]]",
+  "action": "created"
+ },
+ "R5BP2-14": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-14",
+  "source": "[[$x [[date]] y$]]",
+  "action": "created"
+ },
+ "R5BP2-15": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-15",
+  "source": "HTTP://example.com",
+  "action": "created"
+ },
+ "R5BP2-16": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-16",
+  "source": "[a@b.com d@e]",
+  "action": "created"
+ },
+ "R5BP2-17": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-17",
+  "source": "[[code]]foo[[/code]]\n[a@b.com http://example.com]",
+  "action": "created"
+ },
+ "R5BP2-18": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-18",
+  "source": "[[form]]foo[[/form]]\n[a@b.com http://example.com]",
+  "action": "created"
+ },
+ "R5BP2-19": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-19",
+  "source": "[[[some page]]]\n[a@b.com http://example.com]",
+  "action": "created"
+ },
+ "R5BP2-20": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-20",
+  "source": "[[module ListPages]]\n[a@b.com http://example.com]",
+  "action": "created"
+ },
+ "R5BP2-21": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-21",
+  "source": "[!-- comment --]\n[a@b.com http://example.com]",
+  "action": "created"
+ },
+ "R5BP2-22": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-22",
+  "source": "[a@b.com http://example.com]\n[http://after.example.com After]",
+  "action": "created"
+ },
+ "R5BP2-23": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-23",
+  "source": "[a@b.com http://example.com] and [*http://other.example.com other]",
+  "action": "created"
+ },
+ "R5BP2-24": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-24",
+  "source": "[a@b.com http://example.com extra]",
+  "action": "created"
+ },
+ "R5BP2-25": {
+  "fullname": "muse-probe-round5b-p2-r5bp2-25",
+  "source": "[a@b.com x @@raw@@ y]",
+  "action": "created"
+ }
+}

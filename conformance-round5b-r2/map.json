@@ -1,0 +1,112 @@
+{
+ "r2b-math-uppercase-TYPE-valid": {
+  "fullname": "muse-probe-round5b-r2-r2b-math-uppercase-type-valid",
+  "source": "[[math TYPE=\"gather\"]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "r2b-math-type-uppercase-value": {
+  "fullname": "muse-probe-round5b-r2-r2b-math-type-uppercase-value",
+  "source": "[[math type=\"ALIGN\"]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "r2b-math-type-entity": {
+  "fullname": "muse-probe-round5b-r2-r2b-math-type-entity",
+  "source": "[[math type=\"a&b\"]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "r2b-mathinline-date-only": {
+  "fullname": "muse-probe-round5b-r2-r2b-mathinline-date-only",
+  "source": "[[$[[date 0]]$]]",
+  "action": "created"
+ },
+ "r2b-mathinline-quote-escape": {
+  "fullname": "muse-probe-round5b-r2-r2b-mathinline-quote-escape",
+  "source": "[[$ \"a\" 'b' $]]",
+  "action": "created"
+ },
+ "r2b-mathinline-nonascii": {
+  "fullname": "muse-probe-round5b-r2-r2b-mathinline-nonascii",
+  "source": "[[$ é & α $]]",
+  "action": "created"
+ },
+ "r2b-mathinline-code-token": {
+  "fullname": "muse-probe-round5b-r2-r2b-mathinline-code-token",
+  "source": "[[$ [[code X]] $]]",
+  "action": "created"
+ },
+ "r2b-email-claimed-url": {
+  "fullname": "muse-probe-round5b-r2-r2b-email-claimed-url",
+  "source": "[a@b.com http://example.com]",
+  "action": "created"
+ },
+ "r2b-email-claimed-raw": {
+  "fullname": "muse-probe-round5b-r2-r2b-email-claimed-raw",
+  "source": "[a@b.com @@raw@@]",
+  "action": "created"
+ },
+ "r2b-email-bytewise-ee": {
+  "fullname": "muse-probe-round5b-r2-r2b-email-bytewise-ee",
+  "source": "[a@b.com éé]",
+  "action": "created"
+ },
+ "r2b-email-bytewise-cafe": {
+  "fullname": "muse-probe-round5b-r2-r2b-email-bytewise-cafe",
+  "source": "[a@b.com café]",
+  "action": "created"
+ },
+ "r2b-email-label-at": {
+  "fullname": "muse-probe-round5b-r2-r2b-email-label-at",
+  "source": "[a@b.com @@raw]",
+  "action": "created"
+ },
+ "r2b-email-claimed-multidigit": {
+  "fullname": "muse-probe-round5b-r2-r2b-email-claimed-multidigit",
+  "source": "@@a@@ @@b@@ @@c@@ @@d@@ @@e@@ @@f@@ @@g@@ @@h@@ @@i@@ @@j@@ @@k@@ @@l@@ [a@b.com http://example.com]",
+  "action": "created"
+ },
+ "r2b-url-lower-pct": {
+  "fullname": "muse-probe-round5b-r2-r2b-url-lower-pct",
+  "source": "https://example.com/%c3%a9",
+  "action": "created"
+ },
+ "r2b-url-fragment": {
+  "fullname": "muse-probe-round5b-r2-r2b-url-fragment",
+  "source": "http://example.com/a#frag",
+  "action": "created"
+ },
+ "r2b-freelink-anchor-label": {
+  "fullname": "muse-probe-round5b-r2-r2b-freelink-anchor-label",
+  "source": "[[[foo#frag|shown]]]",
+  "action": "created"
+ },
+ "r2b-interwiki-pl-site": {
+  "fullname": "muse-probe-round5b-r2-r2b-interwiki-pl-site",
+  "source": "[wikipedia.pl:A&B]",
+  "action": "created"
+ },
+ "r2b-image-nonascii-src": {
+  "fullname": "muse-probe-round5b-r2-r2b-image-nonascii-src",
+  "source": "[[image http://x/café.png]]",
+  "action": "created"
+ },
+ "r2b-image-alt-quote": {
+  "fullname": "muse-probe-round5b-r2-r2b-image-alt-quote",
+  "source": "[[image http://x/y.png alt=\"a\\\"b&c\"]]",
+  "action": "created"
+ },
+ "r2b-embed-data-scheme": {
+  "fullname": "muse-probe-round5b-r2-r2b-embed-data-scheme",
+  "source": "[[embed]]<iframe src=\"http://x/y\" data-x=\"javascript:alert(1)\"></iframe>[[/embed]]",
+  "action": "created"
+ },
+ "r2b-embed-datasrc": {
+  "fullname": "muse-probe-round5b-r2-r2b-embed-datasrc",
+  "source": "[[embed]]<iframe data-src=\"javascript:alert(1)\"></iframe>[[/embed]]",
+  "action": "created"
+ },
+ "r2b-image-link-nonascii": {
+  "fullname": "muse-probe-round5b-r2-r2b-image-link-nonascii",
+  "source": "[[image http://x/y.png link=\"http://x/café\"]]",
+  "action": "created"
+ }
+}

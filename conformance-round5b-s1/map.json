@@ -1,0 +1,102 @@
+{
+ "s01-li-failed-close": {
+  "fullname": "muse-probe-round5b-s1-s01-li-failed-close",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "s02-list-emptyraw-retrim": {
+  "fullname": "muse-probe-round5b-s1-s02-list-emptyraw-retrim",
+  "source": "[[ul]]\n[[li]]@@@@ @@@@[[/li]]\n[[/ul]]",
+  "action": "created"
+ },
+ "s03-list-scored-wsclass": {
+  "fullname": "muse-probe-round5b-s1-s03-list-scored-wsclass",
+  "source": "[[UL_ class=\" \"]]\n[[li]]a[[/li]]\n[[/OL]]AFTER",
+  "action": "created"
+ },
+ "s04-fl-ws-pipe-label": {
+  "fullname": "muse-probe-round5b-s1-s04-fl-ws-pipe-label",
+  "source": "A [[[　_default:x|Label]]] B",
+  "action": "created"
+ },
+ "s05-fl-vt-upper-pipe": {
+  "fullname": "muse-probe-round5b-s1-s05-fl-vt-upper-pipe",
+  "source": "A [[[\u000b_DEFAULT:Café|Étiquette]]] B",
+  "action": "created"
+ },
+ "s06-fl-nbsp-colonchain": {
+  "fullname": "muse-probe-round5b-s1-s06-fl-nbsp-colonchain",
+  "source": "A [[[ _default:caté:sub|L]]] B",
+  "action": "created"
+ },
+ "s07-math-type-other-attrs": {
+  "fullname": "muse-probe-round5b-s1-s07-math-type-other-attrs",
+  "source": "[[math a TYPE=\"align\" style=\"s\" data-x=\"1\"]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "s08-math-type-lower-and-upper": {
+  "fullname": "muse-probe-round5b-s1-s08-math-type-lower-and-upper",
+  "source": "[[math type=\"gather\" TYPE=\"align\"]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "s09-mathinline-date-email": {
+  "fullname": "muse-probe-round5b-s1-s09-mathinline-date-email",
+  "source": "[[$x [a@b.com http://example.com] y$]]",
+  "action": "created"
+ },
+ "s10-div-id-wsclass": {
+  "fullname": "muse-probe-round5b-s1-s10-div-id-wsclass",
+  "source": "[[div id=\"   \" class=\" \"]]\nbody\n[[/div]]",
+  "action": "created"
+ },
+ "s11-div-id-dupdata": {
+  "fullname": "muse-probe-round5b-s1-s11-div-id-dupdata",
+  "source": "[[div id=\"   \" data-Foo=\"1\" data-foo=\"2\"]]\nX[[/div]]",
+  "action": "created"
+ },
+ "s12-div-id-placeholder-class": {
+  "fullname": "muse-probe-round5b-s1-s12-div-id-placeholder-class",
+  "source": "[[div id=\"   \" class=\"@@@@\"]]\nX[[/div]]",
+  "action": "created"
+ },
+ "s13-fn-in-list-retrim": {
+  "fullname": "muse-probe-round5b-s1-s13-fn-in-list-retrim",
+  "source": "[[ul]]\n[[li]]A [[footnote]]@@@@ @@@@[[/footnote]] B[[/li]]\n[[/ul]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "s14-fn-in-quote-retrim": {
+  "fullname": "muse-probe-round5b-s1-s14-fn-in-quote-retrim",
+  "source": "> [[footnote]]@@@@ @@@@[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "s15-fn-two-runs-tab": {
+  "fullname": "muse-probe-round5b-s1-s15-fn-two-runs-tab",
+  "source": "[[footnote]]@@@@\t@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "s16-bib-two-runs-u3000": {
+  "fullname": "muse-probe-round5b-s1-s16-bib-two-runs-u3000",
+  "source": "[[bibliography]]\n: lab : @@@@　@@@@\n[[/bibliography]]",
+  "action": "created"
+ },
+ "s17-raw-4c3-plus-empty": {
+  "fullname": "muse-probe-round5b-s1-s17-raw-4c3-plus-empty",
+  "source": "@@@@ZQ@@@\n\n@@@@",
+  "action": "created"
+ },
+ "s18-tableadv-dup-data": {
+  "fullname": "muse-probe-round5b-s1-s18-tableadv-dup-data",
+  "source": "[[table data-Foo=\"1\" data-foo=\"2\"]]\n[[row]]\n[[cell]]\nC\n[[/cell]]\n[[/row]]\n[[/table]]",
+  "action": "created"
+ },
+ "s19-email-mixed-label": {
+  "fullname": "muse-probe-round5b-s1-s19-email-mixed-label",
+  "source": "[a@b.com X http://example.com]",
+  "action": "created"
+ },
+ "s20-email-intervening-code": {
+  "fullname": "muse-probe-round5b-s1-s20-email-intervening-code",
+  "source": "[[code]]x[[/code]]\n\n[a@b.com http://example.com]",
+  "action": "created"
+ }
+}

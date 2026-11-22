@@ -1,0 +1,22 @@
+{"id": "r2b-math-uppercase-TYPE-valid", "source": "[[math TYPE=\"gather\"]]\nx\n[[/math]]"}
+{"id": "r2b-math-type-uppercase-value", "source": "[[math type=\"ALIGN\"]]\nx\n[[/math]]"}
+{"id": "r2b-math-type-entity", "source": "[[math type=\"a&b\"]]\nx\n[[/math]]"}
+{"id": "r2b-mathinline-date-only", "source": "[[$[[date 0]]$]]"}
+{"id": "r2b-mathinline-quote-escape", "source": "[[$ \"a\" 'b' $]]"}
+{"id": "r2b-mathinline-nonascii", "source": "[[$ é & α $]]"}
+{"id": "r2b-mathinline-code-token", "source": "[[$ [[code X]] $]]"}
+{"id": "r2b-email-claimed-url", "source": "[a@b.com http://example.com]"}
+{"id": "r2b-email-claimed-raw", "source": "[a@b.com @@raw@@]"}
+{"id": "r2b-email-bytewise-ee", "source": "[a@b.com éé]"}
+{"id": "r2b-email-bytewise-cafe", "source": "[a@b.com café]"}
+{"id": "r2b-email-label-at", "source": "[a@b.com @@raw]"}
+{"id": "r2b-email-claimed-multidigit", "source": "@@a@@ @@b@@ @@c@@ @@d@@ @@e@@ @@f@@ @@g@@ @@h@@ @@i@@ @@j@@ @@k@@ @@l@@ [a@b.com http://example.com]"}
+{"id": "r2b-url-lower-pct", "source": "https://example.com/%c3%a9"}
+{"id": "r2b-url-fragment", "source": "http://example.com/a#frag"}
+{"id": "r2b-freelink-anchor-label", "source": "[[[foo#frag|shown]]]"}
+{"id": "r2b-interwiki-pl-site", "source": "[wikipedia.pl:A&B]"}
+{"id": "r2b-image-nonascii-src", "source": "[[image http://x/café.png]]"}
+{"id": "r2b-image-alt-quote", "source": "[[image http://x/y.png alt=\"a\\\"b&c\"]]"}
+{"id": "r2b-embed-data-scheme", "source": "[[embed]]<iframe src=\"http://x/y\" data-x=\"javascript:alert(1)\"></iframe>[[/embed]]"}
+{"id": "r2b-embed-datasrc", "source": "[[embed]]<iframe data-src=\"javascript:alert(1)\"></iframe>[[/embed]]"}
+{"id": "r2b-image-link-nonascii", "source": "[[image http://x/y.png link=\"http://x/café\"]]"}

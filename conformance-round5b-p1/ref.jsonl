@@ -1,0 +1,14 @@
+{"id":"LA-ABS","output":"<ul>\n<li>A<li>B<br \/>"}
+{"id":"LB-S1IN","output":"<ul>\n<li>a<br \/><ul>\n<li style=\"list-style: none\">[[li]]b<\/li>\n<\/ul><\/li>\n<\/ul>"}
+{"id":"LC-S1TAIL","output":"<ul>\n<li>a<br \/>\n<ol>\n<li>b<\/li>\n<\/ol><br \/>\nAFTER<br \/>\n[[\/ol]]<br \/><\/li>\n<\/ul>TAIL"}
+{"id":"LD-SCOREDTAIL","output":"<ul>\n<li>aAFTER<\/li>\n<\/ul>"}
+{"id":"LE-EMPTYITEM","output":"<ul>\n<li><br \/>\n<br \/>"}
+{"id":"LF-DATAUP","output":"<ul data-x=\"2\">\n<li>a<\/li>\n<\/ul><br \/>\n"}
+{"id":"DA-STYLEWS","output":"<div style=\"\"><\/div><br \/>\nX"}
+{"id":"DB-DATAEMPTY","output":"<div><p>X<\/p>\n\n<\/div>"}
+{"id":"DC-DATATRIPLE","output":"<div data-foo=\"2\"><p>X<\/p>\n\n<\/div>"}
+{"id":"DD-IDTAB","output":"<div id=\"u-\"><p>body<\/p>\n\n<\/div>"}
+{"id":"DE-IDLIT","output":"<div id=\"u-\"><p>body<\/p>\n\n<\/div>"}
+{"id":"BB-LEADSPACE","output":"<p>X<\/p>\n\n<p>&gt; q<\/p>\n\n<p>Y<\/p>\n\n"}
+{"id":"NN-3LF","output":"<p>a<\/p>\n\n<p>b<\/p>\n\n"}
+{"id":"TT-UNPAIREDAT","output":"<script type=\"text\/javascript\" src=\"\/common--javascript\/yahooui\/element-beta-min.js\"><\/script>\n<script type=\"text\/javascript\" src=\"\/common--javascript\/yahooui\/tabview-min.js\"><\/script><div id=\"wiki-tabview-0\" class=\"yui-navset\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>x@@y<\/em><\/a><\/li><\/ul><div class=\"yui-content\"><div id=\"wiki-tab-0-0\"><p>X<\/p>\n\n<\/div><\/div><\/div><script type=\"text\/javascript\">\n(function(){\n\tvar tabView0 = new YAHOO.widget.TabView('wiki-tabview-0');\n})();\n<\/script>"}

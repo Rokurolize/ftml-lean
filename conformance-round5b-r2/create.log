@@ -1,0 +1,138 @@
+r2b-math-uppercase-TYPE-valid -> muse-probe-round5b-r2-r2b-math-uppercase-type-valid (created)
+r2b-math-type-uppercase-value -> muse-probe-round5b-r2-r2b-math-type-uppercase-value (created)
+r2b-math-type-entity -> muse-probe-round5b-r2-r2b-math-type-entity (created)
+2026-11-23 07:16:48,452 [wikidot/ERROR] AMC is respond status: "try_again" -> {'wikidot_token7': '***MASKED***', 'action': 'WikiPageAction', 'event': 'savePage', 'moduleName': 'Empty', 'mode': 'page', 'lock_id': '85391253', 'lock_secret': '***MASKED***', 'revision_id': '', 'wiki_page': 'muse-probe-round5b-r2-r2b-mathinline-date-only', 'page_id': '', 'title': '***MASKED***', 'source': '***MASKED***', 'comments': '***MASKED***'}
+r2b-mathinline-date-only -> muse-probe-round5b-r2-r2b-mathinline-date-only (created)
+r2b-mathinline-quote-escape -> muse-probe-round5b-r2-r2b-mathinline-quote-escape (created)
+r2b-mathinline-nonascii -> muse-probe-round5b-r2-r2b-mathinline-nonascii (created)
+r2b-mathinline-code-token -> muse-probe-round5b-r2-r2b-mathinline-code-token (created)
+r2b-email-claimed-url -> muse-probe-round5b-r2-r2b-email-claimed-url (created)
+r2b-email-claimed-raw -> muse-probe-round5b-r2-r2b-email-claimed-raw (created)
+r2b-email-bytewise-ee -> muse-probe-round5b-r2-r2b-email-bytewise-ee (created)
+r2b-email-bytewise-cafe -> muse-probe-round5b-r2-r2b-email-bytewise-cafe (created)
+r2b-email-label-at -> muse-probe-round5b-r2-r2b-email-label-at (created)
+r2b-email-claimed-multidigit -> muse-probe-round5b-r2-r2b-email-claimed-multidigit (created)
+r2b-url-lower-pct -> muse-probe-round5b-r2-r2b-url-lower-pct (created)
+r2b-url-fragment -> muse-probe-round5b-r2-r2b-url-fragment (created)
+r2b-freelink-anchor-label -> muse-probe-round5b-r2-r2b-freelink-anchor-label (created)
+r2b-interwiki-pl-site -> muse-probe-round5b-r2-r2b-interwiki-pl-site (created)
+r2b-image-nonascii-src -> muse-probe-round5b-r2-r2b-image-nonascii-src (created)
+r2b-image-alt-quote -> muse-probe-round5b-r2-r2b-image-alt-quote (created)
+2026-11-23 07:21:45,110 [wikidot/ERROR] AMC is respond status: "try_again" -> {'wikidot_token7': '***MASKED***', 'action': 'WikiPageAction', 'event': 'savePage', 'moduleName': 'Empty', 'mode': 'page', 'lock_id': '85391388', 'lock_secret': '***MASKED***', 'revision_id': '', 'wiki_page': 'muse-probe-round5b-r2-r2b-embed-data-scheme', 'page_id': '', 'title': '***MASKED***', 'source': '***MASKED***', 'comments': '***MASKED***'}
+r2b-embed-data-scheme -> muse-probe-round5b-r2-r2b-embed-data-scheme (created)
+r2b-embed-datasrc -> muse-probe-round5b-r2-r2b-embed-datasrc (created)
+r2b-image-link-nonascii -> muse-probe-round5b-r2-r2b-image-link-nonascii (created)
+22 probe pages left in place on sandbox-for-codex; the tool never deletes pages.
+{
+ "r2b-math-uppercase-TYPE-valid": {
+  "fullname": "muse-probe-round5b-r2-r2b-math-uppercase-type-valid",
+  "source": "[[math TYPE=\"gather\"]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "r2b-math-type-uppercase-value": {
+  "fullname": "muse-probe-round5b-r2-r2b-math-type-uppercase-value",
+  "source": "[[math type=\"ALIGN\"]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "r2b-math-type-entity": {
+  "fullname": "muse-probe-round5b-r2-r2b-math-type-entity",
+  "source": "[[math type=\"a&b\"]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "r2b-mathinline-date-only": {
+  "fullname": "muse-probe-round5b-r2-r2b-mathinline-date-only",
+  "source": "[[$[[date 0]]$]]",
+  "action": "created"
+ },
+ "r2b-mathinline-quote-escape": {
+  "fullname": "muse-probe-round5b-r2-r2b-mathinline-quote-escape",
+  "source": "[[$ \"a\" 'b' $]]",
+  "action": "created"
+ },
+ "r2b-mathinline-nonascii": {
+  "fullname": "muse-probe-round5b-r2-r2b-mathinline-nonascii",
+  "source": "[[$ é & α $]]",
+  "action": "created"
+ },
+ "r2b-mathinline-code-token": {
+  "fullname": "muse-probe-round5b-r2-r2b-mathinline-code-token",
+  "source": "[[$ [[code X]] $]]",
+  "action": "created"
+ },
+ "r2b-email-claimed-url": {
+  "fullname": "muse-probe-round5b-r2-r2b-email-claimed-url",
+  "source": "[a@b.com http://example.com]",
+  "action": "created"
+ },
+ "r2b-email-claimed-raw": {
+  "fullname": "muse-probe-round5b-r2-r2b-email-claimed-raw",
+  "source": "[a@b.com @@raw@@]",
+  "action": "created"
+ },
+ "r2b-email-bytewise-ee": {
+  "fullname": "muse-probe-round5b-r2-r2b-email-bytewise-ee",
+  "source": "[a@b.com éé]",
+  "action": "created"
+ },
+ "r2b-email-bytewise-cafe": {
+  "fullname": "muse-probe-round5b-r2-r2b-email-bytewise-cafe",
+  "source": "[a@b.com café]",
+  "action": "created"
+ },
+ "r2b-email-label-at": {
+  "fullname": "muse-probe-round5b-r2-r2b-email-label-at",
+  "source": "[a@b.com @@raw]",
+  "action": "created"
+ },
+ "r2b-email-claimed-multidigit": {
+  "fullname": "muse-probe-round5b-r2-r2b-email-claimed-multidigit",
+  "source": "@@a@@ @@b@@ @@c@@ @@d@@ @@e@@ @@f@@ @@g@@ @@h@@ @@i@@ @@j@@ @@k@@ @@l@@ [a@b.com http://example.com]",
+  "action": "created"
+ },
+ "r2b-url-lower-pct": {
+  "fullname": "muse-probe-round5b-r2-r2b-url-lower-pct",
+  "source": "https://example.com/%c3%a9",
+  "action": "created"
+ },
+ "r2b-url-fragment": {
+  "fullname": "muse-probe-round5b-r2-r2b-url-fragment",
+  "source": "http://example.com/a#frag",
+  "action": "created"
+ },
+ "r2b-freelink-anchor-label": {
+  "fullname": "muse-probe-round5b-r2-r2b-freelink-anchor-label",
+  "source": "[[[foo#frag|shown]]]",
+  "action": "created"
+ },
+ "r2b-interwiki-pl-site": {
+  "fullname": "muse-probe-round5b-r2-r2b-interwiki-pl-site",
+  "source": "[wikipedia.pl:A&B]",
+  "action": "created"
+ },
+ "r2b-image-nonascii-src": {
+  "fullname": "muse-probe-round5b-r2-r2b-image-nonascii-src",
+  "source": "[[image http://x/café.png]]",
+  "action": "created"
+ },
+ "r2b-image-alt-quote": {
+  "fullname": "muse-probe-round5b-r2-r2b-image-alt-quote",
+  "source": "[[image http://x/y.png alt=\"a\\\"b&c\"]]",
+  "action": "created"
+ },
+ "r2b-embed-data-scheme": {
+  "fullname": "muse-probe-round5b-r2-r2b-embed-data-scheme",
+  "source": "[[embed]]<iframe src=\"http://x/y\" data-x=\"javascript:alert(1)\"></iframe>[[/embed]]",
+  "action": "created"
+ },
+ "r2b-embed-datasrc": {
+  "fullname": "muse-probe-round5b-r2-r2b-embed-datasrc",
+  "source": "[[embed]]<iframe data-src=\"javascript:alert(1)\"></iframe>[[/embed]]",
+  "action": "created"
+ },
+ "r2b-image-link-nonascii": {
+  "fullname": "muse-probe-round5b-r2-r2b-image-link-nonascii",
+  "source": "[[image http://x/y.png link=\"http://x/café\"]]",
+  "action": "created"
+ }
+}
+create exit=0

@@ -1,0 +1,25 @@
+{"id":"R5BP2-01","output":"<p><a class=\"newpage\" href=\"\/default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5BP2-02","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5BP2-03","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5BP2-04","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"R5BP2-05","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5BP2-06","output":"<p><a class=\"newpage\" href=\"\/default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5BP2-07","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5BP2-08","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"R5BP2-09","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"R5BP2-10","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"R5BP2-11","output":"<p>[[math a TYPE=align]]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"R5BP2-12","output":"<p><span class=\"math-inline\">$$<\/span><\/p>\n\n"}
+{"id":"R5BP2-13","output":"<p><span class=\"math-inline\">$$<\/span><\/p>\n\n"}
+{"id":"R5BP2-14","output":"<p><span class=\"math-inline\">$x [[date]] y$<\/span><\/p>\n\n"}
+{"id":"R5BP2-15","output":"<p>HTTP:\/\/example.com<\/p>\n\n"}
+{"id":"R5BP2-16","output":"<p><span class=\"wiki-email\">moc.b|a#e|d<\/span><\/p>\n\n"}
+{"id":"R5BP2-17","output":"\n<div class=\"code\">\n<pre><code>foo<\/code><\/pre><\/div>\n\n<br \/>\n<span class=\"wiki-email\">moc.b|a#\ufffd2\ufffd<\/span>"}
+{"id":"R5BP2-18","output":"<p>[[form]]foo[[\/form]]<br \/>\n<span class=\"wiki-email\">moc.b|a#\ufffd3\ufffd<\/span><\/p>\n\n"}
+{"id":"R5BP2-19","output":"<p><a class=\"newpage\" href=\"\/some-page\">some page<\/a><br \/>\n<span class=\"wiki-email\">moc.b|a#\ufffd4\ufffd<\/span><\/p>\n\n"}
+{"id":"R5BP2-20","output":"\u00femodule \"ListPages\"\u00fe<p><span class=\"wiki-email\">moc.b|a#\ufffd3\ufffd<\/span><\/p>\n\n"}
+{"id":"R5BP2-21","output":"<p><span class=\"wiki-email\">moc.b|a#\ufffd2\ufffd<\/span><\/p>\n\n"}
+{"id":"R5BP2-22","output":"<p><span class=\"wiki-email\">moc.b|a#\ufffd4\ufffd<\/span><br \/>\n<a href=\"http:\/\/after.example.com\">After<\/a><\/p>\n\n"}
+{"id":"R5BP2-23","output":"<p><span class=\"wiki-email\">moc.b|a#\ufffd3\ufffd<\/span> and <a href=\"http:\/\/other.example.com\" target=\"_blank\">other<\/a><\/p>\n\n"}
+{"id":"R5BP2-24","output":"<p><span class=\"wiki-email\">moc.b|a#artxe \ufffd2\ufffd<\/span><\/p>\n\n"}
+{"id":"R5BP2-25","output":"<p><span class=\"wiki-email\">moc.b|a#y \ufffd0\ufffd x<\/span><\/p>\n\n"}
