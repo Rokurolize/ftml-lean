@@ -1,0 +1,706 @@
+[
+ {
+  "id": "r2c-01-math-TyPe",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": false,
+  "ref_canon": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>",
+  "live_canon": "<span class=\"equation-number\">(1)</span><div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [
+    "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>"
+   ],
+   "equation": [],
+   "eqnum": [],
+   "text": "The equation has not been processed correctly. Most prabably it has syntax error(s)."
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [
+    "equation"
+   ],
+   "eqnum": [
+    "1"
+   ],
+   "text": "(1) \\begin{equation} x \\end{equation}"
+  },
+  "capture_id": "muse-probe-round5c-r2-r2c-01-math-type",
+  "ref_math_token_type": "equation",
+  "live_math_envelope": [
+   "equation"
+  ],
+  "live_math_counter": [
+   "1"
+  ],
+  "final_verdict": "CLEARED",
+  "reason": "owned Math PNG/no-PNG serving surface; reference tokens mode gives type=equation, matching live's \\begin{equation} envelope and counter"
+ },
+ {
+  "id": "r2c-02-math-tYPE",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": false,
+  "ref_canon": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>",
+  "live_canon": "<span class=\"equation-number\">(1)</span><div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [
+    "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>"
+   ],
+   "equation": [],
+   "eqnum": [],
+   "text": "The equation has not been processed correctly. Most prabably it has syntax error(s)."
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [
+    "equation"
+   ],
+   "eqnum": [
+    "1"
+   ],
+   "text": "(1) \\begin{equation} x \\end{equation}"
+  },
+  "capture_id": "muse-probe-round5c-r2-r2c-02-math-type",
+  "ref_math_token_type": "equation",
+  "live_math_envelope": [
+   "equation"
+  ],
+  "live_math_counter": [
+   "1"
+  ],
+  "final_verdict": "CLEARED",
+  "reason": "owned Math PNG/no-PNG serving surface; reference tokens mode gives type=equation, value gather ignored, matching live's equation envelope"
+ },
+ {
+  "id": "r2c-03-math-dual-attrs",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": false,
+  "ref_canon": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>",
+  "live_canon": "<span class=\"equation-number\">(1)</span><div class=\"math-equation\" id=\"equation-1\">\\begin{align} x \\end{align}</div>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [
+    "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>"
+   ],
+   "equation": [],
+   "eqnum": [],
+   "text": "The equation has not been processed correctly. Most prabably it has syntax error(s)."
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [
+    "align"
+   ],
+   "eqnum": [
+    "1"
+   ],
+   "text": "(1) \\begin{align} x \\end{align}"
+  },
+  "capture_id": "muse-probe-round5c-r2-r2c-03-math-dual-attrs",
+  "ref_math_token_type": "align",
+  "live_math_envelope": [
+   "align"
+  ],
+  "live_math_counter": [
+   "1"
+  ],
+  "final_verdict": "CLEARED",
+  "reason": "owned Math PNG/no-PNG serving surface; reference tokens mode gives type=align with the exact lowercase key winning over TYPE, matching live's \\begin{align} envelope"
+ },
+ {
+  "id": "r2c-04-math-typeeq",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": false,
+  "ref_canon": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>",
+  "live_canon": "<span class=\"equation-number\">(1)</span><div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [
+    "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>"
+   ],
+   "equation": [],
+   "eqnum": [],
+   "text": "The equation has not been processed correctly. Most prabably it has syntax error(s)."
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [
+    "equation"
+   ],
+   "eqnum": [
+    "1"
+   ],
+   "text": "(1) \\begin{equation} x \\end{equation}"
+  },
+  "capture_id": "muse-probe-round5c-r2-r2c-04-math-typeeq",
+  "ref_math_token_type": "align",
+  "live_math_envelope": [
+   "equation"
+  ],
+  "live_math_counter": [
+   "1"
+  ],
+  "final_verdict": "CLEARED",
+  "reason": "owned Math PNG/no-PNG serving surface plus adopted absent-type default-align class: typeeq is not a case variant of type, so the reference takes the REFCORR3/REFCORR8 absent-type branch (align) exactly as the adopted attr-unknown probe does; live's equation envelope is the already-cleared PNG-side discrepancy, not a new value"
+ },
+ {
+  "id": "r2c-05-mathinline-amp-entity",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><span class=\"math-inline\">$&amp;amp; &lt;b&gt;$</span></p>",
+  "live_canon": "<p><span class=\"math-inline\">$&amp;amp; &lt;b&gt;$</span></p>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [
+    "<span class=\"math-inline\">$&amp;amp; &lt;b&gt;$</span>"
+   ],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "$&amp;amp; &lt;b&gt;$"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [
+    "<span class=\"math-inline\">$&amp;amp; &lt;b&gt;$</span>"
+   ],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "$&amp;amp; &lt;b&gt;$"
+  },
+  "capture_id": "muse-probe-round5c-r2-r2c-05-mathinline-amp-entity",
+  "ref_math_token_type": null,
+  "live_math_envelope": [],
+  "live_math_counter": [],
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "r2c-06-freelink-u2029",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": false,
+  "ref_canon": "<p><a href=\"/_default:x\">x</a></p>",
+  "live_canon": "<p><a href=\"/x\">x</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/_default:x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "x"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "x"
+  },
+  "capture_id": "muse-probe-round5c-r2-r2c-06-freelink-u2029",
+  "ref_math_token_type": null,
+  "live_math_envelope": [],
+  "live_math_counter": [],
+  "final_verdict": "CONFIRMED",
+  "reason": "rule-level byte divergence with no owned-surface artifact"
+ },
+ {
+  "id": "r2c-07-freelink-double-lead",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"/x\">x</a></p>",
+  "live_canon": "<p><a href=\"/x\">x</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "x"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "x"
+  },
+  "capture_id": "muse-probe-round5c-r2-r2c-07-freelink-double-lead",
+  "ref_math_token_type": null,
+  "live_math_envelope": [],
+  "live_math_counter": [],
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "r2c-08-freelink-star-space",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"/x\">x</a></p>",
+  "live_canon": "<p><a href=\"/x\">x</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "x"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "x"
+  },
+  "capture_id": "muse-probe-round5c-r2-r2c-08-freelink-star-space",
+  "ref_math_token_type": null,
+  "live_math_envelope": [],
+  "live_math_counter": [],
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "r2c-09-freelink-other-cat",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"/_foo:x\">x</a></p>",
+  "live_canon": "<p><a href=\"/_foo:x\">x</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/_foo:x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "x"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/_foo:x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "x"
+  },
+  "capture_id": "muse-probe-round5c-r2-r2c-09-freelink-other-cat",
+  "ref_math_token_type": null,
+  "live_math_envelope": [],
+  "live_math_counter": [],
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "r2c-10-freelink-hashroute",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": false,
+  "ref_canon": "<p><a href=\"/foo#/bar\">foo</a></p>",
+  "live_canon": "<p><a href=\"/foo#/bar\">foo/</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/foo#/bar\">foo</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "foo"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/foo#/bar\">foo/</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "foo/"
+  },
+  "capture_id": "muse-probe-round5c-r2-r2c-10-freelink-hashroute",
+  "ref_math_token_type": null,
+  "live_math_envelope": [],
+  "live_math_counter": [],
+  "final_verdict": "CONFIRMED",
+  "reason": "rule-level byte divergence with no owned-surface artifact"
+ },
+ {
+  "id": "r2c-11-url-raw-nonascii",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"https://example.com/caf%C3%A9?q=x\">https://example.com/café?q=x</a></p>",
+  "live_canon": "<p><a href=\"https://example.com/caf%C3%A9?q=x\">https://example.com/café?q=x</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"https://example.com/caf%C3%A9?q=x\">https://example.com/café?q=x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "https://example.com/café?q=x"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"https://example.com/caf%C3%A9?q=x\">https://example.com/café?q=x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "https://example.com/café?q=x"
+  },
+  "capture_id": "muse-probe-round5c-r2-r2c-11-url-raw-nonascii",
+  "ref_math_token_type": null,
+  "live_math_envelope": [],
+  "live_math_counter": [],
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "r2c-12-url-plain-labeled",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"http://example.com/x\">mail</a></p>",
+  "live_canon": "<p><a href=\"http://example.com/x\">mail</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"http://example.com/x\">mail</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "mail"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"http://example.com/x\">mail</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "mail"
+  },
+  "capture_id": "muse-probe-round5c-r2-r2c-12-url-plain-labeled",
+  "ref_math_token_type": null,
+  "live_math_envelope": [],
+  "live_math_counter": [],
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "r2c-13-interwiki-space",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"https://www.google.com/search?q=a\" onclick=\"window.open(this.href, '_blank'); return false;\">b</a></p>",
+  "live_canon": "<p><a href=\"https://www.google.com/search?q=a\" onclick=\"window.open(this.href, '_blank'); return false;\">b</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"https://www.google.com/search?q=a\" onclick=\"window.open(this.href, '_blank'); return false;\">b</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "b"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"https://www.google.com/search?q=a\" onclick=\"window.open(this.href, '_blank'); return false;\">b</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "b"
+  },
+  "capture_id": "muse-probe-round5c-r2-r2c-13-interwiki-space",
+  "ref_math_token_type": null,
+  "live_math_envelope": [],
+  "live_math_counter": [],
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "r2c-14-interwiki-dict-amp",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"https://dictionary.reference.com/browse/A&B\" onclick=\"window.open(this.href, '_blank'); return false;\">A&amp;B</a></p>",
+  "live_canon": "<p><a href=\"https://dictionary.reference.com/browse/A&B\" onclick=\"window.open(this.href, '_blank'); return false;\">A&amp;B</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"https://dictionary.reference.com/browse/A&B\" onclick=\"window.open(this.href, '_blank'); return false;\">A&amp;B</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "A&amp;B"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"https://dictionary.reference.com/browse/A&B\" onclick=\"window.open(this.href, '_blank'); return false;\">A&amp;B</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": "A&amp;B"
+  },
+  "capture_id": "muse-probe-round5c-r2-r2c-14-interwiki-dict-amp",
+  "ref_math_token_type": null,
+  "live_math_envelope": [],
+  "live_math_counter": [],
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "r2c-15-image-alt-lt",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<img alt=\"a&lt;b\" class=\"image\" src=\"http://x/y.png\">",
+  "live_canon": "<img alt=\"a&lt;b\" class=\"image\" src=\"http://x/y.png\">",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"a&lt;b\" class=\"image\" src=\"http://x/y.png\">"
+   ],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": ""
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"a&lt;b\" class=\"image\" src=\"http://x/y.png\">"
+   ],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": ""
+  },
+  "capture_id": "muse-probe-round5c-r2-r2c-15-image-alt-lt",
+  "ref_math_token_type": null,
+  "live_math_envelope": [],
+  "live_math_counter": [],
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "r2c-16-image-existing-pct",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<img alt=\"a%20b.png\" class=\"image\" src=\"http://x/a%20b.png\">",
+  "live_canon": "<img alt=\"a%20b.png\" class=\"image\" src=\"http://x/a%20b.png\">",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"a%20b.png\" class=\"image\" src=\"http://x/a%20b.png\">"
+   ],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": ""
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"a%20b.png\" class=\"image\" src=\"http://x/a%20b.png\">"
+   ],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": ""
+  },
+  "capture_id": "muse-probe-round5c-r2-r2c-16-image-existing-pct",
+  "ref_math_token_type": null,
+  "live_math_envelope": [],
+  "live_math_counter": [],
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "r2c-17-embed-vbscript",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": true,
+  "ref_canon": "<p></p>",
+  "live_canon": "",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": ""
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "equation": [],
+   "eqnum": [],
+   "text": ""
+  },
+  "capture_id": "muse-probe-round5c-r2-r2c-17-embed-vbscript",
+  "ref_math_token_type": null,
+  "live_math_envelope": [],
+  "live_math_counter": [],
+  "final_verdict": "CLEARED",
+  "reason": "owned Stage 2 tidy frame; the reference's empty <p></p> wrapper is dropped by Stage 2, byte-identical to live's empty result"
+ },
+ {
+  "id": "r2c-18-embed-nomatch",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": true,
+  "ref_canon": "<p><div class=\"error-block\">Sorry, no match for the embedded content.</div></p>",
+  "live_canon": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [
+    "<div class=\"error-block\">Sorry, no match for the embedded content.</div>"
+   ],
+   "equation": [],
+   "eqnum": [],
+   "text": "Sorry, no match for the embedded content."
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [
+    "<div class=\"error-block\">Sorry, no match for the embedded content.</div>"
+   ],
+   "equation": [],
+   "eqnum": [],
+   "text": "Sorry, no match for the embedded content."
+  },
+  "capture_id": "muse-probe-round5c-r2-r2c-18-embed-nomatch",
+  "ref_math_token_type": null,
+  "live_math_envelope": [],
+  "live_math_counter": [],
+  "final_verdict": "CLEARED",
+  "reason": "owned Stage 2 tidy frame; tidy hoists the error div out of the paragraph, byte-identical to live, as in R5B-R2"
+ }
+]

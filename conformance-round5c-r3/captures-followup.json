@@ -1,0 +1,32 @@
+{
+ "R3C-19": {
+  "fullname": "muse-probe-round5c-r3-r3c-19",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>\n</div>",
+  "html_sha256": "9a433756f6c93079ca2faf49d827011e130ad08752d11db407983fc244a3c003",
+  "source": "[[footnote]]@@@@\n\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "a96a0847a2f41d651b4b2eb12917c425e9118572e5e9fefea5aeb9dcd6ebc1fa",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R3C-20": {
+  "fullname": "muse-probe-round5c-r3-r3c-20",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br />\n@@@@</div>\n</div>",
+  "html_sha256": "d2b3217180b45e60b462b3f7e26ac0dd738e794693fa86e39c79b7d18bfd75f9",
+  "source": "[[footnote]]@@@@\n@@@@@@@@[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "b95d33601b7742c21fd7dbffb81c17524e9bfd58773f093a78f7c50bf3444cc3",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R3C-21": {
+  "fullname": "muse-probe-round5c-r3-r3c-21",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>\n</div>",
+  "html_sha256": "9a433756f6c93079ca2faf49d827011e130ad08752d11db407983fc244a3c003",
+  "source": "[[footnote]]@@@@\n\n\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "db49ed1b752a6bc5849d093fe6050b2a68d7a9e27558a33b12776869729010cd",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

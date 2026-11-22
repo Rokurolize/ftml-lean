@@ -1,0 +1,152 @@
+{
+ "R5CR1-D1": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-d1",
+  "html": "<div id=\"\">\n<p>body</p>\n</div>",
+  "html_sha256": "2061a590abcadc604490830cf36c644802ef287f597b83cd98f5034bb4376101",
+  "source": "[[div id=\"u-[[size 12px]]x[[/size]]\"]]\nbody\n[[/div]]",
+  "source_sha256": "7ec908df5ee9ae4ec57fe18cd80f523f2aa7a9ca3fc78106c3131fc91a5120e6",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5CR1-D2": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-d2",
+  "html": "<div id=\"\">\n<p>body</p>\n</div>",
+  "html_sha256": "2061a590abcadc604490830cf36c644802ef287f597b83cd98f5034bb4376101",
+  "source": "[[div id=\"U-[[size 12px]]x[[/size]]\"]]\nbody\n[[/div]]",
+  "source_sha256": "e8bb7d73ee0fe01608cab9cd137f3ed8c7b10b92e48c5d23a72b825b8ba45373",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5CR1-D3": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-d3",
+  "html": "<div id=\"\">\n<p>body</p>\n</div>",
+  "html_sha256": "2061a590abcadc604490830cf36c644802ef287f597b83cd98f5034bb4376101",
+  "source": "[[div id=\"  [[size 12px]]x[[/size]]\"]]\nbody\n[[/div]]",
+  "source_sha256": "9ac0d0cc0232a2b267ffca22de94a5bf69787045c1074675c28757e3cebad1f7",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5CR1-D4": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-d4",
+  "html": "<div role=\"\">\n<p>body</p>\n</div>",
+  "html_sha256": "6266990524d3b1528971c57fe470acb4d344c9616dc9fa064a724ccc8df648ac",
+  "source": "[[div role=\"[[size 12px]]x[[/size]]\"]]\nbody\n[[/div]]",
+  "source_sha256": "8074fa925f0031a9fab4caaa2de48f521d98a931f97776495ad89f5800c1b921",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5CR1-D5": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-d5",
+  "html": "<div id=\"\">body</div>",
+  "html_sha256": "2cb0bf17f86dc38533a8ae4d906e0163112b44fd65966d93fd3affa9920993ca",
+  "source": "[[div_ id=\"[[size 12px]]x[[/size]]\"]]\nbody\n[[/div]]",
+  "source_sha256": "9d1d8fc66e93f0f530f38838a6c8d652135340d4199683a2123070f37252f6d8",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5CR1-D6": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-d6",
+  "html": "<div data-x=\"\">\n<p>body</p>\n</div>",
+  "html_sha256": "bc7318c23ce6b46dba57d8509e9542cda82ab5dcccfe3008e52032d85722e47e",
+  "source": "[[div data-X=\"[[size 12px]]x[[/size]]\"]]\nbody\n[[/div]]",
+  "source_sha256": "66d77e4d7c017e8cbe740b8b9242f9c4249ce0aae529a24b616ce14d4f50697e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5CR1-N1": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-n1",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br /></div>\n</div>",
+  "html_sha256": "2dd69a97242cf0ef6919dc0302b248b92358824ceeba915a03f2338b0b654941",
+  "source": "[[footnote]]@@@@  \n  @@@@[[/footnote]]\n\n[[footnoteblock]]",
+  "source_sha256": "77044dd6c4658f39a059d3861ff729e17353f5a130c5b7e71bb9ef5423b39e8e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5CR1-N3": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-n3",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. &nbsp;<br />\n&nbsp;</div>\n</div>",
+  "html_sha256": "b08e46c097a4262d7f005a03c2d962c39edd8af215dcb8d87d6e90f98d706180",
+  "source": "[[footnote]]@@@@ \n @@@@[[/footnote]]\n\n[[footnoteblock]]",
+  "source_sha256": "28d98b523fc9af2bb9490cbf246bfc25812352f7094c2b65190d15758e404418",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5CR1-N4": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-n4",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. <span style=\"white-space: pre-wrap;\">a</span><br /></div>\n</div>",
+  "html_sha256": "01a8bbdadcad5d06612232639e120e58c25d99573cada839b93e606770ba8d37",
+  "source": "[[footnote]]@@a@@\n@@@@[[/footnote]]\n\n[[footnoteblock]]",
+  "source_sha256": "956fd68cd2a3dd83f5b0e1bc9a5e582835e86c4786684538e3bf78f4f8f382e9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5CR1-N5": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-n5",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br />\n<span style=\"white-space: pre-wrap;\">b</span></div>\n</div>",
+  "html_sha256": "882c00d9863ed25e9155f2e84d97a69d9aea0332db9a3ad001070f4c22c46ae2",
+  "source": "[[footnote]]@@@@\n@@b@@[[/footnote]]\n\n[[footnoteblock]]",
+  "source_sha256": "b693a6db57f5235233c55441444d8008ecf3d694a6a715aae628935ec734dae0",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5CR1-K1": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-k1",
+  "html": "<div class=\"collapsible-block\">\n<div class=\"collapsible-block-folded\" style=\"display:none\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block</a></div>\n<div class=\"collapsible-block-unfolded\">\n<div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div>\n<div class=\"collapsible-block-content\">\n<p>body</p>\n</div>\n<div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div>\n</div>\n</div>",
+  "html_sha256": "3600ff5fb01d001c983c386cfa964e87d414b0b39310732defac47121160dd52",
+  "source": "[[collapsible folded=\"false\" hideLocation=\"both\"]]body[[/collapsible]]",
+  "source_sha256": "7097785d8157a33495b8c7ff77e4cc1994cab70450e65aba5e6acb51da103564",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5CR1-K2": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-k2",
+  "html": "<div class=\"collapsible-block\">\n<div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block</a></div>\n<div class=\"collapsible-block-unfolded\" style=\"display:none\">\n<div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div>\n<div class=\"collapsible-block-content\">\n<p>body</p>\n</div>\n</div>\n</div>",
+  "html_sha256": "be3921efca1e85f43f942aeb106d1cc2088913dbfe2479435dc91d87db003ac4",
+  "source": "[[collapsible hideLocation=\"middle\"]]body[[/collapsible]]",
+  "source_sha256": "4a8f7ebc7ee5b098057a6e76d34e81c4c17351e3918c71a7c85c199312001fc0",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5CR1-T2": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-t2",
+  "html": "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common--javascript/yahooui/tabview-min.js\"></script>\n<div id=\"wiki-tabview-451723a63443f8cc2076b7ec1eedd466\" class=\"yui-navset\">\n<ul class=\"yui-nav\">\n<li class=\"selected\"><a href=\"javascript:;\"><em>one</em></a></li>\n<li><a href=\"javascript:;\"></a></li>\n</ul>\n<div class=\"yui-content\">\n<div id=\"wiki-tab-0-0\">\n<p>a</p>\n</div>\n<div id=\"wiki-tab-0-1\" style=\"display:none\">\n<p>c</p>\n</div>\n</div>\n</div>\n<script type=\"text/javascript\">\n//<![CDATA[\nOZONE.dom.onDomReady(function(){\n        var tabView451723a63443f8cc2076b7ec1eedd466 = new YAHOO.widget.TabView('wiki-tabview-451723a63443f8cc2076b7ec1eedd466');\n                }, \"dummy-ondomready-block\");\n        \n//]]>\n</script>",
+  "html_sha256": "7ec49b0fd60e8ca0f66f3bd8c8997c41d7340bfeb79e9f31688855a39f42e78e",
+  "source": "[[tabview]][[tab title=\"one\"]]a[[/tab]][[tab title=\"b [[size 12px]]x[[/size]]\"]]c[[/tab]][[/tabview]]",
+  "source_sha256": "e6278df7fd6a12ec372841c450cf5b0423fe3d743655a275f0ea7c8eae96ae74",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5CR1-L2": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-l2",
+  "html": "<ul class=\"a&amp;b\">\n<li class=\"c&amp;d\">x</li>\n</ul>\n<br />",
+  "html_sha256": "7b91085ed900109210ebabce17cc90af2338feec0e0ba8ecf14e51b2c518b8cf",
+  "source": "[[ul class=\"a&b\"]]\n[[li class=\"c&d\"]]x[[/li]]\n[[/ul]]",
+  "source_sha256": "f02371487ba5c583654264e14889f79f82a382ba3c46c4491265e8c4da9160a5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5CR1-Z2": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-z2",
+  "html": "<p><span style=\"font-size:12.5%;\">x</span></p>",
+  "html_sha256": "59c28fb1c6c818343dd5248857a4d207cac32ec75ae8c7830c1048b6d142a294",
+  "source": "[[size 12.5%]]x[[/size]]",
+  "source_sha256": "92920a41060f4ecf2545d7245efde26b60313887a08a7032bd23364436082166",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

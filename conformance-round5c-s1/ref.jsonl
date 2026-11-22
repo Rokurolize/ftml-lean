@@ -1,0 +1,20 @@
+{"id":"s01-fn-newline-in-div","output":"<p>[[div class=&quot;c&quot;]]<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1<\/a><\/sup><br \/>\n[[\/div]]<\/p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes<\/div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1<\/a>.<br \/>\n<\/div><\/div>"}
+{"id":"s02-fn-newline-with-toc","output":"<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1<\/a><\/sup><\/p>\n\n<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold<\/a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold<\/a><\/div><div class=\"title\">Table of Contents<\/div><div id=\"toc-list\">\n<\/div><\/div><\/td><\/tr><\/table>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes<\/div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1<\/a>.<br \/>\n<\/div><\/div>"}
+{"id":"s03-fn-newline-with-anchor","output":"<p>[[a tgt]]<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1<\/a><\/sup><\/p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes<\/div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1<\/a>.<br \/>\n<\/div><\/div>"}
+{"id":"s04-fl-ff-pipe-label","output":"<p>A <a class=\"newpage\" href=\"\/cafe\">\u00c9tiquette<\/a> B<\/p>\n\n"}
+{"id":"s05-fl-u2028-colon-pipe","output":"<p>A <a class=\"newpage\" href=\"\/cafe:sub\">L<\/a> B<\/p>\n\n"}
+{"id":"s06-fl-bom-upper-pipe","output":"<p>A <a class=\"newpage\" href=\"\/cafe\">L<\/a> B<\/p>\n\n"}
+{"id":"s07-fl-star-leadbyte-pipe","output":"<p>A <a class=\"newpage\" href=\"\/cafe\">Label<\/a> B<\/p>\n\n"}
+{"id":"s08-math-variant-with-attrs","output":"<p>[[math a TYPe=&quot;align&quot; style=&quot;s&quot; data-x=&quot;1&quot;]]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"s09-math-lower-plus-variant","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"s10-div-ph-id-ph-class","output":"<div id=\"\" class=\"\" data-foo=\"2\"><p>X<\/p>\n\n<\/div>"}
+{"id":"s11-div-ph-id-u-prefix","output":"<div><p>X<\/p>\n\n<\/div>"}
+{"id":"s12-raw-2close-plus-text","output":"<p>A ZQ@@ B<\/p>\n\n"}
+{"id":"s13-raw-3close-plus-text-run","output":"<p>A ZQ@@@ B C<\/p>\n\n"}
+{"id":"s14-table-dup-underscore","output":"<table data-foo_bar=\"2\">\n<tr>\n<td>C<\/td>\n<\/tr>\n<\/table>"}
+{"id":"s15-table-dup-underscore-cell","output":"<table>\n<tr data-foo_bar=\"2\">\n<td data-foo_bar=\"3\">C<\/td>\n<\/tr>\n<\/table>"}
+{"id":"s16-module-code-raw-closer","output":"<div class=\"error-block\">[[module <em>nosuchmod<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>\n<div class=\"code\">\n<pre><code>CODEX<\/code><\/pre><\/div>\n\n<br \/>\n<br \/>\n[[\/MODULE]]"}
+{"id":"s17-module-closer-tail","output":"<div class=\"error-block\">[[module <em>nosuchmod<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>\n<div class=\"code\">\n<pre><code>CODEX<\/code><\/pre><\/div>\n\n<br \/>\n[[\/Module]]TAIL"}
+{"id":"s18-li-lower-after-failed-close","output":"<ul>\n<li>A<li>B<br \/>"}
+{"id":"s19-li-attr-after-failed-close","output":"<ul>\n<li>A<li class=\"x\">B<br \/>"}
+{"id":"s20-li-empty-raw-item","output":"<ul>\n<li> <br \/>"}

@@ -1,0 +1,35 @@
+wrote /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/coord-units/R5C-R2/comparison.json rows 18 {'DIFF': 8, 'CLEAR': 10}
+r2c-01-math-TyPe DIFF math_ref_type=equation live_env=['equation']
+   ref : '<div class="error-block">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>'
+   live: '<span class="equation-number">(1)</span><div class="math-equation" id="equation-1">\\begin{equation} x \\end{equation}</div>'
+r2c-02-math-tYPE DIFF math_ref_type=equation live_env=['equation']
+   ref : '<div class="error-block">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>'
+   live: '<span class="equation-number">(1)</span><div class="math-equation" id="equation-1">\\begin{equation} x \\end{equation}</div>'
+r2c-03-math-dual-attrs DIFF math_ref_type=align live_env=['align']
+   ref : '<div class="error-block">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>'
+   live: '<span class="equation-number">(1)</span><div class="math-equation" id="equation-1">\\begin{align} x \\end{align}</div>'
+r2c-04-math-typeeq DIFF math_ref_type=align live_env=['equation']
+   ref : '<div class="error-block">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>'
+   live: '<span class="equation-number">(1)</span><div class="math-equation" id="equation-1">\\begin{equation} x \\end{equation}</div>'
+r2c-05-mathinline-amp-entity CLEAR math_ref_type=None live_env=[]
+r2c-06-freelink-u2029 DIFF math_ref_type=None live_env=[]
+   ref : '<p><a href="/_default:x">x</a></p>'
+   live: '<p><a href="/x">x</a></p>'
+r2c-07-freelink-double-lead CLEAR math_ref_type=None live_env=[]
+r2c-08-freelink-star-space CLEAR math_ref_type=None live_env=[]
+r2c-09-freelink-other-cat CLEAR math_ref_type=None live_env=[]
+r2c-10-freelink-hashroute DIFF math_ref_type=None live_env=[]
+   ref : '<p><a href="/foo#/bar">foo</a></p>'
+   live: '<p><a href="/foo#/bar">foo/</a></p>'
+r2c-11-url-raw-nonascii CLEAR math_ref_type=None live_env=[]
+r2c-12-url-plain-labeled CLEAR math_ref_type=None live_env=[]
+r2c-13-interwiki-space CLEAR math_ref_type=None live_env=[]
+r2c-14-interwiki-dict-amp CLEAR math_ref_type=None live_env=[]
+r2c-15-image-alt-lt CLEAR math_ref_type=None live_env=[]
+r2c-16-image-existing-pct CLEAR math_ref_type=None live_env=[]
+r2c-17-embed-vbscript DIFF math_ref_type=None live_env=[]
+   ref : '<p></p>'
+   live: ''
+r2c-18-embed-nomatch DIFF math_ref_type=None live_env=[]
+   ref : '<p><div class="error-block">Sorry, no match for the embedded content.</div></p>'
+   live: '<div class="error-block">Sorry, no match for the embedded content.</div>'

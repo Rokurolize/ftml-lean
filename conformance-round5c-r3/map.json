@@ -1,0 +1,92 @@
+{
+ "R3C-01": {
+  "fullname": "muse-probe-round5c-r3-r3c-01",
+  "source": "[[footnote]]@@@@\n@@@@\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "present"
+ },
+ "R3C-02": {
+  "fullname": "muse-probe-round5c-r3-r3c-02",
+  "source": "[[footnote]]@@@@ \n @@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "present"
+ },
+ "R3C-03": {
+  "fullname": "muse-probe-round5c-r3-r3c-03",
+  "source": "[[footnote]]@@@@\t\n\t@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "present"
+ },
+ "R3C-04": {
+  "fullname": "muse-probe-round5c-r3-r3c-04",
+  "source": "[[footnote]]@@@@\n \n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "present"
+ },
+ "R3C-05": {
+  "fullname": "muse-probe-round5c-r3-r3c-05",
+  "source": "[[footnote]]@@@@\r\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "present"
+ },
+ "R3C-06": {
+  "fullname": "muse-probe-round5c-r3-r3c-06",
+  "source": "[[footnote]]\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "present"
+ },
+ "R3C-07": {
+  "fullname": "muse-probe-round5c-r3-r3c-07",
+  "source": "[[footnote]]\n[[/footnote]]\n[[footnoteblock]]",
+  "action": "present"
+ },
+ "R3C-08": {
+  "fullname": "muse-probe-round5c-r3-r3c-08",
+  "source": "[[footnote]]x@@@@\n@@@@y[[/footnote]]\n[[footnoteblock]]",
+  "action": "present"
+ },
+ "R3C-09": {
+  "fullname": "muse-probe-round5c-r3-r3c-09",
+  "source": "[[footnote]]@@x@@\n@@y@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "present"
+ },
+ "R3C-10": {
+  "fullname": "muse-probe-round5c-r3-r3c-10",
+  "source": "[[bibliography]]\n: lab : @@@@\n@@@@\n[[/bibliography]]",
+  "action": "present"
+ },
+ "R3C-11": {
+  "fullname": "muse-probe-round5c-r3-r3c-11",
+  "source": "[[footnote]]@@@@\n@@@@[[/footnote]]\n[[footnoteblock]]\n[[bibliography]]\n: b : beta\n[[/bibliography]]",
+  "action": "present"
+ },
+ "R3C-12": {
+  "fullname": "muse-probe-round5c-r3-r3c-12",
+  "source": "[[footnote]]@@@@\n@@@@[[/footnote]]\n[[footnoteblock title=\"It's A & B\"]]",
+  "action": "present"
+ },
+ "R3C-13": {
+  "fullname": "muse-probe-round5c-r3-r3c-13",
+  "source": "[[f>toc]]\n\n+ One\n\n+ Two",
+  "action": "present"
+ },
+ "R3C-14": {
+  "fullname": "muse-probe-round5c-r3-r3c-14",
+  "source": "[[toc title=\"A & B <x>\"]]\n\n+ One",
+  "action": "present"
+ },
+ "R3C-15": {
+  "fullname": "muse-probe-round5c-r3-r3c-15",
+  "source": "[[toc]]\n\n+ First\n\n+* Hidden\n\n+ Second",
+  "action": "present"
+ },
+ "R3C-16": {
+  "fullname": "muse-probe-round5c-r3-r3c-16",
+  "source": "[[toc]]\n\n+ a@@@@b\n\n+ Plain",
+  "action": "present"
+ },
+ "R3C-17": {
+  "fullname": "muse-probe-round5c-r3-r3c-17",
+  "source": "[[a href=\"/1\"]]x[[a href=\"/2\"]]y[[/a]]z[[/a]]",
+  "action": "present"
+ },
+ "R3C-18": {
+  "fullname": "muse-probe-round5c-r3-r3c-18",
+  "source": "[[a href=\"/x\"]]para1\n\npara2[[/a]]",
+  "action": "present"
+ }
+}

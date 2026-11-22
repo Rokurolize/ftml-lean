@@ -1,0 +1,200 @@
+r2c-01-math-TyPe -> muse-probe-round5c-r2-r2c-01-math-type stable=True saved_source_matches=True valid=True
+r2c-02-math-tYPE -> muse-probe-round5c-r2-r2c-02-math-type stable=True saved_source_matches=True valid=True
+r2c-03-math-dual-attrs -> muse-probe-round5c-r2-r2c-03-math-dual-attrs stable=True saved_source_matches=True valid=True
+r2c-04-math-typeeq -> muse-probe-round5c-r2-r2c-04-math-typeeq stable=True saved_source_matches=True valid=True
+r2c-05-mathinline-amp-entity -> muse-probe-round5c-r2-r2c-05-mathinline-amp-entity stable=True saved_source_matches=True valid=True
+r2c-06-freelink-u2029 -> muse-probe-round5c-r2-r2c-06-freelink-u2029 stable=True saved_source_matches=True valid=True
+r2c-07-freelink-double-lead -> muse-probe-round5c-r2-r2c-07-freelink-double-lead stable=True saved_source_matches=True valid=True
+r2c-08-freelink-star-space -> muse-probe-round5c-r2-r2c-08-freelink-star-space stable=True saved_source_matches=True valid=True
+r2c-09-freelink-other-cat -> muse-probe-round5c-r2-r2c-09-freelink-other-cat stable=True saved_source_matches=True valid=True
+r2c-10-freelink-hashroute -> muse-probe-round5c-r2-r2c-10-freelink-hashroute stable=True saved_source_matches=True valid=True
+r2c-11-url-raw-nonascii -> muse-probe-round5c-r2-r2c-11-url-raw-nonascii stable=True saved_source_matches=True valid=True
+r2c-12-url-plain-labeled -> muse-probe-round5c-r2-r2c-12-url-plain-labeled stable=True saved_source_matches=True valid=True
+r2c-13-interwiki-space -> muse-probe-round5c-r2-r2c-13-interwiki-space stable=True saved_source_matches=True valid=True
+r2c-14-interwiki-dict-amp -> muse-probe-round5c-r2-r2c-14-interwiki-dict-amp stable=True saved_source_matches=True valid=True
+r2c-15-image-alt-lt -> muse-probe-round5c-r2-r2c-15-image-alt-lt stable=True saved_source_matches=True valid=True
+r2c-16-image-existing-pct -> muse-probe-round5c-r2-r2c-16-image-existing-pct stable=True saved_source_matches=True valid=True
+r2c-17-embed-vbscript -> muse-probe-round5c-r2-r2c-17-embed-vbscript stable=True saved_source_matches=True valid=True
+r2c-18-embed-nomatch -> muse-probe-round5c-r2-r2c-18-embed-nomatch stable=True saved_source_matches=True valid=True
+{
+ "r2c-01-math-TyPe": {
+  "fullname": "muse-probe-round5c-r2-r2c-01-math-type",
+  "html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+  "html_sha256": "e504bd63f5c257493a0bd835e3359b4574ca995dfdaf283fa88623fea08d5a1f",
+  "source": "[[math TyPe=\"align\"]]\nx\n[[/math]]",
+  "source_sha256": "d10127f38945c3c8429508ab8f10bed78b441c71cbb2821b169f5090ea48bb54",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2c-02-math-tYPE": {
+  "fullname": "muse-probe-round5c-r2-r2c-02-math-type",
+  "html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+  "html_sha256": "e504bd63f5c257493a0bd835e3359b4574ca995dfdaf283fa88623fea08d5a1f",
+  "source": "[[math tYPE=\"gather\"]]\nx\n[[/math]]",
+  "source_sha256": "6eabea16e821d3815d932074b1e968d55e23c0ead4f268cf29ec3951840a67e4",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2c-03-math-dual-attrs": {
+  "fullname": "muse-probe-round5c-r2-r2c-03-math-dual-attrs",
+  "html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{align} x \\end{align}</div>",
+  "html_sha256": "d2ff6a492fc9df7ae6a68927dc59ef71a7ba40629a33ea341a90113cdcf8ee69",
+  "source": "[[math TYPE=\"gather\" type=\"align\"]]\nx\n[[/math]]",
+  "source_sha256": "aab855cf62cfdc88303565106a5baf10d11cef97c9154a8e3309c0d94faa304d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2c-04-math-typeeq": {
+  "fullname": "muse-probe-round5c-r2-r2c-04-math-typeeq",
+  "html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+  "html_sha256": "e504bd63f5c257493a0bd835e3359b4574ca995dfdaf283fa88623fea08d5a1f",
+  "source": "[[math typeeq=\"align\"]]\nx\n[[/math]]",
+  "source_sha256": "3c5e7bb75d27ede0eb859d612069fe103a733303a618affc721eb5108da0468d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2c-05-mathinline-amp-entity": {
+  "fullname": "muse-probe-round5c-r2-r2c-05-mathinline-amp-entity",
+  "html": "<p><span class=\"math-inline\">$&amp;amp; &lt;b&gt;$</span></p>",
+  "html_sha256": "9caa6ab9e7f39795d67daf3a9dd6449b089578d09e3a9ceece75189b9ffd2d14",
+  "source": "[[$ &amp; <b> $]]",
+  "source_sha256": "76121a7a2d9fc2f9716c630c63a5c0949ff47e64cf15317dcb6258c666ff7e3f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2c-06-freelink-u2029": {
+  "fullname": "muse-probe-round5c-r2-r2c-06-freelink-u2029",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[ _default:x]]]",
+  "source_sha256": "3248b486fea4856b826de01b57f54cb2f810587aaf0e34e4fa91470be92021c6",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2c-07-freelink-double-lead": {
+  "fullname": "muse-probe-round5c-r2-r2c-07-freelink-double-lead",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[\f _default:x]]]",
+  "source_sha256": "20cc03d523fde212abb044bea171e446ba0a333f613957207071698cbaec30cd",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2c-08-freelink-star-space": {
+  "fullname": "muse-probe-round5c-r2-r2c-08-freelink-star-space",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[* _default:x]]]",
+  "source_sha256": "371aafb6cd891b8811aab5afea91acd62faaf25ee121d9f7d11af71ebafead53",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2c-09-freelink-other-cat": {
+  "fullname": "muse-probe-round5c-r2-r2c-09-freelink-other-cat",
+  "html": "<p><a class=\"newpage\" href=\"/_foo:x\">x</a></p>",
+  "html_sha256": "775d17d74b0ac8c41e8996eb76729fee92e15a22668a83808f3d318c32a3f071",
+  "source": "[[[ _foo:x]]]",
+  "source_sha256": "ace049244c9cf9fe1557b7f338dd43c030dbd9cb3f840f99741afc81b10cefa1",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2c-10-freelink-hashroute": {
+  "fullname": "muse-probe-round5c-r2-r2c-10-freelink-hashroute",
+  "html": "<p><a class=\"newpage\" href=\"/foo#/bar\">foo/</a></p>",
+  "html_sha256": "fb78456199f5088fbe7ea9e0f2f19362aac018e0c0da449d871a97d0d52dcf2d",
+  "source": "[[[foo/#/bar]]]",
+  "source_sha256": "f680466a8778566104a9b5bf970982c5768d84609702ec932b502a530c71973f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2c-11-url-raw-nonascii": {
+  "fullname": "muse-probe-round5c-r2-r2c-11-url-raw-nonascii",
+  "html": "<p><a href=\"https://example.com/caf%C3%A9?q=x\">https://example.com/café?q=x</a></p>",
+  "html_sha256": "038e9711d0e1f5edc0f4953860395a357b4ccc2ac8ab16c04e1d7a06116eab9b",
+  "source": "https://example.com/café?q=x",
+  "source_sha256": "56bd6c753942e0ae91d4860e6be2ae51b775782ba84ff8c062dd1e91ecdcc852",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2c-12-url-plain-labeled": {
+  "fullname": "muse-probe-round5c-r2-r2c-12-url-plain-labeled",
+  "html": "<p><a href=\"http://example.com/x\">mail</a></p>",
+  "html_sha256": "b83a38bded3ef3d969fed337f209df5c3f2333382ee6342f9c9c77dd12a11ece",
+  "source": "[http://example.com/x mail]",
+  "source_sha256": "95f94f4f684d15706aee1960b7b0d52a58e3a202b9612e62db357a9b241dac87",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2c-13-interwiki-space": {
+  "fullname": "muse-probe-round5c-r2-r2c-13-interwiki-space",
+  "html": "<p><a href=\"https://www.google.com/search?q=a\" onclick=\"window.open(this.href, '_blank'); return false;\">b</a></p>",
+  "html_sha256": "0b865104d5836adb58e75594326a31af3605c44a8f66bf28dfe536826ea90f8c",
+  "source": "[google:a b]",
+  "source_sha256": "66077da7a990702e70b56a4ef7e02b92c0a30674ea1fa8d472fd2cea2ef9f279",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2c-14-interwiki-dict-amp": {
+  "fullname": "muse-probe-round5c-r2-r2c-14-interwiki-dict-amp",
+  "html": "<p><a href=\"https://dictionary.reference.com/browse/A&B\" onclick=\"window.open(this.href, '_blank'); return false;\">A&amp;B</a></p>",
+  "html_sha256": "5ebc4a0be27ccf808a73f9f48849ebde18ed70fb8c0cd941ae2e5db35e4dc5e4",
+  "source": "[dictionary:A&B]",
+  "source_sha256": "d59dbe750732358d90a207541da016de50685d1a53081c75a5ea0e58b7a17a2d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2c-15-image-alt-lt": {
+  "fullname": "muse-probe-round5c-r2-r2c-15-image-alt-lt",
+  "html": "<img src=\"http://x/y.png\" alt=\"a&lt;b\" class=\"image\" />",
+  "html_sha256": "6add8d9dfdafea550bc454fb3d79441ebfa5ee47f189e84207121fc8845e4389",
+  "source": "[[image http://x/y.png alt=\"a<b\"]]",
+  "source_sha256": "9382982c1e8b9fe7f11efa675421c1a6ed49c07d2bbd833b094f0a8cf5f31b93",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2c-16-image-existing-pct": {
+  "fullname": "muse-probe-round5c-r2-r2c-16-image-existing-pct",
+  "html": "<img src=\"http://x/a%20b.png\" alt=\"a%20b.png\" class=\"image\" />",
+  "html_sha256": "c85873a009bca3a50c2f21290f952d28ce0dd0180b6498d4d2cdeeabe29bd50b",
+  "source": "[[image http://x/a%20b.png]]",
+  "source_sha256": "7ec3efd586b604a8d11268bf47434bf2a33d3692271fd52917190952e0b2814a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2c-17-embed-vbscript": {
+  "fullname": "muse-probe-round5c-r2-r2c-17-embed-vbscript",
+  "html": "",
+  "html_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source": "[[embed]]<iframe src=\"vbscript:alert(1)\"></iframe>[[/embed]]",
+  "source_sha256": "8ddd390fc96e1a79f61fb907adfe80b50da19fa88cf8547147ecf0cd2abbaa77",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2c-18-embed-nomatch": {
+  "fullname": "muse-probe-round5c-r2-r2c-18-embed-nomatch",
+  "html": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "html_sha256": "0d94a629bbda9bb7b87fcaf86579d5195ffef1ffcfd644fd09babead0f4c04b0",
+  "source": "[[embed]]plain text[[/embed]]",
+  "source_sha256": "d47a60c277815db1a4e6b0c233334bc7bf19437324b9e76c91790590aa0841c2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

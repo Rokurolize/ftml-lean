@@ -1,0 +1,18 @@
+{"id":"r2c-01-math-TyPe","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"r2c-02-math-tYPE","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"r2c-03-math-dual-attrs","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"r2c-04-math-typeeq","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"r2c-05-mathinline-amp-entity","output":"<p><span class=\"math-inline\">$&amp;amp; &lt;b&gt;$<\/span><\/p>\n\n"}
+{"id":"r2c-06-freelink-u2029","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"r2c-07-freelink-double-lead","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"r2c-08-freelink-star-space","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"r2c-09-freelink-other-cat","output":"<p><a class=\"newpage\" href=\"\/_foo:x\">x<\/a><\/p>\n\n"}
+{"id":"r2c-10-freelink-hashroute","output":"<p><a class=\"newpage\" href=\"\/foo#\/bar\">foo<\/a><\/p>\n\n"}
+{"id":"r2c-11-url-raw-nonascii","output":"<p><a href=\"https:\/\/example.com\/caf%C3%A9?q=x\">https:\/\/example.com\/caf\u00e9?q=x<\/a><\/p>\n\n"}
+{"id":"r2c-12-url-plain-labeled","output":"<p><a href=\"http:\/\/example.com\/x\">mail<\/a><\/p>\n\n"}
+{"id":"r2c-13-interwiki-space","output":"<p><a href=\"https:\/\/www.google.com\/search?q=a\" onclick=\"window.open(this.href, '_blank'); return false;\">b<\/a><\/p>\n\n"}
+{"id":"r2c-14-interwiki-dict-amp","output":"<p><a href=\"https:\/\/dictionary.reference.com\/browse\/A&B\" onclick=\"window.open(this.href, '_blank'); return false;\">A&amp;B<\/a><\/p>\n\n"}
+{"id":"r2c-15-image-alt-lt","output":"<img src=\"http:\/\/x\/y.png\" alt=\"a&lt;b\" class=\"image\" \/>"}
+{"id":"r2c-16-image-existing-pct","output":"<img src=\"http:\/\/x\/a%20b.png\" alt=\"a%20b.png\" class=\"image\" \/>"}
+{"id":"r2c-17-embed-vbscript","output":"<p><\/p>\n\n"}
+{"id":"r2c-18-embed-nomatch","output":"<p><div class=\"error-block\">Sorry, no match for the embedded content.<\/div><\/p>\n\n"}

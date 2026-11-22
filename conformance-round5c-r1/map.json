@@ -1,0 +1,77 @@
+{
+ "R5CR1-D1": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-d1",
+  "source": "[[div id=\"u-[[size 12px]]x[[/size]]\"]]\nbody\n[[/div]]",
+  "action": "exists"
+ },
+ "R5CR1-D2": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-d2",
+  "source": "[[div id=\"U-[[size 12px]]x[[/size]]\"]]\nbody\n[[/div]]",
+  "action": "exists"
+ },
+ "R5CR1-D3": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-d3",
+  "source": "[[div id=\"  [[size 12px]]x[[/size]]\"]]\nbody\n[[/div]]",
+  "action": "exists"
+ },
+ "R5CR1-D4": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-d4",
+  "source": "[[div role=\"[[size 12px]]x[[/size]]\"]]\nbody\n[[/div]]",
+  "action": "exists"
+ },
+ "R5CR1-D5": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-d5",
+  "source": "[[div_ id=\"[[size 12px]]x[[/size]]\"]]\nbody\n[[/div]]",
+  "action": "exists"
+ },
+ "R5CR1-D6": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-d6",
+  "source": "[[div data-X=\"[[size 12px]]x[[/size]]\"]]\nbody\n[[/div]]",
+  "action": "exists"
+ },
+ "R5CR1-N1": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-n1",
+  "source": "[[footnote]]@@@@  \n  @@@@[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "exists"
+ },
+ "R5CR1-N3": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-n3",
+  "source": "[[footnote]]@@@@ \n @@@@[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R5CR1-N4": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-n4",
+  "source": "[[footnote]]@@a@@\n@@@@[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R5CR1-N5": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-n5",
+  "source": "[[footnote]]@@@@\n@@b@@[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R5CR1-K1": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-k1",
+  "source": "[[collapsible folded=\"false\" hideLocation=\"both\"]]body[[/collapsible]]",
+  "action": "created"
+ },
+ "R5CR1-K2": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-k2",
+  "source": "[[collapsible hideLocation=\"middle\"]]body[[/collapsible]]",
+  "action": "created"
+ },
+ "R5CR1-T2": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-t2",
+  "source": "[[tabview]][[tab title=\"one\"]]a[[/tab]][[tab title=\"b [[size 12px]]x[[/size]]\"]]c[[/tab]][[/tabview]]",
+  "action": "created"
+ },
+ "R5CR1-L2": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-l2",
+  "source": "[[ul class=\"a&b\"]]\n[[li class=\"c&d\"]]x[[/li]]\n[[/ul]]",
+  "action": "created"
+ },
+ "R5CR1-Z2": {
+  "fullname": "muse-probe-round5c-r1-r5cr1-z2",
+  "source": "[[size 12.5%]]x[[/size]]",
+  "action": "created"
+ }
+}

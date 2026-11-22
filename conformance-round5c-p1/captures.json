@@ -1,0 +1,162 @@
+{
+ "L1-C1LOWER": {
+  "fullname": "muse-probe-round5c-p1-l1-c1lower",
+  "html": "<ul>\n<li>A[[li]]B[[/li]]<br />\n[[/UL]]</li>\n</ul>",
+  "html_sha256": "a414ab9b7d4110ca605d0cab2dd21789262a5459b2ae9105092c6e9f65b3ea33",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[li]]B[[/li]]\n[[/UL]]",
+  "source_sha256": "248dcd17e01f3c0c6fcb6fdc363923f6e86c7fe25e18facd1356079fa9cf8252",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "L2-C1MIXCLOSE": {
+  "fullname": "muse-probe-round5c-p1-l2-c1mixclose",
+  "html": "<ul>\n<li>A[[LI]]B[[/LI]]<br />\n[[/UL]]</li>\n</ul>",
+  "html_sha256": "c4d87f83bea9dd4b152ee152a824e4523dad20eb3199c959c7a70a4be10a4c58",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/Ul]]\n[[LI]]B[[/LI]]\n[[/UL]]",
+  "source_sha256": "21d244caa286f1c0943219782420a849724ab2ead8af43a7bff6060ac86a0eb7",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "L3-C1MULTI": {
+  "fullname": "muse-probe-round5c-p1-l3-c1multi",
+  "html": "<ul>\n<li>A<br />\nB[[LI]]C[[/LI]]<br />\n[[/UL]]</li>\n</ul>",
+  "html_sha256": "dbdb136f56d2f2a716588e7a19da0eb09f995c486cf030de8abd10e30893e20a",
+  "source": "[[UL]]\n[[LI]]A\nB[[/LI]]\n[[/UL]]\n[[LI]]C[[/LI]]\n[[/UL]]",
+  "source_sha256": "8b1d00367d9215b0257ebeb1b3d2c50c8bc9b82045b1febf82fd11775b719c1c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "L4-C2ATTR": {
+  "fullname": "muse-probe-round5c-p1-l4-c2attr",
+  "html": "<ul>\n<li>a<br /></li>\n<li>bAFTER</li>\n</ul>",
+  "html_sha256": "3cf40033da45bc13a6ad2b8ac7443ff3af232dc42d190440f5e0ded07bce41e3",
+  "source": "[[UL]]\n[[li]]a\n[[OL class=\"c\"]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]AFTER",
+  "source_sha256": "78e4d8560c1c9b2c92a92aa55c997ad215d5550b10d557c8147a202f86eaee3f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "L5-C2TAILNL": {
+  "fullname": "muse-probe-round5c-p1-l5-c2tailnl",
+  "html": "<ul>\n<li>a<br /></li>\n<li>bAFTER<br />\nMORE</li>\n</ul>",
+  "html_sha256": "319f1f4abfb665fee74d51e3b76f0210faea527efc7140e3822cd7e6666f6884",
+  "source": "[[UL class=\"c\"]]\n[[li]]a\n[[OL]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]AFTER\nMORE",
+  "source_sha256": "8ef5c421df8af38c25d818fb969eb02b35d5fdd8a8a26a7231f7ee9bf7fae4ea",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "L6-C3INNERUL": {
+  "fullname": "muse-probe-round5c-p1-l6-c3innerul",
+  "html": "<ul>\n<li>a<br />\n<ul>\n<li style=\"list-style: none\">[[li]]b</li>\n</ul>\nAFTER</li>\n</ul>\n[[/li]]<br />\n[[/ul]]TAIL",
+  "html_sha256": "b00bdd903725cef03f61b03b0a34dbc8450ed1452073974493a5ff761b6bde86",
+  "source": "[[ul]]\n[[li]]a\n[[ul]]\n[[li]]b[[/li]]\n[[/UL]]AFTER\n[[/ul]]\n[[/li]]\n[[/ul]]TAIL",
+  "source_sha256": "2a36cc96ba41baf215865672da6b45e0e0228739780c614df14321343952d208",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "L7-C3ITEMNL": {
+  "fullname": "muse-probe-round5c-p1-l7-c3itemnl",
+  "html": "<ul>\n<li>a<br />\n<ol>\n<li style=\"list-style: none\">[[li]]b<br />\nb2</li>\n</ol>\nAFTER</li>\n</ul>\n[[/li]]<br />\n[[/ul]]TAIL",
+  "html_sha256": "3a9203587e8e88e53d65177f82dc73c3c1cf634f5edcb37823699887a2f6dc66",
+  "source": "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b\nb2[[/li]]\n[[/UL]]AFTER\n[[/ol]]\n[[/li]]\n[[/ul]]TAIL",
+  "source_sha256": "a4cada1947f19b2e110d2c619a29aba57086fe34236ffd6832fc8a96a4035de9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "L8-C4NESTED": {
+  "fullname": "muse-probe-round5c-p1-l8-c4nested",
+  "html": "<ul>\n<li><br /></li>\n</ul>\n<ul>\n<li>x</li>\n</ul>\n<br />",
+  "html_sha256": "657a51221093482110e5e53b8942d44403d6312f5b74141885504aa5f18823ec",
+  "source": "[[UL]]\n[[LI]] \t \n[[ul]]\n[[li]]x[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]",
+  "source_sha256": "c5fbf5ff6c4cc58160023144ed65d56bebc3f6e4461389bc0e58db54f8ba7138",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "L9-C4SCORED": {
+  "fullname": "muse-probe-round5c-p1-l9-c4scored",
+  "html": "<ul>\n<li>",
+  "html_sha256": "4fb98ae4a4cebc215e5a384b0e4e7e3ff7a593a68a2271a5903b91d36c17d03c",
+  "source": "[[UL_]]\n[[LI]] \t [[/LI]]\n[[/UL]]",
+  "source_sha256": "06b39da5b3880beea211bc1eae15c38d24a5096387525fd8677d8957e5365847",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "D1-DATAEMPTYFIRST": {
+  "fullname": "muse-probe-round5c-p1-d1-dataemptyfirst",
+  "html": "<div data-foo=\"2\">\n<p>X</p>\n</div>",
+  "html_sha256": "0670e39fb5547ae0b2eadf6a42ac80fb3a35e47c126a2b9a52ee3a6e8fa41089",
+  "source": "[[div data-Foo=\"\" data-foo=\"2\"]]\nX[[/div]]",
+  "source_sha256": "b3a761d5996e1f2e1217b97dd0dca5a93d804e6083c61f3f7b2cccd4708d703b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "D2-DATAEMPTYMID": {
+  "fullname": "muse-probe-round5c-p1-d2-dataemptymid",
+  "html": "<div data-foo=\"\">\n<p>X</p>\n</div>",
+  "html_sha256": "7ccf9ed208916165e2f5aa66de662c1c5d4f7d3f30d25f8e8b9d0fa4957adf2a",
+  "source": "[[div data-Foo=\"1\" data-foo=\"\" DATA-FOO=\"3\"]]\nX[[/div]]",
+  "source_sha256": "ae778089870e7803127ac35b727f7500b12d4715de7f02a705694ff6865f7848",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "P1-SCOREDSPAN": {
+  "fullname": "muse-probe-round5c-p1-p1-scoredspan",
+  "html": "<p>A<span>X</span>B</p>",
+  "html_sha256": "362407bc6e2ecd9a129ac08dfa5ea4913056acb70faa1d1ef7807177602eb64c",
+  "source": "A\n[[span_]]X[[/span]]\nB",
+  "source_sha256": "8856012b5fb289779751d813ff3d706c6a64a43913d6e23cea4bc1bb954ac002",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "N1-BRK2SPACE": {
+  "fullname": "muse-probe-round5c-p1-n1-brk2space",
+  "html": "<p>a<br />\nb</p>",
+  "html_sha256": "a9cbfe60373c4c33a399fbc904966ca82bc750eed50beb32adf283236c9a9dfa",
+  "source": "a  _\nb",
+  "source_sha256": "ea26637a2997042a859f7653712f643c18610a60d4726a653032c64ba27bd8da",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "B1-DEEPTOBRANCH": {
+  "fullname": "muse-probe-round5c-p1-b1-deeptobranch",
+  "html": "<blockquote>\n<blockquote>\n<blockquote>\n<p>a</p>\n</blockquote>\n</blockquote>\n<p>b</p>\n</blockquote>",
+  "html_sha256": "f32d9a225f2a1b2a30bc40c2b6e1f4b8ce5847ca1b32dc85e34937ed9b71bd34",
+  "source": ">>> a\n> b",
+  "source_sha256": "88323b8e7bc87b2c3faaf4fa451f78172d4b695920ab0b7e1e22347b999bf90f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "T1-TABTITLEATLT": {
+  "fullname": "muse-probe-round5c-p1-t1-tabtitleatlt",
+  "html": "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common--javascript/yahooui/tabview-min.js\"></script>\n<div id=\"wiki-tabview-5a9c2fdcd196bc79d813b01546724854\" class=\"yui-navset\">\n<ul class=\"yui-nav\">\n<li class=\"selected\"><a href=\"javascript:;\"></a></li>\n</ul>\n<div class=\"yui-content\">\n<div id=\"wiki-tab-0-0\">\n<p>X</p>\n</div>\n</div>\n</div>\n<script type=\"text/javascript\">\n//<![CDATA[\nOZONE.dom.onDomReady(function(){\n        var tabView5a9c2fdcd196bc79d813b01546724854 = new YAHOO.widget.TabView('wiki-tabview-5a9c2fdcd196bc79d813b01546724854');\n                }, \"dummy-ondomready-block\");\n        \n//]]>\n</script>",
+  "html_sha256": "d8472edd931c2bc47c70ef8dbdb2974c0a729994bbbf78be27887db7d50760ad",
+  "source": "[[tabview]]\n[[tab @<Label>@]]X[[/tab]]\n[[/tabview]]",
+  "source_sha256": "a20d4c10339a8faedf343ea08a384828ff0aee37834374b0fe5232f7541c1983",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "C1-COLLNEST": {
+  "fullname": "muse-probe-round5c-p1-c1-collnest",
+  "html": "<div class=\"collapsible-block\">\n<div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block</a></div>\n<div class=\"collapsible-block-unfolded\" style=\"display:none\">\n<div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div>\n<div class=\"collapsible-block-content\">\n<p>A[[collapsible]]B</p>\n</div>\n</div>\n</div>\nC[[/collapsible]]",
+  "html_sha256": "8fbcfdf4be743137d07dd1e86a4db0542969fec66f004e9a71ed021a984815e4",
+  "source": "[[collapsible]]A[[collapsible]]B[[/collapsible]]C[[/collapsible]]",
+  "source_sha256": "6c34ad5a74fa99aef005b9cf78d61993ccdf3c2391e295728df2945d079a1bf5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

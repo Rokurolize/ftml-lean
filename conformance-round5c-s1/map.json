@@ -1,0 +1,102 @@
+{
+ "s01-fn-newline-in-div": {
+  "fullname": "muse-probe-round5c-s1-s01-fn-newline-in-div",
+  "source": "[[div class=\"c\"]]\n[[footnote]]@@@@\n@@@@[[/footnote]]\n[[/div]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "s02-fn-newline-with-toc": {
+  "fullname": "muse-probe-round5c-s1-s02-fn-newline-with-toc",
+  "source": "[[footnote]]@@@@\n@@@@[[/footnote]]\n[[toc]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "s03-fn-newline-with-anchor": {
+  "fullname": "muse-probe-round5c-s1-s03-fn-newline-with-anchor",
+  "source": "[[a tgt]]\n[[footnote]]@@@@\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "s04-fl-ff-pipe-label": {
+  "fullname": "muse-probe-round5c-s1-s04-fl-ff-pipe-label",
+  "source": "A [[[\f_default:Café|Étiquette]]] B",
+  "action": "created"
+ },
+ "s05-fl-u2028-colon-pipe": {
+  "fullname": "muse-probe-round5c-s1-s05-fl-u2028-colon-pipe",
+  "source": "A [[[ _default:Café:sub|L]]] B",
+  "action": "created"
+ },
+ "s06-fl-bom-upper-pipe": {
+  "fullname": "muse-probe-round5c-s1-s06-fl-bom-upper-pipe",
+  "source": "A [[[﻿_DEFAULT:Café|L]]] B",
+  "action": "created"
+ },
+ "s07-fl-star-leadbyte-pipe": {
+  "fullname": "muse-probe-round5c-s1-s07-fl-star-leadbyte-pipe",
+  "source": "A [[[*\f_default:Café|Label]]] B",
+  "action": "created"
+ },
+ "s08-math-variant-with-attrs": {
+  "fullname": "muse-probe-round5c-s1-s08-math-variant-with-attrs",
+  "source": "[[math a TYPe=\"align\" style=\"s\" data-x=\"1\"]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "s09-math-lower-plus-variant": {
+  "fullname": "muse-probe-round5c-s1-s09-math-lower-plus-variant",
+  "source": "[[math type=\"gather\" TYPe=\"align\"]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "s10-div-ph-id-ph-class": {
+  "fullname": "muse-probe-round5c-s1-s10-div-ph-id-ph-class",
+  "source": "[[div id=\"[[size 12px]]x[[/size]]\" class=\"@@@@\" data-Foo=\"1\" data-foo=\"2\"]]\nX[[/div]]",
+  "action": "created"
+ },
+ "s11-div-ph-id-u-prefix": {
+  "fullname": "muse-probe-round5c-s1-s11-div-ph-id-u-prefix",
+  "source": "[[div id=\"u-[[size 12px]]x[[/size]]\"]]\nX[[/div]]",
+  "action": "created"
+ },
+ "s12-raw-2close-plus-text": {
+  "fullname": "muse-probe-round5c-s1-s12-raw-2close-plus-text",
+  "source": "A @@@@ZQ@@ B",
+  "action": "created"
+ },
+ "s13-raw-3close-plus-text-run": {
+  "fullname": "muse-probe-round5c-s1-s13-raw-3close-plus-text-run",
+  "source": "A @@@@ZQ@@@ B @@@@ C",
+  "action": "created"
+ },
+ "s14-table-dup-underscore": {
+  "fullname": "muse-probe-round5c-s1-s14-table-dup-underscore",
+  "source": "[[table data-Foo_Bar=\"1\" data-foo_bar=\"2\"]]\n[[row]]\n[[cell]]\nC\n[[/cell]]\n[[/row]]\n[[/table]]",
+  "action": "created"
+ },
+ "s15-table-dup-underscore-cell": {
+  "fullname": "muse-probe-round5c-s1-s15-table-dup-underscore-cell",
+  "source": "[[table]]\n[[row data-Foo_Bar=\"1\" data-foo_bar=\"2\"]]\n[[cell data-Foo_Bar=\"3\" DATA-BAZ_QUX=\"4\"]]\nC\n[[/cell]]\n[[/row]]\n[[/table]]",
+  "action": "created"
+ },
+ "s16-module-code-raw-closer": {
+  "fullname": "muse-probe-round5c-s1-s16-module-code-raw-closer",
+  "source": "[[module nosuchmod]]\n[[code]]CODEX[[/code]]\n@@@@\n[[/MODULE]]",
+  "action": "created"
+ },
+ "s17-module-closer-tail": {
+  "fullname": "muse-probe-round5c-s1-s17-module-closer-tail",
+  "source": "[[module nosuchmod]]\n[[code]]CODEX[[/code]]\n[[/Module]]TAIL",
+  "action": "created"
+ },
+ "s18-li-lower-after-failed-close": {
+  "fullname": "muse-probe-round5c-s1-s18-li-lower-after-failed-close",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[li]]B[[/li]]\n[[/UL]]",
+  "action": "created"
+ },
+ "s19-li-attr-after-failed-close": {
+  "fullname": "muse-probe-round5c-s1-s19-li-attr-after-failed-close",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI class=\"x\"]]B[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "s20-li-empty-raw-item": {
+  "fullname": "muse-probe-round5c-s1-s20-li-empty-raw-item",
+  "source": "[[UL]]\n[[LI]]@@@@ @@@@[[/LI]]\n[[/UL]]",
+  "action": "created"
+ }
+}

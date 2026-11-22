@@ -1,0 +1,21 @@
+{"id": "p3c-01-raw-3-2", "source": "@@@ZQ@@"}
+{"id": "p3c-02-raw-5-2", "source": "@@@@@ZQ@@"}
+{"id": "p3c-03-raw-6-2", "source": "@@@@@@ZQ@@"}
+{"id": "p3c-04-raw-2-3", "source": "@@ZQ@@@"}
+{"id": "p3c-05-tableadv-data-dot", "source": "[[table data-Foo.Bar=\"UB\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3c-06-tableadv-data-trailing-us", "source": "[[table data-foo_=\"UB\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3c-07-tableadv-data-leading-digit", "source": "[[table data-9foo=\"UB\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3c-08-tableadv-data-mixed-us-dash", "source": "[[table data-Foo_Bar-Baz=\"UB\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3c-09-tableadv-cell-data-underscore", "source": "[[table]]\n[[row]]\n[[cell data-Foo_Bar=\"UB\"]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3c-10-module-mixed-closer", "source": "[[module nosuchmod]]\n[[code]]CODEX[[/code]]\n[[/Module]]"}
+{"id": "p3c-11-module-upper-opener", "source": "[[MODULE nosuchmod]]\n[[code]]CODEX[[/code]]\n[[/module]]"}
+{"id": "p3c-12-module-nested", "source": "[[module nosuchmod]]\n[[module inner]]INNER[[/module]]\n[[/module]]"}
+{"id": "p3c-13-include-reverse-cascade", "source": "[[include muse-probe-round5c-p3-t-fold | a=AA | b={$a}]]"}
+{"id": "p3c-14-include-tight-pipe", "source": "[[include muse-probe-round5c-p3-t-text|a=A]]"}
+{"id": "p3c-15-include-nested-target", "source": "[[include muse-probe-round5c-p3-t-nested]]"}
+{"id": "p3c-16-form-with-separator", "source": "[[form]]\nFIELDA = text\n---\nDATAX\n[[/form]]"}
+{"id": "p3c-17-table-leading-span", "source": "PRE\n||||||H||\nPOST"}
+{"id": "p3c-18-image-link-leading-space", "source": "[[image IMG.png link=\" http://example.com/x\"]]"}
+{"id": "p3c-19-image-size-upper", "source": "[[image IMG.png size=\"LARGE\"]]"}
+{"id": "p3c-20-gallery-size", "source": "[[gallery size=\"small\"]]\n: img1.png\n: img2.png\n[[/gallery]]"}
+{"id": "p3c-21-file-multi-pipe", "source": "[[file page/a.png|Label|extra]]"}

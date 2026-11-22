@@ -1,0 +1,113 @@
+r2c-01-math-TyPe -> muse-probe-round5c-r2-r2c-01-math-type (exists)
+r2c-02-math-tYPE -> muse-probe-round5c-r2-r2c-02-math-type (exists)
+r2c-03-math-dual-attrs -> muse-probe-round5c-r2-r2c-03-math-dual-attrs (exists)
+r2c-04-math-typeeq -> muse-probe-round5c-r2-r2c-04-math-typeeq (created)
+r2c-05-mathinline-amp-entity -> muse-probe-round5c-r2-r2c-05-mathinline-amp-entity (created)
+r2c-06-freelink-u2029 -> muse-probe-round5c-r2-r2c-06-freelink-u2029 (created)
+r2c-07-freelink-double-lead -> muse-probe-round5c-r2-r2c-07-freelink-double-lead (created)
+r2c-08-freelink-star-space -> muse-probe-round5c-r2-r2c-08-freelink-star-space (created)
+r2c-09-freelink-other-cat -> muse-probe-round5c-r2-r2c-09-freelink-other-cat (created)
+2026-11-23 08:44:19,009 [wikidot/ERROR] AMC is respond status: "try_again" -> {'wikidot_token7': '***MASKED***', 'action': 'WikiPageAction', 'event': 'savePage', 'moduleName': 'Empty', 'mode': 'page', 'lock_id': '85392251', 'lock_secret': '***MASKED***', 'revision_id': '', 'wiki_page': 'muse-probe-round5c-r2-r2c-10-freelink-hashroute', 'page_id': '', 'title': '***MASKED***', 'source': '***MASKED***', 'comments': '***MASKED***'}
+r2c-10-freelink-hashroute -> muse-probe-round5c-r2-r2c-10-freelink-hashroute (created)
+r2c-11-url-raw-nonascii -> muse-probe-round5c-r2-r2c-11-url-raw-nonascii (created)
+2026-11-23 08:45:20,295 [wikidot/ERROR] AMC is respond status: "try_again" -> {'wikidot_token7': '***MASKED***', 'action': 'WikiPageAction', 'event': 'savePage', 'moduleName': 'Empty', 'mode': 'page', 'lock_id': '85392287', 'lock_secret': '***MASKED***', 'revision_id': '', 'wiki_page': 'muse-probe-round5c-r2-r2c-12-url-plain-labeled', 'page_id': '', 'title': '***MASKED***', 'source': '***MASKED***', 'comments': '***MASKED***'}
+r2c-12-url-plain-labeled -> muse-probe-round5c-r2-r2c-12-url-plain-labeled (created)
+r2c-13-interwiki-space -> muse-probe-round5c-r2-r2c-13-interwiki-space (created)
+r2c-14-interwiki-dict-amp -> muse-probe-round5c-r2-r2c-14-interwiki-dict-amp (created)
+r2c-15-image-alt-lt -> muse-probe-round5c-r2-r2c-15-image-alt-lt (created)
+r2c-16-image-existing-pct -> muse-probe-round5c-r2-r2c-16-image-existing-pct (created)
+r2c-17-embed-vbscript -> muse-probe-round5c-r2-r2c-17-embed-vbscript (created)
+r2c-18-embed-nomatch -> muse-probe-round5c-r2-r2c-18-embed-nomatch (created)
+18 probe pages left in place on sandbox-for-codex; the tool never deletes pages.
+{
+ "r2c-01-math-TyPe": {
+  "fullname": "muse-probe-round5c-r2-r2c-01-math-type",
+  "source": "[[math TyPe=\"align\"]]\nx\n[[/math]]",
+  "action": "exists"
+ },
+ "r2c-02-math-tYPE": {
+  "fullname": "muse-probe-round5c-r2-r2c-02-math-type",
+  "source": "[[math tYPE=\"gather\"]]\nx\n[[/math]]",
+  "action": "exists"
+ },
+ "r2c-03-math-dual-attrs": {
+  "fullname": "muse-probe-round5c-r2-r2c-03-math-dual-attrs",
+  "source": "[[math TYPE=\"gather\" type=\"align\"]]\nx\n[[/math]]",
+  "action": "exists"
+ },
+ "r2c-04-math-typeeq": {
+  "fullname": "muse-probe-round5c-r2-r2c-04-math-typeeq",
+  "source": "[[math typeeq=\"align\"]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "r2c-05-mathinline-amp-entity": {
+  "fullname": "muse-probe-round5c-r2-r2c-05-mathinline-amp-entity",
+  "source": "[[$ &amp; <b> $]]",
+  "action": "created"
+ },
+ "r2c-06-freelink-u2029": {
+  "fullname": "muse-probe-round5c-r2-r2c-06-freelink-u2029",
+  "source": "[[[ _default:x]]]",
+  "action": "created"
+ },
+ "r2c-07-freelink-double-lead": {
+  "fullname": "muse-probe-round5c-r2-r2c-07-freelink-double-lead",
+  "source": "[[[\f _default:x]]]",
+  "action": "created"
+ },
+ "r2c-08-freelink-star-space": {
+  "fullname": "muse-probe-round5c-r2-r2c-08-freelink-star-space",
+  "source": "[[[* _default:x]]]",
+  "action": "created"
+ },
+ "r2c-09-freelink-other-cat": {
+  "fullname": "muse-probe-round5c-r2-r2c-09-freelink-other-cat",
+  "source": "[[[ _foo:x]]]",
+  "action": "created"
+ },
+ "r2c-10-freelink-hashroute": {
+  "fullname": "muse-probe-round5c-r2-r2c-10-freelink-hashroute",
+  "source": "[[[foo/#/bar]]]",
+  "action": "created"
+ },
+ "r2c-11-url-raw-nonascii": {
+  "fullname": "muse-probe-round5c-r2-r2c-11-url-raw-nonascii",
+  "source": "https://example.com/café?q=x",
+  "action": "created"
+ },
+ "r2c-12-url-plain-labeled": {
+  "fullname": "muse-probe-round5c-r2-r2c-12-url-plain-labeled",
+  "source": "[http://example.com/x mail]",
+  "action": "created"
+ },
+ "r2c-13-interwiki-space": {
+  "fullname": "muse-probe-round5c-r2-r2c-13-interwiki-space",
+  "source": "[google:a b]",
+  "action": "created"
+ },
+ "r2c-14-interwiki-dict-amp": {
+  "fullname": "muse-probe-round5c-r2-r2c-14-interwiki-dict-amp",
+  "source": "[dictionary:A&B]",
+  "action": "created"
+ },
+ "r2c-15-image-alt-lt": {
+  "fullname": "muse-probe-round5c-r2-r2c-15-image-alt-lt",
+  "source": "[[image http://x/y.png alt=\"a<b\"]]",
+  "action": "created"
+ },
+ "r2c-16-image-existing-pct": {
+  "fullname": "muse-probe-round5c-r2-r2c-16-image-existing-pct",
+  "source": "[[image http://x/a%20b.png]]",
+  "action": "created"
+ },
+ "r2c-17-embed-vbscript": {
+  "fullname": "muse-probe-round5c-r2-r2c-17-embed-vbscript",
+  "source": "[[embed]]<iframe src=\"vbscript:alert(1)\"></iframe>[[/embed]]",
+  "action": "created"
+ },
+ "r2c-18-embed-nomatch": {
+  "fullname": "muse-probe-round5c-r2-r2c-18-embed-nomatch",
+  "source": "[[embed]]plain text[[/embed]]",
+  "action": "created"
+ }
+}

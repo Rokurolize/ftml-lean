@@ -1,0 +1,17 @@
+{
+ "t-fold": {
+  "fullname": "muse-probe-round5c-p3-t-fold",
+  "source": "A={$a} B={$b}",
+  "action": "created"
+ },
+ "t-text": {
+  "fullname": "muse-probe-round5c-p3-t-text",
+  "source": "SPLICED",
+  "action": "created"
+ },
+ "t-nested": {
+  "fullname": "muse-probe-round5c-p3-t-nested",
+  "source": "[[include muse-probe-round5c-p3-t-text]]",
+  "action": "created"
+ }
+}

@@ -1,0 +1,16 @@
+{"id":"L1-C1LOWER","output":"<ul>\n<li>A<li>B<br \/>"}
+{"id":"L2-C1MIXCLOSE","output":"<ul>\n<li>A<li>B<br \/>"}
+{"id":"L3-C1MULTI","output":"<ul>\n<li>A<br \/>\nB<li>C<br \/>"}
+{"id":"L4-C2ATTR","output":"<ul>\n<li>a<br \/><ul>\n<li style=\"list-style: none\">[[li]]b<\/li>\n<\/ul><\/li>\n<\/ul>"}
+{"id":"L5-C2TAILNL","output":"<ul>\n<li>a<br \/><ul>\n<li style=\"list-style: none\">[[li]]b<\/li>\n<\/ul><\/li>\n<\/ul>"}
+{"id":"L6-C3INNERUL","output":"<ul>\n<li style=\"list-style: none\">[[li]]a<br \/>\n<ul>\n<li>b<\/li>\n<\/ul><br \/>\nAFTER<\/li>\n<\/ul><br \/>\n[[\/li]]<br \/>\n[[\/ul]]TAIL"}
+{"id":"L7-C3ITEMNL","output":"<ul>\n<li>a<br \/>\n<ol>\n<li>b<br \/>\nb2<\/li>\n<\/ol><br \/>\nAFTER<br \/>\n[[\/ol]]<br \/><\/li>\n<\/ul>TAIL"}
+{"id":"L8-C4NESTED","output":"<ul>\n<li><ul>\n<li>x<\/li>\n<\/ul><br \/>"}
+{"id":"L9-C4SCORED","output":""}
+{"id":"D1-DATAEMPTYFIRST","output":"<div data-foo=\"2\"><p>X<\/p>\n\n<\/div>"}
+{"id":"D2-DATAEMPTYMID","output":"<div data-foo=\"\"><p>X<\/p>\n\n<\/div>"}
+{"id":"P1-SCOREDSPAN","output":"<p>A<span>X<\/span>B<\/p>\n\n"}
+{"id":"N1-BRK2SPACE","output":"<p>a <br \/>\nb<\/p>\n\n"}
+{"id":"B1-DEEPTOBRANCH","output":"<blockquote><blockquote><blockquote><p>a<\/p>\n\n<\/blockquote>\n<\/blockquote>\n<p>b<\/p>\n\n<\/blockquote>\n"}
+{"id":"T1-TABTITLEATLT","output":"<script type=\"text\/javascript\" src=\"\/common--javascript\/yahooui\/element-beta-min.js\"><\/script>\n<script type=\"text\/javascript\" src=\"\/common--javascript\/yahooui\/tabview-min.js\"><\/script><div id=\"wiki-tabview-0\" class=\"yui-navset\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><\/a><\/li><\/ul><div class=\"yui-content\"><div id=\"wiki-tab-0-0\"><p>X<\/p>\n\n<\/div><\/div><\/div><script type=\"text\/javascript\">\n(function(){\n\tvar tabView0 = new YAHOO.widget.TabView('wiki-tabview-0');\n})();\n<\/script>"}
+{"id":"C1-COLLNEST","output":"<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block<\/a><\/div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">\u2013&nbsp;hide&nbsp;block<\/a><\/div><div class=\"collapsible-block-content\"><p>A[[collapsible]]B<\/p>\n\n<\/div><\/div><\/div>C[[\/collapsible]]"}

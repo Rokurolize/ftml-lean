@@ -1,0 +1,20 @@
+{"id": "R5CP2-01", "source": "[[[\f_default:x]]]"}
+{"id": "R5CP2-02", "source": "[[[\u2028_default:x]]]"}
+{"id": "R5CP2-03", "source": "[[[\ufeff_default:x]]]"}
+{"id": "R5CP2-04", "source": "[[[*_default:x]]]"}
+{"id": "R5CP2-05", "source": "[[[\t\u000b\f \u00a0\u3000\u2028\ufeff_default:x]]]"}
+{"id": "R5CP2-06", "source": "[[[*\f_default:x]]]"}
+{"id": "R5CP2-07", "source": "[[[**_default:x]]]"}
+{"id": "R5CP2-08", "source": "[[[\u2003_default:x]]]"}
+{"id": "R5CP2-09", "source": "[[[\u202f_default:x]]]"}
+{"id": "R5CP2-10", "source": "[[[\u2009_default:x]]]"}
+{"id": "R5CP2-11", "source": "[[math a TYPE=\"align\"]]\nx\n[[/math]]"}
+{"id": "R5CP2-12", "source": "[[math a tYpE=\"align\"]]\nx\n[[/math]]"}
+{"id": "R5CP2-13", "source": "[[math a Type=\"align\"]]\nx\n[[/math]]"}
+{"id": "R5CP2-14", "source": "[[math a TyPe=\"align\"]]\nx\n[[/math]]"}
+{"id": "R5CP2-15", "source": "[[math a tYpe=\"align\"]]\nx\n[[/math]]"}
+{"id": "R5CP2-16", "source": "[[math a type=\"gather\" tYpE=\"align\"]]\nx\n[[/math]]"}
+{"id": "R5CP2-17", "source": "[[math a type=\"ALIGN\"]]\nx\n[[/math]]"}
+{"id": "R5CP2-18", "source": "[HTTP://example.com Label]"}
+{"id": "R5CP2-19", "source": "[wiki:123]"}
+{"id": "R5CP2-20", "source": "[[code]]x[[/CODE]]"}

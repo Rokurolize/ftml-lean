@@ -1,0 +1,146 @@
+[
+ {
+  "id": "L1-C1LOWER",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<ul><li>A[[li]]B[[/li]]<br> [[/UL]]</li></ul>",
+  "ref_rule": "<ul><li>A<li>B<br>"
+ },
+ {
+  "id": "L2-C1MIXCLOSE",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<ul><li>A[[LI]]B[[/LI]]<br> [[/UL]]</li></ul>",
+  "ref_rule": "<ul><li>A<li>B<br>"
+ },
+ {
+  "id": "L3-C1MULTI",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<ul><li>A<br> B[[LI]]C[[/LI]]<br> [[/UL]]</li></ul>",
+  "ref_rule": "<ul><li>A<br> B<li>C<br>"
+ },
+ {
+  "id": "L4-C2ATTR",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<ul><li>a<br></li><li>bAFTER</li></ul>",
+  "ref_rule": "<ul><li>a<br><ul><li style=\"list-style: none\">[[li]]b</li></ul></li></ul>"
+ },
+ {
+  "id": "L5-C2TAILNL",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<ul><li>a<br></li><li>bAFTER<br> MORE</li></ul>",
+  "ref_rule": "<ul><li>a<br><ul><li style=\"list-style: none\">[[li]]b</li></ul></li></ul>"
+ },
+ {
+  "id": "L6-C3INNERUL",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<ul><li>a<br><ul><li style=\"list-style: none\">[[li]]b</li></ul> AFTER</li></ul> [[/li]]<br> [[/ul]]TAIL",
+  "ref_rule": "<ul><li style=\"list-style: none\">[[li]]a<br><ul><li>b</li></ul><br> AFTER</li></ul><br> [[/li]]<br> [[/ul]]TAIL"
+ },
+ {
+  "id": "L7-C3ITEMNL",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<ul><li>a<br><ol><li style=\"list-style: none\">[[li]]b<br> b2</li></ol> AFTER</li></ul> [[/li]]<br> [[/ul]]TAIL",
+  "ref_rule": "<ul><li>a<br><ol><li>b<br> b2</li></ol><br> AFTER<br> [[/ol]]<br></li></ul>TAIL"
+ },
+ {
+  "id": "L8-C4NESTED",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<ul><li><br></li></ul><ul><li>x</li></ul><br>",
+  "ref_rule": "<ul><li><ul><li>x</li></ul><br>"
+ },
+ {
+  "id": "L9-C4SCORED",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<ul><li>",
+  "ref_rule": ""
+ },
+ {
+  "id": "D1-DATAEMPTYFIRST",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": true,
+  "live_rule": "<div data-foo=\"2\"><p>X</p></div>",
+  "ref_rule": "<div data-foo=\"2\"><p>X</p></div>"
+ },
+ {
+  "id": "D2-DATAEMPTYMID",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": true,
+  "live_rule": "<div data-foo><p>X</p></div>",
+  "ref_rule": "<div data-foo><p>X</p></div>"
+ },
+ {
+  "id": "P1-SCOREDSPAN",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": true,
+  "live_rule": "<p>A<span>X</span>B</p>",
+  "ref_rule": "<p>A<span>X</span>B</p>"
+ },
+ {
+  "id": "N1-BRK2SPACE",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<p>a<br> b</p>",
+  "ref_rule": "<p>a <br> b</p>"
+ },
+ {
+  "id": "B1-DEEPTOBRANCH",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": true,
+  "live_rule": "<blockquote><blockquote><blockquote><p>a</p></blockquote></blockquote><p>b</p></blockquote>",
+  "ref_rule": "<blockquote><blockquote><blockquote><p>a</p></blockquote></blockquote><p>b</p></blockquote>"
+ },
+ {
+  "id": "T1-TABTITLEATLT",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": true,
+  "live_rule": "<div class=\"yui-navset\" id=\"wiki-tabview-X\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"></a></li></ul><div class=\"yui-content\"><div id=\"wiki-tab-X\"><p>X</p></div></div></div>",
+  "ref_rule": "<div class=\"yui-navset\" id=\"wiki-tabview-X\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"></a></li></ul><div class=\"yui-content\"><div id=\"wiki-tab-X\"><p>X</p></div></div></div>"
+ },
+ {
+  "id": "C1-COLLNEST",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+ show block</a></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">– hide block</a></div><div class=\"collapsible-block-content\"><p>A[[collapsible]]B</p></div></div></div> C[[/collapsible]]",
+  "ref_rule": "<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+ show block</a></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">– hide block</a></div><div class=\"collapsible-block-content\"><p>A[[collapsible]]B</p></div></div></div>C[[/collapsible]]"
+ }
+]

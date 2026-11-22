@@ -1,0 +1,92 @@
+{
+ "R5C-P4-C01": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c01",
+  "source": "[[footnote]]@@@@ \n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R5C-P4-C02": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c02",
+  "source": "[[footnote]]@@@@ \n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R5C-P4-C03": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c03",
+  "source": "[[footnote]]@@@@\f\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R5C-P4-C04": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c04",
+  "source": "[[footnote]]@@@@ \n @@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R5C-P4-C05": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c05",
+  "source": "[[footnote]]@@@@\n@@@@x[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R5C-P4-C06": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c06",
+  "source": "alpha\\\nbravo",
+  "action": "created"
+ },
+ "R5C-P4-C07": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c07",
+  "source": "alpha\n \nbravo",
+  "action": "created"
+ },
+ "R5C-P4-C08": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c08",
+  "source": "1 22",
+  "action": "created"
+ },
+ "R5C-P4-C09": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c09",
+  "source": "alpha .  .  . bravo",
+  "action": "created"
+ },
+ "R5C-P4-C10": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c10",
+  "source": "alpha ----- bravo",
+  "action": "created"
+ },
+ "R5C-P4-C11": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c11",
+  "source": "1 &#x000b5; and 2 &#X0B5;",
+  "action": "created"
+ },
+ "R5C-P4-C12": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c12",
+  "source": "[[code]]``x''[[/code]]",
+  "action": "created"
+ },
+ "R5C-P4-C13": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c13",
+  "source": "alpha  bravo",
+  "action": "created"
+ },
+ "R5C-P4-C14": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c14",
+  "source": "alpha\n@@@@\nbravo",
+  "action": "created"
+ },
+ "R5C-P4-C15": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c15",
+  "source": "[[ul]]\n[[li]]x�@@@@\n@@@@\n@@@@\n@@@@\n@@@@[[/li]]\n[[/ul]]",
+  "action": "created"
+ },
+ "R5C-P4-C16": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c16",
+  "source": "[[bibliography]]\n: lab : x�@@@@\n@@@@\n@@@@\n@@@@\n[[/bibliography]]",
+  "action": "created"
+ },
+ "R5C-P4-C17": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c17",
+  "source": "x�@@@@ @@@@ @@@@ @@@@ z",
+  "action": "created"
+ },
+ "R5C-P4-C18": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c18",
+  "source": "1 &#000181;",
+  "action": "created"
+ }
+}

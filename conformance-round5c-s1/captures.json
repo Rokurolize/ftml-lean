@@ -1,0 +1,202 @@
+{
+ "s01-fn-newline-in-div": {
+  "fullname": "muse-probe-round5c-s1-s01-fn-newline-in-div",
+  "html": "<p>[[div class=&quot;c&quot;]]<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n[[/div]]</p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br /></div>\n</div>",
+  "html_sha256": "670a15d102ae5a726766652d0dd2417bc8791a3a1ef1e7d1f4b66ed637f039dd",
+  "source": "[[div class=\"c\"]]\n[[footnote]]@@@@\n@@@@[[/footnote]]\n[[/div]]\n[[footnoteblock]]",
+  "source_sha256": "bf17dd8a38ad6c78a62cc62aba1e16e0d317a4065d8fca54fbf7bfb376c20a4c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s02-fn-newline-with-toc": {
+  "fullname": "muse-probe-round5c-s1-s02-fn-newline-with-toc",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<table style=\"margin:0; padding:0\">\n<tr>\n<td style=\"margin:0; padding:0\">\n<div id=\"toc\">\n<div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div>\n<div class=\"title\">Table of Contents</div>\n<div id=\"toc-list\"></div>\n</div>\n</td>\n</tr>\n</table>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br /></div>\n</div>",
+  "html_sha256": "7ab50ae98bbf79d6247e8b1646e696f0c4706bb56476416977b2de31bbfe5e49",
+  "source": "[[footnote]]@@@@\n@@@@[[/footnote]]\n[[toc]]\n[[footnoteblock]]",
+  "source_sha256": "c4c483939fb6666486923d12817ef340b95198f606a9c16a14a98e781086feb9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s03-fn-newline-with-anchor": {
+  "fullname": "muse-probe-round5c-s1-s03-fn-newline-with-anchor",
+  "html": "<p>[[a tgt]]<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br /></div>\n</div>",
+  "html_sha256": "5fc68b09e86cc2287845078cfed724fe07de1c7aff9b06e96f4f92348c8469b3",
+  "source": "[[a tgt]]\n[[footnote]]@@@@\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "a140a542561e772356833a67954419df84d9c7abd12568f266034e6acbc65fbb",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s04-fl-ff-pipe-label": {
+  "fullname": "muse-probe-round5c-s1-s04-fl-ff-pipe-label",
+  "html": "<p>A <a class=\"newpage\" href=\"/cafe\">Étiquette</a> B</p>",
+  "html_sha256": "392e721585277d65722612549084a8f59c2ae1e691182126b24d59c27aa2f49b",
+  "source": "A [[[\f_default:Café|Étiquette]]] B",
+  "source_sha256": "efcd8537a6674d22c70e6868cf1378fff646320ae07835976423ec7c3a53628d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s05-fl-u2028-colon-pipe": {
+  "fullname": "muse-probe-round5c-s1-s05-fl-u2028-colon-pipe",
+  "html": "<p>A <a class=\"newpage\" href=\"/cafe:sub\">L</a> B</p>",
+  "html_sha256": "4555c22e15ae601eded35f83a105407c3bdc803b095259fb27ff9464fe7b2af3",
+  "source": "A [[[ _default:Café:sub|L]]] B",
+  "source_sha256": "682172b220be6d7da1f74c8075d12d8dfae00797563359a50aa2eee4e347c9f4",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s06-fl-bom-upper-pipe": {
+  "fullname": "muse-probe-round5c-s1-s06-fl-bom-upper-pipe",
+  "html": "<p>A <a class=\"newpage\" href=\"/cafe\">L</a> B</p>",
+  "html_sha256": "94d2ae1d4a19b0ca6c7ce940482bdef88107b57e4d826593c80cb9233fe4a675",
+  "source": "A [[[﻿_DEFAULT:Café|L]]] B",
+  "source_sha256": "d7eeec5ff7edb57eb19a892fb45def03eca776706d587c7d9b10ab1e8c5d9251",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s07-fl-star-leadbyte-pipe": {
+  "fullname": "muse-probe-round5c-s1-s07-fl-star-leadbyte-pipe",
+  "html": "<p>A <a class=\"newpage\" href=\"/cafe\">Label</a> B</p>",
+  "html_sha256": "baa5b23cbd54f2e07b756f536832359ddc202ea5cd0785690d769068143855b5",
+  "source": "A [[[*\f_default:Café|Label]]] B",
+  "source_sha256": "f3b3b3a16d8e024048579d8d45661955dc6415df6080b18c3920cf81188885b3",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s08-math-variant-with-attrs": {
+  "fullname": "muse-probe-round5c-s1-s08-math-variant-with-attrs",
+  "html": "<p>[[math a TYPe=&quot;align&quot; style=&quot;s&quot; data-x=&quot;1&quot;]]<br />\nx<br />\n[[/math]]</p>",
+  "html_sha256": "4d089ae0c0efe4088c3acccbbff2660e4ff85af6f7dc8c07872771939706724a",
+  "source": "[[math a TYPe=\"align\" style=\"s\" data-x=\"1\"]]\nx\n[[/math]]",
+  "source_sha256": "f26bbe180067b7a44bcb9cedfe673bb99223c30bdfcba88b60f392f44b2a93fd",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s09-math-lower-plus-variant": {
+  "fullname": "muse-probe-round5c-s1-s09-math-lower-plus-variant",
+  "html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+  "html_sha256": "e504bd63f5c257493a0bd835e3359b4574ca995dfdaf283fa88623fea08d5a1f",
+  "source": "[[math type=\"gather\" TYPe=\"align\"]]\nx\n[[/math]]",
+  "source_sha256": "86652c1d20e5eee7db2c8dde7ef80242b86e5abc91f410f7373eb78fdc8665b5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s10-div-ph-id-ph-class": {
+  "fullname": "muse-probe-round5c-s1-s10-div-ph-id-ph-class",
+  "html": "<div id=\"\" class=\"\" data-foo=\"2\">\n<p>X</p>\n</div>",
+  "html_sha256": "81b381bfce8fd9d7a24e9eb51efd1f82959900d2e1e363287ea4484335561aeb",
+  "source": "[[div id=\"[[size 12px]]x[[/size]]\" class=\"@@@@\" data-Foo=\"1\" data-foo=\"2\"]]\nX[[/div]]",
+  "source_sha256": "668c2461171b8eba4b4ae9533349a20be78734467873f6cc1295c6e319711809",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s11-div-ph-id-u-prefix": {
+  "fullname": "muse-probe-round5c-s1-s11-div-ph-id-u-prefix",
+  "html": "<div id=\"\">\n<p>X</p>\n</div>",
+  "html_sha256": "2802c046b85ec9fbdfa4ded9f74f4b06c87dcb6c9c270e1a271155c6d89a2fce",
+  "source": "[[div id=\"u-[[size 12px]]x[[/size]]\"]]\nX[[/div]]",
+  "source_sha256": "882f0031ff79bfde5b5d6c96c43143ba6a3b21b100e9bf37fca2da4edcf7be92",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s12-raw-2close-plus-text": {
+  "fullname": "muse-probe-round5c-s1-s12-raw-2close-plus-text",
+  "html": "<p>A ZQ@@ B</p>",
+  "html_sha256": "c815f53a7c6fe0a3b1edb889dd82199f4044a8b80180cdb211f5155cf5ce25fc",
+  "source": "A @@@@ZQ@@ B",
+  "source_sha256": "b8a98bfea4e77613aebd64a831b0d2b373cf5b06a9284c1b2940b0021a06b4a6",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s13-raw-3close-plus-text-run": {
+  "fullname": "muse-probe-round5c-s1-s13-raw-3close-plus-text-run",
+  "html": "<p>A ZQ<span style=\"white-space: pre-wrap;\">@&#32;B&#32;</span>@@ C</p>",
+  "html_sha256": "759cbecf90207bc2917f068266b25207405336263bb165bc52cf0b12c9bac7d2",
+  "source": "A @@@@ZQ@@@ B @@@@ C",
+  "source_sha256": "43a2295483eae1ef1794b91e416841f043b1b8b2fb97e185a8668013f792caf6",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s14-table-dup-underscore": {
+  "fullname": "muse-probe-round5c-s1-s14-table-dup-underscore",
+  "html": "<table data-foo_bar=\"2\">\n<tr>\n<td>C</td>\n</tr>\n</table>",
+  "html_sha256": "b09adc70a7746497f60566bf5c4b15f03b4d4e8435f7415100661a2904e9729a",
+  "source": "[[table data-Foo_Bar=\"1\" data-foo_bar=\"2\"]]\n[[row]]\n[[cell]]\nC\n[[/cell]]\n[[/row]]\n[[/table]]",
+  "source_sha256": "d253fe1f3550a50a1220d5b18709a5a277e69d659637421e97ab6622caf7de1a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s15-table-dup-underscore-cell": {
+  "fullname": "muse-probe-round5c-s1-s15-table-dup-underscore-cell",
+  "html": "<table>\n<tr data-foo_bar=\"2\">\n<td data-foo_bar=\"3\">C</td>\n</tr>\n</table>",
+  "html_sha256": "33324d355863461a9aad667b7cf50fccac97126ea27684ca84d3f27a002ddbc1",
+  "source": "[[table]]\n[[row data-Foo_Bar=\"1\" data-foo_bar=\"2\"]]\n[[cell data-Foo_Bar=\"3\" DATA-BAZ_QUX=\"4\"]]\nC\n[[/cell]]\n[[/row]]\n[[/table]]",
+  "source_sha256": "2dd32c5fd6523f8089d72d34c3defd21e2e1310ef45c811ecb8b2286d697c550",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s16-module-code-raw-closer": {
+  "fullname": "muse-probe-round5c-s1-s16-module-code-raw-closer",
+  "html": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>\n<div class=\"code\">\n<pre><code>CODEX</code></pre></div>\n<br />\n<br />\n[[/MODULE]]",
+  "html_sha256": "b3daae94cbbebe412fe070e9cb30ea18ac3d208aa60ae43950a159fa3ff69fd5",
+  "source": "[[module nosuchmod]]\n[[code]]CODEX[[/code]]\n@@@@\n[[/MODULE]]",
+  "source_sha256": "1eefba3c090425123910cd5730ef746ddcb67068d131ade3b7b7eec1dcd9f074",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s17-module-closer-tail": {
+  "fullname": "muse-probe-round5c-s1-s17-module-closer-tail",
+  "html": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>\n<div class=\"code\">\n<pre><code>CODEX</code></pre></div>\n<br />\n[[/Module]]TAIL",
+  "html_sha256": "08112d934d411d4a2cb2453420b48f896818effc8488f99a177ea5d318f941a8",
+  "source": "[[module nosuchmod]]\n[[code]]CODEX[[/code]]\n[[/Module]]TAIL",
+  "source_sha256": "47425004d0de76da9dae732d46721545d42ea50f8d9e0f59c426f705f5839297",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s18-li-lower-after-failed-close": {
+  "fullname": "muse-probe-round5c-s1-s18-li-lower-after-failed-close",
+  "html": "<ul>\n<li>A[[li]]B[[/li]]<br />\n[[/UL]]</li>\n</ul>",
+  "html_sha256": "a414ab9b7d4110ca605d0cab2dd21789262a5459b2ae9105092c6e9f65b3ea33",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[li]]B[[/li]]\n[[/UL]]",
+  "source_sha256": "248dcd17e01f3c0c6fcb6fdc363923f6e86c7fe25e18facd1356079fa9cf8252",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s19-li-attr-after-failed-close": {
+  "fullname": "muse-probe-round5c-s1-s19-li-attr-after-failed-close",
+  "html": "<ul>\n<li>A[[LI class=&quot;x&quot;]]B[[/LI]]<br />\n[[/UL]]</li>\n</ul>",
+  "html_sha256": "abfdfe5460f2585687f9dc29d69a7112da9289c0ce6a914b0bc225f666a63713",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI class=\"x\"]]B[[/LI]]\n[[/UL]]",
+  "source_sha256": "d5bd9cff2ab4526f46c66c72eeb8e1dd635bddf4c01ed2bab0e4edca76e9fa22",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s20-li-empty-raw-item": {
+  "fullname": "muse-probe-round5c-s1-s20-li-empty-raw-item",
+  "html": "<ul>\n<li><br />",
+  "html_sha256": "4fa118e2d100e3f6f99283cb6a71681dbbf391dc6142053ab8450bad165fe6b7",
+  "source": "[[UL]]\n[[LI]]@@@@ @@@@[[/LI]]\n[[/UL]]",
+  "source_sha256": "a28b5f9a73fe1ac41b5e8d29f55dc93bfb3135768f321befc875740561f21623",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

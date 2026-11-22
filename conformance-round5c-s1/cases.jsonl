@@ -1,0 +1,20 @@
+{"id": "s01-fn-newline-in-div", "source": "[[div class=\"c\"]]\n[[footnote]]@@@@\n@@@@[[/footnote]]\n[[/div]]\n[[footnoteblock]]"}
+{"id": "s02-fn-newline-with-toc", "source": "[[footnote]]@@@@\n@@@@[[/footnote]]\n[[toc]]\n[[footnoteblock]]"}
+{"id": "s03-fn-newline-with-anchor", "source": "[[a tgt]]\n[[footnote]]@@@@\n@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "s04-fl-ff-pipe-label", "source": "A [[[\f_default:Caf\u00e9|\u00c9tiquette]]] B"}
+{"id": "s05-fl-u2028-colon-pipe", "source": "A [[[\u2028_default:Caf\u00e9:sub|L]]] B"}
+{"id": "s06-fl-bom-upper-pipe", "source": "A [[[\ufeff_DEFAULT:Caf\u00e9|L]]] B"}
+{"id": "s07-fl-star-leadbyte-pipe", "source": "A [[[*\f_default:Caf\u00e9|Label]]] B"}
+{"id": "s08-math-variant-with-attrs", "source": "[[math a TYPe=\"align\" style=\"s\" data-x=\"1\"]]\nx\n[[/math]]"}
+{"id": "s09-math-lower-plus-variant", "source": "[[math type=\"gather\" TYPe=\"align\"]]\nx\n[[/math]]"}
+{"id": "s10-div-ph-id-ph-class", "source": "[[div id=\"[[size 12px]]x[[/size]]\" class=\"@@@@\" data-Foo=\"1\" data-foo=\"2\"]]\nX[[/div]]"}
+{"id": "s11-div-ph-id-u-prefix", "source": "[[div id=\"u-[[size 12px]]x[[/size]]\"]]\nX[[/div]]"}
+{"id": "s12-raw-2close-plus-text", "source": "A @@@@ZQ@@ B"}
+{"id": "s13-raw-3close-plus-text-run", "source": "A @@@@ZQ@@@ B @@@@ C"}
+{"id": "s14-table-dup-underscore", "source": "[[table data-Foo_Bar=\"1\" data-foo_bar=\"2\"]]\n[[row]]\n[[cell]]\nC\n[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "s15-table-dup-underscore-cell", "source": "[[table]]\n[[row data-Foo_Bar=\"1\" data-foo_bar=\"2\"]]\n[[cell data-Foo_Bar=\"3\" DATA-BAZ_QUX=\"4\"]]\nC\n[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "s16-module-code-raw-closer", "source": "[[module nosuchmod]]\n[[code]]CODEX[[/code]]\n@@@@\n[[/MODULE]]"}
+{"id": "s17-module-closer-tail", "source": "[[module nosuchmod]]\n[[code]]CODEX[[/code]]\n[[/Module]]TAIL"}
+{"id": "s18-li-lower-after-failed-close", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[li]]B[[/li]]\n[[/UL]]"}
+{"id": "s19-li-attr-after-failed-close", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI class=\"x\"]]B[[/LI]]\n[[/UL]]"}
+{"id": "s20-li-empty-raw-item", "source": "[[UL]]\n[[LI]]@@@@ @@@@[[/LI]]\n[[/UL]]"}

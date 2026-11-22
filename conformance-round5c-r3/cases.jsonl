@@ -1,0 +1,18 @@
+{"id": "R3C-01", "source": "[[footnote]]@@@@\n@@@@\n@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3C-02", "source": "[[footnote]]@@@@ \n @@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3C-03", "source": "[[footnote]]@@@@\t\n\t@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3C-04", "source": "[[footnote]]@@@@\n \n@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3C-05", "source": "[[footnote]]@@@@\r\n@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3C-06", "source": "[[footnote]]\n@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3C-07", "source": "[[footnote]]\n[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3C-08", "source": "[[footnote]]x@@@@\n@@@@y[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3C-09", "source": "[[footnote]]@@x@@\n@@y@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3C-10", "source": "[[bibliography]]\n: lab : @@@@\n@@@@\n[[/bibliography]]"}
+{"id": "R3C-11", "source": "[[footnote]]@@@@\n@@@@[[/footnote]]\n[[footnoteblock]]\n[[bibliography]]\n: b : beta\n[[/bibliography]]"}
+{"id": "R3C-12", "source": "[[footnote]]@@@@\n@@@@[[/footnote]]\n[[footnoteblock title=\"It's A & B\"]]"}
+{"id": "R3C-13", "source": "[[f>toc]]\n\n+ One\n\n+ Two"}
+{"id": "R3C-14", "source": "[[toc title=\"A & B <x>\"]]\n\n+ One"}
+{"id": "R3C-15", "source": "[[toc]]\n\n+ First\n\n+* Hidden\n\n+ Second"}
+{"id": "R3C-16", "source": "[[toc]]\n\n+ a@@@@b\n\n+ Plain"}
+{"id": "R3C-17", "source": "[[a href=\"/1\"]]x[[a href=\"/2\"]]y[[/a]]z[[/a]]"}
+{"id": "R3C-18", "source": "[[a href=\"/x\"]]para1\n\npara2[[/a]]"}

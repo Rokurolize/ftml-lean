@@ -1,0 +1,82 @@
+{
+ "L1-C1LOWER": {
+  "fullname": "muse-probe-round5c-p1-l1-c1lower",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[li]]B[[/li]]\n[[/UL]]",
+  "action": "created"
+ },
+ "L2-C1MIXCLOSE": {
+  "fullname": "muse-probe-round5c-p1-l2-c1mixclose",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/Ul]]\n[[LI]]B[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "L3-C1MULTI": {
+  "fullname": "muse-probe-round5c-p1-l3-c1multi",
+  "source": "[[UL]]\n[[LI]]A\nB[[/LI]]\n[[/UL]]\n[[LI]]C[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "L4-C2ATTR": {
+  "fullname": "muse-probe-round5c-p1-l4-c2attr",
+  "source": "[[UL]]\n[[li]]a\n[[OL class=\"c\"]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]AFTER",
+  "action": "created"
+ },
+ "L5-C2TAILNL": {
+  "fullname": "muse-probe-round5c-p1-l5-c2tailnl",
+  "source": "[[UL class=\"c\"]]\n[[li]]a\n[[OL]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]AFTER\nMORE",
+  "action": "created"
+ },
+ "L6-C3INNERUL": {
+  "fullname": "muse-probe-round5c-p1-l6-c3innerul",
+  "source": "[[ul]]\n[[li]]a\n[[ul]]\n[[li]]b[[/li]]\n[[/UL]]AFTER\n[[/ul]]\n[[/li]]\n[[/ul]]TAIL",
+  "action": "created"
+ },
+ "L7-C3ITEMNL": {
+  "fullname": "muse-probe-round5c-p1-l7-c3itemnl",
+  "source": "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b\nb2[[/li]]\n[[/UL]]AFTER\n[[/ol]]\n[[/li]]\n[[/ul]]TAIL",
+  "action": "created"
+ },
+ "L8-C4NESTED": {
+  "fullname": "muse-probe-round5c-p1-l8-c4nested",
+  "source": "[[UL]]\n[[LI]] \t \n[[ul]]\n[[li]]x[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "L9-C4SCORED": {
+  "fullname": "muse-probe-round5c-p1-l9-c4scored",
+  "source": "[[UL_]]\n[[LI]] \t [[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "D1-DATAEMPTYFIRST": {
+  "fullname": "muse-probe-round5c-p1-d1-dataemptyfirst",
+  "source": "[[div data-Foo=\"\" data-foo=\"2\"]]\nX[[/div]]",
+  "action": "created"
+ },
+ "D2-DATAEMPTYMID": {
+  "fullname": "muse-probe-round5c-p1-d2-dataemptymid",
+  "source": "[[div data-Foo=\"1\" data-foo=\"\" DATA-FOO=\"3\"]]\nX[[/div]]",
+  "action": "created"
+ },
+ "P1-SCOREDSPAN": {
+  "fullname": "muse-probe-round5c-p1-p1-scoredspan",
+  "source": "A\n[[span_]]X[[/span]]\nB",
+  "action": "created"
+ },
+ "N1-BRK2SPACE": {
+  "fullname": "muse-probe-round5c-p1-n1-brk2space",
+  "source": "a  _\nb",
+  "action": "created"
+ },
+ "B1-DEEPTOBRANCH": {
+  "fullname": "muse-probe-round5c-p1-b1-deeptobranch",
+  "source": ">>> a\n> b",
+  "action": "created"
+ },
+ "T1-TABTITLEATLT": {
+  "fullname": "muse-probe-round5c-p1-t1-tabtitleatlt",
+  "source": "[[tabview]]\n[[tab @<Label>@]]X[[/tab]]\n[[/tabview]]",
+  "action": "created"
+ },
+ "C1-COLLNEST": {
+  "fullname": "muse-probe-round5c-p1-c1-collnest",
+  "source": "[[collapsible]]A[[collapsible]]B[[/collapsible]]C[[/collapsible]]",
+  "action": "created"
+ }
+}

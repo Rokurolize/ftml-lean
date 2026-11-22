@@ -1,0 +1,16 @@
+{"id": "L1-C1LOWER", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[li]]B[[/li]]\n[[/UL]]"}
+{"id": "L2-C1MIXCLOSE", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/Ul]]\n[[LI]]B[[/LI]]\n[[/UL]]"}
+{"id": "L3-C1MULTI", "source": "[[UL]]\n[[LI]]A\nB[[/LI]]\n[[/UL]]\n[[LI]]C[[/LI]]\n[[/UL]]"}
+{"id": "L4-C2ATTR", "source": "[[UL]]\n[[li]]a\n[[OL class=\"c\"]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]AFTER"}
+{"id": "L5-C2TAILNL", "source": "[[UL class=\"c\"]]\n[[li]]a\n[[OL]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]AFTER\nMORE"}
+{"id": "L6-C3INNERUL", "source": "[[ul]]\n[[li]]a\n[[ul]]\n[[li]]b[[/li]]\n[[/UL]]AFTER\n[[/ul]]\n[[/li]]\n[[/ul]]TAIL"}
+{"id": "L7-C3ITEMNL", "source": "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b\nb2[[/li]]\n[[/UL]]AFTER\n[[/ol]]\n[[/li]]\n[[/ul]]TAIL"}
+{"id": "L8-C4NESTED", "source": "[[UL]]\n[[LI]] \t \n[[ul]]\n[[li]]x[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]"}
+{"id": "L9-C4SCORED", "source": "[[UL_]]\n[[LI]] \t [[/LI]]\n[[/UL]]"}
+{"id": "D1-DATAEMPTYFIRST", "source": "[[div data-Foo=\"\" data-foo=\"2\"]]\nX[[/div]]"}
+{"id": "D2-DATAEMPTYMID", "source": "[[div data-Foo=\"1\" data-foo=\"\" DATA-FOO=\"3\"]]\nX[[/div]]"}
+{"id": "P1-SCOREDSPAN", "source": "A\n[[span_]]X[[/span]]\nB"}
+{"id": "N1-BRK2SPACE", "source": "a  _\nb"}
+{"id": "B1-DEEPTOBRANCH", "source": ">>> a\n> b"}
+{"id": "T1-TABTITLEATLT", "source": "[[tabview]]\n[[tab @<Label>@]]X[[/tab]]\n[[/tabview]]"}
+{"id": "C1-COLLNEST", "source": "[[collapsible]]A[[collapsible]]B[[/collapsible]]C[[/collapsible]]"}

@@ -1,0 +1,21 @@
+{"id":"p3c-01-raw-3-2","output":"<p><span style=\"white-space: pre-wrap;\">@ZQ<\/span><\/p>\n\n"}
+{"id":"p3c-02-raw-5-2","output":"<p>@ZQ@@<\/p>\n\n"}
+{"id":"p3c-03-raw-6-2","output":"<p>@@ZQ@@<\/p>\n\n"}
+{"id":"p3c-04-raw-2-3","output":"<p><span style=\"white-space: pre-wrap;\">ZQ<\/span>@<\/p>\n\n"}
+{"id":"p3c-05-tableadv-data-dot","output":"<table>\n<tr>\n<td>CELLX<\/td>\n<\/tr>\n<\/table>"}
+{"id":"p3c-06-tableadv-data-trailing-us","output":"<table data-foo_=\"UB\">\n<tr>\n<td>CELLX<\/td>\n<\/tr>\n<\/table>"}
+{"id":"p3c-07-tableadv-data-leading-digit","output":"<table data-9foo=\"UB\">\n<tr>\n<td>CELLX<\/td>\n<\/tr>\n<\/table>"}
+{"id":"p3c-08-tableadv-data-mixed-us-dash","output":"<table data-foo_bar-baz=\"UB\">\n<tr>\n<td>CELLX<\/td>\n<\/tr>\n<\/table>"}
+{"id":"p3c-09-tableadv-cell-data-underscore","output":"<table>\n<tr>\n<td data-foo_bar=\"UB\">CELLX<\/td>\n<\/tr>\n<\/table>"}
+{"id":"p3c-10-module-mixed-closer","output":"<div class=\"error-block\">[[module <em>nosuchmod<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>\n<div class=\"code\">\n<pre><code>CODEX<\/code><\/pre><\/div>\n\n<br \/>\n[[\/Module]]"}
+{"id":"p3c-11-module-upper-opener","output":"<div class=\"error-block\">[[module <em>nosuchmod<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>\n<div class=\"code\">\n<pre><code>CODEX<\/code><\/pre><\/div>\n\n<br \/>\n[[\/module]]"}
+{"id":"p3c-12-module-nested","output":"<div class=\"error-block\">[[module <em>nosuchmod<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div><p>[[\/module]]<\/p>\n\n"}
+{"id":"p3c-13-include-reverse-cascade","output":"<p>A=AA B={$a}<\/p>\n\n"}
+{"id":"p3c-14-include-tight-pipe","output":"<p>[[include muse-probe-round5c-p3-t-text|a=A]]<\/p>\n\n"}
+{"id":"p3c-15-include-nested-target","output":"<p>SPLICED<\/p>\n\n"}
+{"id":"p3c-16-form-with-separator","output":"<p><span style=\"white-space: pre-wrap;\">[[form]]<\/span><br \/>\n<span style=\"white-space: pre-wrap;\">FIELDA&#32;=&#32;text<\/span><br \/>\n<span style=\"white-space: pre-wrap;\">---<\/span><br \/>\n<span style=\"white-space: pre-wrap;\">DATAX<\/span><br \/>\n<span style=\"white-space: pre-wrap;\">[[\/form]]<\/span><\/p>\n\n"}
+{"id":"p3c-17-table-leading-span","output":"<p>PRE<br \/>\n<table class=\"wiki-content-table\">\n<tr>\n<td colspan=\"3\">H<\/td>\n<\/tr>\n<\/table><\/p>\n\n<p>POST<\/p>\n\n"}
+{"id":"p3c-18-image-link-leading-space","output":"<p>[[image IMG.png link=&quot; <a href=\"http:\/\/example.com\/x\">http:\/\/example.com\/x<\/a>&quot;]]<\/p>\n\n"}
+{"id":"p3c-19-image-size-upper","output":"<img src=\"\/local--files\/\/IMG.png\" alt=\"IMG.png\" class=\"image\" \/>"}
+{"id":"p3c-20-gallery-size","output":"<div class=\"gallery-box\"><div class=\"gallery-item small\"><table><tr><td><a href=\"\/local--files\/\/img1.png\" ><img src=\"\/local--resized-images\/\/img1.png\/small.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><div class=\"gallery-item small\"><table><tr><td><a href=\"\/local--files\/\/img2.png\" ><img src=\"\/local--resized-images\/\/img2.png\/small.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"p3c-21-file-multi-pipe","output":"<p><a href=\"\/local--files\/page\/a.png\">Label|extra<\/a><\/p>\n\n"}

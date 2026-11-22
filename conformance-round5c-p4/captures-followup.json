@@ -1,0 +1,12 @@
+{
+ "R5C-P4-C16": {
+  "fullname": "muse-probe-round5c-p4-r5c-p4-c16",
+  "html": "<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n<div class=\"bibitem\" id=\"bibitem-1\">1. x16</div>\n</div>\n        \n    \n            <!-- mobile bottom 320x50 -->\n<script>\n\n$j( function(){\n\n    if(isUAMobile && screen.width < 400 && screen.height > 600) {\n        var $o = $j('<div id=\"wad-tier3-mobile-anchor\" class=\"wd-adunit wd-ad-np wd-adunit-mobile_anchor\"></div>');\n        $j('body').append($o);\n        $j('body').css('margin-bottom', '200px');\n\n        var res = function(){\n            $o = $j('#wad-tier3-mobile-anchor');\n            if($o.length > 0){\n                $o.show();\n                var $w = $j(window);\n                var scale = $w.width() / 320;\n                $o.css('transform', 'scale('+scale+')');\n            } else {\n                $o.hide();\n            }\n        }\n\n        res();\n        setInterval(res, 1000);\n\n        window['nitroAds'].createAd('wad-tier3-mobile-anchor', {\n          \"refreshLimit\": 1,\n          \"refreshTime\": 30,\n          \"renderVisibleOnly\": false,\n          \"refreshVisibleOnly\": true,\n          \"format\": \"display\",\n          \"sizes\": [ [ 320, 50 ] ],\n          \"report\": {\n            \"enabled\": true,\n            \"wording\": \"Report Ad\",\n            \"position\": \"bottom-right\"\n          }\n                  });\n    }\n});\n</script>\n        \n    \n\n\n\n\n\n\n        \n    \n                        <!-- wikidot_bottom_300x250 -->\n<div id=\"wad-tier3-below-content\" class=\"wd-adunit wd-ad-np wd-adunit-below_content\"></div>\n<script>\nwindow['nitroAds'].createAd('wad-tier3-below-content', {\n  \"refreshTime\": 30,\n  \"renderVisibleOnly\": false,\n  \"refreshVisibleOnly\": true,\n  \"sizes\": [ [ 300, 250 ] ],\n  \"report\": {\n    \"enabled\": true,\n    \"wording\": \"Report Ad\",\n    \"position\": \"bottom-right\"\n  }\n  });\n</script>\n                    \n    \n\n\n          \n          <div class=\"page-info-break\"></div>\n          <div class=\"page-options-container\"></div>\n          <div id=\"action-area\" style=\"display: none;\"></div>",
+  "html_sha256": "1734a21ff501aef71f14f0d574c2e200002160699e31576d989207dec3d91f26",
+  "source": "[[bibliography]]\n: lab : x�@@@@\n@@@@\n@@@@\n@@@@\n[[/bibliography]]",
+  "source_sha256": "53efe62c7f1741c02a3fffd2d3c914677a64a8f4461471e776388faafd1ae95b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}
