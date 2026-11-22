@@ -1,0 +1,258 @@
+{
+  "seed_runs": [
+    {
+      "seed": 20261122,
+      "cases": 144,
+      "failures": 0,
+      "class_mismatch": 0,
+      "uncomparable": 12,
+      "by_class": {
+        "codePlain": {
+          "n": 16,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "codeTrailEnd": {
+          "n": 16,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "codeTrailWs": {
+          "n": 16,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "codeEmpty": {
+          "n": 16,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "mathTypeValid": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "mathTypeAbsent": {
+          "n": 16,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "mathTypeInvalid": {
+          "n": 16,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "mathFatal": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "miPlain": {
+          "n": 9,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "miSource": {
+          "n": 7,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "miFallback": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "miSuppressFreelink": {
+          "n": 10,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "miSuppressRaw": {
+          "n": 9,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "miSuppressNewline": {
+          "n": 9,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "miSuppressImage": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "miDepth": {
+          "n": 4,
+          "fail": 0,
+          "uncomparable": 4,
+          "ids": []
+        },
+        "miUnknown": {
+          "n": 4,
+          "fail": 0,
+          "uncomparable": 4,
+          "ids": []
+        },
+        "miCycle": {
+          "n": 4,
+          "fail": 0,
+          "uncomparable": 4,
+          "ids": []
+        }
+      }
+    },
+    {
+      "seed": 7,
+      "cases": 144,
+      "failures": 0,
+      "class_mismatch": 0,
+      "uncomparable": 12,
+      "by_class": {
+        "codePlain": {
+          "n": 16,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "codeTrailEnd": {
+          "n": 16,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "codeTrailWs": {
+          "n": 16,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "codeEmpty": {
+          "n": 16,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "mathTypeValid": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "mathTypeAbsent": {
+          "n": 16,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "mathTypeInvalid": {
+          "n": 16,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "mathFatal": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "miPlain": {
+          "n": 9,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "miSource": {
+          "n": 7,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "miFallback": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "miSuppressFreelink": {
+          "n": 10,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "miSuppressRaw": {
+          "n": 9,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "miSuppressNewline": {
+          "n": 9,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "miSuppressImage": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "miDepth": {
+          "n": 4,
+          "fail": 0,
+          "uncomparable": 4,
+          "ids": []
+        },
+        "miUnknown": {
+          "n": 4,
+          "fail": 0,
+          "uncomparable": 4,
+          "ids": []
+        },
+        "miCycle": {
+          "n": 4,
+          "fail": 0,
+          "uncomparable": 4,
+          "ids": []
+        }
+      }
+    }
+  ],
+  "classes": [
+    "codePlain",
+    "codeEmpty",
+    "codeTrailWs",
+    "codeTrailEnd",
+    "mathFatal",
+    "mathTypeAbsent",
+    "mathTypeValid",
+    "mathTypeInvalid",
+    "miPlain",
+    "miDepth",
+    "miUnknown",
+    "miCycle",
+    "miSource",
+    "miFallback",
+    "miSuppressFreelink",
+    "miSuppressRaw",
+    "miSuppressNewline",
+    "miSuppressImage"
+  ]
+}

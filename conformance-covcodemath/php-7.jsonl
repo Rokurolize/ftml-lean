@@ -1,0 +1,144 @@
+{"id": "code-plain-end-0", "output": "\n<div class=\"code\">\n<pre><code>a&lt;b&gt;</code></pre></div>\n\n", "classes": ["codePlain", "codeTrailEnd"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-plain-ws-0", "output": "\n<div class=\"code\">\n<pre><code>a&lt;b&gt;</code></pre></div>\n\n ", "classes": ["codePlain", "codeTrailWs"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-plain-end-1", "output": "\n<div class=\"code\">\n<pre><code>zz</code></pre></div>\n\n", "classes": ["codePlain", "codeTrailEnd"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-plain-ws-1", "output": "\n<div class=\"code\">\n<pre><code>zz</code></pre></div>\n\n", "classes": ["codePlain", "codeTrailWs"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-plain-end-2", "output": "\n<div class=\"code\">\n<pre><code>q</code></pre></div>\n\n", "classes": ["codePlain", "codeTrailEnd"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-plain-ws-2", "output": "\n<div class=\"code\">\n<pre><code>q</code></pre></div>\n\n ", "classes": ["codePlain", "codeTrailWs"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-plain-end-3", "output": "\n<div class=\"code\">\n<pre><code>alpha</code></pre></div>\n\n", "classes": ["codePlain", "codeTrailEnd"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-plain-ws-3", "output": "\n<div class=\"code\">\n<pre><code>alpha</code></pre></div>\n\n ", "classes": ["codePlain", "codeTrailWs"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-plain-end-4", "output": "\n<div class=\"code\">\n<pre><code>a&amp;b</code></pre></div>\n\n", "classes": ["codePlain", "codeTrailEnd"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-plain-ws-4", "output": "\n<div class=\"code\">\n<pre><code>a&amp;b</code></pre></div>\n\n ", "classes": ["codePlain", "codeTrailWs"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-plain-end-5", "output": "\n<div class=\"code\">\n<pre><code>O'Brien</code></pre></div>\n\n", "classes": ["codePlain", "codeTrailEnd"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-plain-ws-5", "output": "\n<div class=\"code\">\n<pre><code>O'Brien</code></pre></div>\n\n", "classes": ["codePlain", "codeTrailWs"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-plain-end-6", "output": "\n<div class=\"code\">\n<pre><code>x y</code></pre></div>\n\n", "classes": ["codePlain", "codeTrailEnd"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-plain-ws-6", "output": "\n<div class=\"code\">\n<pre><code>x y</code></pre></div>\n\n ", "classes": ["codePlain", "codeTrailWs"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-plain-end-7", "output": "\n<div class=\"code\">\n<pre><code>n0</code></pre></div>\n\n", "classes": ["codePlain", "codeTrailEnd"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-plain-ws-7", "output": "\n<div class=\"code\">\n<pre><code>n0</code></pre></div>\n\n ", "classes": ["codePlain", "codeTrailWs"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-empty-end-0", "output": "\n<div class=\"code\"></div>\n\n", "classes": ["codeEmpty", "codeTrailEnd"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-empty-ws-0", "output": "\n<div class=\"code\"></div>\n\n ", "classes": ["codeEmpty", "codeTrailWs"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-empty-end-1", "output": "\n<div class=\"code\"></div>\n\n", "classes": ["codeEmpty", "codeTrailEnd"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-empty-ws-1", "output": "\n<div class=\"code\"></div>\n\n", "classes": ["codeEmpty", "codeTrailWs"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-empty-end-2", "output": "\n<div class=\"code\"></div>\n\n", "classes": ["codeEmpty", "codeTrailEnd"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-empty-ws-2", "output": "\n<div class=\"code\"></div>\n\n ", "classes": ["codeEmpty", "codeTrailWs"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-empty-end-3", "output": "\n<div class=\"code\"></div>\n\n", "classes": ["codeEmpty", "codeTrailEnd"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-empty-ws-3", "output": "\n<div class=\"code\"></div>\n\n ", "classes": ["codeEmpty", "codeTrailWs"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-empty-end-4", "output": "\n<div class=\"code\"></div>\n\n", "classes": ["codeEmpty", "codeTrailEnd"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-empty-ws-4", "output": "\n<div class=\"code\"></div>\n\n ", "classes": ["codeEmpty", "codeTrailWs"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-empty-end-5", "output": "\n<div class=\"code\"></div>\n\n", "classes": ["codeEmpty", "codeTrailEnd"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-empty-ws-5", "output": "\n<div class=\"code\"></div>\n\n", "classes": ["codeEmpty", "codeTrailWs"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-empty-end-6", "output": "\n<div class=\"code\"></div>\n\n", "classes": ["codeEmpty", "codeTrailEnd"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-empty-ws-6", "output": "\n<div class=\"code\"></div>\n\n ", "classes": ["codeEmpty", "codeTrailWs"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-empty-end-7", "output": "\n<div class=\"code\"></div>\n\n", "classes": ["codeEmpty", "codeTrailEnd"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "code-empty-ws-7", "output": "\n<div class=\"code\"></div>\n\n ", "classes": ["codeEmpty", "codeTrailWs"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "math-valid-0", "output": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeValid"], "mathIds": [1], "mathTypes": ["align"], "mathId": 2}
+{"id": "math-valid-1", "output": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeValid"], "mathIds": [1], "mathTypes": ["gather"], "mathId": 2}
+{"id": "math-valid-2", "output": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeValid"], "mathIds": [1], "mathTypes": ["equation"], "mathId": 2}
+{"id": "math-valid-3", "output": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeValid"], "mathIds": [1], "mathTypes": ["eqnarray"], "mathId": 2}
+{"id": "math-valid-4", "output": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeValid"], "mathIds": [1], "mathTypes": ["foo"], "mathId": 2}
+{"id": "math-valid-5", "output": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeValid"], "mathIds": [1], "mathTypes": ["bar"], "mathId": 2}
+{"id": "math-valid-6", "output": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeValid"], "mathIds": [1], "mathTypes": ["a1"], "mathId": 2}
+{"id": "math-valid-7", "output": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeValid"], "mathIds": [1], "mathTypes": ["xyz"], "mathId": 2}
+{"id": "math-absent-0", "output": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeAbsent"], "mathIds": [1], "mathTypes": ["align"], "mathId": 2}
+{"id": "math-absent-1", "output": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeAbsent"], "mathIds": [1], "mathTypes": ["align"], "mathId": 2}
+{"id": "math-absent-2", "output": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeAbsent"], "mathIds": [1], "mathTypes": ["align"], "mathId": 2}
+{"id": "math-absent-3", "output": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeAbsent"], "mathIds": [1], "mathTypes": ["align"], "mathId": 2}
+{"id": "math-absent-4", "output": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeAbsent"], "mathIds": [1], "mathTypes": ["align"], "mathId": 2}
+{"id": "math-absent-5", "output": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeAbsent"], "mathIds": [1], "mathTypes": ["align"], "mathId": 2}
+{"id": "math-absent-6", "output": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeAbsent"], "mathIds": [1], "mathTypes": ["align"], "mathId": 2}
+{"id": "math-absent-7", "output": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeAbsent"], "mathIds": [1], "mathTypes": ["align"], "mathId": 2}
+{"id": "math-invalid-0", "output": "<div class=\"error-block\">Unsupported math environment \"ALIGN\"</div>", "classes": ["mathTypeInvalid"], "mathIds": [1], "mathTypes": ["ALIGN"], "mathId": 2}
+{"id": "math-invalid-1", "output": "<div class=\"error-block\">Unsupported math environment \"\"</div>", "classes": ["mathTypeInvalid"], "mathIds": [1], "mathTypes": [""], "mathId": 2}
+{"id": "math-invalid-2", "output": "<div class=\"error-block\">Unsupported math environment \"Equation\"</div>", "classes": ["mathTypeInvalid"], "mathIds": [1], "mathTypes": ["Equation"], "mathId": 2}
+{"id": "math-invalid-3", "output": "<div class=\"error-block\">Unsupported math environment \"1abc\"</div>", "classes": ["mathTypeInvalid"], "mathIds": [1], "mathTypes": ["1abc"], "mathId": 2}
+{"id": "math-invalid-4", "output": "<div class=\"error-block\">Unsupported math environment \"a_b\"</div>", "classes": ["mathTypeInvalid"], "mathIds": [1], "mathTypes": ["a_b"], "mathId": 2}
+{"id": "math-invalid-5", "output": "<div class=\"error-block\">Unsupported math environment \"A\"</div>", "classes": ["mathTypeInvalid"], "mathIds": [1], "mathTypes": ["A"], "mathId": 2}
+{"id": "math-invalid-6", "output": "<div class=\"error-block\">Unsupported math environment \"eq-1\"</div>", "classes": ["mathTypeInvalid"], "mathIds": [1], "mathTypes": ["eq-1"], "mathId": 2}
+{"id": "math-invalid-7", "output": "<div class=\"error-block\">Unsupported math environment \"b \"</div>", "classes": ["mathTypeInvalid"], "mathIds": [1], "mathTypes": ["b "], "mathId": 2}
+{"id": "math-fatal-0", "error": "ProcessException: Invalid LaTeX expression(s) found.", "fatal": true, "classes": ["mathFatal"], "mathId": 2}
+{"id": "math-fatal-1", "error": "ProcessException: Invalid LaTeX expression(s) found.", "fatal": true, "classes": ["mathFatal"], "mathId": 2}
+{"id": "math-fatal-2", "error": "ProcessException: Invalid LaTeX expression(s) found.", "fatal": true, "classes": ["mathFatal"], "mathId": 2}
+{"id": "math-fatal-3", "error": "ProcessException: Invalid LaTeX expression(s) found.", "fatal": true, "classes": ["mathFatal"], "mathId": 2}
+{"id": "math-fatal-4", "error": "ProcessException: Invalid LaTeX expression(s) found.", "fatal": true, "classes": ["mathFatal"], "mathId": 2}
+{"id": "math-fatal-5", "error": "ProcessException: Invalid LaTeX expression(s) found.", "fatal": true, "classes": ["mathFatal"], "mathId": 2}
+{"id": "math-fatal-6", "error": "ProcessException: Invalid LaTeX expression(s) found.", "fatal": true, "classes": ["mathFatal"], "mathId": 2}
+{"id": "math-fatal-7", "error": "ProcessException: Invalid LaTeX expression(s) found.", "fatal": true, "classes": ["mathFatal"], "mathId": 2}
+{"id": "math-counter-0", "output": "<div class=\"error-block\">Unsupported math environment \"ALIGN\"</div><div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeInvalid", "mathTypeAbsent"], "mathIds": [1, 2], "mathTypes": ["ALIGN", "align"], "mathId": 3}
+{"id": "math-counter-1", "output": "<div class=\"error-block\">Unsupported math environment \"\"</div><div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeInvalid", "mathTypeAbsent"], "mathIds": [1, 2], "mathTypes": ["", "align"], "mathId": 3}
+{"id": "math-counter-2", "output": "<div class=\"error-block\">Unsupported math environment \"Equation\"</div><div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeInvalid", "mathTypeAbsent"], "mathIds": [1, 2], "mathTypes": ["Equation", "align"], "mathId": 3}
+{"id": "math-counter-3", "output": "<div class=\"error-block\">Unsupported math environment \"1abc\"</div><div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeInvalid", "mathTypeAbsent"], "mathIds": [1, 2], "mathTypes": ["1abc", "align"], "mathId": 3}
+{"id": "math-counter-4", "output": "<div class=\"error-block\">Unsupported math environment \"a_b\"</div><div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeInvalid", "mathTypeAbsent"], "mathIds": [1, 2], "mathTypes": ["a_b", "align"], "mathId": 3}
+{"id": "math-counter-5", "output": "<div class=\"error-block\">Unsupported math environment \"A\"</div><div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeInvalid", "mathTypeAbsent"], "mathIds": [1, 2], "mathTypes": ["A", "align"], "mathId": 3}
+{"id": "math-counter-6", "output": "<div class=\"error-block\">Unsupported math environment \"eq-1\"</div><div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeInvalid", "mathTypeAbsent"], "mathIds": [1, 2], "mathTypes": ["eq-1", "align"], "mathId": 3}
+{"id": "math-counter-7", "output": "<div class=\"error-block\">Unsupported math environment \"b \"</div><div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>", "classes": ["mathTypeInvalid", "mathTypeAbsent"], "mathIds": [1, 2], "mathTypes": ["b ", "align"], "mathId": 3}
+{"id": "mi-plain-0", "output": "<p>A <span class=\"math-inline\">$a+b$</span> B</p>\n\n", "classes": ["miPlain"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-plain-1", "output": "<p>A <span class=\"math-inline\">$x$</span> B</p>\n\n", "classes": ["miPlain"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-plain-2", "output": "<p>A <span class=\"math-inline\">$a&amp;b$</span> B</p>\n\n", "classes": ["miPlain"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-plain-3", "output": "<p>A <span class=\"math-inline\">$a&lt;b&gt;$</span> B</p>\n\n", "classes": ["miPlain"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-plain-4", "output": "<p>A <span class=\"math-inline\">$say hi$</span> B</p>\n\n", "classes": ["miPlain"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-plain-5", "output": "<p>A <span class=\"math-inline\">$n0$</span> B</p>\n\n", "classes": ["miPlain"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-plain-6", "output": "<p>A <span class=\"math-inline\">$zz$</span> B</p>\n\n", "classes": ["miPlain"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-plain-7", "output": "<p>A <span class=\"math-inline\">$q$</span> B</p>\n\n", "classes": ["miPlain"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-source-url", "output": "<p>A <span class=\"math-inline\">$http://example.com/0$</span> B</p>\n\n", "classes": ["miSource"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-source-email", "output": "<p>A <span class=\"math-inline\">$a1@example.com$</span> B</p>\n\n", "classes": ["miSource"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-source-edesc", "output": "<p>A <span class=\"math-inline\">$[a2@example.com Label]$</span> B</p>\n\n", "classes": ["miSource"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-source-two", "output": "<p>A <span class=\"math-inline\">$http://example.com/a http://example.com/b3$</span> B</p>\n\n", "classes": ["miSource"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-source-nest", "output": "<p>A <span class=\"math-inline\">$[a@example.com http://example.com/4]$</span> B</p>\n\n", "classes": ["miSource"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-source-url2", "output": "<p>A <span class=\"math-inline\">$https://example.com/p5$</span> B</p>\n\n", "classes": ["miSource"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-source-email2", "output": "<p>A <span class=\"math-inline\">$b6@example.org$</span> B</p>\n\n", "classes": ["miSource"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-plain-code", "output": "<p>A <span class=\"math-inline\">$[[code]]ff[[/code]]$</span> B</p>\n\n", "classes": ["miPlain"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-fallback-0", "output": "<p>A <span class=\"math-inline\">$ff$</span> B</p>\n\n", "classes": ["miFallback"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-free-0", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressFreelink"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-raw-0", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressRaw"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-nl-0", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressNewline"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-image-0", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressImage"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-fallback-1", "output": "<p>A <span class=\"math-inline\">$gg$</span> B</p>\n\n", "classes": ["miFallback"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-free-1", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressFreelink"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-raw-1", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressRaw"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-nl-1", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressNewline"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-image-1", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressImage"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-fallback-2", "output": "<p>A <span class=\"math-inline\">$hh$</span> B</p>\n\n", "classes": ["miFallback"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-free-2", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressFreelink"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-raw-2", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressRaw"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-nl-2", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressNewline"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-image-2", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressImage"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-fallback-3", "output": "<p>A <span class=\"math-inline\">$aa$</span> B</p>\n\n", "classes": ["miFallback"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-free-3", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressFreelink"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-raw-3", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressRaw"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-nl-3", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressNewline"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-image-3", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressImage"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-fallback-4", "output": "<p>A <span class=\"math-inline\">$bb$</span> B</p>\n\n", "classes": ["miFallback"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-free-4", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressFreelink"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-raw-4", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressRaw"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-nl-4", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressNewline"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-image-4", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressImage"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-fallback-5", "output": "<p>A <span class=\"math-inline\">$cc$</span> B</p>\n\n", "classes": ["miFallback"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-free-5", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressFreelink"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-raw-5", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressRaw"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-nl-5", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressNewline"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-image-5", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressImage"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-fallback-6", "output": "<p>A <span class=\"math-inline\">$dd$</span> B</p>\n\n", "classes": ["miFallback"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-free-6", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressFreelink"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-raw-6", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressRaw"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-nl-6", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressNewline"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-image-6", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressImage"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-fallback-7", "output": "<p>A <span class=\"math-inline\">$ee$</span> B</p>\n\n", "classes": ["miFallback"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-free-7", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressFreelink"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-raw-7", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressRaw"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-nl-7", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressNewline"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-image-7", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressImage"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-free-nested", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressFreelink"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-raw-nested", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressRaw"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-nl-nested", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressNewline"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-image-url", "output": "<p>A <span class=\"math-inline\">$$</span> B</p>\n\n", "classes": ["miSuppressFreelink"], "mathIds": [], "mathTypes": [], "mathId": null}
+{"id": "mi-depth-0", "kind": "depth", "ok": true}
+{"id": "mi-unknown-0", "kind": "unknown", "ok": true}
+{"id": "mi-cycle-0", "kind": "cycle", "ok": true}
+{"id": "mi-depth-1", "kind": "depth", "ok": true}
+{"id": "mi-unknown-1", "kind": "unknown", "ok": true}
+{"id": "mi-cycle-1", "kind": "cycle", "ok": true}
+{"id": "mi-depth-2", "kind": "depth", "ok": true}
+{"id": "mi-unknown-2", "kind": "unknown", "ok": true}
+{"id": "mi-cycle-2", "kind": "cycle", "ok": true}
+{"id": "mi-depth-3", "kind": "depth", "ok": true}
+{"id": "mi-unknown-3", "kind": "unknown", "ok": true}
+{"id": "mi-cycle-3", "kind": "cycle", "ok": true}

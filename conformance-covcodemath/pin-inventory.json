@@ -1,0 +1,169 @@
+{
+  "tree_state": "post-REFCORR6",
+  "module": "lean-ftml/LeanFtml/CoverageCodemath.lean",
+  "non_classes": {
+    "Text_Highlighter": {
+      "reason": "Code token whose lowered type is one of the fourteen names. Vendored library, R4.7 external boundary (REPORT-R47.md, REPORT-R48.md). codeShapeOf returns none. Not a class.",
+      "battery": [
+        "code/arg-type-python",
+        "code/arg-type-PYTHON",
+        "code/arg-two-attrs",
+        "code/crlf-args",
+        "code/arg-type-css-inline",
+        "code/arg-tab-after",
+        "code/arg-multi-space",
+        "code/arg-newline-after",
+        "code/arg-type-name"
+      ],
+      "theorem": "cm_highlighter_nonclass, cm_code_python_boundary, cm_code_langs_fourteen"
+    },
+    "MathPngExists": {
+      "reason": "Render/Xhtml/Math.php PNG-exists arm. Harness LatexRenderer is a no-op, so the PNG never exists and token() takes the fossil failure block. Named unreachable boundary (REPORT-R48.md). Not a class.",
+      "battery": [],
+      "theorem": "cm_math_png_nonclass"
+    },
+    "CodeFilename": {
+      "reason": "Render/Xhtml/Code.php filename prefix. Harness css_filename conf is unset, so the branch is dead. renderCode does not read filename.",
+      "theorem": "cm_code_filename_dead"
+    }
+  },
+  "classes": {
+    "codePlain": {
+      "branch": "Code.php token, type outside the fourteen, trimmed body nonempty: ENT_COMPAT pre/code wrap",
+      "live": [],
+      "battery": ["code/basic-line", "code/basic-inline", "code/body-tab", "code/body-leading-space-first"],
+      "file": "conformance-r47/family-cases.jsonl",
+      "theorem": "cm_code_plain_shape"
+    },
+    "codeEmpty": {
+      "branch": "Code.php token, trimmed body empty under PHP trim: bare div.code",
+      "live": ["muse-probe-r2code-empty-body"],
+      "battery": ["code/empty", "code/empty-lines", "code/ws-body-spaces", "code/ws-body-tabs"],
+      "file": "conformance-r47/family-cases.jsonl; REPORT-R47.md",
+      "theorem": "cm_code_empty_shape"
+    },
+    "codeTrailWs": {
+      "branch": "Code.php process REFCORR6: group 3 is a whitespace byte, returned after the token, excluded from the claimed span",
+      "live": [],
+      "battery": ["code/basic-line", "code/basic-two-blocks"],
+      "file": "ref-php/text-wiki/Text/Wiki/Parse/Default/Code.php; conformance-r47/family-cases.jsonl",
+      "theorem": "cm_code_trail_space, cm_claimed_shorter, cm_claimed_partition"
+    },
+    "codeTrailEnd": {
+      "branch": "Code.php process REFCORR6: group 3 is the empty $ alternative, claimed span is the whole match",
+      "live": [],
+      "battery": ["code/basic-no-trailing-nl", "code/basic-inline", "code/empty"],
+      "file": "conformance-r47/family-cases.jsonl",
+      "theorem": "cm_claimed_at_end"
+    },
+    "mathFatal": {
+      "branch": "Math.php process: trimmed body matches include\\s*\\{|input\\s*\\{ and throws ProcessException. Counter already incremented. FATAL-AGREE.",
+      "live": [],
+      "battery": ["math-include-brace", "math-include-in-word", "math-include-uppercase", "math-include-in-label-block", "math-input-brace"],
+      "file": "conformance-r48/cases.jsonl; REPORT-R48.md",
+      "theorem": "cm_math_fatal_input, cm_counter_on_fatal"
+    },
+    "mathTypeAbsent": {
+      "branch": "Math.php process C-SUSPECT-SERVING-1: type key absent, stored type is align, counter advances, fossil failure block",
+      "live": ["muse-probe-suspect-serving-math-types-ids"],
+      "battery": ["smoke-math"],
+      "file": "REPORT-REFCORR3.md; conformance-refphp/next/math/CORRECTION-CSUSPECT-SERVING-1.md",
+      "theorem": "cm_math_absent_input, cm_counter_starts"
+    },
+    "mathTypeValid": {
+      "branch": "Math.php process: present type matches ^[a-z][a-z0-9]*$, kept verbatim. Harness render is the fossil prabably block.",
+      "live": ["muse-probe-suspect-serving-math-type-equation", "muse-probe-suspect-serving-math-type-gather"],
+      "battery": ["math-type-equation", "math-type-eqnarray", "math-type-align", "math-type-gather"],
+      "file": "conformance-r48/cases.jsonl; REPORT-REFCORR3.md",
+      "theorem": "cm_math_valid_gather, cm_math_png_nonclass"
+    },
+    "mathTypeInvalid": {
+      "branch": "Math.php render: present type fails ^[a-z][a-z0-9]*$. Unsupported math environment error. Counter still advanced.",
+      "live": ["muse-probe-suspect-serving-math-types-ids"],
+      "battery": ["math-type-uppercase", "math-type-empty"],
+      "file": "conformance-r48/cases.jsonl; REPORT-REFCORR3.md",
+      "theorem": "cm_math_invalid_empty, cm_math_invalid_upper, cm_counter_on_invalid"
+    },
+    "miPlain": {
+      "branch": "Mathinline expandSource: trimmed body has no placeholder. Includes m1-code, whose [[code]] markup stays literal because Code matches only at line start.",
+      "live": ["muse-probe-suspect3-m1-plain", "muse-probe-suspect3-m1-code"],
+      "battery": ["m1-plain", "m1-code"],
+      "file": "conformance-suspect3/cases-m1.jsonl; conformance-refcorr6/",
+      "theorem": "cm_mi_absent_unknown"
+    },
+    "miDepth": {
+      "branch": "Mathinline expandSource: depth > 64 returns the bytes unchanged. No page enters it. Designed direct-call pin.",
+      "live": [],
+      "battery": [],
+      "file": "ref-php/text-wiki/Text/Wiki/Parse/Default/Mathinline.php",
+      "theorem": "cm_mi_depth_beats_suppress",
+      "direct": true
+    },
+    "miUnknown": {
+      "branch": "Mathinline expandSource: placeholder id with no token stays literal. No page enters it. Designed direct-call pin.",
+      "live": [],
+      "battery": [],
+      "file": "ref-php/text-wiki/Text/Wiki/Parse/Default/Mathinline.php",
+      "theorem": "cm_mi_unknown_keeps",
+      "direct": true
+    },
+    "miCycle": {
+      "branch": "Mathinline expandSource: id already on the seen chain stays literal. No page enters it. Designed direct-call pin.",
+      "live": [],
+      "battery": [],
+      "file": "ref-php/text-wiki/Text/Wiki/Parse/Default/Mathinline.php",
+      "theorem": "cm_mi_cycle_keeps",
+      "direct": true
+    },
+    "miSource": {
+      "branch": "Mathinline expandSource: tokenSource span expanded recursively. Page-reachable through Url and Email, which match mid-line. Code's ^ anchor does not fire inside [[$ ... $]], so m1-code is miPlain.",
+      "live": [
+        "muse-probe-suspect3-m1-url",
+        "muse-probe-suspect3-m1-email-bare",
+        "muse-probe-suspect3-m1-email-descr",
+        "muse-probe-suspect3-m1-nested-email-url",
+        "muse-probe-suspect3-m1-two-urls",
+        "muse-probe-suspect3-m1-email-descr-url-first"
+      ],
+      "battery": ["m1-url", "m1-email-bare", "m1-email-descr", "m1-nested-email-url", "m1-two-urls", "m1-email-descr-url-first"],
+      "file": "conformance-suspect3/cases-m1.jsonl; REPORT-REFCORR6.md",
+      "theorem": "cm_mi_source_url"
+    },
+    "miFallback": {
+      "branch": "Mathinline expandSource: token with no recorded span, option text then href. Reachable via Rawold, whose addToken does not pass a span.",
+      "live": [],
+      "battery": [],
+      "file": "ref-php/text-wiki/Text/Wiki/Parse/Default/Mathinline.php; Rawold.php",
+      "theorem": "cm_mi_fallback_text",
+      "designed_source": "[[$ ``word`` $]]"
+    },
+    "miSuppressFreelink": {
+      "branch": "Mathinline suppress set: Freelink at any depth empties the body to $$",
+      "live": ["muse-probe-suspect3-m1-freelink", "muse-probe-suspect3-m1-nested-email-free", "muse-probe-suspect3-m1-freelink-url"],
+      "battery": ["m1-freelink", "m1-nested-email-free", "m1-freelink-url"],
+      "file": "conformance-suspect3/cases-m1.jsonl; REPORT-REFCORR6.md",
+      "theorem": "cm_mi_freelink_suppress, cm_suppress_freelink"
+    },
+    "miSuppressRaw": {
+      "branch": "Mathinline suppress set: Raw at any depth empties the body to $$",
+      "live": ["muse-probe-suspect3-m1-raw", "muse-probe-suspect3-m1-nested-email-raw"],
+      "battery": ["m1-raw", "m1-nested-email-raw"],
+      "file": "conformance-suspect3/cases-m1.jsonl; REPORT-REFCORR6.md",
+      "theorem": "cm_mi_raw_suppress, cm_suppress_raw"
+    },
+    "miSuppressNewline": {
+      "branch": "Mathinline suppress set: Newline at any depth empties the body to $$",
+      "live": ["muse-probe-suspect3-m1-newline", "muse-probe-suspect3-m1-nested-email-newline"],
+      "battery": ["m1-newline", "m1-nested-email-newline"],
+      "file": "conformance-suspect3/cases-m1.jsonl; REPORT-REFCORR6.md",
+      "theorem": "cm_mi_newline_suppress, cm_suppress_newline"
+    },
+    "miSuppressImage": {
+      "branch": "Mathinline suppress set: Image at any depth empties the body to $$",
+      "live": ["muse-probe-suspect3-m1-image"],
+      "battery": ["m1-image"],
+      "file": "conformance-suspect3/cases-m1.jsonl; REPORT-REFCORR6.md",
+      "theorem": "cm_mi_image_suppress, cm_suppress_image"
+    }
+  }
+}

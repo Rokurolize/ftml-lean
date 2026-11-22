@@ -1,0 +1,193 @@
+{
+  "seed": 7,
+  "cases": 144,
+  "failures": 0,
+  "class_mismatch": 0,
+  "uncomparable": 12,
+  "by_class": {
+    "codePlain": {
+      "n": 16,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "codeTrailEnd": {
+      "n": 16,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "codeTrailWs": {
+      "n": 16,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "codeEmpty": {
+      "n": 16,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "mathTypeValid": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "mathTypeAbsent": {
+      "n": 16,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "mathTypeInvalid": {
+      "n": 16,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "mathFatal": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "miPlain": {
+      "n": 9,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "miSource": {
+      "n": 7,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "miFallback": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "miSuppressFreelink": {
+      "n": 10,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "miSuppressRaw": {
+      "n": 9,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "miSuppressNewline": {
+      "n": 9,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "miSuppressImage": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "miDepth": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 4,
+      "ids": []
+    },
+    "miUnknown": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 4,
+      "ids": []
+    },
+    "miCycle": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 4,
+      "ids": []
+    }
+  },
+  "failure_records": [],
+  "mismatch_records": [],
+  "uncomparable_records": [
+    {
+      "id": "mi-depth-0",
+      "class": "miDepth",
+      "php_ok": true,
+      "reason": "direct expandSource depth 65; mirror theorem cm_mi_depth_beats_suppress"
+    },
+    {
+      "id": "mi-unknown-0",
+      "class": "miUnknown",
+      "php_ok": true,
+      "reason": "direct expandSource of a missing id; mirror theorem cm_mi_unknown_keeps"
+    },
+    {
+      "id": "mi-cycle-0",
+      "class": "miCycle",
+      "php_ok": true,
+      "reason": "direct expandSource of a self-span; mirror theorem cm_mi_cycle_keeps"
+    },
+    {
+      "id": "mi-depth-1",
+      "class": "miDepth",
+      "php_ok": true,
+      "reason": "direct expandSource depth 65; mirror theorem cm_mi_depth_beats_suppress"
+    },
+    {
+      "id": "mi-unknown-1",
+      "class": "miUnknown",
+      "php_ok": true,
+      "reason": "direct expandSource of a missing id; mirror theorem cm_mi_unknown_keeps"
+    },
+    {
+      "id": "mi-cycle-1",
+      "class": "miCycle",
+      "php_ok": true,
+      "reason": "direct expandSource of a self-span; mirror theorem cm_mi_cycle_keeps"
+    },
+    {
+      "id": "mi-depth-2",
+      "class": "miDepth",
+      "php_ok": true,
+      "reason": "direct expandSource depth 65; mirror theorem cm_mi_depth_beats_suppress"
+    },
+    {
+      "id": "mi-unknown-2",
+      "class": "miUnknown",
+      "php_ok": true,
+      "reason": "direct expandSource of a missing id; mirror theorem cm_mi_unknown_keeps"
+    },
+    {
+      "id": "mi-cycle-2",
+      "class": "miCycle",
+      "php_ok": true,
+      "reason": "direct expandSource of a self-span; mirror theorem cm_mi_cycle_keeps"
+    },
+    {
+      "id": "mi-depth-3",
+      "class": "miDepth",
+      "php_ok": true,
+      "reason": "direct expandSource depth 65; mirror theorem cm_mi_depth_beats_suppress"
+    },
+    {
+      "id": "mi-unknown-3",
+      "class": "miUnknown",
+      "php_ok": true,
+      "reason": "direct expandSource of a missing id; mirror theorem cm_mi_unknown_keeps"
+    },
+    {
+      "id": "mi-cycle-3",
+      "class": "miCycle",
+      "php_ok": true,
+      "reason": "direct expandSource of a self-span; mirror theorem cm_mi_cycle_keeps"
+    }
+  ]
+}

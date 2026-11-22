@@ -1,0 +1,144 @@
+{"id": "code-plain-end-0", "source": "[[code]]x y[[/code]]", "expect": ["codePlain", "codeTrailEnd"], "target": "codePlain"}
+{"id": "code-plain-ws-0", "source": "[[code]]x y[[/code]] ", "expect": ["codePlain", "codeTrailWs"], "target": "codeTrailWs"}
+{"id": "code-plain-end-1", "source": "[[code]]n0[[/code]]", "expect": ["codePlain", "codeTrailEnd"], "target": "codeTrailEnd"}
+{"id": "code-plain-ws-1", "source": "[[code]]n0[[/code]]\n", "expect": ["codePlain", "codeTrailWs"], "target": "codeTrailWs"}
+{"id": "code-plain-end-2", "source": "[[code]]a<b>[[/code]]", "expect": ["codePlain", "codeTrailEnd"], "target": "codePlain"}
+{"id": "code-plain-ws-2", "source": "[[code]]a<b>[[/code]]\t", "expect": ["codePlain", "codeTrailWs"], "target": "codeTrailWs"}
+{"id": "code-plain-end-3", "source": "[[code]]zz[[/code]]", "expect": ["codePlain", "codeTrailEnd"], "target": "codeTrailEnd"}
+{"id": "code-plain-ws-3", "source": "[[code]]zz[[/code]] ", "expect": ["codePlain", "codeTrailWs"], "target": "codeTrailWs"}
+{"id": "code-plain-end-4", "source": "[[code]]q[[/code]]", "expect": ["codePlain", "codeTrailEnd"], "target": "codePlain"}
+{"id": "code-plain-ws-4", "source": "[[code]]q[[/code]] ", "expect": ["codePlain", "codeTrailWs"], "target": "codeTrailWs"}
+{"id": "code-plain-end-5", "source": "[[code]]alpha[[/code]]", "expect": ["codePlain", "codeTrailEnd"], "target": "codeTrailEnd"}
+{"id": "code-plain-ws-5", "source": "[[code]]alpha[[/code]]\n", "expect": ["codePlain", "codeTrailWs"], "target": "codeTrailWs"}
+{"id": "code-plain-end-6", "source": "[[code]]a&b[[/code]]", "expect": ["codePlain", "codeTrailEnd"], "target": "codePlain"}
+{"id": "code-plain-ws-6", "source": "[[code]]a&b[[/code]]\t", "expect": ["codePlain", "codeTrailWs"], "target": "codeTrailWs"}
+{"id": "code-plain-end-7", "source": "[[code]]O'Brien[[/code]]", "expect": ["codePlain", "codeTrailEnd"], "target": "codeTrailEnd"}
+{"id": "code-plain-ws-7", "source": "[[code]]O'Brien[[/code]] ", "expect": ["codePlain", "codeTrailWs"], "target": "codeTrailWs"}
+{"id": "code-empty-end-0", "source": "[[code]][[/code]]", "expect": ["codeEmpty", "codeTrailEnd"], "target": "codeTrailEnd"}
+{"id": "code-empty-ws-0", "source": "[[code]][[/code]] ", "expect": ["codeEmpty", "codeTrailWs"], "target": "codeEmpty"}
+{"id": "code-empty-end-1", "source": "[[code]]   [[/code]]", "expect": ["codeEmpty", "codeTrailEnd"], "target": "codeEmpty"}
+{"id": "code-empty-ws-1", "source": "[[code]]   [[/code]]\n", "expect": ["codeEmpty", "codeTrailWs"], "target": "codeEmpty"}
+{"id": "code-empty-end-2", "source": "[[code]]\n[[/code]]", "expect": ["codeEmpty", "codeTrailEnd"], "target": "codeTrailEnd"}
+{"id": "code-empty-ws-2", "source": "[[code]]\n[[/code]]\t", "expect": ["codeEmpty", "codeTrailWs"], "target": "codeEmpty"}
+{"id": "code-empty-end-3", "source": "[[code]]\t\t[[/code]]", "expect": ["codeEmpty", "codeTrailEnd"], "target": "codeEmpty"}
+{"id": "code-empty-ws-3", "source": "[[code]]\t\t[[/code]] ", "expect": ["codeEmpty", "codeTrailWs"], "target": "codeEmpty"}
+{"id": "code-empty-end-4", "source": "[[code]] \n [[/code]]", "expect": ["codeEmpty", "codeTrailEnd"], "target": "codeTrailEnd"}
+{"id": "code-empty-ws-4", "source": "[[code]] \n [[/code]] ", "expect": ["codeEmpty", "codeTrailWs"], "target": "codeEmpty"}
+{"id": "code-empty-end-5", "source": "[[code]]\n\n[[/code]]", "expect": ["codeEmpty", "codeTrailEnd"], "target": "codeEmpty"}
+{"id": "code-empty-ws-5", "source": "[[code]]\n\n[[/code]]\n", "expect": ["codeEmpty", "codeTrailWs"], "target": "codeEmpty"}
+{"id": "code-empty-end-6", "source": "[[code]]  \n[[/code]]", "expect": ["codeEmpty", "codeTrailEnd"], "target": "codeTrailEnd"}
+{"id": "code-empty-ws-6", "source": "[[code]]  \n[[/code]]\t", "expect": ["codeEmpty", "codeTrailWs"], "target": "codeEmpty"}
+{"id": "code-empty-end-7", "source": "[[code]]\n [[/code]]", "expect": ["codeEmpty", "codeTrailEnd"], "target": "codeEmpty"}
+{"id": "code-empty-ws-7", "source": "[[code]]\n [[/code]] ", "expect": ["codeEmpty", "codeTrailWs"], "target": "codeEmpty"}
+{"id": "math-valid-0", "source": "[[math type=\"align\"]]\ndd\n[[/math]]", "expect": ["mathTypeValid"], "target": "mathTypeValid", "mathIds": [1], "mathTypes": ["align"], "counter": 2}
+{"id": "math-valid-1", "source": "[[math type=\"gather\"]]\nee\n[[/math]]", "expect": ["mathTypeValid"], "target": "mathTypeValid", "mathIds": [1], "mathTypes": ["gather"], "counter": 2}
+{"id": "math-valid-2", "source": "[[math type=\"equation\"]]\nff\n[[/math]]", "expect": ["mathTypeValid"], "target": "mathTypeValid", "mathIds": [1], "mathTypes": ["equation"], "counter": 2}
+{"id": "math-valid-3", "source": "[[math type=\"eqnarray\"]]\ngg\n[[/math]]", "expect": ["mathTypeValid"], "target": "mathTypeValid", "mathIds": [1], "mathTypes": ["eqnarray"], "counter": 2}
+{"id": "math-valid-4", "source": "[[math type=\"foo\"]]\nhh\n[[/math]]", "expect": ["mathTypeValid"], "target": "mathTypeValid", "mathIds": [1], "mathTypes": ["foo"], "counter": 2}
+{"id": "math-valid-5", "source": "[[math type=\"bar\"]]\naa\n[[/math]]", "expect": ["mathTypeValid"], "target": "mathTypeValid", "mathIds": [1], "mathTypes": ["bar"], "counter": 2}
+{"id": "math-valid-6", "source": "[[math type=\"a1\"]]\nbb\n[[/math]]", "expect": ["mathTypeValid"], "target": "mathTypeValid", "mathIds": [1], "mathTypes": ["a1"], "counter": 2}
+{"id": "math-valid-7", "source": "[[math type=\"xyz\"]]\ncc\n[[/math]]", "expect": ["mathTypeValid"], "target": "mathTypeValid", "mathIds": [1], "mathTypes": ["xyz"], "counter": 2}
+{"id": "math-absent-0", "source": "[[math]]\ndd\n[[/math]]", "expect": ["mathTypeAbsent"], "target": "mathTypeAbsent", "mathIds": [1], "mathTypes": ["align"], "counter": 2}
+{"id": "math-absent-1", "source": "[[math]]\nee\n[[/math]]", "expect": ["mathTypeAbsent"], "target": "mathTypeAbsent", "mathIds": [1], "mathTypes": ["align"], "counter": 2}
+{"id": "math-absent-2", "source": "[[math]]\nff\n[[/math]]", "expect": ["mathTypeAbsent"], "target": "mathTypeAbsent", "mathIds": [1], "mathTypes": ["align"], "counter": 2}
+{"id": "math-absent-3", "source": "[[math]]\ngg\n[[/math]]", "expect": ["mathTypeAbsent"], "target": "mathTypeAbsent", "mathIds": [1], "mathTypes": ["align"], "counter": 2}
+{"id": "math-absent-4", "source": "[[math]]\nhh\n[[/math]]", "expect": ["mathTypeAbsent"], "target": "mathTypeAbsent", "mathIds": [1], "mathTypes": ["align"], "counter": 2}
+{"id": "math-absent-5", "source": "[[math]]\naa\n[[/math]]", "expect": ["mathTypeAbsent"], "target": "mathTypeAbsent", "mathIds": [1], "mathTypes": ["align"], "counter": 2}
+{"id": "math-absent-6", "source": "[[math]]\nbb\n[[/math]]", "expect": ["mathTypeAbsent"], "target": "mathTypeAbsent", "mathIds": [1], "mathTypes": ["align"], "counter": 2}
+{"id": "math-absent-7", "source": "[[math]]\ncc\n[[/math]]", "expect": ["mathTypeAbsent"], "target": "mathTypeAbsent", "mathIds": [1], "mathTypes": ["align"], "counter": 2}
+{"id": "math-invalid-0", "source": "[[math type=\"ALIGN\"]]\ndd\n[[/math]]", "expect": ["mathTypeInvalid"], "target": "mathTypeInvalid", "mathIds": [1], "mathTypes": ["ALIGN"], "counter": 2}
+{"id": "math-invalid-1", "source": "[[math type=\"\"]]\nee\n[[/math]]", "expect": ["mathTypeInvalid"], "target": "mathTypeInvalid", "mathIds": [1], "mathTypes": [""], "counter": 2}
+{"id": "math-invalid-2", "source": "[[math type=\"Equation\"]]\nff\n[[/math]]", "expect": ["mathTypeInvalid"], "target": "mathTypeInvalid", "mathIds": [1], "mathTypes": ["Equation"], "counter": 2}
+{"id": "math-invalid-3", "source": "[[math type=\"1abc\"]]\ngg\n[[/math]]", "expect": ["mathTypeInvalid"], "target": "mathTypeInvalid", "mathIds": [1], "mathTypes": ["1abc"], "counter": 2}
+{"id": "math-invalid-4", "source": "[[math type=\"a_b\"]]\nhh\n[[/math]]", "expect": ["mathTypeInvalid"], "target": "mathTypeInvalid", "mathIds": [1], "mathTypes": ["a_b"], "counter": 2}
+{"id": "math-invalid-5", "source": "[[math type=\"A\"]]\naa\n[[/math]]", "expect": ["mathTypeInvalid"], "target": "mathTypeInvalid", "mathIds": [1], "mathTypes": ["A"], "counter": 2}
+{"id": "math-invalid-6", "source": "[[math type=\"eq-1\"]]\nbb\n[[/math]]", "expect": ["mathTypeInvalid"], "target": "mathTypeInvalid", "mathIds": [1], "mathTypes": ["eq-1"], "counter": 2}
+{"id": "math-invalid-7", "source": "[[math type=\"b \"]]\ncc\n[[/math]]", "expect": ["mathTypeInvalid"], "target": "mathTypeInvalid", "mathIds": [1], "mathTypes": ["b "], "counter": 2}
+{"id": "math-fatal-0", "source": "[[math]]\n\\input{a}\n[[/math]]", "expect": ["mathFatal"], "target": "mathFatal", "counter": 2}
+{"id": "math-fatal-1", "source": "[[math]]\n\\include{b}\n[[/math]]", "expect": ["mathFatal"], "target": "mathFatal", "counter": 2}
+{"id": "math-fatal-2", "source": "[[math]]\nINPUT{c}\n[[/math]]", "expect": ["mathFatal"], "target": "mathFatal", "counter": 2}
+{"id": "math-fatal-3", "source": "[[math]]\nInclude {d}\n[[/math]]", "expect": ["mathFatal"], "target": "mathFatal", "counter": 2}
+{"id": "math-fatal-4", "source": "[[math]]\n\\input {e}\n[[/math]]", "expect": ["mathFatal"], "target": "mathFatal", "counter": 2}
+{"id": "math-fatal-5", "source": "[[math]]\nxx\\include{f}yy\n[[/math]]", "expect": ["mathFatal"], "target": "mathFatal", "counter": 2}
+{"id": "math-fatal-6", "source": "[[math]]\n\\input{\n[[/math]]", "expect": ["mathFatal"], "target": "mathFatal", "counter": 2}
+{"id": "math-fatal-7", "source": "[[math]]\ninclude{z}\n[[/math]]", "expect": ["mathFatal"], "target": "mathFatal", "counter": 2}
+{"id": "math-counter-0", "source": "[[math type=\"ALIGN\"]]\na\n[[/math]]\n[[math]]\ndd\n[[/math]]", "expect": ["mathTypeInvalid", "mathTypeAbsent"], "target": "mathTypeInvalid", "mathIds": [1, 2], "mathTypes": ["ALIGN", "align"], "counter": 3}
+{"id": "math-counter-1", "source": "[[math type=\"\"]]\na\n[[/math]]\n[[math]]\nee\n[[/math]]", "expect": ["mathTypeInvalid", "mathTypeAbsent"], "target": "mathTypeInvalid", "mathIds": [1, 2], "mathTypes": ["", "align"], "counter": 3}
+{"id": "math-counter-2", "source": "[[math type=\"Equation\"]]\na\n[[/math]]\n[[math]]\nff\n[[/math]]", "expect": ["mathTypeInvalid", "mathTypeAbsent"], "target": "mathTypeInvalid", "mathIds": [1, 2], "mathTypes": ["Equation", "align"], "counter": 3}
+{"id": "math-counter-3", "source": "[[math type=\"1abc\"]]\na\n[[/math]]\n[[math]]\ngg\n[[/math]]", "expect": ["mathTypeInvalid", "mathTypeAbsent"], "target": "mathTypeInvalid", "mathIds": [1, 2], "mathTypes": ["1abc", "align"], "counter": 3}
+{"id": "math-counter-4", "source": "[[math type=\"a_b\"]]\na\n[[/math]]\n[[math]]\nhh\n[[/math]]", "expect": ["mathTypeInvalid", "mathTypeAbsent"], "target": "mathTypeInvalid", "mathIds": [1, 2], "mathTypes": ["a_b", "align"], "counter": 3}
+{"id": "math-counter-5", "source": "[[math type=\"A\"]]\na\n[[/math]]\n[[math]]\naa\n[[/math]]", "expect": ["mathTypeInvalid", "mathTypeAbsent"], "target": "mathTypeInvalid", "mathIds": [1, 2], "mathTypes": ["A", "align"], "counter": 3}
+{"id": "math-counter-6", "source": "[[math type=\"eq-1\"]]\na\n[[/math]]\n[[math]]\nbb\n[[/math]]", "expect": ["mathTypeInvalid", "mathTypeAbsent"], "target": "mathTypeInvalid", "mathIds": [1, 2], "mathTypes": ["eq-1", "align"], "counter": 3}
+{"id": "math-counter-7", "source": "[[math type=\"b \"]]\na\n[[/math]]\n[[math]]\ncc\n[[/math]]", "expect": ["mathTypeInvalid", "mathTypeAbsent"], "target": "mathTypeInvalid", "mathIds": [1, 2], "mathTypes": ["b ", "align"], "counter": 3}
+{"id": "mi-plain-0", "source": "A [[$ a+b $]] B", "expect": ["miPlain"], "target": "miPlain"}
+{"id": "mi-plain-1", "source": "A [[$ x $]] B", "expect": ["miPlain"], "target": "miPlain"}
+{"id": "mi-plain-2", "source": "A [[$ a&b $]] B", "expect": ["miPlain"], "target": "miPlain"}
+{"id": "mi-plain-3", "source": "A [[$ a<b> $]] B", "expect": ["miPlain"], "target": "miPlain"}
+{"id": "mi-plain-4", "source": "A [[$ say hi $]] B", "expect": ["miPlain"], "target": "miPlain"}
+{"id": "mi-plain-5", "source": "A [[$ n0 $]] B", "expect": ["miPlain"], "target": "miPlain"}
+{"id": "mi-plain-6", "source": "A [[$ zz $]] B", "expect": ["miPlain"], "target": "miPlain"}
+{"id": "mi-plain-7", "source": "A [[$ q $]] B", "expect": ["miPlain"], "target": "miPlain"}
+{"id": "mi-source-url", "source": "A [[$ http://example.com/0 $]] B", "expect": ["miSource"], "target": "miSource"}
+{"id": "mi-source-email", "source": "A [[$ a1@example.com $]] B", "expect": ["miSource"], "target": "miSource"}
+{"id": "mi-source-edesc", "source": "A [[$ [a2@example.com Label] $]] B", "expect": ["miSource"], "target": "miSource"}
+{"id": "mi-source-two", "source": "A [[$ http://example.com/a http://example.com/b3 $]] B", "expect": ["miSource"], "target": "miSource"}
+{"id": "mi-source-nest", "source": "A [[$ [a@example.com http://example.com/4] $]] B", "expect": ["miSource"], "target": "miSource"}
+{"id": "mi-source-url2", "source": "A [[$ https://example.com/p5 $]] B", "expect": ["miSource"], "target": "miSource"}
+{"id": "mi-source-email2", "source": "A [[$ b6@example.org $]] B", "expect": ["miSource"], "target": "miSource"}
+{"id": "mi-plain-code", "source": "A [[$ [[code]]dd[[/code]] $]] B", "expect": ["miPlain"], "target": "miPlain", "note": "Code ^ anchor does not fire mid-line; m1-code is miPlain"}
+{"id": "mi-fallback-0", "source": "A [[$ ``dd`` $]] B", "expect": ["miFallback"], "target": "miFallback"}
+{"id": "mi-free-0", "source": "A [[$ [[[Page0]]] $]] B", "expect": ["miSuppressFreelink"], "target": "miSuppressFreelink"}
+{"id": "mi-raw-0", "source": "A [[$ @@dd@@ $]] B", "expect": ["miSuppressRaw"], "target": "miSuppressRaw"}
+{"id": "mi-nl-0", "source": "A [[$ x\ndd $]] B", "expect": ["miSuppressNewline"], "target": "miSuppressNewline"}
+{"id": "mi-image-0", "source": "A [[$ [[image http://example.com/0.png]] $]] B", "expect": ["miSuppressImage"], "target": "miSuppressImage"}
+{"id": "mi-fallback-1", "source": "A [[$ ``ee`` $]] B", "expect": ["miFallback"], "target": "miFallback"}
+{"id": "mi-free-1", "source": "A [[$ [[[Page1]]] $]] B", "expect": ["miSuppressFreelink"], "target": "miSuppressFreelink"}
+{"id": "mi-raw-1", "source": "A [[$ @@ee@@ $]] B", "expect": ["miSuppressRaw"], "target": "miSuppressRaw"}
+{"id": "mi-nl-1", "source": "A [[$ x\nee $]] B", "expect": ["miSuppressNewline"], "target": "miSuppressNewline"}
+{"id": "mi-image-1", "source": "A [[$ [[image http://example.com/1.png]] $]] B", "expect": ["miSuppressImage"], "target": "miSuppressImage"}
+{"id": "mi-fallback-2", "source": "A [[$ ``ff`` $]] B", "expect": ["miFallback"], "target": "miFallback"}
+{"id": "mi-free-2", "source": "A [[$ [[[Page2]]] $]] B", "expect": ["miSuppressFreelink"], "target": "miSuppressFreelink"}
+{"id": "mi-raw-2", "source": "A [[$ @@ff@@ $]] B", "expect": ["miSuppressRaw"], "target": "miSuppressRaw"}
+{"id": "mi-nl-2", "source": "A [[$ x\nff $]] B", "expect": ["miSuppressNewline"], "target": "miSuppressNewline"}
+{"id": "mi-image-2", "source": "A [[$ [[image http://example.com/2.png]] $]] B", "expect": ["miSuppressImage"], "target": "miSuppressImage"}
+{"id": "mi-fallback-3", "source": "A [[$ ``gg`` $]] B", "expect": ["miFallback"], "target": "miFallback"}
+{"id": "mi-free-3", "source": "A [[$ [[[Page3]]] $]] B", "expect": ["miSuppressFreelink"], "target": "miSuppressFreelink"}
+{"id": "mi-raw-3", "source": "A [[$ @@gg@@ $]] B", "expect": ["miSuppressRaw"], "target": "miSuppressRaw"}
+{"id": "mi-nl-3", "source": "A [[$ x\ngg $]] B", "expect": ["miSuppressNewline"], "target": "miSuppressNewline"}
+{"id": "mi-image-3", "source": "A [[$ [[image http://example.com/3.png]] $]] B", "expect": ["miSuppressImage"], "target": "miSuppressImage"}
+{"id": "mi-fallback-4", "source": "A [[$ ``hh`` $]] B", "expect": ["miFallback"], "target": "miFallback"}
+{"id": "mi-free-4", "source": "A [[$ [[[Page4]]] $]] B", "expect": ["miSuppressFreelink"], "target": "miSuppressFreelink"}
+{"id": "mi-raw-4", "source": "A [[$ @@hh@@ $]] B", "expect": ["miSuppressRaw"], "target": "miSuppressRaw"}
+{"id": "mi-nl-4", "source": "A [[$ x\nhh $]] B", "expect": ["miSuppressNewline"], "target": "miSuppressNewline"}
+{"id": "mi-image-4", "source": "A [[$ [[image http://example.com/4.png]] $]] B", "expect": ["miSuppressImage"], "target": "miSuppressImage"}
+{"id": "mi-fallback-5", "source": "A [[$ ``aa`` $]] B", "expect": ["miFallback"], "target": "miFallback"}
+{"id": "mi-free-5", "source": "A [[$ [[[Page5]]] $]] B", "expect": ["miSuppressFreelink"], "target": "miSuppressFreelink"}
+{"id": "mi-raw-5", "source": "A [[$ @@aa@@ $]] B", "expect": ["miSuppressRaw"], "target": "miSuppressRaw"}
+{"id": "mi-nl-5", "source": "A [[$ x\naa $]] B", "expect": ["miSuppressNewline"], "target": "miSuppressNewline"}
+{"id": "mi-image-5", "source": "A [[$ [[image http://example.com/5.png]] $]] B", "expect": ["miSuppressImage"], "target": "miSuppressImage"}
+{"id": "mi-fallback-6", "source": "A [[$ ``bb`` $]] B", "expect": ["miFallback"], "target": "miFallback"}
+{"id": "mi-free-6", "source": "A [[$ [[[Page6]]] $]] B", "expect": ["miSuppressFreelink"], "target": "miSuppressFreelink"}
+{"id": "mi-raw-6", "source": "A [[$ @@bb@@ $]] B", "expect": ["miSuppressRaw"], "target": "miSuppressRaw"}
+{"id": "mi-nl-6", "source": "A [[$ x\nbb $]] B", "expect": ["miSuppressNewline"], "target": "miSuppressNewline"}
+{"id": "mi-image-6", "source": "A [[$ [[image http://example.com/6.png]] $]] B", "expect": ["miSuppressImage"], "target": "miSuppressImage"}
+{"id": "mi-fallback-7", "source": "A [[$ ``cc`` $]] B", "expect": ["miFallback"], "target": "miFallback"}
+{"id": "mi-free-7", "source": "A [[$ [[[Page7]]] $]] B", "expect": ["miSuppressFreelink"], "target": "miSuppressFreelink"}
+{"id": "mi-raw-7", "source": "A [[$ @@cc@@ $]] B", "expect": ["miSuppressRaw"], "target": "miSuppressRaw"}
+{"id": "mi-nl-7", "source": "A [[$ x\ncc $]] B", "expect": ["miSuppressNewline"], "target": "miSuppressNewline"}
+{"id": "mi-image-7", "source": "A [[$ [[image http://example.com/7.png]] $]] B", "expect": ["miSuppressImage"], "target": "miSuppressImage"}
+{"id": "mi-free-nested", "source": "A [[$ [a@example.com [[[Some Page]]]] $]] B", "expect": ["miSuppressFreelink"], "target": "miSuppressFreelink"}
+{"id": "mi-raw-nested", "source": "A [[$ [a@example.com @@x@@] $]] B", "expect": ["miSuppressRaw"], "target": "miSuppressRaw"}
+{"id": "mi-nl-nested", "source": "A [[$ [a@example.com x\ny] $]] B", "expect": ["miSuppressNewline"], "target": "miSuppressNewline"}
+{"id": "mi-image-url", "source": "A [[$ [[[http://example.com/a]]] $]] B", "expect": ["miSuppressFreelink"], "target": "miSuppressFreelink"}
+{"id": "mi-depth-0", "source": "", "expect": ["miDepth"], "target": "miDepth", "note": "direct expandSource depth 65; mirror theorem cm_mi_depth_beats_suppress", "direct": {"kind": "depth", "arg": "abc"}}
+{"id": "mi-unknown-0", "source": "", "expect": ["miUnknown"], "target": "miUnknown", "note": "direct expandSource of a missing id; mirror theorem cm_mi_unknown_keeps", "direct": {"kind": "unknown", "arg": "800"}}
+{"id": "mi-cycle-0", "source": "", "expect": ["miCycle"], "target": "miCycle", "note": "direct expandSource of a self-span; mirror theorem cm_mi_cycle_keeps", "direct": {"kind": "cycle", "arg": "abc"}}
+{"id": "mi-depth-1", "source": "", "expect": ["miDepth"], "target": "miDepth", "note": "direct expandSource depth 65; mirror theorem cm_mi_depth_beats_suppress", "direct": {"kind": "depth", "arg": "a&b"}}
+{"id": "mi-unknown-1", "source": "", "expect": ["miUnknown"], "target": "miUnknown", "note": "direct expandSource of a missing id; mirror theorem cm_mi_unknown_keeps", "direct": {"kind": "unknown", "arg": "801"}}
+{"id": "mi-cycle-1", "source": "", "expect": ["miCycle"], "target": "miCycle", "note": "direct expandSource of a self-span; mirror theorem cm_mi_cycle_keeps", "direct": {"kind": "cycle", "arg": "a&b"}}
+{"id": "mi-depth-2", "source": "", "expect": ["miDepth"], "target": "miDepth", "note": "direct expandSource depth 65; mirror theorem cm_mi_depth_beats_suppress", "direct": {"kind": "depth", "arg": "zz"}}
+{"id": "mi-unknown-2", "source": "", "expect": ["miUnknown"], "target": "miUnknown", "note": "direct expandSource of a missing id; mirror theorem cm_mi_unknown_keeps", "direct": {"kind": "unknown", "arg": "802"}}
+{"id": "mi-cycle-2", "source": "", "expect": ["miCycle"], "target": "miCycle", "note": "direct expandSource of a self-span; mirror theorem cm_mi_cycle_keeps", "direct": {"kind": "cycle", "arg": "zz"}}
+{"id": "mi-depth-3", "source": "", "expect": ["miDepth"], "target": "miDepth", "note": "direct expandSource depth 65; mirror theorem cm_mi_depth_beats_suppress", "direct": {"kind": "depth", "arg": "n0"}}
+{"id": "mi-unknown-3", "source": "", "expect": ["miUnknown"], "target": "miUnknown", "note": "direct expandSource of a missing id; mirror theorem cm_mi_unknown_keeps", "direct": {"kind": "unknown", "arg": "803"}}
+{"id": "mi-cycle-3", "source": "", "expect": ["miCycle"], "target": "miCycle", "note": "direct expandSource of a self-span; mirror theorem cm_mi_cycle_keeps", "direct": {"kind": "cycle", "arg": "n0"}}
