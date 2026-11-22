@@ -1,0 +1,20 @@
+{"id":"lc-ctrl-ul-upper-all","output":"<ul>\n<li>Case<br \/>\n<br \/><\/li>\n<\/ul><br \/>\n"}
+{"id":"lc-ctrl-ul-upper-open-lower-close","output":"<ul>\n<li>Case<br \/>\n<br \/><\/li>\n<\/ul><br \/>\n"}
+{"id":"lc-ctrl-ul-lower-open-upper-close","output":"<ul>\n<li>Case<\/li>\n<\/ul><br \/>\n"}
+{"id":"lc-ctrl-ol-lower-open-upper-close","output":"<ol>\n<li>Case<\/li>\n<\/ol><br \/>\n"}
+{"id":"lc-ctrl-ul-mixed-inner","output":"<ul>\n<li>A<\/li>\n<\/ul><br \/>\n"}
+{"id":"lc-ctrl-lower-ul-degraded-noli","output":"<ul>\n<li style=\"list-style: none\">body<\/li>\n<\/ul><br \/>\n"}
+{"id":"lc-sib-mixed-ul","output":"<ul>\n<li>Mixed<br \/>\n<br \/><\/li>\n<\/ul><br \/>\n"}
+{"id":"lc-sib-mixed-ol","output":"<ul>\n<li>Mixed<br \/>\n<br \/><\/li>\n<\/ul><br \/>\n"}
+{"id":"lc-sib-lower-li-mixed-close","output":"<ul>\n<li>Case<\/li>\n<\/ul><br \/>\n"}
+{"id":"lc-sib-scored-ul-upper","output":"<ul>\n<li>AAFTER<br \/>\n<br \/><\/li>\n<\/ul>"}
+{"id":"lc-sib-scored-ol-upper","output":"<ul>\n<li>AAFTER<br \/>\n<br \/><\/li>\n<\/ul>"}
+{"id":"lc-sib-scored-lower-open-upper-close","output":"<ul>\n<li>A<\/li>\n<\/ul>\n<br \/>\nAFTER"}
+{"id":"lc-sib-ul-upper-with-class","output":"<ul class=\"mycls\">\n<li style=\"color:red\">Item<br \/>\n<br \/><\/li>\n<\/ul><br \/>\n"}
+{"id":"lc-sib-nested-lower-ul-upper-ol","output":"<ul>\n<li>a<br \/><ul>\n<li style=\"list-style: none\">[[li]]b<\/li>\n<\/ul><\/li>\n<\/ul><br \/>\n"}
+{"id":"lc-sib-extra-bracket-upper-close","output":"<ul>\n<li>a]<\/li>\n<\/ul>\n]"}
+{"id":"lc-sib-lower-ul-upper-attr-data","output":"<ul>\n<li>x<\/li>\n<\/ul><br \/>\n"}
+{"id":"lc-sib-lower-ul-data-mixed-val","output":"<ul>\n<li>a<\/li>\n<\/ul><br \/>\n"}
+{"id":"lc-sib-upper-ul-degraded-noli","output":"<ul>\n<li style=\"list-style: none\">body<\/li>\n<\/ul><br \/>\n"}
+{"id":"lc-sib-cross-ul-ol-upper","output":"<p>[[ul]]<br \/>\n[[li]]a[[\/li]]<br \/>\n[[\/OL]]<\/p>\n\n"}
+{"id":"lc-sib-standalone-upper-li","output":"<p>[[LI]]a[[\/LI]]<\/p>\n\n"}

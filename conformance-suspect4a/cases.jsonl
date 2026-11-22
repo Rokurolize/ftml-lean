@@ -1,0 +1,30 @@
+{"id": "s4a-l1a", "source": "[[ul]]\n[[li]]a\n[[OL]]\n[[li]]b[[/li]]\n[[/ol]]\n[[/li]]\n[[/ul]]"}
+{"id": "s4a-l1b", "source": "[[UL]]\n[[ol]]\n[[li]]a[[/li]]\n[[/ol]]\n[[/ul]]"}
+{"id": "s4a-l2a", "source": "[[ol]]\n[[li]]a[[/li]]\n[[/UL]]"}
+{"id": "s4a-l2b", "source": "[[ul]]\n[[li]]a[[/li]]\n[[/OL]]trailing"}
+{"id": "s4a-l3a", "source": "[[UL style=\"color:red\" id=\"x\"]]\n[[LI]]A[[/LI]]\n[[/uL]]"}
+{"id": "s4a-l3b", "source": "[[OL data-x=\"1\"]]\n[[li]]a[[/li]]\n[[/OL]]AFTER"}
+{"id": "s4a-l4a", "source": "[[OL]]\nplain body\n[[/OL]]\n\nAFTER"}
+{"id": "s4a-l4b", "source": "[[Ul]]\nbody\n[[/uL]]\nAFTER"}
+{"id": "s4a-l5a", "source": "[[ul]]\n[[li CLASS=\"c\" class=\"d\" ID=\"x\" id=\"y\" data-FOO=\"1\" data-foo=\"2\"]]A[[/li]]\n[[/ul]]"}
+{"id": "s4a-l5b", "source": "[[ul]]\n[[li DATA-FOO=\"1\" data-Foo=\"2\"]]A[[/li]]\n[[/ul]]"}
+{"id": "s4a-r1a", "source": ": term : @@@@"}
+{"id": "s4a-r1b", "source": ": term : def@@@@"}
+{"id": "s4a-r1c", "source": ": @@@@ : @@@@"}
+{"id": "s4a-r2a", "source": ": a@@@@b : def"}
+{"id": "s4a-r2b", "source": ": @@@@@@@@ : def"}
+{"id": "s4a-r3a", "source": "A @@@@\nB"}
+{"id": "s4a-r3b", "source": "A@@@@\n@@@@B"}
+{"id": "s4a-r4a", "source": "##red| @@@@ hi ##"}
+{"id": "s4a-r4b", "source": "x##red| hi @@@@ ##y"}
+{"id": "s4a-m1a", "source": "[[module CSS]]\n[[module unknown]]\nbody\n[[/module]]\n[[/module]]"}
+{"id": "s4a-m1b", "source": "[[module css]]\n[[MODULE unknown]]\nbody\n[[/MODULE]]\n[[/module]]"}
+{"id": "s4a-m2a", "source": "[[module css]]\nbody\n[[/module]]trailing"}
+{"id": "s4a-m2b", "source": "[[module654 css]]\n[[module foo]]\nbody\n[[/module]]\n[[/module]]"}
+{"id": "s4a-t1a", "source": "[[table a=\"x]]y\"]][[row]][[cell]]A[[/cell]][[/row]][[/table]]"}
+{"id": "s4a-t1b", "source": "[[table]][[row]][[cell]][[table]][[row]][[cell]]inner[[/cell]][[/row]][[/table]][[/cell]][[/row]][[/table]]"}
+{"id": "s4a-t1c", "source": "[[table]][[row]][[cell]]x[[/HCELL]][[/row]][[/table]]"}
+{"id": "s4a-p1a", "source": "a\n \nb"}
+{"id": "s4a-p1b", "source": "a\n\f\nb"}
+{"id": "s4a-p1c", "source": "a\n\u000b\nb"}
+{"id": "s4a-p1d", "source": "a\n \n \nb"}

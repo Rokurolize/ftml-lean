@@ -1,0 +1,27 @@
+{"id":"s1a","output":"<ul>\n<li>a<br \/>\n<br \/><\/li>\n<\/ul><br \/>\n"}
+{"id":"s1b","output":"<ul>\n<li>a<br \/><ul>\n<li style=\"list-style: none\">[[li]]b<\/li>\n<\/ul><\/li>\n<\/ul><br \/>\n"}
+{"id":"s1c","output":"<ul>\n<li>a<br \/>\n<br \/><\/li>\n<\/ul><br \/>\n"}
+{"id":"s1d","output":"<ul>\n<li style=\"list-style: none; display: inline\">\n<ol>\n<li>a<\/li>\n<\/ol>\n<\/li>\n<\/ul><br \/>\n"}
+{"id":"s1e","output":"<ul>\n<li>a<br \/><ul>\n<li style=\"list-style: none\">[[li]]b<\/li>\n<\/ul><\/li>\n<\/ul><br \/>\n"}
+{"id":"s2a","output":"<ul>\n<li class=\"d\">A<\/li>\n<\/ul><br \/>\n"}
+{"id":"s2b","output":"<ul>\n<li data-foo=\"1\">A<\/li>\n<\/ul><br \/>\n"}
+{"id":"s3a","output":"<dl>\n<dt>term<\/dt>\n<dd><\/dd>\n<\/dl>\n"}
+{"id":"s3b","output":"<dl>\n<dd><\/dd>\n<\/dl>\n"}
+{"id":"s3c","output":"<dl>\n<dt>ab<\/dt>\n<dd>def<\/dd>\n<\/dl>\n"}
+{"id":"s3d","output":"<dl>\n<dt>@@@@<\/dt>\n<dd>def<\/dd>\n<\/dl>\n"}
+{"id":"s3e","output":"<dl>\n<dt>term<\/dt>\n<dd>def<\/dd>\n<\/dl>\n"}
+{"id":"s4a","output":"<p>A<br \/>\nB<\/p>\n\n"}
+{"id":"s4b","output":"<p>A<br \/>\nB<\/p>\n\n"}
+{"id":"s4c","output":"<p><span style=\"color: red\">hi<\/span><\/p>\n\n"}
+{"id":"s4d","output":"<p>a<\/p>\n\n"}
+{"id":"s5a","output":"\u00femodule \"css\" +module_body%3D%22%25FF312%25FF%22 \u00fe"}
+{"id":"s5b","output":"\u00femodule \"css\" +module_body%3D%22.blue%257B%257D%22 \u00fe<p>trailing<\/p>\n\n"}
+{"id":"s5c","output":"\u00femodule \"CSS\" +module_body%3D%22body%22 \u00fe"}
+{"id":"s5d","output":"\u00femodule \"css\" +module_body%3D%22%25FF357%25FF%22 \u00fe"}
+{"id":"s6a","output":"<table>\n<tr>\n<td>A<\/td>\n<\/tr>\n<\/table>"}
+{"id":"s6b","output":"<table>\n<tr>\n<td><table>\n<tr>\n<td>inner<\/td>\n<\/tr>\n<\/table><\/td>\n<\/tr>\n<\/table>"}
+{"id":"s6c","output":"<table>\n<tr>\n<td>x<\/td>\n<\/tr>\n<\/table>"}
+{"id":"s7a","output":"<p>a<br \/>\n\u00a0<br \/>\nb<\/p>\n\n"}
+{"id":"s7b","output":"<p>a<\/p>\n\n<p>b<\/p>\n\n"}
+{"id":"s7c","output":"<p>a<\/p>\n\n<p>b<\/p>\n\n"}
+{"id":"s7d","output":"<p>a<\/p>\n\n<p>b<\/p>\n\n"}

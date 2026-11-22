@@ -1,0 +1,332 @@
+s4a-l1a -> muse-probe-suspect4a-s4a-l1a stable=True saved_source_matches=True valid=True
+s4a-l1b -> muse-probe-suspect4a-s4a-l1b stable=True saved_source_matches=True valid=True
+s4a-l2a -> muse-probe-suspect4a-s4a-l2a stable=True saved_source_matches=True valid=True
+s4a-l2b -> muse-probe-suspect4a-s4a-l2b stable=True saved_source_matches=True valid=True
+s4a-l3a -> muse-probe-suspect4a-s4a-l3a stable=True saved_source_matches=True valid=True
+s4a-l3b -> muse-probe-suspect4a-s4a-l3b stable=True saved_source_matches=True valid=True
+s4a-l4a -> muse-probe-suspect4a-s4a-l4a stable=True saved_source_matches=True valid=True
+s4a-l4b -> muse-probe-suspect4a-s4a-l4b stable=True saved_source_matches=True valid=True
+s4a-l5a -> muse-probe-suspect4a-s4a-l5a stable=True saved_source_matches=True valid=True
+s4a-l5b -> muse-probe-suspect4a-s4a-l5b stable=True saved_source_matches=True valid=True
+s4a-r1a -> muse-probe-suspect4a-s4a-r1a stable=True saved_source_matches=True valid=True
+s4a-r1b -> muse-probe-suspect4a-s4a-r1b stable=True saved_source_matches=True valid=True
+s4a-r1c -> muse-probe-suspect4a-s4a-r1c stable=True saved_source_matches=True valid=True
+s4a-r2a -> muse-probe-suspect4a-s4a-r2a stable=True saved_source_matches=True valid=True
+s4a-r2b -> muse-probe-suspect4a-s4a-r2b stable=True saved_source_matches=True valid=True
+s4a-r3a -> muse-probe-suspect4a-s4a-r3a stable=True saved_source_matches=True valid=True
+s4a-r3b -> muse-probe-suspect4a-s4a-r3b stable=True saved_source_matches=True valid=True
+s4a-r4a -> muse-probe-suspect4a-s4a-r4a stable=True saved_source_matches=True valid=True
+s4a-r4b -> muse-probe-suspect4a-s4a-r4b stable=True saved_source_matches=True valid=True
+s4a-m1a -> muse-probe-suspect4a-s4a-m1a stable=True saved_source_matches=True valid=True
+s4a-m1b -> muse-probe-suspect4a-s4a-m1b stable=True saved_source_matches=True valid=True
+s4a-m2a -> muse-probe-suspect4a-s4a-m2a stable=True saved_source_matches=True valid=True
+s4a-m2b -> muse-probe-suspect4a-s4a-m2b stable=True saved_source_matches=True valid=True
+s4a-t1a -> muse-probe-suspect4a-s4a-t1a stable=True saved_source_matches=True valid=True
+s4a-t1b -> muse-probe-suspect4a-s4a-t1b stable=True saved_source_matches=True valid=True
+s4a-t1c -> muse-probe-suspect4a-s4a-t1c stable=True saved_source_matches=True valid=True
+s4a-p1a -> muse-probe-suspect4a-s4a-p1a stable=True saved_source_matches=True valid=True
+s4a-p1b -> muse-probe-suspect4a-s4a-p1b stable=True saved_source_matches=False valid=False
+s4a-p1c -> muse-probe-suspect4a-s4a-p1c stable=True saved_source_matches=True valid=True
+s4a-p1d -> muse-probe-suspect4a-s4a-p1d stable=True saved_source_matches=False valid=False
+{
+ "s4a-l1a": {
+  "fullname": "muse-probe-suspect4a-s4a-l1a",
+  "html": "<ul>\n<li>a<br /></li>\n<li>b</li>\n</ul>\n<br />",
+  "html_sha256": "3240a54cf925f2ff98a0b85ccedbd909878c50c975ea4e1da52b09e8930773f5",
+  "source": "[[ul]]\n[[li]]a\n[[OL]]\n[[li]]b[[/li]]\n[[/ol]]\n[[/li]]\n[[/ul]]",
+  "source_sha256": "00ed9ae4a2c9ff77157ec34c7b23cb7ffb11d39b904cca8591ff40a0b8bc74be",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-l1b": {
+  "fullname": "muse-probe-suspect4a-s4a-l1b",
+  "html": "<ol>\n<li>a</li>\n</ol>\n<br />",
+  "html_sha256": "92091de6536777cc2db0ddcbd5805b2240c61e56a1dda3242b08bc38e100abab",
+  "source": "[[UL]]\n[[ol]]\n[[li]]a[[/li]]\n[[/ol]]\n[[/ul]]",
+  "source_sha256": "080e194907b9f328e95509f093d83445f799b21813e9edc8fb884eda8c43a321",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-l2a": {
+  "fullname": "muse-probe-suspect4a-s4a-l2a",
+  "html": "<ol>\n<li>a</li>\n</ol>\n<br />",
+  "html_sha256": "92091de6536777cc2db0ddcbd5805b2240c61e56a1dda3242b08bc38e100abab",
+  "source": "[[ol]]\n[[li]]a[[/li]]\n[[/UL]]",
+  "source_sha256": "a1354aa11f552ec0d5a2f3ba62220cc590300d0c6d09f989a866bae117e2c672",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-l2b": {
+  "fullname": "muse-probe-suspect4a-s4a-l2b",
+  "html": "<ul>\n<li>a</li>\n</ul>\ntrailing",
+  "html_sha256": "ed8a097261af571398e2f583178da13e84c4ab2d5b9ab42e24e5c9b1396f7193",
+  "source": "[[ul]]\n[[li]]a[[/li]]\n[[/OL]]trailing",
+  "source_sha256": "daf75a35f34fc93c68a8b6fb388a48dfa3b69e1fe61d5f723d37aaac17906001",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-l3a": {
+  "fullname": "muse-probe-suspect4a-s4a-l3a",
+  "html": "<ul>\n<li>A<br />",
+  "html_sha256": "699570c8782a0e99076f181965f48c857552a9c28ada9e85b60f244857b5be1a",
+  "source": "[[UL style=\"color:red\" id=\"x\"]]\n[[LI]]A[[/LI]]\n[[/uL]]",
+  "source_sha256": "06a2fcdebcb2882b1ef6f8f902271a2958a5bc4174a8ae37f4258c0a1d113aed",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-l3b": {
+  "fullname": "muse-probe-suspect4a-s4a-l3b",
+  "html": "<ul>\n<li>aAFTER</li>\n</ul>",
+  "html_sha256": "b31ee83ca409b9f50e621fd2df8a4b48d8069ad64c68f7a6bc61ebaf52ced707",
+  "source": "[[OL data-x=\"1\"]]\n[[li]]a[[/li]]\n[[/OL]]AFTER",
+  "source_sha256": "6ca80fcffddedd7ecaa795df9b3b6f305fc2335e9e9bff77afe53938b2b73b78",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-l4a": {
+  "fullname": "muse-probe-suspect4a-s4a-l4a",
+  "html": "<p>plain body<br />\nAFTER</p>",
+  "html_sha256": "4cdf79c157723f6beb4477594f5ffa437adc5cd864d157197fc3b4e645b99723",
+  "source": "[[OL]]\nplain body\n[[/OL]]\n\nAFTER",
+  "source_sha256": "c6b2f822d6a0f09aa565aea12be593e566ffdba4c98994cec98d3ad5b988c79f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-l4b": {
+  "fullname": "muse-probe-suspect4a-s4a-l4b",
+  "html": "<p>bodyAFTER</p>",
+  "html_sha256": "d30adea73d76fc67efd95e76326cca06c9b3b94d2107603c80b95e1c0a07cd5a",
+  "source": "[[Ul]]\nbody\n[[/uL]]\nAFTER",
+  "source_sha256": "1032a2af0849e464ef2004f5d054829ca9eb671a19dbbb56e1087a243ea3252e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-l5a": {
+  "fullname": "muse-probe-suspect4a-s4a-l5a",
+  "html": "<ul>\n<li id=\"u-y\" class=\"d\" data-foo=\"2\">A</li>\n</ul>\n<br />",
+  "html_sha256": "45840f52c6c2391cb475dc72d2888365c784970919c554e731aae93bd358a37b",
+  "source": "[[ul]]\n[[li CLASS=\"c\" class=\"d\" ID=\"x\" id=\"y\" data-FOO=\"1\" data-foo=\"2\"]]A[[/li]]\n[[/ul]]",
+  "source_sha256": "d4ddd4ab681a5f6eac28578555b90ac5bedd0a32b6457783d7ecd4502e9e943c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-l5b": {
+  "fullname": "muse-probe-suspect4a-s4a-l5b",
+  "html": "<ul>\n<li data-foo=\"2\">A</li>\n</ul>\n<br />",
+  "html_sha256": "6306bdb4b287948b40cbe41120c37c29cd098dfa1c5158e026f89fee22ddef68",
+  "source": "[[ul]]\n[[li DATA-FOO=\"1\" data-Foo=\"2\"]]A[[/li]]\n[[/ul]]",
+  "source_sha256": "97744bb3e42f790aebf3a7c8085399ff3603e45d56dcefaae3c8647f70458873",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-r1a": {
+  "fullname": "muse-probe-suspect4a-s4a-r1a",
+  "html": "<dl>\n<dt>term</dt>\n<dd></dd>\n</dl>",
+  "html_sha256": "76845dd0abfa26d736b9b11941716abddbb08482ad8573187459bc2444276f2f",
+  "source": ": term : @@@@",
+  "source_sha256": "74c51a3c6cdcd05f8b17d5b6d22769107e26a8939f2aee0b2bde93b68424ee65",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-r1b": {
+  "fullname": "muse-probe-suspect4a-s4a-r1b",
+  "html": "<dl>\n<dt>term</dt>\n<dd>def</dd>\n</dl>",
+  "html_sha256": "b5b06b41a466c48385bf84d2cacec8bb27f088fb7892f432972520b0ecd5011e",
+  "source": ": term : def@@@@",
+  "source_sha256": "352a65df7889c6b8f42f7fd05a605465e8973c5991cde1107b9ad9a392fa837d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-r1c": {
+  "fullname": "muse-probe-suspect4a-s4a-r1c",
+  "html": "<dl>\n<dd></dd>\n</dl>",
+  "html_sha256": "5b018df171545e3127008e9665a9d742fadc3429deaa54e75763c24daa759904",
+  "source": ": @@@@ : @@@@",
+  "source_sha256": "7102f1e1c51802479456cedf22f4bb09bafa37b4ee92c9c37699fa2e129ece79",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-r2a": {
+  "fullname": "muse-probe-suspect4a-s4a-r2a",
+  "html": "<dl>\n<dt>ab</dt>\n<dd>def</dd>\n</dl>",
+  "html_sha256": "ad74388feaaff1fffa9ef56c5ab605f0da9aa8f15cf02eff2d42258944d5bf2b",
+  "source": ": a@@@@b : def",
+  "source_sha256": "f46cdf0aa27d173baa3877d6cea05284f328418dac98e63a4c0288d6e98ee4f5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-r2b": {
+  "fullname": "muse-probe-suspect4a-s4a-r2b",
+  "html": "<dl>\n<dt>@@@@</dt>\n<dd>def</dd>\n</dl>",
+  "html_sha256": "d569cde63239ec7b39ec66810c8780a6eaf0ddaf2c09044539987a69e973c3ea",
+  "source": ": @@@@@@@@ : def",
+  "source_sha256": "5b7a2bd7d36b78ae6aed9f5df8d88941b9f03b43096d3db5acd5850b0f7135dc",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-r3a": {
+  "fullname": "muse-probe-suspect4a-s4a-r3a",
+  "html": "<p>A<br />\nB</p>",
+  "html_sha256": "64bd78651d1ba75137bca8b8f9b5be0bdf08c2c17f02a60a805aa797de152fe8",
+  "source": "A @@@@\nB",
+  "source_sha256": "5ee4a18218a1be47640df3514f52ecace234097cdf063430fe426c91831fd692",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-r3b": {
+  "fullname": "muse-probe-suspect4a-s4a-r3b",
+  "html": "<p>A<br />\nB</p>",
+  "html_sha256": "64bd78651d1ba75137bca8b8f9b5be0bdf08c2c17f02a60a805aa797de152fe8",
+  "source": "A@@@@\n@@@@B",
+  "source_sha256": "78aa12d405757ec8f7d5a73403a455f01cf573b1a3bf03cc9ad325172237df29",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-r4a": {
+  "fullname": "muse-probe-suspect4a-s4a-r4a",
+  "html": "<p><span style=\"color: red\">hi</span></p>",
+  "html_sha256": "f2f7c4b858dd2b996341febb871d3360844439b9a49d4fa98c6c02ca4297199b",
+  "source": "##red| @@@@ hi ##",
+  "source_sha256": "fbf3852f2e7fb2a9dea13cea9ffb07cd8e0edc1e8530b76d5bce7570b72435f8",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-r4b": {
+  "fullname": "muse-probe-suspect4a-s4a-r4b",
+  "html": "<p>x <span style=\"color: red\">hi</span> y</p>",
+  "html_sha256": "1740fb2f86c054291e953d1071de6d2c37ba4678622a525483e35119880b4c0d",
+  "source": "x##red| hi @@@@ ##y",
+  "source_sha256": "96b7c839ce284f674178fba797199200973be0ff055448691d3d5ab4ee0bd49c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-m1a": {
+  "fullname": "muse-probe-suspect4a-s4a-m1a",
+  "html": "",
+  "html_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source": "[[module CSS]]\n[[module unknown]]\nbody\n[[/module]]\n[[/module]]",
+  "source_sha256": "cf21eb0d5ebad66cf3f30a9aef24a92ac1008647844ed8a1a422e8b187285605",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-m1b": {
+  "fullname": "muse-probe-suspect4a-s4a-m1b",
+  "html": "",
+  "html_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source": "[[module css]]\n[[MODULE unknown]]\nbody\n[[/MODULE]]\n[[/module]]",
+  "source_sha256": "a8b28712eccfbdaf9cb8ef6f55717f0db920872adf286a823654d234f4788146",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-m2a": {
+  "fullname": "muse-probe-suspect4a-s4a-m2a",
+  "html": "<p>trailing</p>",
+  "html_sha256": "d61e68c9d80209293cf9b23d6cf90bde5bf5cb3d2b02a147e06ebdcf8bce561d",
+  "source": "[[module css]]\nbody\n[[/module]]trailing",
+  "source_sha256": "620e3dea68fb61ee87cc8c0c3d0f8129238ee24dcf9079bddd6ff5aa92653676",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-m2b": {
+  "fullname": "muse-probe-suspect4a-s4a-m2b",
+  "html": "",
+  "html_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source": "[[module654 css]]\n[[module foo]]\nbody\n[[/module]]\n[[/module]]",
+  "source_sha256": "81a3084b8f0e2270cd5fc6ee36adf2828b7cb92226bc6ba6b3b01f01fa54f607",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-t1a": {
+  "fullname": "muse-probe-suspect4a-s4a-t1a",
+  "html": "<table>\n<tr>\n<td>A</td>\n</tr>\n</table>",
+  "html_sha256": "f200b7f7ccf63756ac654a025c1cac5a6da9819e4a1069ebbd98307f031e43a8",
+  "source": "[[table a=\"x]]y\"]][[row]][[cell]]A[[/cell]][[/row]][[/table]]",
+  "source_sha256": "5415b148cc8bad897c48922d07eb2c99de5de0a364a94412b7da62e3b78dda6f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-t1b": {
+  "fullname": "muse-probe-suspect4a-s4a-t1b",
+  "html": "<table>\n<tr>\n<td>\n<table>\n<tr>\n<td>inner</td>\n</tr>\n</table>\n</td>\n</tr>\n</table>",
+  "html_sha256": "b1f8b4084a9a8e6a990b7fa1171cf6d307df1a59ce27fd3323541c595692ff3d",
+  "source": "[[table]][[row]][[cell]][[table]][[row]][[cell]]inner[[/cell]][[/row]][[/table]][[/cell]][[/row]][[/table]]",
+  "source_sha256": "1a847084f169ef96bcd96019b2efb2bf4246e2f575034388a8dfe0df1b14dc7b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-t1c": {
+  "fullname": "muse-probe-suspect4a-s4a-t1c",
+  "html": "<table>\n<tr>\n<td>x</td>\n</tr>\n</table>",
+  "html_sha256": "3586233dee5e3e128d8f7f27dce43561f7707e3a13492b2e896b52ea5efb911d",
+  "source": "[[table]][[row]][[cell]]x[[/HCELL]][[/row]][[/table]]",
+  "source_sha256": "69431ac19664d28e37c320c6a4b7451b01e7de4020be3c502a492e5c7b7aad31",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-p1a": {
+  "fullname": "muse-probe-suspect4a-s4a-p1a",
+  "html": "<p>a<br />\n&nbsp;<br />\nb</p>",
+  "html_sha256": "3e200ab7e183cc066298ec2ed266c3f24a93057486999172a5aa6fbb36b6b404",
+  "source": "a\n \nb",
+  "source_sha256": "b5a9ed9414bee39166a1db05f1a033a5a70574e7eebf643c93e7c7952d562795",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-p1b": {
+  "fullname": "muse-probe-suspect4a-s4a-p1b",
+  "html": "<p>a</p>\n<p>b</p>",
+  "html_sha256": "5de5a59361cc476cfde5f0974ca3679ea6d0bf294a35db9c3c556051add5370a",
+  "source": "a\n\nb",
+  "source_sha256": "38022fd2b8dbc5cb3d2cee74e083edbf59e3d4e13d067ebcb5db633d4cff4d8c",
+  "saved_source_matches": false,
+  "stable": true,
+  "valid": false
+ },
+ "s4a-p1c": {
+  "fullname": "muse-probe-suspect4a-s4a-p1c",
+  "html": "<p>a</p>\n<p>b</p>",
+  "html_sha256": "5de5a59361cc476cfde5f0974ca3679ea6d0bf294a35db9c3c556051add5370a",
+  "source": "a\n\u000b\nb",
+  "source_sha256": "9d46ff10f9763bad2fc27e728915f5af31a91e296f8ce07a23634e65f3d05cda",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s4a-p1d": {
+  "fullname": "muse-probe-suspect4a-s4a-p1d",
+  "html": "<p>a</p>\n<p>b</p>",
+  "html_sha256": "5de5a59361cc476cfde5f0974ca3679ea6d0bf294a35db9c3c556051add5370a",
+  "source": "a\n\n\nb",
+  "source_sha256": "2282b3efda183ac2a3e762d8cf310bda78e79126b43846b41e1875fd043463cb",
+  "saved_source_matches": false,
+  "stable": true,
+  "valid": false
+ }
+}

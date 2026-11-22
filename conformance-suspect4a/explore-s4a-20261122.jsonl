@@ -1,0 +1,27 @@
+{"id": "s1a", "source": "[[UL]]\n[[li]]a[[/li]]\n[[/ul]]"}
+{"id": "s1b", "source": "[[ul]]\n[[li]]a\n[[OL]]\n[[li]]b[[/li]]\n[[/ol]]\n[[/li]]\n[[/ul]]"}
+{"id": "s1c", "source": "[[Ul]]\n[[li]]a[[/li]]\n[[/uL]]"}
+{"id": "s1d", "source": "[[UL]]\n[[ol]]\n[[li]]a[[/li]]\n[[/ol]]\n[[/ul]]"}
+{"id": "s1e", "source": "[[ul]]\n[[li]]a\n[[OL]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]"}
+{"id": "s2a", "source": "[[ul]]\n[[li CLASS=\"c\" class=\"d\"]]A[[/li]]\n[[/ul]]"}
+{"id": "s2b", "source": "[[ul]]\n[[li data-Foo=\"1\" ID=\"x\"]]A[[/li]]\n[[/ul]]"}
+{"id": "s3a", "source": ": term : @@@@"}
+{"id": "s3b", "source": ": @@@@ : @@@@"}
+{"id": "s3c", "source": ": a@@@@b : def"}
+{"id": "s3d", "source": ": @@@@@@@@ : def"}
+{"id": "s3e", "source": ": term : def@@@@"}
+{"id": "s4a", "source": "A @@@@\nB"}
+{"id": "s4b", "source": "A@@@@\n@@@@B"}
+{"id": "s4c", "source": "##red| @@@@ hi ##"}
+{"id": "s4d", "source": "a @@@@ "}
+{"id": "s5a", "source": "[[module css]]\n[[module unknown]]\nbody\n[[/module]]\n[[/module]]"}
+{"id": "s5b", "source": "[[module css]]\n.blue{}\n[[/module]]trailing"}
+{"id": "s5c", "source": "[[module CSS]]\nbody\n[[/module]]"}
+{"id": "s5d", "source": "[[module654 css]]\n[[module foo]]\nbody\n[[/module]]\n[[/module]]"}
+{"id": "s6a", "source": "[[table a=\"x]]y\"]][[row]][[cell]]A[[/cell]][[/row]][[/table]]"}
+{"id": "s6b", "source": "[[table]][[row]][[cell]][[table]][[row]][[cell]]inner[[/cell]][[/row]][[/table]][[/cell]][[/row]][[/table]]"}
+{"id": "s6c", "source": "[[table]][[row]][[cell]]x[[/HCELL]][[/row]][[/table]]"}
+{"id": "s7a", "source": "a\n \nb"}
+{"id": "s7b", "source": "a\n\f\nb"}
+{"id": "s7c", "source": "a\n \n \nb"}
+{"id": "s7d", "source": "a\n\u000b\nb"}
