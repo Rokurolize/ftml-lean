@@ -1,0 +1,333 @@
+{
+  "tree_state": "post-REFCORR4 post-TABLEADV-FIX post-REFCORR5 post-COVERAGE-INLINE post-MIRROR-FIX post-REFCORR6",
+  "family": "Gallery User Button Embed",
+  "classes": {
+    "gaSizeSmall": {
+      "branch": "Gallery.php in_array size small, emitted as gallery-item small. Post REFVAL the size is the gallery's effective size, including on an external item.",
+      "live": ["muse-probe-refval-gallery-p05", "muse-probe-refval2-gallery-pg01"],
+      "battery": ["ga-04", "ga-x19", "p05"],
+      "file": "conformance-refphp/refval/gallery/battery.jsonl; conformance-refphp/refval/gallery/SECTION.md"
+    },
+    "gaSizeMedium": {
+      "branch": "Gallery.php in_array size medium.",
+      "live": ["muse-probe-refval-gallery-p06"],
+      "battery": ["ga-x02", "ga-27", "p06"],
+      "file": "conformance-refphp/refval/gallery/battery.jsonl"
+    },
+    "gaSizeThumbnail": {
+      "branch": "Gallery.php in_array size thumbnail, the explicit literal, distinct from the defaulted arm.",
+      "live": [],
+      "battery": ["ga-x03"],
+      "file": "conformance-refphp/refval/gallery/battery.jsonl"
+    },
+    "gaSizeSquare": {
+      "branch": "Gallery.php in_array size square.",
+      "live": ["muse-probe-refval-gallery-p07"],
+      "battery": ["ga-x04", "p07"],
+      "file": "conformance-refphp/refval/gallery/battery.jsonl"
+    },
+    "gaSizeOriginal": {
+      "branch": "Gallery.php in_array size original. A local item's img src becomes the original-file URL.",
+      "live": ["muse-probe-refval-gallery-p08"],
+      "battery": ["ga-x05", "p08"],
+      "file": "conformance-refphp/refval/gallery/battery.jsonl"
+    },
+    "gaSizeDefault": {
+      "branch": "Gallery.php size not in the five literals, including an absent size. The reference assigns thumbnail.",
+      "live": ["muse-probe-refval-gallery-p14"],
+      "battery": ["ga-x06", "ga-x07", "ga-x10"],
+      "file": "conformance-refphp/refval/gallery/battery.jsonl"
+    },
+    "gaPageMiss": {
+      "branch": "Gallery.php falsy sources, no_local unset, selectByName misses. The harness page name is unset, so this is the arm every no-sources token takes.",
+      "live": [],
+      "battery": ["ga-x01", "p01", "p02"],
+      "designed": ["gallery_local_mode_block", "cov_gallery_page_miss"],
+      "reason": "Live with a real page enters the attachment loop instead. The harness cannot name a page, so the comparable pin is the page-miss block.",
+      "file": "lean-ftml/LeanFtml/ServingRender.lean; conformance-refphp/refval/gallery/SECTION.md"
+    },
+    "gaNoItem": {
+      "branch": "Gallery.php truthy sources whose lines are all skipped by the /^: / filter. The result is an empty gallery-box.",
+      "live": [],
+      "battery": [],
+      "designed": ["token sources=hello"],
+      "reason": "No retained page is only non-item source lines. The direct token call is the pin.",
+      "file": "ref-php/text-wiki/Text/Wiki/Render/Xhtml/Gallery.php"
+    },
+    "gaFlickr": {
+      "branch": "Gallery.php strpos flickr: on a processed row. FlickrHandler is absent from the harness.",
+      "live": [],
+      "battery": [],
+      "designed": ["Gallery:FlickrHandler", "servingBoundaryOf"],
+      "reason": "Designed direct-call pin. The reference fatals Class FlickrHandler not found. Lean names Gallery:FlickrHandler and does not count the token as a pass. The photo-null and photo-hit arms sit behind that fatal and are non-classes.",
+      "file": "lean-ftml/LeanFtml/ServingRender.lean; REPORT-R48.md"
+    },
+    "gaLocalSlashed": {
+      "branch": "Gallery.php local source containing /. Path is /local--files and /local--resized-images with no database read.",
+      "live": [],
+      "battery": ["ga-x08", "ga-x09"],
+      "file": "conformance-refphp/refval/gallery/battery.jsonl"
+    },
+    "gaLocalPlain": {
+      "branch": "Gallery.php local source with no slash. pageName is empty in the harness, so the path contains a doubled slash.",
+      "live": ["muse-probe-refval-gallery-p05"],
+      "battery": ["ga-04", "ga-x02"],
+      "designed": ["gallery_one_local_row"],
+      "file": "lean-ftml/LeanFtml/ServingRender.lean"
+    },
+    "gaExternal": {
+      "branch": "Gallery.php source containing ://. Post REFVAL the item keeps the gallery size class and the img src is the URL. The reference sets link to the source.",
+      "live": ["muse-probe-refval-gallery-p14", "muse-probe-refval-gallery-p15", "muse-probe-refval2-gallery-pg01"],
+      "battery": ["ga-x10", "ga-x11", "p14", "p15"],
+      "file": "conformance-refphp/refval/gallery/SECTION.md"
+    },
+    "gaStarSrc": {
+      "branch": "Gallery.php source begins with *. The star is stripped and this row's anchor gets target=_blank. REFCORR5 Batch 8 stopped the target leaking into later rows.",
+      "live": ["muse-probe-refval-gallery-p15"],
+      "battery": ["ga-x11", "p15"],
+      "file": "conformance-refphp/refval/gallery/CORRECTION-REFCORR5-TARGET-LEAK.md"
+    },
+    "gaAlt": {
+      "branch": "Gallery.php isset alt. The value is escaped ENT_COMPAT. title is dropped.",
+      "live": ["muse-probe-refval-gallery-p19", "muse-probe-refval2-gallery-pg03"],
+      "battery": ["ga-x15", "p19"],
+      "file": "conformance-refphp/refval/gallery/SECTION.md"
+    },
+    "gaLinkUrl": {
+      "branch": "Gallery.php link whose strpos of :// is truthy (index at least 1), or the link an external source forces.",
+      "live": ["muse-probe-refval-gallery-p14", "muse-probe-refval-gallery-p16"],
+      "battery": ["ga-x10", "ga-x12", "p16"],
+      "file": "conformance-refphp/refval/gallery/battery.jsonl"
+    },
+    "gaLinkPage": {
+      "branch": "Gallery.php link set, strpos of :// falsy. The harness wikilink view_url is unset, so the href is the bare link.",
+      "live": ["muse-probe-refval-gallery-p18"],
+      "battery": ["ga-x14", "p18"],
+      "file": "conformance-refphp/refval/gallery/battery.jsonl"
+    },
+    "gaLinkStar": {
+      "branch": "Gallery.php link begins with *. The star is stripped and this row's target is _blank.",
+      "live": ["muse-probe-refval-gallery-p17"],
+      "battery": ["ga-x13", "p17"],
+      "file": "conformance-refphp/refval/gallery/battery.jsonl"
+    },
+    "usNotFound": {
+      "branch": "User.php user == null. ENT_COMPAT name inside the error-inline span, REFVAL2 wording.",
+      "live": ["muse-probe-refval-user-p05", "muse-probe-refval-user-p06", "muse-probe-refval-user-p15"],
+      "battery": [],
+      "designed": ["cov_user_not_found", "user_not_found"],
+      "reason": "The harness has no Criteria class, so token() fatals before either branch. The comparable oracle is the corrected branch formula, which the live probes pin. The image flag is read only on the found-user path.",
+      "file": "conformance-refphp/refval/user/SECTION.md; lean-ftml/LeanFtml/ServingRender.lean"
+    },
+    "btEdit": {
+      "branch": "Button.php type edit after strtolower. Default text edit, onclick editClick.",
+      "live": ["muse-probe-refval-button-p14"],
+      "battery": ["bt-01", "bt-06"],
+      "file": "conformance-refphp/refval/button/SECTION.md"
+    },
+    "btEditAppend": {
+      "branch": "Button.php type edit-append. Default text append.",
+      "live": ["muse-probe-refval-button-p02"],
+      "battery": ["bt-x01", "p02"],
+      "file": "conformance-refphp/refval/button/battery.jsonl"
+    },
+    "btEditSections": {
+      "branch": "Button.php type edit-sections. Default text edit sections.",
+      "live": ["muse-probe-refval-button-p02"],
+      "battery": ["bt-x02", "p02"],
+      "file": "conformance-refphp/refval/button/battery.jsonl"
+    },
+    "btHistory": {
+      "branch": "Button.php type history. REFVAL2 removed the fossil onclick's leading space.",
+      "live": ["muse-probe-refval-button-p03"],
+      "battery": ["bt-x03", "bt-25", "p03"],
+      "file": "conformance-refphp/refval/button/SECTION.md"
+    },
+    "btPrint": {
+      "branch": "Button.php type print.",
+      "live": ["muse-probe-refval-button-p03"],
+      "battery": ["bt-x04", "p03"],
+      "file": "conformance-refphp/refval/button/battery.jsonl"
+    },
+    "btFiles": {
+      "branch": "Button.php type files.",
+      "live": ["muse-probe-refval-button-p03"],
+      "battery": ["bt-x05", "p03"],
+      "file": "conformance-refphp/refval/button/battery.jsonl"
+    },
+    "btTags": {
+      "branch": "Button.php type tags.",
+      "live": ["muse-probe-refval-button-p04"],
+      "battery": ["bt-x06", "p04"],
+      "file": "conformance-refphp/refval/button/battery.jsonl"
+    },
+    "btSource": {
+      "branch": "Button.php type source. Default text view source.",
+      "live": ["muse-probe-refval-button-p04"],
+      "battery": ["bt-x07", "p04"],
+      "file": "conformance-refphp/refval/button/battery.jsonl"
+    },
+    "btTalk": {
+      "branch": "Button.php type talk. onclick assigns window.location.",
+      "live": ["muse-probe-refval-button-p04"],
+      "battery": ["bt-x08", "p04"],
+      "file": "conformance-refphp/refval/button/battery.jsonl"
+    },
+    "btBacklinks": {
+      "branch": "Button.php type backlinks.",
+      "live": ["muse-probe-refval-button-p04"],
+      "battery": ["bt-x09", "p04"],
+      "file": "conformance-refphp/refval/button/battery.jsonl"
+    },
+    "btRename": {
+      "branch": "Button.php type rename, one of the six types C-REFVAL2-3 added.",
+      "live": ["muse-probe-refval-button-p07"],
+      "battery": ["bt-x12", "p07"],
+      "file": "conformance-refphp/refval/button/SECTION.md"
+    },
+    "btDelete": {
+      "branch": "Button.php type delete, C-REFVAL2-3.",
+      "live": ["muse-probe-refval-button-p07"],
+      "battery": ["bt-x13", "p07"],
+      "file": "conformance-refphp/refval/button/SECTION.md"
+    },
+    "btParent": {
+      "branch": "Button.php type parent, C-REFVAL2-3.",
+      "live": ["muse-probe-refval-button-p07"],
+      "battery": ["bt-x14", "p07"],
+      "file": "conformance-refphp/refval/button/SECTION.md"
+    },
+    "btEditMeta": {
+      "branch": "Button.php type edit-meta, default text edit meta, C-REFVAL2-3.",
+      "live": ["muse-probe-refval-button-p08"],
+      "battery": ["bt-x16", "p08"],
+      "file": "conformance-refphp/refval/button/SECTION.md"
+    },
+    "btWatchers": {
+      "branch": "Button.php type watchers, C-REFVAL2-3.",
+      "live": ["muse-probe-refval-button-p08"],
+      "battery": ["bt-x17", "p08"],
+      "file": "conformance-refphp/refval/button/SECTION.md"
+    },
+    "btSetTags": {
+      "branch": "Button.php type set-tags with truthy text. onclick is updateTagsByButton(event, ''). The tags attribute is not rendered.",
+      "live": ["muse-probe-refval-button-p06", "muse-probe-refval2-button-sb01"],
+      "battery": ["bt-x11", "p06"],
+      "file": "conformance-refphp/refval/button/SECTION.md"
+    },
+    "btInvalid": {
+      "branch": "Button.php type not in the allowlist. The error shows the lowercased type.",
+      "live": ["muse-probe-refval-button-p07", "muse-probe-refval-button-p08", "muse-probe-refval2-button-sb07"],
+      "battery": ["bt-05", "bt-x15", "p08"],
+      "file": "conformance-refphp/refval/button/SECTION.md"
+    },
+    "btSetTagsEmpty": {
+      "branch": "Button.php set-tags with falsy text.",
+      "live": ["muse-probe-refval-button-p06"],
+      "battery": ["bt-x10", "p06"],
+      "file": "conformance-refphp/refval/button/SECTION.md"
+    },
+    "btStyle": {
+      "branch": "Button.php truthy style, emitted ENT_COMPAT.",
+      "live": ["muse-probe-refval-button-p10"],
+      "battery": ["bt-03", "bt-x21", "p10"],
+      "file": "conformance-refphp/refval/button/battery.jsonl"
+    },
+    "btClassCustom": {
+      "branch": "Button.php truthy class. A falsy class uses wiki-standalone-button.",
+      "live": ["muse-probe-refval-button-p10"],
+      "battery": ["bt-03", "bt-13", "p10"],
+      "file": "conformance-refphp/refval/button/battery.jsonl"
+    },
+    "btTextCustom": {
+      "branch": "Button.php truthy text, escaped ENT_COMPAT. Apostrophe stays raw.",
+      "live": ["muse-probe-refval-button-p13"],
+      "battery": ["bt-x20", "p13", "bt-03"],
+      "file": "conformance-refphp/refval/button/SECTION.md"
+    },
+    "emNoMatch": {
+      "branch": "Embed.php no allowlist pattern matches. The error block is also what an event or a non-src script scheme produces; this class is the miss itself.",
+      "live": ["muse-probe-refval-embed-p16"],
+      "battery": ["eb-x20"],
+      "file": "conformance-refphp/refval/embed/SECTION.md"
+    },
+    "emEvent": {
+      "branch": "Embed.php event-handler pattern, checked before the src scheme. REFCORR4 C-SUSPECT-CODEEMBED-6 allows the handler to be glued to the previous attribute.",
+      "live": ["muse-probe-refval-embed-p14"],
+      "battery": ["p14"],
+      "file": "conformance-refphp/refval/embed/CORRECTION-CSUSPECT-CODEEMBED-1TO7.md"
+    },
+    "emSrcJavascript": {
+      "branch": "Embed.php src value, trimmed and lowercased, starts with javascript:. The token renders empty. REFCORR4 C-SUSPECT-CODEEMBED-3 accepts either quote.",
+      "live": ["muse-probe-refval-embed-p17", "muse-probe-refval2-embed-se02", "muse-probe-refval2-embed-se06"],
+      "battery": ["eb-x13", "p17", "se02", "se06"],
+      "file": "conformance-refphp/refval/embed/SECTION.md"
+    },
+    "emSrcVbscript": {
+      "branch": "Embed.php src value starts with vbscript:. The token renders empty.",
+      "live": ["muse-probe-refval2-embed-se04"],
+      "battery": ["se04"],
+      "file": "conformance-refphp/refval/embed/supplementary.jsonl"
+    },
+    "emAttrJavascript": {
+      "branch": "Embed.php a non-src attribute value contains javascript:. The token renders the no-match error. The src attribute is excluded from this scan.",
+      "live": [],
+      "battery": [],
+      "designed": ["token iframe datax=javascript:"],
+      "reason": "se03's data-x attribute does not match the current anyiframe pattern (the name class excludes a hyphen), so that probe is an allowlist miss with the same error bytes. The scheme arm is pinned by a direct token whose attributes fit anyiframe.",
+      "file": "ref-php/text-wiki/Text/Wiki/Render/Xhtml/Embed.php; conformance-refphp/refval/embed/SECTION.md"
+    },
+    "emAttrVbscript": {
+      "branch": "Embed.php a non-src attribute value contains vbscript: and not javascript:.",
+      "live": [],
+      "battery": [],
+      "designed": ["token iframe datax=vbscript:"],
+      "reason": "No retained page isolates a vbscript attribute value. The direct token is the pin.",
+      "file": "ref-php/text-wiki/Text/Wiki/Render/Xhtml/Embed.php"
+    },
+    "emPass": {
+      "branch": "Embed.php first matching allowlist pattern, no event handler and no script scheme. The trimmed content is returned, after the language strip.",
+      "live": ["muse-probe-refval-embed-p12", "muse-probe-refval2-embed-se01", "muse-probe-refval2-embed-se05"],
+      "battery": ["p12", "se01", "se05"],
+      "file": "conformance-refphp/refval/embed/SECTION.md"
+    },
+    "emLangStrip": {
+      "branch": "Embed.php preg_replace of language=JavaScript... on a passthrough. The stripped content is what is returned.",
+      "live": [],
+      "battery": [],
+      "designed": ["token iframe language=JavaScript"],
+      "reason": "No retained page carries the language attribute. The direct token is the pin.",
+      "file": "ref-php/text-wiki/Text/Wiki/Render/Xhtml/Embed.php"
+    }
+  },
+  "nonClasses": [
+    {
+      "name": "galleryAttachments",
+      "reason": "Gallery.php found-page loop over DB_FilePeer, including the empty-attachments message. The harness page name is unset, selectByName misses, and the reference returns the page-miss block before this loop. Live probes p01, p02, p20 and p21 show the empty-attachments wording; they are not a harness class."
+    },
+    {
+      "name": "galleryNoLocal",
+      "reason": "Both Gallery.php no_local returns. wiki-config.php never sets Gallery no_local, so both arms are dead. renderGallery has no such branch."
+    },
+    {
+      "name": "galleryExplodeEmpty",
+      "reason": "Gallery.php count of exploded sources === 0. explode always yields at least one piece. explodeByte_nonempty records that."
+    },
+    {
+      "name": "galleryFormatElse",
+      "reason": "Gallery.php final else, format not supported. The flickr test, the absent-:// test and the present-:// test partition every source."
+    },
+    {
+      "name": "galleryFlickrInner",
+      "reason": "The photo-null template and the buildPhotoURL arm. Both sit behind FlickrHandler, which the harness cannot construct. They are not separate classes from gaFlickr."
+    },
+    {
+      "name": "userFound",
+      "reason": "User.php else branch, WDRenderUtils::renderUser, including the image flag. The harness fatals on Criteria before the lookup. The found-user rendering is the live user directory and is not a class."
+    },
+    {
+      "name": "buttonHrefs",
+      "reason": "Button.php $hrefs is an empty array, so every allowed type uses javascript:;. The hrefs[$type] arm is dead."
+    }
+  ]
+}

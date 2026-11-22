@@ -1,0 +1,729 @@
+{
+  "seed_runs": [
+    {
+      "seed": 20261122,
+      "cases": 376,
+      "failures": 0,
+      "class_mismatch": 0,
+      "uncomparable": 8,
+      "by_class": {
+        "gaSizeSmall": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaSizeMedium": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaSizeThumbnail": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaSizeSquare": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaSizeOriginal": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaSizeDefault": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaPageMiss": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaNoItem": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaFlickr": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 8,
+          "formula": 0,
+          "ids": []
+        },
+        "gaLocalSlashed": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaLocalPlain": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaExternal": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaStarSrc": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaAlt": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaLinkUrl": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaLinkPage": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaLinkStar": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "usNotFound": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 8,
+          "ids": []
+        },
+        "btEdit": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btEditAppend": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btEditSections": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btHistory": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btPrint": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btFiles": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btTags": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btSource": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btTalk": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btBacklinks": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btRename": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btDelete": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btParent": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btEditMeta": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btWatchers": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btSetTags": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btInvalid": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btSetTagsEmpty": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btStyle": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btClassCustom": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btTextCustom": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "emNoMatch": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "emEvent": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "emSrcJavascript": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "emSrcVbscript": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "emAttrJavascript": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "emAttrVbscript": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "emPass": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "emLangStrip": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        }
+      }
+    },
+    {
+      "seed": 7,
+      "cases": 376,
+      "failures": 0,
+      "class_mismatch": 0,
+      "uncomparable": 8,
+      "by_class": {
+        "gaSizeSmall": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaSizeMedium": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaSizeThumbnail": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaSizeSquare": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaSizeOriginal": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaSizeDefault": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaPageMiss": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaNoItem": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaFlickr": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 8,
+          "formula": 0,
+          "ids": []
+        },
+        "gaLocalSlashed": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaLocalPlain": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaExternal": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaStarSrc": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaAlt": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaLinkUrl": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaLinkPage": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "gaLinkStar": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "usNotFound": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 8,
+          "ids": []
+        },
+        "btEdit": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btEditAppend": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btEditSections": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btHistory": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btPrint": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btFiles": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btTags": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btSource": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btTalk": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btBacklinks": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btRename": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btDelete": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btParent": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btEditMeta": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btWatchers": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btSetTags": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btInvalid": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btSetTagsEmpty": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btStyle": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btClassCustom": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "btTextCustom": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "emNoMatch": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "emEvent": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "emSrcJavascript": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "emSrcVbscript": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "emAttrJavascript": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "emAttrVbscript": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "emPass": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        },
+        "emLangStrip": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "formula": 0,
+          "ids": []
+        }
+      }
+    }
+  ],
+  "classes": [
+    "gaSizeSmall",
+    "gaSizeMedium",
+    "gaSizeThumbnail",
+    "gaSizeSquare",
+    "gaSizeOriginal",
+    "gaSizeDefault",
+    "gaPageMiss",
+    "gaNoItem",
+    "gaFlickr",
+    "gaLocalSlashed",
+    "gaLocalPlain",
+    "gaExternal",
+    "gaStarSrc",
+    "gaAlt",
+    "gaLinkUrl",
+    "gaLinkPage",
+    "gaLinkStar",
+    "usNotFound",
+    "btEdit",
+    "btEditAppend",
+    "btEditSections",
+    "btHistory",
+    "btPrint",
+    "btFiles",
+    "btTags",
+    "btSource",
+    "btTalk",
+    "btBacklinks",
+    "btRename",
+    "btDelete",
+    "btParent",
+    "btEditMeta",
+    "btWatchers",
+    "btSetTags",
+    "btInvalid",
+    "btSetTagsEmpty",
+    "btStyle",
+    "btClassCustom",
+    "btTextCustom",
+    "emNoMatch",
+    "emEvent",
+    "emSrcJavascript",
+    "emSrcVbscript",
+    "emAttrJavascript",
+    "emAttrVbscript",
+    "emPass",
+    "emLangStrip"
+  ]
+}

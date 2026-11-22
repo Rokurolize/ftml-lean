@@ -1,0 +1,50 @@
+'LeanFtml.serveAllClasses_nodup' does not depend on any axioms
+'LeanFtml.serveAllClasses_length' does not depend on any axioms
+'LeanFtml.bt_ok_nonempty' depends on axioms: [propext]
+'LeanFtml.serveAllClasses_mem' depends on axioms: [propext]
+'LeanFtml.serve_classify_sound' depends on axioms: [propext]
+'LeanFtml.serve_classify_nonempty' depends on axioms: [propext]
+'LeanFtml.serve_witness_classify' depends on axioms: [propext]
+'LeanFtml.serve_classes_exhaustive' depends on axioms: [propext]
+'LeanFtml.serve_classification_complete' depends on axioms: [propext]
+'LeanFtml.ga_size_exclusive' depends on axioms: [propext]
+'LeanFtml.ga_kind_exclusive' depends on axioms: [propext]
+'LeanFtml.ga_link_not_both' depends on axioms: [propext]
+'LeanFtml.bt_invalid_single' does not depend on any axioms
+'LeanFtml.bt_set_tags_empty_single' does not depend on any axioms
+'LeanFtml.bt_primary_mem' depends on axioms: [propext]
+'LeanFtml.us_single' does not depend on any axioms
+'LeanFtml.em_nomatch_single' does not depend on any axioms
+'LeanFtml.em_event_single' does not depend on any axioms
+'LeanFtml.em_src_javascript_single' does not depend on any axioms
+'LeanFtml.em_src_vbscript_single' does not depend on any axioms
+'LeanFtml.em_attr_javascript_single' does not depend on any axioms
+'LeanFtml.em_attr_vbscript_single' does not depend on any axioms
+'LeanFtml.em_pass_base' depends on axioms: [propext]
+'LeanFtml.serve_shapeOf_isSome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.mem_foldl_acc' depends on axioms: [propext]
+'LeanFtml.ga_row_not_flickr_of_any' depends on axioms: [propext]
+'LeanFtml.mem_box_realized' depends on axioms: [propext, Quot.sound]
+'LeanFtml.classes_realized_of_outcome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.gallery_classes_realized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.classesOfOutcome_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.emClasses_nonempty' depends on axioms: [propext]
+'LeanFtml.btClasses_nonempty' depends on axioms: [propext]
+'LeanFtml.gallery_classOf_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.user_classOf_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.button_classOf_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.embed_classOf_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.isServe_of_bool' depends on axioms: [propext]
+'LeanFtml.serveClassOf_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.serve_classOf_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.serve_classOf_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.serve_memClass_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.serve_memClass_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.gallery_falsy_is_page_miss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.explodeByte_nil_nonempty' does not depend on any axioms
+'LeanFtml.explodeByte_go_nonempty' depends on axioms: [propext]
+'LeanFtml.explodeByte_nonempty' depends on axioms: [propext]
+'LeanFtml.cov_gallery_page_miss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.cov_user_not_found' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.cov_button_invalid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.button_allowlist_agrees' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,376 @@
+{"id": "gaSizeSmall-0", "rule": "Gallery", "opts": {"size": "small", "sources": ": h530.example/p0.png"}, "expect": ["gaSizeSmall", "gaLocalSlashed"], "target": "gaSizeSmall"}
+{"id": "gaSizeSmall-1", "rule": "Gallery", "opts": {"size": "small", "sources": ": h531.example/p1.png"}, "expect": ["gaSizeSmall", "gaLocalSlashed"], "target": "gaSizeSmall"}
+{"id": "gaSizeSmall-2", "rule": "Gallery", "opts": {"size": "small", "sources": ": h532.example/p2.png"}, "expect": ["gaSizeSmall", "gaLocalSlashed"], "target": "gaSizeSmall"}
+{"id": "gaSizeSmall-3", "rule": "Gallery", "opts": {"size": "small", "sources": ": h533.example/p3.png"}, "expect": ["gaSizeSmall", "gaLocalSlashed"], "target": "gaSizeSmall"}
+{"id": "gaSizeSmall-4", "rule": "Gallery", "opts": {"size": "small", "sources": ": h534.example/p4.png"}, "expect": ["gaSizeSmall", "gaLocalSlashed"], "target": "gaSizeSmall"}
+{"id": "gaSizeSmall-5", "rule": "Gallery", "opts": {"size": "small", "sources": ": h535.example/p5.png"}, "expect": ["gaSizeSmall", "gaLocalSlashed"], "target": "gaSizeSmall"}
+{"id": "gaSizeSmall-6", "rule": "Gallery", "opts": {"size": "small", "sources": ": h536.example/p6.png"}, "expect": ["gaSizeSmall", "gaLocalSlashed"], "target": "gaSizeSmall"}
+{"id": "gaSizeSmall-7", "rule": "Gallery", "opts": {"size": "small", "sources": ": h537.example/p7.png"}, "expect": ["gaSizeSmall", "gaLocalSlashed"], "target": "gaSizeSmall"}
+{"id": "gaSizeMedium-0", "rule": "Gallery", "opts": {"size": "medium", "sources": ": h530.example/p0.png"}, "expect": ["gaSizeMedium", "gaLocalSlashed"], "target": "gaSizeMedium"}
+{"id": "gaSizeMedium-1", "rule": "Gallery", "opts": {"size": "medium", "sources": ": h531.example/p1.png"}, "expect": ["gaSizeMedium", "gaLocalSlashed"], "target": "gaSizeMedium"}
+{"id": "gaSizeMedium-2", "rule": "Gallery", "opts": {"size": "medium", "sources": ": h532.example/p2.png"}, "expect": ["gaSizeMedium", "gaLocalSlashed"], "target": "gaSizeMedium"}
+{"id": "gaSizeMedium-3", "rule": "Gallery", "opts": {"size": "medium", "sources": ": h533.example/p3.png"}, "expect": ["gaSizeMedium", "gaLocalSlashed"], "target": "gaSizeMedium"}
+{"id": "gaSizeMedium-4", "rule": "Gallery", "opts": {"size": "medium", "sources": ": h534.example/p4.png"}, "expect": ["gaSizeMedium", "gaLocalSlashed"], "target": "gaSizeMedium"}
+{"id": "gaSizeMedium-5", "rule": "Gallery", "opts": {"size": "medium", "sources": ": h535.example/p5.png"}, "expect": ["gaSizeMedium", "gaLocalSlashed"], "target": "gaSizeMedium"}
+{"id": "gaSizeMedium-6", "rule": "Gallery", "opts": {"size": "medium", "sources": ": h536.example/p6.png"}, "expect": ["gaSizeMedium", "gaLocalSlashed"], "target": "gaSizeMedium"}
+{"id": "gaSizeMedium-7", "rule": "Gallery", "opts": {"size": "medium", "sources": ": h537.example/p7.png"}, "expect": ["gaSizeMedium", "gaLocalSlashed"], "target": "gaSizeMedium"}
+{"id": "gaSizeThumbnail-0", "rule": "Gallery", "opts": {"size": "thumbnail", "sources": ": h530.example/p0.png"}, "expect": ["gaSizeThumbnail", "gaLocalSlashed"], "target": "gaSizeThumbnail"}
+{"id": "gaSizeThumbnail-1", "rule": "Gallery", "opts": {"size": "thumbnail", "sources": ": h531.example/p1.png"}, "expect": ["gaSizeThumbnail", "gaLocalSlashed"], "target": "gaSizeThumbnail"}
+{"id": "gaSizeThumbnail-2", "rule": "Gallery", "opts": {"size": "thumbnail", "sources": ": h532.example/p2.png"}, "expect": ["gaSizeThumbnail", "gaLocalSlashed"], "target": "gaSizeThumbnail"}
+{"id": "gaSizeThumbnail-3", "rule": "Gallery", "opts": {"size": "thumbnail", "sources": ": h533.example/p3.png"}, "expect": ["gaSizeThumbnail", "gaLocalSlashed"], "target": "gaSizeThumbnail"}
+{"id": "gaSizeThumbnail-4", "rule": "Gallery", "opts": {"size": "thumbnail", "sources": ": h534.example/p4.png"}, "expect": ["gaSizeThumbnail", "gaLocalSlashed"], "target": "gaSizeThumbnail"}
+{"id": "gaSizeThumbnail-5", "rule": "Gallery", "opts": {"size": "thumbnail", "sources": ": h535.example/p5.png"}, "expect": ["gaSizeThumbnail", "gaLocalSlashed"], "target": "gaSizeThumbnail"}
+{"id": "gaSizeThumbnail-6", "rule": "Gallery", "opts": {"size": "thumbnail", "sources": ": h536.example/p6.png"}, "expect": ["gaSizeThumbnail", "gaLocalSlashed"], "target": "gaSizeThumbnail"}
+{"id": "gaSizeThumbnail-7", "rule": "Gallery", "opts": {"size": "thumbnail", "sources": ": h537.example/p7.png"}, "expect": ["gaSizeThumbnail", "gaLocalSlashed"], "target": "gaSizeThumbnail"}
+{"id": "gaSizeSquare-0", "rule": "Gallery", "opts": {"size": "square", "sources": ": h530.example/p0.png"}, "expect": ["gaSizeSquare", "gaLocalSlashed"], "target": "gaSizeSquare"}
+{"id": "gaSizeSquare-1", "rule": "Gallery", "opts": {"size": "square", "sources": ": h531.example/p1.png"}, "expect": ["gaSizeSquare", "gaLocalSlashed"], "target": "gaSizeSquare"}
+{"id": "gaSizeSquare-2", "rule": "Gallery", "opts": {"size": "square", "sources": ": h532.example/p2.png"}, "expect": ["gaSizeSquare", "gaLocalSlashed"], "target": "gaSizeSquare"}
+{"id": "gaSizeSquare-3", "rule": "Gallery", "opts": {"size": "square", "sources": ": h533.example/p3.png"}, "expect": ["gaSizeSquare", "gaLocalSlashed"], "target": "gaSizeSquare"}
+{"id": "gaSizeSquare-4", "rule": "Gallery", "opts": {"size": "square", "sources": ": h534.example/p4.png"}, "expect": ["gaSizeSquare", "gaLocalSlashed"], "target": "gaSizeSquare"}
+{"id": "gaSizeSquare-5", "rule": "Gallery", "opts": {"size": "square", "sources": ": h535.example/p5.png"}, "expect": ["gaSizeSquare", "gaLocalSlashed"], "target": "gaSizeSquare"}
+{"id": "gaSizeSquare-6", "rule": "Gallery", "opts": {"size": "square", "sources": ": h536.example/p6.png"}, "expect": ["gaSizeSquare", "gaLocalSlashed"], "target": "gaSizeSquare"}
+{"id": "gaSizeSquare-7", "rule": "Gallery", "opts": {"size": "square", "sources": ": h537.example/p7.png"}, "expect": ["gaSizeSquare", "gaLocalSlashed"], "target": "gaSizeSquare"}
+{"id": "gaSizeOriginal-0", "rule": "Gallery", "opts": {"size": "original", "sources": ": h530.example/p0.png"}, "expect": ["gaSizeOriginal", "gaLocalSlashed"], "target": "gaSizeOriginal"}
+{"id": "gaSizeOriginal-1", "rule": "Gallery", "opts": {"size": "original", "sources": ": h531.example/p1.png"}, "expect": ["gaSizeOriginal", "gaLocalSlashed"], "target": "gaSizeOriginal"}
+{"id": "gaSizeOriginal-2", "rule": "Gallery", "opts": {"size": "original", "sources": ": h532.example/p2.png"}, "expect": ["gaSizeOriginal", "gaLocalSlashed"], "target": "gaSizeOriginal"}
+{"id": "gaSizeOriginal-3", "rule": "Gallery", "opts": {"size": "original", "sources": ": h533.example/p3.png"}, "expect": ["gaSizeOriginal", "gaLocalSlashed"], "target": "gaSizeOriginal"}
+{"id": "gaSizeOriginal-4", "rule": "Gallery", "opts": {"size": "original", "sources": ": h534.example/p4.png"}, "expect": ["gaSizeOriginal", "gaLocalSlashed"], "target": "gaSizeOriginal"}
+{"id": "gaSizeOriginal-5", "rule": "Gallery", "opts": {"size": "original", "sources": ": h535.example/p5.png"}, "expect": ["gaSizeOriginal", "gaLocalSlashed"], "target": "gaSizeOriginal"}
+{"id": "gaSizeOriginal-6", "rule": "Gallery", "opts": {"size": "original", "sources": ": h536.example/p6.png"}, "expect": ["gaSizeOriginal", "gaLocalSlashed"], "target": "gaSizeOriginal"}
+{"id": "gaSizeOriginal-7", "rule": "Gallery", "opts": {"size": "original", "sources": ": h537.example/p7.png"}, "expect": ["gaSizeOriginal", "gaLocalSlashed"], "target": "gaSizeOriginal"}
+{"id": "gaSizeDefault-0", "rule": "Gallery", "opts": {"size": "nope", "sources": ": h530.example/p0.png"}, "expect": ["gaSizeDefault", "gaLocalSlashed"], "target": "gaSizeDefault"}
+{"id": "gaSizeDefault-1", "rule": "Gallery", "opts": {"size": "nope", "sources": ": h531.example/p1.png"}, "expect": ["gaSizeDefault", "gaLocalSlashed"], "target": "gaSizeDefault"}
+{"id": "gaSizeDefault-2", "rule": "Gallery", "opts": {"size": "nope", "sources": ": h532.example/p2.png"}, "expect": ["gaSizeDefault", "gaLocalSlashed"], "target": "gaSizeDefault"}
+{"id": "gaSizeDefault-3", "rule": "Gallery", "opts": {"size": "nope", "sources": ": h533.example/p3.png"}, "expect": ["gaSizeDefault", "gaLocalSlashed"], "target": "gaSizeDefault"}
+{"id": "gaSizeDefault-4", "rule": "Gallery", "opts": {"size": "nope", "sources": ": h534.example/p4.png"}, "expect": ["gaSizeDefault", "gaLocalSlashed"], "target": "gaSizeDefault"}
+{"id": "gaSizeDefault-5", "rule": "Gallery", "opts": {"size": "nope", "sources": ": h535.example/p5.png"}, "expect": ["gaSizeDefault", "gaLocalSlashed"], "target": "gaSizeDefault"}
+{"id": "gaSizeDefault-6", "rule": "Gallery", "opts": {"size": "nope", "sources": ": h536.example/p6.png"}, "expect": ["gaSizeDefault", "gaLocalSlashed"], "target": "gaSizeDefault"}
+{"id": "gaSizeDefault-7", "rule": "Gallery", "opts": {"size": "nope", "sources": ": h537.example/p7.png"}, "expect": ["gaSizeDefault", "gaLocalSlashed"], "target": "gaSizeDefault"}
+{"id": "ga-miss-0", "rule": "Gallery", "opts": {"sources": "", "size": "small"}, "expect": ["gaPageMiss"], "target": "gaPageMiss"}
+{"id": "ga-noitem-0", "rule": "Gallery", "opts": {"sources": "note a\nnot an item"}, "expect": ["gaNoItem"], "target": "gaNoItem"}
+{"id": "ga-flickr-0", "rule": "Gallery", "opts": {"sources": ": flickr:1000"}, "expect": ["gaFlickr"], "target": "gaFlickr", "note": "Gallery:FlickrHandler: reference fatals, Lean excludes the token; the handler is not runnable in the harness"}
+{"id": "ga-slash-0", "rule": "Gallery", "opts": {"sources": ": page0/a.png"}, "expect": ["gaSizeDefault", "gaLocalSlashed"], "target": "gaLocalSlashed"}
+{"id": "ga-plain-0", "rule": "Gallery", "opts": {"sources": ": file0.png"}, "expect": ["gaSizeDefault", "gaLocalPlain"], "target": "gaLocalPlain"}
+{"id": "ga-ext-0", "rule": "Gallery", "opts": {"sources": ": https://h530.example/a0.png", "size": "small"}, "expect": ["gaSizeSmall", "gaExternal", "gaLinkUrl"], "target": "gaExternal"}
+{"id": "ga-star-0", "rule": "Gallery", "opts": {"sources": ": *https://h530.example/s0.png"}, "expect": ["gaSizeDefault", "gaExternal", "gaStarSrc", "gaLinkUrl"], "target": "gaStarSrc"}
+{"id": "ga-alt-0", "rule": "Gallery", "opts": {"sources": ": file0.png alt=\"a\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaAlt"], "target": "gaAlt"}
+{"id": "ga-linkurl-0", "rule": "Gallery", "opts": {"sources": ": file0.png link=\"https://h530.example/go\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkUrl"], "target": "gaLinkUrl"}
+{"id": "ga-linkpage-0", "rule": "Gallery", "opts": {"sources": ": file0.png link=\"page-0\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkPage"], "target": "gaLinkPage"}
+{"id": "ga-linkstar-0", "rule": "Gallery", "opts": {"sources": ": file0.png link=\"*https://h530.example/go\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkUrl", "gaLinkStar"], "target": "gaLinkStar"}
+{"id": "ga-miss-1", "rule": "Gallery", "opts": {"sources": "0", "size": "small"}, "expect": ["gaPageMiss"], "target": "gaPageMiss"}
+{"id": "ga-noitem-1", "rule": "Gallery", "opts": {"sources": "note O'Brien\nnot an item"}, "expect": ["gaNoItem"], "target": "gaNoItem"}
+{"id": "ga-flickr-1", "rule": "Gallery", "opts": {"sources": ": flickr:1001"}, "expect": ["gaFlickr"], "target": "gaFlickr", "note": "Gallery:FlickrHandler: reference fatals, Lean excludes the token; the handler is not runnable in the harness"}
+{"id": "ga-slash-1", "rule": "Gallery", "opts": {"sources": ": page1/a.png"}, "expect": ["gaSizeDefault", "gaLocalSlashed"], "target": "gaLocalSlashed"}
+{"id": "ga-plain-1", "rule": "Gallery", "opts": {"sources": ": file1.png"}, "expect": ["gaSizeDefault", "gaLocalPlain"], "target": "gaLocalPlain"}
+{"id": "ga-ext-1", "rule": "Gallery", "opts": {"sources": ": https://h531.example/a1.png", "size": ""}, "expect": ["gaSizeDefault", "gaExternal", "gaLinkUrl"], "target": "gaExternal"}
+{"id": "ga-star-1", "rule": "Gallery", "opts": {"sources": ": *https://h531.example/s1.png"}, "expect": ["gaSizeDefault", "gaExternal", "gaStarSrc", "gaLinkUrl"], "target": "gaStarSrc"}
+{"id": "ga-alt-1", "rule": "Gallery", "opts": {"sources": ": file1.png alt=\"O'Brien\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaAlt"], "target": "gaAlt"}
+{"id": "ga-linkurl-1", "rule": "Gallery", "opts": {"sources": ": file1.png link=\"https://h531.example/go\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkUrl"], "target": "gaLinkUrl"}
+{"id": "ga-linkpage-1", "rule": "Gallery", "opts": {"sources": ": file1.png link=\"page-1\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkPage"], "target": "gaLinkPage"}
+{"id": "ga-linkstar-1", "rule": "Gallery", "opts": {"sources": ": file1.png link=\"*https://h531.example/go\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkUrl", "gaLinkStar"], "target": "gaLinkStar"}
+{"id": "ga-miss-2", "rule": "Gallery", "opts": {"sources": "", "size": "small"}, "expect": ["gaPageMiss"], "target": "gaPageMiss"}
+{"id": "ga-noitem-2", "rule": "Gallery", "opts": {"sources": "note a&b\nnot an item"}, "expect": ["gaNoItem"], "target": "gaNoItem"}
+{"id": "ga-flickr-2", "rule": "Gallery", "opts": {"sources": ": flickr:1002"}, "expect": ["gaFlickr"], "target": "gaFlickr", "note": "Gallery:FlickrHandler: reference fatals, Lean excludes the token; the handler is not runnable in the harness"}
+{"id": "ga-slash-2", "rule": "Gallery", "opts": {"sources": ": page2/a.png"}, "expect": ["gaSizeDefault", "gaLocalSlashed"], "target": "gaLocalSlashed"}
+{"id": "ga-plain-2", "rule": "Gallery", "opts": {"sources": ": file2.png"}, "expect": ["gaSizeDefault", "gaLocalPlain"], "target": "gaLocalPlain"}
+{"id": "ga-ext-2", "rule": "Gallery", "opts": {"sources": ": https://h532.example/a2.png", "size": "small"}, "expect": ["gaSizeSmall", "gaExternal", "gaLinkUrl"], "target": "gaExternal"}
+{"id": "ga-star-2", "rule": "Gallery", "opts": {"sources": ": *https://h532.example/s2.png"}, "expect": ["gaSizeDefault", "gaExternal", "gaStarSrc", "gaLinkUrl"], "target": "gaStarSrc"}
+{"id": "ga-alt-2", "rule": "Gallery", "opts": {"sources": ": file2.png alt=\"a&b\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaAlt"], "target": "gaAlt"}
+{"id": "ga-linkurl-2", "rule": "Gallery", "opts": {"sources": ": file2.png link=\"https://h532.example/go\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkUrl"], "target": "gaLinkUrl"}
+{"id": "ga-linkpage-2", "rule": "Gallery", "opts": {"sources": ": file2.png link=\"page-2\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkPage"], "target": "gaLinkPage"}
+{"id": "ga-linkstar-2", "rule": "Gallery", "opts": {"sources": ": file2.png link=\"*https://h532.example/go\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkUrl", "gaLinkStar"], "target": "gaLinkStar"}
+{"id": "ga-miss-3", "rule": "Gallery", "opts": {"sources": "0", "size": "small"}, "expect": ["gaPageMiss"], "target": "gaPageMiss"}
+{"id": "ga-noitem-3", "rule": "Gallery", "opts": {"sources": "note n<2\nnot an item"}, "expect": ["gaNoItem"], "target": "gaNoItem"}
+{"id": "ga-flickr-3", "rule": "Gallery", "opts": {"sources": ": flickr:1003"}, "expect": ["gaFlickr"], "target": "gaFlickr", "note": "Gallery:FlickrHandler: reference fatals, Lean excludes the token; the handler is not runnable in the harness"}
+{"id": "ga-slash-3", "rule": "Gallery", "opts": {"sources": ": page3/a.png"}, "expect": ["gaSizeDefault", "gaLocalSlashed"], "target": "gaLocalSlashed"}
+{"id": "ga-plain-3", "rule": "Gallery", "opts": {"sources": ": file3.png"}, "expect": ["gaSizeDefault", "gaLocalPlain"], "target": "gaLocalPlain"}
+{"id": "ga-ext-3", "rule": "Gallery", "opts": {"sources": ": https://h533.example/a3.png", "size": ""}, "expect": ["gaSizeDefault", "gaExternal", "gaLinkUrl"], "target": "gaExternal"}
+{"id": "ga-star-3", "rule": "Gallery", "opts": {"sources": ": *https://h533.example/s3.png"}, "expect": ["gaSizeDefault", "gaExternal", "gaStarSrc", "gaLinkUrl"], "target": "gaStarSrc"}
+{"id": "ga-alt-3", "rule": "Gallery", "opts": {"sources": ": file3.png alt=\"n<2\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaAlt"], "target": "gaAlt"}
+{"id": "ga-linkurl-3", "rule": "Gallery", "opts": {"sources": ": file3.png link=\"https://h533.example/go\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkUrl"], "target": "gaLinkUrl"}
+{"id": "ga-linkpage-3", "rule": "Gallery", "opts": {"sources": ": file3.png link=\"page-3\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkPage"], "target": "gaLinkPage"}
+{"id": "ga-linkstar-3", "rule": "Gallery", "opts": {"sources": ": file3.png link=\"*https://h533.example/go\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkUrl", "gaLinkStar"], "target": "gaLinkStar"}
+{"id": "ga-miss-4", "rule": "Gallery", "opts": {"sources": "", "size": "small"}, "expect": ["gaPageMiss"], "target": "gaPageMiss"}
+{"id": "ga-noitem-4", "rule": "Gallery", "opts": {"sources": "note zz\nnot an item"}, "expect": ["gaNoItem"], "target": "gaNoItem"}
+{"id": "ga-flickr-4", "rule": "Gallery", "opts": {"sources": ": flickr:1004"}, "expect": ["gaFlickr"], "target": "gaFlickr", "note": "Gallery:FlickrHandler: reference fatals, Lean excludes the token; the handler is not runnable in the harness"}
+{"id": "ga-slash-4", "rule": "Gallery", "opts": {"sources": ": page4/a.png"}, "expect": ["gaSizeDefault", "gaLocalSlashed"], "target": "gaLocalSlashed"}
+{"id": "ga-plain-4", "rule": "Gallery", "opts": {"sources": ": file4.png"}, "expect": ["gaSizeDefault", "gaLocalPlain"], "target": "gaLocalPlain"}
+{"id": "ga-ext-4", "rule": "Gallery", "opts": {"sources": ": https://h534.example/a4.png", "size": "small"}, "expect": ["gaSizeSmall", "gaExternal", "gaLinkUrl"], "target": "gaExternal"}
+{"id": "ga-star-4", "rule": "Gallery", "opts": {"sources": ": *https://h534.example/s4.png"}, "expect": ["gaSizeDefault", "gaExternal", "gaStarSrc", "gaLinkUrl"], "target": "gaStarSrc"}
+{"id": "ga-alt-4", "rule": "Gallery", "opts": {"sources": ": file4.png alt=\"zz\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaAlt"], "target": "gaAlt"}
+{"id": "ga-linkurl-4", "rule": "Gallery", "opts": {"sources": ": file4.png link=\"https://h534.example/go\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkUrl"], "target": "gaLinkUrl"}
+{"id": "ga-linkpage-4", "rule": "Gallery", "opts": {"sources": ": file4.png link=\"page-4\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkPage"], "target": "gaLinkPage"}
+{"id": "ga-linkstar-4", "rule": "Gallery", "opts": {"sources": ": file4.png link=\"*https://h534.example/go\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkUrl", "gaLinkStar"], "target": "gaLinkStar"}
+{"id": "ga-miss-5", "rule": "Gallery", "opts": {"sources": "0", "size": "small"}, "expect": ["gaPageMiss"], "target": "gaPageMiss"}
+{"id": "ga-noitem-5", "rule": "Gallery", "opts": {"sources": "note body\nnot an item"}, "expect": ["gaNoItem"], "target": "gaNoItem"}
+{"id": "ga-flickr-5", "rule": "Gallery", "opts": {"sources": ": flickr:1005"}, "expect": ["gaFlickr"], "target": "gaFlickr", "note": "Gallery:FlickrHandler: reference fatals, Lean excludes the token; the handler is not runnable in the harness"}
+{"id": "ga-slash-5", "rule": "Gallery", "opts": {"sources": ": page5/a.png"}, "expect": ["gaSizeDefault", "gaLocalSlashed"], "target": "gaLocalSlashed"}
+{"id": "ga-plain-5", "rule": "Gallery", "opts": {"sources": ": file5.png"}, "expect": ["gaSizeDefault", "gaLocalPlain"], "target": "gaLocalPlain"}
+{"id": "ga-ext-5", "rule": "Gallery", "opts": {"sources": ": https://h535.example/a5.png", "size": ""}, "expect": ["gaSizeDefault", "gaExternal", "gaLinkUrl"], "target": "gaExternal"}
+{"id": "ga-star-5", "rule": "Gallery", "opts": {"sources": ": *https://h535.example/s5.png"}, "expect": ["gaSizeDefault", "gaExternal", "gaStarSrc", "gaLinkUrl"], "target": "gaStarSrc"}
+{"id": "ga-alt-5", "rule": "Gallery", "opts": {"sources": ": file5.png alt=\"body\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaAlt"], "target": "gaAlt"}
+{"id": "ga-linkurl-5", "rule": "Gallery", "opts": {"sources": ": file5.png link=\"https://h535.example/go\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkUrl"], "target": "gaLinkUrl"}
+{"id": "ga-linkpage-5", "rule": "Gallery", "opts": {"sources": ": file5.png link=\"page-5\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkPage"], "target": "gaLinkPage"}
+{"id": "ga-linkstar-5", "rule": "Gallery", "opts": {"sources": ": file5.png link=\"*https://h535.example/go\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkUrl", "gaLinkStar"], "target": "gaLinkStar"}
+{"id": "ga-miss-6", "rule": "Gallery", "opts": {"sources": "", "size": "small"}, "expect": ["gaPageMiss"], "target": "gaPageMiss"}
+{"id": "ga-noitem-6", "rule": "Gallery", "opts": {"sources": "note xy\nnot an item"}, "expect": ["gaNoItem"], "target": "gaNoItem"}
+{"id": "ga-flickr-6", "rule": "Gallery", "opts": {"sources": ": flickr:1006"}, "expect": ["gaFlickr"], "target": "gaFlickr", "note": "Gallery:FlickrHandler: reference fatals, Lean excludes the token; the handler is not runnable in the harness"}
+{"id": "ga-slash-6", "rule": "Gallery", "opts": {"sources": ": page6/a.png"}, "expect": ["gaSizeDefault", "gaLocalSlashed"], "target": "gaLocalSlashed"}
+{"id": "ga-plain-6", "rule": "Gallery", "opts": {"sources": ": file6.png"}, "expect": ["gaSizeDefault", "gaLocalPlain"], "target": "gaLocalPlain"}
+{"id": "ga-ext-6", "rule": "Gallery", "opts": {"sources": ": https://h536.example/a6.png", "size": "small"}, "expect": ["gaSizeSmall", "gaExternal", "gaLinkUrl"], "target": "gaExternal"}
+{"id": "ga-star-6", "rule": "Gallery", "opts": {"sources": ": *https://h536.example/s6.png"}, "expect": ["gaSizeDefault", "gaExternal", "gaStarSrc", "gaLinkUrl"], "target": "gaStarSrc"}
+{"id": "ga-alt-6", "rule": "Gallery", "opts": {"sources": ": file6.png alt=\"xy\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaAlt"], "target": "gaAlt"}
+{"id": "ga-linkurl-6", "rule": "Gallery", "opts": {"sources": ": file6.png link=\"https://h536.example/go\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkUrl"], "target": "gaLinkUrl"}
+{"id": "ga-linkpage-6", "rule": "Gallery", "opts": {"sources": ": file6.png link=\"page-6\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkPage"], "target": "gaLinkPage"}
+{"id": "ga-linkstar-6", "rule": "Gallery", "opts": {"sources": ": file6.png link=\"*https://h536.example/go\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkUrl", "gaLinkStar"], "target": "gaLinkStar"}
+{"id": "ga-miss-7", "rule": "Gallery", "opts": {"sources": "0", "size": "small"}, "expect": ["gaPageMiss"], "target": "gaPageMiss"}
+{"id": "ga-noitem-7", "rule": "Gallery", "opts": {"sources": "note q\nnot an item"}, "expect": ["gaNoItem"], "target": "gaNoItem"}
+{"id": "ga-flickr-7", "rule": "Gallery", "opts": {"sources": ": flickr:1007"}, "expect": ["gaFlickr"], "target": "gaFlickr", "note": "Gallery:FlickrHandler: reference fatals, Lean excludes the token; the handler is not runnable in the harness"}
+{"id": "ga-slash-7", "rule": "Gallery", "opts": {"sources": ": page7/a.png"}, "expect": ["gaSizeDefault", "gaLocalSlashed"], "target": "gaLocalSlashed"}
+{"id": "ga-plain-7", "rule": "Gallery", "opts": {"sources": ": file7.png"}, "expect": ["gaSizeDefault", "gaLocalPlain"], "target": "gaLocalPlain"}
+{"id": "ga-ext-7", "rule": "Gallery", "opts": {"sources": ": https://h537.example/a7.png", "size": ""}, "expect": ["gaSizeDefault", "gaExternal", "gaLinkUrl"], "target": "gaExternal"}
+{"id": "ga-star-7", "rule": "Gallery", "opts": {"sources": ": *https://h537.example/s7.png"}, "expect": ["gaSizeDefault", "gaExternal", "gaStarSrc", "gaLinkUrl"], "target": "gaStarSrc"}
+{"id": "ga-alt-7", "rule": "Gallery", "opts": {"sources": ": file7.png alt=\"q\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaAlt"], "target": "gaAlt"}
+{"id": "ga-linkurl-7", "rule": "Gallery", "opts": {"sources": ": file7.png link=\"https://h537.example/go\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkUrl"], "target": "gaLinkUrl"}
+{"id": "ga-linkpage-7", "rule": "Gallery", "opts": {"sources": ": file7.png link=\"page-7\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkPage"], "target": "gaLinkPage"}
+{"id": "ga-linkstar-7", "rule": "Gallery", "opts": {"sources": ": file7.png link=\"*https://h537.example/go\""}, "expect": ["gaSizeDefault", "gaLocalPlain", "gaLinkUrl", "gaLinkStar"], "target": "gaLinkStar"}
+{"id": "user-0", "rule": "User", "opts": {"userName": "user998", "image": true}, "expect": ["usNotFound"], "target": "usNotFound"}
+{"id": "user-1", "rule": "User", "opts": {"userName": "O'Brien", "image": false}, "expect": ["usNotFound"], "target": "usNotFound"}
+{"id": "user-2", "rule": "User", "opts": {"userName": "a&b", "image": true}, "expect": ["usNotFound"], "target": "usNotFound"}
+{"id": "user-3", "rule": "User", "opts": {"userName": "n<2", "image": false}, "expect": ["usNotFound"], "target": "usNotFound"}
+{"id": "user-4", "rule": "User", "opts": {"userName": "q\"q", "image": true}, "expect": ["usNotFound"], "target": "usNotFound"}
+{"id": "user-5", "rule": "User", "opts": {"userName": "zz", "image": false}, "expect": ["usNotFound"], "target": "usNotFound"}
+{"id": "user-6", "rule": "User", "opts": {"userName": "<b>", "image": true}, "expect": ["usNotFound"], "target": "usNotFound"}
+{"id": "user-7", "rule": "User", "opts": {"userName": "x y", "image": false}, "expect": ["usNotFound"], "target": "usNotFound"}
+{"id": "btEdit-0", "rule": "Button", "opts": {"type": "EDIT"}, "expect": ["btEdit"], "target": "btEdit"}
+{"id": "btEdit-1", "rule": "Button", "opts": {"type": "edit"}, "expect": ["btEdit"], "target": "btEdit"}
+{"id": "btEdit-2", "rule": "Button", "opts": {"type": "edit"}, "expect": ["btEdit"], "target": "btEdit"}
+{"id": "btEdit-3", "rule": "Button", "opts": {"type": "EDIT"}, "expect": ["btEdit"], "target": "btEdit"}
+{"id": "btEdit-4", "rule": "Button", "opts": {"type": "edit"}, "expect": ["btEdit"], "target": "btEdit"}
+{"id": "btEdit-5", "rule": "Button", "opts": {"type": "edit"}, "expect": ["btEdit"], "target": "btEdit"}
+{"id": "btEdit-6", "rule": "Button", "opts": {"type": "EDIT"}, "expect": ["btEdit"], "target": "btEdit"}
+{"id": "btEdit-7", "rule": "Button", "opts": {"type": "edit"}, "expect": ["btEdit"], "target": "btEdit"}
+{"id": "btEditAppend-0", "rule": "Button", "opts": {"type": "EDIT-APPEND"}, "expect": ["btEditAppend"], "target": "btEditAppend"}
+{"id": "btEditAppend-1", "rule": "Button", "opts": {"type": "edit-append"}, "expect": ["btEditAppend"], "target": "btEditAppend"}
+{"id": "btEditAppend-2", "rule": "Button", "opts": {"type": "edit-append"}, "expect": ["btEditAppend"], "target": "btEditAppend"}
+{"id": "btEditAppend-3", "rule": "Button", "opts": {"type": "EDIT-APPEND"}, "expect": ["btEditAppend"], "target": "btEditAppend"}
+{"id": "btEditAppend-4", "rule": "Button", "opts": {"type": "edit-append"}, "expect": ["btEditAppend"], "target": "btEditAppend"}
+{"id": "btEditAppend-5", "rule": "Button", "opts": {"type": "edit-append"}, "expect": ["btEditAppend"], "target": "btEditAppend"}
+{"id": "btEditAppend-6", "rule": "Button", "opts": {"type": "EDIT-APPEND"}, "expect": ["btEditAppend"], "target": "btEditAppend"}
+{"id": "btEditAppend-7", "rule": "Button", "opts": {"type": "edit-append"}, "expect": ["btEditAppend"], "target": "btEditAppend"}
+{"id": "btEditSections-0", "rule": "Button", "opts": {"type": "EDIT-SECTIONS"}, "expect": ["btEditSections"], "target": "btEditSections"}
+{"id": "btEditSections-1", "rule": "Button", "opts": {"type": "edit-sections"}, "expect": ["btEditSections"], "target": "btEditSections"}
+{"id": "btEditSections-2", "rule": "Button", "opts": {"type": "edit-sections"}, "expect": ["btEditSections"], "target": "btEditSections"}
+{"id": "btEditSections-3", "rule": "Button", "opts": {"type": "EDIT-SECTIONS"}, "expect": ["btEditSections"], "target": "btEditSections"}
+{"id": "btEditSections-4", "rule": "Button", "opts": {"type": "edit-sections"}, "expect": ["btEditSections"], "target": "btEditSections"}
+{"id": "btEditSections-5", "rule": "Button", "opts": {"type": "edit-sections"}, "expect": ["btEditSections"], "target": "btEditSections"}
+{"id": "btEditSections-6", "rule": "Button", "opts": {"type": "EDIT-SECTIONS"}, "expect": ["btEditSections"], "target": "btEditSections"}
+{"id": "btEditSections-7", "rule": "Button", "opts": {"type": "edit-sections"}, "expect": ["btEditSections"], "target": "btEditSections"}
+{"id": "btHistory-0", "rule": "Button", "opts": {"type": "HISTORY"}, "expect": ["btHistory"], "target": "btHistory"}
+{"id": "btHistory-1", "rule": "Button", "opts": {"type": "history"}, "expect": ["btHistory"], "target": "btHistory"}
+{"id": "btHistory-2", "rule": "Button", "opts": {"type": "history"}, "expect": ["btHistory"], "target": "btHistory"}
+{"id": "btHistory-3", "rule": "Button", "opts": {"type": "HISTORY"}, "expect": ["btHistory"], "target": "btHistory"}
+{"id": "btHistory-4", "rule": "Button", "opts": {"type": "history"}, "expect": ["btHistory"], "target": "btHistory"}
+{"id": "btHistory-5", "rule": "Button", "opts": {"type": "history"}, "expect": ["btHistory"], "target": "btHistory"}
+{"id": "btHistory-6", "rule": "Button", "opts": {"type": "HISTORY"}, "expect": ["btHistory"], "target": "btHistory"}
+{"id": "btHistory-7", "rule": "Button", "opts": {"type": "history"}, "expect": ["btHistory"], "target": "btHistory"}
+{"id": "btPrint-0", "rule": "Button", "opts": {"type": "PRINT"}, "expect": ["btPrint"], "target": "btPrint"}
+{"id": "btPrint-1", "rule": "Button", "opts": {"type": "print"}, "expect": ["btPrint"], "target": "btPrint"}
+{"id": "btPrint-2", "rule": "Button", "opts": {"type": "print"}, "expect": ["btPrint"], "target": "btPrint"}
+{"id": "btPrint-3", "rule": "Button", "opts": {"type": "PRINT"}, "expect": ["btPrint"], "target": "btPrint"}
+{"id": "btPrint-4", "rule": "Button", "opts": {"type": "print"}, "expect": ["btPrint"], "target": "btPrint"}
+{"id": "btPrint-5", "rule": "Button", "opts": {"type": "print"}, "expect": ["btPrint"], "target": "btPrint"}
+{"id": "btPrint-6", "rule": "Button", "opts": {"type": "PRINT"}, "expect": ["btPrint"], "target": "btPrint"}
+{"id": "btPrint-7", "rule": "Button", "opts": {"type": "print"}, "expect": ["btPrint"], "target": "btPrint"}
+{"id": "btFiles-0", "rule": "Button", "opts": {"type": "FILES"}, "expect": ["btFiles"], "target": "btFiles"}
+{"id": "btFiles-1", "rule": "Button", "opts": {"type": "files"}, "expect": ["btFiles"], "target": "btFiles"}
+{"id": "btFiles-2", "rule": "Button", "opts": {"type": "files"}, "expect": ["btFiles"], "target": "btFiles"}
+{"id": "btFiles-3", "rule": "Button", "opts": {"type": "FILES"}, "expect": ["btFiles"], "target": "btFiles"}
+{"id": "btFiles-4", "rule": "Button", "opts": {"type": "files"}, "expect": ["btFiles"], "target": "btFiles"}
+{"id": "btFiles-5", "rule": "Button", "opts": {"type": "files"}, "expect": ["btFiles"], "target": "btFiles"}
+{"id": "btFiles-6", "rule": "Button", "opts": {"type": "FILES"}, "expect": ["btFiles"], "target": "btFiles"}
+{"id": "btFiles-7", "rule": "Button", "opts": {"type": "files"}, "expect": ["btFiles"], "target": "btFiles"}
+{"id": "btTags-0", "rule": "Button", "opts": {"type": "TAGS"}, "expect": ["btTags"], "target": "btTags"}
+{"id": "btTags-1", "rule": "Button", "opts": {"type": "tags"}, "expect": ["btTags"], "target": "btTags"}
+{"id": "btTags-2", "rule": "Button", "opts": {"type": "tags"}, "expect": ["btTags"], "target": "btTags"}
+{"id": "btTags-3", "rule": "Button", "opts": {"type": "TAGS"}, "expect": ["btTags"], "target": "btTags"}
+{"id": "btTags-4", "rule": "Button", "opts": {"type": "tags"}, "expect": ["btTags"], "target": "btTags"}
+{"id": "btTags-5", "rule": "Button", "opts": {"type": "tags"}, "expect": ["btTags"], "target": "btTags"}
+{"id": "btTags-6", "rule": "Button", "opts": {"type": "TAGS"}, "expect": ["btTags"], "target": "btTags"}
+{"id": "btTags-7", "rule": "Button", "opts": {"type": "tags"}, "expect": ["btTags"], "target": "btTags"}
+{"id": "btSource-0", "rule": "Button", "opts": {"type": "SOURCE"}, "expect": ["btSource"], "target": "btSource"}
+{"id": "btSource-1", "rule": "Button", "opts": {"type": "source"}, "expect": ["btSource"], "target": "btSource"}
+{"id": "btSource-2", "rule": "Button", "opts": {"type": "source"}, "expect": ["btSource"], "target": "btSource"}
+{"id": "btSource-3", "rule": "Button", "opts": {"type": "SOURCE"}, "expect": ["btSource"], "target": "btSource"}
+{"id": "btSource-4", "rule": "Button", "opts": {"type": "source"}, "expect": ["btSource"], "target": "btSource"}
+{"id": "btSource-5", "rule": "Button", "opts": {"type": "source"}, "expect": ["btSource"], "target": "btSource"}
+{"id": "btSource-6", "rule": "Button", "opts": {"type": "SOURCE"}, "expect": ["btSource"], "target": "btSource"}
+{"id": "btSource-7", "rule": "Button", "opts": {"type": "source"}, "expect": ["btSource"], "target": "btSource"}
+{"id": "btTalk-0", "rule": "Button", "opts": {"type": "TALK"}, "expect": ["btTalk"], "target": "btTalk"}
+{"id": "btTalk-1", "rule": "Button", "opts": {"type": "talk"}, "expect": ["btTalk"], "target": "btTalk"}
+{"id": "btTalk-2", "rule": "Button", "opts": {"type": "talk"}, "expect": ["btTalk"], "target": "btTalk"}
+{"id": "btTalk-3", "rule": "Button", "opts": {"type": "TALK"}, "expect": ["btTalk"], "target": "btTalk"}
+{"id": "btTalk-4", "rule": "Button", "opts": {"type": "talk"}, "expect": ["btTalk"], "target": "btTalk"}
+{"id": "btTalk-5", "rule": "Button", "opts": {"type": "talk"}, "expect": ["btTalk"], "target": "btTalk"}
+{"id": "btTalk-6", "rule": "Button", "opts": {"type": "TALK"}, "expect": ["btTalk"], "target": "btTalk"}
+{"id": "btTalk-7", "rule": "Button", "opts": {"type": "talk"}, "expect": ["btTalk"], "target": "btTalk"}
+{"id": "btBacklinks-0", "rule": "Button", "opts": {"type": "BACKLINKS"}, "expect": ["btBacklinks"], "target": "btBacklinks"}
+{"id": "btBacklinks-1", "rule": "Button", "opts": {"type": "backlinks"}, "expect": ["btBacklinks"], "target": "btBacklinks"}
+{"id": "btBacklinks-2", "rule": "Button", "opts": {"type": "backlinks"}, "expect": ["btBacklinks"], "target": "btBacklinks"}
+{"id": "btBacklinks-3", "rule": "Button", "opts": {"type": "BACKLINKS"}, "expect": ["btBacklinks"], "target": "btBacklinks"}
+{"id": "btBacklinks-4", "rule": "Button", "opts": {"type": "backlinks"}, "expect": ["btBacklinks"], "target": "btBacklinks"}
+{"id": "btBacklinks-5", "rule": "Button", "opts": {"type": "backlinks"}, "expect": ["btBacklinks"], "target": "btBacklinks"}
+{"id": "btBacklinks-6", "rule": "Button", "opts": {"type": "BACKLINKS"}, "expect": ["btBacklinks"], "target": "btBacklinks"}
+{"id": "btBacklinks-7", "rule": "Button", "opts": {"type": "backlinks"}, "expect": ["btBacklinks"], "target": "btBacklinks"}
+{"id": "btRename-0", "rule": "Button", "opts": {"type": "RENAME"}, "expect": ["btRename"], "target": "btRename"}
+{"id": "btRename-1", "rule": "Button", "opts": {"type": "rename"}, "expect": ["btRename"], "target": "btRename"}
+{"id": "btRename-2", "rule": "Button", "opts": {"type": "rename"}, "expect": ["btRename"], "target": "btRename"}
+{"id": "btRename-3", "rule": "Button", "opts": {"type": "RENAME"}, "expect": ["btRename"], "target": "btRename"}
+{"id": "btRename-4", "rule": "Button", "opts": {"type": "rename"}, "expect": ["btRename"], "target": "btRename"}
+{"id": "btRename-5", "rule": "Button", "opts": {"type": "rename"}, "expect": ["btRename"], "target": "btRename"}
+{"id": "btRename-6", "rule": "Button", "opts": {"type": "RENAME"}, "expect": ["btRename"], "target": "btRename"}
+{"id": "btRename-7", "rule": "Button", "opts": {"type": "rename"}, "expect": ["btRename"], "target": "btRename"}
+{"id": "btDelete-0", "rule": "Button", "opts": {"type": "DELETE"}, "expect": ["btDelete"], "target": "btDelete"}
+{"id": "btDelete-1", "rule": "Button", "opts": {"type": "delete"}, "expect": ["btDelete"], "target": "btDelete"}
+{"id": "btDelete-2", "rule": "Button", "opts": {"type": "delete"}, "expect": ["btDelete"], "target": "btDelete"}
+{"id": "btDelete-3", "rule": "Button", "opts": {"type": "DELETE"}, "expect": ["btDelete"], "target": "btDelete"}
+{"id": "btDelete-4", "rule": "Button", "opts": {"type": "delete"}, "expect": ["btDelete"], "target": "btDelete"}
+{"id": "btDelete-5", "rule": "Button", "opts": {"type": "delete"}, "expect": ["btDelete"], "target": "btDelete"}
+{"id": "btDelete-6", "rule": "Button", "opts": {"type": "DELETE"}, "expect": ["btDelete"], "target": "btDelete"}
+{"id": "btDelete-7", "rule": "Button", "opts": {"type": "delete"}, "expect": ["btDelete"], "target": "btDelete"}
+{"id": "btParent-0", "rule": "Button", "opts": {"type": "PARENT"}, "expect": ["btParent"], "target": "btParent"}
+{"id": "btParent-1", "rule": "Button", "opts": {"type": "parent"}, "expect": ["btParent"], "target": "btParent"}
+{"id": "btParent-2", "rule": "Button", "opts": {"type": "parent"}, "expect": ["btParent"], "target": "btParent"}
+{"id": "btParent-3", "rule": "Button", "opts": {"type": "PARENT"}, "expect": ["btParent"], "target": "btParent"}
+{"id": "btParent-4", "rule": "Button", "opts": {"type": "parent"}, "expect": ["btParent"], "target": "btParent"}
+{"id": "btParent-5", "rule": "Button", "opts": {"type": "parent"}, "expect": ["btParent"], "target": "btParent"}
+{"id": "btParent-6", "rule": "Button", "opts": {"type": "PARENT"}, "expect": ["btParent"], "target": "btParent"}
+{"id": "btParent-7", "rule": "Button", "opts": {"type": "parent"}, "expect": ["btParent"], "target": "btParent"}
+{"id": "btEditMeta-0", "rule": "Button", "opts": {"type": "EDIT-META"}, "expect": ["btEditMeta"], "target": "btEditMeta"}
+{"id": "btEditMeta-1", "rule": "Button", "opts": {"type": "edit-meta"}, "expect": ["btEditMeta"], "target": "btEditMeta"}
+{"id": "btEditMeta-2", "rule": "Button", "opts": {"type": "edit-meta"}, "expect": ["btEditMeta"], "target": "btEditMeta"}
+{"id": "btEditMeta-3", "rule": "Button", "opts": {"type": "EDIT-META"}, "expect": ["btEditMeta"], "target": "btEditMeta"}
+{"id": "btEditMeta-4", "rule": "Button", "opts": {"type": "edit-meta"}, "expect": ["btEditMeta"], "target": "btEditMeta"}
+{"id": "btEditMeta-5", "rule": "Button", "opts": {"type": "edit-meta"}, "expect": ["btEditMeta"], "target": "btEditMeta"}
+{"id": "btEditMeta-6", "rule": "Button", "opts": {"type": "EDIT-META"}, "expect": ["btEditMeta"], "target": "btEditMeta"}
+{"id": "btEditMeta-7", "rule": "Button", "opts": {"type": "edit-meta"}, "expect": ["btEditMeta"], "target": "btEditMeta"}
+{"id": "btWatchers-0", "rule": "Button", "opts": {"type": "WATCHERS"}, "expect": ["btWatchers"], "target": "btWatchers"}
+{"id": "btWatchers-1", "rule": "Button", "opts": {"type": "watchers"}, "expect": ["btWatchers"], "target": "btWatchers"}
+{"id": "btWatchers-2", "rule": "Button", "opts": {"type": "watchers"}, "expect": ["btWatchers"], "target": "btWatchers"}
+{"id": "btWatchers-3", "rule": "Button", "opts": {"type": "WATCHERS"}, "expect": ["btWatchers"], "target": "btWatchers"}
+{"id": "btWatchers-4", "rule": "Button", "opts": {"type": "watchers"}, "expect": ["btWatchers"], "target": "btWatchers"}
+{"id": "btWatchers-5", "rule": "Button", "opts": {"type": "watchers"}, "expect": ["btWatchers"], "target": "btWatchers"}
+{"id": "btWatchers-6", "rule": "Button", "opts": {"type": "WATCHERS"}, "expect": ["btWatchers"], "target": "btWatchers"}
+{"id": "btWatchers-7", "rule": "Button", "opts": {"type": "watchers"}, "expect": ["btWatchers"], "target": "btWatchers"}
+{"id": "bt-set-0", "rule": "Button", "opts": {"type": "set-tags", "text": "Tag a"}, "expect": ["btSetTags", "btTextCustom"], "target": "btSetTags"}
+{"id": "bt-invalid-0", "rule": "Button", "opts": {"type": "lock"}, "expect": ["btInvalid"], "target": "btInvalid"}
+{"id": "bt-setempty-0", "rule": "Button", "opts": {"type": "set-tags", "text": ""}, "expect": ["btSetTagsEmpty"], "target": "btSetTagsEmpty"}
+{"id": "bt-style-0", "rule": "Button", "opts": {"type": "edit", "style": "color:#000000"}, "expect": ["btEdit", "btStyle"], "target": "btStyle"}
+{"id": "bt-class-0", "rule": "Button", "opts": {"type": "print", "class": "c0"}, "expect": ["btPrint", "btClassCustom"], "target": "btClassCustom"}
+{"id": "bt-text-0", "rule": "Button", "opts": {"type": "talk", "text": "a"}, "expect": ["btTalk", "btTextCustom"], "target": "btTextCustom"}
+{"id": "bt-set-1", "rule": "Button", "opts": {"type": "set-tags", "text": "Tag O'Brien"}, "expect": ["btSetTags", "btTextCustom"], "target": "btSetTags"}
+{"id": "bt-invalid-1", "rule": "Button", "opts": {"type": "Lock1"}, "expect": ["btInvalid"], "target": "btInvalid"}
+{"id": "bt-setempty-1", "rule": "Button", "opts": {"type": "set-tags", "text": "0"}, "expect": ["btSetTagsEmpty"], "target": "btSetTagsEmpty"}
+{"id": "bt-style-1", "rule": "Button", "opts": {"type": "edit", "style": "color:#010000"}, "expect": ["btEdit", "btStyle"], "target": "btStyle"}
+{"id": "bt-class-1", "rule": "Button", "opts": {"type": "print", "class": "c1"}, "expect": ["btPrint", "btClassCustom"], "target": "btClassCustom"}
+{"id": "bt-text-1", "rule": "Button", "opts": {"type": "talk", "text": "O'Brien"}, "expect": ["btTalk", "btTextCustom"], "target": "btTextCustom"}
+{"id": "bt-set-2", "rule": "Button", "opts": {"type": "set-tags", "text": "Tag a&b"}, "expect": ["btSetTags", "btTextCustom"], "target": "btSetTags"}
+{"id": "bt-invalid-2", "rule": "Button", "opts": {"type": "Lock2"}, "expect": ["btInvalid"], "target": "btInvalid"}
+{"id": "bt-setempty-2", "rule": "Button", "opts": {"type": "set-tags", "text": ""}, "expect": ["btSetTagsEmpty"], "target": "btSetTagsEmpty"}
+{"id": "bt-style-2", "rule": "Button", "opts": {"type": "edit", "style": "color:#020000"}, "expect": ["btEdit", "btStyle"], "target": "btStyle"}
+{"id": "bt-class-2", "rule": "Button", "opts": {"type": "print", "class": "c2"}, "expect": ["btPrint", "btClassCustom"], "target": "btClassCustom"}
+{"id": "bt-text-2", "rule": "Button", "opts": {"type": "talk", "text": "a&b"}, "expect": ["btTalk", "btTextCustom"], "target": "btTextCustom"}
+{"id": "bt-set-3", "rule": "Button", "opts": {"type": "set-tags", "text": "Tag n<2"}, "expect": ["btSetTags", "btTextCustom"], "target": "btSetTags"}
+{"id": "bt-invalid-3", "rule": "Button", "opts": {"type": "Lock3"}, "expect": ["btInvalid"], "target": "btInvalid"}
+{"id": "bt-setempty-3", "rule": "Button", "opts": {"type": "set-tags", "text": "0"}, "expect": ["btSetTagsEmpty"], "target": "btSetTagsEmpty"}
+{"id": "bt-style-3", "rule": "Button", "opts": {"type": "edit", "style": "color:#030000"}, "expect": ["btEdit", "btStyle"], "target": "btStyle"}
+{"id": "bt-class-3", "rule": "Button", "opts": {"type": "print", "class": "c3"}, "expect": ["btPrint", "btClassCustom"], "target": "btClassCustom"}
+{"id": "bt-text-3", "rule": "Button", "opts": {"type": "talk", "text": "n<2"}, "expect": ["btTalk", "btTextCustom"], "target": "btTextCustom"}
+{"id": "bt-set-4", "rule": "Button", "opts": {"type": "set-tags", "text": "Tag zz"}, "expect": ["btSetTags", "btTextCustom"], "target": "btSetTags"}
+{"id": "bt-invalid-4", "rule": "Button", "opts": {"type": "Lock4"}, "expect": ["btInvalid"], "target": "btInvalid"}
+{"id": "bt-setempty-4", "rule": "Button", "opts": {"type": "set-tags", "text": ""}, "expect": ["btSetTagsEmpty"], "target": "btSetTagsEmpty"}
+{"id": "bt-style-4", "rule": "Button", "opts": {"type": "edit", "style": "color:#040000"}, "expect": ["btEdit", "btStyle"], "target": "btStyle"}
+{"id": "bt-class-4", "rule": "Button", "opts": {"type": "print", "class": "c4"}, "expect": ["btPrint", "btClassCustom"], "target": "btClassCustom"}
+{"id": "bt-text-4", "rule": "Button", "opts": {"type": "talk", "text": "zz"}, "expect": ["btTalk", "btTextCustom"], "target": "btTextCustom"}
+{"id": "bt-set-5", "rule": "Button", "opts": {"type": "set-tags", "text": "Tag body"}, "expect": ["btSetTags", "btTextCustom"], "target": "btSetTags"}
+{"id": "bt-invalid-5", "rule": "Button", "opts": {"type": "Lock5"}, "expect": ["btInvalid"], "target": "btInvalid"}
+{"id": "bt-setempty-5", "rule": "Button", "opts": {"type": "set-tags", "text": "0"}, "expect": ["btSetTagsEmpty"], "target": "btSetTagsEmpty"}
+{"id": "bt-style-5", "rule": "Button", "opts": {"type": "edit", "style": "color:#050000"}, "expect": ["btEdit", "btStyle"], "target": "btStyle"}
+{"id": "bt-class-5", "rule": "Button", "opts": {"type": "print", "class": "c5"}, "expect": ["btPrint", "btClassCustom"], "target": "btClassCustom"}
+{"id": "bt-text-5", "rule": "Button", "opts": {"type": "talk", "text": "body"}, "expect": ["btTalk", "btTextCustom"], "target": "btTextCustom"}
+{"id": "bt-set-6", "rule": "Button", "opts": {"type": "set-tags", "text": "Tag xy"}, "expect": ["btSetTags", "btTextCustom"], "target": "btSetTags"}
+{"id": "bt-invalid-6", "rule": "Button", "opts": {"type": "Lock6"}, "expect": ["btInvalid"], "target": "btInvalid"}
+{"id": "bt-setempty-6", "rule": "Button", "opts": {"type": "set-tags", "text": ""}, "expect": ["btSetTagsEmpty"], "target": "btSetTagsEmpty"}
+{"id": "bt-style-6", "rule": "Button", "opts": {"type": "edit", "style": "color:#060000"}, "expect": ["btEdit", "btStyle"], "target": "btStyle"}
+{"id": "bt-class-6", "rule": "Button", "opts": {"type": "print", "class": "c6"}, "expect": ["btPrint", "btClassCustom"], "target": "btClassCustom"}
+{"id": "bt-text-6", "rule": "Button", "opts": {"type": "talk", "text": "xy"}, "expect": ["btTalk", "btTextCustom"], "target": "btTextCustom"}
+{"id": "bt-set-7", "rule": "Button", "opts": {"type": "set-tags", "text": "Tag q"}, "expect": ["btSetTags", "btTextCustom"], "target": "btSetTags"}
+{"id": "bt-invalid-7", "rule": "Button", "opts": {"type": "Lock7"}, "expect": ["btInvalid"], "target": "btInvalid"}
+{"id": "bt-setempty-7", "rule": "Button", "opts": {"type": "set-tags", "text": "0"}, "expect": ["btSetTagsEmpty"], "target": "btSetTagsEmpty"}
+{"id": "bt-style-7", "rule": "Button", "opts": {"type": "edit", "style": "color:#070000"}, "expect": ["btEdit", "btStyle"], "target": "btStyle"}
+{"id": "bt-class-7", "rule": "Button", "opts": {"type": "print", "class": "c7"}, "expect": ["btPrint", "btClassCustom"], "target": "btClassCustom"}
+{"id": "bt-text-7", "rule": "Button", "opts": {"type": "talk", "text": "q"}, "expect": ["btTalk", "btTextCustom"], "target": "btTextCustom"}
+{"id": "em-nomatch-0", "rule": "Embed", "opts": {"content": "  plain a 0  "}, "expect": ["emNoMatch"], "target": "emNoMatch"}
+{"id": "em-event-0", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h530.example/e\" onclick=\"go0\"></iframe>"}, "expect": ["emEvent"], "target": "emEvent"}
+{"id": "em-sjs-0", "rule": "Embed", "opts": {"content": "<iframe src=\"javascript:alert(0)\"></iframe>"}, "expect": ["emSrcJavascript"], "target": "emSrcJavascript"}
+{"id": "em-svb-0", "rule": "Embed", "opts": {"content": "<iframe src=\"vbscript:msg0\"></iframe>"}, "expect": ["emSrcVbscript"], "target": "emSrcVbscript"}
+{"id": "em-ajs-0", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h530.example/a\" datax=\"javascript:f0\"></iframe>"}, "expect": ["emAttrJavascript"], "target": "emAttrJavascript"}
+{"id": "em-avb-0", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h530.example/a\" datax=\"vbscript:f0\"></iframe>"}, "expect": ["emAttrVbscript"], "target": "emAttrVbscript"}
+{"id": "em-pass-0", "rule": "Embed", "opts": {"content": "  <iframe src=\"http://h530.example/p0\"></iframe>  "}, "expect": ["emPass"], "target": "emPass"}
+{"id": "em-lang-0", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h530.example/p0\" language=\"JavaScript1.2\"></iframe>"}, "expect": ["emPass", "emLangStrip"], "target": "emLangStrip"}
+{"id": "em-nomatch-1", "rule": "Embed", "opts": {"content": "  plain O'Brien 1  "}, "expect": ["emNoMatch"], "target": "emNoMatch"}
+{"id": "em-event-1", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h531.example/e\" onclick=\"go1\"></iframe>"}, "expect": ["emEvent"], "target": "emEvent"}
+{"id": "em-sjs-1", "rule": "Embed", "opts": {"content": "<iframe src=\" JaVaScRiPt:alert(1)\"></iframe>"}, "expect": ["emSrcJavascript"], "target": "emSrcJavascript"}
+{"id": "em-svb-1", "rule": "Embed", "opts": {"content": "<iframe src=\"vbscript:msg1\"></iframe>"}, "expect": ["emSrcVbscript"], "target": "emSrcVbscript"}
+{"id": "em-ajs-1", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h531.example/a\" datax=\"javascript:f1\"></iframe>"}, "expect": ["emAttrJavascript"], "target": "emAttrJavascript"}
+{"id": "em-avb-1", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h531.example/a\" datax=\"vbscript:f1\"></iframe>"}, "expect": ["emAttrVbscript"], "target": "emAttrVbscript"}
+{"id": "em-pass-1", "rule": "Embed", "opts": {"content": "  <iframe src=\"http://h531.example/p1\"></iframe>  "}, "expect": ["emPass"], "target": "emPass"}
+{"id": "em-lang-1", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h531.example/p1\" language=\"JavaScript1.2\"></iframe>"}, "expect": ["emPass", "emLangStrip"], "target": "emLangStrip"}
+{"id": "em-nomatch-2", "rule": "Embed", "opts": {"content": "  plain a&b 2  "}, "expect": ["emNoMatch"], "target": "emNoMatch"}
+{"id": "em-event-2", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h532.example/e\" onclick=\"go2\"></iframe>"}, "expect": ["emEvent"], "target": "emEvent"}
+{"id": "em-sjs-2", "rule": "Embed", "opts": {"content": "<iframe src=\"javascript:alert(2)\"></iframe>"}, "expect": ["emSrcJavascript"], "target": "emSrcJavascript"}
+{"id": "em-svb-2", "rule": "Embed", "opts": {"content": "<iframe src=\"vbscript:msg2\"></iframe>"}, "expect": ["emSrcVbscript"], "target": "emSrcVbscript"}
+{"id": "em-ajs-2", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h532.example/a\" datax=\"javascript:f2\"></iframe>"}, "expect": ["emAttrJavascript"], "target": "emAttrJavascript"}
+{"id": "em-avb-2", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h532.example/a\" datax=\"vbscript:f2\"></iframe>"}, "expect": ["emAttrVbscript"], "target": "emAttrVbscript"}
+{"id": "em-pass-2", "rule": "Embed", "opts": {"content": "  <iframe src=\"http://h532.example/p2\"></iframe>  "}, "expect": ["emPass"], "target": "emPass"}
+{"id": "em-lang-2", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h532.example/p2\" language=\"JavaScript1.2\"></iframe>"}, "expect": ["emPass", "emLangStrip"], "target": "emLangStrip"}
+{"id": "em-nomatch-3", "rule": "Embed", "opts": {"content": "  plain n<2 3  "}, "expect": ["emNoMatch"], "target": "emNoMatch"}
+{"id": "em-event-3", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h533.example/e\" onclick=\"go3\"></iframe>"}, "expect": ["emEvent"], "target": "emEvent"}
+{"id": "em-sjs-3", "rule": "Embed", "opts": {"content": "<iframe src=\" JaVaScRiPt:alert(3)\"></iframe>"}, "expect": ["emSrcJavascript"], "target": "emSrcJavascript"}
+{"id": "em-svb-3", "rule": "Embed", "opts": {"content": "<iframe src=\"vbscript:msg3\"></iframe>"}, "expect": ["emSrcVbscript"], "target": "emSrcVbscript"}
+{"id": "em-ajs-3", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h533.example/a\" datax=\"javascript:f3\"></iframe>"}, "expect": ["emAttrJavascript"], "target": "emAttrJavascript"}
+{"id": "em-avb-3", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h533.example/a\" datax=\"vbscript:f3\"></iframe>"}, "expect": ["emAttrVbscript"], "target": "emAttrVbscript"}
+{"id": "em-pass-3", "rule": "Embed", "opts": {"content": "  <iframe src=\"http://h533.example/p3\"></iframe>  "}, "expect": ["emPass"], "target": "emPass"}
+{"id": "em-lang-3", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h533.example/p3\" language=\"JavaScript1.2\"></iframe>"}, "expect": ["emPass", "emLangStrip"], "target": "emLangStrip"}
+{"id": "em-nomatch-4", "rule": "Embed", "opts": {"content": "  plain zz 4  "}, "expect": ["emNoMatch"], "target": "emNoMatch"}
+{"id": "em-event-4", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h534.example/e\" onclick=\"go4\"></iframe>"}, "expect": ["emEvent"], "target": "emEvent"}
+{"id": "em-sjs-4", "rule": "Embed", "opts": {"content": "<iframe src=\"javascript:alert(4)\"></iframe>"}, "expect": ["emSrcJavascript"], "target": "emSrcJavascript"}
+{"id": "em-svb-4", "rule": "Embed", "opts": {"content": "<iframe src=\"vbscript:msg4\"></iframe>"}, "expect": ["emSrcVbscript"], "target": "emSrcVbscript"}
+{"id": "em-ajs-4", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h534.example/a\" datax=\"javascript:f4\"></iframe>"}, "expect": ["emAttrJavascript"], "target": "emAttrJavascript"}
+{"id": "em-avb-4", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h534.example/a\" datax=\"vbscript:f4\"></iframe>"}, "expect": ["emAttrVbscript"], "target": "emAttrVbscript"}
+{"id": "em-pass-4", "rule": "Embed", "opts": {"content": "  <iframe src=\"http://h534.example/p4\"></iframe>  "}, "expect": ["emPass"], "target": "emPass"}
+{"id": "em-lang-4", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h534.example/p4\" language=\"JavaScript1.2\"></iframe>"}, "expect": ["emPass", "emLangStrip"], "target": "emLangStrip"}
+{"id": "em-nomatch-5", "rule": "Embed", "opts": {"content": "  plain body 5  "}, "expect": ["emNoMatch"], "target": "emNoMatch"}
+{"id": "em-event-5", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h535.example/e\" onclick=\"go5\"></iframe>"}, "expect": ["emEvent"], "target": "emEvent"}
+{"id": "em-sjs-5", "rule": "Embed", "opts": {"content": "<iframe src=\" JaVaScRiPt:alert(5)\"></iframe>"}, "expect": ["emSrcJavascript"], "target": "emSrcJavascript"}
+{"id": "em-svb-5", "rule": "Embed", "opts": {"content": "<iframe src=\"vbscript:msg5\"></iframe>"}, "expect": ["emSrcVbscript"], "target": "emSrcVbscript"}
+{"id": "em-ajs-5", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h535.example/a\" datax=\"javascript:f5\"></iframe>"}, "expect": ["emAttrJavascript"], "target": "emAttrJavascript"}
+{"id": "em-avb-5", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h535.example/a\" datax=\"vbscript:f5\"></iframe>"}, "expect": ["emAttrVbscript"], "target": "emAttrVbscript"}
+{"id": "em-pass-5", "rule": "Embed", "opts": {"content": "  <iframe src=\"http://h535.example/p5\"></iframe>  "}, "expect": ["emPass"], "target": "emPass"}
+{"id": "em-lang-5", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h535.example/p5\" language=\"JavaScript1.2\"></iframe>"}, "expect": ["emPass", "emLangStrip"], "target": "emLangStrip"}
+{"id": "em-nomatch-6", "rule": "Embed", "opts": {"content": "  plain xy 6  "}, "expect": ["emNoMatch"], "target": "emNoMatch"}
+{"id": "em-event-6", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h536.example/e\" onclick=\"go6\"></iframe>"}, "expect": ["emEvent"], "target": "emEvent"}
+{"id": "em-sjs-6", "rule": "Embed", "opts": {"content": "<iframe src=\"javascript:alert(6)\"></iframe>"}, "expect": ["emSrcJavascript"], "target": "emSrcJavascript"}
+{"id": "em-svb-6", "rule": "Embed", "opts": {"content": "<iframe src=\"vbscript:msg6\"></iframe>"}, "expect": ["emSrcVbscript"], "target": "emSrcVbscript"}
+{"id": "em-ajs-6", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h536.example/a\" datax=\"javascript:f6\"></iframe>"}, "expect": ["emAttrJavascript"], "target": "emAttrJavascript"}
+{"id": "em-avb-6", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h536.example/a\" datax=\"vbscript:f6\"></iframe>"}, "expect": ["emAttrVbscript"], "target": "emAttrVbscript"}
+{"id": "em-pass-6", "rule": "Embed", "opts": {"content": "  <iframe src=\"http://h536.example/p6\"></iframe>  "}, "expect": ["emPass"], "target": "emPass"}
+{"id": "em-lang-6", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h536.example/p6\" language=\"JavaScript1.2\"></iframe>"}, "expect": ["emPass", "emLangStrip"], "target": "emLangStrip"}
+{"id": "em-nomatch-7", "rule": "Embed", "opts": {"content": "  plain q 7  "}, "expect": ["emNoMatch"], "target": "emNoMatch"}
+{"id": "em-event-7", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h537.example/e\" onclick=\"go7\"></iframe>"}, "expect": ["emEvent"], "target": "emEvent"}
+{"id": "em-sjs-7", "rule": "Embed", "opts": {"content": "<iframe src=\" JaVaScRiPt:alert(7)\"></iframe>"}, "expect": ["emSrcJavascript"], "target": "emSrcJavascript"}
+{"id": "em-svb-7", "rule": "Embed", "opts": {"content": "<iframe src=\"vbscript:msg7\"></iframe>"}, "expect": ["emSrcVbscript"], "target": "emSrcVbscript"}
+{"id": "em-ajs-7", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h537.example/a\" datax=\"javascript:f7\"></iframe>"}, "expect": ["emAttrJavascript"], "target": "emAttrJavascript"}
+{"id": "em-avb-7", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h537.example/a\" datax=\"vbscript:f7\"></iframe>"}, "expect": ["emAttrVbscript"], "target": "emAttrVbscript"}
+{"id": "em-pass-7", "rule": "Embed", "opts": {"content": "  <iframe src=\"http://h537.example/p7\"></iframe>  "}, "expect": ["emPass"], "target": "emPass"}
+{"id": "em-lang-7", "rule": "Embed", "opts": {"content": "<iframe src=\"http://h537.example/p7\" language=\"JavaScript1.2\"></iframe>"}, "expect": ["emPass", "emLangStrip"], "target": "emLangStrip"}
