@@ -866,6 +866,18 @@ def takeInline (rule : String) :
 def swallowedBreaks : List Nat :=
   litBytes "<br />\n<br />"
 
+/-- Leak the index of every further token immediately adjacent to a
+    block-end/block-start pair opened by a fake delimiter, stopping at
+    the first text or fake atom. REFCORR7 (idx-after): live leaks the
+    whole adjacent run, not just the first two tokens. A pending
+    heading-end swallow keeps the old two-token shape so the heading
+    merge is unchanged. -/
+def ufffdLeakRun : List UfffdAtom → List Nat × List UfffdAtom
+  | .tok k _ :: rest =>
+      let (leaked, tail) := ufffdLeakRun rest
+      (natBytes k ++ leaked, tail)
+  | atoms => ([], atoms)
+
 /-- Rescan a flattened stream. `edge` trims text exposed at a block
     start by a removed fake delimiter. `owe` is a heading-end token
     whose close was delayed so a following paragraph could be swallowed. -/
@@ -901,7 +913,9 @@ def ufffdWalk
                               some (k, e)
                             else
                               owe
-                          ufffdWalk dispatch conf doc fuel rest3 false owe' acc
+                          let (leaked, tail) :=
+                            if owe'.isNone then ufffdLeakRun rest3 else ([], rest3)
+                          ufffdWalk dispatch conf doc fuel tail false owe' (acc ++ leaked)
                         else
                           let acc := acc ++ natBytes k ++ renderCaptured dispatch conf doc k e
                           ufffdWalk dispatch conf doc fuel rest2 false owe acc

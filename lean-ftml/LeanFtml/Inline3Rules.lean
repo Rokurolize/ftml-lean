@@ -605,13 +605,22 @@ where
         | _ => 0xFF :: go rest fuel toks
     | b :: rest, fuel + 1, toks => b :: go rest fuel toks
 
+/-- Whether the working byte stream still carries the three UTF-8 bytes
+    of a literal U+FFFD (R-UFFFD-1). REFCORR7 (idx-after): the recovery
+    path walks the whole adjacent placeholder run, so the empty Raw
+    placeholder must stay in the stream exactly as live keeps it. -/
+def hasUfffdBytes : List Nat → Bool
+  | 0xEF :: 0xBF :: 0xBD :: _ => true
+  | _ :: rest => hasUfffdBytes rest
+  | [] => false
+
 /-- Tighten's parse(): delete every newline, fold
     space/tab runs, run the color pass, fold again, run
     the edge pass. The token table is read, never
     written. -/
 def tightenBytes (bs : List Nat) (toks : List TokenEntry) :
     List Nat :=
-  let s0 := stripEmptyRawPh bs toks
+  let s0 := if hasUfffdBytes bs then bs else stripEmptyRawPh bs toks
   let s1 := s0.filter (fun b => b != 10)
   let s2 := collapsePad s1
   let s3 := tightenColorPass s2 toks 0

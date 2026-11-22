@@ -272,6 +272,28 @@ def modulepreMatch (src : List Nat) : Option (List Nat × List Nat) :=
       | none => some (rewrite654Prefix (src.take headLen), rest)
   | _ => none
 
+/-- Whether the byte pattern `pat` occurs anywhere in `xs` (a
+    non-empty-pattern infix test over byte lists; `List.isPrefixOf`
+    is the same primitive CodeEmbedRules uses for literal search).
+    REFCORR7 helper. -/
+def bytesContain (pat : List Nat) : List Nat → Bool
+  | [] => false
+  | xs@(_ :: rest) => pat.isPrefixOf xs || bytesContain pat rest
+
+/-- REFCORR7 (SUSPECT4-C S11 inc-mod / S14 inc-css): whether `body`
+    holds the placeholder bytes `phBytes i` of a token in `toks`
+    whose claiming rule is Code. This mirrors the reference's
+    `foreach tokens: rule == 'Code' && strpos(body, delim.id.delim)`
+    check in Module::process. A Raw placeholder in the body (an
+    @@...@@ spliced in by Include) is deliberately excluded: live
+    consumes it with the closer. A Code placeholder (probe
+    muse-probe-suspect-xrule-x19-module-code) is still re-emitted. -/
+def bodyHasCodeToken (body : List Nat) : List TokenEntry → Nat → Bool
+  | [], _ => false
+  | t :: ts, i =>
+      (t.rule == "Code" && bytesContain (phBytes i) body) ||
+        bodyHasCodeToken body ts (i + 1)
+
 /-- Module's attribute candidates, in PCRE priority order: the
     first candidate whose tail matches decides the match. On a
     match, the defense runs over the whole matched text: more
@@ -291,12 +313,21 @@ def moduleTryCands (src name : List Nat) (toks : List TokenEntry) :
         else
           let (ph, t1) := claimModule "Module" name
             (trimBytes attrRaw) (trimBytes bodyRaw) toks
-          -- C-SUSPECT-XRULE-3: a body carrying an earlier rule's
-          -- placeholder is not consumed by the module opener on live.
-          -- The error token is emitted, then the untrimmed body and the
-          -- literal closer are left in the residual source.
+          -- C-SUSPECT-XRULE-3: a body carrying an earlier Code
+          -- placeholder is not consumed by the module opener on live
+          -- (probe muse-probe-suspect-xrule-x19-module-code): the error
+          -- token is emitted, then the untrimmed body and the literal
+          -- closer are left in the residual source.
+          -- REFCORR7 (SUSPECT4-C S11/S14): the old test re-emitted for
+          -- ANY placeholder, including the Raw token an Include splice
+          -- leaves in the body; live consumes that Raw token with the
+          -- closer and emits only the module result. Narrow the
+          -- re-emit to a Code token via bodyHasCodeToken; the compared
+          -- [rule, options] token entry and the claim shape are
+          -- untouched (wire-shape argument: no compared field is added
+          -- for a source-byte side effect).
           let repl := [10, 10] ++ ph ++ [10, 10] ++
-            (if bodyRaw.any (fun b => b == 0xFF) then
+            (if bodyHasCodeToken bodyRaw toks 0 then
                bodyRaw ++ litBytes "[[/module]]"
              else [])
           some (repl, rest', t1)

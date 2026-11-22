@@ -1059,7 +1059,13 @@ def freelinkProcess (full raw labelRaw : List Nat)
     else
       -- REFCORR5 Batch 5: strip _default: before transliteration so the
       -- ASCII prefix is not corrupted into _: by the table fallback.
-      let stripped := match matchLitCI (litBytes "_default:") raw1 with
+      -- REFCORR7: live tolerates leading space/tab before the category, so
+      -- skip that run before the anchored case-insensitive strip. A target
+      -- with no leading whitespace takes the unchanged nine-byte bare path,
+      -- and a non-matching prefix keeps raw1 exactly as before.
+      let wsLen := (raw1.takeWhile (fun b => b == 32 || b == 9)).length
+      let afterWs := raw1.drop wsLen
+      let stripped := match matchLitCI (litBytes "_default:") afterWs with
         | some rest => rest
         | none => raw1
       let slug := if stripped.any (fun b => 128 ≤ b) && utf8Valid stripped

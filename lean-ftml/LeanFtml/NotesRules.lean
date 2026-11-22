@@ -145,13 +145,54 @@ def footnoteMatchAt (src : List Nat) : Option (List Nat × List Nat) :=
       (fun r1 => (findSub (litBytes "[[/footnote]]") r1).map
         (fun j => (r1.take j, r1.drop (j + 13)))))
 
+/- REFCORR7 (S4C fn-empty, fn-ws, bib-empty): an empty-Raw token is
+   `rule = "Raw"` with an empty `text` option, and its placeholder
+   `\xFF<id>\xFF` renders to nothing (Tighten deletes it; the Raw
+   renderer emits no bytes). A stored note or entry body made only of
+   such placeholders is therefore empty on live. These two definitions
+   restate `Inline3Rules.isEmptyRawTok` and `Inline3Rules.stripEmptyRawPh`
+   locally: `Inline3Rules` imports this module, so importing it here
+   would be cyclic. The algorithm and predicate are identical, and the
+   token table is read only — no token is added, removed or reindexed. -/
+def isEmptyRawTokNotes (toks : List TokenEntry) (id : Nat) : Bool :=
+  match toks[id]? with
+  | some t =>
+      t.rule == "Raw" &&
+      match omGet t.opts "text".toList with
+      | some (.str cs) => cs.isEmpty
+      | some (.bytes bs) => bs.isEmpty
+      | some (.list xs) => xs.isEmpty
+      | _ => false
+  | none => false
+
+def stripEmptyRawPhNotes (bs : List Nat) (toks : List TokenEntry) : List Nat :=
+  go bs bs.length toks
+where
+  go : List Nat → Nat → List TokenEntry → List Nat
+    | [], _, _ => []
+    | _, 0, _ => []
+    | 0xFF :: rest, fuel + 1, toks =>
+        let (digits, tail) := rest.span (fun b => 48 <= b && b <= 57)
+        match tail with
+        | 0xFF :: rest2 =>
+            let id := digits.foldl (fun a b => a * 10 + (b - 48)) 0
+            if !digits.isEmpty && isEmptyRawTokNotes toks id
+            then go rest2 fuel toks
+            else 0xFF :: go rest fuel toks
+        | _ => 0xFF :: go rest fuel toks
+    | b :: rest, fuel + 1, toks => b :: go rest fuel toks
+
 /-- process() for a Footnote match: the id is one plus the
     number of notes collected so far; the trimmed body is
     appended to the footnotes list at that index; the token
-    carries only the id. -/
+    carries only the id. REFCORR7: the trimmed body first has its
+    empty-Raw placeholders stripped, mirroring PHP Footnote::process,
+    so Footnoteitem's existing `body.isEmpty` separator test sees the
+    live emptiness. A non-empty Raw token or a literal remainder such
+    as fn-six's `@@` is preserved. -/
 def footnoteProcess (body : List Nat) (doc : DocState)
     (toks : List TokenEntry) : List Nat × List TokenEntry × DocState :=
-  let content := trimBytes body
+  let content := stripEmptyRawPhNotes (trimBytes body) toks
   let id := doc.footnotes.length + 1
   (phBytes toks.length,
    toks ++ [{ rule := "Footnote",
@@ -339,11 +380,17 @@ def footnoteblockRule (st : ParseState) : ParseState :=
     count, and later labels number from the same count). The
     replacement is the start token, the content, and the end
     token; the start token carries label, id, type, and the
-    empty-body flag (the R2 correction). -/
+    empty-body flag (the R2 correction). REFCORR7: the flag is
+    computed from the content with empty-Raw placeholders stripped
+    (mirroring PHP Bibitem::process's `$visible` test), while the
+    stored `bibitems` body and the emitted content keep the exact
+    original bytes so the compared state and wire shape are otherwise
+    unchanged. -/
 def bibitemProcess (label content : List Nat) (doc : DocState)
     (toks : List TokenEntry) : List Nat × List TokenEntry × DocState :=
   let content' :=
     trimBytes (content.map (fun b => if b == 10 then 32 else b))
+  let visible := stripEmptyRawPhNotes content' toks
   let id := doc.bibitemIds.length + 1
   let doc1 : DocState := { doc with
     bibitems := bibSet doc.bibitems label content',
@@ -353,7 +400,7 @@ def bibitemProcess (label content : List Nat) (doc : DocState)
     [("label".toList, textVal label),
      ("id".toList, OptVal.int (id : Int)),
      ("type".toList, OptVal.str "start".toList),
-     ("empty".toList, OptVal.bool content'.isEmpty)] }]
+     ("empty".toList, OptVal.bool visible.isEmpty)] }]
   let endPh := phBytes t1.length
   let t2 := t1 ++ [{ rule := "Bibitem", opts :=
     [("type".toList, OptVal.str "end".toList)] }]

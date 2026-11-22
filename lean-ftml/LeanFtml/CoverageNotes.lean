@@ -658,18 +658,24 @@ private theorem glue_suffix {toks t1 result : List TokenEntry}
     · exact hmid e h d
     · exact hex e h d
 
-private def bibiPair (label content : List Nat) (doc : DocState) : List TokenEntry :=
+/- REFCORR7: the emitted Bibitem start token's `empty` flag is now
+   computed from the empty-Raw-stripped content, so the structural
+   description needs the same token table that `bibitemProcess` reads. -/
+private def bibiPair (label content : List Nat) (doc : DocState)
+    (toks : List TokenEntry) : List TokenEntry :=
   let content' := trimBytes (content.map (fun b => if b == 10 then 32 else b))
-  [bibiStartEntry label (doc.bibitemIds.length + 1) content'.isEmpty, bibiEndEntry]
+  [bibiStartEntry label (doc.bibitemIds.length + 1)
+     (stripEmptyRawPhNotes content' toks).isEmpty, bibiEndEntry]
 
 private theorem bibitemProcess_mid (label content : List Nat) (doc : DocState)
     (toks : List TokenEntry) :
-    (bibitemProcess label content doc toks).2.1 = toks ++ bibiPair label content doc := by
+    (bibitemProcess label content doc toks).2.1 = toks ++ bibiPair label content doc toks := by
   dsimp [bibitemProcess, bibiPair, bibiStartEntry, bibiEndEntry]
   simp [List.append_assoc]
 
 private theorem bibiPair_reach (label content : List Nat) (doc : DocState)
-    (e : TokenEntry) (h : e ∈ bibiPair label content doc) (d : DocState) :
+    (toks : List TokenEntry) (e : TokenEntry)
+    (h : e ∈ bibiPair label content doc toks) (d : DocState) :
     NotesReach e d := by
   simp [bibiPair, List.mem_cons, List.not_mem_nil, or_false] at h
   rcases h with rfl | rfl
@@ -781,8 +787,8 @@ theorem bibitemProcess_reach (label content : List Nat) (doc : DocState)
     (toks : List TokenEntry) :
     ∃ extra, (bibitemProcess label content doc toks).2.1 = toks ++ extra ∧
       ∀ e ∈ extra, ∀ d, NotesReach e d :=
-  ⟨bibiPair label content doc, bibitemProcess_mid label content doc toks,
-    bibiPair_reach label content doc⟩
+  ⟨bibiPair label content doc toks, bibitemProcess_mid label content doc toks,
+    bibiPair_reach label content doc toks⟩
 
 theorem bibWalk_reach (fuel : Nat) (s : List Nat) (prev : BibPrev) (doc : DocState)
     (toks : List TokenEntry) :
@@ -817,7 +823,7 @@ theorem bibWalk_reach (fuel : Nat) (s : List Nat) (prev : BibPrev) (doc : DocSta
                     rfl
                   exact glue_suffix (bibitemProcess_mid label content doc toks)
                     (by rw [hstep]; exact heq)
-                    (bibiPair_reach label content doc) hmem
+                    (bibiPair_reach label content doc toks) hmem
               | «def» =>
                   let proc := bibitemProcess label content doc toks
                   obtain ⟨extra, heq, hmem⟩ := ih ((b :: rest).drop len) .def proc.2.2 proc.2.1
@@ -830,7 +836,7 @@ theorem bibWalk_reach (fuel : Nat) (s : List Nat) (prev : BibPrev) (doc : DocSta
                     rfl
                   exact glue_suffix (bibitemProcess_mid label content doc toks)
                     (by rw [hstep]; exact heq)
-                    (bibiPair_reach label content doc) hmem
+                    (bibiPair_reach label content doc toks) hmem
               | res =>
                   let t0 := (claimNl toks).2
                   let proc := bibitemProcess label content doc t0
@@ -842,17 +848,17 @@ theorem bibWalk_reach (fuel : Nat) (s : List Nat) (prev : BibPrev) (doc : DocSta
                       unfold bibWalk
                     simp only [List.isEmpty_cons, hdef]
                     rfl
-                  have hmid : proc.2.1 = toks ++ (bibNlEntry :: bibiPair label content doc) := by
+                  have hmid : proc.2.1 = toks ++ (bibNlEntry :: bibiPair label content doc t0) := by
                     have ht0 : t0 = toks ++ [bibNlEntry] := claimNl_mid toks
                     rw [bibitemProcess_mid, ht0]
                     simp [List.append_assoc]
-                  have hpair : ∀ e ∈ bibNlEntry :: bibiPair label content doc,
+                  have hpair : ∀ e ∈ bibNlEntry :: bibiPair label content doc t0,
                       ∀ d, NotesReach e d := by
                     intro e he d
                     simp [List.mem_cons] at he
                     rcases he with rfl | he
                     · exact NotesReach.bibNl d
-                    · exact bibiPair_reach label content doc e he d
+                    · exact bibiPair_reach label content doc t0 e he d
                   exact glue_suffix hmid (by rw [hstep]; exact heq) hpair hmem
           | none =>
               let text := (b :: rest).takeWhile (fun b => b != 10)

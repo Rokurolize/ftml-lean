@@ -658,8 +658,8 @@ def blockCloserAt (s : List Nat) : Option (List Nat × Bool × Nat) :=
         (rawMatchedTag t r).bind (fun (rawTag, r1) =>
           (matchLitBytes (litBytes "]]") r1).map (fun r2 =>
             match r2 with
-            | 93 :: r3 => (lowerBytes rawTag, true, s.length - r3.length)
-            | _ => (lowerBytes rawTag, false, s.length - r2.length))))
+            | 93 :: r3 => (rawTag, true, s.length - r3.length)
+            | _ => (rawTag, false, s.length - r2.length))))
 
 /-- One tag occurrence in the source. -/
 structure TagMatch where
@@ -694,6 +694,26 @@ where
                   go (s'.drop len) (i + len) fuel
             | none => go rest (i + 1) fuel
 
+/-- REFCORR7: a tag written with any upper-case byte is a raw-case tag. -/
+def tagIsRawCase (t : List Nat) : Bool := t != lowerBytes t
+
+/-- REFCORR7 C-SUSPECT4A-2: choose a closer's partner from the opener
+stack. A raw-case opener is never a partner; when its folded tag equals
+the close tag it absorbs that closer and shields the lowercase openers
+beneath it (the `break` in the reference's stack loop). A lowercase
+opener pairs on folded tag equality, or on any closer whose own tag was
+written with upper-case bytes (the cross-type uppercase closer). -/
+def findPairOpener (stack : List TagMatch) (closeTag : List Nat) (rawClose : Bool) :
+    Option (TagMatch × Bool) :=
+  match stack with
+  | [] => none
+  | o :: rest =>
+      if tagIsRawCase o.tag then
+        if lowerBytes o.tag == closeTag then some (o, true)
+        else findPairOpener rest closeTag rawClose
+      else if o.tag == closeTag || rawClose then some (o, false)
+      else findPairOpener rest closeTag rawClose
+
 /-- The pairing walk: the first closer that has a partner pairs with
 the topmost matching opener on the stack. -/
 def findPair (tags : List TagMatch) : Option (TagMatch × TagMatch) :=
@@ -703,8 +723,10 @@ where
     | [], _ => none
     | t :: rest, stack =>
         if t.isOpen then go rest (t :: stack)
-        else match stack.find? (fun o => o.tag == t.tag) with
-          | some opener => some (opener, t)
+        else
+          match findPairOpener stack (lowerBytes t.tag) (tagIsRawCase t.tag) with
+          | some (_, true) => go rest stack
+          | some (opener, false) => some (opener, t)
           | none => go rest stack
 
 /-- `normalizeAttrValue`: strip control bytes (keeping tab, LF, CR),
@@ -766,6 +788,7 @@ structure ExplBlock where
   endPh : List Nat
   endKey : Nat
   scored : Bool
+  isSynth : Bool := false
 deriving Inhabited
 
 /-- Mask the already-built nested explicit blocks occurring in a body:
@@ -942,7 +965,7 @@ def formatItem (rawBody : List Nat)
     (itemAttrs : List (List Nat × List Nat))
     (attached : List (List Nat × List Nat × Nat))
     (nmap natmap : List (List Nat × List Nat × Nat))
-    (toks : List TokenEntry) : List Nat × List TokenEntry :=
+    (unclosed : Bool) (toks : List TokenEntry) : List Nat × List TokenEntry :=
   let b0 := stripSpaceTab rawBody
   let b1 := match b0 with
     | 10 :: r => ltrimSpaceTab r
@@ -1007,10 +1030,12 @@ def formatItem (rawBody : List Nat)
           [("type".toList, textVal (litBytes "explicit_item_start")),
            ("attrs".toList, OptVal.map (attrsToOpts itemAttrs)),
            ("lead".toList, textVal leadAfter)] toks
-        let (ePh, toks) := addTok "List"
-          [("type".toList, textVal (litBytes "explicit_item_end")),
-           ("lead".toList, textVal leadBefore)] toks
-        (sPh ++ body ++ ePh, toks)
+        if unclosed then (sPh ++ body, toks)
+        else
+          let (ePh, toks) := addTok "List"
+            [("type".toList, textVal (litBytes "explicit_item_end")),
+             ("lead".toList, textVal leadBefore)] toks
+          (sPh ++ body ++ ePh, toks)
 
 /-- All masking placeholders (either kind) of `s`, in order. -/
 def allMaskPhs (s : List Nat) : List (List Nat) :=
@@ -1045,7 +1070,7 @@ where
 
 /-- Create the wrapping list tokens around a built block's inner
 content, register the block, and produce the replacement text. -/
-def wrapListTokens (tag : List Nat) (scored : Bool)
+def wrapListTokens (tag : List Nat) (scored : Bool) (isSynth : Bool)
     (attrs : List (List Nat × List Nat)) (inner trail : List Nat)
     (toks : List TokenEntry) (blocks : List ExplBlock) :
     List Nat × List TokenEntry × List ExplBlock :=
@@ -1061,7 +1086,20 @@ def wrapListTokens (tag : List Nat) (scored : Bool)
      ("trail".toList, textVal []),
      ("scored".toList, OptVal.bool scored)] toks
   (sPh ++ inner ++ ePh ++ trail, toks,
-   blocks ++ [{ startPh := sPh, endPh := ePh, endKey := endKey, scored := scored }])
+   blocks ++ [{ startPh := sPh, endPh := ePh, endKey := endKey, scored := scored, isSynth := isSynth }])
+
+/-- REFCORR7 C-SUSPECT4A-3: the unclosed-list variant. It emits the
+start token and the items only; no item-end/list-end token and no
+block registration, so finalize adds no boundary follower. -/
+def wrapListTokensUnclosed (tag : List Nat) (scored : Bool)
+    (attrs : List (List Nat × List Nat)) (inner : List Nat)
+    (toks : List TokenEntry) : List Nat × List TokenEntry :=
+  let (sPh, toks) := addTok "List"
+    [("type".toList, textVal (litBytes "explicit_list_start")),
+     ("list_type".toList, textVal tag),
+     ("attrs".toList, OptVal.map (attrsToOpts attrs)),
+     ("scored".toList, OptVal.bool scored)] toks
+  (sPh ++ inner, toks)
 
 /-- The dissolve replacement for a block with no surviving content. -/
 def dissolveBlock (toks : List TokenEntry) (blocks : List ExplBlock) :
@@ -1070,6 +1108,51 @@ def dissolveBlock (toks : List TokenEntry) (blocks : List ExplBlock) :
     [("type".toList, textVal (litBytes "explicit_empty"))] toks
   ([2] ++ litBytes "EXPDISSOLVED" ++ [3] ++ ePh, toks, blocks)
 
+/-- REFCORR7 C-SUSPECT4A-1: a mixed/uppercase opener nested inside a
+lowercase list is recognized but does not open a list on live; it closes
+the current item, and its would-be closer plus the item's now-redundant
+closer are swallowed. This mirrors the reference's body-level regexp
+callback: a raw-case `[[UL]]...[[/UL]]` span becomes `[[/li]]` plus its
+inner body, leaving the inner `[[li]]` items as siblings. Lowercase
+openers pass through untouched. -/
+def findSubCIBytes (pat : List Nat) (s : List Nat) : Option Nat :=
+  go 0 s s.length
+where
+  go : Nat → List Nat → Nat → Option Nat
+    | _, [], _ => none
+    | _, _, 0 => none
+    | i, s@(_ :: rest), fuel + 1 =>
+        if (matchLitCI pat s).isSome then some i
+        else go (i + 1) rest fuel
+
+def dissolveNestedUpper (bs : List Nat) : List Nat :=
+  (go [] bs bs.length).reverse
+where
+  go : List Nat → List Nat → Nat → List Nat
+    | acc, [], _ => acc
+    | acc, _, 0 => acc
+    | acc, s@(b :: rest), fuel + 1 =>
+        match blockOpenerAt s with
+        | some (tag, _, _, olen) =>
+            if tagIsRawCase tag then
+              let afterOpen := s.drop olen
+              let closePat := litBytes "[[" ++ litBytes "/" ++ tag ++ litBytes "]]"
+              match findSubCIBytes closePat afterOpen with
+              | some idx =>
+                  let middle := afterOpen.take idx
+                  let r := afterOpen.drop (idx + closePat.length)
+                  let ws := (r.takeWhile isWsByte).length
+                  let afterWs := r.drop ws
+                  let afterMatch := match matchLitCI (litBytes "[[/li]]") afterWs with
+                    | some rli => rli
+                    | none => r
+                  let added := afterMatch.reverse ++ middle.reverse ++
+                    (litBytes "[[/li]]").reverse
+                  go (added ++ acc) afterMatch fuel
+              | none => go (b :: acc) rest fuel
+            else go (b :: acc) rest fuel
+        | none => go (b :: acc) rest fuel
+
 /-- `buildExplicitListBlock`: build one paired block. The body is
 masked (nested explicit blocks first, then native list spans), then
 shaped by the `[[li]]` items if any are present, by the only-lists
@@ -1077,12 +1160,13 @@ wrapper if the trimmed body is only masked lists and whitespace, or
 by the none-item fallback otherwise; a block with no surviving
 content dissolves. -/
 def buildExplicit (tag : List Nat) (scored : Bool) (attrStr : List Nat)
-    (body0 : List Nat) (residual : Bool)
+    (body0 : List Nat) (residual : Bool) (unclosed isSynth : Bool)
     (toks : List TokenEntry) (blocks : List ExplBlock) :
     List Nat × List TokenEntry × List ExplBlock :=
-  let attrs := buildListAttrs attrStr
+  let attrs := if tagIsRawCase tag then [] else buildListAttrs attrStr
   let (body1, nmap, blocks1) := maskNested body0 blocks
-  let (body, natmap) := maskNative body1 toks
+  let (bodyMasked, natmap) := maskNative body1 toks
+  let body := dissolveNestedUpper bodyMasked
   let trailAfterClose := if residual then litBytes "\n]" else []
   let lis := scanLi body
   if !lis.isEmpty then
@@ -1117,11 +1201,15 @@ def buildExplicit (tag : List Nat) (scored : Bool) (attrStr : List Nat)
       (fun (st : List Nat × List TokenEntry × Nat × Nat) e =>
         let (o, tk, surv, i) := st
         let (fmt, tk) := formatItem e.2.2.1 (buildListAttrs e.2.1)
-          (attachedOf i) nmap natmap tk
+          (attachedOf i) nmap natmap unclosed tk
         (o ++ fmt, tk, surv + (if fmt.isEmpty then 0 else 1), i + 1))
       ([], toks, 0, 0)
     if surviving == 0 && preNested.isEmpty then dissolveBlock toks blocks1
-    else wrapListTokens tag scored attrs (preOut ++ itemsOut)
+    else if unclosed then
+      let (repl, tk) := wrapListTokensUnclosed tag scored attrs
+        (preOut ++ itemsOut) toks
+      (repl, tk, blocks1)
+    else wrapListTokens tag scored isSynth attrs (preOut ++ itemsOut)
       trailAfterClose toks blocks1
   else
     let trimmedBody := trimBytes body
@@ -1154,7 +1242,7 @@ def buildExplicit (tag : List Nat) (scored : Bool) (attrStr : List Nat)
         [("type".toList, textVal (litBytes "explicit_inline_wrapper_end")),
          ("newline".toList, OptVal.bool multi),
          ("lead_nl".toList, OptVal.bool multi)] toks
-      wrapListTokens tag scored attrs (wS ++ inner ++ wE)
+      wrapListTokens tag scored isSynth attrs (wS ++ inner ++ wE)
         trailAfterClose toks blocks1
     else
       let restored := restoreMasked trimmedBody nmap natmap
@@ -1162,7 +1250,7 @@ def buildExplicit (tag : List Nat) (scored : Bool) (attrStr : List Nat)
         [("type".toList, textVal (litBytes "explicit_none_item_start"))] toks
       let (nePh, toks) := addTok "List"
         [("type".toList, textVal (litBytes "explicit_none_item_end"))] toks
-      wrapListTokens tag scored attrs (nsPh ++ restored ++ nePh)
+      wrapListTokens tag scored isSynth attrs (nsPh ++ restored ++ nePh)
         trailAfterClose toks blocks1
 
 /-- REFCORR5 Batch 1: strip an uppercase/mixed-class block closer from a
@@ -1179,8 +1267,6 @@ where
         match r with
         | some r2 => go r2 fuel
         | none => s.head! :: go s.tail fuel
-
-def tagIsRawCase (t : List Nat) : Bool := t != lowerBytes t
 
 /-- MIRROR-FIX Item 1: the byte offset of the last case-insensitive
     `[[/li]]` in `bs`, or none. This is the mirror of PHP's `strripos`
@@ -1222,6 +1308,73 @@ def absorbLastLiTail (bs : List Nat) : List Nat :=
       let tail := foldNewlineRun3 (bs.drop (i + 7))
       bs.take i ++ tail ++ close
 
+/-- REFCORR7 C-SUSPECT4A-3: absorb the residual tail into the last item,
+trimming both ends of the tail when it carries visible text. A
+whitespace-only tail is kept verbatim so the unclosed item's <br />
+survives. -/
+def absorbTailTrim (bs : List Nat) : List Nat :=
+  match lastLiCloseIdx bs with
+  | none => bs
+  | some i =>
+      let close := (bs.drop i).take 7
+      let tail := bs.drop (i + 7)
+      let t := trimBytes tail
+      bs.take i ++ (if t.isEmpty then tail else t) ++ close
+
+/-- REFCORR7 C-SUSPECT4A-4: split at the first block closer, folding the
+three reference branches (blank line after closer, single newline after
+closer, no newline after closer). -/
+def degradeOneBody (bs : List Nat) : Option (List Nat) :=
+  go [] bs bs.length
+where
+  go : List Nat → List Nat → Nat → Option (List Nat)
+    | acc, [], _ => none
+    | _, _, 0 => none
+    | acc, s@(_ :: rest), fuel + 1 =>
+        let r := matchLitCI (litBytes "[[/ul]]") s <|>
+                 matchLitCI (litBytes "[[/ol]]") s
+        match r with
+        | some r2 =>
+            let nls := (r2.takeWhile (· == 10)).length
+            let pre := match acc.reverse.getLast? with
+              | some 10 => acc.reverse.dropLast
+              | _ => acc.reverse
+            some (pre ++ (if nls >= 2 then [10] else []) ++ r2.drop nls)
+        | none => go (s.head! :: acc) rest fuel
+
+/-- REFCORR7: strip every swallowed block closer from a degraded body. -/
+def degradeRawBody (bs : List Nat) : List Nat :=
+  go bs bs.length
+where
+  go : List Nat → Nat → List Nat
+    | s, 0 => s
+    | s, fuel + 1 =>
+        match degradeOneBody s with
+        | none => s
+        | some out =>
+            let out' := if out.any (· == 255) then
+              ((out.dropWhile (· == 10)).reverse.dropWhile (· == 10)).reverse
+              else out
+            if out' == s then out' else go out' fuel
+
+/-- REFCORR7 C-SUSPECT4A-3: an unscored synthetic opener whose would-be
+closer is the last non-whitespace content leaves an unclosed list. -/
+def lastCloserTail (bs : List Nat) : List Nat :=
+  go [] bs bs.length
+where
+  go : List Nat → List Nat → Nat → List Nat
+    | acc, [], _ => acc.reverse
+    | _, _, 0 => []
+    | acc, s@(_ :: rest), fuel + 1 =>
+        let r := matchLitCI (litBytes "[[/ul]]") s <|>
+                 matchLitCI (litBytes "[[/ol]]") s
+        match r with
+        | some r2 => go r2 r2 fuel
+        | none => go (s.head! :: acc) rest fuel
+
+def syntheticUnclosed (scored : Bool) (src : List Nat) : Bool :=
+  !scored && (trimBytes (lastCloserTail src)).isEmpty
+
 /-- The build loop: repeatedly pair the first pairable closer with
 the topmost matching opener, build that block, splice, and rescan
 (the reference's 500-iteration guard). -/
@@ -1236,23 +1389,31 @@ def explLoop (src : List Nat) (toks : List TokenEntry)
           -- closer still enters list mode; its body runs to end of source.
           match (scanTags src).find? (fun t => t.isOpen && tagIsRawCase t.tag) with
           | some op =>
-              -- MIRROR-FIX Item 1: swallow the would-be block closer and
-              -- absorb the residual tail into the last item, bytewise as
-              -- the corrected reference does (lb07). The tail used to stay
-              -- after the final [[/li]] and was dropped from the item body.
-              let body := absorbLastLiTail
-                (stripBlockCloserTag (src.drop (op.start + op.len)))
-              let (repl, toks', blocks') := buildExplicit op.tag op.scored
-                op.attrs body false toks blocks
-              let src' := (src.take op.start) ++ repl
-              explLoop src' toks' blocks' fuel
+              let rawBody := src.drop (op.start + op.len)
+              if !(existsLitCI (litBytes "[[li") rawBody) then
+                -- REFCORR7 C-SUSPECT4A-4: no item in the body, so live
+                -- degrades the whole block to bare prose; no List tokens.
+                let bare := degradeRawBody rawBody
+                explLoop ((src.take op.start) ++ bare) toks blocks fuel
+              else
+                -- MIRROR-FIX Item 1 plus REFCORR7 C-SUSPECT4A-3: swallow the
+                -- would-be block closer and absorb the trimmed residual tail.
+                let body := absorbTailTrim
+                  (stripBlockCloserTag rawBody)
+                let unclosed := syntheticUnclosed op.scored src
+                let (repl, toks', blocks') := buildExplicit op.tag op.scored
+                  op.attrs body false unclosed true toks blocks
+                explLoop ((src.take op.start) ++ repl) toks' blocks' fuel
           | none => (src, toks, blocks)
       | some (op, cl) =>
           let body := (src.drop (op.start + op.len)).take
             (cl.start - (op.start + op.len))
           let (repl, toks', blocks') := buildExplicit op.tag op.scored
-            op.attrs body cl.residual toks blocks
-          let src' := (src.take op.start) ++ repl ++
+            op.attrs body cl.residual false (tagIsRawCase cl.tag) toks blocks
+          let repl' := if tagIsRawCase cl.tag &&
+              cl.start + cl.len < src.length &&
+              src[cl.start + cl.len]? != some 10 then repl ++ [10] else repl
+          let src' := (src.take op.start) ++ repl' ++
             (src.drop (cl.start + cl.len))
           explLoop src' toks' blocks' fuel
 
@@ -1348,7 +1509,7 @@ def finalizeOne (src : List Nat) (toks : List TokenEntry)
               if nlRun ≥ 1 && nextIsBlock then
                 ((src.take afterEnd) ++ (rest.drop nlRun), toks)
               else if rest.all (· == 10) then
-                if !blk.scored then
+                if !blk.scored && !blk.isSynth then
                   let (nlPh, toks') := addTok "Newline" [] toks
                   ((src.take afterEnd) ++ nlPh ++ rest, toks')
                 else (src, toks)
