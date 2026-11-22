@@ -1,0 +1,5 @@
+## SpecRawhead.lean — part deliverable (BRIEF-SPEC-REFRESH-B1 lane B1)
+
+Elaborated in isolation against this tree's current mirror through the serial queue wrapper, command `~/.local/state/wikijump/muse-bhl/tools/lean-build.sh <lean-ftml workdir> lake env lean LeanFtml/SpecRawhead.lean`, at 2026-11-22T23:46:22+09:00. Result: exit 0, zero errors, zero warnings from the spec file (log: spec-refresh-b1-logs/SpecRawhead-baseline.log). The file was left byte-identical: no `.before-refresh-b` copy was needed because no change was made. The five live divergences named in the header remain recorded as candidates in conformance-suspect-rawhead/CANDIDATES.md and are not asserted here, so no statement needed restating.
+
+Theorem count: 7. Classification: STILL-TRUE 7, PROOF-REPAIRED 0, RESTATED-AS-PIN 0, NEW CANDIDATE 0. Names classified STILL-TRUE: spec_raw_at_prefix_body, spec_raw_escape_leaves_at_literal, spec_rawold_backticks_literal, spec_heading_space_star_anchored, spec_toc_level1_margin, spec_toc_level2_margin, spec_toc_empty_list_end. No repaired, restated or candidate statement in this file; no new-candidate evidence; no Main.lean audit-line concern.

@@ -1,0 +1,11 @@
+[lean-build] 480287 waiting for queue 23:44:14
+[lean-build] 480287 acquired 23:44:54
+LeanFtml/SpecInline.lean:109:4: warning: This simp argument is unused:
+  List.nil_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hhref0, henc, hhrefE, hhash, htext0, htext, htarget0, htruth, htargetE, htype, Bool.false_eq_true,
+    ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+[lean-build] 480287 released status=0 23:45:02

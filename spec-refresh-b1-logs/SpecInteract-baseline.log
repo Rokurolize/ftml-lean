@@ -1,0 +1,45 @@
+[lean-build] 483259 waiting for queue 23:47:07
+[lean-build] 483259 acquired 23:47:41
+LeanFtml/SpecInteract.lean:65:44: warning: This simp argument is unused:
+  hne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hraw, hts, hcast, hfmt, hform, Bool.false_eq_true, ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+LeanFtml/SpecInteract.lean:65:49: warning: This simp argument is unused:
+  Bool.false_eq_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hraw, hts, hcast, hfmt, hform, hne, ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+LeanFtml/SpecInteract.lean:66:4: warning: This simp argument is unused:
+  ↓reduceIte
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hraw, hts, hcast, hfmt, hform, hne, Bool.false_eq_true, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+LeanFtml/SpecInteract.lean:136:4: warning: This simp argument is unused:
+  List.append_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hval, hcond, henc, hqc, hkey, ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+LeanFtml/SpecInteract.lean:184:29: warning: This simp argument is unused:
+  hcont
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hfile, hanchor, hcontCons, hcons, hqc1, hqc2, ↓reduceIte, List.append_nil, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+LeanFtml/SpecInteract.lean:185:16: warning: This simp argument is unused:
+  List.append_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hfile, hanchor, hcont, hcontCons, hcons, hqc1, hqc2, ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+[lean-build] 483259 released status=0 23:47:49
