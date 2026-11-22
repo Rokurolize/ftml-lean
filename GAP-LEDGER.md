@@ -86,7 +86,7 @@ All OPEN, T only (corpus counts in INVENTORY.md §5), unless noted:
 - G3.9 Conditionals: iftags (144), ifcategory (3 — strikingly thin vs iftags)
 - G3.10 Typography and whitespace preprocessing as a whole (only the seam slice is E)
 - G3.11 Parser functions and variables ({$...}, [[include]] args, literal regions; include_variables 16 tests)
-- G3.12 Modules: head grammar + body capture for the 9 Module variants and the module rule set (13 corpus cases — thin). Evaluation: candidate DISPOSITIONED (deepwell's, not the parser's) pending owner confirmation.
+- G3.12 Modules: head grammar + body capture for the 9 Module variants and the module rule set (13 corpus cases — thin). Evaluation: DISPOSITIONED (deepwell's, not the parser's); confirmed in the 2026-11-22 Decision Note and superseding this line's earlier pending wording (see the REMAINDER AUDIT DISPOSITIONS entry).
 - G3.13 Remaining long tail: date, user, char, checkbox/radio, button, embed/ iframe/html, gallery/media, ruby, note/hidden/invisible, lines/later, color/size/span attribute grammars.
 - G3.14 Tokenizer/lexer equivalence (lexer.pest vs. the token stream the rules consume) — T only, no stated spec.
 
