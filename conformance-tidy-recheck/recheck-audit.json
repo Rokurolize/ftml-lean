@@ -1,0 +1,519 @@
+{
+  "tallies": {
+    "original": {
+      "all_three_agree": 249,
+      "oracle_eq_live": 249,
+      "model_eq_live": 255,
+      "oracle_eq_model": 254
+    },
+    "recheck": {
+      "all_three_agree": 251,
+      "oracle_eq_live": 251,
+      "model_eq_live": 257,
+      "oracle_eq_model": 254
+    }
+  },
+  "counts": {
+    "cases": 266,
+    "original_nonagreeing": 17,
+    "recheck_nonagreeing": 15
+  },
+  "stage1_changed_count": 34,
+  "stage1_changed_ids": [
+    "p09-div-divalign-swap",
+    "p10-div-note-swap",
+    "p25-span-cross-div-boundary",
+    "p30-p-survives-around-div-list",
+    "p31-empty-prune-vs-keep",
+    "p32-block-joining-matrix",
+    "p34-div-tag-attr-whitespace",
+    "q16-div-p-div",
+    "in2-x53",
+    "in2-x62",
+    "con-x11-span-size-cross-block",
+    "con-x21-div-in-coll-in-tab",
+    "con-x23-div-in-tab",
+    "con-x24-three-nested-divs",
+    "con-x25-tab-in-coll-in-div",
+    "con-x27-footnote-in-div",
+    "con-x30-div-in-footnote",
+    "con-x32-div-underscore-basic",
+    "con-x33-div-underscore-attrs",
+    "con-x36-div-normal-control",
+    "lst-x01-list-in-div",
+    "lst-x02-numbered-in-div",
+    "lst-x03-nested-list-in-div",
+    "lst-x09-div-in-list-item",
+    "lst-x10-list-then-div",
+    "lst-x16-deflist-in-div",
+    "tab-x01-table-in-div",
+    "tab-x02-table-in-div-attr",
+    "tab-x07-adv-in-div",
+    "tab-x09-table-in-quote-in-div",
+    "tab-x31-table-heading-table",
+    "tab-x37-heading-then-table",
+    "tab-x39-adv-heading-adv",
+    "tab-x46-div-simple-collapsible-adv"
+  ],
+  "model_output_changed_ids": [
+    "p34-div-tag-attr-whitespace",
+    "con-x24-three-nested-divs"
+  ],
+  "moved_cases": [
+    {
+      "id": "p34-div-tag-attr-whitespace",
+      "from": "classified",
+      "to": "agree",
+      "stage1_changed": true,
+      "model_changed": true
+    },
+    {
+      "id": "con-x24-three-nested-divs",
+      "from": "classified",
+      "to": "agree",
+      "stage1_changed": true,
+      "model_changed": true
+    }
+  ],
+  "repobe": {
+    "fresh_live_probes": 0,
+    "reason": "Every case source is byte-identical to the frozen capture source (read verbatim from stage2/stage2-evidence battery files); the 34 Stage 1 changes are reference corrections rendering the same source, so no capture ceased to correspond."
+  },
+  "nonagreeing": [
+    {
+      "id": "p29-unwrap-image-table-dl",
+      "battery": "A",
+      "classification": "harness frame",
+      "subclass": "recorded frame compensation",
+      "stage1_changed": false,
+      "oracle_eq_live": false,
+      "model_eq_live": true,
+      "oracle_eq_model": false,
+      "literal_model_gap_predicate": false,
+      "mask_model_eq_oracle": false,
+      "mask_model_eq_live": true,
+      "mask_oracle_eq_live": false,
+      "model_vs_oracle_first_diff": [
+        0,
+        "lead <img src=\"http://example.com/a.png\" alt=\"a.png\" class=\"",
+        "<p>lead <img src=\"http://example.com/a.png\" alt=\"a.png\" clas"
+      ],
+      "model_vs_live_first_diff": [
+        224,
+        "",
+        ""
+      ],
+      "oracle_vs_live_first_diff": [
+        0,
+        "<p>lead <img src=\"http://example.com/a.png\" alt=\"a.png\" clas",
+        "lead <img src=\"http://example.com/a.png\" alt=\"a.png\" class=\""
+      ]
+    },
+    {
+      "id": "in2-x48",
+      "battery": "C",
+      "classification": "harness frame",
+      "subclass": "recorded frame compensation",
+      "stage1_changed": false,
+      "oracle_eq_live": false,
+      "model_eq_live": true,
+      "oracle_eq_model": false,
+      "literal_model_gap_predicate": false,
+      "mask_model_eq_oracle": false,
+      "mask_model_eq_live": true,
+      "mask_oracle_eq_live": false,
+      "model_vs_oracle_first_diff": [
+        0,
+        "__a\n<div class=\"collapsible-block\">\n<div class=\"collapsible-",
+        "<p>__a</p>\n<div class=\"collapsible-block\">\n<div class=\"colla"
+      ],
+      "model_vs_live_first_diff": [
+        427,
+        "",
+        ""
+      ],
+      "oracle_vs_live_first_diff": [
+        0,
+        "<p>__a</p>\n<div class=\"collapsible-block\">\n<div class=\"colla",
+        "__a\n<div class=\"collapsible-block\">\n<div class=\"collapsible-"
+      ]
+    },
+    {
+      "id": "con-x21-div-in-coll-in-tab",
+      "battery": "C",
+      "classification": "harness frame",
+      "subclass": "script/harness-id frame",
+      "stage1_changed": true,
+      "oracle_eq_live": false,
+      "model_eq_live": false,
+      "oracle_eq_model": false,
+      "literal_model_gap_predicate": true,
+      "mask_model_eq_oracle": true,
+      "mask_model_eq_live": true,
+      "mask_oracle_eq_live": true,
+      "model_vs_oracle_first_diff": [
+        94,
+        "t/yahooui/element-beta-min.js\"></script>\n<script type=\"text/javascript\" src=\"/common--javascript/yah",
+        "t/yahooui/element-beta-min.js\"></script> \n<script type=\"text/javascript\" src=\"/common--javascript/ya"
+      ],
+      "model_vs_live_first_diff": [
+        36,
+        "<script type=\"text/javascript\" src=\"/common--javascript/yahooui/element-beta-min.js\"></script>\n<",
+        "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common"
+      ],
+      "oracle_vs_live_first_diff": [
+        36,
+        "<script type=\"text/javascript\" src=\"/common--javascript/yahooui/element-beta-min.js\"></script> \n",
+        "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common"
+      ]
+    },
+    {
+      "id": "con-x22-coll-in-tab",
+      "battery": "C",
+      "classification": "harness frame",
+      "subclass": "script/harness-id frame",
+      "stage1_changed": false,
+      "oracle_eq_live": false,
+      "model_eq_live": false,
+      "oracle_eq_model": false,
+      "literal_model_gap_predicate": true,
+      "mask_model_eq_oracle": true,
+      "mask_model_eq_live": true,
+      "mask_oracle_eq_live": true,
+      "model_vs_oracle_first_diff": [
+        94,
+        "t/yahooui/element-beta-min.js\"></script>\n<script type=\"text/javascript\" src=\"/common--javascript/yah",
+        "t/yahooui/element-beta-min.js\"></script> \n<script type=\"text/javascript\" src=\"/common--javascript/ya"
+      ],
+      "model_vs_live_first_diff": [
+        36,
+        "<script type=\"text/javascript\" src=\"/common--javascript/yahooui/element-beta-min.js\"></script>\n<",
+        "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common"
+      ],
+      "oracle_vs_live_first_diff": [
+        36,
+        "<script type=\"text/javascript\" src=\"/common--javascript/yahooui/element-beta-min.js\"></script> \n",
+        "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common"
+      ]
+    },
+    {
+      "id": "con-x23-div-in-tab",
+      "battery": "C",
+      "classification": "harness frame",
+      "subclass": "script/harness-id frame",
+      "stage1_changed": true,
+      "oracle_eq_live": false,
+      "model_eq_live": false,
+      "oracle_eq_model": false,
+      "literal_model_gap_predicate": true,
+      "mask_model_eq_oracle": true,
+      "mask_model_eq_live": true,
+      "mask_oracle_eq_live": true,
+      "model_vs_oracle_first_diff": [
+        94,
+        "t/yahooui/element-beta-min.js\"></script>\n<script type=\"text/javascript\" src=\"/common--javascript/yah",
+        "t/yahooui/element-beta-min.js\"></script> \n<script type=\"text/javascript\" src=\"/common--javascript/ya"
+      ],
+      "model_vs_live_first_diff": [
+        36,
+        "<script type=\"text/javascript\" src=\"/common--javascript/yahooui/element-beta-min.js\"></script>\n<",
+        "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common"
+      ],
+      "oracle_vs_live_first_diff": [
+        36,
+        "<script type=\"text/javascript\" src=\"/common--javascript/yahooui/element-beta-min.js\"></script> \n",
+        "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common"
+      ]
+    },
+    {
+      "id": "con-x25-tab-in-coll-in-div",
+      "battery": "C",
+      "classification": "harness frame",
+      "subclass": "script/harness-id frame",
+      "stage1_changed": true,
+      "oracle_eq_live": false,
+      "model_eq_live": false,
+      "oracle_eq_model": false,
+      "literal_model_gap_predicate": true,
+      "mask_model_eq_oracle": true,
+      "mask_model_eq_live": true,
+      "mask_oracle_eq_live": true,
+      "model_vs_oracle_first_diff": [
+        491,
+        "t/yahooui/element-beta-min.js\"></script>\n<script type=\"text/javascript\" src=\"/common--javascript/yah",
+        "t/yahooui/element-beta-min.js\"></script> \n<script type=\"text/javascript\" src=\"/common--javascript/ya"
+      ],
+      "model_vs_live_first_diff": [
+        433,
+        "t\">\n<script type=\"text/javascript\" src=\"/common--javascript/yahooui/element-beta-min.js\"></script>\n<",
+        "t\">\n<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common"
+      ],
+      "oracle_vs_live_first_diff": [
+        433,
+        "t\">\n<script type=\"text/javascript\" src=\"/common--javascript/yahooui/element-beta-min.js\"></script> \n",
+        "t\">\n<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common"
+      ]
+    },
+    {
+      "id": "con-x29-footnote-in-tab",
+      "battery": "C",
+      "classification": "harness frame",
+      "subclass": "script/harness-id frame",
+      "stage1_changed": false,
+      "oracle_eq_live": false,
+      "model_eq_live": false,
+      "oracle_eq_model": false,
+      "literal_model_gap_predicate": true,
+      "mask_model_eq_oracle": true,
+      "mask_model_eq_live": true,
+      "mask_oracle_eq_live": true,
+      "model_vs_oracle_first_diff": [
+        94,
+        "t/yahooui/element-beta-min.js\"></script>\n<script type=\"text/javascript\" src=\"/common--javascript/yah",
+        "t/yahooui/element-beta-min.js\"></script> \n<script type=\"text/javascript\" src=\"/common--javascript/ya"
+      ],
+      "model_vs_live_first_diff": [
+        36,
+        "<script type=\"text/javascript\" src=\"/common--javascript/yahooui/element-beta-min.js\"></script>\n<",
+        "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common"
+      ],
+      "oracle_vs_live_first_diff": [
+        36,
+        "<script type=\"text/javascript\" src=\"/common--javascript/yahooui/element-beta-min.js\"></script> \n",
+        "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common"
+      ]
+    },
+    {
+      "id": "lst-x08-list-in-tab",
+      "battery": "C",
+      "classification": "harness frame",
+      "subclass": "script/harness-id frame",
+      "stage1_changed": false,
+      "oracle_eq_live": false,
+      "model_eq_live": false,
+      "oracle_eq_model": false,
+      "literal_model_gap_predicate": true,
+      "mask_model_eq_oracle": true,
+      "mask_model_eq_live": true,
+      "mask_oracle_eq_live": true,
+      "model_vs_oracle_first_diff": [
+        94,
+        "t/yahooui/element-beta-min.js\"></script>\n<script type=\"text/javascript\" src=\"/common--javascript/yah",
+        "t/yahooui/element-beta-min.js\"></script> \n<script type=\"text/javascript\" src=\"/common--javascript/ya"
+      ],
+      "model_vs_live_first_diff": [
+        36,
+        "<script type=\"text/javascript\" src=\"/common--javascript/yahooui/element-beta-min.js\"></script>\n<",
+        "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common"
+      ],
+      "oracle_vs_live_first_diff": [
+        36,
+        "<script type=\"text/javascript\" src=\"/common--javascript/yahooui/element-beta-min.js\"></script> \n",
+        "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common"
+      ]
+    },
+    {
+      "id": "lst-x13-deflist-in-bib",
+      "battery": "C",
+      "classification": "harness frame",
+      "subclass": "dynamic bibcite id frame",
+      "stage1_changed": false,
+      "oracle_eq_live": false,
+      "model_eq_live": false,
+      "oracle_eq_model": true,
+      "literal_model_gap_predicate": false,
+      "mask_model_eq_oracle": true,
+      "mask_model_eq_live": true,
+      "mask_oracle_eq_live": true,
+      "model_vs_oracle_first_diff": [
+        245,
+        "",
+        ""
+      ],
+      "model_vs_live_first_diff": [
+        55,
+        "ascript:;\" class=\"bibcite\" id=\"bibcite-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-1')",
+        "ascript:;\" class=\"bibcite\" id=\"bibcite-1-84754a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibi"
+      ],
+      "oracle_vs_live_first_diff": [
+        55,
+        "ascript:;\" class=\"bibcite\" id=\"bibcite-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-1')",
+        "ascript:;\" class=\"bibcite\" id=\"bibcite-1-84754a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibi"
+      ]
+    },
+    {
+      "id": "lst-x14-deflist-multi-bib",
+      "battery": "C",
+      "classification": "harness frame",
+      "subclass": "dynamic bibcite id frame",
+      "stage1_changed": false,
+      "oracle_eq_live": false,
+      "model_eq_live": false,
+      "oracle_eq_model": true,
+      "literal_model_gap_predicate": false,
+      "mask_model_eq_oracle": true,
+      "mask_model_eq_live": true,
+      "mask_oracle_eq_live": true,
+      "model_vs_oracle_first_diff": [
+        416,
+        "",
+        ""
+      ],
+      "model_vs_live_first_diff": [
+        55,
+        "ascript:;\" class=\"bibcite\" id=\"bibcite-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-1')",
+        "ascript:;\" class=\"bibcite\" id=\"bibcite-1-77405a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibi"
+      ],
+      "oracle_vs_live_first_diff": [
+        55,
+        "ascript:;\" class=\"bibcite\" id=\"bibcite-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-1')",
+        "ascript:;\" class=\"bibcite\" id=\"bibcite-1-77405a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibi"
+      ]
+    },
+    {
+      "id": "lst-x15-deflist-bib-colon",
+      "battery": "C",
+      "classification": "harness frame",
+      "subclass": "dynamic bibcite id frame",
+      "stage1_changed": false,
+      "oracle_eq_live": false,
+      "model_eq_live": false,
+      "oracle_eq_model": true,
+      "literal_model_gap_predicate": false,
+      "mask_model_eq_oracle": true,
+      "mask_model_eq_live": true,
+      "mask_oracle_eq_live": true,
+      "model_vs_oracle_first_diff": [
+        257,
+        "",
+        ""
+      ],
+      "model_vs_live_first_diff": [
+        55,
+        "ascript:;\" class=\"bibcite\" id=\"bibcite-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-1')",
+        "ascript:;\" class=\"bibcite\" id=\"bibcite-1-66873a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibi"
+      ],
+      "oracle_vs_live_first_diff": [
+        55,
+        "ascript:;\" class=\"bibcite\" id=\"bibcite-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-1')",
+        "ascript:;\" class=\"bibcite\" id=\"bibcite-1-66873a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibi"
+      ]
+    },
+    {
+      "id": "lst-x27-deflist-heading",
+      "battery": "C",
+      "classification": "harness frame",
+      "subclass": "recorded frame compensation",
+      "stage1_changed": false,
+      "oracle_eq_live": false,
+      "model_eq_live": true,
+      "oracle_eq_model": false,
+      "literal_model_gap_predicate": false,
+      "mask_model_eq_oracle": false,
+      "mask_model_eq_live": true,
+      "mask_oracle_eq_live": false,
+      "model_vs_oracle_first_diff": [
+        45,
+        "<dt>term</dt>\n<dd>definition</dd>\n</dl>\n== Heading ==<br />\n<dl>\n<dt>other</dt>\n<dd>more</dd>\n</dl>",
+        "<dt>term</dt>\n<dd>definition</dd>\n</dl>\n<p>== Heading ==<br /></p>\n<dl>\n<dt>other</dt>\n<dd>more</dd>"
+      ],
+      "model_vs_live_first_diff": [
+        104,
+        "",
+        ""
+      ],
+      "oracle_vs_live_first_diff": [
+        45,
+        "<dt>term</dt>\n<dd>definition</dd>\n</dl>\n<p>== Heading ==<br /></p>\n<dl>\n<dt>other</dt>\n<dd>more</dd>",
+        "<dt>term</dt>\n<dd>definition</dd>\n</dl>\n== Heading ==<br />\n<dl>\n<dt>other</dt>\n<dd>more</dd>\n</dl>"
+      ]
+    },
+    {
+      "id": "tab-x06-table-in-quote-head",
+      "battery": "C",
+      "classification": "harness frame",
+      "subclass": "recorded frame compensation",
+      "stage1_changed": false,
+      "oracle_eq_live": false,
+      "model_eq_live": true,
+      "oracle_eq_model": false,
+      "literal_model_gap_predicate": false,
+      "mask_model_eq_oracle": false,
+      "mask_model_eq_live": true,
+      "mask_oracle_eq_live": false,
+      "model_vs_oracle_first_diff": [
+        12,
+        "<blockquote>intro<br />\n<table class=\"wiki-content-table\">\n<tr>\n<td>a</t",
+        "<blockquote>\n<p>intro<br /></p>\n<table class=\"wiki-content-table\">\n<tr>\n"
+      ],
+      "model_vs_live_first_diff": [
+        147,
+        "",
+        ""
+      ],
+      "oracle_vs_live_first_diff": [
+        12,
+        "<blockquote>\n<p>intro<br /></p>\n<table class=\"wiki-content-table\">\n<tr>\n",
+        "<blockquote>intro<br />\n<table class=\"wiki-content-table\">\n<tr>\n<td>a</t"
+      ]
+    },
+    {
+      "id": "tab-x16-two-adv-adjacent",
+      "battery": "C",
+      "classification": "harness frame",
+      "subclass": "recorded frame compensation",
+      "stage1_changed": false,
+      "oracle_eq_live": false,
+      "model_eq_live": true,
+      "oracle_eq_model": false,
+      "literal_model_gap_predicate": false,
+      "mask_model_eq_oracle": false,
+      "mask_model_eq_live": true,
+      "mask_oracle_eq_live": false,
+      "model_vs_oracle_first_diff": [
+        84,
+        ">\n<td>c</td>\n<td>d</td>\n</tr>\n</table>\n<table>\n<tr>\n<td>a</td>\n<td>b</td>\n</tr>\n<tr>\n<td>c</td>\n<td>",
+        ">\n<td>c</td>\n<td>d</td>\n</tr>\n</table>\n<br />\n<table>\n<tr>\n<td>a</td>\n<td>b</td>\n</tr>\n<tr>\n<td>c</t"
+      ],
+      "model_vs_live_first_diff": [
+        165,
+        "",
+        ""
+      ],
+      "oracle_vs_live_first_diff": [
+        84,
+        ">\n<td>c</td>\n<td>d</td>\n</tr>\n</table>\n<br />\n<table>\n<tr>\n<td>a</td>\n<td>b</td>\n</tr>\n<tr>\n<td>c</t",
+        ">\n<td>c</td>\n<td>d</td>\n</tr>\n</table>\n<table>\n<tr>\n<td>a</td>\n<td>b</td>\n</tr>\n<tr>\n<td>c</td>\n<td>"
+      ]
+    },
+    {
+      "id": "tab-x44-malformed-adv-opener",
+      "battery": "C",
+      "classification": "harness frame",
+      "subclass": "recorded frame compensation",
+      "stage1_changed": false,
+      "oracle_eq_live": false,
+      "model_eq_live": true,
+      "oracle_eq_model": false,
+      "literal_model_gap_predicate": false,
+      "mask_model_eq_oracle": false,
+      "mask_model_eq_live": true,
+      "mask_oracle_eq_live": false,
+      "model_vs_oracle_first_diff": [
+        0,
+        "[[table]]<br />\n[[row]]<br />\n[[cell]]unclosed<br />\n<table ",
+        "<p>[[table]]<br />\n[[row]]<br />\n[[cell]]unclosed<br /></p>\n"
+      ],
+      "model_vs_live_first_diff": [
+        162,
+        "",
+        ""
+      ],
+      "oracle_vs_live_first_diff": [
+        0,
+        "<p>[[table]]<br />\n[[row]]<br />\n[[cell]]unclosed<br /></p>\n",
+        "[[table]]<br />\n[[row]]<br />\n[[cell]]unclosed<br />\n<table "
+      ]
+    }
+  ]
+}

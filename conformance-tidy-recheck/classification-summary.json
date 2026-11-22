@@ -1,0 +1,28 @@
+{
+  "total": 266,
+  "by_class": {
+    "harness frame": {
+      "dynamic bibcite id frame": 3,
+      "recorded frame compensation": 6,
+      "script/harness-id frame": 6
+    },
+    "three-way agreement": {
+      "(none)": 251
+    }
+  },
+  "model_gap_cases": [],
+  "model_gap_predicate_true": [
+    "con-x21-div-in-coll-in-tab",
+    "con-x22-coll-in-tab",
+    "con-x23-div-in-tab",
+    "con-x25-tab-in-coll-in-div",
+    "con-x29-footnote-in-tab",
+    "lst-x08-list-in-tab"
+  ],
+  "unclassified_cases": [],
+  "stage1_changed_nonagreeing": [
+    "con-x21-div-in-coll-in-tab",
+    "con-x23-div-in-tab",
+    "con-x25-tab-in-coll-in-div"
+  ]
+}
