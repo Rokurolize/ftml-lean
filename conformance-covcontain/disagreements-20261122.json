@@ -1,0 +1,40 @@
+{
+  "failures": [
+    {
+      "id": "gap-van-int",
+      "class": "dvRVanished",
+      "gap": true,
+      "php": "",
+      "lean": "<div>"
+    },
+    {
+      "id": "gap-show-int0",
+      "class": "coShowAuthored",
+      "gap": true,
+      "php": "<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">0</a></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div><div class=\"collapsible-block-content\">",
+      "lean": "<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block</a></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div><div class=\"collapsible-block-content\">"
+    },
+    {
+      "id": "gap-show-false",
+      "class": "coShowAuthored",
+      "gap": true,
+      "php": "<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\"></a></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div><div class=\"collapsible-block-content\">",
+      "lean": "<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block</a></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div><div class=\"collapsible-block-content\">"
+    },
+    {
+      "id": "gap-tab-00",
+      "class": "tvSelected",
+      "gap": true,
+      "php": "<script type=\"text/javascript\" src=\"/common--javascript/yahooui/element-beta-min.js\"></script>\n<script type=\"text/javascript\" src=\"/common--javascript/yahooui/tabview-min.js\"></script><div id=\"wiki-tabview-0\" class=\"yui-navset\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>Z</em></a></li></ul><div class=\"yui-content\">",
+      "lean": "<script type=\"text/javascript\" src=\"/common--javascript/yahooui/element-beta-min.js\"></script>\n<script type=\"text/javascript\" src=\"/common--javascript/yahooui/tabview-min.js\"></script><div id=\"wiki-tabview-0\" class=\"yui-navset\"><ul class=\"yui-nav\"><li><a href=\"javascript:;\"><em>Z</em></a></li></ul><div class=\"yui-content\">"
+    },
+    {
+      "id": "gap-panel-00",
+      "class": "tvPanelShown",
+      "gap": true,
+      "php": "<div id=\"wiki-tab-0-00\">",
+      "lean": "<div id=\"wiki-tab-0-00\" style=\"display:none\">"
+    }
+  ],
+  "mismatches": []
+}

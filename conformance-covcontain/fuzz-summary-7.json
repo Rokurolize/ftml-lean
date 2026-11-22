@@ -1,0 +1,426 @@
+{
+  "seed": 7,
+  "cases": 221,
+  "failures": 5,
+  "class_mismatch": 0,
+  "by_class": {
+    "bqRunDeleted": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "bqLineDropped": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "bqText": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "bqNestStart": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "bqNestEnd": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "bqDrain": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "bqRenderStart": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "bqRenderEnd": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "bqRenderFall": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "dvPlain": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "dvScored": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "dvVanished": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "dvBare": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "dvAttrOrder": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "dvEmptyUnset": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "dvRVanished": {
+      "n": 5,
+      "fail": 1,
+      "uncomparable": 0,
+      "gap_fail": 1,
+      "ids": [
+        "gap-van-int"
+      ]
+    },
+    "dvRStartBare": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "dvRStartEsc": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "dvRStartClear": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "dvREnd": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "dvRFall": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "coParseClaim": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "coFolded": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "coOpened": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "coShowDefault": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "coShowAuthored": {
+      "n": 6,
+      "fail": 2,
+      "uncomparable": 0,
+      "gap_fail": 2,
+      "ids": [
+        "gap-show-int0",
+        "gap-show-false"
+      ]
+    },
+    "coHideDefault": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "coHideAuthored": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "coLocTop": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "coLocBottom": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "coLocBoth": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "coStart": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "coEnd": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "coFall": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "tvTitleUntitled": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "tvTitleRawEmpty": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "tvTitleCollapsed": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "tvTitlePositional": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "tvTitleAttribute": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "tvClassKept": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "tvClassDropped": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "tvAttrEcho": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "tvStart": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "tvSelected": {
+      "n": 5,
+      "fail": 1,
+      "uncomparable": 0,
+      "gap_fail": 1,
+      "ids": [
+        "gap-tab-00"
+      ]
+    },
+    "tvUnselected": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "tvLabelDefault": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "tvLabelEmpty": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "tvLabelText": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "tvPanelShown": {
+      "n": 5,
+      "fail": 1,
+      "uncomparable": 0,
+      "gap_fail": 1,
+      "ids": [
+        "gap-panel-00"
+      ]
+    },
+    "tvPanelHidden": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "tvPanelEnd": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "tvEnd": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    },
+    "tvFall": {
+      "n": 4,
+      "fail": 0,
+      "uncomparable": 0,
+      "gap_fail": 0,
+      "ids": []
+    }
+  },
+  "failure_records": [
+    {
+      "id": "gap-van-int",
+      "class": "dvRVanished",
+      "gap": true,
+      "php": "",
+      "lean": "<div>"
+    },
+    {
+      "id": "gap-show-int0",
+      "class": "coShowAuthored",
+      "gap": true,
+      "php": "<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">0</a></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div><div class=\"collapsible-block-content\">",
+      "lean": "<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block</a></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div><div class=\"collapsible-block-content\">"
+    },
+    {
+      "id": "gap-show-false",
+      "class": "coShowAuthored",
+      "gap": true,
+      "php": "<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\"></a></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div><div class=\"collapsible-block-content\">",
+      "lean": "<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block</a></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div><div class=\"collapsible-block-content\">"
+    },
+    {
+      "id": "gap-tab-00",
+      "class": "tvSelected",
+      "gap": true,
+      "php": "<script type=\"text/javascript\" src=\"/common--javascript/yahooui/element-beta-min.js\"></script>\n<script type=\"text/javascript\" src=\"/common--javascript/yahooui/tabview-min.js\"></script><div id=\"wiki-tabview-0\" class=\"yui-navset\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>Z</em></a></li></ul><div class=\"yui-content\">",
+      "lean": "<script type=\"text/javascript\" src=\"/common--javascript/yahooui/element-beta-min.js\"></script>\n<script type=\"text/javascript\" src=\"/common--javascript/yahooui/tabview-min.js\"></script><div id=\"wiki-tabview-0\" class=\"yui-navset\"><ul class=\"yui-nav\"><li><a href=\"javascript:;\"><em>Z</em></a></li></ul><div class=\"yui-content\">"
+    },
+    {
+      "id": "gap-panel-00",
+      "class": "tvPanelShown",
+      "gap": true,
+      "php": "<div id=\"wiki-tab-0-00\">",
+      "lean": "<div id=\"wiki-tab-0-00\" style=\"display:none\">"
+    }
+  ],
+  "mismatch_records": []
+}
