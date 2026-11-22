@@ -1,0 +1,10 @@
+[lean-build] 474914 waiting for queue 23:39:48
+[lean-build] 474914 acquired 23:43:00
+LeanFtml/SpecIntent.lean:35:0: error: unknown module prefix 'LeanFtml'
+
+No directory 'LeanFtml' or file 'LeanFtml.olean' in the search path entries:
+/home/roku/.local/state/wikijump/muse-bhl/cursor-spec-intent-reclass/lean-ftml/.lake/build/lib/lean
+/home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/lib/lean
+/home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/lib/lean
+[lean-build] 474914 released status=1 23:43:00
+EXIT:1

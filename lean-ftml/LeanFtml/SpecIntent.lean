@@ -1,18 +1,5 @@
 /-
-  CLASSIFICATION PASS (BRIEF-SPECINTENT): elaborated against this tree's current
-  mirror through the serial lean-build.sh wrapper (mirror: lake build LeanFtml,
-  104 jobs, exit 0; this file: lake env lean LeanFtml/SpecIntent.lean, exit 0,
-  zero errors). All 43 statements elaborate exactly as written: 0 proof repairs,
-  0 native_decide uses, 0 sorry. By the coordinator's binding adjudications,
-  36 statements are CLEAN and 7 are FALSE against live semantics: the three
-  blockquote line-preservation statements and the four iftags non-suppression
-  statements (conformance-spec2-adjudicate/spec2-captures.json). The full
-  per-statement classification, axiom audit, counterexamples, REFCORR5 queue
-  notes and proposed corrected propositions are in REPORT-SPECINTENT.md at the
-  tree root; the corrected propositions are also in
-  spec-corrected-intent/SpecIntentCorrectedLive.lean. This file is deliberately
-  NOT imported by LeanFtml.lean. Every declaration below is byte-for-byte the
-  original text: no proposition was weakened, edited, or fenced.
+CLASSIFICATION PASS (BRIEF-SPEC-INTENT-RECLASS, 2026-11-22): re-derived against the post-REFCORR4, post-REFCORR5, post-MIRROR-FIX mirror. Before this comment edit the file elaborated through the serial wrapper as lake build LeanFtml.SpecIntent (15 jobs, exit 0) and then lake env lean LeanFtml/SpecIntent.lean (exit 0, no errors). Of the 43 statements, 26 agree with the current mirror in substance, 10 still diverge, and 7 remain the known blockquote and iftags intent errors. The divergences that survive a landed correction are listCloserMatches_case_independent (REFCORR5 batch 1 kept live's asymmetric pairing) and dateIntent_class_suffix_digits_only, dateIntent_rejects_invalid_ts_overrides and dateIntent_valid_override_and_trim (REFCORR5 batch 4 changed encodeFormat only; canonTimestamp still accepts non-digit and untrimmed overrides). The per-statement table, the evidence route for each statement, and the elaboration after this comment are in REPORT-SPEC-INTENT-RECLASS.md. This file is deliberately NOT imported by LeanFtml.lean. Every declaration below is byte-for-byte the text this pass found: no proposition was weakened, edited, or fenced.
 -/
 
 /-

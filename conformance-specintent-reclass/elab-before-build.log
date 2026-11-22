@@ -1,0 +1,73 @@
+[lean-build] 482405 waiting for queue 23:46:22
+[lean-build] 482405 acquired 23:46:25
+✔ [2/15] Built LeanFtml.TokenState (619ms)
+⚠ [4/15] Built LeanFtml.FrameRules (321ms)
+warning: LeanFtml/FrameRules.lean:51:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FrameRules.lean:53:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/FrameRules.lean:123:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FrameRules.lean:125:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [6/15] Built LeanFtml.CodeRule (412ms)
+⚠ [8/15] Built LeanFtml.FormRawRules (873ms)
+warning: LeanFtml/FormRawRules.lean:554:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FormRawRules.lean:557:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/FormRawRules.lean:559:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FormRawRules.lean:562:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/FormRawRules.lean:564:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FormRawRules.lean:567:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/FormRawRules.lean:614:45: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rawScan]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/FormRawRules.lean:616:46: This simp argument is unused:
+  hnil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rawScan, findSub, countRun]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/FormRawRules.lean:618:72: This simp argument is unused:
+  hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rawScan, findSub, countRun, hnil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [10/15] Built LeanFtml.ModuleRules (2.0s)
+✔ [12/15] Built LeanFtml.RenderCore (14s)
+✔ [14/15] Built LeanFtml.SpecIntent (6.4s)
+Build completed successfully (15 jobs).
+[lean-build] 482405 released status=0 23:46:50
+EXIT:0
