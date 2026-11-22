@@ -1,0 +1,127 @@
+{
+ "P1": {
+  "fullname": "muse-probe-round5-p1-p1",
+  "source": "[[span_ style=\"color:red\"]]X[[/span]] tail",
+  "action": "exists"
+ },
+ "P2": {
+  "fullname": "muse-probe-round5-p1-p2",
+  "source": "[[span_]]A[[/span]] [[span_]]B[[/span]]",
+  "action": "exists"
+ },
+ "P3": {
+  "fullname": "muse-probe-round5-p1-p3",
+  "source": "a\n\n\n\nb",
+  "action": "exists"
+ },
+ "N2": {
+  "fullname": "muse-probe-round5-p1-n2",
+  "source": "A  _\nB",
+  "action": "created"
+ },
+ "N3": {
+  "fullname": "muse-probe-round5-p1-n3",
+  "source": "A\t_\nB",
+  "action": "created"
+ },
+ "B1": {
+  "fullname": "muse-probe-round5-p1-b1",
+  "source": "> q\n\nX",
+  "action": "created"
+ },
+ "B2": {
+  "fullname": "muse-probe-round5-p1-b2",
+  "source": ">> deep\n\nX",
+  "action": "created"
+ },
+ "B3": {
+  "fullname": "muse-probe-round5-p1-b3",
+  "source": "X\n\n> a\n>>nospace\n> b\n\nY",
+  "action": "created"
+ },
+ "D1": {
+  "fullname": "muse-probe-round5-p1-d1",
+  "source": "[[div id=\"x\"]]body[[/div]]",
+  "action": "created"
+ },
+ "D2": {
+  "fullname": "muse-probe-round5-p1-d2",
+  "source": "[[div class=\" \"]]\n[[/div]]\nX",
+  "action": "created"
+ },
+ "D3": {
+  "fullname": "muse-probe-round5-p1-d3",
+  "source": "[[div data-Foo=\"1\" data-foo=\"2\"]]\nX[[/div]]",
+  "action": "created"
+ },
+ "D4": {
+  "fullname": "muse-probe-round5-p1-d4",
+  "source": "[[collapsible id=\"k\" data-x=\"1\" onclick=\"bad()\"]]BODY[[/collapsible]]",
+  "action": "created"
+ },
+ "D5": {
+  "fullname": "muse-probe-round5-p1-d5",
+  "source": "[[tabview]]\n[[tab �]]X[[/tab]]\n[[/tabview]]",
+  "action": "created"
+ },
+ "D6": {
+  "fullname": "muse-probe-round5-p1-d6",
+  "source": "[[size ....em]]X[[/size]]",
+  "action": "created"
+ },
+ "D7": {
+  "fullname": "muse-probe-round5-p1-d7",
+  "source": "[[size 12px]]A\u001bB[[/size]]",
+  "action": "created"
+ },
+ "L1": {
+  "fullname": "muse-probe-round5-p1-l1",
+  "source": "[[UL id=\"x\"]]\n[[LI class=\"c\" data-z=\"9\"]]A[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "L2": {
+  "fullname": "muse-probe-round5-p1-l2",
+  "source": "[[ul id=\"x\"]]\n[[li]]a[[/li]]\n[[/OL]]tail",
+  "action": "created"
+ },
+ "L3": {
+  "fullname": "muse-probe-round5-p1-l3",
+  "source": "[[UL_]]\n[[li]]a[[/li]]\n[[/ul]]",
+  "action": "created"
+ },
+ "L4": {
+  "fullname": "muse-probe-round5-p1-l4",
+  "source": "[[UL]]\nplain\n\nAFTER",
+  "action": "created"
+ },
+ "DL1": {
+  "fullname": "muse-probe-round5-p1-dl1",
+  "source": ": term : @@@@",
+  "action": "created"
+ },
+ "DL2": {
+  "fullname": "muse-probe-round5-p1-dl2",
+  "source": ": [!-- hide --] @@@@ : val",
+  "action": "created"
+ },
+ "DL3": {
+  "fullname": "muse-probe-round5-p1-dl3",
+  "source": ": term\n: t2 : v2",
+  "action": "created"
+ },
+ "T1": {
+  "fullname": "muse-probe-round5-p1-t1",
+  "source": "[[color red]] @@@@ [[/color]]",
+  "action": "created"
+ },
+ "T2": {
+  "fullname": "muse-probe-round5-p1-t2",
+  "source": "a @@@@ @@@@ b",
+  "action": "created"
+ },
+ "T3": {
+  "fullname": "muse-probe-round5-p1-t3",
+  "source": "a @@@@\nb",
+  "action": "created"
+ }
+}

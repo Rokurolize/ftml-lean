@@ -1,0 +1,19 @@
+{"id": "R5P2-01", "source": "[[[\u000b_default:x]]]"}
+{"id": "R5P2-02", "source": "[[[ _default:x]]]"}
+{"id": "R5P2-03", "source": "[[[_default:_default:x]]]"}
+{"id": "R5P2-04", "source": "http://example.com[[$a$]][[$b$]]"}
+{"id": "R5P2-05", "source": "http://example.com/x|[[$a$]]"}
+{"id": "R5P2-06", "source": "[a@b.com �x]"}
+{"id": "R5P2-07", "source": "[a@b.com [[image http://example.com/a.png|alt]]]"}
+{"id": "R5P2-08", "source": "[nosuchsite:Page] [nosuchsite:Page Label] [en.example.org:X Label2]"}
+{"id": "R5P2-09", "source": "##red\tblue|x##"}
+{"id": "R5P2-10", "source": "##rgb( 0 , 0 , 0 )|x##"}
+{"id": "R5P2-11", "source": "A ---- B"}
+{"id": "R5P2-12", "source": "A ** ** B"}
+{"id": "R5P2-13", "source": "A //////// B"}
+{"id": "R5P2-14", "source": "[[code language=\"python\" filename=\"ex.py\"]]\nprint('x')\n[[/code]]"}
+{"id": "R5P2-15", "source": "[[code]]\nx\n[[/code]]TAIL"}
+{"id": "R5P2-16", "source": "[[math a TYPE=\"align\"]]\nx\n[[/math]]"}
+{"id": "R5P2-17", "source": "[[math a type=\"A\"]]\nx\n[[/math]]\n\n[[math b type=\"align\"]]\ny\n[[/math]]"}
+{"id": "R5P2-18", "source": "[[$x [[date 0]] y$]]"}
+{"id": "R5P2-19", "source": "[[$[http://x [a@b.com [[[F]]]]]$]]"}

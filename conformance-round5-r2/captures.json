@@ -1,0 +1,192 @@
+{
+ "url-nbsp-href": {
+  "fullname": "muse-probe-round5-r2-url-nbsp-href",
+  "html": "<p><a href=\"https://example.com/a%C2%A0b\">https://example.com/a&nbsp;b</a></p>",
+  "html_sha256": "3e6474c883b8d393f1fed09f7caffa4e78d8e1fddac275f118c84776ea1d7da2",
+  "source": "https://example.com/a b",
+  "source_sha256": "e933d31e982b5f0fb117fa0e467b13c1018ec5a3de70cb00d9d9c9db13230161",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "url-star-target": {
+  "fullname": "muse-probe-round5-r2-url-star-target",
+  "html": "<p><a href=\"http://example.com/a\" target=\"_blank\">label</a></p>",
+  "html_sha256": "568dd182e4f677443740f6c9a5c8c9fbb625440b42501c9afa17896093858230",
+  "source": "[*http://example.com/a label]",
+  "source_sha256": "497eea5e996b0cd66e671921bceed5ab3343727adc642437e76dd01d1aea8bfb",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "url-mailto-star": {
+  "fullname": "muse-probe-round5-r2-url-mailto-star",
+  "html": "<p><a href=\"mailto:a@example.com\" target=\"_blank\">mail me</a></p>",
+  "html_sha256": "05c4af02ca21f4d22d2ed0677921dc08d870af68681668e93caadf112c15143a",
+  "source": "[*mailto:a@example.com mail me]",
+  "source_sha256": "0f1e4c3b8c33fff29beb0a6f96f53f07d4a117fa9b10312ff933f529e9afa784",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "url-existing-pct": {
+  "fullname": "muse-probe-round5-r2-url-existing-pct",
+  "html": "<p><a href=\"https://example.com/%C3%A9\">https://example.com/%C3%A9</a></p>",
+  "html_sha256": "0671e4a6d2a82ac48efba0ce57f53b5bfa039d1c3f7b7cf8f30afdf3e9911700",
+  "source": "https://example.com/%C3%A9",
+  "source_sha256": "dd86114654b4ce05fa1507048e9b41d299b4bc702bc8e71507991617ebf5c0a7",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "email-quote-raw": {
+  "fullname": "muse-probe-round5-r2-email-quote-raw",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|oof#\"ih\" yas</span></p>",
+  "html_sha256": "f85a86c59d96b39a823a287ef17c53ee639ee1e7d5c08d7e713e89073028ebec",
+  "source": "[foo@example.com say \"hi\"]",
+  "source_sha256": "7071f746745d9c724dceda6303cc6d238ac1e5080d877537b8b85ec6727a7518",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "email-angles-amp": {
+  "fullname": "muse-probe-round5-r2-email-angles-amp",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|oof#&gt;c&lt;b&amp;a</span></p>",
+  "html_sha256": "cb8b119a0b4c2d2992f14c7763dcec87a90ddc1906ed66960457997e98edf85b",
+  "source": "[foo@example.com a&b<c>]",
+  "source_sha256": "24044cde1fe43a7a8d4b8e2b9ba5bbebac133fe31c82ba59ab7f773aa0bf7884",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "freelink-star-url": {
+  "fullname": "muse-probe-round5-r2-freelink-star-url",
+  "html": "<p><a target=\"_blank\" href=\"http://example.com/x\">label</a></p>",
+  "html_sha256": "827dd71c7a1e5f8d856327acc485a943671d9de9792903faa8a75ee79ebc45c4",
+  "source": "[[[*http://example.com/x|label]]]",
+  "source_sha256": "01a4bb262999f8e424ba7b7dd2ba22640a084b429727e49395f02dee0917c01c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "freelink-new-anchor": {
+  "fullname": "muse-probe-round5-r2-freelink-new-anchor",
+  "html": "<p><a class=\"newpage\" href=\"/foo#anchor\">foo</a></p>",
+  "html_sha256": "e669db5595b83c028c8aba60594db6b0cb10dd6e4fac215532d7f9729014dc89",
+  "source": "[[[foo#anchor]]]",
+  "source_sha256": "8e8266d0ab3e7234421f5d247c430ffde3273a0a86421957509a902badc42866",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "interwiki-known-amp": {
+  "fullname": "muse-probe-round5-r2-interwiki-known-amp",
+  "html": "<p><a href=\"https://www.google.com/search?q=a&b\" onclick=\"window.open(this.href, '_blank'); return false;\">a&amp;b</a></p>",
+  "html_sha256": "fb2fe6b495222650c34f74407793610f43e224551ffbaad6a39f3ff668d27a63",
+  "source": "[google:a&b]",
+  "source_sha256": "f4c15c2946547e732b7ec12f47b8df91655869cd42411c031a11408517f9db32",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "interwiki-unknown": {
+  "fullname": "muse-probe-round5-r2-interwiki-unknown",
+  "html": "<p>[nosuchwiki:A&amp;B]</p>",
+  "html_sha256": "64c856018cdd03532518a860526bfc33c59cd89fb10490a2f2e1143c1aaff85a",
+  "source": "[nosuchwiki:A&B]",
+  "source_sha256": "50b812e2b0978e7576fa4ae37472c9c238a77ef6711a40f4083d345ce45abe6f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "image-title-alt": {
+  "fullname": "muse-probe-round5-r2-image-title-alt",
+  "html": "<img src=\"http://x/y.png\" title=\"a&amp;b\" alt=\"A&amp;B\" class=\"image\" />",
+  "html_sha256": "007c1a690317d1a549b9b7ad96f6d115dd48f81a8931df377b72d571cdc73714",
+  "source": "[[image http://x/y.png title=\"a&b\" alt=\"A&B\"]]",
+  "source_sha256": "d206b77016ce241f7e84aa4eec65aa24fad7446bf7cf9e703aced3bece2b281f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "image-link-fragment": {
+  "fullname": "muse-probe-round5-r2-image-link-fragment",
+  "html": "<a href=\"#frag\"><img src=\"http://x/y.png\" alt=\"y.png\" class=\"image\" /></a>",
+  "html_sha256": "475de324f4dd93fd7c3fd924c214c8b1e8842e8ced8c29bee1231117512b0217",
+  "source": "[[image http://x/y.png link=\"#frag\"]]",
+  "source_sha256": "8d4bab4c349f317930991e513eaf6ea7d0ac40936584c796abb77adda285b733",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "image-link-star": {
+  "fullname": "muse-probe-round5-r2-image-link-star",
+  "html": "<a href=\"http://z/w\" target=\"_blank\"><img src=\"http://x/y.png\" alt=\"y.png\" class=\"image\" /></a>",
+  "html_sha256": "353cb988fdbeef414971f4e83a99b026adc13067b57ce46d3fe8ead999bc6009",
+  "source": "[[image http://x/y.png link=\"*http://z/w\"]]",
+  "source_sha256": "cabe4d17e7300a92c13088b6c7b072f15d26d0b85688b8f3b6ca43b252a9d1e7",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "image-align": {
+  "fullname": "muse-probe-round5-r2-image-align",
+  "html": "<div class=\"image-container aligncenter\"><img src=\"http://x/y.png\" alt=\"y.png\" class=\"image\" /></div>",
+  "html_sha256": "beb7202e9c796664e38ec912cdab19b739567b44c469cc29285ba5a52c3da602",
+  "source": "[[=image http://x/y.png]]",
+  "source_sha256": "f33250540fe008a5ff43eea8e1d79eea20ac4e5fc73639b560120ff9029b9a71",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "embed-glued-event": {
+  "fullname": "muse-probe-round5-r2-embed-glued-event",
+  "html": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "html_sha256": "0d94a629bbda9bb7b87fcaf86579d5195ffef1ffcfd644fd09babead0f4c04b0",
+  "source": "[[embed]]<iframe src=\"http://x/y\"onload=\"x\"></iframe>[[/embed]]",
+  "source_sha256": "3b632cf862d9acb8f715b49ca793916fb2a581e481da1b40e1ae217d4254b101",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "embed-js-scheme": {
+  "fullname": "muse-probe-round5-r2-embed-js-scheme",
+  "html": "",
+  "html_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source": "[[embed]]<iframe src='javascript:alert(1)'></iframe>[[/embed]]",
+  "source_sha256": "1b880911e093efa3d92a62ffd0e86473389481235afb8a057096406f05f19ee1",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "math-escape": {
+  "fullname": "muse-probe-round5-r2-math-escape",
+  "html": "<p><span class=\"math-inline\">$a &amp; b &lt; c &gt; d$</span></p>",
+  "html_sha256": "24465505bb7b19869608755d7c605a051afc90f344b81ab4faab3b96b527d152",
+  "source": "[[$ a & b < c > d $]]",
+  "source_sha256": "aef23e9863fe984ee03b7f96dabf6f0aa6aa3450e167e5ee9e106bdf1e735c5e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "math-freelink-suppress": {
+  "fullname": "muse-probe-round5-r2-math-freelink-suppress",
+  "html": "<p><span class=\"math-inline\">$$</span></p>",
+  "html_sha256": "8119dd8e254d13e759b9ee65895322c26e3e6e9fd2c600c47fb9e0ed1270506a",
+  "source": "[[$ [[[foo]]] $]]",
+  "source_sha256": "85195332f67c1299047c4ee89ef80063878f0d9040cd2d120fc203f7d7e20161",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "math-interwiki-expand": {
+  "fullname": "muse-probe-round5-r2-math-interwiki-expand",
+  "html": "<p><span class=\"math-inline\">$[[wikipedia:X]]$</span></p>",
+  "html_sha256": "9fb4b0038c364b449532d6fb8a447c4e3a1c9d3713eccda7c1405a818015228b",
+  "source": "[[$ [[wikipedia:X]] $]]",
+  "source_sha256": "a4c7e1f97a91ef2250a893603fae607156ea655b8645eb3cf3edad0c723c6897",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

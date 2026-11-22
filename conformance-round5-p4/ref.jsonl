@@ -1,0 +1,22 @@
+{"id":"R5P4-C01","output":"<p>alpha <strong>bold<\/strong> 341@@@@<\/p>"}
+{"id":"R5P4-C02","output":"<p>alpha <strong>bold<\/strong> 341@@@@@@@@<\/p>"}
+{"id":"R5P4-C03","output":"<p>alpha <strong>bold<\/strong> 341@@@@@@@@@@@@<\/p>"}
+{"id":"R5P4-C04","output":"<p>alpha <strong>bold<\/strong> 451<\/p>"}
+{"id":"R5P4-C05","output":"<p>alpha <strong>bold<\/strong><\/p>"}
+{"id":"R5P4-C06","output":"<p style=\"text-align: center;\">Head 1 =<\/p>"}
+{"id":"R5P4-C07","output":"<ul>\n<li>item 145two<\/li>\n<\/ul>"}
+{"id":"R5P4-C08","output":"<p>alpha [[code]]x[[\/code]] tail<\/p>"}
+{"id":"R5P4-C09","output":"<p>a b<\/p>\n\n"}
+{"id":"R5P4-C10","output":"<p>alpha<\/p>\n\n<p>bravo<\/p>\n\n"}
+{"id":"R5P4-C11","output":"<p>alpha<\/p>\n\n<p>bravo<\/p>\n\n"}
+{"id":"R5P4-C12","output":"<p>alpha bravo charlie<\/p>\n\n"}
+{"id":"R5P4-C13","output":"<p>alpha &#8212; bravo<\/p>\n\n"}
+{"id":"R5P4-C14","output":"<p>alpha &#8212;- bravo<\/p>\n\n"}
+{"id":"R5P4-C15","output":"<p>Cost 5 $ tail<\/p>\n\n"}
+{"id":"R5P4-C16","output":"<p>10&#160;&amp;euro; 20&#160;&amp;#8364; 30&#160;&amp;#x20AC;<\/p>\n\n"}
+{"id":"R5P4-C17","output":"<p>It was 20&#160;\u00b0C and 50&#160;% at 1&#160;2&#160;3<\/p>\n\n"}
+{"id":"R5P4-C18","output":"<p>&#8220;double&#8221; &#8222;low&#8221; &#8216;single&#8217;<\/p>\n\n"}
+{"id":"R5P4-C19","output":"<p>alpha bravo<\/p>\n\n"}
+{"id":"R5P4-C20","output":"<p><span class=\"odate time_0 format_%FF320%FF\">01 Jan 1970 00:00<\/span><\/p>\n\n"}
+{"id":"R5P4-C21","output":"<p><span class=\"odate time_0 format_%40%40\">01 Jan 1970 00:00<\/span><\/p>\n\n"}
+{"id":"R5P4-C22","output":"<p><span class=\"odate time_123\">01 Jan 1970 00:02<\/span> <span class=\"odate time_-5\">31 Dec 1969 23:59<\/span> <span class=\"odate time_9223372036854775807\">04 Dec 292277026596 15:30<\/span><\/p>\n\n"}

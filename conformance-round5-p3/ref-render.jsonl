@@ -1,0 +1,20 @@
+{"id":"p3-01-module-form","output":"<div class=\"error-block\">[[module <em>nosuchmod<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"p3-02-module-rawold","output":"<div class=\"error-block\">[[module <em>nosuchmod<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"p3-03-module-tab","output":"<div class=\"error-block\">[[module <em>nosuchmod<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"p3-04-module654-empty","output":"<div class=\"error-block\">[[module <em>nosuchmod<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div><p>[[\/module]]<\/p>\n\n"}
+{"id":"p3-05-inc-form-module","output":"<div class=\"error-block\">[[module <em>nosuchmod<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"p3-06-inc-code-code","output":"\n<div class=\"code\">\n<pre><code>[[code]]\nCODEX\n[[\/code]]<\/code><\/pre><\/div>\n\n"}
+{"id":"p3-07-inc-text-div","output":"<div class=\"DIVX\"><p>SPLICED<\/p>\n\n<\/div>"}
+{"id":"p3-08-raw-4-3","output":"<p>ZQ<\/p>\n\n"}
+{"id":"p3-09-raw-3-2","output":"<p><span style=\"white-space: pre-wrap;\">@PQ<\/span><\/p>\n\n"}
+{"id":"p3-10-raw-2-4","output":"<p><span style=\"white-space: pre-wrap;\">LQ<\/span>@@<\/p>\n\n"}
+{"id":"p3-11-tableadv-quoted","output":"<table class=\"a]]b\">\n<tr>\n<td>CELLX<\/td>\n<\/tr>\n<\/table>"}
+{"id":"p3-12-tableadv-empty-colspan","output":"<table>\n<tr>\n<td>CELLX<\/td>\n<\/tr>\n<\/table>"}
+{"id":"p3-13-tableadv-upper-data","output":"<table>\n<tr>\n<td>CELLX<\/td>\n<\/tr>\n<\/table>"}
+{"id":"p3-14-tableadv-id-space","output":"<table id=\"u- IDX\">\n<tr>\n<td>CELLX<\/td>\n<\/tr>\n<\/table>"}
+{"id":"p3-15-image-upper-scheme","output":"<p>[[image IMGX.png link=&quot;HTTP:\/\/example.com\/x&quot;]]<\/p>\n\n"}
+{"id":"p3-16-image-proto-rel","output":"<a href=\"\/example.com\/x\"><img src=\"\/local--files\/\/IMGX.png\" alt=\"IMGX.png\" class=\"image\" \/><\/a>"}
+{"id":"p3-17-gallery-size-target","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/IMGX.png\" target=\"_blank\"><img src=\"\/local--resized-images\/\/IMGX.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/IMGY.png\" ><img src=\"\/local--resized-images\/\/IMGY.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"p3-18-gallery-scheme-zero","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\":\/\/example.com\/x\" ><img src=\"\/local--resized-images\/\/IMGX.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"p3-19-file-unicode","output":"<p><a href=\"\/local--files\/page\/%C3%A9%20a.png\">LabelX<\/a><\/p>\n\n"}
+{"id":"p3-20-file-amp","output":"<p><a href=\"\/local--files\/page\/f&amp;x.png\">A &amp; B<\/a><\/p>\n\n"}

@@ -1,0 +1,25 @@
+{"id": "P1", "source": "[[span_ style=\"color:red\"]]X[[/span]] tail"}
+{"id": "P2", "source": "[[span_]]A[[/span]] [[span_]]B[[/span]]"}
+{"id": "P3", "source": "a\n\n\n\nb"}
+{"id": "N2", "source": "A  _\nB"}
+{"id": "N3", "source": "A\t_\nB"}
+{"id": "B1", "source": "> q\n\nX"}
+{"id": "B2", "source": ">> deep\n\nX"}
+{"id": "B3", "source": "X\n\n> a\n>>nospace\n> b\n\nY"}
+{"id": "D1", "source": "[[div id=\"x\"]]body[[/div]]"}
+{"id": "D2", "source": "[[div class=\" \"]]\n[[/div]]\nX"}
+{"id": "D3", "source": "[[div data-Foo=\"1\" data-foo=\"2\"]]\nX[[/div]]"}
+{"id": "D4", "source": "[[collapsible id=\"k\" data-x=\"1\" onclick=\"bad()\"]]BODY[[/collapsible]]"}
+{"id": "D5", "source": "[[tabview]]\n[[tab �]]X[[/tab]]\n[[/tabview]]"}
+{"id": "D6", "source": "[[size ....em]]X[[/size]]"}
+{"id": "D7", "source": "[[size 12px]]A\u001bB[[/size]]"}
+{"id": "L1", "source": "[[UL id=\"x\"]]\n[[LI class=\"c\" data-z=\"9\"]]A[[/LI]]\n[[/UL]]"}
+{"id": "L2", "source": "[[ul id=\"x\"]]\n[[li]]a[[/li]]\n[[/OL]]tail"}
+{"id": "L3", "source": "[[UL_]]\n[[li]]a[[/li]]\n[[/ul]]"}
+{"id": "L4", "source": "[[UL]]\nplain\n\nAFTER"}
+{"id": "DL1", "source": ": term : @@@@"}
+{"id": "DL2", "source": ": [!-- hide --] @@@@ : val"}
+{"id": "DL3", "source": ": term\n: t2 : v2"}
+{"id": "T1", "source": "[[color red]] @@@@ [[/color]]"}
+{"id": "T2", "source": "a @@@@ @@@@ b"}
+{"id": "T3", "source": "a @@@@\nb"}

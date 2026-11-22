@@ -1,0 +1,25 @@
+{"id":"P1","output":"<p><span style=\"color:red\">X<\/span> tail<\/p>\n\n"}
+{"id":"P2","output":"<span>A<\/span> <span>B<\/span>"}
+{"id":"P3","output":"<p>a<\/p>\n\n<p>b<\/p>\n\n"}
+{"id":"N2","output":"<p>A <br \/>\nB<\/p>\n\n"}
+{"id":"N3","output":"<p>A <br \/>\nB<\/p>\n\n"}
+{"id":"B1","output":"<blockquote><p>q<\/p>\n\n<\/blockquote>\n<p>X<\/p>\n\n"}
+{"id":"B2","output":"<blockquote><blockquote><p>deep<\/p>\n\n<\/blockquote>\n<\/blockquote>\n<p>X<\/p>\n\n"}
+{"id":"B3","output":"<p>X<\/p>\n\n<blockquote><p>a<br \/>\nb<\/p>\n\n<\/blockquote>\n<p>Y<\/p>\n\n"}
+{"id":"D1","output":"<p>[[div id=&quot;x&quot;]]body[[\/div]]<\/p>\n\n"}
+{"id":"D2","output":"<br \/>\nX"}
+{"id":"D3","output":"<div data-foo=\"1\"><p>X<\/p>\n\n<\/div>"}
+{"id":"D4","output":"<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block<\/a><\/div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">\u2013&nbsp;hide&nbsp;block<\/a><\/div><div class=\"collapsible-block-content\"><p>BODY<\/p>\n\n<\/div><\/div><\/div>"}
+{"id":"D5","output":"<script type=\"text\/javascript\" src=\"\/common--javascript\/yahooui\/element-beta-min.js\"><\/script>\n<script type=\"text\/javascript\" src=\"\/common--javascript\/yahooui\/tabview-min.js\"><\/script><div id=\"wiki-tabview-0\" class=\"yui-navset\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>\ufffd<\/em><\/a><\/li><\/ul><div class=\"yui-content\"><div id=\"wiki-tab-0-0\"><p>X<\/p>\n\n<\/div><\/div><\/div><script type=\"text\/javascript\">\n(function(){\n\tvar tabView0 = new YAHOO.widget.TabView('wiki-tabview-0');\n})();\n<\/script>"}
+{"id":"D6","output":"<p><span style=\"font-size:....em;\">X<\/span><\/p>\n\n"}
+{"id":"D7","output":"<p><span style=\"font-size:12px;\">A\u001bB<\/span><\/p>\n\n"}
+{"id":"L1","output":"<ul>\n<li class=\"c\" data-z=\"9\">A<br \/>"}
+{"id":"L2","output":"<ul id=\"u-x\">\n<li>a<\/li>\n<\/ul>\ntail"}
+{"id":"L3","output":"<ul>\n<li>a<br \/><\/li>\n<\/ul>"}
+{"id":"L4","output":"<p>plain<\/p>\n\n<p>AFTER<\/p>\n\n"}
+{"id":"DL1","output":"<dl>\n<dt>term<\/dt>\n<dd><\/dd>\n<\/dl>\n"}
+{"id":"DL2","output":"<dl>\n<dd>val<\/dd>\n<\/dl>\n"}
+{"id":"DL3","output":"<dl>\n<dt>term<br \/>\n: t2<\/dt>\n<dd>v2<\/dd>\n<\/dl>\n"}
+{"id":"T1","output":"<p>[[color red]] [[\/color]]<\/p>\n\n"}
+{"id":"T2","output":"<p>a b<\/p>\n\n"}
+{"id":"T3","output":"<p>a<br \/>\nb<\/p>\n\n"}

@@ -1,0 +1,4 @@
+{"id": "l1-attrmix", "source": "[[UL class=\"c\" id=\"i\" data-x=\"1\"]]\n[[li]]a\n[[ol]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]AFTER"}
+{"id": "l2-deepcross", "source": "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b[[/li]]\n[[/UL]]AFTER\n[[/ol]]\n[[/li]]\n[[/ul]]"}
+{"id": "f3-u3000", "source": "A [[[　_default:x]]] B"}
+{"id": "u3-listfour", "source": "[[ul]]\n[[li]]x �\n@@@@\n@@@@\n@@@@\n@@@@\n[[/li]]\n[[/ul]]"}

@@ -1,0 +1,19 @@
+{"id":"R5P2-01","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5P2-02","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5P2-03","output":"<p><a class=\"newpage\" href=\"\/_default:x\">_default:x<\/a><\/p>\n\n"}
+{"id":"R5P2-04","output":"<p><a href=\"http:\/\/example.com\">http:\/\/example.com<\/a><span class=\"math-inline\">$a$<\/span><span class=\"math-inline\">$b$<\/span><\/p>\n\n"}
+{"id":"R5P2-05","output":"<p><a href=\"http:\/\/example.com\/x\">http:\/\/example.com\/x<\/a>|<span class=\"math-inline\">$a$<\/span><\/p>\n\n"}
+{"id":"R5P2-06","output":"<p><span class=\"wiki-email\">moc.b|a#x\ufffd\ufffd\ufffd<\/span><\/p>\n\n"}
+{"id":"R5P2-07","output":"<p><span class=\"wiki-email\">moc.b|a#\ufffd99\ufffd<\/span><\/p>\n\n"}
+{"id":"R5P2-08","output":"<p>[nosuchsite:Page] Label Label2<\/p>\n\n"}
+{"id":"R5P2-09","output":"<p><span style=\"color: red blue\">x<\/span><\/p>\n\n"}
+{"id":"R5P2-10","output":"<p><span style=\"color: rgb( 0 , 0 , 0 )\">x<\/span><\/p>\n\n"}
+{"id":"R5P2-11","output":"<p>A &#8212;&#8212; B<\/p>\n\n"}
+{"id":"R5P2-12","output":"<p>A ** ** B<\/p>\n\n"}
+{"id":"R5P2-13","output":"<p>A B<\/p>\n\n"}
+{"id":"R5P2-14","output":"\n<div class=\"code\">\n<pre><code>print('x')<\/code><\/pre><\/div>\n\n"}
+{"id":"R5P2-15","output":"<p>[[code]]<br \/>\nx<br \/>\n[[\/code]]TAIL<\/p>\n\n"}
+{"id":"R5P2-16","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"R5P2-17","output":"<div class=\"error-block\">Unsupported math environment \"A\"<\/div><div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"R5P2-18","output":"<p><span class=\"math-inline\">$x  y$<\/span><\/p>\n\n"}
+{"id":"R5P2-19","output":"<p><span class=\"math-inline\">$$<\/span><\/p>\n\n"}

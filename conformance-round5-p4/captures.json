@@ -1,0 +1,222 @@
+{
+ "R5P4-C01": {
+  "fullname": "muse-probe-round5-p4-r5p4-c01",
+  "html": "<p>alpha <strong>bold</strong> 341@@@@</p>",
+  "html_sha256": "ba56ec615c26722cfb83b73a480d22fe6abbc6865f1e1b3842682cd4cdf6f9ce",
+  "source": "alpha **bold** �\n\n@@@@@@@@",
+  "source_sha256": "01adb0e702199c4b8c62bcc3925009a79bab573f4ed849842bf171cb94715a7b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C02": {
+  "fullname": "muse-probe-round5-p4-r5p4-c02",
+  "html": "<p>alpha <strong>bold</strong> 341@@@@@@@@</p>",
+  "html_sha256": "eb8d747328d4add7858b1e35cd0576112a4bed9d27ec26d0284a92c91d91002a",
+  "source": "alpha **bold** �\n\n@@@@@@@@@@@@",
+  "source_sha256": "7252b2413eb38c29070a7f3bda0e0f6aa5f1c12ee339c4738281f9c1200736c2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C03": {
+  "fullname": "muse-probe-round5-p4-r5p4-c03",
+  "html": "<p>alpha <strong>bold</strong> 341@@@@@@@@@@@@</p>",
+  "html_sha256": "a45c1fc6d7921d9ff138d66713ae4e7c6fcd928eadb865a757b36d4d2cb37f8d",
+  "source": "alpha **bold** �\n\n@@@@@@@@@@@@@@@@",
+  "source_sha256": "ff62448b7fd6f18b8e76a7b95847d42b6be216d22b1393f9fc4363d179f87946",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C04": {
+  "fullname": "muse-probe-round5-p4-r5p4-c04",
+  "html": "<p>alpha <strong>bold</strong> 451</p>",
+  "html_sha256": "c0dba31aa5b72f1c54223edda71f4b86843c6661eced97a66a5223661f064449",
+  "source": "alpha **bold** �\n\n@@@@ @@@@",
+  "source_sha256": "faf88a25ebfac671e0597e723d451431d3e95eceba0bfe0ae0d2fcccfd097725",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C05": {
+  "fullname": "muse-probe-round5-p4-r5p4-c05",
+  "html": "<p>alpha <strong>bold</strong></p>",
+  "html_sha256": "3cfe70dc8135393782b260de6ffd0e6fb0cd2ef24955b708824a2fb309fbd9ad",
+  "source": "alpha **bold** ��@@@@",
+  "source_sha256": "d076282a0c2aeca721d21fc70b7a7ee6885de842dfa3e54ed9264961dabe8448",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C06": {
+  "fullname": "muse-probe-round5-p4-r5p4-c06",
+  "html": "<p style=\"text-align: center;\">Head 1 =</p>",
+  "html_sha256": "37f056cab769085886c950c37bb662dcf2f5ed1e516c5b98fb16cca655b54094",
+  "source": "= Head �@@@@ =",
+  "source_sha256": "528196a03d14a59687cadcd6dcb55adad8c5cac22c373626f7ee8dc100af73e2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C07": {
+  "fullname": "muse-probe-round5-p4-r5p4-c07",
+  "html": "<ul>\n<li>item 145two</li>\n</ul>",
+  "html_sha256": "b613bcbc70593a1ef77aca939cc3eb7b71a40d0daec0d1056bb1c2a0abef23a7",
+  "source": "* item �@@@@\n* two",
+  "source_sha256": "fde55663798cbd423558faeb72d3e0dfe1e5a8be485f683917a612b5d8d646c8",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C08": {
+  "fullname": "muse-probe-round5-p4-r5p4-c08",
+  "html": "<p>alpha [[code]]x[[/code]] tail</p>",
+  "html_sha256": "032e266696eff68aa9c5fb1f0e0b8c6c4dc2aeb164e7b4258724c61d63c19f14",
+  "source": "alpha �[[code]]x[[/code]] tail",
+  "source_sha256": "2c3d7f5fc710c053a121197aac1c65eef7a303b6e12c79fb6441ab2dccfd4b07",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C09": {
+  "fullname": "muse-probe-round5-p4-r5p4-c09",
+  "html": "<p>a b</p>",
+  "html_sha256": "c0404946a2faae16136c44e6f88d6fd7c6093a745921b2848695b0c564e1aa1f",
+  "source": "a\tb",
+  "source_sha256": "894891f8b78a9945b0aa07e70d5f71f10b1f1990af127de561cc0ac36024c188",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C10": {
+  "fullname": "muse-probe-round5-p4-r5p4-c10",
+  "html": "<p>alpha</p>\n<p>bravo</p>",
+  "html_sha256": "e280a92dbfe08ed5386f435c43a40b0bcfe7856a56315301fb49e6ce4e2a6224",
+  "source": "alpha\n\n\n\nbravo",
+  "source_sha256": "03bef177c66fb91b0980a39b2c9884c912c2595c61330f85e27be8290ded9cdd",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C11": {
+  "fullname": "muse-probe-round5-p4-r5p4-c11",
+  "html": "<p>alpha</p>\n<p>bravo</p>",
+  "html_sha256": "e280a92dbfe08ed5386f435c43a40b0bcfe7856a56315301fb49e6ce4e2a6224",
+  "source": "alpha\n\nbravo",
+  "source_sha256": "6672e0daeeced03b1f2787679434711ac51e5287d025cef018374a49ff2e15d6",
+  "saved_source_matches": false,
+  "stable": true,
+  "valid": false
+ },
+ "R5P4-C12": {
+  "fullname": "muse-probe-round5-p4-r5p4-c12",
+  "html": "<p>alpha bravo charlie</p>",
+  "html_sha256": "f8a42f0e06d79a814ac68f38a0f3d2424fa17a9f5783a8d58edfffa9abc53622",
+  "source": "alpha  bravo   charlie",
+  "source_sha256": "668c1cc71474bd63f45d7370ea7c96b705ee85aa1cf14de35e3389363507ecb3",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C13": {
+  "fullname": "muse-probe-round5-p4-r5p4-c13",
+  "html": "<p>alpha &#8212; bravo</p>",
+  "html_sha256": "98eb715982752b1610473c8bcbd5cc9596a91410a795b3f8033d07666eaf5405",
+  "source": "alpha -- bravo",
+  "source_sha256": "64c73435ed197add1320c81a4e5aaf800cfca8af3c5325361958d8e52d806b42",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C14": {
+  "fullname": "muse-probe-round5-p4-r5p4-c14",
+  "html": "<p>alpha &#8212;- bravo</p>",
+  "html_sha256": "0090c047f971ac12619144f348c49ffe88c4d50139a7bc9502f59a0bb18405f0",
+  "source": "alpha --- bravo",
+  "source_sha256": "7793499273452ac2ccf5f89d273d6373253dcd5007920353c87f9c42835fb6b2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C15": {
+  "fullname": "muse-probe-round5-p4-r5p4-c15",
+  "html": "<p>Cost 5 $ tail</p>",
+  "html_sha256": "72282aec973f24d134583b19a8e8a17f79bf95c0b161e3e9250c9fedde9940d0",
+  "source": "Cost 5 $ tail",
+  "source_sha256": "6f5e291bf6f34c744e71814c01de3e56fc34112587dd9474c578d492d472aba5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C16": {
+  "fullname": "muse-probe-round5-p4-r5p4-c16",
+  "html": "<p>10&#160;&amp;euro; 20&#160;&amp;#8364; 30&#160;&amp;#x20AC;</p>",
+  "html_sha256": "85dd1a9c07f855e8e0c0b682cdec38e1cf4cb55735c0d7bb8e0ad7e4779eb94d",
+  "source": "10 &euro; 20 &#8364; 30 &#x20AC;",
+  "source_sha256": "cafbe95df2baf209fab823c138d80f8e1968b69110e217a1e0891e77f400298a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C17": {
+  "fullname": "muse-probe-round5-p4-r5p4-c17",
+  "html": "<p>It was 20&#160;°C and 50&#160;% at 1&#160;2&#160;3</p>",
+  "html_sha256": "02ce44be62ecfaf4fa370569d95f4c4cc42b8ecd7c19ec120ad1d112ccfdaee0",
+  "source": "It was 20 °C and 50 % at 1 2 3",
+  "source_sha256": "48bb4f73e09efa192b91654230c342cce083192a92c096a35bc4730a9d948351",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C18": {
+  "fullname": "muse-probe-round5-p4-r5p4-c18",
+  "html": "<p>&#8220;double&#8221; &#8222;low&#8221; &#8216;single&#8217;</p>",
+  "html_sha256": "84525fb7e78389adf8fd800cdcbf8cea1134fcec8be6d650abfd40f5bfccab86",
+  "source": "``double'' ,,low'' `single'",
+  "source_sha256": "2abd034e0836458839e98e974bfd033bb9c23de5b07082056c10f8601e24ce33",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C19": {
+  "fullname": "muse-probe-round5-p4-r5p4-c19",
+  "html": "<p>alpha bravo</p>",
+  "html_sha256": "2b0b44bd703e422655eb53ba21c44af4fa868c966d4f3bfa819ee1202488cc6b",
+  "source": "alpha @@@@ bravo",
+  "source_sha256": "fd40f8a3ba6faba4cc2693acc5849b432f221b8336dbeed3a3aa9f84b7d69b31",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C20": {
+  "fullname": "muse-probe-round5-p4-r5p4-c20",
+  "html": "<p><span class=\"odate time_0 format_%FF1%FF\">01 Jan 1970 00:00</span></p>",
+  "html_sha256": "c2712634dd7bfc6b8deb4e6e31e2ef0a6060d48c57862564d452f7c8ceba149a",
+  "source": "[[date 0 format=\"@@123@@\"]]",
+  "source_sha256": "50800d364501a9312c4b6e3c3832b5309c8c84eaa750f675fc243825a3791502",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C21": {
+  "fullname": "muse-probe-round5-p4-r5p4-c21",
+  "html": "<p><span class=\"odate time_0 format_%40%40\">01 Jan 1970 00:00</span></p>",
+  "html_sha256": "2f65b91dcee7bf6134351b5a03493341bd786eb3172da9d8a1eeac4548fce58c",
+  "source": "[[date 0 format=\"@@\"]]",
+  "source_sha256": "99e6a3f13da7de1a7e6597399f66bda0c4e60cfd177959d9344c644485e2795f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5P4-C22": {
+  "fullname": "muse-probe-round5-p4-r5p4-c22",
+  "html": "<p><span class=\"odate time_123\">01 Jan 1970 00:02</span> <span class=\"odate time_-5\">31 Dec 1969 23:59</span> <span class=\"odate time_9223372036854775807\">04 Dec 292277026596 15:30</span></p>",
+  "html_sha256": "0e342eabe80005ea49321de6afb6776b4d6f2f16766607d027c9231dc4d89e7a",
+  "source": "[[date 0000123]] [[date -0005]] [[date 9223372036854775808]]",
+  "source_sha256": "33a0d83d1fda75c10192ec68b939b6b6e8fcae81ff7a77230489d7f7393a33cc",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "t-form": {
+  "fullname": "muse-probe-round5-p3-t-form",
+  "source": "[[form]]\nFORMX\n[[/form]]",
+  "action": "created"
+ },
+ "t-code": {
+  "fullname": "muse-probe-round5-p3-t-code",
+  "source": "[[code]]\nCODEX\n[[/code]]",
+  "action": "created"
+ },
+ "t-text": {
+  "fullname": "muse-probe-round5-p3-t-text",
+  "source": "SPLICED",
+  "action": "created"
+ },
+ "t-raw": {
+  "fullname": "muse-probe-round5-p3-t-raw",
+  "source": "@@RAWX@@",
+  "action": "created"
+ }
+}

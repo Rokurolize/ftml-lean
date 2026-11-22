@@ -1,0 +1,97 @@
+{
+ "url-nbsp-href": {
+  "fullname": "muse-probe-round5-r2-url-nbsp-href",
+  "source": "https://example.com/a b",
+  "action": "created"
+ },
+ "url-star-target": {
+  "fullname": "muse-probe-round5-r2-url-star-target",
+  "source": "[*http://example.com/a label]",
+  "action": "created"
+ },
+ "url-mailto-star": {
+  "fullname": "muse-probe-round5-r2-url-mailto-star",
+  "source": "[*mailto:a@example.com mail me]",
+  "action": "created"
+ },
+ "url-existing-pct": {
+  "fullname": "muse-probe-round5-r2-url-existing-pct",
+  "source": "https://example.com/%C3%A9",
+  "action": "created"
+ },
+ "email-quote-raw": {
+  "fullname": "muse-probe-round5-r2-email-quote-raw",
+  "source": "[foo@example.com say \"hi\"]",
+  "action": "created"
+ },
+ "email-angles-amp": {
+  "fullname": "muse-probe-round5-r2-email-angles-amp",
+  "source": "[foo@example.com a&b<c>]",
+  "action": "created"
+ },
+ "freelink-star-url": {
+  "fullname": "muse-probe-round5-r2-freelink-star-url",
+  "source": "[[[*http://example.com/x|label]]]",
+  "action": "created"
+ },
+ "freelink-new-anchor": {
+  "fullname": "muse-probe-round5-r2-freelink-new-anchor",
+  "source": "[[[foo#anchor]]]",
+  "action": "created"
+ },
+ "interwiki-known-amp": {
+  "fullname": "muse-probe-round5-r2-interwiki-known-amp",
+  "source": "[google:a&b]",
+  "action": "created"
+ },
+ "interwiki-unknown": {
+  "fullname": "muse-probe-round5-r2-interwiki-unknown",
+  "source": "[nosuchwiki:A&B]",
+  "action": "created"
+ },
+ "image-title-alt": {
+  "fullname": "muse-probe-round5-r2-image-title-alt",
+  "source": "[[image http://x/y.png title=\"a&b\" alt=\"A&B\"]]",
+  "action": "created"
+ },
+ "image-link-fragment": {
+  "fullname": "muse-probe-round5-r2-image-link-fragment",
+  "source": "[[image http://x/y.png link=\"#frag\"]]",
+  "action": "created"
+ },
+ "image-link-star": {
+  "fullname": "muse-probe-round5-r2-image-link-star",
+  "source": "[[image http://x/y.png link=\"*http://z/w\"]]",
+  "action": "created"
+ },
+ "image-align": {
+  "fullname": "muse-probe-round5-r2-image-align",
+  "source": "[[=image http://x/y.png]]",
+  "action": "created"
+ },
+ "embed-glued-event": {
+  "fullname": "muse-probe-round5-r2-embed-glued-event",
+  "source": "[[embed]]<iframe src=\"http://x/y\"onload=\"x\"></iframe>[[/embed]]",
+  "action": "created"
+ },
+ "embed-js-scheme": {
+  "fullname": "muse-probe-round5-r2-embed-js-scheme",
+  "source": "[[embed]]<iframe src='javascript:alert(1)'></iframe>[[/embed]]",
+  "action": "created"
+ },
+ "math-escape": {
+  "fullname": "muse-probe-round5-r2-math-escape",
+  "source": "[[$ a & b < c > d $]]",
+  "action": "created"
+ },
+ "math-freelink-suppress": {
+  "fullname": "muse-probe-round5-r2-math-freelink-suppress",
+  "source": "[[$ [[[foo]]] $]]",
+  "action": "created"
+ },
+ "math-interwiki-expand": {
+  "fullname": "muse-probe-round5-r2-math-interwiki-expand",
+  "source": "[[$ [[wikipedia:X]] $]]",
+  "action": "created"
+ }
+}

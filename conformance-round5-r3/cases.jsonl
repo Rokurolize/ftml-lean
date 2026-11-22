@@ -1,0 +1,16 @@
+{"id": "R3-01", "source": "[[footnote]]@@@@ @@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3-02", "source": "[[footnote]]x@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3-03", "source": "[[footnote]] @@@@ [[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3-04", "source": "[[bibliography]]\n: lab : @@@@ @@@@\n[[/bibliography]]"}
+{"id": "R3-05", "source": "[[bibliography]]\n: lab :  @@@@ \n[[/bibliography]]"}
+{"id": "R3-06", "source": "[[bibliography]]\n: lab :\nvalue\n[[/bibliography]]"}
+{"id": "R3-07", "source": "+++++++ too many pluses"}
+{"id": "R3-08", "source": "+*NoToc\n\n+ Anchored"}
+{"id": "R3-09", "source": "[[toc]]\n\n+ One\n\n+*Two\n\n+ Three"}
+{"id": "R3-10", "source": "[[toc]]\n\n+ Héllo üü\n\nalpha"}
+{"id": "R3-11", "source": "[[toc title=\"O'Brien & <x>\"]]\n\n+ T"}
+{"id": "R3-12", "source": "[[# foo@@x@@bar ]]"}
+{"id": "R3-13", "source": "[[# ]]\n\n[[# bad name ]]"}
+{"id": "R3-14", "source": "((bibcite lab))\n[[bibliography]]\n: lab : one\n: lab : two\n[[/bibliography]]\n((bibcite LAB))"}
+{"id": "R3-15", "source": "B[[footnote]]b[[/footnote]] A[[footnote]]a[[/footnote]]\n[[footnoteblock title=\"N\"]]"}
+{"id": "R3-16", "source": "[[footnote]]a[[/footnote]]\n[[footnoteblock title=\"O'Brien\"]]"}

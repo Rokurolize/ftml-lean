@@ -1,0 +1,106 @@
+{
+ "P1": {
+  "id": "P1",
+  "verdict": "CLEARED (live=ref)"
+ },
+ "P2": {
+  "id": "P2",
+  "verdict": "CLEARED (live=ref)"
+ },
+ "P3": {
+  "id": "P3",
+  "verdict": "CLEARED (live=ref)"
+ },
+ "N1": {
+  "id": "N1",
+  "verdict": "UNTESTABLE"
+ },
+ "N2": {
+  "id": "N2",
+  "verdict": "CLEARED (owned frame)"
+ },
+ "N3": {
+  "id": "N3",
+  "verdict": "CLEARED (owned frame)"
+ },
+ "B1": {
+  "id": "B1",
+  "verdict": "CLEARED (owned frame)"
+ },
+ "B2": {
+  "id": "B2",
+  "verdict": "CLEARED (owned frame)"
+ },
+ "B3": {
+  "id": "B3",
+  "verdict": "CLEARED (owned frame)"
+ },
+ "D1": {
+  "id": "D1",
+  "verdict": "CLEARED (live=ref)"
+ },
+ "D2": {
+  "id": "D2",
+  "verdict": "CONFIRMED C-R5-P1-1"
+ },
+ "D3": {
+  "id": "D3",
+  "verdict": "CONFIRMED C-R5-P1-2"
+ },
+ "D4": {
+  "id": "D4",
+  "verdict": "CLEARED (owned frame)"
+ },
+ "D5": {
+  "id": "D5",
+  "verdict": "CLEARED (owned frame)"
+ },
+ "D6": {
+  "id": "D6",
+  "verdict": "CLEARED (live=ref)"
+ },
+ "D7": {
+  "id": "D7",
+  "verdict": "CLEARED (live=ref)"
+ },
+ "L1": {
+  "id": "L1",
+  "verdict": "CLEARED (live=ref)"
+ },
+ "L2": {
+  "id": "L2",
+  "verdict": "CLEARED (live=ref)"
+ },
+ "L3": {
+  "id": "L3",
+  "verdict": "CONFIRMED C-R5-P1-3"
+ },
+ "L4": {
+  "id": "L4",
+  "verdict": "CONFIRMED C-R5-P1-4"
+ },
+ "DL1": {
+  "id": "DL1",
+  "verdict": "CLEARED (live=ref)"
+ },
+ "DL2": {
+  "id": "DL2",
+  "verdict": "CLEARED (live=ref)"
+ },
+ "DL3": {
+  "id": "DL3",
+  "verdict": "CLEARED (live=ref)"
+ },
+ "T1": {
+  "id": "T1",
+  "verdict": "CLEARED (live=ref)"
+ },
+ "T2": {
+  "id": "T2",
+  "verdict": "CLEARED (live=ref)"
+ },
+ "T3": {
+  "id": "T3",
+  "verdict": "CLEARED (live=ref)"
+ }
+}

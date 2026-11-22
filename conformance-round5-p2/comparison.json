@@ -1,0 +1,205 @@
+{
+ "method": "probe.norm + suspect4b shape + U+FFFD token-index digit mask; math serving surface excluded from new-divergence count",
+ "tallies": {
+  "cleared": 15,
+  "differ": 4,
+  "untestable": 0
+ },
+ "rows": [
+  {
+   "id": "R5P2-01",
+   "fullname": "muse-probe-round5-p2-r5p2-01",
+   "live_html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+   "ref_output": "<p><a class=\"newpage\" href=\"/_default:x\">x</a></p>\n\n",
+   "live_norm": "<a href=\"/x\">x</a>",
+   "ref_norm": "<a href=\"/_default:x\">x</a>",
+   "live_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+   "verdict": "DIFFER",
+   "reason": "live href /x drops the category prefix, reference href /_default:x keeps it; a rule-level Freelink slug value, not a serving surface"
+  },
+  {
+   "id": "R5P2-02",
+   "fullname": "muse-probe-round5-p2-r5p2-02",
+   "live_html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+   "ref_output": "<p><a class=\"newpage\" href=\"/_default:x\">x</a></p>\n\n",
+   "live_norm": "<a href=\"/x\">x</a>",
+   "ref_norm": "<a href=\"/_default:x\">x</a>",
+   "live_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+   "verdict": "DIFFER",
+   "reason": "live href /x drops the category prefix, reference href /_default:x keeps it; a rule-level Freelink slug value, not a serving surface"
+  },
+  {
+   "id": "R5P2-03",
+   "fullname": "muse-probe-round5-p2-r5p2-03",
+   "live_html": "<p><a class=\"newpage\" href=\"/_default:x\">_default:x</a></p>",
+   "ref_output": "<p><a class=\"newpage\" href=\"/_default:x\">_default:x</a></p>\n\n",
+   "live_norm": "<a href=\"/_default:x\">_default:x</a>",
+   "ref_norm": "<a href=\"/_default:x\">_default:x</a>",
+   "live_sha256": "5e4b4836be300d1739a68290364060eea182ee49c9db3bedbd6164b4ff232272",
+   "verdict": "CLEARED"
+  },
+  {
+   "id": "R5P2-04",
+   "fullname": "muse-probe-round5-p2-r5p2-04",
+   "live_html": "<p><a href=\"http://example.com\">http://example.com</a><span class=\"math-inline\">$a$</span><span class=\"math-inline\">$b$</span></p>",
+   "ref_output": "<p><a href=\"http://example.com\">http://example.com</a><span class=\"math-inline\">$a$</span><span class=\"math-inline\">$b$</span></p>\n\n",
+   "live_norm": "<a href=\"http://example.com\">http://example.com</a><span class=\"math-inline\">$a$</span><span class=\"math-inline\">$b$</span>",
+   "ref_norm": "<a href=\"http://example.com\">http://example.com</a><span class=\"math-inline\">$a$</span><span class=\"math-inline\">$b$</span>",
+   "live_sha256": "f97c98be4599f8f7931ee24f198aee55793ea25d43855c8fdf961c9b19f7e614",
+   "verdict": "CLEARED"
+  },
+  {
+   "id": "R5P2-05",
+   "fullname": "muse-probe-round5-p2-r5p2-05",
+   "live_html": "<p><a href=\"http://example.com/x\">http://example.com/x</a>|<span class=\"math-inline\">$a$</span></p>",
+   "ref_output": "<p><a href=\"http://example.com/x\">http://example.com/x</a>|<span class=\"math-inline\">$a$</span></p>\n\n",
+   "live_norm": "<a href=\"http://example.com/x\">http://example.com/x</a>|<span class=\"math-inline\">$a$</span>",
+   "ref_norm": "<a href=\"http://example.com/x\">http://example.com/x</a>|<span class=\"math-inline\">$a$</span>",
+   "live_sha256": "13f0887296374505f6a1030906461f102d6bbae5b698480589874430a2077808",
+   "verdict": "CLEARED"
+  },
+  {
+   "id": "R5P2-06",
+   "fullname": "muse-probe-round5-p2-r5p2-06",
+   "live_html": "<p><span class=\"wiki-email\">moc.b|a#x���</span></p>",
+   "ref_output": "<p><span class=\"wiki-email\">moc.b|a#x���</span></p>\n\n",
+   "live_norm": "<span class=\"wiki-email\">moc.b|a#x���</span>",
+   "ref_norm": "<span class=\"wiki-email\">moc.b|a#x���</span>",
+   "live_sha256": "e574a02899dcc53a69cd38bb5b2c6ba6fb37ddb9c828b9c10e69ad9f6e3502de",
+   "verdict": "CLEARED"
+  },
+  {
+   "id": "R5P2-07",
+   "fullname": "muse-probe-round5-p2-r5p2-07",
+   "live_html": "<span class=\"wiki-email\">moc.b|a#�1�</span>",
+   "ref_output": "<p><span class=\"wiki-email\">moc.b|a#�99�</span></p>\n\n",
+   "live_norm": "<span class=\"wiki-email\">moc.b|a#�N�</span>",
+   "ref_norm": "<span class=\"wiki-email\">moc.b|a#�N�</span>",
+   "live_sha256": "8288fecd228290a467ba3349fdb3f3e1d0a5e9a25ff0e5c37f953982af063128",
+   "verdict": "CLEARED"
+  },
+  {
+   "id": "R5P2-08",
+   "fullname": "muse-probe-round5-p2-r5p2-08",
+   "live_html": "<p>[nosuchsite:Page] Label Label2</p>",
+   "ref_output": "<p>[nosuchsite:Page] Label Label2</p>\n\n",
+   "live_norm": "[nosuchsite:Page] Label Label2",
+   "ref_norm": "[nosuchsite:Page] Label Label2",
+   "live_sha256": "bcac5e32fb46e04ee4f9b2a09bb3f6a6af17390b29c95fd78d22914667121bd0",
+   "verdict": "CLEARED"
+  },
+  {
+   "id": "R5P2-09",
+   "fullname": "muse-probe-round5-p2-r5p2-09",
+   "live_html": "<p><span style=\"color: red blue\">x</span></p>",
+   "ref_output": "<p><span style=\"color: red blue\">x</span></p>\n\n",
+   "live_norm": "<span style=\"color: red blue\">x</span>",
+   "ref_norm": "<span style=\"color: red blue\">x</span>",
+   "live_sha256": "d7235631ea55817a3790f0e00611bb9d8609e8b136cc149633ec0fd7eabc4009",
+   "verdict": "CLEARED"
+  },
+  {
+   "id": "R5P2-10",
+   "fullname": "muse-probe-round5-p2-r5p2-10",
+   "live_html": "<p><span style=\"color: rgb( 0 , 0 , 0 )\">x</span></p>",
+   "ref_output": "<p><span style=\"color: rgb( 0 , 0 , 0 )\">x</span></p>\n\n",
+   "live_norm": "<span style=\"color: rgb( 0 , 0 , 0 )\">x</span>",
+   "ref_norm": "<span style=\"color: rgb( 0 , 0 , 0 )\">x</span>",
+   "live_sha256": "69578d91a71e830d68fcde2af0161c7a509b61fd604b3bb7b3546e640b9d30c0",
+   "verdict": "CLEARED"
+  },
+  {
+   "id": "R5P2-11",
+   "fullname": "muse-probe-round5-p2-r5p2-11",
+   "live_html": "<p>A &#8212;&#8212; B</p>",
+   "ref_output": "<p>A &#8212;&#8212; B</p>\n\n",
+   "live_norm": "A —— B",
+   "ref_norm": "A —— B",
+   "live_sha256": "71cf9d2f56d143a28d785fe63727a96b341f2e128794594d74df05b824bc15f6",
+   "verdict": "CLEARED"
+  },
+  {
+   "id": "R5P2-12",
+   "fullname": "muse-probe-round5-p2-r5p2-12",
+   "live_html": "<p>A ** ** B</p>",
+   "ref_output": "<p>A ** ** B</p>\n\n",
+   "live_norm": "A ** ** B",
+   "ref_norm": "A ** ** B",
+   "live_sha256": "a8e0b627ec43735dcc313877db3461f44f2cab00d59047c8d826e3e5bff3d5ce",
+   "verdict": "CLEARED"
+  },
+  {
+   "id": "R5P2-13",
+   "fullname": "muse-probe-round5-p2-r5p2-13",
+   "live_html": "<p>A B</p>",
+   "ref_output": "<p>A B</p>\n\n",
+   "live_norm": "A B",
+   "ref_norm": "A B",
+   "live_sha256": "036156d0e73a072ff96f2631eb56732be5bb90733f7a01685ac90cb54344f72d",
+   "verdict": "CLEARED"
+  },
+  {
+   "id": "R5P2-14",
+   "fullname": "muse-probe-round5-p2-r5p2-14",
+   "live_html": "<div class=\"code\">\n<pre><code>print('x')</code></pre></div>",
+   "ref_output": "\n<div class=\"code\">\n<pre><code>print('x')</code></pre></div>\n\n",
+   "live_norm": "<div class=\"code\"> <pre><code>print('x')</code></pre></div>",
+   "ref_norm": "<div class=\"code\"> <pre><code>print('x')</code></pre></div>",
+   "live_sha256": "86832f06e702af2c2e3043e2625462f5358a6fc4ba337cba9dfb6eeb44d6f686",
+   "verdict": "CLEARED"
+  },
+  {
+   "id": "R5P2-15",
+   "fullname": "muse-probe-round5-p2-r5p2-15",
+   "live_html": "<p>[[code]]<br />\nx<br />\n[[/code]]TAIL</p>",
+   "ref_output": "<p>[[code]]<br />\nx<br />\n[[/code]]TAIL</p>\n\n",
+   "live_norm": "[[code]]<br> x<br> [[/code]]TAIL",
+   "ref_norm": "[[code]]<br> x<br> [[/code]]TAIL",
+   "live_sha256": "31de4341bcb7c33792b21760d2f7b4e9d745403f187fa05735d0390e075bb80d",
+   "verdict": "CLEARED"
+  },
+  {
+   "id": "R5P2-16",
+   "fullname": "muse-probe-round5-p2-r5p2-16",
+   "live_html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+   "ref_output": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>",
+   "live_norm": "<span class=\"equation-number\">(1)</span> <div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+   "ref_norm": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>",
+   "live_sha256": "e504bd63f5c257493a0bd835e3359b4574ca995dfdaf283fa88623fea08d5a1f",
+   "verdict": "DIFFER",
+   "reason": "reference token type=align (batch.php tokens: Math label a, id 1, type align) vs live envelope equation; the harness's non-rendering PNG stub is a serving surface, not the rule-level value"
+  },
+  {
+   "id": "R5P2-17",
+   "fullname": "muse-probe-round5-p2-r5p2-17",
+   "live_html": "<div class=\"error-block\">Unsupported math environment \"A\"</div>\n<span class=\"equation-number\">(2)</span>\n<div class=\"math-equation\" id=\"equation-2\">\\begin{align} y \\end{align}</div>",
+   "ref_output": "<div class=\"error-block\">Unsupported math environment \"A\"</div><div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>",
+   "live_norm": "<div class=\"error-block\">Unsupported math environment \"A\"</div> <span class=\"equation-number\">(2)</span> <div class=\"math-equation\" id=\"equation-2\">\\begin{align} y \\end{align}</div>",
+   "ref_norm": "<div class=\"error-block\">Unsupported math environment \"A\"</div><div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>",
+   "live_sha256": "1f4f791110b9515c3e3669ef29a7caa4ae77be67d84bff9ff1a69c9589ad728b",
+   "verdict": "CLEARED",
+   "reason": "PNG serving surface and equation-number frame only; ref tokens give type=align id=2 for block 2 and live serves align/2, while block 1 is Unsupported on both sides"
+  },
+  {
+   "id": "R5P2-18",
+   "fullname": "muse-probe-round5-p2-r5p2-18",
+   "live_html": "<p><span class=\"math-inline\">$$</span></p>",
+   "ref_output": "<p><span class=\"math-inline\">$x  y$</span></p>\n\n",
+   "live_norm": "<span class=\"math-inline\">$$</span>",
+   "ref_norm": "<span class=\"math-inline\">$x y$</span>",
+   "live_sha256": "8119dd8e254d13e759b9ee65895322c26e3e6e9fd2c600c47fb9e0ed1270506a",
+   "verdict": "DIFFER",
+   "reason": "live suppresses the whole math body to $$; reference preserves the reconstructed $x y$ body"
+  },
+  {
+   "id": "R5P2-19",
+   "fullname": "muse-probe-round5-p2-r5p2-19",
+   "live_html": "<p><span class=\"math-inline\">$$</span></p>",
+   "ref_output": "<p><span class=\"math-inline\">$$</span></p>\n\n",
+   "live_norm": "<span class=\"math-inline\">$$</span>",
+   "ref_norm": "<span class=\"math-inline\">$$</span>",
+   "live_sha256": "8119dd8e254d13e759b9ee65895322c26e3e6e9fd2c600c47fb9e0ed1270506a",
+   "verdict": "CLEARED"
+  }
+ ]
+}

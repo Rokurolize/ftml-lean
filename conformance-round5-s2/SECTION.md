@@ -1,0 +1,7 @@
+# conformance-round5-s2 — evidence-only clearance section
+
+This folder is an evidence-only adoption payload for the coordinator. It contains no source files, no reference edits and no mirror edits. The fourteen ledger rows in coord-units/R5-S2/LEDGER.md were probed once and cached; the per-case decisive live bytes, the matching PHP reference bytes, the validity flags and the clearance class are in clearance.jsonl, keyed by the same case id as captures.json and ref.jsonl. Page prefix muse-probe-round5-s2-; all fourteen pages left in place on sandbox-for-codex.
+
+The mask applied to each row is probe.norm imported from the standard wikidot-probe tool plus the campaign frame mask used by the round-5 comparison lanes. Eleven rows are byte-equal after that mask. Three rows retain a difference that the canonical records own as serving surface: the two iframe backslash rows are the M27 routed served-surface observation (WORKLIST-FTML.md:28, GAP-LEDGER.md:30/182), and the gallery row is the lightbox/id/host serving layer named in conformance-refphp/refval/gallery/SECTION.md. All three are CLEARED, never confirmed. There are no untestable rows: every capture is valid, stable and saved-source-matching. There are no confirmed divergences, so there is no C-R5-S2-N candidate and no mirror consequence to adopt.
+
+Adoption instruction: copy REPORT-ROUND5-S2.md to the canonical tree root and this folder to conformance-round5-s2/ unchanged. Do not copy gen_cases.py, compare.py, make_payload.py or any probe artifact beyond the named evidence files.

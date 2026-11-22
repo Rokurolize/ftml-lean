@@ -1,0 +1,19 @@
+{"id": "url-nbsp-href", "source": "https://example.com/a b"}
+{"id": "url-star-target", "source": "[*http://example.com/a label]"}
+{"id": "url-mailto-star", "source": "[*mailto:a@example.com mail me]"}
+{"id": "url-existing-pct", "source": "https://example.com/%C3%A9"}
+{"id": "email-quote-raw", "source": "[foo@example.com say \"hi\"]"}
+{"id": "email-angles-amp", "source": "[foo@example.com a&b<c>]"}
+{"id": "freelink-star-url", "source": "[[[*http://example.com/x|label]]]"}
+{"id": "freelink-new-anchor", "source": "[[[foo#anchor]]]"}
+{"id": "interwiki-known-amp", "source": "[google:a&b]"}
+{"id": "interwiki-unknown", "source": "[nosuchwiki:A&B]"}
+{"id": "image-title-alt", "source": "[[image http://x/y.png title=\"a&b\" alt=\"A&B\"]]"}
+{"id": "image-link-fragment", "source": "[[image http://x/y.png link=\"#frag\"]]"}
+{"id": "image-link-star", "source": "[[image http://x/y.png link=\"*http://z/w\"]]"}
+{"id": "image-align", "source": "[[=image http://x/y.png]]"}
+{"id": "embed-glued-event", "source": "[[embed]]<iframe src=\"http://x/y\"onload=\"x\"></iframe>[[/embed]]"}
+{"id": "embed-js-scheme", "source": "[[embed]]<iframe src='javascript:alert(1)'></iframe>[[/embed]]"}
+{"id": "math-escape", "source": "[[$ a & b < c > d $]]"}
+{"id": "math-freelink-suppress", "source": "[[$ [[[foo]]] $]]"}
+{"id": "math-interwiki-expand", "source": "[[$ [[wikipedia:X]] $]]"}

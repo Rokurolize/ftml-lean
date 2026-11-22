@@ -1,0 +1,20 @@
+{"id": "p3-01-module-form", "source": "[[module nosuchmod]]\n[[form]]\nFORMX\n[[/form]]\n[[/module]]"}
+{"id": "p3-02-module-rawold", "source": "[[module nosuchmod]]\n``RAWOLDX``\n[[/module]]"}
+{"id": "p3-03-module-tab", "source": "[[module nosuchmod]]\t\nBODYT\n[[/module]]"}
+{"id": "p3-04-module654-empty", "source": "[[module654 nosuchmod]]\n[[/module]]"}
+{"id": "p3-05-inc-form-module", "source": "[[module nosuchmod]]\n[[include muse-probe-round5-p3-t-form]]\n[[/module]]"}
+{"id": "p3-06-inc-code-code", "source": "[[code]]\n[[include muse-probe-round5-p3-t-code]]\n[[/code]]"}
+{"id": "p3-07-inc-text-div", "source": "[[div class=\"DIVX\"]]\n[[include muse-probe-round5-p3-t-text]]\n[[/div]]"}
+{"id": "p3-08-raw-4-3", "source": "@@@@ZQ@@@"}
+{"id": "p3-09-raw-3-2", "source": "@@@PQ@@"}
+{"id": "p3-10-raw-2-4", "source": "@@LQ@@@@"}
+{"id": "p3-11-tableadv-quoted", "source": "[[table class=\"a]]b\"]]\n[[row]]\n[[cell]]\nCELLX\n[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3-12-tableadv-empty-colspan", "source": "[[table colspan=\"   \"]]\n[[row]]\n[[cell]]\nCELLX\n[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3-13-tableadv-upper-data", "source": "[[table data-Foo=\"UP\"]]\n[[row]]\n[[cell]]\nCELLX\n[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3-14-tableadv-id-space", "source": "[[table id=\" IDX\"]]\n[[row]]\n[[cell]]\nCELLX\n[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3-15-image-upper-scheme", "source": "[[image IMGX.png link=\"HTTP://example.com/x\"]]"}
+{"id": "p3-16-image-proto-rel", "source": "[[image IMGX.png link=\"//example.com/x\"]]"}
+{"id": "p3-17-gallery-size-target", "source": "[[gallery size=\"SMALL\"]]\n: *IMGX.png\n: IMGY.png\n[[/gallery]]"}
+{"id": "p3-18-gallery-scheme-zero", "source": "[[gallery]]\n: IMGX.png link=\"://example.com/x\"\n[[/gallery]]"}
+{"id": "p3-19-file-unicode", "source": "[[file page/é a.png|LabelX]]"}
+{"id": "p3-20-file-amp", "source": "[[file page/f&x.png|A & B]]"}

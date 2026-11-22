@@ -1,0 +1,74 @@
+{
+ "unit": "R5-S1",
+ "base": "e53e7234",
+ "suspicions": 20,
+ "pages_created": 23,
+ "pages_captured": 23,
+ "valid_stable_source_matched": 23,
+ "untestable": 0,
+ "confirmed": 4,
+ "cleared": 19,
+ "confirmed_ids": [
+  "C-R5-S1-01",
+  "C-R5-S1-02",
+  "C-R5-S1-08",
+  "C-R5-S1-16"
+ ],
+ "captures_sha256": "dd5813c7c5238920a750a4414d1f4daa655f688077c7d78f99a085f733ac4970",
+ "cases_sha256": "c304b355321aa7bcba26f9045463ca4d7b7e500be8de64f5c10f3cea1caf684d",
+ "ref_sha256": "fbf5fbed855353955a46db62020b8a9471ecd5013d68c3d25b17354003ee9045",
+ "confirmed_rows": [
+  {
+   "id": "l1-attrmix",
+   "fullname": "muse-probe-round5-s1-l1-attrmix",
+   "source": "[[UL class=\"c\" id=\"i\" data-x=\"1\"]]\n[[li]]a\n[[ol]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]AFTER",
+   "final_verdict": "CONFIRMED",
+   "candidate": "C-R5-S1-01",
+   "adjudication": "rule-level list nesting structure differs: live two sibling lists with AFTER outside, reference nested ol inside ul with AFTER inside the item; not a frame surface; the earlier rule_sig multiset clear was a false positive and is overridden",
+   "live_html": "<ul>\n<li>a<br /></li>\n</ul>\n<ol>\n<li>b</li>\n</ol>\nAFTER",
+   "ref_html": "<ul>\n<li>a<br />\n<ol>\n<li>b</li>\n</ol><br />\nAFTER</li>\n</ul>",
+   "html_sha256": "cdc0f682bce47e47702fc050ab595bff5cf6206fb2d26edb62d20f0a7247d18c",
+   "live_canon": "<ul><li>a<br></li></ul><ol><li>b</li></ol> AFTER",
+   "ref_canon": "<ul><li>a<br><ol><li>b</li></ol><br> AFTER</li></ul>"
+  },
+  {
+   "id": "l2-deepcross",
+   "fullname": "muse-probe-round5-s1-l2-deepcross",
+   "source": "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b[[/li]]\n[[/UL]]AFTER\n[[/ol]]\n[[/li]]\n[[/ul]]",
+   "final_verdict": "CONFIRMED",
+   "candidate": "C-R5-S1-02",
+   "adjudication": "rule-level list/closer structure differs: live leaves [[li]]/[[/li]]/[[/ul]] literals outside the list, reference keeps [[/ol]] inside and no such literals; not a frame surface",
+   "live_html": "<ul>\n<li>a<br />\n<ol>\n<li style=\"list-style: none\">[[li]]b</li>\n</ol>\nAFTER</li>\n</ul>\n[[/li]]<br />\n[[/ul]]",
+   "ref_html": "<ul>\n<li>a<br />\n<ol>\n<li>b</li>\n</ol><br />\nAFTER<br />\n[[/ol]]<br /></li>\n</ul><br />\n",
+   "html_sha256": "72ecc0ef04e8dc1643ff9e2da8c5c5aededb8fe2d4def7a1b30186ddd57335da",
+   "live_canon": "<ul><li>a<br><ol><li style=\"list-style: none\">[[li]]b</li></ol> AFTER</li></ul> [[/li]]<br> [[/ul]]",
+   "ref_canon": "<ul><li>a<br><ol><li>b</li></ol><br> AFTER<br> [[/ol]]<br></li></ul><br>"
+  },
+  {
+   "id": "f3-u3000",
+   "fullname": "muse-probe-round5-s1-f3-u3000",
+   "source": "A [[[　_default:x]]] B",
+   "final_verdict": "CONFIRMED",
+   "candidate": "C-R5-S1-08",
+   "adjudication": "rule-level href differs /x vs /_default:x after the standard mask removes class=newpage; not a serving surface",
+   "live_html": "<p>A <a class=\"newpage\" href=\"/x\">x</a> B</p>",
+   "ref_html": "<p>A <a class=\"newpage\" href=\"/_default:x\">x</a> B</p>\n\n",
+   "html_sha256": "6bfe45e8dad03524ec6e64e9a68c47c3261781a10821a0ca3faab8530060ac19",
+   "live_canon": "A <a href=\"/x\">x</a> B",
+   "ref_canon": "A <a href=\"/_default:x\">x</a> B"
+  },
+  {
+   "id": "u3-listfour",
+   "fullname": "muse-probe-round5-s1-u3-listfour",
+   "source": "[[ul]]\n[[li]]x �\n@@@@\n@@@@\n@@@@\n@@@@\n[[/li]]\n[[/ul]]",
+   "final_verdict": "CONFIRMED",
+   "candidate": "C-R5-S1-16",
+   "adjudication": "rule-level U+FFFD adjacent-run leak digits differ 91102113124136814 vs 11112213314457910; re-render of the single case is deterministic and token ids are per-document, so this is not an owned counter shift; u1/u2 run lengths matched exactly",
+   "live_html": "<ul>\n<li>x 91102113124136814",
+   "ref_html": "<ul>\n<li>x 11112213314457910",
+   "html_sha256": "540ffd0d85ee7ec4dc4be8a85a7d41dcf63cf13d4579dad8a16f1dba37d35eba",
+   "live_canon": "<ul><li>x 91102113124136814",
+   "ref_canon": "<ul><li>x 11112213314457910"
+  }
+ ]
+}

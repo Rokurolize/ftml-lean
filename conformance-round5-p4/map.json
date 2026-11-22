@@ -1,0 +1,112 @@
+{
+ "R5P4-C01": {
+  "fullname": "muse-probe-round5-p4-r5p4-c01",
+  "source": "alpha **bold** �\n\n@@@@@@@@",
+  "action": "exists"
+ },
+ "R5P4-C02": {
+  "fullname": "muse-probe-round5-p4-r5p4-c02",
+  "source": "alpha **bold** �\n\n@@@@@@@@@@@@",
+  "action": "exists"
+ },
+ "R5P4-C03": {
+  "fullname": "muse-probe-round5-p4-r5p4-c03",
+  "source": "alpha **bold** �\n\n@@@@@@@@@@@@@@@@",
+  "action": "exists"
+ },
+ "R5P4-C04": {
+  "fullname": "muse-probe-round5-p4-r5p4-c04",
+  "source": "alpha **bold** �\n\n@@@@ @@@@",
+  "action": "exists"
+ },
+ "R5P4-C05": {
+  "fullname": "muse-probe-round5-p4-r5p4-c05",
+  "source": "alpha **bold** ��@@@@",
+  "action": "exists"
+ },
+ "R5P4-C06": {
+  "fullname": "muse-probe-round5-p4-r5p4-c06",
+  "source": "= Head �@@@@ =",
+  "action": "exists"
+ },
+ "R5P4-C07": {
+  "fullname": "muse-probe-round5-p4-r5p4-c07",
+  "source": "* item �@@@@\n* two",
+  "action": "exists"
+ },
+ "R5P4-C08": {
+  "fullname": "muse-probe-round5-p4-r5p4-c08",
+  "source": "alpha �[[code]]x[[/code]] tail",
+  "action": "exists"
+ },
+ "R5P4-C09": {
+  "fullname": "muse-probe-round5-p4-r5p4-c09",
+  "source": "a\tb",
+  "action": "exists"
+ },
+ "R5P4-C10": {
+  "fullname": "muse-probe-round5-p4-r5p4-c10",
+  "source": "alpha\n\n\n\nbravo",
+  "action": "exists"
+ },
+ "R5P4-C11": {
+  "fullname": "muse-probe-round5-p4-r5p4-c11",
+  "source": "alpha\n   \nbravo",
+  "action": "create-rejected-save-normalized"
+ },
+ "R5P4-C12": {
+  "fullname": "muse-probe-round5-p4-r5p4-c12",
+  "source": "alpha  bravo   charlie",
+  "action": "created"
+ },
+ "R5P4-C13": {
+  "fullname": "muse-probe-round5-p4-r5p4-c13",
+  "source": "alpha -- bravo",
+  "action": "created"
+ },
+ "R5P4-C14": {
+  "fullname": "muse-probe-round5-p4-r5p4-c14",
+  "source": "alpha --- bravo",
+  "action": "created"
+ },
+ "R5P4-C15": {
+  "fullname": "muse-probe-round5-p4-r5p4-c15",
+  "source": "Cost 5 $ tail",
+  "action": "created"
+ },
+ "R5P4-C16": {
+  "fullname": "muse-probe-round5-p4-r5p4-c16",
+  "source": "10 &euro; 20 &#8364; 30 &#x20AC;",
+  "action": "created"
+ },
+ "R5P4-C17": {
+  "fullname": "muse-probe-round5-p4-r5p4-c17",
+  "source": "It was 20 °C and 50 % at 1 2 3",
+  "action": "created"
+ },
+ "R5P4-C18": {
+  "fullname": "muse-probe-round5-p4-r5p4-c18",
+  "source": "``double'' ,,low'' `single'",
+  "action": "created"
+ },
+ "R5P4-C19": {
+  "fullname": "muse-probe-round5-p4-r5p4-c19",
+  "source": "alpha @@@@ bravo",
+  "action": "created"
+ },
+ "R5P4-C20": {
+  "fullname": "muse-probe-round5-p4-r5p4-c20",
+  "source": "[[date 0 format=\"@@123@@\"]]",
+  "action": "created"
+ },
+ "R5P4-C21": {
+  "fullname": "muse-probe-round5-p4-r5p4-c21",
+  "source": "[[date 0 format=\"@@\"]]",
+  "action": "created"
+ },
+ "R5P4-C22": {
+  "fullname": "muse-probe-round5-p4-r5p4-c22",
+  "source": "[[date 0000123]] [[date -0005]] [[date 9223372036854775808]]",
+  "action": "created"
+ }
+}

@@ -1,0 +1,625 @@
+[
+ {
+  "id": "url-nbsp-href",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"https://example.com/a%C2%A0b\">https://example.com/a b</a></p>",
+  "live_canon": "<p><a href=\"https://example.com/a%C2%A0b\">https://example.com/a b</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"https://example.com/a%C2%A0b\">https://example.com/a b</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "https://example.com/a b"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"https://example.com/a%C2%A0b\">https://example.com/a b</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "https://example.com/a b"
+  },
+  "capture_id": "url-nbsp-href",
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "url-star-target",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"http://example.com/a\" target=\"_blank\">label</a></p>",
+  "live_canon": "<p><a href=\"http://example.com/a\" target=\"_blank\">label</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"http://example.com/a\" target=\"_blank\">label</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "label"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"http://example.com/a\" target=\"_blank\">label</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "label"
+  },
+  "capture_id": "url-star-target",
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "url-mailto-star",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"mailto:a@example.com\" target=\"_blank\">mail me</a></p>",
+  "live_canon": "<p><a href=\"mailto:a@example.com\" target=\"_blank\">mail me</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"mailto:a@example.com\" target=\"_blank\">mail me</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "mail me"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"mailto:a@example.com\" target=\"_blank\">mail me</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "mail me"
+  },
+  "capture_id": "url-mailto-star",
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "url-existing-pct",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"https://example.com/%C3%A9\">https://example.com/%C3%A9</a></p>",
+  "live_canon": "<p><a href=\"https://example.com/%C3%A9\">https://example.com/%C3%A9</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"https://example.com/%C3%A9\">https://example.com/%C3%A9</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "https://example.com/%C3%A9"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"https://example.com/%C3%A9\">https://example.com/%C3%A9</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "https://example.com/%C3%A9"
+  },
+  "capture_id": "url-existing-pct",
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "email-quote-raw",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><span class=\"wiki-email\">moc.elpmaxe|oof#\"ih\" yas</span></p>",
+  "live_canon": "<p><span class=\"wiki-email\">moc.elpmaxe|oof#\"ih\" yas</span></p>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [
+    "<span class=\"wiki-email\">moc.elpmaxe|oof#\"ih\" yas</span>"
+   ],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "moc.elpmaxe|oof#\"ih\" yas"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [
+    "<span class=\"wiki-email\">moc.elpmaxe|oof#\"ih\" yas</span>"
+   ],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "moc.elpmaxe|oof#\"ih\" yas"
+  },
+  "capture_id": "email-quote-raw",
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "email-angles-amp",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><span class=\"wiki-email\">moc.elpmaxe|oof#&gt;c&lt;b&amp;a</span></p>",
+  "live_canon": "<p><span class=\"wiki-email\">moc.elpmaxe|oof#&gt;c&lt;b&amp;a</span></p>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [
+    "<span class=\"wiki-email\">moc.elpmaxe|oof#&gt;c&lt;b&amp;a</span>"
+   ],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "moc.elpmaxe|oof#&gt;c&lt;b&amp;a"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [
+    "<span class=\"wiki-email\">moc.elpmaxe|oof#&gt;c&lt;b&amp;a</span>"
+   ],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "moc.elpmaxe|oof#&gt;c&lt;b&amp;a"
+  },
+  "capture_id": "email-angles-amp",
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "freelink-star-url",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"http://example.com/x\" target=\"_blank\">label</a></p>",
+  "live_canon": "<p><a href=\"http://example.com/x\" target=\"_blank\">label</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"http://example.com/x\" target=\"_blank\">label</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "label"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"http://example.com/x\" target=\"_blank\">label</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "label"
+  },
+  "capture_id": "freelink-star-url",
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "freelink-new-anchor",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"/foo#anchor\">foo</a></p>",
+  "live_canon": "<p><a href=\"/foo#anchor\">foo</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/foo#anchor\">foo</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "foo"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/foo#anchor\">foo</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "foo"
+  },
+  "capture_id": "freelink-new-anchor",
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "interwiki-known-amp",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"https://www.google.com/search?q=a&b\" onclick=\"window.open(this.href, '_blank'); return false;\">a&amp;b</a></p>",
+  "live_canon": "<p><a href=\"https://www.google.com/search?q=a&b\" onclick=\"window.open(this.href, '_blank'); return false;\">a&amp;b</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"https://www.google.com/search?q=a&b\" onclick=\"window.open(this.href, '_blank'); return false;\">a&amp;b</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "a&amp;b"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"https://www.google.com/search?q=a&b\" onclick=\"window.open(this.href, '_blank'); return false;\">a&amp;b</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "a&amp;b"
+  },
+  "capture_id": "interwiki-known-amp",
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "interwiki-unknown",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p>[nosuchwiki:A&amp;B]</p>",
+  "live_canon": "<p>[nosuchwiki:A&amp;B]</p>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "[nosuchwiki:A&amp;B]"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": "[nosuchwiki:A&amp;B]"
+  },
+  "capture_id": "interwiki-unknown",
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "image-title-alt",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<img alt=\"A&amp;B\" class=\"image\" src=\"http://x/y.png\" title=\"a&amp;b\">",
+  "live_canon": "<img alt=\"A&amp;B\" class=\"image\" src=\"http://x/y.png\" title=\"a&amp;b\">",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"A&amp;B\" class=\"image\" src=\"http://x/y.png\" title=\"a&amp;b\">"
+   ],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": ""
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"A&amp;B\" class=\"image\" src=\"http://x/y.png\" title=\"a&amp;b\">"
+   ],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": ""
+  },
+  "capture_id": "image-title-alt",
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "image-link-fragment",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<a href=\"#frag\"><img alt=\"y.png\" class=\"image\" src=\"http://x/y.png\"></a>",
+  "live_canon": "<a href=\"#frag\"><img alt=\"y.png\" class=\"image\" src=\"http://x/y.png\"></a>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"y.png\" class=\"image\" src=\"http://x/y.png\">"
+   ],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": ""
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"y.png\" class=\"image\" src=\"http://x/y.png\">"
+   ],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": ""
+  },
+  "capture_id": "image-link-fragment",
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "image-link-star",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<a href=\"http://z/w\" target=\"_blank\"><img alt=\"y.png\" class=\"image\" src=\"http://x/y.png\"></a>",
+  "live_canon": "<a href=\"http://z/w\" target=\"_blank\"><img alt=\"y.png\" class=\"image\" src=\"http://x/y.png\"></a>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"y.png\" class=\"image\" src=\"http://x/y.png\">"
+   ],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": ""
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"y.png\" class=\"image\" src=\"http://x/y.png\">"
+   ],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": ""
+  },
+  "capture_id": "image-link-star",
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "image-align",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<div class=\"image-container aligncenter\"><img alt=\"y.png\" class=\"image\" src=\"http://x/y.png\"></div>",
+  "live_canon": "<div class=\"image-container aligncenter\"><img alt=\"y.png\" class=\"image\" src=\"http://x/y.png\"></div>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"y.png\" class=\"image\" src=\"http://x/y.png\">"
+   ],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [
+    "<div class=\"image-container aligncenter\">"
+   ],
+   "text": ""
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"y.png\" class=\"image\" src=\"http://x/y.png\">"
+   ],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [
+    "<div class=\"image-container aligncenter\">"
+   ],
+   "text": ""
+  },
+  "capture_id": "image-align",
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "embed-glued-event",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": true,
+  "ref_canon": "<p><div class=\"error-block\">Sorry, no match for the embedded content.</div></p>",
+  "live_canon": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [
+    "<div class=\"error-block\">Sorry, no match for the embedded content.</div>"
+   ],
+   "divs": [],
+   "text": "Sorry, no match for the embedded content."
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [
+    "<div class=\"error-block\">Sorry, no match for the embedded content.</div>"
+   ],
+   "divs": [],
+   "text": "Sorry, no match for the embedded content."
+  },
+  "capture_id": "embed-glued-event",
+  "final_verdict": "CLEARED",
+  "reason": "Stage 2 paragraph frame only; rule-level signature and non-paragraph bytes identical"
+ },
+ {
+  "id": "embed-js-scheme",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": true,
+  "ref_canon": "<p></p>",
+  "live_canon": "",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": ""
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [],
+   "err": [],
+   "divs": [],
+   "text": ""
+  },
+  "capture_id": "embed-js-scheme",
+  "final_verdict": "CLEARED",
+  "reason": "Stage 2 paragraph frame only; rule-level signature and non-paragraph bytes identical"
+ },
+ {
+  "id": "math-escape",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><span class=\"math-inline\">$a &amp; b &lt; c &gt; d$</span></p>",
+  "live_canon": "<p><span class=\"math-inline\">$a &amp; b &lt; c &gt; d$</span></p>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [
+    "<span class=\"math-inline\">$a &amp; b &lt; c &gt; d$</span>"
+   ],
+   "err": [],
+   "divs": [],
+   "text": "$a &amp; b &lt; c &gt; d$"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [
+    "<span class=\"math-inline\">$a &amp; b &lt; c &gt; d$</span>"
+   ],
+   "err": [],
+   "divs": [],
+   "text": "$a &amp; b &lt; c &gt; d$"
+  },
+  "capture_id": "math-escape",
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "math-freelink-suppress",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><span class=\"math-inline\">$$</span></p>",
+  "live_canon": "<p><span class=\"math-inline\">$$</span></p>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [
+    "<span class=\"math-inline\">$$</span>"
+   ],
+   "err": [],
+   "divs": [],
+   "text": "$$"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [
+    "<span class=\"math-inline\">$$</span>"
+   ],
+   "err": [],
+   "divs": [],
+   "text": "$$"
+  },
+  "capture_id": "math-freelink-suppress",
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ },
+ {
+  "id": "math-interwiki-expand",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><span class=\"math-inline\">$[[wikipedia:X]]$</span></p>",
+  "live_canon": "<p><span class=\"math-inline\">$[[wikipedia:X]]$</span></p>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [
+    "<span class=\"math-inline\">$[[wikipedia:X]]$</span>"
+   ],
+   "err": [],
+   "divs": [],
+   "text": "$[[wikipedia:X]]$"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "math": [
+    "<span class=\"math-inline\">$[[wikipedia:X]]$</span>"
+   ],
+   "err": [],
+   "divs": [],
+   "text": "$[[wikipedia:X]]$"
+  },
+  "capture_id": "math-interwiki-expand",
+  "final_verdict": "CLEARED",
+  "reason": "masked canonical bytes equal"
+ }
+]

@@ -1,0 +1,19 @@
+{"id":"url-nbsp-href","output":"<p><a href=\"https:\/\/example.com\/a%C2%A0b\">https:\/\/example.com\/a\u00a0b<\/a><\/p>\n\n"}
+{"id":"url-star-target","output":"<p><a href=\"http:\/\/example.com\/a\" target=\"_blank\">label<\/a><\/p>\n\n"}
+{"id":"url-mailto-star","output":"<p><a href=\"mailto:a@example.com\" target=\"_blank\">mail me<\/a><\/p>\n\n"}
+{"id":"url-existing-pct","output":"<p><a href=\"https:\/\/example.com\/%C3%A9\">https:\/\/example.com\/%C3%A9<\/a><\/p>\n\n"}
+{"id":"email-quote-raw","output":"<p><span class=\"wiki-email\">moc.elpmaxe|oof#\"ih\" yas<\/span><\/p>\n\n"}
+{"id":"email-angles-amp","output":"<p><span class=\"wiki-email\">moc.elpmaxe|oof#&gt;c&lt;b&amp;a<\/span><\/p>\n\n"}
+{"id":"freelink-star-url","output":"<p><a target=\"_blank\" href=\"http:\/\/example.com\/x\">label<\/a><\/p>\n\n"}
+{"id":"freelink-new-anchor","output":"<p><a class=\"newpage\" href=\"\/foo#anchor\">foo<\/a><\/p>\n\n"}
+{"id":"interwiki-known-amp","output":"<p><a href=\"https:\/\/www.google.com\/search?q=a&b\" onclick=\"window.open(this.href, '_blank'); return false;\">a&amp;b<\/a><\/p>\n\n"}
+{"id":"interwiki-unknown","output":"<p>[nosuchwiki:A&amp;B]<\/p>\n\n"}
+{"id":"image-title-alt","output":"<img src=\"http:\/\/x\/y.png\" title=\"a&amp;b\" alt=\"A&amp;B\" class=\"image\" \/>"}
+{"id":"image-link-fragment","output":"<a href=\"#frag\"><img src=\"http:\/\/x\/y.png\" alt=\"y.png\" class=\"image\" \/><\/a>"}
+{"id":"image-link-star","output":"<a href=\"http:\/\/z\/w\" target=\"_blank\"><img src=\"http:\/\/x\/y.png\" alt=\"y.png\" class=\"image\" \/><\/a>"}
+{"id":"image-align","output":"<div class=\"image-container aligncenter\"><img src=\"http:\/\/x\/y.png\" alt=\"y.png\" class=\"image\" \/><\/div>"}
+{"id":"embed-glued-event","output":"<p><div class=\"error-block\">Sorry, no match for the embedded content.<\/div><\/p>\n\n"}
+{"id":"embed-js-scheme","output":"<p><\/p>\n\n"}
+{"id":"math-escape","output":"<p><span class=\"math-inline\">$a &amp; b &lt; c &gt; d$<\/span><\/p>\n\n"}
+{"id":"math-freelink-suppress","output":"<p><span class=\"math-inline\">$$<\/span><\/p>\n\n"}
+{"id":"math-interwiki-expand","output":"<p><span class=\"math-inline\">$[[wikipedia:X]]$<\/span><\/p>\n\n"}

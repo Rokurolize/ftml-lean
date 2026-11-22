@@ -1,0 +1,190 @@
+{
+ "summary": {
+  "agree": 11,
+  "differ": 9,
+  "invalid": 0,
+  "missing": 0
+ },
+ "rows": [
+  {
+   "id": "p3-01-module-form",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5-p3-p3-01-module-form",
+   "reference": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>",
+   "live": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>",
+   "live_sha256": "b3e0122b100fe4f72c5544f83517a9ebb084d7e196270f9423657d7ad6758e9b",
+   "source": "[[module nosuchmod]]\n[[form]]\nFORMX\n[[/form]]\n[[/module]]"
+  },
+  {
+   "id": "p3-02-module-rawold",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5-p3-p3-02-module-rawold",
+   "reference": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>",
+   "live": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>",
+   "live_sha256": "b3e0122b100fe4f72c5544f83517a9ebb084d7e196270f9423657d7ad6758e9b",
+   "source": "[[module nosuchmod]]\n``RAWOLDX``\n[[/module]]"
+  },
+  {
+   "id": "p3-03-module-tab",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5-p3-p3-03-module-tab",
+   "reference": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>",
+   "live": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>",
+   "live_sha256": "b3e0122b100fe4f72c5544f83517a9ebb084d7e196270f9423657d7ad6758e9b",
+   "source": "[[module nosuchmod]]\t\nBODYT\n[[/module]]"
+  },
+  {
+   "id": "p3-04-module654-empty",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5-p3-p3-04-module654-empty",
+   "reference": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div><p>[[/module]]</p>",
+   "live": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div> <p>[[/module]]</p>",
+   "live_sha256": "b75c05058fb97e1fcbfb284af8822ffe1dbb5e5bcfee201f035e7d09380dd3d7",
+   "source": "[[module654 nosuchmod]]\n[[/module]]"
+  },
+  {
+   "id": "p3-05-inc-form-module",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5-p3-p3-05-inc-form-module",
+   "reference": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>",
+   "live": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>",
+   "live_sha256": "b3e0122b100fe4f72c5544f83517a9ebb084d7e196270f9423657d7ad6758e9b",
+   "source": "[[module nosuchmod]]\n[[include muse-probe-round5-p3-t-form]]\n[[/module]]"
+  },
+  {
+   "id": "p3-06-inc-code-code",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5-p3-p3-06-inc-code-code",
+   "reference": "<div class=\"code\"> <pre><code>[[code]] CODEX [[/code]]</code></pre></div>",
+   "live": "<div class=\"code\"> <pre><code>[[code]] CODEX [[/code]]</code></pre></div>",
+   "live_sha256": "f9e3ce75c9531196aa05cc93311bf11b2c035c6e130bc56f31113cc1b218c743",
+   "source": "[[code]]\n[[include muse-probe-round5-p3-t-code]]\n[[/code]]"
+  },
+  {
+   "id": "p3-07-inc-text-div",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5-p3-p3-07-inc-text-div",
+   "reference": "<div class=\"DIVX\"><p>SPLICED</p> </div>",
+   "live": "<div class=\"DIVX\"> <p>SPLICED</p> </div>",
+   "live_sha256": "fc346ce808e822625308ec117ddb1ef1a7181a4d15f04fb39aa77916df6fb1b0",
+   "source": "[[div class=\"DIVX\"]]\n[[include muse-probe-round5-p3-t-text]]\n[[/div]]"
+  },
+  {
+   "id": "p3-08-raw-4-3",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5-p3-p3-08-raw-4-3",
+   "reference": "<p>ZQ</p>",
+   "live": "<p>ZQ@@@</p>",
+   "live_sha256": "29fbfbf5229fe9bd5af4a053dac639dbcf2ad8c47ded64f90ee6042dfe2f84dd",
+   "source": "@@@@ZQ@@@"
+  },
+  {
+   "id": "p3-09-raw-3-2",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5-p3-p3-09-raw-3-2",
+   "reference": "<p><span style=\"white-space: pre-wrap;\">@PQ</span></p>",
+   "live": "<p><span style=\"white-space: pre-wrap;\">@PQ</span></p>",
+   "live_sha256": "f283e21e7509210bc76960bf304f4d0418a74a6d577bd2bf47543260c62c93cb",
+   "source": "@@@PQ@@"
+  },
+  {
+   "id": "p3-10-raw-2-4",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5-p3-p3-10-raw-2-4",
+   "reference": "<p><span style=\"white-space: pre-wrap;\">LQ</span>@@</p>",
+   "live": "<p><span style=\"white-space: pre-wrap;\">LQ</span>@@</p>",
+   "live_sha256": "f4e3827e565f15ad577e26d184bd9bcf63224c4da49dc00d38bf1817af908009",
+   "source": "@@LQ@@@@"
+  },
+  {
+   "id": "p3-11-tableadv-quoted",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5-p3-p3-11-tableadv-quoted",
+   "reference": "<table class=\"a]]b\"> <tr> <td>CELLX</td> </tr> </table>",
+   "live": "<table class=\"a]]b\"> <tr> <td>CELLX</td> </tr> </table>",
+   "live_sha256": "c5290fe1672b2a1d6bf79721e6a8e3c9660e09433dc795fe56683395bff48cf4",
+   "source": "[[table class=\"a]]b\"]]\n[[row]]\n[[cell]]\nCELLX\n[[/cell]]\n[[/row]]\n[[/table]]"
+  },
+  {
+   "id": "p3-12-tableadv-empty-colspan",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5-p3-p3-12-tableadv-empty-colspan",
+   "reference": "<table> <tr> <td>CELLX</td> </tr> </table>",
+   "live": "<table> <tr> <td>CELLX</td> </tr> </table>",
+   "live_sha256": "e71ade1a36ca580cde1c249dc85c138ed353c32d33307fb79a05c60332c42ca3",
+   "source": "[[table colspan=\"   \"]]\n[[row]]\n[[cell]]\nCELLX\n[[/cell]]\n[[/row]]\n[[/table]]"
+  },
+  {
+   "id": "p3-13-tableadv-upper-data",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5-p3-p3-13-tableadv-upper-data",
+   "reference": "<table> <tr> <td>CELLX</td> </tr> </table>",
+   "live": "<table data-foo=\"UP\"> <tr> <td>CELLX</td> </tr> </table>",
+   "live_sha256": "9ab15922b3aa5f5873a21f03646467deab6126758dbf4025cf56e95df04d1442",
+   "source": "[[table data-Foo=\"UP\"]]\n[[row]]\n[[cell]]\nCELLX\n[[/cell]]\n[[/row]]\n[[/table]]"
+  },
+  {
+   "id": "p3-14-tableadv-id-space",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5-p3-p3-14-tableadv-id-space",
+   "reference": "<table id=\"u- IDX\"> <tr> <td>CELLX</td> </tr> </table>",
+   "live": "<table id=\"u- IDX\"> <tr> <td>CELLX</td> </tr> </table>",
+   "live_sha256": "dbd016bb37264c266850e660a34c60ad787128cb506f91c7f718e28bfdcae77b",
+   "source": "[[table id=\" IDX\"]]\n[[row]]\n[[cell]]\nCELLX\n[[/cell]]\n[[/row]]\n[[/table]]"
+  },
+  {
+   "id": "p3-15-image-upper-scheme",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5-p3-p3-15-image-upper-scheme",
+   "reference": "<p>[[image IMGX.png link=&quot;HTTP://example.com/x&quot;]]</p>",
+   "live": "<p>[[image IMGX.png link=&quot;HTTP://example.com/x&quot;]]</p>",
+   "live_sha256": "41a20d146796ef471d54beda946fcd2697084f07f7221b3c959447de605de50b",
+   "source": "[[image IMGX.png link=\"HTTP://example.com/x\"]]"
+  },
+  {
+   "id": "p3-16-image-proto-rel",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5-p3-p3-16-image-proto-rel",
+   "reference": "<a href=\"/example.com/x\"><img alt=\"IMGX.png\" class=\"image\" src=\"/local--files//IMGX.png\"></a>",
+   "live": "<a href=\"/example.com/x\"><img alt=\"IMGX.png\" class=\"image\" src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5-p3-p3-16-image-proto-rel/IMGX.png\"></a>",
+   "live_sha256": "510347201108ce6228bb91f6c1431bad146dfa3dbb2e1323da5f6339dbcf3170",
+   "source": "[[image IMGX.png link=\"//example.com/x\"]]"
+  },
+  {
+   "id": "p3-17-gallery-size-target",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5-p3-p3-17-gallery-size-target",
+   "reference": "<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//IMGX.png\" target=\"_blank\"><img alt src=\"/local--resized-images//IMGX.png/thumbnail.jpg\"></a></td></tr></table></div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//IMGY.png\"><img alt src=\"/local--resized-images//IMGY.png/thumbnail.jpg\"></a></td></tr></table></div></div>",
+   "live": "<div class=\"gallery-box\" id=\"gallery-box-226152\"> <div class=\"gallery-item thumbnail\"> <table> <tr> <td><a href=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5-p3-p3-17-gallery-size-target/IMGX.png\" target=\"_blank\"><img alt class=\"gallery-image-size-thumbnail\" src=\"https://sandbox-for-codex.wdfiles.com/local--resized-images/muse-probe-round5-p3-p3-17-gallery-size-target/IMGX.png/thumbnail.jpg\"></a></td> </tr> </table> </div> <div class=\"gallery-item thumbnail\"> <table> <tr> <td><a class=\"with-lb\" href=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5-p3-p3-17-gallery-size-target/IMGY.png\"><img alt class=\"gallery-image-size-thumbnail\" src=\"https://sandbox-for-codex.wdfiles.com/local--resized-images/muse-probe-round5-p3-p3-17-gallery-size-target/IMGY.png/thumbnail.jpg\"></a></td> </tr> </table> </div> </div>",
+   "live_sha256": "fd3dc19d72548757da2dacb85980930ca0f6329195a7afbf1f11823e33b9d638",
+   "source": "[[gallery size=\"SMALL\"]]\n: *IMGX.png\n: IMGY.png\n[[/gallery]]"
+  },
+  {
+   "id": "p3-18-gallery-scheme-zero",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5-p3-p3-18-gallery-scheme-zero",
+   "reference": "<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"://example.com/x\"><img alt src=\"/local--resized-images//IMGX.png/thumbnail.jpg\"></a></td></tr></table></div></div>",
+   "live": "<div class=\"gallery-box\" id=\"gallery-box-548562\"> <div class=\"gallery-item thumbnail\"> <table> <tr> <td><a class=\"with-lb\" href=\"://example.com/x\"><img alt class=\"gallery-image-size-thumbnail\" src=\"https://sandbox-for-codex.wdfiles.com/local--resized-images/muse-probe-round5-p3-p3-18-gallery-scheme-zero/IMGX.png/thumbnail.jpg\"></a></td> </tr> </table> </div> </div>",
+   "live_sha256": "9a5f1a47fd73e9c2aa11c60777f46158ec3ddf1d325d99bb9ba72ef70cd8be56",
+   "source": "[[gallery]]\n: IMGX.png link=\"://example.com/x\"\n[[/gallery]]"
+  },
+  {
+   "id": "p3-19-file-unicode",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5-p3-p3-19-file-unicode",
+   "reference": "<p><a href=\"/local--files/page/%C3%A9%20a.png\">LabelX</a></p>",
+   "live": "<p><a href=\"https://sandbox-for-codex.wdfiles.com/local--files/page/%C3%A9%20a.png\">LabelX</a></p>",
+   "live_sha256": "ccc0d3c6734a385742f12c41e6807fee768a0e5846e5484c4e6ed0c56bf909e3",
+   "source": "[[file page/é a.png|LabelX]]"
+  },
+  {
+   "id": "p3-20-file-amp",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5-p3-p3-20-file-amp",
+   "reference": "<p><a href=\"/local--files/page/f&amp;x.png\">A &amp; B</a></p>",
+   "live": "<p><a href=\"https://sandbox-for-codex.wdfiles.com/local--files/page/f&amp;x.png\">A &amp; B</a></p>",
+   "live_sha256": "695408909e1e4015f192e554f591bd8002020eb8c3a11d38e8449a7b5b5ea3e6",
+   "source": "[[file page/f&x.png|A & B]]"
+  }
+ ]
+}

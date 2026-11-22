@@ -1,0 +1,82 @@
+{
+ "R3-01": {
+  "fullname": "muse-probe-round5-r3-r3-01",
+  "source": "[[footnote]]@@@@ @@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3-02": {
+  "fullname": "muse-probe-round5-r3-r3-02",
+  "source": "[[footnote]]x@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3-03": {
+  "fullname": "muse-probe-round5-r3-r3-03",
+  "source": "[[footnote]] @@@@ [[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3-04": {
+  "fullname": "muse-probe-round5-r3-r3-04",
+  "source": "[[bibliography]]\n: lab : @@@@ @@@@\n[[/bibliography]]",
+  "action": "created"
+ },
+ "R3-05": {
+  "fullname": "muse-probe-round5-r3-r3-05",
+  "source": "[[bibliography]]\n: lab :  @@@@ \n[[/bibliography]]",
+  "action": "created"
+ },
+ "R3-06": {
+  "fullname": "muse-probe-round5-r3-r3-06",
+  "source": "[[bibliography]]\n: lab :\nvalue\n[[/bibliography]]",
+  "action": "created"
+ },
+ "R3-07": {
+  "fullname": "muse-probe-round5-r3-r3-07",
+  "source": "+++++++ too many pluses",
+  "action": "created"
+ },
+ "R3-08": {
+  "fullname": "muse-probe-round5-r3-r3-08",
+  "source": "+*NoToc\n\n+ Anchored",
+  "action": "created"
+ },
+ "R3-09": {
+  "fullname": "muse-probe-round5-r3-r3-09",
+  "source": "[[toc]]\n\n+ One\n\n+*Two\n\n+ Three",
+  "action": "created"
+ },
+ "R3-10": {
+  "fullname": "muse-probe-round5-r3-r3-10",
+  "source": "[[toc]]\n\n+ Héllo üü\n\nalpha",
+  "action": "created"
+ },
+ "R3-11": {
+  "fullname": "muse-probe-round5-r3-r3-11",
+  "source": "[[toc title=\"O'Brien & <x>\"]]\n\n+ T",
+  "action": "created"
+ },
+ "R3-12": {
+  "fullname": "muse-probe-round5-r3-r3-12",
+  "source": "[[# foo@@x@@bar ]]",
+  "action": "created"
+ },
+ "R3-13": {
+  "fullname": "muse-probe-round5-r3-r3-13",
+  "source": "[[# ]]\n\n[[# bad name ]]",
+  "action": "created"
+ },
+ "R3-14": {
+  "fullname": "muse-probe-round5-r3-r3-14",
+  "source": "((bibcite lab))\n[[bibliography]]\n: lab : one\n: lab : two\n[[/bibliography]]\n((bibcite LAB))",
+  "action": "created"
+ },
+ "R3-15": {
+  "fullname": "muse-probe-round5-r3-r3-15",
+  "source": "B[[footnote]]b[[/footnote]] A[[footnote]]a[[/footnote]]\n[[footnoteblock title=\"N\"]]",
+  "action": "created"
+ },
+ "R3-16": {
+  "fullname": "muse-probe-round5-r3-r3-16",
+  "source": "[[footnote]]a[[/footnote]]\n[[footnoteblock title=\"O'Brien\"]]",
+  "action": "created"
+ }
+}
