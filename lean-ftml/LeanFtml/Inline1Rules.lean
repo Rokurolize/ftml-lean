@@ -619,9 +619,15 @@ def mathRepl (tok : TokenEntry) : List Nat :=
   | _ => fallback
 
 /-- REFCORR6 suppression set: the four rules the M1 battery proves
-    suppress the whole formula wherever they occur, at any depth. -/
+    suppress the whole formula wherever they occur, at any depth.
+    REFCORR8 C-R5-P2-4 adds `Date`: live suppresses the whole formula for
+    a Date token (`[[$x [[date 0]] y$]]` renders `$x y$` on the reference
+    but `$$` on live). The recursive source-span expansion below is
+    unchanged, so a Date at any depth still suppresses while the four
+    original rules and every non-suppressing token keep their shape. -/
 def mathSuppressRule (rule : String) : Bool :=
-  rule == "Freelink" || rule == "Raw" || rule == "Newline" || rule == "Image"
+  rule == "Freelink" || rule == "Raw" || rule == "Newline" ||
+  rule == "Image" || rule == "Date"
 
 /-- REFCORR6 C-SUSPECT3-1 recursive expansion. Each placeholder is
     looked up and replaced with its token's authored source text; that
@@ -887,3 +893,13 @@ theorem interwikiDescrMatch_placeholder_label_none :
 theorem interwikiDescrMatch_bracket_label_none :
     interwikiDescrMatch (litBytes "[wikipedia:Page a [b]") [] =
       none := rfl
+
+/-- REFCORR8 C-R5-P2-4: Date joins the whole-formula suppression set;
+    the four REFCORR6 rules still suppress. -/
+theorem mathSuppressRule_date_added :
+    mathSuppressRule "Date" = true ∧ mathSuppressRule "Freelink" = true ∧
+    mathSuppressRule "Raw" = true ∧ mathSuppressRule "Newline" = true ∧
+    mathSuppressRule "Image" = true := by decide
+
+theorem mathSuppressRule_non_suppress_kept :
+    mathSuppressRule "Url" = false ∧ mathSuppressRule "Code" = false := by decide

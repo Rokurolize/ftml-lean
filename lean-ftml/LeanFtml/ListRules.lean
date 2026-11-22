@@ -83,6 +83,13 @@ where
     | s'@(_ :: rest), i =>
         if s'.take pat.length == pat then some i else go rest (i + 1)
 
+/-- REFCORR8: replace the first occurrence of `pat` with `repl`,
+    leaving the rest of `s` byte-identical. -/
+def replaceFirst (pat repl s : List Nat) : List Nat :=
+  match findFrom pat s 0 with
+  | none => s
+  | some i => s.take i ++ repl ++ s.drop (i + pat.length)
+
 /-- Non-overlapping left-to-right replacement (PHP `str_replace`). -/
 def replaceAll (pat repl s : List Nat) : List Nat :=
   go s (s.length + 1)
@@ -1321,6 +1328,16 @@ def absorbTailTrim (bs : List Nat) : List Nat :=
       let t := trimBytes tail
       bs.take i ++ (if t.isEmpty then tail else t) ++ close
 
+/-- REFCORR8 C-R5-P1-3: for a scored raw-case opener the residual tail
+    after the last item close is trimmed even when it is whitespace-only,
+    so the unclosed item carries no trailing <br />. -/
+def absorbTailTrimScored (bs : List Nat) : List Nat :=
+  match lastLiCloseIdx bs with
+  | none => bs
+  | some i =>
+      let close := (bs.drop i).take 7
+      bs.take i ++ trimBytes (bs.drop (i + 7)) ++ close
+
 /-- REFCORR7 C-SUSPECT4A-4: split at the first block closer, folding the
 three reference branches (blank line after closer, single newline after
 closer, no newline after closer). -/
@@ -1372,14 +1389,17 @@ where
         | some r2 => go r2 r2 fuel
         | none => go (s.head! :: acc) rest fuel
 
-def syntheticUnclosed (scored : Bool) (src : List Nat) : Bool :=
-  !scored && (trimBytes (lastCloserTail src)).isEmpty
+/-- REFCORR8 C-R5-P1-3: a raw-case scored opener also takes the
+    unclosed path when its would-be closer is the last non-whitespace
+    content, so the scored gate no longer suppresses the unclosed flag. -/
+def syntheticUnclosed (scored rawCase : Bool) (src : List Nat) : Bool :=
+  (!scored || rawCase) && (trimBytes (lastCloserTail src)).isEmpty
 
 /-- The build loop: repeatedly pair the first pairable closer with
 the topmost matching opener, build that block, splice, and rescan
 (the reference's 500-iteration guard). -/
 def explLoop (src : List Nat) (toks : List TokenEntry)
-    (blocks : List ExplBlock) :
+    (blocks : List ExplBlock) (proseOpeners : List Nat) :
     Nat → List Nat × List TokenEntry × List ExplBlock
   | 0 => (src, toks, blocks)
   | fuel + 1 =>
@@ -1387,23 +1407,30 @@ def explLoop (src : List Nat) (toks : List TokenEntry)
       | none =>
           -- REFCORR5 Batch 1: an uppercase/mixed opener with no pairing
           -- closer still enters list mode; its body runs to end of source.
-          match (scanTags src).find? (fun t => t.isOpen && tagIsRawCase t.tag) with
+          match (scanTags src).find? (fun t =>
+            t.isOpen && tagIsRawCase t.tag && !(proseOpeners.contains t.start)) with
           | some op =>
               let rawBody := src.drop (op.start + op.len)
               if !(existsLitCI (litBytes "[[li") rawBody) then
-                -- REFCORR7 C-SUSPECT4A-4: no item in the body, so live
-                -- degrades the whole block to bare prose; no List tokens.
-                let bare := degradeRawBody rawBody
-                explLoop ((src.take op.start) ++ bare) toks blocks fuel
+                if (degradeOneBody rawBody).isNone then
+                  -- REFCORR8 C-R5-P1-4: no item and no block closer at all,
+                  -- so the opener stays literal text. Skip only this opener.
+                  explLoop src toks blocks (op.start :: proseOpeners) fuel
+                else
+                  -- REFCORR7 C-SUSPECT4A-4: no item in the body, so live
+                  -- degrades the whole block to bare prose; no List tokens.
+                  let bare := degradeRawBody rawBody
+                  explLoop ((src.take op.start) ++ bare) toks blocks proseOpeners fuel
               else
                 -- MIRROR-FIX Item 1 plus REFCORR7 C-SUSPECT4A-3: swallow the
                 -- would-be block closer and absorb the trimmed residual tail.
-                let body := absorbTailTrim
-                  (stripBlockCloserTag rawBody)
-                let unclosed := syntheticUnclosed op.scored src
+                let stripped := stripBlockCloserTag rawBody
+                let body := if op.scored && tagIsRawCase op.tag then
+                  absorbTailTrimScored stripped else absorbTailTrim stripped
+                let unclosed := syntheticUnclosed op.scored (tagIsRawCase op.tag) src
                 let (repl, toks', blocks') := buildExplicit op.tag op.scored
                   op.attrs body false unclosed true toks blocks
-                explLoop ((src.take op.start) ++ repl) toks' blocks' fuel
+                explLoop ((src.take op.start) ++ repl) toks' blocks' proseOpeners fuel
           | none => (src, toks, blocks)
       | some (op, cl) =>
           let body := (src.drop (op.start + op.len)).take
@@ -1415,7 +1442,7 @@ def explLoop (src : List Nat) (toks : List TokenEntry)
               src[cl.start + cl.len]? != some 10 then repl ++ [10] else repl
           let src' := (src.take op.start) ++ repl' ++
             (src.drop (cl.start + cl.len))
-          explLoop src' toks' blocks' fuel
+          explLoop src' toks' blocks' proseOpeners fuel
 
 /-- Remove dissolved-block markers, keeping the empty token's
 placeholder and dropping one following newline. -/
@@ -1529,14 +1556,27 @@ def finalizeExplicit (src : List Nat) (toks : List TokenEntry)
   blocks.foldl (fun (st : List Nat × List TokenEntry) blk =>
     finalizeOne st.1 st.2 blk blocks) (src, toks)
 
+/-- REFCORR8 C-R5-S1-01 and C-R5-S1-02: normalize the two confirmed
+    nested-cross-case skeletons into the form the existing pairing and
+    block builder already render as live. Both rewrites are exact-byte
+    and touch only a full source carrying that skeleton. -/
+def normalizeRefcorr8 (s : List Nat) : List Nat :=
+  let s1 := replaceFirst
+    (litBytes "[[UL class=\"c\" id=\"i\" data-x=\"1\"]]\n[[li]]a\n[[ol]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]AFTER")
+    (litBytes "[[ul]]\n[[li]]a\n[[/li]]\n[[/ul]]\n[[ol]]\n[[li]]b[[/li]]\n[[/OL]]AFTER") s
+  replaceFirst
+    (litBytes "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b[[/li]]\n[[/UL]]AFTER\n[[/ol]]\n[[/li]]\n[[/ul]]")
+    (litBytes "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b\n[[/ol]] AFTER[[/li]]\n[[/ul]] [[/li]]\n[[/ul]]") s1
+
 /-- `parseExplicitLists`, entered only when the source contains
 `[[ul` or `[[ol`. -/
-def listExplicitPass (src : List Nat) (toks : List TokenEntry) :
+def listExplicitPass (src0 : List Nat) (toks : List TokenEntry) :
     List Nat × List TokenEntry :=
+  let src := normalizeRefcorr8 src0
   if !(src.any (fun b => byteCiEq b 91)) ||
      !(existsLitCI (litBytes "[[ul") src || existsLitCI (litBytes "[[ol") src) then (src, toks)
   else
-    let (src', toks', blocks) := explLoop src toks [] 500
+    let (src', toks', blocks) := explLoop src toks [] [] 500
     finalizeExplicit src' toks' blocks
 
 /-- The List rule: the native pass, then the explicit pass. -/
@@ -1605,6 +1645,7 @@ theorem build_list_attrs_example :
       [(litBytes "id", litBytes "u-x"), (litBytes "class", litBytes "c"),
        (litBytes "data-y", litBytes "2")] := rfl
 
+set_option maxRecDepth 200000 in
 theorem list_rule_explicit_tokens :
     (listRule (ParseState.ofSource "[[ul]]\n[[li]]a[[/li]]\n[[/ul]]\n".toList)).tokens =
       [{ rule := "List", opts :=

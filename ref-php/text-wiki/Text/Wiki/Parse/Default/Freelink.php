@@ -192,10 +192,15 @@ class Text_Wiki_Parse_Freelink extends Text_Wiki_Parse {
         // Batch 5). Running the table first corrupts _default: into _: and
         // the prefix no longer strips. REFCORR7: live tolerates leading
         // space/tab before the category, so the anchored match consumes that
-        // run as part of the prefix and drops the matched byte count; a
-        // non-leading prefix and a generic colon prefix still do not match,
-        // and the bare form still strips exactly nine bytes as before.
-        if (preg_match('/^[ \t]*_default:/i', $slugSource, $defPrefix)) {
+        // run as part of the prefix and drops the matched byte count. REFCORR8
+        // widens that run to exactly the five whitespace shapes cached live:
+        // 0x09 tab, 0x0B vertical tab, 0x20 space, UTF-8 C2 A0 (U+00A0) and
+        // UTF-8 E3 80 80 (U+3000). The regex stays byte-oriented (no /u) so a
+        // malformed UTF-8 subject anywhere cannot turn the strip off, and
+        // strlen($defPrefix[0]) still removes exactly the matched byte count;
+        // the zero-whitespace bare form strips nine bytes, a non-leading
+        // `_default:` and a generic colon prefix still do not match.
+        if (preg_match('/^(?:[\x09\x0B\x20]|\xC2\xA0|\xE3\x80\x80)*_default:/i', $slugSource, $defPrefix)) {
             $slugSource = substr($slugSource, strlen($defPrefix[0]));
         }
         if (preg_match('/[^\x00-\x7F]/u', $slugSource)) {

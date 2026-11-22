@@ -147,8 +147,13 @@ class Text_Wiki_Parse_Tableadv extends Text_Wiki_Parse {
         $parsed = $this->getAttrs(trim($text));
         $attrs = array();
         foreach ($parsed as $key => $value) {
-            // Block heads at this level are case sensitive: an upper-case
-            // key is dropped rather than folded.
+            // REFCORR8 C-R5-P3-2: a data-* key is recognised by its exact
+            // lower-case `data-` prefix and folded to lower case as a
+            // whole, matching the List and Div siblings. Other block-head
+            // keys stay case sensitive: an upper-case key is dropped.
+            if (strpos($key, 'data-') === 0) {
+                $key = strtolower($key);
+            }
             if (preg_match('/^[a-z][a-z0-9-]*$/', $key) !== 1) {
                 continue;
             }

@@ -76,6 +76,9 @@ class Text_Wiki_Parse_Footnote extends Text_Wiki_Parse {
 	            return $m[0];
 	        },
 	        $content);
+	    // REFCORR8 (C-R5-R3-1): re-trim the remainder after the empty-Raw
+	    // strip (REFCORR7 trimmed only before the strip).
+	    $content = trim($content);
 
 	    $this->wiki->vars['footnotes'][$id-1] = $content;
         $options = array('id'=>$id);

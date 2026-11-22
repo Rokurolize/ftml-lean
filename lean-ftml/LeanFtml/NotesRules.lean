@@ -192,7 +192,9 @@ where
     as fn-six's `@@` is preserved. -/
 def footnoteProcess (body : List Nat) (doc : DocState)
     (toks : List TokenEntry) : List Nat × List TokenEntry × DocState :=
-  let content := stripEmptyRawPhNotes (trimBytes body) toks
+  -- REFCORR8 (C-R5-R3-1): re-trim the whitespace remainder after the
+  -- empty-Raw strip; REFCORR7 trimmed only before the strip.
+  let content := trimBytes (stripEmptyRawPhNotes (trimBytes body) toks)
   let id := doc.footnotes.length + 1
   (phBytes toks.length,
    toks ++ [{ rule := "Footnote",
@@ -390,7 +392,11 @@ def bibitemProcess (label content : List Nat) (doc : DocState)
     (toks : List TokenEntry) : List Nat × List TokenEntry × DocState :=
   let content' :=
     trimBytes (content.map (fun b => if b == 10 then 32 else b))
-  let visible := stripEmptyRawPhNotes content' toks
+  -- REFCORR8 (C-R5-R3-2): re-trim the visible remainder after the
+  -- empty-Raw strip, and emit it as the body; the stored bibitems state
+  -- (content') is set above and stays byte-identical, so no compared
+  -- field is added and only the existing 'empty' flag value changes.
+  let visible := trimBytes (stripEmptyRawPhNotes content' toks)
   let id := doc.bibitemIds.length + 1
   let doc1 : DocState := { doc with
     bibitems := bibSet doc.bibitems label content',
@@ -404,7 +410,7 @@ def bibitemProcess (label content : List Nat) (doc : DocState)
   let endPh := phBytes t1.length
   let t2 := t1 ++ [{ rule := "Bibitem", opts :=
     [("type".toList, OptVal.str "end".toList)] }]
-  (startPh ++ content' ++ endPh, t2, doc1)
+  (startPh ++ visible ++ endPh, t2, doc1)
 
 /-- The Bibitem rule mirror: the rule defines no `regex` and no
     `parse()`, so its standalone pass does nothing; its process

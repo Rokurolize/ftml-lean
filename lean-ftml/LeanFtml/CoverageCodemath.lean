@@ -79,6 +79,7 @@ inductive CodemathClass where
   /- Mathinline.php expandSource, REFCORR6. -/
   | miPlain | miDepth | miUnknown | miCycle | miSource | miFallback
   | miSuppressFreelink | miSuppressRaw | miSuppressNewline | miSuppressImage
+  | miSuppressDate
   deriving DecidableEq, Repr
 
 /-- The declared class set, in reference rule order and then in the
@@ -88,11 +89,11 @@ def cmAllClasses : List CodemathClass :=
     .mathFatal, .mathTypeAbsent, .mathTypeValid, .mathTypeInvalid,
     .miPlain, .miDepth, .miUnknown, .miCycle, .miSource, .miFallback,
     .miSuppressFreelink, .miSuppressRaw, .miSuppressNewline,
-    .miSuppressImage ]
+    .miSuppressImage, .miSuppressDate ]
 
 theorem cmAllClasses_nodup : cmAllClasses.Nodup := by decide
 
-theorem cmAllClasses_length : cmAllClasses.length = 18 := by decide
+theorem cmAllClasses_length : cmAllClasses.length = 19 := by decide
 
 /-! ## Source shapes -/
 
@@ -123,7 +124,7 @@ inductive MathKind where
     option fallback). -/
 inductive MiPhKind where
   | unknown | cycle | source | fallback
-  | supFree | supRaw | supNl | supImage
+  | supFree | supRaw | supNl | supImage | supDate
   deriving DecidableEq, Repr
 
 /-- Mathinline's outer guard, the no-placeholder body, or the walk. -/
@@ -163,9 +164,10 @@ def miPhClass : MiPhKind → CodemathClass
   | .supRaw => .miSuppressRaw
   | .supNl => .miSuppressNewline
   | .supImage => .miSuppressImage
+  | .supDate => .miSuppressDate
 
 def miIsSuppress : MiPhKind → Bool
-  | .supFree | .supRaw | .supNl | .supImage => true
+  | .supFree | .supRaw | .supNl | .supImage | .supDate => true
   | _ => false
 
 /-- The walk: the first suppress name empties the whole body and is
@@ -255,6 +257,7 @@ def cmWitness : CodemathClass → CodemathShape
   | .miSuppressRaw => .mathinline (.walk [.supRaw])
   | .miSuppressNewline => .mathinline (.walk [.supNl])
   | .miSuppressImage => .mathinline (.walk [.supImage])
+  | .miSuppressDate => .mathinline (.walk [.supDate])
 
 theorem cm_witness_classify (c : CodemathClass) :
     c ∈ cmClassify (cmWitness c) := by
@@ -347,6 +350,7 @@ def miPhOf (present : Bool) (rule : String) (hasSource seen : Bool) : MiPhKind :
   else if rule == "Raw" then .supRaw
   else if rule == "Newline" then .supNl
   else if rule == "Image" then .supImage
+  else if rule == "Date" then .supDate
   else if hasSource then .source
   else .fallback
 
@@ -569,10 +573,13 @@ theorem cm_suppress_newline : mathSuppressRule "Newline" = true := rfl
 theorem cm_suppress_image : mathSuppressRule "Image" = true := rfl
 theorem cm_suppress_url_no : mathSuppressRule "Url" = false := rfl
 
-theorem cm_suppress_four (rule : String) :
+/-- REFCORR8 C-R5-P2-4: restated from `cm_suppress_four` (the REFCORR6
+    four-rule set) because live suppresses the whole formula for a Date
+    token too; the mirror suppression set is now five rules. -/
+theorem cm_suppress_five (rule : String) :
     mathSuppressRule rule = true ↔
       rule = "Freelink" ∨ rule = "Raw" ∨ rule = "Newline" ∨
-      rule = "Image" := by
+      rule = "Image" ∨ rule = "Date" := by
   simp [mathSuppressRule, Bool.or_eq_true, beq_iff_eq, or_assoc]
 
 theorem cm_suppress_before_source (rule : String) (hasSource : Bool)
@@ -583,6 +590,7 @@ theorem cm_suppress_before_source (rule : String) (hasSource : Bool)
     cases h2 : rule == "Raw" <;>
     cases h3 : rule == "Newline" <;>
     cases h4 : rule == "Image" <;>
+    cases h5 : rule == "Date" <;>
     simp_all [miPhOf, miIsSuppress]
 
 theorem cm_mi_absent_unknown (rule : String) (hasSource seen : Bool) :
@@ -612,6 +620,11 @@ theorem cm_mi_raw_suppress :
 
 theorem cm_mi_image_suppress :
     mathResolve (phBytes 0) [{ rule := "Image", opts := [] }] = [] := rfl
+
+/-- REFCORR8 C-R5-P2-4: a Date token suppresses the whole formula, as
+    live renders `[[$x [[date 0]] y$]]` to `$$`. -/
+theorem cm_mi_date_suppress :
+    mathResolve (phBytes 0) [{ rule := "Date", opts := [] }] = [] := rfl
 
 theorem cm_mi_source_url :
     mathResolve (phBytes 0)

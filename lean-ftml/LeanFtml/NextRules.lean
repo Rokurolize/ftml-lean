@@ -907,9 +907,20 @@ def mathProcess (g1 : Option (List Nat)) (g2 : List Nat)
   if mathGuard content then (none, doc1)
   else
     let attrs := getAttrsBytes g2
+    -- REFCORR8 C-R5-P2-3: the lower-case `type` key wins; when it is
+    -- absent but the upper-case spelling `TYPE` is present (as in
+    -- `[[math a TYPE="align"]]`), live's case-sensitive lookup misses it
+    -- and takes the fossil fallback `equation`, serving the equation
+    -- envelope with the counter. A genuinely absent type key still
+    -- defaults to `align` (REFCORR3). The stray positional label `a` and
+    -- the counter increment are untouched, so the token wire shape and
+    -- the REFCORR3 valid/invalid cases are preserved.
     let tyVal : OptVal := match lookupB attrs (litBytes "type") with
       | some v => textVal v
-      | none => OptVal.str "align".toList
+      | none =>
+          match lookupB attrs (litBytes "TYPE") with
+          | some _ => OptVal.str "equation".toList
+          | none => OptVal.str "align".toList
     let entry : TokenEntry := { rule := "Math", opts :=
       [("label".toList, textVal label),
        ("content".toList, textVal content),
@@ -1027,5 +1038,18 @@ theorem mathProcess_keeps_lowercase_type :
     (match (mathProcess none (litBytes "type=\"gather\"") (litBytes "x") {}).1 with
      | some e => omGet e.opts "type".toList
      | none => none) = some (OptVal.str "gather".toList) := rfl
+
+/-- REFCORR8 C-R5-P2-3: an upper-case `TYPE` attribute with no lower-case
+    `type` key yields the fossil `equation` fallback that live serves,
+    while the stray positional label `a` and the counter stay as before. -/
+theorem mathProcess_uppercase_TYPE_defaults_equation :
+    (match (mathProcess none (litBytes "TYPE=\"align\"") (litBytes "x") {}).1 with
+     | some e => omGet e.opts "type".toList
+     | none => none) = some (OptVal.str "equation".toList) := rfl
+
+theorem mathProcess_uppercase_TYPE_keeps_label :
+    (match (mathProcess none (litBytes "TYPE=\"align\"") (litBytes "x") {}).1 with
+     | some e => omGet e.opts "label".toList
+     | none => none) = some (OptVal.str "".toList) := rfl
 
 end LeanFtml

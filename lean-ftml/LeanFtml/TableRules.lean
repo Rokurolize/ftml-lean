@@ -372,9 +372,19 @@ def advKeyOk (k : List Nat) : Bool :=
       (97 ≤ b && b ≤ 122) && rest.all (fun x =>
         (97 ≤ x && x ≤ 122) || (48 ≤ x && x ≤ 57) || x == 45)
 
+/-- REFCORR8 C-R5-P3-2: PHP `buildAttrs` folds a data-* key to lower case
+    before the key grammar and allowlist run. The prefix must already be
+    the exact lower-case `data-`, exactly as in the List and Div siblings;
+    other keys keep their authored case and an upper-case byte still drops
+    them. This definition leaves `advKeyOk` itself untouched, so the
+    CoverageTable key-shape pin is unaffected. -/
+def foldDataKeyAdv (k : List Nat) : List Nat :=
+  if (litBytes "data-").isPrefixOf k then lowerBytes k else k
+
 /-- One parsed attribute pair through Tableadv's `buildAttrs`
     filter for the given owner (`"cell"`, `"row"`, or
-    `"table"`): the key grammar and the safe-attribute test,
+    `"table"`): a data-* key folded to lower case first
+    (REFCORR8 C-R5-P3-2), then the key grammar and the safe-attribute test,
     `title` and `hidden` always dropped, spans dropped off
     cells, an empty raw value dropped, a cell span of exactly
     `0` dropped, the value normalized (`id` through the
@@ -384,7 +394,8 @@ def advKeyOk (k : List Nat) : Bool :=
 def advAttrStep (owner : String)
     (acc : List (List Nat × List Nat)) (kv : List Nat × List Nat) :
     List (List Nat × List Nat) :=
-  let (k, v) := kv
+  let k := foldDataKeyAdv kv.1
+  let v := kv.2
   if !advKeyOk k then acc
   else if !isSafeAttrB k || k == litBytes "title" ||
       k == litBytes "hidden" then acc
@@ -927,6 +938,22 @@ theorem advAttrStep_span_zero_example :
 theorem advAttrStep_data_example :
     advAttrStep "cell" [] (litBytes "data-y", litBytes "2") =
       [(litBytes "data-y", litBytes "2")] := rfl
+
+/-- REFCORR8 C-R5-P3-2: `data-Foo` survives with its key folded to
+    `data-foo`, matching the cached live table head. -/
+theorem adv_data_key_upper_folded :
+    foldDataKeyAdv (litBytes "data-Foo") = litBytes "data-foo" := rfl
+
+theorem adv_attr_step_upper_data_example :
+    advAttrStep "table" [] (litBytes "data-Foo", litBytes "UP") =
+      [(litBytes "data-foo", litBytes "UP")] := rfl
+
+/-- The upper-case prefix and the upper-case non-data keys stay dropped. -/
+theorem adv_attr_step_upper_prefix_data_dropped :
+    advAttrStep "table" [] (litBytes "DATA-foo", litBytes "x") = [] := rfl
+
+theorem adv_attr_step_upper_class_dropped :
+    advAttrStep "table" [] (litBytes "CLASS", litBytes "x") = [] := rfl
 
 /-- REFCORR3 C-R45-2 / C-R45-3: `align` and `aria-*` are not safe
 advanced-table attributes on live. -/

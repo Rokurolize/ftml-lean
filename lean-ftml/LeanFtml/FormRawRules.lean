@@ -333,11 +333,14 @@ def rawScan (prev : Option Nat) (src : List Nat) (toks : List TokenEntry) :
                   let (o, t) := rawScan (some 64) afterClose toks fuel
                   (emit ++ o, t)
                 else if 2 ≤ lead then
-                  -- extra opener '@'s beyond two on each side
-                  -- stay literal around the plain body text
+                  -- extra opener '@'s beyond two stay literal before the
+                  -- plain body. REFCORR8 C-R5-P3-1: a bare three-run closer
+                  -- (trail == 1, i.e. closeRun == 3) after a 4+ opener is
+                  -- literal too, so @@@@ZQ@@@ renders ZQ@@@; every other
+                  -- closer run keeps the established trail-2 shaping.
                   let (o, t) := rawScan (some 64) afterClose toks fuel
                   (List.replicate (lead - 2) 64 ++ body ++
-                    List.replicate (trail - 2) 64 ++ o, t)
+                    List.replicate (if trail == 1 then 3 else trail - 2) 64 ++ o, t)
                 else if 2 ≤ trail then
                   -- a closer run of 4+ is an empty raw followed by
                   -- an opener: the body is claimed and the full

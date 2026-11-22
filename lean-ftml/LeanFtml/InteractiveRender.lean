@@ -1135,13 +1135,15 @@ theorem div_start_class_escaped :
     litBytes "<div class=\"a&quot;b\">" := rfl
 
 /-- REFCORR4 Batch C: a value carrying a placeholder is cleared
-    with its key kept, and the id's bare `u-` shell is cleared too. -/
+    with its key kept. REFCORR8 C-R5-R1-1 narrows this: only the 0xFF
+    placeholder arm clears, so the non-placeholder bare `u-` id shell is
+    emitted verbatim while the placeholder-bearing class still clears. -/
 theorem div_start_placeholder_attrs_cleared :
     renderDiv [("args".toList, OptVal.map
         [("class".toList, OptVal.bytes [97, 0xFF, 48, 0xFF, 99]),
          ("id".toList, OptVal.str "u-".toList)]),
       ("type".toList, OptVal.str "start".toList)] =
-    litBytes "<div class=\"\" id=\"\">" := rfl
+    litBytes "<div class=\"\" id=\"u-\">" := rfl
 
 /-- `Div` `end`. -/
 theorem div_end :

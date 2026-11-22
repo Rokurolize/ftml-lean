@@ -977,17 +977,17 @@ def renderSpan (opts : OptMap) : List Nat :=
     litBytes "</span>"
   else []
 
-/-- Attribute fragment for Div under REFCORR4 Batch C. A value
-    carrying a placeholder byte is cleared with its key kept, as
-    is the bare `u-` shell the parse leaves when an id value was
-    entirely consumed by a placeholder; other values use the
+/-- Attribute fragment for Div under REFCORR4 Batch C as narrowed by
+    REFCORR8 (C-R5-R1-1). A value carrying a placeholder byte is cleared
+    with its key kept; the bare `u-` shell that isolateId leaves for a
+    whitespace-only authored id is not a placeholder carrier on live and
+    is escaped and emitted verbatim (`id="u-"`). Other values use the
     ENT_COMPAT escaper. Stored order is preserved. -/
 def divAttrFragment : List (List Char × OptVal) → List Nat
   | [] => []
   | (k, v) :: rest =>
       let raw := renderOptValBytes v
-      let val := if raw.any (fun b => b == 0xFF) ||
-                    (k == "id".toList && raw == litBytes "u-")
+      let val := if raw.any (fun b => b == 0xFF)
                  then [] else htmlSpecialCharsCompat raw
       [32] ++ k.flatMap utf8Bytes ++ litBytes "=\"" ++ val ++
         litBytes "\"" ++ divAttrFragment rest

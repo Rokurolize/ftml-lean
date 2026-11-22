@@ -148,7 +148,11 @@ class Text_Wiki_Parse_Raw extends Text_Wiki_Parse {
                 // body becomes plain text, with extra @ emitted literally.
                 $out .= str_repeat('@', max(0, $lead - 2));
                 $out .= $body;
-                $out .= str_repeat('@', max(0, $trail - 2));
+                // REFCORR8 C-R5-P3-1: a bare three-run closer after a
+                // 4+ opener and plain body stays literal (the opener run
+                // is already its own empty Raw); @@@@ZQ@@@ surfaces ZQ@@@.
+                // Other closer runs keep the established shaping.
+                $out .= str_repeat('@', $trail === 1 ? 3 : max(0, $trail - 2));
             } elseif ($trail >= 2) {
                 // The closer run is an empty raw plus an opener for whatever
                 // follows; the body is still a raw span, and the extra @ are

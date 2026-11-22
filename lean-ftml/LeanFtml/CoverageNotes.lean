@@ -658,14 +658,15 @@ private theorem glue_suffix {toks t1 result : List TokenEntry}
     · exact hmid e h d
     · exact hex e h d
 
-/- REFCORR7: the emitted Bibitem start token's `empty` flag is now
-   computed from the empty-Raw-stripped content, so the structural
+/- REFCORR7/8: the emitted Bibitem start token's `empty` flag is now
+   computed from the trimmed empty-Raw-stripped content, so the structural
    description needs the same token table that `bibitemProcess` reads. -/
 private def bibiPair (label content : List Nat) (doc : DocState)
     (toks : List TokenEntry) : List TokenEntry :=
   let content' := trimBytes (content.map (fun b => if b == 10 then 32 else b))
+  let visible := trimBytes (stripEmptyRawPhNotes content' toks)
   [bibiStartEntry label (doc.bibitemIds.length + 1)
-     (stripEmptyRawPhNotes content' toks).isEmpty, bibiEndEntry]
+     visible.isEmpty, bibiEndEntry]
 
 private theorem bibitemProcess_mid (label content : List Nat) (doc : DocState)
     (toks : List TokenEntry) :

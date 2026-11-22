@@ -639,8 +639,11 @@ def divArgs (attr : List (List Nat × List Nat)) :
         omSetOpt acc k (some (normalizeValue v))
       else if (litBytes "data-").isPrefixOf k then
         let lk := asciiLower k
-        if (acc.find? (fun kv => kv.1 == lk)).isSome then acc
-        else omSetOpt acc lk (some (normalizeValue v))
+        -- REFCORR8 C-R5-P1-2: case-variant duplicate data-* keys are
+        -- last-wins on live. The lowercased key is unchanged and
+        -- omSetOpt keeps the first occurrence's emit position while
+        -- taking the later authored value, matching PHP's overwrite.
+        omSetOpt acc lk (some (normalizeValue v))
       else acc) []
   (divArgsOrder built).map
     (fun (k, v) => (utf8Decode k, v))
@@ -719,6 +722,28 @@ def divBody (s : List Nat) : Nat → List (List Nat × List Nat)
 
 end
 
+/-- REFCORR8 C-R5-P1-1: the byte keys of admitted Div attributes
+    whose authored value was non-empty, carried as a parallel table
+    rather than a compared token field so the `[rule, options]` wire
+    shape is unchanged. An authored non-empty value that normalizes
+    to empty (a whitespace-only `class=" "`) is still a kept attribute
+    rendered as `""`; only a literally empty authored value is unset.
+    Later authored occurrences overwrite earlier ones, matching the
+    PHP parse's `authoredValue` map. -/
+def divAuthoredNonEmpty (attr : List (List Nat × List Nat)) :
+    List (List Nat) :=
+  attr.foldl (fun acc (k, v) =>
+    let key :=
+      if k == litBytes "class" || k == litBytes "style" ||
+          k == litBytes "role" || k == litBytes "type" then some k
+      else if (litBytes "data-").isPrefixOf k then some (asciiLower k)
+      else none
+    match key with
+    | none => acc
+    | some key =>
+        let acc' := acc.filter (fun x => x != key)
+        if v.isEmpty then acc' else acc' ++ [key]) []
+
 /-- Is an optional byte value empty for Div's purposes
     (a null value, or one whose full trim is empty)? -/
 def optBytesEmpty : Option (List Nat) → Bool
@@ -727,8 +752,10 @@ def optBytesEmpty : Option (List Nat) → Bool
 
 /-- process() for a Div match: the arguments from
     `divArgs`, with arguments whose trimmed value is
-    empty unset. When no argument carries a non-empty
-    trimmed value and the trimmed body is empty, the div
+    empty unset EXCEPT those whose authored value was
+    non-empty (REFCORR8 C-R5-P1-1, kept as an empty
+    rendered attribute). When no argument survives that
+    test and the trimmed body is empty, the div
     is suppressed on live, but the pair is still claimed,
     flagged `vanished` on both tokens, so it still bounds
     the surrounding text segments (REFCORR2 correction
@@ -744,10 +771,12 @@ def divProcess (g1 score : List Nat) (g3 : Option (List Nat))
     List Nat × List TokenEntry :=
   let attr := getAttrsBytes (g3.getD [])
   let args := divArgs attr
-  let valueEmpty := optBytesEmpty
-  let effective := args.any (fun kv => !valueEmpty kv.2)
+  let authored := (divAuthoredNonEmpty attr).map utf8Decode
+  let valueEmpty : List Char × Option (List Nat) → Bool :=
+    fun kv => optBytesEmpty kv.2 && !(kv.1 ∈ authored)
+  let effective := args.any (fun kv => !valueEmpty kv)
   let vanished := !effective && (trimBytes body).isEmpty
-  let kept := args.filter (fun kv => !valueEmpty kv.2)
+  let kept := args.filter (fun kv => !valueEmpty kv)
   let optArgs : OptMap := kept.map
     (fun kv => (kv.1, match kv.2 with
       | some b => textVal b

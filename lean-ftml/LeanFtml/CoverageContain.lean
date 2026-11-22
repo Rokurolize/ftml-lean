@@ -102,7 +102,7 @@ structure DivParseShape where
   unset : Bool
   deriving DecidableEq, Repr
 
-/-- Div render kind. Vanished dominates type. A start is bare, escaped, or clearing, exclusively: clearing means at least one stored value carries a placeholder byte or is the bare `u-` id shell. -/
+/-- Div render kind. Vanished dominates type. A start is bare, escaped, or clearing, exclusively: clearing means at least one stored value carries a placeholder byte (REFCORR8 C-R5-R1-1 removed the bare `u-` id shell arm, which live emits verbatim). -/
 inductive DivRenderKind where
   | vanished | startBare | startEsc | startClear | endTok | other
   deriving DecidableEq, Repr
@@ -536,10 +536,10 @@ def bqRenderOf (opts : OptMap) : BqRender :=
   else if proseTypeIs opts (litBytes "end") then .endTok
   else .other
 
-/-- A Div attribute value takes the clear arm when it carries a placeholder byte, or when an id is the bare `u-` shell. This is the test in `divAttrFragment`. -/
+/-- A Div attribute value takes the clear arm only when it carries a placeholder byte (REFCORR8 C-R5-R1-1). The bare `u-` id shell no longer clears; this is the test in `divAttrFragment`. -/
 def divValueCleared (k : List Char) (v : OptVal) : Bool :=
   let raw := renderOptValBytes v
-  raw.any (fun b => b == 255) || (k == "id".toList && raw == litBytes "u-")
+  raw.any (fun b => b == 255)
 
 /-- The Div render kind, in the reference's order: a truthy `vanished` bool dominates, then `start` (bare, or clearing if any value clears, or escaped), then `end`, then the fallthrough. The mirror treats only `OptVal.bool true` as the flag, which is the value the parse stores. -/
 def divRenderOf (opts : OptMap) : DivRenderKind :=
@@ -731,11 +731,11 @@ theorem cov_div_attr_order :
         ("class".toList, OptVal.bytes [97])])] =
       litBytes "<div id=\"u-b\" class=\"a\">" := rfl
 
-/-- REFCORR4 Batch C: the bare `u-` id shell is cleared and the key is kept. -/
-theorem cov_div_id_shell_cleared :
+/-- REFCORR4 Batch C over-generalised to a whitespace-only authored id; REFCORR8 C-R5-R1-1 flips this pin to the live bytes, where isolateId's bare `u-` shell is emitted verbatim and the key is kept. Captured live html sha256 f1ad87bc749dd882348960ce72a4772667b35d3ca82f7d0177cab58395320736. -/
+theorem cov_div_id_shell_live :
     renderDiv [("type".toList, OptVal.bytes [115, 116, 97, 114, 116]),
       ("args".toList, OptVal.map [("id".toList, OptVal.bytes [117, 45])])] =
-      litBytes "<div id=\"\">" := rfl
+      litBytes "<div id=\"u-\">" := rfl
 
 theorem cov_div_end :
     renderDiv [("type".toList, OptVal.bytes [101, 110, 100])] =

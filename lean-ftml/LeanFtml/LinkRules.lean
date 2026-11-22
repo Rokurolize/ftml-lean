@@ -1001,6 +1001,19 @@ def transliterate (bs : List Nat) : List Nat :=
       | some (_, v) => v.map Char.toNat
       | none => [32])
 
+/-- REFCORR8: the exact byte prefix tolerated before a leading `_default:`
+    category on live: 0x09 tab, 0x0B vertical tab, 0x20 space, the two-byte
+    UTF-8 sequence C2 A0 (U+00A0) and the three-byte E3 80 80 (U+3000).
+    Multi-byte alternatives are consumed only as whole sequences, matching
+    the byte-oriented PHP pattern; no other byte is skipped. -/
+def skipDefaultWsBytes : List Nat → List Nat
+  | 9 :: t => skipDefaultWsBytes t
+  | 11 :: t => skipDefaultWsBytes t
+  | 32 :: t => skipDefaultWsBytes t
+  | 0xC2 :: 0xA0 :: t => skipDefaultWsBytes t
+  | 0xE3 :: 0x80 :: 0x80 :: t => skipDefaultWsBytes t
+  | t => t
+
 /-- process() for a Freelink match, transcribed step for step
     from the corrected rule file: the literal returns (the match
     is replaced by itself and claims nothing, but is still
@@ -1060,11 +1073,13 @@ def freelinkProcess (full raw labelRaw : List Nat)
       -- REFCORR5 Batch 5: strip _default: before transliteration so the
       -- ASCII prefix is not corrupted into _: by the table fallback.
       -- REFCORR7: live tolerates leading space/tab before the category, so
-      -- skip that run before the anchored case-insensitive strip. A target
+      -- skip that run before the anchored case-insensitive strip. REFCORR8
+      -- widens the skipped run to exactly the live-cached whitespace class
+      -- (09, 0B, 20, C2 A0, E3 80 80) via skipDefaultWsBytes; the anchored
+      -- strip, option map and returned token shape are unchanged. A target
       -- with no leading whitespace takes the unchanged nine-byte bare path,
       -- and a non-matching prefix keeps raw1 exactly as before.
-      let wsLen := (raw1.takeWhile (fun b => b == 32 || b == 9)).length
-      let afterWs := raw1.drop wsLen
+      let afterWs := skipDefaultWsBytes raw1
       let stripped := match matchLitCI (litBytes "_default:") afterWs with
         | some rest => rest
         | none => raw1

@@ -84,7 +84,17 @@ class Text_Wiki_Parse_Math extends Text_Wiki_Parse {
 	   	// value's case, so the raw value is kept here for the renderer;
 	   	// the equation counter above has already advanced for every block,
 	   	// including rejected ones, as live's ids 3/4 show.
-	   	$type = array_key_exists('type', $args) ? $args['type'] : 'align';
+	   	// REFCORR8 C-R5-P2-3: a stray positional label (the `a` in
+	   	// `[[math a TYPE="align"]]`) is harmless, but an attribute whose
+	   	// NAME is the upper-case spelling `TYPE` is not the lower-case
+	   	// `type` key. Live's case-sensitive lookup misses it and takes the
+	   	// fossil fallback `equation` (live serves
+	   	// \begin{equation} x \end{equation} with the counter), while the
+	   	// REFCORR3 absent-type default `align` stays in force when no
+	   	// type-like key is present. The counter and the valid/invalid value
+	   	// handling are untouched.
+	   	$type = array_key_exists('type', $args) ? $args['type']
+	   	      : (array_key_exists('TYPE', $args) ? 'equation' : 'align');
     	
         $options = array('label'=>$label, 'content'=>$content, 'id'=>$id, 'type' => $type);
         self::$equationsArray[$label] = $id;
