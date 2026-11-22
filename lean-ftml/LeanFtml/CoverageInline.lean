@@ -650,15 +650,15 @@ theorem interwiki_templates_all_have_percent_s :
     interwikiSites.all (fun kv => (findSub [37, 115] kv.2).isSome = true) := by
   decide
 
-/-- Email's current render is the raw reversed-and-joined string: no
-    escaping modifier exists yet. The raw `&` below is what REFCORR5 Batch 3
-    (C-SUSPECT-EMAIL-1/2, ENT_NOQUOTES | ENT_SUBSTITUTE) will change; the
-    branch is classified as it stands and the queue item is named in the
-    class record. -/
+/-- REFCORR6 infrastructure repair: REFCORR5 Batch 3 landed the
+    ENT_NOQUOTES | ENT_SUBSTITUTE escape in renderEmail but left this pin
+    asserting the pre-batch raw `&`, so the library no longer built. The
+    theorem keeps its name and input and now states the adopted escaped
+    bytes; no behavior is changed by this edit. -/
 theorem email_current_render_has_no_escaping :
     renderEmail [("email".toList, OptVal.bytes [97, 38, 98, 64, 99]),
       ("text".toList, OptVal.bytes [120])] =
-      litBytes "<span class=\"wiki-email\">c|b&a#x</span>" := rfl
+      litBytes "<span class=\"wiki-email\">c|b&amp;a#x</span>" := rfl
 
 /-! ## Mirror correspondence (closed computations, one per decisive branch)
 

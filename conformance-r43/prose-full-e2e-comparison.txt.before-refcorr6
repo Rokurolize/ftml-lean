@@ -1,0 +1,6 @@
+TOTAL 740
+PASS 735
+EXCLUDED 0
+FAIL 5
+FATAL-AGREE 0
+FAILURES ["ga-24", "x22-coll-in-tab", "x23-div-in-tab", "x25-tab-in-coll-in-div", "x29-footnote-in-tab"]
