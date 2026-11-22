@@ -18,6 +18,8 @@
   items are omitted here.
 -/
 
+/- SPEC-REFRESH-A: re-elaborated against the post-REFCORR6 canonical mirror; thirteen landed-correction divergences flipped to confirmations, two over-expensive proof scripts were repaired byte-for-byte, and the x09 confirmation was restated to the corrected empty-Raw mechanism. Every theorem is classified in REPORT-SPEC-REFRESH-A.md. -/
+
 import LeanFtml.TokenState
 import LeanFtml.Pipeline
 import LeanFtml.RenderCore
@@ -219,9 +221,10 @@ theorem confirmed_x03_x04_x05_email_overclaim :
     `<dl>\n<dd>def</dd>\n</dl>`), agreeing with `termRendersEmpty` stripping
     placeholder tokens when the raw token is empty. (`Raw` vs empty token
     existence itself is tested in `diverges_x01_raw_empty_emits_token`.) -/
+/- SPEC-REFRESH-A RESTATED-AS-PIN (REFCORR3 C-SUSPECT-LISTTABLE-1 made termRendersEmpty token-aware, REFCORR5 Batch 6 moved empty-Raw transparency into stripEmptyRawPh): the live rule still holds under the corrected mechanism, re-tested there; the original first conjunct no longer types against the new signature. -/
 theorem confirmed_x09_deflist_raw_empty_dt_omitted :
-    termRendersEmpty (phBytes 0) = true ∧
-    let st := deflistRule (rawRule (ParseState.ofSource "\n: @@@@ : def\n".toList))
+    let st0 := rawRule (ParseState.ofSource "\n: @@@@ : def\n".toList)
+    let st := deflistRule (applyByteRule st0 (fun bs toks => (stripEmptyRawPh bs toks, toks)))
     countTokType "Deflist" "list_start" st.tokens = 1 ∧
       countTokType "Deflist" "term_start" st.tokens = 0 := by
   decide
@@ -279,17 +282,10 @@ def LiveSpec_postStripToc (fn : List Nat → List Nat) : Prop :=
   let inp := litBytes "<p>a " ++ uu ++ litBytes "<strong>bold</strong>" ++ uu ++ litBytes " b</p>"
   fn inp = inp
 
-theorem diverges_p02_postStripToc : ¬ LiveSpec_postStripToc postStripToc := by
-  intro h
-  dsimp [LiveSpec_postStripToc] at h
-  have hfalse :
-      postStripToc (litBytes "<p>a " ++ [0xC3, 0xBC, 0xC3, 0xBC] ++
-        litBytes "<strong>bold</strong>" ++ [0xC3, 0xBC, 0xC3, 0xBC] ++ litBytes " b</p>") =
-      litBytes "<p>a bold b</p>" := by
-    dsimp [postStripToc]
-    decide
-  rw [hfalse] at h
-  exact absurd h (by decide)
+/- SPEC-REFRESH-A FLIP (REFCORR4 C-SUSPECT-XRULE-4, NUL Toc sentinel; formerly diverges_p02_postStripToc). -/
+theorem confirmed_p02_postStripToc : LiveSpec_postStripToc postStripToc := by
+  dsimp [LiveSpec_postStripToc]
+  decide
 
 /-- Live probes `muse-probe-agy-suspect-p03-freelink-cafe`,
     `muse-probe-agy-suspect-p04-freelink-polish`, and
@@ -302,13 +298,12 @@ def LiveSpec_freelink_transliterate (fn : List Nat → List Nat) : Prop :=
     toUnixName (fn [0xC5, 0x81, 0xC3, 0xB3, 100, 0xC5, 0xBA]) = litBytes "lodz" ∧
     toUnixName (fn [99, 97, 102, 0xC3, 0xA9, 49, 50, 51]) = litBytes "cafe123"
 
+/- SPEC-REFRESH-A FLIP (REFCORR5 Batch 5, Freelink ASCII pass-through; formerly diverges_p03_p04_f03_freelink_transliterate). -/
 set_option maxRecDepth 8192 in
-theorem diverges_p03_p04_f03_freelink_transliterate :
-    ¬ LiveSpec_freelink_transliterate transliterate := by
-  intro ⟨h1, _, _⟩
-  have hbad : toUnixName (transliterate [99, 97, 102, 0xC3, 0xA9]) = litBytes "e" := rfl
-  rw [hbad] at h1
-  exact absurd h1 (by decide)
+theorem confirmed_p03_p04_f03_freelink_transliterate :
+    LiveSpec_freelink_transliterate transliterate := by
+  dsimp [LiveSpec_freelink_transliterate]
+  decide
 
 /-- Live probe `muse-probe-agy-suspect-p06-deflist-raw-term`:
     `: @@term@@ : definition` has non-empty rendered content (`<span>term</span>`)
@@ -320,15 +315,11 @@ def LiveSpec_deflist_raw_term (fn : ParseState → ParseState) : Prop :=
   countTokType "Deflist" "term_start" st.tokens = 1 ∧
     countTokType "Deflist" "term_end" st.tokens = 1
 
-theorem diverges_p06_deflist_raw_term :
-    ¬ LiveSpec_deflist_raw_term (fun st => deflistRule (rawRule st)) := by
-  intro ⟨hstart, _⟩
-  have hbad :
-      countTokType "Deflist" "term_start"
-        (deflistRule (rawRule (ParseState.ofSource "\n: @@term@@ : definition\n".toList))).tokens = 0 := by
-    decide
-  rw [hbad] at hstart
-  exact absurd hstart (by decide)
+/- SPEC-REFRESH-A FLIP (REFCORR3 C-SUSPECT-LISTTABLE-1, Comment-only term stripping; formerly diverges_p06_deflist_raw_term). -/
+theorem confirmed_p06_deflist_raw_term :
+    LiveSpec_deflist_raw_term (fun st => deflistRule (rawRule st)) := by
+  dsimp [LiveSpec_deflist_raw_term]
+  decide
 
 /-- Live probe `muse-probe-agy-suspect-p08-strong-quad-follow`:
     on `**** x **y**`, live matches `****` as the empty strong pair (before
@@ -365,27 +356,24 @@ def LiveSpec_colortext_parse_validates (colorFn : ParseState → ParseState) : P
   byteForm (tightenRule (colorFn (ParseState.ofSource "x##a!b| hello ##y".toList))).work =
     litBytes "x##a!b| hello ##y"
 
-theorem diverges_p09_p10_x06_colortext_parse :
-    ¬ LiveSpec_colortext_parse_validates colortextRule := by
-  intro ⟨h09, _, _, _⟩
-  have hbad :
-      (colortextRule (ParseState.ofSource "##<i>|hello##".toList)).tokens.isEmpty = false := by
-    decide
-  rw [hbad] at h09
-  exact absurd h09 (by decide)
+/- SPEC-REFRESH-A FLIP (REFCORR5 Batch 2, Colortext parse-time validation; formerly diverges_p09_p10_x06_colortext_parse). -/
+theorem confirmed_p09_p10_x06_colortext_parse :
+    LiveSpec_colortext_parse_validates colortextRule := by
+  dsimp [LiveSpec_colortext_parse_validates]
+  decide
 
 /-- Direct cross-rule `Colortext` × `Tighten` (`p10`) and `Colortext` × `Raw` (`x06`)
     mismatch witnesses. -/
-theorem diverges_p10_tighten_hoist_witness :
+/- SPEC-REFRESH-A FLIP (REFCORR5 Batch 2, invalid Colortext escapes before Tighten; formerly diverges_p10_tighten_hoist_witness). -/
+theorem confirmed_p10_tighten_no_hoist :
     byteForm (tightenRule (colortextRule (ParseState.ofSource "x##a!b| hello ##y".toList))).work =
-      litBytes "x " ++ phBytes 0 ++ litBytes "hello" ++ phBytes 1 ++ litBytes " y" := by
+      litBytes "x##a!b| hello ##y" := by
   decide
 
-theorem diverges_x06_color_raw_leaks_placeholder :
-    let st := colortextRule (rawRule (ParseState.ofSource "##@@red@@|hello##".toList))
-    byteForm st.work = phBytes 1 ++ litBytes "hello" ++ phBytes 2 ∧
-      ∃ tok ∈ st.tokens, tok.rule = "Colortext" ∧
-        getOptStr tok.opts "color" = some (phBytes 0) := by
+/- SPEC-REFRESH-A FLIP (REFCORR5 Batch 2, Raw placeholder rejected by the color spec; formerly diverges_x06_color_raw_leaks_placeholder). -/
+theorem confirmed_x06_color_raw_no_leak :
+    countTokRule "Colortext"
+      (colortextRule (rawRule (ParseState.ofSource "##@@red@@|hello##".toList))).tokens = 0 := by
   decide
 
 /-- Live probe `muse-probe-agy-suspect-p12-module654-upper-empty`:
@@ -416,23 +404,10 @@ def LiveSpec_span_id_no_double_u (fn : ParseState → ParseState) : Prop :=
   ∃ tok ∈ st.tokens, tok.rule = "Span" ∧
     (getOptMap tok.opts "args").bind (fun m => getOptStr m "id") = some (litBytes "u-foo")
 
-theorem diverges_p14_span_double_u_id : ¬ LiveSpec_span_id_no_double_u spanRule := by
-  intro ⟨tok, hmem, hrule, hid⟩
-  have hcheck :
-      (spanRule (ParseState.ofSource "[[span id=\"u-foo\"]]hi[[/span]]".toList)).tokens =
-        [{ rule := "Span",
-           opts := [("args".toList, OptVal.map [("id".toList, OptVal.str "u-u-foo".toList)]),
-                    ("type".toList, OptVal.str "start".toList)] },
-         { rule := "Span",
-           opts := [("type".toList, OptVal.str "end".toList)] }] := by
-    dsimp [spanRule]
-    rfl
-  rw [hcheck] at hmem
-  rcases List.mem_cons.mp hmem with rfl | hmem2
-  · simp [getOptMap, getOptStr, omGet, litBytes, utf8Bytes] at hid
-  · rcases List.mem_cons.mp hmem2 with rfl | hmem3
-    · simp [getOptMap, omGet] at hid
-    · cases hmem3
+/- SPEC-REFRESH-A FLIP (REFCORR5 Batch 8, Span id u- guard; formerly diverges_p14_span_double_u_id). -/
+theorem confirmed_p14_span_double_u_id : LiveSpec_span_id_no_double_u spanRule := by
+  dsimp [LiveSpec_span_id_no_double_u]
+  decide
 
 /-- Live probes `muse-probe-agy-suspect-p16-interwiki-unknown-html` and
     `muse-probe-agy-suspect-f10-interwiki-unknown-apos`:
@@ -451,7 +426,15 @@ def LiveSpec_interwiki_unknown_escapes (fn : OptMap → List Nat) : Prop :=
 
 theorem conforms_p16_f10_interwiki_unknown :
     LiveSpec_interwiki_unknown_escapes renderInterwiki := by
-  constructor <;> decide
+  constructor
+  · unfold renderInterwiki
+    dsimp
+    rw [htmlSpecialCharsCompat_ascii _ (by decide)]
+    rfl
+  · unfold renderInterwiki
+    dsimp
+    rw [htmlSpecialCharsCompat_ascii _ (by decide)]
+    rfl
 
 /-- Live probes `muse-probe-agy-suspect-p17-url-star-hash` and
     `muse-probe-agy-suspect-x10-url-star-mailto`:
@@ -469,21 +452,10 @@ def LiveSpec_url_star_keeps_target (fn : OptMap → List Nat) : Prop :=
       ("target".toList, OptVal.str "_blank".toList)] =
     litBytes "<a href=\"mailto:a@b.com\" target=\"_blank\">mail</a>"
 
-theorem diverges_p17_x10_url_star_target : ¬ LiveSpec_url_star_keeps_target renderUrl := by
-  intro ⟨h1, _⟩
-  have hbad :
-      renderUrl [("type".toList, OptVal.str "descr".toList),
-        ("href".toList, OptVal.str "#foo".toList),
-        ("text".toList, OptVal.str "named".toList),
-        ("target".toList, OptVal.str "_blank".toList)] =
-      litBytes "<a href=\"#foo\">named</a>" := by
-    unfold renderUrl
-    dsimp
-    rw [htmlSpecialCharsCompat_ascii _ (by decide),
-        htmlSpecialCharsCompat_ascii _ (by decide)]
-    decide
-  rw [hbad] at h1
-  exact absurd h1 (by decide)
+/- SPEC-REFRESH-A FLIP (REFCORR3 C-SUSPECT-INLINE-C1, Url starred-target suppression deleted; formerly diverges_p17_x10_url_star_target). -/
+theorem confirmed_p17_x10_url_star_target : LiveSpec_url_star_keeps_target renderUrl := by
+  dsimp [LiveSpec_url_star_keeps_target]
+  decide
 
 /-- Live probes `muse-probe-agy-suspect-p18-email-html`,
     `muse-probe-agy-suspect-p19-email-utf8`,
@@ -525,13 +497,11 @@ def LiveSpec_raw_triple_open_literal (fn : ParseState → ParseState) : Prop :=
   let st := fn (ParseState.ofSource "A @@@hello B".toList)
   st.tokens.isEmpty = true ∧ byteForm st.work = litBytes "A @@@hello B"
 
-theorem diverges_p27_raw_triple_open_literal : ¬ LiveSpec_raw_triple_open_literal rawRule := by
-  intro ⟨_, hw⟩
-  have hbad : byteForm (rawRule (ParseState.ofSource "A @@@hello B".toList)).work =
-      litBytes "A hello B" := by
-    decide
-  rw [hbad] at hw
-  exact absurd hw (by decide)
+/- SPEC-REFRESH-A FLIP (REFCORR3 C-SUSPECT-RAWHEAD-1TO4, bare three-@ run kept whole; formerly diverges_p27_raw_triple_open_literal). -/
+theorem confirmed_p27_raw_triple_open_literal :
+    LiveSpec_raw_triple_open_literal rawRule := by
+  dsimp [LiveSpec_raw_triple_open_literal]
+  decide
 
 /-- Live probes `muse-probe-agy-suspect-x01-raw-empty-interwiki`,
     `muse-probe-agy-suspect-x02-raw-in-date`, and
@@ -546,12 +516,11 @@ def LiveSpec_raw_empty_emits_token (rawFn : ParseState → ParseState) : Prop :=
     byteForm stRaw.work = litBytes "a" ++ phBytes 0 ++ litBytes "b" ∧
     countTokRule "Interwiki" stIw.tokens = 0
 
-theorem diverges_x01_raw_empty_emits_token : ¬ LiveSpec_raw_empty_emits_token rawRule := by
-  intro ⟨hc, _, _⟩
-  have hbad : countTokRule "Raw" (rawRule (ParseState.ofSource "a@@@@b".toList)).tokens = 0 := by
-    decide
-  rw [hbad] at hc
-  exact absurd hc (by decide)
+/- SPEC-REFRESH-A FLIP (REFCORR5 Batch 6, empty-Raw token for a four-@ run; formerly diverges_x01_raw_empty_emits_token). -/
+theorem confirmed_x01_raw_empty_emits_token :
+    LiveSpec_raw_empty_emits_token rawRule := by
+  dsimp [LiveSpec_raw_empty_emits_token]
+  decide
 
 /-- Live probes `muse-probe-agy-suspect-p22-date-at-forge` and
     `muse-probe-agy-suspect-x02-raw-in-date`:
@@ -563,12 +532,11 @@ def LiveSpec_date_encodeFormat_literal_at (fn : List Nat → List Nat) : Prop :=
   fn ([0xFF] ++ litBytes "1" ++ [0xFF] ++ litBytes "@@123") =
     litBytes "%FF1%FF%40%40123"
 
-theorem diverges_p22_x02_date_encodeFormat :
-    ¬ LiveSpec_date_encodeFormat_literal_at encodeDateFormat := by
-  intro ⟨h1, _⟩
-  have hbad : encodeDateFormat (litBytes "@@123@@") = litBytes "%FF123%FF" := rfl
-  rw [hbad] at h1
-  exact absurd h1 (by decide)
+/- SPEC-REFRESH-A FLIP (REFCORR5 Batch 4, fabricated %FF encodeFormat branch removed; formerly diverges_p22_x02_date_encodeFormat). -/
+theorem confirmed_p22_x02_date_encodeFormat :
+    LiveSpec_date_encodeFormat_literal_at encodeDateFormat := by
+  dsimp [LiveSpec_date_encodeFormat_literal_at]
+  decide
 
 /-- Live probes `muse-probe-agy-suspect-p23-div-attr-unesc` and
     `muse-probe-agy-suspect-f09-div-attr-escapes`:
@@ -583,7 +551,15 @@ def LiveSpec_div_attr_escapes (fn : OptMap → List Nat) : Prop :=
     litBytes "<div data-x=\"a&amp;b&lt;c&gt;d'e&quot;f\">"
 
 theorem conforms_p23_f09_div_attr_escapes : LiveSpec_div_attr_escapes renderDiv := by
-  constructor <;> decide
+  constructor
+  · unfold renderDiv divAttrFragment attrPairs intTypeIs omGet renderOptValBytes
+    simp
+    rw [htmlSpecialCharsCompat_ascii _ (by decide)]
+    rfl
+  · unfold renderDiv divAttrFragment attrPairs intTypeIs omGet renderOptValBytes
+    simp
+    rw [htmlSpecialCharsCompat_ascii _ (by decide)]
+    rfl
 
 /-- REFCORR4 Batch C discharges the render side of
     `LiveSpec_div_raw_attr_cleared`: the parse still carries the
@@ -646,15 +622,11 @@ def LiveSpec_size_outer_with_invalid_inner (fn : ParseState → ParseState) : Pr
     byteForm st.work =
       phBytes 0 ++ litBytes "outer[[size bad]]inner[[/size]]tail" ++ phBytes 1
 
-theorem diverges_p26_size_invalid_inner :
-    ¬ LiveSpec_size_outer_with_invalid_inner sizeRule := by
-  intro ⟨hc, _, _⟩
-  have hbad :
-      countTokType "Size" "start"
-        (sizeRule (ParseState.ofSource "[[size large]]outer[[size bad]]inner[[/size]]tail[[/size]]".toList)).tokens = 0 := by
-    decide
-  rw [hbad] at hc
-  exact absurd hc (by decide)
+/- SPEC-REFRESH-A FLIP (REFCORR5 Batch 8, recursive Size body pairing; formerly diverges_p26_size_invalid_inner). -/
+theorem confirmed_p26_size_invalid_inner :
+    LiveSpec_size_outer_with_invalid_inner sizeRule := by
+  dsimp [LiveSpec_size_outer_with_invalid_inner]
+  decide
 
 /-- Live probes `muse-probe-agy-suspect-p30-listblocks-upper`,
     `muse-probe-agy-suspect-f04-ul-upper-open`,
@@ -680,13 +652,9 @@ def LiveSpec_listblocks_case (fn : ParseState → ParseState) : Prop :=
   (0 < countTokRule "List"
     (fn (ParseState.ofSource "[[UL]]\n[[LI]]Case[[/LI]]\n[[/UL]]".toList)).tokens)
 
-theorem diverges_p30_f05_b3_listblocks_case : ¬ LiveSpec_listblocks_case listRule := by
-  intro ⟨h1, _, _, _⟩
-  have hbad :
-      countTokType "List" "explicit_list_start"
-        (listRule (ParseState.ofSource "[[ul]]\n[[li]]Case[[/LI]]\n[[/UL]]".toList)).tokens = 0 := by
-    decide
-  rw [hbad] at h1
-  exact absurd h1 (by decide)
+/- SPEC-REFRESH-A FLIP (REFCORR5 Batch 1, case-insensitive list blocks; formerly diverges_p30_f05_b3_listblocks_case). -/
+theorem confirmed_p30_f05_b3_listblocks_case : LiveSpec_listblocks_case listRule := by
+  dsimp [LiveSpec_listblocks_case]
+  decide
 
 end LeanFtml.SuspectSpec
