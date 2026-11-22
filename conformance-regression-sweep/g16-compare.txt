@@ -1,0 +1,16 @@
+cases: 271453
+got mismatches: 0
+expected mismatches: 0
+model got != corrected: 0
+rust difference classes:
+  267732 agree
+  3239 right-angle:text-differs: >- »+
+  342 text-differs:  -
+  139 right-angle:text-differs:  -
+  1 right-angle:text-differs:  - >- »+
+known finding classes vs observed:
+  agree: known=0 observed=267732
+  right-angle:text-differs:  -: known=139 observed=139
+  right-angle:text-differs:  - >- »+: known=1 observed=1
+  right-angle:text-differs: >- »+: known=3239 observed=3239
+  text-differs:  -: known=342 observed=342

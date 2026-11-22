@@ -1,0 +1,7 @@
+# R3.15 middle parse slice — regression sweep summary
+
+Baseline: 276/276 cases match with 0 fatal agreements and 0 fatal mismatches, the recorded adoption state in REPORT-CAPSTONE-FIX.md step 6 and conformance-r315/comparison-middle-refval.txt.
+
+Method: the driver lean-ftml-conformance-r315 was rebuilt by name through the serial queue wrapper (logs/build-rest.log, exit 0), then run through the wrapper over the retained 276-case corpus conformance-r315/middle-all-cases.jsonl into the uniquely named scratch conformance-regression-sweep/r315-lean-fresh.jsonl (276 records, exit 0, logs/r315-run.err). Comparison used the stage's conformance-r315/compare.py with EXPECTED=conformance-r315/restricted-middle-states.jsonl (frozen restricted PHP states) and the case restriction; output conformance-regression-sweep/r315-compare.txt.
+
+New tally: 275/276 cases match, 0 parse-fatal agreements, 0 fatal mismatches. Moved case: smoke-math only, Math token type equation in the frozen oracle versus align in the fresh mirror. Explanation: REFCORR3 batch C-SUSPECT-SERVING-1 (Math type), REPORT-REFCORR3.md sections 7 and 33 and conformance-refphp/next/math/CORRECTION-CSUSPECT-SERVING-1.md, which defaults an absent type to align in the corrected reference and in NextRules.lean's mathProcess (theorem mathProcess_absent_type_defaults_align); REPORT-REFCORR3.md:33 names prose/smoke-math as this correction's state movement. The frozen restricted oracle predates the correction. EXPLAINED, not a regression.

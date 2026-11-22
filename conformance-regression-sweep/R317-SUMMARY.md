@@ -1,0 +1,7 @@
+# R3.17 final parse slice — regression sweep summary
+
+Baseline: 364/365 cases match with a34 the sole failure, 0 parse-fatal agreements and 0 fatal mismatches, the recorded adoption state in REPORT-CAPSTONE-FIX.md step 6 and conformance-r317/comparison-final.txt.
+
+Method: the driver lean-ftml-conformance-r317 was rebuilt by name through the serial queue wrapper (logs/build-rest.log, exit 0), then run through the wrapper over the retained 365-case corpus conformance-r317/final-all-cases.jsonl into the uniquely named scratch conformance-regression-sweep/r317-lean-fresh.jsonl (365 records, exit 0, logs/r317-run.err). Comparison used the stage's conformance-r317/compare.py with EXPECTED=conformance-r317/restricted-final-states.jsonl (frozen restricted PHP states) and the case restriction; output conformance-regression-sweep/r317-compare.txt.
+
+New tally: 363/365 cases match, 0 parse-fatal agreements, 0 fatal mismatches. Moved cases: a34 (standing) and smoke-math (new relative to the frozen oracle). a34 is unchanged from the recorded baseline: the Anchor href carries the batch-position token digits 803 in the frozen record versus the per-document digits 0 in the driver, the process-global addToken counter artifact documented in REPORT-R317.md:35, REPORT-CAPSTONE-FIX.md Gate 2 and conformance-r317/comparison-a34-fresh.txt (per-document agreement demonstrated). smoke-math moved for the REFCORR3 C-SUSPECT-SERVING-1 Math-type reason (frozen equation versus corrected align), as in the other R3 slices. Both are EXPLAINED; no new divergence appeared.
