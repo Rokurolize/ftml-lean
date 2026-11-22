@@ -1,0 +1,478 @@
+{
+ "seed": 7,
+ "cases": 480,
+ "sentinel_width_fails": 18,
+ "sentinel_behavior_pass": 0,
+ "sentinel_behavior_cases": 0,
+ "tally": {
+  "hdRStart": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdRId": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdROnclick": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdRNotoc": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdREnd": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdREndMinus": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdREndPlus": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdRContent": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdRContentEnd": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdRFall": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdRScript": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdRHidden": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocRStart": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocRTable": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocRFLeft": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocRFRight": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocROther": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocRTitleDefault": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocRTitleAuthored": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocREnd": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocREndTable": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocREndBare": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocRItem": {
+   "cases": 6,
+   "fail": 6,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocRItemEnd": {
+   "cases": 6,
+   "fail": 6,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocSentinel": {
+   "cases": 12,
+   "fail": 6,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocRFall": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anRNamed": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anRStartGiven": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anRStartDefault": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anREnd": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anRInvalid": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anRLiteral": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anRFallName": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdL1": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdL2": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdL3": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdL4": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdL5": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdL6": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdToc": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdNotoc": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "hdMiss": {
+   "cases": 12,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocMiss": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocPEmpty": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocPFLeft": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocPFRight": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocKeep": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocSkip": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anPlaceholder": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anBlank": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anValid": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anLiteral": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anInvalid": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anPlain": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anNested": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anPara": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anScored": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anLead": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anTrail": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anNestedClose": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anJoinStrip": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anHrefAbsent": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anHrefVerb": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anHrefDelim": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anHrefSlug": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anStarTarget": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anIdDrop": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anIdBare": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anIdKept": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anIdSpace": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anIdPrefix": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anFixedDrop": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anFixedDelim": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anFixedKeep": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anDataDelim": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anDataKeep": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "anOtherDrop": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  },
+  "tocPNull": {
+   "cases": 6,
+   "fail": 0,
+   "uncomparable": 0,
+   "class_mismatch": 0
+  }
+ },
+ "disagreements": 18
+}

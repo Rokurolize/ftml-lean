@@ -1,0 +1,793 @@
+{
+ "count": 78,
+ "classes": [
+  {
+   "class": "hdMiss",
+   "side": "parse",
+   "branch": "headingMatchLine rejects the line",
+   "pins": [
+    "h34-nospace",
+    "h35-seven",
+    "muse-probe-r2block-head-p04-nospace",
+    "muse-probe-r2block-head-p05-seven",
+    "muse-probe-suspect3-m3-t1b"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "hdL1",
+   "side": "parse",
+   "branch": "plus run of length 1",
+   "pins": [
+    "h01-plus1",
+    "muse-probe-r2block-head-p03-same-text",
+    "muse-probe-suspect3-m3-t1a"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "hdL2",
+   "side": "parse",
+   "branch": "plus run of length 2",
+   "pins": [
+    "h02-plus2",
+    "toc07-levels",
+    "muse-probe-suspect3-m3-t1a"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "hdL3",
+   "side": "parse",
+   "branch": "plus run of length 3",
+   "pins": [
+    "h03-plus3",
+    "h07-skips"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "hdL4",
+   "side": "parse",
+   "branch": "plus run of length 4",
+   "pins": [
+    "h04-plus4",
+    "muse-probe-suspect3-m3-t1a"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "hdL5",
+   "side": "parse",
+   "branch": "plus run of length 5",
+   "pins": [
+    "h05-plus5",
+    "toc07-levels"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "hdL6",
+   "side": "parse",
+   "branch": "plus run of length 6",
+   "pins": [
+    "h06-plus6",
+    "toc07-levels",
+    "muse-probe-suspect3-m3-t1a"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "hdToc",
+   "side": "parse",
+   "branch": "no star: type start, id tocN, counter increments",
+   "pins": [
+    "h01-plus1",
+    "h21-same-text",
+    "muse-probe-r2block-head-p18-toc-anchors",
+    "cov_hd_toc0_id",
+    "cov_hd_toc_advances"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "hdNotoc",
+   "side": "parse",
+   "branch": "star: type start-notoc, null id, counter unchanged",
+   "pins": [
+    "h28-notoc1",
+    "h31-notoc-mixed",
+    "muse-probe-r2block-head-p01-notoc-single",
+    "muse-probe-suspect3-m3-h2a",
+    "cov_hd_notoc_id",
+    "cov_hd_notoc_counter"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "hdRStart",
+   "side": "render",
+   "branch": "Heading type start",
+   "pins": [
+    "h01-plus1",
+    "muse-probe-r2block-head-p03-same-text"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "hdRNotoc",
+   "side": "render",
+   "branch": "Heading type start-notoc, no id attribute",
+   "pins": [
+    "h28-notoc1",
+    "muse-probe-r2block-head-p01-notoc-single"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "hdREnd",
+   "side": "render",
+   "branch": "Heading type end",
+   "pins": [
+    "h01-plus1",
+    "muse-probe-r2block-head-p01-notoc-single"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "hdRId",
+   "side": "render",
+   "branch": "start emits id when the option is set and non-empty",
+   "pins": [
+    "h01-plus1",
+    "h23-seven-headings",
+    "muse-probe-r2block-head-p18-toc-anchors"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "hdROnclick",
+   "side": "render",
+   "branch": "start with collapse set emits hideTOC onclick",
+   "pins": [
+    "direct token type=start collapse=x"
+   ],
+   "reach": "direct-call"
+  },
+  {
+   "class": "hdREndMinus",
+   "side": "render",
+   "branch": "end with an empty collapse emits the minus link. The parser never sets collapse",
+   "pins": [
+    "direct token type=end collapse=false"
+   ],
+   "reach": "direct-call"
+  },
+  {
+   "class": "hdREndPlus",
+   "side": "render",
+   "branch": "end with truthy collapse emits the plus link",
+   "pins": [
+    "direct token type=end collapse=x"
+   ],
+   "reach": "direct-call"
+  },
+  {
+   "class": "hdRContent",
+   "side": "render",
+   "branch": "startContent, parser never emits it",
+   "pins": [
+    "direct token type=startContent"
+   ],
+   "reach": "direct-call"
+  },
+  {
+   "class": "hdRContentEnd",
+   "side": "render",
+   "branch": "endContent, parser never emits it",
+   "pins": [
+    "direct token type=endContent"
+   ],
+   "reach": "direct-call"
+  },
+  {
+   "class": "hdRScript",
+   "side": "render",
+   "branch": "startContent with collapse set emits hideTOC script; jsOutput is never assigned",
+   "pins": [
+    "direct token type=startContent collapse=false"
+   ],
+   "reach": "direct-call"
+  },
+  {
+   "class": "hdRHidden",
+   "side": "render",
+   "branch": "startContent with collapse === true adds display:none",
+   "pins": [
+    "direct token type=startContent collapse=true"
+   ],
+   "reach": "direct-call"
+  },
+  {
+   "class": "hdRFall",
+   "side": "render",
+   "branch": "any other type returns empty",
+   "pins": [
+    "direct token type=other"
+   ],
+   "reach": "direct-call"
+  },
+  {
+   "class": "tocMiss",
+   "side": "parse",
+   "branch": "tocMatchAt finds no marker",
+   "pins": [
+    "h01-plus1",
+    "plain text"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "tocPNull",
+   "side": "parse",
+   "branch": "match with group 1 absent: align null. A full pipeline page gets a Prefilter newline, so the saved page sees the empty-string arm instead",
+   "pins": [
+    "cov_toc_null",
+    "regex [[toc]] and [[toc]]text leave group 1 unset"
+   ],
+   "reach": "direct-call"
+  },
+  {
+   "class": "tocPEmpty",
+   "side": "parse",
+   "branch": "no float, a later group set: align empty string, still falsy",
+   "pins": [
+    "toc01-before",
+    "toc03-empty",
+    "muse-probe-suspect3-m3-t3c"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "tocPFLeft",
+   "side": "parse",
+   "branch": "float group f<",
+   "pins": [
+    "toc20-float-left",
+    "toc30-float-title"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "tocPFRight",
+   "side": "parse",
+   "branch": "float group f>",
+   "pins": [
+    "toc21-float-right",
+    "toc31-float-class"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "tocKeep",
+   "side": "parse",
+   "branch": "tocItems keeps type start",
+   "pins": [
+    "toc01-before",
+    "toc10-skipped-heading",
+    "muse-probe-suspect3-m3-h2a"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "tocSkip",
+   "side": "parse",
+   "branch": "tocItems drops start-notoc and does not spend a count",
+   "pins": [
+    "toc10-skipped-heading",
+    "h32-notoc-with-toc",
+    "muse-probe-suspect3-m3-h2b",
+    "cov_toc_skips_notoc"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "tocRStart",
+   "side": "render",
+   "branch": "list_start shell: div#toc, fold bar, title, toc-list",
+   "pins": [
+    "toc01-before",
+    "muse-probe-suspect3-m3-t1a"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "tocRTable",
+   "side": "render",
+   "branch": "falsy align wraps the list in the marginless table",
+   "pins": [
+    "toc01-before",
+    "toc03-empty"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "tocRFLeft",
+   "side": "render",
+   "branch": "align f< sets class floatleft and skips the table",
+   "pins": [
+    "toc20-float-left"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "tocRFRight",
+   "side": "render",
+   "branch": "align f> sets class floatright and skips the table",
+   "pins": [
+    "toc21-float-right"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "tocROther",
+   "side": "render",
+   "branch": "truthy align other than f< and f> : no table, no float class. The parser emits only f<, f>, empty and null",
+   "pins": [
+    "direct token align=center"
+   ],
+   "reach": "direct-call"
+  },
+  {
+   "class": "tocRTitleDefault",
+   "side": "render",
+   "branch": "no string title: Table of Contents. [[toc numbered]] is this arm; count is not a title",
+   "pins": [
+    "toc01-before",
+    "toc03-empty",
+    "muse-probe-suspect3-m3-t3c"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "tocRTitleAuthored",
+   "side": "render",
+   "branch": "string title, including empty, htmlspecialchars ENT_COMPAT",
+   "pins": [
+    "toc22-title",
+    "toc23-title-empty",
+    "toc24-title-entities"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "tocREnd",
+   "side": "render",
+   "branch": "list_end closes the divs",
+   "pins": [
+    "toc01-before"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "tocREndTable",
+   "side": "render",
+   "branch": "falsy align closes the table",
+   "pins": [
+    "toc01-before",
+    "toc_list_end_plain"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "tocREndBare",
+   "side": "render",
+   "branch": "truthy align does not close a table",
+   "pins": [
+    "toc20-float-left",
+    "toc_list_end_float"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "tocRItem",
+   "side": "render",
+   "branch": "item_start: margin-left is the level in em, href #id. Level 1 is included and a skip is only a gap",
+   "pins": [
+    "toc07-levels",
+    "toc08-skip",
+    "muse-probe-suspect3-m3-t1a",
+    "cov_toc_depth_level1",
+    "toc_item_start_level"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "tocRItemEnd",
+   "side": "render",
+   "branch": "item_end closes the anchor and the div",
+   "pins": [
+    "toc01-before",
+    "toc_item_end_shape"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "tocSentinel",
+   "side": "render",
+   "branch": "both item arms emit the NUL sentinel the post-pass strips. Reference emission is two NUL bytes; the mirror emits four. Behavior pin is the paired strip",
+   "pins": [
+    "toc11-inline-markup",
+    "muse-probe-suspect3-m3-t4a",
+    "muse-probe-suspect-xrule-x31-toc-ustrip",
+    "cov_toc_sentinel_width"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "tocRFall",
+   "side": "render",
+   "branch": "any other Toc type returns empty",
+   "pins": [
+    "direct token type=nope"
+   ],
+   "reach": "direct-call"
+  },
+  {
+   "class": "anPlaceholder",
+   "side": "parse",
+   "branch": "REFCORR4 C-SUSPECT-XRULE-6: a placeholder in the name leaves the brackets literal",
+   "pins": [
+    "muse-probe-suspect-xrule-x30-anchor-freelink-name",
+    "a34",
+    "cov_an_placeholder"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anBlank",
+   "side": "parse",
+   "branch": "a name that trims empty is left literal and claims no token",
+   "pins": [
+    "a04"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anValid",
+   "side": "parse",
+   "branch": "name bytes in [-_A-Za-z0-9.%] claim a named token",
+   "pins": [
+    "a01",
+    "a02",
+    "toc50-author-anchor-collision"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anLiteral",
+   "side": "parse",
+   "branch": "invalid name closed by ]]] and not preceded by [ is a literal token",
+   "pins": [
+    "a08",
+    "a10"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anInvalid",
+   "side": "parse",
+   "branch": "any other invalid name is the javascript:; form, with edge spaces hoisted",
+   "pins": [
+    "a07",
+    "a09"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anNested",
+   "side": "parse",
+   "branch": "a non-scored body containing an opener splits into two pairs",
+   "pins": [
+    "a46"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anPara",
+   "side": "parse",
+   "branch": "a non-scored body with a blank line and no [[ wraps each paragraph",
+   "pins": [
+    "a52"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anScored",
+   "side": "parse",
+   "branch": "[[a_]] is the scored pair and registers scoredAnchors",
+   "pins": [
+    "a53",
+    "a54",
+    "a55"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anPlain",
+   "side": "parse",
+   "branch": "one non-scored pair with no nested opener and no blank line",
+   "pins": [
+    "a13",
+    "a15",
+    "a17"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anLead",
+   "side": "parse",
+   "branch": "a leading space or tab in the body is hoisted when the previous byte is not space",
+   "pins": [
+    "a45"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anTrail",
+   "side": "parse",
+   "branch": "a trailing space or tab is hoisted when the next byte is not space",
+   "pins": [
+    "a45"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anNestedClose",
+   "side": "parse",
+   "branch": "the nested path consumes a same-line trailing [[/a]] that holds no opener",
+   "pins": [
+    "a46"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anJoinStrip",
+   "side": "parse",
+   "branch": "a scored anchor strips one or two surrounding newlines when content sits beyond them",
+   "pins": [
+    "a55",
+    "a56"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anHrefAbsent",
+   "side": "parse",
+   "branch": "no href or an empty href emits href empty",
+   "pins": [
+    "a13",
+    "a14"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anHrefVerb",
+   "side": "parse",
+   "branch": "verbatim href: #, /, or one of the thirteen schemes, percent-encoded",
+   "pins": [
+    "a17",
+    "a20",
+    "a22",
+    "a24",
+    "a31",
+    "a32"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anHrefDelim",
+   "side": "parse",
+   "branch": "a verbatim href containing a placeholder is emptied",
+   "pins": [
+    "a34"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anHrefSlug",
+   "side": "parse",
+   "branch": "any other href is the lowercased slug",
+   "pins": [
+    "a15",
+    "a26",
+    "a33"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anStarTarget",
+   "side": "parse",
+   "branch": "a starred verbatim href with no authored target gains target=_blank",
+   "pins": [
+    "a18",
+    "a21",
+    "a35"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anIdDrop",
+   "side": "parse",
+   "branch": "an empty id, or an id containing a placeholder, is dropped",
+   "pins": [
+    "a42"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anIdBare",
+   "side": "parse",
+   "branch": "an id that normalizes empty becomes u-",
+   "pins": [
+    "direct and fuzz id of only spaces; battery a42 covers the empty drop beside it"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anIdKept",
+   "side": "parse",
+   "branch": "an id that already starts with u- is kept",
+   "pins": [
+    "a36"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anIdSpace",
+   "side": "parse",
+   "branch": "a leading whitespace id becomes u- plus a space plus the normalized value",
+   "pins": [
+    "fuzz id=' foo'; the u- isolation is the same arm as a36"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anIdPrefix",
+   "side": "parse",
+   "branch": "any other id is prefixed with u-",
+   "pins": [
+    "a36",
+    "a37"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anFixedDrop",
+   "side": "parse",
+   "branch": "an empty class, style, role, type or target is dropped",
+   "pins": [
+    "a42"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anFixedDelim",
+   "side": "parse",
+   "branch": "a fixed key whose value contains a placeholder is kept with an empty value",
+   "pins": [
+    "a34"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anFixedKeep",
+   "side": "parse",
+   "branch": "a fixed key is normalized and kept",
+   "pins": [
+    "a36",
+    "a44"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anDataDelim",
+   "side": "parse",
+   "branch": "a data-* value containing a placeholder is emptied; the key is lowercased",
+   "pins": [
+    "a39"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anDataKeep",
+   "side": "parse",
+   "branch": "a data-* key is lowercased and the value normalized",
+   "pins": [
+    "a38",
+    "a39"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anOtherDrop",
+   "side": "parse",
+   "branch": "a key outside the allowlist is dropped",
+   "pins": [
+    "a40"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anRNamed",
+   "side": "render",
+   "branch": "missing or null type: a name= anchor under htmlentities",
+   "pins": [
+    "a01",
+    "anchor_name_plain"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anRStartGiven",
+   "side": "render",
+   "branch": "type start with an attribute array",
+   "pins": [
+    "a15",
+    "a36",
+    "anchor_start_attrs"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anRStartDefault",
+   "side": "render",
+   "branch": "type start whose attrs is not an array defaults to href empty. The parser always stores a map",
+   "pins": [
+    "direct token type=start attrs=nope",
+    "anchor_start_default"
+   ],
+   "reach": "direct-call"
+  },
+  {
+   "class": "anREnd",
+   "side": "render",
+   "branch": "type end",
+   "pins": [
+    "a13",
+    "anchor_end"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anRInvalid",
+   "side": "render",
+   "branch": "invalid_named: brackets around a javascript:; anchor",
+   "pins": [
+    "a07",
+    "anchor_invalid_named"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anRLiteral",
+   "side": "render",
+   "branch": "literal: htmlspecialchars of the whole match",
+   "pins": [
+    "a08",
+    "anchor_literal"
+   ],
+   "reach": "page"
+  },
+  {
+   "class": "anRFallName",
+   "side": "render",
+   "branch": "a type outside the four handled values falls through to the named renderer",
+   "pins": [
+    "direct token type=other",
+    "anchor_type_fallthrough"
+   ],
+   "reach": "direct-call"
+  }
+ ]
+}

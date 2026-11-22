@@ -1,0 +1,92 @@
+[
+ {
+  "id": "r-toc-item-0",
+  "why": "sentinel-width",
+  "target": "tocRItem"
+ },
+ {
+  "id": "r-toc-iend-0",
+  "why": "sentinel-width",
+  "target": "tocRItemEnd"
+ },
+ {
+  "id": "r-toc-sent-0",
+  "why": "sentinel-width",
+  "target": "tocSentinel"
+ },
+ {
+  "id": "r-toc-item-1",
+  "why": "sentinel-width",
+  "target": "tocRItem"
+ },
+ {
+  "id": "r-toc-iend-1",
+  "why": "sentinel-width",
+  "target": "tocRItemEnd"
+ },
+ {
+  "id": "r-toc-sent-1",
+  "why": "sentinel-width",
+  "target": "tocSentinel"
+ },
+ {
+  "id": "r-toc-item-2",
+  "why": "sentinel-width",
+  "target": "tocRItem"
+ },
+ {
+  "id": "r-toc-iend-2",
+  "why": "sentinel-width",
+  "target": "tocRItemEnd"
+ },
+ {
+  "id": "r-toc-sent-2",
+  "why": "sentinel-width",
+  "target": "tocSentinel"
+ },
+ {
+  "id": "r-toc-item-3",
+  "why": "sentinel-width",
+  "target": "tocRItem"
+ },
+ {
+  "id": "r-toc-iend-3",
+  "why": "sentinel-width",
+  "target": "tocRItemEnd"
+ },
+ {
+  "id": "r-toc-sent-3",
+  "why": "sentinel-width",
+  "target": "tocSentinel"
+ },
+ {
+  "id": "r-toc-item-4",
+  "why": "sentinel-width",
+  "target": "tocRItem"
+ },
+ {
+  "id": "r-toc-iend-4",
+  "why": "sentinel-width",
+  "target": "tocRItemEnd"
+ },
+ {
+  "id": "r-toc-sent-4",
+  "why": "sentinel-width",
+  "target": "tocSentinel"
+ },
+ {
+  "id": "r-toc-item-5",
+  "why": "sentinel-width",
+  "target": "tocRItem"
+ },
+ {
+  "id": "r-toc-iend-5",
+  "why": "sentinel-width",
+  "target": "tocRItemEnd"
+ },
+ {
+  "id": "r-toc-sent-5",
+  "why": "sentinel-width",
+  "target": "tocSentinel"
+ }
+]

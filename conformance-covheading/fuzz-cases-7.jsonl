@@ -1,0 +1,480 @@
+{"id": "hd-l1-0", "kind": "source", "target": "hdL1", "source": "+ A5"}
+{"id": "hd-l2-0", "kind": "source", "target": "hdL2", "source": "++ A5"}
+{"id": "hd-l3-0", "kind": "source", "target": "hdL3", "source": "+++ A5"}
+{"id": "hd-l4-0", "kind": "source", "target": "hdL4", "source": "++++ A5"}
+{"id": "hd-l5-0", "kind": "source", "target": "hdL5", "source": "+++++ A5"}
+{"id": "hd-l6-0", "kind": "source", "target": "hdL6", "source": "++++++ A5"}
+{"id": "hd-toc-0", "kind": "source", "target": "hdToc", "source": "+ A5"}
+{"id": "hd-notoc-0", "kind": "source", "target": "hdNotoc", "source": "+* A5"}
+{"id": "hd-miss-nospace-0", "kind": "source", "target": "hdMiss", "source": "+A5"}
+{"id": "hd-miss-seven-0", "kind": "source", "target": "hdMiss", "source": "+++++++ A5"}
+{"id": "toc-miss-0", "kind": "source", "target": "tocMiss", "source": "plain A5"}
+{"id": "toc-empty-0", "kind": "source", "target": "tocPEmpty", "source": "[[toc]]\n"}
+{"id": "toc-fleft-0", "kind": "source", "target": "tocPFLeft", "source": "[[f<toc]]\n+ A5"}
+{"id": "toc-fright-0", "kind": "source", "target": "tocPFRight", "source": "[[f>toc]]\n+ A5"}
+{"id": "toc-keep-0", "kind": "source", "target": "tocKeep", "source": "+ A5\n[[toc]]"}
+{"id": "toc-skip-0", "kind": "source", "target": "tocSkip", "source": "+* A5\n[[toc]]"}
+{"id": "toc-null-0", "kind": "regex", "target": "tocPNull", "source": "[[toc]]"}
+{"id": "an-ph-0", "kind": "source", "target": "anPlaceholder", "source": "[[# @@A5@@]]"}
+{"id": "an-blank-0", "kind": "source", "target": "anBlank", "source": "[[# ]]"}
+{"id": "an-valid-0", "kind": "source", "target": "anValid", "source": "[[# A5]]"}
+{"id": "an-lit-0", "kind": "source", "target": "anLiteral", "source": "[[# a b]]]"}
+{"id": "an-inv-0", "kind": "source", "target": "anInvalid", "source": "[[# a A5]]"}
+{"id": "an-plain-0", "kind": "source", "target": "anPlain", "source": "[[a href=\"/p0\"]]A5[[/a]]"}
+{"id": "an-nested-0", "kind": "source", "target": "anNested", "source": "[[a href=\"/0\"]]x[[a href=\"/0b\"]]A5[[/a]]z[[/a]]"}
+{"id": "an-para-0", "kind": "source", "target": "anPara", "source": "[[a href=\"/p0\"]]A5\n\nmore[[/a]]"}
+{"id": "an-scored-0", "kind": "source", "target": "anScored", "source": "[[a_ href=\"/p0\"]]A5[[/a]]"}
+{"id": "an-lead-0", "kind": "source", "target": "anLead", "source": "x[[a href=\"/p0\"]] A5[[/a]]z"}
+{"id": "an-trail-0", "kind": "source", "target": "anTrail", "source": "[[a href=\"/p0\"]]A5 [[/a]]z"}
+{"id": "an-close-0", "kind": "source", "target": "anNestedClose", "source": "[[a href=\"/0\"]]x[[a href=\"/0b\"]]A5[[/a]]z[[/a]]"}
+{"id": "an-join-0", "kind": "source", "target": "anJoinStrip", "source": "PRE\n[[a_ href=\"/p0\"]]A5[[/a]]\nPOST"}
+{"id": "an-href0-0", "kind": "source", "target": "anHrefAbsent", "source": "[[a]]A5[[/a]]"}
+{"id": "an-hrefv-0", "kind": "source", "target": "anHrefVerb", "source": "[[a href=\"https://example.com/0\"]]A5[[/a]]"}
+{"id": "an-hrefd-0", "kind": "source", "target": "anHrefDelim", "source": "[[a href=\"https://example.com/@@0@@\"]]A5[[/a]]"}
+{"id": "an-hrefs-0", "kind": "source", "target": "anHrefSlug", "source": "[[a href=\"Some Page\"]]A5[[/a]]"}
+{"id": "an-star-0", "kind": "source", "target": "anStarTarget", "source": "[[a href=\"*https://example.com/0\"]]A5[[/a]]"}
+{"id": "an-iddrop-0", "kind": "source", "target": "anIdDrop", "source": "[[a href=\"/x\" id=\"\"]]A5[[/a]]"}
+{"id": "an-idbare-0", "kind": "source", "target": "anIdBare", "source": "[[a href=\"/x\" id=\"   \"]]A5[[/a]]"}
+{"id": "an-idkept-0", "kind": "source", "target": "anIdKept", "source": "[[a href=\"/x\" id=\"u-foo0\"]]A5[[/a]]"}
+{"id": "an-idspace-0", "kind": "source", "target": "anIdSpace", "source": "[[a href=\"/x\" id=\" foo\"]]A5[[/a]]"}
+{"id": "an-idpre-0", "kind": "source", "target": "anIdPrefix", "source": "[[a href=\"/x\" id=\"foo\"]]A5[[/a]]"}
+{"id": "an-fixdrop-0", "kind": "source", "target": "anFixedDrop", "source": "[[a href=\"/x\" class=\"\"]]A5[[/a]]"}
+{"id": "an-fixdelim-0", "kind": "source", "target": "anFixedDelim", "source": "[[a href=\"/x\" class=\"@@a@@\"]]A5[[/a]]"}
+{"id": "an-fixkeep-0", "kind": "source", "target": "anFixedKeep", "source": "[[a href=\"/x\" class=\"c\"]]A5[[/a]]"}
+{"id": "an-datad-0", "kind": "source", "target": "anDataDelim", "source": "[[a href=\"/x\" data-x=\"@@a@@\"]]A5[[/a]]"}
+{"id": "an-datak-0", "kind": "source", "target": "anDataKeep", "source": "[[a href=\"/x\" data-x=\"d\"]]A5[[/a]]"}
+{"id": "an-other-0", "kind": "source", "target": "anOtherDrop", "source": "[[a href=\"/x\" onclick=\"o\"]]A5[[/a]]"}
+{"id": "r-hd-start-0", "kind": "token", "rule": "Heading", "target": "hdRStart", "opts": {"type": "start", "level": 1, "text": "A5"}, "expect": ["hdRStart"]}
+{"id": "r-hd-id-0", "kind": "token", "rule": "Heading", "target": "hdRId", "opts": {"type": "start", "level": 1, "id": "toc0", "text": "A5"}, "expect": ["hdRStart", "hdRId"]}
+{"id": "r-hd-click-0", "kind": "token", "rule": "Heading", "target": "hdROnclick", "opts": {"type": "start", "level": 1, "id": "toc0", "collapse": "x", "text": "A5"}, "expect": ["hdRStart", "hdRId", "hdROnclick"]}
+{"id": "r-hd-notoc-0", "kind": "token", "rule": "Heading", "target": "hdRNotoc", "opts": {"type": "start-notoc", "level": 1, "text": "A5"}, "expect": ["hdRNotoc"]}
+{"id": "r-hd-end-0", "kind": "token", "rule": "Heading", "target": "hdREnd", "opts": {"type": "end", "level": 1}, "expect": ["hdREnd"]}
+{"id": "r-hd-minus-0", "kind": "token", "rule": "Heading", "target": "hdREndMinus", "opts": {"type": "end", "level": 1, "id": "toc0", "collapse": false}, "expect": ["hdREnd", "hdREndMinus"]}
+{"id": "r-hd-plus-0", "kind": "token", "rule": "Heading", "target": "hdREndPlus", "opts": {"type": "end", "level": 1, "id": "toc0", "collapse": "x"}, "expect": ["hdREnd", "hdREndPlus"]}
+{"id": "r-hd-content-0", "kind": "token", "rule": "Heading", "target": "hdRContent", "opts": {"type": "startContent", "level": 1, "id": "toc0"}, "expect": ["hdRContent"]}
+{"id": "r-hd-cend-0", "kind": "token", "rule": "Heading", "target": "hdRContentEnd", "opts": {"type": "endContent", "id": "toc0"}, "expect": ["hdRContentEnd"]}
+{"id": "r-hd-fall-0", "kind": "token", "rule": "Heading", "target": "hdRFall", "opts": {"type": "other", "level": 1}, "expect": ["hdRFall"]}
+{"id": "r-hd-script-0", "kind": "token", "rule": "Heading", "target": "hdRScript", "opts": {"type": "startContent", "id": "toc0", "collapse": false}, "expect": ["hdRContent", "hdRScript"]}
+{"id": "r-hd-hidden-0", "kind": "token", "rule": "Heading", "target": "hdRHidden", "opts": {"type": "startContent", "id": "toc0", "collapse": true}, "expect": ["hdRContent", "hdRScript", "hdRHidden"]}
+{"id": "r-toc-start-0", "kind": "token", "rule": "Toc", "target": "tocRStart", "opts": {"type": "list_start", "level": 0, "align": ""}, "expect": ["tocRStart", "tocRTable", "tocRTitleDefault"]}
+{"id": "r-toc-table-0", "kind": "token", "rule": "Toc", "target": "tocRTable", "opts": {"type": "list_start", "level": 0, "align": null}, "expect": ["tocRStart", "tocRTable", "tocRTitleDefault"]}
+{"id": "r-toc-fl-0", "kind": "token", "rule": "Toc", "target": "tocRFLeft", "opts": {"type": "list_start", "level": 0, "align": "f<", "attr": {"title": "A5"}}, "expect": ["tocRStart", "tocRFLeft", "tocRTitleAuthored"]}
+{"id": "r-toc-fr-0", "kind": "token", "rule": "Toc", "target": "tocRFRight", "opts": {"type": "list_start", "level": 0, "align": "f>"}, "expect": ["tocRStart", "tocRFRight", "tocRTitleDefault"]}
+{"id": "r-toc-other-0", "kind": "token", "rule": "Toc", "target": "tocROther", "opts": {"type": "list_start", "level": 0, "align": "center"}, "expect": ["tocRStart", "tocROther", "tocRTitleDefault"]}
+{"id": "r-toc-tdef-0", "kind": "token", "rule": "Toc", "target": "tocRTitleDefault", "opts": {"type": "list_start", "level": 0, "align": "", "attr": {"class": "c"}}, "expect": ["tocRStart", "tocRTable", "tocRTitleDefault"]}
+{"id": "r-toc-tauth-0", "kind": "token", "rule": "Toc", "target": "tocRTitleAuthored", "opts": {"type": "list_start", "level": 0, "align": "", "attr": {"title": "A5"}}, "expect": ["tocRStart", "tocRTable", "tocRTitleAuthored"]}
+{"id": "r-toc-end-0", "kind": "token", "rule": "Toc", "target": "tocREnd", "opts": {"type": "list_end", "level": 0, "align": ""}, "expect": ["tocREnd", "tocREndTable"]}
+{"id": "r-toc-etable-0", "kind": "token", "rule": "Toc", "target": "tocREndTable", "opts": {"type": "list_end", "level": 0, "align": null}, "expect": ["tocREnd", "tocREndTable"]}
+{"id": "r-toc-ebare-0", "kind": "token", "rule": "Toc", "target": "tocREndBare", "opts": {"type": "list_end", "level": 0, "align": "f<"}, "expect": ["tocREnd", "tocREndBare"]}
+{"id": "r-toc-item-0", "kind": "token", "rule": "Toc", "target": "tocRItem", "opts": {"type": "item_start", "id": "toc0", "level": 1, "count": 0}, "expect": ["tocRItem", "tocSentinel"]}
+{"id": "r-toc-iend-0", "kind": "token", "rule": "Toc", "target": "tocRItemEnd", "opts": {"type": "item_end", "level": 1}, "expect": ["tocRItemEnd", "tocSentinel"]}
+{"id": "r-toc-sent-0", "kind": "token", "rule": "Toc", "target": "tocSentinel", "opts": {"type": "item_start", "id": "toc0", "level": 1, "count": 0}, "expect": ["tocRItem", "tocSentinel"]}
+{"id": "r-toc-fall-0", "kind": "token", "rule": "Toc", "target": "tocRFall", "opts": {"type": "nope"}, "expect": ["tocRFall"]}
+{"id": "r-an-named-0", "kind": "token", "rule": "Anchor", "target": "anRNamed", "opts": {"name": "A5"}, "expect": ["anRNamed"]}
+{"id": "r-an-given-0", "kind": "token", "rule": "Anchor", "target": "anRStartGiven", "opts": {"type": "start", "attrs": {"href": "/A5", "class": "c"}}, "expect": ["anRStartGiven"]}
+{"id": "r-an-def-0", "kind": "token", "rule": "Anchor", "target": "anRStartDefault", "opts": {"type": "start", "attrs": "nope"}, "expect": ["anRStartDefault"]}
+{"id": "r-an-end-0", "kind": "token", "rule": "Anchor", "target": "anREnd", "opts": {"type": "end"}, "expect": ["anREnd"]}
+{"id": "r-an-inv-0", "kind": "token", "rule": "Anchor", "target": "anRInvalid", "opts": {"type": "invalid_named", "lead": " ", "text": "A5", "trail": ""}, "expect": ["anRInvalid"]}
+{"id": "r-an-lit-0", "kind": "token", "rule": "Anchor", "target": "anRLiteral", "opts": {"type": "literal", "text": "[[# A5]]"}, "expect": ["anRLiteral"]}
+{"id": "r-an-fall-0", "kind": "token", "rule": "Anchor", "target": "anRFallName", "opts": {"type": "other", "name": "A5"}, "expect": ["anRFallName"]}
+{"id": "sent-page-0", "kind": "source", "target": "tocSentinel", "source": "+ **A5**\n[[toc]]"}
+{"id": "hd-l1-1", "kind": "source", "target": "hdL1", "source": "+ Beta2"}
+{"id": "hd-l2-1", "kind": "source", "target": "hdL2", "source": "++ Beta2"}
+{"id": "hd-l3-1", "kind": "source", "target": "hdL3", "source": "+++ Beta2"}
+{"id": "hd-l4-1", "kind": "source", "target": "hdL4", "source": "++++ Beta2"}
+{"id": "hd-l5-1", "kind": "source", "target": "hdL5", "source": "+++++ Beta2"}
+{"id": "hd-l6-1", "kind": "source", "target": "hdL6", "source": "++++++ Beta2"}
+{"id": "hd-toc-1", "kind": "source", "target": "hdToc", "source": "+ Beta2"}
+{"id": "hd-notoc-1", "kind": "source", "target": "hdNotoc", "source": "+* Beta2"}
+{"id": "hd-miss-nospace-1", "kind": "source", "target": "hdMiss", "source": "+Beta2"}
+{"id": "hd-miss-seven-1", "kind": "source", "target": "hdMiss", "source": "+++++++ Beta2"}
+{"id": "toc-miss-1", "kind": "source", "target": "tocMiss", "source": "plain Beta2"}
+{"id": "toc-empty-1", "kind": "source", "target": "tocPEmpty", "source": "[[toc]]\n"}
+{"id": "toc-fleft-1", "kind": "source", "target": "tocPFLeft", "source": "[[f<toc]]\n+ Beta2"}
+{"id": "toc-fright-1", "kind": "source", "target": "tocPFRight", "source": "[[f>toc]]\n+ Beta2"}
+{"id": "toc-keep-1", "kind": "source", "target": "tocKeep", "source": "+ Beta2\n[[toc]]"}
+{"id": "toc-skip-1", "kind": "source", "target": "tocSkip", "source": "+* Beta2\n[[toc]]"}
+{"id": "toc-null-1", "kind": "regex", "target": "tocPNull", "source": "[[toc]]x"}
+{"id": "an-ph-1", "kind": "source", "target": "anPlaceholder", "source": "[[# @@Beta2@@]]"}
+{"id": "an-blank-1", "kind": "source", "target": "anBlank", "source": "[[# ]]"}
+{"id": "an-valid-1", "kind": "source", "target": "anValid", "source": "[[# Beta2]]"}
+{"id": "an-lit-1", "kind": "source", "target": "anLiteral", "source": "[[# a b]]]"}
+{"id": "an-inv-1", "kind": "source", "target": "anInvalid", "source": "[[# a Beta2]]"}
+{"id": "an-plain-1", "kind": "source", "target": "anPlain", "source": "[[a href=\"/p1\"]]Beta2[[/a]]"}
+{"id": "an-nested-1", "kind": "source", "target": "anNested", "source": "[[a href=\"/1\"]]x[[a href=\"/1b\"]]Beta2[[/a]]z[[/a]]"}
+{"id": "an-para-1", "kind": "source", "target": "anPara", "source": "[[a href=\"/p1\"]]Beta2\n\nmore[[/a]]"}
+{"id": "an-scored-1", "kind": "source", "target": "anScored", "source": "[[a_ href=\"/p1\"]]Beta2[[/a]]"}
+{"id": "an-lead-1", "kind": "source", "target": "anLead", "source": "x[[a href=\"/p1\"]] Beta2[[/a]]z"}
+{"id": "an-trail-1", "kind": "source", "target": "anTrail", "source": "[[a href=\"/p1\"]]Beta2 [[/a]]z"}
+{"id": "an-close-1", "kind": "source", "target": "anNestedClose", "source": "[[a href=\"/1\"]]x[[a href=\"/1b\"]]Beta2[[/a]]z[[/a]]"}
+{"id": "an-join-1", "kind": "source", "target": "anJoinStrip", "source": "PRE\n[[a_ href=\"/p1\"]]Beta2[[/a]]\nPOST"}
+{"id": "an-href0-1", "kind": "source", "target": "anHrefAbsent", "source": "[[a]]Beta2[[/a]]"}
+{"id": "an-hrefv-1", "kind": "source", "target": "anHrefVerb", "source": "[[a href=\"https://example.com/1\"]]Beta2[[/a]]"}
+{"id": "an-hrefd-1", "kind": "source", "target": "anHrefDelim", "source": "[[a href=\"https://example.com/@@1@@\"]]Beta2[[/a]]"}
+{"id": "an-hrefs-1", "kind": "source", "target": "anHrefSlug", "source": "[[a href=\"Some Page\"]]Beta2[[/a]]"}
+{"id": "an-star-1", "kind": "source", "target": "anStarTarget", "source": "[[a href=\"*https://example.com/1\"]]Beta2[[/a]]"}
+{"id": "an-iddrop-1", "kind": "source", "target": "anIdDrop", "source": "[[a href=\"/x\" id=\"\"]]Beta2[[/a]]"}
+{"id": "an-idbare-1", "kind": "source", "target": "anIdBare", "source": "[[a href=\"/x\" id=\"   \"]]Beta2[[/a]]"}
+{"id": "an-idkept-1", "kind": "source", "target": "anIdKept", "source": "[[a href=\"/x\" id=\"u-foo1\"]]Beta2[[/a]]"}
+{"id": "an-idspace-1", "kind": "source", "target": "anIdSpace", "source": "[[a href=\"/x\" id=\" foo\"]]Beta2[[/a]]"}
+{"id": "an-idpre-1", "kind": "source", "target": "anIdPrefix", "source": "[[a href=\"/x\" id=\"foo\"]]Beta2[[/a]]"}
+{"id": "an-fixdrop-1", "kind": "source", "target": "anFixedDrop", "source": "[[a href=\"/x\" class=\"\"]]Beta2[[/a]]"}
+{"id": "an-fixdelim-1", "kind": "source", "target": "anFixedDelim", "source": "[[a href=\"/x\" class=\"@@a@@\"]]Beta2[[/a]]"}
+{"id": "an-fixkeep-1", "kind": "source", "target": "anFixedKeep", "source": "[[a href=\"/x\" class=\"c\"]]Beta2[[/a]]"}
+{"id": "an-datad-1", "kind": "source", "target": "anDataDelim", "source": "[[a href=\"/x\" data-x=\"@@a@@\"]]Beta2[[/a]]"}
+{"id": "an-datak-1", "kind": "source", "target": "anDataKeep", "source": "[[a href=\"/x\" data-x=\"d\"]]Beta2[[/a]]"}
+{"id": "an-other-1", "kind": "source", "target": "anOtherDrop", "source": "[[a href=\"/x\" onclick=\"o\"]]Beta2[[/a]]"}
+{"id": "r-hd-start-1", "kind": "token", "rule": "Heading", "target": "hdRStart", "opts": {"type": "start", "level": 2, "text": "Beta2"}, "expect": ["hdRStart"]}
+{"id": "r-hd-id-1", "kind": "token", "rule": "Heading", "target": "hdRId", "opts": {"type": "start", "level": 2, "id": "toc1", "text": "Beta2"}, "expect": ["hdRStart", "hdRId"]}
+{"id": "r-hd-click-1", "kind": "token", "rule": "Heading", "target": "hdROnclick", "opts": {"type": "start", "level": 2, "id": "toc1", "collapse": "x", "text": "Beta2"}, "expect": ["hdRStart", "hdRId", "hdROnclick"]}
+{"id": "r-hd-notoc-1", "kind": "token", "rule": "Heading", "target": "hdRNotoc", "opts": {"type": "start-notoc", "level": 2, "text": "Beta2"}, "expect": ["hdRNotoc"]}
+{"id": "r-hd-end-1", "kind": "token", "rule": "Heading", "target": "hdREnd", "opts": {"type": "end", "level": 2}, "expect": ["hdREnd"]}
+{"id": "r-hd-minus-1", "kind": "token", "rule": "Heading", "target": "hdREndMinus", "opts": {"type": "end", "level": 2, "id": "toc1", "collapse": false}, "expect": ["hdREnd", "hdREndMinus"]}
+{"id": "r-hd-plus-1", "kind": "token", "rule": "Heading", "target": "hdREndPlus", "opts": {"type": "end", "level": 2, "id": "toc1", "collapse": "x"}, "expect": ["hdREnd", "hdREndPlus"]}
+{"id": "r-hd-content-1", "kind": "token", "rule": "Heading", "target": "hdRContent", "opts": {"type": "startContent", "level": 2, "id": "toc1"}, "expect": ["hdRContent"]}
+{"id": "r-hd-cend-1", "kind": "token", "rule": "Heading", "target": "hdRContentEnd", "opts": {"type": "endContent", "id": "toc1"}, "expect": ["hdRContentEnd"]}
+{"id": "r-hd-fall-1", "kind": "token", "rule": "Heading", "target": "hdRFall", "opts": {"type": "other", "level": 2}, "expect": ["hdRFall"]}
+{"id": "r-hd-script-1", "kind": "token", "rule": "Heading", "target": "hdRScript", "opts": {"type": "startContent", "id": "toc1", "collapse": false}, "expect": ["hdRContent", "hdRScript"]}
+{"id": "r-hd-hidden-1", "kind": "token", "rule": "Heading", "target": "hdRHidden", "opts": {"type": "startContent", "id": "toc1", "collapse": true}, "expect": ["hdRContent", "hdRScript", "hdRHidden"]}
+{"id": "r-toc-start-1", "kind": "token", "rule": "Toc", "target": "tocRStart", "opts": {"type": "list_start", "level": 0, "align": ""}, "expect": ["tocRStart", "tocRTable", "tocRTitleDefault"]}
+{"id": "r-toc-table-1", "kind": "token", "rule": "Toc", "target": "tocRTable", "opts": {"type": "list_start", "level": 0, "align": null}, "expect": ["tocRStart", "tocRTable", "tocRTitleDefault"]}
+{"id": "r-toc-fl-1", "kind": "token", "rule": "Toc", "target": "tocRFLeft", "opts": {"type": "list_start", "level": 0, "align": "f<", "attr": {"title": "Beta2"}}, "expect": ["tocRStart", "tocRFLeft", "tocRTitleAuthored"]}
+{"id": "r-toc-fr-1", "kind": "token", "rule": "Toc", "target": "tocRFRight", "opts": {"type": "list_start", "level": 0, "align": "f>"}, "expect": ["tocRStart", "tocRFRight", "tocRTitleDefault"]}
+{"id": "r-toc-other-1", "kind": "token", "rule": "Toc", "target": "tocROther", "opts": {"type": "list_start", "level": 0, "align": "center"}, "expect": ["tocRStart", "tocROther", "tocRTitleDefault"]}
+{"id": "r-toc-tdef-1", "kind": "token", "rule": "Toc", "target": "tocRTitleDefault", "opts": {"type": "list_start", "level": 0, "align": "", "attr": {"class": "c"}}, "expect": ["tocRStart", "tocRTable", "tocRTitleDefault"]}
+{"id": "r-toc-tauth-1", "kind": "token", "rule": "Toc", "target": "tocRTitleAuthored", "opts": {"type": "list_start", "level": 0, "align": "", "attr": {"title": "Beta2"}}, "expect": ["tocRStart", "tocRTable", "tocRTitleAuthored"]}
+{"id": "r-toc-end-1", "kind": "token", "rule": "Toc", "target": "tocREnd", "opts": {"type": "list_end", "level": 0, "align": ""}, "expect": ["tocREnd", "tocREndTable"]}
+{"id": "r-toc-etable-1", "kind": "token", "rule": "Toc", "target": "tocREndTable", "opts": {"type": "list_end", "level": 0, "align": null}, "expect": ["tocREnd", "tocREndTable"]}
+{"id": "r-toc-ebare-1", "kind": "token", "rule": "Toc", "target": "tocREndBare", "opts": {"type": "list_end", "level": 0, "align": "f<"}, "expect": ["tocREnd", "tocREndBare"]}
+{"id": "r-toc-item-1", "kind": "token", "rule": "Toc", "target": "tocRItem", "opts": {"type": "item_start", "id": "toc1", "level": 2, "count": 1}, "expect": ["tocRItem", "tocSentinel"]}
+{"id": "r-toc-iend-1", "kind": "token", "rule": "Toc", "target": "tocRItemEnd", "opts": {"type": "item_end", "level": 2}, "expect": ["tocRItemEnd", "tocSentinel"]}
+{"id": "r-toc-sent-1", "kind": "token", "rule": "Toc", "target": "tocSentinel", "opts": {"type": "item_start", "id": "toc1", "level": 2, "count": 0}, "expect": ["tocRItem", "tocSentinel"]}
+{"id": "r-toc-fall-1", "kind": "token", "rule": "Toc", "target": "tocRFall", "opts": {"type": "nope"}, "expect": ["tocRFall"]}
+{"id": "r-an-named-1", "kind": "token", "rule": "Anchor", "target": "anRNamed", "opts": {"name": "Beta2"}, "expect": ["anRNamed"]}
+{"id": "r-an-given-1", "kind": "token", "rule": "Anchor", "target": "anRStartGiven", "opts": {"type": "start", "attrs": {"href": "/Beta2", "class": "c"}}, "expect": ["anRStartGiven"]}
+{"id": "r-an-def-1", "kind": "token", "rule": "Anchor", "target": "anRStartDefault", "opts": {"type": "start", "attrs": "nope"}, "expect": ["anRStartDefault"]}
+{"id": "r-an-end-1", "kind": "token", "rule": "Anchor", "target": "anREnd", "opts": {"type": "end"}, "expect": ["anREnd"]}
+{"id": "r-an-inv-1", "kind": "token", "rule": "Anchor", "target": "anRInvalid", "opts": {"type": "invalid_named", "lead": " ", "text": "Beta2", "trail": ""}, "expect": ["anRInvalid"]}
+{"id": "r-an-lit-1", "kind": "token", "rule": "Anchor", "target": "anRLiteral", "opts": {"type": "literal", "text": "[[# Beta2]]"}, "expect": ["anRLiteral"]}
+{"id": "r-an-fall-1", "kind": "token", "rule": "Anchor", "target": "anRFallName", "opts": {"type": "other", "name": "Beta2"}, "expect": ["anRFallName"]}
+{"id": "sent-page-1", "kind": "source", "target": "tocSentinel", "source": "+ **Beta2**\n[[toc]]"}
+{"id": "hd-l1-2", "kind": "source", "target": "hdL1", "source": "+ O'Brien6"}
+{"id": "hd-l2-2", "kind": "source", "target": "hdL2", "source": "++ O'Brien6"}
+{"id": "hd-l3-2", "kind": "source", "target": "hdL3", "source": "+++ O'Brien6"}
+{"id": "hd-l4-2", "kind": "source", "target": "hdL4", "source": "++++ O'Brien6"}
+{"id": "hd-l5-2", "kind": "source", "target": "hdL5", "source": "+++++ O'Brien6"}
+{"id": "hd-l6-2", "kind": "source", "target": "hdL6", "source": "++++++ O'Brien6"}
+{"id": "hd-toc-2", "kind": "source", "target": "hdToc", "source": "+ O'Brien6"}
+{"id": "hd-notoc-2", "kind": "source", "target": "hdNotoc", "source": "+* O'Brien6"}
+{"id": "hd-miss-nospace-2", "kind": "source", "target": "hdMiss", "source": "+O'Brien6"}
+{"id": "hd-miss-seven-2", "kind": "source", "target": "hdMiss", "source": "+++++++ O'Brien6"}
+{"id": "toc-miss-2", "kind": "source", "target": "tocMiss", "source": "plain O'Brien6"}
+{"id": "toc-empty-2", "kind": "source", "target": "tocPEmpty", "source": "[[toc]]\n"}
+{"id": "toc-fleft-2", "kind": "source", "target": "tocPFLeft", "source": "[[f<toc]]\n+ O'Brien6"}
+{"id": "toc-fright-2", "kind": "source", "target": "tocPFRight", "source": "[[f>toc]]\n+ O'Brien6"}
+{"id": "toc-keep-2", "kind": "source", "target": "tocKeep", "source": "+ O'Brien6\n[[toc]]"}
+{"id": "toc-skip-2", "kind": "source", "target": "tocSkip", "source": "+* O'Brien6\n[[toc]]"}
+{"id": "toc-null-2", "kind": "regex", "target": "tocPNull", "source": "[[toc]]"}
+{"id": "an-ph-2", "kind": "source", "target": "anPlaceholder", "source": "[[# @@O'Brien6@@]]"}
+{"id": "an-blank-2", "kind": "source", "target": "anBlank", "source": "[[# ]]"}
+{"id": "an-valid-2", "kind": "source", "target": "anValid", "source": "[[# OBrien6]]"}
+{"id": "an-lit-2", "kind": "source", "target": "anLiteral", "source": "[[# a b]]]"}
+{"id": "an-inv-2", "kind": "source", "target": "anInvalid", "source": "[[# a O'Brien6]]"}
+{"id": "an-plain-2", "kind": "source", "target": "anPlain", "source": "[[a href=\"/p2\"]]O'Brien6[[/a]]"}
+{"id": "an-nested-2", "kind": "source", "target": "anNested", "source": "[[a href=\"/2\"]]x[[a href=\"/2b\"]]O'Brien6[[/a]]z[[/a]]"}
+{"id": "an-para-2", "kind": "source", "target": "anPara", "source": "[[a href=\"/p2\"]]O'Brien6\n\nmore[[/a]]"}
+{"id": "an-scored-2", "kind": "source", "target": "anScored", "source": "[[a_ href=\"/p2\"]]O'Brien6[[/a]]"}
+{"id": "an-lead-2", "kind": "source", "target": "anLead", "source": "x[[a href=\"/p2\"]] O'Brien6[[/a]]z"}
+{"id": "an-trail-2", "kind": "source", "target": "anTrail", "source": "[[a href=\"/p2\"]]O'Brien6 [[/a]]z"}
+{"id": "an-close-2", "kind": "source", "target": "anNestedClose", "source": "[[a href=\"/2\"]]x[[a href=\"/2b\"]]O'Brien6[[/a]]z[[/a]]"}
+{"id": "an-join-2", "kind": "source", "target": "anJoinStrip", "source": "PRE\n[[a_ href=\"/p2\"]]O'Brien6[[/a]]\nPOST"}
+{"id": "an-href0-2", "kind": "source", "target": "anHrefAbsent", "source": "[[a]]O'Brien6[[/a]]"}
+{"id": "an-hrefv-2", "kind": "source", "target": "anHrefVerb", "source": "[[a href=\"https://example.com/2\"]]O'Brien6[[/a]]"}
+{"id": "an-hrefd-2", "kind": "source", "target": "anHrefDelim", "source": "[[a href=\"https://example.com/@@2@@\"]]O'Brien6[[/a]]"}
+{"id": "an-hrefs-2", "kind": "source", "target": "anHrefSlug", "source": "[[a href=\"Some Page\"]]O'Brien6[[/a]]"}
+{"id": "an-star-2", "kind": "source", "target": "anStarTarget", "source": "[[a href=\"*https://example.com/2\"]]O'Brien6[[/a]]"}
+{"id": "an-iddrop-2", "kind": "source", "target": "anIdDrop", "source": "[[a href=\"/x\" id=\"\"]]O'Brien6[[/a]]"}
+{"id": "an-idbare-2", "kind": "source", "target": "anIdBare", "source": "[[a href=\"/x\" id=\"   \"]]O'Brien6[[/a]]"}
+{"id": "an-idkept-2", "kind": "source", "target": "anIdKept", "source": "[[a href=\"/x\" id=\"u-foo2\"]]O'Brien6[[/a]]"}
+{"id": "an-idspace-2", "kind": "source", "target": "anIdSpace", "source": "[[a href=\"/x\" id=\" foo\"]]O'Brien6[[/a]]"}
+{"id": "an-idpre-2", "kind": "source", "target": "anIdPrefix", "source": "[[a href=\"/x\" id=\"foo\"]]O'Brien6[[/a]]"}
+{"id": "an-fixdrop-2", "kind": "source", "target": "anFixedDrop", "source": "[[a href=\"/x\" class=\"\"]]O'Brien6[[/a]]"}
+{"id": "an-fixdelim-2", "kind": "source", "target": "anFixedDelim", "source": "[[a href=\"/x\" class=\"@@a@@\"]]O'Brien6[[/a]]"}
+{"id": "an-fixkeep-2", "kind": "source", "target": "anFixedKeep", "source": "[[a href=\"/x\" class=\"c\"]]O'Brien6[[/a]]"}
+{"id": "an-datad-2", "kind": "source", "target": "anDataDelim", "source": "[[a href=\"/x\" data-x=\"@@a@@\"]]O'Brien6[[/a]]"}
+{"id": "an-datak-2", "kind": "source", "target": "anDataKeep", "source": "[[a href=\"/x\" data-x=\"d\"]]O'Brien6[[/a]]"}
+{"id": "an-other-2", "kind": "source", "target": "anOtherDrop", "source": "[[a href=\"/x\" onclick=\"o\"]]O'Brien6[[/a]]"}
+{"id": "r-hd-start-2", "kind": "token", "rule": "Heading", "target": "hdRStart", "opts": {"type": "start", "level": 3, "text": "O'Brien6"}, "expect": ["hdRStart"]}
+{"id": "r-hd-id-2", "kind": "token", "rule": "Heading", "target": "hdRId", "opts": {"type": "start", "level": 3, "id": "toc2", "text": "O'Brien6"}, "expect": ["hdRStart", "hdRId"]}
+{"id": "r-hd-click-2", "kind": "token", "rule": "Heading", "target": "hdROnclick", "opts": {"type": "start", "level": 3, "id": "toc2", "collapse": "x", "text": "O'Brien6"}, "expect": ["hdRStart", "hdRId", "hdROnclick"]}
+{"id": "r-hd-notoc-2", "kind": "token", "rule": "Heading", "target": "hdRNotoc", "opts": {"type": "start-notoc", "level": 3, "text": "O'Brien6"}, "expect": ["hdRNotoc"]}
+{"id": "r-hd-end-2", "kind": "token", "rule": "Heading", "target": "hdREnd", "opts": {"type": "end", "level": 3}, "expect": ["hdREnd"]}
+{"id": "r-hd-minus-2", "kind": "token", "rule": "Heading", "target": "hdREndMinus", "opts": {"type": "end", "level": 3, "id": "toc2", "collapse": false}, "expect": ["hdREnd", "hdREndMinus"]}
+{"id": "r-hd-plus-2", "kind": "token", "rule": "Heading", "target": "hdREndPlus", "opts": {"type": "end", "level": 3, "id": "toc2", "collapse": "x"}, "expect": ["hdREnd", "hdREndPlus"]}
+{"id": "r-hd-content-2", "kind": "token", "rule": "Heading", "target": "hdRContent", "opts": {"type": "startContent", "level": 3, "id": "toc2"}, "expect": ["hdRContent"]}
+{"id": "r-hd-cend-2", "kind": "token", "rule": "Heading", "target": "hdRContentEnd", "opts": {"type": "endContent", "id": "toc2"}, "expect": ["hdRContentEnd"]}
+{"id": "r-hd-fall-2", "kind": "token", "rule": "Heading", "target": "hdRFall", "opts": {"type": "other", "level": 3}, "expect": ["hdRFall"]}
+{"id": "r-hd-script-2", "kind": "token", "rule": "Heading", "target": "hdRScript", "opts": {"type": "startContent", "id": "toc2", "collapse": false}, "expect": ["hdRContent", "hdRScript"]}
+{"id": "r-hd-hidden-2", "kind": "token", "rule": "Heading", "target": "hdRHidden", "opts": {"type": "startContent", "id": "toc2", "collapse": true}, "expect": ["hdRContent", "hdRScript", "hdRHidden"]}
+{"id": "r-toc-start-2", "kind": "token", "rule": "Toc", "target": "tocRStart", "opts": {"type": "list_start", "level": 0, "align": ""}, "expect": ["tocRStart", "tocRTable", "tocRTitleDefault"]}
+{"id": "r-toc-table-2", "kind": "token", "rule": "Toc", "target": "tocRTable", "opts": {"type": "list_start", "level": 0, "align": null}, "expect": ["tocRStart", "tocRTable", "tocRTitleDefault"]}
+{"id": "r-toc-fl-2", "kind": "token", "rule": "Toc", "target": "tocRFLeft", "opts": {"type": "list_start", "level": 0, "align": "f<", "attr": {"title": "O'Brien6"}}, "expect": ["tocRStart", "tocRFLeft", "tocRTitleAuthored"]}
+{"id": "r-toc-fr-2", "kind": "token", "rule": "Toc", "target": "tocRFRight", "opts": {"type": "list_start", "level": 0, "align": "f>"}, "expect": ["tocRStart", "tocRFRight", "tocRTitleDefault"]}
+{"id": "r-toc-other-2", "kind": "token", "rule": "Toc", "target": "tocROther", "opts": {"type": "list_start", "level": 0, "align": "center"}, "expect": ["tocRStart", "tocROther", "tocRTitleDefault"]}
+{"id": "r-toc-tdef-2", "kind": "token", "rule": "Toc", "target": "tocRTitleDefault", "opts": {"type": "list_start", "level": 0, "align": "", "attr": {"class": "c"}}, "expect": ["tocRStart", "tocRTable", "tocRTitleDefault"]}
+{"id": "r-toc-tauth-2", "kind": "token", "rule": "Toc", "target": "tocRTitleAuthored", "opts": {"type": "list_start", "level": 0, "align": "", "attr": {"title": "O'Brien6"}}, "expect": ["tocRStart", "tocRTable", "tocRTitleAuthored"]}
+{"id": "r-toc-end-2", "kind": "token", "rule": "Toc", "target": "tocREnd", "opts": {"type": "list_end", "level": 0, "align": ""}, "expect": ["tocREnd", "tocREndTable"]}
+{"id": "r-toc-etable-2", "kind": "token", "rule": "Toc", "target": "tocREndTable", "opts": {"type": "list_end", "level": 0, "align": null}, "expect": ["tocREnd", "tocREndTable"]}
+{"id": "r-toc-ebare-2", "kind": "token", "rule": "Toc", "target": "tocREndBare", "opts": {"type": "list_end", "level": 0, "align": "f<"}, "expect": ["tocREnd", "tocREndBare"]}
+{"id": "r-toc-item-2", "kind": "token", "rule": "Toc", "target": "tocRItem", "opts": {"type": "item_start", "id": "toc2", "level": 3, "count": 2}, "expect": ["tocRItem", "tocSentinel"]}
+{"id": "r-toc-iend-2", "kind": "token", "rule": "Toc", "target": "tocRItemEnd", "opts": {"type": "item_end", "level": 3}, "expect": ["tocRItemEnd", "tocSentinel"]}
+{"id": "r-toc-sent-2", "kind": "token", "rule": "Toc", "target": "tocSentinel", "opts": {"type": "item_start", "id": "toc2", "level": 3, "count": 0}, "expect": ["tocRItem", "tocSentinel"]}
+{"id": "r-toc-fall-2", "kind": "token", "rule": "Toc", "target": "tocRFall", "opts": {"type": "nope"}, "expect": ["tocRFall"]}
+{"id": "r-an-named-2", "kind": "token", "rule": "Anchor", "target": "anRNamed", "opts": {"name": "O'Brien6"}, "expect": ["anRNamed"]}
+{"id": "r-an-given-2", "kind": "token", "rule": "Anchor", "target": "anRStartGiven", "opts": {"type": "start", "attrs": {"href": "/O'Brien6", "class": "c"}}, "expect": ["anRStartGiven"]}
+{"id": "r-an-def-2", "kind": "token", "rule": "Anchor", "target": "anRStartDefault", "opts": {"type": "start", "attrs": "nope"}, "expect": ["anRStartDefault"]}
+{"id": "r-an-end-2", "kind": "token", "rule": "Anchor", "target": "anREnd", "opts": {"type": "end"}, "expect": ["anREnd"]}
+{"id": "r-an-inv-2", "kind": "token", "rule": "Anchor", "target": "anRInvalid", "opts": {"type": "invalid_named", "lead": " ", "text": "O'Brien6", "trail": ""}, "expect": ["anRInvalid"]}
+{"id": "r-an-lit-2", "kind": "token", "rule": "Anchor", "target": "anRLiteral", "opts": {"type": "literal", "text": "[[# O'Brien6]]"}, "expect": ["anRLiteral"]}
+{"id": "r-an-fall-2", "kind": "token", "rule": "Anchor", "target": "anRFallName", "opts": {"type": "other", "name": "O'Brien6"}, "expect": ["anRFallName"]}
+{"id": "sent-page-2", "kind": "source", "target": "tocSentinel", "source": "+ **O'Brien6**\n[[toc]]"}
+{"id": "hd-l1-3", "kind": "source", "target": "hdL1", "source": "+ a&b0"}
+{"id": "hd-l2-3", "kind": "source", "target": "hdL2", "source": "++ a&b0"}
+{"id": "hd-l3-3", "kind": "source", "target": "hdL3", "source": "+++ a&b0"}
+{"id": "hd-l4-3", "kind": "source", "target": "hdL4", "source": "++++ a&b0"}
+{"id": "hd-l5-3", "kind": "source", "target": "hdL5", "source": "+++++ a&b0"}
+{"id": "hd-l6-3", "kind": "source", "target": "hdL6", "source": "++++++ a&b0"}
+{"id": "hd-toc-3", "kind": "source", "target": "hdToc", "source": "+ a&b0"}
+{"id": "hd-notoc-3", "kind": "source", "target": "hdNotoc", "source": "+* a&b0"}
+{"id": "hd-miss-nospace-3", "kind": "source", "target": "hdMiss", "source": "+a&b0"}
+{"id": "hd-miss-seven-3", "kind": "source", "target": "hdMiss", "source": "+++++++ a&b0"}
+{"id": "toc-miss-3", "kind": "source", "target": "tocMiss", "source": "plain a&b0"}
+{"id": "toc-empty-3", "kind": "source", "target": "tocPEmpty", "source": "[[toc]]\n"}
+{"id": "toc-fleft-3", "kind": "source", "target": "tocPFLeft", "source": "[[f<toc]]\n+ a&b0"}
+{"id": "toc-fright-3", "kind": "source", "target": "tocPFRight", "source": "[[f>toc]]\n+ a&b0"}
+{"id": "toc-keep-3", "kind": "source", "target": "tocKeep", "source": "+ a&b0\n[[toc]]"}
+{"id": "toc-skip-3", "kind": "source", "target": "tocSkip", "source": "+* a&b0\n[[toc]]"}
+{"id": "toc-null-3", "kind": "regex", "target": "tocPNull", "source": "[[toc]]x"}
+{"id": "an-ph-3", "kind": "source", "target": "anPlaceholder", "source": "[[# @@a&b0@@]]"}
+{"id": "an-blank-3", "kind": "source", "target": "anBlank", "source": "[[# ]]"}
+{"id": "an-valid-3", "kind": "source", "target": "anValid", "source": "[[# ab0]]"}
+{"id": "an-lit-3", "kind": "source", "target": "anLiteral", "source": "[[# a b]]]"}
+{"id": "an-inv-3", "kind": "source", "target": "anInvalid", "source": "[[# a a&b0]]"}
+{"id": "an-plain-3", "kind": "source", "target": "anPlain", "source": "[[a href=\"/p3\"]]a&b0[[/a]]"}
+{"id": "an-nested-3", "kind": "source", "target": "anNested", "source": "[[a href=\"/3\"]]x[[a href=\"/3b\"]]a&b0[[/a]]z[[/a]]"}
+{"id": "an-para-3", "kind": "source", "target": "anPara", "source": "[[a href=\"/p3\"]]a&b0\n\nmore[[/a]]"}
+{"id": "an-scored-3", "kind": "source", "target": "anScored", "source": "[[a_ href=\"/p3\"]]a&b0[[/a]]"}
+{"id": "an-lead-3", "kind": "source", "target": "anLead", "source": "x[[a href=\"/p3\"]] a&b0[[/a]]z"}
+{"id": "an-trail-3", "kind": "source", "target": "anTrail", "source": "[[a href=\"/p3\"]]a&b0 [[/a]]z"}
+{"id": "an-close-3", "kind": "source", "target": "anNestedClose", "source": "[[a href=\"/3\"]]x[[a href=\"/3b\"]]a&b0[[/a]]z[[/a]]"}
+{"id": "an-join-3", "kind": "source", "target": "anJoinStrip", "source": "PRE\n[[a_ href=\"/p3\"]]a&b0[[/a]]\nPOST"}
+{"id": "an-href0-3", "kind": "source", "target": "anHrefAbsent", "source": "[[a]]a&b0[[/a]]"}
+{"id": "an-hrefv-3", "kind": "source", "target": "anHrefVerb", "source": "[[a href=\"https://example.com/3\"]]a&b0[[/a]]"}
+{"id": "an-hrefd-3", "kind": "source", "target": "anHrefDelim", "source": "[[a href=\"https://example.com/@@3@@\"]]a&b0[[/a]]"}
+{"id": "an-hrefs-3", "kind": "source", "target": "anHrefSlug", "source": "[[a href=\"Some Page\"]]a&b0[[/a]]"}
+{"id": "an-star-3", "kind": "source", "target": "anStarTarget", "source": "[[a href=\"*https://example.com/3\"]]a&b0[[/a]]"}
+{"id": "an-iddrop-3", "kind": "source", "target": "anIdDrop", "source": "[[a href=\"/x\" id=\"\"]]a&b0[[/a]]"}
+{"id": "an-idbare-3", "kind": "source", "target": "anIdBare", "source": "[[a href=\"/x\" id=\"   \"]]a&b0[[/a]]"}
+{"id": "an-idkept-3", "kind": "source", "target": "anIdKept", "source": "[[a href=\"/x\" id=\"u-foo3\"]]a&b0[[/a]]"}
+{"id": "an-idspace-3", "kind": "source", "target": "anIdSpace", "source": "[[a href=\"/x\" id=\" foo\"]]a&b0[[/a]]"}
+{"id": "an-idpre-3", "kind": "source", "target": "anIdPrefix", "source": "[[a href=\"/x\" id=\"foo\"]]a&b0[[/a]]"}
+{"id": "an-fixdrop-3", "kind": "source", "target": "anFixedDrop", "source": "[[a href=\"/x\" class=\"\"]]a&b0[[/a]]"}
+{"id": "an-fixdelim-3", "kind": "source", "target": "anFixedDelim", "source": "[[a href=\"/x\" class=\"@@a@@\"]]a&b0[[/a]]"}
+{"id": "an-fixkeep-3", "kind": "source", "target": "anFixedKeep", "source": "[[a href=\"/x\" class=\"c\"]]a&b0[[/a]]"}
+{"id": "an-datad-3", "kind": "source", "target": "anDataDelim", "source": "[[a href=\"/x\" data-x=\"@@a@@\"]]a&b0[[/a]]"}
+{"id": "an-datak-3", "kind": "source", "target": "anDataKeep", "source": "[[a href=\"/x\" data-x=\"d\"]]a&b0[[/a]]"}
+{"id": "an-other-3", "kind": "source", "target": "anOtherDrop", "source": "[[a href=\"/x\" onclick=\"o\"]]a&b0[[/a]]"}
+{"id": "r-hd-start-3", "kind": "token", "rule": "Heading", "target": "hdRStart", "opts": {"type": "start", "level": 4, "text": "a&b0"}, "expect": ["hdRStart"]}
+{"id": "r-hd-id-3", "kind": "token", "rule": "Heading", "target": "hdRId", "opts": {"type": "start", "level": 4, "id": "toc3", "text": "a&b0"}, "expect": ["hdRStart", "hdRId"]}
+{"id": "r-hd-click-3", "kind": "token", "rule": "Heading", "target": "hdROnclick", "opts": {"type": "start", "level": 4, "id": "toc3", "collapse": "x", "text": "a&b0"}, "expect": ["hdRStart", "hdRId", "hdROnclick"]}
+{"id": "r-hd-notoc-3", "kind": "token", "rule": "Heading", "target": "hdRNotoc", "opts": {"type": "start-notoc", "level": 4, "text": "a&b0"}, "expect": ["hdRNotoc"]}
+{"id": "r-hd-end-3", "kind": "token", "rule": "Heading", "target": "hdREnd", "opts": {"type": "end", "level": 4}, "expect": ["hdREnd"]}
+{"id": "r-hd-minus-3", "kind": "token", "rule": "Heading", "target": "hdREndMinus", "opts": {"type": "end", "level": 4, "id": "toc3", "collapse": false}, "expect": ["hdREnd", "hdREndMinus"]}
+{"id": "r-hd-plus-3", "kind": "token", "rule": "Heading", "target": "hdREndPlus", "opts": {"type": "end", "level": 4, "id": "toc3", "collapse": "x"}, "expect": ["hdREnd", "hdREndPlus"]}
+{"id": "r-hd-content-3", "kind": "token", "rule": "Heading", "target": "hdRContent", "opts": {"type": "startContent", "level": 4, "id": "toc3"}, "expect": ["hdRContent"]}
+{"id": "r-hd-cend-3", "kind": "token", "rule": "Heading", "target": "hdRContentEnd", "opts": {"type": "endContent", "id": "toc3"}, "expect": ["hdRContentEnd"]}
+{"id": "r-hd-fall-3", "kind": "token", "rule": "Heading", "target": "hdRFall", "opts": {"type": "other", "level": 4}, "expect": ["hdRFall"]}
+{"id": "r-hd-script-3", "kind": "token", "rule": "Heading", "target": "hdRScript", "opts": {"type": "startContent", "id": "toc3", "collapse": false}, "expect": ["hdRContent", "hdRScript"]}
+{"id": "r-hd-hidden-3", "kind": "token", "rule": "Heading", "target": "hdRHidden", "opts": {"type": "startContent", "id": "toc3", "collapse": true}, "expect": ["hdRContent", "hdRScript", "hdRHidden"]}
+{"id": "r-toc-start-3", "kind": "token", "rule": "Toc", "target": "tocRStart", "opts": {"type": "list_start", "level": 0, "align": ""}, "expect": ["tocRStart", "tocRTable", "tocRTitleDefault"]}
+{"id": "r-toc-table-3", "kind": "token", "rule": "Toc", "target": "tocRTable", "opts": {"type": "list_start", "level": 0, "align": null}, "expect": ["tocRStart", "tocRTable", "tocRTitleDefault"]}
+{"id": "r-toc-fl-3", "kind": "token", "rule": "Toc", "target": "tocRFLeft", "opts": {"type": "list_start", "level": 0, "align": "f<", "attr": {"title": "a&b0"}}, "expect": ["tocRStart", "tocRFLeft", "tocRTitleAuthored"]}
+{"id": "r-toc-fr-3", "kind": "token", "rule": "Toc", "target": "tocRFRight", "opts": {"type": "list_start", "level": 0, "align": "f>"}, "expect": ["tocRStart", "tocRFRight", "tocRTitleDefault"]}
+{"id": "r-toc-other-3", "kind": "token", "rule": "Toc", "target": "tocROther", "opts": {"type": "list_start", "level": 0, "align": "center"}, "expect": ["tocRStart", "tocROther", "tocRTitleDefault"]}
+{"id": "r-toc-tdef-3", "kind": "token", "rule": "Toc", "target": "tocRTitleDefault", "opts": {"type": "list_start", "level": 0, "align": "", "attr": {"class": "c"}}, "expect": ["tocRStart", "tocRTable", "tocRTitleDefault"]}
+{"id": "r-toc-tauth-3", "kind": "token", "rule": "Toc", "target": "tocRTitleAuthored", "opts": {"type": "list_start", "level": 0, "align": "", "attr": {"title": "a&b0"}}, "expect": ["tocRStart", "tocRTable", "tocRTitleAuthored"]}
+{"id": "r-toc-end-3", "kind": "token", "rule": "Toc", "target": "tocREnd", "opts": {"type": "list_end", "level": 0, "align": ""}, "expect": ["tocREnd", "tocREndTable"]}
+{"id": "r-toc-etable-3", "kind": "token", "rule": "Toc", "target": "tocREndTable", "opts": {"type": "list_end", "level": 0, "align": null}, "expect": ["tocREnd", "tocREndTable"]}
+{"id": "r-toc-ebare-3", "kind": "token", "rule": "Toc", "target": "tocREndBare", "opts": {"type": "list_end", "level": 0, "align": "f<"}, "expect": ["tocREnd", "tocREndBare"]}
+{"id": "r-toc-item-3", "kind": "token", "rule": "Toc", "target": "tocRItem", "opts": {"type": "item_start", "id": "toc3", "level": 4, "count": 3}, "expect": ["tocRItem", "tocSentinel"]}
+{"id": "r-toc-iend-3", "kind": "token", "rule": "Toc", "target": "tocRItemEnd", "opts": {"type": "item_end", "level": 4}, "expect": ["tocRItemEnd", "tocSentinel"]}
+{"id": "r-toc-sent-3", "kind": "token", "rule": "Toc", "target": "tocSentinel", "opts": {"type": "item_start", "id": "toc3", "level": 4, "count": 0}, "expect": ["tocRItem", "tocSentinel"]}
+{"id": "r-toc-fall-3", "kind": "token", "rule": "Toc", "target": "tocRFall", "opts": {"type": "nope"}, "expect": ["tocRFall"]}
+{"id": "r-an-named-3", "kind": "token", "rule": "Anchor", "target": "anRNamed", "opts": {"name": "a&b0"}, "expect": ["anRNamed"]}
+{"id": "r-an-given-3", "kind": "token", "rule": "Anchor", "target": "anRStartGiven", "opts": {"type": "start", "attrs": {"href": "/a&b0", "class": "c"}}, "expect": ["anRStartGiven"]}
+{"id": "r-an-def-3", "kind": "token", "rule": "Anchor", "target": "anRStartDefault", "opts": {"type": "start", "attrs": "nope"}, "expect": ["anRStartDefault"]}
+{"id": "r-an-end-3", "kind": "token", "rule": "Anchor", "target": "anREnd", "opts": {"type": "end"}, "expect": ["anREnd"]}
+{"id": "r-an-inv-3", "kind": "token", "rule": "Anchor", "target": "anRInvalid", "opts": {"type": "invalid_named", "lead": " ", "text": "a&b0", "trail": ""}, "expect": ["anRInvalid"]}
+{"id": "r-an-lit-3", "kind": "token", "rule": "Anchor", "target": "anRLiteral", "opts": {"type": "literal", "text": "[[# a&b0]]"}, "expect": ["anRLiteral"]}
+{"id": "r-an-fall-3", "kind": "token", "rule": "Anchor", "target": "anRFallName", "opts": {"type": "other", "name": "a&b0"}, "expect": ["anRFallName"]}
+{"id": "sent-page-3", "kind": "source", "target": "tocSentinel", "source": "+ **a&b0**\n[[toc]]"}
+{"id": "hd-l1-4", "kind": "source", "target": "hdL1", "source": "+ n01"}
+{"id": "hd-l2-4", "kind": "source", "target": "hdL2", "source": "++ n01"}
+{"id": "hd-l3-4", "kind": "source", "target": "hdL3", "source": "+++ n01"}
+{"id": "hd-l4-4", "kind": "source", "target": "hdL4", "source": "++++ n01"}
+{"id": "hd-l5-4", "kind": "source", "target": "hdL5", "source": "+++++ n01"}
+{"id": "hd-l6-4", "kind": "source", "target": "hdL6", "source": "++++++ n01"}
+{"id": "hd-toc-4", "kind": "source", "target": "hdToc", "source": "+ n01"}
+{"id": "hd-notoc-4", "kind": "source", "target": "hdNotoc", "source": "+* n01"}
+{"id": "hd-miss-nospace-4", "kind": "source", "target": "hdMiss", "source": "+n01"}
+{"id": "hd-miss-seven-4", "kind": "source", "target": "hdMiss", "source": "+++++++ n01"}
+{"id": "toc-miss-4", "kind": "source", "target": "tocMiss", "source": "plain n01"}
+{"id": "toc-empty-4", "kind": "source", "target": "tocPEmpty", "source": "[[toc]]\n"}
+{"id": "toc-fleft-4", "kind": "source", "target": "tocPFLeft", "source": "[[f<toc]]\n+ n01"}
+{"id": "toc-fright-4", "kind": "source", "target": "tocPFRight", "source": "[[f>toc]]\n+ n01"}
+{"id": "toc-keep-4", "kind": "source", "target": "tocKeep", "source": "+ n01\n[[toc]]"}
+{"id": "toc-skip-4", "kind": "source", "target": "tocSkip", "source": "+* n01\n[[toc]]"}
+{"id": "toc-null-4", "kind": "regex", "target": "tocPNull", "source": "[[toc]]"}
+{"id": "an-ph-4", "kind": "source", "target": "anPlaceholder", "source": "[[# @@n01@@]]"}
+{"id": "an-blank-4", "kind": "source", "target": "anBlank", "source": "[[# ]]"}
+{"id": "an-valid-4", "kind": "source", "target": "anValid", "source": "[[# n01]]"}
+{"id": "an-lit-4", "kind": "source", "target": "anLiteral", "source": "[[# a b]]]"}
+{"id": "an-inv-4", "kind": "source", "target": "anInvalid", "source": "[[# a n01]]"}
+{"id": "an-plain-4", "kind": "source", "target": "anPlain", "source": "[[a href=\"/p4\"]]n01[[/a]]"}
+{"id": "an-nested-4", "kind": "source", "target": "anNested", "source": "[[a href=\"/4\"]]x[[a href=\"/4b\"]]n01[[/a]]z[[/a]]"}
+{"id": "an-para-4", "kind": "source", "target": "anPara", "source": "[[a href=\"/p4\"]]n01\n\nmore[[/a]]"}
+{"id": "an-scored-4", "kind": "source", "target": "anScored", "source": "[[a_ href=\"/p4\"]]n01[[/a]]"}
+{"id": "an-lead-4", "kind": "source", "target": "anLead", "source": "x[[a href=\"/p4\"]] n01[[/a]]z"}
+{"id": "an-trail-4", "kind": "source", "target": "anTrail", "source": "[[a href=\"/p4\"]]n01 [[/a]]z"}
+{"id": "an-close-4", "kind": "source", "target": "anNestedClose", "source": "[[a href=\"/4\"]]x[[a href=\"/4b\"]]n01[[/a]]z[[/a]]"}
+{"id": "an-join-4", "kind": "source", "target": "anJoinStrip", "source": "PRE\n[[a_ href=\"/p4\"]]n01[[/a]]\nPOST"}
+{"id": "an-href0-4", "kind": "source", "target": "anHrefAbsent", "source": "[[a]]n01[[/a]]"}
+{"id": "an-hrefv-4", "kind": "source", "target": "anHrefVerb", "source": "[[a href=\"https://example.com/4\"]]n01[[/a]]"}
+{"id": "an-hrefd-4", "kind": "source", "target": "anHrefDelim", "source": "[[a href=\"https://example.com/@@4@@\"]]n01[[/a]]"}
+{"id": "an-hrefs-4", "kind": "source", "target": "anHrefSlug", "source": "[[a href=\"Some Page\"]]n01[[/a]]"}
+{"id": "an-star-4", "kind": "source", "target": "anStarTarget", "source": "[[a href=\"*https://example.com/4\"]]n01[[/a]]"}
+{"id": "an-iddrop-4", "kind": "source", "target": "anIdDrop", "source": "[[a href=\"/x\" id=\"\"]]n01[[/a]]"}
+{"id": "an-idbare-4", "kind": "source", "target": "anIdBare", "source": "[[a href=\"/x\" id=\"   \"]]n01[[/a]]"}
+{"id": "an-idkept-4", "kind": "source", "target": "anIdKept", "source": "[[a href=\"/x\" id=\"u-foo4\"]]n01[[/a]]"}
+{"id": "an-idspace-4", "kind": "source", "target": "anIdSpace", "source": "[[a href=\"/x\" id=\" foo\"]]n01[[/a]]"}
+{"id": "an-idpre-4", "kind": "source", "target": "anIdPrefix", "source": "[[a href=\"/x\" id=\"foo\"]]n01[[/a]]"}
+{"id": "an-fixdrop-4", "kind": "source", "target": "anFixedDrop", "source": "[[a href=\"/x\" class=\"\"]]n01[[/a]]"}
+{"id": "an-fixdelim-4", "kind": "source", "target": "anFixedDelim", "source": "[[a href=\"/x\" class=\"@@a@@\"]]n01[[/a]]"}
+{"id": "an-fixkeep-4", "kind": "source", "target": "anFixedKeep", "source": "[[a href=\"/x\" class=\"c\"]]n01[[/a]]"}
+{"id": "an-datad-4", "kind": "source", "target": "anDataDelim", "source": "[[a href=\"/x\" data-x=\"@@a@@\"]]n01[[/a]]"}
+{"id": "an-datak-4", "kind": "source", "target": "anDataKeep", "source": "[[a href=\"/x\" data-x=\"d\"]]n01[[/a]]"}
+{"id": "an-other-4", "kind": "source", "target": "anOtherDrop", "source": "[[a href=\"/x\" onclick=\"o\"]]n01[[/a]]"}
+{"id": "r-hd-start-4", "kind": "token", "rule": "Heading", "target": "hdRStart", "opts": {"type": "start", "level": 5, "text": "n01"}, "expect": ["hdRStart"]}
+{"id": "r-hd-id-4", "kind": "token", "rule": "Heading", "target": "hdRId", "opts": {"type": "start", "level": 5, "id": "toc4", "text": "n01"}, "expect": ["hdRStart", "hdRId"]}
+{"id": "r-hd-click-4", "kind": "token", "rule": "Heading", "target": "hdROnclick", "opts": {"type": "start", "level": 5, "id": "toc4", "collapse": "x", "text": "n01"}, "expect": ["hdRStart", "hdRId", "hdROnclick"]}
+{"id": "r-hd-notoc-4", "kind": "token", "rule": "Heading", "target": "hdRNotoc", "opts": {"type": "start-notoc", "level": 5, "text": "n01"}, "expect": ["hdRNotoc"]}
+{"id": "r-hd-end-4", "kind": "token", "rule": "Heading", "target": "hdREnd", "opts": {"type": "end", "level": 5}, "expect": ["hdREnd"]}
+{"id": "r-hd-minus-4", "kind": "token", "rule": "Heading", "target": "hdREndMinus", "opts": {"type": "end", "level": 5, "id": "toc4", "collapse": false}, "expect": ["hdREnd", "hdREndMinus"]}
+{"id": "r-hd-plus-4", "kind": "token", "rule": "Heading", "target": "hdREndPlus", "opts": {"type": "end", "level": 5, "id": "toc4", "collapse": "x"}, "expect": ["hdREnd", "hdREndPlus"]}
+{"id": "r-hd-content-4", "kind": "token", "rule": "Heading", "target": "hdRContent", "opts": {"type": "startContent", "level": 5, "id": "toc4"}, "expect": ["hdRContent"]}
+{"id": "r-hd-cend-4", "kind": "token", "rule": "Heading", "target": "hdRContentEnd", "opts": {"type": "endContent", "id": "toc4"}, "expect": ["hdRContentEnd"]}
+{"id": "r-hd-fall-4", "kind": "token", "rule": "Heading", "target": "hdRFall", "opts": {"type": "other", "level": 5}, "expect": ["hdRFall"]}
+{"id": "r-hd-script-4", "kind": "token", "rule": "Heading", "target": "hdRScript", "opts": {"type": "startContent", "id": "toc4", "collapse": false}, "expect": ["hdRContent", "hdRScript"]}
+{"id": "r-hd-hidden-4", "kind": "token", "rule": "Heading", "target": "hdRHidden", "opts": {"type": "startContent", "id": "toc4", "collapse": true}, "expect": ["hdRContent", "hdRScript", "hdRHidden"]}
+{"id": "r-toc-start-4", "kind": "token", "rule": "Toc", "target": "tocRStart", "opts": {"type": "list_start", "level": 0, "align": ""}, "expect": ["tocRStart", "tocRTable", "tocRTitleDefault"]}
+{"id": "r-toc-table-4", "kind": "token", "rule": "Toc", "target": "tocRTable", "opts": {"type": "list_start", "level": 0, "align": null}, "expect": ["tocRStart", "tocRTable", "tocRTitleDefault"]}
+{"id": "r-toc-fl-4", "kind": "token", "rule": "Toc", "target": "tocRFLeft", "opts": {"type": "list_start", "level": 0, "align": "f<", "attr": {"title": "n01"}}, "expect": ["tocRStart", "tocRFLeft", "tocRTitleAuthored"]}
+{"id": "r-toc-fr-4", "kind": "token", "rule": "Toc", "target": "tocRFRight", "opts": {"type": "list_start", "level": 0, "align": "f>"}, "expect": ["tocRStart", "tocRFRight", "tocRTitleDefault"]}
+{"id": "r-toc-other-4", "kind": "token", "rule": "Toc", "target": "tocROther", "opts": {"type": "list_start", "level": 0, "align": "center"}, "expect": ["tocRStart", "tocROther", "tocRTitleDefault"]}
+{"id": "r-toc-tdef-4", "kind": "token", "rule": "Toc", "target": "tocRTitleDefault", "opts": {"type": "list_start", "level": 0, "align": "", "attr": {"class": "c"}}, "expect": ["tocRStart", "tocRTable", "tocRTitleDefault"]}
+{"id": "r-toc-tauth-4", "kind": "token", "rule": "Toc", "target": "tocRTitleAuthored", "opts": {"type": "list_start", "level": 0, "align": "", "attr": {"title": "n01"}}, "expect": ["tocRStart", "tocRTable", "tocRTitleAuthored"]}
+{"id": "r-toc-end-4", "kind": "token", "rule": "Toc", "target": "tocREnd", "opts": {"type": "list_end", "level": 0, "align": ""}, "expect": ["tocREnd", "tocREndTable"]}
+{"id": "r-toc-etable-4", "kind": "token", "rule": "Toc", "target": "tocREndTable", "opts": {"type": "list_end", "level": 0, "align": null}, "expect": ["tocREnd", "tocREndTable"]}
+{"id": "r-toc-ebare-4", "kind": "token", "rule": "Toc", "target": "tocREndBare", "opts": {"type": "list_end", "level": 0, "align": "f<"}, "expect": ["tocREnd", "tocREndBare"]}
+{"id": "r-toc-item-4", "kind": "token", "rule": "Toc", "target": "tocRItem", "opts": {"type": "item_start", "id": "toc4", "level": 5, "count": 4}, "expect": ["tocRItem", "tocSentinel"]}
+{"id": "r-toc-iend-4", "kind": "token", "rule": "Toc", "target": "tocRItemEnd", "opts": {"type": "item_end", "level": 5}, "expect": ["tocRItemEnd", "tocSentinel"]}
+{"id": "r-toc-sent-4", "kind": "token", "rule": "Toc", "target": "tocSentinel", "opts": {"type": "item_start", "id": "toc4", "level": 5, "count": 0}, "expect": ["tocRItem", "tocSentinel"]}
+{"id": "r-toc-fall-4", "kind": "token", "rule": "Toc", "target": "tocRFall", "opts": {"type": "nope"}, "expect": ["tocRFall"]}
+{"id": "r-an-named-4", "kind": "token", "rule": "Anchor", "target": "anRNamed", "opts": {"name": "n01"}, "expect": ["anRNamed"]}
+{"id": "r-an-given-4", "kind": "token", "rule": "Anchor", "target": "anRStartGiven", "opts": {"type": "start", "attrs": {"href": "/n01", "class": "c"}}, "expect": ["anRStartGiven"]}
+{"id": "r-an-def-4", "kind": "token", "rule": "Anchor", "target": "anRStartDefault", "opts": {"type": "start", "attrs": "nope"}, "expect": ["anRStartDefault"]}
+{"id": "r-an-end-4", "kind": "token", "rule": "Anchor", "target": "anREnd", "opts": {"type": "end"}, "expect": ["anREnd"]}
+{"id": "r-an-inv-4", "kind": "token", "rule": "Anchor", "target": "anRInvalid", "opts": {"type": "invalid_named", "lead": " ", "text": "n01", "trail": ""}, "expect": ["anRInvalid"]}
+{"id": "r-an-lit-4", "kind": "token", "rule": "Anchor", "target": "anRLiteral", "opts": {"type": "literal", "text": "[[# n01]]"}, "expect": ["anRLiteral"]}
+{"id": "r-an-fall-4", "kind": "token", "rule": "Anchor", "target": "anRFallName", "opts": {"type": "other", "name": "n01"}, "expect": ["anRFallName"]}
+{"id": "sent-page-4", "kind": "source", "target": "tocSentinel", "source": "+ **n01**\n[[toc]]"}
+{"id": "hd-l1-5", "kind": "source", "target": "hdL1", "source": "+ Zz8"}
+{"id": "hd-l2-5", "kind": "source", "target": "hdL2", "source": "++ Zz8"}
+{"id": "hd-l3-5", "kind": "source", "target": "hdL3", "source": "+++ Zz8"}
+{"id": "hd-l4-5", "kind": "source", "target": "hdL4", "source": "++++ Zz8"}
+{"id": "hd-l5-5", "kind": "source", "target": "hdL5", "source": "+++++ Zz8"}
+{"id": "hd-l6-5", "kind": "source", "target": "hdL6", "source": "++++++ Zz8"}
+{"id": "hd-toc-5", "kind": "source", "target": "hdToc", "source": "+ Zz8"}
+{"id": "hd-notoc-5", "kind": "source", "target": "hdNotoc", "source": "+* Zz8"}
+{"id": "hd-miss-nospace-5", "kind": "source", "target": "hdMiss", "source": "+Zz8"}
+{"id": "hd-miss-seven-5", "kind": "source", "target": "hdMiss", "source": "+++++++ Zz8"}
+{"id": "toc-miss-5", "kind": "source", "target": "tocMiss", "source": "plain Zz8"}
+{"id": "toc-empty-5", "kind": "source", "target": "tocPEmpty", "source": "[[toc]]\n"}
+{"id": "toc-fleft-5", "kind": "source", "target": "tocPFLeft", "source": "[[f<toc]]\n+ Zz8"}
+{"id": "toc-fright-5", "kind": "source", "target": "tocPFRight", "source": "[[f>toc]]\n+ Zz8"}
+{"id": "toc-keep-5", "kind": "source", "target": "tocKeep", "source": "+ Zz8\n[[toc]]"}
+{"id": "toc-skip-5", "kind": "source", "target": "tocSkip", "source": "+* Zz8\n[[toc]]"}
+{"id": "toc-null-5", "kind": "regex", "target": "tocPNull", "source": "[[toc]]x"}
+{"id": "an-ph-5", "kind": "source", "target": "anPlaceholder", "source": "[[# @@Zz8@@]]"}
+{"id": "an-blank-5", "kind": "source", "target": "anBlank", "source": "[[# ]]"}
+{"id": "an-valid-5", "kind": "source", "target": "anValid", "source": "[[# Zz8]]"}
+{"id": "an-lit-5", "kind": "source", "target": "anLiteral", "source": "[[# a b]]]"}
+{"id": "an-inv-5", "kind": "source", "target": "anInvalid", "source": "[[# a Zz8]]"}
+{"id": "an-plain-5", "kind": "source", "target": "anPlain", "source": "[[a href=\"/p5\"]]Zz8[[/a]]"}
+{"id": "an-nested-5", "kind": "source", "target": "anNested", "source": "[[a href=\"/5\"]]x[[a href=\"/5b\"]]Zz8[[/a]]z[[/a]]"}
+{"id": "an-para-5", "kind": "source", "target": "anPara", "source": "[[a href=\"/p5\"]]Zz8\n\nmore[[/a]]"}
+{"id": "an-scored-5", "kind": "source", "target": "anScored", "source": "[[a_ href=\"/p5\"]]Zz8[[/a]]"}
+{"id": "an-lead-5", "kind": "source", "target": "anLead", "source": "x[[a href=\"/p5\"]] Zz8[[/a]]z"}
+{"id": "an-trail-5", "kind": "source", "target": "anTrail", "source": "[[a href=\"/p5\"]]Zz8 [[/a]]z"}
+{"id": "an-close-5", "kind": "source", "target": "anNestedClose", "source": "[[a href=\"/5\"]]x[[a href=\"/5b\"]]Zz8[[/a]]z[[/a]]"}
+{"id": "an-join-5", "kind": "source", "target": "anJoinStrip", "source": "PRE\n[[a_ href=\"/p5\"]]Zz8[[/a]]\nPOST"}
+{"id": "an-href0-5", "kind": "source", "target": "anHrefAbsent", "source": "[[a]]Zz8[[/a]]"}
+{"id": "an-hrefv-5", "kind": "source", "target": "anHrefVerb", "source": "[[a href=\"https://example.com/5\"]]Zz8[[/a]]"}
+{"id": "an-hrefd-5", "kind": "source", "target": "anHrefDelim", "source": "[[a href=\"https://example.com/@@5@@\"]]Zz8[[/a]]"}
+{"id": "an-hrefs-5", "kind": "source", "target": "anHrefSlug", "source": "[[a href=\"Some Page\"]]Zz8[[/a]]"}
+{"id": "an-star-5", "kind": "source", "target": "anStarTarget", "source": "[[a href=\"*https://example.com/5\"]]Zz8[[/a]]"}
+{"id": "an-iddrop-5", "kind": "source", "target": "anIdDrop", "source": "[[a href=\"/x\" id=\"\"]]Zz8[[/a]]"}
+{"id": "an-idbare-5", "kind": "source", "target": "anIdBare", "source": "[[a href=\"/x\" id=\"   \"]]Zz8[[/a]]"}
+{"id": "an-idkept-5", "kind": "source", "target": "anIdKept", "source": "[[a href=\"/x\" id=\"u-foo5\"]]Zz8[[/a]]"}
+{"id": "an-idspace-5", "kind": "source", "target": "anIdSpace", "source": "[[a href=\"/x\" id=\" foo\"]]Zz8[[/a]]"}
+{"id": "an-idpre-5", "kind": "source", "target": "anIdPrefix", "source": "[[a href=\"/x\" id=\"foo\"]]Zz8[[/a]]"}
+{"id": "an-fixdrop-5", "kind": "source", "target": "anFixedDrop", "source": "[[a href=\"/x\" class=\"\"]]Zz8[[/a]]"}
+{"id": "an-fixdelim-5", "kind": "source", "target": "anFixedDelim", "source": "[[a href=\"/x\" class=\"@@a@@\"]]Zz8[[/a]]"}
+{"id": "an-fixkeep-5", "kind": "source", "target": "anFixedKeep", "source": "[[a href=\"/x\" class=\"c\"]]Zz8[[/a]]"}
+{"id": "an-datad-5", "kind": "source", "target": "anDataDelim", "source": "[[a href=\"/x\" data-x=\"@@a@@\"]]Zz8[[/a]]"}
+{"id": "an-datak-5", "kind": "source", "target": "anDataKeep", "source": "[[a href=\"/x\" data-x=\"d\"]]Zz8[[/a]]"}
+{"id": "an-other-5", "kind": "source", "target": "anOtherDrop", "source": "[[a href=\"/x\" onclick=\"o\"]]Zz8[[/a]]"}
+{"id": "r-hd-start-5", "kind": "token", "rule": "Heading", "target": "hdRStart", "opts": {"type": "start", "level": 6, "text": "Zz8"}, "expect": ["hdRStart"]}
+{"id": "r-hd-id-5", "kind": "token", "rule": "Heading", "target": "hdRId", "opts": {"type": "start", "level": 6, "id": "toc5", "text": "Zz8"}, "expect": ["hdRStart", "hdRId"]}
+{"id": "r-hd-click-5", "kind": "token", "rule": "Heading", "target": "hdROnclick", "opts": {"type": "start", "level": 6, "id": "toc5", "collapse": "x", "text": "Zz8"}, "expect": ["hdRStart", "hdRId", "hdROnclick"]}
+{"id": "r-hd-notoc-5", "kind": "token", "rule": "Heading", "target": "hdRNotoc", "opts": {"type": "start-notoc", "level": 6, "text": "Zz8"}, "expect": ["hdRNotoc"]}
+{"id": "r-hd-end-5", "kind": "token", "rule": "Heading", "target": "hdREnd", "opts": {"type": "end", "level": 6}, "expect": ["hdREnd"]}
+{"id": "r-hd-minus-5", "kind": "token", "rule": "Heading", "target": "hdREndMinus", "opts": {"type": "end", "level": 6, "id": "toc5", "collapse": false}, "expect": ["hdREnd", "hdREndMinus"]}
+{"id": "r-hd-plus-5", "kind": "token", "rule": "Heading", "target": "hdREndPlus", "opts": {"type": "end", "level": 6, "id": "toc5", "collapse": "x"}, "expect": ["hdREnd", "hdREndPlus"]}
+{"id": "r-hd-content-5", "kind": "token", "rule": "Heading", "target": "hdRContent", "opts": {"type": "startContent", "level": 6, "id": "toc5"}, "expect": ["hdRContent"]}
+{"id": "r-hd-cend-5", "kind": "token", "rule": "Heading", "target": "hdRContentEnd", "opts": {"type": "endContent", "id": "toc5"}, "expect": ["hdRContentEnd"]}
+{"id": "r-hd-fall-5", "kind": "token", "rule": "Heading", "target": "hdRFall", "opts": {"type": "other", "level": 6}, "expect": ["hdRFall"]}
+{"id": "r-hd-script-5", "kind": "token", "rule": "Heading", "target": "hdRScript", "opts": {"type": "startContent", "id": "toc5", "collapse": false}, "expect": ["hdRContent", "hdRScript"]}
+{"id": "r-hd-hidden-5", "kind": "token", "rule": "Heading", "target": "hdRHidden", "opts": {"type": "startContent", "id": "toc5", "collapse": true}, "expect": ["hdRContent", "hdRScript", "hdRHidden"]}
+{"id": "r-toc-start-5", "kind": "token", "rule": "Toc", "target": "tocRStart", "opts": {"type": "list_start", "level": 0, "align": ""}, "expect": ["tocRStart", "tocRTable", "tocRTitleDefault"]}
+{"id": "r-toc-table-5", "kind": "token", "rule": "Toc", "target": "tocRTable", "opts": {"type": "list_start", "level": 0, "align": null}, "expect": ["tocRStart", "tocRTable", "tocRTitleDefault"]}
+{"id": "r-toc-fl-5", "kind": "token", "rule": "Toc", "target": "tocRFLeft", "opts": {"type": "list_start", "level": 0, "align": "f<", "attr": {"title": "Zz8"}}, "expect": ["tocRStart", "tocRFLeft", "tocRTitleAuthored"]}
+{"id": "r-toc-fr-5", "kind": "token", "rule": "Toc", "target": "tocRFRight", "opts": {"type": "list_start", "level": 0, "align": "f>"}, "expect": ["tocRStart", "tocRFRight", "tocRTitleDefault"]}
+{"id": "r-toc-other-5", "kind": "token", "rule": "Toc", "target": "tocROther", "opts": {"type": "list_start", "level": 0, "align": "center"}, "expect": ["tocRStart", "tocROther", "tocRTitleDefault"]}
+{"id": "r-toc-tdef-5", "kind": "token", "rule": "Toc", "target": "tocRTitleDefault", "opts": {"type": "list_start", "level": 0, "align": "", "attr": {"class": "c"}}, "expect": ["tocRStart", "tocRTable", "tocRTitleDefault"]}
+{"id": "r-toc-tauth-5", "kind": "token", "rule": "Toc", "target": "tocRTitleAuthored", "opts": {"type": "list_start", "level": 0, "align": "", "attr": {"title": "Zz8"}}, "expect": ["tocRStart", "tocRTable", "tocRTitleAuthored"]}
+{"id": "r-toc-end-5", "kind": "token", "rule": "Toc", "target": "tocREnd", "opts": {"type": "list_end", "level": 0, "align": ""}, "expect": ["tocREnd", "tocREndTable"]}
+{"id": "r-toc-etable-5", "kind": "token", "rule": "Toc", "target": "tocREndTable", "opts": {"type": "list_end", "level": 0, "align": null}, "expect": ["tocREnd", "tocREndTable"]}
+{"id": "r-toc-ebare-5", "kind": "token", "rule": "Toc", "target": "tocREndBare", "opts": {"type": "list_end", "level": 0, "align": "f<"}, "expect": ["tocREnd", "tocREndBare"]}
+{"id": "r-toc-item-5", "kind": "token", "rule": "Toc", "target": "tocRItem", "opts": {"type": "item_start", "id": "toc5", "level": 6, "count": 5}, "expect": ["tocRItem", "tocSentinel"]}
+{"id": "r-toc-iend-5", "kind": "token", "rule": "Toc", "target": "tocRItemEnd", "opts": {"type": "item_end", "level": 6}, "expect": ["tocRItemEnd", "tocSentinel"]}
+{"id": "r-toc-sent-5", "kind": "token", "rule": "Toc", "target": "tocSentinel", "opts": {"type": "item_start", "id": "toc5", "level": 6, "count": 0}, "expect": ["tocRItem", "tocSentinel"]}
+{"id": "r-toc-fall-5", "kind": "token", "rule": "Toc", "target": "tocRFall", "opts": {"type": "nope"}, "expect": ["tocRFall"]}
+{"id": "r-an-named-5", "kind": "token", "rule": "Anchor", "target": "anRNamed", "opts": {"name": "Zz8"}, "expect": ["anRNamed"]}
+{"id": "r-an-given-5", "kind": "token", "rule": "Anchor", "target": "anRStartGiven", "opts": {"type": "start", "attrs": {"href": "/Zz8", "class": "c"}}, "expect": ["anRStartGiven"]}
+{"id": "r-an-def-5", "kind": "token", "rule": "Anchor", "target": "anRStartDefault", "opts": {"type": "start", "attrs": "nope"}, "expect": ["anRStartDefault"]}
+{"id": "r-an-end-5", "kind": "token", "rule": "Anchor", "target": "anREnd", "opts": {"type": "end"}, "expect": ["anREnd"]}
+{"id": "r-an-inv-5", "kind": "token", "rule": "Anchor", "target": "anRInvalid", "opts": {"type": "invalid_named", "lead": " ", "text": "Zz8", "trail": ""}, "expect": ["anRInvalid"]}
+{"id": "r-an-lit-5", "kind": "token", "rule": "Anchor", "target": "anRLiteral", "opts": {"type": "literal", "text": "[[# Zz8]]"}, "expect": ["anRLiteral"]}
+{"id": "r-an-fall-5", "kind": "token", "rule": "Anchor", "target": "anRFallName", "opts": {"type": "other", "name": "Zz8"}, "expect": ["anRFallName"]}
+{"id": "sent-page-5", "kind": "source", "target": "tocSentinel", "source": "+ **Zz8**\n[[toc]]"}
