@@ -1,0 +1,12 @@
+{"id": "end-after-bold", "source": "alpha **bold** �"}
+{"id": "end-first-para", "source": "alpha �\n\nbravo charlie"}
+{"id": "end-both-para", "source": "alpha �\n\nbravo �"}
+{"id": "only-two", "source": "��"}
+{"id": "pair-zero", "source": "alpha �0� bravo charlie"}
+{"id": "digits-text", "source": "alpha � 42 bravo charlie"}
+{"id": "unclosed-digits", "source": "alpha �42 bravo charlie"}
+{"id": "end-list", "source": "* item one �\n* item two"}
+{"id": "end-heading", "source": "+ Head Word �\n\nbody alpha bravo"}
+{"id": "start-bold-after", "source": "� **bold** tail end"}
+{"id": "mid-no-space", "source": "alpha�bravo charlie"}
+{"id": "end-no-space", "source": "alpha bravo�"}

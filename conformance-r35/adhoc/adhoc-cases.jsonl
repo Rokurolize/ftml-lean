@@ -1,0 +1,4 @@
+{"id": "adhoc-target-span", "source": "[[[a@@span@@b|lab]]]"}
+{"id": "adhoc-target-span-nolabel", "source": "[[[@@span@@]]]"}
+{"id": "adhoc-eref-span-mid", "source": "[[eref a@@span@@b]]"}
+{"id": "adhoc-concat-at-ph", "source": "x@@span@@\\\ny"}

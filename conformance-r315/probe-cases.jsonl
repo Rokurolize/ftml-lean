@@ -1,0 +1,17 @@
+{"id": "cf-absent", "source": "~~~~\n"}
+{"id": "cf-gt", "source": "~~~~>\n"}
+{"id": "cf-lt", "source": "~~~~~~<\n"}
+{"id": "cf-three", "source": "~~~\n"}
+{"id": "hz-basic", "source": "a\n----\nb\n"}
+{"id": "hz-start", "source": "----\nb\n"}
+{"id": "hz-end", "source": "a\n----"}
+{"id": "hz-three", "source": "a\n---\nb\n"}
+{"id": "hz-trail", "source": "a\n---- \nb\n"}
+{"id": "sep-basic", "source": "a\n====\nb\n"}
+{"id": "br-basic", "source": "a _\nb\n"}
+{"id": "br-two", "source": "a _\nb _\nc\n"}
+{"id": "ce-basic", "source": "a\n= hello =\nb\n"}
+{"id": "ce-start", "source": "= hello\nb\n"}
+{"id": "ce-two", "source": "x\n= a\n= b\ny\n"}
+{"id": "ce-empty", "source": "x\n= \ny\n"}
+{"id": "ce-blank-between", "source": "x\n= a\n\n= b\ny\n"}

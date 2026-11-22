@@ -1,0 +1,6 @@
+{"id": "code-nested-tight", "source": "BEFORE\n[[code]]\n>>[[include muse-probe-g14-target |marker=PROBE]]\n[[/code]]\nAFTER"}
+{"id": "code-nested-spaced", "source": "BEFORE\n[[code]]\n> >[[include muse-probe-g14-target |marker=PROBE]]\n[[/code]]\nAFTER"}
+{"id": "code-indented", "source": "BEFORE\n[[code]]\n >[[include muse-probe-g14-target |marker=PROBE]]\n[[/code]]\nAFTER"}
+{"id": "quote-nested-tight", "source": "BEFORE\n>>[[include muse-probe-g14-target |marker=PROBE]]\nAFTER"}
+{"id": "quote-nested-spaced", "source": "BEFORE\n> >[[include muse-probe-g14-target |marker=PROBE]]\nAFTER"}
+{"id": "quote-indented", "source": "BEFORE\n >[[include muse-probe-g14-target |marker=PROBE]]\nAFTER"}

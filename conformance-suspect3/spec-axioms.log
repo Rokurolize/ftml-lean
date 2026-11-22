@@ -1,0 +1,10 @@
+[lean-build] waiting for the serial slot: (cd /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/lean-ftml && lake env lean /tmp/SpecSuspect3-audit.lean) at 2026-11-22T17:34:04+09:00
+[lean-build] slot acquired at 2026-11-22T17:34:04+09:00
+'LeanFtml.suspect3_url_autolink_admits_nbsp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.suspect3_include_pair_colon_page_part' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.suspect3_heading_seven_plus_never_matches' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.suspect3_toc_skips_notoc_heading' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.suspect3_bib_duplicate_label_overwrites' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.suspect3_typography_ellipsis_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.suspect3_typography_angles_carry_placeholder' depends on axioms: [propext, Classical.choice, Quot.sound]
+[lean-build] released (exit 0) at 2026-11-22T17:34:06+09:00

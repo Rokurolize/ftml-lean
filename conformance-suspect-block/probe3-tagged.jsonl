@@ -1,0 +1,2 @@
+{"id": "if-comma-space-multi-tagged", "source": "[[iftags +alpha, +beta]]KEEP[[/iftags]]\nX", "tags": ["alpha", "beta"]}
+{"id": "if-only-comma-tagged", "source": "[[iftags ,]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}

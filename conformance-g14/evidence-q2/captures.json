@@ -1,0 +1,62 @@
+{
+ "code-nested-tight": {
+  "fullname": "muse-probe-g14q-code-nested-tight",
+  "html": "<p>BEFORE</p>\n<div class=\"code\">\n<pre><code>&gt;&gt;[[include muse-probe-g14-target |marker=PROBE]]</code></pre></div>\n<br />\nAFTER",
+  "html_sha256": "28d2158d3fb686919de88cad0e4df1253bcc1d01993175b379824124e6e363fc",
+  "source": "BEFORE\n[[code]]\n>>[[include muse-probe-g14-target |marker=PROBE]]\n[[/code]]\nAFTER",
+  "source_sha256": "96a87df7faeaef52b08150167a3c72f66ae153cb4539a0aa3772f585ee653c4d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "code-nested-spaced": {
+  "fullname": "muse-probe-g14q-code-nested-spaced",
+  "html": "<p>BEFORE</p>\n<div class=\"code\">\n<pre><code>&gt; &gt;[[include muse-probe-g14-target |marker=PROBE]]</code></pre></div>\n<br />\nAFTER",
+  "html_sha256": "ef56a666da828d675577752c395c45b08c33f6aa59a331aa4ad1e617befbfcde",
+  "source": "BEFORE\n[[code]]\n> >[[include muse-probe-g14-target |marker=PROBE]]\n[[/code]]\nAFTER",
+  "source_sha256": "5e04b1892362341d44a03430d56ad5b838569d76024c93f2104de59b958126b7",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "code-indented": {
+  "fullname": "muse-probe-g14q-code-indented",
+  "html": "<p>BEFORE</p>\n<div class=\"code\">\n<pre><code> &gt;[[include muse-probe-g14-target |marker=PROBE]]</code></pre></div>\n<br />\nAFTER",
+  "html_sha256": "c9e88f8c7d7e936b4d6a6653ee8a4db675d271238c8bd6942b18c20ebed44d2c",
+  "source": "BEFORE\n[[code]]\n >[[include muse-probe-g14-target |marker=PROBE]]\n[[/code]]\nAFTER",
+  "source_sha256": "435cb8f1f909db1c45ed10f905333afcb7face7d7e69e0880a0b5d637c7bb952",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "quote-nested-tight": {
+  "fullname": "muse-probe-g14q-quote-nested-tight",
+  "html": "<p>BEFORE</p>\n<p>AFTER</p>",
+  "html_sha256": "3bfe5e22ed36d07f7df24fc03b97792cb34eaf01761080b5491bfa668b4baaef",
+  "source": "BEFORE\n>>[[include muse-probe-g14-target |marker=PROBE]]\nAFTER",
+  "source_sha256": "125c261a35e1ca541b01c1d030a2aa0e4799a110a06dc2b7cb7d7cf454c3f5e0",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "quote-nested-spaced": {
+  "fullname": "muse-probe-g14q-quote-nested-spaced",
+  "html": "<p>BEFORE</p>\n<blockquote>\n<p>&gt;[[include muse-probe-g14-target |marker=PROBE]]</p>\n</blockquote>\n<p>AFTER</p>",
+  "html_sha256": "d2d94ac0ba6c4ef145ced0a0887d935a17dfb17d5de1dc7f9143022ee5f63713",
+  "source": "BEFORE\n> >[[include muse-probe-g14-target |marker=PROBE]]\nAFTER",
+  "source_sha256": "e0a8821c6776eb54f70f892a896ee337ee6293018fbbe1dc1f4ec5c7f32e2c82",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "quote-indented": {
+  "fullname": "muse-probe-g14q-quote-indented",
+  "html": "<p>BEFORE<br />\n&gt;[[include muse-probe-g14-target |marker=PROBE]]<br />\nAFTER</p>",
+  "html_sha256": "3b732f88f1c8920c35800da0aa6f3756bdb2c4f6002d5d10c56807df1fa88aee",
+  "source": "BEFORE\n >[[include muse-probe-g14-target |marker=PROBE]]\nAFTER",
+  "source_sha256": "c40c41b81ffb6b03bc3e73f627250b1b73a4412cca860a0cfbff48a5c85faf40",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

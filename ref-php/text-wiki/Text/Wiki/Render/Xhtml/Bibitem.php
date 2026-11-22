@@ -1,0 +1,57 @@
+<?php
+
+/**
+ *
+ * @category   Text
+ * @package    Text_Wiki
+ * @author     Michal Frackowiak
+ * @license    http://www.gnu.org/copyleft/lesser.html  LGPL License 2.1
+ * @version    $Id$
+ * @link       http://pear.php.net/package/Text_Wiki
+ */
+
+/**
+ * Bibliography item.
+ *
+ * @category   Text
+ * @package    Text_Wiki
+ * @author     Michal Frackowiak
+ * @license    http://www.gnu.org/copyleft/lesser.html  LGPL License 2.1
+ * @version    Release: @package_version@
+ * @link       http://pear.php.net/package/Text_Wiki
+ */
+class Text_Wiki_Render_Xhtml_Bibitem extends Text_Wiki_Render {
+    
+    public $conf = array();
+
+    /**
+     *
+     * Renders a token into text matching the requested format.
+     *
+     * @access public
+     *
+     * @param array $options The "options" portion of the token (second
+     * element).
+     *
+     * @return string The text rendered from the token options.
+     *
+     */
+    
+    function token($options) {
+        if ($options['type'] == "start") {
+            $idPrefix = $this->getConf("id_prefix");
+            $label = $options['label'];
+            $id = $options['id'];
+            // R2-notes: live omits the space after the period when the
+            // entry body is empty (saved-page probes p-empty-body,
+            // p-empty-blank-entry, p-space-only-body, p-tab-only-body).
+            $separator = empty($options['empty']) ? ' ' : '';
+            $out = '<div class="bibitem" id="bibitem-' . $idPrefix . $id . '">' . $id . '.' . $separator;
+            return $out;
+        }
+        if ($options['type'] == "end") {
+            return '</div>';
+        }
+    }
+
+}

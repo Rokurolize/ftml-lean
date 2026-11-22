@@ -1,0 +1,42 @@
+{
+ "m2-nbsp-after-url": {
+  "fullname": "muse-probe-suspect3-m2-m2-nbsp-after-url",
+  "source": "http://example.com/a--b?x=1 2\nx",
+  "action": "created"
+ },
+ "m2-nbsp-after-url-inline": {
+  "fullname": "muse-probe-suspect3-m2-m2-nbsp-after-url-inline",
+  "source": "A http://example.com/a B C",
+  "action": "created"
+ },
+ "m2-include-colon-part": {
+  "fullname": "muse-probe-suspect3-m2-m2-include-colon-part",
+  "source": "[[include :sandbox-for-codex:foo:bar]]",
+  "action": "created"
+ },
+ "m2-include-colon-part-cross": {
+  "fullname": "muse-probe-suspect3-m2-m2-include-colon-part-cross",
+  "source": "[[include :sandbox-for-codex:category:page]]",
+  "action": "created"
+ },
+ "m2-m654-upper-nested": {
+  "fullname": "muse-probe-suspect3-m2-m2-m654-upper-nested",
+  "source": "[[MODULE654 CSS]]\n[[module654 Rate]]\n[[/module]]\n[[/module]]",
+  "action": "created"
+ },
+ "m2-m654-upper-inline-empty": {
+  "fullname": "muse-probe-suspect3-m2-m2-m654-upper-inline-empty",
+  "source": "[[MODULE654 Rate]][[/module]]",
+  "action": "created"
+ },
+ "m2-m654-control-module": {
+  "fullname": "muse-probe-suspect3-m2-m2-m654-control-module",
+  "source": "[[module Rate]]\n[[/module]]",
+  "action": "created"
+ },
+ "m2-m654-control-plain": {
+  "fullname": "muse-probe-suspect3-m2-m2-m654-control-plain",
+  "source": "just plain text",
+  "action": "created"
+ }
+}

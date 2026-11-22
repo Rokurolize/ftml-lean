@@ -1,0 +1,8 @@
+adhoc-concat-at-ph: PASS
+adhoc-eref-span-mid: PASS
+adhoc-target-span: PASS
+adhoc-target-span-nolabel: FAIL
+  expected tokens: (('Raw', ('map', (('text', ('str', 'span')),))), ('Freelink', ('map', (('anchor', ('str', '')), ('extra', ('str', '')), ('page', ('str', '2')), ('site', ('str', 'null')), ('text', ('bytes', (255, 48, 255))), ('textFromTitle', ('str', 'null')), ('url', ('str', 'null'))))))
+  got      tokens: (('Raw', ('map', (('text', ('str', 'span')),))), ('Freelink', ('map', (('anchor', ('str', '')), ('extra', ('str', '')), ('page', ('str', '0')), ('site', ('str', 'null')), ('text', ('bytes', (255, 48, 255))), ('textFromTitle', ('str', 'null')), ('url', ('str', 'null'))))))
+SUMMARY: 3/4 cases match
+SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches

@@ -1,0 +1,24 @@
+adj-acute-before -> muse-probe-suspect-email-adj-acute-before stable=True saved_source_matches=True valid=True
+adj-acute-after -> muse-probe-suspect-email-adj-acute-after stable=True saved_source_matches=True valid=True
+{
+ "adj-acute-before": {
+  "fullname": "muse-probe-suspect-email-adj-acute-before",
+  "html": "<p>é <span class=\"wiki-email\">moc.elpmaxe|u#moc.elpmaxe|u</span></p>",
+  "html_sha256": "3455928bd453bf084aa2e7de9f75b38cb75f4b162b66829b1cb9f6d99dae1382",
+  "source": "é u@example.com",
+  "source_sha256": "9332ca65669e62d0f02d75a4388ac5d1cbdc7618143ff7a9330bc6cda9707f4c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "adj-acute-after": {
+  "fullname": "muse-probe-suspect-email-adj-acute-after",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#moc.elpmaxe|u</span> é</p>",
+  "html_sha256": "a573a26b4d3999858d7d4d4d2a6ee48a55a41838cc5c08b33206993d176a5040",
+  "source": "u@example.com é",
+  "source_sha256": "0523ce4b46f7f7465cf0417e669976fcdd66cfcdc0b3e42a381ba6ea699e47dc",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

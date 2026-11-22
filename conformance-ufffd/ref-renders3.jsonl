@@ -1,0 +1,5 @@
+{"id":"spaces-control","output":"<p>alpha bravo charlie delta<\/p>\n\n"}
+{"id":"fake-after-bold","error":"Error: Call to a member function token() on null"}
+{"id":"fake-before-bold","error":"Error: Call to a member function token() on null"}
+{"id":"fake-space-fake","error":"Error: Call to a member function token() on null"}
+{"id":"fake-digit-mid","error":"Error: Call to a member function token() on null"}

@@ -1,0 +1,37 @@
+{
+ "bq-raw-nospace": {
+  "fullname": "muse-probe-suspect-block-bq-raw-nospace",
+  "source": "A\n\n>@@hello@@\n\nB",
+  "action": "created"
+ },
+ "bq-raw-space-control": {
+  "fullname": "muse-probe-suspect-block-bq-raw-space-control",
+  "source": "A\n\n> @@hello@@\n\nB",
+  "action": "created"
+ },
+ "bq-comment-after-marker": {
+  "fullname": "muse-probe-suspect-block-bq-comment-after-marker",
+  "source": "A\n\n>[!-- c --]\n\nB",
+  "action": "created"
+ },
+ "if-trail-forbid-untag": {
+  "fullname": "muse-probe-suspect-block-if-trail-forbid-untag",
+  "source": "A [[iftags -foo,]]KEPT[[/iftags]] B",
+  "action": "created"
+ },
+ "if-lead-forbid-untag": {
+  "fullname": "muse-probe-suspect-block-if-lead-forbid-untag",
+  "source": "A [[iftags ,-foo]]KEPT[[/iftags]] B",
+  "action": "created"
+ },
+ "cm-in-raw": {
+  "fullname": "muse-probe-suspect-block-cm-in-raw",
+  "source": "@@[!-- c --]@@",
+  "action": "created"
+ },
+ "bq-comment-tail-text": {
+  "fullname": "muse-probe-suspect-block-bq-comment-tail-text",
+  "source": "> [!-- c --] q",
+  "action": "created"
+ }
+}

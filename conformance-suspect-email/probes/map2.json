@@ -1,0 +1,12 @@
+{
+ "idx-url-shift": {
+  "fullname": "muse-probe-suspect-email-idx-url-shift",
+  "source": "http://p.q/r [u@example.com http://a.b/x]",
+  "action": "created"
+ },
+ "idx-newline-shift": {
+  "fullname": "muse-probe-suspect-email-idx-newline-shift",
+  "source": "X\n[u@example.com A\nB]",
+  "action": "created"
+ }
+}

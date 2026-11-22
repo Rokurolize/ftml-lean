@@ -1,0 +1,7 @@
+{"id": "x34-module-unknown-body", "source": "[[module Foo]]\nplain body\n[[/module]]"}
+{"id": "x35-module-unknown-nobody", "source": "[[module Foo]]"}
+{"id": "x36-freelink-footnote-target", "source": "A [[[[footnote]]n[[/footnote]]]] B"}
+{"id": "x37-form-raw-body", "source": "[[form]]\n@@x@@\n[[/form]]"}
+{"id": "x38-form-code-midline", "source": "[[form]]\na@@x@@b\n[[/form]]"}
+{"id": "x39-ustrip-plain", "source": "üüplainüü"}
+{"id": "x40-email-raw-shift3", "source": "A @@a@@ @@b@@ [a@example.com @@x@@] B"}

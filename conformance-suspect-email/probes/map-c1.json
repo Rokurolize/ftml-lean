@@ -1,0 +1,42 @@
+{
+ "lbl-close-inner": {
+  "fullname": "muse-probe-suspect-email-lbl-close-inner",
+  "source": "[u@example.com a]b]",
+  "action": "created"
+ },
+ "lbl-open-bracket": {
+  "fullname": "muse-probe-suspect-email-lbl-open-bracket",
+  "source": "[u@example.com a[b]",
+  "action": "created"
+ },
+ "lbl-url": {
+  "fullname": "muse-probe-suspect-email-lbl-url",
+  "source": "[u@example.com http://example.org/x]",
+  "action": "created"
+ },
+ "lbl-email": {
+  "fullname": "muse-probe-suspect-email-lbl-email",
+  "source": "[u@example.com other@example.net]",
+  "action": "created"
+ },
+ "lbl-strong": {
+  "fullname": "muse-probe-suspect-email-lbl-strong",
+  "source": "[u@example.com **bold**]",
+  "action": "created"
+ },
+ "lbl-newline": {
+  "fullname": "muse-probe-suspect-email-lbl-newline",
+  "source": "[u@example.com Line1\nLine2]",
+  "action": "created"
+ },
+ "lbl-bracket-lead": {
+  "fullname": "muse-probe-suspect-email-lbl-bracket-lead",
+  "source": "[u@example.com ]x]",
+  "action": "created"
+ },
+ "lbl-two-forms": {
+  "fullname": "muse-probe-suspect-email-lbl-two-forms",
+  "source": "[u@example.com First] and [v@example.net Second]",
+  "action": "created"
+ }
+}

@@ -1,0 +1,4 @@
+{"id":"adhoc-target-span","segments":[{"t":"\n"},{"k":1},{"t":"\n\n"}],"tokens":[["Raw",{"text":"span"}],["Freelink",{"site":null,"page":"a-0-b","text":"lab","anchor":"","extra":"","url":null,"textFromTitle":null}]],"equations":[],"mathId":null}
+{"id":"adhoc-target-span-nolabel","segments":[{"t":"\n"},{"k":3},{"t":"\n\n"}],"tokens":{"2":["Raw",{"text":"span"}],"3":["Freelink",{"site":null,"page":"2","text":{"$bytes":[255,50,255]},"anchor":"","extra":"","url":null,"textFromTitle":null}]},"equations":[],"mathId":null}
+{"id":"adhoc-eref-span-mid","segments":[{"t":"\n"},{"k":5},{"t":"\n\n"}],"tokens":{"4":["Raw",{"text":"span"}],"5":["Equationreference",{"label":{"$bytes":[97,255,52,255,98]}}]},"equations":[],"mathId":null}
+{"id":"adhoc-concat-at-ph","segments":[{"t":"\nx"},{"k":6},{"t":"y\n\n"}],"tokens":{"6":["Raw",{"text":"span"}]},"equations":[],"mathId":null}

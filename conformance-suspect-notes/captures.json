@@ -1,0 +1,102 @@
+{
+ "n3para": {
+  "fullname": "muse-probe-suspect-notes-n3para",
+  "html": "<p>x<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. p1\n<p>p2</p>\n<p>p3</p>\n</div>\n</div>",
+  "html_sha256": "506c98da769254207568bdbe57adbdeea7eb79e093b2b9d1de25085da18b7dca",
+  "source": "x[[footnote]]p1\n\np2\n\np3[[/footnote]]",
+  "source_sha256": "cfde1d355d9747bb931b37541ff5e72bc5322c0b824b734b17bd9280ed4cdccc",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "n2para-ctrl": {
+  "fullname": "muse-probe-suspect-notes-n2para-ctrl",
+  "html": "<p>x<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. p1\n<p>p2</p>\n</div>\n</div>",
+  "html_sha256": "3e46b7723ffce7b7ef05a217493b290eb47731e4489c74f60d41e75170901b43",
+  "source": "x[[footnote]]p1\n\np2[[/footnote]]",
+  "source_sha256": "7e49eb62071858308cd65d627ebd43579ea50890a87730fe2e5f5d23f9cd57c0",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bib-res-blank": {
+  "fullname": "muse-probe-suspect-notes-bib-res-blank",
+  "html": "<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n<div class=\"bibitem\" id=\"bibitem-1\">1. A</div>\nfoo bar</div>\n<p><a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-1-95626a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-1')\">1</a></p>",
+  "html_sha256": "c9622dad3ad0fc86a567d657a989974aafed27b936c63857681a86bd634964aa",
+  "source": "[[bibliography]]\n: a : A\nfoo\n\nbar\n[[/bibliography]]\n((bibcite a))",
+  "source_sha256": "4c602bd43dbc63c096ae63b63ebfb2a26d73ea7ce5fb8b89228aabd3b53913d5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bib-close-tail": {
+  "fullname": "muse-probe-suspect-notes-bib-close-tail",
+  "html": "[[bibliography]]<br />\n<dl>\n<dt>a</dt>\n<dd>A</dd>\n</dl>\n<p>[[/bibliography]] tail<br />\n<span class=\"error-inline\">Bibliography item <em>a</em> not found.</span></p>",
+  "html_sha256": "3146f3ee623cdfeb7a90234f5a400ef1403841ed16d31b104901736c9db819fb",
+  "source": "[[bibliography]]\n: a : A\n[[/bibliography]] tail\n((bibcite a))",
+  "source_sha256": "53384fabc9f48a11b24eef0e4fcc140d28a9b53cd6278ce79785d10d4b66a6f5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bib-multi-space": {
+  "fullname": "muse-probe-suspect-notes-bib-multi-space",
+  "html": "<p><a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-1-4279a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-1')\">1</a></p>\n<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n<div class=\"bibitem\" id=\"bibitem-1\">1. A B</div>\n</div>",
+  "html_sha256": "2da0bf3977b1522cf8610a2bd5e98ad745a5d8426335b1ed786e800d81ee1892",
+  "source": "((bibcite a))\n\n[[bibliography]]\n: a : A   B\n[[/bibliography]]",
+  "source_sha256": "f3c05e6680e2da2204112dac5a698eb1042631883e1316e658317d3957d4ddd9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bibc-case-rev": {
+  "fullname": "muse-probe-suspect-notes-bibc-case-rev",
+  "html": "<p><span class=\"error-inline\">Bibliography item <em>alpha</em> not found.</span></p>\n<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n<div class=\"bibitem\" id=\"bibitem-1\">1. Upper</div>\n</div>",
+  "html_sha256": "7a63bd871328af795fbbc3bc47ba11c814384fdb307bf2cf678c40af1c11fb5b",
+  "source": "((bibcite alpha))\n\n[[bibliography]]\n: Alpha : Upper\n[[/bibliography]]",
+  "source_sha256": "db22fb8f89200f02aa6f3de80bf023bd8d18d259d08975f27b5df1a1f4cea676",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "fnb-title-brackets": {
+  "fullname": "muse-probe-suspect-notes-fnb-title-brackets",
+  "html": "<p>x<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. n</div>\n</div>\n<br />\nB&quot;]]",
+  "html_sha256": "04744f9b8cad1cb23bba824fe86a8e1dfd92a776e1be235a28654fdf81b8ff76",
+  "source": "x[[footnote]]n[[/footnote]]\n[[footnoteblock title=\"A]]B\"]]",
+  "source_sha256": "fed40374f7b4d005e530ffe659b81d8937c508853f6691131e394f2d50297fba",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bib-close-nbsp": {
+  "fullname": "muse-probe-suspect-notes-bib-close-nbsp",
+  "html": "[[bibliography]]<br />\n<dl>\n<dt>a</dt>\n<dd>A</dd>\n</dl>\n<p>[[/bibliography]]&nbsp;<br />\n<span class=\"error-inline\">Bibliography item <em>a</em> not found.</span></p>",
+  "html_sha256": "69bed7dda647ee8d9f071d280588264e34f00ad951bf6dd8ba270113ad81796c",
+  "source": "[[bibliography]]\n: a : A\n[[/bibliography]] \n((bibcite a))",
+  "source_sha256": "aec725fc1ab36e11ee4c6dda57914a0aad378ab5ada4dbd15429dbfd1fad4d43",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bib-ctrl": {
+  "fullname": "muse-probe-suspect-notes-bib-ctrl",
+  "html": "<p><a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-1-26674a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-1')\">1</a></p>\n<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n<div class=\"bibitem\" id=\"bibitem-1\">1. A</div>\n</div>",
+  "html_sha256": "36fbb3fb563badee6ed33c175e50936eb8b921da5345e0c6776d559aff281c6c",
+  "source": "((bibcite a))\n\n[[bibliography]]\n: a : A\n[[/bibliography]]",
+  "source_sha256": "66c05ac18aaa1043bed0ac4e15e40e9c37926844b85895b8a5c028903fe2213c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bib-indent2": {
+  "fullname": "muse-probe-suspect-notes-bib-indent2",
+  "html": "x<br />\n[[bibliography]]<br />\n<dl>\n<dt>a</dt>\n<dd>A</dd>\n</dl>\n<p>[[/bibliography]]<br />\n<span class=\"error-inline\">Bibliography item <em>a</em> not found.</span></p>",
+  "html_sha256": "030b0b3e66bcf44a0c26b8a3f0726edd57a02e0ec763341035638157b35e9eef",
+  "source": "x\n [[bibliography]]\n: a : A\n[[/bibliography]]\n((bibcite a))",
+  "source_sha256": "c0515b3f555795a9d4347dcc2aaf5416e9d8f5715b08dd28c4a2652a28b00c1b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

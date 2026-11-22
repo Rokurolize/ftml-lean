@@ -1,0 +1,52 @@
+{
+ "freelink": {
+  "file": "link/freelink/battery.jsonl",
+  "count": 60
+ },
+ "linkx": {
+  "file": "link/xbattery.jsonl",
+  "count": 36
+ },
+ "module": {
+  "file": "module/module/battery.jsonl",
+  "count": 52
+ },
+ "module654": {
+  "file": "module/module654/battery.jsonl",
+  "count": 59
+ },
+ "modulex": {
+  "file": "module/xbattery.jsonl",
+  "count": 29
+ },
+ "image": {
+  "file": "para/image/battery.jsonl",
+  "count": 68
+ },
+ "math": {
+  "file": "next/math/battery.jsonl",
+  "count": 76
+ },
+ "gallery": {
+  "file": "refval/gallery/battery.jsonl",
+  "count": 88
+ },
+ "gallerysupp": {
+  "file": "refval/gallery/supplementary.jsonl",
+  "count": 4
+ },
+ "user": {
+  "file": "refval/user/battery.jsonl",
+  "count": 82
+ },
+ "file": {
+  "file": "refval/file/battery.jsonl",
+  "count": 83
+ },
+ "filesupp": {
+  "file": "refval/file/supplementary.jsonl",
+  "count": 6
+ },
+ "_total": 643,
+ "_raw_id_collisions_across_batteries": 20
+}

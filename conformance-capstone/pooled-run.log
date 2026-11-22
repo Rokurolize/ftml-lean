@@ -1,0 +1,104 @@
+pooled-php-full.jsonl rc: 0 bytes: 4061953 stderr bytes: 0
+pool sources (file: lines in, new ids contributed):
+  materials/block-all-cases.jsonl: 206 in, 206 new
+  materials/contain-all-cases.jsonl: 372 in, 363 new
+  materials/final-all-cases.jsonl: 365 in, 354 new
+  materials/inline1-all-cases.jsonl: 318 in, 307 new
+  materials/inline2-all-cases.jsonl: 363 in, 304 new
+  materials/inline3-all-cases.jsonl: 455 in, 381 new
+  materials/link-all-cases.jsonl: 221 in, 208 new
+  materials/list-all-cases.jsonl: 239 in, 219 new
+  materials/middle-all-cases.jsonl: 276 in, 241 new
+  materials/middle2-all-cases.jsonl: 189 in, 178 new
+  materials/module-all-cases.jsonl: 204 in, 195 new
+  materials/next-all-cases.jsonl: 382 in, 362 new
+  materials/notes-all-cases.jsonl: 367 in, 356 new
+  materials/para-all-cases.jsonl: 253 in, 230 new
+  materials/table-all-cases.jsonl: 185 in, 169 new
+  conformance-r3/smoke-cases.jsonl: 9 in, 0 new
+  conformance-r33/code-cases.jsonl: 68 in, 64 new
+  conformance-r33/formraw-cases.jsonl: 68 in, 68 new
+  conformance-r33/module-cases.jsonl: 195 in, 0 new
+  conformance-r33/module-all-cases.jsonl: 204 in, 0 new
+  conformance-r33/smoke-cases.jsonl: 9 in, 0 new
+  conformance-r34/next-all-cases.jsonl: 382 in, 0 new
+  conformance-r317/final-all-cases.jsonl: 365 in, 0 new
+  conformance-r317/authored-cases.jsonl: 285 in, 0 new
+pool size: 4205 cases
+PASS: 4130/4205 (including 5 parse-fatal agreements)
+MISMATCH: 75
+  a34: tokens
+  ce-05: segments
+  ce-06: segments
+  ce-07: segments
+  ce-18: segments,tokens
+  ce-21: segments,tokens
+  ce-34: segments,tokens
+  cf-31: segments,tokens
+  cf-32: segments,tokens
+  da-01: segments,tokens
+  da-02: segments,tokens
+  da-03: segments,tokens
+  da-04: segments,tokens
+  da-07: segments,tokens
+  da-08: segments,tokens
+  da-09: segments,tokens
+  da-10: segments,tokens
+  da-11: segments,tokens
+  da-15: segments,tokens
+  da-16: segments,tokens
+  da-17: segments,tokens
+  da-20: segments,tokens
+  da-21: segments,tokens
+  da-22: segments,tokens
+  da-23: segments,tokens
+  da-24: segments,tokens
+  da-25: segments,tokens
+  da-26: segments,tokens
+  da-27: segments,tokens
+  da-28: segments,tokens
+  da-31: segments,tokens
+  da-32: segments,tokens
+  da-33: segments,tokens
+  da-34: segments,tokens
+  da-35: segments,tokens
+  da-37: segments,tokens
+  da-38: segments,tokens
+  da-39: segments,tokens
+  da-40: segments,tokens
+  da-41: segments,tokens
+  da-42: segments,tokens
+  da-43: segments,tokens
+  da-44: segments,tokens
+  da-45: segments,tokens
+  da-46: segments,tokens
+  da-47: segments,tokens
+  hz-22: segments,tokens
+  hz-37: segments,tokens
+  hz-38: segments,tokens
+  sep-01: segments,tokens
+  sep-02: segments,tokens
+  sep-03: segments,tokens
+  sep-04: segments,tokens
+  sep-05: segments,tokens
+  sep-09: segments,tokens
+  sep-20: segments,tokens
+  sep-21: segments,tokens
+  sep-22: segments,tokens
+  sep-23: segments,tokens
+  sep-24: segments,tokens
+  sep-25: segments,tokens
+  sep-26: segments,tokens
+  sep-28: segments,tokens
+  sep-29: segments,tokens
+  sep-30: segments,tokens
+  sep-31: segments,tokens
+  sep-32: segments,tokens
+  sep-34: segments,tokens
+  sep-35: segments,tokens
+  sep-36: segments,tokens
+  sep-37: segments,tokens
+  sep-38: segments,tokens
+  sep-39: segments,tokens
+  sep-40: segments,tokens
+  sep-41: segments,tokens

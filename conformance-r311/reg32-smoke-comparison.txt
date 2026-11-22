@@ -1,0 +1,11 @@
+smoke-code: PASS
+smoke-collapsible: PASS
+smoke-div: PASS
+smoke-footnote: PASS
+smoke-include: PASS
+smoke-link: PASS
+smoke-math: PASS
+smoke-quote: PASS
+smoke-table: PASS
+SUMMARY: 9/9 cases match
+SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches

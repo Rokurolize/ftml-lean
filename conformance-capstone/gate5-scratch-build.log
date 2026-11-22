@@ -1,0 +1,1494 @@
+✔ [2/95] Built LeanFtml.Tree (385ms)
+✔ [4/95] Built LeanFtml.Tree:c.o (231ms)
+⚠ [5/95] Built LeanFtml.IncludeExpr (707ms)
+warning: LeanFtml/IncludeExpr.lean:82:12: Variable name `h` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [7/95] Built LeanFtml.Include (875ms)
+warning: LeanFtml/Include.lean:320:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/Include.lean:322:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/Include.lean:322:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/Include.lean:326:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/Include.lean:326:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/Include.lean:330:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/Include.lean:330:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/Include.lean:333:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/Include.lean:333:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [9/95] Built LeanFtml.SeamTypography (876ms)
+warning: LeanFtml/SeamTypography.lean:266:33: This simp argument is unused:
+  charsOf
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [markPieces, charsOf_map_some]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [11/95] Built LeanFtml.IncludeExpr:c.o (211ms)
+✔ [12/95] Built LeanFtml.TokenState (1.1s)
+✔ [14/95] Built LeanFtml.Include:c.o (209ms)
+⚠ [15/95] Built LeanFtml.BlockEnd (1.2s)
+warning: LeanFtml/BlockEnd.lean:201:23: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, hs]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:208:23: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, hs]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:255:53: This simp argument is unused:
+  Prod.mk.injEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanFirst, hrec, Option.map_some] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:271:73: This simp argument is unused:
+  Prod.mk.injEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanFirst, hrec, hacc, ↓reduceIte, Option.map_some] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:280:53: This simp argument is unused:
+  Prod.mk.injEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanFirst, hrec, Option.map_some] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:299:71: This simp argument is unused:
+  Prod.mk.injEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanCount, hrec, hb, ↓reduceIte, Option.map_some] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:307:71: This simp argument is unused:
+  Prod.mk.injEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanCount, hrec, hb, ↓reduceIte, Option.map_some] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:315:39: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, hacc, hn]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:324:79: This simp argument is unused:
+  Prod.mk.injEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanCount, hrec, hacc, hn, ↓reduceIte, Option.map_some] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:332:73: This simp argument is unused:
+  Prod.mk.injEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanCount, hrec, hacc, ↓reduceIte, Option.map_some] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:341:53: This simp argument is unused:
+  Prod.mk.injEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanCount, hrec, Option.map_some] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:375:49: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:378:41: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:381:49: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:384:41: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:392:57: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, allBlank_nil, h, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:392:68: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, allBlank_nil, herase, h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:394:67: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, allBlank_nil, h, hb, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:397:59: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, allBlank_nil, h, hb, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:402:51: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, herase, h, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:402:65: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, allBlank_nil, h, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:405:43: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, herase, h, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:405:57: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, allBlank_nil, h, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:418:51: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, hb, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:421:43: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, hb, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:423:51: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, hb, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:426:43: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, hb, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:429:49: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:432:41: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:441:59: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, allBlank_nil, h, hn, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:441:74: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, allBlank_nil, herase, h, hn]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:443:69: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, allBlank_nil, h, hn, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:446:61: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, allBlank_nil, h, hn, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:448:67: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, allBlank_nil, h, hb, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:451:59: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, allBlank_nil, h, hb, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:456:51: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, herase, h, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:456:65: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, allBlank_nil, h, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:459:43: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, herase, h, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:459:57: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, allBlank_nil, h, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [17/95] Built LeanFtml.IncludeGrammar (1.2s)
+warning: LeanFtml/IncludeGrammar.lean:93:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:95:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:96:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:97:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:108:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:131:56: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:137:36: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:140:67: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:145:43: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:146:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:160:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:167:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:188:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:193:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:199:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:209:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:227:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:230:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:234:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:239:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:359:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:444:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:448:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:541:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:543:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:571:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:619:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:624:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:668:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:670:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:676:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:678:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [19/95] Built LeanFtml.ParagraphStack (1.4s)
+warning: LeanFtml/ParagraphStack.lean:318:22: This simp argument is unused:
+  _h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [endParagraph]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [21/95] Built LeanFtml.IncludeGrammar:c.o (405ms)
+✔ [22/95] Built LeanFtml.SeamTypography:c.o (628ms)
+⚠ [23/95] Built LeanFtml.FrameRules (593ms)
+warning: LeanFtml/FrameRules.lean:51:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FrameRules.lean:53:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/FrameRules.lean:123:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FrameRules.lean:125:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [25/95] Built LeanFtml.BlockEnd:c.o (611ms)
+✔ [26/95] Built LeanFtml.TokenState:c.o (841ms)
+✔ [27/95] Built LeanFtml.FrameRules:c.o (283ms)
+⚠ [28/95] Built LeanFtml.Depth (2.0s)
+warning: LeanFtml/Depth.lean:104:18: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LeanFtml/Depth.lean:105:20: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LeanFtml/Depth.lean:306:39: This simp argument is unused:
+  modifyTop_ne_nil (s := g' :: rs) (by simp)
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [modifyTop]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/Depth.lean:619:31: This simp argument is unused:
+  placedForest_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hnil, placedState, placedStack]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/Depth.lean:620:31: This simp argument is unused:
+  placedForest_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hnil, placedState, placedStack, Forest.walk, placedForest]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/Depth.lean:896:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/Depth.lean:911:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/Depth.lean:960:30: This simp argument is unused:
+  Forest.walk_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Forest.walk, List.append_nil, walk_append]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/Depth.lean:979:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/Depth.lean:988:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [30/95] Built LeanFtml.CodeRule (517ms)
+✔ [32/95] Built LeanFtml.ParagraphStack:c.o (712ms)
+✔ [33/95] Built LeanFtml.Depth:c.o (550ms)
+✔ [34/95] Built LeanFtml.CodeRule:c.o (467ms)
+⚠ [35/95] Built LeanFtml.FormRawRules (932ms)
+warning: LeanFtml/FormRawRules.lean:514:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FormRawRules.lean:517:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/FormRawRules.lean:519:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FormRawRules.lean:522:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/FormRawRules.lean:524:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FormRawRules.lean:527:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [37/95] Built LeanFtml.FormRawRules:c.o (661ms)
+✔ [38/95] Built LeanFtml.ModuleRules (2.3s)
+✔ [40/95] Built LeanFtml.ModuleRules:c.o (1.0s)
+✔ [41/95] Built LeanFtml.MiddleRules (2.6s)
+✔ [43/95] Built LeanFtml.MiddleRules:c.o (306ms)
+⚠ [44/95] Built LeanFtml.NextRules (3.0s)
+warning: LeanFtml/NextRules.lean:339:9: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [46/95] Built LeanFtml.NotesRules (1.0s)
+✔ [48/95] Built LeanFtml.NextRules:c.o (2.1s)
+✔ [49/95] Built LeanFtml.NotesRules:c.o (961ms)
+✔ [50/95] Built LeanFtml.BlockRules (1.7s)
+✔ [52/95] Built LeanFtml.BlockRules:c.o (780ms)
+⚠ [53/95] Built LeanFtml.Middle2Rules (4.6s)
+warning: LeanFtml/Middle2Rules.lean:213:14: Variable name `k2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _k2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LeanFtml/Middle2Rules.lean:213:18: Variable name `b2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [55/95] Built LeanFtml.Middle2Rules:c.o (659ms)
+✔ [56/95] Built LeanFtml.LinkRules (6.3s)
+✔ [58/95] Built LeanFtml.LinkRules:c.o (2.6s)
+✔ [59/95] Built LeanFtml.ContainRules (4.5s)
+✔ [61/95] Built LeanFtml.ContainRules:c.o (1.0s)
+✔ [62/95] Built LeanFtml.ListRules (3.4s)
+✔ [64/95] Built LeanFtml.ListRules:c.o (2.7s)
+✔ [65/95] Built LeanFtml.TableRules (3.8s)
+✔ [67/95] Built LeanFtml.TableRules:c.o (902ms)
+⚠ [68/95] Built LeanFtml.ParaRules (1.5s)
+warning: LeanFtml/ParaRules.lean:353:6: Variable name `src` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _src
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [70/95] Built LeanFtml.ParaRules:c.o (1.1s)
+✔ [71/95] Built LeanFtml.Inline1Rules (3.0s)
+✔ [73/95] Built LeanFtml.Inline1Rules:c.o (1.4s)
+✔ [74/95] Built LeanFtml.Inline2Rules (1.4s)
+✔ [76/95] Built LeanFtml.FinalRules (4.4s)
+✔ [78/95] Built LeanFtml.Inline2Rules:c.o (509ms)
+✔ [79/95] Built LeanFtml.FinalRules:c.o (1.8s)
+⚠ [80/95] Built LeanFtml.Inline3Rules (2.0s)
+warning: LeanFtml/Inline3Rules.lean:462:6: Variable name `src` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _src
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [82/95] Built LeanFtml.Inline3Rules:c.o (927ms)
+⚠ [83/95] Built LeanFtml.IncludeRule (124s)
+warning: LeanFtml/IncludeRule.lean:657:19: This simp argument is unused:
+  hm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/IncludeRule.lean:662:19: This simp argument is unused:
+  hm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/IncludeRule.lean:682:29: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [refSubstitute, substitute, List.foldl_cons, refSubPass_eq_repPass]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [85/95] Built LeanFtml.Pipeline (673ms)
+✔ [87/95] Built LeanFtml (249ms)
+✔ [89/95] Built LeanFtml:c.o (80ms)
+✔ [90/95] Built LeanFtml.IncludeRule:c.o (1.1s)
+ℹ [91/95] Built Main (318ms)
+info: Main.lean:15:0: 'LeanFtml.processDepths_placed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:16:0: 'LeanFtml.processDepths_good' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:19:0: 'LeanFtml.scan_eraseBlank' depends on axioms: [propext, Quot.sound]
+info: Main.lean:20:0: 'LeanFtml.scanCount_close_blank' depends on axioms: [propext]
+info: Main.lean:21:0: 'LeanFtml.scan_tail' depends on axioms: [propext, Quot.sound]
+info: Main.lean:22:0: 'LeanFtml.recorded_pairing' depends on axioms: [propext]
+info: Main.lean:23:0: 'LeanFtml.scanEnd_eq_some' depends on axioms: [propext, Quot.sound]
+info: Main.lean:24:0: 'LeanFtml.findIncludeEnd_spec' depends on axioms: [propext, Quot.sound]
+info: Main.lean:25:0: 'LeanFtml.splice_empty_eq_gaps' depends on axioms: [propext]
+info: Main.lean:26:0: 'LeanFtml.gaps_sublist' depends on axioms: [propext, Quot.sound]
+info: Main.lean:27:0: 'LeanFtml.separated_shape' depends on axioms: [propext]
+info: Main.lean:28:0: 'LeanFtml.pagesRust_eq' depends on axioms: [propext]
+info: Main.lean:29:0: 'LeanFtml.matchOpener_adjacent' depends on axioms: [propext, Quot.sound]
+info: Main.lean:30:0: 'LeanFtml.matchOpener_spaced_none' depends on axioms: [propext, Quot.sound]
+info: Main.lean:31:0: 'LeanFtml.stripGt_split' depends on axioms: [propext, Quot.sound]
+info: Main.lean:32:0: 'LeanFtml.origOffset_mem' depends on axioms: [propext]
+info: Main.lean:33:0: 'LeanFtml.parsePageRef_spec' depends on axioms: [propext]
+info: Main.lean:34:0: 'LeanFtml.parseSiteRef_spec' depends on axioms: [propext, Quot.sound]
+info: Main.lean:36:0: 'LeanFtml.matchPat_eq_some' depends on axioms: [propext]
+info: Main.lean:37:0: 'LeanFtml.repPass_no_occurs' depends on axioms: [propext, Quot.sound]
+info: Main.lean:38:0: 'LeanFtml.repPass_first_occurs' depends on axioms: [propext, Quot.sound]
+info: Main.lean:39:0: 'LeanFtml.substitute_append' depends on axioms: [propext, Quot.sound]
+info: Main.lean:44:0: 'LeanFtml.endParagraph_wrapped' depends on axioms: [propext]
+info: Main.lean:45:0: 'LeanFtml.endParagraph_unwrapped' depends on axioms: [propext]
+info: Main.lean:46:0: 'LeanFtml.endParagraph_empty' depends on axioms: [propext]
+info: Main.lean:47:0: 'LeanFtml.push_unsafe_finishes' depends on axioms: [propext]
+info: Main.lean:48:0: 'LeanFtml.push_unsafe_twice' depends on axioms: [propext]
+info: Main.lean:49:0: 'LeanFtml.endParagraph_prefix' depends on axioms: [propext]
+info: Main.lean:50:0: 'LeanFtml.pushSafeElements_empty' depends on axioms: [propext]
+info: Main.lean:51:0: 'LeanFtml.pushSafeElements_all_breaks' depends on axioms: [propext]
+info: Main.lean:52:0: 'LeanFtml.pushSafeElements_append' depends on axioms: [propext]
+info: Main.lean:53:0: 'LeanFtml.buildParagraph_trims' depends on axioms: [propext]
+info: Main.lean:54:0: 'LeanFtml.markUnwrapped_empty' depends on axioms: [propext]
+info: Main.lean:55:0: 'LeanFtml.markUnwrapped_nonempty' depends on axioms: [propext]
+info: Main.lean:56:0: 'LeanFtml.endBreak_whitespace_unwrapped' depends on axioms: [propext]
+info: Main.lean:57:0: 'LeanFtml.endBreak_wrapped' depends on axioms: [propext]
+info: Main.lean:58:0: 'LeanFtml.discardedControl_no_output_change' depends on axioms: [propext]
+info: Main.lean:59:0: 'LeanFtml.intoElements_after_flush' depends on axioms: [propext]
+info: Main.lean:67:0: 'LeanFtml.seamResolve_eq_corrected' depends on axioms: [propext]
+info: Main.lean:68:0: 'LeanFtml.charsOf_append' depends on axioms: [propext]
+info: Main.lean:69:0: 'LeanFtml.charsOf_map_some' depends on axioms: [propext]
+info: Main.lean:70:0: 'LeanFtml.charsOf_markPieces' depends on axioms: [propext]
+info: Main.lean:71:0: 'LeanFtml.position_zero_eligibility' depends on axioms: [propext]
+info: Main.lean:72:0: 'LeanFtml.seam_space_run_collapse' depends on axioms: [propext]
+info: Main.lean:73:0: 'LeanFtml.seam_rules_compose' depends on axioms: [propext]
+info: Main.lean:80:0: 'LeanFtml.byteForm_text' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:81:0: 'LeanFtml.convCR_no_cr' depends on axioms: [propext, Quot.sound]
+info: Main.lean:82:0: 'LeanFtml.expandTabs_no_tab' depends on axioms: [propext]
+info: Main.lean:83:0: 'LeanFtml.delimiterRule_id' does not depend on any axioms
+info: Main.lean:87:0: 'LeanFtml.utf8Bytes_no_ff' depends on axioms: [propext, Quot.sound]
+info: Main.lean:88:0: 'LeanFtml.rawScan_no_at' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:93:0: 'LeanFtml.modulepreRule_tokens' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:94:0: 'LeanFtml.moduleMatch_defense_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:95:0: 'LeanFtml.module654Match_claim_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:101:0: 'LeanFtml.iftagsRule_tokens' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:102:0: 'LeanFtml.iftagsGate_keep_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:103:0: 'LeanFtml.iftagsGate_drop_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:104:0: 'LeanFtml.commentMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:105:0: 'LeanFtml.iframeMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:106:0: 'LeanFtml.dateMatch1_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:107:0: 'LeanFtml.mathProcess_guard_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:114:0: 'LeanFtml.concatlinesRule_tokens' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:115:0: 'LeanFtml.concatScan_join_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:116:0: 'LeanFtml.concatScan_div_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:117:0: 'LeanFtml.toUnixName_double_colon_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:118:0: 'LeanFtml.toUnixName_case_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:119:0: 'LeanFtml.freelinkMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:120:0: 'LeanFtml.freelinkRule_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:121:0: 'LeanFtml.erefMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:122:0: 'LeanFtml.erefRule_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:129:0: 'LeanFtml.footnoteitemRule_id' does not depend on any axioms
+info: Main.lean:130:0: 'LeanFtml.bibitemRule_id' does not depend on any axioms
+info: Main.lean:131:0: 'LeanFtml.footnoteMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:132:0: 'LeanFtml.footnoteblockProcess_empty_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:133:0: 'LeanFtml.bibDefMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:134:0: 'LeanFtml.bibitemProcess_state_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:135:0: 'LeanFtml.bibciteMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:142:0: 'LeanFtml.blockquoteMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:143:0: 'LeanFtml.blockquoteProcess_jump_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:144:0: 'LeanFtml.blockquoteProcess_empty_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:145:0: 'LeanFtml.headingMatchLine_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:146:0: 'LeanFtml.headingMatchLine_seven_none' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:147:0: 'LeanFtml.headingProcess_first_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:148:0: 'LeanFtml.tocMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:149:0: 'LeanFtml.tocProcess_one_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:158:0: 'LeanFtml.spanProcess_elides_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:159:0: 'LeanFtml.spanProcess_claim_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:160:0: 'LeanFtml.sizeValid_examples' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:161:0: 'LeanFtml.sizeProcess_invalid_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:162:0: 'LeanFtml.sizeMatchAt_tempered_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:163:0: 'LeanFtml.isolateId_examples' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:164:0: 'LeanFtml.divProcess_scored_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:165:0: 'LeanFtml.divProcess_suppresses_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:166:0: 'LeanFtml.collProcess_count_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:167:0: 'LeanFtml.collMatchAt_first_closer_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:168:0: 'LeanFtml.tabTitle_examples' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:169:0: 'LeanFtml.tabviewProcess_token_order_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:178:0: 'LeanFtml.native_run_two_items' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:179:0: 'LeanFtml.native_process_one_item' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:180:0: 'LeanFtml.def_item_simple' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:181:0: 'LeanFtml.def_process_one_item' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:182:0: 'LeanFtml.build_list_attrs_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:183:0: 'LeanFtml.list_rule_explicit_tokens' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:184:0: 'LeanFtml.deflist_rule_no_claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:192:0: 'LeanFtml.tableMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:193:0: 'LeanFtml.tableProcess_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:194:0: 'LeanFtml.advAttrStep_id_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:195:0: 'LeanFtml.advAttrStep_title_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:196:0: 'LeanFtml.advAttrStep_span_owner_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:197:0: 'LeanFtml.advAttrStep_span_zero_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:198:0: 'LeanFtml.advAttrStep_data_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:206:0: 'LeanFtml.imageMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:207:0: 'LeanFtml.imageProcess_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:208:0: 'LeanFtml.imageProcess_aligned_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:209:0: 'LeanFtml.imageProcess_placeholder_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:210:0: 'LeanFtml.newlineScan_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:211:0: 'LeanFtml.paraMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:212:0: 'LeanFtml.paraProcess_wrap_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:213:0: 'LeanFtml.paraProcess_skip_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:214:0: 'LeanFtml.paraProcess_scored_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:223:0: 'LeanFtml.urlMatchLen_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:224:0: 'LeanFtml.urlDescrMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:225:0: 'LeanFtml.urlInlineCut_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:226:0: 'LeanFtml.emailMatchLen_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:227:0: 'LeanFtml.emailDescrMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:228:0: 'LeanFtml.mathResolve_text_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:229:0: 'LeanFtml.mathResolve_suppress_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:230:0: 'LeanFtml.interwikiStandaloneMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:231:0: 'LeanFtml.interwikiStandaloneMatch_unknown_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:232:0: 'LeanFtml.interwikiDescrMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:241:0: 'LeanFtml.colortextMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:242:0: 'LeanFtml.strongMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:243:0: 'LeanFtml.strongMatch_empty_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:244:0: 'LeanFtml.emphasisMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:245:0: 'LeanFtml.emphasisMatch_empty_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:246:0: 'LeanFtml.emphasisMatch_padded_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:247:0: 'LeanFtml.underlineMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:248:0: 'LeanFtml.underlineMatch_empty_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:249:0: 'LeanFtml.underlineScan_double_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:250:0: 'LeanFtml.strikethroughMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:260:0: 'LeanFtml.ttMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:261:0: 'LeanFtml.ttMatch_closeRun_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:262:0: 'LeanFtml.ttScan_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:263:0: 'LeanFtml.superscriptMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:264:0: 'LeanFtml.superscriptMatch_empty_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:265:0: 'LeanFtml.subscriptMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:266:0: 'LeanFtml.subscriptMatch_empty_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:267:0: 'LeanFtml.typoUnits_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:268:0: 'LeanFtml.typoUnits_anchor_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:269:0: 'LeanFtml.tighten_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:270:0: 'LeanFtml.tightenColor_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:283:0: 'LeanFtml.userMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:284:0: 'LeanFtml.userMatchAt_starred_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:285:0: 'LeanFtml.buttonMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:286:0: 'LeanFtml.buttonTail_space_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:287:0: 'LeanFtml.buttonTail_twoSpace_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:288:0: 'LeanFtml.embedMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:289:0: 'LeanFtml.embedMatchAt_suffix_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:290:0: 'LeanFtml.socialMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:291:0: 'LeanFtml.socialMatchAt_bare_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:292:0: 'LeanFtml.socialMatchAt_oneSpace_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:293:0: 'LeanFtml.socialReplacement_bare_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:294:0: 'LeanFtml.fileMatchAt_pipe_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:295:0: 'LeanFtml.fileMatchAt_anchor_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:296:0: 'LeanFtml.isVerbatimHref_case_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:297:0: 'LeanFtml.isVerbatimHref_slash_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:298:0: 'LeanFtml.normalizeUnsafeHref_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:299:0: 'LeanFtml.namedAnchorMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:300:0: 'LeanFtml.anchorOpenerAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:301:0: 'LeanFtml.scoredJoinStrip_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:302:0: 'LeanFtml.scoredJoinStrip_three_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:303:0: 'LeanFtml.paraProcess_anchor_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:307:0: 'LeanFtml.includeRule_tokens' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:308:0: 'LeanFtml.includeRule_fatal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:309:0: 'LeanFtml.includePassesWith_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:310:0: 'LeanFtml.refSubPass_eq_repPass' depends on axioms: [propext, Quot.sound]
+info: Main.lean:311:0: 'LeanFtml.refSubstitute_eq_substitute' depends on axioms: [propext, Quot.sound]
+info: Main.lean:312:0: 'LeanFtml.refPageId_g14_target_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:313:0: 'LeanFtml.refPageId_other_page_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:314:0: 'LeanFtml.refPageId_empty_page_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:315:0: 'LeanFtml.refPageId_site_other_page_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:316:0: 'LeanFtml.refPageId_g14b_target_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:317:0: 'LeanFtml.refPageId_notes_inc_src_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:318:0: 'LeanFtml.refFindCandidate_basic_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:319:0: 'LeanFtml.refFindCandidate_quoted_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:320:0: 'LeanFtml.refFindIncludeEnd_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:321:0: 'LeanFtml.refParseBlock_stray_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:322:0: 'LeanFtml.refSegments_comment_pipe_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:323:0: 'LeanFtml.refSegments_unclosed_comment_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:324:0: 'LeanFtml.refCanonicalSite_host_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:325:0: 'LeanFtml.refResolveRef_cross_site_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:326:0: 'LeanFtml.refResolveRef_leading_colons_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:327:0: 'LeanFtml.refResolveRef_site_empty_fallback_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:328:0: 'LeanFtml.refResolveRef_empty_norm_fires_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:329:0: 'LeanFtml.refResolveRef_char_gate_rejects_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:330:0: 'LeanFtml.refResolveRef_pair_char_gate_rejects_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:331:0: 'LeanFtml.refFetch_missing_cross_site_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:332:0: 'LeanFtml.refFetch_existing_fold_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:333:0: 'LeanFtml.includePassesWith_self_cycle_bound_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:334:0: 'LeanFtml.includePassesWith_mutual_cycle_bound_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:335:0: 'LeanFtml.includePassesWith_nested_missing_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:336:0: 'LeanFtml.pipelineFull_length' does not depend on any axioms
+✔ [93/95] Built LeanFtml.Pipeline:c.o (619ms)
+✔ [94/95] Built Main:c.o (78ms)
+✔ [95/95] Built «lean-ftml»:exe (462ms)
+Build completed successfully (95 jobs).
+DEFAULT_BUILD_RC=0
+⚠ [4/95] Replayed LeanFtml.Depth
+warning: LeanFtml/Depth.lean:104:18: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LeanFtml/Depth.lean:105:20: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LeanFtml/Depth.lean:306:39: This simp argument is unused:
+  modifyTop_ne_nil (s := g' :: rs) (by simp)
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [modifyTop]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/Depth.lean:619:31: This simp argument is unused:
+  placedForest_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hnil, placedState, placedStack]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/Depth.lean:620:31: This simp argument is unused:
+  placedForest_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hnil, placedState, placedStack, Forest.walk, placedForest]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/Depth.lean:896:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/Depth.lean:911:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/Depth.lean:960:30: This simp argument is unused:
+  Forest.walk_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Forest.walk, List.append_nil, walk_append]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/Depth.lean:979:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/Depth.lean:988:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [6/95] Replayed LeanFtml.BlockEnd
+warning: LeanFtml/BlockEnd.lean:201:23: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, hs]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:208:23: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, hs]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:255:53: This simp argument is unused:
+  Prod.mk.injEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanFirst, hrec, Option.map_some] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:271:73: This simp argument is unused:
+  Prod.mk.injEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanFirst, hrec, hacc, ↓reduceIte, Option.map_some] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:280:53: This simp argument is unused:
+  Prod.mk.injEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanFirst, hrec, Option.map_some] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:299:71: This simp argument is unused:
+  Prod.mk.injEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanCount, hrec, hb, ↓reduceIte, Option.map_some] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:307:71: This simp argument is unused:
+  Prod.mk.injEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanCount, hrec, hb, ↓reduceIte, Option.map_some] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:315:39: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, hacc, hn]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:324:79: This simp argument is unused:
+  Prod.mk.injEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanCount, hrec, hacc, hn, ↓reduceIte, Option.map_some] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:332:73: This simp argument is unused:
+  Prod.mk.injEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanCount, hrec, hacc, ↓reduceIte, Option.map_some] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:341:53: This simp argument is unused:
+  Prod.mk.injEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanCount, hrec, Option.map_some] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:375:49: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:378:41: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:381:49: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:384:41: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:392:57: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, allBlank_nil, h, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:392:68: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, allBlank_nil, herase, h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:394:67: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, allBlank_nil, h, hb, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:397:59: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, allBlank_nil, h, hb, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:402:51: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, herase, h, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:402:65: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, allBlank_nil, h, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:405:43: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, herase, h, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:405:57: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, allBlank_nil, h, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:418:51: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, hb, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:421:43: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, hb, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:423:51: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, hb, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:426:43: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, hb, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:429:49: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:432:41: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:441:59: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, allBlank_nil, h, hn, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:441:74: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, allBlank_nil, herase, h, hn]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:443:69: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, allBlank_nil, h, hn, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:446:61: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, allBlank_nil, h, hn, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:448:67: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, allBlank_nil, h, hb, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:451:59: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, allBlank_nil, h, hb, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:456:51: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, herase, h, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:456:65: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, allBlank_nil, h, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:459:43: This simp argument is unused:
+  allBlank_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, herase, h, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:459:57: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanCount, eraseBlankItem, allBlank_nil, h, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8/95] Replayed LeanFtml.Include
+warning: LeanFtml/Include.lean:320:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/Include.lean:322:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/Include.lean:322:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/Include.lean:326:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/Include.lean:326:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/Include.lean:330:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/Include.lean:330:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/Include.lean:333:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/Include.lean:333:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [10/95] Replayed LeanFtml.IncludeGrammar
+warning: LeanFtml/IncludeGrammar.lean:93:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:95:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:96:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:97:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:108:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:131:56: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:137:36: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:140:67: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:145:43: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:146:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:160:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:167:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:188:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:193:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:199:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:209:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:227:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:230:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:234:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:239:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:359:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:444:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:448:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:541:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:543:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:571:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:619:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:624:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:668:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:670:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:676:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:678:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [12/95] Replayed LeanFtml.IncludeExpr
+warning: LeanFtml/IncludeExpr.lean:82:12: Variable name `h` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [14/95] Replayed LeanFtml.ParagraphStack
+warning: LeanFtml/ParagraphStack.lean:318:22: This simp argument is unused:
+  _h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [endParagraph]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [16/95] Replayed LeanFtml.SeamTypography
+warning: LeanFtml/SeamTypography.lean:266:33: This simp argument is unused:
+  charsOf
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [markPieces, charsOf_map_some]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [20/95] Replayed LeanFtml.IncludeRule
+warning: LeanFtml/IncludeRule.lean:657:19: This simp argument is unused:
+  hm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/IncludeRule.lean:662:19: This simp argument is unused:
+  hm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/IncludeRule.lean:682:29: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [refSubstitute, substitute, List.foldl_cons, refSubPass_eq_repPass]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [22/95] Replayed LeanFtml.FrameRules
+warning: LeanFtml/FrameRules.lean:51:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FrameRules.lean:53:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/FrameRules.lean:123:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FrameRules.lean:125:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [26/95] Replayed LeanFtml.FormRawRules
+warning: LeanFtml/FormRawRules.lean:514:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FormRawRules.lean:517:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/FormRawRules.lean:519:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FormRawRules.lean:522:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/FormRawRules.lean:524:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FormRawRules.lean:527:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [30/95] Replayed LeanFtml.NextRules
+warning: LeanFtml/NextRules.lean:339:9: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [44/95] Replayed LeanFtml.ParaRules
+warning: LeanFtml/ParaRules.lean:353:6: Variable name `src` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _src
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [50/95] Replayed LeanFtml.Inline3Rules
+warning: LeanFtml/Inline3Rules.lean:462:6: Variable name `src` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _src
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [54/95] Replayed LeanFtml.Middle2Rules
+warning: LeanFtml/Middle2Rules.lean:213:14: Variable name `k2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _k2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LeanFtml/Middle2Rules.lean:213:18: Variable name `b2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [92/95] Built ConformanceCapstone (397ms)
+✔ [94/95] Built ConformanceCapstone:c.o (389ms)
+✔ [95/95] Built «lean-ftml-conformance-capstone»:exe (204ms)
+Build completed successfully (95 jobs).
+CAPSTONE_BUILD_RC=0

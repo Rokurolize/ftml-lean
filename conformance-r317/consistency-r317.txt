@@ -1,0 +1,4 @@
+A prefix==fixture on family claims: 365/365  disagreements: []
+B restricted==full on family claims: 365/365  exclusions: []
+B-so Social firing agreement (restricted pair vs full pair): 365/365  disagreements: []
+C restricted==prefix on earlier claims: 364/365  disagreements: ['smoke-include']

@@ -1,0 +1,13 @@
+{"id": "bq-nbsp-only", "source": "X\n>  \nY", "tags": []}
+{"id": "bq-comment-only", "source": "A\n> [!--c--]\nB", "tags": []}
+{"id": "bq-spaced-marker", "source": "X\n> > q\nY", "tags": []}
+{"id": "bq-empty-in-run", "source": "A\n> a\n> \n> b\nB", "tags": []}
+{"id": "bq-indented-next", "source": "X\n> a\n > b\nY", "tags": []}
+{"id": "cm-two-lines", "source": "a\n[!--1--]\n[!--2--]\nb", "tags": []}
+{"id": "cm-nbsp-indent", "source": "a\n [!--c--]\nb", "tags": []}
+{"id": "cm-before-quote", "source": "A\n[!--c--]> q\nB", "tags": []}
+{"id": "cm-nested", "source": "a[!--x[!--y--]z--]b", "tags": []}
+{"id": "cm-quote-bridge-blank", "source": "A\n> x\n\n[!--c--]\n\n> y\nB", "tags": []}
+{"id": "bq-if-false-tagged", "source": "A\n> [[iftags +beta]]KEEP[[/iftags]]\nB", "tags": ["alpha"]}
+{"id": "if-spec-comment-tagged", "source": "[[iftags [!--x--]+alpha]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-trail-forbid-hit-tagged", "source": "[[iftags -alpha,]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}

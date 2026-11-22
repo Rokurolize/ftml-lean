@@ -1,0 +1,12 @@
+{
+ "if-comma-space-multi-tagged": {
+  "fullname": "muse-probe-suspect-block-if-comma-space-multi-tagged",
+  "source": "[[iftags +alpha, +beta]]KEEP[[/iftags]]\nX",
+  "action": "publish-tags"
+ },
+ "if-only-comma-tagged": {
+  "fullname": "muse-probe-suspect-block-if-only-comma-tagged",
+  "source": "[[iftags ,]]KEEP[[/iftags]]\nX",
+  "action": "publish-tags"
+ }
+}

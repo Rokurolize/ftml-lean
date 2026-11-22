@@ -1,0 +1,7 @@
+{"id":"lead-iftags-trailing-comma-tag","source":"[[iftags +alpha,]]KEEP[[/iftags]]","tags":["alpha"]}
+{"id":"lead-iftags-trailing-comma-untag","source":"[[iftags +alpha,]]KEEP[[/iftags]]","tags":[]}
+{"id":"lead-iftags-control-tagged","source":"[[iftags +alpha]]KEEP[[/iftags]]","tags":["alpha"]}
+{"id":"lead-iftags-control-untag","source":"[[iftags +alpha]]KEEP[[/iftags]]","tags":[]}
+{"id":"lead-bq-nospace-only","source":">nospace"}
+{"id":"lead-bq-nospace-then-text","source":">nospace\nX"}
+{"id":"lead-bq-space-then-text","source":"> space\nX"}

@@ -1,0 +1,82 @@
+{
+ "m2-nbsp-after-url": {
+  "fullname": "muse-probe-suspect3-m2-m2-nbsp-after-url",
+  "html": "<p><a href=\"http://example.com/a--b?x=1%C2%A02\">http://example.com/a--b?x=1&nbsp;2</a><br />\nx</p>",
+  "html_sha256": "b197ad86eb35e3d89094222791f33b212f388cd9002e01709a82b67b3a5ab5e0",
+  "source": "http://example.com/a--b?x=1 2\nx",
+  "source_sha256": "b6ec2fc982db98a5e38f891acb3a8d17a05bd3dd6beb5b246fa2b534db562b38",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "m2-nbsp-after-url-inline": {
+  "fullname": "muse-probe-suspect3-m2-m2-nbsp-after-url-inline",
+  "html": "<p>A <a href=\"http://example.com/a\">http://example.com/a</a> B&nbsp;C</p>",
+  "html_sha256": "ed67047f9df342d5e074d0ba38ede94df452c5e64cc9b8ff2796db0728831b0a",
+  "source": "A http://example.com/a B C",
+  "source_sha256": "940c5a909e495a95ae9940ae54ddc7e3ef690614afcc6d4cfd2c7d325d83105a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "m2-include-colon-part": {
+  "fullname": "muse-probe-suspect3-m2-m2-include-colon-part",
+  "html": "<div class=\"error-block\">\n<p>Included page &quot;foo:bar&quot; does not exist (<a href=\"https://sandbox-for-codex.wikidot.com/foo:bar/edit/true\">create it now</a>)</p>\n</div>",
+  "html_sha256": "3b8afcb36d1790e527ed1fae47844e042e1dbd16b7cde099f05828a35b45ac76",
+  "source": "[[include :sandbox-for-codex:foo:bar]]",
+  "source_sha256": "44f123852f35429f37d44b89249746b9ead63b1a8cf6b9d141ba506fc26b2254",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "m2-include-colon-part-cross": {
+  "fullname": "muse-probe-suspect3-m2-m2-include-colon-part-cross",
+  "html": "<div class=\"error-block\">\n<p>Included page &quot;category:page&quot; does not exist (<a href=\"https://sandbox-for-codex.wikidot.com/category:page/edit/true\">create it now</a>)</p>\n</div>",
+  "html_sha256": "a5aac410ceebcbc8ae9fd2bf052ec08a884818aee70aebd20889b577ceb03d45",
+  "source": "[[include :sandbox-for-codex:category:page]]",
+  "source_sha256": "1b73c7548e9b236880f964a59808fc15355e1d827acfcce6874aa5d43ca2598a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "m2-m654-upper-nested": {
+  "fullname": "muse-probe-suspect3-m2-m2-m654-upper-nested",
+  "html": "<p>[[/module]]</p>",
+  "html_sha256": "78a326d818461bc0dc7f89b89e793731e5915e5f5e9a1d13d1f1416e8b048d4c",
+  "source": "[[MODULE654 CSS]]\n[[module654 Rate]]\n[[/module]]\n[[/module]]",
+  "source_sha256": "a07af30283cf2d4ccce231a7562a21257f6218ae5653214621fce5a8b21a0e1e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "m2-m654-upper-inline-empty": {
+  "fullname": "muse-probe-suspect3-m2-m2-m654-upper-inline-empty",
+  "html": "<p>[[MODULE654 Rate]][[/module]]</p>",
+  "html_sha256": "5b4507615b3d7b780396384dcaa0258687e28813a456c93c029a2efb395af695",
+  "source": "[[MODULE654 Rate]][[/module]]",
+  "source_sha256": "3fed8c1dd03a678f9c109ecacfc6841f692dac2c12ca87c63cbbfd6b0bfbd776",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "m2-m654-control-module": {
+  "fullname": "muse-probe-suspect3-m2-m2-m654-control-module",
+  "html": "<div class=\"page-rate-widget-box\"><span class=\"rate-points\">rating:&nbsp;<span class=\"number prw54353\">0</span></span><span class=\"rateup btn btn-default\"><a title=\"I like it\" href=\"javascript:;\" onclick=\"WIKIDOT.modules.PageRateWidgetModule.listeners.rate(event, 1)\">+</a></span><span class=\"cancel btn btn-default\"><a title=\"Cancel my vote\" href=\"javascript:;\" onclick=\"WIKIDOT.modules.PageRateWidgetModule.listeners.cancelVote(event)\">x</a></span></div>\n<p>[[/module]]</p>",
+  "html_sha256": "ac3c338867d60340a5247cf28bbacae91aa9a1645e54004835f0a9999bdc24c0",
+  "source": "[[module Rate]]\n[[/module]]",
+  "source_sha256": "f7c70cd63764bccac763864644b126fdd0be8751e3f031e860d111e5c082d3d2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "m2-m654-control-plain": {
+  "fullname": "muse-probe-suspect3-m2-m2-m654-control-plain",
+  "html": "<p>just plain text</p>",
+  "html_sha256": "0a0b2509d2d013c9fe6c13bb4dbd0d44997379b6ebc2d56a89e8209fbbd6ce26",
+  "source": "just plain text",
+  "source_sha256": "ba6e6c9d9eab0573a46ce3cb17a60d493276ff0a8e8fb4022213b2a9fc45d22a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

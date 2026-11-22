@@ -1,0 +1,72 @@
+tableadv-witness-01: FAIL
+  expected segments: (('t', '\n'), ('k', 4), ('k', 2), ('k', 0), ('t', '[[table"]][[/table]]"]]'), ('k', 1), ('k', 3), ('k', 5), ('t', '\n\n'))
+  got      segments: (('t', '\n[[table]][[row]][[cell]][[table"]][[/table]]"]][[/cell]][[/row]][[/table]]\n\n'),)
+  expected tokens: (('Tableadv', ('map', (('attrs', ('map', ())), ('header', ('str', 'false')), ('type', ('str', 'cellStart'))))), ('Tableadv', ('map', (('header', ('str', 'false')), ('type', ('str', 'cellEnd'))))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'rowStart'))))), ('Tableadv', ('map', (('type', ('str', 'rowEnd')),))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'start'))))), ('Tableadv', ('map', (('type', ('str', 'end')),))))
+  got      tokens: ()
+tableadv-witness-02: FAIL
+  expected segments: (('t', '\n'), ('k', 4), ('k', 2), ('k', 0), ('t', '[[table"]][[/table]]"]]'), ('k', 1), ('k', 3), ('k', 5), ('t', '\n\n'))
+  got      segments: (('t', '\n[[table]][[row]][[cell]][[table"]][[/table]]"]][[/hcell]][[/row]][[/table]]\n\n'),)
+  expected tokens: (('Tableadv', ('map', (('attrs', ('map', ())), ('header', ('str', 'true')), ('type', ('str', 'cellStart'))))), ('Tableadv', ('map', (('header', ('str', 'true')), ('type', ('str', 'cellEnd'))))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'rowStart'))))), ('Tableadv', ('map', (('type', ('str', 'rowEnd')),))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'start'))))), ('Tableadv', ('map', (('type', ('str', 'end')),))))
+  got      tokens: ()
+tableadv-witness-03: FAIL
+  expected segments: (('t', '\n'), ('k', 4), ('k', 2), ('k', 0), ('t', '[[table"]][[/table]]"]]'), ('k', 1), ('k', 3), ('k', 5), ('t', '\n\n'))
+  got      segments: (('t', '\n[[table]][[row]][[hcell]][[table"]][[/table]]"]][[/cell]][[/row]][[/table]]\n\n'),)
+  expected tokens: (('Tableadv', ('map', (('attrs', ('map', ())), ('header', ('str', 'false')), ('type', ('str', 'cellStart'))))), ('Tableadv', ('map', (('header', ('str', 'false')), ('type', ('str', 'cellEnd'))))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'rowStart'))))), ('Tableadv', ('map', (('type', ('str', 'rowEnd')),))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'start'))))), ('Tableadv', ('map', (('type', ('str', 'end')),))))
+  got      tokens: ()
+tableadv-witness-04: FAIL
+  expected segments: (('t', '\n'), ('k', 4), ('k', 2), ('k', 0), ('t', '[[table"]][[/table]]"]]'), ('k', 1), ('k', 3), ('k', 5), ('t', '\n\n'))
+  got      segments: (('t', '\n[[table]][[row]][[hcell]][[table"]][[/table]]"]][[/hcell]][[/row]][[/table]]\n\n'),)
+  expected tokens: (('Tableadv', ('map', (('attrs', ('map', ())), ('header', ('str', 'true')), ('type', ('str', 'cellStart'))))), ('Tableadv', ('map', (('header', ('str', 'true')), ('type', ('str', 'cellEnd'))))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'rowStart'))))), ('Tableadv', ('map', (('type', ('str', 'rowEnd')),))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'start'))))), ('Tableadv', ('map', (('type', ('str', 'end')),))))
+  got      tokens: ()
+tableadv-witness-05: FAIL
+  expected segments: (('t', '\n'), ('k', 4), ('k', 2), ('k', 0), ('t', '[[table"]][[/table]]"]]'), ('k', 1), ('k', 3), ('k', 5), ('t', '\n\n'))
+  got      segments: (('t', '\n[[table]][[row]][[cell colspan="2"]][[table"]][[/table]]"]][[/cell]][[/row]][[/table]]\n\n'),)
+  expected tokens: (('Tableadv', ('map', (('attrs', ('map', (('colspan', ('str', '2')),))), ('header', ('str', 'false')), ('type', ('str', 'cellStart'))))), ('Tableadv', ('map', (('header', ('str', 'false')), ('type', ('str', 'cellEnd'))))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'rowStart'))))), ('Tableadv', ('map', (('type', ('str', 'rowEnd')),))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'start'))))), ('Tableadv', ('map', (('type', ('str', 'end')),))))
+  got      tokens: ()
+tableadv-witness-06: FAIL
+  expected segments: (('t', '\n'), ('k', 4), ('k', 2), ('k', 0), ('t', '[[table"]][[/table]]"]]'), ('k', 1), ('k', 3), ('k', 5), ('t', '\n\n'))
+  got      segments: (('t', '\n[[table]][[row]][[cell colspan="2"]][[table"]][[/table]]"]][[/hcell]][[/row]][[/table]]\n\n'),)
+  expected tokens: (('Tableadv', ('map', (('attrs', ('map', (('colspan', ('str', '2')),))), ('header', ('str', 'true')), ('type', ('str', 'cellStart'))))), ('Tableadv', ('map', (('header', ('str', 'true')), ('type', ('str', 'cellEnd'))))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'rowStart'))))), ('Tableadv', ('map', (('type', ('str', 'rowEnd')),))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'start'))))), ('Tableadv', ('map', (('type', ('str', 'end')),))))
+  got      tokens: ()
+tableadv-witness-07: FAIL
+  expected segments: (('t', '\n'), ('k', 4), ('k', 2), ('k', 0), ('t', '[[table"]][[/table]]"]]'), ('k', 1), ('k', 3), ('k', 5), ('t', '\n\n'))
+  got      segments: (('t', '\n[[table]][[row]][[cell colspan="0"]][[table"]][[/table]]"]][[/cell]][[/row]][[/table]]\n\n'),)
+  expected tokens: (('Tableadv', ('map', (('attrs', ('map', ())), ('header', ('str', 'false')), ('type', ('str', 'cellStart'))))), ('Tableadv', ('map', (('header', ('str', 'false')), ('type', ('str', 'cellEnd'))))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'rowStart'))))), ('Tableadv', ('map', (('type', ('str', 'rowEnd')),))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'start'))))), ('Tableadv', ('map', (('type', ('str', 'end')),))))
+  got      tokens: ()
+tableadv-witness-08: FAIL
+  expected segments: (('t', '\n'), ('k', 4), ('k', 2), ('k', 0), ('t', '[[table"]][[/table]]"]]'), ('k', 1), ('k', 3), ('k', 5), ('t', '\n\n'))
+  got      segments: (('t', '\n[[table]][[row]][[cell colspan="0"]][[table"]][[/table]]"]][[/hcell]][[/row]][[/table]]\n\n'),)
+  expected tokens: (('Tableadv', ('map', (('attrs', ('map', ())), ('header', ('str', 'true')), ('type', ('str', 'cellStart'))))), ('Tableadv', ('map', (('header', ('str', 'true')), ('type', ('str', 'cellEnd'))))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'rowStart'))))), ('Tableadv', ('map', (('type', ('str', 'rowEnd')),))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'start'))))), ('Tableadv', ('map', (('type', ('str', 'end')),))))
+  got      tokens: ()
+tableadv-witness-09: FAIL
+  expected segments: (('t', '\n'), ('k', 4), ('k', 2), ('k', 0), ('t', '[[table"]][[/table]]"]]'), ('k', 1), ('k', 3), ('k', 5), ('t', '\n\n'))
+  got      segments: (('t', '\n[[table]][[row]][[cell colspan="abc"]][[table"]][[/table]]"]][[/cell]][[/row]][[/table]]\n\n'),)
+  expected tokens: (('Tableadv', ('map', (('attrs', ('map', (('colspan', ('str', 'abc')),))), ('header', ('str', 'false')), ('type', ('str', 'cellStart'))))), ('Tableadv', ('map', (('header', ('str', 'false')), ('type', ('str', 'cellEnd'))))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'rowStart'))))), ('Tableadv', ('map', (('type', ('str', 'rowEnd')),))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'start'))))), ('Tableadv', ('map', (('type', ('str', 'end')),))))
+  got      tokens: ()
+tableadv-witness-10: FAIL
+  expected segments: (('t', '\n'), ('k', 4), ('k', 2), ('k', 0), ('t', '[[table"]][[/table]]"]]'), ('k', 1), ('k', 3), ('k', 5), ('t', '\n\n'))
+  got      segments: (('t', '\n[[table]][[row]][[cell colspan="abc"]][[table"]][[/table]]"]][[/hcell]][[/row]][[/table]]\n\n'),)
+  expected tokens: (('Tableadv', ('map', (('attrs', ('map', (('colspan', ('str', 'abc')),))), ('header', ('str', 'true')), ('type', ('str', 'cellStart'))))), ('Tableadv', ('map', (('header', ('str', 'true')), ('type', ('str', 'cellEnd'))))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'rowStart'))))), ('Tableadv', ('map', (('type', ('str', 'rowEnd')),))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'start'))))), ('Tableadv', ('map', (('type', ('str', 'end')),))))
+  got      tokens: ()
+tableadv-witness-11: FAIL
+  expected segments: (('t', '\n'), ('k', 4), ('k', 2), ('k', 0), ('t', '[[table"]][[/table]]"]]'), ('k', 1), ('k', 3), ('k', 5), ('t', '\n\n'))
+  got      segments: (('t', '\n[[table]][[row]][[cell align="center"]][[table"]][[/table]]"]][[/cell]][[/row]][[/table]]\n\n'),)
+  expected tokens: (('Tableadv', ('map', (('attrs', ('map', ())), ('header', ('str', 'false')), ('type', ('str', 'cellStart'))))), ('Tableadv', ('map', (('header', ('str', 'false')), ('type', ('str', 'cellEnd'))))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'rowStart'))))), ('Tableadv', ('map', (('type', ('str', 'rowEnd')),))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'start'))))), ('Tableadv', ('map', (('type', ('str', 'end')),))))
+  got      tokens: ()
+tableadv-witness-12: FAIL
+  expected segments: (('t', '\n'), ('k', 4), ('k', 2), ('k', 0), ('t', '[[table"]][[/table]]"]]'), ('k', 1), ('k', 3), ('k', 5), ('t', '\n\n'))
+  got      segments: (('t', '\n[[table]][[row]][[cell align="center"]][[table"]][[/table]]"]][[/hcell]][[/row]][[/table]]\n\n'),)
+  expected tokens: (('Tableadv', ('map', (('attrs', ('map', ())), ('header', ('str', 'true')), ('type', ('str', 'cellStart'))))), ('Tableadv', ('map', (('header', ('str', 'true')), ('type', ('str', 'cellEnd'))))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'rowStart'))))), ('Tableadv', ('map', (('type', ('str', 'rowEnd')),))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'start'))))), ('Tableadv', ('map', (('type', ('str', 'end')),))))
+  got      tokens: ()
+tableadv-witness-13: FAIL
+  expected segments: (('t', '\n'), ('k', 4), ('k', 2), ('k', 0), ('t', '[[table"]][[/table]]"]]'), ('k', 1), ('k', 3), ('k', 5), ('t', '\n\n'))
+  got      segments: (('t', '\n[[table]][[row]][[cell foo="1"]][[table"]][[/table]]"]][[/cell]][[/row]][[/table]]\n\n'),)
+  expected tokens: (('Tableadv', ('map', (('attrs', ('map', ())), ('header', ('str', 'false')), ('type', ('str', 'cellStart'))))), ('Tableadv', ('map', (('header', ('str', 'false')), ('type', ('str', 'cellEnd'))))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'rowStart'))))), ('Tableadv', ('map', (('type', ('str', 'rowEnd')),))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'start'))))), ('Tableadv', ('map', (('type', ('str', 'end')),))))
+  got      tokens: ()
+tableadv-witness-14: FAIL
+  expected segments: (('t', '\n'), ('k', 4), ('k', 2), ('k', 0), ('t', '[[table"]][[/table]]"]]'), ('k', 1), ('k', 3), ('k', 5), ('t', '\n\n'))
+  got      segments: (('t', '\n[[table]][[row]][[cell foo="1"]][[table"]][[/table]]"]][[/hcell]][[/row]][[/table]]\n\n'),)
+  expected tokens: (('Tableadv', ('map', (('attrs', ('map', ())), ('header', ('str', 'true')), ('type', ('str', 'cellStart'))))), ('Tableadv', ('map', (('header', ('str', 'true')), ('type', ('str', 'cellEnd'))))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'rowStart'))))), ('Tableadv', ('map', (('type', ('str', 'rowEnd')),))), ('Tableadv', ('map', (('attrs', ('map', ())), ('type', ('str', 'start'))))), ('Tableadv', ('map', (('type', ('str', 'end')),))))
+  got      tokens: ()
+SUMMARY: 0/14 cases match
+SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches

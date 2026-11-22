@@ -1,0 +1,500 @@
+{"id": "fz-bq-000", "source": ">>>>  \n>>>> [[[some-page|lab]]] link\n\n>> @@raw@@ body\n>>> xxxxxxxxxxxxxxxxxxxxxxxx\n> two words"}
+{"id": "fz-bq-001", "source": ">>> caf\u00e9 \u4e2d\u6587\n>>> @@raw@@ body\n\n>>>> > nested literal\n>>> "}
+{"id": "fz-bq-002", "source": ">>>>   padded\n> \n> note[[footnote]]fn[[/footnote]] here\n>>> text\n\n>>>>   padded\nafter text"}
+{"id": "fz-bq-003", "source": "+ Head\n>>\n>>> \n>  \n\n> [[[some-page|lab]]] link"}
+{"id": "fz-bq-004", "source": ">>> @@raw@@ body\n\n>  note[[footnote]]fn[[/footnote]] here\n>>\n>>> [[[some-page|lab]]] link\n>>> text"}
+{"id": "fz-bq-005", "source": ">> text\n>>>xxxxxxxxxxxxxxxxxxxxxxxx\n>  [[[some-page|lab]]] link\n>>> > nested literal"}
+{"id": "fz-bq-006", "source": "intro text\n>>>> caf\u00e9 \u4e2d\u6587\n>>>> xxxxxxxxxxxxxxxxxxxxxxxx\n>>   padded\n>>>"}
+{"id": "fz-bq-007", "source": ">> \n\n>>  > nested literal\n\n> xxxxxxxxxxxxxxxxxxxxxxxx\n"}
+{"id": "fz-bq-008", "source": ">>>> two words\n[[blockquote]]\n"}
+{"id": "fz-bq-009", "source": ">>>> caf\u00e9 \u4e2d\u6587\n>>>[[[some-page|lab]]] link\n>>>> \n\n>> text\n>"}
+{"id": "fz-bq-010", "source": ">>> \n[[blockquote]]"}
+{"id": "fz-bq-011", "source": ">> > nested literal\n>>>> caf\u00e9 \u4e2d\u6587\n>  padded\n>>> @@raw@@ body\n>>>>  note[[footnote]]fn[[/footnote]] here"}
+{"id": "fz-bq-012", "source": ">note[[footnote]]fn[[/footnote]] here\n>>>>\n>>> [[[some-page|lab]]] link\n>>>   padded\n\n>>>> "}
+{"id": "fz-bq-013", "source": ">>>> note[[footnote]]fn[[/footnote]] here\n>>    padded\n>>>\n\n>>>   "}
+{"id": "fz-bq-014", "source": "para\nmore\n>  \n\n> @@raw@@ body\n+ Tail"}
+{"id": "fz-bq-015", "source": ">> nested literal\n>>\n"}
+{"id": "fz-bq-016", "source": ">>> note[[footnote]]fn[[/footnote]] here\n> text\n\n"}
+{"id": "fz-bq-017", "source": "intro text\n>>>> @@raw@@ body\n>> [[[some-page|lab]]] link\n>> caf\u00e9 \u4e2d\u6587\n>> \n>> \n\n"}
+{"id": "fz-bq-018", "source": "> \n\n+ Tail"}
+{"id": "fz-bq-019", "source": ">>>> text\n"}
+{"id": "fz-bq-020", "source": ">>>> text\n\n>>>>  \n>> \n[[blockquote]]"}
+{"id": "fz-bq-021", "source": "intro text\n>> note[[footnote]]fn[[/footnote]] here\n>>>"}
+{"id": "fz-bq-022", "source": "> two words\n>> \n>> two words\n>> > nested literal\n>>>>   padded"}
+{"id": "fz-bq-023", "source": ">>>  \n\n+ Tail"}
+{"id": "fz-bq-024", "source": ">>\n>>> \n>>>   padded\n\n>>>  \n>>>>\n\n[[/blockquote]]"}
+{"id": "fz-bq-025", "source": "para\nmore\n> \n>>> text"}
+{"id": "fz-bq-026", "source": ">>> [[[some-page|lab]]] link\n>>> \nafter text\n"}
+{"id": "fz-bq-027", "source": ">> @@raw@@ body\n[[/blockquote]]"}
+{"id": "fz-bq-028", "source": ">>>>   padded\n> [[[some-page|lab]]] link\n"}
+{"id": "fz-bq-029", "source": "intro text\n>>>\n> \n+ Tail"}
+{"id": "fz-bq-030", "source": ">\n[[/blockquote]]"}
+{"id": "fz-bq-031", "source": ">>>>  \n\n>>>>note[[footnote]]fn[[/footnote]] here\n>>>> \n>>>caf\u00e9 \u4e2d\u6587\n>>>> > nested literal\n[[blockquote]]"}
+{"id": "fz-bq-032", "source": "+ Head\n>>> caf\u00e9 \u4e2d\u6587\n>>>> nested literal\n>>>\n>>>> text"}
+{"id": "fz-bq-033", "source": "para\nmore\n>>>>  \n>>   padded\n>> caf\u00e9 \u4e2d\u6587\n>> xxxxxxxxxxxxxxxxxxxxxxxx\n"}
+{"id": "fz-bq-034", "source": "> text\n\n>>> \n\n>>>  [[[some-page|lab]]] link\n>>> > nested literal\n\n[[blockquote]]"}
+{"id": "fz-bq-035", "source": "intro text\n>>>>\n>> xxxxxxxxxxxxxxxxxxxxxxxx\n\n>>>   padded\n>>>>\n>> xxxxxxxxxxxxxxxxxxxxxxxx"}
+{"id": "fz-bq-036", "source": ">>>> \n[[blockquote]]"}
+{"id": "fz-bq-037", "source": ">> two words\n>>> \n>>\n>>>caf\u00e9 \u4e2d\u6587\n> note[[footnote]]fn[[/footnote]] here\n"}
+{"id": "fz-bq-038", "source": "intro text\n> note[[footnote]]fn[[/footnote]] here\n>>>>"}
+{"id": "fz-bq-039", "source": ">>>> [[[some-page|lab]]] link\n>>>>   padded\n>> note[[footnote]]fn[[/footnote]] here\n> [[[some-page|lab]]] link\n> text"}
+{"id": "fz-bq-040", "source": ">>>> @@raw@@ body\n>>> two words\n>> @@raw@@ body\n>  padded\n\n>>  \n"}
+{"id": "fz-bq-041", "source": "intro text\n> text\n> \n>>>> \n>>>> > nested literal\n> two words\n"}
+{"id": "fz-bq-042", "source": ">>>>   padded\n\n"}
+{"id": "fz-bq-043", "source": "para\nmore\n>>>>  text\n\n>   padded\n[[blockquote]]\n"}
+{"id": "fz-bq-044", "source": ">>>> two words\n> note[[footnote]]fn[[/footnote]] here\n>> > nested literal\n>> two words\n>>>   \n+ Tail"}
+{"id": "fz-bq-045", "source": ">>   padded\n>>\n>>>>  "}
+{"id": "fz-bq-046", "source": "> two words\n\n>>  \n\n>>>  @@raw@@ body\n> \n>  \n"}
+{"id": "fz-bq-047", "source": ">> text\n\n>>>   padded\n>>>>\n>>>> "}
+{"id": "fz-bq-048", "source": "para\nmore\n> [[[some-page|lab]]] link\n"}
+{"id": "fz-bq-049", "source": "intro text\n>> @@raw@@ body\n> > nested literal\n>>>> > nested literal\n[[/blockquote]]"}
+{"id": "fz-bq-050", "source": ">> > nested literal\n>>   padded\n>>>> text\n>>>>  text\nafter text"}
+{"id": "fz-bq-051", "source": "para\nmore\n>>>>  \n"}
+{"id": "fz-bq-052", "source": "> \n+ Tail"}
+{"id": "fz-bq-053", "source": ">>   \n[[/blockquote]]"}
+{"id": "fz-bq-054", "source": "intro text\n>\n>>>\n>>>> > nested literal"}
+{"id": "fz-bq-055", "source": ">>   padded\n>>>>  caf\u00e9 \u4e2d\u6587\n>>>>   padded\n>> [[[some-page|lab]]] link\n"}
+{"id": "fz-bq-056", "source": "intro text\n> @@raw@@ body\n\n>"}
+{"id": "fz-bq-057", "source": "para\nmore\n>>>> note[[footnote]]fn[[/footnote]] here\n\n>>> \n>>>>\n>>> caf\u00e9 \u4e2d\u6587\n>\n+ Tail\n"}
+{"id": "fz-bq-058", "source": ">> \n>> @@raw@@ body\n> \n>  note[[footnote]]fn[[/footnote]] here\n\n>> > nested literal"}
+{"id": "fz-bq-059", "source": ">>>    padded\n\n>>   padded\n>> two words\n>>>> "}
+{"id": "fz-bq-060", "source": "> "}
+{"id": "fz-bq-061", "source": "intro text\n> \n>>> two words\n>> \n>>>> note[[footnote]]fn[[/footnote]] here\n>   padded"}
+{"id": "fz-bq-062", "source": "para\nmore\n>>>> \n"}
+{"id": "fz-bq-063", "source": ">>>>note[[footnote]]fn[[/footnote]] here\n>two words\n>>\n> "}
+{"id": "fz-bq-064", "source": ">>> nested literal\n+ Tail"}
+{"id": "fz-bq-065", "source": ">>> > nested literal\n>>>  \n>>>\n>>[[[some-page|lab]]] link\n\nafter text"}
+{"id": "fz-bq-066", "source": ">>>    padded\n\n>>>>\n+ Tail"}
+{"id": "fz-bq-067", "source": ">>>  two words\n>>>>\n>>> text\n"}
+{"id": "fz-bq-068", "source": "intro text\n> @@raw@@ body\n"}
+{"id": "fz-bq-069", "source": ">> xxxxxxxxxxxxxxxxxxxxxxxx\n>>  note[[footnote]]fn[[/footnote]] here\n\n>   "}
+{"id": "fz-bq-070", "source": ">  \n>\n>>>caf\u00e9 \u4e2d\u6587"}
+{"id": "fz-bq-071", "source": "intro text\n>>>> \n>>  note[[footnote]]fn[[/footnote]] here\n\n>>>>  \n>>>> \n>>> caf\u00e9 \u4e2d\u6587\n"}
+{"id": "fz-bq-072", "source": "+ Head\n>>>> caf\u00e9 \u4e2d\u6587\n[[/blockquote]]"}
+{"id": "fz-bq-073", "source": "+ Head\n>>>\n\n>>>> \n>>>> @@raw@@ body\n>>> xxxxxxxxxxxxxxxxxxxxxxxx\n"}
+{"id": "fz-bq-074", "source": "intro text\n>\n>>  text\n>>>"}
+{"id": "fz-bq-075", "source": "para\nmore\n>>>> text\n>   padded\n\n>>>>  \n>>>> > nested literal\n>>>>  "}
+{"id": "fz-bq-076", "source": "+ Head\n>>>  \n>> \nafter text"}
+{"id": "fz-bq-077", "source": "para\nmore\n> xxxxxxxxxxxxxxxxxxxxxxxx\n>>  \n>>>>  [[[some-page|lab]]] link"}
+{"id": "fz-bq-078", "source": ">>> xxxxxxxxxxxxxxxxxxxxxxxx\n>>>>note[[footnote]]fn[[/footnote]] here\n>>>> note[[footnote]]fn[[/footnote]] here\n>>>>[[[some-page|lab]]] link\n>>>>  "}
+{"id": "fz-bq-079", "source": "intro text\n>>>  \n>>>> [[[some-page|lab]]] link\n\n>>>> @@raw@@ body\n"}
+{"id": "fz-bq-080", "source": ">>  \n>> nested literal\n>>>> \n\n>>   \n[[/blockquote]]"}
+{"id": "fz-bq-081", "source": "+ Head\n>>>>   padded\n"}
+{"id": "fz-bq-082", "source": "para\nmore\n>>>> > nested literal\n\n> xxxxxxxxxxxxxxxxxxxxxxxx\n>> \n[[blockquote]]\n"}
+{"id": "fz-bq-083", "source": "intro text\n>> xxxxxxxxxxxxxxxxxxxxxxxx\n[[blockquote]]\n"}
+{"id": "fz-bq-084", "source": "> note[[footnote]]fn[[/footnote]] here\n>>> \n>>> note[[footnote]]fn[[/footnote]] here\n\n>>  \n>> \nafter text"}
+{"id": "fz-bq-085", "source": ">>>>caf\u00e9 \u4e2d\u6587\n+ Tail"}
+{"id": "fz-bq-086", "source": ">>>>\n"}
+{"id": "fz-bq-087", "source": ">>>>caf\u00e9 \u4e2d\u6587\n>\n>   padded\n\n> "}
+{"id": "fz-bq-088", "source": "> \n\n> [[[some-page|lab]]] link\n\n>>>> caf\u00e9 \u4e2d\u6587\n>>> \n>>>> @@raw@@ body"}
+{"id": "fz-bq-089", "source": "> note[[footnote]]fn[[/footnote]] here\n>>>\n\n>>>> note[[footnote]]fn[[/footnote]] here\n[[/blockquote]]"}
+{"id": "fz-bq-090", "source": "+ Head\n>>>   padded"}
+{"id": "fz-bq-091", "source": "para\nmore\n> \n>\n>>> > nested literal\n"}
+{"id": "fz-bq-092", "source": "para\nmore\n>> @@raw@@ body\n>    padded\n>>>>  \n>    padded"}
+{"id": "fz-bq-093", "source": "> @@raw@@ body\n>  \n>>>\n> "}
+{"id": "fz-bq-094", "source": ">   padded\n>>> text\n>"}
+{"id": "fz-bq-095", "source": "> \n> xxxxxxxxxxxxxxxxxxxxxxxx"}
+{"id": "fz-bq-096", "source": ">>>> @@raw@@ body"}
+{"id": "fz-bq-097", "source": ">>>> @@raw@@ body\n>> caf\u00e9 \u4e2d\u6587\n\n>>>text\n>>>>\n>>>[[[some-page|lab]]] link\n"}
+{"id": "fz-bq-098", "source": ">>>\n>> xxxxxxxxxxxxxxxxxxxxxxxx\n\n>>>> caf\u00e9 \u4e2d\u6587\n"}
+{"id": "fz-bq-099", "source": "para\nmore\n>>>>two words\n"}
+{"id": "fz-bq-100", "source": "intro text\n> \n>>>> xxxxxxxxxxxxxxxxxxxxxxxx\n\n"}
+{"id": "fz-bq-101", "source": "+ Head\n>>>   padded\n>> text\n> two words\n>>\n\n>>>>  @@raw@@ body\n+ Tail\n"}
+{"id": "fz-bq-102", "source": ">>> two words\n>> [[[some-page|lab]]] link\n>>> two words\n+ Tail\n"}
+{"id": "fz-bq-103", "source": "> > nested literal\n> two words\n>>>>  "}
+{"id": "fz-bq-104", "source": "+ Head\n>>>> \n>>>  [[[some-page|lab]]] link\n>>>> "}
+{"id": "fz-bq-105", "source": ">>text\n> caf\u00e9 \u4e2d\u6587\n> [[[some-page|lab]]] link\n>>>> [[[some-page|lab]]] link\n[[/blockquote]]"}
+{"id": "fz-bq-106", "source": ">>>  \n> \n>>\n>  \n"}
+{"id": "fz-bq-107", "source": "+ Head\n>> \nafter text"}
+{"id": "fz-bq-108", "source": ">>>> \n>>>> note[[footnote]]fn[[/footnote]] here\n>>>> xxxxxxxxxxxxxxxxxxxxxxxx"}
+{"id": "fz-bq-109", "source": "> caf\u00e9 \u4e2d\u6587\n>>> text\n+ Tail"}
+{"id": "fz-bq-110", "source": ">>>  note[[footnote]]fn[[/footnote]] here\n> "}
+{"id": "fz-bq-111", "source": ">>  \n\n>>>  > nested literal\n"}
+{"id": "fz-bq-112", "source": "intro text\n>> caf\u00e9 \u4e2d\u6587\n>>>   \n"}
+{"id": "fz-bq-113", "source": "+ Head\n>> @@raw@@ body\n>  note[[footnote]]fn[[/footnote]] here\n\n>\n>  padded\n"}
+{"id": "fz-bq-114", "source": "> \n>caf\u00e9 \u4e2d\u6587\n>> xxxxxxxxxxxxxxxxxxxxxxxx\n>>>>two words\n>> note[[footnote]]fn[[/footnote]] here"}
+{"id": "fz-bq-115", "source": ">>>>\n>>>note[[footnote]]fn[[/footnote]] here"}
+{"id": "fz-bq-116", "source": "intro text\n>>>>text\n>>>>  padded\n>>>   padded\n>>>\n"}
+{"id": "fz-bq-117", "source": "+ Head\n>>> \n>> two words\n>>>>  \n>   padded\n\nafter text"}
+{"id": "fz-bq-118", "source": "intro text\n> \n>>> \n>>>> note[[footnote]]fn[[/footnote]] here\n"}
+{"id": "fz-bq-119", "source": ">>> caf\u00e9 \u4e2d\u6587\n\n>>>> @@raw@@ body\n>>>   padded\n>\n"}
+{"id": "fz-bq-120", "source": "+ Head\n>>>> caf\u00e9 \u4e2d\u6587"}
+{"id": "fz-bq-121", "source": ">>> caf\u00e9 \u4e2d\u6587\n>>>> > nested literal\n\n"}
+{"id": "fz-bq-122", "source": "intro text\n>> > nested literal\n\n>>>   \n>> @@raw@@ body\n>> note[[footnote]]fn[[/footnote]] here\n>>> note[[footnote]]fn[[/footnote]] here\n[[blockquote]]"}
+{"id": "fz-bq-123", "source": "+ Head\n> \n"}
+{"id": "fz-bq-124", "source": "+ Head\n>>>> @@raw@@ body\n>>  \n>>>[[[some-page|lab]]] link\n>>  \n>>>> xxxxxxxxxxxxxxxxxxxxxxxx"}
+{"id": "fz-bq-125", "source": ">>caf\u00e9 \u4e2d\u6587\n>>>>  \n>>> note[[footnote]]fn[[/footnote]] here\n> caf\u00e9 \u4e2d\u6587\n>>> caf\u00e9 \u4e2d\u6587"}
+{"id": "fz-bq-126", "source": "para\nmore\n>>> \n>>>> text\n>>>> two words\n"}
+{"id": "fz-bq-127", "source": ">>>>   padded\n\n>caf\u00e9 \u4e2d\u6587\n> [[[some-page|lab]]] link\n>\nafter text"}
+{"id": "fz-bq-128", "source": ">>\n"}
+{"id": "fz-bq-129", "source": ">>> caf\u00e9 \u4e2d\u6587\n> \n>> \n> @@raw@@ body\n\n>>>"}
+{"id": "fz-head-000", "source": "+++* \t Title\n> quote line\n+++++++ \t Title"}
+{"id": "fz-head-001", "source": "++trail  \n+  [[[page|lab]]] link"}
+{"id": "fz-head-002", "source": "+ See ((ref)) eq\n+ \t Title\n++caf\u00e9 \u4e2d\u6587\n"}
+{"id": "fz-head-003", "source": "plain text\n++ [[[page|lab]]] link"}
+{"id": "fz-head-004", "source": "++  xxxxxxxxxxxxxxxxxxxx\n+++++  See ((ref)) eq"}
+{"id": "fz-head-005", "source": "lead\n+++++++\tA [[footnote]]n[[/footnote]] B\n++A [[footnote]]n[[/footnote]] B"}
+{"id": "fz-head-006", "source": "+ A [[footnote]]n[[/footnote]] B\n+  See ((ref)) eq\n++++ Same\n[[math]]\nx\n[[/math]]"}
+{"id": "fz-head-007", "source": "+++ See ((ref)) eq\n+++ trail  \n++a]]b\n+++++ [[[page|lab]]] link"}
+{"id": "fz-head-008", "source": "++++ \n++++++ \t Title\n++ Same"}
+{"id": "fz-head-009", "source": "+++*\n+++++  a]]b\n[[math]]\nx\n[[/math]]\n+++++++* a]]b"}
+{"id": "fz-head-010", "source": "lead\n+\ttrail  "}
+{"id": "fz-head-011", "source": "+++ a]]b\n+++++++\t[[[page|lab]]] link\n++* A [[footnote]]n[[/footnote]] B"}
+{"id": "fz-head-012", "source": "lead\n+ \t \n++++ A [[footnote]]n[[/footnote]] B"}
+{"id": "fz-head-013", "source": "++++++++*Same"}
+{"id": "fz-head-014", "source": "+++*\t"}
+{"id": "fz-head-015", "source": "lead\n+++ xxxxxxxxxxxxxxxxxxxx"}
+{"id": "fz-head-016", "source": "++ \t xxxxxxxxxxxxxxxxxxxx"}
+{"id": "fz-head-017", "source": "+ \t a]]b\n+A [[footnote]]n[[/footnote]] B\n++\tTitle"}
+{"id": "fz-head-018", "source": "++ A [[footnote]]n[[/footnote]] B\n++++++++ See ((ref)) eq\n++++++  \n> quote line"}
+{"id": "fz-head-019", "source": ""}
+{"id": "fz-head-020", "source": "+++++++ Same\n++  xxxxxxxxxxxxxxxxxxxx"}
+{"id": "fz-head-021", "source": "lead\n\n+++++ \t See ((ref)) eq\n++++ "}
+{"id": "fz-head-022", "source": "++++++++* trail  \n+ See ((ref)) eq"}
+{"id": "fz-head-023", "source": "lead\n+  Same\n+++++++ [[[page|lab]]] link\n++ A [[footnote]]n[[/footnote]] B"}
+{"id": "fz-head-024", "source": "++++*\txxxxxxxxxxxxxxxxxxxx\n++++++\tcaf\u00e9 \u4e2d\u6587\n"}
+{"id": "fz-head-025", "source": "+* \t caf\u00e9 \u4e2d\u6587\n+++  \n+++*A [[footnote]]n[[/footnote]] B"}
+{"id": "fz-head-026", "source": "lead\nplain text\n[[math]]\nx\n[[/math]]\n++++++ \t A [[footnote]]n[[/footnote]] B"}
+{"id": "fz-head-027", "source": "lead\n[[math]]\nx\n[[/math]]\n++++++++*\ttrail  \n++* \t trail  "}
+{"id": "fz-head-028", "source": "lead\n++++++* a]]b"}
+{"id": "fz-head-029", "source": "++++++  a]]b\n[[math]]\nx\n[[/math]]\n++++++* \t [[[page|lab]]] link"}
+{"id": "fz-head-030", "source": "++++++*\tA [[footnote]]n[[/footnote]] B\n+ \t trail  "}
+{"id": "fz-head-031", "source": "++++++ Same\n++++ Title"}
+{"id": "fz-head-032", "source": "++++++++*  caf\u00e9 \u4e2d\u6587\n+++++++ \t caf\u00e9 \u4e2d\u6587"}
+{"id": "fz-head-033", "source": "++++++[[[page|lab]]] link"}
+{"id": "fz-head-034", "source": "lead\n++ Title\n[[math]]\nx\n[[/math]]"}
+{"id": "fz-head-035", "source": "+++\t\n++++\tA [[footnote]]n[[/footnote]] B\n++ A [[footnote]]n[[/footnote]] B"}
+{"id": "fz-head-036", "source": "+++++\t\n++++ A [[footnote]]n[[/footnote]] B\n++trail  "}
+{"id": "fz-head-037", "source": "plain text\n++"}
+{"id": "fz-head-038", "source": "++++++trail  \n+++ \t  \n+*  trail  "}
+{"id": "fz-head-039", "source": "++ [[[page|lab]]] link\nplain text"}
+{"id": "fz-head-040", "source": "lead\n+++ See ((ref)) eq\n++ \t a]]b\n+\tSee ((ref)) eq"}
+{"id": "fz-head-041", "source": "+++++[[[page|lab]]] link\n++  [[[page|lab]]] link\n\n+++* \t trail  "}
+{"id": "fz-head-042", "source": "+++ Same"}
+{"id": "fz-head-043", "source": "lead\n+* \n++++++++[[[page|lab]]] link\n"}
+{"id": "fz-head-044", "source": "lead\n+ Same\n+++++++  Same\n+A [[footnote]]n[[/footnote]] B"}
+{"id": "fz-head-045", "source": "lead\n++ a]]b"}
+{"id": "fz-head-046", "source": "++Same"}
+{"id": "fz-head-047", "source": "lead\n++++++ xxxxxxxxxxxxxxxxxxxx\n++* \t [[[page|lab]]] link\n++ "}
+{"id": "fz-head-048", "source": "+*\tcaf\u00e9 \u4e2d\u6587\n+++++\tSee ((ref)) eq"}
+{"id": "fz-head-049", "source": "++* \t a]]b\n++++++ See ((ref)) eq\n++++++++* \t Title"}
+{"id": "fz-head-050", "source": "lead\n++++*trail  \n++ a]]b\n+++++++*\t[[[page|lab]]] link"}
+{"id": "fz-head-051", "source": "lead\n+++++++ caf\u00e9 \u4e2d\u6587\n++++* Same\n++  \n[[math]]\nx\n[[/math]]"}
+{"id": "fz-head-052", "source": "lead\n+*\tTitle\nplain text\n+  Title\n++++ xxxxxxxxxxxxxxxxxxxx"}
+{"id": "fz-head-053", "source": "++\ttrail  \n+  a]]b\n+xxxxxxxxxxxxxxxxxxxx\n++++ "}
+{"id": "fz-head-054", "source": "+++  trail  "}
+{"id": "fz-head-055", "source": "+ \t caf\u00e9 \u4e2d\u6587\n++++* Title\nplain text"}
+{"id": "fz-head-056", "source": "++++++* a]]b"}
+{"id": "fz-head-057", "source": "++*\t \n++++++* \t Same"}
+{"id": "fz-head-058", "source": "+ [[[page|lab]]] link\n+  \n++  "}
+{"id": "fz-head-059", "source": "+++ a]]b"}
+{"id": "fz-head-060", "source": "+* caf\u00e9 \u4e2d\u6587"}
+{"id": "fz-head-061", "source": "+++* xxxxxxxxxxxxxxxxxxxx\n+++++\t[[[page|lab]]] link\n++++++ See ((ref)) eq"}
+{"id": "fz-head-062", "source": "lead\n++++++*\tTitle\n++  "}
+{"id": "fz-head-063", "source": "+++++++ \t a]]b\n++\t "}
+{"id": "fz-head-064", "source": "++ See ((ref)) eq"}
+{"id": "fz-head-065", "source": "> quote line\n++  Same\n"}
+{"id": "fz-head-066", "source": "++* Title\n+  A [[footnote]]n[[/footnote]] B\nplain text\n+++++++  Title"}
+{"id": "fz-head-067", "source": "+++\txxxxxxxxxxxxxxxxxxxx"}
+{"id": "fz-head-068", "source": "++* [[[page|lab]]] link\n++++++++ \t \n+++*  [[[page|lab]]] link"}
+{"id": "fz-head-069", "source": "++[[[page|lab]]] link\n+++ caf\u00e9 \u4e2d\u6587"}
+{"id": "fz-head-070", "source": "lead\n++++++* xxxxxxxxxxxxxxxxxxxx\n+ caf\u00e9 \u4e2d\u6587\n+++++++caf\u00e9 \u4e2d\u6587"}
+{"id": "fz-head-071", "source": "++++++++ Title"}
+{"id": "fz-head-072", "source": "++*  \n++[[[page|lab]]] link"}
+{"id": "fz-head-073", "source": "+++\ta]]b"}
+{"id": "fz-head-074", "source": "++++++ \t See ((ref)) eq\n++   \nplain text"}
+{"id": "fz-head-075", "source": "+++* [[[page|lab]]] link\n++*  trail  "}
+{"id": "fz-head-076", "source": "> quote line\n+++++++  Same\n++++++++ \t Title"}
+{"id": "fz-head-077", "source": "lead\n+++ Title\n+++++ \t  "}
+{"id": "fz-head-078", "source": "++*  \n+++++++  Same\n++++*A [[footnote]]n[[/footnote]] B"}
+{"id": "fz-head-079", "source": "lead\n++++ A [[footnote]]n[[/footnote]] B\n++ "}
+{"id": "fz-head-080", "source": "+ xxxxxxxxxxxxxxxxxxxx\n> quote line\n+++Same"}
+{"id": "fz-head-081", "source": "[[math]]\nx\n[[/math]]\n++++ xxxxxxxxxxxxxxxxxxxx"}
+{"id": "fz-head-082", "source": "lead\n+* \t See ((ref)) eq\n++*   "}
+{"id": "fz-head-083", "source": "lead\n++++* \t Same\n++++++++* \t See ((ref)) eq\n\n+++*\tSame"}
+{"id": "fz-head-084", "source": "lead\n++\tTitle\n+++++* \t A [[footnote]]n[[/footnote]] B\n+ trail  "}
+{"id": "fz-head-085", "source": "++++++*\tSame\n++++++++ \t [[[page|lab]]] link\n+++++  Same\n++* \t xxxxxxxxxxxxxxxxxxxx"}
+{"id": "fz-head-086", "source": "++++++* \t  \n++ \t trail  "}
+{"id": "fz-head-087", "source": "lead\n+++Title"}
+{"id": "fz-head-088", "source": "++++  Title\n++++ \t See ((ref)) eq\nplain text"}
+{"id": "fz-head-089", "source": "+++ See ((ref)) eq\n+*\tTitle\n++*  xxxxxxxxxxxxxxxxxxxx"}
+{"id": "fz-head-090", "source": "+* trail  "}
+{"id": "fz-head-091", "source": "++++++++*  Same"}
+{"id": "fz-head-092", "source": "+++++*\t \n+ \n+++++++trail  \n++++++* a]]b"}
+{"id": "fz-head-093", "source": "+* [[[page|lab]]] link"}
+{"id": "fz-head-094", "source": "plain text\n+ \n+*  Same"}
+{"id": "fz-head-095", "source": "+++ xxxxxxxxxxxxxxxxxxxx\n++++\t\n+++++ \t Title"}
+{"id": "fz-head-096", "source": "+ \n> quote line\n\n+*\t"}
+{"id": "fz-head-097", "source": "lead\n++  See ((ref)) eq\n[[math]]\nx\n[[/math]]\n"}
+{"id": "fz-head-098", "source": "+++\t[[[page|lab]]] link\n++ A [[footnote]]n[[/footnote]] B\n+++++++  xxxxxxxxxxxxxxxxxxxx"}
+{"id": "fz-head-099", "source": "lead\n+++++a]]b\n++   \n"}
+{"id": "fz-head-100", "source": "lead\n++++++\n++++++++*\tSee ((ref)) eq\n\n[[math]]\nx\n[[/math]]"}
+{"id": "fz-head-101", "source": "++++\txxxxxxxxxxxxxxxxxxxx"}
+{"id": "fz-head-102", "source": "+++++++ \t xxxxxxxxxxxxxxxxxxxx\n+++++ \t A [[footnote]]n[[/footnote]] B"}
+{"id": "fz-head-103", "source": "+++\tSame\n> quote line\n+ caf\u00e9 \u4e2d\u6587"}
+{"id": "fz-head-104", "source": "++++++*  xxxxxxxxxxxxxxxxxxxx\n++++++++trail  "}
+{"id": "fz-head-105", "source": "lead\n+* \t Same\n+*  a]]b\nplain text\n++++ [[[page|lab]]] link"}
+{"id": "fz-head-106", "source": "lead\n++++++*  caf\u00e9 \u4e2d\u6587"}
+{"id": "fz-head-107", "source": "++* \t [[[page|lab]]] link\n++ A [[footnote]]n[[/footnote]] B\n+++++++See ((ref)) eq\n+  Same"}
+{"id": "fz-head-108", "source": "++++++ a]]b\nplain text\n> quote line\n++ \t "}
+{"id": "fz-head-109", "source": "++++*\t "}
+{"id": "fz-head-110", "source": ""}
+{"id": "fz-head-111", "source": "lead\n++* \t trail  "}
+{"id": "fz-head-112", "source": "lead\n++++++++ a]]b\n++ Same\n++++  trail  "}
+{"id": "fz-head-113", "source": "+  \n++++++* Same\n+  \n[[math]]\nx\n[[/math]]"}
+{"id": "fz-head-114", "source": "plain text"}
+{"id": "fz-head-115", "source": "+*caf\u00e9 \u4e2d\u6587"}
+{"id": "fz-head-116", "source": "+++++++*  Title\n++++++  See ((ref)) eq\n+++*Title"}
+{"id": "fz-head-117", "source": "> quote line\n+++++\txxxxxxxxxxxxxxxxxxxx\n+++* \t Same\nplain text"}
+{"id": "fz-head-118", "source": "+++++\tSee ((ref)) eq\n++++++\t[[[page|lab]]] link\n> quote line"}
+{"id": "fz-head-119", "source": "+  "}
+{"id": "fz-head-120", "source": "lead\n++++++++* \t a]]b\n++++++ Same\n++++++  \n+++++  See ((ref)) eq"}
+{"id": "fz-head-121", "source": "+++++++* Same\n++++ caf\u00e9 \u4e2d\u6587\nplain text\n+* caf\u00e9 \u4e2d\u6587"}
+{"id": "fz-head-122", "source": "plain text\n+ a]]b\n+   "}
+{"id": "fz-head-123", "source": "+++* \n++a]]b"}
+{"id": "fz-head-124", "source": "lead\n+++++++  \n+\ta]]b\n++++++  Same"}
+{"id": "fz-head-125", "source": "++* a]]b\n+++++  trail  "}
+{"id": "fz-head-126", "source": "lead\n+++++++\t \n+++Same\n++ trail  \n"}
+{"id": "fz-head-127", "source": "++++A [[footnote]]n[[/footnote]] B"}
+{"id": "fz-head-128", "source": "+  A [[footnote]]n[[/footnote]] B"}
+{"id": "fz-head-129", "source": "lead\n+++++++  caf\u00e9 \u4e2d\u6587\n+  \n+++++++* [[[page|lab]]] link\n++*Same"}
+{"id": "fz-toc-000", "source": "++ G [[footnote]]n[[/footnote]]\n++ Same\n+++ Alpha\n[[toc]] tail"}
+{"id": "fz-toc-001", "source": "pre\n[[toc title=\"Contents\"]]\n++ G [[footnote]]n[[/footnote]]\n+++ Alpha\n+++ Alpha\npost"}
+{"id": "fz-toc-002", "source": "[[Toc]]\n+++ Beta\n+++* Same\n++ G [[footnote]]n[[/footnote]]"}
+{"id": "fz-toc-003", "source": "+ Same\n+++ Alpha\n++* Alpha\n+++* Beta\n[[toc]]", "tags": [""]}
+{"id": "fz-toc-004", "source": "+ Same\n+ G [[footnote]]n[[/footnote]]\n[[toc title=\"\"]]", "tags": [""]}
+{"id": "fz-toc-005", "source": ""}
+{"id": "fz-toc-006", "source": "++ G [[footnote]]n[[/footnote]]\n+ Same\n [[toc]]\n++ G [[footnote]]n[[/footnote]]\n+ Same", "tags": [""]}
+{"id": "fz-toc-007", "source": "++ Same"}
+{"id": "fz-toc-008", "source": "[[>toc]]\n++ Beta\n+ Beta\n+ Same\n++ Same"}
+{"id": "fz-toc-009", "source": "x [[toc]]\n++ G [[footnote]]n[[/footnote]]\n+* Alpha\n++ Beta"}
+{"id": "fz-toc-010", "source": "[[toc]]\n+* G [[footnote]]n[[/footnote]]\n+++ Beta\n[[toc]]", "tags": ["Alpha"]}
+{"id": "fz-toc-011", "source": "x [[toc]]\n\nx [[toc]]"}
+{"id": "fz-toc-012", "source": "\n[[toc title=\"\"]]\n", "tags": ["Alpha"]}
+{"id": "fz-toc-013", "source": "[[toc]]\n++ Same\n+++ G [[footnote]]n[[/footnote]]\n[[toc]]"}
+{"id": "fz-toc-014", "source": "+* G [[footnote]]n[[/footnote]]\n+++ Alpha\n++ G [[footnote]]n[[/footnote]]\n+++* G [[footnote]]n[[/footnote]]\n[[*toc]]"}
+{"id": "fz-toc-015", "source": "++* Alpha\n++* Beta\n+++ Beta"}
+{"id": "fz-toc-016", "source": "\n [[toc]]\n"}
+{"id": "fz-toc-017", "source": "[[toc bogus]]\n+ Same\n+ Alpha\n[[toc bogus]]"}
+{"id": "fz-toc-018", "source": "[[toc]]\n+ Beta\n+++ Beta\n++ G [[footnote]]n[[/footnote]]\n++ Beta", "tags": ["beta"]}
+{"id": "fz-toc-019", "source": "[[toc]]\n++ Alpha\n+ Alpha\n+ Alpha\n++* Beta\n[[toc]]"}
+{"id": "fz-toc-020", "source": "[[f<toc]]\n+++ Same\n+++* Beta\n[[f<toc]]", "tags": ["Alpha"]}
+{"id": "fz-toc-021", "source": "pre\n[[>toc]]\n++ Same\npost"}
+{"id": "fz-toc-022", "source": "pre\n[[toc\ttitle=\"x\"]]\n++ Beta\npost", "tags": [""]}
+{"id": "fz-toc-023", "source": "\n[[>toc]]"}
+{"id": "fz-toc-024", "source": "+++ Beta\n+ G [[footnote]]n[[/footnote]]\nx [[toc]]"}
+{"id": "fz-toc-025", "source": "[[toc title=\"\"]]"}
+{"id": "fz-toc-026", "source": "++ Beta\n+++ Alpha\n++ G [[footnote]]n[[/footnote]]\n[[toc title=\"\"]]\n++ Beta\n+++ Alpha\n++ G [[footnote]]n[[/footnote]]"}
+{"id": "fz-toc-027", "source": "[[f<toc]]\n+++ Alpha\n+++ Alpha", "tags": ["alpha"]}
+{"id": "fz-toc-028", "source": "[[toc\ttitle=\"x\"]]\n+ Beta\n+++ Beta"}
+{"id": "fz-toc-029", "source": "+* Alpha\n+++ G [[footnote]]n[[/footnote]]\n+ G [[footnote]]n[[/footnote]]\n[[f>toc]]\n+* Alpha\n+++ G [[footnote]]n[[/footnote]]\n+ G [[footnote]]n[[/footnote]]"}
+{"id": "fz-toc-030", "source": "++* Same"}
+{"id": "fz-toc-031", "source": "[[Toc]]\n+++ G [[footnote]]n[[/footnote]]\n+* G [[footnote]]n[[/footnote]]\n++* G [[footnote]]n[[/footnote]]\n[[Toc]]"}
+{"id": "fz-toc-032", "source": "pre\n[[toc]]\n\npost"}
+{"id": "fz-toc-033", "source": "+* G [[footnote]]n[[/footnote]]\n[[toc]] tail\n+* G [[footnote]]n[[/footnote]]"}
+{"id": "fz-toc-034", "source": "[[toc bogus]]"}
+{"id": "fz-toc-035", "source": "[[>toc]]", "tags": [""]}
+{"id": "fz-toc-036", "source": "++ Beta\n+ G [[footnote]]n[[/footnote]]\n+++ Alpha"}
+{"id": "fz-toc-037", "source": "+++ Beta\n++ Same\n[[toc ]]\n+++ Beta\n++ Same", "tags": [""]}
+{"id": "fz-toc-038", "source": "+ Alpha\n+ Alpha\n+ G [[footnote]]n[[/footnote]]\n+++ G [[footnote]]n[[/footnote]]\n[[toc title=\"Contents\"]]\n+ Alpha\n+ Alpha\n+ G [[footnote]]n[[/footnote]]\n+++ G [[footnote]]n[[/footnote]]"}
+{"id": "fz-toc-039", "source": "[[TOC]]"}
+{"id": "fz-toc-040", "source": "+ G [[footnote]]n[[/footnote]]\n+++ G [[footnote]]n[[/footnote]]\n+++ Beta\n++ G [[footnote]]n[[/footnote]]\n[[toc]]\n+ G [[footnote]]n[[/footnote]]\n+++ G [[footnote]]n[[/footnote]]\n+++ Beta\n++ G [[footnote]]n[[/footnote]]", "tags": ["beta"]}
+{"id": "fz-toc-041", "source": "[[*toc]]\n\n[[*toc]]"}
+{"id": "fz-toc-042", "source": "", "tags": ["beta"]}
+{"id": "fz-toc-043", "source": "\n[[toc title=\"a]]b\"]]"}
+{"id": "fz-toc-044", "source": ""}
+{"id": "fz-toc-045", "source": ""}
+{"id": "fz-toc-046", "source": "+++* Beta\n+* G [[footnote]]n[[/footnote]]\n[[toc title=\"a]]b\"]]\n+++* Beta\n+* G [[footnote]]n[[/footnote]]"}
+{"id": "fz-toc-047", "source": "[[toc]]"}
+{"id": "fz-toc-048", "source": "\n[[>toc]]"}
+{"id": "fz-toc-049", "source": "[[toc bogus]]"}
+{"id": "fz-toc-050", "source": "\n[[f<toc]]"}
+{"id": "fz-toc-051", "source": "[[toc title=\"a]]b\"]]\n+ Same\n+++* Same\n+ Same", "tags": ["alpha"]}
+{"id": "fz-toc-052", "source": "[[toc\ttitle=\"x\"]]\n++ Alpha\n++ Alpha\n++ Beta\n[[toc\ttitle=\"x\"]]"}
+{"id": "fz-toc-053", "source": ""}
+{"id": "fz-toc-054", "source": "+ Same\n[[f<toc]]\n+ Same", "tags": ["beta"]}
+{"id": "fz-toc-055", "source": "++ Same\n+++* Same\n++ Beta\n++ G [[footnote]]n[[/footnote]]"}
+{"id": "fz-toc-056", "source": "+ Same"}
+{"id": "fz-toc-057", "source": "[[toc title=\"a]]b\"]]\n+++ Beta\n+* Beta\n+++ Beta\n+++ Beta", "tags": ["alpha"]}
+{"id": "fz-toc-058", "source": ""}
+{"id": "fz-toc-059", "source": "x [[toc]]\n\nx [[toc]]"}
+{"id": "fz-toc-060", "source": "pre\n[[toc]] tail\n+ Alpha\npost"}
+{"id": "fz-toc-061", "source": "+ G [[footnote]]n[[/footnote]]\n[[toc]]\n+ G [[footnote]]n[[/footnote]]", "tags": ["Alpha"]}
+{"id": "fz-toc-062", "source": "[[toc title=\"Contents\"]]\n++ Same\n++ Beta\n+ Beta\n++ Alpha\n[[toc title=\"Contents\"]]"}
+{"id": "fz-toc-063", "source": "[[toc title=\"Contents\"]]", "tags": ["alpha"]}
+{"id": "fz-toc-064", "source": "+++ Beta\n+ G [[footnote]]n[[/footnote]]"}
+{"id": "fz-toc-065", "source": "++ Beta", "tags": ["beta"]}
+{"id": "fz-toc-066", "source": "[[toc\ttitle=\"x\"]]\n\n[[toc\ttitle=\"x\"]]"}
+{"id": "fz-toc-067", "source": "\n[[f>toc]]\n", "tags": [""]}
+{"id": "fz-toc-068", "source": "pre\n[[toc title=\"a]]b\"]]\n+ Alpha\n+++ Beta\n+ Same\n+++* Same\npost"}
+{"id": "fz-toc-069", "source": "+ G [[footnote]]n[[/footnote]]\n++ Alpha\n[[toc]]\n+ G [[footnote]]n[[/footnote]]\n++ Alpha"}
+{"id": "fz-toc-070", "source": "[[f>toc]]\n++ Alpha\n[[f>toc]]"}
+{"id": "fz-toc-071", "source": "+ Alpha\n+++ Same\n++* Beta\n++ Same\n[[toc title=\"\"]]"}
+{"id": "fz-toc-072", "source": "\n[[toc ]]"}
+{"id": "fz-toc-073", "source": "++ Beta\n[[toc]]\n++ Beta"}
+{"id": "fz-toc-074", "source": "+++ Beta\n [[toc]]\n+++ Beta"}
+{"id": "fz-toc-075", "source": "[[f<toc]]\n+++ Beta\n++ Beta\n+++ Same\n[[f<toc]]"}
+{"id": "fz-toc-076", "source": "[[toc bogus]]"}
+{"id": "fz-toc-077", "source": "[[TOC]]\n++* G [[footnote]]n[[/footnote]]\n+++ Alpha\n+ Beta"}
+{"id": "fz-toc-078", "source": "+ Alpha\n+ Alpha\n++ Alpha\n[[TOC]]\n+ Alpha\n+ Alpha\n++ Alpha"}
+{"id": "fz-toc-079", "source": "[[toc ]]\n\n[[toc ]]"}
+{"id": "fz-toc-080", "source": "[[toc]] tail\n\n[[toc]] tail", "tags": ["beta"]}
+{"id": "fz-toc-081", "source": "+++ Same\n++ G [[footnote]]n[[/footnote]]\n+++ Beta\n[[TOC]]\n+++ Same\n++ G [[footnote]]n[[/footnote]]\n+++ Beta"}
+{"id": "fz-toc-082", "source": "[[toc]]\n+ Same\n++ Beta\n++ Same\n[[toc]]"}
+{"id": "fz-toc-083", "source": "[[toc title=\"a]]b\"]]"}
+{"id": "fz-toc-084", "source": " [[toc]]\n+++ Same\n++ G [[footnote]]n[[/footnote]]\n+ Beta\n+++ G [[footnote]]n[[/footnote]]"}
+{"id": "fz-toc-085", "source": "+ Beta\n+++ Beta\n[[toc ]]\n+ Beta\n+++ Beta"}
+{"id": "fz-toc-086", "source": "[[f>toc]]\n+++ Alpha\n+ Same"}
+{"id": "fz-toc-087", "source": "[[*toc]]\n+++ Alpha\n+++ Beta\n++* Alpha"}
+{"id": "fz-toc-088", "source": "+* Alpha"}
+{"id": "fz-toc-089", "source": "[[toc]] tail"}
+{"id": "fz-toc-090", "source": "pre\n[[toc]] tail\n\npost", "tags": [""]}
+{"id": "fz-toc-091", "source": "[[TOC]]"}
+{"id": "fz-toc-092", "source": "x [[toc]]\n+++ Alpha\n++ Beta\n++* Same"}
+{"id": "fz-toc-093", "source": "+++* Alpha\n+++* Alpha\n+ Beta"}
+{"id": "fz-toc-094", "source": "[[toc title=\"a]]b\"]]\n+++ Beta\n+++ Beta\n[[toc title=\"a]]b\"]]"}
+{"id": "fz-toc-095", "source": "[[>toc]]\n+ G [[footnote]]n[[/footnote]]\n[[>toc]]", "tags": ["beta"]}
+{"id": "fz-toc-096", "source": "+++ G [[footnote]]n[[/footnote]]\n++ Beta\n+ Same\n++* G [[footnote]]n[[/footnote]]\n[[>toc]]", "tags": ["beta"]}
+{"id": "fz-toc-097", "source": "+++ Beta\n[[TOC]]\n+++ Beta"}
+{"id": "fz-toc-098", "source": "+++ Alpha\n[[toc title=\"a]]b\"]]", "tags": [""]}
+{"id": "fz-toc-099", "source": "+++* G [[footnote]]n[[/footnote]]\n+ Beta"}
+{"id": "fz-toc-100", "source": "[[toc]]\n"}
+{"id": "fz-toc-101", "source": "++ Beta\n+ G [[footnote]]n[[/footnote]]\n+ Beta\n+++ Alpha\n[[toc]]\n++ Beta\n+ G [[footnote]]n[[/footnote]]\n+ Beta\n+++ Alpha"}
+{"id": "fz-toc-102", "source": "++ G [[footnote]]n[[/footnote]]\n[[toc\ttitle=\"x\"]]\n++ G [[footnote]]n[[/footnote]]"}
+{"id": "fz-toc-103", "source": "++ Beta", "tags": [""]}
+{"id": "fz-toc-104", "source": "[[Toc]]"}
+{"id": "fz-toc-105", "source": "[[f>toc]]"}
+{"id": "fz-toc-106", "source": "+ Beta\n+++ Beta\n++ Beta\n+ Same\n[[toc]] tail\n+ Beta\n+++ Beta\n++ Beta\n+ Same"}
+{"id": "fz-toc-107", "source": "++ G [[footnote]]n[[/footnote]]\n+++ Alpha\n++ G [[footnote]]n[[/footnote]]\n++* Alpha"}
+{"id": "fz-toc-108", "source": "[[TOC]]\n++ G [[footnote]]n[[/footnote]]\n++* G [[footnote]]n[[/footnote]]\n[[TOC]]", "tags": ["beta"]}
+{"id": "fz-toc-109", "source": "+ G [[footnote]]n[[/footnote]]\n+ Same\n[[f>toc]]"}
+{"id": "fz-toc-110", "source": "+* G [[footnote]]n[[/footnote]]\n++ Alpha\n+++ Beta\n[[toc\ttitle=\"x\"]]\n+* G [[footnote]]n[[/footnote]]\n++ Alpha\n+++ Beta"}
+{"id": "fz-toc-111", "source": " [[toc]]\n+++* Alpha\n++ G [[footnote]]n[[/footnote]]\n [[toc]]"}
+{"id": "fz-toc-112", "source": "[[toc]]\n\n[[toc]]", "tags": ["Alpha"]}
+{"id": "fz-toc-113", "source": "++ G [[footnote]]n[[/footnote]]\n+++* G [[footnote]]n[[/footnote]]\n+++ Beta\n+++ G [[footnote]]n[[/footnote]]"}
+{"id": "fz-toc-114", "source": "[[TOC]]", "tags": ["Alpha"]}
+{"id": "fz-toc-115", "source": "[[toc title=\"\"]]\n+++ Alpha"}
+{"id": "fz-toc-116", "source": "+++ Beta\n+* Alpha\n+++* G [[footnote]]n[[/footnote]]", "tags": ["alpha"]}
+{"id": "fz-toc-117", "source": "+ G [[footnote]]n[[/footnote]]\n+ Beta\n[[toc\ttitle=\"x\"]]\n+ G [[footnote]]n[[/footnote]]\n+ Beta"}
+{"id": "fz-toc-118", "source": "\n[[toc title=\"a]]b\"]]\n"}
+{"id": "fz-toc-119", "source": "[[toc title=\"\"]]\n+++ Alpha\n+ G [[footnote]]n[[/footnote]]\n+ Same\n[[toc title=\"\"]]", "tags": ["Alpha"]}
+{"id": "fz-toc-120", "source": "[[>toc]]\n"}
+{"id": "fz-toc-121", "source": "[[toc title=\"a]]b\"]]\n"}
+{"id": "fz-toc-122", "source": "[[>toc]]\n++ Alpha\n+++ Alpha\n++ Alpha\n+ Beta"}
+{"id": "fz-toc-123", "source": "\n[[toc]] tail\n"}
+{"id": "fz-toc-124", "source": "[[toc ]]\n+++ Beta\n[[toc ]]"}
+{"id": "fz-toc-125", "source": "\n[[toc ]]"}
+{"id": "fz-toc-126", "source": "+++ Alpha\n++* Beta\n++* Alpha\n[[toc]] tail", "tags": [""]}
+{"id": "fz-toc-127", "source": "pre\n[[Toc]]\n++ G [[footnote]]n[[/footnote]]\n+* G [[footnote]]n[[/footnote]]\npost"}
+{"id": "fz-toc-128", "source": "[[toc\ttitle=\"x\"]]", "tags": [""]}
+{"id": "fz-toc-129", "source": "\n[[toc]]", "tags": [""]}
+{"id": "fz-mix-000", "source": "[[f<toc title=\"T\"]]\n[[footnote]]note[[/footnote]] text\n", "tags": []}
+{"id": "fz-mix-001", "source": "[[f<toc title=\"T\"]]\n[[toc]]\n> head next\n+ In quote area\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n", "tags": []}
+{"id": "fz-mix-002", "source": "> head next\n+ In quote area\n[[/blockquote]]\n[[toc]]\n[[math E]]\nx + y\n[[/math]]\n> + not a heading\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]", "tags": ["Alpha"]}
+{"id": "fz-mix-003", "source": "> + not a heading\n+* Skip\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n[[toc]]\n[[f<toc title=\"T\"]]\n((E)) reference\n[[/blockquote]]"}
+{"id": "fz-mix-004", "source": "++ Head B\n> quote line"}
+{"id": "fz-mix-005", "source": "[[blockquote]]\n> + not a heading\n> + not a heading\n>> deep quote\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n[[math E]]\nx + y\n[[/math]]\n>> deep quote", "tags": []}
+{"id": "fz-mix-006", "source": "[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n[[toc]]"}
+{"id": "fz-mix-007", "source": "> head next\n+ In quote area\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n+ Head A\n> quote line\n[[footnote]]note[[/footnote]] text\n> + not a heading", "tags": ["beta"]}
+{"id": "fz-mix-008", "source": "plain paragraph\n++ Head B\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n+* Skip\n> head next\n+ In quote area\n((E)) reference"}
+{"id": "fz-mix-009", "source": "> head next\n+ In quote area\n+* Skip\n[[footnote]]note[[/footnote]] text\n+ Head A\n> head next\n+ In quote area", "tags": ["", "alpha"]}
+{"id": "fz-mix-010", "source": "[[math E]]\nx + y\n[[/math]]\n>> deep quote\n+ Head A\n> + not a heading\n[[math E]]\nx + y\n[[/math]]", "tags": [""]}
+{"id": "fz-mix-011", "source": "((E)) reference\n++ Head B"}
+{"id": "fz-mix-012", "source": "[[toc]]\n[[toc]]\n[[math E]]\nx + y\n[[/math]]\n+* Skip\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n>> deep quote\n+ Head A"}
+{"id": "fz-mix-013", "source": "[[/blockquote]]\n[[blockquote]]\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n>> deep quote\n>> deep quote\n\n[[math E]]\nx + y\n[[/math]]", "tags": ["alpha"]}
+{"id": "fz-mix-014", "source": "((E)) reference\n((E)) reference\n> quote line\n[[footnote]]note[[/footnote]] text"}
+{"id": "fz-mix-015", "source": "[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n> quote line\n++ Head B\n[[math E]]\nx + y\n[[/math]]\n[[math E]]\nx + y\n[[/math]]\n+ Head A", "tags": ["alpha", "Alpha"]}
+{"id": "fz-mix-016", "source": "+* Skip\n++ Head B\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n> head next\n+ In quote area\n> head next\n+ In quote area\n++ Head B\n> head next\n+ In quote area"}
+{"id": "fz-mix-017", "source": "plain paragraph\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n+ Head A\n[[blockquote]]\n> head next\n+ In quote area"}
+{"id": "fz-mix-018", "source": "[[math E]]\nx + y\n[[/math]]\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]", "tags": ["alpha", "alpha"]}
+{"id": "fz-mix-019", "source": "> quote line\n[[footnote]]note[[/footnote]] text\n[[footnote]]note[[/footnote]] text"}
+{"id": "fz-mix-020", "source": "plain paragraph\n[[blockquote]]\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n> head next\n+ In quote area\n[[blockquote]]"}
+{"id": "fz-mix-021", "source": "[[/blockquote]]\n> head next\n+ In quote area\n> head next\n+ In quote area\n[[blockquote]]\n[[f<toc title=\"T\"]]\n> + not a heading\n[[math E]]\nx + y\n[[/math]]", "tags": []}
+{"id": "fz-mix-022", "source": "((E)) reference\n> head next\n+ In quote area\n> quote line\n> quote line\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n> + not a heading\n> head next\n+ In quote area", "tags": ["alpha"]}
+{"id": "fz-mix-023", "source": "[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n> head next\n+ In quote area\n[[footnote]]note[[/footnote]] text\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n((E)) reference", "tags": ["beta", "alpha"]}
+{"id": "fz-mix-024", "source": "+ Head A\n> + not a heading\n> quote line\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n> + not a heading\n[[math E]]\nx + y\n[[/math]]\n++ Head B", "tags": []}
+{"id": "fz-mix-025", "source": "[[blockquote]]\n((E)) reference\n++ Head B\n>> deep quote\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]", "tags": []}
+{"id": "fz-mix-026", "source": "+ Head A\n((E)) reference\n> quote line\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]"}
+{"id": "fz-mix-027", "source": "[[blockquote]]\n((E)) reference\n> + not a heading\n+* Skip\n[[footnote]]note[[/footnote]] text", "tags": ["beta", "beta"]}
+{"id": "fz-mix-028", "source": "[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n++ Head B\n>> deep quote\n[[toc]]\n> quote line\nplain paragraph\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]"}
+{"id": "fz-mix-029", "source": "> + not a heading\n[[math E]]\nx + y\n[[/math]]\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]", "tags": [""]}
+{"id": "fz-mix-030", "source": "plain paragraph\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n++ Head B\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n[[footnote]]note[[/footnote]] text", "tags": []}
+{"id": "fz-mix-031", "source": "> quote line\n> + not a heading\n> head next\n+ In quote area\n[[toc]]\n[[blockquote]]\n[[/blockquote]]"}
+{"id": "fz-mix-032", "source": ">> deep quote\n> head next\n+ In quote area\n[[toc]]\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n[[math E]]\nx + y\n[[/math]]"}
+{"id": "fz-mix-033", "source": "> + not a heading\n[[math E]]\nx + y\n[[/math]]\n>> deep quote\n[[f<toc title=\"T\"]]\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n++ Head B"}
+{"id": "fz-mix-034", "source": "+* Skip\n\n+ Head A\n> head next\n+ In quote area", "tags": ["alpha", ""]}
+{"id": "fz-mix-035", "source": "> + not a heading\n+ Head A\n+ Head A\n((E)) reference\n\n+* Skip\n[[toc]]"}
+{"id": "fz-mix-036", "source": "[[footnote]]note[[/footnote]] text\n+* Skip\n[[math E]]\nx + y\n[[/math]]\n[[blockquote]]\n[[blockquote]]"}
+{"id": "fz-mix-037", "source": "[[f<toc title=\"T\"]]\n[[blockquote]]", "tags": ["", "Alpha"]}
+{"id": "fz-mix-038", "source": "[[blockquote]]\n> head next\n+ In quote area\n[[blockquote]]\n[[footnote]]note[[/footnote]] text\n>> deep quote\n((E)) reference\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]"}
+{"id": "fz-mix-039", "source": "[[f<toc title=\"T\"]]\n[[toc]]\n++ Head B\n++ Head B", "tags": ["alpha"]}
+{"id": "fz-mix-040", "source": ">> deep quote\n> quote line\n[[f<toc title=\"T\"]]\n> head next\n+ In quote area\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n[[/blockquote]]\n+* Skip", "tags": ["alpha"]}
+{"id": "fz-mix-041", "source": "[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n\n> quote line\nplain paragraph", "tags": ["Alpha", ""]}
+{"id": "fz-mix-042", "source": "[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n[[math E]]\nx + y\n[[/math]]\n> + not a heading\n++ Head B\n> head next\n+ In quote area"}
+{"id": "fz-mix-043", "source": "[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n[[blockquote]]\n> + not a heading\n> quote line\n+* Skip\n[[math E]]\nx + y\n[[/math]]\nplain paragraph"}
+{"id": "fz-mix-044", "source": "+* Skip\n[[toc]]\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n> head next\n+ In quote area", "tags": []}
+{"id": "fz-mix-045", "source": "[[toc]]\n+ Head A\n[[f<toc title=\"T\"]]\n[[footnote]]note[[/footnote]] text"}
+{"id": "fz-mix-046", "source": "((E)) reference\n[[footnote]]note[[/footnote]] text\n\nplain paragraph\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n++ Head B\n[[toc]]"}
+{"id": "fz-mix-047", "source": "+ Head A\n>> deep quote\n> head next\n+ In quote area\n++ Head B", "tags": ["alpha", ""]}
+{"id": "fz-mix-048", "source": "[[f<toc title=\"T\"]]\n[[/blockquote]]\n[[f<toc title=\"T\"]]\n[[blockquote]]"}
+{"id": "fz-mix-049", "source": "> + not a heading\n>> deep quote\n((E)) reference"}
+{"id": "fz-mix-050", "source": "[[footnote]]note[[/footnote]] text\n> head next\n+ In quote area\n+ Head A\n> quote line\n[[/blockquote]]\n> head next\n+ In quote area"}
+{"id": "fz-mix-051", "source": "++ Head B\n+* Skip\n\n> + not a heading\n> quote line\n> quote line\n++ Head B", "tags": [""]}
+{"id": "fz-mix-052", "source": "[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n+* Skip\n[[blockquote]]\n[[/blockquote]]\n[[math E]]\nx + y\n[[/math]]\nplain paragraph"}
+{"id": "fz-mix-053", "source": "[[math E]]\nx + y\n[[/math]]\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n[[footnote]]note[[/footnote]] text\n> + not a heading\n\n[[toc]]\n"}
+{"id": "fz-mix-054", "source": ">> deep quote\n> + not a heading\nplain paragraph\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]"}
+{"id": "fz-mix-055", "source": "\n[[f<toc title=\"T\"]]\n[[/blockquote]]\n+ Head A", "tags": ["alpha", "beta"]}
+{"id": "fz-mix-056", "source": "[[toc]]\n[[toc]]\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\nplain paragraph\n((E)) reference"}
+{"id": "fz-mix-057", "source": "> + not a heading\n[[/blockquote]]\n++ Head B\n[[/blockquote]]\n> quote line\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n++ Head B", "tags": [""]}
+{"id": "fz-mix-058", "source": "+ Head A\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n>> deep quote\n> + not a heading\n[[/blockquote]]\n++ Head B"}
+{"id": "fz-mix-059", "source": "\n\n+* Skip\nplain paragraph"}
+{"id": "fz-mix-060", "source": "[[f<toc title=\"T\"]]\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n[[math E]]\nx + y\n[[/math]]\n+* Skip\n\n[[f<toc title=\"T\"]]"}
+{"id": "fz-mix-061", "source": "[[/blockquote]]\n[[f<toc title=\"T\"]]\n[[blockquote]]\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n[[math E]]\nx + y\n[[/math]]"}
+{"id": "fz-mix-062", "source": "+* Skip\n((E)) reference\n\n> head next\n+ In quote area"}
+{"id": "fz-mix-063", "source": "[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n[[/blockquote]]\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\nplain paragraph\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]"}
+{"id": "fz-mix-064", "source": "[[math E]]\nx + y\n[[/math]]\n> quote line\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n> quote line\n((E)) reference", "tags": []}
+{"id": "fz-mix-065", "source": "[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n++ Head B\n[[f<toc title=\"T\"]]\n"}
+{"id": "fz-mix-066", "source": "> head next\n+ In quote area\n+ Head A\n[[footnote]]note[[/footnote]] text\n>> deep quote\nplain paragraph"}
+{"id": "fz-mix-067", "source": "> + not a heading\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n[[math E]]\nx + y\n[[/math]]"}
+{"id": "fz-mix-068", "source": "+* Skip\nplain paragraph\n\n[[math E]]\nx + y\n[[/math]]\n\n+* Skip\n[[toc]]", "tags": ["alpha"]}
+{"id": "fz-mix-069", "source": "[[f<toc title=\"T\"]]\n[[blockquote]]\n++ Head B"}
+{"id": "fz-mix-070", "source": "[[toc]]\n> head next\n+ In quote area\n>> deep quote\n[[/blockquote]]\nplain paragraph", "tags": ["alpha"]}
+{"id": "fz-mix-071", "source": "[[math E]]\nx + y\n[[/math]]\n\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n> quote line\n+* Skip", "tags": ["Alpha"]}
+{"id": "fz-mix-072", "source": "+* Skip\n[[/blockquote]]\n[[f<toc title=\"T\"]]\n[[footnote]]note[[/footnote]] text", "tags": ["Alpha", "alpha"]}
+{"id": "fz-mix-073", "source": "+* Skip\n\n> head next\n+ In quote area\n[[footnote]]note[[/footnote]] text\n> quote line\n[[toc]]"}
+{"id": "fz-mix-074", "source": "[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n> quote line\n((E)) reference\n[[/blockquote]]\n>> deep quote"}
+{"id": "fz-mix-075", "source": "++ Head B\n> + not a heading\n((E)) reference\n((E)) reference\n[[f<toc title=\"T\"]]"}
+{"id": "fz-mix-076", "source": "[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n[[math E]]\nx + y\n[[/math]]\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n> + not a heading\n[[/blockquote]]"}
+{"id": "fz-mix-077", "source": "[[/blockquote]]\n[[blockquote]]\n+ Head A\n[[blockquote]]\n+ Head A"}
+{"id": "fz-mix-078", "source": "[[math E]]\nx + y\n[[/math]]\n+* Skip\n[[/blockquote]]\n>> deep quote\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n\n>> deep quote"}
+{"id": "fz-mix-079", "source": "> quote line\n++ Head B"}
+{"id": "fz-mix-080", "source": "[[math E]]\nx + y\n[[/math]]\n>> deep quote\n> + not a heading\n> + not a heading", "tags": []}
+{"id": "fz-mix-081", "source": "> + not a heading\n[[math E]]\nx + y\n[[/math]]\n++ Head B\n[[/blockquote]]\n> + not a heading"}
+{"id": "fz-mix-082", "source": "[[/blockquote]]\n((E)) reference\n[[footnote]]note[[/footnote]] text\n((E)) reference\n[[blockquote]]\n> head next\n+ In quote area\n[[toc]]", "tags": []}
+{"id": "fz-mix-083", "source": "+* Skip\nplain paragraph\n> quote line\n[[/blockquote]]", "tags": []}
+{"id": "fz-mix-084", "source": "+* Skip\n[[toc]]\n+* Skip\n> + not a heading\n[[blockquote]]\n> quote line\n> head next\n+ In quote area"}
+{"id": "fz-mix-085", "source": "((E)) reference\n[[f<toc title=\"T\"]]\n> head next\n+ In quote area\n[[blockquote]]\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n[[toc]]", "tags": []}
+{"id": "fz-mix-086", "source": "[[f<toc title=\"T\"]]\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]"}
+{"id": "fz-mix-087", "source": "((E)) reference\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]"}
+{"id": "fz-mix-088", "source": "[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n((E)) reference\n\n[[/blockquote]]", "tags": [""]}
+{"id": "fz-mix-089", "source": "[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n[[footnote]]note[[/footnote]] text\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n> + not a heading\n"}
+{"id": "fz-mix-090", "source": "+ Head A\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n\n+ Head A\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]"}
+{"id": "fz-mix-091", "source": "> head next\n+ In quote area\n> quote line\n+ Head A\n+* Skip\n\n[[toc]]", "tags": ["Alpha", ""]}
+{"id": "fz-mix-092", "source": "[[toc]]\n> head next\n+ In quote area"}
+{"id": "fz-mix-093", "source": "plain paragraph\n+ Head A"}
+{"id": "fz-mix-094", "source": "++ Head B\n>> deep quote\n++ Head B\n+ Head A\n((E)) reference\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]"}
+{"id": "fz-mix-095", "source": "[[/blockquote]]\n((E)) reference\n[[blockquote]]\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n> quote line\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]", "tags": [""]}
+{"id": "fz-mix-096", "source": "\n((E)) reference\n> + not a heading\n> head next\n+ In quote area\n((E)) reference\n+* Skip"}
+{"id": "fz-mix-097", "source": "++ Head B\n[[toc]]\n++ Head B", "tags": ["alpha"]}
+{"id": "fz-mix-098", "source": ">> deep quote\n> + not a heading\n[[math E]]\nx + y\n[[/math]]\n[[f<toc title=\"T\"]]\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]"}
+{"id": "fz-mix-099", "source": "> quote line\n[[blockquote]]\n> + not a heading\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n> + not a heading", "tags": []}
+{"id": "fz-mix-100", "source": "[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n> quote line\n+ Head A\n[[toc]]\n>> deep quote"}
+{"id": "fz-mix-101", "source": "[[f<toc title=\"T\"]]\n[[toc]]\n((E)) reference\n[[blockquote]]"}
+{"id": "fz-mix-102", "source": "\n[[toc]]\n>> deep quote\n\n[[blockquote]]"}
+{"id": "fz-mix-103", "source": "+ Head A\n++ Head B\n[[footnote]]note[[/footnote]] text", "tags": [""]}
+{"id": "fz-mix-104", "source": "> + not a heading\n> head next\n+ In quote area", "tags": []}
+{"id": "fz-mix-105", "source": "+ Head A\n> + not a heading"}
+{"id": "fz-mix-106", "source": "[[blockquote]]\nplain paragraph\n> + not a heading\n> head next\n+ In quote area\n[[/blockquote]]\n[[math E]]\nx + y\n[[/math]]\n[[toc]]", "tags": [""]}
+{"id": "fz-mix-107", "source": "++ Head B\n+* Skip\n[[iftags -alpha]]\n+ Dropped\n[[/iftags]]", "tags": ["Alpha"]}
+{"id": "fz-mix-108", "source": "[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n[[blockquote]]\n[[iftags +alpha]]\n+ Gated\n[[/iftags]]\n[[footnote]]note[[/footnote]] text"}
+{"id": "fz-mix-109", "source": "[[iftags -alpha]]\n+ Dropped\n[[/iftags]]\n((E)) reference\n((E)) reference\n+* Skip\n>> deep quote\n+ Head A"}

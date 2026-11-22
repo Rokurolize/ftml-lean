@@ -1,0 +1,19 @@
+{"id":"control","output":"<p>alpha bravo charlie delta<\/p>\n\n"}
+{"id":"plain-mid","error":"Error: Call to a member function token() on null"}
+{"id":"plain-start","error":"Error: Call to a member function token() on null"}
+{"id":"plain-end","error":"Error: Call to a member function token() on null"}
+{"id":"plain-only","error":"Error: Call to a member function token() on null"}
+{"id":"pair-text","error":"Error: Call to a member function token() on null"}
+{"id":"pair-digits","error":"Error: Call to a member function token() on null"}
+{"id":"near-token","error":"Error: Call to a member function token() on null"}
+{"id":"swallow-bold","error":"Error: Call to a member function token() on null"}
+{"id":"inside-bold","error":"Error: Call to a member function token() on null"}
+{"id":"entity-dec","output":"<p>alpha &amp;#65533; bravo charlie<\/p>\n\n"}
+{"id":"entity-hex","output":"<p>alpha &amp;#xFFFD; bravo charlie<\/p>\n\n"}
+{"id":"code-token","output":"\n<div class=\"code\">\n<pre><code>x \ufffd y<\/code><\/pre><\/div>\n\n<p>after alpha bravo<\/p>\n\n"}
+{"id":"raw-token","error":"Error: Call to a member function token() on null"}
+{"id":"heading","error":"Error: Call to a member function token() on null"}
+{"id":"second-para","error":"Error: Call to a member function token() on null"}
+{"id":"list-item","error":"Error: Call to a member function token() on null"}
+{"id":"inc-target","error":"Error: Call to a member function token() on null"}
+{"id":"includer","output":"<p>before text [[include muse-probe-ufffd-inc-target]] after text<\/p>\n\n"}

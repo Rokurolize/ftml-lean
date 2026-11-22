@@ -1,0 +1,13 @@
+{"id":"bq-nbsp-only","output":"<p>X<\/p>\n\n<blockquote><p>\u00a0<\/p>\n\n<\/blockquote>\n<p>Y<\/p>\n\n"}
+{"id":"bq-comment-only","output":"<p>A<\/p>\n\n<p>B<\/p>\n\n"}
+{"id":"bq-spaced-marker","output":"<p>X<\/p>\n\n<blockquote><p>&gt; q<\/p>\n\n<\/blockquote>\n<p>Y<\/p>\n\n"}
+{"id":"bq-empty-in-run","output":"<p>A<\/p>\n\n<blockquote><p>a<\/p>\n\n<p>b<\/p>\n\n<\/blockquote>\n<p>B<\/p>\n\n"}
+{"id":"bq-indented-next","output":"<p>X<\/p>\n\n<blockquote><p>a<\/p>\n\n<\/blockquote>\n<p>&gt; b<br \/>\nY<\/p>\n\n"}
+{"id":"cm-two-lines","output":"<p>a<br \/>\nb<\/p>\n\n"}
+{"id":"cm-nbsp-indent","output":"<p>a<br \/>\n\u00a0<br \/>\nb<\/p>\n\n"}
+{"id":"cm-before-quote","output":"<p>A&gt; q<br \/>\nB<\/p>\n\n"}
+{"id":"cm-nested","output":"<p>az&#8212;]b<\/p>\n\n"}
+{"id":"cm-quote-bridge-blank","output":"<p>A<\/p>\n\n<blockquote><p>x<\/p>\n\n<\/blockquote>\n<blockquote><p>y<\/p>\n\n<\/blockquote>\n<p>B<\/p>\n\n"}
+{"id":"bq-if-false-tagged","output":"<p>A<\/p>\n\n<p>B<\/p>\n\n"}
+{"id":"if-spec-comment-tagged","output":"<p>[[iftags +alpha]]KEEP[[\/iftags]]<br \/>\nX<\/p>\n\n"}
+{"id":"if-trail-forbid-hit-tagged","output":"<p>X<\/p>\n\n"}

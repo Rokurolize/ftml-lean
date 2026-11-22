@@ -1,0 +1,3 @@
+A prefix==fixture on family claims: 276/276  disagreements: []
+B restricted==full on family claims: 276/276  exclusions: []
+C restricted==prefix on earlier claims: 275/276  disagreements: ['smoke-include']

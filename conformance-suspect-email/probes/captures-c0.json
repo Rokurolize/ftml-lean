@@ -1,0 +1,82 @@
+{
+ "lbl-eacute": {
+  "fullname": "muse-probe-suspect-email-lbl-eacute",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#��fac</span></p>",
+  "html_sha256": "b658355d28c9741677b31f21c0b24182d6f4c9edecd6b64242c761517b911d2c",
+  "source": "[u@example.com café]",
+  "source_sha256": "53be50934b1bc63ca78f94490f132eefceff4faae9ac608c47db2f9c66078f0d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "lbl-emoji": {
+  "fullname": "muse-probe-suspect-email-lbl-emoji",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#B����A</span></p>",
+  "html_sha256": "11bc31b3c8f0d5b80ee2df53e7ff32c0ded58b61c953aac363b2d4abc19c8482",
+  "source": "[u@example.com A😀B]",
+  "source_sha256": "8d4f9a91253a7aeeb21671b380c7c823eef1c61183637ed61133994aa871220c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "lbl-cjk": {
+  "fullname": "muse-probe-suspect-email-lbl-cjk",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#��楗�</span></p>",
+  "html_sha256": "27a92b6efd4183eb4e5de6c1e76c88cbe6728faa37d332b864990bc03905d60a",
+  "source": "[u@example.com 日本]",
+  "source_sha256": "fd9c4eeff1baef41ebf961109e108f45cf494951b0288d120f4ac5d64e884925",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "lbl-mixed": {
+  "fullname": "muse-probe-suspect-email-lbl-mixed",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#X��</span></p>",
+  "html_sha256": "07a369fd9eb84befc367c65ac0ef8c698953b26a64755bfb0cf58639d5a83cf2",
+  "source": "[u@example.com éX]",
+  "source_sha256": "c979c12e7db77d5f6094f8125a6effe905b3984cc680a9bf1c29db0311896790",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "lbl-acute-only": {
+  "fullname": "muse-probe-suspect-email-lbl-acute-only",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#��</span></p>",
+  "html_sha256": "ac470e774a24e795d3f86f80d032193c7acfb5dc27bcb367e532dd3d9038e5d2",
+  "source": "[u@example.com é]",
+  "source_sha256": "296b56e328fb16ad89abb4abd9f2ef5b39f34b186ae2b68a9e445b58eefaceb9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "lbl-at": {
+  "fullname": "muse-probe-suspect-email-lbl-at",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#rab|oof</span></p>",
+  "html_sha256": "145e4a71755e74b0992295662f409af0ca89f4e343d42ace12212e8e49604506",
+  "source": "[u@example.com foo@bar]",
+  "source_sha256": "3eb6a7a6067cbeb6cc5245e7b6d8c4b6a9c74bf38b5166c0e3cc7793cd023572",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "lbl-hash": {
+  "fullname": "muse-probe-suspect-email-lbl-hash",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#rab#oof</span></p>",
+  "html_sha256": "ae17f7be7257af0f835eff135f1a0fc22e1ab8074c8c3a979a0bc739993f5456",
+  "source": "[u@example.com foo#bar]",
+  "source_sha256": "707ef0d4f5ee3f2e4c308e75377f4f1e4a6cb0a47535fa43333172b5ff28a7eb",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "lbl-pipe": {
+  "fullname": "muse-probe-suspect-email-lbl-pipe",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#rab|oof</span></p>",
+  "html_sha256": "145e4a71755e74b0992295662f409af0ca89f4e343d42ace12212e8e49604506",
+  "source": "[u@example.com foo|bar]",
+  "source_sha256": "bddcde945979807220b294c7fcdf06784bb9723bab9982ef9ea6d3af95f5259a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

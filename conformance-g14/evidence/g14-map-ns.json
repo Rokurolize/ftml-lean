@@ -1,0 +1,12 @@
+{
+ "l1f-nospace": {
+  "fullname": "muse-probe-g14-l1f-nospace",
+  "source": "BEFORE-L1F\n>[[include muse-probe-g14-target]]\nAFTER-L1F",
+  "action": "created"
+ },
+ "l1g-nospace-arg": {
+  "fullname": "muse-probe-g14-l1g-nospace-arg",
+  "source": "BEFORE-L1G\n>[[include muse-probe-g14-target\n>| marker=NSOK]]\nAFTER-L1G",
+  "action": "created"
+ }
+}

@@ -1,0 +1,16 @@
+{"id":"e1-raw-around-code","segments":[{"t":"\n"},{"k":0},{"t":"\n\n"}],"tokens":[["Raw",{"text":"a[[code]]x[[\/code]]b"}]]}
+{"id":"e2-raw-opener-in-code","segments":[{"t":"\n\n\n"},{"k":1},{"t":" y @@\n\n"}],"tokens":{"1":["Code",{"text":"@@x","attr":{"type":""}}]}}
+{"id":"e3-form-line-placeholder","segments":[{"t":"\n"},{"k":2},{"t":"\n"},{"k":3},{"t":"\n"},{"k":4},{"t":"\n"},{"k":5},{"t":"\n"},{"k":6},{"t":"\n\n"}],"tokens":{"2":["Form",{"text":"[[form]]"}],"3":["Form",{"text":"a[[code]]x[[\/code]]b"}],"4":["Form",{"text":"---"}],"5":["Form",{"text":"y"}],"6":["Form",{"text":"[[\/form]]"}]}}
+{"id":"e4-rawold-around-code","segments":[{"t":"\n"},{"k":7},{"t":"\n\n"}],"tokens":{"7":["Rawold",{"text":"a[[code]]x[[\/code]]b"}]}}
+{"id":"e5-code-in-raw","segments":[{"t":"\n"},{"k":8},{"t":"\n\n"}],"tokens":{"8":["Raw",{"text":"[[code]]x[[\/code]]"}]}}
+{"id":"e6-at-run-across-code","segments":[{"t":"\n[[code]]x[[\/code]]\n\n"}],"tokens":[]}
+{"id":"f1-form-with-code-line","error":"json_encode failed: Malformed UTF-8 characters, possibly incorrectly encoded"}
+{"id":"f2-rawold-across-code","error":"json_encode failed: Malformed UTF-8 characters, possibly incorrectly encoded"}
+{"id":"f3-raw-abort-across-code","segments":[{"t":"\n@@start\n\n\n"},{"k":19},{"t":"\nend@@\n\n"}],"tokens":{"19":["Code",{"text":"x","attr":{"type":""}}]}}
+{"id":"f4-raw-after-code-sameline","segments":[{"t":"\n\n\n"},{"k":20},{"t":" "},{"k":21},{"t":"\n\n"}],"tokens":{"20":["Code",{"text":"x","attr":{"type":""}}],"21":["Raw",{"text":"raw"}]}}
+{"id":"g1-raw-around-form","segments":[{"t":"\n@@"},{"k":22},{"t":"\n"},{"k":23},{"t":"\n"},{"k":24},{"t":"\n"},{"k":25},{"t":"\n"},{"k":26},{"t":"@@\n\n"}],"tokens":{"22":["Form",{"text":"[[form]]"}],"23":["Form",{"text":"x"}],"24":["Form",{"text":"---"}],"25":["Form",{"text":"y"}],"26":["Form",{"text":"[[\/form]]"}]}}
+{"id":"g2-rawold-across-form","error":"json_encode failed: Malformed UTF-8 characters, possibly incorrectly encoded"}
+{"id":"g3-raw-crossline-formline","segments":[{"t":"\n@@"},{"k":33},{"t":"\n"},{"k":34},{"t":"\n"},{"k":35},{"t":"\n\n"}],"tokens":{"33":["Form",{"text":"[[form]]"}],"34":["Form",{"text":"x"}],"35":["Form",{"text":"[[\/form]]"}]}}
+{"id":"g4-form-blank-and-case","segments":[{"t":"\n"},{"k":36},{"t":"\n"},{"k":37},{"t":"\n"},{"k":38},{"t":"\n"},{"k":39},{"t":"\n"},{"k":40},{"t":"\n\n"}],"tokens":{"36":["Form",{"text":"[[FORM]]"}],"37":["Form",{"blank":1}],"38":["Form",{"text":"---"}],"39":["Form",{"blank":1}],"40":["Form",{"text":"[[\/FORM]]"}]}}
+{"id":"g5-form-sep-nospace","segments":[{"t":"\n"},{"k":41},{"t":"\n"},{"k":42},{"t":"\n"},{"k":43},{"t":"\n"},{"k":44},{"t":"\n\n"}],"tokens":{"41":["Form",{"text":"[[form]]"}],"42":["Form",{"text":"a"}],"43":["Form",{"text":"---"}],"44":["Form",{"text":"[[\/form]]"}]}}
+{"id":"g6-form-two-seps","segments":[{"t":"\n"},{"k":45},{"t":"\n"},{"k":46},{"t":"\n"},{"k":47},{"t":"\n"},{"k":48},{"t":"\n"},{"k":49},{"t":"\n"},{"k":50},{"t":"\n"},{"k":51},{"t":"\n\n"}],"tokens":{"45":["Form",{"text":"[[form]]"}],"46":["Form",{"text":"a"}],"47":["Form",{"text":"---"}],"48":["Form",{"text":"b"}],"49":["Form",{"text":"---"}],"50":["Form",{"text":"c"}],"51":["Form",{"text":"[[\/form]]"}]}}

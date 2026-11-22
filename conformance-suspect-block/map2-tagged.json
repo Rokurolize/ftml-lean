@@ -1,0 +1,17 @@
+{
+ "bq-if-false-tagged": {
+  "fullname": "muse-probe-suspect-block-bq-if-false-tagged",
+  "source": "A\n> [[iftags +beta]]KEEP[[/iftags]]\nB",
+  "action": "publish-tags"
+ },
+ "if-spec-comment-tagged": {
+  "fullname": "muse-probe-suspect-block-if-spec-comment-tagged",
+  "source": "[[iftags [!--x--]+alpha]]KEEP[[/iftags]]\nX",
+  "action": "publish-tags"
+ },
+ "if-trail-forbid-hit-tagged": {
+  "fullname": "muse-probe-suspect-block-if-trail-forbid-hit-tagged",
+  "source": "[[iftags -alpha,]]KEEP[[/iftags]]\nX",
+  "action": "publish-tags"
+ }
+}

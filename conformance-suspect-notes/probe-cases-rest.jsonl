@@ -1,0 +1,10 @@
+{"id": "n3para", "source": "x[[footnote]]p1\n\np2\n\np3[[/footnote]]"}
+{"id": "n2para-ctrl", "source": "x[[footnote]]p1\n\np2[[/footnote]]"}
+{"id": "bib-res-blank", "source": "[[bibliography]]\n: a : A\nfoo\n\nbar\n[[/bibliography]]\n((bibcite a))"}
+{"id": "bib-indent", "source": " [[bibliography]]\n: a : A\n[[/bibliography]]\n((bibcite a))"}
+{"id": "bib-close-tail", "source": "[[bibliography]]\n: a : A\n[[/bibliography]] tail\n((bibcite a))"}
+{"id": "bib-multi-space", "source": "((bibcite a))\n\n[[bibliography]]\n: a : A   B\n[[/bibliography]]"}
+{"id": "bibc-case-rev", "source": "((bibcite alpha))\n\n[[bibliography]]\n: Alpha : Upper\n[[/bibliography]]"}
+{"id": "fnb-title-brackets", "source": "x[[footnote]]n[[/footnote]]\n[[footnoteblock title=\"A]]B\"]]"}
+{"id": "bib-close-nbsp", "source": "[[bibliography]]\n: a : A\n[[/bibliography]] \n((bibcite a))"}
+{"id": "bib-ctrl", "source": "((bibcite a))\n\n[[bibliography]]\n: a : A\n[[/bibliography]]"}

@@ -1,0 +1,365 @@
+{"id": "a-fn-define", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "b-fn-empty-block", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "b01-single", "verdict": "PASS"}
+{"id": "b02-two", "verdict": "PASS"}
+{"id": "b03-three", "verdict": "PASS"}
+{"id": "b04-dup-adjacent", "verdict": "PASS"}
+{"id": "b05-dup-separated", "verdict": "PASS"}
+{"id": "b06-dup-then-third", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "b07-empty-body", "verdict": "PASS"}
+{"id": "b08-two-empty", "verdict": "PASS"}
+{"id": "b09-empty-then-value", "verdict": "PASS"}
+{"id": "b10-italic", "verdict": "EXCLUDED", "unmirrored": ["Emphasis"], "missingKeys": []}
+{"id": "b11-bold", "verdict": "EXCLUDED", "unmirrored": ["Strong"], "missingKeys": []}
+{"id": "b12-link", "verdict": "EXCLUDED", "unmirrored": ["Url"], "missingKeys": []}
+{"id": "b13-self-cite", "verdict": "PASS"}
+{"id": "b14-nested-footnote", "verdict": "PASS"}
+{"id": "b15-nested-code", "verdict": "EXCLUDED", "unmirrored": ["Tt"], "missingKeys": []}
+{"id": "b16-forward-cite", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "b17-backward-cite", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "b18-undefined-cite", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "b19-cite-only", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "b20-block-only", "verdict": "PASS"}
+{"id": "b21-title", "verdict": "PASS"}
+{"id": "b22-hide", "verdict": "PASS"}
+{"id": "b23-title-hide", "verdict": "PASS"}
+{"id": "b24-label-hyphen", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "b25-label-underscore", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "b26-no-space-before-colon", "verdict": "PASS"}
+{"id": "b27-two-spaces-before-colon", "verdict": "PASS"}
+{"id": "b28-no-space-after-colon", "verdict": "PASS"}
+{"id": "b29-unterminated", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Deflist", "Paragraph"], "missingKeys": []}
+{"id": "b30-no-entries", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "b31-mixed-valid-invalid", "verdict": "PASS"}
+{"id": "b32-tab-separators", "verdict": "PASS"}
+{"id": "b33-uppercase-label", "verdict": "PASS"}
+{"id": "b34-digit-label", "verdict": "PASS"}
+{"id": "b35-in-div", "verdict": "EXCLUDED", "unmirrored": ["Div"], "missingKeys": []}
+{"id": "b36-in-collapsible", "verdict": "EXCLUDED", "unmirrored": ["Collapsible"], "missingKeys": []}
+{"id": "b37-in-table", "verdict": "EXCLUDED", "unmirrored": ["Tableadv"], "missingKeys": []}
+{"id": "b38-adjacent-footnoteblock", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "b39-adjacent-footnote", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "b40-two-blocks", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Deflist", "Paragraph"], "missingKeys": []}
+{"id": "b41-mixed-markup", "verdict": "EXCLUDED", "unmirrored": ["Strong", "Emphasis", "Tt"], "missingKeys": []}
+{"id": "b42-special-chars", "verdict": "PASS"}
+{"id": "b43-multiple-cites", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "b44-leading-trailing-space", "verdict": "PASS"}
+{"id": "b45-colon-in-body", "verdict": "EXCLUDED", "unmirrored": ["Url"], "missingKeys": []}
+{"id": "b46-long-label", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "b47-dup-nested-markup", "verdict": "EXCLUDED", "unmirrored": ["Emphasis", "Strong"], "missingKeys": []}
+{"id": "b48-empty-block-cite", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "b49-span-inline", "verdict": "EXCLUDED", "unmirrored": ["Span"], "missingKeys": []}
+{"id": "b50-size-inline", "verdict": "EXCLUDED", "unmirrored": ["Size"], "missingKeys": []}
+{"id": "b51-blank-lines", "verdict": "PASS"}
+{"id": "b52-title-empty", "verdict": "PASS"}
+{"id": "bib01-canonical-two", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph", "Emphasis"], "missingKeys": []}
+{"id": "bib02-cite-after", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib03-cite-both-sides", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib04-duplicate-label", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib05-empty-block", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib06-body-only-no-cite", "verdict": "PASS"}
+{"id": "bib07-alphabetical-order", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib08-citation-order", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib09-definition-order", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib10-two-blocks", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Deflist", "Paragraph"], "missingKeys": []}
+{"id": "bib11-first-empty-second-full", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Deflist", "Paragraph"], "missingKeys": []}
+{"id": "bib12-three-blocks", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Deflist", "Paragraph"], "missingKeys": []}
+{"id": "bib13-title-double-quoted", "verdict": "PASS"}
+{"id": "bib14-title-single-quoted", "verdict": "PASS"}
+{"id": "bib15-title-empty", "verdict": "PASS"}
+{"id": "bib16-title-special-chars", "verdict": "PASS"}
+{"id": "bib17-hide-yes", "verdict": "PASS"}
+{"id": "bib18-hide-short-t", "verdict": "PASS"}
+{"id": "bib19-unknown-args", "verdict": "PASS"}
+{"id": "bib20-title-and-hide", "verdict": "PASS"}
+{"id": "bib21-unterminated", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Deflist", "Paragraph"], "missingKeys": []}
+{"id": "bib22-unterminated-empty", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib23-name-case-uppercase", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Deflist", "Paragraph"], "missingKeys": []}
+{"id": "bib24-name-case-title", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Deflist", "Paragraph"], "missingKeys": []}
+{"id": "bib25-closer-uppercase", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Deflist", "Paragraph"], "missingKeys": []}
+{"id": "bib26-opener-leading-space", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Deflist", "Paragraph"], "missingKeys": []}
+{"id": "bib27-opener-extra-close", "verdict": "PASS"}
+{"id": "bib28-closer-trailing-spaces", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib29-closer-trailing-tab", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib30-closer-trailing-text", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Deflist", "Paragraph"], "missingKeys": []}
+{"id": "bib31-nested-bibliography", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib32-overlap-bold-closer", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "bib33-inline-strong-em", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Strong", "Emphasis"], "missingKeys": []}
+{"id": "bib34-inline-size-span", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Size", "Span"], "missingKeys": []}
+{"id": "bib35-line-anchored-list", "verdict": "PASS"}
+{"id": "bib36-line-anchored-heading", "verdict": "PASS"}
+{"id": "bib37-bibcite-in-value", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib38-definition-separators", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib39-label-charset", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib40-tab-prefix-label", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib41-next-line-value", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib42-invalid-line-residual", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Strong"], "missingKeys": []}
+{"id": "bib43-label-only-crossing", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib44-whitespace-body", "verdict": "PASS"}
+{"id": "bib45-footnote-then-bibliography", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib46-bibliography-then-footnote", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib47-bibliography-inside-footnote", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Deflist", "Paragraph"], "missingKeys": []}
+{"id": "bib48-footnote-opened-in-bib-body", "verdict": "PASS"}
+{"id": "bib49-bibliography-inside-list", "verdict": "EXCLUDED", "unmirrored": ["Newline", "List"], "missingKeys": []}
+{"id": "bib50-item-inside-table", "verdict": "EXCLUDED", "unmirrored": ["Tableadv", "Paragraph"], "missingKeys": []}
+{"id": "bib51-iftags-kept", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib52-iftags-closer-inside", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bib53-tabview-residue", "verdict": "EXCLUDED", "unmirrored": ["Url"], "missingKeys": []}
+{"id": "bib54-trailing-paragraph", "verdict": "PASS"}
+{"id": "bib55-dashes-typography", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Typography"], "missingKeys": []}
+{"id": "bib56-no-bibliography", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-01-undef-basic", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-02-undef-adjacent", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-03-undef-multi", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-04-def-backward", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-05-def-forward", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-06-def-two-cites-forward", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-07-def-two-cites-backward", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-08-def-dup-label", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-09-def-same-label-twice", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-10-def-case-mismatch", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-11-def-mixed-case-label", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-12-def-tabbed-cite", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-13-def-two-space", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-14-empty-body-bib", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-15-empty-bibliography", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-16-no-bibliography", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-17-two-bibliographies", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Deflist", "Paragraph"], "missingKeys": []}
+{"id": "bibc-18-cite-inside-bibliography", "verdict": "PASS"}
+{"id": "bibc-19-undef-empty-label", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-20-undef-no-space", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-21-undef-missing-close", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-22-undef-closer-only", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-23-undef-extra-word", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-24-undef-unicode", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-25-undef-hyphen", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-26-undef-underscore", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-27-undef-upper-marker", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-28-undef-bibcite-word", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-29-undef-pipe", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-30-undef-bold", "verdict": "EXCLUDED", "unmirrored": ["Strong", "Paragraph"], "missingKeys": []}
+{"id": "bibc-31-undef-paragraph-break", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-32-undef-single-newline", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "bibc-33-undef-newline-after-bibcite", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-34-comment-in-label", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-35-comment-tag-in-label", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-36-code-owner", "verdict": "EXCLUDED", "unmirrored": ["Code"], "missingKeys": []}
+{"id": "bibc-37-raw-owner", "verdict": "EXCLUDED", "unmirrored": ["Raw", "Paragraph"], "missingKeys": []}
+{"id": "bibc-38-heading-owner", "verdict": "EXCLUDED", "unmirrored": ["Heading"], "missingKeys": []}
+{"id": "bibc-39-list-owner", "verdict": "EXCLUDED", "unmirrored": ["List"], "missingKeys": []}
+{"id": "bibc-40-table-owner", "verdict": "EXCLUDED", "unmirrored": ["Table"], "missingKeys": []}
+{"id": "bibc-41-external-link-label", "verdict": "EXCLUDED", "unmirrored": ["Url", "Paragraph"], "missingKeys": []}
+{"id": "bibc-42-internal-link-label", "verdict": "EXCLUDED", "unmirrored": ["Freelink", "Paragraph"], "missingKeys": []}
+{"id": "bibc-43-escaped-cite", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-44-span-attr-owner", "verdict": "EXCLUDED", "unmirrored": ["Span", "Paragraph"], "missingKeys": []}
+{"id": "bibc-45-footnote-adjacency", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-46-footnoteitem-adjacency", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-47-iftags-seam-off", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-48-iftags-seam-on", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-49-block-undef", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-50-block-score-undef", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-51-block-defined", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-52-anchor-adjacency", "verdict": "EXCLUDED", "unmirrored": ["Anchor", "Paragraph"], "missingKeys": []}
+{"id": "bibc-53-div-adjacency", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "bibc-54-nested-in-note", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-55-cite-in-bib-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-56-html-escape-label", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-57-residual-para", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-58-typography-adjacency", "verdict": "EXCLUDED", "unmirrored": ["Typography", "Strong", "Paragraph"], "missingKeys": []}
+{"id": "bibc-59-colon-in-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bibc-60-multi-paragraph", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "c-fn-new-number", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "d-bib-define", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "e-bib-cite-alone", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "f-bib-new", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn01-single", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn02-two", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn03-block-after", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn04-block-before", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn05-block-between", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn06-two-blocks", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "fn07-empty-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn08-bold-italic-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Strong", "Emphasis", "Underline"], "missingKeys": []}
+{"id": "fn09-link-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Url", "Interwiki"], "missingKeys": []}
+{"id": "fn10-code-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn11-math-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn12-list-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "List"], "missingKeys": []}
+{"id": "fn13-quote-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "fn14-multiline-body", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "fn15-unicode-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Strong"], "missingKeys": []}
+{"id": "fn16-uppercase-tag", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn17-mixed-case-tag", "verdict": "EXCLUDED", "unmirrored": ["Url", "Paragraph"], "missingKeys": []}
+{"id": "fn18-space-in-opener", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn19-unterminated", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn20-stray-closer", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn21-nested-footnote", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn22-block-in-footnote", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn23-fused-close", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn24-block-title", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn25-block-hide", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn26-block-bogus-arg", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn27-block-title-empty", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn28-leading-newline", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn29-leading-spaces", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn30-many-notes", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn31-block-then-more", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "fn32-adj-bibitem", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn33-adj-bibcite-before", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn34-adj-undefined-bibcite", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn35-adj-footnoteitem", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn36-div-wrapped", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "fn37-list-wrapped", "verdict": "EXCLUDED", "unmirrored": ["List"], "missingKeys": []}
+{"id": "fn38-quote-wrapped", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "fn39-collapsible-wrapped", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Collapsible"], "missingKeys": []}
+{"id": "fn40-iftags-kept", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn41-iftags-hidden", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn42-brackets-in-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn43-double-closer", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn44-across-paragraphs", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn45-block-after-list", "verdict": "EXCLUDED", "unmirrored": ["List", "Paragraph"], "missingKeys": []}
+{"id": "fn46-table-cell", "verdict": "EXCLUDED", "unmirrored": ["Table"], "missingKeys": []}
+{"id": "fn47-header-note", "verdict": "EXCLUDED", "unmirrored": ["Center"], "missingKeys": []}
+{"id": "fn48-no-notes", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn49-comment-around", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn50-bracket-prefix", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn51-underscore-closer", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Url"], "missingKeys": []}
+{"id": "fn52-sameline-code-close", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fn53-empty-doc", "verdict": "PASS"}
+{"id": "fnb-01-block-after-notes", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-02-block-before-notes", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-03-block-between-notes", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-04-no-block-autoappend", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-05-block-only-no-notes", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-06-no-notes-no-block", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-07-two-blocks", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-08-two-blocks-titles", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-09-two-blocks-empty-first", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-10-title-simple", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-11-title-empty", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-12-title-spaces", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-13-title-htmlspecial", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-14-title-singlequote", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-15-title-unicode", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-16-hide-true", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-17-hide-false", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-18-bogus-attr", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-19-title-and-hide", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-20-attr-singlequoted", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-21-note-bold", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Strong", "Emphasis"], "missingKeys": []}
+{"id": "fnb-22-note-link", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Url"], "missingKeys": []}
+{"id": "fnb-23-note-multiline", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Newline"], "missingKeys": []}
+{"id": "fnb-24-note-paragraphs", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-25-note-list", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "List"], "missingKeys": []}
+{"id": "fnb-26-note-code", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-27-note-nested-div", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "fnb-28-empty-note-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-29-whitespace-note-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-30-unterminated-block", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-31-block-no-close-bracket", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-32-lowercase-variants-ignored", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-33-uppercase-block", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-34-block-extra-spaces", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-35-block-leading-space", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "fnb-36-adjacent-bibitem", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-37-adjacent-bibliography", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-38-adjacent-bibcite", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-39-literal-footnoteitem", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-40-block-then-bibcite-before-def", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-41-block-in-div", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "fnb-42-block-in-quote", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-43-block-in-list", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-44-block-inline", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Newline"], "missingKeys": []}
+{"id": "fnb-45-block-tight", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "fnb-46-many-notes", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-47-block-then-note-then-title-block", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fnb-48-block-with-newline-attr", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-01-one", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-02-two", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-03-three", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-04-four", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-05-empty-one", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-06-empty-mixed", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-07-empty-ws", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-08-all-empty", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-09-bold-italic", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Strong", "Emphasis"], "missingKeys": []}
+{"id": "fni-10-link", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Url"], "missingKeys": []}
+{"id": "fni-11-multiline", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Newline"], "missingKeys": []}
+{"id": "fni-12-paragraphs", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-13-list-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "List"], "missingKeys": []}
+{"id": "fni-14-blockquote-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "fni-15-div-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "fni-16-code-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Rawold"], "missingKeys": []}
+{"id": "fni-17-html-special", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-18-nested-footnote", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-19-block-first", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-20-block-middle", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-21-block-last", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-22-two-blocks", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "fni-23-block-with-tail", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-24-no-block", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-25-empty-block", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-26-empty-block-bare", "verdict": "PASS"}
+{"id": "fni-27-two-empty-blocks", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-28-title", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-29-title-empty", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-30-title-special", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-31-hide", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-32-title-unquoted", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-33-unterminated-note", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-34-stray-close", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-35-unterminated-then-good", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Newline"], "missingKeys": []}
+{"id": "fni-36-fused-close", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-37-malformed-block", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-38-malformed-opener", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-39-uppercase", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-40-with-bib", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-41-bibcite-before", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-42-undefined-bibcite", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-43-dup-biblabel", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Url"], "missingKeys": []}
+{"id": "fni-44-note-in-div", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "fni-45-note-in-quote", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "fni-46-note-in-list", "verdict": "EXCLUDED", "unmirrored": ["List"], "missingKeys": []}
+{"id": "fni-47-note-in-collapsible", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Collapsible"], "missingKeys": []}
+{"id": "fni-48-unicode", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-49-repeated-marker", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "fni-50-block-in-div", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "g-fn-bib-both", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-bib-cite-after", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-bib-cite-before", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-bib-cite-malformed", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-bib-def-order", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-bib-dup-label", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-bib-empty", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-bib-empty-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-bib-multi-block", "verdict": "EXCLUDED", "unmirrored": ["Deflist", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "x-bib-nested-markup", "verdict": "EXCLUDED", "unmirrored": ["Strong", "Paragraph"], "missingKeys": []}
+{"id": "x-bib-title", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-bib-undefined", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-bib-unordered-labels", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-bib-unterminated", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Deflist", "Paragraph"], "missingKeys": []}
+{"id": "x-fn-around-iftags", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-fn-block-after", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "x-fn-block-before", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "x-fn-block-between", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-fn-block-empty", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-fn-block-multiple", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "x-fn-block-none", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "x-fn-block-title", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-fn-block-title-empty", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-fn-block-two-before", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-fn-empty-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-fn-in-code", "verdict": "EXCLUDED", "unmirrored": ["Code", "Newline"], "missingKeys": []}
+{"id": "x-fn-in-collapsible", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Collapsible"], "missingKeys": []}
+{"id": "x-fn-in-div", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div", "Newline"], "missingKeys": []}
+{"id": "x-fn-in-iftags-drop", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-fn-in-iftags-keep", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-fn-in-include", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "x-fn-in-list", "verdict": "EXCLUDED", "unmirrored": ["List", "Paragraph"], "missingKeys": []}
+{"id": "x-fn-in-quote", "verdict": "EXCLUDED", "unmirrored": ["Blockquote", "Paragraph"], "missingKeys": []}
+{"id": "x-fn-nested-strong", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Strong", "Emphasis"], "missingKeys": []}
+{"id": "x-fn-unterminated", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-mix-bibcite-in-block", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-mix-bibcite-in-fn", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-mix-blocks-interleaved", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-mix-fn-bib", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-mix-fn-in-bib", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}

@@ -1,0 +1,156 @@
+/*
+ * render/html/element/iframe.rs
+ *
+ * ftml - Library to parse Wikidot text
+ * Copyright (C) 2019-2026 Wikijump Team
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+use super::prelude::*;
+use crate::tree::{AttributeMap, Element};
+use crate::url::normalize_href;
+use std::borrow::Cow;
+
+pub fn render_iframe(ctx: &mut HtmlContext, url: &str, attributes: &AttributeMap) {
+    debug!("Rendering iframe block (url '{url}')");
+    if ctx.layout().legacy() {
+        render_legacy_iframe(ctx, url, attributes, false);
+    } else {
+        let src = normalize_href(url, None);
+        ctx.html().iframe().attr(attr!(
+            "src" => &src,
+            "crossorigin";;
+            attributes
+        ));
+    }
+}
+
+pub(super) fn render_legacy_iframe(
+    ctx: &mut HtmlContext,
+    url: &str,
+    attributes: &AttributeMap,
+    omit_close: bool,
+) {
+    let src = crate::url::percent_encode_non_ascii(url);
+    let get = |name| {
+        attributes
+            .get()
+            .get(name)
+            .map_or("", std::convert::AsRef::as_ref)
+    };
+    let mut iframe = ctx.html().iframe();
+    iframe.attr_single_quoted("src", &[src.as_ref()]);
+    iframe.attr_single_quoted("align", &[get("align")]);
+    iframe.attr_single_quoted("frameborder", &[get("frameborder")]);
+    iframe.attr_single_quoted("height", &[get("height")]);
+    iframe.attr_single_quoted("scrolling", &[get("scrolling")]);
+    iframe.attr_single_quoted("width", &[get("width")]);
+    iframe.attr_single_quoted("class", &[get("class")]);
+    iframe.attr_single_quoted("style", &[get("style")]);
+    if omit_close {
+        iframe.omit_close();
+    }
+}
+
+pub fn render_html(ctx: &mut HtmlContext, contents: &str, attributes: &AttributeMap) {
+    render_html_with_tail(ctx, contents, attributes, &[]);
+}
+
+pub fn render_wikidot_inline_html_run(ctx: &mut HtmlContext, elements: &[Element]) {
+    let mut index = 0usize;
+    while index < elements.len() {
+        match &elements[index] {
+            Element::Html {
+                contents,
+                attributes,
+            } => {
+                let rest = &elements[index + 1..];
+                let next_html = rest
+                    .iter()
+                    .position(|element| matches!(element, Element::Html { .. }))
+                    .unwrap_or(rest.len());
+                render_html_with_tail(ctx, contents, attributes, &rest[..next_html]);
+                index += 1 + next_html;
+            }
+            _ => {
+                render_element(ctx, &elements[index]);
+                index += 1;
+            }
+        }
+    }
+}
+
+fn render_html_with_tail(
+    ctx: &mut HtmlContext,
+    contents: &str,
+    attributes: &AttributeMap,
+    tail: &[Element],
+) {
+    debug!("Rendering html block (submitting to remote for iframe)");
+
+    let iframe_url = ctx.handle().post_html(ctx.info(), contents);
+    let src = normalize_href(&iframe_url, None);
+
+    if ctx.layout().legacy() {
+        let wikidot_attributes = attributes.get();
+        let user_class: &str = wikidot_attributes.get("class").map_or("", AsRef::as_ref);
+        let user_style: &str = wikidot_attributes.get("style").map_or("", AsRef::as_ref);
+        let class = if user_class.is_empty() {
+            Cow::Borrowed("html-block-iframe")
+        } else {
+            Cow::Owned(format!("{user_class} html-block-iframe"))
+        };
+        // Wikidot emits the class attribute before the style attribute when a
+        // user class is supplied, but after it when only the fixed class is
+        // present. Both orders are pinned by the saved-page captures.
+        let mut iframe = ctx.html().iframe();
+        if user_class.is_empty() {
+            iframe.attr(attr!(
+                "src" => &src,
+                "allowtransparency" => "true",
+                "frameborder" => "0",
+                "style" => &user_style; if !user_style.is_empty(),
+                "class" => &class,
+            ));
+        } else {
+            iframe.attr(attr!(
+                "src" => &src,
+                "allowtransparency" => "true",
+                "frameborder" => "0",
+                "class" => &class,
+                "style" => &user_style; if !user_style.is_empty(),
+            ));
+        }
+        if !tail.is_empty() {
+            iframe.inner(|ctx| render_wikidot_iframe_tail(ctx, tail));
+        }
+    } else {
+        ctx.html().iframe().attr(attr!(
+            "src" => &src,
+            "crossorigin";;
+            attributes
+        ));
+    }
+}
+
+fn render_wikidot_iframe_tail(ctx: &mut HtmlContext, tail: &[Element]) {
+    match tail.split_last() {
+        Some((Element::LineBreak, rest)) => {
+            render_elements(ctx, rest);
+            ctx.html().br();
+        }
+        _ => render_elements(ctx, tail),
+    }
+}

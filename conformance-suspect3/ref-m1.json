@@ -1,0 +1,82 @@
+{
+ "m1-plain": {
+  "source": "A [[$ a + b $]] B",
+  "ref": "<p>A <span class=\"math-inline\">$a + b$</span> B</p>",
+  "stderr": ""
+ },
+ "m1-url": {
+  "source": "A [[$ http://example.com/a $]] B",
+  "ref": "<p>A <span class=\"math-inline\">$http://example.com/a$</span> B</p>",
+  "stderr": ""
+ },
+ "m1-email-bare": {
+  "source": "A [[$ a@example.com $]] B",
+  "ref": "<p>A <span class=\"math-inline\">$a@example.com$</span> B</p>",
+  "stderr": ""
+ },
+ "m1-email-descr": {
+  "source": "A [[$ [a@example.com Label] $]] B",
+  "ref": "<p>A <span class=\"math-inline\">$Label$</span> B</p>",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/T"
+ },
+ "m1-freelink": {
+  "source": "A [[$ [[[Some Page]]] $]] B",
+  "ref": "<p>A <span class=\"math-inline\">$Some Page$</span> B</p>",
+  "stderr": ""
+ },
+ "m1-raw": {
+  "source": "A [[$ @@x@@ $]] B",
+  "ref": "<p>A <span class=\"math-inline\">$$</span> B</p>",
+  "stderr": ""
+ },
+ "m1-code": {
+  "source": "A [[$ [[code]]x[[/code]] $]] B",
+  "ref": "<p>A [[$ [[code]]x[<a href=\"/code]]\">$</a>] B</p>",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Url::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Tex"
+ },
+ "m1-newline": {
+  "source": "A [[$ x\ny $]] B",
+  "ref": "<p>A <span class=\"math-inline\">$$</span> B</p>",
+  "stderr": ""
+ },
+ "m1-nested-email-url": {
+  "source": "A [[$ [a@example.com http://example.com/a] $]] B",
+  "ref": "<p>A <span class=\"math-inline\">$�2�$</span> B</p>",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/T"
+ },
+ "m1-nested-email-free": {
+  "source": "A [[$ [a@example.com [[[Some Page]]]] $]] B",
+  "ref": "<p>A <span class=\"math-inline\">$�0�$</span> B</p>",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/T"
+ },
+ "m1-nested-email-raw": {
+  "source": "A [[$ [a@example.com @@x@@] $]] B",
+  "ref": "<p>A <span class=\"math-inline\">$�0�$</span> B</p>",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/T"
+ },
+ "m1-nested-email-newline": {
+  "source": "A [[$ [a@example.com x\ny] $]] B",
+  "ref": "<p>A <span class=\"math-inline\">$x�0�y$</span> B</p>",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/T"
+ },
+ "m1-freelink-url": {
+  "source": "A [[$ [[[http://example.com/a]]] $]] B",
+  "ref": "<p>A <span class=\"math-inline\">$http://example.com/a$</span> B</p>",
+  "stderr": ""
+ },
+ "m1-image": {
+  "source": "A [[$ [[image http://example.com/a.png]] $]] B",
+  "ref": "<p>A <span class=\"math-inline\">$$</span> B</p>",
+  "stderr": ""
+ },
+ "m1-email-descr-url-first": {
+  "source": "A [[$ [http://example.com/a a@example.com] $]] B",
+  "ref": "<p>A <span class=\"math-inline\">$a@example.com$</span> B</p>",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Url::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Tex"
+ },
+ "m1-two-urls": {
+  "source": "A [[$ http://example.com/a http://example.com/b $]] B",
+  "ref": "<p>A <span class=\"math-inline\">$http://example.com/a http://example.com/b$</span> B</p>",
+  "stderr": ""
+ }
+}

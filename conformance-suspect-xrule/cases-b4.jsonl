@@ -1,0 +1,8 @@
+{"id": "x26-email-shift", "source": "A [[[Some Page]]] [a@example.com @@x@@] B"}
+{"id": "x27-email-shift2", "source": "@@a@@ [a@example.com @@x@@] B"}
+{"id": "x28-file-freelink-label", "source": "[[file foo|[[[Bar]]]]]"}
+{"id": "x29-user-freelink-name", "source": "[[user [[[Bar]]] ]]"}
+{"id": "x30-anchor-freelink-name", "source": "[[# [[[Bar]]] ]]"}
+{"id": "x31-toc-ustrip", "source": "[[toc]]\n++ Grüüße"}
+{"id": "x32-footnote-table", "source": ";[[footnote]]||a||b||[[/footnote]];\n[[footnoteblock]]"}
+{"id": "x33-div-attr-freelink", "source": "[[div class=\"[[[Bar]]]\"]]x[[/div]]"}

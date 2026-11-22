@@ -1,0 +1,72 @@
+{
+ "bq-raw-nospace": {
+  "fullname": "muse-probe-suspect-block-bq-raw-nospace",
+  "html": "<p>A</p>\n<p>B</p>",
+  "html_sha256": "af1a4520d4a128c82ff2db34cd6245cadd0d28c1f8e48878a23b9824b709322d",
+  "source": "A\n\n>@@hello@@\n\nB",
+  "source_sha256": "af87cbc5cbe130e0940e2b9b7fd7e3a4b9bb4e7f9c7e0105bde11c262e65e26b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bq-raw-space-control": {
+  "fullname": "muse-probe-suspect-block-bq-raw-space-control",
+  "html": "<p>A</p>\n<blockquote>\n<p><span style=\"white-space: pre-wrap;\">hello</span></p>\n</blockquote>\n<p>B</p>",
+  "html_sha256": "7612300314a21b6a01ab2663eada5b1bfb5eb52ee6b7f22a0ace845c8544bcd7",
+  "source": "A\n\n> @@hello@@\n\nB",
+  "source_sha256": "5d55694d4d345a36d4f3c2dc9d4519dc39182ba33848f9bb9c5722cdd706dc01",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bq-comment-after-marker": {
+  "fullname": "muse-probe-suspect-block-bq-comment-after-marker",
+  "html": "<p>A</p>\n<p>B</p>",
+  "html_sha256": "af1a4520d4a128c82ff2db34cd6245cadd0d28c1f8e48878a23b9824b709322d",
+  "source": "A\n\n>[!-- c --]\n\nB",
+  "source_sha256": "890fa5f166e8ec759c8a23a340cf7daab676708807755200cf3f5e5b68c540e0",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "if-trail-forbid-untag": {
+  "fullname": "muse-probe-suspect-block-if-trail-forbid-untag",
+  "html": "<p>A B</p>",
+  "html_sha256": "036156d0e73a072ff96f2631eb56732be5bb90733f7a01685ac90cb54344f72d",
+  "source": "A [[iftags -foo,]]KEPT[[/iftags]] B",
+  "source_sha256": "415970e2f886d850658cc7e4f8345639e93d6a07bb03eb9f7105fff6ca1214c6",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "if-lead-forbid-untag": {
+  "fullname": "muse-probe-suspect-block-if-lead-forbid-untag",
+  "html": "<p>A B</p>",
+  "html_sha256": "036156d0e73a072ff96f2631eb56732be5bb90733f7a01685ac90cb54344f72d",
+  "source": "A [[iftags ,-foo]]KEPT[[/iftags]] B",
+  "source_sha256": "102ad862b0cbab26da9b6b0be3995e50351d1cf7a60cc8b10244f01d171b0d07",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "cm-in-raw": {
+  "fullname": "muse-probe-suspect-block-cm-in-raw",
+  "html": "<p><span style=\"white-space: pre-wrap;\">[!--&#32;c&#32;--]</span></p>",
+  "html_sha256": "a2b92a9848e0b1160367626bd7de549e5ffea15bb3db2260b780d9ba01e29184",
+  "source": "@@[!-- c --]@@",
+  "source_sha256": "13da7563ec238e46d0ec9344f61702b1dfcb74c7b769e3a88ad3078ccf50e7b6",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bq-comment-tail-text": {
+  "fullname": "muse-probe-suspect-block-bq-comment-tail-text",
+  "html": "<blockquote>\n<p>q</p>\n</blockquote>",
+  "html_sha256": "d973cdc18cb541f6e2cdf7c17f264b83c949ea18a9b675dea6864190aa178a12",
+  "source": "> [!-- c --] q",
+  "source_sha256": "121de43b90625ff62f4488ef4aab426ee745661cfe01a18757bcf3f37fc15372",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

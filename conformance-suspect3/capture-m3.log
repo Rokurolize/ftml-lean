@@ -1,0 +1,310 @@
+t-a -> muse-probe-suspect3-m3-t-a stable=True saved_source_matches=True valid=True
+t-b -> muse-probe-suspect3-m3-t-b stable=True saved_source_matches=True valid=True
+t-c -> muse-probe-suspect3-m3-t-c stable=True saved_source_matches=True valid=True
+t-d1 -> muse-probe-suspect3-m3-t-d1 stable=True saved_source_matches=True valid=True
+t-d2 -> muse-probe-suspect3-m3-t-d2 stable=True saved_source_matches=True valid=True
+t-fold -> muse-probe-suspect3-m3-t-fold stable=True saved_source_matches=True valid=True
+y-a -> muse-probe-suspect3-m3-y-a stable=True saved_source_matches=True valid=True
+y-b -> muse-probe-suspect3-m3-y-b stable=True saved_source_matches=True valid=True
+y-c1 -> muse-probe-suspect3-m3-y-c1 stable=True saved_source_matches=True valid=True
+y-c2 -> muse-probe-suspect3-m3-y-c2 stable=True saved_source_matches=True valid=True
+y-d -> muse-probe-suspect3-m3-y-d stable=True saved_source_matches=True valid=True
+y5 -> muse-probe-suspect3-m3-y5 stable=True saved_source_matches=True valid=True
+s1a -> muse-probe-suspect3-m3-s1a stable=True saved_source_matches=True valid=True
+s1b -> muse-probe-suspect3-m3-s1b stable=True saved_source_matches=True valid=True
+s1c -> muse-probe-suspect3-m3-s1c stable=True saved_source_matches=True valid=True
+s3c -> muse-probe-suspect3-m3-s3c stable=True saved_source_matches=True valid=True
+s2c -> muse-probe-suspect3-m3-s2c stable=True saved_source_matches=True valid=True
+s5a -> muse-probe-suspect3-m3-s5a stable=True saved_source_matches=True valid=True
+s6b -> muse-probe-suspect3-m3-s6b stable=True saved_source_matches=True valid=True
+t1a -> muse-probe-suspect3-m3-t1a stable=True saved_source_matches=True valid=True
+t1b -> muse-probe-suspect3-m3-t1b stable=True saved_source_matches=True valid=True
+t2a -> muse-probe-suspect3-m3-t2a stable=True saved_source_matches=True valid=True
+t2b -> muse-probe-suspect3-m3-t2b stable=True saved_source_matches=True valid=True
+t2c -> muse-probe-suspect3-m3-t2c stable=True saved_source_matches=True valid=True
+t3c -> muse-probe-suspect3-m3-t3c stable=True saved_source_matches=True valid=True
+t4a -> muse-probe-suspect3-m3-t4a stable=True saved_source_matches=True valid=True
+h2a -> muse-probe-suspect3-m3-h2a stable=True saved_source_matches=True valid=True
+h2b -> muse-probe-suspect3-m3-h2b stable=True saved_source_matches=True valid=True
+{
+ "t-a": {
+  "fullname": "muse-probe-suspect3-m3-t-a",
+  "html": "<p>A <span style=\"color: red\">B</span> C</p>",
+  "html_sha256": "be0b6ac654f634fc1acc0a0c3e64034d48ec59280c138e30f863b729a0a1d572",
+  "source": "A ##red|``@@x@@`` B## C",
+  "source_sha256": "759b431e7a03aa7adbfaced885937f37111cb774e5145a462acda0d86868a6ac",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "t-b": {
+  "fullname": "muse-probe-suspect3-m3-t-b",
+  "html": "<p>A <span style=\"color: red\">B</span> C</p>",
+  "html_sha256": "be0b6ac654f634fc1acc0a0c3e64034d48ec59280c138e30f863b729a0a1d572",
+  "source": "A ##red|B ``@@x@@``## C",
+  "source_sha256": "ea70d4e565c142baa544eca115a38b38a35d337df8fb0cb4269a4dfb122c7e17",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "t-c": {
+  "fullname": "muse-probe-suspect3-m3-t-c",
+  "html": "<p>A<br />\nB</p>",
+  "html_sha256": "64bd78651d1ba75137bca8b8f9b5be0bdf08c2c17f02a60a805aa797de152fe8",
+  "source": "A\n``@@x@@`` B",
+  "source_sha256": "f392863697a5ced66191246c8894a4becebef9b5083df0accd8b0b6651808058",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "t-d1": {
+  "fullname": "muse-probe-suspect3-m3-t-d1",
+  "html": "<p>A</p>",
+  "html_sha256": "88f8e72647fda6eedd96d8678131dd1b6320185127612942a7c7e184c516f626",
+  "source": "``@@x@@`` A",
+  "source_sha256": "31ae6970b5697f6aa21cedd3fd3e0e84bc68269e238d73c81d34c11ee974bee0",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "t-d2": {
+  "fullname": "muse-probe-suspect3-m3-t-d2",
+  "html": "<p>A</p>",
+  "html_sha256": "88f8e72647fda6eedd96d8678131dd1b6320185127612942a7c7e184c516f626",
+  "source": "A ``@@x@@``",
+  "source_sha256": "b2947b138d9d2358305810646e8f3901abdbcfddfad47aad7a571593e229c51d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "t-fold": {
+  "fullname": "muse-probe-suspect3-m3-t-fold",
+  "html": "<p>A <span style=\"color: red\">B</span> C</p>",
+  "html_sha256": "be0b6ac654f634fc1acc0a0c3e64034d48ec59280c138e30f863b729a0a1d572",
+  "source": "A ``@@x@@`` ##red| B## C",
+  "source_sha256": "36908842c3f76d952397d8ca4a378ac130b291df643d3389ecabdbeb7345cf8a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "y-a": {
+  "fullname": "muse-probe-suspect3-m3-y-a",
+  "html": "<p>A .... B</p>",
+  "html_sha256": "358d22f850d1e0578a32476c74aa24435f451803398ab31be6ff22c3c8757a34",
+  "source": "A ..``@@x@@``.. B",
+  "source_sha256": "6541e7983a027bb024a7d996406f02b6309ea2ceb1672c6038b0a745c5172084",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "y-b": {
+  "fullname": "muse-probe-suspect3-m3-y-b",
+  "html": "<p>A -- B</p>",
+  "html_sha256": "057f5eb38c9138213846f09eeb1ad74f88b6186bacbb5dd7d34de1b9a9dae078",
+  "source": "A -``@@x@@``- B",
+  "source_sha256": "c68e6ac8cac9d97240ae18b1e578384fae04ec3213a2b2819d751387fcfdd5a3",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "y-c1": {
+  "fullname": "muse-probe-suspect3-m3-y-c1",
+  "html": "<p>A &#8220;<span style=\"white-space: pre-wrap;\">x</span>&#8221; B</p>",
+  "html_sha256": "002ba96b50c9864566838fae7941eb868139b3c9e5f8e2907a32dc21a6097526",
+  "source": "A ``@@x@@'' B",
+  "source_sha256": "2eb55e571fe72df13e3b6feac9a87a7831412e3e8e8e925b9bd2d93fd1fb55e7",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "y-c2": {
+  "fullname": "muse-probe-suspect3-m3-y-c2",
+  "html": "<p>A &#171;<span style=\"white-space: pre-wrap;\">x</span>&#187; B</p>",
+  "html_sha256": "726e708ec81674ea0b3b03af1f883e5b46557ead7f98116c1e11fcf52c241f2a",
+  "source": "A <<@@x@@>> B",
+  "source_sha256": "352be62c4b9a996d498d707c9001248d59434ba9630e31208173db92aa0182ce",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "y-d": {
+  "fullname": "muse-probe-suspect3-m3-y-d",
+  "html": "<p>A . . . B</p>",
+  "html_sha256": "457b81379a3fd5df035c4f5a9627b06fbb57015ed6d25f03e0ed8dc5da1db69d",
+  "source": "A . ``@@x@@`` . . B",
+  "source_sha256": "2a1925573e302e1db6efb1b690b9f103aa2494f78caff9a8bcea622170056d2b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "y5": {
+  "fullname": "muse-probe-suspect3-m3-y5",
+  "html": "<p>A &#8230; B</p>",
+  "html_sha256": "a0aa6bf157c87bb805880f785390444a36d314dfa1bb4dfdd7be0234d7d2af37",
+  "source": "A .[!--x--].. B",
+  "source_sha256": "baabe6e37dfa04201c9720dfef2d01f44d6562d8e1ffbe62bcbc204b669e9ec3",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s1a": {
+  "fullname": "muse-probe-suspect3-m3-s1a",
+  "html": "<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n<div class=\"bibitem\" id=\"bibitem-1\">1. X</div>\n<div class=\"bibitem\" id=\"bibitem-2\">2. Y</div>\n<div class=\"bibitem\" id=\"bibitem-2\">2. Z</div>\n</div>\n<p>Cite <a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-2-72762a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-2')\">2</a> and <a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-2-23909a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-2')\">2</a>.</p>",
+  "html_sha256": "7f11067e50a7022e64216ccc4426724d003310f499b88d0b602070d41073e0e7",
+  "source": "[[bibliography]]\n: a : X\n: a : Y\n: b : Z\n[[/bibliography]]\nCite ((bibcite a)) and ((bibcite b)).",
+  "source_sha256": "262c7ef896f00451ee83ace3f5c0115bad627949b42a05c73086f4f94b2cdf7b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s1b": {
+  "fullname": "muse-probe-suspect3-m3-s1b",
+  "html": "<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n<div class=\"bibitem\" id=\"bibitem-1\">1. X</div>\n<div class=\"bibitem\" id=\"bibitem-2\">2. Y</div>\n<div class=\"bibitem\" id=\"bibitem-3\">3. Z</div>\n</div>\n<p><a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-3-97489a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-3')\">3</a></p>",
+  "html_sha256": "c5d51be6149d9c3e5f0f92a75292a75c8607b98ee0a8a3fdcd56c9542d918f23",
+  "source": "[[bibliography]]\n: a : X\n: b : Y\n: a : Z\n[[/bibliography]]\n((bibcite a))",
+  "source_sha256": "ccfd4d67fa581fbe1039617f70d2fd3e5fff8589d679b32a6c4d63555ddc00f0",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s1c": {
+  "fullname": "muse-probe-suspect3-m3-s1c",
+  "html": "<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n<div class=\"bibitem\" id=\"bibitem-1\">1. First</div>\n<div class=\"bibitem\" id=\"bibitem-2\">2. Second</div>\n</div>\n<p>Cite <a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-2-63023a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-2')\">2</a>.</p>",
+  "html_sha256": "a72792b831ee462addf1b5601fcab87c0fc7fc5c96d99fe1e450c68a3f557c7a",
+  "source": "[[bibliography]]\n: k : First\n: k : Second\n[[/bibliography]]\nCite ((bibcite k)).",
+  "source_sha256": "9d16033801a711e7e2c8a98a5ca117465ce4ea68876a1d071426ddf9dde393f9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s3c": {
+  "fullname": "muse-probe-suspect3-m3-s3c",
+  "html": "<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n<div class=\"bibitem\" id=\"bibitem-1\">1. Entry A</div>\n</div>\n[[bibliography]]<br />\n<dl>\n<dt>a</dt>\n<dd>Entry A2</dd>\n</dl>\n<p>[[/bibliography]]<br />\nCite <a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-1-22867a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-1')\">1</a>.</p>",
+  "html_sha256": "9f5403f68834b717f1bf319b0fc353fa5efd6c6f22d7e9a6eb8660b9506a4f6b",
+  "source": "[[bibliography]]\n: a : Entry A\n[[/bibliography]]\n[[bibliography]]\n: a : Entry A2\n[[/bibliography]]\nCite ((bibcite a)).",
+  "source_sha256": "799aee325c7518db7ecaa8c6e921b0bae0647094c2e5d69af4acd5970fb3a526",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s2c": {
+  "fullname": "muse-probe-suspect3-m3-s2c",
+  "html": "<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. see <a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-1-99285a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-1')\">1</a></div>\n</div>\n<br />\n<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>\n<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n<div class=\"bibitem\" id=\"bibitem-1\">1. Key</div>\n</div>",
+  "html_sha256": "cfb5d24649f83bdc16101515829dab7d24275f2b7bfc00c1eae83ce5bc5d97e8",
+  "source": "[[footnoteblock]]\n[[footnote]]see ((bibcite k))[[/footnote]]\n[[bibliography]]\n: k : Key\n[[/bibliography]]",
+  "source_sha256": "78dbd6bb1035ad25de00e8dc7b45ec39f1288b982060d9eabb475390c73bb949",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s5a": {
+  "fullname": "muse-probe-suspect3-m3-s5a",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. outer [[footnote]]inner</div>\n</div>",
+  "html_sha256": "33b218443e4ad172766f8ee0ee6aceb3e6feb8dd924135866a08373fe560a20c",
+  "source": "[[footnote]]outer [[footnote]]inner[[/footnote]]",
+  "source_sha256": "6253356099eaab35c29b94fbfb01b537af2b4c98b0f45aef5f6444d51108ca47",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s6b": {
+  "fullname": "muse-probe-suspect3-m3-s6b",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A\n<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n<div class=\"bibitem\" id=\"bibitem-1\">1. Key</div>\n</div>\n</div>\n</div>",
+  "html_sha256": "6f7ef111a54d2d4492c7110b2167c430dc85cca78a1317d43d3a5b4bf2cd2319",
+  "source": "[[footnote]]A\n[[bibliography]]\n: k : Key\n[[/bibliography]][[/footnote]]",
+  "source_sha256": "3646f470112d2622d985f9b9b0d85b39b870f1c885143014e90a3b4a7f4c3520",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "t1a": {
+  "fullname": "muse-probe-suspect3-m3-t1a",
+  "html": "<table style=\"margin:0; padding:0\">\n<tr>\n<td style=\"margin:0; padding:0\">\n<div id=\"toc\">\n<div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div>\n<div class=\"title\">Table of Contents</div>\n<div id=\"toc-list\">\n<div style=\"margin-left: 1em;\"><a href=\"#toc0\">A</a></div>\n<div style=\"margin-left: 2em;\"><a href=\"#toc1\">B</a></div>\n<div style=\"margin-left: 4em;\"><a href=\"#toc2\">D</a></div>\n<div style=\"margin-left: 6em;\"><a href=\"#toc3\">F</a></div>\n</div>\n</div>\n</td>\n</tr>\n</table>\n<h1 id=\"toc0\"><span>A</span></h1>\n<h2 id=\"toc1\"><span>B</span></h2>\n<h4 id=\"toc2\"><span>D</span></h4>\n<h6 id=\"toc3\"><span>F</span></h6>",
+  "html_sha256": "2df2d1ea2c2aa6a6955016a9bb2442fe7380f3a608b1a9eb011572939a98d095",
+  "source": "[[toc]]\n+ A\n++ B\n++++ D\n++++++ F",
+  "source_sha256": "b477f800724300af2c89399459d87603248a36d0e0242769a3ae3365c3027b0d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "t1b": {
+  "fullname": "muse-probe-suspect3-m3-t1b",
+  "html": "<table style=\"margin:0; padding:0\">\n<tr>\n<td style=\"margin:0; padding:0\">\n<div id=\"toc\">\n<div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div>\n<div class=\"title\">Table of Contents</div>\n<div id=\"toc-list\">\n<div style=\"margin-left: 1em;\"><a href=\"#toc0\">A</a></div>\n<div style=\"margin-left: 2em;\"><a href=\"#toc1\">B</a></div>\n</div>\n</div>\n</td>\n</tr>\n</table>\n<h1 id=\"toc0\"><span>A</span></h1>\n<p>+++++++ X</p>\n<h2 id=\"toc1\"><span>B</span></h2>",
+  "html_sha256": "dcd2585a85c41b07844e474551a42752e8f3c46c02ea5b061b016251a64a362a",
+  "source": "[[toc]]\n+ A\n+++++++ X\n++ B",
+  "source_sha256": "72c8a1726fb2cf5d075a2c44c168df6153fb82f42fab27228e4b31fc0e9ef665",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "t2a": {
+  "fullname": "muse-probe-suspect3-m3-t2a",
+  "html": "<h1 id=\"toc0\"><span>Before</span></h1>\n<table style=\"margin:0; padding:0\">\n<tr>\n<td style=\"margin:0; padding:0\">\n<div id=\"toc\">\n<div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div>\n<div class=\"title\">Table of Contents</div>\n<div id=\"toc-list\">\n<div style=\"margin-left: 1em;\"><a href=\"#toc0\">Before</a></div>\n<div style=\"margin-left: 1em;\"><a href=\"#toc1\">After</a></div>\n</div>\n</div>\n</td>\n</tr>\n</table>\n<h1 id=\"toc1\"><span>After</span></h1>",
+  "html_sha256": "05e8c343128077bb50f1a19083c6c65bfd762fd411814d9b8a94f9d388059651",
+  "source": "+ Before\n[[toc]]\n+ After",
+  "source_sha256": "dda85708d905cfc1920fbdb319ce0fc21c3dcb2bf23d9174e224c3d42fb8dadc",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "t2b": {
+  "fullname": "muse-probe-suspect3-m3-t2b",
+  "html": "<table style=\"margin:0; padding:0\">\n<tr>\n<td style=\"margin:0; padding:0\">\n<div id=\"toc\">\n<div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div>\n<div class=\"title\">Table of Contents</div>\n<div id=\"toc-list\">\n<div style=\"margin-left: 1em;\"><a href=\"#toc0\">A</a></div>\n<div style=\"margin-left: 2em;\"><a href=\"#toc1\">B</a></div>\n</div>\n</div>\n</td>\n</tr>\n</table>\n<h1 id=\"toc0\"><span>A</span></h1>\n<table style=\"margin:0; padding:0\">\n<tr>\n<td style=\"margin:0; padding:0\">\n<div id=\"toc\">\n<div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div>\n<div class=\"title\">Table of Contents</div>\n<div id=\"toc-list\">\n<div style=\"margin-left: 1em;\"><a href=\"#toc0\">A</a></div>\n<div style=\"margin-left: 2em;\"><a href=\"#toc1\">B</a></div>\n</div>\n</div>\n</td>\n</tr>\n</table>\n<h2 id=\"toc1\"><span>B</span></h2>",
+  "html_sha256": "d4bd190b2eb32bc7e222345d7955b8ac65452b132a946de66f8970cd36e42f84",
+  "source": "[[toc]]\n+ A\n[[toc]]\n++ B",
+  "source_sha256": "7f9675dd11c0013f4ecc398957541f48062cd2d9067abe0faebe0ce1490d4cb8",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "t2c": {
+  "fullname": "muse-probe-suspect3-m3-t2c",
+  "html": "<table style=\"margin:0; padding:0\">\n<tr>\n<td style=\"margin:0; padding:0\">\n<div id=\"toc\">\n<div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div>\n<div class=\"title\">Table of Contents</div>\n<div id=\"toc-list\">\n<div style=\"margin-left: 2em;\"><a href=\"#toc0\">Same</a></div>\n<div style=\"margin-left: 2em;\"><a href=\"#toc1\">Same</a></div>\n</div>\n</div>\n</td>\n</tr>\n</table>\n<h2 id=\"toc0\"><span>Same</span></h2>\n<h2 id=\"toc1\"><span>Same</span></h2>",
+  "html_sha256": "848342f433c4e41e31778f8dbd4ac8f1edec30ab49229a1da996655244c0702f",
+  "source": "[[toc]]\n++ Same\n++ Same",
+  "source_sha256": "cf6e94a27b896604d7e8b6ad785cd1f6efd4988313a38efa9cf4bf8cedd8a13c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "t3c": {
+  "fullname": "muse-probe-suspect3-m3-t3c",
+  "html": "<table style=\"margin:0; padding:0\">\n<tr>\n<td style=\"margin:0; padding:0\">\n<div id=\"toc\">\n<div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div>\n<div class=\"title\">Table of Contents</div>\n<div id=\"toc-list\">\n<div style=\"margin-left: 1em;\"><a href=\"#toc0\">A</a></div>\n</div>\n</div>\n</td>\n</tr>\n</table>\n<h1 id=\"toc0\"><span>A</span></h1>",
+  "html_sha256": "f8a9fabe28e4554135baa831c03baa55074b99763e915c97c2fe8f132a1e5711",
+  "source": "[[toc numbered]]\n+ A",
+  "source_sha256": "0522fd857ba860ba9af5976099106668513293e1d961cc55a0a30a351eeee148",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "t4a": {
+  "fullname": "muse-probe-suspect3-m3-t4a",
+  "html": "<table style=\"margin:0; padding:0\">\n<tr>\n<td style=\"margin:0; padding:0\">\n<div id=\"toc\">\n<div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div>\n<div class=\"title\">Table of Contents</div>\n<div id=\"toc-list\">\n<div style=\"margin-left: 2em;\"><a href=\"#toc0\">A bold B</a></div>\n</div>\n</div>\n</td>\n</tr>\n</table>\n<h2 id=\"toc0\"><span>A <strong>bold</strong> B</span></h2>",
+  "html_sha256": "a9b969cd2f3c70276df4be5d3816e1c29905237188f38e223095ef889ea46e98",
+  "source": "[[toc]]\n++ A **bold** B",
+  "source_sha256": "7d61ac7664e362f74631733f61fb4ce686227f609a52cf8566e6a671b3610533",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "h2a": {
+  "fullname": "muse-probe-suspect3-m3-h2a",
+  "html": "<table style=\"margin:0; padding:0\">\n<tr>\n<td style=\"margin:0; padding:0\">\n<div id=\"toc\">\n<div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div>\n<div class=\"title\">Table of Contents</div>\n<div id=\"toc-list\">\n<div style=\"margin-left: 1em;\"><a href=\"#toc0\">A</a></div>\n<div style=\"margin-left: 1em;\"><a href=\"#toc1\">B</a></div>\n</div>\n</div>\n</td>\n</tr>\n</table>\n<h1 id=\"toc0\"><span>A</span></h1>\n<h1><span>Skip</span></h1>\n<h1 id=\"toc1\"><span>B</span></h1>",
+  "html_sha256": "50f030131b98b4223a6b514f76d43d69be589720d18db8414acd3cbb0c41c227",
+  "source": "[[toc]]\n+ A\n+* Skip\n+ B",
+  "source_sha256": "53049ad12adb9fe972079064e1643d73a0b05ab09073341b86162b6a008c1b24",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "h2b": {
+  "fullname": "muse-probe-suspect3-m3-h2b",
+  "html": "<table style=\"margin:0; padding:0\">\n<tr>\n<td style=\"margin:0; padding:0\">\n<div id=\"toc\">\n<div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div>\n<div class=\"title\">Table of Contents</div>\n<div id=\"toc-list\">\n<div style=\"margin-left: 1em;\"><a href=\"#toc0\">A</a></div>\n</div>\n</div>\n</td>\n</tr>\n</table>\n<h1><span>Only</span></h1>\n<h1 id=\"toc0\"><span>A</span></h1>",
+  "html_sha256": "50bb8d8eecb9ad7ce13a3cc5c780259a6763e8bdebe329bc5212f15c47f00426",
+  "source": "[[toc]]\n+* Only\n+ A",
+  "source_sha256": "f16a1490248b3401866b4c9ef70caa96324f0327184293a4f05acb8d8db7f3ee",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

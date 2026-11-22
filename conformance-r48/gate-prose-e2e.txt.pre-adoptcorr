@@ -1,0 +1,7 @@
+TOTAL 740
+PASS 730
+EXCLUDED 1
+FAIL 9
+FATAL-AGREE 0
+UNMIRRORED-TALLY {"BatchTokenIdCounter": 1}
+FAILURES ["dp-32", "dp-33", "dp-38", "dp-45", "x22-coll-in-tab", "x23-div-in-tab", "x24-three-nested-divs", "x25-tab-in-coll-in-div", "x29-footnote-in-tab"]

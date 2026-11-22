@@ -1,0 +1,518 @@
+{
+ "fzc-20261121-0004": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "text = more text\ntext = more text\n[[include  :foo_bar:other-page | [ stray | a=1]]"
+ },
+ "fzc-20261121-0011": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x = y\n= Title\n= Title"
+ },
+ "fzc-20261121-0018": {
+  "components": [
+   "segments"
+  ],
+  "source": " = Title\n=  spaced  "
+ },
+ "fzc-20261121-0020": {
+  "components": [
+   "segments"
+  ],
+  "source": "=  spaced   text [[div align=\"right\"]] inner [[/div]] tail"
+ },
+ "fzc-20261121-0027": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[include  empty-page]]\n aaa\n[[separator]]\nbbb\n[[include\u000bmuse-probe-g14-target | a=1 | a=2]] "
+ },
+ "fzc-20261121-0030": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[include\tmuse-probe-g14-target]]\n"
+ },
+ "fzc-20261121-0044": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include other-page]]\n"
+ },
+ "fzc-20261121-0051": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[Include empty-page]]\n"
+ },
+ "fzc-20261121-0052": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "intro\n[[div class=\"x\"]]\n[[include\t:foo_bar:other-page | =noval]]\n[[/div]]"
+ },
+ "fzc-20261121-0066": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "intro\n[[blockquote]]\n[[Include :SANDBOX:other-page | ]]\n[[/blockquote]]\noutro"
+ },
+ "fzc-20261121-0069": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[Include muse-probe-g14-target]]\n\n\nplain line\na = b = c\n\n>[[include\t\"other-page\" | a=1 | b=2]]\n "
+ },
+ "fzc-20261121-0083": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x = y\n=  spaced  \nintro\n[[code]]\n[[include\tother-page | marker=[!-- unclosed]]\n[[/code]]\noutrointro\n[[blockquote]]\n[[include  :a:b:other-page|a=1]]\n[[/blockquote]]"
+ },
+ "fzc-20261121-0087": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "intro\n[[include :sandbox.:other-page | =noval]]\noutro"
+ },
+ "fzc-20261121-0102": {
+  "components": [
+   "segments"
+  ],
+  "source": "=  spaced  \nx = y"
+ },
+ "fzc-20261121-0109": {
+  "components": [
+   "segments"
+  ],
+  "source": "a = b = c\nplain line\n=  spaced  "
+ },
+ "fzc-20261121-0111": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include muse-probe-g14-target]]\n > [[include\t\"---\" | marker=x]]x\n\n\n"
+ },
+ "fzc-20261121-0114": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[include\tother-page]]\n"
+ },
+ "fzc-20261121-0128": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[Include other-page]]\n"
+ },
+ "fzc-20261121-0146": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": " = Title\nplain line\n[[include a/b\n[[include\nother-page]]\n\n\n"
+ },
+ "fzc-20261121-0154": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "pre\n[[include :sandbox:--- | marker=unclosed --] | b=a=b]]\nx\n[[include\t:sandbox.wikidot.com:other-page tail\n\t> [[include\u000ba.b | a = spaced ]]]\n\n"
+ },
+ "fzc-20261121-0170": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[include  muse-probe-g14-target]]\n"
+ },
+ "fzc-20261121-0184": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include  other-page]]\n"
+ },
+ "fzc-20261121-0198": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include muse-probe-g14-target]]\n"
+ },
+ "fzc-20261121-0203": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x\n[[include :SANDBOX:other-page]]\n\n"
+ },
+ "fzc-20261121-0206": {
+  "components": [
+   "tokens"
+  ],
+  "source": "[[code]]\n[[include  :sandbox.:other-page | a=1 | b=2]]\n[[/code]]\noutro"
+ },
+ "fzc-20261121-0207": {
+  "components": [
+   "segments"
+  ],
+  "source": "=  spaced  \nx = y"
+ },
+ "fzc-20261121-0212": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include\tmuse-probe-g14-target]]\n"
+ },
+ "fzc-20261121-0214": {
+  "components": [
+   "segments"
+  ],
+  "source": "=  spaced  \n = Title\ntext = more text"
+ },
+ "fzc-20261121-0219": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include  other-page]]\n"
+ },
+ "fzc-20261121-0221": {
+  "components": [
+   "segments"
+  ],
+  "source": "=Title\n=  spaced  \ntext = more text"
+ },
+ "fzc-20261121-0226": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include\tother-page]]\n"
+ },
+ "fzc-20261121-0233": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[include empty-page]]\n"
+ },
+ "fzc-20261121-0235": {
+  "components": [
+   "segments"
+  ],
+  "source": "= Title\n = Title\n=  spaced  \n[[include :sandbox: | [ stray | a=1]]"
+ },
+ "fzc-20261121-0237": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "=Title\n= Title\na = b = c\n[[include  café-page|a=1]]\n\n[[include a/b\n[[include empty-page]]\n\n\na = b = c\n=  spaced  "
+ },
+ "fzc-20261121-0238": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "\n  > [[include\tmissing-page | a=1 | a=2]]\n\n[[include\t:sandbox:--- | marker=unclosed --]]]]\n\npre\n[[include\u000bOTHER-PAGE | [ stray | a=1]] tail"
+ },
+ "fzc-20261121-0240": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include\tmuse-probe-g14-target]]\n"
+ },
+ "fzc-20261121-0244": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[Include empty-page]]\n[[include a/b\n[[INCLUDE muse-probe-g14-target]]\n\n"
+ },
+ "fzc-20261121-0247": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[include  empty-page]]\n"
+ },
+ "fzc-20261121-0248": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[blockquote]]\n[[Include :sandbox.:other-page | marker=m1 | other=o]]\n[[/blockquote]]\noutro"
+ },
+ "fzc-20261121-0254": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[include muse-probe-g14-target]]\n"
+ },
+ "fzc-20261121-0286": {
+  "components": [
+   "tokens"
+  ],
+  "source": "intro\n[[code]]\n[[include  :sandbox:--- | a = spaced ]]\n[[/code]]\noutro\n>[[include\t\"other-page\" | marker=x]]\n> quoted text\n "
+ },
+ "fzc-20261121-0300": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "== Title\n= Title\n=  spaced  \n\nintro\n[[blockquote]]\n[[INCLUDE :sandbox:muse-probe-g14-target | a=1 | a=2]]\n[[/blockquote]]"
+ },
+ "fzc-20261121-0303": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[INCLUDE muse-probe-g14-target]]\n"
+ },
+ "fzc-20261121-0333": {
+  "components": [
+   "segments"
+  ],
+  "source": "=  spaced  \ntext = more text\n= Title"
+ },
+ "fzc-20261121-0338": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include\nmuse-probe-g14-target]]\n"
+ },
+ "fzc-20261121-0348": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "text [[div align=\"right\"]] inner [[/div]] tail\n[[Include :sandbox.:other-page | marker=1 | b=[[include muse-probe-g14-target]]]]"
+ },
+ "fzc-20261121-0366": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[INCLUDE muse-probe-g14-target]]\n"
+ },
+ "fzc-20261121-0375": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "= Title\n= Title\n=Title\n[[include\u000bmuse-probe-g14-target | marker=]]"
+ },
+ "fzc-20261121-0380": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[include  other-page]]\n"
+ },
+ "fzc-20261121-0381": {
+  "components": [
+   "tokens"
+  ],
+  "source": "[[code]]\n[[include :sandbox.:other-page | noval]]\n[[/code]]"
+ },
+ "fzc-20261121-0382": {
+  "components": [
+   "segments"
+  ],
+  "source": "=  spaced  \n=Title"
+ },
+ "fzc-20261121-0384": {
+  "components": [
+   "segments"
+  ],
+  "source": "=Title\n=  spaced  \nplain line\n[[include\tmuse-probe-r2link-free-exists | marker=m1 | other=o]]\n\n[[include foo/bar]]\n\n[[include\tempty-page]]\n\n\n"
+ },
+ "fzc-20261121-0387": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include\nmuse-probe-g14-target]]\n"
+ },
+ "fzc-20261121-0389": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "=  spaced  \n= Title\nx = y"
+ },
+ "fzc-20261121-0394": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[include\tempty-page]]\n"
+ },
+ "fzc-20261121-0397": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "aaa\n[[separator]]\nbbb\n[[include\t:SANDBOX:other-page | a=1 | b=2]]"
+ },
+ "fzc-20261121-0404": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "one paragraph\n\n[[separator]]\n\nanother\n[[include\t:sandbox:muse-probe-g14-target | marker=text]]tail | b=[!-- unclosed]]"
+ },
+ "fzc-20261121-0405": {
+  "components": [
+   "tokens"
+  ],
+  "source": "pre [[include  :foo_bar:other-page | noval\n\n[[code]]\n[[include\t:sandbox.:other-page | a=1 | a=2]]\n[[/code]]\n"
+ },
+ "fzc-20261121-0406": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "\n[[include :foo_bar:other-page | marker=]] \n > [[INCLUDE --- | a = spaced ]]\n\n"
+ },
+ "fzc-20261121-0408": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[include  empty-page]]\n"
+ },
+ "fzc-20261121-0412": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[Include empty-page]]\n\n\n[[include :sandbox: | a=text]]tail]]x\n"
+ },
+ "fzc-20261121-0415": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[include  empty-page]]\n"
+ },
+ "fzc-20261121-0429": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[include\tother-page]]\n"
+ },
+ "fzc-20261121-0440": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include  muse-probe-g14-target]]\n\n\n== Title\ntext = more text\n\naaa\n[[separator]]\nbbb\n[[include\t:sandbox:missing-page | a=1 | b=2]]\n\n"
+ },
+ "fzc-20261121-0443": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[Include other-page]]\n"
+ },
+ "fzc-20261121-0446": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "one paragraph\n\n[[separator]]\n\nanother\n[[INCLUDE :sandbox:other-page | marker=a b | b=[!-- unclosed]]"
+ },
+ "fzc-20261121-0460": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "one paragraph\n\n[[separator]]\n\nanother\n[[include\t:SANDBOX:other-page | a = spaced ]]"
+ },
+ "fzc-20261121-0464": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[Include other-page]]\n"
+ },
+ "fzc-20261121-0468": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include ]]\n\n[[include muse-probe-g14-target]]\n\n[[include bad.page\n[[include\nother-page]]\n\n"
+ },
+ "fzc-20261121-0478": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[include\tempty-page]]\n"
+ },
+ "fzc-20261121-0480": {
+  "components": [
+   "segments"
+  ],
+  "source": "text = more text\n=  spaced  "
+ },
+ "fzc-20261121-0482": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[include empty-page]]\ntext = more text\nplain line\n= Title [[include\nOTHER-PAGE | marker=m1 | other=o]]  y"
+ },
+ "fzc-20261121-0485": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[include other-page]]\n"
+ },
+ "fzc-20261121-0490": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "pre\n[[include :sandbox.:other-page | noval]]x\nx\n[[include\tno-such-page | =noval]]"
+ },
+ "fzc-20261121-0492": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[INCLUDE muse-probe-g14-target]]\n"
+ },
+ "fzc-20261121-0499": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include\tempty-page]]\n"
+ }
+}

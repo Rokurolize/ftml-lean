@@ -1,0 +1,3 @@
+{"id": "ctrl-hello", "source": "BEFORE\n >hello world\nAFTER"}
+{"id": "ctrl-bold", "source": "BEFORE\n >**bold**\nAFTER"}
+{"id": "ctrl-link", "source": "BEFORE\n >some [[link]] text\nAFTER"}

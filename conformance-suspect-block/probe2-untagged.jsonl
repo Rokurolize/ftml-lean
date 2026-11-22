@@ -1,0 +1,10 @@
+{"id": "bq-nbsp-only", "source": "X\n>  \nY"}
+{"id": "bq-comment-only", "source": "A\n> [!--c--]\nB"}
+{"id": "bq-spaced-marker", "source": "X\n> > q\nY"}
+{"id": "bq-empty-in-run", "source": "A\n> a\n> \n> b\nB"}
+{"id": "bq-indented-next", "source": "X\n> a\n > b\nY"}
+{"id": "cm-two-lines", "source": "a\n[!--1--]\n[!--2--]\nb"}
+{"id": "cm-nbsp-indent", "source": "a\n [!--c--]\nb"}
+{"id": "cm-before-quote", "source": "A\n[!--c--]> q\nB"}
+{"id": "cm-nested", "source": "a[!--x[!--y--]z--]b"}
+{"id": "cm-quote-bridge-blank", "source": "A\n> x\n\n[!--c--]\n\n> y\nB"}

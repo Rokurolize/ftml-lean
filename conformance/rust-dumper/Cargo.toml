@@ -1,0 +1,8 @@
+[package]
+name = "lean-ftml-depth-dumper"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "lean-ftml-depth-dumper"
+path = "src/main.rs"

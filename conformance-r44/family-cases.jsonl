@@ -1,0 +1,215 @@
+{"id": "formraw/raw-basic", "source": "before @@raw **bold** [[link]]@@ after"}
+{"id": "formraw/raw-basic-inline", "source": "@@hello@@"}
+{"id": "formraw/raw-empty", "source": "a @@@@ b"}
+{"id": "formraw/raw-ws-only", "source": "a @@   @@ b"}
+{"id": "formraw/raw-tab-body", "source": "a @@\t@@ b"}
+{"id": "formraw/raw-multiline", "source": "before\n@@line one\nline two@@\nafter"}
+{"id": "formraw/raw-multiline-leading", "source": "@@\nindented\n@@"}
+{"id": "formraw/raw-nbsp", "source": "@@ x @@"}
+{"id": "formraw/raw-triple-open", "source": "a @@@x@@@ b"}
+{"id": "formraw/raw-quad", "source": "a @@@@x@@@@ b"}
+{"id": "formraw/raw-five-run", "source": "a @@@@@x@@@@@ b"}
+{"id": "formraw/raw-at-end", "source": "a @@x@@@ b"}
+{"id": "formraw/raw-at-start", "source": "a @@@x@@ b"}
+{"id": "formraw/raw-inner-at", "source": "@@x@y@@"}
+{"id": "formraw/raw-adjacent", "source": "@@one@@@@two@@"}
+{"id": "formraw/raw-unterminated", "source": "a @@never closed"}
+{"id": "formraw/raw-lone", "source": "a @@ b"}
+{"id": "formraw/raw-two-lone", "source": "a @@ b @@ c"}
+{"id": "formraw/raw-closer-only", "source": "a @@ b @@@ c"}
+{"id": "formraw/raw-wikitext", "source": "@@//italic// **bold** __under__++strikethrough++@@"}
+{"id": "formraw/raw-brackets", "source": "@@[[wikilink]] [[/bad]]@@"}
+{"id": "formraw/raw-quotes", "source": "@@\"double\" 'single' & < >@@"}
+{"id": "formraw/raw-html", "source": "@@<b>bold</b> <script>alert(1)</script>@@"}
+{"id": "formraw/raw-entities", "source": "@@&amp; &lt; &quot; &#39;@@"}
+{"id": "formraw/raw-code-markup", "source": "@@[[code]]inner[[/code]]@@"}
+{"id": "formraw/raw-form-markup", "source": "@@[[form]]x---y[[/form]]@@"}
+{"id": "formraw/raw-heading", "source": "@@= Heading =@@"}
+{"id": "formraw/raw-list", "source": "@@* item\n* item@@"}
+{"id": "formraw/raw-link", "source": "@@http://example.com/?a=1&b=2@@"}
+{"id": "formraw/raw-accents", "source": "@@café α 日本@@"}
+{"id": "formraw/raw-in-bold", "source": "**before @@raw@@ after**"}
+{"id": "formraw/raw-in-italic", "source": "//before @@raw@@ after//"}
+{"id": "formraw/raw-next-bold", "source": "@@raw@@ **bold**"}
+{"id": "formraw/raw-in-link", "source": "[[http://x/|@@raw@@]]"}
+{"id": "formraw/raw-in-div", "source": "[[div class=\"x\"]]\n@@raw@@\n[[/div]]"}
+{"id": "formraw/raw-in-quote", "source": "> @@raw@@"}
+{"id": "formraw/old-basic", "source": "before ``raw **bold**`` after"}
+{"id": "formraw/old-empty", "source": "a ```` b"}
+{"id": "formraw/old-ws-only", "source": "a ``  `` b"}
+{"id": "formraw/old-multiline", "source": "before\n``line one\nline two``\nafter"}
+{"id": "formraw/old-apostrophe", "source": "a ``it's`` b"}
+{"id": "formraw/old-triple", "source": "a ```x``` b"}
+{"id": "formraw/old-unterminated", "source": "a ``never closed"}
+{"id": "formraw/old-lone", "source": "a `` b"}
+{"id": "formraw/old-wikitext", "source": "``//italic// **bold** [[link]]``"}
+{"id": "formraw/old-html", "source": "``<b>&\"'</b>``"}
+{"id": "formraw/old-adjacent", "source": "``one````two``"}
+{"id": "formraw/old-and-raw", "source": "``old`` @@raw@@"}
+{"id": "formraw/old-quote-run", "source": "a ``x`` b ``y`` c"}
+{"id": "formraw/form-basic", "source": "[[form]]\nfields:\n  name:\n    type: text\n    label: Name\n---\nname: Alice\n[[/form]]"}
+{"id": "formraw/form-no-data", "source": "[[form]]\nfields:\n  name:\n    type: text\n    label: Name\n---\n\n[[/form]]"}
+{"id": "formraw/form-empty-body", "source": "[[form]]\n\n---\n\n[[/form]]"}
+{"id": "formraw/form-unterminated", "source": "[[form]]\nfields:\n  name:\n    type: text\n---\nname: x"}
+{"id": "formraw/form-malformed-field", "source": "[[form]]\nfields:\n  name: [broken\n---\nname: x\n[[/form]]"}
+{"id": "formraw/form-no-separator", "source": "[[form]]\nfields:\n  name:\n    type: text\n[[/form]]"}
+{"id": "formraw/form-select", "source": "[[form]]\nfields:\n  color:\n    type: select\n    label: Color\n    options:\n      r: Red\n      b: Blue\n---\ncolor: r\n[[/form]]"}
+{"id": "formraw/form-wiki", "source": "[[form]]\nfields:\n  note:\n    type: wiki\n    label: Note\n---\nnote: **bold**\n[[/form]]"}
+{"id": "formraw/form-in-div", "source": "[[div class=\"x\"]]\n[[form]]\nx\n---\ny\n[[/form]]\n[[/div]]"}
+{"id": "formraw/form-stray-closer", "source": "text\n[[/form]]\nafter"}
+{"id": "formraw/form-inline", "source": "before [[form]]x---y[[/form]] after"}
+{"id": "formraw/raw-in-code", "source": "[[code]]\n@@raw@@\n[[/code]]"}
+{"id": "formraw/code-in-raw", "source": "@@[[code]]x[[/code]]@@"}
+{"id": "formraw/include-in-raw", "source": "@@[[include page=test]]@@"}
+{"id": "formraw/raw-in-include", "source": "[[include page=raw-include]]"}
+{"id": "formraw/form-in-code", "source": "[[code]]\n[[form]]\nx\n---\ny\n[[/form]]\n[[/code]]"}
+{"id": "formraw/code-in-form", "source": "[[form]]\nfields:\n  note:\n    type: wiki\n---\nnote: [[code]]x[[/code]]\n[[/form]]"}
+{"id": "formraw/raw-after-code", "source": "[[code]]x[[/code]]\n@@raw@@"}
+{"id": "formraw/old-in-code", "source": "[[code]]\n``old``\n[[/code]]"}
+{"id": "heading/h01-plus1", "source": "+ Level one"}
+{"id": "heading/h02-plus2", "source": "++ Level two"}
+{"id": "heading/h03-plus3", "source": "+++ Level three"}
+{"id": "heading/h04-plus4", "source": "++++ Level four"}
+{"id": "heading/h05-plus5", "source": "+++++ Level five"}
+{"id": "heading/h06-plus6", "source": "++++++ Level six"}
+{"id": "heading/h07-skips", "source": "+ One\n+++ Three\n++++++ Six"}
+{"id": "heading/h08-repeats", "source": "++ A\n++ B\n++ C"}
+{"id": "heading/h09-descent", "source": "++++++ Six\n++++ Five\n+++ Three\n++ Two\n+ One"}
+{"id": "heading/h10-mixed-blanks", "source": "+ A\n\n++ B\n\n\n+++ C"}
+{"id": "heading/h11-em", "source": "+ My //header//"}
+{"id": "heading/h12-bold", "source": "++ Bold **text** here"}
+{"id": "heading/h13-underline", "source": "+++ Under __line__"}
+{"id": "heading/h14-raw", "source": "++++ Inline @@raw@@ here"}
+{"id": "heading/h15-size", "source": "+++++ [[size 20%]]this one has an inline block in it[[/size]]"}
+{"id": "heading/h16-external-link", "source": "+ See [[http://example.com|the site]]"}
+{"id": "heading/h17-internal-link", "source": "++ See [[page-name]]"}
+{"id": "heading/h18-anchor", "source": "+++ [[a name=\"x\"]]anchor[[/a]]"}
+{"id": "heading/h19-entities", "source": "+ A & B < C > D \"quote\" 'apos'"}
+{"id": "heading/h20-leading-double-space", "source": "+  double space after prefix"}
+{"id": "heading/h21-same-text", "source": "+ Same\n+ Same\n+ Same"}
+{"id": "heading/h22-same-diff-level", "source": "+ Same\n++ Same\n+++ Same"}
+{"id": "heading/h23-seven-headings", "source": "+ a\n+ b\n+ c\n+ d\n+ e\n+ f\n+ g"}
+{"id": "heading/h24-interleaved", "source": "+ A\npara\n++ B\npara\n+ C"}
+{"id": "heading/h25-toc-before", "source": "[[toc]]\n\n+ A\n++ B\n+++ C"}
+{"id": "heading/h26-toc-after", "source": "+ A\n++ B\n\n[[toc]]"}
+{"id": "heading/h27-two-tocs", "source": "[[toc]]\n+ A\n[[toc]]\n++ B"}
+{"id": "heading/h28-notoc1", "source": "+* no toc one"}
+{"id": "heading/h29-notoc2", "source": "++* no toc two"}
+{"id": "heading/h30-notoc6", "source": "++++++* no toc six"}
+{"id": "heading/h31-notoc-mixed", "source": "+ A\n+* B\n++ C\n++* D\n+++ E"}
+{"id": "heading/h32-notoc-with-toc", "source": "[[toc]]\n+ A\n++* skip\n++ B"}
+{"id": "heading/h33-notoc-repeat", "source": "+* Same\n++* Same"}
+{"id": "heading/h34-nospace", "source": "+No space"}
+{"id": "heading/h35-seven", "source": "+++++++ seven"}
+{"id": "heading/h36-eight", "source": "++++++++ eight"}
+{"id": "heading/h37-leading-space", "source": " + Leading space"}
+{"id": "heading/h38-tab", "source": "+\tTab after plus"}
+{"id": "heading/h39-only-plus", "source": "+"}
+{"id": "heading/h40-plus-space-only", "source": "+ "}
+{"id": "heading/h41-trailing-spaces", "source": "+ trailing  "}
+{"id": "heading/h42-plus-in-para", "source": "text + plus in middle"}
+{"id": "heading/h43-plus-after-para", "source": "para\n+ Heading\nmore"}
+{"id": "heading/h53-notoc-seven", "source": "+++++++* seven notoc"}
+{"id": "heading/h55-double-plus-space", "source": "++  two spaces after prefix"}
+{"id": "heading/h44-adjacent-div", "source": "[[div]]\ninside\n[[/div]]\n+ After div"}
+{"id": "heading/h45-heading-then-div", "source": "+ Head\n[[div]]\nd\n[[/div]]"}
+{"id": "heading/h46-quote", "source": "> quote\n+ Head"}
+{"id": "heading/h47-list", "source": "* list\n+ Head"}
+{"id": "heading/h48-barrier-div", "source": "[[div]]\n+ Head[[/div]] tail\n\n++ J"}
+{"id": "heading/h49-comment-line", "source": "[!--x--]+ Head\n[!--a--][!--b--]++ Sub"}
+{"id": "heading/h50-raw-shield", "source": "@@+ not a heading@@\n+ real heading"}
+{"id": "heading/h51-unicode", "source": "+ Héading 中文 🎉"}
+{"id": "heading/h52-empty-body", "source": "++    "}
+{"id": "heading/h54-toc-raw-pin", "source": "[[toc]]\n\n[[div]]\n+ Head[[/div]] tail\n\n++ J"}
+{"id": "toc/toc01-before", "source": "[[toc]]\n\n+ Alpha\n\n+ Beta"}
+{"id": "toc/toc02-after", "source": "+ Alpha\n\n+ Beta\n\n[[toc]]"}
+{"id": "toc/toc03-empty", "source": "[[toc]]"}
+{"id": "toc/toc04-no-headings-body", "source": "Opening text.\n\n[[toc]]\n\nClosing text."}
+{"id": "toc/toc05-multiple", "source": "+ Lead\n\nintro\n\n[[toc]]\n\n+ Middle\n\n[[toc]]\n\n++ Nested\n\n[[toc]]\n\n+ Final"}
+{"id": "toc/toc06-multiple-adjacent", "source": "[[toc]]\n[[toc]]\n\n+ One"}
+{"id": "toc/toc07-levels", "source": "+ L1\n\n++ L2\n\n+++ L3\n\n++++ L4\n\n+++++ L5\n\n++++++ L6\n\n[[toc]]"}
+{"id": "toc/toc08-skip", "source": "+ One\n\n++++ Four\n\n[[toc]]"}
+{"id": "toc/toc09-repeat", "source": "+ A\n\n++ B\n\n+ C\n\n++ D\n\n[[toc]]"}
+{"id": "toc/toc10-skipped-heading", "source": "[[toc]]\n\n+ Alpha\n\n+* Skipped\n\n++ Beta"}
+{"id": "toc/toc11-inline-markup", "source": "+ **Bold** and //italic// text\n\n[[toc]]"}
+{"id": "toc/toc12-link-in-heading", "source": "+ See [http://example.com the site]\n\n[[toc]]"}
+{"id": "toc/toc13-footnote-in-heading", "source": "+ Head[[footnote]]note text[[/footnote]] tail\n\n+ Plain\n\n[[toc]]"}
+{"id": "toc/toc14-repeated-text", "source": "+ Same\n\n+ Same\n\n+ Same\n\n[[toc]]"}
+{"id": "toc/toc15-dash-runs", "source": "+ aa -- bb\n\n+ cc --- dd\n\n+ ee -- [[span]]ff[[/span]] -- gg\n\n[[toc]]"}
+{"id": "toc/toc16-unicode", "source": "+ 日本語 🌊 café\n\n[[toc]]"}
+{"id": "toc/toc20-float-left", "source": "[[f<toc]]\n\n+ A"}
+{"id": "toc/toc21-float-right", "source": "[[f>toc]]\n\n+ A"}
+{"id": "toc/toc22-title", "source": "+ A\n\n[[toc title=\"Contents\"]]"}
+{"id": "toc/toc23-title-empty", "source": "[[toc title=\"\"]]\n\n+ A"}
+{"id": "toc/toc24-title-entities", "source": "[[toc title=\"目次 & <notes>\"]]\n\n+ A"}
+{"id": "toc/toc25-class", "source": "[[toc class=\"third-toc\"]]\n\n+ A"}
+{"id": "toc/toc26-style", "source": "[[toc style=\"color: blue\"]]\n\n+ A"}
+{"id": "toc/toc27-id", "source": "[[toc id=\"my-toc\"]]\n\n+ A"}
+{"id": "toc/toc28-multi-attrs", "source": "[[toc title=\"T\" class=\"c\" style=\"color:red\" id=\"i\"]]\n\n+ A"}
+{"id": "toc/toc29-quoted-close-bracket", "source": "[[toc title=\"a]]b\"]]\n\n+ A"}
+{"id": "toc/toc30-float-title", "source": "[[f<toc title=\"Left TOC\"]]\n\n+ A"}
+{"id": "toc/toc31-float-class", "source": "[[f>toc class=\"righty\"]]\n\n+ A"}
+{"id": "toc/toc32-float-id", "source": "[[f>toc id=\"toc-right\"]]\n\n+ A"}
+{"id": "toc/toc40-div-wrapped-heading", "source": "[[div class=\"x\"]]\n+ Inside div\n[[/div]]\n\n[[toc]]"}
+{"id": "toc/toc41-collapsible-wrapped-heading", "source": "[[collapsible show=\"open\"]]\n+ Inside collapsible\n[[/collapsible]]\n\n[[toc]]"}
+{"id": "toc/toc42-iftags-kept-heading", "source": "[[iftags tags=\"fn\"]]+ Kept heading[[/iftags]]\n\n[[toc]]", "tags": ["fn"]}
+{"id": "toc/toc43-iftags-hidden-heading", "source": "[[iftags tags=\"other\"]]+ Hidden heading[[/iftags]]\n\n[[toc]]", "tags": ["fn"]}
+{"id": "toc/toc44-toc-in-div", "source": "[[div]]\n[[toc]]\n[[/div]]\n\n+ A"}
+{"id": "toc/toc45-toc-in-collapsible", "source": "[[collapsible]]\n[[toc]]\n[[/collapsible]]\n\n+ A"}
+{"id": "toc/toc46-toc-in-quote", "source": "> [[toc]]\n\n+ A"}
+{"id": "toc/toc47-toc-in-list", "source": "* [[toc]]\n\n+ A"}
+{"id": "toc/toc48-toc-in-footnote", "source": "[[footnote]]\n[[toc]]\n[[/footnote]]\n\n+ A\n\n[[footnoteblock]]"}
+{"id": "toc/toc49-iftags-mid-name", "source": "[[t[[iftags -zzz]][[/iftags]]oc]]\n\n+ A"}
+{"id": "toc/toc50-author-anchor-collision", "source": "[[# toc1]]\n\n+ One\n\n+ Two\n\n[[# toc0]]\n\n[[toc]]"}
+{"id": "toc/toc60-uppercase", "source": "[[TOC]]\n\n+ A"}
+{"id": "toc/toc61-mixedcase", "source": "[[Toc]]\n\n+ A"}
+{"id": "toc/toc62-gt-align", "source": "[[>toc]]\n\n+ A"}
+{"id": "toc/toc63-star", "source": "[[*toc]]\n\n+ A"}
+{"id": "toc/toc64-score", "source": "[[_toc]]\n\n+ A"}
+{"id": "toc/toc65-prefix-suffix", "source": "x[[toc]]y\n\n+ A"}
+{"id": "toc/toc66-indented", "source": "  [[toc]]\n\n+ A"}
+{"id": "toc/toc67-tabbed", "source": "\t[[toc]]\n\n+ A"}
+{"id": "toc/toc68-trailing-space", "source": "[[toc ]]\n\n+ A"}
+{"id": "toc/toc69-two-spaces", "source": "[[toc  title=\"X\"]]\n\n+ A"}
+{"id": "toc/toc70-tab-sep", "source": "[[toc\ttitle=\"X\"]]\n\n+ A"}
+{"id": "toc/toc71-unterminated", "source": "[[toc\n\n+ A"}
+{"id": "toc/toc72-stray-closer", "source": "[[/toc]]\n\n+ A"}
+{"id": "toc/toc73-same-line-text", "source": "[[toc]] trailing\n\n+ A"}
+{"id": "toc/toc74-clear-float", "source": "[[toc]]~~~~\n\n+ A"}
+{"id": "toc/toc75-tocx", "source": "[[toctest]]\n\n+ A"}
+{"id": "blockx/x-toc-basic", "source": "+ Alpha\n++ Beta\n[[toc]]\n"}
+{"id": "blockx/x-toc-before", "source": "[[toc]]\n+ Alpha\n++ Beta\n"}
+{"id": "blockx/x-toc-two", "source": "[[toc]]\n+ One\n[[toc]]\n++ Two\n"}
+{"id": "blockx/x-toc-in-div", "source": "[[div]]\n+ In div\n[[/div]]\n+ Outside\n[[toc]]\n"}
+{"id": "blockx/x-toc-in-collapsible", "source": "[[collapsible]]\n+ In collapsible\n[[/collapsible]]\n+ Outside\n[[toc]]\n"}
+{"id": "blockx/x-toc-in-iftags-drop", "source": "[[iftags -alpha]]\n+ Hidden\n[[/iftags]]\n+ Visible\n[[toc]]\n", "tags": ["alpha"]}
+{"id": "blockx/x-toc-in-iftags-keep", "source": "[[iftags +alpha]]\n+ Kept\n[[/iftags]]\n+ Visible\n[[toc]]\n", "tags": ["alpha"]}
+{"id": "blockx/x-toc-untagged-iftags", "source": "[[iftags -alpha]]\n+ Hidden\n[[/iftags]]\n+ Visible\n[[toc]]\n"}
+{"id": "blockx/x-toc-in-code", "source": "[[code]]\n+ Literal\n[[/code]]\n+ Real\n[[toc]]\n"}
+{"id": "blockx/x-toc-in-quote", "source": "> + Quoted heading\n\n+ Real\n[[toc]]\n"}
+{"id": "blockx/x-toc-in-toc-div", "source": "[[div]]\n[[toc]]\n+ Inside\n[[/div]]\n+ Outside\n[[toc]]\n"}
+{"id": "blockx/x-toc-float-right", "source": "[[f>toc]]\n+ Alpha\n++ Beta\n"}
+{"id": "blockx/x-toc-float-left", "source": "[[f<toc]]\n+ Alpha\n++ Beta\n"}
+{"id": "blockx/x-toc-attr", "source": "[[toc class=\"mine\"]]\n+ Alpha\n[[toc ]]\n"}
+{"id": "blockx/x-anchor-repeat", "source": "+ Alpha\n+ Alpha\n[[toc]]\n"}
+{"id": "blockx/x-anchor-repeat-levels", "source": "+ Alpha\n++ Alpha\n+ Alpha\n[[toc]]\n"}
+{"id": "blockx/x-anchor-markup", "source": "+ **Bold** and [[http://example.com|link]]\n[[toc]]\n"}
+{"id": "blockx/x-anchor-spaces", "source": "+  Two spaces\n+ Trailing  \n[[toc]]\n"}
+{"id": "blockx/x-anchor-across-containers", "source": "[[div]]\n+ Same\n[[/div]]\n+ Same\n[[toc]]\n"}
+{"id": "blockx/x-anchor-skips", "source": "+ Level1\n++++ Level4\n[[toc]]\n"}
+{"id": "blockx/x-anchor-collapsible-repeat", "source": "[[collapsible]]\n+ Repeat\n[[/collapsible]]\n+ Repeat\n[[toc]]\n"}
+{"id": "blockx/x-anchor-head-footnote", "source": "+ Head [[footnote]]note[[/footnote]]\n[[toc]]\n[[footnoteblock]]\n"}
+{"id": "blockx/x-bq-head", "source": "[[blockquote]]\n+ Inside\n[[/blockquote]]\n+ Outside\n[[toc]]\n"}
+{"id": "blockx/x-bq-list", "source": "[[blockquote]]\n* one\n* two\n[[/blockquote]]\n"}
+{"id": "blockx/x-bq-footnote", "source": "[[blockquote]]\n[[footnote]]inside[[/footnote]]\n[[/blockquote]]\n[[footnoteblock]]\n"}
+{"id": "blockx/x-bq-head-list-footnote", "source": "[[blockquote]]\n+ Inside\n* item\n[[footnote]]note[[/footnote]]\n[[/blockquote]]\n[[toc]]\n[[footnoteblock]]\n"}
+{"id": "blockx/x-bq-empty", "source": "a\n[[blockquote]][[/blockquote]]\nb\n"}
+{"id": "blockx/x-bq-empty-lines", "source": "a\n[[blockquote]]\n\n[[/blockquote]]\nb\n"}
+{"id": "blockx/x-bq-nested-head", "source": "[[blockquote]]\n[[blockquote]]\n+ Deep\n[[/blockquote]]\n[[/blockquote]]\n[[toc]]\n"}
+{"id": "blockx/x-bq-attr", "source": "[[blockquote id=\"bq\" class=\"c\"]]text[[/blockquote]]\n"}
+{"id": "blockx/x-bq-unterminated", "source": "[[blockquote]]\ntext\n"}
+{"id": "blockx/x-quote-head", "source": "> + quoted\n\n+ real\n[[toc]]\n"}
+{"id": "blockx/x-quote-list", "source": "> * item\n\noutside\n"}
+{"id": "blockx/x-mix-bq-head-toc", "source": "[[blockquote]]\n+ In quote\n[[/blockquote]]\n+ Outside\n[[toc]]\n"}
+{"id": "blockx/x-mix-toc-in-bq", "source": "[[blockquote]]\n[[toc]]\n+ Inside\n[[/blockquote]]\n"}
+{"id": "blockx/x-mix-div-toc-iftags", "source": "[[div]]\n+ In div\n[[toc]]\n[[/div]]\n[[iftags -alpha]]\n+ Hidden\n[[/iftags]]\n+ Visible\n", "tags": ["alpha"]}

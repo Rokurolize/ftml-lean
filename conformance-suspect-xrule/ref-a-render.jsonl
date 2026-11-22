@@ -1,0 +1,15 @@
+{"id":"x1-rawold-raw","output":"<p>A  B<\/p>\n\n"}
+{"id":"x1-rawold-raw2","output":"<p><\/p>\n\n"}
+{"id":"x2-raw-code","output":"<p>A <span style=\"white-space: pre-wrap;\">[[code]]x[[\/code]]<\/span> B<\/p>\n\n"}
+{"id":"x2-raw-form","output":"<p>A @@<span style=\"white-space: pre-wrap;\">[[form]]<\/span><br \/>\n<span style=\"white-space: pre-wrap;\">x<\/span><br \/>\n<span style=\"white-space: pre-wrap;\">[[\/form]]<\/span>@@ B<\/p>\n\n"}
+{"id":"x3-freelink-raw","output":"<p>A [[<span style=\"white-space: pre-wrap;\">x<\/span>]] B<\/p>\n\n"}
+{"id":"x3-freelink-rawpipe","output":"<p>A [[foo|<span style=\"white-space: pre-wrap;\">x<\/span>]] B<\/p>\n\n"}
+{"id":"x4-url-label-raw","output":"<p>A [<span style=\"white-space: pre-wrap;\">x<\/span> <a href=\"http:\/\/example.com\/a\">http:\/\/example.com\/a<\/a>] B<\/p>\n\n"}
+{"id":"x5-email-raw","output":"<p>A <span style=\"white-space: pre-wrap;\">a<\/span>@example.com B<\/p>\n\n"}
+{"id":"x8-concat-heading","output":"<p>A+ Heading<\/p>\n\n"}
+{"id":"x8-concat-list","output":"<p>A* item<\/p>\n\n"}
+{"id":"x8-concat-collapsible","output":"<p>A<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block<\/a><\/div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">\u2013&nbsp;hide&nbsp;block<\/a><\/div><div class=\"collapsible-block-content\"><\/p>\n\n<p>x<\/p>\n\n<\/div><\/div><\/div>"}
+{"id":"x8-concat-ul","output":"<p>A<ul>\n<li style=\"list-style: none; display: inline\">\n<ul>\n<li>x<\/li>\n<\/ul>\n<\/li>\n<\/ul><br \/>\n<\/p>\n\n"}
+{"id":"x10-pre-code-blankspaces","output":"\n<div class=\"code\">\n<pre><code>a\n\nb<\/code><\/pre><\/div>\n\n"}
+{"id":"x10-pre-raw-blankspaces","output":"<p>@@a<\/p>\n\n<p>b@@<\/p>\n\n"}
+{"id":"x10-pre-code-blank","output":"\n<div class=\"code\">\n<pre><code>a\n\nb<\/code><\/pre><\/div>\n\n"}

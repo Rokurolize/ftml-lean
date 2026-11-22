@@ -1,0 +1,34 @@
+{"id":"bq-nospace-only","output":""}
+{"id":"bq-nospace-then-text","output":"<p>X<\/p>\n\n"}
+{"id":"bq-nospace-run","output":"<p>X<\/p>\n\n"}
+{"id":"bq-multi-nospace","output":"<p>X<\/p>\n\n"}
+{"id":"bq-space-control","output":"<blockquote><p>space<\/p>\n\n<\/blockquote>\n<p>X<\/p>\n\n"}
+{"id":"bq-comment-line","output":"<blockquote><p>shown<\/p>\n\n<\/blockquote>\n"}
+{"id":"bq-comment-between","output":"<blockquote><p>one<br \/>\ntwo<\/p>\n\n<\/blockquote>\n"}
+{"id":"if-trail-plus-untag","output":"<p>X<\/p>\n\n"}
+{"id":"if-empty-untag","output":"<p>X<\/p>\n\n"}
+{"id":"if-dangling-minus-untag","output":"<p>KEEP<br \/>\nX<\/p>\n\n"}
+{"id":"if-comment-closer-untag","output":"<p>KEEPTAIL<\/p>\n\n"}
+{"id":"cm-hides-if-open","output":"<p>[!&#8212;<br \/>\nX<\/p>\n\n"}
+{"id":"cm-basic-inline","output":"<p>AB<\/p>\n\n"}
+{"id":"cm-own-line","output":"<p>a<br \/>\nb<\/p>\n\n"}
+{"id":"cm-two-leading-nl","output":"<p>a<\/p>\n\n<p>b<\/p>\n\n"}
+{"id":"cm-indented","output":"<p>a<br \/>\n<br \/>\nb<\/p>\n\n"}
+{"id":"cm-double-bracket","output":"<p>A[]B<\/p>\n\n"}
+{"id":"cm-in-code","output":"\n<div class=\"code\">\n<pre><code>[!-- hide --]<\/code><\/pre><\/div>\n\n"}
+{"id":"cm-extra-hyphen","output":"<p>AB<\/p>\n\n"}
+{"id":"cm-two-inline","output":"<p>XY<\/p>\n\n"}
+{"id":"cm-unterminated","output":"<p>A[!&#8212; hide B<\/p>\n\n"}
+{"id":"cm-multiline","output":"<p>X<\/p>\n\n"}
+{"id":"if-plain-plus-tagged","output":"<p>KEEP<br \/>\nX<\/p>\n\n"}
+{"id":"if-trail-plus-tagged","output":"<p>X<\/p>\n\n"}
+{"id":"if-trail-bare-tagged","output":"<p>KEEP<br \/>\nX<\/p>\n\n"}
+{"id":"if-lead-comma-tagged","output":"<p>X<\/p>\n\n"}
+{"id":"if-double-comma-tagged","output":"<p>X<\/p>\n\n"}
+{"id":"if-trail-minus-tagged","output":"<p>X<\/p>\n\n"}
+{"id":"if-trail-space-tagged","output":"<p>X<\/p>\n\n"}
+{"id":"if-dangling-minus-tagged","output":"<p>KEEP<br \/>\nX<\/p>\n\n"}
+{"id":"if-case-plus-tagged","output":"<p>KEEP<br \/>\nX<\/p>\n\n"}
+{"id":"if-nospace-tagged","output":"<p>[[iftags+alpha]]KEEP[[\/iftags]]<br \/>\nX<\/p>\n\n"}
+{"id":"if-newline-tagged","output":"<p>X<\/p>\n\n"}
+{"id":"if-nested-tagged","output":"<p>A[[iftags -beta]]B[[\/iftags]]C<br \/>\nX<\/p>\n\n"}

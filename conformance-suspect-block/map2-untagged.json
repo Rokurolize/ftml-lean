@@ -1,0 +1,52 @@
+{
+ "bq-nbsp-only": {
+  "fullname": "muse-probe-suspect-block-bq-nbsp-only",
+  "source": "X\n>  \nY",
+  "action": "created"
+ },
+ "bq-comment-only": {
+  "fullname": "muse-probe-suspect-block-bq-comment-only",
+  "source": "A\n> [!--c--]\nB",
+  "action": "created"
+ },
+ "bq-spaced-marker": {
+  "fullname": "muse-probe-suspect-block-bq-spaced-marker",
+  "source": "X\n> > q\nY",
+  "action": "created"
+ },
+ "bq-empty-in-run": {
+  "fullname": "muse-probe-suspect-block-bq-empty-in-run",
+  "source": "A\n> a\n> \n> b\nB",
+  "action": "created"
+ },
+ "bq-indented-next": {
+  "fullname": "muse-probe-suspect-block-bq-indented-next",
+  "source": "X\n> a\n > b\nY",
+  "action": "created"
+ },
+ "cm-two-lines": {
+  "fullname": "muse-probe-suspect-block-cm-two-lines",
+  "source": "a\n[!--1--]\n[!--2--]\nb",
+  "action": "created"
+ },
+ "cm-nbsp-indent": {
+  "fullname": "muse-probe-suspect-block-cm-nbsp-indent",
+  "source": "a\n [!--c--]\nb",
+  "action": "created"
+ },
+ "cm-before-quote": {
+  "fullname": "muse-probe-suspect-block-cm-before-quote",
+  "source": "A\n[!--c--]> q\nB",
+  "action": "created"
+ },
+ "cm-nested": {
+  "fullname": "muse-probe-suspect-block-cm-nested",
+  "source": "a[!--x[!--y--]z--]b",
+  "action": "created"
+ },
+ "cm-quote-bridge-blank": {
+  "fullname": "muse-probe-suspect-block-cm-quote-bridge-blank",
+  "source": "A\n> x\n\n[!--c--]\n\n> y\nB",
+  "action": "created"
+ }
+}

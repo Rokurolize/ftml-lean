@@ -1,0 +1,523 @@
+{
+ "a34": {
+  "components": [
+   "tokens"
+  ],
+  "source": "[[a href=\"@@a@@\"]]r1[[/a]]\n[[a class=\"@@a@@\" href=\"/x\"]]r2[[/a]]\n[[a href=\"/x@@a@@\"]]r3[[/a]]"
+ },
+ "ce-05": {
+  "components": [
+   "segments"
+  ],
+  "source": "x\n=  \ny\n"
+ },
+ "ce-06": {
+  "components": [
+   "segments"
+  ],
+  "source": "x\n=  padded\ny\n"
+ },
+ "ce-07": {
+  "components": [
+   "segments"
+  ],
+  "source": "x\n= trailing \ny\n"
+ },
+ "ce-18": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x\n= a\n= b\ny\n"
+ },
+ "ce-21": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x\n= a\n= b\n= c\ny\n"
+ },
+ "ce-34": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "====\n= a\nx\n"
+ },
+ "cf-31": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "====\n~~~~>\nx\n"
+ },
+ "cf-32": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "~~~~<\n====\nx\n"
+ },
+ "da-01": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\ncentered\n[[/=]]"
+ },
+ "da-02": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[<]]\nleft\n[[/<]]"
+ },
+ "da-03": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[>]]\nright\n[[/>]]"
+ },
+ "da-04": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[==]]\njustified\n[[/==]]"
+ },
+ "da-07": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\n[[/=]]"
+ },
+ "da-08": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\n\n[[/=]]"
+ },
+ "da-09": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x\n[[=]]\nbody\n[[/=]]\ny"
+ },
+ "da-10": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\nbody\n[[/=]]"
+ },
+ "da-11": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\nbody\n[[/=]]\n"
+ },
+ "da-15": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\n[[<]]\ninner\n[[/<]]\n[[/=]]"
+ },
+ "da-16": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\n[[=]]\ninner\n[[/=]]\n[[/=]]"
+ },
+ "da-17": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\na\n[[/=]]\n[[<]]\nb\n[[/<]]"
+ },
+ "da-20": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\nbody[[/=]]"
+ },
+ "da-21": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\n[[/=]]\n[[/=]]"
+ },
+ "da-22": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\nline1\nline2\nline3\n[[/=]]"
+ },
+ "da-23": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[==]]\nlonger body here\n[[/==]]"
+ },
+ "da-24": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\n[[>]]\ndeep\n[[/>]]\nmid\n[[/=]]"
+ },
+ "da-25": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[<]]\n[[=]]\nx\n[[/=]]\n[[/<]]"
+ },
+ "da-26": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\n[[=]]\n[[/=]]\n[[/=]]"
+ },
+ "da-27": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\n**bold** body\n[[/=]]"
+ },
+ "da-28": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\n[[/=]] extra\n[[/=]]"
+ },
+ "da-31": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[>]]\n\n\n[[/>]]"
+ },
+ "da-32": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\nbody\n[[/=]]\n[[=]]\nmore\n[[/=]]"
+ },
+ "da-33": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\n[[code]]\nx\n[[/code]]\n[[/=]]"
+ },
+ "da-34": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\n[[=]]\n[[/=]]"
+ },
+ "da-35": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\nx\n[[/=]]\n[[/=]]"
+ },
+ "da-37": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[==]]\n[[/==]]"
+ },
+ "da-38": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[<]]\nx[[/<]]"
+ },
+ "da-39": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\nbody\n[[/=]]\n\n[[>]]\nb2\n[[/>]]"
+ },
+ "da-40": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\n[[<]]\n[[/<]]\n[[/=]]"
+ },
+ "da-41": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\n[[<]]\n[[/=]]\n[[/<]]"
+ },
+ "da-42": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\n= centered line\n[[/=]]"
+ },
+ "da-43": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[>]]\n~~~~\n[[/>]]"
+ },
+ "da-44": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\n----\n[[/=]]"
+ },
+ "da-45": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\n[[=]]\nx\n[[/=]]\ny\n[[/=]]"
+ },
+ "da-46": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\n[[<]]\nx\n[[/<]]\ny\n[[/=]]"
+ },
+ "da-47": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[=]]\n[[=]]\nx\n[[/=]]\n[[/=]]"
+ },
+ "hz-22": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "----\n====\n"
+ },
+ "hz-37": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "====\n----\nx\n"
+ },
+ "hz-38": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x\n----\n====\ny\n"
+ },
+ "sep-01": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "====\n"
+ },
+ "sep-02": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "===="
+ },
+ "sep-03": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x\n====\ny\n"
+ },
+ "sep-04": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x\n=====\ny\n"
+ },
+ "sep-05": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x\n==========\ny\n"
+ },
+ "sep-09": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x\n===="
+ },
+ "sep-20": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "====\n====\n"
+ },
+ "sep-21": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "====\n\n====\n"
+ },
+ "sep-22": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "a\n====\nb\n====\nc\n"
+ },
+ "sep-23": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "----\n====\nx\n"
+ },
+ "sep-24": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "====\n----\nx\n"
+ },
+ "sep-25": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "~~~~\n====\nx\n"
+ },
+ "sep-26": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x\n====\n~~~~\ny\n"
+ },
+ "sep-28": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x\n====\n= centered\ny\n"
+ },
+ "sep-29": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[toc]]\n====\nx\n"
+ },
+ "sep-30": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "+ Head\n====\nx\n"
+ },
+ "sep-31": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x\n====\n**bold**\n"
+ },
+ "sep-32": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "* item\n====\nx\n"
+ },
+ "sep-34": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "@@\n====\n@@\nx\n"
+ },
+ "sep-35": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[div]]\n====\n[[/div]]\nx\n"
+ },
+ "sep-36": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "> quote\n====\nx\n"
+ },
+ "sep-37": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[code]]\nx\n[[/code]]\n====\ny\n"
+ },
+ "sep-38": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x\n====\n"
+ },
+ "sep-39": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "\n====\nx\n"
+ },
+ "sep-40": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x\n\n====\n\ny\n"
+ },
+ "sep-41": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "before\nsome ==== text\n====\nafter\n"
+ }
+}

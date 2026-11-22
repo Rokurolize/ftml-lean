@@ -1,0 +1,4 @@
+{"id":"con-x24","source":"[[div class=a]]A\n[[div class=b]]B\n[[div class=c]]C\n[[/div]]\n[[/div]]\n[[/div]]"}
+{"id":"p34","source":"[[div class=\"a\" id=\"b\" style=\"color:green\"]]\n[[div_]]\nplain-scored\n[[/div]]\n[[/div]]"}
+{"id":"div-single-sameline","source":"[[div class=a]]A\n[[/div]]"}
+{"id":"div-single-block","source":"[[div class=a]]\nA\n[[/div]]"}

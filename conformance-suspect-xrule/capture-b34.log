@@ -1,0 +1,134 @@
+x21-email-url-label -> muse-probe-suspect-xrule-x21-email-url-label stable=True saved_source_matches=True valid=True
+x22-email-newline-label -> muse-probe-suspect-xrule-x22-email-newline-label stable=True saved_source_matches=True valid=True
+x23-color-url-spec -> muse-probe-suspect-xrule-x23-color-url-spec stable=True saved_source_matches=True valid=True
+x24-math-nested-email -> muse-probe-suspect-xrule-x24-math-nested-email stable=True saved_source_matches=True valid=True
+x25-email-double-space -> muse-probe-suspect-xrule-x25-email-double-space stable=True saved_source_matches=True valid=True
+x26-email-shift -> muse-probe-suspect-xrule-x26-email-shift stable=True saved_source_matches=True valid=True
+x27-email-shift2 -> muse-probe-suspect-xrule-x27-email-shift2 stable=True saved_source_matches=True valid=True
+x28-file-freelink-label -> muse-probe-suspect-xrule-x28-file-freelink-label stable=True saved_source_matches=True valid=True
+x30-anchor-freelink-name -> muse-probe-suspect-xrule-x30-anchor-freelink-name stable=True saved_source_matches=True valid=True
+x31-toc-ustrip -> muse-probe-suspect-xrule-x31-toc-ustrip stable=True saved_source_matches=True valid=True
+x32-footnote-table -> muse-probe-suspect-xrule-x32-footnote-table stable=True saved_source_matches=True valid=True
+x33-div-attr-freelink -> muse-probe-suspect-xrule-x33-div-attr-freelink stable=True saved_source_matches=True valid=True
+{
+ "x21-email-url-label": {
+  "fullname": "muse-probe-suspect-xrule-x21-email-url-label",
+  "html": "<p>A <span class=\"wiki-email\">moc.elpmaxe|a#�3�</span> B</p>",
+  "html_sha256": "11917f7913b628504ae2212de82c3c071a2701705b0978532f0c83219df5f332",
+  "source": "A [a@example.com http://example.com/a] B",
+  "source_sha256": "8acf96f3264857fd44a760da72c6937353d267b458d7594c76036feb6c4415e6",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x22-email-newline-label": {
+  "fullname": "muse-probe-suspect-xrule-x22-email-newline-label",
+  "html": "<p>A <span class=\"wiki-email\">moc.elpmaxe|a#y�1�x</span> B</p>",
+  "html_sha256": "059e97e333f913e47a33de4ffcbc619efe4e80c27bd72af78fe88fe24e0d13e8",
+  "source": "A [a@example.com x\ny] B",
+  "source_sha256": "c59fa36c154cbbe09652f23d85d6122d85612ae8831bad6bbb99db7dfb3f5d2b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x23-color-url-spec": {
+  "fullname": "muse-probe-suspect-xrule-x23-color-url-spec",
+  "html": "<p>A ##<a href=\"http://example.com|red\">http://example.com|red</a>## B</p>",
+  "html_sha256": "5367a5592ba0d7b0632316c82deade40f29c57e1ae3b36fa946207f0061b7090",
+  "source": "A ##http://example.com|red## B",
+  "source_sha256": "94b29fab28b3f4d11a7a4a0c802173e252200880a40bdf86536050c456902db9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x24-math-nested-email": {
+  "fullname": "muse-probe-suspect-xrule-x24-math-nested-email",
+  "html": "<p>A <span class=\"math-inline\">$[a@example.com http://example.com/a]$</span> B</p>",
+  "html_sha256": "b0eaac321c4e1ff9784e4c4aeef40c1f72bfc7871a0daabd3234a0608b4aefc5",
+  "source": "A [[$ [a@example.com http://example.com/a] $]] B",
+  "source_sha256": "5325c357f53f918245eb3053b3866a54b4dcbfd3c2da068cb87421fc9ed1c0c8",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x25-email-double-space": {
+  "fullname": "muse-probe-suspect-xrule-x25-email-double-space",
+  "html": "<p>A <span class=\"wiki-email\">moc.elpmaxe|a#�3� x</span> B</p>",
+  "html_sha256": "5052f0df9b9cfe3159aea0b47efea0679be7a0ec0bdebe734cc2fcaaf70228cd",
+  "source": "A [a@example.com  x http://example.com/a] B",
+  "source_sha256": "0d357e8fc253671f3f38010918a264be5a6c0e5ae3f5998b8a387283788cf09e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x26-email-shift": {
+  "fullname": "muse-probe-suspect-xrule-x26-email-shift",
+  "html": "<p>A <a class=\"newpage\" href=\"/some-page\">Some Page</a> <span class=\"wiki-email\">moc.elpmaxe|a#�1�</span> B</p>",
+  "html_sha256": "cdbda8ade390eae2c77d813fd5966b2c5fc4be3e8a6fdd46588e92eedeabcdc9",
+  "source": "A [[[Some Page]]] [a@example.com @@x@@] B",
+  "source_sha256": "50c37c33cee6f1b8be8f4ffd2baf8199a4bfeee1c68687273dd32e153eb5d8b0",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x27-email-shift2": {
+  "fullname": "muse-probe-suspect-xrule-x27-email-shift2",
+  "html": "<p><span style=\"white-space: pre-wrap;\">a</span> <span class=\"wiki-email\">moc.elpmaxe|a#�2�</span> B</p>",
+  "html_sha256": "5c90ce2d7584d056af833fba9ec4edef44fdb760765e998de4129a151a9f9ccd",
+  "source": "@@a@@ [a@example.com @@x@@] B",
+  "source_sha256": "014130617ce33f0a7ee136f99ac6c68bbbe12e07d45c1956412dd8cdee79bf3b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x28-file-freelink-label": {
+  "fullname": "muse-probe-suspect-xrule-x28-file-freelink-label",
+  "html": "<p><a href=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-suspect-xrule-x28-file-freelink-label/foo\"></a></p>",
+  "html_sha256": "aca5105ea9b11d6793469aafa3a2132e105ebc7fc82f69302099a7bc64251e3a",
+  "source": "[[file foo|[[[Bar]]]]]",
+  "source_sha256": "e9f58d6643937d71ed5cc74e0788a9060e1b2466b49a2f92315770e9e3e76e27",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x30-anchor-freelink-name": {
+  "fullname": "muse-probe-suspect-xrule-x30-anchor-freelink-name",
+  "html": "<p>[[# <a class=\"newpage\" href=\"/bar\">Bar</a> ]]</p>",
+  "html_sha256": "8791b49ef0ef18dd3d2025ae7c85e0beae4aaccd9093198429b8138a2b8f0686",
+  "source": "[[# [[[Bar]]] ]]",
+  "source_sha256": "ef035e7545e66bb3e71a30aa662eb8b58188742b18b40232035f664d85937f41",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x31-toc-ustrip": {
+  "fullname": "muse-probe-suspect-xrule-x31-toc-ustrip",
+  "html": "<table style=\"margin:0; padding:0\">\n<tr>\n<td style=\"margin:0; padding:0\">\n<div id=\"toc\">\n<div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div>\n<div class=\"title\">Table of Contents</div>\n<div id=\"toc-list\">\n<div style=\"margin-left: 2em;\"><a href=\"#toc0\">Grüüße</a></div>\n</div>\n</div>\n</td>\n</tr>\n</table>\n<h2 id=\"toc0\"><span>Grüüße</span></h2>",
+  "html_sha256": "cebc18b73f07724dc5ba016e8afd8235ae91669fe9bf4f6ea4c12c3591f51425",
+  "source": "[[toc]]\n++ Grüüße",
+  "source_sha256": "91fbd7e137ac6fd5b4ebe2ba2ffcd6df42c16a04eee2dbad1516b26b5a6b0770",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x32-footnote-table": {
+  "fullname": "muse-probe-suspect-xrule-x32-footnote-table",
+  "html": "<p>;<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>;</p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. ||a||b||</div>\n</div>",
+  "html_sha256": "877acb0a192871f0e053b1513be7324440ec3954436b2f5a4e62838a26effb7c",
+  "source": ";[[footnote]]||a||b||[[/footnote]];\n[[footnoteblock]]",
+  "source_sha256": "37126ef39c3fafa5dd997e4dc88a5dc011197acabbc8c0d05b78c92a1ca31167",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x33-div-attr-freelink": {
+  "fullname": "muse-probe-suspect-xrule-x33-div-attr-freelink",
+  "html": "<p>[[div class=&quot;<a class=\"newpage\" href=\"/bar\">Bar</a>&quot;]]x[[/div]]</p>",
+  "html_sha256": "92cd4964506a3a1a077d6c664861dea42bb69f303830de0c6cc9b65e7c67295b",
+  "source": "[[div class=\"[[[Bar]]]\"]]x[[/div]]",
+  "source_sha256": "ec78c44df1fa8bfeb2241ebc9632a843a4cc1caa1747b683096470b33a29c051",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

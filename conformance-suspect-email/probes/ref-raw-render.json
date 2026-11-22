@@ -1,0 +1,212 @@
+{
+ "lbl-eacute": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjqcNmYWM8L3NwYW4+PC9wPgoKCg==",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "lbl-emoji": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjQoCYn/BBPC9zcGFuPjwvcD4KCgo=",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "lbl-cjk": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjrJzmpZfmPC9zcGFuPjwvcD4KCgo=",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "lbl-mixed": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjWKnDPC9zcGFuPjwvcD4KCgo=",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "lbl-acute-only": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjqcM8L3NwYW4+PC9wPgoKCg==",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "lbl-at": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjcmFifG9vZjwvc3Bhbj48L3A+CgoK",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "lbl-hash": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjcmFiI29vZjwvc3Bhbj48L3A+CgoK",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "lbl-pipe": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjcmFifG9vZjwvc3Bhbj48L3A+CgoK",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "lbl-close-inner": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjYTwvc3Bhbj5iXTwvcD4KCgo=",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "lbl-open-bracket": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjYlthPC9zcGFuPjwvcD4KCgo=",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "lbl-url": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUj/zL/PC9zcGFuPjwvcD4KCgo=",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "lbl-email": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjdGVuLmVscG1heGV8cmVodG88L3NwYW4+PC9wPgoKCg==",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "lbl-strong": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjKipkbG9iKio8L3NwYW4+PC9wPgoKCg==",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "lbl-newline": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjMmVuaUz/MP8xZW5pTDwvc3Bhbj48L3A+CgoK",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "lbl-bracket-lead": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjeF08L3NwYW4+PC9wPgoKCg==",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "lbl-two-forms": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjdHNyaUY8L3NwYW4+IGFuZCA8c3BhbiBjbGFzcz0id2lraS1lbWFpbCI+dGVuLmVscG1heGV8diNkbm9jZVM8L3NwYW4+PC9wPgoKCg==",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nPHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "gap-tab": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjbGViYUwgICA8L3NwYW4+PC9wPgoKCg==",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "gap-nbsp": {
+  "output_b64": "PHA+WzxzcGFuIGNsYXNzPSJ3aWtpLWVtYWlsIj5tb2MuZWxwbWF4ZXx1I21vYy5lbHBtYXhlfHU8L3NwYW4+wqBMYWJlbF08L3A+CgoK",
+  "stderr": "",
+  "returncode": 0
+ },
+ "gap-three": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjbGViYUwgIDwvc3Bhbj48L3A+CgoK",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "gap-trail": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjIGxlYmFMPC9zcGFuPjwvcD4KCgo=",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "gap-two-trail": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjIGxlYmFMIDwvc3Bhbj48L3A+CgoK",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "gap-control": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjbGViYUw8L3NwYW4+PC9wPgoKCg==",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "frame-trail-inline": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjbGViYUwgPC9zcGFuPiBYPC9wPgoKCg==",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "frame-trail-bracket": {
+  "output_b64": "PHA+KDxzcGFuIGNsYXNzPSJ3aWtpLWVtYWlsIj5tb2MuZWxwbWF4ZXx1I2xlYmFMIDwvc3Bhbj4pPC9wPgoKCg==",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\nWarning: Text_Wiki_Parse_Email::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect-email/ref-php/text-wiki/Text/Wiki/Parse/Default/Email.php on line 49\n",
+  "returncode": 0
+ },
+ "addr-minimal": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPmMuYnxhI2MuYnxhPC9zcGFuPjwvcD4KCgo=",
+  "stderr": "",
+  "returncode": 0
+ },
+ "addr-localhost": {
+  "output_b64": "PHA+dUBsb2NhbGhvc3Q8L3A+CgoK",
+  "stderr": "",
+  "returncode": 0
+ },
+ "addr-underscore-dom": {
+  "output_b64": "PHA+dUBleGFtcGxlX2NvbS5uZXQ8L3A+CgoK",
+  "stderr": "",
+  "returncode": 0
+ },
+ "addr-double-dot": {
+  "output_b64": "PHA+dUBleGFtcGxlLi5jb208L3A+CgoK",
+  "stderr": "",
+  "returncode": 0
+ },
+ "addr-label-leading-dot": {
+  "output_b64": "PHA+LjxzcGFuIGNsYXNzPSJ3aWtpLWVtYWlsIj5tb2MuZWxwbWF4ZXx1I21vYy5lbHBtYXhlfHU8L3NwYW4+PC9wPgoKCg==",
+  "stderr": "",
+  "returncode": 0
+ },
+ "addr-label-trailing-dot": {
+  "output_b64": "PHA+dS5AZXhhbXBsZS5jb208L3A+CgoK",
+  "stderr": "",
+  "returncode": 0
+ },
+ "addr-double-at": {
+  "output_b64": "PHA+dUBAZXhhbXBsZS5jb208L3A+CgoK",
+  "stderr": "",
+  "returncode": 0
+ },
+ "addr-trailing-dash": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy4tZWxwbWF4ZXx1I21vYy4tZWxwbWF4ZXx1PC9zcGFuPjwvcD4KCgo=",
+  "stderr": "",
+  "returncode": 0
+ },
+ "addr-leading-dash": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlLXx1I21vYy5lbHBtYXhlLXx1PC9zcGFuPjwvcD4KCgo=",
+  "stderr": "",
+  "returncode": 0
+ },
+ "addr-plus": {
+  "output_b64": "PHA+dSs8c3BhbiBjbGFzcz0id2lraS1lbWFpbCI+bW9jLmVscG1heGV8Z2F0I21vYy5lbHBtYXhlfGdhdDwvc3Bhbj48L3A+CgoK",
+  "stderr": "",
+  "returncode": 0
+ },
+ "addr-tld-digit": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPjEuZWxwbWF4ZXx1IzEuZWxwbWF4ZXx1PC9zcGFuPjwvcD4KCgo=",
+  "stderr": "",
+  "returncode": 0
+ },
+ "addr-upper": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPk1PQy5FTFBNQVhFfFUjTU9DLkVMUE1BWEV8VTwvc3Bhbj48L3A+CgoK",
+  "stderr": "",
+  "returncode": 0
+ },
+ "addr-dots": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfGIuYSNtb2MuZWxwbWF4ZXxiLmE8L3NwYW4+PC9wPgoKCg==",
+  "stderr": "",
+  "returncode": 0
+ },
+ "addr-trailing-dot": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjbW9jLmVscG1heGV8dTwvc3Bhbj4uPC9wPgoKCg==",
+  "stderr": "",
+  "returncode": 0
+ },
+ "addr-kelvin": {
+  "output_b64": "PHA+4oSqQGV4YW1wbGUuY29tPC9wPgoKCg==",
+  "stderr": "",
+  "returncode": 0
+ },
+ "addr-acute-local": {
+  "output_b64": "PHA+w6k8c3BhbiBjbGFzcz0id2lraS1lbWFpbCI+bW9jLmVscG1heGV8dSNtb2MuZWxwbWF4ZXx1PC9zcGFuPjwvcD4KCgo=",
+  "stderr": "",
+  "returncode": 0
+ },
+ "adj-acute-before": {
+  "output_b64": "PHA+w6kgPHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjbW9jLmVscG1heGV8dTwvc3Bhbj48L3A+CgoK",
+  "stderr": "",
+  "returncode": 0
+ },
+ "adj-acute-after": {
+  "output_b64": "PHA+PHNwYW4gY2xhc3M9Indpa2ktZW1haWwiPm1vYy5lbHBtYXhlfHUjbW9jLmVscG1heGV8dTwvc3Bhbj4gw6k8L3A+CgoK",
+  "stderr": "",
+  "returncode": 0
+ }
+}

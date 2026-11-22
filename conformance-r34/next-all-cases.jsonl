@@ -1,0 +1,382 @@
+{"id": "basic-plus-hit", "source": "[[iftags +alpha]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "basic-plus-miss", "source": "[[iftags +alpha]]KEEP[[/iftags]]", "tags": ["beta"]}
+{"id": "basic-minus-hit", "source": "[[iftags -alpha]]KEEP[[/iftags]]", "tags": ["beta"]}
+{"id": "basic-minus-miss", "source": "[[iftags -alpha]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "bare-hit", "source": "[[iftags alpha]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "bare-miss", "source": "[[iftags alpha]]KEEP[[/iftags]]", "tags": ["beta"]}
+{"id": "mixed-plus-minus-hit", "source": "[[iftags +alpha -beta gamma]]KEEP[[/iftags]]", "tags": ["alpha", "gamma"]}
+{"id": "mixed-plus-minus-miss-forbidden", "source": "[[iftags +alpha -beta gamma]]KEEP[[/iftags]]", "tags": ["alpha", "beta", "gamma"]}
+{"id": "mixed-plus-minus-miss-any", "source": "[[iftags +alpha -beta gamma]]KEEP[[/iftags]]", "tags": ["alpha", "delta"]}
+{"id": "opener-upper", "source": "[[IFTAGS +alpha]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "opener-mixed", "source": "[[Iftags +alpha]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "closer-upper", "source": "[[iftags +alpha]]KEEP[[/IFTAGS]]", "tags": ["alpha"]}
+{"id": "opener-and-closer-upper", "source": "[[IFTAGS +ALPHA]]KEEP[[/IFTAGS]]", "tags": ["alpha"]}
+{"id": "no-space-after-name", "source": "[[iftags+alpha]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "space-before-name", "source": "[[ iftags +alpha]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "extra-spaces-spec", "source": "[[iftags   +alpha   -beta  ]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "empty-spec-tagged", "source": "[[iftags]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "empty-spec-spaces-tagged", "source": "[[iftags   ]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "empty-spec-untagged", "source": "[[iftags]]KEEP[[/iftags]]"}
+{"id": "plus-untagged", "source": "[[iftags +alpha]]KEEP[[/iftags]]"}
+{"id": "case-plus-spec-upper", "source": "[[iftags +ALPHA]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "case-plus-tag-upper", "source": "[[iftags +alpha]]KEEP[[/iftags]]", "tags": ["ALPHA"]}
+{"id": "case-bare", "source": "[[iftags ALPHA]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "case-minus-spec", "source": "[[iftags -BETA]]KEEP[[/iftags]]", "tags": ["alpha", "beta"]}
+{"id": "case-minus-tag", "source": "[[iftags -beta]]KEEP[[/iftags]]", "tags": ["BETA"]}
+{"id": "comma-plus-both", "source": "[[iftags +alpha,+beta]]KEEP[[/iftags]]", "tags": ["alpha", "beta"]}
+{"id": "comma-plus-one", "source": "[[iftags +alpha,+beta]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "comma-minus", "source": "[[iftags -alpha,-beta]]KEEP[[/iftags]]", "tags": ["gamma"]}
+{"id": "comma-bare", "source": "[[iftags alpha,beta]]KEEP[[/iftags]]", "tags": ["beta"]}
+{"id": "comma-space-mixed", "source": "[[iftags +alpha, -beta gamma]]KEEP[[/iftags]]", "tags": ["alpha", "gamma"]}
+{"id": "bare-minus-only", "source": "[[iftags -]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "bare-minus-only-untagged", "source": "[[iftags -]]KEEP[[/iftags]]"}
+{"id": "bare-plus-only", "source": "[[iftags +]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "bare-double-bare", "source": "[[iftags alpha beta]]KEEP[[/iftags]]", "tags": ["beta"]}
+{"id": "bare-double-bare-miss", "source": "[[iftags alpha beta]]KEEP[[/iftags]]", "tags": ["gamma"]}
+{"id": "tag-hyphen", "source": "[[iftags +some-tag]]KEEP[[/iftags]]", "tags": ["some-tag"]}
+{"id": "tag-underscore", "source": "[[iftags +some_tag]]KEEP[[/iftags]]", "tags": ["some_tag"]}
+{"id": "tag-unicode", "source": "[[iftags +\u30c6\u30fc\u30de]]KEEP[[/iftags]]", "tags": ["\u30c6\u30fc\u30de"]}
+{"id": "nested-both-true", "source": "[[iftags +alpha]]OUT[[iftags +alpha]]IN[[/iftags]]TAIL[[/iftags]]", "tags": ["alpha"]}
+{"id": "nested-inner-false", "source": "[[iftags +alpha]]OUT[[iftags +beta]]IN[[/iftags]]TAIL[[/iftags]]", "tags": ["alpha"]}
+{"id": "nested-outer-false", "source": "[[iftags +beta]]OUT[[iftags +alpha]]IN[[/iftags]]TAIL[[/iftags]]", "tags": ["alpha"]}
+{"id": "nested-triple", "source": "[[iftags +alpha]]A[[iftags +alpha]]B[[iftags +alpha]]C[[/iftags]]D[[/iftags]]E[[/iftags]]", "tags": ["alpha"]}
+{"id": "nested-unbalanced-inner", "source": "[[iftags +alpha]]OUT[[iftags +alpha]]IN[[/iftags]]TAIL", "tags": ["alpha"]}
+{"id": "two-adjacent", "source": "[[iftags +alpha]]A[[/iftags]][[iftags +alpha]]B[[/iftags]]", "tags": ["alpha"]}
+{"id": "two-adjacent-second-false", "source": "[[iftags +alpha]]A[[/iftags]][[iftags +beta]]B[[/iftags]]", "tags": ["alpha"]}
+{"id": "unterminated-open", "source": "[[iftags +alpha]]KEEP-no-closer", "tags": ["alpha"]}
+{"id": "stray-closer", "source": "before[[/iftags]]after", "tags": ["alpha"]}
+{"id": "missing-one-bracket", "source": "[[iftags +alpha]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "triple-close-head", "source": "[[iftags +alpha]]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "closer-first", "source": "[[/iftags]]KEEP[[iftags +alpha]]TAIL[[/iftags]]", "tags": ["alpha"]}
+{"id": "newline-in-spec", "source": "[[iftags +alpha\n+beta]]KEEP[[/iftags]]", "tags": ["alpha", "beta"]}
+{"id": "inline-body", "source": "prefix [[iftags -beta]]KEEP[[/iftags]] suffix", "tags": ["alpha"]}
+{"id": "line-start-body", "source": "[[iftags -beta]]KEEP[[/iftags]]\nAFTER", "tags": ["alpha"]}
+{"id": "body-next-line", "source": "[[iftags -beta]]\nKEEP\n[[/iftags]]\nAFTER", "tags": ["alpha"]}
+{"id": "leading-space-opener", "source": "  [[iftags -beta]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "blockquote-opener", "source": "> [[iftags -beta]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "body-paragraph-breaks", "source": "[[iftags -beta]]A\n\nB\n\nC[[/iftags]]", "tags": ["alpha"]}
+{"id": "whitespace-only-body", "source": "[[iftags -beta]]   [[/iftags]]", "tags": ["alpha"]}
+{"id": "empty-body", "source": "[[iftags -beta]][[/iftags]]", "tags": ["alpha"]}
+{"id": "false-gate-newlines", "source": "A\n[[iftags +beta]]HIDDEN[[/iftags]]\nB", "tags": ["alpha"]}
+{"id": "true-gate-newlines", "source": "A\n[[iftags +alpha]]SHOWN[[/iftags]]\nB", "tags": ["alpha"]}
+{"id": "spec-comment-complete", "source": "[[iftags +alpha [!--x--] -beta]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "spec-comment-straddle", "source": "[[iftags +alpha [!--x--]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "spec-comment-closer-inside", "source": "[[iftags +alpha [!-- [[/iftags]] --]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "spec-comment-unterminated", "source": "[[iftags +alpha [!--x]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "star-flag", "source": "[[iftags* +alpha]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "score-flag", "source": "[[iftags_ +alpha]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "name-suffix", "source": "[[iftagsx +alpha]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "name-prefix", "source": "[[xiftags +alpha]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "plain-attrs", "source": "[[iftags +alpha class=x]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "body-comment", "source": "[[iftags -beta]]A[!-- c --]B[[/iftags]]", "tags": ["alpha"]}
+{"id": "body-iframe", "source": "[[iftags -beta]]\n[[iframe https://example.com/]]\n[[/iftags]]", "tags": ["alpha"]}
+{"id": "body-date", "source": "[[iftags -beta]]\n[[date 0]]\n[[/iftags]]", "tags": ["alpha"]}
+{"id": "body-math", "source": "[[iftags -beta]]\n[[math]]\nx^2\n[[/math]]\n[[/iftags]]", "tags": ["alpha"]}
+{"id": "false-hides-math", "source": "[[iftags +beta]]\n[[math]]\nx^2\n[[/math]]\n[[/iftags]]", "tags": ["alpha"]}
+{"id": "false-hides-iframe", "source": "[[iftags +beta]]\n[[iframe https://example.com/]]\n[[/iftags]]", "tags": ["alpha"]}
+{"id": "math-contains-false-iftags", "source": "[[math]]\nx [[iftags +beta]]HIDDEN[[/iftags]] y\n[[/math]]", "tags": ["alpha"]}
+{"id": "body-bold-seam", "source": "[[iftags -beta]]**BOLD**KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "body-span-seam", "source": "[[iftags -beta]][[span class=x]]SPAN[[/span]]KEEP[[/iftags]]", "tags": ["alpha"]}
+{"id": "after-block-div", "source": "[[iftags -beta]]KEEP[[/iftags]]\n[[div]]\nD\n[[/div]]", "tags": ["alpha"]}
+{"id": "op-basic-inline", "source": "a[!-- hidden --]b"}
+{"id": "op-basic-line-start", "source": "[!-- hidden --]\nvisible"}
+{"id": "op-basic-line-end", "source": "visible\n[!-- hidden --]"}
+{"id": "op-empty", "source": "a[!-- --]b"}
+{"id": "op-no-space", "source": "a[!--x--]b"}
+{"id": "op-whitespace-body", "source": "a[!--   \n  --]b"}
+{"id": "op-close-three-hyphens", "source": "a[!-- hidden ---]b"}
+{"id": "op-close-four-hyphens", "source": "a[!-- hidden ----]b"}
+{"id": "op-close-five-hyphens", "source": "a[!-- hidden -----]b"}
+{"id": "op-hyphen-run-open-close", "source": "a[!----\nhidden\n---]\nb"}
+{"id": "op-unmatched-closer", "source": "a--]b"}
+{"id": "op-unterminated", "source": "a[!-- hidden b"}
+{"id": "op-unterminated-line", "source": "a\n[!-- hidden\nb"}
+{"id": "op-two-openers-one-closer", "source": "a[!-- one [!-- two --]b"}
+{"id": "nl-leading-one", "source": "a\n[!-- c --]b"}
+{"id": "nl-leading-two", "source": "a\n\n[!-- c --]b"}
+{"id": "nl-comment-only-line", "source": "a\n[!-- c --]\nb"}
+{"id": "nl-comment-only-blank-around", "source": "a\n\n[!-- c --]\n\nb"}
+{"id": "nl-comment-at-eof", "source": "a\n[!-- c --]"}
+{"id": "nl-comment-at-start-tail", "source": "[!-- c --] z"}
+{"id": "nl-comment-at-start-only", "source": "[!-- c --]"}
+{"id": "nl-indented-spaces", "source": "a\n  [!-- c --]\nb"}
+{"id": "nl-indented-tab", "source": "a\n\t[!-- c --]\nb"}
+{"id": "nl-trailing-newline-local", "source": "a[!-- c --]b\n"}
+{"id": "ml-body", "source": "a[!-- line1\nline2 --]b"}
+{"id": "ml-line-start", "source": "a\n[!-- line1\nline2 --]\nb"}
+{"id": "ml-nested", "source": "a[!-- outer [!-- inner --] tail --]b"}
+{"id": "ml-adjacent", "source": "a[!-- one --][!-- two --]b"}
+{"id": "ml-chained-lines", "source": "[!-- one --]\n[!-- two --]\nb"}
+{"id": "ml-span-with-block-syntax", "source": "a[!-- [[div]]x[[/div]] --]b"}
+{"id": "ml-span-with-module-opener", "source": "a[!-- [[module X]] --]b"}
+{"id": "ml-span-with-math-opener", "source": "a[!-- [[math]] --]\nx"}
+{"id": "case-upper-body", "source": "a[!-- HIDDEN --]b"}
+{"id": "case-mixed-body", "source": "a[!-- HiDdEn --]b"}
+{"id": "case-opener-word", "source": "a[!COMMENT hidden --]b"}
+{"id": "case-close-word", "source": "a[!-- hidden --COMMENT]b"}
+{"id": "crlf-inline", "source": "a[!-- c --]\r\nb"}
+{"id": "crlf-line-start", "source": "a\r\n[!-- c --]\r\nb"}
+{"id": "crlf-multiline-body", "source": "a[!-- x\r\ny --]b"}
+{"id": "cr-only-inline", "source": "a[!-- c --]\rb"}
+{"id": "cr-only-line", "source": "a\r[!-- c --]\rb"}
+{"id": "adj-before-iframe", "source": "[!-- hide --]\n[[iframe https://example.com]]"}
+{"id": "adj-hide-iframe", "source": "a[!-- [[iframe https://example.com]] --]b"}
+{"id": "adj-before-date", "source": "[!-- hide --]\n[[date 0]]"}
+{"id": "adj-before-heading", "source": "[!-- c --]\n= Heading ="}
+{"id": "adj-before-list", "source": "[!-- c --]\n* item"}
+{"id": "adj-before-div", "source": "[!-- c --]\n[[div class=\"x\"]]\nT\n[[/div]]"}
+{"id": "adj-inside-code", "source": "[[code]]\nA[!-- c --]B\n[[/code]]"}
+{"id": "adj-inside-raw", "source": "@@A[!-- c --]B@@"}
+{"id": "adj-inside-span-head", "source": "[[span [!--x--] class=\"c\"]]T[[/span]]"}
+{"id": "adj-span-with-iftags-head", "source": "[!-- [[iftags +x]] --]\nbody"}
+{"id": "pin-double-bracket-head", "source": "[[!-- Theme Lab candidate port header. --]]\nBody paragraph."}
+{"id": "pin-double-bracket-inline", "source": "Before [[!-- note --]] after."}
+{"id": "pin-double-bracket-only-line", "source": "Line one\n[[!-- note --]]\nLine two"}
+{"id": "pin-paragraph-single-break", "source": "A\n[!-- x --]\nB"}
+{"id": "pin-paragraph-line-final", "source": "A\n[!-- x --]"}
+{"id": "pin-comment-line-break-demotion", "source": "x\n\n[!-- c --] \nz"}
+{"id": "pin-comment-line-splice", "source": "x\n[!-- c --] z"}
+{"id": "pin-list-comment-line-start", "source": "[!--x--]* item\n[!--a--][!--b--]# item"}
+{"id": "pin-code-closer-comment-suffix", "source": "[[code]]\nbody\n[[/code]][!-- c --]"}
+{"id": "pin-double-bracket-in-block-head", "source": "a[[span [!-- x --]]] b[[/span]]c"}
+{"id": "pin-double-bracket-before-name", "source": "[[[!--x--]span class=\"c\"]]x[[/span]]"}
+{"id": "if-scheme-http", "source": "[[iframe http://example.com/a]]"}
+{"id": "if-scheme-https", "source": "[[iframe https://example.com/a]]"}
+{"id": "if-scheme-ftp", "source": "[[iframe ftp://example.com/a]]"}
+{"id": "if-scheme-gopher", "source": "[[iframe gopher://example.com/a]]"}
+{"id": "if-scheme-news", "source": "[[iframe news://example.com/a]]"}
+{"id": "if-scheme-mailto", "source": "[[iframe mailto:a@example.com]]"}
+{"id": "if-scheme-mms", "source": "[[iframe mms://example.com/a]]"}
+{"id": "if-scheme-upper", "source": "[[iframe HTTPS://EXAMPLE.COM/A]]"}
+{"id": "if-scheme-mixed", "source": "[[iframe HtTp://Example.Com/MiXeD]]"}
+{"id": "if-scheme-news-upper", "source": "[[iframe NEWS://example.com/a]]"}
+{"id": "if-scheme-mms-upper", "source": "[[iframe MMS://example.com/a]]"}
+{"id": "if-scheme-git", "source": "[[iframe git://example.com/a]]"}
+{"id": "if-scheme-javascript", "source": "[[iframe javascript:alert(1)]]"}
+{"id": "if-scheme-data", "source": "[[iframe data:text/html,x]]"}
+{"id": "if-scheme-none", "source": "[[iframe example.com/a]]"}
+{"id": "if-scheme-empty-url", "source": "[[iframe ]]"}
+{"id": "if-scheme-no-opener", "source": "[[iframe]]"}
+{"id": "if-url-slash-segments", "source": "[[iframe https://example.com/a/b/c]]"}
+{"id": "if-url-no-path", "source": "[[iframe https://example.com]]"}
+{"id": "if-url-trailing-slash", "source": "[[iframe https://example.com/]]"}
+{"id": "if-url-doublequote", "source": "[[iframe http://example.com/a\"b]]"}
+{"id": "if-url-singlequote-final", "source": "[[iframe http://example.com/a'b]]"}
+{"id": "if-url-singlequote-mid", "source": "[[iframe http://example.com/a'b/c]]"}
+{"id": "if-url-singlequote-two", "source": "[[iframe http://example.com/a'b'c/d]]"}
+{"id": "if-url-space", "source": "[[iframe http://example.com/a b]]"}
+{"id": "if-url-tab", "source": "[[iframe http://example.com/a\tb]]"}
+{"id": "if-url-backslash", "source": "[[iframe http://example.com/a\\b]]"}
+{"id": "if-url-delim-u00ff", "source": "[[iframe http://example.com/\u00ff]]"}
+{"id": "if-url-percent", "source": "[[iframe http://example.com/%20x]]"}
+{"id": "if-url-query-fragment", "source": "[[iframe http://example.com/?q=1&x=2#frag]]"}
+{"id": "if-url-utf8-path", "source": "[[iframe http://example.com/\u65e5\u672c\u8a9e]]"}
+{"id": "if-url-utf8-query", "source": "[[iframe http://example.com/?q=\u65e5\u672c\u8a9e#frag\u65e5]]"}
+{"id": "if-url-braces", "source": "[[iframe http://example.com/{a}]]"}
+{"id": "if-url-angle", "source": "[[iframe http://example.com/<x>]]"}
+{"id": "if-attr-none", "source": "[[iframe http://example.com/]]"}
+{"id": "if-attr-all-unquoted", "source": "[[iframe http://example.com/ align=left frameborder=0 height=7 scrolling=no width=100 class=z style=color:red]]"}
+{"id": "if-attr-all-quoted", "source": "[[iframe http://example.com/ align=\"left\" frameborder=\"0\" height=\"7\" scrolling=\"no\" width=\"100\" class=\"z\" style=\"color:red\"]]"}
+{"id": "if-attr-order-shuffled", "source": "[[iframe http://example.com/ style=\"color:red\" width=\"5\" scrolling=\"auto\" align=\"right\" frameborder=\"1\" height=\"7\" class=\"z\"]]"}
+{"id": "if-attr-unknown-filtered", "source": "[[iframe http://example.com/ title=\"T\" id=\"i\" data-x=\"1\" allowtransparency=\"true\" scrolling=\"auto\"]]"}
+{"id": "if-attr-duplicate", "source": "[[iframe http://example.com/ width=\"1\" width=\"2\"]]"}
+{"id": "if-attr-spaced-equals", "source": "[[iframe http://example.com/ id = \"my-example\" class=\"iframe\" width = \"90%\"]]"}
+{"id": "if-attr-mixed-spaced", "source": "[[iframe http://example.com/ width = \"1\" height=\"2\"]]"}
+{"id": "if-attr-single-quoted", "source": "[[iframe http://example.com/ width='1' height='2']]"}
+{"id": "if-attr-escaped-quote", "source": "[[iframe http://example.com/ class=\"a\\\"b\"]]"}
+{"id": "if-attr-empty-value", "source": "[[iframe http://example.com/ width=\"\"]]"}
+{"id": "if-attr-only-src-space", "source": "[[iframe http://example.com/   ]]"}
+{"id": "if-attr-scheme-and-attrs", "source": "[[iframe https://example.net/my-page frameborder=\"0\"]]"}
+{"id": "if-bad-unterminated", "source": "[[iframe http://example.com/"}
+{"id": "if-bad-unterminated-attrs", "source": "[[iframe http://example.com/ width=\"1\""}
+{"id": "if-bad-extra-brackets", "source": "[[iframe http://example.com/]]]"}
+{"id": "if-bad-double-opener", "source": "[[iframe http://a.com/]] [[iframe http://b.com/]]"}
+{"id": "if-bad-closer-only", "source": "[[/iframe]]"}
+{"id": "if-bad-no-space", "source": "[[iframehttp://example.com/]]"}
+{"id": "if-bad-newline-in-head", "source": "[[iframe\nhttp://example.com/]]"}
+{"id": "if-pos-midline", "source": "before [[iframe http://example.com/]] after"}
+{"id": "if-pos-line-start", "source": "text\n[[iframe http://example.com/]]"}
+{"id": "if-pos-leading-space", "source": "  [[iframe http://example.com/]]"}
+{"id": "if-pos-after-blank", "source": "a\n\n[[iframe http://example.com/]]"}
+{"id": "if-pos-two-lines", "source": "[[iframe http://a.com/]]\n[[iframe http://b.com/]]"}
+{"id": "if-pos-newline-then-text", "source": "[[iframe http://example.com/]]\nx ]]"}
+{"id": "if-tail-newline-closer", "source": "[[iframe http://e.com/]]\n[[/div]]"}
+{"id": "if-tail-no-newline-closer", "source": "[[iframe http://e.com/]][[/div]]"}
+{"id": "if-tail-two-closers", "source": "[[iframe http://e.com/]]\n[[/div]][[/span]]"}
+{"id": "if-tail-text-closer", "source": "[[iframe http://e.com/]]\nfoo\n[[/div]]"}
+{"id": "if-tail-space-stops", "source": "[[iframe http://e.com/]] foo]]"}
+{"id": "if-tail-tab-stops", "source": "[[iframe http://e.com/]]\nfoo\tx]]"}
+{"id": "if-tail-blank-span", "source": "[[iframe http://e.com/]]\n\n[[span]]y[[/span]]"}
+{"id": "if-tail-args-newline-closer", "source": "[[iframe http://e.com/ width=\"1\"]]\n[[/div]]"}
+{"id": "if-tail-surviving-close", "source": "[[div]]\n[[iframe http://example.com/]]\n[[/div]]\nspace here\n[[/div]]"}
+{"id": "if-tail-invalidates-div", "source": "[[div]]\n[[iframe http://example.com/]]\n[[/div]]"}
+{"id": "if-tail-keeps-div-after-args", "source": "[[div]]\n[[iframe http://example.com/ width=\"1\"]]\n[[/div]]"}
+{"id": "if-adj-iftags-seam-name", "source": "[[ifr[[iftags -zzz]][[/iftags]]ame http://example.com/]]"}
+{"id": "if-adj-iftags-seam-url", "source": "[[iframe http://a.example/b[[iftags -zzz]][[/iftags]]c]]"}
+{"id": "if-adj-comment-in-url", "source": "[[iframe https://exam[!--x--]ple.com/]]"}
+{"id": "if-adj-comment-before", "source": "[!-- hide --]\n[[iframe http://example.com/]]"}
+{"id": "if-adj-code-before", "source": "[[code]]\n[[iframe http://example.com/]]\n[[/code]]"}
+{"id": "if-adj-greedy-iftags-failing", "source": "[[iframe http://e.com/]]\n[[iftags a]]\nx\n[[/iftags]]\n[[/div]]"}
+{"id": "if-adj-greedy-iftags-kept", "source": "[[iframe http://e.com/]]\n[[iftags fruit]]\nx\n[[/iftags]]\n[[/div]]"}
+{"id": "if-adj-date-after", "source": "[[iframe http://example.com/]]\n[[date 0]]"}
+{"id": "if-adj-math-after", "source": "[[iframe http://example.com/]]\n[[math]]\nE=mc^2\n[[/math]]"}
+{"id": "if-adj-anchor-around", "source": "[[a href=\"/y\"]][[iframe http://example.org/embed width=\"1\"]][[/a]]"}
+{"id": "if-adj-span-around", "source": "[[span]][[iframe http://example.org/embed width=\"1\"]][[/span]]"}
+{"id": "if-adj-freelink-tail", "source": "[[iframe https://example.com/a]]\n[[https://example.com/b]]"}
+{"id": "d01-basic", "source": "[[date 1216153821]]"}
+{"id": "d02-basic-format", "source": "[[date 1216153821 format=\"%Y\"]]"}
+{"id": "d03-leading-zeros", "source": "[[date 00001216153821 format=\"%Y\"]]"}
+{"id": "d04-zero", "source": "[[date 0]]"}
+{"id": "d05-one", "source": "[[date 1]]"}
+{"id": "d06-negative", "source": "[[date -1000]]"}
+{"id": "d07-negative-one", "source": "[[date -1]]"}
+{"id": "d08-huge-14", "source": "[[date 99999999999999]]"}
+{"id": "d09-huge-20", "source": "[[date 99999999999999999999]]"}
+{"id": "d10-huge-42", "source": "[[date 999999999999999999999999999999999999999999]]"}
+{"id": "d11-neg-huge-14", "source": "[[date -99999999999999]]"}
+{"id": "d12-neg-huge-42", "source": "[[date -999999999999999999999999999999999999999999]]"}
+{"id": "d13-plus", "source": "[[date +1216153821 format=\"%Y\"]]"}
+{"id": "d14-iso-date", "source": "[[date 2009-12-25]]"}
+{"id": "d15-iso-datetime", "source": "[[date 2009-12-25T08:18:05+02:00]]"}
+{"id": "d16-rfc3339-z", "source": "[[date 2007-05-12T09:34:51Z]]"}
+{"id": "d17-now", "source": "[[date now]]"}
+{"id": "d18-NOW", "source": "[[date NOW]]"}
+{"id": "d19-dot", "source": "[[date .]]"}
+{"id": "d20-blank", "source": "[[date  ]]"}
+{"id": "d21-blank-with-format", "source": "[[date  format=\"%Y\"]]"}
+{"id": "d22-no-value", "source": "[[date]]"}
+{"id": "d23-nonnumeric", "source": "[[date foobar]]"}
+{"id": "d24-partial-date", "source": "[[date 2001-09]]"}
+{"id": "d25-quoted-number", "source": "[[date \"1216153821\"]]"}
+{"id": "d26-leading-tab", "source": "[[\tdate 1216153821]]"}
+{"id": "d27-decimal", "source": "[[date 1216153821.5]]"}
+{"id": "d28-hex", "source": "[[date 0x10]]"}
+{"id": "d29-unquoted-format", "source": "[[date 1216153821 format=%Y]]"}
+{"id": "d30-single-quoted-format", "source": "[[date 1216153821 format='%Y']]"}
+{"id": "d31-duplicate-format", "source": "[[date 1216153821 format=\"%Y\" format=\"%m\"]]"}
+{"id": "d32-unknown-attr", "source": "[[date 1216153821 foo=\"bar\"]]"}
+{"id": "d33-empty-format", "source": "[[date 1216153821 format=\"\"]]"}
+{"id": "d34-agohover", "source": "[[date 1216153821 format=\"%Y|agohover\"]]"}
+{"id": "d35-g-format", "source": "[[date 1216153821 format=\"%g\"]]"}
+{"id": "d36-spaced-format", "source": "[[date 1216153821 format=\"%d. %m. %Y\"]]"}
+{"id": "d37-html-format", "source": "[[date 1216153821 format=\"<b>&\"]]"}
+{"id": "d38-tz-attr", "source": "[[date 1216153821 format=\"%Y\" tz=\"+8\"]]"}
+{"id": "d39-hover", "source": "[[date 1216153821 hover=\"true\"]]"}
+{"id": "d40-raw-format", "source": "[[date 0 format=\"@@a@@\"]]"}
+{"id": "d41-case-DATE", "source": "[[DATE 1216153821]]"}
+{"id": "d42-case-Date", "source": "[[Date 1216153821]]"}
+{"id": "d43-case-dAtE", "source": "[[dAtE 1216153821]]"}
+{"id": "d44-midline", "source": "before [[date 1216153821]] after"}
+{"id": "d45-line-start", "source": "[[date 1216153821]]\ntail"}
+{"id": "d46-indented", "source": "  [[date 1216153821]]"}
+{"id": "d47-two-same-line", "source": "[[date 1]] and [[date 2]]"}
+{"id": "d48-trailing-tail", "source": "[[date 1216153821]]tail"}
+{"id": "d49-unterminated", "source": "[[date 1216153821"}
+{"id": "d50-unterminated-attr", "source": "[[date 1216153821 format=\"%Y\""}
+{"id": "d51-extra-bracket", "source": "[[date 1216153821]]]"}
+{"id": "d52-spaced-brackets", "source": "[[ date 1216153821 ]]"}
+{"id": "d53-no-space", "source": "[[date1216153821]]"}
+{"id": "d54-newline-in-opener", "source": "[[date\n1216153821]]"}
+{"id": "d55-iframe-then-date", "source": "[[iframe https://example.com/a]]\n[[date 1216153821]]"}
+{"id": "d56-date-then-math", "source": "[[date 1216153821]]\n[[math E]]\nx=1\n[[/math]]"}
+{"id": "d57-comment-hides-date", "source": "before[!-- [[date 1216153821]] --]after"}
+{"id": "d58-comment-in-format", "source": "[[date 1216153821 format=[!-- x --]\"%Y\"]]"}
+{"id": "d59-iftags-date", "source": "[[iftags +alpha]]\n[[date 1216153821]]\n[[/iftags]]"}
+{"id": "d60-date-in-code", "source": "[[code]]\n[[date 1216153821]]\n[[/code]]"}
+{"id": "basic", "source": "[[math E]]\nx=1\n[[/math]]"}
+{"id": "opener-no-label", "source": "[[math]]\nx\n[[/math]]"}
+{"id": "opener-after-text", "source": "intro\n[[math]]\nx\n[[/math]]"}
+{"id": "opener-midline", "source": "prefix [[math]]\nx\n[[/math]]"}
+{"id": "opener-leading-space", "source": " [[math]]\nx\n[[/math]]"}
+{"id": "opener-leading-tab", "source": "\t[[math]]\nx\n[[/math]]"}
+{"id": "opener-no-space", "source": "[[mathE]]\nx\n[[/math]]"}
+{"id": "opener-trailing-space", "source": "[[math E ]]\nx\n[[/math]]"}
+{"id": "opener-spaces-before-nl", "source": "[[math E]]   \nx\n[[/math]]"}
+{"id": "opener-tab-before-nl", "source": "[[math E]]\t\nx\n[[/math]]"}
+{"id": "opener-crlf", "source": "[[math E]]\r\nx\r\n[[/math]]\r\n"}
+{"id": "opener-blank-line-before", "source": "\n[[math]]\nx\n[[/math]]"}
+{"id": "label-upper", "source": "[[MATH Upper]]\nx\n[[/MATH]]"}
+{"id": "label-title", "source": "[[Math Title]]\nx\n[[/Math]]"}
+{"id": "label-digits", "source": "[[math 123]]\nx\n[[/math]]"}
+{"id": "label-underscore", "source": "[[math a_b]]\nx\n[[/math]]"}
+{"id": "label-mixed-case", "source": "[[math Ab_C9]]\nx\n[[/math]]"}
+{"id": "label-hyphen", "source": "[[math a-b]]\nx\n[[/math]]"}
+{"id": "label-dot", "source": "[[math a.b]]\nx\n[[/math]]"}
+{"id": "label-nonascii", "source": "[[math \u00e9tude]]\nx\n[[/math]]"}
+{"id": "label-empty-spaces", "source": "[[math   ]]\nx\n[[/math]]"}
+{"id": "label-equals", "source": "[[math a=b]]\nx\n[[/math]]"}
+{"id": "label-two-words", "source": "[[math a b]]\nx\n[[/math]]"}
+{"id": "label-quoted", "source": "[[math \"a\" type=\"align\"]]\nx\n[[/math]]"}
+{"id": "type-equation", "source": "[[math type=\"equation\"]]\nx\n[[/math]]"}
+{"id": "type-eqnarray", "source": "[[math type=\"eqnarray\"]]\nx\n[[/math]]"}
+{"id": "type-align", "source": "[[math type=\"align\"]]\nx\n[[/math]]"}
+{"id": "type-gather", "source": "[[math a type=\"gather\"]]\nx\n[[/math]]"}
+{"id": "type-not-last", "source": "[[math type=\"align\" foo=\"bar\"]]\nx\n[[/math]]"}
+{"id": "type-uppercase", "source": "[[math type=\"ALIGN\"]]\nx\n[[/math]]"}
+{"id": "type-unquoted", "source": "[[math type=align]]\nx\n[[/math]]"}
+{"id": "type-single-quote", "source": "[[math type='align']]\nx\n[[/math]]"}
+{"id": "type-spaces-eq", "source": "[[math type = \"align\"]]\nx\n[[/math]]"}
+{"id": "type-empty", "source": "[[math type=\"\"]]\nx\n[[/math]]"}
+{"id": "attr-unknown", "source": "[[math foo=\"bar\"]]\nx\n[[/math]]"}
+{"id": "attr-hyphen-key", "source": "[[math foo-bar=\"x\"]]\nx\n[[/math]]"}
+{"id": "attr-underscore-key", "source": "[[math foo_bar=\"x\"]]\nx\n[[/math]]"}
+{"id": "attr-label-and-type", "source": "[[math E type=\"eqnarray\" foo=\"x\"]]\nx\n[[/math]]"}
+{"id": "attr-quoted-close-bracket", "source": "[[math a=\"x]]y\"]\nz\n[[/math]]"}
+{"id": "body-leading-blank", "source": "[[math]]\n\nx\n[[/math]]"}
+{"id": "body-trailing-blank", "source": "[[math]]\nx\n\n[[/math]]"}
+{"id": "body-spaces", "source": "[[math]]\n  x + y  \n[[/math]]"}
+{"id": "body-multiline", "source": "[[math]]\nx = 1\ny = 2\n[[/math]]"}
+{"id": "body-empty", "source": "[[math]]\n[[/math]]"}
+{"id": "body-whitespace-only", "source": "[[math]]\n   \n[[/math]]"}
+{"id": "closer-trailing-spaces", "source": "[[math]]\nx\n[[/math]]   \n"}
+{"id": "closer-trailing-tab", "source": "[[math]]\nx\n[[/math]]\t\n"}
+{"id": "closer-tail-text", "source": "[[math]]\nx\n[[/math]] tail\n"}
+{"id": "closer-eof-no-nl", "source": "[[math]]\nx\n[[/math]]"}
+{"id": "closer-inline", "source": "[[math]]x[[/math]]"}
+{"id": "closer-case-upper", "source": "[[math]]\nx\n[[/MATH]]"}
+{"id": "closer-blankline-tail", "source": "[[math]]\nx\n[[/math]]\n\ntail\n"}
+{"id": "nested-two", "source": "[[math]]\n[[math]]\nx\n[[/math]]\n[[/math]]"}
+{"id": "nested-outer-tail", "source": "[[math]]\n[[math]]\nx\n[[/math]] tail\n[[/math]]"}
+{"id": "nested-labels", "source": "[[math A]]\n[[math B]]\nx\n[[/math]]\n[[/math]]"}
+{"id": "adjacent-two-blocks", "source": "[[math]]\nx\n[[/math]]\n[[math]]\ny\n[[/math]]"}
+{"id": "stray-closer-math", "source": "x\n[[/math]]\n"}
+{"id": "unterminated", "source": "[[math]]\nx\n"}
+{"id": "unterminated-outer", "source": "[[math]]\n[[math]]\nx\n[[/math]]\n"}
+{"id": "include-brace", "source": "[[math]]\n\\include{foo}\n[[/math]]"}
+{"id": "input-brace", "source": "[[math]]\n\\input{foo}\n[[/math]]"}
+{"id": "include-space", "source": "[[math]]\n\\include foo\n[[/math]]"}
+{"id": "input-space", "source": "[[math]]\n\\input bar\n[[/math]]"}
+{"id": "include-in-word", "source": "[[math]]\nx\\include{y}\n[[/math]]"}
+{"id": "include-uppercase", "source": "[[math]]\n\\Include{foo}\n[[/math]]"}
+{"id": "include-in-label-block", "source": "[[math E]]\n\\include{foo}\n[[/math]]"}
+{"id": "after-comment", "source": "[!-- hidden --]\n[[math]]\nx\n[[/math]]"}
+{"id": "comment-in-body", "source": "[[math]]\n[!-- [[/math]] --]\nx\n[[/math]]"}
+{"id": "after-date", "source": "[[date 1216153821]]\n[[math]]\nx\n[[/math]]"}
+{"id": "eref-after", "source": "[[math E]]\nx\n[[/math]]\n[[eref E]]"}
+{"id": "eref-before", "source": "[[eref E]]\n[[math E]]\nx\n[[/math]]"}
+{"id": "mathinline-after", "source": "[[math]]\nx\n[[/math]]\n[[$ y $]]"}
+{"id": "in-div", "source": "[[div class=\"box\"]]\n[[math]]\nx\n[[/math]]\n[[/div]]"}
+{"id": "in-blockquote", "source": "> [[math]]\n> x\n> [[/math]]\n"}
+{"id": "in-collapsible", "source": "[[collapsible]]\n[[math]]\nx\n[[/math]]\n[[/collapsible]]"}
+{"id": "in-iftags", "source": "[[iftags poll]]\n[[math]]\nx\n[[/math]]\n[[/iftags]]"}
+{"id": "x-comment-hides-iftags-open", "source": "[!-- [[iftags +alpha]] --]body[[/iftags]]"}
+{"id": "x-comment-hides-iftags-close", "source": "[[iftags +alpha]]body[!-- [[/iftags]] --]tail"}
+{"id": "x-comment-hides-math-open", "source": "before[!-- [[math E]] --]\nx=1\n[[/math]]\nafter"}
+{"id": "x-comment-hides-math-close", "source": "[[math E]]\nx=1\n[!-- [[/math]] --]\ny=2\n[[/math]]\nafter"}
+{"id": "x-comment-inside-iframe-attr", "source": "[[iframe https://example.com/a width=[!-- 100 --]200]]"}
+{"id": "x-comment-inside-date-attr", "source": "[[date 1216153821 format=[!-- x --]\"%Y\"]]"}
+{"id": "x-comment-inside-math-body", "source": "[[math E]]\nx[!-- hidden --]=1\n[[/math]]"}
+{"id": "x-iftags-drop-module", "source": "[[iftags +alpha]]\n[[module UnknownModuleX]]\nbody\n[[/module]]\n[[/iftags]]"}
+{"id": "x-iftags-drop-math", "source": "[[iftags +alpha]]\n[[math E]]\nx=1\n[[/math]]\n[[/iftags]]"}
+{"id": "x-iframe-then-url", "source": "[[iframe https://example.com/a]]\n[[https://example.com/b]]"}
+{"id": "x-iframe-url-sameline", "source": "[[iframe https://example.com/a]][[https://example.com/b]]"}
+{"id": "x-iframe-url-in-attr", "source": "[[iframe https://example.com/a style=\"background:url(https://example.com/i.png)\"]]"}
+{"id": "smoke-code", "source": "[[code]]\n$x = 1;\n[[/code]]\n"}
+{"id": "smoke-collapsible", "source": "[[collapsible]]\nhidden body\n[[/collapsible]]\n"}
+{"id": "smoke-div", "source": "[[div class=\"x\"]]\ninside div\n[[/div]]\n"}
+{"id": "smoke-footnote", "source": "Text with a note[[footnote]]the note text[[/footnote]] here.\n\n[[footnoteblock]]\n"}
+{"id": "smoke-include", "source": "Before\n[[include muse-probe-g14-target]]\nAfter\n"}
+{"id": "smoke-link", "source": "A [[[some-page|link text]]] and [[[missing-page]]] here.\n"}
+{"id": "smoke-math", "source": "Math $x^2$ inline and:\n[[math]]\nx^2 + y^2\n[[/math]]\n"}
+{"id": "smoke-quote", "source": "> quoted line\n> more quote\n"}
+{"id": "smoke-table", "source": "||~ cell1 ||~ cell2 ||\n|| a || b ||\n"}

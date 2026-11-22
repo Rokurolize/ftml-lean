@@ -1,0 +1,500 @@
+{"id": "fz-fn-000", "source": "  \n [[footnote]][[/footnote]]x\n[[footnote]]two words"}
+{"id": "fz-fn-001", "source": "[[footnote]] [[/footnote]]  \n [[footnote]]@@raw@@[[/footnote]][[footnote]] "}
+{"id": "fz-fn-002", "source": "x [[footnote]]((bibcite bell))"}
+{"id": "fz-fn-003", "source": "  \n [[footnote]]multi\nline body[[/footnote]][[footnote]]  [[FootNote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/FootNote]]"}
+{"id": "fz-fn-004", "source": "x[[footnote]]  padded  [[/footnote]]x[[footnote]]two words [[FootNote]]((bibcite bell))[[/FootNote]]"}
+{"id": "fz-fn-005", "source": "x[[footnote]]note[[/footnote]]x [[footnote]][[[page|lab]]]x\n[[FootNote]]@@raw@@[[/FootNote]]\n[[footnoteblock]]\n"}
+{"id": "fz-fn-006", "source": " [[footnote]]  padded  [[/footnote]]x\n[[footnote]][[footnote]]nested[[/footnote]] tail"}
+{"id": "fz-fn-007", "source": "\n[[footnote]][[[page|lab]]][[/FootNote]]x[[footnote]]  padded  [[/footnote]]x[[footnote]]two words[[/FootNote]] tail"}
+{"id": "fz-fn-008", "source": "  \n [[footnote]][[[page|lab]]][[/footnote]]"}
+{"id": "fz-fn-009", "source": "x[[footnote]]caf\u00e9 \u4e2d\u6587"}
+{"id": "fz-fn-010", "source": "x [[FootNote]]a [[code]]x[[/code]] b[[/FootNote]]  \n [[footnote]]multi\nline body"}
+{"id": "fz-fn-011", "source": "[[FootNote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/FootNote]]"}
+{"id": "fz-fn-012", "source": "x [[FootNote]][[footnote]]nested[[/FootNote]]"}
+{"id": "fz-fn-013", "source": "  \n [[FootNote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/FootNote]]  \n [[FootNote]][[footnote]]nested[[/FootNote]]  \n [[FootNote]]note[[/FootNote]]"}
+{"id": "fz-fn-014", "source": " [[FootNote]]note[[/FootNote]]x [[footnote]][[/footnote]]\n[[footnoteblock]]\n"}
+{"id": "fz-fn-015", "source": "  \n [[footnote]][[/FootNote]]"}
+{"id": "fz-fn-016", "source": "  \n [[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n[[footnoteblock]]\n"}
+{"id": "fz-fn-017", "source": "  \n [[footnote]]((bibcite bell))[[/footnote]][[footnote]][[/footnote]]\n[[footnoteblock]]"}
+{"id": "fz-fn-018", "source": "x\n[[footnote]][[[page|lab]]] tail"}
+{"id": "fz-fn-019", "source": "  \n [[footnote]] tail"}
+{"id": "fz-fn-020", "source": "x\n[[footnote]][[footnote]]nested"}
+{"id": "fz-fn-021", "source": "x [[footnote]]((bibcite bell))[[/footnote]]x\n[[footnote]][[[page|lab]]]  \n [[footnote]]@@raw@@[[/FootNote]]\n[[footnoteblock]]\n"}
+{"id": "fz-fn-022", "source": "[[footnote]]@@raw@@[[/footnote]] [[footnote]]two words[[/FootNote]][[FootNote]][[/FootNote]]"}
+{"id": "fz-fn-023", "source": "x[[footnote]]note[[/footnote]]"}
+{"id": "fz-fn-024", "source": "[[footnote]]multi\nline body[[/footnote]] [[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail"}
+{"id": "fz-fn-025", "source": "\n[[footnote]]multi\nline body[[/FootNote]][[footnote]]two words[[/FootNote]]"}
+{"id": "fz-fn-026", "source": "  \n [[FootNote]][[[page|lab]]][[/FootNote]] [[footnote]]two words[[/footnote]]"}
+{"id": "fz-fn-027", "source": "  \n [[footnote]]  padded  [[/footnote]][[footnote]][[math]]\nm\n[[/math]] [[/footnote]]\n[[footnote]][[math]]\nm\n[[/math]] [[/footnote]]"}
+{"id": "fz-fn-028", "source": "x[[FootNote]]caf\u00e9 \u4e2d\u6587[[/FootNote]]"}
+{"id": "fz-fn-029", "source": "x\n[[FootNote]][[footnote]]nested[[/FootNote]]"}
+{"id": "fz-fn-030", "source": "x\n[[footnote]]a [[code]]x[[/code]] b[[/footnote]]"}
+{"id": "fz-fn-031", "source": "x [[footnote]]a [[code]]x[[/code]] b[[/footnote]]x\n[[footnote]]multi\nline body[[/footnote]] [[footnote]]caf\u00e9 \u4e2d\u6587[[/FootNote]]"}
+{"id": "fz-fn-032", "source": "x[[footnote]] [[/FootNote]]"}
+{"id": "fz-fn-033", "source": "\n[[footnote]]caf\u00e9 \u4e2d\u6587[[/FootNote]] tail"}
+{"id": "fz-fn-034", "source": "x [[FootNote]]caf\u00e9 \u4e2d\u6587[[/FootNote]][[footnote]]a [[code]]x[[/code]] b[[/footnote]]\n[[footnoteblock]]\n"}
+{"id": "fz-fn-035", "source": " [[footnote]]a [[code]]x[[/code]] b[[/FootNote]]"}
+{"id": "fz-fn-036", "source": "[[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/FootNote]]\n[[footnote]]((bibcite bell))[[/footnote]]x [[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/footnote]]"}
+{"id": "fz-fn-037", "source": " [[footnote]]caf\u00e9 \u4e2d\u6587[[/FootNote]]  \n [[FootNote]][[/FootNote]]x\n[[footnote]]two words[[/FootNote]]"}
+{"id": "fz-fn-038", "source": " [[footnote]][[/footnote]] [[footnote]]notex\n[[footnote]][[[page|lab]]][[/footnote]]"}
+{"id": "fz-fn-039", "source": "x [[FootNote]][[[page|lab]]][[/FootNote]]x[[footnote]][[footnote]][[/footnote]]"}
+{"id": "fz-fn-040", "source": "[[footnote]]((bibcite bell)) [[footnote]][[footnote]]nested[[/FootNote]] [[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/footnote]]\n[[footnoteblock]]"}
+{"id": "fz-fn-041", "source": " [[footnote]][[math]]\nm\n[[/math]] \n[[footnote]]a [[code]]x[[/code]] b\n[[footnoteblock]]"}
+{"id": "fz-fn-042", "source": "\n[[footnote]][[footnote]]nested[[/FootNote]]"}
+{"id": "fz-fn-043", "source": "x\n[[footnote]]@@raw@@x[[footnote]][[/footnote]]x[[footnote]][[math]]\nm\n[[/math]] [[/footnote]]"}
+{"id": "fz-fn-044", "source": "[[footnote]]multi\nline body[[/footnote]]\n[[footnoteblock]]\n"}
+{"id": "fz-fn-045", "source": "[[footnote]][[footnote]]nested\n[[footnote]]notex[[footnote]][[math]]\nm\n[[/math]] [[/FootNote]]"}
+{"id": "fz-fn-046", "source": "[[footnote]][[math]]\nm\n[[/math]] [[/footnote]]"}
+{"id": "fz-fn-047", "source": "  \n [[footnote]][[math]]\nm\n[[/math]] "}
+{"id": "fz-fn-048", "source": "x[[footnote]]a [[code]]x[[/code]] bx[[footnote]]multi\nline body[[/footnote]]"}
+{"id": "fz-fn-049", "source": "x[[footnote]][[math]]\nm\n[[/math]] [[/FootNote]] [[footnote]][[math]]\nm\n[[/math]] "}
+{"id": "fz-fn-050", "source": " [[footnote]][[math]]\nm\n[[/math]] [[/FootNote]]  \n [[footnote]][[/footnote]] tail"}
+{"id": "fz-fn-051", "source": " [[footnote]]((bibcite bell))[[/FootNote]] tail"}
+{"id": "fz-fn-052", "source": " [[FootNote]]caf\u00e9 \u4e2d\u6587[[/FootNote]]\n[[footnoteblock]]"}
+{"id": "fz-fn-053", "source": "x [[footnote]] [[/footnote]]  \n [[footnote]]@@raw@@[[/footnote]]"}
+{"id": "fz-fn-054", "source": "x [[footnote]][[/FootNote]]"}
+{"id": "fz-fn-055", "source": "  \n [[footnote]]a [[code]]x[[/code]] b[[/footnote]]\n[[footnote]]a [[code]]x[[/code]] b[[/footnote]]"}
+{"id": "fz-fn-056", "source": "x[[footnote]]a [[code]]x[[/code]] b[[/FootNote]]"}
+{"id": "fz-fn-057", "source": "x[[footnote]]a [[code]]x[[/code]] bx[[footnote]]  padded  [[/footnote]]\n[[footnoteblock]]"}
+{"id": "fz-fn-058", "source": "\n[[FootNote]]two words[[/FootNote]]\n[[footnoteblock]]"}
+{"id": "fz-fn-059", "source": " [[footnote]]caf\u00e9 \u4e2d\u6587[[/FootNote]]x [[FootNote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/FootNote]]\n[[footnoteblock]]\n"}
+{"id": "fz-fn-060", "source": "[[FootNote]]a [[code]]x[[/code]] b[[/FootNote]]x\n[[footnote]]note[[/footnote]][[FootNote]]@@raw@@[[/FootNote]]"}
+{"id": "fz-fn-061", "source": "x\n[[FootNote]]two words[[/FootNote]]x[[footnote]]two words[[/footnote]]\n[[footnote]]two words[[/footnote]] tail"}
+{"id": "fz-fn-062", "source": "\n[[footnote]]@@raw@@[[footnote]] [[footnote]][[footnote]]nested[[/footnote]]"}
+{"id": "fz-fn-063", "source": " [[footnote]]note[[/footnote]]x [[FootNote]]  padded  [[/FootNote]]"}
+{"id": "fz-fn-064", "source": "  \n [[footnote]]  padded  "}
+{"id": "fz-fn-065", "source": "x\n[[footnote]]a [[code]]x[[/code]] b[[/footnote]][[footnote]]  padded  [[/footnote]]\n[[footnoteblock]]"}
+{"id": "fz-fn-066", "source": " [[footnote]][[[page|lab]]][[/FootNote]]x [[footnote]]two words[[/FootNote]]  \n [[footnote]]((bibcite bell))"}
+{"id": "fz-fn-067", "source": "\n[[footnote]][[math]]\nm\n[[/math]] [[/footnote]]\n[[footnote]] [[/footnote]]"}
+{"id": "fz-fn-068", "source": "x [[footnote]][[footnote]]nested[[/footnote]]\n[[footnote]]@@raw@@[[/footnote]] [[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/footnote]] tail"}
+{"id": "fz-fn-069", "source": "[[footnote]][[/footnote]]x\n[[footnote]]((bibcite bell))[[/FootNote]]"}
+{"id": "fz-fn-070", "source": "x[[footnote]]  padded  [[/footnote]]\n[[footnote]][[footnote]]nested[[/footnote]] [[footnote]][[[page|lab]]][[/footnote]]"}
+{"id": "fz-fn-071", "source": "\n[[footnote]]a [[code]]x[[/code]] b [[footnote]]a [[code]]x[[/code]] b[[/footnote]]"}
+{"id": "fz-fn-072", "source": "\n[[footnote]] [[/footnote]]\n[[footnote]]note[[/FootNote]] tail"}
+{"id": "fz-fn-073", "source": " [[footnote]]((bibcite bell))[[/footnote]]x\n[[footnote]][[math]]\nm\n[[/math]] [[/footnote]]\n[[footnote]]two words[[/footnote]]"}
+{"id": "fz-fn-074", "source": "\n[[FootNote]]note[[/FootNote]] [[footnote]]((bibcite bell))[[/footnote]]"}
+{"id": "fz-fn-075", "source": "x\n[[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/footnote]]x [[footnote]]((bibcite bell))x\n[[FootNote]]@@raw@@[[/FootNote]]"}
+{"id": "fz-fn-076", "source": "\n[[footnote]] [[footnote]]((bibcite bell))[[/footnote]]"}
+{"id": "fz-fn-077", "source": "x [[footnote]][[math]]\nm\n[[/math]] [[/FootNote]]x [[footnote]][[footnote]]nestedx[[footnote]]"}
+{"id": "fz-fn-078", "source": "x [[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
+{"id": "fz-fn-079", "source": "x [[footnote]]((bibcite bell))[[/footnote]][[footnote]]two words[[/footnote]]x [[FootNote]][[/FootNote]]"}
+{"id": "fz-fn-080", "source": "  \n [[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [[footnote]]note[[/footnote]]"}
+{"id": "fz-fn-081", "source": "  \n [[FootNote]] [[/FootNote]]  \n [[footnote]]note[[/footnote]]x[[footnote]][[footnote]]nested"}
+{"id": "fz-fn-082", "source": "  \n [[FootNote]][[footnote]]nested[[/FootNote]][[FootNote]]caf\u00e9 \u4e2d\u6587[[/FootNote]]x [[footnote]] [[/footnote]]\n[[footnoteblock]]\n"}
+{"id": "fz-fn-083", "source": "  \n [[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/footnote]]x [[FootNote]][[[page|lab]]][[/FootNote]]"}
+{"id": "fz-fn-084", "source": "x [[footnote]]((bibcite bell))[[/footnote]]x[[footnote]]two words[[/footnote]]\n[[FootNote]]a [[code]]x[[/code]] b[[/FootNote]]"}
+{"id": "fz-fn-085", "source": "  \n [[footnote]]note[[/footnote]]"}
+{"id": "fz-fn-086", "source": "x [[footnote]] [[/FootNote]]x [[footnote]]  padded    \n [[footnote]]  padded  [[/FootNote]]"}
+{"id": "fz-fn-087", "source": "\n[[footnote]] [[/footnote]][[FootNote]][[[page|lab]]][[/FootNote]][[footnote]][[[page|lab]]]"}
+{"id": "fz-fn-088", "source": "  \n [[footnote]]  padded  [[/footnote]][[footnote]]  tail"}
+{"id": "fz-fn-089", "source": "x[[footnote]][[FootNote]]  padded  [[/FootNote]]\n[[footnoteblock]]\n"}
+{"id": "fz-fn-090", "source": " [[footnote]]note[[/footnote]]x [[footnote]][[[page|lab]]][[/FootNote]]\n[[footnoteblock]]"}
+{"id": "fz-fn-091", "source": "  \n [[FootNote]]a [[code]]x[[/code]] b[[/FootNote]]x\n[[FootNote]]two words[[/FootNote]] tail"}
+{"id": "fz-fn-092", "source": " [[footnote]]two words[[/footnote]]\n[[FootNote]][[footnote]]nested[[/FootNote]]\n[[footnoteblock]]\n"}
+{"id": "fz-fn-093", "source": "x[[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/footnote]]  \n [[FootNote]]a [[code]]x[[/code]] b[[/FootNote]]"}
+{"id": "fz-fn-094", "source": "[[FootNote]]two words[[/FootNote]] [[footnote]]((bibcite bell))[[/footnote]]"}
+{"id": "fz-fn-095", "source": "\n[[footnote]][[math]]\nm\n[[/math]] [[/footnote]]\n[[footnote]]caf\u00e9 \u4e2d\u6587[[/FootNote]]"}
+{"id": "fz-fn-096", "source": "x[[footnote]]@@raw@@x [[footnote]] [[/footnote]]x [[footnote]]note[[/FootNote]]\n[[footnoteblock]]"}
+{"id": "fz-fn-097", "source": "\n[[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/FootNote]]x[[footnote]]note[[/footnote]]  \n [[footnote]][[/FootNote]] tail"}
+{"id": "fz-fn-098", "source": "x [[FootNote]][[footnote]]nested[[/FootNote]]x [[footnote]]@@raw@@[[/footnote]]\n[[footnoteblock]]\n"}
+{"id": "fz-fn-099", "source": "x [[footnote]][[/footnote]]\n[[footnoteblock]]\n"}
+{"id": "fz-fn-100", "source": "  \n [[FootNote]] [[/FootNote]]  \n [[footnote]]caf\u00e9 \u4e2d\u6587[[/FootNote]]x[[footnote]][[/footnote]]\n[[footnoteblock]]"}
+{"id": "fz-fn-101", "source": "[[FootNote]][[math]]\nm\n[[/math]] [[/FootNote]]\n[[FootNote]] [[/FootNote]]"}
+{"id": "fz-fn-102", "source": "x [[footnote]]note[[/FootNote]]\n[[footnoteblock]]"}
+{"id": "fz-fn-103", "source": "\n[[footnote]]  padded  [[/footnote]]\n[[footnote]][[[page|lab]]]"}
+{"id": "fz-fn-104", "source": "x[[footnote]]((bibcite bell))"}
+{"id": "fz-fn-105", "source": "\n[[footnote]]two words[[/footnote]]\n[[footnoteblock]]\n"}
+{"id": "fz-fn-106", "source": "x\n[[footnote]]  padded  [[/footnote]][[footnote]][[/FootNote]]"}
+{"id": "fz-fn-107", "source": "  \n [[footnote]]multi\nline body[[/footnote]]  \n [[footnote]]two words"}
+{"id": "fz-fn-108", "source": "x\n[[footnote]] [[/footnote]] [[footnote]] [[/footnote]]"}
+{"id": "fz-fn-109", "source": "x\n[[footnote]]two words[[/FootNote]]x[[footnote]]two words[[/footnote]]x\n[[footnote]]note[[/footnote]]"}
+{"id": "fz-fnb-000", "source": "[[footnote]][[/footnote]][[footnote]]((bibcite bell))[[/footnote]]"}
+{"id": "fz-fnb-001", "source": "[[footnoteblock title=\"Notes\"]]\n"}
+{"id": "fz-fnb-002", "source": "[[footnoteblock hide=\"1\"]]\n"}
+{"id": "fz-fnb-003", "source": ""}
+{"id": "fz-fnb-004", "source": "[[footnoteblock hide=\"1\"]]"}
+{"id": "fz-fnb-005", "source": "[[footnoteblock ]]\n[[footnote]]note[[/footnote]]\n[[footnoteblock ]]"}
+{"id": "fz-fnb-006", "source": "\n[[footnoteblock]]"}
+{"id": "fz-fnb-007", "source": "[[footnote]]two words[[/footnote]][[footnote]]  padded  [[/footnote]][[footnote]] [[/footnote]] mid [[footnoteblock ]]\n"}
+{"id": "fz-fnb-008", "source": "[[footnoteblock bogus]]\n\n[[footnoteblock bogus]]"}
+{"id": "fz-fnb-009", "source": "[[footnoteblock title=\"@@x@@\"]]\n[[footnote]] [[/footnote]][[footnote]]note[[/footnote]][[footnote]]caf\u00e9 \u4e2d\u6587[[/footnote]]\n[[footnoteblock title=\"@@x@@\"]]"}
+{"id": "fz-fnb-010", "source": "[[footnoteblock hide=\"1\"]]"}
+{"id": "fz-fnb-011", "source": "[[footnote]]caf\u00e9 \u4e2d\u6587[[/footnote]][[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/footnote]]\n[[footnoteblock hide=\"1\"]]"}
+{"id": "fz-fnb-012", "source": "[[footnote]]caf\u00e9 \u4e2d\u6587[[/footnote]][[footnote]]  padded  [[/footnote]]"}
+{"id": "fz-fnb-013", "source": "[[footnoteblock]]"}
+{"id": "fz-fnb-014", "source": "[[footnoteblock title=\"\"]]\n"}
+{"id": "fz-fnb-015", "source": "[[footnoteblock title=\"\"]]\n"}
+{"id": "fz-fnb-016", "source": "[[footnoteblock title=\"\"]]"}
+{"id": "fz-fnb-017", "source": "[[footnote]][[footnote]]nested[[/footnote]][[footnote]]two words[[/footnote]]\n[[footnoteblock title=\"Notes\"]]"}
+{"id": "fz-fnb-018", "source": "[[FOOTNOTEBLOCK]]\n[[footnote]]((bibcite bell))[[/footnote]]\n[[FOOTNOTEBLOCK]]"}
+{"id": "fz-fnb-019", "source": "pre [[footnote]]((bibcite bell))[[/footnote]][[footnote]][[footnote]]nested[[/footnote]]\n[[footnoteblock ]]\npost"}
+{"id": "fz-fnb-020", "source": "[[footnoteblock title=\"Notes\"]]\n[[footnote]][[[page|lab]]][[/footnote]][[footnote]][[/footnote]]\n"}
+{"id": "fz-fnb-021", "source": "[[footnoteblock bogus]]"}
+{"id": "fz-fnb-022", "source": "pre \n[[FOOTNOTEBLOCK]]\npost\n"}
+{"id": "fz-fnb-023", "source": "pre [[footnote]]caf\u00e9 \u4e2d\u6587[[/footnote]][[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/footnote]]\n[[footnoteblock title=\"@@x@@\"]]\npost"}
+{"id": "fz-fnb-024", "source": "[[footnoteblock]]\n\n[[footnoteblock]]"}
+{"id": "fz-fnb-025", "source": "[[footnote]][[math]]\nm\n[[/math]] [[/footnote]][[footnote]][[[page|lab]]][[/footnote]] mid [[footnoteblock hide=\"1\"]]"}
+{"id": "fz-fnb-026", "source": "pre [[footnote]]note[[/footnote]][[footnote]]((bibcite bell))[[/footnote]][[footnote]]@@raw@@[[/footnote]]\n[[footnoteblock hide=\"1\"]]\npost"}
+{"id": "fz-fnb-027", "source": "[[footnoteblock]]\n[[footnote]]note[[/footnote]][[footnote]]@@raw@@[[/footnote]][[footnote]]note[[/footnote]]"}
+{"id": "fz-fnb-028", "source": "\n[[footnoteblock title=\"@@x@@\"]]"}
+{"id": "fz-fnb-029", "source": "[[footnote]]a [[code]]x[[/code]] b[[/footnote]][[footnote]]  padded  [[/footnote]]\n"}
+{"id": "fz-fnb-030", "source": "[[footnoteblock]]\n[[footnote]]  padded  [[/footnote]][[footnote]]  padded  [[/footnote]]\n[[footnoteblock]]"}
+{"id": "fz-fnb-031", "source": "pre \n[[footnoteblock]]\npost\n"}
+{"id": "fz-fnb-032", "source": "pre [[footnote]][[footnote]]nested[[/footnote]][[footnote]][[[page|lab]]][[/footnote]][[footnote]]caf\u00e9 \u4e2d\u6587[[/footnote]]\n[[footnoteblock ]]\npost\n"}
+{"id": "fz-fnb-033", "source": "[[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/footnote]][[footnote]][[[page|lab]]][[/footnote]][[footnote]][[/footnote]]\n[[footnoteblock]]\n"}
+{"id": "fz-fnb-034", "source": "[[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/footnote]][[footnote]][[footnote]]nested[[/footnote]]\n"}
+{"id": "fz-fnb-035", "source": "[[footnote]][[[page|lab]]][[/footnote]][[footnote]]a [[code]]x[[/code]] b[[/footnote]]\n"}
+{"id": "fz-fnb-036", "source": "[[footnoteblock ]]\n[[footnote]] [[/footnote]]"}
+{"id": "fz-fnb-037", "source": "[[footnoteblock title=\"\"]]"}
+{"id": "fz-fnb-038", "source": "\n"}
+{"id": "fz-fnb-039", "source": "[[footnoteblock ]]"}
+{"id": "fz-fnb-040", "source": "[[footnoteblock ]]"}
+{"id": "fz-fnb-041", "source": "pre [[footnote]][[footnote]]nested[[/footnote]]\n[[FOOTNOTEBLOCK]]\npost"}
+{"id": "fz-fnb-042", "source": " mid [[footnoteblock title=\"@@x@@\"]]\n"}
+{"id": "fz-fnb-043", "source": "[[footnote]]a [[code]]x[[/code]] b[[/footnote]][[footnote]]  padded  [[/footnote]]\n[[footnoteblock title=\"@@x@@\"]]"}
+{"id": "fz-fnb-044", "source": "[[footnote]] [[/footnote]]\n[[footnoteblock hide=\"1\"]]\n"}
+{"id": "fz-fnb-045", "source": "[[footnoteblock title=\"Notes\"]]\n"}
+{"id": "fz-fnb-046", "source": "[[footnote]][[math]]\nm\n[[/math]] [[/footnote]]\n[[FOOTNOTEBLOCK]]"}
+{"id": "fz-fnb-047", "source": "[[footnoteblock]]\n"}
+{"id": "fz-fnb-048", "source": "[[footnoteblock]]"}
+{"id": "fz-fnb-049", "source": "[[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/footnote]] mid [[footnoteblock]]\n"}
+{"id": "fz-fnb-050", "source": "[[footnote]] [[/footnote]][[footnote]]two words[[/footnote]]\n[[footnoteblock]]"}
+{"id": "fz-fnb-051", "source": "[[footnote]]two words[[/footnote]]"}
+{"id": "fz-fnb-052", "source": "[[footnoteblock]]\n[[footnote]]multi\nline body[[/footnote]][[footnote]]  padded  [[/footnote]][[footnote]]caf\u00e9 \u4e2d\u6587[[/footnote]]"}
+{"id": "fz-fnb-053", "source": "[[footnote]] [[/footnote]][[footnote]]note[[/footnote]] mid [[footnoteblock bogus]]\n"}
+{"id": "fz-fnb-054", "source": "[[footnote]]  padded  [[/footnote]]"}
+{"id": "fz-fnb-055", "source": "pre [[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/footnote]]\n[[footnoteblock]]\npost"}
+{"id": "fz-fnb-056", "source": "[[footnoteblock title=\"@@x@@\"]]\n[[footnote]][[/footnote]][[footnote]]multi\nline body[[/footnote]]\n"}
+{"id": "fz-fnb-057", "source": "[[footnoteblock ]]\n[[footnote]][[math]]\nm\n[[/math]] [[/footnote]][[footnote]][[[page|lab]]][[/footnote]][[footnote]]two words[[/footnote]]"}
+{"id": "fz-fnb-058", "source": "[[FOOTNOTEBLOCK]]\n[[footnote]]((bibcite bell))[[/footnote]]"}
+{"id": "fz-fnb-059", "source": "[[footnoteblock title=\"@@x@@\"]]\n[[footnote]][[footnote]]nested[[/footnote]][[footnote]]  padded  [[/footnote]][[footnote]]@@raw@@[[/footnote]]\n[[footnoteblock title=\"@@x@@\"]]"}
+{"id": "fz-fnb-060", "source": "[[footnoteblock title=\"@@x@@\"]]\n\n[[footnoteblock title=\"@@x@@\"]]"}
+{"id": "fz-fnb-061", "source": "pre [[footnote]]@@raw@@[[/footnote]][[footnote]]@@raw@@[[/footnote]]\n[[footnoteblock]]\npost"}
+{"id": "fz-fnb-062", "source": "[[footnoteblock ]]\n[[footnote]]((bibcite bell))[[/footnote]][[footnote]] [[/footnote]]\n[[footnoteblock ]]"}
+{"id": "fz-fnb-063", "source": "\n[[footnoteblock ]]"}
+{"id": "fz-fnb-064", "source": ""}
+{"id": "fz-fnb-065", "source": "[[footnoteblock]]\n[[footnote]]caf\u00e9 \u4e2d\u6587[[/footnote]][[footnote]][[/footnote]][[footnote]][[/footnote]]"}
+{"id": "fz-fnb-066", "source": "[[footnoteblock bogus]]\n[[footnote]]two words[[/footnote]][[footnote]]multi\nline body[[/footnote]][[footnote]]multi\nline body[[/footnote]]\n[[footnoteblock bogus]]"}
+{"id": "fz-fnb-067", "source": "[[footnote]]a [[code]]x[[/code]] b[[/footnote]]\n[[footnoteblock title=\"@@x@@\"]]"}
+{"id": "fz-fnb-068", "source": "[[footnoteblock title=\"Notes\"]]"}
+{"id": "fz-fnb-069", "source": "pre [[footnote]]  padded  [[/footnote]]\n[[footnoteblock title=\"\"]]\npost"}
+{"id": "fz-fnb-070", "source": "[[footnoteblock ]]\n[[footnote]]a [[code]]x[[/code]] b[[/footnote]][[footnote]]note[[/footnote]][[footnote]]multi\nline body[[/footnote]]"}
+{"id": "fz-fnb-071", "source": "[[footnote]]((bibcite bell))[[/footnote]]"}
+{"id": "fz-fnb-072", "source": "[[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/footnote]]\n[[footnoteblock]]"}
+{"id": "fz-fnb-073", "source": "\n"}
+{"id": "fz-fnb-074", "source": "[[footnoteblock hide=\"1\"]]\n[[footnote]]two words[[/footnote]][[footnote]][[/footnote]]\n[[footnoteblock hide=\"1\"]]"}
+{"id": "fz-fnb-075", "source": "pre [[footnote]]note[[/footnote]]\n[[FOOTNOTEBLOCK]]\npost"}
+{"id": "fz-fnb-076", "source": "[[footnoteblock bogus]]\n"}
+{"id": "fz-fnb-077", "source": "[[footnoteblock title=\"@@x@@\"]]\n[[footnote]]multi\nline body[[/footnote]][[footnote]][[[page|lab]]][[/footnote]][[footnote]][[math]]\nm\n[[/math]] [[/footnote]]\n[[footnoteblock title=\"@@x@@\"]]"}
+{"id": "fz-fnb-078", "source": "[[footnoteblock ]]\n[[footnote]]@@raw@@[[/footnote]]\n[[footnoteblock ]]"}
+{"id": "fz-fnb-079", "source": "[[footnoteblock]]\n"}
+{"id": "fz-fnb-080", "source": "[[footnoteblock]]\n"}
+{"id": "fz-fnb-081", "source": "[[footnote]]a [[code]]x[[/code]] b[[/footnote]] mid [[footnoteblock ]]\n"}
+{"id": "fz-fnb-082", "source": "[[footnoteblock]]\n[[footnote]][[math]]\nm\n[[/math]] [[/footnote]][[footnote]][[math]]\nm\n[[/math]] [[/footnote]][[footnote]]((bibcite bell))[[/footnote]]"}
+{"id": "fz-fnb-083", "source": "pre \n[[footnoteblock bogus]]\npost"}
+{"id": "fz-fnb-084", "source": "pre \n[[footnoteblock]]\npost"}
+{"id": "fz-fnb-085", "source": "pre [[footnote]]((bibcite bell))[[/footnote]][[footnote]]caf\u00e9 \u4e2d\u6587[[/footnote]][[footnote]][[/footnote]]\n[[footnoteblock]]\npost\n"}
+{"id": "fz-fnb-086", "source": "\n[[footnoteblock hide=\"1\"]]"}
+{"id": "fz-fnb-087", "source": "[[footnoteblock title=\"\"]]\n[[footnote]]  padded  [[/footnote]][[footnote]]caf\u00e9 \u4e2d\u6587[[/footnote]][[footnote]]caf\u00e9 \u4e2d\u6587[[/footnote]]\n[[footnoteblock title=\"\"]]"}
+{"id": "fz-fnb-088", "source": "[[footnote]]two words[[/footnote]]"}
+{"id": "fz-fnb-089", "source": "pre [[footnote]]a [[code]]x[[/code]] b[[/footnote]]\n[[footnoteblock title=\"@@x@@\"]]\npost"}
+{"id": "fz-fnb-090", "source": "[[footnote]][[math]]\nm\n[[/math]] [[/footnote]][[footnote]][[[page|lab]]][[/footnote]]\n"}
+{"id": "fz-fnb-091", "source": "[[footnoteblock bogus]]\n[[footnote]]a [[code]]x[[/code]] b[[/footnote]]\n"}
+{"id": "fz-fnb-092", "source": "[[footnoteblock bogus]]\n"}
+{"id": "fz-fnb-093", "source": "[[FOOTNOTEBLOCK]]\n[[footnote]]two words[[/footnote]][[footnote]]caf\u00e9 \u4e2d\u6587[[/footnote]]"}
+{"id": "fz-fnb-094", "source": "[[footnote]]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[[/footnote]][[footnote]][[[page|lab]]][[/footnote]]"}
+{"id": "fz-fnb-095", "source": ""}
+{"id": "fz-fnb-096", "source": "[[footnoteblock title=\"@@x@@\"]]"}
+{"id": "fz-fnb-097", "source": "pre [[footnote]]a [[code]]x[[/code]] b[[/footnote]]\n[[footnoteblock bogus]]\npost\n"}
+{"id": "fz-fnb-098", "source": "[[footnote]][[/footnote]] mid [[footnoteblock]]"}
+{"id": "fz-fnb-099", "source": "[[footnoteblock bogus]]\n[[footnote]]  padded  [[/footnote]][[footnote]]((bibcite bell))[[/footnote]]\n[[footnoteblock bogus]]\n"}
+{"id": "fz-bib-000", "source": "pre\n[[bibliography]]\n\n[[/bibliography]]  "}
+{"id": "fz-bib-001", "source": "pre\n[[bibliography]]\n: a: ((bibcite bell))\nresidual text\n[[/bibliography]]", "tags": ["Alpha"]}
+{"id": "fz-bib-002", "source": "pre\n[[bibliography title=\"Refs\"]]\n: BELL:  \n::  \n: b2 :\n: a ://ital// and **bold**\n[[/bibliography]]"}
+{"id": "fz-bib-003", "source": "pre\n[[bibliography]]\n   \n\t tabbed\n: b2 :  \n: longlabel9 :Value text.\n[[/bibliography]]  ", "tags": ["beta"]}
+{"id": "fz-bib-004", "source": "[[bibliography]]\n: longlabel9 : \n@@raw@@\n", "tags": [""]}
+{"id": "fz-bib-005", "source": "[[Bibliography]]\n: x_y : ((bibcite bell))\n: :  \n: BELL : Next  value  here\n:  BELL : Value text.\n"}
+{"id": "fz-bib-006", "source": "pre\n[[bibliography]]\n: b2 :\n\n: BELL: Next  value  here\n[[/bibliography]] tail"}
+{"id": "fz-bib-007", "source": "[[bibliography title=\"\"]]\n: longlabel9 :\n: bell :Value text.\n: b2: //ital// and **bold**\n", "tags": ["alpha"]}
+{"id": "fz-bib-008", "source": "[[bibliography]]\n\n[[/bibliography]]\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-009", "source": "pre\n[[bibliography]]\n\n[[/bibliography]]", "tags": ["alpha"]}
+{"id": "fz-bib-010", "source": "[[bibliography]]\n\n\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-011", "source": "[[bibliography title=\"Refs\"]]\n: guy : @@raw@@\n: b2 : \n: guy :\n:  guy : Next  value  here\n[[/bibliography]] tail\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]", "tags": ["Alpha"]}
+{"id": "fz-bib-012", "source": "[[Bibliography]]\n\n[[/bibliography]] tail"}
+{"id": "fz-bib-013", "source": "pre\nx[[bibliography]]\n: bell : @@raw@@\n: guy :\n: longlabel9 : Next  value  here\n[[/bibliography]] tail\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]", "tags": ["alpha"]}
+{"id": "fz-bib-014", "source": "pre\n[[bibliography title=\"Refs\"]]\n\n[[/BIBLIOGRAPHY]]"}
+{"id": "fz-bib-015", "source": "[[bibliography]]\n[[footnote]]in bib[[/footnote]]\n: a: //ital// and **bold**\n:b2: ((bibcite bell))\n[[/bibliography]]"}
+{"id": "fz-bib-016", "source": "[[Bibliography]]\n\n[[/bibliography]] tail"}
+{"id": "fz-bib-017", "source": "[[bibliography title=\"\"]]\n\n[[/bibliography]]"}
+{"id": "fz-bib-018", "source": "[[Bibliography]]\n: x_y :\n: bell : \n[[[page]]]\n: a :\n((bibcite bell))\n: a :\n[[/bibliography]] tail\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-019", "source": "[[bibliography]]\n: BELL : \n//ital// and **bold**\n[[/bibliography]]  "}
+{"id": "fz-bib-020", "source": "pre\n[[bibliography]]\n:  x-y : Next  value  here\n: guy :  \n[[/BIBLIOGRAPHY]]\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-021", "source": "[[bibliography]]\n: b2 : \n: x_y : ((bibcite bell))\n[[/BIBLIOGRAPHY]]", "tags": ["Alpha"]}
+{"id": "fz-bib-022", "source": "[[Bibliography]]\n: BELL : @@raw@@\n: x_y: @@raw@@\nnot : a : def\n"}
+{"id": "fz-bib-023", "source": "x[[bibliography]]\n: BELL :\n:  x_y :  \n:  : ((bibcite bell))\n[[/BIBLIOGRAPHY]]"}
+{"id": "fz-bib-024", "source": "[[Bibliography]]\n: x_y : ((bibcite bell))\n:longlabel9: Next  value  here\n[[/bibliography]]  \n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-025", "source": "[[bibliography title=\"Refs\"]]\n:   : Value text.\n: x_y: ((bibcite bell))\n: a :\n@@raw@@\n: guy : [[[page]]]\n[[/bibliography]] tail\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]", "tags": [""]}
+{"id": "fz-bib-026", "source": "pre\n[[bibliography title=\"\"]]\nresidual text\n: x_y :Next  value  here\n[[/bibliography]]  ", "tags": ["beta"]}
+{"id": "fz-bib-027", "source": "pre\n[[bibliography title=\"Refs\"]]\nnot : a : def\n: a :[[[page]]]\n: BELL :\n[[/bibliography]]  ", "tags": [""]}
+{"id": "fz-bib-028", "source": "[[Bibliography]]\n: BELL: [[[page]]]\n[[/bibliography]] tail"}
+{"id": "fz-bib-029", "source": "pre\n[[Bibliography]]\n\n[[/bibliography]] tail"}
+{"id": "fz-bib-030", "source": "x[[bibliography]]\n\n[[/bibliography]] tail\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-031", "source": "pre\n[[bibliography title=\"Refs\"]]\n: bell : Next  value  here\n\n\t tabbed\n: b2 :\n[[/bibliography]]  "}
+{"id": "fz-bib-032", "source": "[[bibliography title=\"\"]]\n: guy: //ital// and **bold**\n: b2 :\nresidual text\n\n[[/bibliography]]  "}
+{"id": "fz-bib-033", "source": "[[bibliography title=\"\"]]\n: a: ((bibcite bell))\n:longlabel9: Value text.\n:   : ((bibcite bell))\n[[/bibliography]] tail"}
+{"id": "fz-bib-034", "source": "pre\n[[Bibliography]]\nnot : a : def\n[[/bibliography]]\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-035", "source": "[[Bibliography]]\n: guy :\n: a: Value text.\n[[/BIBLIOGRAPHY]]"}
+{"id": "fz-bib-036", "source": "pre\n[[bibliography]]\n:  longlabel9 : Next  value  here\n: x_y :\n//ital// and **bold**\n[[/bibliography]] tail"}
+{"id": "fz-bib-037", "source": "[[Bibliography]]\n: longlabel9: [[[page]]]\n[[footnote]]in bib[[/footnote]]\n:  b2 : [[[page]]]\n: guy :Value text.\n", "tags": ["Alpha"]}
+{"id": "fz-bib-038", "source": "pre\n[[bibliography]]\n\n[[/bibliography]]"}
+{"id": "fz-bib-039", "source": "x[[bibliography]]\n\n"}
+{"id": "fz-bib-040", "source": "[[bibliography]]\n: guy : Next  value  here\n   \n  spaced   out  \n: a :Value text.\n[[/bibliography]]"}
+{"id": "fz-bib-041", "source": "[[bibliography title=\"\"]]\n: BELL : \n: bell : \n@@raw@@\nresidual text\n: longlabel9 : Value text.\n", "tags": [""]}
+{"id": "fz-bib-042", "source": "[[bibliography]]\nnot : a : def\n:  :\n@@raw@@\n:: Next  value  here\n   \n[[/bibliography]]\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-043", "source": "pre\n[[bibliography]]\n\n[[/bibliography]]\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-044", "source": "[[Bibliography]]\n: a  : Value text.\n[[/bibliography]]  \n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-045", "source": "[[bibliography]]\n: BELL : Value text.\n: bell :\n: a : \n((bibcite bell))\n[[/bibliography]] tail"}
+{"id": "fz-bib-046", "source": "[[Bibliography]]\n:guy: [[[page]]]\n[[/BIBLIOGRAPHY]]"}
+{"id": "fz-bib-047", "source": "x[[bibliography]]\n:  x-y : //ital// and **bold**\n:x-y: Value text.\n[[/bibliography]] tail", "tags": [""]}
+{"id": "fz-bib-048", "source": "[[bibliography]]\n  spaced   out  \n: BELL  : Value text.\n: x_y : \n \n[[/bibliography]] tail"}
+{"id": "fz-bib-049", "source": "[[bibliography title=\"Refs\"]]\n: longlabel9  : ((bibcite bell))\n: longlabel9 :((bibcite bell))\n: b2 : \n//ital// and **bold**\n: x_y: ((bibcite bell))\n"}
+{"id": "fz-bib-050", "source": "x[[bibliography]]\n\n[[/bibliography]] tail"}
+{"id": "fz-bib-051", "source": "pre\n[[bibliography]]\n: longlabel9 :\n: b2: Next  value  here\n[[/bibliography]]"}
+{"id": "fz-bib-052", "source": "pre\nx[[bibliography]]\n: longlabel9:  \n:  : [[[page]]]\n:: \n:  bell : [[[page]]]\n\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-053", "source": "x[[bibliography]]\n:  b2 : //ital// and **bold**\n:   :  \n:x-y: Next  value  here\n: bell : Value text.\n[[/bibliography]] tail"}
+{"id": "fz-bib-054", "source": "x[[bibliography]]\n\n[[/BIBLIOGRAPHY]]", "tags": ["Alpha"]}
+{"id": "fz-bib-055", "source": "pre\n[[bibliography]]\n:guy: @@raw@@\n: a: [[[page]]]\n: b2 :  \n: x-y :\nValue text.\n[[/bibliography]]"}
+{"id": "fz-bib-056", "source": "[[bibliography]]\n: a : [[[page]]]\n: BELL : ((bibcite bell))\n: x-y ://ital// and **bold**\n[[/bibliography]] tail\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]", "tags": ["beta"]}
+{"id": "fz-bib-057", "source": "[[bibliography title=\"\"]]\n\n[[/bibliography]]  \n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-058", "source": "x[[bibliography]]\n\n[[/bibliography]] tail\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-059", "source": "[[bibliography title=\"\"]]\n\n[[/bibliography]]"}
+{"id": "fz-bib-060", "source": "pre\n[[bibliography]]\n: x-y  :  \n[[/bibliography]]"}
+{"id": "fz-bib-061", "source": "[[bibliography title=\"\"]]\n: BELL :@@raw@@\n: bell : \n//ital// and **bold**\n:  x-y :  \n[[/bibliography]]", "tags": ["alpha"]}
+{"id": "fz-bib-062", "source": "pre\n[[bibliography title=\"Refs\"]]\n[[footnote]]in bib[[/footnote]]\n[[/bibliography]]"}
+{"id": "fz-bib-063", "source": "[[bibliography]]\n: b2 :\n:  a : Value text.\n[[/bibliography]]"}
+{"id": "fz-bib-064", "source": "x[[bibliography]]\n:longlabel9: //ital// and **bold**\n: bell: @@raw@@\n:a:  \n[[/bibliography]]  \n[[bibliography]]\n: z : Second block.\n[[/bibliography]]", "tags": ["alpha"]}
+{"id": "fz-bib-065", "source": "pre\n[[Bibliography]]\n: BELL:  \n: b2: //ital// and **bold**\n: longlabel9 : @@raw@@\n:  x-y : [[[page]]]\n[[/BIBLIOGRAPHY]]"}
+{"id": "fz-bib-066", "source": "pre\nx[[bibliography]]\n:BELL: Next  value  here\n[[/bibliography]] tail"}
+{"id": "fz-bib-067", "source": "[[bibliography title=\"Refs\"]]\n\n", "tags": ["Alpha"]}
+{"id": "fz-bib-068", "source": "[[bibliography]]\n: x-y : \n@@raw@@\n[[/bibliography]] tail"}
+{"id": "fz-bib-069", "source": "[[bibliography]]\n: longlabel9 :  \n: guy : \nNext  value  here\n:  guy : //ital// and **bold**\nresidual text\n[[/bibliography]]", "tags": [""]}
+{"id": "fz-bib-070", "source": "x[[bibliography]]\n:   : \n:  a : Value text.\n:  : //ital// and **bold**\n: x_y :\n \n[[/bibliography]]  \n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-071", "source": "pre\n[[bibliography title=\"Refs\"]]\n: bell :@@raw@@\n\t tabbed\n: x_y  : Value text.\n[[/BIBLIOGRAPHY]]"}
+{"id": "fz-bib-072", "source": "[[bibliography title=\"\"]]\n: x-y :\n@@raw@@\n: longlabel9  :  \n: x_y  : Value text.\n: a  : \n[[/bibliography]]  \n[[bibliography]]\n: z : Second block.\n[[/bibliography]]", "tags": [""]}
+{"id": "fz-bib-073", "source": "pre\n[[bibliography]]\n[[footnote]]in bib[[/footnote]]\n: bell : \nValue text.\n: BELL : \nValue text.\n[[/bibliography]] tail\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]", "tags": ["alpha"]}
+{"id": "fz-bib-074", "source": "[[bibliography title=\"\"]]\n: x-y :  \n: longlabel9 : //ital// and **bold**\n\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]", "tags": ["beta"]}
+{"id": "fz-bib-075", "source": "pre\nx[[bibliography]]\n: BELL: //ital// and **bold**\n: longlabel9 :\n"}
+{"id": "fz-bib-076", "source": "pre\n[[bibliography title=\"Refs\"]]\n: longlabel9 : \n//ital// and **bold**\n: BELL: Value text.\n[[/bibliography]]  "}
+{"id": "fz-bib-077", "source": "[[bibliography]]\n: x-y:  \n:  x-y : ((bibcite bell))\n: b2 : //ital// and **bold**\n[[/bibliography]]  "}
+{"id": "fz-bib-078", "source": "x[[bibliography]]\n\n[[/BIBLIOGRAPHY]]"}
+{"id": "fz-bib-079", "source": "x[[bibliography]]\n: a  : @@raw@@\n  spaced   out  \n\t tabbed\n\n[[/bibliography]]"}
+{"id": "fz-bib-080", "source": "pre\nx[[bibliography]]\n: a : @@raw@@\n: longlabel9 :\n:  a : @@raw@@\n"}
+{"id": "fz-bib-081", "source": "[[Bibliography]]\n: BELL :[[[page]]]\n: x_y : [[[page]]]\n[[/BIBLIOGRAPHY]]"}
+{"id": "fz-bib-082", "source": "[[bibliography title=\"Refs\"]]\n: x_y : Next  value  here\n[[/bibliography]] tail", "tags": ["Alpha"]}
+{"id": "fz-bib-083", "source": "[[bibliography title=\"Refs\"]]\n: bell : Value text.\n"}
+{"id": "fz-bib-084", "source": "[[bibliography]]\n: x_y :@@raw@@\n: bell :\n[[/bibliography]]\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-085", "source": "[[bibliography title=\"Refs\"]]\n\t tabbed\n: b2 :\n:x-y: \n[[/bibliography]] tail\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-086", "source": "[[bibliography title=\"\"]]\n: BELL :\n[[[page]]]\n[[/bibliography]]  ", "tags": ["beta"]}
+{"id": "fz-bib-087", "source": "[[bibliography title=\"\"]]\n: guy : \n[[[page]]]\n: bell : @@raw@@\n:  BELL : Value text.\n[[/bibliography]]", "tags": [""]}
+{"id": "fz-bib-088", "source": "[[bibliography]]\n[[footnote]]in bib[[/footnote]]\n\t tabbed\n: a :Next  value  here\n  spaced   out  \n\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]", "tags": ["beta"]}
+{"id": "fz-bib-089", "source": "[[Bibliography]]\n:  : @@raw@@\nnot : a : def\n: x-y:  \n:  a : Value text.\n[[/bibliography]]", "tags": ["beta"]}
+{"id": "fz-bib-090", "source": "[[bibliography]]\nresidual text\n: x_y :\n: b2: Next  value  here\n[[/bibliography]]  "}
+{"id": "fz-bib-091", "source": "pre\n[[bibliography]]\n: BELL : ((bibcite bell))\n: x_y :Next  value  here\n: : Value text.\n[[/bibliography]]  ", "tags": ["Alpha"]}
+{"id": "fz-bib-092", "source": "[[bibliography title=\"\"]]\nresidual text\n: x_y :[[[page]]]\nresidual text\n[[/bibliography]] tail"}
+{"id": "fz-bib-093", "source": "pre\n[[bibliography]]\n: bell : //ital// and **bold**\n:a: Next  value  here\n[[/bibliography]]  ", "tags": [""]}
+{"id": "fz-bib-094", "source": "[[bibliography title=\"\"]]\n: b2  :  \n: x_y : \n@@raw@@\n: : Next  value  here\n[[/bibliography]]  "}
+{"id": "fz-bib-095", "source": "pre\n[[bibliography title=\"Refs\"]]\n\n:x_y: Next  value  here\n: guy :\n\n[[/BIBLIOGRAPHY]]", "tags": ["alpha"]}
+{"id": "fz-bib-096", "source": "pre\n[[bibliography]]\n: a  : Next  value  here\n: guy :\n\n: longlabel9: //ital// and **bold**\n[[/bibliography]] tail"}
+{"id": "fz-bib-097", "source": "[[Bibliography]]\n:x_y: ((bibcite bell))\n: a  : Value text.\nnot : a : def\n[[/bibliography]] tail\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-098", "source": "x[[bibliography]]\n: x_y : [[[page]]]\n: guy : \n//ital// and **bold**\n: bell : @@raw@@\n[[/bibliography]]  ", "tags": ["alpha"]}
+{"id": "fz-bib-099", "source": "[[bibliography]]\n: a : \nNext  value  here\n: longlabel9 ://ital// and **bold**\n\t tabbed\n:  bell : \n\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]", "tags": ["alpha"]}
+{"id": "fz-bib-100", "source": "[[bibliography title=\"Refs\"]]\n\n[[/bibliography]]  "}
+{"id": "fz-bib-101", "source": "[[Bibliography]]\n   \n: b2 :\n//ital// and **bold**\n: x_y  : ((bibcite bell))\n"}
+{"id": "fz-bib-102", "source": "x[[bibliography]]\n: b2 :\n@@raw@@\n: a: ((bibcite bell))\n:longlabel9: //ital// and **bold**\n[[/bibliography]]  "}
+{"id": "fz-bib-103", "source": "pre\n[[bibliography title=\"\"]]\n: a  : [[[page]]]\n[[/bibliography]]", "tags": [""]}
+{"id": "fz-bib-104", "source": "[[Bibliography]]\n: b2 :\nValue text.\n  spaced   out  \n:x-y: //ital// and **bold**\n[[/bibliography]]  "}
+{"id": "fz-bib-105", "source": "x[[bibliography]]\n\n[[/BIBLIOGRAPHY]]\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-106", "source": "[[Bibliography]]\n: x_y : Next  value  here\nresidual text\n: b2 : Value text.\n: BELL : Next  value  here\n[[/bibliography]] tail\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-107", "source": "pre\n[[Bibliography]]\n\n: guy : Value text.\n:   : \n"}
+{"id": "fz-bib-108", "source": "pre\n[[bibliography]]\n: longlabel9 : [[[page]]]\n: guy : \n//ital// and **bold**\n: BELL : Next  value  here\n[[/bibliography]]", "tags": ["Alpha"]}
+{"id": "fz-bib-109", "source": "[[Bibliography]]\n: longlabel9 :  \n[[/bibliography]] tail", "tags": ["Alpha"]}
+{"id": "fz-bib-110", "source": "[[Bibliography]]\n:  a : [[[page]]]\n: bell : \n\n[[/BIBLIOGRAPHY]]"}
+{"id": "fz-bib-111", "source": "pre\n[[bibliography title=\"\"]]\n:BELL: \n  spaced   out  \n: x_y : \n[[/BIBLIOGRAPHY]]", "tags": [""]}
+{"id": "fz-bib-112", "source": "pre\n[[bibliography]]\n: bell  : @@raw@@\n[[/BIBLIOGRAPHY]]", "tags": ["beta"]}
+{"id": "fz-bib-113", "source": "pre\nx[[bibliography]]\n:  : \n[[[page]]]\n: guy :\n[[[page]]]\n: longlabel9 : \n"}
+{"id": "fz-bib-114", "source": "[[bibliography title=\"Refs\"]]\n\n   \n[[/BIBLIOGRAPHY]]\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-115", "source": "x[[bibliography]]\n: bell: Next  value  here\n   \n  spaced   out  \n\n", "tags": [""]}
+{"id": "fz-bib-116", "source": "x[[bibliography]]\n: b2:  \n:  guy : Next  value  here\n  spaced   out  \n[[/bibliography]] tail"}
+{"id": "fz-bib-117", "source": "x[[bibliography]]\nresidual text\n: guy : @@raw@@\n: a :\n\n: x_y:  \n[[/BIBLIOGRAPHY]]\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-118", "source": "pre\n[[bibliography title=\"\"]]\n\n[[/bibliography]]  \n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-119", "source": "[[bibliography]]\n: guy : \n", "tags": ["Alpha"]}
+{"id": "fz-bib-120", "source": "[[bibliography]]\n:  x-y : Value text.\n[[/bibliography]]  "}
+{"id": "fz-bib-121", "source": "pre\nx[[bibliography]]\n: x-y  : \n: guy: Value text.\n: b2 : ((bibcite bell))\n[[/BIBLIOGRAPHY]]\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]", "tags": ["Alpha"]}
+{"id": "fz-bib-122", "source": "x[[bibliography]]\n:BELL: @@raw@@\n[[/bibliography]] tail"}
+{"id": "fz-bib-123", "source": "[[Bibliography]]\n: x-y :\n: bell : Value text.\n:x_y: ((bibcite bell))\n[[/BIBLIOGRAPHY]]"}
+{"id": "fz-bib-124", "source": "[[bibliography title=\"Refs\"]]\n\n[[/bibliography]] tail", "tags": ["alpha"]}
+{"id": "fz-bib-125", "source": "x[[bibliography]]\n: x-y  : ((bibcite bell))\n[[/BIBLIOGRAPHY]]", "tags": [""]}
+{"id": "fz-bib-126", "source": "pre\n[[bibliography title=\"\"]]\n: b2 : \n((bibcite bell))\n:  a :  \n[[/bibliography]] tail"}
+{"id": "fz-bib-127", "source": "[[Bibliography]]\n: a :\nValue text.\n: guy :Next  value  here\nnot : a : def\n:BELL: Next  value  here\n[[/bibliography]]"}
+{"id": "fz-bib-128", "source": "pre\n[[bibliography title=\"Refs\"]]\n: b2 :\n[[[page]]]\n: x-y  : Value text.\n[[footnote]]in bib[[/footnote]]\n: x-y: Next  value  here\n[[/bibliography]]  \n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bib-129", "source": "pre\nx[[bibliography]]\n:x_y: //ital// and **bold**\n  spaced   out  \n: BELL : \n//ital// and **bold**\n[[/bibliography]] tail\n[[bibliography]]\n: z : Second block.\n[[/bibliography]]"}
+{"id": "fz-bibc-000", "source": "[[bibliography]]\n: guy : Entry guy.\n: a : Entry a.\n[[/bibliography]] ((bibcite a))"}
+{"id": "fz-bibc-001", "source": "[[bibliography]]\n: guy : Entry guy.\n[[/bibliography]] ((bibcite\tbell))"}
+{"id": "fz-bibc-002", "source": "[[bibliography]]\n: bell : Entry bell.\n: bell : Entry bell.\n[[/bibliography]] ((bibcite  ))"}
+{"id": "fz-bibc-003", "source": "[[bibliography]]\n: bell : Entry bell.\n[[/bibliography]] ((bibcite\nundef))"}
+{"id": "fz-bibc-004", "source": "((bibcite bell))"}
+{"id": "fz-bibc-005", "source": "[[bibliography]]\n: a : Entry a.\n: bell : Entry bell.\n: guy : Entry guy.\n[[/bibliography]]\n((bibcite guy))\n[[footnote]]note ((bibcite guy))[[/footnote]]"}
+{"id": "fz-bibc-006", "source": "[[bibliography]]\n: a : Entry a.\n: guy : Entry guy.\n: a : Entry a.\n[[/bibliography]] ((bibcite ))"}
+{"id": "fz-bibc-007", "source": "[[bibliography]]\n: a : Entry a.\n: guy : Entry guy.\n[[/bibliography]]\n((bibcite\nbell))"}
+{"id": "fz-bibc-008", "source": "[[bibliography]]\n: bell : Entry bell.\n: guy : Entry guy.\n[[/bibliography]]\n((bibcite\nundef))"}
+{"id": "fz-bibc-009", "source": "[[bibliography]]\n: a : Entry a.\n[[/bibliography]] ((bibcite bell)) [[footnote]]note ((bibcite bell))[[/footnote]]"}
+{"id": "fz-bibc-010", "source": "[[bibliography]]\n: a : Entry a.\n: bell : Entry bell.\n: guy : Entry guy.\n: a : Entry a.\n[[/bibliography]] ((bibcite  BELL))"}
+{"id": "fz-bibc-011", "source": "((bibcite BELL))"}
+{"id": "fz-bibc-012", "source": "[[bibliography]]\n: a : Entry a.\n: guy : Entry guy.\n: a : Entry a.\n[[/bibliography]]\n((bibcite\t))\n[[footnote]]note ((bibcite\t))[[/footnote]]"}
+{"id": "fz-bibc-013", "source": "[[bibliography]]\n: bell : Entry bell.\n: guy : Entry guy.\n: a : Entry a.\n[[/bibliography]]\n((bibcite  ))"}
+{"id": "fz-bibc-014", "source": "[[bibliography]]\n: guy : Entry guy.\n[[/bibliography]]\n((bibcite\na))"}
+{"id": "fz-bibc-015", "source": "[[bibliography]]\n: a : Entry a.\n: bell : Entry bell.\n[[/bibliography]]\n((bibcite guy))"}
+{"id": "fz-bibc-016", "source": "[[bibliography]]\n: bell : Entry bell.\n: a : Entry a.\n[[/bibliography]] ((bibcite\tundef)) [[footnote]]note ((bibcite\tundef))[[/footnote]]"}
+{"id": "fz-bibc-017", "source": "[[bibliography]]\n: guy : Entry guy.\n: a : Entry a.\n: bell : Entry bell.\n[[/bibliography]]\n((bibcite  BELL))"}
+{"id": "fz-bibc-018", "source": "[[bibliography]]\n: bell : Entry bell.\n: a : Entry a.\n[[/bibliography]]\n((bibcite undef))"}
+{"id": "fz-bibc-019", "source": "((bibcite  undef))"}
+{"id": "fz-bibc-020", "source": "((bibcite\tguy))"}
+{"id": "fz-bibc-021", "source": "[[bibliography]]\n: bell : Entry bell.\n: guy : Entry guy.\n[[/bibliography]]\n((bibcite  guy))\n[[footnote]]note ((bibcite  guy))[[/footnote]]"}
+{"id": "fz-bibc-022", "source": "((bibcite\na))\n[[footnote]]note ((bibcite\na))[[/footnote]]"}
+{"id": "fz-bibc-023", "source": "[[bibliography]]\n: bell : Entry bell.\n: guy : Entry guy.\n[[/bibliography]]\n((bibcite  guy))"}
+{"id": "fz-bibc-024", "source": "[[bibliography]]\n: bell : Entry bell.\n[[/bibliography]] ((bibcite bell)) [[footnote]]note ((bibcite bell))[[/footnote]]"}
+{"id": "fz-bibc-025", "source": "[[bibliography]]\n: bell : Entry bell.\n: guy : Entry guy.\n[[/bibliography]] ((bibcite bell))"}
+{"id": "fz-bibc-026", "source": "[[bibliography]]\n: a : Entry a.\n[[/bibliography]] ((bibcite undef)) [[footnote]]note ((bibcite undef))[[/footnote]]"}
+{"id": "fz-bibc-027", "source": "[[bibliography]]\n: a : Entry a.\n: a : Entry a.\n[[/bibliography]]\n((bibcite\nguy))"}
+{"id": "fz-bibc-028", "source": "((bibcite bell))"}
+{"id": "fz-bibc-029", "source": "[[bibliography]]\n: bell : Entry bell.\n: a : Entry a.\n: guy : Entry guy.\n[[/bibliography]]\n((bibcite bell))"}
+{"id": "fz-bibc-030", "source": "((bibcite guy))\n[[footnote]]note ((bibcite guy))[[/footnote]]"}
+{"id": "fz-bibc-031", "source": "[[bibliography]]\n: bell : Entry bell.\n[[/bibliography]] ((bibcite  undef))"}
+{"id": "fz-bibc-032", "source": "[[bibliography]]\n: bell : Entry bell.\n: guy : Entry guy.\n: a : Entry a.\n[[/bibliography]] ((bibcite  undef))"}
+{"id": "fz-bibc-033", "source": "[[bibliography]]\n: a : Entry a.\n: guy : Entry guy.\n[[/bibliography]] ((bibcite  )) [[footnote]]note ((bibcite  ))[[/footnote]]"}
+{"id": "fz-bibc-034", "source": "((bibcite BELL))"}
+{"id": "fz-bibc-035", "source": "[[bibliography]]\n: guy : Entry guy.\n: bell : Entry bell.\n: a : Entry a.\n[[/bibliography]] ((bibcite  a)) [[footnote]]note ((bibcite  a))[[/footnote]]"}
+{"id": "fz-bibc-036", "source": "[[bibliography]]\n: guy : Entry guy.\n: a : Entry a.\n: bell : Entry bell.\n[[/bibliography]]\n((bibcite bell))"}
+{"id": "fz-bibc-037", "source": "[[bibliography]]\n: a : Entry a.\n: guy : Entry guy.\n: bell : Entry bell.\n[[/bibliography]] ((bibcite\t))"}
+{"id": "fz-bibc-038", "source": "[[bibliography]]\n: guy : Entry guy.\n: a : Entry a.\n: bell : Entry bell.\n[[/bibliography]]\n((bibcite undef))"}
+{"id": "fz-bibc-039", "source": "[[bibliography]]\n: a : Entry a.\n: guy : Entry guy.\n[[/bibliography]]\n((bibcite  a))"}
+{"id": "fz-bibc-040", "source": "((bibcite guy))"}
+{"id": "fz-bibc-041", "source": "((bibcite a))\n[[footnote]]note ((bibcite a))[[/footnote]]"}
+{"id": "fz-bibc-042", "source": "[[bibliography]]\n: bell : Entry bell.\n: guy : Entry guy.\n: a : Entry a.\n[[/bibliography]]\n((bibcite\t))"}
+{"id": "fz-bibc-043", "source": "((bibcite BELL))"}
+{"id": "fz-bibc-044", "source": "[[bibliography]]\n: a : Entry a.\n: bell : Entry bell.\n[[/bibliography]]\n((bibcite\n))\n[[footnote]]note ((bibcite\n))[[/footnote]]"}
+{"id": "fz-bibc-045", "source": "[[bibliography]]\n: bell : Entry bell.\n: a : Entry a.\n: guy : Entry guy.\n[[/bibliography]] ((bibcite\tbell))"}
+{"id": "fz-bibc-046", "source": "[[bibliography]]\n: guy : Entry guy.\n: a : Entry a.\n: guy : Entry guy.\n[[/bibliography]] ((bibcite\nguy)) [[footnote]]note ((bibcite\nguy))[[/footnote]]"}
+{"id": "fz-bibc-047", "source": "[[bibliography]]\n: a : Entry a.\n: guy : Entry guy.\n: bell : Entry bell.\n[[/bibliography]]\n((bibcite\nbell))\n[[footnote]]note ((bibcite\nbell))[[/footnote]]"}
+{"id": "fz-bibc-048", "source": "((bibcite\ta))\n[[footnote]]note ((bibcite\ta))[[/footnote]]"}
+{"id": "fz-bibc-049", "source": "((bibcite\nundef))"}
+{"id": "fz-bibc-050", "source": "[[bibliography]]\n: guy : Entry guy.\n: a : Entry a.\n[[/bibliography]]\n((bibcite  BELL))"}
+{"id": "fz-bibc-051", "source": "[[bibliography]]\n: bell : Entry bell.\n: guy : Entry guy.\n: a : Entry a.\n[[/bibliography]]\n((bibcite\nBELL))"}
+{"id": "fz-bibc-052", "source": "[[bibliography]]\n: guy : Entry guy.\n: bell : Entry bell.\n: guy : Entry guy.\n[[/bibliography]] ((bibcite\tBELL))"}
+{"id": "fz-bibc-053", "source": "[[bibliography]]\n: bell : Entry bell.\n: a : Entry a.\n[[/bibliography]] ((bibcite\t))"}
+{"id": "fz-bibc-054", "source": "((bibcite bell))"}
+{"id": "fz-bibc-055", "source": "[[bibliography]]\n: guy : Entry guy.\n: bell : Entry bell.\n: guy : Entry guy.\n[[/bibliography]] ((bibcite  ))"}
+{"id": "fz-bibc-056", "source": "[[bibliography]]\n: a : Entry a.\n[[/bibliography]]\n((bibcite bell))"}
+{"id": "fz-bibc-057", "source": "((bibcite\tundef))"}
+{"id": "fz-bibc-058", "source": "((bibcite a))"}
+{"id": "fz-bibc-059", "source": "[[bibliography]]\n: bell : Entry bell.\n: a : Entry a.\n: guy : Entry guy.\n[[/bibliography]]\n((bibcite  guy))\n[[footnote]]note ((bibcite  guy))[[/footnote]]"}
+{"id": "fz-bibc-060", "source": "[[bibliography]]\n: guy : Entry guy.\n: bell : Entry bell.\n: a : Entry a.\n[[/bibliography]] ((bibcite  ))"}
+{"id": "fz-bibc-061", "source": "[[bibliography]]\n: bell : Entry bell.\n: bell : Entry bell.\n[[/bibliography]] ((bibcite  a))"}
+{"id": "fz-bibc-062", "source": "((bibcite\t)) [[footnote]]note ((bibcite\t))[[/footnote]]"}
+{"id": "fz-bibc-063", "source": "[[bibliography]]\n: a : Entry a.\n: bell : Entry bell.\n: guy : Entry guy.\n: a : Entry a.\n[[/bibliography]] ((bibcite undef)) [[footnote]]note ((bibcite undef))[[/footnote]]"}
+{"id": "fz-bibc-064", "source": "[[bibliography]]\n: guy : Entry guy.\n: bell : Entry bell.\n[[/bibliography]] ((bibcite undef))"}
+{"id": "fz-bibc-065", "source": "((bibcite\tBELL))"}
+{"id": "fz-bibc-066", "source": "[[bibliography]]\n: bell : Entry bell.\n: a : Entry a.\n: guy : Entry guy.\n[[/bibliography]] ((bibcite bell)) [[footnote]]note ((bibcite bell))[[/footnote]]"}
+{"id": "fz-bibc-067", "source": "((bibcite guy))"}
+{"id": "fz-bibc-068", "source": "[[bibliography]]\n: a : Entry a.\n: guy : Entry guy.\n: bell : Entry bell.\n[[/bibliography]] ((bibcite BELL)) [[footnote]]note ((bibcite BELL))[[/footnote]]"}
+{"id": "fz-bibc-069", "source": "[[bibliography]]\n: bell : Entry bell.\n: a : Entry a.\n[[/bibliography]]\n((bibcite ))"}
+{"id": "fz-bibc-070", "source": "((bibcite  ))"}
+{"id": "fz-bibc-071", "source": "[[bibliography]]\n: guy : Entry guy.\n: bell : Entry bell.\n[[/bibliography]] ((bibcite bell))"}
+{"id": "fz-bibc-072", "source": "[[bibliography]]\n: guy : Entry guy.\n: bell : Entry bell.\n: guy : Entry guy.\n[[/bibliography]] ((bibcite ))"}
+{"id": "fz-bibc-073", "source": "[[bibliography]]\n: a : Entry a.\n[[/bibliography]] ((bibcite BELL))"}
+{"id": "fz-bibc-074", "source": "[[bibliography]]\n: guy : Entry guy.\n[[/bibliography]]\n((bibcite\tguy))"}
+{"id": "fz-bibc-075", "source": "[[bibliography]]\n: a : Entry a.\n[[/bibliography]]\n((bibcite undef))"}
+{"id": "fz-bibc-076", "source": "((bibcite undef))"}
+{"id": "fz-bibc-077", "source": "[[bibliography]]\n: a : Entry a.\n: bell : Entry bell.\n: a : Entry a.\n[[/bibliography]] ((bibcite bell))"}
+{"id": "fz-bibc-078", "source": "((bibcite\nguy)) [[footnote]]note ((bibcite\nguy))[[/footnote]]"}
+{"id": "fz-bibc-079", "source": "[[bibliography]]\n: a : Entry a.\n[[/bibliography]]\n((bibcite  bell))\n[[footnote]]note ((bibcite  bell))[[/footnote]]"}
+{"id": "fz-mix-000", "source": "[[footnoteblock]]((bibcite bell))\n((bibcite bell))[[footnote]][[code]]c[[/code]][[/footnote]]", "tags": ["alpha"]}
+{"id": "fz-mix-001", "source": "[[iftags +alpha]][[footnote]]gated[[/footnote]][[/iftags]][[footnote]]@@r@@[[/footnote]]\n[[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]][[footnote]]@@r@@[[/footnote]][[math E]]\nx\n[[/math]] ", "tags": [""]}
+{"id": "fz-mix-002", "source": "[[footnote]]n1[[/footnote]][[footnote]]n1[[/footnote]]"}
+{"id": "fz-mix-003", "source": "((bibcite undef))text "}
+{"id": "fz-mix-004", "source": "[[footnote]]((bibcite bell))[[/footnote]][[[some-page|lab]]]((bibcite bell))[[footnote]]@@r@@[[/footnote]]((bibcite bell))"}
+{"id": "fz-mix-005", "source": "((bibcite bell))[[footnote]][[code]]c[[/code]][[/footnote]]text "}
+{"id": "fz-mix-006", "source": "[[footnote]]n1[[/footnote]][[[some-page|lab]]]text [[[some-page|lab]]]"}
+{"id": "fz-mix-007", "source": "[[footnote]][[code]]c[[/code]][[/footnote]][[bibliography]]\n: bell : B.\n[[/bibliography]][[footnote]]@@r@@[[/footnote]][[footnote]]@@r@@[[/footnote]]"}
+{"id": "fz-mix-008", "source": "[[footnote]][[code]]c[[/code]][[/footnote]][[iftags +alpha]][[footnote]]gated[[/footnote]][[/iftags]]", "tags": ["alpha", "Alpha"]}
+{"id": "fz-mix-009", "source": "[[footnoteblock]][[footnote]][[code]]c[[/code]][[/footnote]][[footnote]]((bibcite bell))[[/footnote]][[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]][[footnote]]n1[[/footnote]]"}
+{"id": "fz-mix-010", "source": "[[footnoteblock]][[bibliography]]\n: bell : B.\n[[/bibliography]]((bibcite undef))[[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]]", "tags": []}
+{"id": "fz-mix-011", "source": "\n[[[some-page|lab]]][[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]]"}
+{"id": "fz-mix-012", "source": "[[footnote]]n1[[/footnote]][[footnote]]@@r@@[[/footnote]]"}
+{"id": "fz-mix-013", "source": "[[math E]]\nx\n[[/math]] [[math E]]\nx\n[[/math]] \n[[footnote]]((bibcite bell))[[/footnote]][[footnoteblock]]"}
+{"id": "fz-mix-014", "source": "[[footnote]]@@r@@[[/footnote]][[math E]]\nx\n[[/math]] [[footnote]][[code]]c[[/code]][[/footnote]]", "tags": ["alpha"]}
+{"id": "fz-mix-015", "source": "((bibcite undef))[[footnote]]((bibcite bell))[[/footnote]][[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]][[footnote]]@@r@@[[/footnote]][[bibliography]]\n: bell : B.\n[[/bibliography]]"}
+{"id": "fz-mix-016", "source": "[[footnote]]@@r@@[[/footnote]]text "}
+{"id": "fz-mix-017", "source": "[[footnoteblock]][[footnote]]((bibcite bell))[[/footnote]][[math E]]\nx\n[[/math]] "}
+{"id": "fz-mix-018", "source": "[[[some-page|lab]]][[footnoteblock]]", "tags": ["alpha"]}
+{"id": "fz-mix-019", "source": "[[footnoteblock]][[footnote]]((bibcite bell))[[/footnote]]"}
+{"id": "fz-mix-020", "source": "[[[some-page|lab]]][[bibliography]]\n: bell : B.\n[[/bibliography]]((bibcite bell))", "tags": ["beta"]}
+{"id": "fz-mix-021", "source": "((bibcite bell))((bibcite undef))"}
+{"id": "fz-mix-022", "source": "[[footnote]]@@r@@[[/footnote]][[math E]]\nx\n[[/math]] ", "tags": ["beta", "beta"]}
+{"id": "fz-mix-023", "source": "[[math E]]\nx\n[[/math]] [[footnote]][[code]]c[[/code]][[/footnote]][[footnoteblock]][[footnoteblock]]"}
+{"id": "fz-mix-024", "source": "\n[[footnote]]@@r@@[[/footnote]][[footnote]]n1[[/footnote]][[math E]]\nx\n[[/math]] "}
+{"id": "fz-mix-025", "source": "[[iftags +alpha]][[footnote]]gated[[/footnote]][[/iftags]][[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]]"}
+{"id": "fz-mix-026", "source": "[[math E]]\nx\n[[/math]] [[footnote]]((bibcite bell))[[/footnote]]"}
+{"id": "fz-mix-027", "source": "[[[some-page|lab]]]text [[footnote]]n1[[/footnote]]"}
+{"id": "fz-mix-028", "source": "[[footnote]]@@r@@[[/footnote]]text \n((bibcite bell))[[footnote]]((bibcite bell))[[/footnote]]", "tags": [""]}
+{"id": "fz-mix-029", "source": "[[bibliography]]\n: bell : B.\n[[/bibliography]][[[some-page|lab]]]\n"}
+{"id": "fz-mix-030", "source": "\n[[iftags +alpha]][[footnote]]gated[[/footnote]][[/iftags]]"}
+{"id": "fz-mix-031", "source": "[[footnote]][[code]]c[[/code]][[/footnote]]((bibcite undef))((bibcite undef))[[[some-page|lab]]]text [[math E]]\nx\n[[/math]] "}
+{"id": "fz-mix-032", "source": "[[bibliography]]\n: bell : B.\n[[/bibliography]]\n[[footnote]]((bibcite bell))[[/footnote]][[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]]text text ", "tags": ["beta"]}
+{"id": "fz-mix-033", "source": "[[footnoteblock]][[footnote]]((bibcite bell))[[/footnote]][[iftags +alpha]][[footnote]]gated[[/footnote]][[/iftags]]"}
+{"id": "fz-mix-034", "source": "[[footnote]]((bibcite bell))[[/footnote]]text \n[[footnote]]n1[[/footnote]]((bibcite undef))"}
+{"id": "fz-mix-035", "source": "[[math E]]\nx\n[[/math]] text text [[math E]]\nx\n[[/math]] ((bibcite bell))"}
+{"id": "fz-mix-036", "source": "[[footnote]]@@r@@[[/footnote]][[footnoteblock]]text text [[[some-page|lab]]]"}
+{"id": "fz-mix-037", "source": "[[[some-page|lab]]]((bibcite undef))[[math E]]\nx\n[[/math]] [[bibliography]]\n: bell : B.\n[[/bibliography]][[footnote]]n1[[/footnote]][[bibliography]]\n: bell : B.\n[[/bibliography]]", "tags": []}
+{"id": "fz-mix-038", "source": "[[math E]]\nx\n[[/math]] [[iftags +alpha]][[footnote]]gated[[/footnote]][[/iftags]]", "tags": ["Alpha", ""]}
+{"id": "fz-mix-039", "source": "((bibcite bell))[[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]][[footnoteblock]]", "tags": [""]}
+{"id": "fz-mix-040", "source": "[[footnote]]n1[[/footnote]][[bibliography]]\n: bell : B.\n[[/bibliography]]((bibcite bell))[[footnote]]@@r@@[[/footnote]][[bibliography]]\n: bell : B.\n[[/bibliography]][[footnote]][[code]]c[[/code]][[/footnote]]"}
+{"id": "fz-mix-041", "source": "((bibcite undef))text [[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]][[math E]]\nx\n[[/math]] [[footnoteblock]]", "tags": ["alpha", ""]}
+{"id": "fz-mix-042", "source": "((bibcite undef))[[bibliography]]\n: bell : B.\n[[/bibliography]]((bibcite bell))"}
+{"id": "fz-mix-043", "source": "[[footnote]][[code]]c[[/code]][[/footnote]][[footnoteblock]]((bibcite bell))[[[some-page|lab]]]"}
+{"id": "fz-mix-044", "source": "[[bibliography]]\n: bell : B.\n[[/bibliography]][[iftags +alpha]][[footnote]]gated[[/footnote]][[/iftags]]((bibcite bell))[[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]][[math E]]\nx\n[[/math]] "}
+{"id": "fz-mix-045", "source": "[[[some-page|lab]]][[[some-page|lab]]][[footnote]][[code]]c[[/code]][[/footnote]]", "tags": []}
+{"id": "fz-mix-046", "source": "[[[some-page|lab]]][[footnote]][[code]]c[[/code]][[/footnote]]", "tags": []}
+{"id": "fz-mix-047", "source": "[[footnote]]((bibcite bell))[[/footnote]][[math E]]\nx\n[[/math]] text [[bibliography]]\n: bell : B.\n[[/bibliography]]\n", "tags": []}
+{"id": "fz-mix-048", "source": "\n[[[some-page|lab]]][[math E]]\nx\n[[/math]] [[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]]text ((bibcite undef))", "tags": [""]}
+{"id": "fz-mix-049", "source": "[[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]][[footnote]]((bibcite bell))[[/footnote]]", "tags": ["Alpha"]}
+{"id": "fz-mix-050", "source": "[[bibliography]]\n: bell : B.\n[[/bibliography]]text \ntext "}
+{"id": "fz-mix-051", "source": "[[math E]]\nx\n[[/math]] text [[footnote]]n1[[/footnote]]text [[iftags +alpha]][[footnote]]gated[[/footnote]][[/iftags]][[iftags +alpha]][[footnote]]gated[[/footnote]][[/iftags]]", "tags": []}
+{"id": "fz-mix-052", "source": "[[[some-page|lab]]]text ", "tags": [""]}
+{"id": "fz-mix-053", "source": "[[math E]]\nx\n[[/math]] [[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]][[footnote]][[code]]c[[/code]][[/footnote]]\n"}
+{"id": "fz-mix-054", "source": "[[footnote]]n1[[/footnote]]((bibcite bell))[[iftags +alpha]][[footnote]]gated[[/footnote]][[/iftags]][[footnote]][[code]]c[[/code]][[/footnote]][[footnote]]n1[[/footnote]]"}
+{"id": "fz-mix-055", "source": "[[footnote]][[code]]c[[/code]][[/footnote]][[footnoteblock]][[footnote]]((bibcite bell))[[/footnote]][[footnote]]((bibcite bell))[[/footnote]]"}
+{"id": "fz-mix-056", "source": "[[footnote]][[code]]c[[/code]][[/footnote]]\n[[footnote]]((bibcite bell))[[/footnote]]text [[bibliography]]\n: bell : B.\n[[/bibliography]]"}
+{"id": "fz-mix-057", "source": "[[bibliography]]\n: bell : B.\n[[/bibliography]][[math E]]\nx\n[[/math]] [[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]]", "tags": ["", "alpha"]}
+{"id": "fz-mix-058", "source": "[[iftags +alpha]][[footnote]]gated[[/footnote]][[/iftags]]\n((bibcite bell))\n[[bibliography]]\n: bell : B.\n[[/bibliography]]", "tags": ["", "alpha"]}
+{"id": "fz-mix-059", "source": "((bibcite bell))[[footnote]][[code]]c[[/code]][[/footnote]][[footnoteblock]][[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]][[math E]]\nx\n[[/math]] [[footnote]]n1[[/footnote]]", "tags": ["beta", "Alpha"]}
+{"id": "fz-mix-060", "source": "[[footnote]]((bibcite bell))[[/footnote]][[bibliography]]\n: bell : B.\n[[/bibliography]]"}
+{"id": "fz-mix-061", "source": "\n[[footnote]][[code]]c[[/code]][[/footnote]][[bibliography]]\n: bell : B.\n[[/bibliography]][[bibliography]]\n: bell : B.\n[[/bibliography]]"}
+{"id": "fz-mix-062", "source": "[[footnoteblock]][[footnote]]((bibcite bell))[[/footnote]]((bibcite bell))[[iftags +alpha]][[footnote]]gated[[/footnote]][[/iftags]]((bibcite undef))", "tags": ["Alpha"]}
+{"id": "fz-mix-063", "source": "((bibcite bell))((bibcite undef))[[math E]]\nx\n[[/math]] [[iftags +alpha]][[footnote]]gated[[/footnote]][[/iftags]][[bibliography]]\n: bell : B.\n[[/bibliography]]", "tags": ["", ""]}
+{"id": "fz-mix-064", "source": "[[math E]]\nx\n[[/math]] ((bibcite bell))[[footnote]]n1[[/footnote]]", "tags": ["", ""]}
+{"id": "fz-mix-065", "source": "[[bibliography]]\n: bell : B.\n[[/bibliography]]((bibcite undef))", "tags": ["Alpha"]}
+{"id": "fz-mix-066", "source": "[[bibliography]]\n: bell : B.\n[[/bibliography]][[iftags +alpha]][[footnote]]gated[[/footnote]][[/iftags]]"}
+{"id": "fz-mix-067", "source": "[[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]][[[some-page|lab]]]"}
+{"id": "fz-mix-068", "source": "((bibcite bell))[[footnote]]((bibcite bell))[[/footnote]]((bibcite bell))[[bibliography]]\n: bell : B.\n[[/bibliography]]"}
+{"id": "fz-mix-069", "source": "[[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]][[footnote]]@@r@@[[/footnote]]"}
+{"id": "fz-mix-070", "source": "[[[some-page|lab]]][[math E]]\nx\n[[/math]] \n[[footnote]]@@r@@[[/footnote]][[bibliography]]\n: bell : B.\n[[/bibliography]]", "tags": []}
+{"id": "fz-mix-071", "source": "[[math E]]\nx\n[[/math]] ((bibcite undef))", "tags": ["Alpha", ""]}
+{"id": "fz-mix-072", "source": "[[iftags +alpha]][[footnote]]gated[[/footnote]][[/iftags]][[math E]]\nx\n[[/math]] ((bibcite bell))((bibcite bell))[[[some-page|lab]]]", "tags": []}
+{"id": "fz-mix-073", "source": "\n[[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]]((bibcite undef))text [[bibliography]]\n: bell : B.\n[[/bibliography]][[footnote]][[code]]c[[/code]][[/footnote]]", "tags": ["alpha", ""]}
+{"id": "fz-mix-074", "source": "[[iftags -alpha]][[footnote]]dropped[[/footnote]][[/iftags]][[footnote]]n1[[/footnote]]"}
+{"id": "fz-mix-075", "source": "[[footnote]]((bibcite bell))[[/footnote]]((bibcite undef))((bibcite undef))", "tags": ["Alpha", "beta"]}
+{"id": "fz-mix-076", "source": "[[footnoteblock]]text [[[some-page|lab]]]"}
+{"id": "fz-mix-077", "source": "[[footnote]]@@r@@[[/footnote]][[bibliography]]\n: bell : B.\n[[/bibliography]][[footnote]]n1[[/footnote]]\n[[[some-page|lab]]]text ", "tags": ["beta"]}
+{"id": "fz-mix-078", "source": "[[footnote]]((bibcite bell))[[/footnote]][[bibliography]]\n: bell : B.\n[[/bibliography]]\n[[footnote]]@@r@@[[/footnote]][[math E]]\nx\n[[/math]] "}
+{"id": "fz-mix-079", "source": "[[bibliography]]\n: bell : B.\n[[/bibliography]][[footnote]]((bibcite bell))[[/footnote]][[footnoteblock]][[footnoteblock]][[bibliography]]\n: bell : B.\n[[/bibliography]][[footnote]]@@r@@[[/footnote]]", "tags": ["alpha", "Alpha"]}

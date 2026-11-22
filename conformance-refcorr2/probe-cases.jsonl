@@ -1,0 +1,21 @@
+{"id": "diva-a1", "source": "[[div class=\"a\" id=\"b\" style=\"color:green\"]]\nX\n[[/div]]"}
+{"id": "diva-a2", "source": "[[div style=\"color:green\" id=\"b\" class=\"a\"]]\nX\n[[/div]]"}
+{"id": "diva-a3", "source": "[[div style=\"color:green\" class=\"a\" id=\"b\"]]\nX\n[[/div]]"}
+{"id": "diva-a4", "source": "[[div id=\"b\" style=\"color:green\" class=\"a\"]]\nX\n[[/div]]"}
+{"id": "diva-a5", "source": "[[div data-z=\"9\" type=\"t\" role=\"r\" style=\"color:red\" class=\"a\" id=\"b\"]]\nX\n[[/div]]"}
+{"id": "diva-a6", "source": "[[div data-z=\"9\" data-a=\"1\" class=\"a\"]]\nX\n[[/div]]"}
+{"id": "diva-a7", "source": "[[div type=\"t\" role=\"r\"]]\nX\n[[/div]]"}
+{"id": "diva-a8", "source": "[[div data-m=\"5\" id=\"b\"]]\nX\n[[/div]]"}
+{"id": "divn-s1", "source": "[[div class=a]]A\n[[/div]]"}
+{"id": "divn-s2", "source": "[[div class=\"a\"]]A\n[[/div]]"}
+{"id": "divn-s3", "source": "[[div class=a]]A\n[[div class=b]]B\n[[/div]]\n[[/div]]"}
+{"id": "divn-s4", "source": "[[div class=\"a\"]]A\n[[div class=\"b\"]]B\n[[div class=\"c\"]]C\n[[/div]]\n[[/div]]\n[[/div]]"}
+{"id": "divn-s5", "source": "[[div class=a]]A\n[[div class=b]]B\n[[div class=c]]C\n[[/div]]\n[[/div]]\n[[/div]]"}
+{"id": "divn-s6", "source": "[[div class=a]]A[[/div]]"}
+{"id": "divn-s7", "source": "[[/div]]\n[[/div]]"}
+{"id": "divn-s8", "source": "[[div class=a]]A\n[[div class=b]]B\n[[div class=c]]C\n[[/div]]\n[[/div]]"}
+{"id": "divn-s9", "source": "[[div class=\"a\"]]\n[[div class=\"b\"]]\n[[div class=\"c\"]]\nC\n[[/div]]\n[[/div]]\n[[/div]]"}
+{"id": "divn-s10", "source": "[[div class=a]]A\n[[div class=b]]B\n[[div class=c]]C\n[[/div]]\n[[/div]]\n[[/div]]\n[[/div]]"}
+{"id": "divn-r1", "source": "\n[[/div]]"}
+{"id": "divn-r2", "source": "[[/div]]"}
+{"id": "divn-r3", "source": "\nhello"}

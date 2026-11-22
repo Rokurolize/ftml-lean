@@ -1,0 +1,12 @@
+{
+ "adj-acute-before": {
+  "fullname": "muse-probe-suspect-email-adj-acute-before",
+  "source": "é u@example.com",
+  "action": "created"
+ },
+ "adj-acute-after": {
+  "fullname": "muse-probe-suspect-email-adj-acute-after",
+  "source": "u@example.com é",
+  "action": "created"
+ }
+}

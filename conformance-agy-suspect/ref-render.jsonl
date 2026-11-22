@@ -1,0 +1,32 @@
+{"id":"p02-uu-pair","output":"<p>a bold b<\/p>\n\n"}
+{"id":"p03-freelink-cafe","output":"<p><a class=\"newpage\" href=\"\/e\">caf\u00e9<\/a><\/p>\n\n"}
+{"id":"p04-freelink-polish","output":"<p><a class=\"newpage\" href=\"\/lo-z\">\u0141\u00f3d\u017a<\/a><\/p>\n\n"}
+{"id":"p05-tabview-attr","output":"<p>class=&quot;foo&quot; class=&quot;foo&quot;<script type=\"text\/javascript\" src=\"\/common--javascript\/yahooui\/element-beta-min.js\"><\/script>\n<script type=\"text\/javascript\" src=\"\/common--javascript\/yahooui\/tabview-min.js\"><\/script><div id=\"wiki-tabview-0\" class=\"yui-navset\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>A<\/em><\/a><\/li><\/ul><div class=\"yui-content\"><\/p>\n\n<div id=\"wiki-tab-0-0\"><p>body<\/p>\n\n<\/div><\/div><\/div><script type=\"text\/javascript\">\n(function(){\n\tvar tabView0 = new YAHOO.widget.TabView('wiki-tabview-0');\n})();\n<\/script>"}
+{"id":"p06-deflist-raw-term","output":"<dl>\n<dd>definition<\/dd>\n<\/dl>\n"}
+{"id":"p07-deflist-blank-merge","output":"<dl>\n<dt>t1<\/dt>\n<dd>d1<\/dd>\n<dt>t2<\/dt>\n<dd>d2<\/dd>\n<\/dl>\n"}
+{"id":"p08-strong-quad-follow","output":"<p><strong>** x **y<\/strong><\/p>\n\n"}
+{"id":"p09-color-invalid-unesc","output":"<p>##<i>|hello##<\/p>\n\n"}
+{"id":"p10-color-invalid-hoist","output":"<p>x ##a!b|hello## y<\/p>\n\n"}
+{"id":"p11-module-upper-nested","output":"<p>[[MODULE outer]]<br \/>\n[[module inner]]<br \/>\n[[\/module]]<\/p>\n\n"}
+{"id":"p12-module654-upper-empty","output":"<div class=\"error-block\">[[module <em>unknownmod<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"p13-rawold-trailing-apos","output":"<p>abc&#039;<\/p>\n\n"}
+{"id":"p14-span-double-u-id","output":"<p><span id=\"u-u-foo\">hi<\/span><\/p>\n\n"}
+{"id":"p15-typo-dollar-unit","output":"<p>10 $ and 10&#160;\u20ac<\/p>\n\n"}
+{"id":"p16-interwiki-unknown-html","output":"<p><i>hi<\/i><\/p>\n\n"}
+{"id":"p17-url-star-hash","output":"<p><a href=\"javascript:;\" target=\"_blank\">bare<\/a> and <a href=\"#foo\">named<\/a><\/p>\n\n"}
+{"id":"p18-email-html","output":"<p><span class=\"wiki-email\">moc.b|a#<i><\/span><\/p>\n\n"}
+
+{"id":"p20-gallery-target-leak","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"https:\/\/example.com\/1.png\" target=\"_blank\"><img src=\"https:\/\/example.com\/1.png\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"https:\/\/example.com\/2.png\" target=\"_blank\"><img src=\"https:\/\/example.com\/2.png\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"p21-date-ts-override","output":"<p><span class=\"odate time_0\">01 Jan 1970 00:00<\/span> and <span class=\"odate time_0\">01 Jan 1970 00:00<\/span><\/p>\n\n"}
+{"id":"p22-date-at-forge","output":"<p><span class=\"odate time_0 format_%FF123%FF\">01 Jan 1970 00:00<\/span><\/p>\n\n"}
+{"id":"p23-div-attr-unesc","output":"<div data-x=\"a\"b\"><p>hi<\/p>\n\n<\/div>"}
+{"id":"p24-image-pct-typo","output":"<p>A <img src=\"%%%foo%%\" alt=\"%%%foo%%\" class=\"image\" \/> B <a href=\"\/local--files\/\/%%foo%%\"><img src=\"\/local--resized-images\/\/%%foo%%\/medium.jpg\" alt=\"%%foo%%\" class=\"image\" \/><\/a> C<\/p>\n\n"}
+{"id":"p25-image-jpeg-resize","output":"<img src=\"\/local--files\/page\/a.jpg\" alt=\"a.jpg\" class=\"image\" \/> and <a href=\"\/local--files\/page\/a.jpeg\"><img src=\"\/local--resized-images\/page\/a.jpeg\/medium.jpg\" alt=\"a.jpeg\" class=\"image\" \/><\/a>"}
+{"id":"p26-size-invalid-inner","output":"<p>[[size large]]outer[[size bad]]inner[[\/size]]tail[[\/size]]<\/p>\n\n"}
+{"id":"p27-raw-triple-open-only","output":"<p>A hello B<\/p>\n\n"}
+{"id":"p28-iftags-trail-comma","output":"<p>A B<\/p>\n\n"}
+{"id":"p29-apos-freelink-url","output":"<p><a class=\"newpage\" href=\"\/nonexist\">it&#039;s<\/a> <a href=\"https:\/\/example.com\">it&#039;s<\/a><\/p>\n\n"}
+{"id":"p30-listblocks-upper","output":"<p>[[UL]]<br \/>\n[[LI]]Case[[\/LI]]<br \/>\n[[\/UL]]<\/p>\n\n"}
+{"id":"p31-div-sameline","output":"<p>[[div]]hello[[\/div]]<\/p>\n\n"}
+{"id":"p32-bq-lone-nospace","output":"<p>A<\/p>\n\n<p>B<\/p>\n\n"}
+{"id":"p01-fffd","error":"Error: Call to a member function token() on null"}

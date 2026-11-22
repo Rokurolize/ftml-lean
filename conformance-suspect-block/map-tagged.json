@@ -1,0 +1,62 @@
+{
+ "if-plain-plus-tagged": {
+  "fullname": "muse-probe-suspect-block-if-plain-plus-tagged",
+  "source": "[[iftags +alpha]]KEEP[[/iftags]]\nX",
+  "action": "publish-tags"
+ },
+ "if-trail-plus-tagged": {
+  "fullname": "muse-probe-suspect-block-if-trail-plus-tagged",
+  "source": "[[iftags +alpha,]]KEEP[[/iftags]]\nX",
+  "action": "publish-tags"
+ },
+ "if-trail-bare-tagged": {
+  "fullname": "muse-probe-suspect-block-if-trail-bare-tagged",
+  "source": "[[iftags alpha,]]KEEP[[/iftags]]\nX",
+  "action": "publish-tags"
+ },
+ "if-lead-comma-tagged": {
+  "fullname": "muse-probe-suspect-block-if-lead-comma-tagged",
+  "source": "[[iftags ,+alpha]]KEEP[[/iftags]]\nX",
+  "action": "publish-tags"
+ },
+ "if-double-comma-tagged": {
+  "fullname": "muse-probe-suspect-block-if-double-comma-tagged",
+  "source": "[[iftags +alpha,,]]KEEP[[/iftags]]\nX",
+  "action": "publish-tags"
+ },
+ "if-trail-minus-tagged": {
+  "fullname": "muse-probe-suspect-block-if-trail-minus-tagged",
+  "source": "[[iftags -beta,]]KEEP[[/iftags]]\nX",
+  "action": "publish-tags"
+ },
+ "if-trail-space-tagged": {
+  "fullname": "muse-probe-suspect-block-if-trail-space-tagged",
+  "source": "[[iftags +alpha, ]]KEEP[[/iftags]]\nX",
+  "action": "publish-tags"
+ },
+ "if-dangling-minus-tagged": {
+  "fullname": "muse-probe-suspect-block-if-dangling-minus-tagged",
+  "source": "[[iftags -]]KEEP[[/iftags]]\nX",
+  "action": "publish-tags"
+ },
+ "if-case-plus-tagged": {
+  "fullname": "muse-probe-suspect-block-if-case-plus-tagged",
+  "source": "[[iftags +ALPHA]]KEEP[[/iftags]]\nX",
+  "action": "publish-tags"
+ },
+ "if-nospace-tagged": {
+  "fullname": "muse-probe-suspect-block-if-nospace-tagged",
+  "source": "[[iftags+alpha]]KEEP[[/iftags]]\nX",
+  "action": "publish-tags"
+ },
+ "if-newline-tagged": {
+  "fullname": "muse-probe-suspect-block-if-newline-tagged",
+  "source": "[[iftags +alpha\n+beta]]KEEP[[/iftags]]\nX",
+  "action": "publish-tags"
+ },
+ "if-nested-tagged": {
+  "fullname": "muse-probe-suspect-block-if-nested-tagged",
+  "source": "[[iftags +alpha]]A[[iftags -beta]]B[[/iftags]]C[[/iftags]]\nX",
+  "action": "publish-tags"
+ }
+}

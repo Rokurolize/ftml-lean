@@ -1,0 +1,42 @@
+{
+ "gap-tab": {
+  "fullname": "muse-probe-suspect-email-gap-tab",
+  "source": "[u@example.com\tLabel]",
+  "action": "created"
+ },
+ "gap-nbsp": {
+  "fullname": "muse-probe-suspect-email-gap-nbsp",
+  "source": "[u@example.com Label]",
+  "action": "created"
+ },
+ "gap-three": {
+  "fullname": "muse-probe-suspect-email-gap-three",
+  "source": "[u@example.com   Label]",
+  "action": "created"
+ },
+ "gap-trail": {
+  "fullname": "muse-probe-suspect-email-gap-trail",
+  "source": "[u@example.com Label ]",
+  "action": "created"
+ },
+ "gap-two-trail": {
+  "fullname": "muse-probe-suspect-email-gap-two-trail",
+  "source": "[u@example.com  Label ]",
+  "action": "created"
+ },
+ "gap-control": {
+  "fullname": "muse-probe-suspect-email-gap-control",
+  "source": "[u@example.com Label]",
+  "action": "created"
+ },
+ "frame-trail-inline": {
+  "fullname": "muse-probe-suspect-email-frame-trail-inline",
+  "source": "[u@example.com  Label] X",
+  "action": "created"
+ },
+ "frame-trail-bracket": {
+  "fullname": "muse-probe-suspect-email-frame-trail-bracket",
+  "source": "([u@example.com  Label])",
+  "action": "created"
+ }
+}

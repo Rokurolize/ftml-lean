@@ -1,0 +1,31 @@
+/home/hatch/workspace/ftml-lean-equivalence-r3-15/conformance-r315/retirement-restricted.jsonl rc: 0 bytes: 24532 stderr bytes: 0
+/home/hatch/workspace/ftml-lean-equivalence-r3-15/conformance-r315/retirement-full.jsonl rc: 0 bytes: 24701 stderr bytes: 0
+b03-continuation-lines [R3.9 B] over 2 rules: RETIRED (expected RETIRED) ok
+t35-30-line-continuation [R3.10 B] over 2 rules: RETIRED (expected RETIRED) ok
+n38-19-before-hr [R3.11 B] over 3 rules: RETIRED (expected RETIRED) ok
+n38-20-after-hr [R3.11 B] over 3 rules: RETIRED (expected RETIRED) ok
+n38-43-underscore-break [R3.11 B] over 3 rules: RETIRED (expected RETIRED) ok
+n38-44-underscore-doubled [R3.11 B] over 3 rules: RETIRED (expected RETIRED) ok
+pg33-heading-above [R3.11 B] over 3 rules: RETIRED (expected RETIRED) ok
+pg34-heading-below [R3.11 B] over 3 rules: RETIRED (expected RETIRED) ok
+pg43-horiz-between [R3.11 B] over 3 rules: RETIRED (expected RETIRED) ok
+pg46-mixed-blocks [R3.11 B] over 3 rules: RETIRED (expected RETIRED) ok
+pg49-only-heading [R3.11 B] over 3 rules: RETIRED (expected RETIRED) ok
+x23-text-heading-text [R3.11 B] over 3 rules: RETIRED (expected RETIRED) ok
+x28-heading-text-list [R3.11 B] over 3 rules: RETIRED (expected RETIRED) ok
+x2-05-scored-span-then-heading [R3.11 B] over 3 rules: RETIRED (expected RETIRED) ok
+s33 [R3.13 B] over 5 rules: RETIRED (expected RETIRED) ok
+sup33 [R3.14 B] over 5 rules: RETIRED (expected RETIRED) ok
+typo10 [R3.14 C] over 43 rules: RETIRED (expected RETIRED) ok
+typo12 [R3.14 C] over 43 rules: RETIRED (expected RETIRED) ok
+typo14 [R3.14 C] over 43 rules: RETIRED (expected RETIRED) ok
+typo16 [R3.14 C] over 43 rules: RETIRED (expected RETIRED) ok
+typo18 [R3.14 C] over 43 rules: RETIRED (expected RETIRED) ok
+lb35 [R3.9 B (Note)] over 2 rules: STILL OPEN (expected STILL OPEN) ok
+smoke-include [R3.11 B (Include)] over 3 rules: STILL OPEN (expected STILL OPEN) ok
+s59 [R3.13 C (Anchor)] over 35 rules: STILL OPEN (expected STILL OPEN) ok
+u50 [R3.13 C (Anchor)] over 35 rules: STILL OPEN (expected STILL OPEN) ok
+sup59 [R3.14 C (Anchor)] over 43 rules: STILL OPEN (expected STILL OPEN) ok
+typo69 [R3.14 C (Anchor)] over 43 rules: STILL OPEN (expected STILL OPEN) ok
+retired: 21 ['b03-continuation-lines', 't35-30-line-continuation', 'n38-19-before-hr', 'n38-20-after-hr', 'n38-43-underscore-break', 'n38-44-underscore-doubled', 'pg33-heading-above', 'pg34-heading-below', 'pg43-horiz-between', 'pg46-mixed-blocks', 'pg49-only-heading', 'x23-text-heading-text', 'x28-heading-text-list', 'x2-05-scored-span-then-heading', 's33', 'sup33', 'typo10', 'typo12', 'typo14', 'typo16', 'typo18']
+still open: 6 ['lb35', 'smoke-include', 's59', 'u50', 'sup59', 'typo69']

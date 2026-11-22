@@ -1,0 +1,16 @@
+{"id": "iw-empty4", "source": "[wikipedia:X a@@@@b]"}
+{"id": "iw-empty6", "source": "[wikipedia:X a@@@@@@b]"}
+{"id": "iw-nonempty", "source": "[wikipedia:X a@@x@@b]"}
+{"id": "date-empty4", "source": "[[date 0 format=\"a@@@@b\"]]"}
+{"id": "date-empty6", "source": "[[date 0 format=\"a@@@@@@b\"]]"}
+{"id": "date-nonempty", "source": "[[date 0 format=\"a@@x@@b\"]]"}
+{"id": "date-index", "source": "@@x@@ [[date 0 format=\"q@@@@r\"]]"}
+{"id": "xl-basic", "source": "A @@x\n@@ B"}
+{"id": "xl-close3", "source": "A @@x\n@@@ B"}
+{"id": "xl-open3", "source": "A @@@x\n@@ B"}
+{"id": "xl-two-nl", "source": "A @@x\n\n@@ B"}
+{"id": "bare-3", "source": "A @@@ B"}
+{"id": "bare-6", "source": "A @@@@@@ B"}
+{"id": "trail-4", "source": "A @@x@@@@ B"}
+{"id": "dl-empty4", "source": ": @@@@ : def"}
+{"id": "fn-empty4", "source": "[[footnote]]a@@@@b[[/footnote]]"}

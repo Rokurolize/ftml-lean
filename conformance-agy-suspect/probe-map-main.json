@@ -1,0 +1,157 @@
+{
+ "p02-uu-pair": {
+  "fullname": "muse-probe-agy-suspect-p02-uu-pair",
+  "source": "a üü**bold**üü b",
+  "action": "created"
+ },
+ "p03-freelink-cafe": {
+  "fullname": "muse-probe-agy-suspect-p03-freelink-cafe",
+  "source": "[[[café]]]",
+  "action": "created"
+ },
+ "p04-freelink-polish": {
+  "fullname": "muse-probe-agy-suspect-p04-freelink-polish",
+  "source": "[[[Łódź]]]",
+  "action": "created"
+ },
+ "p05-tabview-attr": {
+  "fullname": "muse-probe-agy-suspect-p05-tabview-attr",
+  "source": "[[tabview class=\"foo\"]]\n[[tab A]]\nbody\n[[/tab]]\n[[/tabview]]",
+  "action": "created"
+ },
+ "p06-deflist-raw-term": {
+  "fullname": "muse-probe-agy-suspect-p06-deflist-raw-term",
+  "source": ": @@term@@ : definition",
+  "action": "created"
+ },
+ "p07-deflist-blank-merge": {
+  "fullname": "muse-probe-agy-suspect-p07-deflist-blank-merge",
+  "source": ": t1 : d1\n\n: t2 : d2",
+  "action": "created"
+ },
+ "p08-strong-quad-follow": {
+  "fullname": "muse-probe-agy-suspect-p08-strong-quad-follow",
+  "source": "**** x **y**",
+  "action": "created"
+ },
+ "p09-color-invalid-unesc": {
+  "fullname": "muse-probe-agy-suspect-p09-color-invalid-unesc",
+  "source": "##<i>|hello##",
+  "action": "created"
+ },
+ "p10-color-invalid-hoist": {
+  "fullname": "muse-probe-agy-suspect-p10-color-invalid-hoist",
+  "source": "x##a!b| hello ##y",
+  "action": "created"
+ },
+ "p11-module-upper-nested": {
+  "fullname": "muse-probe-agy-suspect-p11-module-upper-nested",
+  "source": "[[MODULE outer]]\n[[module inner]]\n[[/module]]",
+  "action": "created"
+ },
+ "p12-module654-upper-empty": {
+  "fullname": "muse-probe-agy-suspect-p12-module654-upper-empty",
+  "source": "[[MODULE654 unknownmod]]\n[[/module]]",
+  "action": "created"
+ },
+ "p13-rawold-trailing-apos": {
+  "fullname": "muse-probe-agy-suspect-p13-rawold-trailing-apos",
+  "source": "``abc'``",
+  "action": "created"
+ },
+ "p14-span-double-u-id": {
+  "fullname": "muse-probe-agy-suspect-p14-span-double-u-id",
+  "source": "[[span id=\"u-foo\"]]hi[[/span]]",
+  "action": "created"
+ },
+ "p15-typo-dollar-unit": {
+  "fullname": "muse-probe-agy-suspect-p15-typo-dollar-unit",
+  "source": "10 $ and 10 €",
+  "action": "created"
+ },
+ "p16-interwiki-unknown-html": {
+  "fullname": "muse-probe-agy-suspect-p16-interwiki-unknown-html",
+  "source": "[nosuchwiki:Mallard <i>hi</i>]",
+  "action": "created"
+ },
+ "p17-url-star-hash": {
+  "fullname": "muse-probe-agy-suspect-p17-url-star-hash",
+  "source": "[*# bare] and [*#foo named]",
+  "action": "created"
+ },
+ "p18-email-html": {
+  "fullname": "muse-probe-agy-suspect-p18-email-html",
+  "source": "[a@b.com >i<]",
+  "action": "created"
+ },
+ "p19-email-utf8": {
+  "fullname": "muse-probe-agy-suspect-p19-email-utf8",
+  "source": "[a@b.com café]",
+  "action": "created"
+ },
+ "p20-gallery-target-leak": {
+  "fullname": "muse-probe-agy-suspect-p20-gallery-target-leak",
+  "source": "[[gallery]]\n: *https://example.com/1.png\n: https://example.com/2.png\n[[/gallery]]",
+  "action": "created"
+ },
+ "p21-date-ts-override": {
+  "fullname": "muse-probe-agy-suspect-p21-date-ts-override",
+  "source": "[[date  timestamp=\"0\"]] and [[date 86400 timestamp=\"0\"]]",
+  "action": "created"
+ },
+ "p22-date-at-forge": {
+  "fullname": "muse-probe-agy-suspect-p22-date-at-forge",
+  "source": "[[date 0 format=\"@@@@@@123@@@@@@\"]]",
+  "action": "created"
+ },
+ "p23-div-attr-unesc": {
+  "fullname": "muse-probe-agy-suspect-p23-div-attr-unesc",
+  "source": "[[div data-x=\"a\\\"b\"]]\nhi\n[[/div]]",
+  "action": "created"
+ },
+ "p24-image-pct-typo": {
+  "fullname": "muse-probe-agy-suspect-p24-image-pct-typo",
+  "source": "A [[image %%%foo%%]] B [[image %%foo%%]] C",
+  "action": "created"
+ },
+ "p25-image-jpeg-resize": {
+  "fullname": "muse-probe-agy-suspect-p25-image-jpeg-resize",
+  "source": "[[image page/a.jpg]] and [[image page/a.jpeg]]",
+  "action": "created"
+ },
+ "p26-size-invalid-inner": {
+  "fullname": "muse-probe-agy-suspect-p26-size-invalid-inner",
+  "source": "[[size large]]outer[[size bad]]inner[[/size]]tail[[/size]]",
+  "action": "created"
+ },
+ "p27-raw-triple-open-only": {
+  "fullname": "muse-probe-agy-suspect-p27-raw-triple-open-only",
+  "source": "A @@@hello B",
+  "action": "created"
+ },
+ "p28-iftags-trail-comma": {
+  "fullname": "muse-probe-agy-suspect-p28-iftags-trail-comma",
+  "source": "A [[iftags -foo,]]KEPT[[/iftags]] B",
+  "action": "created"
+ },
+ "p29-apos-freelink-url": {
+  "fullname": "muse-probe-agy-suspect-p29-apos-freelink-url",
+  "source": "[[[nonexist|it's]]] [https://example.com it's]",
+  "action": "created"
+ },
+ "p30-listblocks-upper": {
+  "fullname": "muse-probe-agy-suspect-p30-listblocks-upper",
+  "source": "[[UL]]\n[[LI]]Case[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "p31-div-sameline": {
+  "fullname": "muse-probe-agy-suspect-p31-div-sameline",
+  "source": "[[div]]hello[[/div]]",
+  "action": "created"
+ },
+ "p32-bq-lone-nospace": {
+  "fullname": "muse-probe-agy-suspect-p32-bq-lone-nospace",
+  "source": "A\n\n>nospace\n\nB",
+  "action": "created"
+ }
+}

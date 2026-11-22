@@ -1,0 +1,26 @@
+{
+  "total": 266,
+  "all_three_agree": 249,
+  "oracle_eq_live": 249,
+  "model_eq_live": 255,
+  "oracle_eq_model": 254,
+  "disagreements": [
+    "p29-unwrap-image-table-dl",
+    "p34-div-tag-attr-whitespace",
+    "in2-x48",
+    "con-x21-div-in-coll-in-tab",
+    "con-x22-coll-in-tab",
+    "con-x23-div-in-tab",
+    "con-x24-three-nested-divs",
+    "con-x25-tab-in-coll-in-div",
+    "con-x29-footnote-in-tab",
+    "lst-x08-list-in-tab",
+    "lst-x13-deflist-in-bib",
+    "lst-x14-deflist-multi-bib",
+    "lst-x15-deflist-bib-colon",
+    "lst-x27-deflist-heading",
+    "tab-x06-table-in-quote-head",
+    "tab-x16-two-adv-adjacent",
+    "tab-x44-malformed-adv-opener"
+  ]
+}

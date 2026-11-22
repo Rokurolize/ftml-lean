@@ -1,0 +1,65 @@
+# REPORT-PUBDOCS — the reference's publication docs pass (2026-11-22)
+
+This lane changed documentation only. No PHP file, no Lean file and no conformance artifact was edited, moved or regenerated; no ftml was touched, no cargo was run, no repository-local git identity or identity environment variable was set, and no Lean build was invoked. Every new paragraph is written as a single line. Each deliverable was written to disk as its part completed: the two pre-edit copies first, then the edited documents, then this report.
+
+## Targets and the layout check
+
+The brief's "docs/INVENTORY.md" had to be mapped onto this tree before editing. STATE.md:87 records the published repository's docs as "docs (INVENTORY.md, r1-compat.patch)" with the README at the root. Direct inspection of the staging checkout at `~/.local/state/wikijump/muse-bhl/wikidot-php-reference` confirmed that its root `README.md` is byte-identical to this tree's `REPO-README.md` (SHA-256 9a9b7137…), and its `docs/INVENTORY.md` is byte-identical to this tree's `ref-php/INVENTORY.md` (SHA-256 429adb7b…). The root `INVENTORY.md` of this tree is a different document — the ftml formalization inventory, 10529 bytes — and is not the publication doc, so it was left untouched.
+
+Pre-edit copies were saved before the first change and verified byte-identical to their sources: `REPO-README.md.before-pubdocs` and `ref-php/INVENTORY.md.before-pubdocs`.
+
+## The environment dependency note (the primary debt)
+
+The R-UFFFD-1 correction's dependency is now written where a runner will meet it, in both publication docs.
+
+1. `REPO-README.md`, "Running it": added the requirement for the system HTML Tidy binary at `/usr/bin/tidy` (5.8.0), the reason (the PHP tidy extension is not loaded, so `Text/Wiki.php` shells out), the exact consequence of a missing or unusable binary (the unrepaired fragment is returned and U+FFFD shapes differ from the live captures), and the 5.4/5.8 equivalence-class caveat for Stage 2 with its driving conditions. Evidence: `ref-php/text-wiki/Text/Wiki.php:898` (`renderLiteralUfffdRecovery`), `:1069-1089` (`purifyRecoveredHtml`, `$tidy = '/usr/bin/tidy'`, `shell_exec`, and both `return $code` fallbacks), `:1126-1131` (the literal-U+FFFD dispatch); `conformance-ufffd/CORRECTION-R-UFFFD-1.md:1` (the invocation and the repair's five observable effects); `GAP-LEDGER.md:137` ("a disclosed harness-environment dependency of the reference from this correction on"), `:148` and `:164` (the 5.4-or-5.8 class, the no-`tidyCleanAndRepair` and entity-preservation conditions); `BRIEF-PUBDOCS.md:11` and `COMPLETION-WBS.md:14` (the extension-not-loaded statement). A read-only runtime check on this host confirmed PHP 8.5.4 with `extension_loaded("tidy")` false and `/usr/bin/tidy -v` reporting 5.8.0; the code and the records carry the claim independently of that check.
+
+2. `ref-php/INVENTORY.md` (public `docs/INVENTORY.md`), new "Runtime environment" subsection under "Inventory facts": the same dependency, with the exact tidy flags, the fallback, the correction-record pointer and the library-class caveat. Evidence as above; this is the doc that already carries environment facts (its "R1 DONE" section names PHP 8.5.4 and the reconstructed root), so the brief's condition for writing there is met.
+
+## Currency audit — every fix and its evidence
+
+All line references to the README below are to its R2-era text before this pass. The README's last upstream change was commit 8f5530e (snapshot-15), confirmed by `git log -- README.md` in the staging checkout; the inventory's last was cf267d9 (snapshot-1). Everything after those tags was stale by construction.
+
+Correction-status and layout fixes in `REPO-README.md`:
+
+- **Include, quoted consumption removed.** The old row promised "quoted-include consumption". `ref-php/text-wiki/Text/Wiki/Parse/Default/Include.php:57-81` records the AUDIT-G13 correction: the quoted consumption path is removed and a quote-prefixed candidate is skipped; the row now says so and also records the narrowed site gate, the end of slug normalization, the resumption fix and the AUDIT-G14B raw-pipe argument split. Evidence additionally: staging tag snapshot-21 ("AUDIT corrections to the Include rule: raw-pipe argument splitting, no quoted consumption, live site handling and resumption").
+- **Interwiki "needed no rule change" withdrawn.** `conformance-refphp/inline1/interwiki/CORRECTION-AGY-INTERWIKI-FALLBACK.md:7` and `REPORT-REFCORR4.md:21` show the render fallback now escaped with ENT_COMPAT. The row was reworded to limit the no-change claim to R2.
+- **Image scheme anchoring.** `conformance-refphp/para/image/CORRECTION-CSUSPECT-SERVING-3.md:11`, `REPORT-REFCORR3.md:11`: a scheme appearing only later in `link=` leaves the opener literal. Added to the Image row.
+- **Tableadv attribute rank, aria/align and case sensitivity.** `conformance-refphp/table/tableadv/CORRECTION-SUSPECT-LISTTABLE-CR45.md:7,11`, `REPORT-REFCORR3.md:29`. Added to the Table/Tableadv row.
+- **The "no [[ul]] rule" gap closed.** The old List row said "one gap is the reference's own: it has no rule yet for ftml's explicit [[ul]] block form". `REPORT-REFGAPS.md:26` records Gap 2 (M46) closed, `ref-php/.../Parse/Default/List.php:260-334` implements `parseExplicitLists`, and `CORRECTION-CSUSPECT-G15-1.md:11` and `CORRECTION-SUSPECT-LISTTABLE-CR45.md:11` supply the post-follower and empty-item fixpoint. The row now states the implemented behavior.
+- **Div order, vanished pair and escaping; Collapsible labels.** `REPORT-REFCORR2.md:11,23` (id, class, style, role, type, then data-*; the `'vanished'` pair bounding later text), `REPORT-REFCORR4.md:21` (ENT_COMPAT on every value and placeholder clearing), `CORRECTION-CSUSPECT-INTERACT-1.md:11` (labels keep apostrophes raw). The Container row was rewritten accordingly.
+- **Toc NUL sentinel.** `CORRECTION-CSUSPECT-XRULE-4.md:3,7` and `REPORT-REFCORR4.md:7`: the authorable üü sentinel was replaced by an unforgeable NUL pair in `Toc.php` and `Text/Wiki.php`. Added to the Blockquote/Heading/Toc row, which also discharges C-SUSPECT-RAWHEAD-5.
+- **Freelink's two later corrections.** `REPORT-REFCORR3.md:9` (starred URL keeps `target="_blank"`) and `REPORT-REFCORR4.md:7` (a Raw placeholder in a triple-link target leaves the form literal). "seven corrections" became "seven R2 corrections and two more in later rounds" and the two were enumerated.
+- **Math type validation.** `CORRECTION-CSUSPECT-SERVING-1.md:3,11` and `REPORT-REFCORR3.md:7` (absent type defaults to align, invalid types get live's error block while the counter advances, `\begin{TYPE}` envelopes). Added to the Iftags/Comment/Iframe/Date/Math row.
+- **Module placeholder-bearing body.** `CORRECTION-CSUSPECT-XRULE-3.md:7` and `REPORT-REFCORR4.md:7` (the untrimmed body and literal closer are re-emitted after the unknown-module error). Added to the Module row.
+- **Raw scanner and Form placeholders; the open Raw token case.** `REPORT-REFCORR3.md:17` (four RAWHEAD fixes), `REPORT-REFCORR4.md:7` (Form strips delimiter-wrapped placeholders), `GAP-LEDGER.md:154` (one empty Raw token for 4+ @, C-RAW-COMPOSITE-1 routed to REFCORR5). The Form/Raw row now carries the refined mechanism and states that the 24-probe byte-exact claim was the R2 baseline, with the token case recorded as an open item.
+- **R1 bridge note.** The ENT_SUBSTITUTE bridge's invalid-byte question is now tied to the U+FFFD collision work (`GAP-LEDGER.md:129`, the correction record), instead of being called an open item.
+- **Blanket validation claim qualified.** "All 68 active rules: validated" became "validated at R2, with later rounds recorded below", with the reason that later probes found divergences in rules the table had declared done (`REPORT-REFCORR2.md:9,17`, `REPORT-REFCORR3.md`, `REPORT-REFCORR4.md`).
+- **New "Corrections after R2" section.** Lists snapshots 16-17, 19-20, 21-22, 24, 25, 26 and 27 by round from the staging git tags and the records, and notes snapshot-28 in preparation from `GAP-LEDGER.md:175` ("publication as snapshot-28") and `COMPLETION-WBS.md:11` ("publish as snapshot-28 … coordinator harvest and verification in progress"). This also covers Embed, which had no status row although `REPORT-REFCORR4.md:14-16` corrected its render and allowlist (76 to 75 patterns). The original README had no tag history at all; the new section records only the current published tag and the next one, rather than inventing a release log.
+- **Correction-record locations.** "conformance/: the differential records behind every correction" and the "disagreements … cataloged in conformance/" claim were extended to `conformance-ufffd/`, which holds `CORRECTION-R-UFFFD-1.md` and the after-renders in the published staging tree. The staging checkout's `conformance/` holds 25 CORRECTION records in family directories; there is no published `conformance-refcorr*/`.
+- **Text_Highlighter and the runtime root.** The layout entry now names the 2007-06-03 PEAR snapshot (upstream 0fab9c0) and its external-boundary status, with the nine excluded highlighted cases. Evidence: `GAP-LEDGER.md:146`, `:128`, `REPORT-REFCORR4.md:37`.
+- **Layout pointer to `docs/INVENTORY.md`** expanded to "correction plan, per-phase record, and runtime prerequisites", matching the new section in that document.
+- **New "Bundled and external code" section.** Reconciles the README's account with the EXTERNAL LIBRARY INVENTORY: PHPMailer 2.0.0 rc1 (SMTP rc1, POP3 rc2) as mail transport only and not the Text_Wiki Email mechanism, Text_Highlighter's snapshot as a named external boundary, and libtidy behind `purifyHtml` as the 5.4-or-5.8-class external oracle. Evidence: `GAP-LEDGER.md:146` and `:164`, `REPORT-REFCORR4.md:14-16`, `BRIEF-REFCORR5.md:17`. The existing Licenses paragraph needed no change.
+
+Currency fixes in `ref-php/INVENTORY.md` (public `docs/INVENTORY.md`):
+
+- A currency note at the top: R0/R1/R2 plan status, validation at R2, the pointer to the README's post-R2 section, snapshot-27 published and snapshot-28 queued, and the location of the new runtime section.
+- The "Runtime environment" subsection described above.
+- Plan phases R1, R2 and R3 marked with their actual outcomes (R1 DONE at snapshot-1, R2 DONE at snapshot-15 with all 68 rules, R3 reaching all 68 parse rules at CAPSTONE and the render tier continuing in the R4 records). Evidence: `STATE.md:87,322,324`, `GAP-LEDGER.md:50`.
+- The findings-discipline bullet gained the one recorded exception where a live-vs-reference divergence was adjudicated as tidy-side and left the reference unchanged (`ADJUDICATION-CSUSPECT-CODEEMBED-9.md:11`, `REPORT-REFCORR4.md:14`).
+- The ENT_SUBSTITUTE bridge's "open R2 question" was replaced by the U+FFFD resolution and its tidy dependency pointer (`GAP-LEDGER.md:129,144,145`).
+- The Include R2 observation's "which parts match live is adjudication work" was marked as historical, with the current corrected/validated state and the AUDIT-G13/G14B refinements (`Include.php:57-81`, the audit records under `conformance-refphp/block/audit/` and `conformance-refphp/inline1/`, and staging tag snapshot-21).
+- A new "Currency notes (2026-11-22)" section recording the re-verified counts, the publication state, the correction-record locations in both trees, and the external-library facts.
+
+## Audit items checked with no change owed
+
+- **Rule inventory and counts.** Verified firsthand: 78 real parse rule files in the fossil, in the working copy and in the staging checkout (extra directory entries are `.before-*` backups, not rules); 84 Xhtml render rule files; 68 active entries in `Text/Wiki.php`'s `$rules` list, unchanged across REFCORR2-4 (`REPORT-REFCORR3.md:3`, `REPORT-REFCORR4.md:31,33`, `GAP-LEDGER.md:50`). The README's "roughly 70" is a statement about the upstream fossil, and the inventory's "about 70" is the R0 approximation beside its exact 68; neither is a numeric drift, and the inventory's currency note now says so explicitly.
+- **Snapshot history.** The published tags run snapshot-1 through snapshot-27; `GAP-LEDGER.md:166` records snapshot-27 at commit a86c2ff and `GAP-LEDGER.md:175` plus `COMPLETION-WBS.md:11` record snapshot-28 as queued. STATE.md:340 still phrases snapshot-27 as pending, but that is a programme-record drift inside STATE.md, not a publication doc in this lane's scope, so it was not edited.
+- **Licenses.** No claim contradicted by the external-library inventory; the new section is additive.
+- **Other records.** No other documentation file was changed; the root `INVENTORY.md` is a different document as explained above.
+
+## Releases and status
+
+Deliverables on disk: the edited `REPO-README.md` (69 lines) and `ref-php/INVENTORY.md` (76 lines); the byte-identical pre-edit copies `REPO-README.md.before-pubdocs` and `ref-php/INVENTORY.md.before-pubdocs`; and this report. Live Wikidot behavior remained definitional throughout; nothing was inferred from the fossil's authority where a live-derived record existed, and every stale claim above was replaced with wording traceable to a named record.
+
+COMPLETE

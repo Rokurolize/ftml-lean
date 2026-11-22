@@ -1,0 +1,42 @@
+{
+ "addr-leading-dash": {
+  "fullname": "muse-probe-suspect-email-addr-leading-dash",
+  "source": "u@-example.com",
+  "action": "created"
+ },
+ "addr-plus": {
+  "fullname": "muse-probe-suspect-email-addr-plus",
+  "source": "u+tag@example.com",
+  "action": "created"
+ },
+ "addr-tld-digit": {
+  "fullname": "muse-probe-suspect-email-addr-tld-digit",
+  "source": "u@example.1",
+  "action": "created"
+ },
+ "addr-upper": {
+  "fullname": "muse-probe-suspect-email-addr-upper",
+  "source": "U@EXAMPLE.COM",
+  "action": "created"
+ },
+ "addr-dots": {
+  "fullname": "muse-probe-suspect-email-addr-dots",
+  "source": "a.b@example.com",
+  "action": "created"
+ },
+ "addr-trailing-dot": {
+  "fullname": "muse-probe-suspect-email-addr-trailing-dot",
+  "source": "u@example.com.",
+  "action": "created"
+ },
+ "addr-kelvin": {
+  "fullname": "muse-probe-suspect-email-addr-kelvin",
+  "source": "K@example.com",
+  "action": "created"
+ },
+ "addr-acute-local": {
+  "fullname": "muse-probe-suspect-email-addr-acute-local",
+  "source": "éu@example.com",
+  "action": "created"
+ }
+}

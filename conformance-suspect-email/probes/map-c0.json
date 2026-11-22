@@ -1,0 +1,42 @@
+{
+ "lbl-eacute": {
+  "fullname": "muse-probe-suspect-email-lbl-eacute",
+  "source": "[u@example.com café]",
+  "action": "created"
+ },
+ "lbl-emoji": {
+  "fullname": "muse-probe-suspect-email-lbl-emoji",
+  "source": "[u@example.com A😀B]",
+  "action": "created"
+ },
+ "lbl-cjk": {
+  "fullname": "muse-probe-suspect-email-lbl-cjk",
+  "source": "[u@example.com 日本]",
+  "action": "created"
+ },
+ "lbl-mixed": {
+  "fullname": "muse-probe-suspect-email-lbl-mixed",
+  "source": "[u@example.com éX]",
+  "action": "created"
+ },
+ "lbl-acute-only": {
+  "fullname": "muse-probe-suspect-email-lbl-acute-only",
+  "source": "[u@example.com é]",
+  "action": "created"
+ },
+ "lbl-at": {
+  "fullname": "muse-probe-suspect-email-lbl-at",
+  "source": "[u@example.com foo@bar]",
+  "action": "created"
+ },
+ "lbl-hash": {
+  "fullname": "muse-probe-suspect-email-lbl-hash",
+  "source": "[u@example.com foo#bar]",
+  "action": "created"
+ },
+ "lbl-pipe": {
+  "fullname": "muse-probe-suspect-email-lbl-pipe",
+  "source": "[u@example.com foo|bar]",
+  "action": "created"
+ }
+}

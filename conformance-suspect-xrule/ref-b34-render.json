@@ -1,0 +1,74 @@
+{
+ "x21-email-url-label": {
+  "source": "A [a@example.com http://example.com/a] B",
+  "ref_b64": "PHA+QSA8c3BhbiBjbGFzcz0id2lraS1lbWFpbCI+bW9jLmVscG1heGV8YSP/Mv88L3NwYW4+IEI8L3A+CgoK",
+  "live_b64": "PHA+QSA8c3BhbiBjbGFzcz0id2lraS1lbWFpbCI+bW9jLmVscG1heGV8YSPvv70z77+9PC9zcGFuPiBCPC9wPg==",
+  "match": false
+ },
+ "x22-email-newline-label": {
+  "source": "A [a@example.com x\ny] B",
+  "ref_b64": "PHA+QSA8c3BhbiBjbGFzcz0id2lraS1lbWFpbCI+bW9jLmVscG1heGV8YSN5/zD/eDwvc3Bhbj4gQjwvcD4KCgo=",
+  "live_b64": "PHA+QSA8c3BhbiBjbGFzcz0id2lraS1lbWFpbCI+bW9jLmVscG1heGV8YSN577+9Me+/vXg8L3NwYW4+IEI8L3A+",
+  "match": false
+ },
+ "x23-color-url-spec": {
+  "source": "A ##http://example.com|red## B",
+  "ref_b64": "PHA+QSAjIzxhIGhyZWY9Imh0dHA6Ly9leGFtcGxlLmNvbXxyZWQiPmh0dHA6Ly9leGFtcGxlLmNvbXxyZWQ8L2E+IyMgQjwvcD4KCgo=",
+  "live_b64": "PHA+QSAjIzxhIGhyZWY9Imh0dHA6Ly9leGFtcGxlLmNvbXxyZWQiPmh0dHA6Ly9leGFtcGxlLmNvbXxyZWQ8L2E+IyMgQjwvcD4=",
+  "match": true
+ },
+ "x24-math-nested-email": {
+  "source": "A [[$ [a@example.com http://example.com/a] $]] B",
+  "ref_b64": "PHA+QSA8c3BhbiBjbGFzcz0ibWF0aC1pbmxpbmUiPiT/Mv8kPC9zcGFuPiBCPC9wPgoKCg==",
+  "live_b64": "PHA+QSA8c3BhbiBjbGFzcz0ibWF0aC1pbmxpbmUiPiRbYUBleGFtcGxlLmNvbSBodHRwOi8vZXhhbXBsZS5jb20vYV0kPC9zcGFuPiBCPC9wPg==",
+  "match": false
+ },
+ "x25-email-double-space": {
+  "source": "A [a@example.com  x http://example.com/a] B",
+  "ref_b64": "PHA+QSA8c3BhbiBjbGFzcz0id2lraS1lbWFpbCI+bW9jLmVscG1heGV8YSP/Mv8geCA8L3NwYW4+IEI8L3A+CgoK",
+  "live_b64": "PHA+QSA8c3BhbiBjbGFzcz0id2lraS1lbWFpbCI+bW9jLmVscG1heGV8YSPvv70z77+9IHg8L3NwYW4+IEI8L3A+",
+  "match": false
+ },
+ "x26-email-shift": {
+  "source": "A [[[Some Page]]] [a@example.com @@x@@] B",
+  "ref_b64": "PHA+QSA8YSBjbGFzcz0ibmV3cGFnZSIgaHJlZj0iL3NvbWUtcGFnZSI+U29tZSBQYWdlPC9hPiA8c3BhbiBjbGFzcz0id2lraS1lbWFpbCI+bW9jLmVscG1heGV8YSP/MP88L3NwYW4+IEI8L3A+CgoK",
+  "live_b64": "PHA+QSA8YSBjbGFzcz0ibmV3cGFnZSIgaHJlZj0iL3NvbWUtcGFnZSI+U29tZSBQYWdlPC9hPiA8c3BhbiBjbGFzcz0id2lraS1lbWFpbCI+bW9jLmVscG1heGV8YSPvv70x77+9PC9zcGFuPiBCPC9wPg==",
+  "match": false
+ },
+ "x27-email-shift2": {
+  "source": "@@a@@ [a@example.com @@x@@] B",
+  "ref_b64": "PHA+PHNwYW4gc3R5bGU9IndoaXRlLXNwYWNlOiBwcmUtd3JhcDsiPmE8L3NwYW4+IDxzcGFuIGNsYXNzPSJ3aWtpLWVtYWlsIj5tb2MuZWxwbWF4ZXxhI/8x/zwvc3Bhbj4gQjwvcD4KCgo=",
+  "live_b64": "PHA+PHNwYW4gc3R5bGU9IndoaXRlLXNwYWNlOiBwcmUtd3JhcDsiPmE8L3NwYW4+IDxzcGFuIGNsYXNzPSJ3aWtpLWVtYWlsIj5tb2MuZWxwbWF4ZXxhI++/vTLvv708L3NwYW4+IEI8L3A+",
+  "match": false
+ },
+ "x28-file-freelink-label": {
+  "source": "[[file foo|[[[Bar]]]]]",
+  "ref_b64": "PHA+PGEgaHJlZj0iL2ZvbyI+PC9hPjwvcD4KCgo=",
+  "live_b64": "PHA+PGEgaHJlZj0iaHR0cHM6Ly9zYW5kYm94LWZvci1jb2RleC53ZGZpbGVzLmNvbS9sb2NhbC0tZmlsZXMvbXVzZS1wcm9iZS1zdXNwZWN0LXhydWxlLXgyOC1maWxlLWZyZWVsaW5rLWxhYmVsL2ZvbyI+PC9hPjwvcD4=",
+  "match": false
+ },
+ "x30-anchor-freelink-name": {
+  "source": "[[# [[[Bar]]] ]]",
+  "ref_b64": "PHA+W1sjIDxhIGNsYXNzPSJuZXdwYWdlIiBocmVmPSIvYmFyIj5CYXI8L2E+IF1dPC9wPgoKCg==",
+  "live_b64": "PHA+W1sjIDxhIGNsYXNzPSJuZXdwYWdlIiBocmVmPSIvYmFyIj5CYXI8L2E+IF1dPC9wPg==",
+  "match": true
+ },
+ "x31-toc-ustrip": {
+  "source": "[[toc]]\n++ Grüüße",
+  "ref_b64": "PHRhYmxlIHN0eWxlPSJtYXJnaW46MDsgcGFkZGluZzowIj48dHI+PHRkIHN0eWxlPSJtYXJnaW46MDsgcGFkZGluZzowIj48ZGl2IGlkPSJ0b2MiPjxkaXYgaWQ9InRvYy1hY3Rpb24tYmFyIj48YSBocmVmPSJqYXZhc2NyaXB0OjsiIG9uY2xpY2s9IldJS0lET1QucGFnZS5saXN0ZW5lcnMuZm9sZFRvYyhldmVudCkiPkZvbGQ8L2E+PGEgc3R5bGU9ImRpc3BsYXk6IG5vbmUiIGhyZWY9ImphdmFzY3JpcHQ6OyIgb25jbGljaz0iV0lLSURPVC5wYWdlLmxpc3RlbmVycy51bmZvbGRUb2MoZXZlbnQpIj5VbmZvbGQ8L2E+PC9kaXY+PGRpdiBjbGFzcz0idGl0bGUiPlRhYmxlIG9mIENvbnRlbnRzPC9kaXY+PGRpdiBpZD0idG9jLWxpc3QiPgoJPGRpdiBzdHlsZT0ibWFyZ2luLWxlZnQ6IDJlbTsiPjxhIGhyZWY9IiN0b2MwIj5HcsO8w7zDn2U8L2E+PC9kaXY+CjwvZGl2PjwvZGl2PjwvdGQ+PC90cj48L3RhYmxlPgoKCjxoMiBpZD0idG9jMCI+PHNwYW4+R3LDvMO8w59lPC9zcGFuPjwvaDI+Cgo=",
+  "live_b64": "PHRhYmxlIHN0eWxlPSJtYXJnaW46MDsgcGFkZGluZzowIj4KPHRyPgo8dGQgc3R5bGU9Im1hcmdpbjowOyBwYWRkaW5nOjAiPgo8ZGl2IGlkPSJ0b2MiPgo8ZGl2IGlkPSJ0b2MtYWN0aW9uLWJhciI+PGEgaHJlZj0iamF2YXNjcmlwdDo7IiBvbmNsaWNrPSJXSUtJRE9ULnBhZ2UubGlzdGVuZXJzLmZvbGRUb2MoZXZlbnQpIj5Gb2xkPC9hPjxhIHN0eWxlPSJkaXNwbGF5OiBub25lIiBocmVmPSJqYXZhc2NyaXB0OjsiIG9uY2xpY2s9IldJS0lET1QucGFnZS5saXN0ZW5lcnMudW5mb2xkVG9jKGV2ZW50KSI+VW5mb2xkPC9hPjwvZGl2Pgo8ZGl2IGNsYXNzPSJ0aXRsZSI+VGFibGUgb2YgQ29udGVudHM8L2Rpdj4KPGRpdiBpZD0idG9jLWxpc3QiPgo8ZGl2IHN0eWxlPSJtYXJnaW4tbGVmdDogMmVtOyI+PGEgaHJlZj0iI3RvYzAiPkdyw7zDvMOfZTwvYT48L2Rpdj4KPC9kaXY+CjwvZGl2Pgo8L3RkPgo8L3RyPgo8L3RhYmxlPgo8aDIgaWQ9InRvYzAiPjxzcGFuPkdyw7zDvMOfZTwvc3Bhbj48L2gyPg==",
+  "match": false
+ },
+ "x32-footnote-table": {
+  "source": ";[[footnote]]||a||b||[[/footnote]];\n[[footnoteblock]]",
+  "ref_b64": "PHA+OzxzdXAgY2xhc3M9ImZvb3Rub3RlcmVmIj48YSBpZD0iZm9vdG5vdGVyZWYtMSIgaHJlZj0iamF2YXNjcmlwdDo7IiBjbGFzcz0iZm9vdG5vdGVyZWYiIG9uY2xpY2s9IldJS0lET1QucGFnZS51dGlscy5zY3JvbGxUb1JlZmVyZW5jZSgnZm9vdG5vdGUtMScpIj4xPC9hPjwvc3VwPjs8L3A+Cgo8ZGl2IGNsYXNzPSJmb290bm90ZXMtZm9vdGVyIj48ZGl2IGNsYXNzPSJ0aXRsZSI+Rm9vdG5vdGVzPC9kaXY+PGRpdiBjbGFzcz0iZm9vdG5vdGUtZm9vdGVyIiBpZD0iZm9vdG5vdGUtMSI+PGEgaHJlZj0iamF2YXNjcmlwdDo7IiBvbmNsaWNrPSJXSUtJRE9ULnBhZ2UudXRpbHMuc2Nyb2xsVG9SZWZlcmVuY2UoJ2Zvb3Rub3RlcmVmLTEnKSI+MTwvYT4uIHx8YXx8Ynx8PC9kaXY+PC9kaXY+Cg==",
+  "live_b64": "PHA+OzxzdXAgY2xhc3M9ImZvb3Rub3RlcmVmIj48YSBpZD0iZm9vdG5vdGVyZWYtMSIgaHJlZj0iamF2YXNjcmlwdDo7IiBjbGFzcz0iZm9vdG5vdGVyZWYiIG9uY2xpY2s9IldJS0lET1QucGFnZS51dGlscy5zY3JvbGxUb1JlZmVyZW5jZSgnZm9vdG5vdGUtMScpIj4xPC9hPjwvc3VwPjs8L3A+CjxkaXYgY2xhc3M9ImZvb3Rub3Rlcy1mb290ZXIiPgo8ZGl2IGNsYXNzPSJ0aXRsZSI+Rm9vdG5vdGVzPC9kaXY+CjxkaXYgY2xhc3M9ImZvb3Rub3RlLWZvb3RlciIgaWQ9ImZvb3Rub3RlLTEiPjxhIGhyZWY9ImphdmFzY3JpcHQ6OyIgb25jbGljaz0iV0lLSURPVC5wYWdlLnV0aWxzLnNjcm9sbFRvUmVmZXJlbmNlKCdmb290bm90ZXJlZi0xJykiPjE8L2E+LiB8fGF8fGJ8fDwvZGl2Pgo8L2Rpdj4=",
+  "match": false
+ },
+ "x33-div-attr-freelink": {
+  "source": "[[div class=\"[[[Bar]]]\"]]x[[/div]]",
+  "ref_b64": "PHA+W1tkaXYgY2xhc3M9JnF1b3Q7PGEgY2xhc3M9Im5ld3BhZ2UiIGhyZWY9Ii9iYXIiPkJhcjwvYT4mcXVvdDtdXXhbWy9kaXZdXTwvcD4KCgo=",
+  "live_b64": "PHA+W1tkaXYgY2xhc3M9JnF1b3Q7PGEgY2xhc3M9Im5ld3BhZ2UiIGhyZWY9Ii9iYXIiPkJhcjwvYT4mcXVvdDtdXXhbWy9kaXZdXTwvcD4=",
+  "match": true
+ }
+}

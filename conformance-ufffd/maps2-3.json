@@ -1,0 +1,89 @@
+{
+ "end-after-bold": {
+  "fullname": "muse-probe-ufffd2-end-after-bold",
+  "source": "alpha **bold** �",
+  "action": "exists"
+ },
+ "end-first-para": {
+  "fullname": "muse-probe-ufffd2-end-first-para",
+  "source": "alpha �\n\nbravo charlie",
+  "action": "exists"
+ },
+ "end-both-para": {
+  "fullname": "muse-probe-ufffd2-end-both-para",
+  "source": "alpha �\n\nbravo �",
+  "action": "exists"
+ },
+ "only-two": {
+  "fullname": "muse-probe-ufffd2-only-two",
+  "source": "��",
+  "action": "exists"
+ },
+ "pair-zero": {
+  "fullname": "muse-probe-ufffd2-pair-zero",
+  "source": "alpha �0� bravo charlie",
+  "action": "exists"
+ },
+ "digits-text": {
+  "fullname": "muse-probe-ufffd2-digits-text",
+  "source": "alpha � 42 bravo charlie",
+  "action": "exists"
+ },
+ "unclosed-digits": {
+  "fullname": "muse-probe-ufffd2-unclosed-digits",
+  "source": "alpha �42 bravo charlie",
+  "action": "exists"
+ },
+ "end-list": {
+  "fullname": "muse-probe-ufffd2-end-list",
+  "source": "* item one �\n* item two",
+  "action": "created"
+ },
+ "end-heading": {
+  "fullname": "muse-probe-ufffd2-end-heading",
+  "source": "+ Head Word �\n\nbody alpha bravo",
+  "action": "created"
+ },
+ "start-bold-after": {
+  "fullname": "muse-probe-ufffd2-start-bold-after",
+  "source": "� **bold** tail end",
+  "action": "created"
+ },
+ "mid-no-space": {
+  "fullname": "muse-probe-ufffd2-mid-no-space",
+  "source": "alpha�bravo charlie",
+  "action": "created"
+ },
+ "end-no-space": {
+  "fullname": "muse-probe-ufffd2-end-no-space",
+  "source": "alpha bravo�",
+  "action": "created"
+ }
+}
+{
+ "spaces-control": {
+  "fullname": "muse-probe-ufffd3-spaces-control",
+  "source": "alpha  bravo   charlie delta",
+  "action": "created"
+ },
+ "fake-after-bold": {
+  "fullname": "muse-probe-ufffd3-fake-after-bold",
+  "source": "alpha **bold**� omega tail",
+  "action": "created"
+ },
+ "fake-before-bold": {
+  "fullname": "muse-probe-ufffd3-fake-before-bold",
+  "source": "alpha �**bold** omega tail",
+  "action": "created"
+ },
+ "fake-space-fake": {
+  "fullname": "muse-probe-ufffd3-fake-space-fake",
+  "source": "alpha � � bravo charlie",
+  "action": "created"
+ },
+ "fake-digit-mid": {
+  "fullname": "muse-probe-ufffd3-fake-digit-mid",
+  "source": "alpha �9 bravo\n\ncharlie delta",
+  "action": "created"
+ }
+}

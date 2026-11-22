@@ -1,0 +1,172 @@
+{
+ "ro-trail": {
+  "fullname": "muse-probe-htmlchars-ro-trail",
+  "html": "<p>A&amp;B&quot;C&lt;D&gt;E'</p>",
+  "html_sha256": "37acc596c9fea8595aa41e301027e9af156ec9dd6c2016b55610723b96e9d35d",
+  "source": "``A&B\"C<D>E'``",
+  "source_sha256": "1bd2fa85514eef2f97e965362c3365f5012a582ba0e50502034e938be96c945f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "ro-plain": {
+  "fullname": "muse-probe-htmlchars-ro-plain",
+  "html": "<p>A&amp;B&quot;C&lt;D&gt;Eé</p>",
+  "html_sha256": "84373f8bf2ba67f41ebb83ca69b38cb4bc33fbd50c8b757c0ffa37834a4bc2dc",
+  "source": "``A&B\"C<D>Eé``",
+  "source_sha256": "e69dc90194f9aa6da7ba9362db3463137a1395a3875033c597ccc0042a049ace",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "ro-interior": {
+  "fullname": "muse-probe-htmlchars-ro-interior",
+  "html": "<p>&#8216;`A&#8217;B``</p>",
+  "html_sha256": "f8d949f6550c23ad8b4fb1bf2f7b84d08ea9b336de95f1d204a9ce7cce2c2d9d",
+  "source": "``A'B``",
+  "source_sha256": "b3346e6d81d50580e664733f6861dba6fdceff6a6364c78c1e50e6eb1a6b7f98",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "fl-label": {
+  "fullname": "muse-probe-htmlchars-fl-label",
+  "html": "<p><a class=\"newpage\" href=\"/htmlchars-nope\">O'Brien &amp;amp; &lt;x&gt; &quot;q&quot; é</a></p>",
+  "html_sha256": "81ab1b418255d0f987821179f99703f9f4ab8af597e4ceab974131caa8023e94",
+  "source": "[[[htmlchars-nope|O'Brien &amp; <x> \"q\" é]]]",
+  "source_sha256": "320dab5cd6bc121621c2e74a09f42db988e2b65868d6b6c7f4a2aa671ecbcd62",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "fl-url": {
+  "fullname": "muse-probe-htmlchars-fl-url",
+  "html": "<p><a href=\"https://example.com/a'b?x=1&amp;y=2\">U'R L&amp;&lt;&gt;</a></p>",
+  "html_sha256": "b5b88335f7cc5a296a637aae80948dfdb5507f7c52e4e45f1ac84f09024cad1e",
+  "source": "[[[https://example.com/a'b?x=1&y=2|U'R L&<>]]]",
+  "source_sha256": "5c3cb42c37be1b48f52c4e661e0feb6f92f1b0ec652e17228f228effa79ab47c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "fl-anchor": {
+  "fullname": "muse-probe-htmlchars-fl-anchor",
+  "html": "<p><a class=\"newpage\" href=\"/htmlchars-nope#an'chor&amp;x\">Anchor</a></p>",
+  "html_sha256": "5f959bb7e03664b8b949b713b78ea901fa645fb9875ff6b6c79edd94e5a048fa",
+  "source": "[[[htmlchars-nope#an'chor&x|Anchor]]]",
+  "source_sha256": "eca63974b391b68c092ba5fa71ed992c6c90ee86d671ca723a10138194bd8bae",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "fl-extra": {
+  "fullname": "muse-probe-htmlchars-fl-extra",
+  "html": "<p><a class=\"newpage\" href=\"/htmlchars-nope#/ro'ute\">Extra</a></p>",
+  "html_sha256": "0d855fd703a623f53a319c0ac4ee428ab80ec568b55624048f2753f82e07e347",
+  "source": "[[[htmlchars-nope/#/ro'ute|Extra]]]",
+  "source_sha256": "a6406526468d62800e9e44cff08a0c1c25918da87d7323122f52b0ceceec65e2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bt-attrs": {
+  "fullname": "muse-probe-htmlchars-bt-attrs",
+  "html": "<p><a class=\"c'd&amp;e\" style=\"s:'&amp;é\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\">ok</a></p>",
+  "html_sha256": "e3d59417eedfcd5600c6ba9a1dae6229280d41577f7611cf58ef2ad1323cbef8",
+  "source": "[[button edit class=\"c'd&e\" style=\"s:'&é\" text=\"ok\"]]",
+  "source_sha256": "99759334e3ba7bce918c3acc43273f5093745d561bcb4ffd2b1d241a9426cecf",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bt-class2": {
+  "fullname": "muse-probe-htmlchars-bt-class2",
+  "html": "<p><a class=\"only'one\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\">edit</a></p>",
+  "html_sha256": "57c705c377e5e40b11e43a64d0d1dd17df71e88b7b5fd934ba742554ea1cef62",
+  "source": "[[button edit class=\"only'one\"]]",
+  "source_sha256": "e8333204166bddd2c52ef87efcd9a7ac3b75f6b5c76f428aacb9953f330dcd57",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "im-attrs": {
+  "fullname": "muse-probe-htmlchars-im-attrs",
+  "html": "<a href=\"https://example.com/x'y?a=1&amp;b=2\"><img src=\"https://example.com/a'b.png\" title=\"T'B\" alt=\"A'B &amp; é\" class=\"image\" /></a>",
+  "html_sha256": "587c4c3a1846163b5dc1b0d30a351b8796db40695d943ddbcd5f9cddc4e956d4",
+  "source": "[[image https://example.com/a'b.png alt=\"A'B & é\" title=\"T'B\" link=\"https://example.com/x'y?a=1&b=2\"]]",
+  "source_sha256": "ebae3d092e270dbf8b3fe65336ab002622bd6b74fddc62afc2ce1e4fa5822242",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "im-local": {
+  "fullname": "muse-probe-htmlchars-im-local",
+  "html": "<img src=\"https://sandbox-for-codex.wdfiles.com/local--files/htmlchars/a'b.png\" alt=\"a'b.png\" class=\"image\" />",
+  "html_sha256": "b5219fa7a9e502df0f9d2c1526f3aa56bc4c7a62a0a58a564a2e364e917a03df",
+  "source": "[[image htmlchars/a'b.png]]",
+  "source_sha256": "9065deca76cd180efeb63e08cbb3bdc402c91260e7a2b7a712f0868ef0ca39b5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "im-altamp": {
+  "fullname": "muse-probe-htmlchars-im-altamp",
+  "html": "<img src=\"https://example.com/p.png\" alt=\"A&amp;amp;B 'x'\" class=\"image\" />",
+  "html_sha256": "0a2ce95073b1c50f0249b50148022fcc387ad2e5d1d03c9ce774e945a2671a82",
+  "source": "[[image https://example.com/p.png alt=\"A&amp;B 'x'\"]]",
+  "source_sha256": "9e5abf97a67246ce465435a32a8f4154f60fa956cb30978670907bf0970b6caa",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "url-desc": {
+  "fullname": "muse-probe-htmlchars-url-desc",
+  "html": "<p><a href=\"https://example.com/a'b?x=1&amp;y=2\">O'Brien &amp;amp; &lt;x&gt; &quot;q&quot; é</a></p>",
+  "html_sha256": "a3f7edeb4bbcea9f74a4c65f1fd2707fe4305b0aa2d0e44fe981d9f453d37e4f",
+  "source": "[https://example.com/a'b?x=1&y=2 O'Brien &amp; <x> \"q\" é]",
+  "source_sha256": "96aabfeb08f39553a663caf8de12aa847706bac61e0bce02c8cebc477f77f644",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "url-star": {
+  "fullname": "muse-probe-htmlchars-url-star",
+  "html": "<p><a href=\"https://example.com/a'b\" target=\"_blank\">Star's</a></p>",
+  "html_sha256": "975c062f3a52a309cc3fac6f0d0f7fdf75e3972ce0a43a359bf0e7087b047a88",
+  "source": "[*https://example.com/a'b Star's]",
+  "source_sha256": "19591da43edaff2ba32c6ede580b05b4f54264049ad90e651a6cf1f4fa14bc65",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "url-auto": {
+  "fullname": "muse-probe-htmlchars-url-auto",
+  "html": "<p><a href=\"https://example.com/?x=1&amp;y=2\">https://example.com/?x=1&amp;y=2</a>'z</p>",
+  "html_sha256": "14f46d006687723e71f9b2f4432c7646034a9bc98ea06d1a3a7fc795a77a080a",
+  "source": "https://example.com/?x=1&y=2'z",
+  "source_sha256": "5b3d7782c8194cedc9a5ea599be427c0fc2ba0a61738c5cbfb2866b2b329a0e9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "iw-label": {
+  "fullname": "muse-probe-htmlchars-iw-label",
+  "html": "<p><a href=\"https://en.wikipedia.org/wiki/Albert_Einstein\" onclick=\"window.open(this.href, '_blank'); return false;\">O'Brien &amp;amp; &lt;x&gt; &quot;q&quot; é</a></p>",
+  "html_sha256": "e1ad712d99420aa2eef3f5d812aea2293b11d1edea3a0736c643921ec55076cd",
+  "source": "[wikipedia:Albert_Einstein O'Brien &amp; <x> \"q\" é]",
+  "source_sha256": "1e6ce77b635e31796e745624c654446934bc8072742236c1e1be1ba1eeb97f73",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "iw-stand": {
+  "fullname": "muse-probe-htmlchars-iw-stand",
+  "html": "<p><a href=\"https://en.wikipedia.org/wiki/Albert_Einstein\" onclick=\"window.open(this.href, '_blank'); return false;\">Albert_Einstein</a></p>",
+  "html_sha256": "09019ac32d9e3b99e37af179ef3c5111ba6b05a2505afd6b22f39eb4836f1073",
+  "source": "[wikipedia:Albert_Einstein]",
+  "source_sha256": "d7a41f0e3d9b5d81c01f86617afce5fe965aef5fce621e604d618f980f724eb4",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

@@ -1,0 +1,92 @@
+{
+ "diva-a1": {
+  "fullname": "muse-probe-refcorr2-diva-a1",
+  "source": "[[div class=\"a\" id=\"b\" style=\"color:green\"]]\nX\n[[/div]]",
+  "action": "created"
+ },
+ "diva-a2": {
+  "fullname": "muse-probe-refcorr2-diva-a2",
+  "source": "[[div style=\"color:green\" id=\"b\" class=\"a\"]]\nX\n[[/div]]",
+  "action": "created"
+ },
+ "diva-a3": {
+  "fullname": "muse-probe-refcorr2-diva-a3",
+  "source": "[[div style=\"color:green\" class=\"a\" id=\"b\"]]\nX\n[[/div]]",
+  "action": "created"
+ },
+ "diva-a4": {
+  "fullname": "muse-probe-refcorr2-diva-a4",
+  "source": "[[div id=\"b\" style=\"color:green\" class=\"a\"]]\nX\n[[/div]]",
+  "action": "created"
+ },
+ "diva-a5": {
+  "fullname": "muse-probe-refcorr2-diva-a5",
+  "source": "[[div data-z=\"9\" type=\"t\" role=\"r\" style=\"color:red\" class=\"a\" id=\"b\"]]\nX\n[[/div]]",
+  "action": "created"
+ },
+ "diva-a6": {
+  "fullname": "muse-probe-refcorr2-diva-a6",
+  "source": "[[div data-z=\"9\" data-a=\"1\" class=\"a\"]]\nX\n[[/div]]",
+  "action": "created"
+ },
+ "diva-a7": {
+  "fullname": "muse-probe-refcorr2-diva-a7",
+  "source": "[[div type=\"t\" role=\"r\"]]\nX\n[[/div]]",
+  "action": "created"
+ },
+ "diva-a8": {
+  "fullname": "muse-probe-refcorr2-diva-a8",
+  "source": "[[div data-m=\"5\" id=\"b\"]]\nX\n[[/div]]",
+  "action": "created"
+ },
+ "divn-s1": {
+  "fullname": "muse-probe-refcorr2-divn-s1",
+  "source": "[[div class=a]]A\n[[/div]]",
+  "action": "created"
+ },
+ "divn-s2": {
+  "fullname": "muse-probe-refcorr2-divn-s2",
+  "source": "[[div class=\"a\"]]A\n[[/div]]",
+  "action": "created"
+ },
+ "divn-s3": {
+  "fullname": "muse-probe-refcorr2-divn-s3",
+  "source": "[[div class=a]]A\n[[div class=b]]B\n[[/div]]\n[[/div]]",
+  "action": "created"
+ },
+ "divn-s4": {
+  "fullname": "muse-probe-refcorr2-divn-s4",
+  "source": "[[div class=\"a\"]]A\n[[div class=\"b\"]]B\n[[div class=\"c\"]]C\n[[/div]]\n[[/div]]\n[[/div]]",
+  "action": "created"
+ },
+ "divn-s5": {
+  "fullname": "muse-probe-refcorr2-divn-s5",
+  "source": "[[div class=a]]A\n[[div class=b]]B\n[[div class=c]]C\n[[/div]]\n[[/div]]\n[[/div]]",
+  "action": "created"
+ },
+ "divn-s6": {
+  "fullname": "muse-probe-refcorr2-divn-s6",
+  "source": "[[div class=a]]A[[/div]]",
+  "action": "created"
+ },
+ "divn-s7": {
+  "fullname": "muse-probe-refcorr2-divn-s7",
+  "source": "[[/div]]\n[[/div]]",
+  "action": "created"
+ },
+ "divn-s8": {
+  "fullname": "muse-probe-refcorr2-divn-s8",
+  "source": "[[div class=a]]A\n[[div class=b]]B\n[[div class=c]]C\n[[/div]]\n[[/div]]",
+  "action": "created"
+ },
+ "divn-s9": {
+  "fullname": "muse-probe-refcorr2-divn-s9",
+  "source": "[[div class=\"a\"]]\n[[div class=\"b\"]]\n[[div class=\"c\"]]\nC\n[[/div]]\n[[/div]]\n[[/div]]",
+  "action": "created"
+ },
+ "divn-s10": {
+  "fullname": "muse-probe-refcorr2-divn-s10",
+  "source": "[[div class=a]]A\n[[div class=b]]B\n[[div class=c]]C\n[[/div]]\n[[/div]]\n[[/div]]\n[[/div]]",
+  "action": "created"
+ }
+}

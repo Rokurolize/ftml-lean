@@ -1,0 +1,90 @@
+addr-leading-dash -> muse-probe-suspect-email-addr-leading-dash stable=True saved_source_matches=True valid=True
+addr-plus -> muse-probe-suspect-email-addr-plus stable=True saved_source_matches=True valid=True
+addr-tld-digit -> muse-probe-suspect-email-addr-tld-digit stable=True saved_source_matches=True valid=True
+addr-upper -> muse-probe-suspect-email-addr-upper stable=True saved_source_matches=True valid=True
+addr-dots -> muse-probe-suspect-email-addr-dots stable=True saved_source_matches=True valid=True
+addr-trailing-dot -> muse-probe-suspect-email-addr-trailing-dot stable=True saved_source_matches=True valid=True
+addr-kelvin -> muse-probe-suspect-email-addr-kelvin stable=True saved_source_matches=True valid=True
+addr-acute-local -> muse-probe-suspect-email-addr-acute-local stable=True saved_source_matches=True valid=True
+{
+ "addr-leading-dash": {
+  "fullname": "muse-probe-suspect-email-addr-leading-dash",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe-|u#moc.elpmaxe-|u</span></p>",
+  "html_sha256": "a28f3cc0ac1c1e21ed2bb0ecb303927e41714ec87fce4d9ad61cb62387039da0",
+  "source": "u@-example.com",
+  "source_sha256": "f3e7b755ee04e1784b431eadb016deb2f0477a4538744ff164f691d682ab0e27",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "addr-plus": {
+  "fullname": "muse-probe-suspect-email-addr-plus",
+  "html": "<p>u+<span class=\"wiki-email\">moc.elpmaxe|gat#moc.elpmaxe|gat</span></p>",
+  "html_sha256": "ed11f350c58599b592c814d3febe2aeba84d40701a213b9b8a591e1752be2cd7",
+  "source": "u+tag@example.com",
+  "source_sha256": "bc93d77aa7abba3c84d684844bdf45e07589ce9ab300e3a719f70a4cbe48f09c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "addr-tld-digit": {
+  "fullname": "muse-probe-suspect-email-addr-tld-digit",
+  "html": "<p><span class=\"wiki-email\">1.elpmaxe|u#1.elpmaxe|u</span></p>",
+  "html_sha256": "61b7d7e77c3a343248df5b224b6dff662818d9ec31097e0d4cac2f8832b44dd2",
+  "source": "u@example.1",
+  "source_sha256": "5796252e22a1927cfea6ec44219844653e91ac182d12a08edbefb6a96cc29eb3",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "addr-upper": {
+  "fullname": "muse-probe-suspect-email-addr-upper",
+  "html": "<p><span class=\"wiki-email\">MOC.ELPMAXE|U#MOC.ELPMAXE|U</span></p>",
+  "html_sha256": "cf5b715947af7fb97396fdb5dcc788035bbbda61097ca65bf5e54c6cf4f8ad14",
+  "source": "U@EXAMPLE.COM",
+  "source_sha256": "ed0c4b4bcf7cb3fac2ca94711a329268b288e17b7028efc37e9b3f254a30ad97",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "addr-dots": {
+  "fullname": "muse-probe-suspect-email-addr-dots",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|b.a#moc.elpmaxe|b.a</span></p>",
+  "html_sha256": "e8609c40b7743e7ae7c5088268a9dd687379925f9cc2c3c0fdd29352bdf531c2",
+  "source": "a.b@example.com",
+  "source_sha256": "a6f1bad172104d254e536c6b8dbab9bb2d1e2427e766189525c1099ea578d690",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "addr-trailing-dot": {
+  "fullname": "muse-probe-suspect-email-addr-trailing-dot",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#moc.elpmaxe|u</span>.</p>",
+  "html_sha256": "aefc7c691426e64a2177f15cd95a038258b33b5d8b91c878fd3d6d0f0cdae775",
+  "source": "u@example.com.",
+  "source_sha256": "dd7bfe59ca51de63d0d224480dac0ef382d24b17aab48bcf13af724bdb901662",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "addr-kelvin": {
+  "fullname": "muse-probe-suspect-email-addr-kelvin",
+  "html": "<p>K@example.com</p>",
+  "html_sha256": "2d306330fa28c164b2aeb76f85c5f2fd30ef77be5324cca9ffb47568d20c732f",
+  "source": "K@example.com",
+  "source_sha256": "68efbd47068a4636087c51e05af076a737d516ee8304fec4e8808f2fe938550e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "addr-acute-local": {
+  "fullname": "muse-probe-suspect-email-addr-acute-local",
+  "html": "<p>é<span class=\"wiki-email\">moc.elpmaxe|u#moc.elpmaxe|u</span></p>",
+  "html_sha256": "232c2ae770c7be9d09be77aaf8b79c196c6cfd8ca661d7c672744e3f629acb42",
+  "source": "éu@example.com",
+  "source_sha256": "f4d57d93c795742bd59168f092bf3cb8a091174a5647700af68f897718f94179",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

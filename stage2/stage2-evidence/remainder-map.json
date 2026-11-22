@@ -1,0 +1,197 @@
+{
+ "u1-span-then-em": {
+  "fullname": "muse-probe-stage2r-u1-span-then-em",
+  "source": "**A ##red|B //C** D## E//",
+  "action": "created"
+ },
+ "u1-plain-between": {
+  "fullname": "muse-probe-stage2r-u1-plain-between",
+  "source": "**A //B ##red|C** D## PLAIN//",
+  "action": "created"
+ },
+ "u1-tail-after": {
+  "fullname": "muse-probe-stage2r-u1-tail-after",
+  "source": "**A ##red|B //C** D// E## TAIL",
+  "action": "created"
+ },
+ "u1-two-spans": {
+  "fullname": "muse-probe-stage2r-u1-two-spans",
+  "source": "**A [[size 120%]]B ##red|C** D[[/size]] E##",
+  "action": "created"
+ },
+ "u1-tt-span": {
+  "fullname": "muse-probe-stage2r-u1-tt-span",
+  "source": "**A {{B ##red|C** D## E}}",
+  "action": "created"
+ },
+ "u1-sup-span": {
+  "fullname": "muse-probe-stage2r-u1-sup-span",
+  "source": "**A ^^B ##red|C** D## E^^",
+  "action": "created"
+ },
+ "u1-em-target": {
+  "fullname": "muse-probe-stage2r-u1-em-target",
+  "source": "//A **B ##red|C// D** E##",
+  "action": "created"
+ },
+ "u1-three": {
+  "fullname": "muse-probe-stage2r-u1-three",
+  "source": "**A ^^B //C ##red|D** E## F// G^^",
+  "action": "created"
+ },
+ "u1-underline": {
+  "fullname": "muse-probe-stage2r-u1-underline",
+  "source": "**A //B __C** D__ E//",
+  "action": "created"
+ },
+ "u1-stray-star": {
+  "fullname": "muse-probe-stage2r-u1-stray-star",
+  "source": "**A //B** C// D**",
+  "action": "created"
+ },
+ "u1-stray-slash": {
+  "fullname": "muse-probe-stage2r-u1-stray-slash",
+  "source": "**A //B** C// D//",
+  "action": "created"
+ },
+ "u2-two-align": {
+  "fullname": "muse-probe-stage2r-u2-two-align",
+  "source": "[[div class=\"a\"]]\nA\n[[=]]\nB\n[[=]]\nC\n[[/=]]\n[[/=]]\n[[/div]]",
+  "action": "created"
+ },
+ "u2-nested-collapsible": {
+  "fullname": "muse-probe-stage2r-u2-nested-collapsible",
+  "source": "[[div class=\"a\"]]\nlead [[collapsible]]x[[/collapsible]]\n[[div class=\"z\"]]\ny\n[[/div]]\n[[/div]]",
+  "action": "created"
+ },
+ "u2-table-then-div": {
+  "fullname": "muse-probe-stage2r-u2-table-then-div",
+  "source": "[[div class=\"outer\"]]\ntext\n|| a ||\n[[div class=\"z\"]]\nmore\n[[/div]]\n[[/div]]",
+  "action": "created"
+ },
+ "u2-root-collapsible": {
+  "fullname": "muse-probe-stage2r-u2-root-collapsible",
+  "source": "lead[[collapsible]]body[[/collapsible]]tail",
+  "action": "created"
+ },
+ "u3-div-table": {
+  "fullname": "muse-probe-stage2r-u3-div-table",
+  "source": "[[div class=\"a\"]]\na\n[[/div]]\n|| b ||",
+  "action": "created"
+ },
+ "u3-br-in-div": {
+  "fullname": "muse-probe-stage2r-u3-br-in-div",
+  "source": "[[div class=\"a\"]]\n[[div class=\"b\"]]\nb\n[[/div]]\n|| t ||\n[[/div]]",
+  "action": "created"
+ },
+ "u3-div-div": {
+  "fullname": "muse-probe-stage2r-u3-div-div",
+  "source": "[[div class=\"a\"]]\na\n[[/div]]\n\n[[div class=\"b\"]]\nb\n[[/div]]",
+  "action": "created"
+ },
+ "u3-p-table": {
+  "fullname": "muse-probe-stage2r-u3-p-table",
+  "source": "para\n\n|| a ||",
+  "action": "created"
+ },
+ "u3-quote-list": {
+  "fullname": "muse-probe-stage2r-u3-quote-list",
+  "source": "> q\n\n* item",
+  "action": "created"
+ },
+ "u3-div-list": {
+  "fullname": "muse-probe-stage2r-u3-div-list",
+  "source": "[[div class=\"a\"]]\na\n[[/div]]\n* item",
+  "action": "created"
+ },
+ "u4-two": {
+  "fullname": "muse-probe-stage2r-u4-two",
+  "source": "[[a href=\"/x\"]]A **B //C[[/a]] D** E//",
+  "action": "created"
+ },
+ "u4-three": {
+  "fullname": "muse-probe-stage2r-u4-three",
+  "source": "[[a href=\"/x\"]]A **B //C {{D[[/a]] E** F// G}}",
+  "action": "created"
+ },
+ "u4-span-em": {
+  "fullname": "muse-probe-stage2r-u4-span-em",
+  "source": "[[a href=\"/x\"]]A ##red|B //C[[/a]] D## E//",
+  "action": "created"
+ },
+ "u5-img": {
+  "fullname": "muse-probe-stage2r-u5-img",
+  "source": "[[image http://example.com/a.png]]",
+  "action": "created"
+ },
+ "u5-hr": {
+  "fullname": "muse-probe-stage2r-u5-hr",
+  "source": "----",
+  "action": "created"
+ },
+ "u5-img-between": {
+  "fullname": "muse-probe-stage2r-u5-img-between",
+  "source": "before\n\n[[image http://example.com/a.png]]\n\nafter",
+  "action": "created"
+ },
+ "u5-hr-between": {
+  "fullname": "muse-probe-stage2r-u5-hr-between",
+  "source": "before\n\n----\n\nafter",
+  "action": "created"
+ },
+ "r43-div": {
+  "fullname": "muse-probe-stage2r-r43-div",
+  "source": "X[[footnote]]\n[[div]]\nblock body\n[[/div]]\n[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "r43-list": {
+  "fullname": "muse-probe-stage2r-r43-list",
+  "source": "X[[footnote]]\n* one\n* two\n[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "r43-text-list": {
+  "fullname": "muse-probe-stage2r-r43-text-list",
+  "source": "X[[footnote]]lead\n* one\n* two\n[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "r43-code": {
+  "fullname": "muse-probe-stage2r-r43-code",
+  "source": "X[[footnote]]\n[[code]]\nx\n[[/code]]\n[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "r43-collapsible": {
+  "fullname": "muse-probe-stage2r-r43-collapsible",
+  "source": "X[[footnote]]\n[[collapsible]]\nbody\n[[/collapsible]]\n[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "r43-two-div": {
+  "fullname": "muse-probe-stage2r-r43-two-div",
+  "source": "X[[footnote]]\n[[div]]\nA\n[[/div]]\n[[div]]\nB\n[[/div]]\n[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "r43-text-div-text": {
+  "fullname": "muse-probe-stage2r-r43-text-div-text",
+  "source": "X[[footnote]]lead\n[[div]]\nA\n[[/div]]\ntail\n[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "r43-span-div": {
+  "fullname": "muse-probe-stage2r-r43-span-div",
+  "source": "X[[footnote]]\n[[span]]S[[/span]]\n[[div]]\nA\n[[/div]]\n[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "r43-div-list": {
+  "fullname": "muse-probe-stage2r-r43-div-list",
+  "source": "X[[footnote]]\n[[div]]\nA\n[[/div]]\n* one\n* two\n[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "r43-heading": {
+  "fullname": "muse-probe-stage2r-r43-heading",
+  "source": "X[[footnote]]\n+ Head\n[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "r43-table": {
+  "fullname": "muse-probe-stage2r-r43-table",
+  "source": "X[[footnote]]\n|| a || b ||\n[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "created"
+ }
+}

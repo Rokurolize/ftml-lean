@@ -1,0 +1,12 @@
+{"id": "if-plain-plus-tagged", "source": "[[iftags +alpha]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-trail-plus-tagged", "source": "[[iftags +alpha,]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-trail-bare-tagged", "source": "[[iftags alpha,]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-lead-comma-tagged", "source": "[[iftags ,+alpha]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-double-comma-tagged", "source": "[[iftags +alpha,,]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-trail-minus-tagged", "source": "[[iftags -beta,]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-trail-space-tagged", "source": "[[iftags +alpha, ]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-dangling-minus-tagged", "source": "[[iftags -]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-case-plus-tagged", "source": "[[iftags +ALPHA]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-nospace-tagged", "source": "[[iftags+alpha]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-newline-tagged", "source": "[[iftags +alpha\n+beta]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-nested-tagged", "source": "[[iftags +alpha]]A[[iftags -beta]]B[[/iftags]]C[[/iftags]]\nX", "tags": ["alpha"]}

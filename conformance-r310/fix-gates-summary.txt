@@ -1,0 +1,37 @@
+stage-corpus-185: SUMMARY: 185/185 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+consistency: SUMMARY B (restricted vs full, family): 182/185 consistent (including 0 fatal agreements); exclusions: ['t35-30-line-continuation', 'adv30-unknown-attrs', 'adv39-align-center'] | SUMMARY: full-side surrogate (prefix) cases: ['smoke-code', 'smoke-collapsible', 'smoke-div', 'smoke-footnote', 'smoke-include', 'smoke-link', 'smoke-math', 'smoke-quote', 'smoke-table'] | SUMMARY C (restricted vs prefix, earlier rules): 185/185 agree; disagreeing: []; skipped (fatal/error): []
+fuzz: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+fuzz-s7: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg31-code: SUMMARY: 68/68 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg31-smoke: SUMMARY: 9/9 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg31-fuzz: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg31-fuzz-s7: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg32-formraw: SUMMARY: 68/68 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg32-fuzz: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg32-fuzz-s7: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg33-module: SUMMARY: 204/204 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg33-fuzz: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg33-fuzz-s7: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg34-next: SUMMARY: 382/382 cases match | SUMMARY-FATAL: 5 parse-fatal agreements, 0 fatal mismatches
+reg34-fuzz: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 13 parse-fatal agreements, 0 fatal mismatches
+reg34-fuzz-s7: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 18 parse-fatal agreements, 0 fatal mismatches
+reg35-link: SUMMARY: 221/221 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg35-fuzz: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg35-fuzz-s7: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg36-notes: SUMMARY: 367/367 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg36-fuzz: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg36-fuzz-s7: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg37-block: SUMMARY: 206/206 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg37-fuzz: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg37-fuzz-s7: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg38-contain: SUMMARY: 372/372 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg38-fuzz: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg38-fuzz-s7: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg39-list: SUMMARY: 229/229 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg39-fuzz: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+reg39-fuzz-s7: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+stage-corpus-185-vs-legacy: SUMMARY: 185/185 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+repair-fuzz-vs-legacy: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+repair-fuzz-s7-vs-legacy: SUMMARY: 500/500 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+repair-witness-family-vs-legacy: SUMMARY: 0/14 cases match | SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches
+overall_rc: 1

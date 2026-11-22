@@ -1,0 +1,6 @@
+{
+  "b3-div-raw-class": {
+    "hex": "3c64697620636c6173733d2261ff30ff63222069643d22752d223e3c703e68693c2f703e0a0a3c2f6469763e",
+    "repr": "b'<div class=\"a\\xff0\\xffc\" id=\"u-\"><p>hi</p>\\n\\n</div>'"
+  }
+}

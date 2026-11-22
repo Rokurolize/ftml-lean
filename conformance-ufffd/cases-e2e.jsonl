@@ -1,0 +1,36 @@
+{"id": "control", "source": "alpha bravo charlie delta"}
+{"id": "plain-mid", "source": "alpha � bravo charlie delta"}
+{"id": "plain-start", "source": "� bravo charlie delta"}
+{"id": "plain-end", "source": "alpha bravo charlie �"}
+{"id": "plain-only", "source": "�"}
+{"id": "pair-text", "source": "alpha � bravo � charlie delta"}
+{"id": "pair-digits", "source": "alpha �42� charlie delta"}
+{"id": "near-token", "source": "alpha **boldone** beta � gamma **boldtwo** delta epsilon"}
+{"id": "swallow-bold", "source": "alpha � beta **boldswallowed** gamma delta"}
+{"id": "inside-bold", "source": "alpha **bold � inside** omega tail"}
+{"id": "entity-dec", "source": "alpha &#65533; bravo charlie"}
+{"id": "entity-hex", "source": "alpha &#xFFFD; bravo charlie"}
+{"id": "code-token", "source": "[[code]]\nx � y\n[[/code]]\n\nafter alpha bravo"}
+{"id": "raw-token", "source": "[[raw]]x � y[[/raw]] after alpha bravo"}
+{"id": "heading", "source": "+ Head � Word\n\nalpha bravo charlie"}
+{"id": "second-para", "source": "first para alpha\n\nsecond � para bravo tail"}
+{"id": "list-item", "source": "* item � one\n* item two tail"}
+{"id": "inc-target", "source": "included alpha � bravo tail end"}
+{"id": "includer", "source": "before text [[include muse-probe-ufffd-inc-target]] after text"}
+{"id": "end-after-bold", "source": "alpha **bold** �"}
+{"id": "end-first-para", "source": "alpha �\n\nbravo charlie"}
+{"id": "end-both-para", "source": "alpha �\n\nbravo �"}
+{"id": "only-two", "source": "��"}
+{"id": "pair-zero", "source": "alpha �0� bravo charlie"}
+{"id": "digits-text", "source": "alpha � 42 bravo charlie"}
+{"id": "unclosed-digits", "source": "alpha �42 bravo charlie"}
+{"id": "end-list", "source": "* item one �\n* item two"}
+{"id": "end-heading", "source": "+ Head Word �\n\nbody alpha bravo"}
+{"id": "start-bold-after", "source": "� **bold** tail end"}
+{"id": "mid-no-space", "source": "alpha�bravo charlie"}
+{"id": "end-no-space", "source": "alpha bravo�"}
+{"id": "spaces-control", "source": "alpha  bravo   charlie delta"}
+{"id": "fake-after-bold", "source": "alpha **bold**� omega tail"}
+{"id": "fake-before-bold", "source": "alpha �**bold** omega tail"}
+{"id": "fake-space-fake", "source": "alpha � � bravo charlie"}
+{"id": "fake-digit-mid", "source": "alpha �9 bravo\n\ncharlie delta"}

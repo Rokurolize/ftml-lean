@@ -1,0 +1,24 @@
+idx-url-shift -> muse-probe-suspect-email-idx-url-shift stable=True saved_source_matches=True valid=True
+idx-newline-shift -> muse-probe-suspect-email-idx-newline-shift stable=True saved_source_matches=True valid=True
+{
+ "idx-url-shift": {
+  "fullname": "muse-probe-suspect-email-idx-url-shift",
+  "html": "<p><a href=\"http://p.q/r\">http://p.q/r</a> <span class=\"wiki-email\">moc.elpmaxe|u#�4�</span></p>",
+  "html_sha256": "d27c9df2e6338eb28687cb86bfe0513bb1e767fc78c30664226883b579c55827",
+  "source": "http://p.q/r [u@example.com http://a.b/x]",
+  "source_sha256": "3f7d2a31edcc49c53d16345108e97055c165888dee0a84a22bef8ecd510fe1d1",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "idx-newline-shift": {
+  "fullname": "muse-probe-suspect-email-idx-newline-shift",
+  "html": "<p>X<br />\n<span class=\"wiki-email\">moc.elpmaxe|u#B�2�A</span></p>",
+  "html_sha256": "3227baa368c0f3cf431306e34ae05e550ac94be9d7e70853218597ce2231ce0e",
+  "source": "X\n[u@example.com A\nB]",
+  "source_sha256": "3ac8a5980e1b559c878f3abb01a73e559c7c87a608b9c28b1198af00521c8bca",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

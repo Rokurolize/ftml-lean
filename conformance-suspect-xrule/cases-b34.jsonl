@@ -1,0 +1,12 @@
+{"id": "x21-email-url-label", "source": "A [a@example.com http://example.com/a] B"}
+{"id": "x22-email-newline-label", "source": "A [a@example.com x\ny] B"}
+{"id": "x23-color-url-spec", "source": "A ##http://example.com|red## B"}
+{"id": "x24-math-nested-email", "source": "A [[$ [a@example.com http://example.com/a] $]] B"}
+{"id": "x25-email-double-space", "source": "A [a@example.com  x http://example.com/a] B"}
+{"id": "x26-email-shift", "source": "A [[[Some Page]]] [a@example.com @@x@@] B"}
+{"id": "x27-email-shift2", "source": "@@a@@ [a@example.com @@x@@] B"}
+{"id": "x28-file-freelink-label", "source": "[[file foo|[[[Bar]]]]]"}
+{"id": "x30-anchor-freelink-name", "source": "[[# [[[Bar]]] ]]"}
+{"id": "x31-toc-ustrip", "source": "[[toc]]\n++ Grüüße"}
+{"id": "x32-footnote-table", "source": ";[[footnote]]||a||b||[[/footnote]];\n[[footnoteblock]]"}
+{"id": "x33-div-attr-freelink", "source": "[[div class=\"[[[Bar]]]\"]]x[[/div]]"}

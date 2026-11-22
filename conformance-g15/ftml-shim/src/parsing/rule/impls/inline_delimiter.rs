@@ -1,0 +1,839 @@
+/*
+ * parsing/rule/impls/inline_delimiter.rs
+ *
+ * ftml - Library to parse Wikidot text
+ * Copyright (C) 2019-2026 Wikijump Team
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+use super::prelude::*;
+use crate::parsing::ParseSuccess;
+use crate::parsing::collect::{SegmentCtx, TokenWindow, split_delimiter_end};
+use crate::parsing::inline_scope::visit_children;
+use crate::parsing::parser::closer_scan::count_scan_token_visit;
+use crate::parsing::parser::closer_whitespace_is_quote_row_prefix;
+use crate::tree::{AcceptsPartial, Container, Element, ListItem};
+use std::borrow::Cow;
+
+/// Wikidot's table rule runs before inline pairing and splits a glued marker
+/// onto its own paragraph. A format whose body holds that table never pairs.
+pub(super) fn legacy_format_body_contains_table(elements: &Elements<'_>) -> bool {
+    let Elements::Single(Element::Container(container)) = elements else {
+        return false;
+    };
+    container
+        .elements()
+        .iter()
+        .any(|element| matches!(element, Element::Table(_)))
+}
+
+/// Live rejects an inline format pair whose body holds an explicit list item
+/// with a `[[code]]` block preceded by content — text, another block — in
+/// that same item (measured on sandbox-for-codex for every format; the
+/// markers stay literal there). An item whose code block is the FIRST
+/// content keeps the pair: live forms it and segments around the block.
+/// Each list item opens a fresh content scope; between items the rule is
+/// irrelevant. At the top level the body's own sequence is one scope.
+pub(super) fn legacy_format_body_code_preceded_by_content(
+    elements: &Elements<'_>,
+) -> bool {
+    let Elements::Single(Element::Container(container)) = elements else {
+        return false;
+    };
+    code_preceded_by_content_in_elements(container.elements())
+}
+
+/// `pub(super)` sibling for call sites that hold a bare vector of body
+/// elements rather than a collected container.
+pub(super) fn code_preceded_by_content_in_elements(elements: &[Element<'_>]) -> bool {
+    list_items_have_content_before_code(elements)
+        || top_level_has_content_before_code(elements)
+}
+
+fn top_level_has_content_before_code(elements: &[Element<'_>]) -> bool {
+    let mut content = false;
+    scope_has_content_before_code(elements, &mut content)
+}
+
+fn list_items_have_content_before_code(elements: &[Element<'_>]) -> bool {
+    for element in elements {
+        match element {
+            Element::List { items, .. } => {
+                for item in items {
+                    if item_has_content_before_code(item) {
+                        return true;
+                    }
+                }
+            }
+            _ => {
+                // Lists nested deeper in the body also own fresh item
+                // scopes; check them via their own enumeration.
+                let mut found = false;
+                visit_children(element, &mut |children| {
+                    if !found && list_items_have_content_before_code(children) {
+                        found = true;
+                    }
+                });
+                if found {
+                    return true;
+                }
+            }
+        }
+    }
+    false
+}
+
+fn item_has_content_before_code(item: &ListItem<'_>) -> bool {
+    match item {
+        ListItem::Elements { elements, .. } => {
+            top_level_has_content_before_code(elements)
+        }
+        ListItem::SubList { element } => match element.as_ref() {
+            Element::List { items, .. } => items.iter().any(item_has_content_before_code),
+            _ => false,
+        },
+    }
+}
+
+fn scope_has_content_before_code(elements: &[Element<'_>], content: &mut bool) -> bool {
+    for element in elements {
+        match element {
+            Element::LineBreak | Element::LineBreaks(_) => {}
+            Element::Text(text) if text.trim().is_empty() => {}
+            Element::Code(_) => {
+                if *content {
+                    return true;
+                }
+                *content = true;
+            }
+            Element::List { items, .. } => {
+                // A nested list's items open fresh item scopes, so any
+                // code block misplaced inside them rejects the pair too.
+                for item in items {
+                    if item_has_content_before_code(item) {
+                        return true;
+                    }
+                }
+                // A nested list is content in its enclosing scope.
+                *content = true;
+            }
+            _ => {
+                let mut recursed = false;
+                visit_children(element, &mut |children| {
+                    if !recursed && scope_has_content_before_code(children, content) {
+                        recursed = true;
+                    }
+                });
+                if recursed {
+                    return true;
+                }
+                *content = true;
+            }
+        }
+    }
+    false
+}
+
+pub(super) fn assert_unpadded_open<'r, 't>(
+    parser: &mut Parser<'r, 't>,
+    token: Token,
+) -> Result<(), ParseError> {
+    assert_step(parser, token)?;
+    if parser.current().token == Token::Whitespace {
+        Err(parser.make_err(ParseErrorKind::RuleFailed))
+    } else {
+        Ok(())
+    }
+}
+
+pub(super) fn container_closes_at_line_start(element: &Element) -> bool {
+    matches!(
+        element,
+        Element::Container(container)
+            if matches!(container.elements().last(), Some(Element::LineBreak))
+    )
+}
+
+pub(super) fn append_wikidot_line_close_space(
+    elements: Elements<'_>,
+    wikidot: bool,
+) -> Elements<'_> {
+    let closes_at_line_start = wikidot
+        && matches!(
+            &elements,
+            Elements::Single(element) if container_closes_at_line_start(element)
+        );
+    if !closes_at_line_start {
+        return elements;
+    }
+    match elements {
+        Elements::Single(element) => Elements::Multiple(vec![element, text!(" ")]),
+        _ => unreachable!("line-close check requires one container"),
+    }
+}
+
+pub(super) fn inline_body_padded_through_seams(elements: &[Element]) -> bool {
+    let mut start = 0usize;
+    let mut skipped_hidden = false;
+    while start < elements.len() && is_suppression_seam(&elements[start]) {
+        skipped_hidden = skipped_hidden || is_hidden_gate(&elements[start]);
+        start += 1;
+    }
+    if skipped_hidden && start < elements.len() && is_space_text(&elements[start]) {
+        return true;
+    }
+    let mut end = elements.len();
+    skipped_hidden = false;
+    while end > start && is_suppression_seam(&elements[end - 1]) {
+        skipped_hidden = skipped_hidden || is_hidden_gate(&elements[end - 1]);
+        end -= 1;
+    }
+    skipped_hidden && end > start && is_space_text(&elements[end - 1])
+}
+
+fn is_suppression_seam(element: &Element) -> bool {
+    matches!(element, Element::Delayed(delayed) if delayed.is_suppression_seam())
+}
+
+fn is_hidden_gate(element: &Element) -> bool {
+    matches!(element, Element::Delayed(delayed) if delayed.is_suppression_seam() && !delayed.is_typography_boundary())
+}
+
+fn is_space_text(element: &Element) -> bool {
+    matches!(element, Element::Text(text) if !text.is_empty() && text.bytes().all(|byte| byte == b' ' || byte == b'\t'))
+}
+
+#[derive(Debug, Copy, Clone, PartialEq, Eq)]
+pub(super) enum ReachableCloseMode {
+    Standard,
+    BlockBarrier,
+}
+
+fn post_list_gap_before(tokens: &[ExtractedToken<'_>], index: usize) -> bool {
+    let mut pos = index;
+    loop {
+        if pos == 0 {
+            return false;
+        }
+        pos -= 1;
+        match tokens[pos].token {
+            Token::Whitespace | Token::LineBreak => {}
+            Token::RightBlock => break,
+            _ => return false,
+        }
+    }
+    loop {
+        if pos == 0 {
+            return false;
+        }
+        pos -= 1;
+        match tokens[pos].token {
+            Token::Whitespace | Token::LineBreak => {}
+            Token::Identifier
+                if tokens[pos].slice.eq_ignore_ascii_case("ul")
+                    || tokens[pos].slice.eq_ignore_ascii_case("ol") =>
+            {
+                break;
+            }
+            _ => return false,
+        }
+    }
+    loop {
+        if pos == 0 {
+            return false;
+        }
+        pos -= 1;
+        match tokens[pos].token {
+            Token::Whitespace | Token::LineBreak => {}
+            Token::LeftBlockEnd => break,
+            _ => return false,
+        }
+    }
+    true
+}
+
+fn closer_bare_before(tokens: &[ExtractedToken<'_>], index: usize) -> bool {
+    let mut pos = index;
+    while pos > 0 {
+        pos -= 1;
+        match tokens[pos].token {
+            Token::Whitespace => {}
+            Token::LineBreak | Token::ParagraphBreak => return true,
+            _ => return false,
+        }
+    }
+    true
+}
+
+fn paragraph_break_after_list_close(tokens: &[ExtractedToken<'_>], index: usize) -> bool {
+    if tokens
+        .get(index)
+        .is_none_or(|token| token.token != Token::ParagraphBreak)
+    {
+        return false;
+    }
+    let mut cursor = index;
+    while cursor > 0 {
+        let Some(previous) = tokens.get(cursor - 1) else {
+            break;
+        };
+        if matches!(previous.token, Token::LineBreak | Token::ParagraphBreak) {
+            cursor -= 1;
+            continue;
+        }
+        break;
+    }
+    if cursor < 3 {
+        return false;
+    }
+    let (Some(close), Some(name), Some(open)) = (
+        tokens.get(cursor - 1),
+        tokens.get(cursor - 2),
+        tokens.get(cursor - 3),
+    ) else {
+        return false;
+    };
+    close.token == Token::RightBlock
+        && open.token == Token::LeftBlockEnd
+        && name.token == Token::Identifier
+        && (name.slice.eq_ignore_ascii_case("ul")
+            || name.slice.eq_ignore_ascii_case("ol"))
+}
+
+/// Whether the block head at byte `span_start` begins its line (only
+/// whitespace before it since the last break). This is judged on the
+/// full source text, not on the walk's remaining-token slice: a head
+/// inside a `{{...}}` span sits at or near the start of that slice yet
+/// is always preceded by the span opener on its line, so it never
+/// begins the line; a real nested block head does.
+/// The slice-based line-start judgment kept for `Standard` walks:
+/// only the walk's remaining tokens are scanned, so a head at the
+/// start of the slice counts as beginning its line.
+fn block_start_at_line_start_slice(tokens: &[ExtractedToken<'_>], index: usize) -> bool {
+    let mut pos = index;
+    while pos > 0 {
+        pos -= 1;
+        match tokens[pos].token {
+            Token::Whitespace => {}
+            Token::LineBreak | Token::ParagraphBreak => return true,
+            _ => return false,
+        }
+    }
+    true
+}
+
+fn block_start_at_line_start(text: &str, span_start: usize) -> bool {
+    let bytes = text.as_bytes();
+    let mut pos = span_start.min(bytes.len());
+    while pos > 0 {
+        match bytes[pos - 1] {
+            b' ' | b'\t' | b'\r' => pos -= 1,
+            b'\n' => return true,
+            _ => return false,
+        }
+    }
+    true
+}
+
+pub(super) fn validate_reachable_close(
+    parser: &Parser<'_, '_>,
+    token: Token,
+    split: Option<SplitDelimiter>,
+    mode: ReachableCloseMode,
+) -> Result<(), ParseError> {
+    let tokens = parser.remaining();
+    let scan_start = parser.ahead_token_index();
+    // Block ends change the result only when `end_block_fails` can return
+    // true in this context. Otherwise they are ordinary tokens, and a proved
+    // absence may be replayed. A context that can reject must not read that
+    // record: it would hide a `RuleFailed` block end. See
+    // `parsing/parser/closer_scan.rs`.
+    let blocks_can_reject = block_end_can_reject(parser, mode);
+    let absent = if split.is_some() {
+        None
+    } else {
+        parser
+            .delimiter_close_absent(token, scan_start)
+            .or_else(|| {
+                if blocks_can_reject {
+                    None
+                } else {
+                    parser.delimiter_close_absent_context_free(token, scan_start)
+                }
+            })
+    };
+    if let Some(paragraph_break) = absent {
+        return Err(if paragraph_break {
+            parser.make_err(ParseErrorKind::RuleFailed)
+        } else {
+            parser.make_err(ParseErrorKind::EndOfInput)
+        });
+    }
+
+    let mut paragraph_error = None;
+    let suppress_breaks = parser.settings().layout.legacy();
+    let gap_forgiveness = token == Token::Bold && suppress_breaks;
+    let opener_bare = !tokens.first().is_some_and(|next| {
+        !matches!(
+            next.token,
+            Token::Whitespace
+                | Token::LineBreak
+                | Token::ParagraphBreak
+                | Token::InputEnd
+        )
+    });
+    let mut forgave_post_list_gap = false;
+    let mut open_blocks: Vec<(String, bool)> = Vec::new();
+    let mut pb_stack: Vec<String> = Vec::new();
+    let mut saw_break = false;
+    // Both are only needed to decide whether this walk may be memoized.
+    let mut saw_block_pairing = false;
+    let mut last_paragraph_break = None;
+    let mut index = 0;
+    while index < tokens.len() {
+        count_scan_token_visit();
+        if let Some(delimiter) = split
+            && delimiter.is_half(&tokens[index])
+            && tokens.get(index + 1).is_some_and(|next| {
+                matches!(next.token, Token::LeftBlock | Token::LeftComment)
+            })
+            && TokenWindow::from_slice(&tokens[index..]).is_some_and(|window| {
+                split_delimiter_end(window, SegmentCtx::from_parser(parser), delimiter)
+                    .is_some()
+            })
+        {
+            if let Some(error) = paragraph_error {
+                return Err(error);
+            }
+            if mode == ReachableCloseMode::Standard
+                && index > 0
+                && tokens[index - 1].token == Token::Whitespace
+                && !closer_whitespace_is_quote_row_prefix(
+                    parser.full_text().inner(),
+                    tokens[index - 1].span.start,
+                    tokens[index - 1].span.end,
+                )
+            {
+                return Err(parser.make_err(ParseErrorKind::RuleFailed));
+            }
+            if forgave_post_list_gap {
+                return Err(parser.make_err(ParseErrorKind::RuleFailed));
+            }
+            return Ok(());
+        }
+        match tokens[index].token {
+            Token::LeftBlock | Token::LeftBlockStar => {
+                let name = block_name_at(tokens, index);
+                if is_block_name(&name) {
+                    pb_stack.push(name);
+                }
+            }
+            Token::LeftBlockEnd => {
+                let name = block_name_at(tokens, index);
+                if is_block_name(&name)
+                    && let Some(pos) = pb_stack.iter().rposition(|n| *n == name)
+                {
+                    pb_stack.truncate(pos);
+                }
+            }
+            _ => {}
+        }
+        match tokens[index].token {
+            Token::InputEnd => {
+                if split.is_none() && !saw_block_pairing {
+                    if blocks_can_reject {
+                        parser.record_delimiter_close_absent(
+                            token,
+                            scan_start,
+                            last_paragraph_break,
+                        );
+                    } else {
+                        parser.record_delimiter_close_absent_context_free(
+                            token,
+                            scan_start,
+                            last_paragraph_break,
+                        );
+                    }
+                }
+                return Err(paragraph_error
+                    .or_else(|| {
+                        saw_break.then(|| parser.make_err(ParseErrorKind::RuleFailed))
+                    })
+                    .unwrap_or_else(|| parser.make_err(ParseErrorKind::EndOfInput)));
+            }
+            Token::ParagraphBreak => {
+                last_paragraph_break = Some(scan_start + index);
+                saw_break = true;
+                let post_list_gap = parser.settings().layout.legacy()
+                    && pb_stack.is_empty()
+                    && !parser.in_wikidot_span_body()
+                    && !parser.in_wikidot_size_body()
+                    && !parser.in_wikidot_anchor_body()
+                    && paragraph_break_after_list_close(tokens, index);
+                if gap_forgiveness
+                    && pb_stack.is_empty()
+                    && !opener_bare
+                    && post_list_gap_before(tokens, index)
+                {
+                    forgave_post_list_gap = true;
+                } else if !post_list_gap && (!suppress_breaks || pb_stack.is_empty()) {
+                    paragraph_error.get_or_insert_with(|| {
+                        parser.make_err(ParseErrorKind::RuleFailed)
+                    });
+                }
+            }
+            Token::LeftBlock | Token::LeftBlockStar if blocks_can_reject => {
+                saw_block_pairing = true;
+                let name = block_name_at(tokens, index);
+                if is_block_name(&name) {
+                    // The full-source judgment (and the wider
+                    // fail-before-pop arm below) applies to
+                    // BlockBarrier walks (monospace and its kin),
+                    // where the exhibited-closer probes pin it.
+                    // Standard walks keep the historical slice-based
+                    // judgment: their pinned error output depends on
+                    // it (the footnote/harvest bold shapes).
+                    let at_line_start = match mode {
+                        ReachableCloseMode::BlockBarrier => block_start_at_line_start(
+                            parser.full_text().inner(),
+                            tokens[index].span.start,
+                        ),
+                        ReachableCloseMode::Standard => {
+                            block_start_at_line_start_slice(tokens, index)
+                        }
+                    };
+                    open_blocks.push((name, at_line_start));
+                }
+            }
+            Token::LeftLink if blocks_can_reject => {
+                saw_block_pairing = true;
+                if let Some(name) = link_name_at(tokens, index) {
+                    open_blocks.push((name, true));
+                }
+            }
+            Token::LeftBlockEnd if blocks_can_reject => {
+                saw_block_pairing = true;
+                let name = block_name_at(tokens, index);
+                if !is_block_name(&name) {
+                } else if let Some(pos) =
+                    open_blocks.iter().rposition(|(n, _)| *n == name)
+                {
+                    let name_in_arm = match mode {
+                        ReachableCloseMode::BlockBarrier => {
+                            name == "note" || name == "collapsible" || name == "div"
+                        }
+                        ReachableCloseMode::Standard => name == "note",
+                    };
+                    if name_in_arm
+                        && !open_blocks[pos].1
+                        && end_block_fails(parser, &name, mode)
+                    {
+                        // Note, collapsible and div bodies are
+                        // scan-delimited for this purpose: the pair
+                        // scanner pairs such a head with the first
+                        // closer after it. An exhibited (mid-line)
+                        // opener inside the span does not shield its
+                        // closer, so the closer fires and the span
+                        // fails (probes
+                        // muse-probe-exhibit-res-n2-balanced-span,
+                        // muse-probe-exhibit-d2-p7-coll-same and the
+                        // muse-probe-exhibit-d2-* family). A head at a
+                        // line start is a real nested block and keeps
+                        // the shield.
+                        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+                    }
+                    open_blocks.truncate(pos);
+                } else if end_block_fails(parser, &name, mode) {
+                    return Err(parser.make_err(ParseErrorKind::RuleFailed));
+                }
+            }
+            current if current == token => {
+                if let Some(error) = paragraph_error {
+                    return Err(error);
+                }
+                if mode == ReachableCloseMode::Standard
+                    && index > 0
+                    && tokens[index - 1].token == Token::Whitespace
+                    && !closer_whitespace_is_quote_row_prefix(
+                        parser.full_text().inner(),
+                        tokens[index - 1].span.start,
+                        tokens[index - 1].span.end,
+                    )
+                {
+                    return Err(parser.make_err(ParseErrorKind::RuleFailed));
+                }
+                if forgave_post_list_gap && closer_bare_before(tokens, index) {
+                    return Err(parser.make_err(ParseErrorKind::RuleFailed));
+                }
+                return Ok(());
+            }
+            _ => {}
+        }
+        index += 1;
+    }
+    Err(parser.make_err(ParseErrorKind::EndOfInput))
+}
+
+/// Whether some block name can make `end_block_fails` return true here.
+///
+/// When this is false, block tokens cannot change the closer scan's error, so
+/// the scan may skip them and reuse a context-free absence.
+fn block_end_can_reject(parser: &Parser<'_, '_>, mode: ReachableCloseMode) -> bool {
+    if parser.discarding_hidden_body() {
+        return true;
+    }
+    match mode {
+        ReachableCloseMode::BlockBarrier => [
+            "div",
+            "collapsible",
+            "footnote",
+            "center",
+            "bibliography",
+            "note",
+        ]
+        .into_iter()
+        .any(|name| end_block_fails(parser, name, mode)),
+        ReachableCloseMode::Standard => {
+            !parser.body_end_boundaries_is_empty()
+                || parser.in_wikidot_span_body()
+                || parser.in_wikidot_literal_alias_body()
+                || parser.in_wikidot_anchor_body()
+                || parser.in_wikidot_div_body()
+                || parser.in_wikidot_center_body()
+                || parser.in_wikidot_bibliography_body()
+        }
+    }
+}
+
+fn end_block_fails(
+    parser: &Parser<'_, '_>,
+    name: &str,
+    mode: ReachableCloseMode,
+) -> bool {
+    if parser.discarding_hidden_body() && parser.hidden_body_boundary_accepts(name) {
+        return true;
+    }
+    match mode {
+        ReachableCloseMode::Standard => {
+            parser.body_end_boundary_accepts(name)
+                || (name == "span"
+                    && (parser.in_wikidot_span_body()
+                        || parser.in_wikidot_literal_alias_body()))
+                || (name == "a"
+                    && (parser.in_wikidot_anchor_body()
+                        || parser.in_wikidot_literal_alias_body()))
+                || (name == "div"
+                    && (parser.in_wikidot_div_body()
+                        || parser.in_wikidot_literal_alias_body()))
+                || (name == "center" && parser.in_wikidot_center_body())
+                || (name == "bibliography" && parser.in_wikidot_bibliography_body())
+        }
+        ReachableCloseMode::BlockBarrier => {
+            matches!(
+                name,
+                "div" | "collapsible" | "footnote" | "center" | "bibliography" | "note"
+            ) && (parser.body_end_boundary_accepts(name)
+                || (name == "div" && parser.in_wikidot_div_body())
+                || (name == "center" && parser.in_wikidot_center_body())
+                || (name == "bibliography" && parser.in_wikidot_bibliography_body())
+                || (name == "collapsible" && parser.in_wikidot_collapsible()))
+        }
+    }
+}
+
+pub(super) fn body_crosses_item_boundary(parser: &Parser<'_, '_>, close: Token) -> bool {
+    if parser.accepts_partial() != AcceptsPartial::ListItem {
+        return false;
+    }
+    // The body's first token can itself be the explicit-list close when the
+    // opener ends an item ("a ##red|[[/li]]"): that token decides the
+    // deferral exactly like a later explicit-list close, so the walk starts at
+    // the current token instead of skipping it.
+    let remaining = parser.remaining();
+    let mut tokens = Vec::with_capacity(remaining.len() + 1);
+    tokens.push(parser.current().clone());
+    tokens.extend_from_slice(remaining);
+    let mut blocks: Vec<String> = Vec::new();
+    let mut raw = false;
+    let mut monospace = 0usize;
+    for (index, token) in tokens.iter().enumerate() {
+        if token.token == close
+            || token.token == Token::ParagraphBreak
+            || token.token == Token::InputEnd
+        {
+            return false;
+        }
+        match token.token {
+            Token::Raw => raw = !raw,
+            Token::LeftRaw => raw = true,
+            Token::RightRaw => raw = false,
+            Token::LeftMonospace => monospace += 1,
+            Token::RightMonospace => monospace = monospace.saturating_sub(1),
+            _ => {}
+        }
+        if raw || monospace > 0 {
+            continue;
+        }
+        match token.token {
+            Token::LeftBlock | Token::LeftBlockStar => {
+                let name = block_name_at(&tokens, index);
+                if !name.is_empty() && name != "li" {
+                    blocks.push(name);
+                }
+            }
+            Token::LeftBlockEnd => {
+                let name = block_name_at(&tokens, index);
+                if blocks.is_empty() {
+                    if matches!(name.as_str(), "li" | "ul" | "ol") {
+                        return true;
+                    }
+                } else if blocks.last().is_some_and(|open| *open == name) {
+                    blocks.pop();
+                }
+            }
+            _ => {}
+        }
+    }
+    false
+}
+
+pub(super) fn block_name_at(tokens: &[ExtractedToken<'_>], index: usize) -> String {
+    let mut name = String::new();
+    let mut pos = index + 1;
+    while let Some(tok) = tokens.get(pos) {
+        match tok.token {
+            Token::Whitespace
+            | Token::LineBreak
+            | Token::ParagraphBreak
+            | Token::RightBlock => break,
+            Token::LeftBlockStar => {}
+            Token::LeftBlock => match segment_close_at(tokens, pos) {
+                Some(next) => {
+                    pos = next;
+                    continue;
+                }
+                None => name.push_str(tok.slice),
+            },
+            _ => name.push_str(tok.slice),
+        }
+        pos += 1;
+    }
+    name.strip_suffix('_').unwrap_or(&name).to_ascii_lowercase()
+}
+
+fn segment_head_at(tokens: &[ExtractedToken<'_>], pos: usize) -> Option<usize> {
+    let mut inner = pos + 1;
+    if tokens
+        .get(inner)
+        .is_some_and(|tok| tok.token == Token::Whitespace)
+    {
+        inner += 1;
+    }
+    let tok = tokens.get(inner)?;
+    if tok.token == Token::Identifier
+        && (tok.slice.eq_ignore_ascii_case("iftags")
+            || tok.slice.eq_ignore_ascii_case("ifcategory"))
+    {
+        Some(inner + 1)
+    } else {
+        None
+    }
+}
+
+fn segment_close_at(tokens: &[ExtractedToken<'_>], start: usize) -> Option<usize> {
+    segment_head_at(tokens, start)?;
+    let mut depth = 1usize;
+    let mut pos = start + 1;
+    while let Some(tok) = tokens.get(pos) {
+        match tok.token {
+            Token::LineBreak | Token::ParagraphBreak | Token::InputEnd => {
+                return None;
+            }
+            Token::LeftBlock => {
+                if segment_head_at(tokens, pos).is_some() {
+                    depth += 1;
+                }
+            }
+            Token::LeftBlockEnd => {
+                if let Some(after_name) = segment_head_at(tokens, pos) {
+                    depth -= 1;
+                    if depth == 0 {
+                        return match tokens.get(after_name).map(|tok| tok.token) {
+                            Some(Token::RightBlock) | Some(Token::RightLink) => {
+                                Some(after_name + 1)
+                            }
+                            _ => None,
+                        };
+                    }
+                }
+            }
+            _ => {}
+        }
+        pos += 1;
+    }
+    None
+}
+
+pub(super) fn is_block_name(name: &str) -> bool {
+    !name.is_empty()
+        && name
+            .bytes()
+            .all(|b| b.is_ascii_alphanumeric() || b == b'-' || b == b'_')
+}
+
+pub(super) fn link_name_at(
+    tokens: &[ExtractedToken<'_>],
+    index: usize,
+) -> Option<String> {
+    match tokens.get(index + 1) {
+        Some(tok) if tok.token == Token::Identifier => Some(tok.slice.to_lowercase()),
+        _ => None,
+    }
+}
+
+pub(super) fn append_split_close_leftover<'t>(
+    elements: Elements<'t>,
+    leftover: String,
+) -> Elements<'t> {
+    let text = Element::Text(Cow::Owned(leftover));
+    match elements {
+        Elements::None => Elements::Single(text),
+        Elements::Single(element) => Elements::Multiple(vec![element, text]),
+        Elements::Multiple(mut elements) => {
+            elements.push(text);
+            Elements::Multiple(elements)
+        }
+    }
+}
+
+pub(super) fn prepend_split_close_leftover<'r, 't>(
+    collected: ParseSuccess<'r, 't, Elements<'t>>,
+    leftover: &str,
+) -> ParseSuccess<'r, 't, Elements<'t>> {
+    let text = leftover.to_owned();
+    collected.map(|elements| match elements {
+        Elements::Single(Element::Container(container)) => {
+            let mut children = Vec::with_capacity(container.elements().len() + 1);
+            children.push(Element::Text(Cow::Owned(text)));
+            children.extend(container.elements().iter().cloned());
+            Elements::Single(Element::Container(Container::new(
+                container.ctype(),
+                children,
+                container.attributes().clone(),
+            )))
+        }
+        elements => elements,
+    })
+}

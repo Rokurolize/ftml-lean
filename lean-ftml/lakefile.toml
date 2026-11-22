@@ -1,0 +1,150 @@
+name = "lean-ftml"
+version = "0.1.0"
+defaultTargets = ["lean-ftml"]
+
+[[lean_lib]]
+name = "LeanFtml"
+
+[[lean_exe]]
+name = "lean-ftml"
+root = "Main"
+
+[[lean_exe]]
+name = "lean-ftml-conformance"
+root = "Conformance"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-g12"
+root = "ConformanceG12"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-g14"
+root = "ConformanceG14"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-g15"
+root = "ConformanceG15"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-g16"
+root = "ConformanceG16"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r31"
+root = "ConformanceR31"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r32"
+root = "ConformanceR32"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r33"
+root = "ConformanceR33"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r34"
+root = "ConformanceR34"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r35"
+root = "ConformanceR35"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r36"
+root = "ConformanceR36"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r37"
+root = "ConformanceR37"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r38"
+root = "ConformanceR38"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r39"
+root = "ConformanceR39"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r310"
+root = "ConformanceR310"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r311"
+root = "ConformanceR311"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r312"
+root = "ConformanceR312"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r313"
+root = "ConformanceR313"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r314"
+root = "ConformanceR314"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r315"
+root = "ConformanceR315"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r316"
+root = "ConformanceR316"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r317"
+root = "ConformanceR317"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r41"
+root = "ConformanceR41"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r42"
+root = "ConformanceR42"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r43"
+root = "ConformanceR43"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r44"
+root = "ConformanceR44"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r45"
+root = "ConformanceR45"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r46"
+root = "ConformanceR46"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-capstone"
+root = "ConformanceCapstone"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r47"
+root = "ConformanceR47"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r48"
+root = "ConformanceR48"
+
+[[lean_exe]]
+name = "lean-ftml-tableadv-fix"
+root = "ConformanceTableadvFix"
+
+[[lean_exe]]
+name = "lean-ftml-tableadv-dfs-measure"
+root = "ConformanceTableadvDfs"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r310-legacy"
+root = "ConformanceR310Legacy"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-r45-legacy"
+root = "ConformanceR45Legacy"

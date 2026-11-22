@@ -1,0 +1,24 @@
+if-comma-space-multi-tagged -> muse-probe-suspect-block-if-comma-space-multi-tagged stable=True saved_source_matches=True valid=True
+if-only-comma-tagged -> muse-probe-suspect-block-if-only-comma-tagged stable=True saved_source_matches=True valid=True
+{
+ "if-comma-space-multi-tagged": {
+  "fullname": "muse-probe-suspect-block-if-comma-space-multi-tagged",
+  "html": "<p>KEEP<br />\nX</p>",
+  "html_sha256": "2f8c42960ded299a5d719adf4abd723595eca9d45efc9864da2bc4c2f9fc8cde",
+  "source": "[[iftags +alpha, +beta]]KEEP[[/iftags]]\nX",
+  "source_sha256": "d32232ec57b7791e87ffa7b97bd8257ece7dafdf746920f87d1d6c9741006aa8",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "if-only-comma-tagged": {
+  "fullname": "muse-probe-suspect-block-if-only-comma-tagged",
+  "html": "<p>X</p>",
+  "html_sha256": "ad248596661a840f40c40032a10aabcc6de25f92a6220ba1d0dd826fab1b2156",
+  "source": "[[iftags ,]]KEEP[[/iftags]]\nX",
+  "source_sha256": "6e6935b341f026ad3417023c02ab896295c9f578b1624f5080178e3b95ddebb4",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

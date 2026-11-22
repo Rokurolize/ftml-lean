@@ -1,0 +1,97 @@
+{
+ "control": {
+  "fullname": "muse-probe-ufffd-control",
+  "source": "alpha bravo charlie delta",
+  "action": "created"
+ },
+ "plain-mid": {
+  "fullname": "muse-probe-ufffd-plain-mid",
+  "source": "alpha � bravo charlie delta",
+  "action": "created"
+ },
+ "plain-start": {
+  "fullname": "muse-probe-ufffd-plain-start",
+  "source": "� bravo charlie delta",
+  "action": "created"
+ },
+ "plain-end": {
+  "fullname": "muse-probe-ufffd-plain-end",
+  "source": "alpha bravo charlie �",
+  "action": "created"
+ },
+ "plain-only": {
+  "fullname": "muse-probe-ufffd-plain-only",
+  "source": "�",
+  "action": "created"
+ },
+ "pair-text": {
+  "fullname": "muse-probe-ufffd-pair-text",
+  "source": "alpha � bravo � charlie delta",
+  "action": "created"
+ },
+ "pair-digits": {
+  "fullname": "muse-probe-ufffd-pair-digits",
+  "source": "alpha �42� charlie delta",
+  "action": "created"
+ },
+ "near-token": {
+  "fullname": "muse-probe-ufffd-near-token",
+  "source": "alpha **boldone** beta � gamma **boldtwo** delta epsilon",
+  "action": "created"
+ },
+ "swallow-bold": {
+  "fullname": "muse-probe-ufffd-swallow-bold",
+  "source": "alpha � beta **boldswallowed** gamma delta",
+  "action": "created"
+ },
+ "inside-bold": {
+  "fullname": "muse-probe-ufffd-inside-bold",
+  "source": "alpha **bold � inside** omega tail",
+  "action": "created"
+ },
+ "entity-dec": {
+  "fullname": "muse-probe-ufffd-entity-dec",
+  "source": "alpha &#65533; bravo charlie",
+  "action": "created"
+ },
+ "entity-hex": {
+  "fullname": "muse-probe-ufffd-entity-hex",
+  "source": "alpha &#xFFFD; bravo charlie",
+  "action": "created"
+ },
+ "code-token": {
+  "fullname": "muse-probe-ufffd-code-token",
+  "source": "[[code]]\nx � y\n[[/code]]\n\nafter alpha bravo",
+  "action": "created"
+ },
+ "raw-token": {
+  "fullname": "muse-probe-ufffd-raw-token",
+  "source": "[[raw]]x � y[[/raw]] after alpha bravo",
+  "action": "created"
+ },
+ "heading": {
+  "fullname": "muse-probe-ufffd-heading",
+  "source": "+ Head � Word\n\nalpha bravo charlie",
+  "action": "created"
+ },
+ "second-para": {
+  "fullname": "muse-probe-ufffd-second-para",
+  "source": "first para alpha\n\nsecond � para bravo tail",
+  "action": "created"
+ },
+ "list-item": {
+  "fullname": "muse-probe-ufffd-list-item",
+  "source": "* item � one\n* item two tail",
+  "action": "created"
+ },
+ "inc-target": {
+  "fullname": "muse-probe-ufffd-inc-target",
+  "source": "included alpha � bravo tail end",
+  "action": "created"
+ },
+ "includer": {
+  "fullname": "muse-probe-ufffd-includer",
+  "source": "before text [[include muse-probe-ufffd-inc-target]] after text",
+  "action": "created"
+ }
+}

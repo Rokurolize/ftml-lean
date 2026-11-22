@@ -1,0 +1,7 @@
+{"id": "bq-raw-nospace", "source": "A\n\n>@@hello@@\n\nB"}
+{"id": "bq-raw-space-control", "source": "A\n\n> @@hello@@\n\nB"}
+{"id": "bq-comment-after-marker", "source": "A\n\n>[!-- c --]\n\nB"}
+{"id": "if-trail-forbid-untag", "source": "A [[iftags -foo,]]KEPT[[/iftags]] B"}
+{"id": "if-lead-forbid-untag", "source": "A [[iftags ,-foo]]KEPT[[/iftags]] B"}
+{"id": "cm-in-raw", "source": "@@[!-- c --]@@"}
+{"id": "bq-comment-tail-text", "source": "> [!-- c --] q"}

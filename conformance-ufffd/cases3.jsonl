@@ -1,0 +1,5 @@
+{"id": "spaces-control", "source": "alpha  bravo   charlie delta"}
+{"id": "fake-after-bold", "source": "alpha **bold**� omega tail"}
+{"id": "fake-before-bold", "source": "alpha �**bold** omega tail"}
+{"id": "fake-space-fake", "source": "alpha � � bravo charlie"}
+{"id": "fake-digit-mid", "source": "alpha �9 bravo\n\ncharlie delta"}

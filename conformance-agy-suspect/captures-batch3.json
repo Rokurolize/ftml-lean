@@ -1,0 +1,42 @@
+{
+ "b3-ul-mixed-inner": {
+  "fullname": "muse-probe-agy-suspect-b3-ul-mixed-inner",
+  "html": "<ul>\n<li>A</li>\n</ul>\n<br />\nAFTER",
+  "html_sha256": "63ade5703c435821deddfa12c96e34e93877dcb5efd7631d55216879d569a3b9",
+  "source": "[[ul]]\n[[LI]]A[[/LI]]\n[[/ul]]\n\nAFTER",
+  "source_sha256": "d319f4ccf330d0bd2c953c512b1cdc2877282ef57d38dddba61f2ebb5b44bdc9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "b3-ol-upper-close": {
+  "fullname": "muse-probe-agy-suspect-b3-ol-upper-close",
+  "html": "<ol>\n<li>Case</li>\n</ol>\n<br />",
+  "html_sha256": "d833f2d9884cf9e08ac812828d0a6f0d2cd959d6b63369c7814dc51023a511ef",
+  "source": "[[ol]]\n[[li]]Case[[/LI]]\n[[/OL]]",
+  "source_sha256": "7356914eb31b91c4c214112c52bb1400dae1e6360fab542f383d0899e3e5e906",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "b3-mod654-upper-body": {
+  "fullname": "muse-probe-agy-suspect-b3-mod654-upper-body",
+  "html": "<div class=\"error-block\">[[module <em>unknownmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>",
+  "html_sha256": "794f4d5040bebaa7b6ec9a796e040976ca972d19a6ecc5d7aa7c9079407cabf2",
+  "source": "[[MODULE654 unknownmod]]\nbody\n[[/module]]",
+  "source_sha256": "c85a4c8850b4c1543f409d03e85d3884be97b940a0327869a1e52a30f28d3927",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "b3-div-raw-class": {
+  "fullname": "muse-probe-agy-suspect-b3-div-raw-class",
+  "html": "<div id=\"\" class=\"\">\n<p>hi</p>\n</div>",
+  "html_sha256": "411b339d311326d1b89cfc48ad5ff85b174cb707937af88ec5768584d2ab4166",
+  "source": "[[div class=\"a@@b@@c\" id=\"a@@b@@c\"]]\nhi\n[[/div]]",
+  "source_sha256": "65eac34d29d9d7629e24d49c29be04d4553af1113cdeba9885178cd60cf0773e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

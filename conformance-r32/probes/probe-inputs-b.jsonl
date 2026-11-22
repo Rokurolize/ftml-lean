@@ -1,0 +1,4 @@
+{"id": "f1-form-with-code-line", "source": "[[form]]\n[[code]]x[[/code]]\n---\ny\n[[/form]]"}
+{"id": "f2-rawold-across-code", "source": "``start\n[[code]]x[[/code]]\nend``"}
+{"id": "f3-raw-abort-across-code", "source": "@@start\n[[code]]x[[/code]]\nend@@"}
+{"id": "f4-raw-after-code-sameline", "source": "[[code]]x[[/code]] @@raw@@"}

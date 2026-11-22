@@ -1,0 +1,292 @@
+{"id": "url-link-0", "rule": "Url", "opts": {"type": "inline", "href": "http://a.example", "text": "a"}, "expect": ["urlLink"], "target": "urlLink"}
+{"id": "url-target-0", "rule": "Url", "opts": {"type": "descr", "href": "http://a.example", "text": "a", "target": "_blank"}, "expect": ["urlLink", "urlTarget"], "target": "urlTarget"}
+{"id": "url-footnote-0", "rule": "Url", "opts": {"type": "footnote", "href": "http://a.example", "text": "a"}, "expect": ["urlLink", "urlFootnote"], "target": "urlFootnote"}
+{"id": "url-link-1", "rule": "Url", "opts": {"type": "inline", "href": "https://b.example/x", "text": "hello"}, "expect": ["urlLink"], "target": "urlLink"}
+{"id": "url-target-1", "rule": "Url", "opts": {"type": "descr", "href": "https://b.example/x", "text": "hello", "target": "_blank"}, "expect": ["urlLink", "urlTarget"], "target": "urlTarget"}
+{"id": "url-footnote-1", "rule": "Url", "opts": {"type": "footnote", "href": "https://b.example/x", "text": "hello"}, "expect": ["urlLink", "urlFootnote"], "target": "urlFootnote"}
+{"id": "url-link-2", "rule": "Url", "opts": {"type": "inline", "href": "http://c.example?q=1", "text": "x y"}, "expect": ["urlLink"], "target": "urlLink"}
+{"id": "url-target-2", "rule": "Url", "opts": {"type": "descr", "href": "http://c.example?q=1", "text": "x y", "target": "_blank"}, "expect": ["urlLink", "urlTarget"], "target": "urlTarget"}
+{"id": "url-footnote-2", "rule": "Url", "opts": {"type": "footnote", "href": "http://c.example?q=1", "text": "x y"}, "expect": ["urlLink", "urlFootnote"], "target": "urlFootnote"}
+{"id": "url-link-3", "rule": "Url", "opts": {"type": "inline", "href": "mailto:d@example.com", "text": "O'Brien"}, "expect": ["urlLink"], "target": "urlLink"}
+{"id": "url-target-3", "rule": "Url", "opts": {"type": "descr", "href": "mailto:d@example.com", "text": "O'Brien", "target": "_blank"}, "expect": ["urlLink", "urlTarget"], "target": "urlTarget"}
+{"id": "url-footnote-3", "rule": "Url", "opts": {"type": "footnote", "href": "mailto:d@example.com", "text": "O'Brien"}, "expect": ["urlLink", "urlFootnote"], "target": "urlFootnote"}
+{"id": "url-link-4", "rule": "Url", "opts": {"type": "inline", "href": "http://e.example/a/b", "text": "a&b"}, "expect": ["urlLink"], "target": "urlLink"}
+{"id": "url-target-4", "rule": "Url", "opts": {"type": "descr", "href": "http://e.example/a/b", "text": "a&b", "target": "_blank"}, "expect": ["urlLink", "urlTarget"], "target": "urlTarget"}
+{"id": "url-footnote-4", "rule": "Url", "opts": {"type": "footnote", "href": "http://e.example/a/b", "text": "a&b"}, "expect": ["urlLink", "urlFootnote"], "target": "urlFootnote"}
+{"id": "url-hash-0", "rule": "Url", "opts": {"type": "descr", "href": "#", "text": "a", "target": ""}, "expect": ["urlLink", "urlHash"], "target": "urlHash"}
+{"id": "url-hash-1", "rule": "Url", "opts": {"type": "descr", "href": "#", "text": "hello", "target": "_blank"}, "expect": ["urlLink", "urlHash", "urlTarget"], "target": "urlHash"}
+{"id": "url-hash-2", "rule": "Url", "opts": {"type": "descr", "href": "#", "text": "x y", "target": ""}, "expect": ["urlLink", "urlHash"], "target": "urlHash"}
+{"id": "url-hash-3", "rule": "Url", "opts": {"type": "descr", "href": "#", "text": "O'Brien", "target": "_blank"}, "expect": ["urlLink", "urlHash", "urlTarget"], "target": "urlHash"}
+{"id": "url-hash-4", "rule": "Url", "opts": {"type": "descr", "href": "#", "text": "a&b", "target": ""}, "expect": ["urlLink", "urlHash"], "target": "urlHash"}
+{"id": "url-hash-5", "rule": "Url", "opts": {"type": "descr", "href": "#", "text": "n0", "target": "_blank"}, "expect": ["urlLink", "urlHash", "urlTarget"], "target": "urlHash"}
+{"id": "url-hash-6", "rule": "Url", "opts": {"type": "descr", "href": "#", "text": "zz", "target": ""}, "expect": ["urlLink", "urlHash"], "target": "urlHash"}
+{"id": "url-hash-7", "rule": "Url", "opts": {"type": "descr", "href": "#", "text": "body", "target": "_blank"}, "expect": ["urlLink", "urlHash", "urlTarget"], "target": "urlHash"}
+{"id": "iw-known-0", "rule": "Interwiki", "opts": {"site": "wikipedia", "page": "Page_0", "text": "a"}, "expect": ["iwKnown"], "target": "iwKnown"}
+{"id": "iw-known-1", "rule": "Interwiki", "opts": {"site": "wikipedia.pl", "page": "Page_1", "text": "hello"}, "expect": ["iwKnown"], "target": "iwKnown"}
+{"id": "iw-known-2", "rule": "Interwiki", "opts": {"site": "pl.wikipedia", "page": "Page_2", "text": "x y"}, "expect": ["iwKnown"], "target": "iwKnown"}
+{"id": "iw-known-3", "rule": "Interwiki", "opts": {"site": "google", "page": "Page_3", "text": "O'Brien"}, "expect": ["iwKnown"], "target": "iwKnown"}
+{"id": "iw-known-4", "rule": "Interwiki", "opts": {"site": "dictionary", "page": "Page_4", "text": "a&b"}, "expect": ["iwKnown"], "target": "iwKnown"}
+{"id": "iw-unknown-0", "rule": "Interwiki", "opts": {"site": "nosuch0", "page": "x", "text": "a"}, "expect": ["iwUnknown"], "target": "iwUnknown"}
+{"id": "iw-unknown-1", "rule": "Interwiki", "opts": {"site": "nosuch1", "page": "x", "text": "hello"}, "expect": ["iwUnknown"], "target": "iwUnknown"}
+{"id": "iw-unknown-2", "rule": "Interwiki", "opts": {"site": "nosuch2", "page": "x", "text": "x y"}, "expect": ["iwUnknown"], "target": "iwUnknown"}
+{"id": "iw-unknown-3", "rule": "Interwiki", "opts": {"site": "nosuch3", "page": "x", "text": "O'Brien"}, "expect": ["iwUnknown"], "target": "iwUnknown"}
+{"id": "iw-unknown-4", "rule": "Interwiki", "opts": {"site": "nosuch4", "page": "x", "text": "a&b"}, "expect": ["iwUnknown"], "target": "iwUnknown"}
+{"id": "iw-unknown-5", "rule": "Interwiki", "opts": {"site": "nosuch5", "page": "x", "text": "n0"}, "expect": ["iwUnknown"], "target": "iwUnknown"}
+{"id": "iw-unknown-6", "rule": "Interwiki", "opts": {"site": "nosuch6", "page": "x", "text": "zz"}, "expect": ["iwUnknown"], "target": "iwUnknown"}
+{"id": "iw-unknown-7", "rule": "Interwiki", "opts": {"site": "nosuch7", "page": "x", "text": "body"}, "expect": ["iwUnknown"], "target": "iwUnknown"}
+{"id": "email-0", "rule": "Email", "opts": {"email": "a0@b.example", "text": "a"}, "expect": ["emReversed"], "target": "emReversed"}
+{"id": "email-1", "rule": "Email", "opts": {"email": "a1@b.example", "text": "hello"}, "expect": ["emReversed"], "target": "emReversed"}
+{"id": "email-2", "rule": "Email", "opts": {"email": "a2@b.example", "text": "x y"}, "expect": ["emReversed"], "target": "emReversed"}
+{"id": "email-3", "rule": "Email", "opts": {"email": "a3@b.example", "text": "O'Brien"}, "expect": ["emReversed"], "target": "emReversed"}
+{"id": "email-4", "rule": "Email", "opts": {"email": "a4@b.example", "text": "a&b"}, "expect": ["emReversed"], "target": "emReversed"}
+{"id": "email-5", "rule": "Email", "opts": {"email": "a5@b.example", "text": "n0"}, "expect": ["emReversed"], "target": "emReversed"}
+{"id": "email-6", "rule": "Email", "opts": {"email": "a6@b.example", "text": "zz"}, "expect": ["emReversed"], "target": "emReversed"}
+{"id": "email-7", "rule": "Email", "opts": {"email": "a7@b.example", "text": "body"}, "expect": ["emReversed"], "target": "emReversed"}
+{"id": "fl-url-0", "rule": "Freelink", "opts": {"url": "http://x.example/0", "text": " label0 "}, "expect": ["flUrl"], "target": "flUrl"}
+{"id": "fl-exists-0", "rule": "Freelink", "opts": {"page": "other-page", "text": " label0 ", "anchor": "#a"}, "expect": ["flExists"], "target": "flExists"}
+{"id": "fl-missing-0", "rule": "Freelink", "opts": {"page": "no-page-0", "text": " label0 "}, "expect": ["flMissing"], "target": "flMissing"}
+{"id": "fl-nonbr-0", "rule": "Freelink", "opts": {"page": "no-page-0", "text": "two words 0", "nonbr": true}, "expect": ["flMissing", "flNonbr"], "target": "flNonbr"}
+{"id": "fl-target-0", "rule": "Freelink", "opts": {"url": "http://x.example/0", "text": "L", "target": "_blank"}, "expect": ["flUrl", "flTarget"], "target": "flTarget"}
+{"id": "fl-site-0", "rule": "Freelink", "opts": {"site": "example0", "page": "p", "text": "L"}, "expect": ["flSite"], "target": "flSite", "note": "Freelink site branch: reference fatals on undefined GlobalProperties; unreachable after parse correction"}
+{"id": "fl-url-1", "rule": "Freelink", "opts": {"url": "http://x.example/1", "text": " label1 "}, "expect": ["flUrl"], "target": "flUrl"}
+{"id": "fl-exists-1", "rule": "Freelink", "opts": {"page": "other-page", "text": " label1 ", "anchor": "#a"}, "expect": ["flExists"], "target": "flExists"}
+{"id": "fl-missing-1", "rule": "Freelink", "opts": {"page": "no-page-1", "text": " label1 "}, "expect": ["flMissing"], "target": "flMissing"}
+{"id": "fl-nonbr-1", "rule": "Freelink", "opts": {"page": "no-page-1", "text": "two words 1", "nonbr": true}, "expect": ["flMissing", "flNonbr"], "target": "flNonbr"}
+{"id": "fl-target-1", "rule": "Freelink", "opts": {"url": "http://x.example/1", "text": "L", "target": "_blank"}, "expect": ["flUrl", "flTarget"], "target": "flTarget"}
+{"id": "fl-site-1", "rule": "Freelink", "opts": {"site": "example1", "page": "p", "text": "L"}, "expect": ["flSite"], "target": "flSite", "note": "Freelink site branch: reference fatals on undefined GlobalProperties; unreachable after parse correction"}
+{"id": "fl-url-2", "rule": "Freelink", "opts": {"url": "http://x.example/2", "text": " label2 "}, "expect": ["flUrl"], "target": "flUrl"}
+{"id": "fl-exists-2", "rule": "Freelink", "opts": {"page": "other-page", "text": " label2 ", "anchor": "#a"}, "expect": ["flExists"], "target": "flExists"}
+{"id": "fl-missing-2", "rule": "Freelink", "opts": {"page": "no-page-2", "text": " label2 "}, "expect": ["flMissing"], "target": "flMissing"}
+{"id": "fl-nonbr-2", "rule": "Freelink", "opts": {"page": "no-page-2", "text": "two words 2", "nonbr": true}, "expect": ["flMissing", "flNonbr"], "target": "flNonbr"}
+{"id": "fl-target-2", "rule": "Freelink", "opts": {"url": "http://x.example/2", "text": "L", "target": "_blank"}, "expect": ["flUrl", "flTarget"], "target": "flTarget"}
+{"id": "fl-site-2", "rule": "Freelink", "opts": {"site": "example2", "page": "p", "text": "L"}, "expect": ["flSite"], "target": "flSite", "note": "Freelink site branch: reference fatals on undefined GlobalProperties; unreachable after parse correction"}
+{"id": "fl-url-3", "rule": "Freelink", "opts": {"url": "http://x.example/3", "text": " label3 "}, "expect": ["flUrl"], "target": "flUrl"}
+{"id": "fl-exists-3", "rule": "Freelink", "opts": {"page": "other-page", "text": " label3 ", "anchor": "#a"}, "expect": ["flExists"], "target": "flExists"}
+{"id": "fl-missing-3", "rule": "Freelink", "opts": {"page": "no-page-3", "text": " label3 "}, "expect": ["flMissing"], "target": "flMissing"}
+{"id": "fl-nonbr-3", "rule": "Freelink", "opts": {"page": "no-page-3", "text": "two words 3", "nonbr": true}, "expect": ["flMissing", "flNonbr"], "target": "flNonbr"}
+{"id": "fl-target-3", "rule": "Freelink", "opts": {"url": "http://x.example/3", "text": "L", "target": "_blank"}, "expect": ["flUrl", "flTarget"], "target": "flTarget"}
+{"id": "fl-site-3", "rule": "Freelink", "opts": {"site": "example3", "page": "p", "text": "L"}, "expect": ["flSite"], "target": "flSite", "note": "Freelink site branch: reference fatals on undefined GlobalProperties; unreachable after parse correction"}
+{"id": "fl-url-4", "rule": "Freelink", "opts": {"url": "http://x.example/4", "text": " label4 "}, "expect": ["flUrl"], "target": "flUrl"}
+{"id": "fl-exists-4", "rule": "Freelink", "opts": {"page": "other-page", "text": " label4 ", "anchor": "#a"}, "expect": ["flExists"], "target": "flExists"}
+{"id": "fl-missing-4", "rule": "Freelink", "opts": {"page": "no-page-4", "text": " label4 "}, "expect": ["flMissing"], "target": "flMissing"}
+{"id": "fl-nonbr-4", "rule": "Freelink", "opts": {"page": "no-page-4", "text": "two words 4", "nonbr": true}, "expect": ["flMissing", "flNonbr"], "target": "flNonbr"}
+{"id": "fl-target-4", "rule": "Freelink", "opts": {"url": "http://x.example/4", "text": "L", "target": "_blank"}, "expect": ["flUrl", "flTarget"], "target": "flTarget"}
+{"id": "fl-site-4", "rule": "Freelink", "opts": {"site": "example4", "page": "p", "text": "L"}, "expect": ["flSite"], "target": "flSite", "note": "Freelink site branch: reference fatals on undefined GlobalProperties; unreachable after parse correction"}
+{"id": "fl-url-5", "rule": "Freelink", "opts": {"url": "http://x.example/5", "text": " label5 "}, "expect": ["flUrl"], "target": "flUrl"}
+{"id": "fl-exists-5", "rule": "Freelink", "opts": {"page": "other-page", "text": " label5 ", "anchor": "#a"}, "expect": ["flExists"], "target": "flExists"}
+{"id": "fl-missing-5", "rule": "Freelink", "opts": {"page": "no-page-5", "text": " label5 "}, "expect": ["flMissing"], "target": "flMissing"}
+{"id": "fl-nonbr-5", "rule": "Freelink", "opts": {"page": "no-page-5", "text": "two words 5", "nonbr": true}, "expect": ["flMissing", "flNonbr"], "target": "flNonbr"}
+{"id": "fl-target-5", "rule": "Freelink", "opts": {"url": "http://x.example/5", "text": "L", "target": "_blank"}, "expect": ["flUrl", "flTarget"], "target": "flTarget"}
+{"id": "fl-site-5", "rule": "Freelink", "opts": {"site": "example5", "page": "p", "text": "L"}, "expect": ["flSite"], "target": "flSite", "note": "Freelink site branch: reference fatals on undefined GlobalProperties; unreachable after parse correction"}
+{"id": "fl-url-6", "rule": "Freelink", "opts": {"url": "http://x.example/6", "text": " label6 "}, "expect": ["flUrl"], "target": "flUrl"}
+{"id": "fl-exists-6", "rule": "Freelink", "opts": {"page": "other-page", "text": " label6 ", "anchor": "#a"}, "expect": ["flExists"], "target": "flExists"}
+{"id": "fl-missing-6", "rule": "Freelink", "opts": {"page": "no-page-6", "text": " label6 "}, "expect": ["flMissing"], "target": "flMissing"}
+{"id": "fl-nonbr-6", "rule": "Freelink", "opts": {"page": "no-page-6", "text": "two words 6", "nonbr": true}, "expect": ["flMissing", "flNonbr"], "target": "flNonbr"}
+{"id": "fl-target-6", "rule": "Freelink", "opts": {"url": "http://x.example/6", "text": "L", "target": "_blank"}, "expect": ["flUrl", "flTarget"], "target": "flTarget"}
+{"id": "fl-site-6", "rule": "Freelink", "opts": {"site": "example6", "page": "p", "text": "L"}, "expect": ["flSite"], "target": "flSite", "note": "Freelink site branch: reference fatals on undefined GlobalProperties; unreachable after parse correction"}
+{"id": "fl-url-7", "rule": "Freelink", "opts": {"url": "http://x.example/7", "text": " label7 "}, "expect": ["flUrl"], "target": "flUrl"}
+{"id": "fl-exists-7", "rule": "Freelink", "opts": {"page": "other-page", "text": " label7 ", "anchor": "#a"}, "expect": ["flExists"], "target": "flExists"}
+{"id": "fl-missing-7", "rule": "Freelink", "opts": {"page": "no-page-7", "text": " label7 "}, "expect": ["flMissing"], "target": "flMissing"}
+{"id": "fl-nonbr-7", "rule": "Freelink", "opts": {"page": "no-page-7", "text": "two words 7", "nonbr": true}, "expect": ["flMissing", "flNonbr"], "target": "flNonbr"}
+{"id": "fl-target-7", "rule": "Freelink", "opts": {"url": "http://x.example/7", "text": "L", "target": "_blank"}, "expect": ["flUrl", "flTarget"], "target": "flTarget"}
+{"id": "fl-site-7", "rule": "Freelink", "opts": {"site": "example7", "page": "p", "text": "L"}, "expect": ["flSite"], "target": "flSite", "note": "Freelink site branch: reference fatals on undefined GlobalProperties; unreachable after parse correction"}
+{"id": "im-first-0", "rule": "Image", "opts": {"src": ":first"}, "expect": ["imFirst"], "target": "imFirst"}
+{"id": "im-flickr-0", "rule": "Image", "opts": {"src": "flickr:0"}, "expect": ["imFlickr"], "target": "imFlickr", "note": "Image:FlickrHandler serving disposition: reference fatal, Lean excluded; not emitted by the parse rules"}
+{"id": "im-url-0", "rule": "Image", "opts": {"src": "http://x.example/0.png"}, "expect": ["imUrlSource"], "target": "imUrlSource"}
+{"id": "im-resized-0", "rule": "Image", "opts": {"src": "page0/a.webp", "attr": {"size": "small"}}, "expect": ["imLocalResized"], "target": "imLocalResized"}
+{"id": "im-plain-0", "rule": "Image", "opts": {"src": "page0/a.png"}, "expect": ["imLocalPlain"], "target": "imLocalPlain"}
+{"id": "im-linked-0", "rule": "Image", "opts": {"src": "a0.png", "attr": {"link": "http://x.example/0"}}, "expect": ["imLocalPlain", "imLinked"], "target": "imLinked"}
+{"id": "im-first-1", "rule": "Image", "opts": {"src": ":first"}, "expect": ["imFirst"], "target": "imFirst"}
+{"id": "im-flickr-1", "rule": "Image", "opts": {"src": "flickr:1"}, "expect": ["imFlickr"], "target": "imFlickr", "note": "Image:FlickrHandler serving disposition: reference fatal, Lean excluded; not emitted by the parse rules"}
+{"id": "im-url-1", "rule": "Image", "opts": {"src": "http://x.example/1.png"}, "expect": ["imUrlSource"], "target": "imUrlSource"}
+{"id": "im-resized-1", "rule": "Image", "opts": {"src": "page1/a.webp", "attr": {"size": "medium"}}, "expect": ["imLocalResized"], "target": "imLocalResized"}
+{"id": "im-plain-1", "rule": "Image", "opts": {"src": "page1/a.png"}, "expect": ["imLocalPlain"], "target": "imLocalPlain"}
+{"id": "im-linked-1", "rule": "Image", "opts": {"src": "a1.png", "attr": {"link": "http://x.example/1"}}, "expect": ["imLocalPlain", "imLinked"], "target": "imLinked"}
+{"id": "im-first-2", "rule": "Image", "opts": {"src": ":first"}, "expect": ["imFirst"], "target": "imFirst"}
+{"id": "im-flickr-2", "rule": "Image", "opts": {"src": "flickr:2"}, "expect": ["imFlickr"], "target": "imFlickr", "note": "Image:FlickrHandler serving disposition: reference fatal, Lean excluded; not emitted by the parse rules"}
+{"id": "im-url-2", "rule": "Image", "opts": {"src": "http://x.example/2.png"}, "expect": ["imUrlSource"], "target": "imUrlSource"}
+{"id": "im-resized-2", "rule": "Image", "opts": {"src": "page2/a.webp", "attr": {"size": "thumbnail"}}, "expect": ["imLocalResized"], "target": "imLocalResized"}
+{"id": "im-plain-2", "rule": "Image", "opts": {"src": "page2/a.png"}, "expect": ["imLocalPlain"], "target": "imLocalPlain"}
+{"id": "im-linked-2", "rule": "Image", "opts": {"src": "a2.png", "attr": {"link": "http://x.example/2"}}, "expect": ["imLocalPlain", "imLinked"], "target": "imLinked"}
+{"id": "im-first-3", "rule": "Image", "opts": {"src": ":first"}, "expect": ["imFirst"], "target": "imFirst"}
+{"id": "im-flickr-3", "rule": "Image", "opts": {"src": "flickr:3"}, "expect": ["imFlickr"], "target": "imFlickr", "note": "Image:FlickrHandler serving disposition: reference fatal, Lean excluded; not emitted by the parse rules"}
+{"id": "im-url-3", "rule": "Image", "opts": {"src": "http://x.example/3.png"}, "expect": ["imUrlSource"], "target": "imUrlSource"}
+{"id": "im-resized-3", "rule": "Image", "opts": {"src": "page3/a.webp", "attr": {"size": "square"}}, "expect": ["imLocalResized"], "target": "imLocalResized"}
+{"id": "im-plain-3", "rule": "Image", "opts": {"src": "page3/a.png"}, "expect": ["imLocalPlain"], "target": "imLocalPlain"}
+{"id": "im-linked-3", "rule": "Image", "opts": {"src": "a3.png", "attr": {"link": "http://x.example/3"}}, "expect": ["imLocalPlain", "imLinked"], "target": "imLinked"}
+{"id": "im-first-4", "rule": "Image", "opts": {"src": ":first"}, "expect": ["imFirst"], "target": "imFirst"}
+{"id": "im-flickr-4", "rule": "Image", "opts": {"src": "flickr:4"}, "expect": ["imFlickr"], "target": "imFlickr", "note": "Image:FlickrHandler serving disposition: reference fatal, Lean excluded; not emitted by the parse rules"}
+{"id": "im-url-4", "rule": "Image", "opts": {"src": "http://x.example/4.png"}, "expect": ["imUrlSource"], "target": "imUrlSource"}
+{"id": "im-resized-4", "rule": "Image", "opts": {"src": "page4/a.webp", "attr": {"size": "small"}}, "expect": ["imLocalResized"], "target": "imLocalResized"}
+{"id": "im-plain-4", "rule": "Image", "opts": {"src": "page4/a.png"}, "expect": ["imLocalPlain"], "target": "imLocalPlain"}
+{"id": "im-linked-4", "rule": "Image", "opts": {"src": "a4.png", "attr": {"link": "http://x.example/4"}}, "expect": ["imLocalPlain", "imLinked"], "target": "imLinked"}
+{"id": "im-first-5", "rule": "Image", "opts": {"src": ":first"}, "expect": ["imFirst"], "target": "imFirst"}
+{"id": "im-flickr-5", "rule": "Image", "opts": {"src": "flickr:5"}, "expect": ["imFlickr"], "target": "imFlickr", "note": "Image:FlickrHandler serving disposition: reference fatal, Lean excluded; not emitted by the parse rules"}
+{"id": "im-url-5", "rule": "Image", "opts": {"src": "http://x.example/5.png"}, "expect": ["imUrlSource"], "target": "imUrlSource"}
+{"id": "im-resized-5", "rule": "Image", "opts": {"src": "page5/a.webp", "attr": {"size": "medium"}}, "expect": ["imLocalResized"], "target": "imLocalResized"}
+{"id": "im-plain-5", "rule": "Image", "opts": {"src": "page5/a.png"}, "expect": ["imLocalPlain"], "target": "imLocalPlain"}
+{"id": "im-linked-5", "rule": "Image", "opts": {"src": "a5.png", "attr": {"link": "http://x.example/5"}}, "expect": ["imLocalPlain", "imLinked"], "target": "imLinked"}
+{"id": "im-first-6", "rule": "Image", "opts": {"src": ":first"}, "expect": ["imFirst"], "target": "imFirst"}
+{"id": "im-flickr-6", "rule": "Image", "opts": {"src": "flickr:6"}, "expect": ["imFlickr"], "target": "imFlickr", "note": "Image:FlickrHandler serving disposition: reference fatal, Lean excluded; not emitted by the parse rules"}
+{"id": "im-url-6", "rule": "Image", "opts": {"src": "http://x.example/6.png"}, "expect": ["imUrlSource"], "target": "imUrlSource"}
+{"id": "im-resized-6", "rule": "Image", "opts": {"src": "page6/a.webp", "attr": {"size": "thumbnail"}}, "expect": ["imLocalResized"], "target": "imLocalResized"}
+{"id": "im-plain-6", "rule": "Image", "opts": {"src": "page6/a.png"}, "expect": ["imLocalPlain"], "target": "imLocalPlain"}
+{"id": "im-linked-6", "rule": "Image", "opts": {"src": "a6.png", "attr": {"link": "http://x.example/6"}}, "expect": ["imLocalPlain", "imLinked"], "target": "imLinked"}
+{"id": "im-first-7", "rule": "Image", "opts": {"src": ":first"}, "expect": ["imFirst"], "target": "imFirst"}
+{"id": "im-flickr-7", "rule": "Image", "opts": {"src": "flickr:7"}, "expect": ["imFlickr"], "target": "imFlickr", "note": "Image:FlickrHandler serving disposition: reference fatal, Lean excluded; not emitted by the parse rules"}
+{"id": "im-url-7", "rule": "Image", "opts": {"src": "http://x.example/7.png"}, "expect": ["imUrlSource"], "target": "imUrlSource"}
+{"id": "im-resized-7", "rule": "Image", "opts": {"src": "page7/a.webp", "attr": {"size": "square"}}, "expect": ["imLocalResized"], "target": "imLocalResized"}
+{"id": "im-plain-7", "rule": "Image", "opts": {"src": "page7/a.png"}, "expect": ["imLocalPlain"], "target": "imLocalPlain"}
+{"id": "im-linked-7", "rule": "Image", "opts": {"src": "a7.png", "attr": {"link": "http://x.example/7"}}, "expect": ["imLocalPlain", "imLinked"], "target": "imLinked"}
+{"id": "imAlignFLeft-0", "rule": "Image", "opts": {"src": "a0.png", "align": "f<"}, "expect": ["imLocalPlain", "imAlignFLeft"], "target": "imAlignFLeft"}
+{"id": "imAlignFLeft-1", "rule": "Image", "opts": {"src": "a1.png", "align": "f<"}, "expect": ["imLocalPlain", "imAlignFLeft"], "target": "imAlignFLeft"}
+{"id": "imAlignFLeft-2", "rule": "Image", "opts": {"src": "a2.png", "align": "f<"}, "expect": ["imLocalPlain", "imAlignFLeft"], "target": "imAlignFLeft"}
+{"id": "imAlignFLeft-3", "rule": "Image", "opts": {"src": "a3.png", "align": "f<"}, "expect": ["imLocalPlain", "imAlignFLeft"], "target": "imAlignFLeft"}
+{"id": "imAlignFLeft-4", "rule": "Image", "opts": {"src": "a4.png", "align": "f<"}, "expect": ["imLocalPlain", "imAlignFLeft"], "target": "imAlignFLeft"}
+{"id": "imAlignFLeft-5", "rule": "Image", "opts": {"src": "a5.png", "align": "f<"}, "expect": ["imLocalPlain", "imAlignFLeft"], "target": "imAlignFLeft"}
+{"id": "imAlignFLeft-6", "rule": "Image", "opts": {"src": "a6.png", "align": "f<"}, "expect": ["imLocalPlain", "imAlignFLeft"], "target": "imAlignFLeft"}
+{"id": "imAlignFLeft-7", "rule": "Image", "opts": {"src": "a7.png", "align": "f<"}, "expect": ["imLocalPlain", "imAlignFLeft"], "target": "imAlignFLeft"}
+{"id": "imAlignFRight-0", "rule": "Image", "opts": {"src": "a0.png", "align": "f>"}, "expect": ["imLocalPlain", "imAlignFRight"], "target": "imAlignFRight"}
+{"id": "imAlignFRight-1", "rule": "Image", "opts": {"src": "a1.png", "align": "f>"}, "expect": ["imLocalPlain", "imAlignFRight"], "target": "imAlignFRight"}
+{"id": "imAlignFRight-2", "rule": "Image", "opts": {"src": "a2.png", "align": "f>"}, "expect": ["imLocalPlain", "imAlignFRight"], "target": "imAlignFRight"}
+{"id": "imAlignFRight-3", "rule": "Image", "opts": {"src": "a3.png", "align": "f>"}, "expect": ["imLocalPlain", "imAlignFRight"], "target": "imAlignFRight"}
+{"id": "imAlignFRight-4", "rule": "Image", "opts": {"src": "a4.png", "align": "f>"}, "expect": ["imLocalPlain", "imAlignFRight"], "target": "imAlignFRight"}
+{"id": "imAlignFRight-5", "rule": "Image", "opts": {"src": "a5.png", "align": "f>"}, "expect": ["imLocalPlain", "imAlignFRight"], "target": "imAlignFRight"}
+{"id": "imAlignFRight-6", "rule": "Image", "opts": {"src": "a6.png", "align": "f>"}, "expect": ["imLocalPlain", "imAlignFRight"], "target": "imAlignFRight"}
+{"id": "imAlignFRight-7", "rule": "Image", "opts": {"src": "a7.png", "align": "f>"}, "expect": ["imLocalPlain", "imAlignFRight"], "target": "imAlignFRight"}
+{"id": "imAlignLeft-0", "rule": "Image", "opts": {"src": "a0.png", "align": "<"}, "expect": ["imLocalPlain", "imAlignLeft"], "target": "imAlignLeft"}
+{"id": "imAlignLeft-1", "rule": "Image", "opts": {"src": "a1.png", "align": "<"}, "expect": ["imLocalPlain", "imAlignLeft"], "target": "imAlignLeft"}
+{"id": "imAlignLeft-2", "rule": "Image", "opts": {"src": "a2.png", "align": "<"}, "expect": ["imLocalPlain", "imAlignLeft"], "target": "imAlignLeft"}
+{"id": "imAlignLeft-3", "rule": "Image", "opts": {"src": "a3.png", "align": "<"}, "expect": ["imLocalPlain", "imAlignLeft"], "target": "imAlignLeft"}
+{"id": "imAlignLeft-4", "rule": "Image", "opts": {"src": "a4.png", "align": "<"}, "expect": ["imLocalPlain", "imAlignLeft"], "target": "imAlignLeft"}
+{"id": "imAlignLeft-5", "rule": "Image", "opts": {"src": "a5.png", "align": "<"}, "expect": ["imLocalPlain", "imAlignLeft"], "target": "imAlignLeft"}
+{"id": "imAlignLeft-6", "rule": "Image", "opts": {"src": "a6.png", "align": "<"}, "expect": ["imLocalPlain", "imAlignLeft"], "target": "imAlignLeft"}
+{"id": "imAlignLeft-7", "rule": "Image", "opts": {"src": "a7.png", "align": "<"}, "expect": ["imLocalPlain", "imAlignLeft"], "target": "imAlignLeft"}
+{"id": "imAlignRight-0", "rule": "Image", "opts": {"src": "a0.png", "align": ">"}, "expect": ["imLocalPlain", "imAlignRight"], "target": "imAlignRight"}
+{"id": "imAlignRight-1", "rule": "Image", "opts": {"src": "a1.png", "align": ">"}, "expect": ["imLocalPlain", "imAlignRight"], "target": "imAlignRight"}
+{"id": "imAlignRight-2", "rule": "Image", "opts": {"src": "a2.png", "align": ">"}, "expect": ["imLocalPlain", "imAlignRight"], "target": "imAlignRight"}
+{"id": "imAlignRight-3", "rule": "Image", "opts": {"src": "a3.png", "align": ">"}, "expect": ["imLocalPlain", "imAlignRight"], "target": "imAlignRight"}
+{"id": "imAlignRight-4", "rule": "Image", "opts": {"src": "a4.png", "align": ">"}, "expect": ["imLocalPlain", "imAlignRight"], "target": "imAlignRight"}
+{"id": "imAlignRight-5", "rule": "Image", "opts": {"src": "a5.png", "align": ">"}, "expect": ["imLocalPlain", "imAlignRight"], "target": "imAlignRight"}
+{"id": "imAlignRight-6", "rule": "Image", "opts": {"src": "a6.png", "align": ">"}, "expect": ["imLocalPlain", "imAlignRight"], "target": "imAlignRight"}
+{"id": "imAlignRight-7", "rule": "Image", "opts": {"src": "a7.png", "align": ">"}, "expect": ["imLocalPlain", "imAlignRight"], "target": "imAlignRight"}
+{"id": "imAlignCenter-0", "rule": "Image", "opts": {"src": "a0.png", "align": "="}, "expect": ["imLocalPlain", "imAlignCenter"], "target": "imAlignCenter"}
+{"id": "imAlignCenter-1", "rule": "Image", "opts": {"src": "a1.png", "align": "="}, "expect": ["imLocalPlain", "imAlignCenter"], "target": "imAlignCenter"}
+{"id": "imAlignCenter-2", "rule": "Image", "opts": {"src": "a2.png", "align": "="}, "expect": ["imLocalPlain", "imAlignCenter"], "target": "imAlignCenter"}
+{"id": "imAlignCenter-3", "rule": "Image", "opts": {"src": "a3.png", "align": "="}, "expect": ["imLocalPlain", "imAlignCenter"], "target": "imAlignCenter"}
+{"id": "imAlignCenter-4", "rule": "Image", "opts": {"src": "a4.png", "align": "="}, "expect": ["imLocalPlain", "imAlignCenter"], "target": "imAlignCenter"}
+{"id": "imAlignCenter-5", "rule": "Image", "opts": {"src": "a5.png", "align": "="}, "expect": ["imLocalPlain", "imAlignCenter"], "target": "imAlignCenter"}
+{"id": "imAlignCenter-6", "rule": "Image", "opts": {"src": "a6.png", "align": "="}, "expect": ["imLocalPlain", "imAlignCenter"], "target": "imAlignCenter"}
+{"id": "imAlignCenter-7", "rule": "Image", "opts": {"src": "a7.png", "align": "="}, "expect": ["imLocalPlain", "imAlignCenter"], "target": "imAlignCenter"}
+{"id": "span-bare-0", "rule": "Span", "opts": {"type": "start", "args": {}}, "expect": ["spStartBare"], "target": "spStartBare"}
+{"id": "span-attrs-0", "rule": "Span", "opts": {"type": "start", "args": {"class": "c0", "title": "a&b"}}, "expect": ["spStartAttrs"], "target": "spStartAttrs"}
+{"id": "span-end-0", "rule": "Span", "opts": {"type": "end"}, "expect": ["spEnd"], "target": "spEnd"}
+{"id": "span-fall-0", "rule": "Span", "opts": {"type": "other"}, "expect": ["spFall"], "target": "spFall"}
+{"id": "size-start-0", "rule": "Size", "opts": {"type": "start", "size": "8px"}, "expect": ["szStart"], "target": "szStart"}
+{"id": "size-end-0", "rule": "Size", "opts": {"type": "end"}, "expect": ["szEnd"], "target": "szEnd"}
+{"id": "size-fall-0", "rule": "Size", "opts": {"type": "other"}, "expect": ["szFall"], "target": "szFall"}
+{"id": "span-bare-1", "rule": "Span", "opts": {"type": "start", "args": {}}, "expect": ["spStartBare"], "target": "spStartBare"}
+{"id": "span-attrs-1", "rule": "Span", "opts": {"type": "start", "args": {"class": "c1", "title": "a&b"}}, "expect": ["spStartAttrs"], "target": "spStartAttrs"}
+{"id": "span-end-1", "rule": "Span", "opts": {"type": "end"}, "expect": ["spEnd"], "target": "spEnd"}
+{"id": "span-fall-1", "rule": "Span", "opts": {"type": "other"}, "expect": ["spFall"], "target": "spFall"}
+{"id": "size-start-1", "rule": "Size", "opts": {"type": "start", "size": "9px"}, "expect": ["szStart"], "target": "szStart"}
+{"id": "size-end-1", "rule": "Size", "opts": {"type": "end"}, "expect": ["szEnd"], "target": "szEnd"}
+{"id": "size-fall-1", "rule": "Size", "opts": {"type": "other"}, "expect": ["szFall"], "target": "szFall"}
+{"id": "span-bare-2", "rule": "Span", "opts": {"type": "start", "args": {}}, "expect": ["spStartBare"], "target": "spStartBare"}
+{"id": "span-attrs-2", "rule": "Span", "opts": {"type": "start", "args": {"class": "c2", "title": "a&b"}}, "expect": ["spStartAttrs"], "target": "spStartAttrs"}
+{"id": "span-end-2", "rule": "Span", "opts": {"type": "end"}, "expect": ["spEnd"], "target": "spEnd"}
+{"id": "span-fall-2", "rule": "Span", "opts": {"type": "other"}, "expect": ["spFall"], "target": "spFall"}
+{"id": "size-start-2", "rule": "Size", "opts": {"type": "start", "size": "10px"}, "expect": ["szStart"], "target": "szStart"}
+{"id": "size-end-2", "rule": "Size", "opts": {"type": "end"}, "expect": ["szEnd"], "target": "szEnd"}
+{"id": "size-fall-2", "rule": "Size", "opts": {"type": "other"}, "expect": ["szFall"], "target": "szFall"}
+{"id": "span-bare-3", "rule": "Span", "opts": {"type": "start", "args": {}}, "expect": ["spStartBare"], "target": "spStartBare"}
+{"id": "span-attrs-3", "rule": "Span", "opts": {"type": "start", "args": {"class": "c3", "title": "a&b"}}, "expect": ["spStartAttrs"], "target": "spStartAttrs"}
+{"id": "span-end-3", "rule": "Span", "opts": {"type": "end"}, "expect": ["spEnd"], "target": "spEnd"}
+{"id": "span-fall-3", "rule": "Span", "opts": {"type": "other"}, "expect": ["spFall"], "target": "spFall"}
+{"id": "size-start-3", "rule": "Size", "opts": {"type": "start", "size": "11px"}, "expect": ["szStart"], "target": "szStart"}
+{"id": "size-end-3", "rule": "Size", "opts": {"type": "end"}, "expect": ["szEnd"], "target": "szEnd"}
+{"id": "size-fall-3", "rule": "Size", "opts": {"type": "other"}, "expect": ["szFall"], "target": "szFall"}
+{"id": "span-bare-4", "rule": "Span", "opts": {"type": "start", "args": {}}, "expect": ["spStartBare"], "target": "spStartBare"}
+{"id": "span-attrs-4", "rule": "Span", "opts": {"type": "start", "args": {"class": "c4", "title": "a&b"}}, "expect": ["spStartAttrs"], "target": "spStartAttrs"}
+{"id": "span-end-4", "rule": "Span", "opts": {"type": "end"}, "expect": ["spEnd"], "target": "spEnd"}
+{"id": "span-fall-4", "rule": "Span", "opts": {"type": "other"}, "expect": ["spFall"], "target": "spFall"}
+{"id": "size-start-4", "rule": "Size", "opts": {"type": "start", "size": "12px"}, "expect": ["szStart"], "target": "szStart"}
+{"id": "size-end-4", "rule": "Size", "opts": {"type": "end"}, "expect": ["szEnd"], "target": "szEnd"}
+{"id": "size-fall-4", "rule": "Size", "opts": {"type": "other"}, "expect": ["szFall"], "target": "szFall"}
+{"id": "span-bare-5", "rule": "Span", "opts": {"type": "start", "args": {}}, "expect": ["spStartBare"], "target": "spStartBare"}
+{"id": "span-attrs-5", "rule": "Span", "opts": {"type": "start", "args": {"class": "c5", "title": "a&b"}}, "expect": ["spStartAttrs"], "target": "spStartAttrs"}
+{"id": "span-end-5", "rule": "Span", "opts": {"type": "end"}, "expect": ["spEnd"], "target": "spEnd"}
+{"id": "span-fall-5", "rule": "Span", "opts": {"type": "other"}, "expect": ["spFall"], "target": "spFall"}
+{"id": "size-start-5", "rule": "Size", "opts": {"type": "start", "size": "13px"}, "expect": ["szStart"], "target": "szStart"}
+{"id": "size-end-5", "rule": "Size", "opts": {"type": "end"}, "expect": ["szEnd"], "target": "szEnd"}
+{"id": "size-fall-5", "rule": "Size", "opts": {"type": "other"}, "expect": ["szFall"], "target": "szFall"}
+{"id": "span-bare-6", "rule": "Span", "opts": {"type": "start", "args": {}}, "expect": ["spStartBare"], "target": "spStartBare"}
+{"id": "span-attrs-6", "rule": "Span", "opts": {"type": "start", "args": {"class": "c6", "title": "a&b"}}, "expect": ["spStartAttrs"], "target": "spStartAttrs"}
+{"id": "span-end-6", "rule": "Span", "opts": {"type": "end"}, "expect": ["spEnd"], "target": "spEnd"}
+{"id": "span-fall-6", "rule": "Span", "opts": {"type": "other"}, "expect": ["spFall"], "target": "spFall"}
+{"id": "size-start-6", "rule": "Size", "opts": {"type": "start", "size": "14px"}, "expect": ["szStart"], "target": "szStart"}
+{"id": "size-end-6", "rule": "Size", "opts": {"type": "end"}, "expect": ["szEnd"], "target": "szEnd"}
+{"id": "size-fall-6", "rule": "Size", "opts": {"type": "other"}, "expect": ["szFall"], "target": "szFall"}
+{"id": "span-bare-7", "rule": "Span", "opts": {"type": "start", "args": {}}, "expect": ["spStartBare"], "target": "spStartBare"}
+{"id": "span-attrs-7", "rule": "Span", "opts": {"type": "start", "args": {"class": "c7", "title": "a&b"}}, "expect": ["spStartAttrs"], "target": "spStartAttrs"}
+{"id": "span-end-7", "rule": "Span", "opts": {"type": "end"}, "expect": ["spEnd"], "target": "spEnd"}
+{"id": "span-fall-7", "rule": "Span", "opts": {"type": "other"}, "expect": ["spFall"], "target": "spFall"}
+{"id": "size-start-7", "rule": "Size", "opts": {"type": "start", "size": "15px"}, "expect": ["szStart"], "target": "szStart"}
+{"id": "size-end-7", "rule": "Size", "opts": {"type": "end"}, "expect": ["szEnd"], "target": "szEnd"}
+{"id": "size-fall-7", "rule": "Size", "opts": {"type": "other"}, "expect": ["szFall"], "target": "szFall"}
+{"id": "ctHex-0", "rule": "Colortext", "opts": {"type": "start", "color": "ff0000"}, "expect": ["ctHex"], "target": "ctHex"}
+{"id": "ctHex-1", "rule": "Colortext", "opts": {"type": "start", "color": "#c00"}, "expect": ["ctHex"], "target": "ctHex"}
+{"id": "ctHex-2", "rule": "Colortext", "opts": {"type": "start", "color": "ABCDEF"}, "expect": ["ctHex"], "target": "ctHex"}
+{"id": "ctHex-3", "rule": "Colortext", "opts": {"type": "start", "color": "ff0000"}, "expect": ["ctHex"], "target": "ctHex"}
+{"id": "ctHex-4", "rule": "Colortext", "opts": {"type": "start", "color": "#c00"}, "expect": ["ctHex"], "target": "ctHex"}
+{"id": "ctHex-5", "rule": "Colortext", "opts": {"type": "start", "color": "ABCDEF"}, "expect": ["ctHex"], "target": "ctHex"}
+{"id": "ctHex-6", "rule": "Colortext", "opts": {"type": "start", "color": "ff0000"}, "expect": ["ctHex"], "target": "ctHex"}
+{"id": "ctHex-7", "rule": "Colortext", "opts": {"type": "start", "color": "#c00"}, "expect": ["ctHex"], "target": "ctHex"}
+{"id": "ctNamed-0", "rule": "Colortext", "opts": {"type": "start", "color": "red"}, "expect": ["ctNamed"], "target": "ctNamed"}
+{"id": "ctNamed-1", "rule": "Colortext", "opts": {"type": "start", "color": "rgb(1,2,3)"}, "expect": ["ctNamed"], "target": "ctNamed"}
+{"id": "ctNamed-2", "rule": "Colortext", "opts": {"type": "start", "color": "var(--c)"}, "expect": ["ctNamed"], "target": "ctNamed"}
+{"id": "ctNamed-3", "rule": "Colortext", "opts": {"type": "start", "color": "red"}, "expect": ["ctNamed"], "target": "ctNamed"}
+{"id": "ctNamed-4", "rule": "Colortext", "opts": {"type": "start", "color": "rgb(1,2,3)"}, "expect": ["ctNamed"], "target": "ctNamed"}
+{"id": "ctNamed-5", "rule": "Colortext", "opts": {"type": "start", "color": "var(--c)"}, "expect": ["ctNamed"], "target": "ctNamed"}
+{"id": "ctNamed-6", "rule": "Colortext", "opts": {"type": "start", "color": "red"}, "expect": ["ctNamed"], "target": "ctNamed"}
+{"id": "ctNamed-7", "rule": "Colortext", "opts": {"type": "start", "color": "rgb(1,2,3)"}, "expect": ["ctNamed"], "target": "ctNamed"}
+{"id": "ctEmpty-0", "rule": "Colortext", "opts": {"type": "start", "color": "  "}, "expect": ["ctEmpty"], "target": "ctEmpty"}
+{"id": "ctEmpty-1", "rule": "Colortext", "opts": {"type": "start", "color": ""}, "expect": ["ctEmpty"], "target": "ctEmpty"}
+{"id": "ctEmpty-2", "rule": "Colortext", "opts": {"type": "start", "color": " \t "}, "expect": ["ctEmpty"], "target": "ctEmpty"}
+{"id": "ctEmpty-3", "rule": "Colortext", "opts": {"type": "start", "color": "  "}, "expect": ["ctEmpty"], "target": "ctEmpty"}
+{"id": "ctEmpty-4", "rule": "Colortext", "opts": {"type": "start", "color": ""}, "expect": ["ctEmpty"], "target": "ctEmpty"}
+{"id": "ctEmpty-5", "rule": "Colortext", "opts": {"type": "start", "color": " \t "}, "expect": ["ctEmpty"], "target": "ctEmpty"}
+{"id": "ctEmpty-6", "rule": "Colortext", "opts": {"type": "start", "color": "  "}, "expect": ["ctEmpty"], "target": "ctEmpty"}
+{"id": "ctEmpty-7", "rule": "Colortext", "opts": {"type": "start", "color": ""}, "expect": ["ctEmpty"], "target": "ctEmpty"}
+{"id": "ct-end-0", "rule": "Colortext", "opts": {"type": "end", "color": "red"}, "expect": ["ctEnd"], "target": "ctEnd"}
+{"id": "ct-fall-0", "rule": "Colortext", "opts": {"type": "other", "color": "red"}, "expect": ["ctFall"], "target": "ctFall"}
+{"id": "ct-invalid-start-0", "rule": "Colortext", "opts": {"type": "start", "color": "<0>"}, "expect": ["ctInvalidStart"], "target": "ctInvalidStart"}
+{"id": "ct-invalid-other-0", "rule": "Colortext", "opts": {"type": "end", "color": "<0>"}, "expect": ["ctInvalidOther"], "target": "ctInvalidOther"}
+{"id": "ct-end-1", "rule": "Colortext", "opts": {"type": "end", "color": "red"}, "expect": ["ctEnd"], "target": "ctEnd"}
+{"id": "ct-fall-1", "rule": "Colortext", "opts": {"type": "other", "color": "red"}, "expect": ["ctFall"], "target": "ctFall"}
+{"id": "ct-invalid-start-1", "rule": "Colortext", "opts": {"type": "start", "color": "<1>"}, "expect": ["ctInvalidStart"], "target": "ctInvalidStart"}
+{"id": "ct-invalid-other-1", "rule": "Colortext", "opts": {"type": "end", "color": "<1>"}, "expect": ["ctInvalidOther"], "target": "ctInvalidOther"}
+{"id": "ct-end-2", "rule": "Colortext", "opts": {"type": "end", "color": "red"}, "expect": ["ctEnd"], "target": "ctEnd"}
+{"id": "ct-fall-2", "rule": "Colortext", "opts": {"type": "other", "color": "red"}, "expect": ["ctFall"], "target": "ctFall"}
+{"id": "ct-invalid-start-2", "rule": "Colortext", "opts": {"type": "start", "color": "<2>"}, "expect": ["ctInvalidStart"], "target": "ctInvalidStart"}
+{"id": "ct-invalid-other-2", "rule": "Colortext", "opts": {"type": "end", "color": "<2>"}, "expect": ["ctInvalidOther"], "target": "ctInvalidOther"}
+{"id": "ct-end-3", "rule": "Colortext", "opts": {"type": "end", "color": "red"}, "expect": ["ctEnd"], "target": "ctEnd"}
+{"id": "ct-fall-3", "rule": "Colortext", "opts": {"type": "other", "color": "red"}, "expect": ["ctFall"], "target": "ctFall"}
+{"id": "ct-invalid-start-3", "rule": "Colortext", "opts": {"type": "start", "color": "<3>"}, "expect": ["ctInvalidStart"], "target": "ctInvalidStart"}
+{"id": "ct-invalid-other-3", "rule": "Colortext", "opts": {"type": "end", "color": "<3>"}, "expect": ["ctInvalidOther"], "target": "ctInvalidOther"}
+{"id": "ct-end-4", "rule": "Colortext", "opts": {"type": "end", "color": "red"}, "expect": ["ctEnd"], "target": "ctEnd"}
+{"id": "ct-fall-4", "rule": "Colortext", "opts": {"type": "other", "color": "red"}, "expect": ["ctFall"], "target": "ctFall"}
+{"id": "ct-invalid-start-4", "rule": "Colortext", "opts": {"type": "start", "color": "<4>"}, "expect": ["ctInvalidStart"], "target": "ctInvalidStart"}
+{"id": "ct-invalid-other-4", "rule": "Colortext", "opts": {"type": "end", "color": "<4>"}, "expect": ["ctInvalidOther"], "target": "ctInvalidOther"}
+{"id": "ct-end-5", "rule": "Colortext", "opts": {"type": "end", "color": "red"}, "expect": ["ctEnd"], "target": "ctEnd"}
+{"id": "ct-fall-5", "rule": "Colortext", "opts": {"type": "other", "color": "red"}, "expect": ["ctFall"], "target": "ctFall"}
+{"id": "ct-invalid-start-5", "rule": "Colortext", "opts": {"type": "start", "color": "<5>"}, "expect": ["ctInvalidStart"], "target": "ctInvalidStart"}
+{"id": "ct-invalid-other-5", "rule": "Colortext", "opts": {"type": "end", "color": "<5>"}, "expect": ["ctInvalidOther"], "target": "ctInvalidOther"}
+{"id": "ct-end-6", "rule": "Colortext", "opts": {"type": "end", "color": "red"}, "expect": ["ctEnd"], "target": "ctEnd"}
+{"id": "ct-fall-6", "rule": "Colortext", "opts": {"type": "other", "color": "red"}, "expect": ["ctFall"], "target": "ctFall"}
+{"id": "ct-invalid-start-6", "rule": "Colortext", "opts": {"type": "start", "color": "<6>"}, "expect": ["ctInvalidStart"], "target": "ctInvalidStart"}
+{"id": "ct-invalid-other-6", "rule": "Colortext", "opts": {"type": "end", "color": "<6>"}, "expect": ["ctInvalidOther"], "target": "ctInvalidOther"}
+{"id": "ct-end-7", "rule": "Colortext", "opts": {"type": "end", "color": "red"}, "expect": ["ctEnd"], "target": "ctEnd"}
+{"id": "ct-fall-7", "rule": "Colortext", "opts": {"type": "other", "color": "red"}, "expect": ["ctFall"], "target": "ctFall"}
+{"id": "ct-invalid-start-7", "rule": "Colortext", "opts": {"type": "start", "color": "<7>"}, "expect": ["ctInvalidStart"], "target": "ctInvalidStart"}
+{"id": "ct-invalid-other-7", "rule": "Colortext", "opts": {"type": "end", "color": "<7>"}, "expect": ["ctInvalidOther"], "target": "ctInvalidOther"}

@@ -1,0 +1,9 @@
+PHP 8.5.4 on WSL (/usr/bin/php), firsthand, 2026-11-22:
+input $s = "a'&<>\"b é" (UTF-8)
+  htmlspecialchars($s)                          -> a&#039;&amp;&lt;&gt;&quot;b é
+  htmlspecialchars($s, ENT_COMPAT, 'UTF-8')     -> a'&amp;&lt;&gt;&quot;b é
+input $bad = "x\xFFy" (invalid UTF-8)
+  htmlspecialchars($bad)                        -> "x\ufffdy"   (ENT_SUBSTITUTE)
+  htmlspecialchars($bad, ENT_COMPAT, 'UTF-8')   -> ""           (no substitute: empty string)
+So the bare call and the explicit ENT_COMPAT call differ on exactly two classes:
+an apostrophe (&#039; vs raw) and invalid UTF-8 (U+FFFD substitution vs empty string).

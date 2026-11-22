@@ -1,0 +1,68 @@
+{"id":"raw-basic","segments":[{"t":"\u000abefore "},{"k":0},{"t":" after\u000a\u000a"}],"tokens":[["Raw",{"text":"raw **bold** [[link]]"}]],"equations":[],"mathId":null}
+{"id":"raw-basic-inline","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"hello"}]],"equations":[],"mathId":null}
+{"id":"raw-empty","segments":[{"t":"\u000aa  b\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"raw-ws-only","segments":[{"t":"\u000aa "},{"k":0},{"t":" b\u000a\u000a"}],"tokens":[["Raw",{"text":"   "}]],"equations":[],"mathId":null}
+{"id":"raw-tab-body","segments":[{"t":"\u000aa "},{"k":0},{"t":" b\u000a\u000a"}],"tokens":[["Raw",{"text":"    "}]],"equations":[],"mathId":null}
+{"id":"raw-multiline","segments":[{"t":"\u000abefore\u000a@@line one\u000aline two@@\u000aafter\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"raw-multiline-leading","segments":[{"t":"\u000a@@\u000aindented\u000a@@\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"raw-nbsp","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":" x "}]],"equations":[],"mathId":null}
+{"id":"raw-triple-open","segments":[{"t":"\u000aa "},{"k":0},{"t":"@ b\u000a\u000a"}],"tokens":[["Raw",{"text":"@x"}]],"equations":[],"mathId":null}
+{"id":"raw-quad","segments":[{"t":"\u000aa x b\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"raw-five-run","segments":[{"t":"\u000aa @x@ b\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"raw-at-end","segments":[{"t":"\u000aa "},{"k":0},{"t":"@ b\u000a\u000a"}],"tokens":[["Raw",{"text":"x"}]],"equations":[],"mathId":null}
+{"id":"raw-at-start","segments":[{"t":"\u000aa "},{"k":0},{"t":" b\u000a\u000a"}],"tokens":[["Raw",{"text":"@x"}]],"equations":[],"mathId":null}
+{"id":"raw-inner-at","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"x@y"}]],"equations":[],"mathId":null}
+{"id":"raw-adjacent","segments":[{"t":"\u000a"},{"k":0},{"t":"@@two@@\u000a\u000a"}],"tokens":[["Raw",{"text":"one"}]],"equations":[],"mathId":null}
+{"id":"raw-unterminated","segments":[{"t":"\u000aa @@never closed\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"raw-lone","segments":[{"t":"\u000aa @@ b\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"raw-two-lone","segments":[{"t":"\u000aa "},{"k":0},{"t":" c\u000a\u000a"}],"tokens":[["Raw",{"text":" b "}]],"equations":[],"mathId":null}
+{"id":"raw-closer-only","segments":[{"t":"\u000aa "},{"k":0},{"t":"@ c\u000a\u000a"}],"tokens":[["Raw",{"text":" b "}]],"equations":[],"mathId":null}
+{"id":"raw-wikitext","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"//italic// **bold** __under__++strikethrough++"}]],"equations":[],"mathId":null}
+{"id":"raw-brackets","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"[[wikilink]] [[/bad]]"}]],"equations":[],"mathId":null}
+{"id":"raw-quotes","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"\"double\" 'single' & < >"}]],"equations":[],"mathId":null}
+{"id":"raw-html","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"<b>bold</b> <script>alert(1)</script>"}]],"equations":[],"mathId":null}
+{"id":"raw-entities","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"&amp; &lt; &quot; &#39;"}]],"equations":[],"mathId":null}
+{"id":"raw-code-markup","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"[[code]]inner[[/code]]"}]],"equations":[],"mathId":null}
+{"id":"raw-form-markup","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"[[form]]x---y[[/form]]"}]],"equations":[],"mathId":null}
+{"id":"raw-heading","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"= Heading ="}]],"equations":[],"mathId":null}
+{"id":"raw-list","segments":[{"t":"\u000a@@* item\u000a* item@@\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"raw-link","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"http://example.com/?a=1&b=2"}]],"equations":[],"mathId":null}
+{"id":"raw-accents","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"café α 日本"}]],"equations":[],"mathId":null}
+{"id":"raw-in-bold","segments":[{"t":"\u000a**before "},{"k":0},{"t":" after**\u000a\u000a"}],"tokens":[["Raw",{"text":"raw"}]],"equations":[],"mathId":null}
+{"id":"raw-in-italic","segments":[{"t":"\u000a//before "},{"k":0},{"t":" after//\u000a\u000a"}],"tokens":[["Raw",{"text":"raw"}]],"equations":[],"mathId":null}
+{"id":"raw-next-bold","segments":[{"t":"\u000a"},{"k":0},{"t":" **bold**\u000a\u000a"}],"tokens":[["Raw",{"text":"raw"}]],"equations":[],"mathId":null}
+{"id":"raw-in-link","segments":[{"t":"\u000a[[http://x/|"},{"k":0},{"t":"]]\u000a\u000a"}],"tokens":[["Raw",{"text":"raw"}]],"equations":[],"mathId":null}
+{"id":"raw-in-div","segments":[{"t":"\u000a[[div class=\"x\"]]\u000a"},{"k":0},{"t":"\u000a[[/div]]\u000a\u000a"}],"tokens":[["Raw",{"text":"raw"}]],"equations":[],"mathId":null}
+{"id":"raw-in-quote","segments":[{"t":"\u000a> "},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"raw"}]],"equations":[],"mathId":null}
+{"id":"old-basic","segments":[{"t":"\u000abefore "},{"k":0},{"t":" after\u000a\u000a"}],"tokens":[["Rawold",{"text":"raw **bold**"}]],"equations":[],"mathId":null}
+{"id":"old-empty","segments":[{"t":"\u000aa ```` b\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"old-ws-only","segments":[{"t":"\u000aa "},{"k":0},{"t":" b\u000a\u000a"}],"tokens":[["Rawold",{"text":"  "}]],"equations":[],"mathId":null}
+{"id":"old-multiline","segments":[{"t":"\u000abefore\u000a"},{"k":0},{"t":"\u000aafter\u000a\u000a"}],"tokens":[["Rawold",{"text":"line one\u000aline two"}]],"equations":[],"mathId":null}
+{"id":"old-apostrophe","segments":[{"t":"\u000aa ``it's`` b\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"old-triple","segments":[{"t":"\u000aa "},{"k":0},{"t":"` b\u000a\u000a"}],"tokens":[["Rawold",{"text":"`x"}]],"equations":[],"mathId":null}
+{"id":"old-unterminated","segments":[{"t":"\u000aa ``never closed\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"old-lone","segments":[{"t":"\u000aa `` b\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"old-wikitext","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Rawold",{"text":"//italic// **bold** [[link]]"}]],"equations":[],"mathId":null}
+{"id":"old-html","segments":[{"t":"\u000a``<b>&\"'</b>``\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"old-adjacent","segments":[{"t":"\u000a"},{"k":0},{"t":"``two``\u000a\u000a"}],"tokens":[["Rawold",{"text":"one"}]],"equations":[],"mathId":null}
+{"id":"old-and-raw","segments":[{"t":"\u000a"},{"k":1},{"t":" "},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"raw"}],["Rawold",{"text":"old"}]],"equations":[],"mathId":null}
+{"id":"old-quote-run","segments":[{"t":"\u000aa "},{"k":0},{"t":" b "},{"k":1},{"t":" c\u000a\u000a"}],"tokens":[["Rawold",{"text":"x"}],["Rawold",{"text":"y"}]],"equations":[],"mathId":null}
+{"id":"form-basic","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a"},{"k":1},{"t":"\u000a"},{"k":2},{"t":"\u000a"},{"k":3},{"t":"\u000a"},{"k":4},{"t":"\u000a"},{"k":5},{"t":"\u000a"},{"k":6},{"t":"\u000a"},{"k":7},{"t":"\u000a\u000a"}],"tokens":[["Form",{"text":"[[form]]"}],["Form",{"text":"fields:"}],["Form",{"text":"  name:"}],["Form",{"text":"    type: text"}],["Form",{"text":"    label: Name"}],["Form",{"text":"---"}],["Form",{"text":"name: Alice"}],["Form",{"text":"[[/form]]"}]],"equations":[],"mathId":null}
+{"id":"form-no-data","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a"},{"k":1},{"t":"\u000a"},{"k":2},{"t":"\u000a"},{"k":3},{"t":"\u000a"},{"k":4},{"t":"\u000a"},{"k":5},{"t":"\u000a"},{"k":6},{"t":"\u000a"},{"k":7},{"t":"\u000a\u000a"}],"tokens":[["Form",{"text":"[[form]]"}],["Form",{"text":"fields:"}],["Form",{"text":"  name:"}],["Form",{"text":"    type: text"}],["Form",{"text":"    label: Name"}],["Form",{"text":"---"}],["Form",{"blank":1}],["Form",{"text":"[[/form]]"}]],"equations":[],"mathId":null}
+{"id":"form-empty-body","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a"},{"k":1},{"t":"\u000a"},{"k":2},{"t":"\u000a"},{"k":3},{"t":"\u000a"},{"k":4},{"t":"\u000a\u000a"}],"tokens":[["Form",{"text":"[[form]]"}],["Form",{"blank":1}],["Form",{"text":"---"}],["Form",{"blank":1}],["Form",{"text":"[[/form]]"}]],"equations":[],"mathId":null}
+{"id":"form-unterminated","segments":[{"t":"\u000a[[form]]\u000afields:\u000a  name:\u000a    type: text\u000a---\u000aname: x\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"form-malformed-field","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a"},{"k":1},{"t":"\u000a"},{"k":2},{"t":"\u000a"},{"k":3},{"t":"\u000a"},{"k":4},{"t":"\u000a"},{"k":5},{"t":"\u000a\u000a"}],"tokens":[["Form",{"text":"[[form]]"}],["Form",{"text":"fields:"}],["Form",{"text":"  name: [broken"}],["Form",{"text":"---"}],["Form",{"text":"name: x"}],["Form",{"text":"[[/form]]"}]],"equations":[],"mathId":null}
+{"id":"form-no-separator","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a"},{"k":1},{"t":"\u000a"},{"k":2},{"t":"\u000a"},{"k":3},{"t":"\u000a"},{"k":4},{"t":"\u000a\u000a"}],"tokens":[["Form",{"text":"[[form]]"}],["Form",{"text":"fields:"}],["Form",{"text":"  name:"}],["Form",{"text":"    type: text"}],["Form",{"text":"[[/form]]"}]],"equations":[],"mathId":null}
+{"id":"form-select","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a"},{"k":1},{"t":"\u000a"},{"k":2},{"t":"\u000a"},{"k":3},{"t":"\u000a"},{"k":4},{"t":"\u000a"},{"k":5},{"t":"\u000a"},{"k":6},{"t":"\u000a"},{"k":7},{"t":"\u000a"},{"k":8},{"t":"\u000a"},{"k":9},{"t":"\u000a"},{"k":10},{"t":"\u000a\u000a"}],"tokens":[["Form",{"text":"[[form]]"}],["Form",{"text":"fields:"}],["Form",{"text":"  color:"}],["Form",{"text":"    type: select"}],["Form",{"text":"    label: Color"}],["Form",{"text":"    options:"}],["Form",{"text":"      r: Red"}],["Form",{"text":"      b: Blue"}],["Form",{"text":"---"}],["Form",{"text":"color: r"}],["Form",{"text":"[[/form]]"}]],"equations":[],"mathId":null}
+{"id":"form-wiki","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a"},{"k":1},{"t":"\u000a"},{"k":2},{"t":"\u000a"},{"k":3},{"t":"\u000a"},{"k":4},{"t":"\u000a"},{"k":5},{"t":"\u000a"},{"k":6},{"t":"\u000a"},{"k":7},{"t":"\u000a\u000a"}],"tokens":[["Form",{"text":"[[form]]"}],["Form",{"text":"fields:"}],["Form",{"text":"  note:"}],["Form",{"text":"    type: wiki"}],["Form",{"text":"    label: Note"}],["Form",{"text":"---"}],["Form",{"text":"note: **bold**"}],["Form",{"text":"[[/form]]"}]],"equations":[],"mathId":null}
+{"id":"form-in-div","segments":[{"t":"\u000a[[div class=\"x\"]]\u000a"},{"k":0},{"t":"\u000a"},{"k":1},{"t":"\u000a"},{"k":2},{"t":"\u000a"},{"k":3},{"t":"\u000a"},{"k":4},{"t":"\u000a[[/div]]\u000a\u000a"}],"tokens":[["Form",{"text":"[[form]]"}],["Form",{"text":"x"}],["Form",{"text":"---"}],["Form",{"text":"y"}],["Form",{"text":"[[/form]]"}]],"equations":[],"mathId":null}
+{"id":"form-stray-closer","segments":[{"t":"\u000atext\u000a[[/form]]\u000aafter\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"form-inline","segments":[{"t":"\u000abefore [[form]]x---y[[/form]] after\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"raw-in-code","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a@@raw@@\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"code-in-raw","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"[[code]]x[[/code]]"}]],"equations":[],"mathId":null}
+{"id":"include-in-raw","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"[[include page=test]]"}]],"equations":[],"mathId":null}
+{"id":"raw-in-include","segments":[{"t":"\u000a[[include page=raw-include]]\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"form-in-code","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a[[form]]\u000ax\u000a---\u000ay\u000a[[/form]]\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"code-in-form","segments":[{"t":"\u000a"},{"k":0},{"t":"\u000a"},{"k":1},{"t":"\u000a"},{"k":2},{"t":"\u000a"},{"k":3},{"t":"\u000a"},{"k":4},{"t":"\u000a"},{"k":5},{"t":"\u000a"},{"k":6},{"t":"\u000a\u000a"}],"tokens":[["Form",{"text":"[[form]]"}],["Form",{"text":"fields:"}],["Form",{"text":"  note:"}],["Form",{"text":"    type: wiki"}],["Form",{"text":"---"}],["Form",{"text":"note: [[code]]x[[/code]]"}],["Form",{"text":"[[/form]]"}]],"equations":[],"mathId":null}
+{"id":"raw-after-code","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a"},{"k":1},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"x","attr":{"type":""}}],["Raw",{"text":"raw"}]],"equations":[],"mathId":null}
+{"id":"old-in-code","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a``old``\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}

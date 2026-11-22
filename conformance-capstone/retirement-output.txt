@@ -1,0 +1,29 @@
+retirement-restricted.jsonl rc: 0 bytes: 6894 stderr bytes: 0
+retirement-full.jsonl rc: 0 bytes: 7696 stderr bytes: 0
+=== 1. Sixty-eight-rule Lean pipeline vs full PHP reference (originating comparison sets) ===
+h18-anchor [R3.7 B (Anchor)] over 3 rules: RETIRED (expected RETIRED) ok
+s59 [R3.13 C (Anchor)] over 35 rules: RETIRED (expected RETIRED) ok
+u50 [R3.13 C (Anchor)] over 35 rules: RETIRED (expected RETIRED) ok
+sup59 [R3.14 C (Anchor)] over 43 rules: RETIRED (expected RETIRED) ok
+typo69 [R3.14 C (Anchor)] over 43 rules: RETIRED (expected RETIRED) ok
+smoke-include [R3.11 B (Include)] over 3 rules: RETIRED (expected RETIRED) ok
+iw43-61-include-site-pair [R3.12 B (Include)] over 4 rules: RETIRED (expected RETIRED) ok
+x30 [R3.12 B (Include)] over 4 rules: RETIRED (expected RETIRED) ok
+retired: 8 ['h18-anchor', 's59', 'u50', 'sup59', 'typo69', 'smoke-include', 'iw43-61-include-site-pair', 'x30']
+still open: 0 []
+
+=== 2. Discriminating control: 67-rule restricted pipeline (without Include) vs full reference ===
+smoke-include [R3.11 B (Include)] restricted-67 vs full-68: STILL OPEN (discriminates: True)
+iw43-61-include-site-pair [R3.12 B (Include)] restricted-67 vs full-68: STILL OPEN (discriminates: True)
+x30 [R3.12 B (Include)] restricted-67 vs full-68: STILL OPEN (discriminates: True)
+
+=== 3. Full canonical-state comparison (all 68 rules, segments, tokens, and DocState including inclusions & inclusionsNotExist) ===
+h18-anchor: full-state vs fresh PHP = PASS, vs R3.17 recorded fixture = PASS (inclusions=[], inclusionsNotExist=[])
+s59: full-state vs fresh PHP = PASS, vs R3.17 recorded fixture = PASS (inclusions=[], inclusionsNotExist=[])
+u50: full-state vs fresh PHP = PASS, vs R3.17 recorded fixture = PASS (inclusions=[], inclusionsNotExist=[])
+sup59: full-state vs fresh PHP = PASS, vs R3.17 recorded fixture = PASS (inclusions=[], inclusionsNotExist=[])
+typo69: full-state vs fresh PHP = PASS, vs R3.17 recorded fixture = PASS (inclusions=[], inclusionsNotExist=[])
+smoke-include: full-state vs fresh PHP = FAIL, vs R3.17 recorded fixture = PASS (inclusions=[1156], inclusionsNotExist=[])
+iw43-61-include-site-pair: full-state vs fresh PHP = FAIL, vs R3.17 recorded fixture = PASS (inclusions=[], inclusionsNotExist=[':wikipedia:albert-einstein'])
+x30: full-state vs fresh PHP = FAIL, vs R3.17 recorded fixture = PASS (inclusions=[], inclusionsNotExist=['wikipedia:albert-einstein'])
+SUMMARY-FULL-STATE: 5/8 fresh PHP match, 8/8 R3.17 recorded fixture match

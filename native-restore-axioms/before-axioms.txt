@@ -1,0 +1,71 @@
+===== HarnessInline (before) =====
+[lean-build] waiting for the serial slot: (cd /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-native-restore/lean-ftml && lake env lean /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-native-restore/native-restore-axioms/HarnessInline.lean) at 2026-11-22T16:54:39+09:00
+[lean-build] slot acquired at 2026-11-22T16:58:02+09:00
+/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-native-restore/native-restore-axioms/HarnessInline.lean:66:0: error: Not a definitional equality: the left-hand side
+  renderInterwiki
+    [("site".toList, OptVal.str "nosuch".toList), ("page".toList, OptVal.str "page".toList),
+      ("text".toList, OptVal.str "<b>&".toList)]
+is not definitionally equal to the right-hand side
+  litBytes "<b>&"
+/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-native-restore/native-restore-axioms/HarnessInline.lean:74:23: error: Type mismatch
+  rfl
+has type
+  ?m.13 = ?m.13
+but is expected to have type
+  renderInterwiki
+      [("site".toList, OptVal.str "nosuch".toList), ("page".toList, OptVal.str "page".toList),
+        ("text".toList, OptVal.str "<b>&".toList)] =
+    litBytes "<b>&"
+'LeanFtml.spec_inline_url_plain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ LeanFtml.spec_inline_url_plain._native.native_decide.ax_1_1]
+'LeanFtml.spec_inline_url_hash_target_kept' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ LeanFtml.spec_inline_url_hash_target_kept._native.native_decide.ax_1_1]
+[lean-build] released (exit 1) at 2026-11-22T16:58:07+09:00
+===== HarnessInline EXIT=1 =====
+===== HarnessRawhead (before) =====
+[lean-build] waiting for the serial slot: (cd /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-native-restore/lean-ftml && lake env lean /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-native-restore/native-restore-axioms/HarnessRawhead.lean) at 2026-11-22T16:58:08+09:00
+[lean-build] slot acquired at 2026-11-22T16:59:53+09:00
+'LeanFtml.spec_rawold_backticks_literal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ LeanFtml.spec_rawold_backticks_literal._native.native_decide.ax_1_1]
+[lean-build] released (exit 0) at 2026-11-22T16:59:59+09:00
+===== HarnessRawhead EXIT=0 =====
+===== HarnessInteract (before) =====
+[lean-build] waiting for the serial slot: (cd /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-native-restore/lean-ftml && lake env lean /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-native-restore/native-restore-axioms/HarnessInteract.lean) at 2026-11-22T16:59:59+09:00
+[lean-build] slot acquired at 2026-11-22T17:00:05+09:00
+/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-native-restore/native-restore-axioms/HarnessInteract.lean:65:44: warning: This simp argument is unused:
+  hne
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hraw, hts, hcast, hfmt, hform, Bool.false_eq_true, ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-native-restore/native-restore-axioms/HarnessInteract.lean:65:49: warning: This simp argument is unused:
+  Bool.false_eq_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hraw, hts, hcast, hfmt, hform, hne, ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-native-restore/native-restore-axioms/HarnessInteract.lean:66:4: warning: This simp argument is unused:
+  ↓reduceIte
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hraw, hts, hcast, hfmt, hform, hne, Bool.false_eq_true, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'LeanFtml.suspect_iframe_src_apostrophe' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ LeanFtml.suspect_iframe_src_apostrophe._native.native_decide.ax_1_1]
+'LeanFtml.suspect_file_anchor_apostrophe' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ LeanFtml.suspect_file_anchor_apostrophe._native.native_decide.ax_1_1]
+[lean-build] released (exit 0) at 2026-11-22T17:00:13+09:00
+===== HarnessInteract EXIT=0 =====

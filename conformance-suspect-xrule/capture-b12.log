@@ -1,0 +1,200 @@
+x1-rawold-raw -> muse-probe-suspect-xrule-x1-rawold-raw stable=True saved_source_matches=True valid=True
+x1c-rawold-plain -> muse-probe-suspect-xrule-x1c-rawold-plain stable=True saved_source_matches=True valid=True
+x2-freelink-raw -> muse-probe-suspect-xrule-x2-freelink-raw stable=True saved_source_matches=True valid=True
+x3-email-raw-label -> muse-probe-suspect-xrule-x3-email-raw-label stable=True saved_source_matches=True valid=True
+x4-email-free-label -> muse-probe-suspect-xrule-x4-email-free-label stable=True saved_source_matches=True valid=True
+x6-concat-heading -> muse-probe-suspect-xrule-x6-concat-heading stable=True saved_source_matches=True valid=True
+x7-concat-list -> muse-probe-suspect-xrule-x7-concat-list stable=True saved_source_matches=True valid=True
+x8-raw-code-cross -> muse-probe-suspect-xrule-x8-raw-code-cross stable=True saved_source_matches=True valid=True
+x9-iw-raw-label -> muse-probe-suspect-xrule-x9-iw-raw-label stable=True saved_source_matches=True valid=True
+x10-url-raw-label -> muse-probe-suspect-xrule-x10-url-raw-label stable=True saved_source_matches=True valid=True
+x11-rawold-comment -> muse-probe-suspect-xrule-x11-rawold-comment stable=True saved_source_matches=True valid=True
+x12-code-umlaut -> muse-probe-suspect-xrule-x12-code-umlaut stable=True saved_source_matches=True valid=True
+x15-comment-concat-heading -> muse-probe-suspect-xrule-x15-comment-concat-heading stable=True saved_source_matches=True valid=True
+x16-pre-code-3blanks -> muse-probe-suspect-xrule-x16-pre-code-3blanks stable=True saved_source_matches=True valid=True
+x17-concat-raw -> muse-probe-suspect-xrule-x17-concat-raw stable=True saved_source_matches=True valid=True
+x18-form-code -> muse-probe-suspect-xrule-x18-form-code stable=True saved_source_matches=True valid=True
+x19-module-code -> muse-probe-suspect-xrule-x19-module-code stable=True saved_source_matches=True valid=True
+x20-ustrip -> muse-probe-suspect-xrule-x20-ustrip stable=True saved_source_matches=True valid=True
+{
+ "x1-rawold-raw": {
+  "fullname": "muse-probe-suspect-xrule-x1-rawold-raw",
+  "html": "<p>A B</p>",
+  "html_sha256": "036156d0e73a072ff96f2631eb56732be5bb90733f7a01685ac90cb54344f72d",
+  "source": "A ``@@x@@`` B",
+  "source_sha256": "10ccb7c7d24949f163c11af9e7b62e4e505a59e59167fa7d071523c9a5a54ff0",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x1c-rawold-plain": {
+  "fullname": "muse-probe-suspect-xrule-x1c-rawold-plain",
+  "html": "<p>A x B</p>",
+  "html_sha256": "a185c5b833bc625340cc34f55ac2d9a7a46daffbc2a93279dca36eefcad84e5b",
+  "source": "A ``x`` B",
+  "source_sha256": "9bebee37f684e11d570322e86c38c16db5f0b50aaf5bb91644172d52c7495097",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x2-freelink-raw": {
+  "fullname": "muse-probe-suspect-xrule-x2-freelink-raw",
+  "html": "<p>A [[[<span style=\"white-space: pre-wrap;\">x</span>]]] B</p>",
+  "html_sha256": "9d86de034d5b726904d1dfef3dde1d125da4930a108f4deb065a084dbf489ef8",
+  "source": "A [[[@@x@@]]] B",
+  "source_sha256": "4107bf51a8329b1db1caa68d152f9342dfed70ed5aa298c25c5a52c54dfa2cc8",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x3-email-raw-label": {
+  "fullname": "muse-probe-suspect-xrule-x3-email-raw-label",
+  "html": "<p>A <span class=\"wiki-email\">moc.elpmaxe|a#�1�</span> B</p>",
+  "html_sha256": "241da13f62b5e2ea0f3bbc7994af51be6477385018d4cfda3328bc4e0a584fae",
+  "source": "A [a@example.com @@x@@] B",
+  "source_sha256": "1eccfb7fbe3fd63ef023644633be52297ad53a25c2eefc40ae0e57e4576be4d9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x4-email-free-label": {
+  "fullname": "muse-probe-suspect-xrule-x4-email-free-label",
+  "html": "<p>A <span class=\"wiki-email\">moc.elpmaxe|a#�1�</span> B</p>",
+  "html_sha256": "241da13f62b5e2ea0f3bbc7994af51be6477385018d4cfda3328bc4e0a584fae",
+  "source": "A [a@example.com [[[Some Page]]]] B",
+  "source_sha256": "bac5e39b155585ccd809215d63a3a1f0ded6e38b674ba75a84c70b7bfd94b50d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x6-concat-heading": {
+  "fullname": "muse-probe-suspect-xrule-x6-concat-heading",
+  "html": "<p>A+ Heading</p>",
+  "html_sha256": "cf60756223779be687bd5d2c819c0891b7da8fdc0cc49df7433ca2f7575dc7a7",
+  "source": "A\\\n+ Heading",
+  "source_sha256": "bfe3afeef3783ff1e2a204369889f50e7b811ef80650c3861d3cede67f480d4c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x7-concat-list": {
+  "fullname": "muse-probe-suspect-xrule-x7-concat-list",
+  "html": "<p>A* item</p>",
+  "html_sha256": "4ccd83d688beb3f679a961797372a1eb02acaa80657fe5c9eab837e2c6846b93",
+  "source": "A\\\n* item",
+  "source_sha256": "1d6816cfc7cc726ee3083337df61ab37d71842195b0a63fc020a0220f99426e8",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x8-raw-code-cross": {
+  "fullname": "muse-probe-suspect-xrule-x8-raw-code-cross",
+  "html": "<p>@@</p>\n<div class=\"code\">\n<pre><code>a\nb</code></pre></div>\n<br />\n@@",
+  "html_sha256": "6484d97f92c3c8f6e25928e4ed808b734d6ad22190ba72a2131386459d1f6960",
+  "source": "@@\n[[code]]a\nb[[/code]]\n@@",
+  "source_sha256": "82bb9ab7977b699cb5157a419053525fdb8d796a07625000d0c615aec7b39847",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x9-iw-raw-label": {
+  "fullname": "muse-probe-suspect-xrule-x9-iw-raw-label",
+  "html": "<p>A [site:page <span style=\"white-space: pre-wrap;\">x</span>] B</p>",
+  "html_sha256": "ba59a21571205003234d9870ba88a41e2192031c71bff25c01db85ce7bbb8d9e",
+  "source": "A [site:page @@x@@] B",
+  "source_sha256": "b3ce303532cc3b285d77db36efe259b02c2eb38a83f2db06c752c4cee4bc142e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x10-url-raw-label": {
+  "fullname": "muse-probe-suspect-xrule-x10-url-raw-label",
+  "html": "<p>A [b <a href=\"http://example.com/x\">http://example.com/x</a> <span style=\"white-space: pre-wrap;\">x</span>] B</p>",
+  "html_sha256": "92dbd99168cf1bdbcb5d7792f58977a20c85ebc8a8304e8e5b3f19f0fcc4ef17",
+  "source": "A [b http://example.com/x @@x@@] B",
+  "source_sha256": "b69a7869c7bf0530105c5ab1e675487cc88d5833ede0a79edfdae9e170647a21",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x11-rawold-comment": {
+  "fullname": "muse-probe-suspect-xrule-x11-rawold-comment",
+  "html": "<p>A [!-- hidden --] B</p>",
+  "html_sha256": "54f5bd99ba6f74451dbe5077c798a0410415f6028bb32c83e41d2b5496dd2dc7",
+  "source": "A ``[!-- hidden --]`` B",
+  "source_sha256": "26edee04b03a055380f4f5356ca80392131eeb4d30b1ae5afbed4e2898d9ce95",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x12-code-umlaut": {
+  "fullname": "muse-probe-suspect-xrule-x12-code-umlaut",
+  "html": "<div class=\"code\">\n<pre><code>aüüb</code></pre></div>",
+  "html_sha256": "16b1d20d6762a14a3456b5cb62567676426b9a0340aac7e0f2b7ca4a8b8c8dba",
+  "source": "[[code]]aüüb[[/code]]",
+  "source_sha256": "68b1f75f6eae52fb4cbb26ae5759e58a3bc113abc99e761927a35462a22c1233",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x15-comment-concat-heading": {
+  "fullname": "muse-probe-suspect-xrule-x15-comment-concat-heading",
+  "html": "<h1 id=\"toc0\"><span>Heading</span></h1>",
+  "html_sha256": "5ec6be1440f3c872827f90300a19a6a345c62de7f4df45afd81b6b0a719740dd",
+  "source": "[!-- h --]\\\n+ Heading",
+  "source_sha256": "baa37a7e9af67447fea945293b46779f3ab1a5101fa7cdede3ead06681262857",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x16-pre-code-3blanks": {
+  "fullname": "muse-probe-suspect-xrule-x16-pre-code-3blanks",
+  "html": "<div class=\"code\">\n<pre><code>a\n\nb</code></pre></div>",
+  "html_sha256": "511bb9807aa9c9594604595657a96b12b463677678173f6d6b88253bf31e4351",
+  "source": "[[code]]a\n\n\n\nb[[/code]]",
+  "source_sha256": "046d8487c4777a8abea6be07003004902569902a82dc4bf1959083ca33f03142",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x17-concat-raw": {
+  "fullname": "muse-probe-suspect-xrule-x17-concat-raw",
+  "html": "<p>@@xy@@</p>",
+  "html_sha256": "f32a58d9292a4ed55562fa927c22d84056a649c3cdcc3bd0314d5d03182d1af1",
+  "source": "@@x\\\ny@@",
+  "source_sha256": "0711b8cab4e7ca9a6018abc01b0fbed7d74fdf08ee97b593d2b55063cb956ae2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x18-form-code": {
+  "fullname": "muse-probe-suspect-xrule-x18-form-code",
+  "html": "<p><span style=\"white-space: pre-wrap;\">[[form]]</span><br />\n<br />\n<br />\n<br />\n<span style=\"white-space: pre-wrap;\">[[/form]]</span></p>",
+  "html_sha256": "f41c9c0528fd220edea08a4375cb31fa159dec5dd504e9eb663f87b6eb1cd7df",
+  "source": "[[form]]\n[[code]]\nx\n[[/code]]\n[[/form]]",
+  "source_sha256": "16c2ab4efbf556802884a213133855b0ef514b0a74875f6321bd624dc91e7c83",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x19-module-code": {
+  "fullname": "muse-probe-suspect-xrule-x19-module-code",
+  "html": "<div class=\"error-block\">[[module <em>Foo</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>\n<div class=\"code\">\n<pre><code>x</code></pre></div>\n<br />\n[[/module]]",
+  "html_sha256": "dd4ef2795e891e42499915a025b17e555f536e09138d754bb01b1d4b45a1639c",
+  "source": "[[module Foo]]\n[[code]]\nx\n[[/code]]\n[[/module]]",
+  "source_sha256": "3a190114a138453d9d65ebb66bf8b09601cb72cab59fc9aaf79978635316ddca",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x20-ustrip": {
+  "fullname": "muse-probe-suspect-xrule-x20-ustrip",
+  "html": "<p>üü<strong>x</strong>üü</p>",
+  "html_sha256": "4cb5e6616a9f58795413f2f981d19d4716d6a8a96699159e18667bd9f711b244",
+  "source": "üü**x**üü",
+  "source_sha256": "f4d5d76a3cd8f4811458c7f170653a228a0906df84430d70f100f3b90d545d03",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

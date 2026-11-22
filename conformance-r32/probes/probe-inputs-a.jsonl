@@ -1,0 +1,6 @@
+{"id": "e1-raw-around-code", "source": "@@a[[code]]x[[/code]]b@@"}
+{"id": "e2-raw-opener-in-code", "source": "[[code]]@@x[[/code]] y @@"}
+{"id": "e3-form-line-placeholder", "source": "[[form]]\na[[code]]x[[/code]]b\n---\ny\n[[/form]]"}
+{"id": "e4-rawold-around-code", "source": "``a[[code]]x[[/code]]b``"}
+{"id": "e5-code-in-raw", "source": "@@[[code]]x[[/code]]@@"}
+{"id": "e6-at-run-across-code", "source": "@@@@[[code]]x[[/code]]@@@@"}

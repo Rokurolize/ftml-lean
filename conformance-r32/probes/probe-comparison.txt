@@ -1,0 +1,17 @@
+e1-raw-around-code: PASS
+e2-raw-opener-in-code: PASS
+e3-form-line-placeholder: PASS
+e4-rawold-around-code: PASS
+e5-code-in-raw: PASS
+e6-at-run-across-code: PASS
+f1-form-with-code-line: PASS-UNREPRESENTABLE
+f2-rawold-across-code: PASS-UNREPRESENTABLE
+f3-raw-abort-across-code: PASS
+f4-raw-after-code-sameline: PASS
+g1-raw-around-form: PASS
+g2-rawold-across-form: PASS-UNREPRESENTABLE
+g3-raw-crossline-formline: PASS
+g4-form-blank-and-case: PASS
+g5-form-sep-nospace: PASS
+g6-form-two-seps: PASS
+SUMMARY: 16/16 cases match

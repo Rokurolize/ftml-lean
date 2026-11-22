@@ -1,0 +1,87 @@
+{
+ "ro-trail": {
+  "fullname": "muse-probe-htmlchars-ro-trail",
+  "source": "``A&B\"C<D>E'``",
+  "action": "created"
+ },
+ "ro-plain": {
+  "fullname": "muse-probe-htmlchars-ro-plain",
+  "source": "``A&B\"C<D>Eé``",
+  "action": "created"
+ },
+ "ro-interior": {
+  "fullname": "muse-probe-htmlchars-ro-interior",
+  "source": "``A'B``",
+  "action": "created"
+ },
+ "fl-label": {
+  "fullname": "muse-probe-htmlchars-fl-label",
+  "source": "[[[htmlchars-nope|O'Brien &amp; <x> \"q\" é]]]",
+  "action": "created"
+ },
+ "fl-url": {
+  "fullname": "muse-probe-htmlchars-fl-url",
+  "source": "[[[https://example.com/a'b?x=1&y=2|U'R L&<>]]]",
+  "action": "created"
+ },
+ "fl-anchor": {
+  "fullname": "muse-probe-htmlchars-fl-anchor",
+  "source": "[[[htmlchars-nope#an'chor&x|Anchor]]]",
+  "action": "created"
+ },
+ "fl-extra": {
+  "fullname": "muse-probe-htmlchars-fl-extra",
+  "source": "[[[htmlchars-nope/#/ro'ute|Extra]]]",
+  "action": "created"
+ },
+ "bt-attrs": {
+  "fullname": "muse-probe-htmlchars-bt-attrs",
+  "source": "[[button edit class=\"c'd&e\" style=\"s:'&é\" text=\"ok\"]]",
+  "action": "created"
+ },
+ "bt-class2": {
+  "fullname": "muse-probe-htmlchars-bt-class2",
+  "source": "[[button edit class=\"only'one\"]]",
+  "action": "created"
+ },
+ "im-attrs": {
+  "fullname": "muse-probe-htmlchars-im-attrs",
+  "source": "[[image https://example.com/a'b.png alt=\"A'B & é\" title=\"T'B\" link=\"https://example.com/x'y?a=1&b=2\"]]",
+  "action": "created"
+ },
+ "im-local": {
+  "fullname": "muse-probe-htmlchars-im-local",
+  "source": "[[image htmlchars/a'b.png]]",
+  "action": "created"
+ },
+ "im-altamp": {
+  "fullname": "muse-probe-htmlchars-im-altamp",
+  "source": "[[image https://example.com/p.png alt=\"A&amp;B 'x'\"]]",
+  "action": "created"
+ },
+ "url-desc": {
+  "fullname": "muse-probe-htmlchars-url-desc",
+  "source": "[https://example.com/a'b?x=1&y=2 O'Brien &amp; <x> \"q\" é]",
+  "action": "created"
+ },
+ "url-star": {
+  "fullname": "muse-probe-htmlchars-url-star",
+  "source": "[*https://example.com/a'b Star's]",
+  "action": "created"
+ },
+ "url-auto": {
+  "fullname": "muse-probe-htmlchars-url-auto",
+  "source": "https://example.com/?x=1&y=2'z",
+  "action": "created"
+ },
+ "iw-label": {
+  "fullname": "muse-probe-htmlchars-iw-label",
+  "source": "[wikipedia:Albert_Einstein O'Brien &amp; <x> \"q\" é]",
+  "action": "created"
+ },
+ "iw-stand": {
+  "fullname": "muse-probe-htmlchars-iw-stand",
+  "source": "[wikipedia:Albert_Einstein]",
+  "action": "created"
+ }
+}

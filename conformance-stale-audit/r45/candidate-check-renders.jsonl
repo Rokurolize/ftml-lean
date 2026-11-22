@@ -1,0 +1,2 @@
+{"id":"p09-skip-one","output":"<ul>\n<li>root\n<ul>\n<li style=\"list-style: none; display: inline\">\n<ul>\n<li>skipped<\/li>\n<\/ul>\n<\/li>\n<\/ul>\n<\/li>\n<li>after<\/li>\n<\/ul>"}
+{"id":"p10-skip-three","output":"<ul>\n<li>root\n<ol>\n<li style=\"list-style: none; display: inline\">\n<ol>\n<li style=\"list-style: none; display: inline\">\n<ol>\n<li style=\"list-style: none; display: inline\">\n<ol>\n<li>skipped three<\/li>\n<\/ol>\n<\/li>\n<\/ol>\n<\/li>\n<\/ol>\n<\/li>\n<\/ol>\n<\/li>\n<li>after<\/li>\n<\/ul>"}

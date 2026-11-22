@@ -1,0 +1,7 @@
+TOTAL 740
+PASS 735
+EXCLUDED 1
+FAIL 4
+FATAL-AGREE 0
+UNMIRRORED-TALLY {"BatchTokenIdCounter": 1}
+FAILURES ["x22-coll-in-tab", "x23-div-in-tab", "x25-tab-in-coll-in-div", "x29-footnote-in-tab"]

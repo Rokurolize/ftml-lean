@@ -1,0 +1,204 @@
+{"id":"mp-name-lower","segments":[{"t":"\n\n\n"},{"k":0},{"t":"\n\n\n\n"}],"tokens":[["Module",{"moduleName":"backlinks","attr":"","module_body":".mp-box { color: red; }"}]],"equations":[],"mathId":null}
+{"id":"mp-name-upper","segments":[{"t":"\n\n\n"},{"k":1},{"t":"\n\n\n\n"}],"tokens":{"1":["Module",{"moduleName":"CSS","attr":"","module_body":".mp-box { color: red; }"}]},"equations":[],"mathId":null}
+{"id":"mp-name-mixed","segments":[{"t":"\n\n\n"},{"k":2},{"t":"\n\n\n\n"}],"tokens":{"2":["Module",{"moduleName":"RaTe","attr":"","module_body":".mp-box { color: red; }"}]},"equations":[],"mathId":null}
+{"id":"mp-name-leading-digit","segments":[{"t":"\n\n\n"},{"k":3},{"t":"\n\n\n\n"}],"tokens":{"3":["Module",{"moduleName":"9lives","attr":"","module_body":".mp-box { color: red; }"}]},"equations":[],"mathId":null}
+{"id":"mp-name-slash","segments":[{"t":"\n\n\n"},{"k":4},{"t":"\n\n\n\n"}],"tokens":{"4":["Module",{"moduleName":"foo\/bar","attr":"","module_body":".mp-box { color: red; }"}]},"equations":[],"mathId":null}
+{"id":"mp-name-hyphen","segments":[{"t":"\n\n\n"},{"k":5},{"t":"\n\n\n\n"}],"tokens":{"5":["Module",{"moduleName":"my-module","attr":"","module_body":".mp-box { color: red; }"}]},"equations":[],"mathId":null}
+{"id":"mp-name-underscore","segments":[{"t":"\n\n\n"},{"k":6},{"t":"\n\n\n\n"}],"tokens":{"6":["Module",{"moduleName":"my_module","attr":"","module_body":".mp-box { color: red; }"}]},"equations":[],"mathId":null}
+{"id":"mp-name-empty","segments":[{"t":"\n[[module654 ]]\n.mp-box { color: red; }\n[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mp-name-dot","segments":[{"t":"\n[[module654 foo.bar]]\n.mp-box { color: red; }\n[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mp-name-colon","segments":[{"t":"\n[[module654 foo:bar]]\n.mp-box { color: red; }\n[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mp-attr-simple","segments":[{"t":"\n\n\n"},{"k":7},{"t":"\n\n\n"}],"tokens":{"7":["Module",{"moduleName":"rate","attr":"show=\"mp-x\"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mp-attr-multiple","segments":[{"t":"\n\n\n"},{"k":8},{"t":"\n\n\n\n"}],"tokens":{"8":["Module",{"moduleName":"listpages","attr":"category=\"cats\" limit=\"5\"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"mp-attr-unquoted","segments":[{"t":"\n\n\n"},{"k":9},{"t":"\n\n\n"}],"tokens":{"9":["Module",{"moduleName":"rate","attr":"show=mp-x","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mp-attr-empty","segments":[{"t":"\n\n\n"},{"k":10},{"t":"\n\n\n"}],"tokens":{"10":["Module",{"moduleName":"rate","attr":"\"\"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mp-attr-newline","segments":[{"t":"\n\n\n"},{"k":11},{"t":"\n\n\n"}],"tokens":{"11":["Module",{"moduleName":"rate","attr":"show=\"mp-x\"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mp-attr-brackets","segments":[{"t":"\n\n\n"},{"k":12},{"t":"\n\n\n"}],"tokens":{"12":["Module",{"moduleName":"rate","attr":"a=\"x]]y\"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mp-attr-spaces","segments":[{"t":"\n\n\n"},{"k":13},{"t":"\n\n\n\n"}],"tokens":{"13":["Module",{"moduleName":"rate","attr":"show=\"mp-x\"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"mp-body-basic","segments":[{"t":"\n\n\n"},{"k":14},{"t":"\n\n\n\n"}],"tokens":{"14":["Module",{"moduleName":"css","attr":"","module_body":".mp-box { color: red; }"}]},"equations":[],"mathId":null}
+{"id":"mp-body-empty","segments":[{"t":"\n\n\n"},{"k":15},{"t":"\n\n[[\/module]]\n\n"}],"tokens":{"15":["Module",{"moduleName":"css","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mp-body-absent","segments":[{"t":"\n\n\n"},{"k":16},{"t":"\n\n\n"}],"tokens":{"16":["Module",{"moduleName":"css","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mp-body-inline","segments":[{"t":"\n[[module css]]inline-body[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mp-body-blank-lines","segments":[{"t":"\n\n\n"},{"k":17},{"t":"\n\n\n\n"}],"tokens":{"17":["Module",{"moduleName":"css","attr":"","module_body":".mp-box { color: red; }"}]},"equations":[],"mathId":null}
+{"id":"mp-body-punctuation","segments":[{"t":"\n\n\n"},{"k":18},{"t":"\n\n\n\n"}],"tokens":{"18":["Module",{"moduleName":"css","attr":"","module_body":"***bold*** and [[div]]"}]},"equations":[],"mathId":null}
+{"id":"mp-unterm","segments":[{"t":"\n\n\n"},{"k":19},{"t":"\n\n.mp-box { color: red; }\n\n"}],"tokens":{"19":["Module",{"moduleName":"css","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mp-stray-closer","segments":[{"t":"\n[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mp-closer-654","segments":[{"t":"\n[[\/module654]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mp-unterm-then-text","segments":[{"t":"\n\n\n"},{"k":20},{"t":"\n\n.mp-box { color: red; }\nTRAILING\n\n"}],"tokens":{"20":["Module",{"moduleName":"css","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mp-close-then-open","segments":[{"t":"\n[[\/module]]\n\n\n"},{"k":21},{"t":"\n\n\n\n"}],"tokens":{"21":["Module",{"moduleName":"css","attr":"","module_body":".mp-box { color: red; }"}]},"equations":[],"mathId":null}
+{"id":"mp-nl-none","segments":[{"t":"\n[[module css]]text\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mp-nl-spaces","segments":[{"t":"\n\n\n"},{"k":22},{"t":"\n\n\n\n"}],"tokens":{"22":["Module",{"moduleName":"css","attr":"","module_body":".mp-box { color: red; }"}]},"equations":[],"mathId":null}
+{"id":"mp-nl-tabs","segments":[{"t":"\n\n\n"},{"k":23},{"t":"\n\n\n\n"}],"tokens":{"23":["Module",{"moduleName":"css","attr":"","module_body":".mp-box { color: red; }"}]},"equations":[],"mathId":null}
+{"id":"mp-nl-crlf","segments":[{"t":"\n\n\n"},{"k":24},{"t":"\n\n\n\n"}],"tokens":{"24":["Module",{"moduleName":"css","attr":"","module_body":".mp-box { color: red; }"}]},"equations":[],"mathId":null}
+{"id":"mp-nl-cr","segments":[{"t":"\n\n\n"},{"k":25},{"t":"\n\n\n\n"}],"tokens":{"25":["Module",{"moduleName":"css","attr":"","module_body":".mp-box { color: red; }"}]},"equations":[],"mathId":null}
+{"id":"mp-nl-two","segments":[{"t":"\n\n\n"},{"k":26},{"t":"\n\n\n\n"}],"tokens":{"26":["Module",{"moduleName":"css","attr":"","module_body":".mp-box { color: red; }"}]},"equations":[],"mathId":null}
+{"id":"mp-nl-eof","segments":[{"t":"\n\n\n"},{"k":27},{"t":"\n\n\n"}],"tokens":{"27":["Module",{"moduleName":"css","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mp-case-ALL","segments":[{"t":"\n\n\n"},{"k":28},{"t":"\n\n\n\n"}],"tokens":{"28":["Module654",{"moduleName":"CSS","attr":"","module_body":".mp-box { color: red; }"}]},"equations":[],"mathId":null}
+{"id":"mp-case-mixed","segments":[{"t":"\n\n\n"},{"k":29},{"t":"\n\n\n\n"}],"tokens":{"29":["Module654",{"moduleName":"CSS","attr":"","module_body":".mp-box { color: red; }"}]},"equations":[],"mathId":null}
+{"id":"mp-case-closer","segments":[{"t":"\n\n\n"},{"k":30},{"t":"\n\n.mp-box { color: red; }\n[[\/MODULE654]]\n\n"}],"tokens":{"30":["Module",{"moduleName":"CSS","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mp-midline","segments":[{"t":"\nprefix [[module654 css]]\n.mp-box { color: red; }\n[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mp-leading-space","segments":[{"t":"\n [[module654 css]]\n.mp-box { color: red; }\n[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mp-leading-space2","segments":[{"t":"\n  [[module654 css]]\n.mp-box { color: red; }\n[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mp-quoted","segments":[{"t":"\n> [[module654 CSS]]\n> .mp-box { color: red; }\n> [[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mp-adjacent-module","segments":[{"t":"\n\n\n"},{"k":31},{"t":"\n\n\n\n\n"},{"k":32},{"t":"\n\n\n"}],"tokens":{"31":["Module",{"moduleName":"css","attr":"","module_body":".mp-box { color: red; }"}],"32":["Module",{"moduleName":"rate","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mp-nested-module-in-654","segments":[{"t":"\n\n\n"},{"k":34},{"t":"\n\n\n\n"}],"tokens":{"33":["Module",{"moduleName":"rate","attr":"","module_body":""}],"34":["Module654",{"moduleName":"css","attr":"","module_body":{"$bytes":[255,51,51,255]}}]},"equations":[],"mathId":null}
+{"id":"mp-nested-654-in-module","segments":[{"t":"\n\n\n"},{"k":36},{"t":"\n\n\n\n"}],"tokens":{"35":["Module",{"moduleName":"rate","attr":"","module_body":""}],"36":["Module654",{"moduleName":"css","attr":"","module_body":{"$bytes":[255,51,53,255]}}]},"equations":[],"mathId":null}
+{"id":"mp-654-body-has-module-closer","segments":[{"t":"\n\n\n"},{"k":38},{"t":"\n\n\n\n"},{"k":37},{"t":"\n\n\n\n"}],"tokens":{"37":["Module",{"moduleName":"rate","attr":"","module_body":"[[\/module]]"}],"38":["Module654",{"moduleName":"css","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mp-two-654","segments":[{"t":"\n\n\n"},{"k":39},{"t":"\n\n\n\n\n"},{"k":40},{"t":"\n\n\n\n"}],"tokens":{"39":["Module",{"moduleName":"css","attr":"","module_body":"A"}],"40":["Module",{"moduleName":"rate","attr":"","module_body":"B"}]},"equations":[],"mathId":null}
+{"id":"mp-vs-module-baseline","segments":[{"t":"\n\n\n"},{"k":41},{"t":"\n\n\n\n"}],"tokens":{"41":["Module",{"moduleName":"CSS","attr":"","module_body":".mp-box { color: red; }"}]},"equations":[],"mathId":null}
+{"id":"mp-vs-module-nonewline","segments":[{"t":"\n[[module CSS]]text\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mp-vs-654-nonewline","segments":[{"t":"\n[[module CSS]]text\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mp-vs-654-closer-654","segments":[{"t":"\n\n\n"},{"k":42},{"t":"\n\n.mp-box { color: red; }\n[[\/module654]]\n\n"}],"tokens":{"42":["Module",{"moduleName":"CSS","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mp-unknown-name","segments":[{"t":"\n\n\n"},{"k":43},{"t":"\n\n\n"}],"tokens":{"43":["Module",{"moduleName":"UnknownOracleModule","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mp-unknown-with-body","segments":[{"t":"\n\n\n"},{"k":44},{"t":"\n\n\n\n"}],"tokens":{"44":["Module",{"moduleName":"UnknownOracleModule","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"mp-unknown-no-newline","segments":[{"t":"\n[[module UnknownOracleModule]]TAIL\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mp-unknown-attrs","segments":[{"t":"\n\n\n"},{"k":45},{"t":"\n\n\n"}],"tokens":{"45":["Module",{"moduleName":"UnknownOracleModule","attr":"foo=\"bar\"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-basic","segments":[{"t":"\n\n\n"},{"k":46},{"t":"\n\n\n"}],"tokens":{"46":["Module",{"moduleName":"backlinks","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-known-uppercase","segments":[{"t":"\n\n\n"},{"k":47},{"t":"\n\n\n"}],"tokens":{"47":["Module",{"moduleName":"BACKLINKS","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-known-mixed","segments":[{"t":"\n\n\n"},{"k":48},{"t":"\n\n\n"}],"tokens":{"48":["Module",{"moduleName":"BackLinks","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-unknown","segments":[{"t":"\n\n\n"},{"k":49},{"t":"\n\n\n"}],"tokens":{"49":["Module",{"moduleName":"UnknownOracleModule","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-unknown-mixed","segments":[{"t":"\n\n\n"},{"k":50},{"t":"\n\n\n"}],"tokens":{"50":["Module",{"moduleName":"Unknown_Oracle-2","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-name-leading-digit","segments":[{"t":"\n\n\n"},{"k":51},{"t":"\n\n\n"}],"tokens":{"51":["Module",{"moduleName":"123abc","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-name-leading-underscore","segments":[{"t":"\n\n\n"},{"k":52},{"t":"\n\n\n"}],"tokens":{"52":["Module",{"moduleName":"_foo","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-name-leading-hyphen","segments":[{"t":"\n\n\n"},{"k":53},{"t":"\n\n\n"}],"tokens":{"53":["Module",{"moduleName":"-foo","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-name-slash","segments":[{"t":"\n\n\n"},{"k":54},{"t":"\n\n\n"}],"tokens":{"54":["Module",{"moduleName":"foo\/bar","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-name-inner-slash","segments":[{"t":"\n\n\n"},{"k":55},{"t":"\n\n\n"}],"tokens":{"55":["Module",{"moduleName":"foo\/bar-baz_qux","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-name-hyphen","segments":[{"t":"\n\n\n"},{"k":56},{"t":"\n\n\n"}],"tokens":{"56":["Module",{"moduleName":"foo-bar","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-name-underscore","segments":[{"t":"\n\n\n"},{"k":57},{"t":"\n\n\n"}],"tokens":{"57":["Module",{"moduleName":"foo_bar","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-name-uppercase-unknown","segments":[{"t":"\n\n\n"},{"k":58},{"t":"\n\n\n"}],"tokens":{"58":["Module",{"moduleName":"FOO_BAR","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-name-empty-space","segments":[{"t":"\n[[module ]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mod-name-empty-nospace","segments":[{"t":"\n[[module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mod-attr-quoted","segments":[{"t":"\n\n\n"},{"k":59},{"t":"\n\n\n"}],"tokens":{"59":["Module",{"moduleName":"rate","attr":"show=\"foo\"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-attr-unquoted","segments":[{"t":"\n\n\n"},{"k":60},{"t":"\n\n\n"}],"tokens":{"60":["Module",{"moduleName":"rate","attr":"show=foo","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-attr-empty","segments":[{"t":"\n\n\n"},{"k":61},{"t":"\n\n\n"}],"tokens":{"61":["Module",{"moduleName":"rate","attr":"show=\"\"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-attr-multiple","segments":[{"t":"\n\n\n"},{"k":62},{"t":"\n\n\n"}],"tokens":{"62":["Module",{"moduleName":"pagetree","attr":"root=\"scp-001\" depth=\"2\"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-attr-on-unknown","segments":[{"t":"\n\n\n"},{"k":63},{"t":"\n\n\n"}],"tokens":{"63":["Module",{"moduleName":"UnknownOracleModule","attr":"foo=\"bar\"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-attr-extra-spaces","segments":[{"t":"\n\n\n"},{"k":64},{"t":"\n\n\n"}],"tokens":{"64":["Module",{"moduleName":"rate","attr":"show=\"foo\"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-body-present","segments":[{"t":"\n\n\n"},{"k":65},{"t":"\n\n\n\n"}],"tokens":{"65":["Module",{"moduleName":"css","attr":"","module_body":".blue { color: blue; }"}]},"equations":[],"mathId":null}
+{"id":"mod-body-empty","segments":[{"t":"\n\n\n"},{"k":66},{"t":"\n\n[[\/module]]\n\n"}],"tokens":{"66":["Module",{"moduleName":"css","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-body-inline-unknown","segments":[{"t":"\n[[module UnknownOracleModule]]preserved body[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mod-body-unknown-newline","segments":[{"t":"\n\n\n"},{"k":67},{"t":"\n\n\n\n"}],"tokens":{"67":["Module",{"moduleName":"UnknownOracleModule","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"mod-unterminated","segments":[{"t":"\n\n\n"},{"k":68},{"t":"\n\n.blue{color:blue}\n\n"}],"tokens":{"68":["Module",{"moduleName":"css","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-stray-closer","segments":[{"t":"\n[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mod-body-same-line","segments":[{"t":"\n[[module css]] body [[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mod-no-newline","segments":[{"t":"\n\n\n"},{"k":69},{"t":"\n\n\n"}],"tokens":{"69":["Module",{"moduleName":"backlinks","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-spaces-then-newline","segments":[{"t":"\n\n\n"},{"k":70},{"t":"\n\n\n"}],"tokens":{"70":["Module",{"moduleName":"backlinks","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-crlf","segments":[{"t":"\n\n\n"},{"k":71},{"t":"\n\n\n"}],"tokens":{"71":["Module",{"moduleName":"backlinks","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-lone-cr","segments":[{"t":"\n\n\n"},{"k":72},{"t":"\n\n\n"}],"tokens":{"72":["Module",{"moduleName":"backlinks","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-tab-after-opener","segments":[{"t":"\n\n\n"},{"k":73},{"t":"\n\n\n"}],"tokens":{"73":["Module",{"moduleName":"backlinks","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-opener-MODULE","segments":[{"t":"\n\n\n"},{"k":74},{"t":"\n\n\n"}],"tokens":{"74":["Module",{"moduleName":"backlinks","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-opener-mixed","segments":[{"t":"\n\n\n"},{"k":75},{"t":"\n\n\n"}],"tokens":{"75":["Module",{"moduleName":"backlinks","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-closer-case","segments":[{"t":"\n\n\n"},{"k":76},{"t":"\n\n\n\n"}],"tokens":{"76":["Module",{"moduleName":"css","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"mod-midline","segments":[{"t":"\nprefix [[module backlinks]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mod-leading-space","segments":[{"t":"\n[[ module backlinks ]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mod-closer-leading-space","segments":[{"t":"\n\n\n"},{"k":77},{"t":"\n\n\n\n"}],"tokens":{"77":["Module",{"moduleName":"css","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"mod-nested-two-openers","segments":[{"t":"\n\n\n"},{"k":79},{"t":"\n\n\n\n"}],"tokens":{"78":["Module",{"moduleName":"rate","attr":"","module_body":""}],"79":["Module654",{"moduleName":"css","attr":"","module_body":{"$bytes":[255,55,56,255]}}]},"equations":[],"mathId":null}
+{"id":"mod-nested-unknown-in-body","segments":[{"t":"\n\n\n"},{"k":81},{"t":"\n\n\n\n"}],"tokens":{"80":["Module",{"moduleName":"css","attr":"","module_body":""}],"81":["Module654",{"moduleName":"UnknownOracleModule","attr":"","module_body":{"$bytes":[255,56,48,255]}}]},"equations":[],"mathId":null}
+{"id":"mod-adjacent-module654","segments":[{"t":"\n\n\n"},{"k":82},{"t":"\n\n\n\n"},{"k":83},{"t":"\n\n\n"}],"tokens":{"82":["Module",{"moduleName":"backlinks","attr":"","module_body":""}],"83":["Module",{"moduleName":"rate","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-module654-basic","segments":[{"t":"\n\n\n"},{"k":84},{"t":"\n\n\n"}],"tokens":{"84":["Module",{"moduleName":"rate","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-module654-unknown","segments":[{"t":"\n\n\n"},{"k":85},{"t":"\n\n\n"}],"tokens":{"85":["Module",{"moduleName":"UnknownOracleModule","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-module654-module-closer","segments":[{"t":"\n\n\n"},{"k":86},{"t":"\n\n\n\n"}],"tokens":{"86":["Module",{"moduleName":"css","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"mod-module-opener-module654-closer","segments":[{"t":"\n\n\n"},{"k":87},{"t":"\n\nbody\n[[\/module654]]\n\n"}],"tokens":{"87":["Module",{"moduleName":"css","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-two-adjacent","segments":[{"t":"\n\n\n"},{"k":88},{"t":"\n\n\n\n"},{"k":89},{"t":"\n\n\n"}],"tokens":{"88":["Module",{"moduleName":"backlinks","attr":"","module_body":""}],"89":["Module",{"moduleName":"rate","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-unknown-tail","segments":[{"t":"\n[[module UnknownOracleModule]]TAIL\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mod-unknown-stray-close","segments":[{"t":"\n[[module UnknownOracleModule]][[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mod-invalid-head-quoted","segments":[{"t":"\n[[module foo=\"bar\"]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"mod-two-adjacent-body","segments":[{"t":"\n\n\n"},{"k":91},{"t":"\n\n\n\n\n"},{"k":90},{"t":"\n\n[[\/module]]\n\n"}],"tokens":{"90":["Module",{"moduleName":"rate","attr":"","module_body":""}],"91":["Module654",{"moduleName":"css","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"mod-blank-lines","segments":[{"t":"\n\n\n\n"},{"k":92},{"t":"\n\n\n"}],"tokens":{"92":["Module",{"moduleName":"backlinks","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"m654-name-basic","segments":[{"t":"\n\n\n"},{"k":93},{"t":"\n\n\n\n"}],"tokens":{"93":["Module",{"moduleName":"Rate","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-name-uppercase","segments":[{"t":"\n\n\n"},{"k":94},{"t":"\n\n\n\n"}],"tokens":{"94":["Module",{"moduleName":"RATE","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-name-mixed","segments":[{"t":"\n\n\n"},{"k":95},{"t":"\n\n\n\n"}],"tokens":{"95":["Module",{"moduleName":"rate","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-name-leading-digit","segments":[{"t":"\n\n\n"},{"k":96},{"t":"\n\n\n\n"}],"tokens":{"96":["Module",{"moduleName":"123abc","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-name-digits-only","segments":[{"t":"\n\n\n"},{"k":97},{"t":"\n\n\n\n"}],"tokens":{"97":["Module",{"moduleName":"654","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-name-slash","segments":[{"t":"\n\n\n"},{"k":98},{"t":"\n\n\n\n"}],"tokens":{"98":["Module",{"moduleName":"foo\/bar","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-name-hyphen","segments":[{"t":"\n\n\n"},{"k":99},{"t":"\n\n\n\n"}],"tokens":{"99":["Module",{"moduleName":"foo-bar","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-name-leading-hyphen","segments":[{"t":"\n\n\n"},{"k":100},{"t":"\n\n\n\n"}],"tokens":{"100":["Module",{"moduleName":"-foo","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-name-underscore","segments":[{"t":"\n\n\n"},{"k":101},{"t":"\n\n\n\n"}],"tokens":{"101":["Module",{"moduleName":"foo_bar","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-name-leading-underscore","segments":[{"t":"\n\n\n"},{"k":102},{"t":"\n\n\n\n"}],"tokens":{"102":["Module",{"moduleName":"_foo","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-name-empty","segments":[{"t":"\n[[module654 ]]\nbody\n[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"m654-name-no-space","segments":[{"t":"\n[[module654Rate]]\nbody\n[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"m654-name-dot","segments":[{"t":"\n[[module654 foo.bar]]\nbody\n[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"m654-name-unicode","segments":[{"t":"\n[[module654 \u00e9]]\nbody\n[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"m654-attr-one","segments":[{"t":"\n\n\n"},{"k":103},{"t":"\n\n\n\n"}],"tokens":{"103":["Module",{"moduleName":"Rate","attr":"show=\"x\"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-attr-bare","segments":[{"t":"\n\n\n"},{"k":104},{"t":"\n\n\n\n"}],"tokens":{"104":["Module",{"moduleName":"Rate","attr":"foo","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-attr-two","segments":[{"t":"\n\n\n"},{"k":105},{"t":"\n\n\n\n"}],"tokens":{"105":["Module",{"moduleName":"Rate","attr":"a=\"1\" b=\"2\"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-attr-quoted-space","segments":[{"t":"\n\n\n"},{"k":106},{"t":"\n\n\n\n"}],"tokens":{"106":["Module",{"moduleName":"Rate","attr":"title=\"a b\"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-attr-empty","segments":[{"t":"\n\n\n"},{"k":107},{"t":"\n\n\n\n"}],"tokens":{"107":["Module",{"moduleName":"Rate","attr":"\"\"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-attr-tab","segments":[{"t":"\n\n\n"},{"k":108},{"t":"\n\n\n\n"}],"tokens":{"108":["Module",{"moduleName":"Rate","attr":"foo=\"x\"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-attr-multi-space","segments":[{"t":"\n\n\n"},{"k":109},{"t":"\n\n\n\n"}],"tokens":{"109":["Module",{"moduleName":"Rate","attr":"foo=\"x\"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-body-present","segments":[{"t":"\n\n\n"},{"k":110},{"t":"\n\n\n\n"}],"tokens":{"110":["Module",{"moduleName":"CSS","attr":"","module_body":".red { color: red; }"}]},"equations":[],"mathId":null}
+{"id":"m654-body-empty","segments":[{"t":"\n\n\n"},{"k":111},{"t":"\n\n\n\n"}],"tokens":{"111":["Module",{"moduleName":"CSS","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"m654-body-absent","segments":[{"t":"\n\n\n"},{"k":112},{"t":"\n\n\n"}],"tokens":{"112":["Module",{"moduleName":"CSS","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"m654-body-absent-newline","segments":[{"t":"\n\n\n"},{"k":113},{"t":"\n\n\n"}],"tokens":{"113":["Module",{"moduleName":"CSS","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"m654-body-inline","segments":[{"t":"\n[[module Rate]]body[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"m654-body-inline-empty","segments":[{"t":"\n[[module Rate]][[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"m654-unterminated","segments":[{"t":"\n\n\n"},{"k":114},{"t":"\n\nbody\n\n"}],"tokens":{"114":["Module",{"moduleName":"CSS","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"m654-stray-closer","segments":[{"t":"\nbefore\n[[\/module]]\nafter\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"m654-stray-closer654","segments":[{"t":"\nbefore\n[[\/module654]]\nafter\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"m654-double-closer","segments":[{"t":"\n\n\n"},{"k":115},{"t":"\n\n\n[[\/module]]\n\n"}],"tokens":{"115":["Module",{"moduleName":"CSS","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-newline-none","segments":[{"t":"\n[[module CSS]]body\n[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"m654-newline-spaces","segments":[{"t":"\n\n\n"},{"k":116},{"t":"\n\n\n\n"}],"tokens":{"116":["Module",{"moduleName":"CSS","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-newline-crlf","segments":[{"t":"\n\n\n"},{"k":117},{"t":"\n\n\n\n"}],"tokens":{"117":["Module",{"moduleName":"CSS","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-newline-lone-cr","segments":[{"t":"\n\n\n"},{"k":118},{"t":"\n\n\n\n"}],"tokens":{"118":["Module",{"moduleName":"CSS","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-newline-two","segments":[{"t":"\n\n\n"},{"k":119},{"t":"\n\n\n\n"}],"tokens":{"119":["Module",{"moduleName":"CSS","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-newline-tab-space","segments":[{"t":"\n\n\n"},{"k":120},{"t":"\n\n\n\n"}],"tokens":{"120":["Module",{"moduleName":"CSS","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-case-opener-upper","segments":[{"t":"\n\n\n"},{"k":121},{"t":"\n\n\n\n"}],"tokens":{"121":["Module654",{"moduleName":"CSS","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-case-opener-mixed","segments":[{"t":"\n\n\n"},{"k":122},{"t":"\n\n\n\n"}],"tokens":{"122":["Module654",{"moduleName":"CSS","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-case-closer-upper","segments":[{"t":"\n\n\n"},{"k":123},{"t":"\n\n\n\n"}],"tokens":{"123":["Module",{"moduleName":"CSS","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-case-closer-mixed","segments":[{"t":"\n\n\n"},{"k":124},{"t":"\n\n\n\n"}],"tokens":{"124":["Module",{"moduleName":"CSS","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-midline","segments":[{"t":"\ntext [[module654 CSS]]\nbody\n[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"m654-leading-space","segments":[{"t":"\n [[module654 CSS]]\nbody\n[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"m654-after-blank","segments":[{"t":"\nbefore\n\n\n\n"},{"k":125},{"t":"\n\n\n\n"}],"tokens":{"125":["Module",{"moduleName":"CSS","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-closer-654","segments":[{"t":"\n\n\n"},{"k":126},{"t":"\n\nbody\n[[\/module654]]\n\n"}],"tokens":{"126":["Module",{"moduleName":"CSS","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"m654-closer-module","segments":[{"t":"\n\n\n"},{"k":127},{"t":"\n\n\n\n"}],"tokens":{"127":["Module",{"moduleName":"CSS","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"m654-module-closer-654","segments":[{"t":"\n\n\n"},{"k":128},{"t":"\n\nbody\n[[\/module654]]\n\n"}],"tokens":{"128":["Module",{"moduleName":"CSS","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"m654-adjacent-module","segments":[{"t":"\n\n\n"},{"k":129},{"t":"\n\n\n\n\n"},{"k":130},{"t":"\n\n[[\/module]]\n\n"}],"tokens":{"129":["Module",{"moduleName":"CSS","attr":"","module_body":".a{}"}],"130":["Module",{"moduleName":"Rate","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"m654-nested-module","segments":[{"t":"\n\n\n"},{"k":132},{"t":"\n\n\n\n"},{"k":131},{"t":"\n\n\n\n"}],"tokens":{"131":["Module",{"moduleName":"Rate","attr":"","module_body":"[[\/module]]"}],"132":["Module654",{"moduleName":"CSS","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"m654-nested-654","segments":[{"t":"\n\n\n"},{"k":133},{"t":"\n\n\n[[\/module]]\n\n"}],"tokens":{"133":["Module",{"moduleName":"CSS","attr":"","module_body":"[[module654 Rate]]"}]},"equations":[],"mathId":null}
+{"id":"m654-module-then-654","segments":[{"t":"\n\n\n"},{"k":135},{"t":"\n\n\n\n"},{"k":134},{"t":"\n\n\n\n"}],"tokens":{"134":["Module",{"moduleName":"CSS","attr":"","module_body":"[[\/module]]"}],"135":["Module654",{"moduleName":"Rate","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"m654-vs-module-unknown","segments":[{"t":"\n\n\n"},{"k":136},{"t":"\n\n\n"}],"tokens":{"136":["Module",{"moduleName":"UnknownOracleModule","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"m654-vs-module-invalid-head","segments":[{"t":"\n[[module654 class=\"\"]]\nv7 body\n[[\/module654]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"m654-vs-module-tail","segments":[{"t":"\n[[module UnknownOracleModule]]TAIL\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"m654-vs-module-sameclose","segments":[{"t":"\n[[module UnknownOracleModule]][[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"m654-vs-module-attr-unknown","segments":[{"t":"\n\n\n"},{"k":137},{"t":"\n\n\n"}],"tokens":{"137":["Module",{"moduleName":"UnknownOracleModule","attr":"foo=\"bar\"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"m654-vs-module-newline-unknown","segments":[{"t":"\n\n\n"},{"k":138},{"t":"\n\n\n\n"}],"tokens":{"138":["Module",{"moduleName":"UnknownOracleModule","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"control-module-basic","segments":[{"t":"\n\n\n"},{"k":139},{"t":"\n\n[[\/module]]\n\n"}],"tokens":{"139":["Module",{"moduleName":"Rate","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"control-plain","segments":[{"t":"\njust plain text\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"x-both-plain","segments":[{"t":"\n\n\n"},{"k":140},{"t":"\n\n\n"}],"tokens":{"140":["Module",{"moduleName":"UnknownModuleX","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"x-both-body","segments":[{"t":"\n\n\n"},{"k":141},{"t":"\n\n\n\n"}],"tokens":{"141":["Module",{"moduleName":"UnknownModuleX","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"x-both-empty-body","segments":[{"t":"\n\n\n"},{"k":142},{"t":"\n\n[[\/module]]\n\n"}],"tokens":{"142":["Module",{"moduleName":"UnknownModuleX","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"x-both-attr","segments":[{"t":"\n\n\n"},{"k":143},{"t":"\n\n\n\n"}],"tokens":{"143":["Module",{"moduleName":"UnknownModuleX","attr":"foo=\"bar\"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"x-both-no-newline","segments":[{"t":"\n[[module UnknownModuleX]]tail\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"x-both-crlf","segments":[{"t":"\n\n\n"},{"k":144},{"t":"\n\n\n\n"}],"tokens":{"144":["Module",{"moduleName":"UnknownModuleX","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"x-both-spaces-newline","segments":[{"t":"\n\n\n"},{"k":145},{"t":"\n\n\n\n"}],"tokens":{"145":["Module",{"moduleName":"UnknownModuleX","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"x-both-leading-space","segments":[{"t":"\n [[module654 UnknownModuleX]]\nbody\n[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"x-mod-plain","segments":[{"t":"\n\n\n"},{"k":146},{"t":"\n\n\n"}],"tokens":{"146":["Module",{"moduleName":"UnknownModuleX","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"x-mod-body","segments":[{"t":"\n\n\n"},{"k":147},{"t":"\n\n\n\n"}],"tokens":{"147":["Module",{"moduleName":"UnknownModuleX","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"x-mod-attr","segments":[{"t":"\n\n\n"},{"k":148},{"t":"\n\n\n\n"}],"tokens":{"148":["Module",{"moduleName":"UnknownModuleX","attr":"foo=\"bar\"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"x-654-body-module","segments":[{"t":"\n\n\n"},{"k":150},{"t":"\n\n\n\n"}],"tokens":{"149":["Module",{"moduleName":"AnotherUnknownY","attr":"","module_body":"inner"}],"150":["Module654",{"moduleName":"UnknownModuleX","attr":"","module_body":{"$bytes":[98,101,102,111,114,101,10,10,10,255,49,52,57,255,10,10,10,97,102,116,101,114]}}]},"equations":[],"mathId":null}
+{"id":"x-654-body-module-attr","segments":[{"t":"\n\n\n"},{"k":152},{"t":"\n\n\n\n"}],"tokens":{"151":["Module",{"moduleName":"AnotherUnknownY","attr":"b=\"2\"","module_body":"inner"}],"152":["Module654",{"moduleName":"UnknownModuleX","attr":"a=\"1\"","module_body":{"$bytes":[255,49,53,49,255]}}]},"equations":[],"mathId":null}
+{"id":"x-654-body-module-noclose","segments":[{"t":"\n\n\n"},{"k":154},{"t":"\n\n\n\n"},{"k":153},{"t":"\n\n\n\n"}],"tokens":{"153":["Module",{"moduleName":"AnotherUnknownY","attr":"","module_body":"inner"}],"154":["Module654",{"moduleName":"UnknownModuleX","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"x-mod-body-654","segments":[{"t":"\n\n\n"},{"k":156},{"t":"\n\n\n\n"}],"tokens":{"155":["Module",{"moduleName":"AnotherUnknownY","attr":"","module_body":"inner"}],"156":["Module654",{"moduleName":"UnknownModuleX","attr":"","module_body":{"$bytes":[98,101,102,111,114,101,10,10,10,255,49,53,53,255,10,10,10,97,102,116,101,114]}}]},"equations":[],"mathId":null}
+{"id":"x-mod-body-654-noinnerclose","segments":[{"t":"\n\n\n"},{"k":158},{"t":"\n\nbefore\n\n\n"},{"k":157},{"t":"\n\n\n\n"}],"tokens":{"157":["Module",{"moduleName":"AnotherUnknownY","attr":"","module_body":"inner"}],"158":["Module654",{"moduleName":"UnknownModuleX","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"x-mod-body-654-inline","segments":[{"t":"\n\n\n"},{"k":159},{"t":"\n\n\n[[\/module]]\n\n"}],"tokens":{"159":["Module654",{"moduleName":"UnknownModuleX","attr":"","module_body":"[[module AnotherUnknownY]]tail"}]},"equations":[],"mathId":null}
+{"id":"x-close-654-tag","segments":[{"t":"\n\n\n"},{"k":160},{"t":"\n\nbody\n[[\/module654]]\n\n"}],"tokens":{"160":["Module",{"moduleName":"UnknownModuleX","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"x-close-mod-tag","segments":[{"t":"\n\n\n"},{"k":161},{"t":"\n\nbody\n[[\/module654]]\n\n"}],"tokens":{"161":["Module",{"moduleName":"UnknownModuleX","attr":"","module_body":""}]},"equations":[],"mathId":null}
+{"id":"x-close-both","segments":[{"t":"\n\n\n"},{"k":162},{"t":"\n\n\n\n"}],"tokens":{"162":["Module",{"moduleName":"UnknownModuleX","attr":"","module_body":"body\n[[\/module654]]"}]},"equations":[],"mathId":null}
+{"id":"x-close-stray-654","segments":[{"t":"\nstray [[\/module654]] after\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"x-654-in-654","segments":[{"t":"\n\n\n"},{"k":163},{"t":"\n\n\n[[\/module]]\n\n"}],"tokens":{"163":["Module",{"moduleName":"UnknownModuleX","attr":"","module_body":"outer\n[[module654 AnotherUnknownY]]\ninner"}]},"equations":[],"mathId":null}
+{"id":"x-mod-in-mod","segments":[{"t":"\n\n\n"},{"k":165},{"t":"\n\n\n\n"}],"tokens":{"164":["Module",{"moduleName":"AnotherUnknownY","attr":"","module_body":"inner"}],"165":["Module654",{"moduleName":"UnknownModuleX","attr":"","module_body":{"$bytes":[111,117,116,101,114,10,10,10,255,49,54,52,255]}}]},"equations":[],"mathId":null}
+{"id":"x-adjacent-654-mod","segments":[{"t":"\n\n\n"},{"k":166},{"t":"\n\n\n\n\n"},{"k":167},{"t":"\n\n\n\n"}],"tokens":{"166":["Module",{"moduleName":"UnknownModuleX","attr":"","module_body":"a"}],"167":["Module",{"moduleName":"AnotherUnknownY","attr":"","module_body":"b"}]},"equations":[],"mathId":null}
+{"id":"x-adjacent-mod-654","segments":[{"t":"\n\n\n"},{"k":168},{"t":"\n\n\n\n\n"},{"k":169},{"t":"\n\n\n\n"}],"tokens":{"168":["Module",{"moduleName":"UnknownModuleX","attr":"","module_body":"a"}],"169":["Module",{"moduleName":"AnotherUnknownY","attr":"","module_body":"b"}]},"equations":[],"mathId":null}
+{"id":"x-midline-654","segments":[{"t":"\nprefix [[module654 UnknownModuleX]]\nbody\n[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"x-midline-mod","segments":[{"t":"\nprefix [[module UnknownModuleX]]\nbody\n[[\/module]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"x-known-654-body-css","segments":[{"t":"\n\n\n"},{"k":170},{"t":"\n\n\n\n"}],"tokens":{"170":["Module",{"moduleName":"CSS","attr":"","module_body":"body"}]},"equations":[],"mathId":null}
+{"id":"x-known-mod-body-654","segments":[{"t":"\n\n\n"},{"k":172},{"t":"\n\n\n\n"}],"tokens":{"171":["Module",{"moduleName":"UnknownModuleX","attr":"","module_body":"inner"}],"172":["Module654",{"moduleName":"CSS","attr":"","module_body":{"$bytes":[255,49,55,49,255]}}]},"equations":[],"mathId":null}
+{"id":"smoke-code","segments":[{"t":"\n\n\n"},{"k":173},{"t":"\n\n"}],"tokens":{"173":["Code",{"text":"\n$x = 1;\n","attr":{"type":""}}]},"equations":[],"mathId":null}
+{"id":"smoke-collapsible","segments":[{"t":"\n[[collapsible]]\nhidden body\n[[\/collapsible]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"smoke-div","segments":[{"t":"\n[[div class=\"x\"]]\ninside div\n[[\/div]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"smoke-footnote","segments":[{"t":"\nText with a note[[footnote]]the note text[[\/footnote]] here.\n\n[[footnoteblock]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"smoke-include","segments":[{"t":"\nBefore\n[[include muse-probe-g14-target]]\nAfter\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"smoke-link","segments":[{"t":"\nA [[[some-page|link text]]] and [[[missing-page]]] here.\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"smoke-math","segments":[{"t":"\nMath $x^2$ inline and:\n[[math]]\nx^2 + y^2\n[[\/math]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"smoke-quote","segments":[{"t":"\n> quoted line\n> more quote\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"smoke-table","segments":[{"t":"\n||~ cell1 ||~ cell2 ||\n|| a || b ||\n\n"}],"tokens":[],"equations":[],"mathId":null}

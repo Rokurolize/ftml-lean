@@ -1,0 +1,16 @@
+{"id": "e1-raw-around-code", "source": "@@a[[code]]x[[/code]]b@@"}
+{"id": "e2-raw-opener-in-code", "source": "[[code]]@@x[[/code]] y @@"}
+{"id": "e3-form-line-placeholder", "source": "[[form]]\na[[code]]x[[/code]]b\n---\ny\n[[/form]]"}
+{"id": "e4-rawold-around-code", "source": "``a[[code]]x[[/code]]b``"}
+{"id": "e5-code-in-raw", "source": "@@[[code]]x[[/code]]@@"}
+{"id": "e6-at-run-across-code", "source": "@@@@[[code]]x[[/code]]@@@@"}
+{"id": "f1-form-with-code-line", "source": "[[form]]\n[[code]]x[[/code]]\n---\ny\n[[/form]]"}
+{"id": "f2-rawold-across-code", "source": "``start\n[[code]]x[[/code]]\nend``"}
+{"id": "f3-raw-abort-across-code", "source": "@@start\n[[code]]x[[/code]]\nend@@"}
+{"id": "f4-raw-after-code-sameline", "source": "[[code]]x[[/code]] @@raw@@"}
+{"id": "g1-raw-around-form", "source": "@@[[form]]\nx\n---\ny\n[[/form]]@@"}
+{"id": "g2-rawold-across-form", "source": "``pre [[form]]\nx\n---\ny\n[[/form]] post``"}
+{"id": "g3-raw-crossline-formline", "source": "@@[[form]]\nx\n[[/form]]"}
+{"id": "g4-form-blank-and-case", "source": "[[FORM]]\n\n---\n\n[[/FORM]]"}
+{"id": "g5-form-sep-nospace", "source": "[[form]]\na\n---\n[[/form]]"}
+{"id": "g6-form-two-seps", "source": "[[form]]\na\n---\nb\n---\nc\n[[/form]]"}

@@ -1,0 +1,14 @@
+fixture generation transcript (R3.16)
+route: state-restricted.php over the full 68-rule list, WSL scratch /tmp/r316/ref-php
+md5 (worktree == scratch, verified before generation):
+  Divprefilter.php 87d3e87570d518b6417ed931d1e0ad0a
+  Divalign.php     46fdd03bf5ecfce07b1d596ef2d8d8a2
+  Note.php         b9a45cba4ea1fb79f8711cf72b74058f
+  Gallery.php      11ef4d58f2d67acdbd937cab84da8df5
+  state-restricted.php cbbdc3bfd32c2aa47e7518bd90387255
+  prefix-source.php    b2d62905e866bf3b45b879b6108cad75
+  Text/Wiki.php        3d946125e4b42382643563c600224433
+all oracle runs zero stderr; expected-middle2-full.jsonl was
+generated twice and the two generations are byte-identical
+(cmp clean); the md5 set was re-verified on the scratch at
+report time (PHP 8.5.4).

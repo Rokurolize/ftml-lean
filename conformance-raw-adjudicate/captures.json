@@ -1,0 +1,162 @@
+{
+ "iw-empty4": {
+  "fullname": "muse-probe-rawadj-iw-empty4",
+  "html": "<p>[wikipedia:X ab]</p>",
+  "html_sha256": "819713764246fa3c61c25a407051411d769f6087ba910cd179f728e04232e0e4",
+  "source": "[wikipedia:X a@@@@b]",
+  "source_sha256": "e85c75683d520ae5c88961de92886e9d8486fdb41803497f4b177f08847dd5c4",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "iw-empty6": {
+  "fullname": "muse-probe-rawadj-iw-empty6",
+  "html": "<p>[wikipedia:X a@@b]</p>",
+  "html_sha256": "c94fbfdf56a03df8c3b53e57bae4839eea6c4a7ab7a03dbd1ae105f12698fa16",
+  "source": "[wikipedia:X a@@@@@@b]",
+  "source_sha256": "be2c8c14d511efacd9852a8d40bf8c5b3f2e80f82d362cac64b4ecf95e0325ab",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "iw-nonempty": {
+  "fullname": "muse-probe-rawadj-iw-nonempty",
+  "html": "<p>[wikipedia:X a<span style=\"white-space: pre-wrap;\">x</span>b]</p>",
+  "html_sha256": "1257b828e8f29466834ad53b22fd3de23913e24e14ecce4260f230d076d5656f",
+  "source": "[wikipedia:X a@@x@@b]",
+  "source_sha256": "015954707b0e837e02e4545226f5742e2e6d044f5dc24f3ffca52ab2d923a7aa",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "date-empty4": {
+  "fullname": "muse-probe-rawadj-date-empty4",
+  "html": "<p><span class=\"odate time_0 format_a%FF1%FFb\">01 Jan 1970 00:00</span></p>",
+  "html_sha256": "f243e38b545a42588054e12ade7332e7eb8283d83fba689b9161756969f3c907",
+  "source": "[[date 0 format=\"a@@@@b\"]]",
+  "source_sha256": "0d6e9c28bf6bde5cf0fad9281272c6ce438233514c3da2fd83fcaf425e498ef5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "date-empty6": {
+  "fullname": "muse-probe-rawadj-date-empty6",
+  "html": "<p><span class=\"odate time_0 format_a%FF1%FF%40%40b\">01 Jan 1970 00:00</span></p>",
+  "html_sha256": "c71b2f07beee83ce8e202a93b14287660828d9d37a21d340d1bbb0d8a12d7eee",
+  "source": "[[date 0 format=\"a@@@@@@b\"]]",
+  "source_sha256": "7fe3b43395bbbc47c79aa5e671c920a4b006e2a64b43edae4aaf2eaa41bf6863",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "date-nonempty": {
+  "fullname": "muse-probe-rawadj-date-nonempty",
+  "html": "<p><span class=\"odate time_0 format_a%FF1%FFb\">01 Jan 1970 00:00</span></p>",
+  "html_sha256": "f243e38b545a42588054e12ade7332e7eb8283d83fba689b9161756969f3c907",
+  "source": "[[date 0 format=\"a@@x@@b\"]]",
+  "source_sha256": "0ca1ae7b5957f65b9d49799e4e7a95e03b7a6c289fa2a9a8f46349d945f3d133",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "date-index": {
+  "fullname": "muse-probe-rawadj-date-index",
+  "html": "<p><span style=\"white-space: pre-wrap;\">x</span> <span class=\"odate time_0 format_q%FF2%FFr\">01 Jan 1970 00:00</span></p>",
+  "html_sha256": "7a6c633534775d731469aeefa4a9c6741ec6f11668c976efbee414328e0b3bd7",
+  "source": "@@x@@ [[date 0 format=\"q@@@@r\"]]",
+  "source_sha256": "e55c0e73484bc1b475c2c801d5126d87fe55210bb622892725ed40ffca01bf17",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "xl-basic": {
+  "fullname": "muse-probe-rawadj-xl-basic",
+  "html": "<p>A <span style=\"white-space: pre-wrap;\">x</span> B</p>",
+  "html_sha256": "d04f2d121e83fa4fc26862dd322fe596137582d28873c2818781903b81316203",
+  "source": "A @@x\n@@ B",
+  "source_sha256": "3dc80805137389902512d00d0d9b9ed1d1cf2c520436b699dc8ae59d4a88396e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "xl-close3": {
+  "fullname": "muse-probe-rawadj-xl-close3",
+  "html": "<p>A <span style=\"white-space: pre-wrap;\">x</span> @ B</p>",
+  "html_sha256": "5d0a154dc1aa63a73f9b0cda080c39acf2832526fa063772e5fcda1ff90858a9",
+  "source": "A @@x\n@@@ B",
+  "source_sha256": "974ad8e4688a98c4f665b81a889e3cdaa0f6b99dfe37adf383992071dd5026db",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "xl-open3": {
+  "fullname": "muse-probe-rawadj-xl-open3",
+  "html": "<p>A <span style=\"white-space: pre-wrap;\">@x</span> B</p>",
+  "html_sha256": "6865092057aca430bc68899dc1bf35739921b3b7ac527a671df6bc905b1c371c",
+  "source": "A @@@x\n@@ B",
+  "source_sha256": "e3943d882f3a810b6d81ff1dc893d2b97b714874052f6b1519b1ff9a96d28567",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "xl-two-nl": {
+  "fullname": "muse-probe-rawadj-xl-two-nl",
+  "html": "<p>A @@x</p>\n<p>@@ B</p>",
+  "html_sha256": "5a48fd581a219ff0e6adda5c0e00afd1ac5f1d1d2d5925b0e3dddf0498f7a3b6",
+  "source": "A @@x\n\n@@ B",
+  "source_sha256": "d0c21f3af3023fe0fda52d26cb5cc5b94fe1eded509c9f3559f1cf1f407d0e9a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bare-3": {
+  "fullname": "muse-probe-rawadj-bare-3",
+  "html": "<p>A @@@ B</p>",
+  "html_sha256": "0e297e03cf591919ac340a0cca28a32abcce876201f39b785dcf58223d8e2993",
+  "source": "A @@@ B",
+  "source_sha256": "052d4a115acdc4a3f61d5dd69252cde5e1a4af4aa62be0985e9ccc0d83406027",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bare-6": {
+  "fullname": "muse-probe-rawadj-bare-6",
+  "html": "<p>A @@ B</p>",
+  "html_sha256": "805c93d9305833b3a274392632cb23bbe21d15ab373c4b9f141f28f02ed04d25",
+  "source": "A @@@@@@ B",
+  "source_sha256": "2db4be63660b312bb0e9a480f5a7a912c3dec7ec957f82f253945d0ad3f2d94c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "trail-4": {
+  "fullname": "muse-probe-rawadj-trail-4",
+  "html": "<p>A <span style=\"white-space: pre-wrap;\">x</span>@@ B</p>",
+  "html_sha256": "b3c00fabf8f7e58da74eed01837910fc10346343f0c8ab352e0e694b214fe7f7",
+  "source": "A @@x@@@@ B",
+  "source_sha256": "e754939aac322f4c543a80375b5b1b4087d8f09812d01937c0b50a727121cf4f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "dl-empty4": {
+  "fullname": "muse-probe-rawadj-dl-empty4",
+  "html": "<dl>\n<dd>def</dd>\n</dl>",
+  "html_sha256": "829781a511a3044a09130881164df9071c8932c3737cb52baf6d8a81736699c7",
+  "source": ": @@@@ : def",
+  "source_sha256": "e4e984367180c735c9737d52cdde78b9ccf619322f7d8ef67e93b7925d7fdbcc",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "fn-empty4": {
+  "fullname": "muse-probe-rawadj-fn-empty4",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. ab</div>\n</div>",
+  "html_sha256": "a2227b9b3506b0749e4fde616772420c00f9b003aa2aec208756926b044c8b4a",
+  "source": "[[footnote]]a@@@@b[[/footnote]]",
+  "source_sha256": "3fc9234efde2f7468a2a18840f6ae58191519536d72462739bd31d280cf7fd01",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

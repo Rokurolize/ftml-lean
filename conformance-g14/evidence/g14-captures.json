@@ -1,0 +1,72 @@
+{
+ "target": {
+  "fullname": "muse-probe-g14-target",
+  "html": "<p>TARGET-CONTENT-START<br />\nValue is {$marker}.<br />\nTARGET-CONTENT-END</p>",
+  "html_sha256": "c074fdce6702ab1e30feee0c05601479455d23353436bacc0e12f4472cff9775",
+  "source": "TARGET-CONTENT-START\nValue is {$marker}.\nTARGET-CONTENT-END",
+  "source_sha256": "3261e65016ffb07df6942695bacd8bf00f02b483a6a3a01d1b3273e352af646f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "l4-upper": {
+  "fullname": "muse-probe-g14-l4-upper",
+  "html": "<p>BEFORE-L4</p>\n<p>TARGET-CONTENT-START<br />\nValue is {$marker}.<br />\nTARGET-CONTENT-END</p>\n<p>AFTER-L4</p>",
+  "html_sha256": "f3ef4b631908ff073ea606c7f5c54e5db285786561da788743a7c4c6a9125f13",
+  "source": "BEFORE-L4\n[[include muse-probe-g14-target]]\nAFTER-L4",
+  "source_sha256": "5a9b0d4d553ff13839503caa1fa87a4bbfd6f43c6b11be2a41cf0128daa00199",
+  "saved_source_matches": false,
+  "stable": true,
+  "valid": false
+ },
+ "l3-nextline": {
+  "fullname": "muse-probe-g14-l3-nextline",
+  "html": "<p>BEFORE-L3</p>\n<p>TARGET-CONTENT-START<br />\nValue is {$marker}.<br />\nTARGET-CONTENT-END</p>\n<p>AFTER-L3</p>",
+  "html_sha256": "03f096e6446ea3fecd062102615536f86ac37a394cfecdbe0522c49b6a0ffb6f",
+  "source": "BEFORE-L3\n[[include muse-probe-g14-target]]\nAFTER-L3",
+  "source_sha256": "52f46925b2499abbc66da65e37f9ea936753ea07991b1cc543b35b8fe69c6ed7",
+  "saved_source_matches": false,
+  "stable": true,
+  "valid": false
+ },
+ "l2-stray": {
+  "fullname": "muse-probe-g14-l2-stray",
+  "html": "<p>BEFORE-L2</p>\n<p>TARGET-CONTENT-START<br />\nValue is STRAYOK.<br />\nTARGET-CONTENT-END</p>\n<p>AFTER-L2</p>",
+  "html_sha256": "180c877d36a86fca5a61ecb85c4b139adc2d8fed67cac79bf8cef2b696e7e4af",
+  "source": "BEFORE-L2\n[[include muse-probe-g14-target\n[[\n| marker=STRAYOK]]\nAFTER-L2",
+  "source_sha256": "e7f4be6054015c1e56c8ab4949a0c8b92cacd42e3522277138e78c57a8abfded",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "l2-control": {
+  "fullname": "muse-probe-g14-l2-control",
+  "html": "<p>BEFORE-L2C</p>\n<p>TARGET-CONTENT-START<br />\nValue is CTRLOK.<br />\nTARGET-CONTENT-END</p>\n<p>AFTER-L2C</p>",
+  "html_sha256": "24a9e04659629dcfa8f10b96b54342e7935f943e6185fd5d68f9098781a1e921",
+  "source": "BEFORE-L2C\n[[include muse-probe-g14-target | marker=CTRLOK]]\nAFTER-L2C",
+  "source_sha256": "399f536111407c1debb14b06bc16694fb3d00de507f69eb90455dbe2fe80f884",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "l1-quoted": {
+  "fullname": "muse-probe-g14-l1-quoted",
+  "html": "<p>BEFORE-L1</p>\n<blockquote>\n<p>[[include muse-probe-g14-target]]</p>\n</blockquote>\n<p>AFTER-L1</p>",
+  "html_sha256": "a3b425e8633f6e533cf27db0427ef275743f3179d38626cba79676b87729feb0",
+  "source": "BEFORE-L1\n> [[include muse-probe-g14-target]]\nAFTER-L1",
+  "source_sha256": "7419ba01ab557dd91773a1331e86dd562aff35a7043834005ae79a53591f39d1",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "l1-control": {
+  "fullname": "muse-probe-g14-l1-control",
+  "html": "<p>BEFORE-L1C</p>\n<blockquote>\n<p>ordinary quoted text L1C</p>\n</blockquote>\n<p>AFTER-L1C</p>",
+  "html_sha256": "422c766ea814e44ef26bbb9f765c50fc8f20dd2e1e780801e5affb5133601d51",
+  "source": "BEFORE-L1C\n> ordinary quoted text L1C\nAFTER-L1C",
+  "source_sha256": "f464637ed0bebc1b1ed67a81631b1020aa1a4be4c5a3af08c3181a6508683fe0",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

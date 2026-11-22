@@ -1,0 +1,90 @@
+lbl-close-inner -> muse-probe-suspect-email-lbl-close-inner stable=True saved_source_matches=True valid=True
+lbl-open-bracket -> muse-probe-suspect-email-lbl-open-bracket stable=True saved_source_matches=True valid=True
+lbl-url -> muse-probe-suspect-email-lbl-url stable=True saved_source_matches=True valid=True
+lbl-email -> muse-probe-suspect-email-lbl-email stable=True saved_source_matches=True valid=True
+lbl-strong -> muse-probe-suspect-email-lbl-strong stable=True saved_source_matches=True valid=True
+lbl-newline -> muse-probe-suspect-email-lbl-newline stable=True saved_source_matches=True valid=True
+lbl-bracket-lead -> muse-probe-suspect-email-lbl-bracket-lead stable=True saved_source_matches=True valid=True
+lbl-two-forms -> muse-probe-suspect-email-lbl-two-forms stable=True saved_source_matches=True valid=True
+{
+ "lbl-close-inner": {
+  "fullname": "muse-probe-suspect-email-lbl-close-inner",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#a</span>b]</p>",
+  "html_sha256": "4164f3c3a58118e082cd00c751042637e9e5250da8fc5eaa11203ef03cf17db8",
+  "source": "[u@example.com a]b]",
+  "source_sha256": "efb60c4e4f66b05eb4fc66e05f195695e3b59fd01c70b3cbc894919c7fd1f510",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "lbl-open-bracket": {
+  "fullname": "muse-probe-suspect-email-lbl-open-bracket",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#b[a</span></p>",
+  "html_sha256": "6e5e4029aa01b0ebca051cdd381908c602e205b0d7f2fbd45c35e8515977b383",
+  "source": "[u@example.com a[b]",
+  "source_sha256": "9db4a7363ad5beaae0fcd7330f0d6de6ef8e2cf06f1beeecc866f66f2830e3d5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "lbl-url": {
+  "fullname": "muse-probe-suspect-email-lbl-url",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#�3�</span></p>",
+  "html_sha256": "d630ee31809044693e5097d8ea6b1bf4dfbdb5944ab03d1f75eafd367a0bcf62",
+  "source": "[u@example.com http://example.org/x]",
+  "source_sha256": "7e892ba52987c26ad545680a770017cd645e9a3093aa56f86dabfe0abe24e32a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "lbl-email": {
+  "fullname": "muse-probe-suspect-email-lbl-email",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#ten.elpmaxe|rehto</span></p>",
+  "html_sha256": "7488e3ce533a3694ddc4bc09acef0aaf86243f4cfce1453d25ca4bb050ddf23e",
+  "source": "[u@example.com other@example.net]",
+  "source_sha256": "8f61f67cc53b67189c06f823be7ebf4748bf9881de618d325aa9496e41ea2874",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "lbl-strong": {
+  "fullname": "muse-probe-suspect-email-lbl-strong",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#**dlob**</span></p>",
+  "html_sha256": "b29143410751449b02cfb167257297fcb9f73b798c0dc87ae398e5e25af3ce42",
+  "source": "[u@example.com **bold**]",
+  "source_sha256": "3361b406037787a0fc47ce5a443d10a6d1f1712d43e608131bfc3223d20d369a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "lbl-newline": {
+  "fullname": "muse-probe-suspect-email-lbl-newline",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#2eniL�1�1eniL</span></p>",
+  "html_sha256": "6de9be92b9dd89995e77b65e572e01d1ef38d15645dbdad4cbaf91cfa70168ff",
+  "source": "[u@example.com Line1\nLine2]",
+  "source_sha256": "c6402f303d8cb1d897d83395c89688a0e06e18dd9dd10ff7e9ff1890ea97e123",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "lbl-bracket-lead": {
+  "fullname": "muse-probe-suspect-email-lbl-bracket-lead",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#x]</span></p>",
+  "html_sha256": "6206902476d1e3bd11961b06ea54951dd02d38140ecb7eaa9e63bbd59830db76",
+  "source": "[u@example.com ]x]",
+  "source_sha256": "38b77401879a56c9a999b73f8d049f72be2bfee04c580e44bf91102a5d41203c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "lbl-two-forms": {
+  "fullname": "muse-probe-suspect-email-lbl-two-forms",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#tsriF</span> and <span class=\"wiki-email\">ten.elpmaxe|v#dnoceS</span></p>",
+  "html_sha256": "c349b15b6ba3ffa049a7058730423086be14bcdfa3ceff57f2fd8ee78cece56d",
+  "source": "[u@example.com First] and [v@example.net Second]",
+  "source_sha256": "4471602a6bd953d7d6978bb0d6cd997595d31a59c336a555f4c249f420e81dda",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

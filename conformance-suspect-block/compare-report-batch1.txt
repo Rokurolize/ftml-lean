@@ -1,0 +1,241 @@
+=== bq-comment-between ===
+page: muse-probe-suspect-block-bq-comment-between
+valid=True stable=True source_match=True
+source: "> one\n[!-- c --]\n> two"
+ref:    "<blockquote><p>one<br />\ntwo</p>\n\n</blockquote>\n"
+live:   "<blockquote>\n<p>one<br />\ntwo</p>\n</blockquote>"
+canon_equal=True
+=== bq-comment-line ===
+page: muse-probe-suspect-block-bq-comment-line
+valid=True stable=True source_match=True
+source: "> [!-- hide --]\n> shown"
+ref:    "<blockquote><p>shown</p>\n\n</blockquote>\n"
+live:   "<blockquote>\n<p>shown</p>\n</blockquote>"
+canon_equal=True
+=== bq-multi-nospace ===
+page: muse-probe-suspect-block-bq-multi-nospace
+valid=True stable=True source_match=True
+source: ">>>nospace\nX"
+ref:    "<p>X</p>\n\n"
+live:   "<p>X</p>"
+canon_equal=True
+=== bq-nospace-only ===
+page: muse-probe-suspect-block-bq-nospace-only
+valid=True stable=True source_match=True
+source: ">nospace"
+ref:    ""
+live:   ""
+canon_equal=True
+=== bq-nospace-run ===
+page: muse-probe-suspect-block-bq-nospace-run
+valid=True stable=True source_match=True
+source: ">one\n>two\nX"
+ref:    "<p>X</p>\n\n"
+live:   "<p>X</p>"
+canon_equal=True
+=== bq-nospace-then-text ===
+page: muse-probe-suspect-block-bq-nospace-then-text
+valid=True stable=True source_match=True
+source: ">nospace\nX"
+ref:    "<p>X</p>\n\n"
+live:   "<p>X</p>"
+canon_equal=True
+=== bq-space-control ===
+page: muse-probe-suspect-block-bq-space-control
+valid=True stable=True source_match=True
+source: "> space\nX"
+ref:    "<blockquote><p>space</p>\n\n</blockquote>\n<p>X</p>\n\n"
+live:   "<blockquote>\n<p>space</p>\n</blockquote>\n<p>X</p>"
+canon_equal=True
+=== cm-basic-inline ===
+page: muse-probe-suspect-block-cm-basic-inline
+valid=True stable=True source_match=True
+source: "A[!-- hide --]B"
+ref:    "<p>AB</p>\n\n"
+live:   "<p>AB</p>"
+canon_equal=True
+=== cm-double-bracket ===
+page: muse-probe-suspect-block-cm-double-bracket
+valid=True stable=True source_match=True
+source: "A[[!-- hide --]]B"
+ref:    "<p>A[]B</p>\n\n"
+live:   "<p>A[]B</p>"
+canon_equal=True
+=== cm-extra-hyphen ===
+page: muse-probe-suspect-block-cm-extra-hyphen
+valid=True stable=True source_match=True
+source: "A[!-- hide ---]B"
+ref:    "<p>AB</p>\n\n"
+live:   "<p>AB</p>"
+canon_equal=True
+=== cm-hides-if-open ===
+page: muse-probe-suspect-block-cm-hides-if-open
+valid=True stable=True source_match=True
+source: "[!-- [[iftags +alpha]] --]KEEP[[/iftags]]\nX"
+ref:    "<p>[!&#8212;<br />\nX</p>\n\n"
+live:   "<p>[!&#8212;<br />\nX</p>"
+canon_equal=True
+=== cm-in-code ===
+page: muse-probe-suspect-block-cm-in-code
+valid=True stable=True source_match=True
+source: "[[code]]\n[!-- hide --]\n[[/code]]"
+ref:    "\n<div class=\"code\">\n<pre><code>[!-- hide --]</code></pre></div>\n\n"
+live:   "<div class=\"code\">\n<pre><code>[!-- hide --]</code></pre></div>"
+canon_equal=True
+=== cm-indented ===
+page: muse-probe-suspect-block-cm-indented
+valid=True stable=True source_match=True
+source: "a\n  [!-- hide --]\nb"
+ref:    "<p>a<br />\n<br />\nb</p>\n\n"
+live:   "<p>a<br />\n<br />\nb</p>"
+canon_equal=True
+=== cm-multiline ===
+page: muse-probe-suspect-block-cm-multiline
+valid=True stable=True source_match=True
+source: "[!-- a\nb --]\nX"
+ref:    "<p>X</p>\n\n"
+live:   "<p>X</p>"
+canon_equal=True
+=== cm-own-line ===
+page: muse-probe-suspect-block-cm-own-line
+valid=True stable=True source_match=True
+source: "a\n[!-- hide --]\nb"
+ref:    "<p>a<br />\nb</p>\n\n"
+live:   "<p>a<br />\nb</p>"
+canon_equal=True
+=== cm-two-inline ===
+page: muse-probe-suspect-block-cm-two-inline
+valid=True stable=True source_match=True
+source: "[!-- a --]X[!-- b --]Y"
+ref:    "<p>XY</p>\n\n"
+live:   "<p>XY</p>"
+canon_equal=True
+=== cm-two-leading-nl ===
+page: muse-probe-suspect-block-cm-two-leading-nl
+valid=True stable=True source_match=True
+source: "a\n\n[!-- hide --]\nb"
+ref:    "<p>a</p>\n\n<p>b</p>\n\n"
+live:   "<p>a</p>\n<p>b</p>"
+canon_equal=True
+=== cm-unterminated ===
+page: muse-probe-suspect-block-cm-unterminated
+valid=True stable=True source_match=True
+source: "A[!-- hide B"
+ref:    "<p>A[!&#8212; hide B</p>\n\n"
+live:   "<p>A[!&#8212; hide B</p>"
+canon_equal=True
+=== if-case-plus-tagged ===
+page: muse-probe-suspect-block-if-case-plus-tagged
+valid=True stable=True source_match=True
+source: "[[iftags +ALPHA]]KEEP[[/iftags]]\nX"
+ref:    "<p>KEEP<br />\nX</p>\n\n"
+live:   "<p>KEEP<br />\nX</p>"
+canon_equal=True
+=== if-comment-closer-untag ===
+page: muse-probe-suspect-block-if-comment-closer-untag
+valid=True stable=True source_match=True
+source: "[[iftags -beta]]KEEP[!-- [[/iftags]] --]TAIL"
+ref:    "<p>KEEPTAIL</p>\n\n"
+live:   "<p>KEEPTAIL</p>"
+canon_equal=True
+=== if-dangling-minus-tagged ===
+page: muse-probe-suspect-block-if-dangling-minus-tagged
+valid=True stable=True source_match=True
+source: "[[iftags -]]KEEP[[/iftags]]\nX"
+ref:    "<p>KEEP<br />\nX</p>\n\n"
+live:   "<p>KEEP<br />\nX</p>"
+canon_equal=True
+=== if-dangling-minus-untag ===
+page: muse-probe-suspect-block-if-dangling-minus-untag
+valid=True stable=True source_match=True
+source: "[[iftags -]]KEEP[[/iftags]]\nX"
+ref:    "<p>KEEP<br />\nX</p>\n\n"
+live:   "<p>KEEP<br />\nX</p>"
+canon_equal=True
+=== if-double-comma-tagged ===
+page: muse-probe-suspect-block-if-double-comma-tagged
+valid=True stable=True source_match=True
+source: "[[iftags +alpha,,]]KEEP[[/iftags]]\nX"
+ref:    "<p>X</p>\n\n"
+live:   "<p>X</p>"
+canon_equal=True
+=== if-empty-untag ===
+page: muse-probe-suspect-block-if-empty-untag
+valid=True stable=True source_match=True
+source: "[[iftags]]KEEP[[/iftags]]\nX"
+ref:    "<p>X</p>\n\n"
+live:   "<p>X</p>"
+canon_equal=True
+=== if-lead-comma-tagged ===
+page: muse-probe-suspect-block-if-lead-comma-tagged
+valid=True stable=True source_match=True
+source: "[[iftags ,+alpha]]KEEP[[/iftags]]\nX"
+ref:    "<p>X</p>\n\n"
+live:   "<p>X</p>"
+canon_equal=True
+=== if-nested-tagged ===
+page: muse-probe-suspect-block-if-nested-tagged
+valid=True stable=True source_match=True
+source: "[[iftags +alpha]]A[[iftags -beta]]B[[/iftags]]C[[/iftags]]\nX"
+ref:    "<p>A[[iftags -beta]]B[[/iftags]]C<br />\nX</p>\n\n"
+live:   "<p>A[[iftags -beta]]B[[/iftags]]C<br />\nX</p>"
+canon_equal=True
+=== if-newline-tagged ===
+page: muse-probe-suspect-block-if-newline-tagged
+valid=True stable=True source_match=True
+source: "[[iftags +alpha\n+beta]]KEEP[[/iftags]]\nX"
+ref:    "<p>X</p>\n\n"
+live:   "<p>X</p>"
+canon_equal=True
+=== if-nospace-tagged ===
+page: muse-probe-suspect-block-if-nospace-tagged
+valid=True stable=True source_match=True
+source: "[[iftags+alpha]]KEEP[[/iftags]]\nX"
+ref:    "<p>[[iftags+alpha]]KEEP[[/iftags]]<br />\nX</p>\n\n"
+live:   "<p>[[iftags+alpha]]KEEP[[/iftags]]<br />\nX</p>"
+canon_equal=True
+=== if-plain-plus-tagged ===
+page: muse-probe-suspect-block-if-plain-plus-tagged
+valid=True stable=True source_match=True
+source: "[[iftags +alpha]]KEEP[[/iftags]]\nX"
+ref:    "<p>KEEP<br />\nX</p>\n\n"
+live:   "<p>KEEP<br />\nX</p>"
+canon_equal=True
+=== if-trail-bare-tagged ===
+page: muse-probe-suspect-block-if-trail-bare-tagged
+valid=True stable=True source_match=True
+source: "[[iftags alpha,]]KEEP[[/iftags]]\nX"
+ref:    "<p>KEEP<br />\nX</p>\n\n"
+live:   "<p>KEEP<br />\nX</p>"
+canon_equal=True
+=== if-trail-minus-tagged ===
+page: muse-probe-suspect-block-if-trail-minus-tagged
+valid=True stable=True source_match=True
+source: "[[iftags -beta,]]KEEP[[/iftags]]\nX"
+ref:    "<p>X</p>\n\n"
+live:   "<p>X</p>"
+canon_equal=True
+=== if-trail-plus-tagged ===
+page: muse-probe-suspect-block-if-trail-plus-tagged
+valid=True stable=True source_match=True
+source: "[[iftags +alpha,]]KEEP[[/iftags]]\nX"
+ref:    "<p>X</p>\n\n"
+live:   "<p>X</p>"
+canon_equal=True
+=== if-trail-plus-untag ===
+page: muse-probe-suspect-block-if-trail-plus-untag
+valid=True stable=True source_match=True
+source: "[[iftags +alpha,]]KEEP[[/iftags]]\nX"
+ref:    "<p>X</p>\n\n"
+live:   "<p>X</p>"
+canon_equal=True
+=== if-trail-space-tagged ===
+page: muse-probe-suspect-block-if-trail-space-tagged
+valid=True stable=True source_match=True
+source: "[[iftags +alpha, ]]KEEP[[/iftags]]\nX"
+ref:    "<p>X</p>\n\n"
+live:   "<p>X</p>"
+canon_equal=True
+
+TOTAL compared=34, canonical-equal=34
+MISSING LIVE CAPTURES: bq-comment-only, bq-empty-in-run, bq-if-false-tagged, bq-indented-next, bq-nbsp-only, bq-spaced-marker, cm-before-quote, cm-nbsp-indent, cm-nested, cm-quote-bridge-blank, cm-two-lines, if-spec-comment-tagged, if-trail-forbid-hit-tagged

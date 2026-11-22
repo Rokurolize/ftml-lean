@@ -1,0 +1,22 @@
+{
+ "l1f-nospace": {
+  "fullname": "muse-probe-g14-l1f-nospace",
+  "html": "<p>BEFORE-L1F</p>\n<p>AFTER-L1F</p>",
+  "html_sha256": "b5cd811412ec96a5a7606686fd3ca70e197c2107a8d1a2b0265ad04b415a3608",
+  "source": "BEFORE-L1F\n>[[include muse-probe-g14-target]]\nAFTER-L1F",
+  "source_sha256": "52403e08774d8c52164f420e9fb79b64aec3286aa782c19b98596ef429d0b790",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "l1g-nospace-arg": {
+  "fullname": "muse-probe-g14-l1g-nospace-arg",
+  "html": "<p>BEFORE-L1G</p>\n<p>AFTER-L1G</p>",
+  "html_sha256": "2316a580155dc74ea1c322d2a7950e11db3dafb8a1121b35efbc19e0da405aea",
+  "source": "BEFORE-L1G\n>[[include muse-probe-g14-target\n>| marker=NSOK]]\nAFTER-L1G",
+  "source_sha256": "2d5d633592ddc2a82cbf5b54d633b91fc35e1c51e40e041d69b6e9f9d8b30ed5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

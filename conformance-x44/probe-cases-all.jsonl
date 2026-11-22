@@ -1,0 +1,26 @@
+{"id": "u01", "source": "[wikipedia:X http://example.com/a]"}
+{"id": "u02", "source": "[wikipedia:Albert_Einstein https://example.com/a?x=1&y=2]"}
+{"id": "u03", "source": "[wikipedia:X http://example.com/a and words]"}
+{"id": "u04", "source": "[wikipedia:X words and http://example.com/a]"}
+{"id": "u05", "source": "[wikipedia:X www.example.com/a]"}
+{"id": "u06", "source": "[wikipedia:X someone@example.com]"}
+{"id": "u07", "source": "[wikipedia:X **bold words**]"}
+{"id": "u08", "source": "[wikipedia:X //italic words//]"}
+{"id": "u09", "source": "[wikipedia:Albert_Einstein [x] label]"}
+{"id": "u10", "source": "[wikipedia:X a [b] c]"}
+{"id": "u11", "source": "[wikipedia:X label [x]]"}
+{"id": "u12", "source": "[wikipedia:X http://example.com/a] plus [wikipedia:Y http://example.com/b]"}
+{"id": "u13", "source": "[wikipedia:X plain label] and [wikipedia:Y http://example.com/b]"}
+{"id": "u14", "source": "[wikipedia:X ftp://example.com/a]"}
+{"id": "u15", "source": "[wikipedia:X http://example.com/a http://example.com/b]"}
+{"id": "u16", "source": "[google:X http://example.com/a]"}
+{"id": "u17", "source": "[wikipedia:X mail someone@example.com end]"}
+{"id": "u18", "source": "[wikipedia:X **bold** and http://example.com/a]"}
+{"id": "u19", "source": "[wikipedia:X a://b]"}
+{"id": "u20", "source": "[wikipedia:X see http://]"}
+{"id": "u21", "source": "[wikipedia:X HTTP://EXAMPLE.COM/A]"}
+{"id": "u22", "source": "[wikipedia:X http://example.com/a_b-c~d]"}
+{"id": "u23", "source": "[wikipedia:X See: Einstein]"}
+{"id": "u24", "source": "[wikipedia:X [[$x^2$]]]"}
+{"id": "u25", "source": "[wikipedia:X [[Some Page]] test]"}
+{"id": "u26", "source": "[nosuchsite:X http://example.com/a]"}

@@ -1,0 +1,37 @@
+{
+ "target": {
+  "fullname": "muse-probe-g14-target",
+  "source": "TARGET-CONTENT-START\nValue is {$marker}.\nTARGET-CONTENT-END",
+  "action": "created"
+ },
+ "l4-upper": {
+  "fullname": "muse-probe-g14-l4-upper",
+  "source": "BEFORE-L4\n[[INCLUDE muse-probe-g14-target]]\nAFTER-L4",
+  "action": "created"
+ },
+ "l3-nextline": {
+  "fullname": "muse-probe-g14-l3-nextline",
+  "source": "BEFORE-L3\n[[include\nmuse-probe-g14-target]]\nAFTER-L3",
+  "action": "created"
+ },
+ "l2-stray": {
+  "fullname": "muse-probe-g14-l2-stray",
+  "source": "BEFORE-L2\n[[include muse-probe-g14-target\n[[\n| marker=STRAYOK]]\nAFTER-L2",
+  "action": "created"
+ },
+ "l2-control": {
+  "fullname": "muse-probe-g14-l2-control",
+  "source": "BEFORE-L2C\n[[include muse-probe-g14-target | marker=CTRLOK]]\nAFTER-L2C",
+  "action": "created"
+ },
+ "l1-quoted": {
+  "fullname": "muse-probe-g14-l1-quoted",
+  "source": "BEFORE-L1\n> [[include muse-probe-g14-target]]\nAFTER-L1",
+  "action": "created"
+ },
+ "l1-control": {
+  "fullname": "muse-probe-g14-l1-control",
+  "source": "BEFORE-L1C\n> ordinary quoted text L1C\nAFTER-L1C",
+  "action": "created"
+ }
+}

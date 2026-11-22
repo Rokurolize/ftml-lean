@@ -1,0 +1,112 @@
+{
+ "bq-nospace-only": {
+  "fullname": "muse-probe-suspect-block-bq-nospace-only",
+  "source": ">nospace",
+  "action": "created"
+ },
+ "bq-nospace-then-text": {
+  "fullname": "muse-probe-suspect-block-bq-nospace-then-text",
+  "source": ">nospace\nX",
+  "action": "created"
+ },
+ "bq-nospace-run": {
+  "fullname": "muse-probe-suspect-block-bq-nospace-run",
+  "source": ">one\n>two\nX",
+  "action": "created"
+ },
+ "bq-multi-nospace": {
+  "fullname": "muse-probe-suspect-block-bq-multi-nospace",
+  "source": ">>>nospace\nX",
+  "action": "created"
+ },
+ "bq-space-control": {
+  "fullname": "muse-probe-suspect-block-bq-space-control",
+  "source": "> space\nX",
+  "action": "created"
+ },
+ "bq-comment-line": {
+  "fullname": "muse-probe-suspect-block-bq-comment-line",
+  "source": "> [!-- hide --]\n> shown",
+  "action": "created"
+ },
+ "bq-comment-between": {
+  "fullname": "muse-probe-suspect-block-bq-comment-between",
+  "source": "> one\n[!-- c --]\n> two",
+  "action": "created"
+ },
+ "if-trail-plus-untag": {
+  "fullname": "muse-probe-suspect-block-if-trail-plus-untag",
+  "source": "[[iftags +alpha,]]KEEP[[/iftags]]\nX",
+  "action": "created"
+ },
+ "if-empty-untag": {
+  "fullname": "muse-probe-suspect-block-if-empty-untag",
+  "source": "[[iftags]]KEEP[[/iftags]]\nX",
+  "action": "created"
+ },
+ "if-dangling-minus-untag": {
+  "fullname": "muse-probe-suspect-block-if-dangling-minus-untag",
+  "source": "[[iftags -]]KEEP[[/iftags]]\nX",
+  "action": "created"
+ },
+ "if-comment-closer-untag": {
+  "fullname": "muse-probe-suspect-block-if-comment-closer-untag",
+  "source": "[[iftags -beta]]KEEP[!-- [[/iftags]] --]TAIL",
+  "action": "created"
+ },
+ "cm-hides-if-open": {
+  "fullname": "muse-probe-suspect-block-cm-hides-if-open",
+  "source": "[!-- [[iftags +alpha]] --]KEEP[[/iftags]]\nX",
+  "action": "created"
+ },
+ "cm-basic-inline": {
+  "fullname": "muse-probe-suspect-block-cm-basic-inline",
+  "source": "A[!-- hide --]B",
+  "action": "created"
+ },
+ "cm-own-line": {
+  "fullname": "muse-probe-suspect-block-cm-own-line",
+  "source": "a\n[!-- hide --]\nb",
+  "action": "created"
+ },
+ "cm-two-leading-nl": {
+  "fullname": "muse-probe-suspect-block-cm-two-leading-nl",
+  "source": "a\n\n[!-- hide --]\nb",
+  "action": "created"
+ },
+ "cm-indented": {
+  "fullname": "muse-probe-suspect-block-cm-indented",
+  "source": "a\n  [!-- hide --]\nb",
+  "action": "created"
+ },
+ "cm-double-bracket": {
+  "fullname": "muse-probe-suspect-block-cm-double-bracket",
+  "source": "A[[!-- hide --]]B",
+  "action": "created"
+ },
+ "cm-in-code": {
+  "fullname": "muse-probe-suspect-block-cm-in-code",
+  "source": "[[code]]\n[!-- hide --]\n[[/code]]",
+  "action": "created"
+ },
+ "cm-extra-hyphen": {
+  "fullname": "muse-probe-suspect-block-cm-extra-hyphen",
+  "source": "A[!-- hide ---]B",
+  "action": "created"
+ },
+ "cm-two-inline": {
+  "fullname": "muse-probe-suspect-block-cm-two-inline",
+  "source": "[!-- a --]X[!-- b --]Y",
+  "action": "created"
+ },
+ "cm-unterminated": {
+  "fullname": "muse-probe-suspect-block-cm-unterminated",
+  "source": "A[!-- hide B",
+  "action": "created"
+ },
+ "cm-multiline": {
+  "fullname": "muse-probe-suspect-block-cm-multiline",
+  "source": "[!-- a\nb --]\nX",
+  "action": "created"
+ }
+}

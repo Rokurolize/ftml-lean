@@ -1,0 +1,254 @@
+{
+  "seed": 20261122,
+  "source_cases": 262,
+  "token_cases": 77,
+  "source_fail": 0,
+  "token_fail": 2,
+  "class_mismatch": [],
+  "source_by_class": {
+    "fnCite": {
+      "n": 116,
+      "fail": 0,
+      "ids": []
+    },
+    "fniStartBody": {
+      "n": 96,
+      "fail": 0,
+      "ids": []
+    },
+    "fniEnd": {
+      "n": 116,
+      "fail": 0,
+      "ids": []
+    },
+    "fnbStartDefault": {
+      "n": 68,
+      "fail": 0,
+      "ids": []
+    },
+    "fnbEnd": {
+      "n": 116,
+      "fail": 0,
+      "ids": []
+    },
+    "fniStartEmpty": {
+      "n": 20,
+      "fail": 0,
+      "ids": []
+    },
+    "fniParabreak": {
+      "n": 16,
+      "fail": 0,
+      "ids": []
+    },
+    "fnbStartBlank": {
+      "n": 16,
+      "fail": 0,
+      "ids": []
+    },
+    "fnbStartTitled": {
+      "n": 32,
+      "fail": 0,
+      "ids": []
+    },
+    "bibiStartSpace": {
+      "n": 96,
+      "fail": 0,
+      "ids": []
+    },
+    "bibiEnd": {
+      "n": 112,
+      "fail": 0,
+      "ids": []
+    },
+    "bibStartDefault": {
+      "n": 96,
+      "fail": 0,
+      "ids": []
+    },
+    "bibEnd": {
+      "n": 128,
+      "fail": 0,
+      "ids": []
+    },
+    "bibiStartTight": {
+      "n": 16,
+      "fail": 0,
+      "ids": []
+    },
+    "bibNl": {
+      "n": 16,
+      "fail": 0,
+      "ids": []
+    },
+    "bibStartBlank": {
+      "n": 16,
+      "fail": 0,
+      "ids": []
+    },
+    "bibStartTitled": {
+      "n": 16,
+      "fail": 0,
+      "ids": []
+    },
+    "bibcMissing": {
+      "n": 16,
+      "fail": 0,
+      "ids": []
+    },
+    "bibcResolved": {
+      "n": 32,
+      "fail": 0,
+      "ids": []
+    }
+  },
+  "token_by_class": {
+    "fnCite": {
+      "n": 4,
+      "fail": 0,
+      "examples": []
+    },
+    "fniParabreak": {
+      "n": 1,
+      "fail": 0,
+      "examples": []
+    },
+    "fniEnd": {
+      "n": 1,
+      "fail": 0,
+      "examples": []
+    },
+    "fniStartEmpty": {
+      "n": 3,
+      "fail": 0,
+      "examples": []
+    },
+    "fniStartBody": {
+      "n": 2,
+      "fail": 0,
+      "examples": []
+    },
+    "fniFallthrough": {
+      "n": 2,
+      "fail": 0,
+      "examples": []
+    },
+    "fnbNoNotes": {
+      "n": 3,
+      "fail": 0,
+      "examples": []
+    },
+    "fnbStartDefault": {
+      "n": 2,
+      "fail": 0,
+      "examples": []
+    },
+    "fnbStartBlank": {
+      "n": 1,
+      "fail": 0,
+      "examples": []
+    },
+    "fnbStartTitled": {
+      "n": 19,
+      "fail": 1,
+      "examples": [
+        {
+          "id": "tok-fnb-bool-false",
+          "php": "<div class=\"footnotes-footer\"><div class=\"title\"></div>",
+          "lean": "<div class=\"footnotes-footer\">"
+        }
+      ]
+    },
+    "fnbEnd": {
+      "n": 1,
+      "fail": 0,
+      "examples": []
+    },
+    "fnbFallthrough": {
+      "n": 1,
+      "fail": 0,
+      "examples": []
+    },
+    "bibiStartSpace": {
+      "n": 5,
+      "fail": 0,
+      "examples": []
+    },
+    "bibiStartTight": {
+      "n": 3,
+      "fail": 0,
+      "examples": []
+    },
+    "bibiEnd": {
+      "n": 1,
+      "fail": 0,
+      "examples": []
+    },
+    "bibiFallthrough": {
+      "n": 1,
+      "fail": 0,
+      "examples": []
+    },
+    "bibNl": {
+      "n": 1,
+      "fail": 0,
+      "examples": []
+    },
+    "bibStartDefault": {
+      "n": 1,
+      "fail": 0,
+      "examples": []
+    },
+    "bibStartBlank": {
+      "n": 1,
+      "fail": 0,
+      "examples": []
+    },
+    "bibStartTitled": {
+      "n": 18,
+      "fail": 1,
+      "examples": [
+        {
+          "id": "tok-bib-bool-false",
+          "php": "<div class=\"bibitems\"><div class=\"title\"></div>",
+          "lean": "<div class=\"bibitems\">"
+        }
+      ]
+    },
+    "bibEnd": {
+      "n": 1,
+      "fail": 0,
+      "examples": []
+    },
+    "bibFallthrough": {
+      "n": 1,
+      "fail": 0,
+      "examples": []
+    },
+    "bibcMissing": {
+      "n": 2,
+      "fail": 0,
+      "examples": []
+    },
+    "bibcResolved": {
+      "n": 2,
+      "fail": 0,
+      "examples": []
+    }
+  },
+  "source_failures": [],
+  "token_failures": [
+    {
+      "id": "tok-fnb-bool-false",
+      "php": "<div class=\"footnotes-footer\"><div class=\"title\"></div>",
+      "lean": "<div class=\"footnotes-footer\">",
+      "class": "fnbStartTitled"
+    },
+    {
+      "id": "tok-bib-bool-false",
+      "php": "<div class=\"bibitems\"><div class=\"title\"></div>",
+      "lean": "<div class=\"bibitems\">",
+      "class": "bibStartTitled"
+    }
+  ]
+}

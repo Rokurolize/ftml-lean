@@ -1,0 +1,39 @@
+{"id": "u1-span-then-em", "source": "**A ##red|B //C** D## E//"}
+{"id": "u1-plain-between", "source": "**A //B ##red|C** D## PLAIN//"}
+{"id": "u1-tail-after", "source": "**A ##red|B //C** D// E## TAIL"}
+{"id": "u1-two-spans", "source": "**A [[size 120%]]B ##red|C** D[[/size]] E##"}
+{"id": "u1-tt-span", "source": "**A {{B ##red|C** D## E}}"}
+{"id": "u1-sup-span", "source": "**A ^^B ##red|C** D## E^^"}
+{"id": "u1-em-target", "source": "//A **B ##red|C// D** E##"}
+{"id": "u1-three", "source": "**A ^^B //C ##red|D** E## F// G^^"}
+{"id": "u1-underline", "source": "**A //B __C** D__ E//"}
+{"id": "u1-stray-star", "source": "**A //B** C// D**"}
+{"id": "u1-stray-slash", "source": "**A //B** C// D//"}
+{"id": "u2-two-align", "source": "[[div class=\"a\"]]\nA\n[[=]]\nB\n[[=]]\nC\n[[/=]]\n[[/=]]\n[[/div]]"}
+{"id": "u2-nested-collapsible", "source": "[[div class=\"a\"]]\nlead [[collapsible]]x[[/collapsible]]\n[[div class=\"z\"]]\ny\n[[/div]]\n[[/div]]"}
+{"id": "u2-table-then-div", "source": "[[div class=\"outer\"]]\ntext\n|| a ||\n[[div class=\"z\"]]\nmore\n[[/div]]\n[[/div]]"}
+{"id": "u2-root-collapsible", "source": "lead[[collapsible]]body[[/collapsible]]tail"}
+{"id": "u3-div-table", "source": "[[div class=\"a\"]]\na\n[[/div]]\n|| b ||"}
+{"id": "u3-br-in-div", "source": "[[div class=\"a\"]]\n[[div class=\"b\"]]\nb\n[[/div]]\n|| t ||\n[[/div]]"}
+{"id": "u3-div-div", "source": "[[div class=\"a\"]]\na\n[[/div]]\n\n[[div class=\"b\"]]\nb\n[[/div]]"}
+{"id": "u3-p-table", "source": "para\n\n|| a ||"}
+{"id": "u3-quote-list", "source": "> q\n\n* item"}
+{"id": "u3-div-list", "source": "[[div class=\"a\"]]\na\n[[/div]]\n* item"}
+{"id": "u4-two", "source": "[[a href=\"/x\"]]A **B //C[[/a]] D** E//"}
+{"id": "u4-three", "source": "[[a href=\"/x\"]]A **B //C {{D[[/a]] E** F// G}}"}
+{"id": "u4-span-em", "source": "[[a href=\"/x\"]]A ##red|B //C[[/a]] D## E//"}
+{"id": "u5-img", "source": "[[image http://example.com/a.png]]"}
+{"id": "u5-hr", "source": "----"}
+{"id": "u5-img-between", "source": "before\n\n[[image http://example.com/a.png]]\n\nafter"}
+{"id": "u5-hr-between", "source": "before\n\n----\n\nafter"}
+{"id": "r43-div", "source": "X[[footnote]]\n[[div]]\nblock body\n[[/div]]\n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "r43-list", "source": "X[[footnote]]\n* one\n* two\n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "r43-text-list", "source": "X[[footnote]]lead\n* one\n* two\n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "r43-code", "source": "X[[footnote]]\n[[code]]\nx\n[[/code]]\n[[/footnote]]\n[[footnoteblock]]"}
+{"id": "r43-collapsible", "source": "X[[footnote]]\n[[collapsible]]\nbody\n[[/collapsible]]\n[[/footnote]]\n[[footnoteblock]]"}
+{"id": "r43-two-div", "source": "X[[footnote]]\n[[div]]\nA\n[[/div]]\n[[div]]\nB\n[[/div]]\n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "r43-text-div-text", "source": "X[[footnote]]lead\n[[div]]\nA\n[[/div]]\ntail\n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "r43-span-div", "source": "X[[footnote]]\n[[span]]S[[/span]]\n[[div]]\nA\n[[/div]]\n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "r43-div-list", "source": "X[[footnote]]\n[[div]]\nA\n[[/div]]\n* one\n* two\n[[/footnote]]\n[[footnoteblock]]"}
+{"id": "r43-heading", "source": "X[[footnote]]\n+ Head\n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "r43-table", "source": "X[[footnote]]\n|| a || b ||\n[[/footnote]]\n\n[[footnoteblock]]"}

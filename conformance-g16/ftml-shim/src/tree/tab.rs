@@ -1,0 +1,96 @@
+/*
+ * tree/tab.rs
+ *
+ * ftml - Library to parse Wikidot text
+ * Copyright (C) 2019-2026 Wikijump Team
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+use super::clone::{elements_to_owned, string_to_owned};
+use super::{AttributeMap, Element};
+use std::borrow::Cow;
+
+#[derive(Serialize, Deserialize, Debug, Clone, Copy, PartialEq, Eq)]
+#[serde(rename_all = "kebab-case")]
+pub enum WikidotRowCut {
+    Div,
+    Collapsible,
+    Note,
+    Align,
+}
+
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq)]
+#[serde(rename_all = "kebab-case")]
+pub struct Tab<'t> {
+    pub label: Cow<'t, str>,
+    pub elements: Vec<Element<'t>>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub wikidot_label_spans: Vec<AttributeMap<'t>>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub wikidot_row_cut: Option<WikidotRowCut>,
+}
+
+impl Tab<'_> {
+    pub fn to_owned(&self) -> Tab<'static> {
+        Tab {
+            label: string_to_owned(&self.label),
+            elements: elements_to_owned(&self.elements),
+            wikidot_label_spans: self
+                .wikidot_label_spans
+                .iter()
+                .map(AttributeMap::to_owned)
+                .collect(),
+            wikidot_row_cut: self.wikidot_row_cut,
+        }
+    }
+}
+
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq)]
+#[serde(untagged)]
+pub enum TabViewItem<'t> {
+    Tab(Tab<'t>),
+    /// A tab that is listed in the view's nav but whose panel is rendered
+    /// outside the navset (Wikidot's cross-segment tabview split). This is
+    /// produced only by the Wikidot layout's quoted-tabview ejection path;
+    /// the native layout never emits it.
+    Remote(Tab<'t>),
+    Content(Vec<Element<'t>>),
+}
+
+impl<'t> TabViewItem<'t> {
+    pub fn elements(&self) -> &[Element<'t>] {
+        match self {
+            TabViewItem::Tab(tab) | TabViewItem::Remote(tab) => &tab.elements,
+            TabViewItem::Content(elements) => elements,
+        }
+    }
+
+    pub fn elements_mut(&mut self) -> &mut Vec<Element<'t>> {
+        match self {
+            TabViewItem::Tab(tab) | TabViewItem::Remote(tab) => &mut tab.elements,
+            TabViewItem::Content(elements) => elements,
+        }
+    }
+
+    pub fn to_owned(&self) -> TabViewItem<'static> {
+        match self {
+            TabViewItem::Tab(tab) => TabViewItem::Tab(tab.to_owned()),
+            TabViewItem::Remote(tab) => TabViewItem::Remote(tab.to_owned()),
+            TabViewItem::Content(elements) => {
+                TabViewItem::Content(elements_to_owned(elements))
+            }
+        }
+    }
+}

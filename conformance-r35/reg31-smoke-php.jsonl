@@ -1,0 +1,9 @@
+{"id":"smoke-code","segments":[{"t":"\n\n\n"},{"k":0},{"t":"\n\n"}],"tokens":[["Code",{"text":"\n$x = 1;\n","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"smoke-collapsible","segments":[{"t":"\n[[collapsible]]\nhidden body\n[[\/collapsible]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"smoke-div","segments":[{"t":"\n[[div class=\"x\"]]\ninside div\n[[\/div]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"smoke-footnote","segments":[{"t":"\nText with a note[[footnote]]the note text[[\/footnote]] here.\n\n[[footnoteblock]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"smoke-include","segments":[{"t":"\nBefore\n[[include muse-probe-g14-target]]\nAfter\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"smoke-link","segments":[{"t":"\nA [[[some-page|link text]]] and [[[missing-page]]] here.\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"smoke-math","segments":[{"t":"\nMath $x^2$ inline and:\n[[math]]\nx^2 + y^2\n[[\/math]]\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"smoke-quote","segments":[{"t":"\n> quoted line\n> more quote\n\n"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"smoke-table","segments":[{"t":"\n||~ cell1 ||~ cell2 ||\n|| a || b ||\n\n"}],"tokens":[],"equations":[],"mathId":null}

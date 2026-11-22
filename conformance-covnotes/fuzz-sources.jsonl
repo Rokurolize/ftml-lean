@@ -1,0 +1,262 @@
+{"id": "src-fn-0", "source": "See [[footnote]]a[[/footnote]] end."}
+{"id": "src-fn-empty-0", "source": "[[footnote]]   [[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-para-0", "source": "[[footnote]]a\n\nmore[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-def-0", "source": "[[footnote]]a[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-blank-0", "source": "[[footnote]]a[[/footnote]]\n[[footnoteblock title=\"\"]]"}
+{"id": "src-fnb-title-0", "source": "[[footnote]]a[[/footnote]]\n[[footnoteblock title=\"Notes\"]]"}
+{"id": "src-bibi-space-0", "source": "[[bibliography]]\n: a : a\n[[/bibliography]]"}
+{"id": "src-bibi-tight-0", "source": "[[bibliography]]\n: a :\n[[/bibliography]]"}
+{"id": "src-bib-nl-0", "source": "[[bibliography]]\nresidual a\n[[/bibliography]]"}
+{"id": "src-bib-def-0", "source": "[[bibliography]]\n: a : a\n[[/bibliography]]"}
+{"id": "src-bib-blank-0", "source": "[[bibliography title=\"\"]]\n: a : a\n[[/bibliography]]"}
+{"id": "src-bib-title-0", "source": "[[bibliography title=\"Notes\"]]\n: a : a\n[[/bibliography]]"}
+{"id": "src-bibc-miss-0", "source": "Before ((bibcite a)) after."}
+{"id": "src-bibc-hit-0", "source": "((bibcite a))\n[[bibliography]]\n: a : a\n[[/bibliography]]"}
+{"id": "src-fn-two-0", "source": "A[[footnote]]a[[/footnote]] B[[footnote]]a[[/footnote]]\n[[footnoteblock title=\"Notes\"]]"}
+{"id": "src-bibc-dup-0", "source": "[[bibliography]]\n: a : one\n: a : two\n[[/bibliography]]\n((bibcite a))"}
+{"id": "src-fn-1", "source": "See [[footnote]]hello[[/footnote]] end."}
+{"id": "src-fn-empty-1", "source": "[[footnote]]   [[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-para-1", "source": "[[footnote]]hello\n\nmore[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-def-1", "source": "[[footnote]]hello[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-blank-1", "source": "[[footnote]]hello[[/footnote]]\n[[footnoteblock title=\"\"]]"}
+{"id": "src-fnb-title-1", "source": "[[footnote]]hello[[/footnote]]\n[[footnoteblock title=\"O'Brien\"]]"}
+{"id": "src-bibi-space-1", "source": "[[bibliography]]\n: b1 : hello\n[[/bibliography]]"}
+{"id": "src-bibi-tight-1", "source": "[[bibliography]]\n: b1 :\n[[/bibliography]]"}
+{"id": "src-bib-nl-1", "source": "[[bibliography]]\nresidual hello\n[[/bibliography]]"}
+{"id": "src-bib-def-1", "source": "[[bibliography]]\n: b1 : hello\n[[/bibliography]]"}
+{"id": "src-bib-blank-1", "source": "[[bibliography title=\"\"]]\n: b1 : hello\n[[/bibliography]]"}
+{"id": "src-bib-title-1", "source": "[[bibliography title=\"O'Brien\"]]\n: b1 : hello\n[[/bibliography]]"}
+{"id": "src-bibc-miss-1", "source": "Before ((bibcite b1)) after."}
+{"id": "src-bibc-hit-1", "source": "((bibcite b1))\n[[bibliography]]\n: b1 : hello\n[[/bibliography]]"}
+{"id": "src-fn-two-1", "source": "A[[footnote]]hello[[/footnote]] B[[footnote]]b1[[/footnote]]\n[[footnoteblock title=\"O'Brien\"]]"}
+{"id": "src-bibc-dup-1", "source": "[[bibliography]]\n: b1 : one\n: b1 : two\n[[/bibliography]]\n((bibcite b1))"}
+{"id": "src-fn-2", "source": "See [[footnote]]x y[[/footnote]] end."}
+{"id": "src-fn-empty-2", "source": "[[footnote]]   [[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-para-2", "source": "[[footnote]]x y\n\nmore[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-def-2", "source": "[[footnote]]x y[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-blank-2", "source": "[[footnote]]x y[[/footnote]]\n[[footnoteblock title=\"\"]]"}
+{"id": "src-fnb-title-2", "source": "[[footnote]]x y[[/footnote]]\n[[footnoteblock title=\"A & B\"]]"}
+{"id": "src-bibi-space-2", "source": "[[bibliography]]\n: abc : x y\n[[/bibliography]]"}
+{"id": "src-bibi-tight-2", "source": "[[bibliography]]\n: abc :\n[[/bibliography]]"}
+{"id": "src-bib-nl-2", "source": "[[bibliography]]\nresidual x y\n[[/bibliography]]"}
+{"id": "src-bib-def-2", "source": "[[bibliography]]\n: abc : x y\n[[/bibliography]]"}
+{"id": "src-bib-blank-2", "source": "[[bibliography title=\"\"]]\n: abc : x y\n[[/bibliography]]"}
+{"id": "src-bib-title-2", "source": "[[bibliography title=\"A & B\"]]\n: abc : x y\n[[/bibliography]]"}
+{"id": "src-bibc-miss-2", "source": "Before ((bibcite abc)) after."}
+{"id": "src-bibc-hit-2", "source": "((bibcite abc))\n[[bibliography]]\n: abc : x y\n[[/bibliography]]"}
+{"id": "src-fn-two-2", "source": "A[[footnote]]x y[[/footnote]] B[[footnote]]abc[[/footnote]]\n[[footnoteblock title=\"A & B\"]]"}
+{"id": "src-bibc-dup-2", "source": "[[bibliography]]\n: abc : one\n: abc : two\n[[/bibliography]]\n((bibcite abc))"}
+{"id": "src-fn-3", "source": "See [[footnote]]O'Brien[[/footnote]] end."}
+{"id": "src-fn-empty-3", "source": "[[footnote]]   [[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-para-3", "source": "[[footnote]]O'Brien\n\nmore[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-def-3", "source": "[[footnote]]O'Brien[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-blank-3", "source": "[[footnote]]O'Brien[[/footnote]]\n[[footnoteblock title=\"\"]]"}
+{"id": "src-fnb-title-3", "source": "[[footnote]]O'Brien[[/footnote]]\n[[footnoteblock title=\"x<y>\"]]"}
+{"id": "src-bibi-space-3", "source": "[[bibliography]]\n: Z : O'Brien\n[[/bibliography]]"}
+{"id": "src-bibi-tight-3", "source": "[[bibliography]]\n: Z :\n[[/bibliography]]"}
+{"id": "src-bib-nl-3", "source": "[[bibliography]]\nresidual O'Brien\n[[/bibliography]]"}
+{"id": "src-bib-def-3", "source": "[[bibliography]]\n: Z : O'Brien\n[[/bibliography]]"}
+{"id": "src-bib-blank-3", "source": "[[bibliography title=\"\"]]\n: Z : O'Brien\n[[/bibliography]]"}
+{"id": "src-bib-title-3", "source": "[[bibliography title=\"x<y>\"]]\n: Z : O'Brien\n[[/bibliography]]"}
+{"id": "src-bibc-miss-3", "source": "Before ((bibcite Z)) after."}
+{"id": "src-bibc-hit-3", "source": "((bibcite Z))\n[[bibliography]]\n: Z : O'Brien\n[[/bibliography]]"}
+{"id": "src-fn-two-3", "source": "A[[footnote]]O'Brien[[/footnote]] B[[footnote]]Z[[/footnote]]\n[[footnoteblock title=\"x<y>\"]]"}
+{"id": "src-bibc-dup-3", "source": "[[bibliography]]\n: Z : one\n: Z : two\n[[/bibliography]]\n((bibcite Z))"}
+{"id": "src-fn-4", "source": "See [[footnote]]a&b[[/footnote]] end."}
+{"id": "src-fn-empty-4", "source": "[[footnote]]   [[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-para-4", "source": "[[footnote]]a&b\n\nmore[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-def-4", "source": "[[footnote]]a&b[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-blank-4", "source": "[[footnote]]a&b[[/footnote]]\n[[footnoteblock title=\"\"]]"}
+{"id": "src-fnb-title-4", "source": "[[footnote]]a&b[[/footnote]]\n[[footnoteblock title=\"n0\"]]"}
+{"id": "src-bibi-space-4", "source": "[[bibliography]]\n: a0b : a&b\n[[/bibliography]]"}
+{"id": "src-bibi-tight-4", "source": "[[bibliography]]\n: a0b :\n[[/bibliography]]"}
+{"id": "src-bib-nl-4", "source": "[[bibliography]]\nresidual a&b\n[[/bibliography]]"}
+{"id": "src-bib-def-4", "source": "[[bibliography]]\n: a0b : a&b\n[[/bibliography]]"}
+{"id": "src-bib-blank-4", "source": "[[bibliography title=\"\"]]\n: a0b : a&b\n[[/bibliography]]"}
+{"id": "src-bib-title-4", "source": "[[bibliography title=\"n0\"]]\n: a0b : a&b\n[[/bibliography]]"}
+{"id": "src-bibc-miss-4", "source": "Before ((bibcite a0b)) after."}
+{"id": "src-bibc-hit-4", "source": "((bibcite a0b))\n[[bibliography]]\n: a0b : a&b\n[[/bibliography]]"}
+{"id": "src-fn-two-4", "source": "A[[footnote]]a&b[[/footnote]] B[[footnote]]a0b[[/footnote]]\n[[footnoteblock title=\"n0\"]]"}
+{"id": "src-bibc-dup-4", "source": "[[bibliography]]\n: a0b : one\n: a0b : two\n[[/bibliography]]\n((bibcite a0b))"}
+{"id": "src-fn-5", "source": "See [[footnote]]n0[[/footnote]] end."}
+{"id": "src-fn-empty-5", "source": "[[footnote]]   [[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-para-5", "source": "[[footnote]]n0\n\nmore[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-def-5", "source": "[[footnote]]n0[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-blank-5", "source": "[[footnote]]n0[[/footnote]]\n[[footnoteblock title=\"\"]]"}
+{"id": "src-fnb-title-5", "source": "[[footnote]]n0[[/footnote]]\n[[footnoteblock title=\"Footnotes\"]]"}
+{"id": "src-bibi-space-5", "source": "[[bibliography]]\n: q : n0\n[[/bibliography]]"}
+{"id": "src-bibi-tight-5", "source": "[[bibliography]]\n: q :\n[[/bibliography]]"}
+{"id": "src-bib-nl-5", "source": "[[bibliography]]\nresidual n0\n[[/bibliography]]"}
+{"id": "src-bib-def-5", "source": "[[bibliography]]\n: q : n0\n[[/bibliography]]"}
+{"id": "src-bib-blank-5", "source": "[[bibliography title=\"\"]]\n: q : n0\n[[/bibliography]]"}
+{"id": "src-bib-title-5", "source": "[[bibliography title=\"Footnotes\"]]\n: q : n0\n[[/bibliography]]"}
+{"id": "src-bibc-miss-5", "source": "Before ((bibcite q)) after."}
+{"id": "src-bibc-hit-5", "source": "((bibcite q))\n[[bibliography]]\n: q : n0\n[[/bibliography]]"}
+{"id": "src-fn-two-5", "source": "A[[footnote]]n0[[/footnote]] B[[footnote]]q[[/footnote]]\n[[footnoteblock title=\"Footnotes\"]]"}
+{"id": "src-bibc-dup-5", "source": "[[bibliography]]\n: q : one\n: q : two\n[[/bibliography]]\n((bibcite q))"}
+{"id": "src-fn-6", "source": "See [[footnote]]zz[[/footnote]] end."}
+{"id": "src-fn-empty-6", "source": "[[footnote]]   [[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-para-6", "source": "[[footnote]]zz\n\nmore[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-def-6", "source": "[[footnote]]zz[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-blank-6", "source": "[[footnote]]zz[[/footnote]]\n[[footnoteblock title=\"\"]]"}
+{"id": "src-fnb-title-6", "source": "[[footnote]]zz[[/footnote]]\n[[footnoteblock title=\"Bibliography\"]]"}
+{"id": "src-bibi-space-6", "source": "[[bibliography]]\n: ref : zz\n[[/bibliography]]"}
+{"id": "src-bibi-tight-6", "source": "[[bibliography]]\n: ref :\n[[/bibliography]]"}
+{"id": "src-bib-nl-6", "source": "[[bibliography]]\nresidual zz\n[[/bibliography]]"}
+{"id": "src-bib-def-6", "source": "[[bibliography]]\n: ref : zz\n[[/bibliography]]"}
+{"id": "src-bib-blank-6", "source": "[[bibliography title=\"\"]]\n: ref : zz\n[[/bibliography]]"}
+{"id": "src-bib-title-6", "source": "[[bibliography title=\"Bibliography\"]]\n: ref : zz\n[[/bibliography]]"}
+{"id": "src-bibc-miss-6", "source": "Before ((bibcite ref)) after."}
+{"id": "src-bibc-hit-6", "source": "((bibcite ref))\n[[bibliography]]\n: ref : zz\n[[/bibliography]]"}
+{"id": "src-fn-two-6", "source": "A[[footnote]]zz[[/footnote]] B[[footnote]]ref[[/footnote]]\n[[footnoteblock title=\"Bibliography\"]]"}
+{"id": "src-bibc-dup-6", "source": "[[bibliography]]\n: ref : one\n: ref : two\n[[/bibliography]]\n((bibcite ref))"}
+{"id": "src-fn-7", "source": "See [[footnote]]body[[/footnote]] end."}
+{"id": "src-fn-empty-7", "source": "[[footnote]]   [[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-para-7", "source": "[[footnote]]body\n\nmore[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-def-7", "source": "[[footnote]]body[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-blank-7", "source": "[[footnote]]body[[/footnote]]\n[[footnoteblock title=\"\"]]"}
+{"id": "src-fnb-title-7", "source": "[[footnote]]body[[/footnote]]\n[[footnoteblock title=\"\u00e9\"]]"}
+{"id": "src-bibi-space-7", "source": "[[bibliography]]\n: n9 : body\n[[/bibliography]]"}
+{"id": "src-bibi-tight-7", "source": "[[bibliography]]\n: n9 :\n[[/bibliography]]"}
+{"id": "src-bib-nl-7", "source": "[[bibliography]]\nresidual body\n[[/bibliography]]"}
+{"id": "src-bib-def-7", "source": "[[bibliography]]\n: n9 : body\n[[/bibliography]]"}
+{"id": "src-bib-blank-7", "source": "[[bibliography title=\"\"]]\n: n9 : body\n[[/bibliography]]"}
+{"id": "src-bib-title-7", "source": "[[bibliography title=\"\u00e9\"]]\n: n9 : body\n[[/bibliography]]"}
+{"id": "src-bibc-miss-7", "source": "Before ((bibcite n9)) after."}
+{"id": "src-bibc-hit-7", "source": "((bibcite n9))\n[[bibliography]]\n: n9 : body\n[[/bibliography]]"}
+{"id": "src-fn-two-7", "source": "A[[footnote]]body[[/footnote]] B[[footnote]]n9[[/footnote]]\n[[footnoteblock title=\"\u00e9\"]]"}
+{"id": "src-bibc-dup-7", "source": "[[bibliography]]\n: n9 : one\n: n9 : two\n[[/bibliography]]\n((bibcite n9))"}
+{"id": "src-fn-8", "source": "See [[footnote]]p[[/footnote]] end."}
+{"id": "src-fn-empty-8", "source": "[[footnote]]   [[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-para-8", "source": "[[footnote]]p\n\nmore[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-def-8", "source": "[[footnote]]p[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-blank-8", "source": "[[footnote]]p[[/footnote]]\n[[footnoteblock title=\"\"]]"}
+{"id": "src-fnb-title-8", "source": "[[footnote]]p[[/footnote]]\n[[footnoteblock title=\"Q\"]]"}
+{"id": "src-bibi-space-8", "source": "[[bibliography]]\n: c : p\n[[/bibliography]]"}
+{"id": "src-bibi-tight-8", "source": "[[bibliography]]\n: c :\n[[/bibliography]]"}
+{"id": "src-bib-nl-8", "source": "[[bibliography]]\nresidual p\n[[/bibliography]]"}
+{"id": "src-bib-def-8", "source": "[[bibliography]]\n: c : p\n[[/bibliography]]"}
+{"id": "src-bib-blank-8", "source": "[[bibliography title=\"\"]]\n: c : p\n[[/bibliography]]"}
+{"id": "src-bib-title-8", "source": "[[bibliography title=\"Q\"]]\n: c : p\n[[/bibliography]]"}
+{"id": "src-bibc-miss-8", "source": "Before ((bibcite c)) after."}
+{"id": "src-bibc-hit-8", "source": "((bibcite c))\n[[bibliography]]\n: c : p\n[[/bibliography]]"}
+{"id": "src-fn-two-8", "source": "A[[footnote]]p[[/footnote]] B[[footnote]]c[[/footnote]]\n[[footnoteblock title=\"Q\"]]"}
+{"id": "src-bibc-dup-8", "source": "[[bibliography]]\n: c : one\n: c : two\n[[/bibliography]]\n((bibcite c))"}
+{"id": "src-fn-9", "source": "See [[footnote]]q[[/footnote]] end."}
+{"id": "src-fn-empty-9", "source": "[[footnote]]   [[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-para-9", "source": "[[footnote]]q\n\nmore[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-def-9", "source": "[[footnote]]q[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-blank-9", "source": "[[footnote]]q[[/footnote]]\n[[footnoteblock title=\"\"]]"}
+{"id": "src-fnb-title-9", "source": "[[footnote]]q[[/footnote]]\n[[footnoteblock title=\"title\"]]"}
+{"id": "src-bibi-space-9", "source": "[[bibliography]]\n: d2 : q\n[[/bibliography]]"}
+{"id": "src-bibi-tight-9", "source": "[[bibliography]]\n: d2 :\n[[/bibliography]]"}
+{"id": "src-bib-nl-9", "source": "[[bibliography]]\nresidual q\n[[/bibliography]]"}
+{"id": "src-bib-def-9", "source": "[[bibliography]]\n: d2 : q\n[[/bibliography]]"}
+{"id": "src-bib-blank-9", "source": "[[bibliography title=\"\"]]\n: d2 : q\n[[/bibliography]]"}
+{"id": "src-bib-title-9", "source": "[[bibliography title=\"title\"]]\n: d2 : q\n[[/bibliography]]"}
+{"id": "src-bibc-miss-9", "source": "Before ((bibcite d2)) after."}
+{"id": "src-bibc-hit-9", "source": "((bibcite d2))\n[[bibliography]]\n: d2 : q\n[[/bibliography]]"}
+{"id": "src-fn-two-9", "source": "A[[footnote]]q[[/footnote]] B[[footnote]]d2[[/footnote]]\n[[footnoteblock title=\"title\"]]"}
+{"id": "src-bibc-dup-9", "source": "[[bibliography]]\n: d2 : one\n: d2 : two\n[[/bibliography]]\n((bibcite d2))"}
+{"id": "src-fn-10", "source": "See [[footnote]]rr[[/footnote]] end."}
+{"id": "src-fn-empty-10", "source": "[[footnote]]   [[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-para-10", "source": "[[footnote]]rr\n\nmore[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-def-10", "source": "[[footnote]]rr[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-blank-10", "source": "[[footnote]]rr[[/footnote]]\n[[footnoteblock title=\"\"]]"}
+{"id": "src-fnb-title-10", "source": "[[footnote]]rr[[/footnote]]\n[[footnoteblock title=\"n1\"]]"}
+{"id": "src-bibi-space-10", "source": "[[bibliography]]\n: ee : rr\n[[/bibliography]]"}
+{"id": "src-bibi-tight-10", "source": "[[bibliography]]\n: ee :\n[[/bibliography]]"}
+{"id": "src-bib-nl-10", "source": "[[bibliography]]\nresidual rr\n[[/bibliography]]"}
+{"id": "src-bib-def-10", "source": "[[bibliography]]\n: ee : rr\n[[/bibliography]]"}
+{"id": "src-bib-blank-10", "source": "[[bibliography title=\"\"]]\n: ee : rr\n[[/bibliography]]"}
+{"id": "src-bib-title-10", "source": "[[bibliography title=\"n1\"]]\n: ee : rr\n[[/bibliography]]"}
+{"id": "src-bibc-miss-10", "source": "Before ((bibcite ee)) after."}
+{"id": "src-bibc-hit-10", "source": "((bibcite ee))\n[[bibliography]]\n: ee : rr\n[[/bibliography]]"}
+{"id": "src-fn-two-10", "source": "A[[footnote]]rr[[/footnote]] B[[footnote]]ee[[/footnote]]\n[[footnoteblock title=\"n1\"]]"}
+{"id": "src-bibc-dup-10", "source": "[[bibliography]]\n: ee : one\n: ee : two\n[[/bibliography]]\n((bibcite ee))"}
+{"id": "src-fn-11", "source": "See [[footnote]]s t[[/footnote]] end."}
+{"id": "src-fn-empty-11", "source": "[[footnote]]   [[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-para-11", "source": "[[footnote]]s t\n\nmore[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-def-11", "source": "[[footnote]]s t[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-blank-11", "source": "[[footnote]]s t[[/footnote]]\n[[footnoteblock title=\"\"]]"}
+{"id": "src-fnb-title-11", "source": "[[footnote]]s t[[/footnote]]\n[[footnoteblock title=\"a b\"]]"}
+{"id": "src-bibi-space-11", "source": "[[bibliography]]\n: f : s t\n[[/bibliography]]"}
+{"id": "src-bibi-tight-11", "source": "[[bibliography]]\n: f :\n[[/bibliography]]"}
+{"id": "src-bib-nl-11", "source": "[[bibliography]]\nresidual s t\n[[/bibliography]]"}
+{"id": "src-bib-def-11", "source": "[[bibliography]]\n: f : s t\n[[/bibliography]]"}
+{"id": "src-bib-blank-11", "source": "[[bibliography title=\"\"]]\n: f : s t\n[[/bibliography]]"}
+{"id": "src-bib-title-11", "source": "[[bibliography title=\"a b\"]]\n: f : s t\n[[/bibliography]]"}
+{"id": "src-bibc-miss-11", "source": "Before ((bibcite f)) after."}
+{"id": "src-bibc-hit-11", "source": "((bibcite f))\n[[bibliography]]\n: f : s t\n[[/bibliography]]"}
+{"id": "src-fn-two-11", "source": "A[[footnote]]s t[[/footnote]] B[[footnote]]f[[/footnote]]\n[[footnoteblock title=\"a b\"]]"}
+{"id": "src-bibc-dup-11", "source": "[[bibliography]]\n: f : one\n: f : two\n[[/bibliography]]\n((bibcite f))"}
+{"id": "src-fn-12", "source": "See [[footnote]]u[[/footnote]] end."}
+{"id": "src-fn-empty-12", "source": "[[footnote]]   [[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-para-12", "source": "[[footnote]]u\n\nmore[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-def-12", "source": "[[footnote]]u[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-blank-12", "source": "[[footnote]]u[[/footnote]]\n[[footnoteblock title=\"\"]]"}
+{"id": "src-fnb-title-12", "source": "[[footnote]]u[[/footnote]]\n[[footnoteblock title=\"cd\"]]"}
+{"id": "src-bibi-space-12", "source": "[[bibliography]]\n: g0 : u\n[[/bibliography]]"}
+{"id": "src-bibi-tight-12", "source": "[[bibliography]]\n: g0 :\n[[/bibliography]]"}
+{"id": "src-bib-nl-12", "source": "[[bibliography]]\nresidual u\n[[/bibliography]]"}
+{"id": "src-bib-def-12", "source": "[[bibliography]]\n: g0 : u\n[[/bibliography]]"}
+{"id": "src-bib-blank-12", "source": "[[bibliography title=\"\"]]\n: g0 : u\n[[/bibliography]]"}
+{"id": "src-bib-title-12", "source": "[[bibliography title=\"cd\"]]\n: g0 : u\n[[/bibliography]]"}
+{"id": "src-bibc-miss-12", "source": "Before ((bibcite g0)) after."}
+{"id": "src-bibc-hit-12", "source": "((bibcite g0))\n[[bibliography]]\n: g0 : u\n[[/bibliography]]"}
+{"id": "src-fn-two-12", "source": "A[[footnote]]u[[/footnote]] B[[footnote]]g0[[/footnote]]\n[[footnoteblock title=\"cd\"]]"}
+{"id": "src-bibc-dup-12", "source": "[[bibliography]]\n: g0 : one\n: g0 : two\n[[/bibliography]]\n((bibcite g0))"}
+{"id": "src-fn-13", "source": "See [[footnote]]v[[/footnote]] end."}
+{"id": "src-fn-empty-13", "source": "[[footnote]]   [[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-para-13", "source": "[[footnote]]v\n\nmore[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-def-13", "source": "[[footnote]]v[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-blank-13", "source": "[[footnote]]v[[/footnote]]\n[[footnoteblock title=\"\"]]"}
+{"id": "src-fnb-title-13", "source": "[[footnote]]v[[/footnote]]\n[[footnoteblock title=\"end\"]]"}
+{"id": "src-bibi-space-13", "source": "[[bibliography]]\n: h : v\n[[/bibliography]]"}
+{"id": "src-bibi-tight-13", "source": "[[bibliography]]\n: h :\n[[/bibliography]]"}
+{"id": "src-bib-nl-13", "source": "[[bibliography]]\nresidual v\n[[/bibliography]]"}
+{"id": "src-bib-def-13", "source": "[[bibliography]]\n: h : v\n[[/bibliography]]"}
+{"id": "src-bib-blank-13", "source": "[[bibliography title=\"\"]]\n: h : v\n[[/bibliography]]"}
+{"id": "src-bib-title-13", "source": "[[bibliography title=\"end\"]]\n: h : v\n[[/bibliography]]"}
+{"id": "src-bibc-miss-13", "source": "Before ((bibcite h)) after."}
+{"id": "src-bibc-hit-13", "source": "((bibcite h))\n[[bibliography]]\n: h : v\n[[/bibliography]]"}
+{"id": "src-fn-two-13", "source": "A[[footnote]]v[[/footnote]] B[[footnote]]h[[/footnote]]\n[[footnoteblock title=\"end\"]]"}
+{"id": "src-bibc-dup-13", "source": "[[bibliography]]\n: h : one\n: h : two\n[[/bibliography]]\n((bibcite h))"}
+{"id": "src-fn-14", "source": "See [[footnote]]w[[/footnote]] end."}
+{"id": "src-fn-empty-14", "source": "[[footnote]]   [[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-para-14", "source": "[[footnote]]w\n\nmore[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-def-14", "source": "[[footnote]]w[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-blank-14", "source": "[[footnote]]w[[/footnote]]\n[[footnoteblock title=\"\"]]"}
+{"id": "src-fnb-title-14", "source": "[[footnote]]w[[/footnote]]\n[[footnoteblock title=\"nl\"]]"}
+{"id": "src-bibi-space-14", "source": "[[bibliography]]\n: i : w\n[[/bibliography]]"}
+{"id": "src-bibi-tight-14", "source": "[[bibliography]]\n: i :\n[[/bibliography]]"}
+{"id": "src-bib-nl-14", "source": "[[bibliography]]\nresidual w\n[[/bibliography]]"}
+{"id": "src-bib-def-14", "source": "[[bibliography]]\n: i : w\n[[/bibliography]]"}
+{"id": "src-bib-blank-14", "source": "[[bibliography title=\"\"]]\n: i : w\n[[/bibliography]]"}
+{"id": "src-bib-title-14", "source": "[[bibliography title=\"nl\"]]\n: i : w\n[[/bibliography]]"}
+{"id": "src-bibc-miss-14", "source": "Before ((bibcite i)) after."}
+{"id": "src-bibc-hit-14", "source": "((bibcite i))\n[[bibliography]]\n: i : w\n[[/bibliography]]"}
+{"id": "src-fn-two-14", "source": "A[[footnote]]w[[/footnote]] B[[footnote]]i[[/footnote]]\n[[footnoteblock title=\"nl\"]]"}
+{"id": "src-bibc-dup-14", "source": "[[bibliography]]\n: i : one\n: i : two\n[[/bibliography]]\n((bibcite i))"}
+{"id": "src-fn-15", "source": "See [[footnote]]xy[[/footnote]] end."}
+{"id": "src-fn-empty-15", "source": "[[footnote]]   [[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-para-15", "source": "[[footnote]]xy\n\nmore[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-def-15", "source": "[[footnote]]xy[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-blank-15", "source": "[[footnote]]xy[[/footnote]]\n[[footnoteblock title=\"\"]]"}
+{"id": "src-fnb-title-15", "source": "[[footnote]]xy[[/footnote]]\n[[footnoteblock title=\"0\"]]"}
+{"id": "src-bibi-space-15", "source": "[[bibliography]]\n: j : xy\n[[/bibliography]]"}
+{"id": "src-bibi-tight-15", "source": "[[bibliography]]\n: j :\n[[/bibliography]]"}
+{"id": "src-bib-nl-15", "source": "[[bibliography]]\nresidual xy\n[[/bibliography]]"}
+{"id": "src-bib-def-15", "source": "[[bibliography]]\n: j : xy\n[[/bibliography]]"}
+{"id": "src-bib-blank-15", "source": "[[bibliography title=\"\"]]\n: j : xy\n[[/bibliography]]"}
+{"id": "src-bib-title-15", "source": "[[bibliography title=\"0\"]]\n: j : xy\n[[/bibliography]]"}
+{"id": "src-bibc-miss-15", "source": "Before ((bibcite j)) after."}
+{"id": "src-bibc-hit-15", "source": "((bibcite j))\n[[bibliography]]\n: j : xy\n[[/bibliography]]"}
+{"id": "src-fn-two-15", "source": "A[[footnote]]xy[[/footnote]] B[[footnote]]j[[/footnote]]\n[[footnoteblock title=\"0\"]]"}
+{"id": "src-bibc-dup-15", "source": "[[bibliography]]\n: j : one\n: j : two\n[[/bibliography]]\n((bibcite j))"}
+{"id": "src-fn-ws-0", "source": "[[footnote]][[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-ws-1", "source": "[[footnote]] [[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-ws-2", "source": "[[footnote]]\t[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fn-ws-3", "source": "[[footnote]]  \n[[/footnote]]\n[[footnoteblock]]"}
+{"id": "src-fnb-nonotes", "source": "[[footnoteblock]]\nNo notes."}
+{"id": "src-fnb-nonotes-title", "source": "[[footnoteblock title=\"Unused\"]]"}

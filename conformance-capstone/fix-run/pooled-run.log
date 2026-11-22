@@ -1,0 +1,30 @@
+conformance-capstone/pooled-php-full.jsonl rc: 0 bytes: 4230020 stderr bytes: 0
+pool sources (file: lines in, new ids contributed):
+  materials/block-all-cases.jsonl: 206 in, 206 new
+  materials/contain-all-cases.jsonl: 372 in, 363 new
+  materials/final-all-cases.jsonl: 365 in, 354 new
+  materials/inline1-all-cases.jsonl: 318 in, 307 new
+  materials/inline2-all-cases.jsonl: 363 in, 304 new
+  materials/inline3-all-cases.jsonl: 455 in, 381 new
+  materials/link-all-cases.jsonl: 221 in, 208 new
+  materials/list-all-cases.jsonl: 239 in, 219 new
+  materials/middle-all-cases.jsonl: 276 in, 241 new
+  materials/middle2-all-cases.jsonl: 189 in, 178 new
+  materials/module-all-cases.jsonl: 204 in, 195 new
+  materials/next-all-cases.jsonl: 382 in, 362 new
+  materials/notes-all-cases.jsonl: 367 in, 356 new
+  materials/para-all-cases.jsonl: 253 in, 230 new
+  materials/table-all-cases.jsonl: 185 in, 169 new
+  conformance-r3/smoke-cases.jsonl: 9 in, 0 new
+  conformance-r33/code-cases.jsonl: 68 in, 64 new
+  conformance-r33/formraw-cases.jsonl: 68 in, 68 new
+  conformance-r33/module-cases.jsonl: 195 in, 0 new
+  conformance-r33/module-all-cases.jsonl: 204 in, 0 new
+  conformance-r33/smoke-cases.jsonl: 9 in, 0 new
+  conformance-r34/next-all-cases.jsonl: 382 in, 0 new
+  conformance-r317/final-all-cases.jsonl: 365 in, 0 new
+  conformance-r317/authored-cases.jsonl: 285 in, 0 new
+pool size: 4205 cases
+PASS: 4204/4205 (including 5 parse-fatal agreements)
+MISMATCH: 1
+  a34: tokens

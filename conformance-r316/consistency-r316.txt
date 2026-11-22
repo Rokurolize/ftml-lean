@@ -1,0 +1,4 @@
+A prefix==fixture on family claims: 189/189  disagreements: []
+B restricted==full on family claims: 189/189  exclusions: []
+B-dp Divprefilter firing agreement (restricted pair vs full pair): 189/189  disagreements: []
+C restricted==prefix on earlier claims: 188/189  disagreements: ['smoke-include']

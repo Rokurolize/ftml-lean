@@ -1,0 +1,4 @@
+{"id": "oneline-div", "source": "X[[footnote]][[div]]block body[[/div]][[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "nl-before-div", "source": "X[[footnote]]\n[[div]]block body[[/div]][[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "text-then-div", "source": "X[[footnote]]lead [[div]]block body[[/div]][[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "oneline-list", "source": "X[[footnote]]* one[[/footnote]]\n\n[[footnoteblock]]"}

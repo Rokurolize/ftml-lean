@@ -1,0 +1,134 @@
+if-plain-plus-tagged -> muse-probe-suspect-block-if-plain-plus-tagged stable=True saved_source_matches=True valid=True
+if-trail-plus-tagged -> muse-probe-suspect-block-if-trail-plus-tagged stable=True saved_source_matches=True valid=True
+if-trail-bare-tagged -> muse-probe-suspect-block-if-trail-bare-tagged stable=True saved_source_matches=True valid=True
+if-lead-comma-tagged -> muse-probe-suspect-block-if-lead-comma-tagged stable=True saved_source_matches=True valid=True
+if-double-comma-tagged -> muse-probe-suspect-block-if-double-comma-tagged stable=True saved_source_matches=True valid=True
+if-trail-minus-tagged -> muse-probe-suspect-block-if-trail-minus-tagged stable=True saved_source_matches=True valid=True
+if-trail-space-tagged -> muse-probe-suspect-block-if-trail-space-tagged stable=True saved_source_matches=True valid=True
+if-dangling-minus-tagged -> muse-probe-suspect-block-if-dangling-minus-tagged stable=True saved_source_matches=True valid=True
+if-case-plus-tagged -> muse-probe-suspect-block-if-case-plus-tagged stable=True saved_source_matches=True valid=True
+if-nospace-tagged -> muse-probe-suspect-block-if-nospace-tagged stable=True saved_source_matches=True valid=True
+if-newline-tagged -> muse-probe-suspect-block-if-newline-tagged stable=True saved_source_matches=True valid=True
+if-nested-tagged -> muse-probe-suspect-block-if-nested-tagged stable=True saved_source_matches=True valid=True
+{
+ "if-plain-plus-tagged": {
+  "fullname": "muse-probe-suspect-block-if-plain-plus-tagged",
+  "html": "<p>KEEP<br />\nX</p>",
+  "html_sha256": "2f8c42960ded299a5d719adf4abd723595eca9d45efc9864da2bc4c2f9fc8cde",
+  "source": "[[iftags +alpha]]KEEP[[/iftags]]\nX",
+  "source_sha256": "36fb189ea393aa7efca272999cfbf5fe6e8557528d677fd1f146d5509a2f87a5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "if-trail-plus-tagged": {
+  "fullname": "muse-probe-suspect-block-if-trail-plus-tagged",
+  "html": "<p>X</p>",
+  "html_sha256": "ad248596661a840f40c40032a10aabcc6de25f92a6220ba1d0dd826fab1b2156",
+  "source": "[[iftags +alpha,]]KEEP[[/iftags]]\nX",
+  "source_sha256": "b4b28bd02660e906acf73c413aea621d7fcb5e729d8ee34660e1cc350db4fd0b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "if-trail-bare-tagged": {
+  "fullname": "muse-probe-suspect-block-if-trail-bare-tagged",
+  "html": "<p>KEEP<br />\nX</p>",
+  "html_sha256": "2f8c42960ded299a5d719adf4abd723595eca9d45efc9864da2bc4c2f9fc8cde",
+  "source": "[[iftags alpha,]]KEEP[[/iftags]]\nX",
+  "source_sha256": "48337b878b4b1ed559c5a7eadef2434dd975ae54fb94d6c1e6578e76e7cd703d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "if-lead-comma-tagged": {
+  "fullname": "muse-probe-suspect-block-if-lead-comma-tagged",
+  "html": "<p>X</p>",
+  "html_sha256": "ad248596661a840f40c40032a10aabcc6de25f92a6220ba1d0dd826fab1b2156",
+  "source": "[[iftags ,+alpha]]KEEP[[/iftags]]\nX",
+  "source_sha256": "5a9ef5b46c508c800bbab1e73704c60519fecf85ca08cbb2d88bdd49a19cc7eb",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "if-double-comma-tagged": {
+  "fullname": "muse-probe-suspect-block-if-double-comma-tagged",
+  "html": "<p>X</p>",
+  "html_sha256": "ad248596661a840f40c40032a10aabcc6de25f92a6220ba1d0dd826fab1b2156",
+  "source": "[[iftags +alpha,,]]KEEP[[/iftags]]\nX",
+  "source_sha256": "fbc8ece278e353d25db986d9bf0a9939af5c8a4cdcdb91be92782efd94b6cd63",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "if-trail-minus-tagged": {
+  "fullname": "muse-probe-suspect-block-if-trail-minus-tagged",
+  "html": "<p>X</p>",
+  "html_sha256": "ad248596661a840f40c40032a10aabcc6de25f92a6220ba1d0dd826fab1b2156",
+  "source": "[[iftags -beta,]]KEEP[[/iftags]]\nX",
+  "source_sha256": "9bb95dd6e21401e98b6b82efc65c1d9c1e41a1fbd79e5d38a2639c02d65965af",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "if-trail-space-tagged": {
+  "fullname": "muse-probe-suspect-block-if-trail-space-tagged",
+  "html": "<p>X</p>",
+  "html_sha256": "ad248596661a840f40c40032a10aabcc6de25f92a6220ba1d0dd826fab1b2156",
+  "source": "[[iftags +alpha, ]]KEEP[[/iftags]]\nX",
+  "source_sha256": "51903b83b581ad7191353b7ee442423c8a972e62ae22eaca0b2043ea2708039a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "if-dangling-minus-tagged": {
+  "fullname": "muse-probe-suspect-block-if-dangling-minus-tagged",
+  "html": "<p>KEEP<br />\nX</p>",
+  "html_sha256": "2f8c42960ded299a5d719adf4abd723595eca9d45efc9864da2bc4c2f9fc8cde",
+  "source": "[[iftags -]]KEEP[[/iftags]]\nX",
+  "source_sha256": "0231fe6179ea2ed3aea2cf2efc566b46943a3a8e843fc0ea1e8cfc5fd51b1dd9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "if-case-plus-tagged": {
+  "fullname": "muse-probe-suspect-block-if-case-plus-tagged",
+  "html": "<p>KEEP<br />\nX</p>",
+  "html_sha256": "2f8c42960ded299a5d719adf4abd723595eca9d45efc9864da2bc4c2f9fc8cde",
+  "source": "[[iftags +ALPHA]]KEEP[[/iftags]]\nX",
+  "source_sha256": "6d39ff9b1f79286f0427289fb8b6b0866087d4d3bf58d0c8c5030e1e7853208d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "if-nospace-tagged": {
+  "fullname": "muse-probe-suspect-block-if-nospace-tagged",
+  "html": "<p>[[iftags+alpha]]KEEP[[/iftags]]<br />\nX</p>",
+  "html_sha256": "a50c49942d07c0cd36bd1308af52042bab9fd99d9d8475f689c13726fb00c8f7",
+  "source": "[[iftags+alpha]]KEEP[[/iftags]]\nX",
+  "source_sha256": "1481a490fee4fdd9ea386254d4ccfd941a70e680c2441e7a47ea7316e0f8b8b6",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "if-newline-tagged": {
+  "fullname": "muse-probe-suspect-block-if-newline-tagged",
+  "html": "<p>X</p>",
+  "html_sha256": "ad248596661a840f40c40032a10aabcc6de25f92a6220ba1d0dd826fab1b2156",
+  "source": "[[iftags +alpha\n+beta]]KEEP[[/iftags]]\nX",
+  "source_sha256": "5078cc8bdaa6af013de38155b07bf80fd4b8c911ec76dcb3ed5c61b801399b10",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "if-nested-tagged": {
+  "fullname": "muse-probe-suspect-block-if-nested-tagged",
+  "html": "<p>A[[iftags -beta]]B[[/iftags]]C<br />\nX</p>",
+  "html_sha256": "f0853bda658e667a0240bc02ea42bc75d188a3917060abc1e3aa8655957e2be6",
+  "source": "[[iftags +alpha]]A[[iftags -beta]]B[[/iftags]]C[[/iftags]]\nX",
+  "source_sha256": "4a5530d115bccb604dcc8b0ba01b69d5f2d9e939a39bd8a3182709c04d5589d6",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

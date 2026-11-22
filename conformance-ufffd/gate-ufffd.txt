@@ -1,0 +1,17 @@
+RESIDUE block-end-leak plain-end gaps=23:1->2
+RESIDUE block-end-leak plain-only gaps=3:1->2
+RESIDUE block-end-leak end-after-bold gaps=31:1->2
+RESIDUE boundary-merge end-first-para gaps=9:1->2,10:2->3
+RESIDUE boundary-merge end-both-para gaps=9:1->2,10:2->3,17:3->4
+RESIDUE boundary-merge end-list gaps=18:2->3,19:3->4
+RESIDUE boundary-merge end-heading gaps=30:1->2,31:2->3
+RESIDUE block-end-leak end-no-space gaps=14:1->2
+TOTAL 36
+FAMILY control n=6 MATCH=6 RESIDUE=0 DIFF=0 OTHER=0 expect=MATCH
+FAMILY mid-recover n=18 MATCH=18 RESIDUE=0 DIFF=0 OTHER=0 expect=MATCH
+FAMILY block-end-leak n=4 MATCH=0 RESIDUE=4 DIFF=0 OTHER=0 expect=RESIDUE
+FAMILY boundary-merge n=4 MATCH=0 RESIDUE=4 DIFF=0 OTHER=0 expect=RESIDUE
+FAMILY enclosed-key n=2 MATCH=2 RESIDUE=0 DIFF=0 OTHER=0 expect=MATCH
+FAMILY only-chars n=1 MATCH=1 RESIDUE=0 DIFF=0 OTHER=0 expect=MATCH
+FAMILY inline-degrade n=1 MATCH=1 RESIDUE=0 DIFF=0 OTHER=0 expect=MATCH
+FAIL 0

@@ -1,0 +1,90 @@
+gap-tab -> muse-probe-suspect-email-gap-tab stable=True saved_source_matches=True valid=True
+gap-nbsp -> muse-probe-suspect-email-gap-nbsp stable=True saved_source_matches=True valid=True
+gap-three -> muse-probe-suspect-email-gap-three stable=True saved_source_matches=True valid=True
+gap-trail -> muse-probe-suspect-email-gap-trail stable=True saved_source_matches=True valid=True
+gap-two-trail -> muse-probe-suspect-email-gap-two-trail stable=True saved_source_matches=True valid=True
+gap-control -> muse-probe-suspect-email-gap-control stable=True saved_source_matches=True valid=True
+frame-trail-inline -> muse-probe-suspect-email-frame-trail-inline stable=True saved_source_matches=True valid=True
+frame-trail-bracket -> muse-probe-suspect-email-frame-trail-bracket stable=True saved_source_matches=True valid=True
+{
+ "gap-tab": {
+  "fullname": "muse-probe-suspect-email-gap-tab",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#lebaL</span></p>",
+  "html_sha256": "f9b9544d68bcda668754724e4fb612174cf2efbeb2ceb42eac67352508692d86",
+  "source": "[u@example.com\tLabel]",
+  "source_sha256": "ed9ecf66365480bda19e50d2a3a9d8da6e9277135b187c32da1d4a2a5cbe0db8",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "gap-nbsp": {
+  "fullname": "muse-probe-suspect-email-gap-nbsp",
+  "html": "<p>[<span class=\"wiki-email\">moc.elpmaxe|u#moc.elpmaxe|u</span>&nbsp;Label]</p>",
+  "html_sha256": "bd1d32f0449e3146ebe914f11a614cb7205b8d9b9baff85194f07f256ec976cb",
+  "source": "[u@example.com Label]",
+  "source_sha256": "fcafd3377216ab6da946f69aa429993d08366cd10eac20ce316e67a683b3c882",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "gap-three": {
+  "fullname": "muse-probe-suspect-email-gap-three",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#lebaL</span></p>",
+  "html_sha256": "f9b9544d68bcda668754724e4fb612174cf2efbeb2ceb42eac67352508692d86",
+  "source": "[u@example.com   Label]",
+  "source_sha256": "37fedcd7d328f1b81f18a811dd04a2b95d41156c7e07500c36a5a04013358a7d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "gap-trail": {
+  "fullname": "muse-probe-suspect-email-gap-trail",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u# lebaL</span></p>",
+  "html_sha256": "9278c445c054bbd5ef2d827d2790b48db0857be87add42c11b87906adb3ae660",
+  "source": "[u@example.com Label ]",
+  "source_sha256": "4930d70a7d7a54a560b0bf1599028557cffe1036c5cde140754a3cfca870862a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "gap-two-trail": {
+  "fullname": "muse-probe-suspect-email-gap-two-trail",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u# lebaL</span></p>",
+  "html_sha256": "9278c445c054bbd5ef2d827d2790b48db0857be87add42c11b87906adb3ae660",
+  "source": "[u@example.com  Label ]",
+  "source_sha256": "e94130fcd3a47c4c37ea051d16ce0478a44e25f19d4e493e81215f6f68f43ab5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "gap-control": {
+  "fullname": "muse-probe-suspect-email-gap-control",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#lebaL</span></p>",
+  "html_sha256": "f9b9544d68bcda668754724e4fb612174cf2efbeb2ceb42eac67352508692d86",
+  "source": "[u@example.com Label]",
+  "source_sha256": "f0fd051e31eff168a7585d7fc46d8191999774f9c84b6d4c03e755096cc99c1a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "frame-trail-inline": {
+  "fullname": "muse-probe-suspect-email-frame-trail-inline",
+  "html": "<p><span class=\"wiki-email\">moc.elpmaxe|u#lebaL</span> X</p>",
+  "html_sha256": "d3d7e389bd983937ee247f0bda3a804d310e4d969fb7deba0982f330c6133614",
+  "source": "[u@example.com  Label] X",
+  "source_sha256": "6cfe9df3c581d317038a87a7496ac1a9e3b372f478c91ec038f16bcec180d564",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "frame-trail-bracket": {
+  "fullname": "muse-probe-suspect-email-frame-trail-bracket",
+  "html": "<p>(<span class=\"wiki-email\">moc.elpmaxe|u#lebaL</span> )</p>",
+  "html_sha256": "c4d2328172445081073559f154fa26ae15435138047a45d1c1bb9b0f2297969f",
+  "source": "([u@example.com  Label])",
+  "source_sha256": "f5918f579bbaaa83b9118f96bccbd4e511beb2c555538a02fe973cb428e3a18f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

@@ -1,0 +1,20 @@
+
+{"id":"f02-email-apos-amp","output":"<p><span class=\"wiki-email\">moc.b|a#d\"c&b'a<\/span><\/p>\n\n"}
+{"id":"f03-freelink-translit","output":"<p><a class=\"newpage\" href=\"\/aeoeuess-n-c-z-acelnoszz-e\">\u00e4\u00f6\u00fc\u00df \u00f1 \u00e7 \u017e \u0105\u0107\u0119\u0142\u0144\u00f3\u015b\u017a\u017c caf\u00e9123<\/a><\/p>\n\n"}
+{"id":"f04-ul-upper-open","output":"<p>[[UL]]<br \/>\n[[LI]]Case[[\/li]]<br \/>\n[[\/ul]]<\/p>\n\n"}
+{"id":"f05-ul-upper-close","output":"<p>[[ul]]<br \/>\n[[li]]Case[[\/LI]]<br \/>\n[[\/UL]]<\/p>\n\n"}
+{"id":"f06-ul-upper-after","output":"<p>[[UL]]<br \/>\n[[LI]]A[[\/LI]]<br \/>\n[[LI]]B[[\/LI]]<br \/>\n[[\/UL]]<\/p>\n\n<p>AFTER<\/p>\n\n"}
+{"id":"f07-modulepre-upper-tail","output":"<p>[[MODULE654 css]]tail<\/p>\n\n"}
+{"id":"f08-iftags-lead-comma","output":"<p>A B<\/p>\n\n"}
+{"id":"f09-div-attr-escapes","output":"<div data-x=\"a&b<c>d'e\"f\"><p>hi<\/p>\n\n<\/div>"}
+{"id":"f10-interwiki-unknown-apos","output":"<p>O'Brien & <b>x<\/b><\/p>\n\n"}
+{"id":"x01-raw-empty-interwiki","output":"<p><a href=\"https:\/\/en.wikipedia.org\/wiki\/X\" onclick=\"window.open(this.href, '_blank'); return false;\">ab<\/a><\/p>\n\n"}
+{"id":"x02-raw-in-date","output":"<p><span class=\"odate time_0 format_a%FF181%FFb\">01 Jan 1970 00:00<\/span> and <span class=\"odate time_0 format_ab\">01 Jan 1970 00:00<\/span><\/p>\n\n"}
+
+{"id":"x04-email-bracket-label","output":"<p><span class=\"wiki-email\">moc.b|a#x[<\/span> label]<\/p>\n\n"}
+
+
+{"id":"x07-bq-raw-nospace","output":"<p>A<\/p>\n\n<p>B<\/p>\n\n"}
+
+{"id":"x09-deflist-raw-empty","output":"<dl>\n<dd>def<\/dd>\n<\/dl>\n"}
+{"id":"x10-url-star-mailto","output":"<p><a href=\"mailto:a@b.com\">mail<\/a> and <a href=\"#foo\">plain<\/a><\/p>\n\n"}

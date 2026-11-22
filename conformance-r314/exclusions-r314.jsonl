@@ -1,0 +1,454 @@
+{"id": "tt01", "source": "{{mono}}"}
+{"id": "tt02", "source": "abc {{mono}} def"}
+{"id": "tt03", "source": "ab{{mono}}cd"}
+{"id": "tt04", "source": "{{a}} {{b}}"}
+{"id": "tt05", "source": "{{a}}{{b}}"}
+{"id": "tt06", "source": "before {{x}} after {{y}} tail"}
+{"id": "tt07", "source": "{{ //code literal// }}"}
+{"id": "tt08", "source": "{{ text}}"}
+{"id": "tt09", "source": "{{text }}"}
+{"id": "tt10", "source": "{{ text }}"}
+{"id": "tt11", "source": "before {{   a  **b**  c   }} after"}
+{"id": "tt12", "source": "{{x }}{{ y}}"}
+{"id": "tt13", "source": "before{{ x}}after"}
+{"id": "tt14", "source": "{{\ttext}}"}
+{"id": "tt15", "source": "{{text\t}}"}
+{"id": "tt16", "source": "{{ x }}after"}
+{"id": "tt17", "source": "{{}}"}
+{"id": "tt18", "source": "{{ }}"}
+{"id": "tt19", "source": "{{   }}"}
+{"id": "tt20", "source": "{{0}}"}
+{"id": "tt21", "source": "A{{0}}B"}
+{"id": "tt22", "source": "{{00}}"}
+{"id": "tt23", "source": "{{-0}}"}
+{"id": "tt24", "source": "{{0.0}}"}
+{"id": "tt25", "source": "{{x}}}}tail"}
+{"id": "tt26", "source": "{{x }}}}tail"}
+{"id": "tt27", "source": "{{x}}}}}}tail"}
+{"id": "tt28", "source": "{{outer {{ inner }} tail}}"}
+{"id": "tt29", "source": "{{a {{b}} c}} {{d}}"}
+{"id": "tt30", "source": "{{**bold**}}"}
+{"id": "tt31", "source": "**{{mono}}**"}
+{"id": "tt32", "source": "{{//italic//}}"}
+{"id": "tt33", "source": "{{__under__}}"}
+{"id": "tt34", "source": "{{--strike--}}"}
+{"id": "tt35", "source": "{{##red|color##}}"}
+{"id": "tt36", "source": "##red|{{mono}}##"}
+{"id": "tt37", "source": "{{a **b** c}}"}
+{"id": "tt38", "source": "{{mono"}
+{"id": "tt39", "source": "mono}}"}
+{"id": "tt40", "source": "{{{mono}}}"}
+{"id": "tt41", "source": "{{ x"}
+{"id": "tt42", "source": "{{ x }"}
+{"id": "tt43", "source": "}}Fail\n{{Fail\n\nparagraph? }}"}
+{"id": "tt44", "source": "{{a\nb}}"}
+{"id": "tt45", "source": "{{a\n\nb}}"}
+{"id": "tt46", "source": "{{a\nb\nc}}"}
+{"id": "tt47", "source": "{{a}}\n{{b}}"}
+{"id": "tt48", "source": "> {{quoted}}"}
+{"id": "tt49", "source": "{{a\n* item\nb}}"}
+{"id": "tt50", "source": "[[div]]\n{{a}}\n[[/div]]"}
+{"id": "tt51", "source": "= {{heading}}"}
+{"id": "tt52", "source": "[[code]]\n{{not mono}}\n[[/code]]"}
+{"id": "tt53", "source": "[[raw]]{{not mono}}[[/raw]]"}
+{"id": "tt54", "source": "{{person@scp.foundation}}"}
+{"id": "tt55", "source": "See {{https://example.com/a}}. end"}
+{"id": "sup01", "source": "^^sup^^"}
+{"id": "sup02", "source": "before ^^sup^^ after"}
+{"id": "sup03", "source": "^^one^^ ^^two^^"}
+{"id": "sup04", "source": "^^a^^b^^c^^"}
+{"id": "sup05", "source": "wor^^d^^in"}
+{"id": "sup06", "source": "^^two words^^"}
+{"id": "sup07", "source": "^^ sup ^^"}
+{"id": "sup08", "source": "^^sup ^^"}
+{"id": "sup09", "source": "^^ sup^^"}
+{"id": "sup10", "source": "^^a b^^"}
+{"id": "sup11", "source": "^^ a^^b^^ ^^"}
+{"id": "sup12", "source": "^^a^^ ^^ b ^^ ^^c^^"}
+{"id": "sup13", "source": "^^unpaired"}
+{"id": "sup14", "source": "unpaired^^"}
+{"id": "sup15", "source": "^^^triple^^^"}
+{"id": "sup16", "source": "^^a^^^"}
+{"id": "sup17", "source": "^^^a^^"}
+{"id": "sup18", "source": "^^^^"}
+{"id": "sup19", "source": "^^ ^^"}
+{"id": "sup20", "source": "^^a^^^^b^^"}
+{"id": "sup21", "source": "^^//em//^^"}
+{"id": "sup22", "source": "//^^sup^^//"}
+{"id": "sup23", "source": "^^__u__^^"}
+{"id": "sup24", "source": "^^--s--^^"}
+{"id": "sup25", "source": "##c00|^^red^^##"}
+{"id": "sup26", "source": "^^##c00|red##^^"}
+{"id": "sup27", "source": "^^{{mono}}^^"}
+{"id": "sup28", "source": "{{^^mono^^}}"}
+{"id": "sup29", "source": "^^,,sub,,^^"}
+{"id": "sup30", "source": ",,OUTER ^^INNER,, TAIL^^"}
+{"id": "sup31", "source": "^^a\nb^^\nx"}
+{"id": "sup32", "source": "^^a\n\nb^^\nx"}
+{"id": "sup34", "source": "^^a\n[!-- c --]\nb^^\nx"}
+{"id": "sup35", "source": "^^a\nb^^\n\nx"}
+{"id": "sup36", "source": "^^a\n> quote\nb^^\nx"}
+{"id": "sup37", "source": "^^[[div]]inside[[/div]]^^\nx"}
+{"id": "sup38", "source": "^^a\n* list\nb^^\nx"}
+{"id": "sup39", "source": "|| ^^A^^ || B ||\nx"}
+{"id": "sup40", "source": "|| ^^A || B^^ || C ||\nx"}
+{"id": "sup41", "source": "||a||^^b^^||c||\nx"}
+{"id": "sup42", "source": "|| ^^ A ^^ ||\nx"}
+{"id": "sup43", "source": "|||| ^^span^^ |||| x ||\nx"}
+{"id": "sup44", "source": "= ^^Head^^ =\nx"}
+{"id": "sup45", "source": "^^= Head =^^\nx"}
+{"id": "sup46", "source": "[[^^label^^|target]]"}
+{"id": "sup47", "source": "[[target|^^label^^]]"}
+{"id": "sup48", "source": "[[^^page^^]]"}
+{"id": "sup49", "source": "[code]^^sup^^[/code]"}
+{"id": "sup50", "source": "{{^^mono^^}}"}
+{"id": "sup51", "source": "[[raw]]^^x^^[[/raw]]"}
+{"id": "sup52", "source": "`^^code^^`"}
+{"id": "sup53", "source": "[code]\n^^sup^^\n[/code]"}
+{"id": "sup54", "source": "^^a[code]x[/code]b^^"}
+{"id": "sup55", "source": "[[code]]^^sup^^[[/code]]"}
+{"id": "sup56", "source": "^^a\n[[div]]\nb\n[[/div]]\nc^^\nx"}
+{"id": "sup57", "source": "[[[^^caption^^|target]]]\nx"}
+{"id": "sup58", "source": "[[[target|^^caption^^]]]\nx"}
+{"id": "sup59", "source": "[[a href=\"https://example.com\"]]^^label^^[[/a]]\nx"}
+{"id": "sup60", "source": "[[[^^page^^]]]\nx"}
+{"id": "sup61", "source": "^^A ^^B^^ C^^\nx"}
+{"id": "sup62", "source": "^[!--x--]^A^^\nx"}
+{"id": "sup63", "source": "^^OUTER {{INNER^^ TAIL}}\nx"}
+{"id": "sup64", "source": "^^A {{B --C^^ X}} Y--\nx"}
+{"id": "sup65", "source": "//A ^^B __C// X^^ Y__\nx"}
+{"id": "sup66", "source": "[[sup]]X[[/sup]]\nx"}
+{"id": "sub01", "source": ",,simple,,"}
+{"id": "sub02", "source": "before ,,subscript,, after"}
+{"id": "sub03", "source": "word,,inside,,word"}
+{"id": "sub04", "source": "a,,b,,c"}
+{"id": "sub05", "source": "x ,,one,, y ,,two,, z"}
+{"id": "sub06", "source": ",,two words inside,,"}
+{"id": "sub07", "source": "one, two, three"}
+{"id": "sub08", "source": "word,, word,, word"}
+{"id": "sub09", "source": "a,, b"}
+{"id": "sub10", "source": "a,,b,, c"}
+{"id": "sub11", "source": ",,a ,, b,,"}
+{"id": "sub12", "source": ",,,a,,,"}
+{"id": "sub13", "source": ",,,,four,,,,"}
+{"id": "sub14", "source": "a,,b,,,"}
+{"id": "sub15", "source": ",,,a,,"}
+{"id": "sub16", "source": "Smith,, Jones,, and Doe"}
+{"id": "sub17", "source": "list: a, b,, c, d"}
+{"id": "sub18", "source": "a, ,,b,, c"}
+{"id": "sub19", "source": ",,,,"}
+{"id": "sub20", "source": "A,,,,B"}
+{"id": "sub21", "source": ",, padded ,,"}
+{"id": "sub22", "source": ",, padded,,"}
+{"id": "sub23", "source": ",,padded ,,"}
+{"id": "sub24", "source": ",,a,,"}
+{"id": "sub25", "source": ",, , ,"}
+{"id": "sub26", "source": ",,unpaired"}
+{"id": "sub27", "source": "unpaired,,"}
+{"id": "sub28", "source": ",,,triple,,,"}
+{"id": "sub29", "source": ",,a,,b,,"}
+{"id": "sub30", "source": ",,,,,five,,,,,"}
+{"id": "sub31", "source": ",,**bold sub**,,"}
+{"id": "sub32", "source": "**,,sub bold,,**"}
+{"id": "sub33", "source": ",,^^super sub^^,,"}
+{"id": "sub34", "source": ",,//italic sub//,,"}
+{"id": "sub35", "source": ",,##red|colored sub##,,"}
+{"id": "sub36", "source": ",,__underline sub__,,,"}
+{"id": "sub37", "source": ",,--strike sub--,,"}
+{"id": "sub38", "source": ",,{{mono sub}},,"}
+{"id": "sub39", "source": ",,OUTER ^^INNER,, TAIL^^"}
+{"id": "sub40", "source": ",,A **B,, X** Y"}
+{"id": "sub41", "source": "--OUTER ,,INNER-- TAIL,,"}
+{"id": "sub42", "source": "a,,x\n,,.b"}
+{"id": "sub43", "source": "x,,a\n,,y"}
+{"id": "sub44", "source": ",,line one\nline two,,"}
+{"id": "sub45", "source": ",,line one\n\nline two,,"}
+{"id": "sub46", "source": "= ,,heading,, ="}
+{"id": "sub47", "source": "* ,,list item,,"}
+{"id": "sub48", "source": "[[code]]\n,,raw sub,,\n[[/code]]"}
+{"id": "sub49", "source": "[[div]]\n,,block sub,,\n[[/div]]"}
+{"id": "sub50", "source": "> ,,quote sub,,"}
+{"id": "sub51", "source": "[[http://example.com|,,label,,]]"}
+{"id": "sub52", "source": "|| ,,cell,, ||"}
+{"id": "sub53", "source": "See ,,https://example.com/a,, end"}
+{"id": "sub54", "source": ",,em\u2014dash\u2026ellipsis,,"}
+{"id": "sub55", "source": ",,a,, \u2014 ,,b,,"}
+{"id": "typo01", "source": "-"}
+{"id": "typo02", "source": "a - b\nx"}
+{"id": "typo03", "source": "a-b\nx"}
+{"id": "typo04", "source": "--\nx"}
+{"id": "typo05", "source": "a--b\nx"}
+{"id": "typo06", "source": "---\nx"}
+{"id": "typo07", "source": "a---b\nx"}
+{"id": "typo08", "source": "----\nx"}
+{"id": "typo09", "source": "a----b\nx"}
+{"id": "typo10", "source": "-----\nx"}
+{"id": "typo11", "source": "a-----b\nx"}
+{"id": "typo12", "source": "------\nx"}
+{"id": "typo13", "source": "a------b\nx"}
+{"id": "typo14", "source": "-------\nx"}
+{"id": "typo15", "source": "a-------b\nx"}
+{"id": "typo16", "source": "--------\nx"}
+{"id": "typo17", "source": "a--------b\nx"}
+{"id": "typo18", "source": "----------\nx"}
+{"id": "typo19", "source": "a----------b\nx"}
+{"id": "typo20", "source": "word-- --word\nx"}
+{"id": "typo21", "source": "wait... what"}
+{"id": "typo22", "source": "wait. . . what"}
+{"id": "typo23", "source": "...leading"}
+{"id": "typo24", "source": "trailing..."}
+{"id": "typo25", "source": "....."}
+{"id": "typo26", "source": "......"}
+{"id": "typo27", "source": "... . . . . . ."}
+{"id": "typo28", "source": ". . .. ...."}
+{"id": "typo29", "source": "x... ...y. . . z"}
+{"id": "typo30", "source": "word ... word\nx"}
+{"id": "typo31", "source": "``double''\nx"}
+{"id": "typo32", "source": "`single'\nx"}
+{"id": "typo33", "source": ",,low''\nx"}
+{"id": "typo34", "source": "``outer ``inner'' outer''\nx"}
+{"id": "typo35", "source": "`one\nline'\nx"}
+{"id": "typo36", "source": "`one\n\nline'\nx"}
+{"id": "typo37", "source": "a``b''c\nx"}
+{"id": "typo38", "source": ",,lower'' and ``upper''\nx"}
+{"id": "typo39", "source": "unpaired`` and ''\nx"}
+{"id": "typo40", "source": "``multi\nline''\nx"}
+{"id": "typo41", "source": "a ' b ` c\nx"}
+{"id": "typo42", "source": "``a''b''c''\nx"}
+{"id": "typo43", "source": "<<French quotes>>\nx"}
+{"id": "typo44", "source": "<<open only\nx"}
+{"id": "typo45", "source": "close only>>\nx"}
+{"id": "typo46", "source": "a >> b\nx"}
+{"id": "typo47", "source": ">> quoted line\nx"}
+{"id": "typo48", "source": "<<<triple>>>\nx"}
+{"id": "typo49", "source": "1 234 567\nx"}
+{"id": "typo50", "source": "12 kg\nx"}
+{"id": "typo51", "source": "12 m\nx"}
+{"id": "typo52", "source": "12 Mpx\nx"}
+{"id": "typo53", "source": "12 foo\nx"}
+{"id": "typo54", "source": "12 kgx\nx"}
+{"id": "typo55", "source": "3.5 kg\nx"}
+{"id": "typo56", "source": "1 2 3 kg 4\nx"}
+{"id": "typo57", "source": "10 %\nx"}
+{"id": "typo58", "source": "100 \u00b0C\nx"}
+{"id": "typo59", "source": "5 km/h\nx"}
+{"id": "typo60", "source": "-12 34 and -7 kg\nx"}
+{"id": "typo61", "source": "http://example.com/a--b?x=1 2\nx"}
+{"id": "typo62", "source": "[https://example.com Label ... --]\nx"}
+{"id": "typo63", "source": "[[code]]\na--b...12 kg\n[[/code]]\nx"}
+{"id": "typo64", "source": "[[raw]]a--b...12 kg[[/raw]]\nx"}
+{"id": "typo65", "source": "$a--b...12 kg$\nx"}
+{"id": "typo66", "source": "[!-- a--b...12 kg --]\nx"}
+{"id": "typo67", "source": "{{a--b...12 kg}}\nx"}
+{"id": "typo68", "source": "[[div style=\"a--b...12 kg\"]]x[[/div]]\nx"}
+{"id": "typo69", "source": "[[a href=\"http://x/a--b\"]]label[[/a]]\nx"}
+{"id": "typo70", "source": "[[date 123 45]]\nx"}
+{"id": "typo71", "source": "**a--b**c--\nx"}
+{"id": "typo72", "source": "//a--b//c--\nx"}
+{"id": "typo73", "source": "__a--b__c--\nx"}
+{"id": "typo74", "source": "--a...b--\nx"}
+{"id": "typo75", "source": "##c00|a--b...12 kg##\nx"}
+{"id": "typo76", "source": "{{a--b}}c--\nx"}
+{"id": "typo77", "source": "^^a--b^^c--\nx"}
+{"id": "typo78", "source": ",,a--b,,c--\nx"}
+{"id": "typo79", "source": ",,OUTER ...INNER,, TAIL...\nx"}
+{"id": "typo80", "source": "a--b^^c...d,,e''\nx"}
+{"id": "typo81", "source": "a--b\nc--d\nx"}
+{"id": "typo82", "source": "a--b\n\nc--d\nx"}
+{"id": "typo83", "source": "= Heading -- ... =\nx"}
+{"id": "typo84", "source": "before\n----\nafter...\nx"}
+{"id": "typo85", "source": "* item -- ...\n* item2\nx"}
+{"id": "typo86", "source": "|| cell--cell || ... ||\nx"}
+{"id": "typo87", "source": "a--b\n> quote--tail\nx"}
+{"id": "typo88", "source": "[[footnote]]a--b...12 kg[[/footnote]]\nx"}
+{"id": "typo89", "source": "12 &euro;\nx"}
+{"id": "typo90", "source": "5 &micro;m\nx"}
+{"id": "typo91", "source": "9 \u03a9 and 3 Ohm\nx"}
+{"id": "typo92", "source": "20 &deg;C\nx"}
+{"id": "tighten01", "source": "one line only"}
+{"id": "tighten02", "source": "a\nb"}
+{"id": "tighten03", "source": "a\nb\nc"}
+{"id": "tighten04", "source": "a\n\nb"}
+{"id": "tighten05", "source": "a\n\n\nb"}
+{"id": "tighten06", "source": "a\n\n\n\nb"}
+{"id": "tighten07", "source": "a\n\n\n\n\n\nb"}
+{"id": "tighten08", "source": "\nleading newline"}
+{"id": "tighten09", "source": "\n\nleading blank line"}
+{"id": "tighten10", "source": "trailing newline\n"}
+{"id": "tighten11", "source": "trailing blank line\n\n"}
+{"id": "tighten12", "source": "\n"}
+{"id": "tighten13", "source": "\n\n\n"}
+{"id": "tighten14", "source": "a\n b"}
+{"id": "tighten15", "source": "a \nb"}
+{"id": "tighten16", "source": "a \n b"}
+{"id": "tighten17", "source": "a  \n\n b"}
+{"id": "tighten18", "source": "a  b"}
+{"id": "tighten19", "source": "a   b"}
+{"id": "tighten20", "source": "  leading spaces"}
+{"id": "tighten21", "source": "trailing spaces  "}
+{"id": "tighten22", "source": "a\t\tb"}
+{"id": "tighten23", "source": "a \t b"}
+{"id": "tighten24", "source": "a\n**bold**"}
+{"id": "tighten25", "source": "**bold**\na"}
+{"id": "tighten26", "source": "a\n//em//"}
+{"id": "tighten27", "source": "//em//\na"}
+{"id": "tighten28", "source": "a\n##red|x##"}
+{"id": "tighten29", "source": "##red|x##\na"}
+{"id": "tighten30", "source": "a\n__u__"}
+{"id": "tighten31", "source": "__u__\na"}
+{"id": "tighten32", "source": "a\n--s--"}
+{"id": "tighten33", "source": "--s--\na"}
+{"id": "tighten34", "source": "a\n{{tt}}"}
+{"id": "tighten35", "source": "{{tt}}\na"}
+{"id": "tighten36", "source": "a\n^^sup^^"}
+{"id": "tighten37", "source": "^^sup^^\na"}
+{"id": "tighten38", "source": "a\n,,sub,,"}
+{"id": "tighten39", "source": ",,sub,,\na"}
+{"id": "tighten40", "source": "##red| A##"}
+{"id": "tighten41", "source": "##red|A ##"}
+{"id": "tighten42", "source": "##red| A ##"}
+{"id": "tighten43", "source": "x ##red| A## y"}
+{"id": "tighten44", "source": "x ##red|A ## y"}
+{"id": "tighten45", "source": "[[#x| A ]]"}
+{"id": "tighten46", "source": "** A **"}
+{"id": "tighten47", "source": "// A //"}
+{"id": "tighten48", "source": "__ A __"}
+{"id": "tighten49", "source": "-- A --"}
+{"id": "tighten50", "source": "A ##red|B## C"}
+{"id": "tighten51", "source": "Empty ____"}
+{"id": "tighten52", "source": "x ____ y"}
+{"id": "tighten53", "source": "____ x"}
+{"id": "tighten54", "source": "x____"}
+{"id": "tighten55", "source": "a ____ b ____ c"}
+{"id": "tighten56", "source": "Empty ____\nnext"}
+{"id": "tighten57", "source": "para one\n\npara two"}
+{"id": "tighten58", "source": "* item one\n* item two"}
+{"id": "tighten59", "source": "+++ heading\nafter"}
+{"id": "tighten60", "source": "[[code]]a\nb[[/code]]"}
+{"id": "tighten61", "source": "{{{a\nb}}}"}
+{"id": "tighten62", "source": "> quoted one\n> quoted two"}
+{"id": "tighten63", "source": "|| head ||\n|| cell ||"}
+{"id": "tighten64", "source": "a -- b\nc"}
+{"id": "tighten65", "source": "...\nnext"}
+{"id": "tighten66", "source": "a\\\\b\nc"}
+{"id": "tighten67", "source": "##red|A\nB##"}
+{"id": "tighten68", "source": "**A\nB**"}
+{"id": "tighten69", "source": "a\n\n[[div]]x[[/div]]\n\nb"}
+{"id": "tighten70", "source": "a  \n\nb  \n\nc"}
+{"id": "x01", "source": "{{a##red|ab}}ba##"}
+{"id": "x02", "source": "{{a##red|ab##ba}}"}
+{"id": "x03", "source": "##red|a{{ab##ba}}"}
+{"id": "x04", "source": "##red|a{{ab}}ba##"}
+{"id": "x05", "source": "{{a**ab}}ba**"}
+{"id": "x06", "source": "{{a**ab**ba}}"}
+{"id": "x07", "source": "**a{{ab**ba}}"}
+{"id": "x08", "source": "**a{{ab}}ba**"}
+{"id": "x09", "source": "{{a//ab}}ba//"}
+{"id": "x10", "source": "{{a//ab//ba}}"}
+{"id": "x11", "source": "//a{{ab//ba}}"}
+{"id": "x12", "source": "//a{{ab}}ba//"}
+{"id": "x13", "source": "{{a__ab}}ba__"}
+{"id": "x14", "source": "{{a__ab__ba}}"}
+{"id": "x15", "source": "__a{{ab__ba}}"}
+{"id": "x16", "source": "__a{{ab}}ba__"}
+{"id": "x17", "source": "{{a--ab}}ba--"}
+{"id": "x18", "source": "{{a--ab--ba}}"}
+{"id": "x19", "source": "--a{{ab--ba}}"}
+{"id": "x20", "source": "--a{{ab}}ba--"}
+{"id": "x21", "source": "^^a##red|ab^^ba##"}
+{"id": "x22", "source": "^^a##red|ab##ba^^"}
+{"id": "x23", "source": "##red|a^^ab##ba^^"}
+{"id": "x24", "source": "##red|a^^ab^^ba##"}
+{"id": "x25", "source": "^^a**ab^^ba**"}
+{"id": "x26", "source": "^^a**ab**ba^^"}
+{"id": "x27", "source": "**a^^ab**ba^^"}
+{"id": "x28", "source": "**a^^ab^^ba**"}
+{"id": "x29", "source": "^^a//ab^^ba//"}
+{"id": "x30", "source": "^^a//ab//ba^^"}
+{"id": "x31", "source": "//a^^ab//ba^^"}
+{"id": "x32", "source": "//a^^ab^^ba//"}
+{"id": "x33", "source": "^^a__ab^^ba__"}
+{"id": "x34", "source": "^^a__ab__ba^^"}
+{"id": "x35", "source": "__a^^ab__ba^^"}
+{"id": "x36", "source": "__a^^ab^^ba__"}
+{"id": "x37", "source": "^^a--ab^^ba--"}
+{"id": "x38", "source": "^^a--ab--ba^^"}
+{"id": "x39", "source": "--a^^ab--ba^^"}
+{"id": "x40", "source": "--a^^ab^^ba--"}
+{"id": "x41", "source": ",,a##red|ab,,ba##"}
+{"id": "x42", "source": ",,a##red|ab##ba,,"}
+{"id": "x43", "source": "##red|a,,ab##ba,,"}
+{"id": "x44", "source": "##red|a,,ab,,ba##"}
+{"id": "x45", "source": ",,a**ab,,ba**"}
+{"id": "x46", "source": ",,a**ab**ba,,"}
+{"id": "x47", "source": "**a,,ab**ba,,"}
+{"id": "x48", "source": "**a,,ab,,ba**"}
+{"id": "x49", "source": ",,a//ab,,ba//"}
+{"id": "x50", "source": ",,a//ab//ba,,"}
+{"id": "x51", "source": "//a,,ab//ba,,"}
+{"id": "x52", "source": "//a,,ab,,ba//"}
+{"id": "x53", "source": ",,a__ab,,ba__"}
+{"id": "x54", "source": ",,a__ab__ba,,"}
+{"id": "x55", "source": "__a,,ab__ba,,"}
+{"id": "x56", "source": "__a,,ab,,ba__"}
+{"id": "x57", "source": ",,a--ab,,ba--"}
+{"id": "x58", "source": ",,a--ab--ba,,"}
+{"id": "x59", "source": "--a,,ab--ba,,"}
+{"id": "x60", "source": "--a,,ab,,ba--"}
+{"id": "x61", "source": "{{a^^ab}}ba^^"}
+{"id": "x62", "source": "{{a^^ab^^ba}}"}
+{"id": "x63", "source": "^^a{{ab^^ba}}"}
+{"id": "x64", "source": "^^a{{ab}}ba^^"}
+{"id": "x65", "source": "{{a,,ab}}ba,,"}
+{"id": "x66", "source": "{{a,,ab,,ba}}"}
+{"id": "x67", "source": ",,a{{ab,,ba}}"}
+{"id": "x68", "source": ",,a{{ab}}ba,,"}
+{"id": "x69", "source": "^^a,,ab^^ba,,"}
+{"id": "x70", "source": "^^a,,ab,,ba^^"}
+{"id": "x71", "source": ",,a^^ab,,ba^^"}
+{"id": "x72", "source": ",,a^^ab^^ba,,"}
+{"id": "x73", "source": "@@skip@@ {{**b** //i// __u__ --s-- ^^p^^ ,,s,, ##red|c##}}"}
+{"id": "x74", "source": "{{a --- b ... c ``d'' `e' <<f>> 12 34}}"}
+{"id": "x75", "source": "{{see //example.com/path and http://x//y}}"}
+{"id": "x76", "source": "{{a // b}} and {{c ,, d}}"}
+{"id": "x77", "source": "pre{{mid}}post and {{ spaced }} and a{{}}b"}
+{"id": "x78", "source": "a -- b --- c ... d"}
+{"id": "x79", "source": "**a -- b** //c --- d// __e ... f__"}
+{"id": "x80", "source": "^^a -- b^^ ,,c --- d,, {{e ... f}}"}
+{"id": "x81", "source": "**a ---b--- c** and ^^d ---e--- f^^"}
+{"id": "x82", "source": "**``a''** ^^`b'^^ ,,<<c>>,,"}
+{"id": "x83", "source": "{{10 kg and 2 3 and 5px}}"}
+{"id": "x84", "source": "[https://example.com a -- b ... c]"}
+{"id": "x85", "source": "^^a **b** c^^ and **^^a^^**"}
+{"id": "x86", "source": ",,a {{b}} c,, and {{,,a,,}}"}
+{"id": "x87", "source": "^^ a ^^ ,, b ,, ^^^^ ,,,, ^^x^^^^ ,,,,y,,,,"}
+{"id": "x88", "source": "^^a\nb^^ and ^^c\n\nd^^"}
+{"id": "x89", "source": "a, b, c,,sub,, d, e and ,,a, b,, c"}
+{"id": "x90", "source": "a\nb\n\n**c**\n,,d,,\n{{e}}\n^^f^^"}
+{"id": "x91", "source": "a ^^b^^ c ,,d,, e {{f}} g **h** i ##red|j## k"}
+{"id": "x92", "source": "##red|a\n\nb## and {{c\n\nd}}"}
+{"id": "x93", "source": "^^a\nb^^ ,,c\nd,, **e\nf**"}
+{"id": "x94", "source": "a____b and __ __ and __a__   b"}
+{"id": "x95", "source": "##red|  lead## ##red|trail  ## ##red| both ##"}
+{"id": "x96", "source": "##red|C**B//I__U--S{{T}}^^P^^,,R,,--S__U//I**B##C"}
+{"id": "x97", "source": ",,R,,^^P^^{{T}}--S__U//I**B##red|C##"}
+{"id": "x98", "source": "**b ^^p ,,s {{t}},, ^^ ** and //i {{a ^^b^^ c}} //"}
+{"id": "x99", "source": "##red|c## **b** //i// __u__ --s-- {{t}} ^^p^^ ,,r,,"}
+{"id": "x100", "source": "a ##red| b ** c // d __ e -- f {{ g ^^ h ,, i"}
+{"id": "x101", "source": "{{a[[div]]b}}c[[/div]] and ^^d[[div]]e^^f[[/div]]"}
+{"id": "x102", "source": "* ^^a\n* b^^ c\n* d and * {{e\n* f}} g"}
+{"id": "x103", "source": "|| h || h ||\n| ^^a^^ | {{b}} |\n| ,,c,, | d |"}
+{"id": "x104", "source": "^^a[[footnote]]b^^c[[/footnote]]"}
+{"id": "x105", "source": "[https://example.com ^^a^^ {{b}} ,,c,,]"}
+{"id": "x106", "source": "= ^^a^^ {{b}} ,,c,, ="}
+{"id": "x107", "source": "[[code]]^^a^^ {{b}} ,,c,,[[/code]]"}
+{"id": "x108", "source": "^^a[[include:foo]]b^^c"}
+{"id": "smoke-code", "source": "[[code]]\n$x = 1;\n[[/code]]\n"}
+{"id": "smoke-collapsible", "source": "[[collapsible]]\nhidden body\n[[/collapsible]]\n"}
+{"id": "smoke-div", "source": "[[div class=\"x\"]]\ninside div\n[[/div]]\n"}
+{"id": "smoke-footnote", "source": "Text with a note[[footnote]]the note text[[/footnote]] here.\n\n[[footnoteblock]]\n"}
+{"id": "smoke-include", "source": "Before\n[[include muse-probe-g14-target]]\nAfter\n"}
+{"id": "smoke-link", "source": "A [[[some-page|link text]]] and [[[missing-page]]] here.\n"}
+{"id": "smoke-math", "source": "Math $x^2$ inline and:\n[[math]]\nx^2 + y^2\n[[/math]]\n"}
+{"id": "smoke-quote", "source": "> quoted line\n> more quote\n"}
+{"id": "smoke-table", "source": "||~ cell1 ||~ cell2 ||\n|| a || b ||\n"}

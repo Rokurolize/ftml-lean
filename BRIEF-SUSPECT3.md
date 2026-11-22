@@ -1,0 +1,17 @@
+# BRIEF-SUSPECT3 — suspicion round 3: the uncorrected candidate, the render seams, and the open probe remainders
+
+This codebase is yours: what it's for and how it's built are your call, and you'll keep building on it.
+
+## Standing method (every lane in this programme)
+
+Live Wikidot behavior is definitionally correct. Evidence order: (1) ftml corpus and integration pins, (2) frozen parity captures, (3) fresh live sandbox probes; fetch once, cache, reuse; muse-probe-* sandbox pages are kept permanently. Never edit ftml. Never run cargo. Never set a repository-local git identity, identity environment variables, or -c user.* overrides. Any Lean build runs through the serial queue wrapper: ~/.local/state/wikijump/muse-bhl/tools/lean-build.sh <workdir> lake build ... The suspicion method, as proven in rounds 1 and 2: read the reference code for constructs no human would write on purpose, write your prediction BEFORE probing each one, probe exactly those areas against live, and state confirmed behaviors as Lean propositions. Write deliverables to disk as each part completes. Prose in files flows in single-line paragraphs, never hard-wrapped. Your tree is a full copy of the canonical programme tree at the post-REFCORR4, post-TABLEADV-FIX state; GAP-LEDGER.md, WORKLIST-FTML.md, and the conformance-suspect-*/ records are your context. The sandbox probe tooling is at ~/.agents/skills/wikidot-py-operations (scripts/wikidot-python scripts/wikidot-probe create/capture, site sandbox-for-codex, prefix muse-probe-suspect3-).
+
+## Mission, in order
+
+1. Adjudicate C-SUSPECT-XRULE-5, the one uncorrected candidate from the seam hunt: Mathinline's one-level placeholder resolution. Build the dedicated battery the XRULE lane said was missing (placeholder-bearing mathinline bodies at one and two levels of nesting, across the rules whose tokens can land inside), probe live, and either correct the reference at the mechanism with the battery green or record the adjudication with evidence.
+2. Work the three open probe remainders from WORKLIST-FTML.md section 3: F-R2-85's literal NBSP immediately after a complete URL; GRAMMAR-INCLUDE.md L6's colon-inside-page-part sub-shape; Module654's four uncaptured probe shapes. Each closes with live evidence or with a recorded reason it cannot be probed.
+3. Hunt the render-phase seams the earlier rounds did not suspicion-test: Tighten's space handling where token text meets literal text, Typography's token text carrying placeholders, the footnote and bibliography cross-reference resolution at render time (forward references, repeated citations, bibliography ordering), Toc's depth and numbering behavior on adversarial heading streams, and Heading's static-state behavior across documents in one batch. For each suspicion: prediction first, then probes, then verdicts in the established shapes (CONFIRMED as live's real behavior, DIVERGENCE with a candidate routed and numbered, UNREACHABLE or UNTESTABLE with the reason).
+
+## Deliverables
+
+REPORT-SUSPECT3.md at the tree root, ending COMPLETE or PARTIAL, with per-item verdicts and the candidate list in the established numbering (C-SUSPECT3-*). Probe artifacts under conformance-suspect3/ with every capture's validity recorded. Lean propositions for the confirmed behaviors in LeanFtml/SpecSuspect3.lean (unimported, elaborated in isolation through the wrapper, axioms within the standard set or disclosed).

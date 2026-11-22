@@ -1,0 +1,52 @@
+{
+ "n3para": {
+  "fullname": "muse-probe-suspect-notes-n3para",
+  "source": "x[[footnote]]p1\n\np2\n\np3[[/footnote]]",
+  "action": "exists"
+ },
+ "n2para-ctrl": {
+  "fullname": "muse-probe-suspect-notes-n2para-ctrl",
+  "source": "x[[footnote]]p1\n\np2[[/footnote]]",
+  "action": "exists"
+ },
+ "bib-res-blank": {
+  "fullname": "muse-probe-suspect-notes-bib-res-blank",
+  "source": "[[bibliography]]\n: a : A\nfoo\n\nbar\n[[/bibliography]]\n((bibcite a))",
+  "action": "exists"
+ },
+ "bib-close-tail": {
+  "fullname": "muse-probe-suspect-notes-bib-close-tail",
+  "source": "[[bibliography]]\n: a : A\n[[/bibliography]] tail\n((bibcite a))",
+  "action": "created"
+ },
+ "bib-multi-space": {
+  "fullname": "muse-probe-suspect-notes-bib-multi-space",
+  "source": "((bibcite a))\n\n[[bibliography]]\n: a : A   B\n[[/bibliography]]",
+  "action": "created"
+ },
+ "bibc-case-rev": {
+  "fullname": "muse-probe-suspect-notes-bibc-case-rev",
+  "source": "((bibcite alpha))\n\n[[bibliography]]\n: Alpha : Upper\n[[/bibliography]]",
+  "action": "created"
+ },
+ "fnb-title-brackets": {
+  "fullname": "muse-probe-suspect-notes-fnb-title-brackets",
+  "source": "x[[footnote]]n[[/footnote]]\n[[footnoteblock title=\"A]]B\"]]",
+  "action": "created"
+ },
+ "bib-close-nbsp": {
+  "fullname": "muse-probe-suspect-notes-bib-close-nbsp",
+  "source": "[[bibliography]]\n: a : A\n[[/bibliography]] \n((bibcite a))",
+  "action": "created"
+ },
+ "bib-ctrl": {
+  "fullname": "muse-probe-suspect-notes-bib-ctrl",
+  "source": "((bibcite a))\n\n[[bibliography]]\n: a : A\n[[/bibliography]]",
+  "action": "created"
+ },
+ "bib-indent2": {
+  "fullname": "muse-probe-suspect-notes-bib-indent2",
+  "source": "x\n [[bibliography]]\n: a : A\n[[/bibliography]]\n((bibcite a))",
+  "action": "created"
+ }
+}

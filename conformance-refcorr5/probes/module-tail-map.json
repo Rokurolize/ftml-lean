@@ -1,0 +1,7 @@
+{
+ "module-tail-css": {
+  "fullname": "muse-probe-refcorr5-module-tail-css",
+  "source": "[[module css]]\n.blue { color: blue; }\n[[/module]]",
+  "action": "created"
+ }
+}

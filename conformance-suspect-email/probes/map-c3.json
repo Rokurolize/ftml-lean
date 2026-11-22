@@ -1,0 +1,42 @@
+{
+ "addr-minimal": {
+  "fullname": "muse-probe-suspect-email-addr-minimal",
+  "source": "a@b.c",
+  "action": "created"
+ },
+ "addr-localhost": {
+  "fullname": "muse-probe-suspect-email-addr-localhost",
+  "source": "u@localhost",
+  "action": "created"
+ },
+ "addr-underscore-dom": {
+  "fullname": "muse-probe-suspect-email-addr-underscore-dom",
+  "source": "u@example_com.net",
+  "action": "created"
+ },
+ "addr-double-dot": {
+  "fullname": "muse-probe-suspect-email-addr-double-dot",
+  "source": "u@example..com",
+  "action": "created"
+ },
+ "addr-label-leading-dot": {
+  "fullname": "muse-probe-suspect-email-addr-label-leading-dot",
+  "source": ".u@example.com",
+  "action": "created"
+ },
+ "addr-label-trailing-dot": {
+  "fullname": "muse-probe-suspect-email-addr-label-trailing-dot",
+  "source": "u.@example.com",
+  "action": "created"
+ },
+ "addr-double-at": {
+  "fullname": "muse-probe-suspect-email-addr-double-at",
+  "source": "u@@example.com",
+  "action": "created"
+ },
+ "addr-trailing-dash": {
+  "fullname": "muse-probe-suspect-email-addr-trailing-dash",
+  "source": "u@example-.com",
+  "action": "created"
+ }
+}

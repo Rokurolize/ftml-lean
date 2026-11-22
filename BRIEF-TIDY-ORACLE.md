@@ -1,0 +1,15 @@
+# BRIEF-TIDY-ORACLE — run the Stage 2 corpus through the local libtidy oracle driven the way live drives it
+
+This codebase is yours: what it's for and how it's built are your call, and you'll keep building on it.
+
+## Standing method (every lane in this programme)
+
+Live Wikidot behavior is definitionally correct. Evidence order: (1) ftml corpus and integration pins, (2) frozen parity captures, (3) fresh live sandbox probes; fetch once, cache, reuse. Never edit ftml. Never run cargo. Never set a repository-local git identity, identity environment variables, or -c user.* overrides. Any Lean build runs through the serial queue wrapper: ~/.local/state/wikijump/muse-bhl/tools/lean-build.sh <workdir> lake build ... Write deliverables to disk as each part completes. Prose in files flows in single-line paragraphs, never hard-wrapped. Your tree is a full copy of the canonical programme tree; stage2/ (G2-SCOPE.md, REPORT-STAGE2.md, REPORT-STAGE2-REMAINDER.md, stage2-model/, stage2-evidence/) and GAP-LEDGER.md's libtidy closure entry are your context.
+
+## Mission
+
+Stage 2 (the WikiTransformation::purifyHtml tidy repair pass) was settled against retained live captures, and the libtidy version question is closed to an equivalence class: live runs a 5.4-or-5.8-class libtidy, and the local /usr/bin/tidy (5.8.0) is a legitimate oracle PROVIDED it is driven the way live's binding drives it: the XHTML 1.0 Strict wrapper, indent=false, output-xhtml=true, wrap=0, tidyParseBuffer plus two tidySaveBuffer passes, NO tidyCleanAndRepair, and entity preservation (live preserves &#32;, &#160;, &#8212;, and &quot; where stock 5.8.0 defaults decode them; reproducing that configuration difference is part of the work). Build that driver, run the full Stage 2 case corpus (the 266 settled cases and their batteries in stage2/) through it, and compare three ways on every case: the oracle's output, the Lean Stage 2 model's output (stage2-model/), and the retained live capture. Classify every disagreement as one of: oracle-configuration gap (your driver does not yet reproduce live's binding; fix the driver and re-run), model gap (the Stage 2 model is wrong against both live and the correctly driven oracle; propose the model correction with the case as evidence, applied in your tree's stage2-model/ copy only), version-class residue (a 5.4-vs-5.8 difference; name the mechanism), or harness frame (the recorded frame differences). The end state this lane owes: a reproducible oracle driver under conformance-tidy-oracle/ that any later lane can re-run, and a three-way accounting in which every case is either in three-way agreement or carries one of those four classifications with evidence.
+
+## Deliverables
+
+REPORT-TIDY-ORACLE.md at the tree root, ending COMPLETE or PARTIAL, with the driver configuration and how each element of live's binding is reproduced, the three-way tallies, and every classified disagreement named by case. The driver and its outputs under conformance-tidy-oracle/. Any stage2-model/ corrections applied in your tree, each tied to its case evidence.

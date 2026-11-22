@@ -1,0 +1,533 @@
+## contain/div / ref-render-after.jsonl
+- `basic`: retained `<div ><p>hello</p>
+
+</div>` ; regenerated `<div><p>hello</p>
+
+</div>`
+- `basic-uppercase`: retained `<div ><p>hello</p>
+
+</div>` ; regenerated `<div><p>hello</p>
+
+</div>`
+- `basic-indented`: retained `<p><div ></p>
+
+<p>hello</p>
+
+</div>` ; regenerated `<p><div></p>
+
+<p>hello</p>
+
+</div>`
+- `basic-trailing-blank`: retained `<div ><p>hello</p>
+
+</div>` ; regenerated `<div><p>hello</p>
+
+</div>`
+- `basic-two-paras`: retained `<div ><p>A</p>
+
+<p>B</p>
+
+</div>` ; regenerated `<div><p>A</p>
+
+<p>B</p>
+
+</div>`
+- `basic-heading`: retained `<div >
+<h1 id="toc0"><span>Head</span></h1>
+<p>text</p>
+
+</div>` ; regenerated `<div>
+<h1 id="toc0"><span>Head</span></h1>
+<p>text</p>
+
+</div>`
+- `attr-class`: retained `<div  class="card"><p>Body</p>
+
+</div>` ; regenerated `<div class="card"><p>Body</p>
+
+</div>`
+- `attr-id`: retained `<div  id="u-panel"><p>Body</p>
+
+</div>` ; regenerated `<div id="u-panel"><p>Body</p>
+
+</div>`
+- `attr-id-prefixed`: retained `<div  id="u-panel"><p>Body</p>
+
+</div>` ; regenerated `<div id="u-panel"><p>Body</p>
+
+</div>`
+- `attr-id-space`: retained `<div  id="u-"><p>x</p>
+
+</div>` ; regenerated `<div id="u-"><p>x</p>
+
+</div>`
+- `attr-style`: retained `<div  style="color: red"><p>Body</p>
+
+</div>` ; regenerated `<div style="color: red"><p>Body</p>
+
+</div>`
+- `attr-style-two`: retained `<div  style="color: red; background: blue"><p>Body</p>
+
+</div>` ; regenerated `<div style="color: red; background: blue"><p>Body</p>
+
+</div>`
+- `attr-role-type`: retained `<div  role="note" type="tip"><p>Body</p>
+
+</div>` ; regenerated `<div role="note" type="tip"><p>Body</p>
+
+</div>`
+- `attr-data`: retained `<div  data-bar="two" data-foo="one"><p>Body</p>
+
+</div>` ; regenerated `<div data-foo="one" data-bar="two"><p>Body</p>
+
+</div>`
+- `attr-data-empty-suffix`: retained `<div  data-="v"><p>T</p>
+
+</div>` ; regenerated `<div data-="v"><p>T</p>
+
+</div>`
+- `attr-unknown`: retained `<div ><p>Body</p>
+
+</div>` ; regenerated `<div><p>Body</p>
+
+</div>`
+- `attr-allowlist`: retained `<div  class="card" data-bar="two" data-foo="one" id="u-panel" role="note" style="color: red" type="t"><p>Body</p>
+
+</div>` ; regenerated `<div id="u-panel" class="card" style="color: red" role="note" type="t" data-foo="one" data-bar="two"><p>Body</p>
+
+</div>`
+- `attr-allowlist-mixed`: retained `<div  data-mixed="four"><p>Body</p>
+
+</div>` ; regenerated `<div data-mixed="four"><p>Body</p>
+
+</div>`
+- `attr-single-quote`: retained `<div ><p>hello</p>
+
+</div>` ; regenerated `<div><p>hello</p>
+
+</div>`
+- `attr-unquoted`: retained `<div ><p>hello</p>
+
+</div>` ; regenerated `<div><p>hello</p>
+
+</div>`
+- `attr-dupe-data`: retained `<div  data-mixed="three"><p>Body</p>
+
+</div>` ; regenerated `<div data-mixed="three"><p>Body</p>
+
+</div>`
+- `attr-class-space`: retained `<div  class="a b"><p>x</p>
+
+</div>` ; regenerated `<div class="a b"><p>x</p>
+
+</div>`
+- `attr-empty-value`: retained `<div ><p>x</p>
+
+</div>` ; regenerated `<div><p>x</p>
+
+</div>`
+- `attr-style-hidden-display`: retained `<div  style="display:none"><p>hello</p>
+
+</div>` ; regenerated `<div style="display:none"><p>hello</p>
+
+</div>`
+- `attr-style-hidden-vis`: retained `<div  style="visibility:hidden"><p>hello</p>
+
+</div>` ; regenerated `<div style="visibility:hidden"><p>hello</p>
+
+</div>`
+- `attr-style-hidden-mixed`: retained `<div  style="display: none; color: red"><p>hello</p>
+
+</div>` ; regenerated `<div style="display: none; color: red"><p>hello</p>
+
+</div>`
+- `attr-style-hidden-space`: retained `<div  style="display : none"><p>hello</p>
+
+</div>` ; regenerated `<div style="display : none"><p>hello</p>
+
+</div>`
+- `empty-plain`: retained `<p>B</p>
+
+` ; regenerated `<br />
+B`
+- `empty-attr`: retained `<div  class="k"></div><br />
+B` ; regenerated `<div class="k"></div><br />
+B`
+- `empty-whitespace`: retained `<p>B</p>
+
+` ; regenerated `<br />
+B`
+- `closer-first`: retained `<div ><p>A</p>
+
+</div><br />
+B<br />
+[[/div]]` ; regenerated `<div><p>A</p>
+
+</div><br />
+B<br />
+[[/div]]`
+- `closer-multi`: retained `<div ><p>A</p>
+
+</div><br />
+B<br />
+[[/div]]<br />
+C<br />
+[[/div]]` ; regenerated `<div><p>A</p>
+
+</div><br />
+B<br />
+[[/div]]<br />
+C<br />
+[[/div]]`
+- `closer-same-line`: retained `<div ><p>A</p>
+
+</div>B<br />
+[[/div]]` ; regenerated `<div><p>A</p>
+
+</div>B<br />
+[[/div]]`
+- `closer-upper`: retained `<div ><p>A</p>
+
+</div>` ; regenerated `<div><p>A</p>
+
+</div>`
+- `inline-bold`: retained `<div ><p><strong>bold</strong> and <em>ital</em></p>
+
+</div>` ; regenerated `<div><p><strong>bold</strong> and <em>ital</em></p>
+
+</div>`
+- `inline-span`: retained `<div ><p><span  style="">egg</span></p>
+
+</div>` ; regenerated `<div><p><span>egg</span></p>
+
+</div>`
+- `inline-link`: retained `<div ><p><a href="http://example.com">link</a></p>
+
+</div>` ; regenerated `<div><p><a href="http://example.com">link</a></p>
+
+</div>`
+- `inline-code`: retained `<div ><p><tt>code</tt></p>
+
+</div>` ; regenerated `<div><p><tt>code</tt></p>
+
+</div>`
+- `crossed-span`: retained `<p>[[div]]A1<span  style="">B2[[/div]]C3</span>D4</p>
+
+` ; regenerated `<p>[[div]]A1<span>B2[[/div]]C3</span>D4</p>
+
+`
+- `inline-content-scored`: retained `<div ><strong>bold</strong> <span  style="">egg</span></div>` ; regenerated `<div><strong>bold</strong> <span>egg</span></div>`
+- `nested`: retained `<div ><p>A</p>
+
+<div ><p>B</p>
+
+</div><br />
+C</div>` ; regenerated `<div><p>A</p>
+
+<div><p>B</p>
+
+</div><br />
+C</div>`
+- `nested-deep`: retained `<div ><p>1</p>
+
+<div ><p>2</p>
+
+<div ><p>3</p>
+
+</div><br />
+2b</div><br />
+1b</div>` ; regenerated `<div><p>1</p>
+
+<div><p>2</p>
+
+<div><p>3</p>
+
+</div><br />
+2b</div><br />
+1b</div>`
+- `nested-attr`: retained `<div  class="outer"><p>A</p>
+
+<div  class="inner"><p>B</p>
+
+</div></div>` ; regenerated `<div class="outer"><p>A</p>
+
+<div class="inner"><p>B</p>
+
+</div></div>`
+- `nested-scored`: retained `<div >1<br />
+<div >2</div><br />
+3</div>` ; regenerated `<div>1<br />
+<div>2</div><br />
+3</div>`
+- `nested-mixed`: retained `<div ><p>A<br />
+<div >B</div><br />
+C</p>
+
+</div>` ; regenerated `<div><p>A<br />
+<div>B</div><br />
+C</p>
+
+</div>`
+- `div-in-collapsible`: retained `<div class="collapsible-block"><div class="collapsible-block-folded"><a class="collapsible-block-link" href="javascript:;">+&nbsp;show&nbsp;block</a></div><div class="collapsible-block-unfolded" style="display:none"><div class="collapsible-block-unfolded-link"><a class="collapsible-block-link" href=` ; regenerated `<div class="collapsible-block"><div class="collapsible-block-folded"><a class="collapsible-block-link" href="javascript:;">+&nbsp;show&nbsp;block</a></div><div class="collapsible-block-unfolded" style="display:none"><div class="collapsible-block-unfolded-link"><a class="collapsible-block-link" href=`
+- `div-in-tabview`: retained `<script type="text/javascript" src="/common--javascript/yahooui/element-beta-min.js"></script>
+<script type="text/javascript" src="/common--javascript/yahooui/tabview-min.js"></script><div id="wiki-tabview-0" class="yui-navset"><ul class="yui-nav"><li class="selected"><a href="javascript:;"><em>T</e` ; regenerated `<script type="text/javascript" src="/common--javascript/yahooui/element-beta-min.js"></script>
+<script type="text/javascript" src="/common--javascript/yahooui/tabview-min.js"></script><div id="wiki-tabview-0" class="yui-navset"><ul class="yui-nav"><li class="selected"><a href="javascript:;"><em>T</e`
+- `scored-in-collapsible`: retained `<div class="collapsible-block"><div class="collapsible-block-folded"><a class="collapsible-block-link" href="javascript:;">+&nbsp;show&nbsp;block</a></div><div class="collapsible-block-unfolded" style="display:none"><div class="collapsible-block-unfolded-link"><a class="collapsible-block-link" href=` ; regenerated `<div class="collapsible-block"><div class="collapsible-block-folded"><a class="collapsible-block-link" href="javascript:;">+&nbsp;show&nbsp;block</a></div><div class="collapsible-block-unfolded" style="display:none"><div class="collapsible-block-unfolded-link"><a class="collapsible-block-link" href=`
+- `nested-in-tab`: retained `<script type="text/javascript" src="/common--javascript/yahooui/element-beta-min.js"></script>
+<script type="text/javascript" src="/common--javascript/yahooui/tabview-min.js"></script><div id="wiki-tabview-1" class="yui-navset"><ul class="yui-nav"><li class="selected"><a href="javascript:;"><em>T</e` ; regenerated `<script type="text/javascript" src="/common--javascript/yahooui/element-beta-min.js"></script>
+<script type="text/javascript" src="/common--javascript/yahooui/tabview-min.js"></script><div id="wiki-tabview-1" class="yui-navset"><ul class="yui-nav"><li class="selected"><a href="javascript:;"><em>T</e`
+- `malformed-close-bracket`: retained `<div ><p>A</p>
+
+</div>]` ; regenerated `<div><p>A</p>
+
+</div>]`
+- `malformed-empty-args`: retained `<div ><p>A</p>
+
+</div>` ; regenerated `<div><p>A</p>
+
+</div>`
+- `score-basic`: retained `<div >hello</div>` ; regenerated `<div>hello</div>`
+- `score-attr`: retained `<div  class="strip">hello</div>` ; regenerated `<div class="strip">hello</div>`
+- `score-attrs-full`: retained `<div  class="strip" data-x="y" role="note">Body</div>` ; regenerated `<div class="strip" role="note" data-x="y">Body</div>`
+- `score-attrs-id`: retained `<div  data-z="1" id="u-q" role="note">x</div>` ; regenerated `<div id="u-q" role="note" data-z="1">x</div>`
+- `score-empty`: retained `<p>B</p>
+
+` ; regenerated `<br />
+B`
+- `score-attr-empty`: retained `<div  class="k"></div><br />
+B` ; regenerated `<div class="k"></div><br />
+B`
+- `score-two-lines`: retained `<div >apple<br />
+banana</div>` ; regenerated `<div>apple<br />
+banana</div>`
+- `score-stray`: retained `<div >hello</div><br />
+[[/div]]` ; regenerated `<div>hello</div><br />
+[[/div]]`
+- `score-uppercase`: retained `<div >hello</div>` ; regenerated `<div>hello</div>`
+- `score-style-hidden`: retained `<div  style="display:none">hello</div>` ; regenerated `<div style="display:none">hello</div>`
+### tokens ref-tokens-after.jsonl: canon-real ['empty-plain', 'empty-whitespace', 'empty-at-eof', 'inline-span', 'crossed-span', 'inline-content-scored', 'score-empty']
+## contain / x-ref-render-final.jsonl
+- `x03-span-color-nested`: retained `<p><span>A<span style="color: red;">B</span>C</span></p>
+
+` ; regenerated `<p><span>A<span style="color: red">B</span>C</span></p>
+
+`
+- `x04-color-span-cross`: retained `<p><span style="color: red;"><span>A</span>B</span></p>
+
+` ; regenerated `<p><span style="color: red"><span>A</span>B</span></p>
+
+`
+- `x11-span-size-cross-block`: retained `<div ><p><span>A<span style="font-size:12px;">B</span>C</span></p>
+
+</div>` ; regenerated `<div><p><span>A<span style="font-size:12px;">B</span>C</span></p>
+
+</div>`
+- `x13-iftags-active-div`: retained `<div ><p>inside</p>
+
+</div><p>visible</p>
+
+` ; regenerated `<div><p>inside</p>
+
+</div><p>visible</p>
+
+`
+- `x21-div-in-coll-in-tab`: retained `<script type="text/javascript" src="/common--javascript/yahooui/element-beta-min.js"></script>
+<script type="text/javascript" src="/common--javascript/yahooui/tabview-min.js"></script><div id="wiki-tabview-0" class="yui-navset"><ul class="yui-nav"><li class="selected"><a href="javascript:;"><em>titl` ; regenerated `<script type="text/javascript" src="/common--javascript/yahooui/element-beta-min.js"></script>
+<script type="text/javascript" src="/common--javascript/yahooui/tabview-min.js"></script><div id="wiki-tabview-0" class="yui-navset"><ul class="yui-nav"><li class="selected"><a href="javascript:;"><em>titl`
+- `x23-div-in-tab`: retained `<script type="text/javascript" src="/common--javascript/yahooui/element-beta-min.js"></script>
+<script type="text/javascript" src="/common--javascript/yahooui/tabview-min.js"></script><div id="wiki-tabview-2" class="yui-navset"><ul class="yui-nav"><li class="selected"><a href="javascript:;"><em>titl` ; regenerated `<script type="text/javascript" src="/common--javascript/yahooui/element-beta-min.js"></script>
+<script type="text/javascript" src="/common--javascript/yahooui/tabview-min.js"></script><div id="wiki-tabview-2" class="yui-navset"><ul class="yui-nav"><li class="selected"><a href="javascript:;"><em>titl`
+- `x24-three-nested-divs`: retained `<p>[[/div]]</p>
+
+` ; regenerated `<br />
+[[/div]]`
+- `x25-tab-in-coll-in-div`: retained `<div ><div class="collapsible-block"><div class="collapsible-block-folded"><a class="collapsible-block-link" href="javascript:;">+&nbsp;show&nbsp;block</a></div><div class="collapsible-block-unfolded" style="display:none"><div class="collapsible-block-unfolded-link"><a class="collapsible-block-link"` ; regenerated `<div><div class="collapsible-block"><div class="collapsible-block-folded"><a class="collapsible-block-link" href="javascript:;">+&nbsp;show&nbsp;block</a></div><div class="collapsible-block-unfolded" style="display:none"><div class="collapsible-block-unfolded-link"><a class="collapsible-block-link" `
+- `x27-footnote-in-div`: retained `<div ><p>text<sup class="footnoteref"><a id="footnoteref-1" href="javascript:;" class="footnoteref" onclick="WIKIDOT.page.utils.scrollToReference('footnote-1')">1</a></sup></p>
+
+<div class="footnotes-footer"><div class="title">Footnotes</div><div class="footnote-footer" id="footnote-1"><a href="java` ; regenerated `<div><p>text<sup class="footnoteref"><a id="footnoteref-1" href="javascript:;" class="footnoteref" onclick="WIKIDOT.page.utils.scrollToReference('footnote-1')">1</a></sup></p>
+
+<div class="footnotes-footer"><div class="title">Footnotes</div><div class="footnote-footer" id="footnote-1"><a href="javas`
+- `x30-div-in-footnote`: retained `<p><sup class="footnoteref"><a id="footnoteref-1" href="javascript:;" class="footnoteref" onclick="WIKIDOT.page.utils.scrollToReference('footnote-1')">1</a></sup></p>
+
+<div class="footnotes-footer"><div class="title">Footnotes</div><div class="footnote-footer" id="footnote-1"><a href="javascript:;" ` ; regenerated `<p><sup class="footnoteref"><a id="footnoteref-1" href="javascript:;" class="footnoteref" onclick="WIKIDOT.page.utils.scrollToReference('footnote-1')">1</a></sup></p>
+
+<div class="footnotes-footer"><div class="title">Footnotes</div><div class="footnote-footer" id="footnote-1"><a href="javascript:;" `
+- `x32-div-underscore-basic`: retained `<div >body</div>` ; regenerated `<div>body</div>`
+- `x33-div-underscore-attrs`: retained `<div  class="x">body</div>` ; regenerated `<div class="x">body</div>`
+- `x36-div-normal-control`: retained `<div ><p>body</p>
+
+</div>` ; regenerated `<div><p>body</p>
+
+</div>`
+### tokens x-ref-tokens-final.jsonl: canon-real ['x24-three-nested-divs']
+## contain / x-ref-tagged-render-final.jsonl
+- `x12-iftags-suppressed-div-tagged`: retained `<div ><p>inside</p>
+
+</div><p>visible</p>
+
+` ; regenerated `<div><p>inside</p>
+
+</div><p>visible</p>
+
+`
+- `x13-iftags-active-div-tagged`: retained `<div ><p>inside</p>
+
+</div><p>visible</p>
+
+` ; regenerated `<div><p>inside</p>
+
+</div><p>visible</p>
+
+`
+## formraw / ref-render-final.jsonl
+- `raw-empty`: retained `<p>a  b</p>
+
+` ; regenerated `<p>a b</p>
+
+`
+- `raw-list`: retained `<p>@@* item</p>
+
+<ul>
+    <li>item@@</li>
+</ul>
+
+` ; regenerated `<p>@@* item</p>
+
+<ul>
+<li>item@@</li>
+</ul>`
+- `raw-in-div`: retained `<div  class="x"><p><span style="white-space: pre-wrap;">raw</span></p>
+
+</div>` ; regenerated `<div class="x"><p><span style="white-space: pre-wrap;">raw</span></p>
+
+</div>`
+- `form-unterminated`: retained `<p>[[form]]<br />
+fields:<br />
+  name:<br />
+    type: text<br />
+&#8212;-<br />
+name: x</p>
+
+` ; regenerated `<p>[[form]]<br />
+fields:<br />
+name:<br />
+type: text<br />
+&#8212;-<br />
+name: x</p>
+
+`
+- `form-in-div`: retained `<div  class="x"><p><span style="white-space: pre-wrap;">[[form]]</span><br />
+<span style="white-space: pre-wrap;">x</span><br />
+<span style="white-space: pre-wrap;">---</span><br />
+<span style="white-space: pre-wrap;">y</span><br />
+<span style="white-space: pre-wrap;">[[/form]]</span></p>
+
+</div` ; regenerated `<div class="x"><p><span style="white-space: pre-wrap;">[[form]]</span><br />
+<span style="white-space: pre-wrap;">x</span><br />
+<span style="white-space: pre-wrap;">---</span><br />
+<span style="white-space: pre-wrap;">y</span><br />
+<span style="white-space: pre-wrap;">[[/form]]</span></p>
+
+</div>`
+### tokens ref-tokens-final.jsonl: canon-real ['raw-list']
+## inline1/interwiki / ref-render-after.jsonl
+- `iw43-37-label-with-brackets`: retained `<p><a href="https://en.wikipedia.org/wiki/Albert_Einstein" onclick="window.open(this.href, '_blank'); return false;">[x</a> label]</p>
+
+` ; regenerated `<p>[wikipedia:Albert_Einstein [x] label]</p>
+
+`
+- `iw43-61-include-site-pair`: retained `<div  class="error-block"><p>Page to be included albert-einstein can not be found!</p>
+
+</div>` ; regenerated `<div class="error-block"><p>Included page &quot;albert-einstein&quot; does not exist (<a href="https://wikipedia.wikidot.com/albert-einstein/edit/true">create it now</a>)</p>
+
+</div>`
+- `iw43-70-interwiki-in-heading`: retained `<p style="text-align: center;">Heading <a href="https://en.wikipedia.org/wiki/Albert_Einstein" onclick="window.open(this.href, '_blank'); return false;">Albert</a></p>` ; regenerated `<p style="text-align: center;">Heading <a href="https://en.wikipedia.org/wiki/Albert_Einstein" onclick="window.open(this.href, '_blank'); return false;">Albert</a></p>
+`
+### tokens ref-tokens-after.jsonl: canon-real ['iw43-37-label-with-brackets', 'iw43-61-include-site-pair']
+## inline1/url / ref-render-after.jsonl
+- `u31-nbsp-in-url`: retained `<p><a href="https://example.com/a.png width=">https://example.com/a.png width=</a> next</p>
+
+` ; regenerated `<p><a href="https://example.com/a.png%C2%A0width=">https://example.com/a.png width=</a> next</p>
+
+`
+### tokens ref-tokens-after.jsonl: canon-real []
+## link/freelink / ref-render-after.jsonl
+### tokens ref-tokens-after.jsonl: canon-real []
+## para / x-ref-render-final.jsonl
+- `x11-image-in-div`: retained `<div  class="box"><img src="http://example.com/a.png" alt="a.png" class="image" /></div>` ; regenerated `<div class="box"><img src="http://example.com/a.png" alt="a.png" class="image" /></div>`
+- `x14-image-caption-with-link`: retained `<img src="http://example.com/a.png" alt="a.png" class="image" />click [[<a href="http://example.com|here]][[/image">http://example.com|here]][[/image</a>]]` ; regenerated `<img src="http://example.com/a.png" alt="a.png" class="image" />click [[<a href="http://example.com|here]]">http://example.com|here]]</a>[[/image]]`
+- `x23-text-heading-text`: retained `<p>lead</p>
+
+<p style="text-align: center;">Heading =</p><p>tail</p>
+
+` ; regenerated `<p>lead</p>
+
+<p style="text-align: center;">Heading =</p>
+<p>tail</p>
+
+`
+- `x28-heading-text-list`: retained `<p style="text-align: center;">Heading =</p><p>mid</p>
+
+<ul>
+<li>item</li>
+</ul>` ; regenerated `<p style="text-align: center;">Heading =</p>
+<p>mid</p>
+
+<ul>
+<li>item</li>
+</ul>`
+- `x30-block-tabs-text`: retained `<p>[[div]]a[[/div]]<br />
+word1    word2<br />
+tail</p>
+
+` ; regenerated `<p>[[div]]a[[/div]]<br />
+word1 word2<br />
+tail</p>
+
+`
+- `x31-newline-in-div`: retained `<div ><p>line1<br />
+line2</p>
+
+</div>` ; regenerated `<div><p>line1<br />
+line2</p>
+
+</div>`
+- `x36-doubled-newline-in-div`: retained `<div ><p>line1</p>
+
+<p>line2</p>
+
+</div>` ; regenerated `<div><p>line1</p>
+
+<p>line2</p>
+
+</div>`
+- `x41-score-span-in-div`: retained `<div ><p><span class="score">100</span></p>
+
+</div>` ; regenerated `<div><p><span class="score">100</span></p>
+
+</div>`
+- `x42-tab-in-paragraph`: retained `<p>word1    word2</p>
+
+` ; regenerated `<p>word1 word2</p>
+
+`
+- `x43-tab-in-list`: retained `<ul>
+<li>word1    word2</li>
+</ul>` ; regenerated `<ul>
+<li>word1 word2</li>
+</ul>`
+- `x44-tab-in-cell`: retained `<table class="wiki-content-table">
+<tr>
+<td>word1    word2</td>
+<td>b</td>
+</tr>
+</table>` ; regenerated `<table class="wiki-content-table">
+<tr>
+<td>word1 word2</td>
+<td>b</td>
+</tr>
+</table>`
+### tokens x-ref-tokens-final.jsonl: canon-real ['x14-image-caption-with-link']
+## para/image / ref-render-final.jsonl
+### tokens ref-tokens-final.jsonl: canon-real []
+## refval/button / ref-render-corrected.jsonl

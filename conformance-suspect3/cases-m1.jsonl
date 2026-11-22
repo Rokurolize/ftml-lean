@@ -1,0 +1,16 @@
+{"id": "m1-plain", "source": "A [[$ a + b $]] B"}
+{"id": "m1-url", "source": "A [[$ http://example.com/a $]] B"}
+{"id": "m1-email-bare", "source": "A [[$ a@example.com $]] B"}
+{"id": "m1-email-descr", "source": "A [[$ [a@example.com Label] $]] B"}
+{"id": "m1-freelink", "source": "A [[$ [[[Some Page]]] $]] B"}
+{"id": "m1-raw", "source": "A [[$ @@x@@ $]] B"}
+{"id": "m1-code", "source": "A [[$ [[code]]x[[/code]] $]] B"}
+{"id": "m1-newline", "source": "A [[$ x\ny $]] B"}
+{"id": "m1-nested-email-url", "source": "A [[$ [a@example.com http://example.com/a] $]] B"}
+{"id": "m1-nested-email-free", "source": "A [[$ [a@example.com [[[Some Page]]]] $]] B"}
+{"id": "m1-nested-email-raw", "source": "A [[$ [a@example.com @@x@@] $]] B"}
+{"id": "m1-nested-email-newline", "source": "A [[$ [a@example.com x\ny] $]] B"}
+{"id": "m1-freelink-url", "source": "A [[$ [[[http://example.com/a]]] $]] B"}
+{"id": "m1-image", "source": "A [[$ [[image http://example.com/a.png]] $]] B"}
+{"id": "m1-email-descr-url-first", "source": "A [[$ [http://example.com/a a@example.com] $]] B"}
+{"id": "m1-two-urls", "source": "A [[$ http://example.com/a http://example.com/b $]] B"}

@@ -1,0 +1,9 @@
+grammar counts: {'alphabet': 20, 'free_bound': 3, 'frame_bound': 2, 'free': 8421, 'fillers': 421, 'frame': 177241, 'union': 185662}
+strings compared: 185662
+mirror vs enumeration parse-state diffs: 0
+mirror vs enumeration token-table diffs: 0
+mirror vs PHP 8.5.4 output-byte diffs: 0
+lean driver seconds: 8.709
+php driver seconds: 6.232
+lean driver exit: 0; php driver exit: 0
+lean stderr bytes: 0; php stderr bytes: 0

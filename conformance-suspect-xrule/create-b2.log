@@ -1,0 +1,82 @@
+x6-concat-heading -> muse-probe-suspect-xrule-x6-concat-heading (created)
+x7-concat-list -> muse-probe-suspect-xrule-x7-concat-list (created)
+2026-11-22 10:55:57,343 [wikidot/ERROR] AMC is respond status: "try_again" -> {'wikidot_token7': '***MASKED***', 'action': 'WikiPageAction', 'event': 'savePage', 'moduleName': 'Empty', 'mode': 'page', 'lock_id': '85376896', 'lock_secret': '***MASKED***', 'revision_id': '', 'wiki_page': 'muse-probe-suspect-xrule-x8-raw-code-cross', 'page_id': '', 'title': '***MASKED***', 'source': '***MASKED***', 'comments': '***MASKED***'}
+x8-raw-code-cross -> muse-probe-suspect-xrule-x8-raw-code-cross (created)
+x9-iw-raw-label -> muse-probe-suspect-xrule-x9-iw-raw-label (created)
+x10-url-raw-label -> muse-probe-suspect-xrule-x10-url-raw-label (created)
+x11-rawold-comment -> muse-probe-suspect-xrule-x11-rawold-comment (created)
+x12-code-umlaut -> muse-probe-suspect-xrule-x12-code-umlaut (created)
+x15-comment-concat-heading -> muse-probe-suspect-xrule-x15-comment-concat-heading (created)
+x16-pre-code-3blanks -> muse-probe-suspect-xrule-x16-pre-code-3blanks (created)
+x17-concat-raw -> muse-probe-suspect-xrule-x17-concat-raw (created)
+x18-form-code -> muse-probe-suspect-xrule-x18-form-code (created)
+x19-module-code -> muse-probe-suspect-xrule-x19-module-code (created)
+x20-ustrip -> muse-probe-suspect-xrule-x20-ustrip (created)
+13 probe pages left in place on sandbox-for-codex; the tool never deletes pages.
+{
+ "x6-concat-heading": {
+  "fullname": "muse-probe-suspect-xrule-x6-concat-heading",
+  "source": "A\\\n+ Heading",
+  "action": "created"
+ },
+ "x7-concat-list": {
+  "fullname": "muse-probe-suspect-xrule-x7-concat-list",
+  "source": "A\\\n* item",
+  "action": "created"
+ },
+ "x8-raw-code-cross": {
+  "fullname": "muse-probe-suspect-xrule-x8-raw-code-cross",
+  "source": "@@\n[[code]]a\nb[[/code]]\n@@",
+  "action": "created"
+ },
+ "x9-iw-raw-label": {
+  "fullname": "muse-probe-suspect-xrule-x9-iw-raw-label",
+  "source": "A [site:page @@x@@] B",
+  "action": "created"
+ },
+ "x10-url-raw-label": {
+  "fullname": "muse-probe-suspect-xrule-x10-url-raw-label",
+  "source": "A [b http://example.com/x @@x@@] B",
+  "action": "created"
+ },
+ "x11-rawold-comment": {
+  "fullname": "muse-probe-suspect-xrule-x11-rawold-comment",
+  "source": "A ``[!-- hidden --]`` B",
+  "action": "created"
+ },
+ "x12-code-umlaut": {
+  "fullname": "muse-probe-suspect-xrule-x12-code-umlaut",
+  "source": "[[code]]aüüb[[/code]]",
+  "action": "created"
+ },
+ "x15-comment-concat-heading": {
+  "fullname": "muse-probe-suspect-xrule-x15-comment-concat-heading",
+  "source": "[!-- h --]\\\n+ Heading",
+  "action": "created"
+ },
+ "x16-pre-code-3blanks": {
+  "fullname": "muse-probe-suspect-xrule-x16-pre-code-3blanks",
+  "source": "[[code]]a\n\n\n\nb[[/code]]",
+  "action": "created"
+ },
+ "x17-concat-raw": {
+  "fullname": "muse-probe-suspect-xrule-x17-concat-raw",
+  "source": "@@x\\\ny@@",
+  "action": "created"
+ },
+ "x18-form-code": {
+  "fullname": "muse-probe-suspect-xrule-x18-form-code",
+  "source": "[[form]]\n[[code]]\nx\n[[/code]]\n[[/form]]",
+  "action": "created"
+ },
+ "x19-module-code": {
+  "fullname": "muse-probe-suspect-xrule-x19-module-code",
+  "source": "[[module Foo]]\n[[code]]\nx\n[[/code]]\n[[/module]]",
+  "action": "created"
+ },
+ "x20-ustrip": {
+  "fullname": "muse-probe-suspect-xrule-x20-ustrip",
+  "source": "üü**x**üü",
+  "action": "created"
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "ctrl-hello": {
+  "fullname": "muse-probe-g14q-ctrl-hello",
+  "html": "<p>BEFORE<br />\n&gt;hello world<br />\nAFTER</p>",
+  "html_sha256": "ea949548cfbbd86b7e791768464d559af19db098558f13e46b2f468b4a73d6f5",
+  "source": "BEFORE\n >hello world\nAFTER",
+  "source_sha256": "7f7f54a88d693c5b4f6456b4e7e69cbe612a1c83532ba1c19e8824fbc0785c8e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "ctrl-bold": {
+  "fullname": "muse-probe-g14q-ctrl-bold",
+  "html": "<p>BEFORE<br />\n&gt;<strong>bold</strong><br />\nAFTER</p>",
+  "html_sha256": "b5eec48c0e8f25c65529ae566b721089db52ef6b70401a2f7c8cd6540af5b337",
+  "source": "BEFORE\n >**bold**\nAFTER",
+  "source_sha256": "8b59d89cb30e9271916dc5fe97e997abc41f2893da0062cf369a2d9bfb511a7e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "ctrl-link": {
+  "fullname": "muse-probe-g14q-ctrl-link",
+  "html": "<p>BEFORE<br />\n&gt;some [[link]] text<br />\nAFTER</p>",
+  "html_sha256": "0a40ef85f5c1f969b563bfea34ae9ee891ab228ca5f1a909adb3b25171e00a2f",
+  "source": "BEFORE\n >some [[link]] text\nAFTER",
+  "source_sha256": "90b2138e84e27b1a5fd60671be0857aeb984692da41abf13f0c99aad0dc5ab80",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

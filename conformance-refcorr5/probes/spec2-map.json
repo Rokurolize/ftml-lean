@@ -1,0 +1,432 @@
+{
+ "lc-ctrl-ul-upper-all": {
+  "fullname": "muse-probe-refcorr5-lc-ctrl-ul-upper-all",
+  "source": "[[UL]]\n[[LI]]Case[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "lc-ctrl-ul-upper-open-lower-close": {
+  "fullname": "muse-probe-refcorr5-lc-ctrl-ul-upper-open-lower-close",
+  "source": "[[UL]]\n[[LI]]Case[[/li]]\n[[/ul]]",
+  "action": "created"
+ },
+ "lc-ctrl-ul-lower-open-upper-close": {
+  "fullname": "muse-probe-refcorr5-lc-ctrl-ul-lower-open-upper-close",
+  "source": "[[ul]]\n[[li]]Case[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "lc-ctrl-ol-lower-open-upper-close": {
+  "fullname": "muse-probe-refcorr5-lc-ctrl-ol-lower-open-upper-close",
+  "source": "[[ol]]\n[[li]]Case[[/LI]]\n[[/OL]]",
+  "action": "created"
+ },
+ "lc-ctrl-ul-mixed-inner": {
+  "fullname": "muse-probe-refcorr5-lc-ctrl-ul-mixed-inner",
+  "source": "[[ul]]\n[[LI]]A[[/LI]]\n[[/ul]]",
+  "action": "created"
+ },
+ "lc-ctrl-lower-ul-degraded-noli": {
+  "fullname": "muse-probe-refcorr5-lc-ctrl-lower-ul-degraded-noli",
+  "source": "[[ul]]\nbody\n[[/ul]]",
+  "action": "created"
+ },
+ "lc-sib-mixed-ul": {
+  "fullname": "muse-probe-refcorr5-lc-sib-mixed-ul",
+  "source": "[[Ul]]\n[[Li]]Mixed[[/Li]]\n[[/Ul]]",
+  "action": "created"
+ },
+ "lc-sib-mixed-ol": {
+  "fullname": "muse-probe-refcorr5-lc-sib-mixed-ol",
+  "source": "[[Ol]]\n[[lI]]Mixed[[/lI]]\n[[/oL]]",
+  "action": "created"
+ },
+ "lc-sib-lower-li-mixed-close": {
+  "fullname": "muse-probe-refcorr5-lc-sib-lower-li-mixed-close",
+  "source": "[[ul]]\n[[li]]Case[[/Li]]\n[[/Ul]]",
+  "action": "created"
+ },
+ "lc-sib-scored-ul-upper": {
+  "fullname": "muse-probe-refcorr5-lc-sib-scored-ul-upper",
+  "source": "[[UL_]]\n[[LI]]A[[/LI]]\n[[/UL]]\n\nAFTER",
+  "action": "created"
+ },
+ "lc-sib-scored-ol-upper": {
+  "fullname": "muse-probe-refcorr5-lc-sib-scored-ol-upper",
+  "source": "[[OL_]]\n[[LI]]A[[/LI]]\n[[/OL]]\n\nAFTER",
+  "action": "created"
+ },
+ "lc-sib-scored-lower-open-upper-close": {
+  "fullname": "muse-probe-refcorr5-lc-sib-scored-lower-open-upper-close",
+  "source": "[[ul_]]\n[[li]]A[[/LI]]\n[[/UL]]\n\nAFTER",
+  "action": "created"
+ },
+ "lc-sib-ul-upper-with-class": {
+  "fullname": "muse-probe-refcorr5-lc-sib-ul-upper-with-class",
+  "source": "[[UL class=\"mycls\"]]\n[[LI style=\"color:red\"]]Item[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "lc-sib-nested-lower-ul-upper-ol": {
+  "fullname": "muse-probe-refcorr5-lc-sib-nested-lower-ul-upper-ol",
+  "source": "[[ul]]\n[[li]]a\n[[OL]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]",
+  "action": "created"
+ },
+ "lc-sib-extra-bracket-upper-close": {
+  "fullname": "muse-probe-refcorr5-lc-sib-extra-bracket-upper-close",
+  "source": "[[ul]]\n[[li]]a[[/LI]]]\n[[/UL]]]",
+  "action": "created"
+ },
+ "lc-sib-lower-ul-upper-attr-data": {
+  "fullname": "muse-probe-refcorr5-lc-sib-lower-ul-upper-attr-data",
+  "source": "[[ul DATA-foo=\"bar\" CLASS=\"c\"]]\n[[li DATA-item=\"1\"]]x[[/li]]\n[[/ul]]",
+  "action": "created"
+ },
+ "lc-sib-lower-ul-data-mixed-val": {
+  "fullname": "muse-probe-refcorr5-lc-sib-lower-ul-data-mixed-val",
+  "source": "[[ul Data-Mix=\"1\"]]\n[[li ID=\"x\"]]a[[/li]]\n[[/ul]]",
+  "action": "created"
+ },
+ "lc-sib-upper-ul-degraded-noli": {
+  "fullname": "muse-probe-refcorr5-lc-sib-upper-ul-degraded-noli",
+  "source": "[[UL]]\nbody\n[[/UL]]",
+  "action": "created"
+ },
+ "lc-sib-cross-ul-ol-upper": {
+  "fullname": "muse-probe-refcorr5-lc-sib-cross-ul-ol-upper",
+  "source": "[[ul]]\n[[li]]a[[/li]]\n[[/OL]]",
+  "action": "created"
+ },
+ "lc-sib-standalone-upper-li": {
+  "fullname": "muse-probe-refcorr5-lc-sib-standalone-upper-li",
+  "source": "[[LI]]a[[/LI]]",
+  "action": "created"
+ },
+ "ct-ctrl-invalid-html": {
+  "fullname": "muse-probe-refcorr5-ct-ctrl-invalid-html",
+  "source": "##<i>|hello##",
+  "action": "created"
+ },
+ "ct-ctrl-invalid-tighten": {
+  "fullname": "muse-probe-refcorr5-ct-ctrl-invalid-tighten",
+  "source": "x##a!b| hello ##y",
+  "action": "created"
+ },
+ "ct-ctrl-invalid-raw-spec": {
+  "fullname": "muse-probe-refcorr5-ct-ctrl-invalid-raw-spec",
+  "source": "##@@red@@|hello##",
+  "action": "created"
+ },
+ "ct-sib-empty-spec": {
+  "fullname": "muse-probe-refcorr5-ct-sib-empty-spec",
+  "source": "##|hello##",
+  "action": "created"
+ },
+ "ct-sib-ws-spec": {
+  "fullname": "muse-probe-refcorr5-ct-sib-ws-spec",
+  "source": "##   |hello##",
+  "action": "created"
+ },
+ "ct-sib-ws-spec-tighten": {
+  "fullname": "muse-probe-refcorr5-ct-sib-ws-spec-tighten",
+  "source": "x##  | hello ##y",
+  "action": "created"
+ },
+ "ct-sib-hex3-hash": {
+  "fullname": "muse-probe-refcorr5-ct-sib-hex3-hash",
+  "source": "## #aBc |hi##",
+  "action": "created"
+ },
+ "ct-sib-hex3-nohash": {
+  "fullname": "muse-probe-refcorr5-ct-sib-hex3-nohash",
+  "source": "##abc|hi##",
+  "action": "created"
+ },
+ "ct-sib-rgb": {
+  "fullname": "muse-probe-refcorr5-ct-sib-rgb",
+  "source": "##rgb(1, 2, 3)|hi##",
+  "action": "created"
+ },
+ "ct-sib-rgba-dot": {
+  "fullname": "muse-probe-refcorr5-ct-sib-rgba-dot",
+  "source": "##rgba(1, 2, 3, 0.5)|hi##",
+  "action": "created"
+ },
+ "ct-sib-rgba-dot-bold": {
+  "fullname": "muse-probe-refcorr5-ct-sib-rgba-dot-bold",
+  "source": "##a!b|**bold**##",
+  "action": "created"
+ },
+ "ct-sib-bad-then-valid-sameline": {
+  "fullname": "muse-probe-refcorr5-ct-sib-bad-then-valid-sameline",
+  "source": "##bad!|a##red|b##",
+  "action": "created"
+ },
+ "ct-sib-html-then-valid-sameline": {
+  "fullname": "muse-probe-refcorr5-ct-sib-html-then-valid-sameline",
+  "source": "##<i>|a##blue|b##",
+  "action": "created"
+ },
+ "ct-sib-url-bracket-in-spec": {
+  "fullname": "muse-probe-refcorr5-ct-sib-url-bracket-in-spec",
+  "source": "##[http://example.com a]|x##",
+  "action": "created"
+ },
+ "ct-sib-span-token-in-spec": {
+  "fullname": "muse-probe-refcorr5-ct-sib-span-token-in-spec",
+  "source": "##[[span]]r[[/span]]|x##",
+  "action": "created"
+ },
+ "ct-sib-comment-token-in-spec": {
+  "fullname": "muse-probe-refcorr5-ct-sib-comment-token-in-spec",
+  "source": "##[!--c--]red|x##",
+  "action": "created"
+ },
+ "ct-sib-quote-apos-in-spec": {
+  "fullname": "muse-probe-refcorr5-ct-sib-quote-apos-in-spec",
+  "source": "##a\"b'c|hello##",
+  "action": "created"
+ },
+ "ct-sib-amp-in-spec": {
+  "fullname": "muse-probe-refcorr5-ct-sib-amp-in-spec",
+  "source": "##a&b|hello##",
+  "action": "created"
+ },
+ "ct-sib-nonascii-in-spec": {
+  "fullname": "muse-probe-refcorr5-ct-sib-nonascii-in-spec",
+  "source": "##é|hello##",
+  "action": "created"
+ },
+ "ct-sib-nonascii-tighten": {
+  "fullname": "muse-probe-refcorr5-ct-sib-nonascii-tighten",
+  "source": "x##é| hello ##y",
+  "action": "created"
+ },
+ "ct-sib-rgba-tighten": {
+  "fullname": "muse-probe-refcorr5-ct-sib-rgba-tighten",
+  "source": "x##rgba(1,2,3,0.5)| hello ##y",
+  "action": "created"
+ },
+ "ct-sib-empty-body-invalid-spec": {
+  "fullname": "muse-probe-refcorr5-ct-sib-empty-body-invalid-spec",
+  "source": "##a!b|##",
+  "action": "created"
+ },
+ "ct-sib-ws-body-valid-spec": {
+  "fullname": "muse-probe-refcorr5-ct-sib-ws-body-valid-spec",
+  "source": "##red| ##",
+  "action": "created"
+ },
+ "ct-sib-nested-valid": {
+  "fullname": "muse-probe-refcorr5-ct-sib-nested-valid",
+  "source": "##red|a##blue|b####",
+  "action": "created"
+ },
+ "dt-ctrl-ts-override": {
+  "fullname": "muse-probe-refcorr5-dt-ctrl-ts-override",
+  "source": "[[date 86400 timestamp=\"0\"]]",
+  "action": "created"
+ },
+ "dt-ctrl-six-at-forge": {
+  "fullname": "muse-probe-refcorr5-dt-ctrl-six-at-forge",
+  "source": "[[date 0 format=\"@@@@@@123@@@@@@\"]]",
+  "action": "created"
+ },
+ "dt-sib-raw-inside-format": {
+  "fullname": "muse-probe-refcorr5-dt-sib-raw-inside-format",
+  "source": "[[date 0 format=\"a@@b@@c\"]]",
+  "action": "created"
+ },
+ "dt-sib-comment-token-in-format": {
+  "fullname": "muse-probe-refcorr5-dt-sib-comment-token-in-format",
+  "source": "[[date 0 format=\"a[!--c--]b\"]]",
+  "action": "created"
+ },
+ "dt-sib-percent-g": {
+  "fullname": "muse-probe-refcorr5-dt-sib-percent-g",
+  "source": "[[date 0 format=\"%g\"]]",
+  "action": "created"
+ },
+ "dt-sib-ts-override-empty": {
+  "fullname": "muse-probe-refcorr5-dt-sib-ts-override-empty",
+  "source": "[[date 86400 timestamp=\"\"]]",
+  "action": "created"
+ },
+ "dt-sib-ts-override-empty-zero": {
+  "fullname": "muse-probe-refcorr5-dt-sib-ts-override-empty-zero",
+  "source": "[[date 0 timestamp=\"\"]]",
+  "action": "created"
+ },
+ "dt-sib-ts-override-alpha": {
+  "fullname": "muse-probe-refcorr5-dt-sib-ts-override-alpha",
+  "source": "[[date 86400 timestamp=\"abc\"]]",
+  "action": "created"
+ },
+ "dt-sib-ts-override-whitespace": {
+  "fullname": "muse-probe-refcorr5-dt-sib-ts-override-whitespace",
+  "source": "[[date 86400 timestamp=\" 120 \"]]",
+  "action": "created"
+ },
+ "dt-sib-ts-override-html-injection": {
+  "fullname": "muse-probe-refcorr5-dt-sib-ts-override-html-injection",
+  "source": "[[date 0 timestamp=\"a&b<c\"]]",
+  "action": "created"
+ },
+ "dt-sib-ts-override-neg": {
+  "fullname": "muse-probe-refcorr5-dt-sib-ts-override-neg",
+  "source": "[[date 86400 timestamp=\"-86400\"]]",
+  "action": "created"
+ },
+ "dt-sib-ts-override-leading-zero": {
+  "fullname": "muse-probe-refcorr5-dt-sib-ts-override-leading-zero",
+  "source": "[[date 86400 timestamp=\"00042\"]]",
+  "action": "created"
+ },
+ "dt-sib-ts-override-overflow": {
+  "fullname": "muse-probe-refcorr5-dt-sib-ts-override-overflow",
+  "source": "[[date 0 timestamp=\"999999999999999999999\"]]",
+  "action": "created"
+ },
+ "dt-sib-blank-pos-with-ts-attr": {
+  "fullname": "muse-probe-refcorr5-dt-sib-blank-pos-with-ts-attr",
+  "source": "[[date  timestamp=\"86400\"]]",
+  "action": "created"
+ },
+ "dt-sib-date-negative-zero": {
+  "fullname": "muse-probe-refcorr5-dt-sib-date-negative-zero",
+  "source": "[[date -0]]",
+  "action": "created"
+ },
+ "dt-sib-date-plus-ten": {
+  "fullname": "muse-probe-refcorr5-dt-sib-date-plus-ten",
+  "source": "[[date +10]]",
+  "action": "created"
+ },
+ "dt-sib-format-utf8": {
+  "fullname": "muse-probe-refcorr5-dt-sib-format-utf8",
+  "source": "[[date 0 format=\"café\"]]",
+  "action": "created"
+ },
+ "dt-sib-format-html": {
+  "fullname": "muse-probe-refcorr5-dt-sib-format-html",
+  "source": "[[date 0 format=\"a&b<c\"]]",
+  "action": "created"
+ },
+ "fl-ctrl-cafe": {
+  "fullname": "muse-probe-refcorr5-fl-ctrl-cafe",
+  "source": "[[[café]]]",
+  "action": "created"
+ },
+ "fl-ctrl-lodz": {
+  "fullname": "muse-probe-refcorr5-fl-ctrl-lodz",
+  "source": "[[[Łódź]]]",
+  "action": "created"
+ },
+ "fl-ctrl-translit-long": {
+  "fullname": "muse-probe-refcorr5-fl-ctrl-translit-long",
+  "source": "[[[äöüß ñ ç ž ąćęłńóśźż café123]]]",
+  "action": "created"
+ },
+ "fl-sib-ascii-alnum-mix": {
+  "fullname": "muse-probe-refcorr5-fl-sib-ascii-alnum-mix",
+  "source": "[[[AéB09]]]",
+  "action": "created"
+ },
+ "fl-sib-cat-ascii-page-nonascii": {
+  "fullname": "muse-probe-refcorr5-fl-sib-cat-ascii-page-nonascii",
+  "source": "[[[cat:café]]]",
+  "action": "created"
+ },
+ "fl-sib-cat-nonascii-page-ascii": {
+  "fullname": "muse-probe-refcorr5-fl-sib-cat-nonascii-page-ascii",
+  "source": "[[[café:page]]]",
+  "action": "created"
+ },
+ "fl-sib-default-prefix-cafe": {
+  "fullname": "muse-probe-refcorr5-fl-sib-default-prefix-cafe",
+  "source": "[[[_default:café]]]",
+  "action": "created"
+ },
+ "fl-sib-default-prefix-pure-nonascii": {
+  "fullname": "muse-probe-refcorr5-fl-sib-default-prefix-pure-nonascii",
+  "source": "[[[_default:é]]]",
+  "action": "created"
+ },
+ "fl-sib-anchor-suffix": {
+  "fullname": "muse-probe-refcorr5-fl-sib-anchor-suffix",
+  "source": "[[[Aé#Anch01]]]",
+  "action": "created"
+ },
+ "fl-sib-hash-route-extra": {
+  "fullname": "muse-probe-refcorr5-fl-sib-hash-route-extra",
+  "source": "[[[café/#/route]]]",
+  "action": "created"
+ },
+ "fl-sib-described-label": {
+  "fullname": "muse-probe-refcorr5-fl-sib-described-label",
+  "source": "[[[café|Label Text]]]",
+  "action": "created"
+ },
+ "fl-sib-described-apos": {
+  "fullname": "muse-probe-refcorr5-fl-sib-described-apos",
+  "source": "[[[café|O'Brien]]]",
+  "action": "created"
+ },
+ "fl-sib-url-target-nonascii": {
+  "fullname": "muse-probe-refcorr5-fl-sib-url-target-nonascii",
+  "source": "[[[http://example.com/café]]]",
+  "action": "created"
+ },
+ "fl-sib-unmapped-cjk-only": {
+  "fullname": "muse-probe-refcorr5-fl-sib-unmapped-cjk-only",
+  "source": "[[[日本語]]]",
+  "action": "created"
+ },
+ "fl-sib-unmapped-cjk-ascii": {
+  "fullname": "muse-probe-refcorr5-fl-sib-unmapped-cjk-ascii",
+  "source": "[[[a日本語b1]]]",
+  "action": "created"
+ },
+ "fl-sib-euro-ascii": {
+  "fullname": "muse-probe-refcorr5-fl-sib-euro-ascii",
+  "source": "[[[item€99]]]",
+  "action": "created"
+ },
+ "fl-sib-cyrillic-only": {
+  "fullname": "muse-probe-refcorr5-fl-sib-cyrillic-only",
+  "source": "[[[Москва]]]",
+  "action": "created"
+ },
+ "fl-sib-cyrillic-ascii-digits": {
+  "fullname": "muse-probe-refcorr5-fl-sib-cyrillic-ascii-digits",
+  "source": "[[[testМосква123]]]",
+  "action": "created"
+ },
+ "fl-sib-german-upper": {
+  "fullname": "muse-probe-refcorr5-fl-sib-german-upper",
+  "source": "[[[ÄÖÜß]]]",
+  "action": "created"
+ },
+ "fl-sib-german-mixed": {
+  "fullname": "muse-probe-refcorr5-fl-sib-german-mixed",
+  "source": "[[[Über10]]]",
+  "action": "created"
+ },
+ "fl-sib-greek-ascii": {
+  "fullname": "muse-probe-refcorr5-fl-sib-greek-ascii",
+  "source": "[[[test_α_1]]]",
+  "action": "created"
+ },
+ "fl-sib-leading-underscore": {
+  "fullname": "muse-probe-refcorr5-fl-sib-leading-underscore",
+  "source": "[[[_café]]]",
+  "action": "created"
+ },
+ "fl-sib-underscore-hyphen-mix": {
+  "fullname": "muse-probe-refcorr5-fl-sib-underscore-hyphen-mix",
+  "source": "[[[a_b-c_é]]]",
+  "action": "created"
+ },
+ "fl-sib-double-space": {
+  "fullname": "muse-probe-refcorr5-fl-sib-double-space",
+  "source": "[[[café  latte]]]",
+  "action": "created"
+ }
+}

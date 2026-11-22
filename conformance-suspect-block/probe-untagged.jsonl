@@ -1,0 +1,22 @@
+{"id": "bq-nospace-only", "source": ">nospace"}
+{"id": "bq-nospace-then-text", "source": ">nospace\nX"}
+{"id": "bq-nospace-run", "source": ">one\n>two\nX"}
+{"id": "bq-multi-nospace", "source": ">>>nospace\nX"}
+{"id": "bq-space-control", "source": "> space\nX"}
+{"id": "bq-comment-line", "source": "> [!-- hide --]\n> shown"}
+{"id": "bq-comment-between", "source": "> one\n[!-- c --]\n> two"}
+{"id": "if-trail-plus-untag", "source": "[[iftags +alpha,]]KEEP[[/iftags]]\nX"}
+{"id": "if-empty-untag", "source": "[[iftags]]KEEP[[/iftags]]\nX"}
+{"id": "if-dangling-minus-untag", "source": "[[iftags -]]KEEP[[/iftags]]\nX"}
+{"id": "if-comment-closer-untag", "source": "[[iftags -beta]]KEEP[!-- [[/iftags]] --]TAIL"}
+{"id": "cm-hides-if-open", "source": "[!-- [[iftags +alpha]] --]KEEP[[/iftags]]\nX"}
+{"id": "cm-basic-inline", "source": "A[!-- hide --]B"}
+{"id": "cm-own-line", "source": "a\n[!-- hide --]\nb"}
+{"id": "cm-two-leading-nl", "source": "a\n\n[!-- hide --]\nb"}
+{"id": "cm-indented", "source": "a\n  [!-- hide --]\nb"}
+{"id": "cm-double-bracket", "source": "A[[!-- hide --]]B"}
+{"id": "cm-in-code", "source": "[[code]]\n[!-- hide --]\n[[/code]]"}
+{"id": "cm-extra-hyphen", "source": "A[!-- hide ---]B"}
+{"id": "cm-two-inline", "source": "[!-- a --]X[!-- b --]Y"}
+{"id": "cm-unterminated", "source": "A[!-- hide B"}
+{"id": "cm-multiline", "source": "[!-- a\nb --]\nX"}

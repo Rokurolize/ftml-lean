@@ -1,0 +1,500 @@
+{"id": "fz-url-000", "source": "\nmailto:x.y  \nftp://192.168.0.1/(p) end  mms://x.y/p|q"}
+{"id": "fz-url-001", "source": "x*http://192.168.0.1/a b."}
+{"id": "fz-url-002", "source": "[ftp://caf\u00e9.example/x[[$y)"}
+{"id": "fz-url-003", "source": "[*mms://caf\u00e9.example/a b and x*telnet://a..b/(p)."}
+{"id": "fz-url-004", "source": "some words"}
+{"id": "fz-url-005", "source": " *mailto:caf\u00e9.example/a/b  text [*mailto:a..b/tab\there end"}
+{"id": "fz-url-006", "source": "[/x|y  lead]"}
+{"id": "fz-url-007", "source": "text"}
+{"id": "fz-url-008", "source": "x*svn://example.com/)"}
+{"id": "fz-url-009", "source": "[*/x|y a|b]"}
+{"id": "fz-url-010", "source": "caf\u00e9 and 1*https://example.com/p,) and [http://localhost/ two words]"}
+{"id": "fz-url-011", "source": "\tnews://caf\u00e9.example/p. "}
+{"id": "fz-url-012", "source": "[http://example.com label and caf\u00e9 and [*#anchor-1 ]"}
+{"id": "fz-url-013", "source": "x*mms://x.y%20) text (cvs://caf\u00e9.example/p#frag end"}
+{"id": "fz-url-014", "source": "[*/a b Label]"}
+{"id": "fz-url-015", "source": "* *svn://caf\u00e9.example/(p) [*# Label] [*# a|b]"}
+{"id": "fz-url-016", "source": "[http://example.com label\n\n *ftp://example.com/p|q end"}
+{"id": "fz-url-017", "source": "[telnet://example.com./p, http://inner.example] * *cvs://example.com/p)) 1*gopher://a..ba/b?x=1&y=2)"}
+{"id": "fz-url-018", "source": "see *mailto:a..ba  and 1*cvs://localhosta/b?x=1&y=2 end"}
+{"id": "fz-url-019", "source": "xhttps://example.com%20) and [*/x|y  lead] and [[http://example.com]]"}
+{"id": "fz-url-020", "source": "text"}
+{"id": "fz-url-021", "source": "(mms://example.com/nl\nhere end caf\u00e9 prehttp://x.example/a"}
+{"id": "fz-url-022", "source": " *news://caf\u00e9.example/p, \n\n* mailto:a..b/p'q)"}
+{"id": "fz-url-023", "source": "[svn://example.com./p.  and text"}
+{"id": "fz-url-024", "source": "*telnet://a-b_c.example.org:8080/x[[y) and \n*mms://caf\u00e9.example/x[[$y) and (git://example.com/p! end"}
+{"id": "fz-url-025", "source": "[mms://a..b two words]"}
+{"id": "fz-url-026", "source": "* gopher://example.com/tab\there \n* gopher://example.com/p|q "}
+{"id": "fz-url-027", "source": "see *gopher://x.y/x|[[y."}
+{"id": "fz-url-028", "source": "[/x|y ] and [*#anchor-1 a|b] and * *news://a..b/x[[y"}
+{"id": "fz-url-029", "source": "[*telnet://localhost/a b)\nsome words"}
+{"id": "fz-url-030", "source": "1*sftp://a..b/a//b end"}
+{"id": "fz-url-031", "source": "\nsvn://a-b_c.example.org:8080/a"}
+{"id": "fz-url-032", "source": "[#anchor-1 http://inner.example] and [*/x|y a|b]"}
+{"id": "fz-url-033", "source": "[http://example.com]"}
+{"id": "fz-url-034", "source": "text"}
+{"id": "fz-url-035", "source": "[# two words]\n\nhttp://example.com|[[rest"}
+{"id": "fz-url-036", "source": "\tssh://192.168.0.1/nl\nhere and 1http://a..b/p) end and [*telnet://localhost/p,  lead]"}
+{"id": "fz-url-037", "source": "\nmms://x.y/p!"}
+{"id": "fz-url-038", "source": "see ftp://x.y/a/b/) and [http://example.com] and [*# a|b]"}
+{"id": "fz-url-039", "source": "see *HTTP://x.y/a.\n\n[%%VAR%% label]"}
+{"id": "fz-url-040", "source": "[svn://example.com./p) end"}
+{"id": "fz-url-041", "source": "[*# Label]\n\n(https://a..b/p! \n\n1sftp://192.168.0.1/p\"q)"}
+{"id": "fz-url-042", "source": "[*# http://inner.example]"}
+{"id": "fz-url-043", "source": "1*xyz://x.y/p.)\n\n* sftp://192.168.0.1/(p))\n\nxxyz://caf\u00e9.example/x|[[y)"}
+{"id": "fz-url-044", "source": "[/x|y two words]"}
+{"id": "fz-url-045", "source": "[*/a b x [[$ y $]] z]\n\n[http://example.com]\n\n[/some/path two words]"}
+{"id": "fz-url-046", "source": "[*svn://caf\u00e9.example/p#frag *ftp://caf\u00e9.example/p)"}
+{"id": "fz-url-047", "source": "* telnet://example.com./tab\there end text [telnet://x.y/p#frag "}
+{"id": "fz-url-048", "source": "(svn://example.com/p.\n\n[*# x [[$ y $]] z]\n\n1mms://example.com/a/b."}
+{"id": "fz-url-049", "source": "* *mailto:example.com./a. (news://caf\u00e9.example/p, end"}
+{"id": "fz-url-050", "source": "1*cvs://a..b/a b end and  *telnet://a-b_c.example.org:8080/p#frag end"}
+{"id": "fz-url-051", "source": "[*/some/path Label]"}
+{"id": "fz-url-052", "source": "\nHTTP://a-b_c.example.org:8080/a."}
+{"id": "fz-url-053", "source": " https://x.y/."}
+{"id": "fz-url-054", "source": "some words and see *mailto:a-b_c.example.org:8080)"}
+{"id": "fz-url-055", "source": "caf\u00e9"}
+{"id": "fz-url-056", "source": "[*xyz://a..b/nl\nhere) http://x.y/p|q)"}
+{"id": "fz-url-057", "source": "[*sftp://a-b_c.example.org:8080/p|q Label]\nsee https://a-b_c.example.org:8080/p, "}
+{"id": "fz-url-058", "source": "\nmms://192.168.0.1/x[[y end and [/x|y x [[$ y $]] z] and \t*gopher://example.com.%20 end"}
+{"id": "fz-url-059", "source": "some words"}
+{"id": "fz-url-060", "source": "* *git://a..b/p. end"}
+{"id": "fz-url-061", "source": "\tnews://example.com./p\"q)"}
+{"id": "fz-url-062", "source": "[*# http://inner.example]"}
+{"id": "fz-url-063", "source": "[/a b x [[$ y $]] z]  *git://192.168.0.1/p|q  [http://example.com label"}
+{"id": "fz-url-064", "source": "1*HTTP://example.com/a/b)\n\n1cvs://x.y/p\"q\n\n[ftp://localhost/a/b "}
+{"id": "fz-url-065", "source": "\n*mailto:caf\u00e9.examplea end"}
+{"id": "fz-url-066", "source": "caf\u00e9\n\nx*xyz://localhost/a b "}
+{"id": "fz-url-067", "source": "* *sftp://localhost)\n\t*cvs://example.com./p\"q.\n[*#anchor-1 a|b]"}
+{"id": "fz-url-068", "source": " *telnet://localhost/x[[y\n[/a b two words]"}
+{"id": "fz-url-069", "source": "text\n\n1http://localhost/x|[[y)"}
+{"id": "fz-url-070", "source": "caf\u00e9 * HTTP://localhost/nl\nhere end  *HTTP://a..b/x[[$y"}
+{"id": "fz-url-071", "source": "[/some/path ] text"}
+{"id": "fz-url-072", "source": "\tftp://x.y/p'q end and [%%VAR%% label]"}
+{"id": "fz-url-073", "source": "text\n\n[/some/path Label]"}
+{"id": "fz-url-074", "source": "[*/x|y x [[$ y $]] z]"}
+{"id": "fz-url-075", "source": "caf\u00e9 and see *git://example.com/tab\there "}
+{"id": "fz-url-076", "source": "(mms://example.com/p'q end"}
+{"id": "fz-url-077", "source": "some words and 1*xyz://example.com./ and text"}
+{"id": "fz-url-078", "source": "[*mailto:example.com.a\n http://localhost/x|[[y"}
+{"id": "fz-url-079", "source": "[*/a b Label]\n[# two words]"}
+{"id": "fz-url-080", "source": "[/a b ]\n[/x|y x [[$ y $]] z]\ntext"}
+{"id": "fz-url-081", "source": "some words"}
+{"id": "fz-url-082", "source": "some words\n\n *ftp://caf\u00e9.example/p|q."}
+{"id": "fz-url-083", "source": "git://localhost/p#frag.\n[*/some/path a|b]\n[#anchor-1 x [[$ y $]] z]"}
+{"id": "fz-url-084", "source": "[*/x|y http://inner.example]"}
+{"id": "fz-url-085", "source": "text"}
+{"id": "fz-url-086", "source": " telnet://192.168.0.1/p\"q."}
+{"id": "fz-url-087", "source": "(gopher://a..b) and [*#anchor-1 two words] and git://example.com./p|q."}
+{"id": "fz-url-088", "source": "1svn://example.com./p,  and some words"}
+{"id": "fz-url-089", "source": "[[http://example.com]]"}
+{"id": "fz-url-090", "source": "[/x|y  lead]"}
+{"id": "fz-url-091", "source": "\tsftp://192.168.0.1/p)"}
+{"id": "fz-url-092", "source": "[*#anchor-1 Label] [#anchor-1 ]"}
+{"id": "fz-url-093", "source": "[%%VAR%% label] and some words"}
+{"id": "fz-url-094", "source": "[*/some/path two words]"}
+{"id": "fz-url-095", "source": "text mms://example.com/a/b/. * *cvs://example.com/nl\nhere."}
+{"id": "fz-url-096", "source": "1git://localhost%20)"}
+{"id": "fz-url-097", "source": "telnet://a..b/p#frag)\ntext\n\nHTTP://example.com/a."}
+{"id": "fz-url-098", "source": "(*svn://a..b/x[[$y \n[*# two words]\n[#anchor-1 Label]"}
+{"id": "fz-url-099", "source": "some words\n\n[*sftp://caf\u00e9.examplea."}
+{"id": "fz-url-100", "source": "some words"}
+{"id": "fz-url-101", "source": "see ssh://example.com./a b  [*/some/path two words] [/a b http://inner.example]"}
+{"id": "fz-url-102", "source": " *telnet://192.168.0.1/p. end\n\n\nHTTP://192.168.0.1a/b?x=1&y=2 end\n\ntext"}
+{"id": "fz-url-103", "source": "* http://a..b/\nsee ftp://192.168.0.1/nl\nhere)"}
+{"id": "fz-url-104", "source": "some words [*/some/path  lead] \n*https://a-b_c.example.org:8080a "}
+{"id": "fz-url-105", "source": "x*ssh://x.y/a/b/. and (*gopher://a..b/a//b and x*https://caf\u00e9.example/p\"q)"}
+{"id": "fz-url-106", "source": "[*#  lead] and [# two words] and * *git://localhosta end"}
+{"id": "fz-url-107", "source": " svn://caf\u00e9.example/p'q.\nsome words"}
+{"id": "fz-url-108", "source": "some words and [*https://a..b/a//b  and caf\u00e9"}
+{"id": "fz-url-109", "source": "[%%VAR%% label] [# a|b]"}
+{"id": "fz-url-110", "source": "(HTTP://x.y/~u/_f-1 end and text and xhttps://x.y/a/b/"}
+{"id": "fz-url-111", "source": "* gopher://example.com./p! end [*/some/path http://inner.example]"}
+{"id": "fz-url-112", "source": "[/some/path ] and [*svn://localhost/p) a|b]"}
+{"id": "fz-url-113", "source": "[*/some/path a|b]\n[/a b two words]\n* *gopher://caf\u00e9.example/p.."}
+{"id": "fz-url-114", "source": "caf\u00e9\n[http://example.com label\nsee https://a..b/(p)."}
+{"id": "fz-url-115", "source": "(*git://x.y/a b end and [/a b x [[$ y $]] z] and text"}
+{"id": "fz-url-116", "source": "[http://example.com]"}
+{"id": "fz-url-117", "source": "[*/some/path x [[$ y $]] z] * *xyz://caf\u00e9.examplea/b?x=1&y=2. [*# Label]"}
+{"id": "fz-url-118", "source": "*xyz://a..b/p#frag.\nsome words"}
+{"id": "fz-url-119", "source": "xmms://localhost/nl\nhere"}
+{"id": "fz-url-120", "source": "[*/x|y x [[$ y $]] z] [*ssh://caf\u00e9.example/nl\nhere end [*# a|b]"}
+{"id": "fz-url-121", "source": "[*/a b Label]"}
+{"id": "fz-url-122", "source": "http://example.com|[[rest caf\u00e9"}
+{"id": "fz-url-123", "source": " http://a-b_c.example.org:8080/p'q) and some words"}
+{"id": "fz-url-124", "source": "x*https://a..b/x|[[y  and x*sftp://example.com./p'q "}
+{"id": "fz-url-125", "source": "[*/x|y ] [*https://a-b_c.example.org:8080/x[[$y Label] [/a b Label]"}
+{"id": "fz-url-126", "source": "x*mms://x.y/a b\n* ftp://caf\u00e9.example/nl\nhere end\n* *git://a-b_c.example.org:8080/p, end"}
+{"id": "fz-url-127", "source": "see gopher://a-b_c.example.org:8080/p'q)"}
+{"id": "fz-url-128", "source": "text"}
+{"id": "fz-url-129", "source": " *telnet://example.com/a b end\n\n[# Label]"}
+{"id": "fz-url-130", "source": "see *http://caf\u00e9.example/.\n[http://a-b_c.example.org:8080/p|q Label]"}
+{"id": "fz-url-131", "source": "\tsftp://localhost/a b end and \tssh://localhosta/b?x=1&y=2)"}
+{"id": "fz-url-132", "source": "\n*cvs://a-b_c.example.org:8080/tab\there \ncaf\u00e9"}
+{"id": "fz-url-133", "source": "prehttp://x.example/a"}
+{"id": "fz-url-134", "source": "text\n\nftp://192.168.0.1/p!."}
+{"id": "fz-url-135", "source": "[/x|y two words]\ntext\n1*ftp://example.com./a"}
+{"id": "fz-url-136", "source": "[/some/path a|b]\n\n[/a b a|b]"}
+{"id": "fz-url-137", "source": "*svn://example.com.a/b?x=1&y=2 end\n[*ssh://caf\u00e9.example/a/b/ two words]\nsee *ftp://x.y/(p)."}
+{"id": "fz-url-138", "source": "caf\u00e9\n\n[cvs://192.168.0.1/a b)\n\n[/some/path x [[$ y $]] z]"}
+{"id": "fz-url-139", "source": "text\n\tcvs://x.y/x[[$y\n* news://localhosta/b?x=1&y=2."}
+{"id": "fz-email-000", "source": "USER@nodot,\nmail: a.b@ex-ample.co)"}
+{"id": "fz-email-001", "source": "user+tag@a..com,\n\n user@a. end\n\n(USER@ex-ample.co)"}
+{"id": "fz-email-002", "source": "caf\u00e9\n\n[a..b@192.168.0.1 two words]\n\n[a..b@192.168.0.1  double gap]\n\nUSER@ex-ample.co "}
+{"id": "fz-email-003", "source": "[u_s-e.r@EXAMPLE.COM a@b.co] [trail.@nodot a@b.co] xx_y-z@a..com)"}
+{"id": "fz-email-004", "source": "[user+tag@nodot  lead]"}
+{"id": "fz-email-005", "source": "(user@ex-ample.co  mail: a@nodot, text"}
+{"id": "fz-email-006", "source": " .lead@.a.com"}
+{"id": "fz-email-007", "source": ".lead@a.b.c.d@again.com\n\n[a@a.b.c.d  lead]"}
+{"id": "fz-email-008", "source": " user@a.b.c.d,, [a.b@example.com Label]"}
+{"id": "fz-email-009", "source": " trail.@x.y end"}
+{"id": "fz-email-010", "source": "[a@a. a@b.co]\n\nxtrail.@example.com\n\nmail: a.b@a.)"}
+{"id": "fz-email-011", "source": " u_s-e.r@x.y \n\nno mail here"}
+{"id": "fz-email-012", "source": "[trail.@a. a@b.co]\n user+tag@192.168.0.1,"}
+{"id": "fz-email-013", "source": "x_y-z@192.168.0.1."}
+{"id": "fz-email-014", "source": "(u_s-e.r@a.b.c.d  xuser@x.y end x_y-z@a."}
+{"id": "fz-email-015", "source": "[a.b@EXAMPLE.COM a@b.co]\nxa@EXAMPLE.COM)\na@"}
+{"id": "fz-email-016", "source": "a@"}
+{"id": "fz-email-017", "source": "mail: a.b@EXAMPLE.COM "}
+{"id": "fz-email-018", "source": "mail: a..b@a.b.c.d end"}
+{"id": "fz-email-019", "source": "user+tag@example.com,, a b@c.com, text"}
+{"id": "fz-email-020", "source": "no mail here"}
+{"id": "fz-email-021", "source": "user+tag@a..com "}
+{"id": "fz-email-022", "source": "no mail here\n\n[USER@example.com Label]\n\n[USER@example.com  double gap]"}
+{"id": "fz-email-023", "source": " u_s-e.r@a.,"}
+{"id": "fz-email-024", "source": "text,  trail.@x.y , mail: USER@a.."}
+{"id": "fz-email-025", "source": "preuser+tag@x.ypost"}
+{"id": "fz-email-026", "source": "no mail here\n\n[x_y-z@.a.com  lead]\n\n[a.b@.a.com  lead]\n\n[a.b@.a.com  double gap]"}
+{"id": "fz-email-027", "source": "[a.b@ex-ample.co a@b.co]\n\nno mail here"}
+{"id": "fz-email-028", "source": "[.lead@a.  lead]\n\nmail: USER@nodot\n\nno mail here"}
+{"id": "fz-email-029", "source": "[a.b@ex-ample.co  lead]\na..b@a..com@again.com"}
+{"id": "fz-email-030", "source": " USER@nodot "}
+{"id": "fz-email-031", "source": "(a.b@a.b.c.d,, text, no mail here"}
+{"id": "fz-email-032", "source": "xuser+tag@.a.com \n\n(user+tag@x.y "}
+{"id": "fz-email-033", "source": " x_y-z@192.168.0.1, [x_y-z@192.168.0.1 a@b.co], text"}
+{"id": "fz-email-034", "source": "@x.com"}
+{"id": "fz-email-035", "source": "[u_s-e.r@x.y two words] preuser+tag@nodotpost [user@x.y Label] [user@x.y  double gap]"}
+{"id": "fz-email-036", "source": "x_y-z@a. "}
+{"id": "fz-email-037", "source": "a@b\n\n(a@ex-ample.co \n\n trail.@a..com "}
+{"id": "fz-email-038", "source": "text"}
+{"id": "fz-email-039", "source": "(user+tag@a. \n[u_s-e.r@example.com a@b.co]\n(x_y-z@a.)"}
+{"id": "fz-email-040", "source": "(trail.@.a.com \n\ntext\n\nprex_y-z@x.ypost"}
+{"id": "fz-email-041", "source": "(u_s-e.r@x.y), caf\u00e9, caf\u00e9"}
+{"id": "fz-email-042", "source": "xuser+tag@nodot,"}
+{"id": "fz-email-043", "source": "mail: USER@example.com),  u_s-e.r@.a.com,, text"}
+{"id": "fz-email-044", "source": "preuser@EXAMPLE.COMpost, caf\u00e9, xa..b@ex-ample.co."}
+{"id": "fz-email-045", "source": "@x.com\nno mail here\n[user@example.com  lead]"}
+{"id": "fz-email-046", "source": "xx_y-z@a..com,\n\nno mail here\n\n(.lead@x.y)"}
+{"id": "fz-email-047", "source": "no mail here"}
+{"id": "fz-email-048", "source": "text"}
+{"id": "fz-email-049", "source": "(USER@a.)\nxa.b@EXAMPLE.COM end"}
+{"id": "fz-email-050", "source": "[trail.@nodot a@b.co], user+tag@EXAMPLE.COM."}
+{"id": "fz-email-051", "source": "xx_y-z@192.168.0.1,\n\n(a..b@example.com.\n\n[a..b@a..com Label]\n\n[a..b@a..com  double gap]"}
+{"id": "fz-email-052", "source": "a@.com,  user+tag@a.b.c.d end"}
+{"id": "fz-email-053", "source": "[a..b@example.com a@b.co]"}
+{"id": "fz-email-054", "source": "a@, xa.b@.a.com."}
+{"id": "fz-email-055", "source": "mail: USER@192.168.0.1) [user+tag@nodot Label]"}
+{"id": "fz-email-056", "source": "(user@a.."}
+{"id": "fz-email-057", "source": "[user@nodot  lead] [user@nodot  double gap]"}
+{"id": "fz-email-058", "source": " USER@192.168.0.1), no mail here"}
+{"id": "fz-email-059", "source": "xx_y-z@a.b.c.d. a..b@x.y. (trail.@a..com "}
+{"id": "fz-email-060", "source": "[a..b@a..com a@b.co]\n[a..b@a..com  double gap]\n x_y-z@EXAMPLE.COM.\nmail: a..b@a.b.c.d,"}
+{"id": "fz-email-061", "source": " x_y-z@192.168.0.1\n\n USER@a.."}
+{"id": "fz-email-062", "source": "xa@a.  text"}
+{"id": "fz-email-063", "source": "user@nodot) a@ mail: x_y-z@192.168.0.1 "}
+{"id": "fz-email-064", "source": "user@a.b.c.d end"}
+{"id": "fz-email-065", "source": " USER@nodot end"}
+{"id": "fz-email-066", "source": "[user@192.168.0.1 two words] USER@EXAMPLE.COM."}
+{"id": "fz-email-067", "source": "(trail.@192.168.0.1 end, (USER@ex-ample.co), mail: USER@x.y"}
+{"id": "fz-email-068", "source": "a b@c.com"}
+{"id": "fz-email-069", "source": "xu_s-e.r@192.168.0.1, xUSER@a."}
+{"id": "fz-email-070", "source": " user@a."}
+{"id": "fz-email-071", "source": ".lead@a..com \nprea@a.b.c.dpost\n a..b@example.com)"}
+{"id": "fz-email-072", "source": "mail: .lead@192.168.0.1 end\n\nUSER@nodot end\n\n(user+tag@a.b.c.d."}
+{"id": "fz-email-073", "source": " a@a..com "}
+{"id": "fz-email-074", "source": ".lead@192.168.0.1,"}
+{"id": "fz-email-075", "source": " .lead@example.com \ncaf\u00e9"}
+{"id": "fz-email-076", "source": "xuser+tag@a.b.c.d)\nmail: trail.@ex-ample.co."}
+{"id": "fz-email-077", "source": " .lead@ex-ample.co \n[user@.a.com  lead]\n(user@a. "}
+{"id": "fz-email-078", "source": "xuser@a..com,,  USER@example.com "}
+{"id": "fz-email-079", "source": "mail: trail.@EXAMPLE.COM,"}
+{"id": "fz-email-080", "source": "user@x.y., @x.com, mail: trail.@x.y."}
+{"id": "fz-email-081", "source": "[USER@192.168.0.1 Label], caf\u00e9, [trail.@nodot Label]"}
+{"id": "fz-email-082", "source": "x_y-z@ex-ample.co , a b@c.com"}
+{"id": "fz-email-083", "source": "a@b\n\n(x_y-z@.a.com end\n\nmail: a.b@x.y end"}
+{"id": "fz-email-084", "source": "[u_s-e.r@EXAMPLE.COM  lead]\n\n(a@a.b.c.d)"}
+{"id": "fz-email-085", "source": "mail: a@a.b.c.d end mail: a@EXAMPLE.COM "}
+{"id": "fz-email-086", "source": "caf\u00e9 xa@a..com."}
+{"id": "fz-email-087", "source": "[a.b@nodot a@b.co], [USER@a..com two words], [USER@a..com  double gap], [u_s-e.r@a..com Label], [u_s-e.r@a..com  double gap]"}
+{"id": "fz-email-088", "source": "mail: a..b@a..com)"}
+{"id": "fz-email-089", "source": "(user@ex-ample.co,, a b@c.com, x_y-z@example.com end"}
+{"id": "fz-email-090", "source": " .lead@a..com,\n\nmail: x_y-z@a.b.c.d)\n\n(a.b@nodot)"}
+{"id": "fz-email-091", "source": "no mail here\n\nUSER@192.168.0.1 "}
+{"id": "fz-email-092", "source": "mail: u_s-e.r@192.168.0.1), xUSER@a..com."}
+{"id": "fz-email-093", "source": "[user@nodot two words]"}
+{"id": "fz-email-094", "source": "mail: trail.@a..com"}
+{"id": "fz-email-095", "source": "(a.b@nodot\n[USER@ex-ample.co Label]"}
+{"id": "fz-email-096", "source": "@x.com"}
+{"id": "fz-email-097", "source": "caf\u00e9\n\ncaf\u00e9\n\ntext"}
+{"id": "fz-email-098", "source": ".lead@.a.com@again.com, a@b"}
+{"id": "fz-email-099", "source": "mail: USER@a.b.c.d "}
+{"id": "fz-email-100", "source": "[a@a.b.c.d a@b.co], [a.b@a..com  lead], a@.com"}
+{"id": "fz-email-101", "source": "(a..b@example.com \nxa@a..com)"}
+{"id": "fz-email-102", "source": "(x_y-z@x.y, trail.@192.168.0.1@again.com"}
+{"id": "fz-email-103", "source": "@x.com, caf\u00e9, [user@example.com  lead]"}
+{"id": "fz-email-104", "source": "no mail here"}
+{"id": "fz-email-105", "source": " USER@192.168.0.1 end [.lead@.a.com  lead] [user@192.168.0.1  lead] [user@192.168.0.1  double gap]"}
+{"id": "fz-email-106", "source": "trail.@x.y), [u_s-e.r@example.com  lead],  user+tag@nodot"}
+{"id": "fz-email-107", "source": "(u_s-e.r@192.168.0.1 \n\na@EXAMPLE.COM.\n\nno mail here"}
+{"id": "fz-email-108", "source": "mail: a.b@ex-ample.co., [u_s-e.r@a. Label], .lead@ex-ample.co "}
+{"id": "fz-email-109", "source": "a@b\n\nUSER@ex-ample.co@again.com\n\n user@nodot end"}
+{"id": "fz-email-110", "source": "[a..b@192.168.0.1  lead]\n\n a.b@a. \n\nmail: u_s-e.r@ex-ample.co "}
+{"id": "fz-email-111", "source": "[trail.@a.b.c.d  lead]\n\n[trail.@a.b.c.d  double gap]\n\n[u_s-e.r@192.168.0.1  lead]"}
+{"id": "fz-email-112", "source": "(USER@192.168.0.1 \n\n[a@nodot  lead]\n\nx_y-z@a.b.c.d "}
+{"id": "fz-email-113", "source": "(a@EXAMPLE.COM)\n[a@x.y Label]\n[a@x.y  double gap]"}
+{"id": "fz-email-114", "source": "mail: x_y-z@ex-ample.co,\n\n[user@example.com Label]\n\n[user@example.com  double gap]\n\n a..b@ex-ample.co."}
+{"id": "fz-email-115", "source": "mail: user@nodot "}
+{"id": "fz-email-116", "source": "a b@c.com [a..b@a.b.c.d two words]"}
+{"id": "fz-email-117", "source": "mail: a.b@.a.com , (u_s-e.r@a..com, xa.b@a.b.c.d end"}
+{"id": "fz-email-118", "source": "a.b@192.168.0.1."}
+{"id": "fz-email-119", "source": "a b@c.com"}
+{"id": "fz-math-000", "source": "[[$ x $]\n\n[[$ http://example.com/x $]]\n\nsome words"}
+{"id": "fz-math-001", "source": "[[$ \\frac{1}{2} $]]\n\n$$"}
+{"id": "fz-math-002", "source": "A [[$ x\ny $]] B and [[$ @@line1@@ $]]"}
+{"id": "fz-math-003", "source": "[[$  lead and trail  $]]"}
+{"id": "fz-math-004", "source": "[[$ @@raw text@@ $]] [[$ a|b $]] [[$ e=mc^2 $]]"}
+{"id": "fz-math-005", "source": "[[$ $]]\n\n[[$ \\frac{1}{2} $]]"}
+{"id": "fz-math-006", "source": "[[$a$b$]]\n[[$ $]]"}
+{"id": "fz-math-007", "source": "[[$x$]]\nsome words\nA [[$ x\ny $]] B\n[[$ @@line1@@ $]]"}
+{"id": "fz-math-008", "source": "some words"}
+{"id": "fz-math-009", "source": "[[$ [[code]]x[[/code]] $]]"}
+{"id": "fz-math-010", "source": "[[$ \\frac{1}{2} $]] some words [[$  $]]"}
+{"id": "fz-math-011", "source": "[[$ $]] and [[$ multi  space $]]"}
+{"id": "fz-math-012", "source": "[[$ [[code]]x[[/code]] $]]\n\n[[$ x^2 $]]"}
+{"id": "fz-math-013", "source": "[[$ a$b $]]"}
+{"id": "fz-math-014", "source": "[[$  a+b  $]]"}
+{"id": "fz-math-015", "source": "[[$ e=mc^2 $]]\n[[$x$]]"}
+{"id": "fz-math-016", "source": "[[$ a|b $]]"}
+{"id": "fz-math-017", "source": "[[$ {set} $]]"}
+{"id": "fz-math-018", "source": "[[$ \\frac{1}{2} $]]"}
+{"id": "fz-math-019", "source": "text text"}
+{"id": "fz-math-020", "source": "$ x $]] and some words"}
+{"id": "fz-math-021", "source": "some words"}
+{"id": "fz-math-022", "source": "pre [[$ x^2 $]] post\n\n[[$  lead and trail  $]]"}
+{"id": "fz-math-023", "source": "[[$ x^2 $]]"}
+{"id": "fz-math-024", "source": "text"}
+{"id": "fz-math-025", "source": "[[$ a$b $]]\n\n[[$ \\frac{1}{2} $]]\n\ntext"}
+{"id": "fz-math-026", "source": "pre [[$ x^2 $]] post"}
+{"id": "fz-math-027", "source": "A [[$ x\ny $]] B\n\n[[$ @@line1@@ $]]\n\n[[$ [[code]]x[[/code]] $]]"}
+{"id": "fz-math-028", "source": "[[$a$b$]]"}
+{"id": "fz-math-029", "source": "text\n\n[[$ http://example.com/x $]]"}
+{"id": "fz-math-030", "source": "A [[$ x\ny $]] B [[$ @@line1@@ $]] [[$  lead and trail  $]] [[$ x^2 $]]"}
+{"id": "fz-math-031", "source": "[[$ {set} $]]\n\n[[$ e=mc^2 $]]"}
+{"id": "fz-math-032", "source": "[[$ http://example.com/x $]] [[$ x\ny $]]"}
+{"id": "fz-math-033", "source": "[[$x$]]\n[[$ http://example.com/x $]]"}
+{"id": "fz-math-034", "source": "[[$ \\frac{1}{2} $]]"}
+{"id": "fz-math-035", "source": "[[$ a]]b $]]\n\n[[$  lead and trail  $]]"}
+{"id": "fz-math-036", "source": "$ x $]]\n[[$   $]]\n[[$ @@raw text@@ $]]"}
+{"id": "fz-math-037", "source": "A [[$ x\ny $]] B\n\n[[$ @@line1@@ $]]\n\n[[$ $]]\n\n[[$ {set} $]]"}
+{"id": "fz-math-038", "source": "[[$ x $]"}
+{"id": "fz-math-039", "source": "[[$$]] and A [[$ x\ny $]] B and [[$ @@line1@@ $]] and some words"}
+{"id": "fz-math-040", "source": "[[$ {set} $]]"}
+{"id": "fz-math-041", "source": "[[$ a]]b $]]\n[[$ \\frac{1}{2} $]]\nA [[$ x\ny $]] B\n[[$ @@line1@@ $]]"}
+{"id": "fz-math-042", "source": "A [[$ x\ny $]] B\n[[$ @@line1@@ $]]\n[[$x$]]"}
+{"id": "fz-math-043", "source": "[[$ \\frac{1}{2} $]]"}
+{"id": "fz-math-044", "source": "[[$ \\frac{1}{2} $]] and [[$ http://example.com/x $]]"}
+{"id": "fz-math-045", "source": "[[$ x^2 $]]\n[[$ x^2 $]]\n[[$ x^2 $]]"}
+{"id": "fz-math-046", "source": "[[$  a+b  $]] [[$ [[code]]x[[/code]] $]]"}
+{"id": "fz-math-047", "source": "pre [[$ x^2 $]] post\n[[$ e=mc^2 $]]\n[[$ a|b $]]"}
+{"id": "fz-math-048", "source": "some words A [[$ x\ny $]] B [[$ @@line1@@ $]] [[$   $]]"}
+{"id": "fz-math-049", "source": "[[$ multi  space $]]\n\n[[$  $]]"}
+{"id": "fz-math-050", "source": "[[$ x\ny $]]"}
+{"id": "fz-math-051", "source": "A [[$ x\ny $]] B [[$ @@line1@@ $]] A [[$ x\ny $]] B [[$ @@line1@@ $]] [[$ multi  space $]]"}
+{"id": "fz-math-052", "source": "[[$  $]]\n[[$ @@raw text@@ $]]"}
+{"id": "fz-math-053", "source": "[[$ a|b $]] and [[$  lead and trail  $]]"}
+{"id": "fz-math-054", "source": "[[$ {set} $]] and [[$ tab\there $]] and [[$ multi  space $]]"}
+{"id": "fz-math-055", "source": "some words\n\npre [[$ x^2 $]] post"}
+{"id": "fz-math-056", "source": "A [[$ x\ny $]] B [[$ @@line1@@ $]]"}
+{"id": "fz-math-057", "source": "[[$ multi  space $]]\n$ x $]]"}
+{"id": "fz-math-058", "source": "[[$ x^2 $]] [[$ x\ny $]]"}
+{"id": "fz-math-059", "source": "A [[$ x\ny $]] B and [[$ @@line1@@ $]] and [[$ a$b $]] and [[$ {set} $]]"}
+{"id": "fz-math-060", "source": "[[$ x $] [[$ \\frac{1}{2} $]] $$"}
+{"id": "fz-math-061", "source": "[[$ $]] A [[$ x\ny $]] B [[$ @@line1@@ $]] $$"}
+{"id": "fz-math-062", "source": "[[$ \\frac{1}{2} $]] [[$ $]] [[$ multi  space $]]"}
+{"id": "fz-math-063", "source": "[[$  a+b  $]]"}
+{"id": "fz-math-064", "source": "A [[$ x\ny $]] B [[$ @@line1@@ $]] A [[$ x\ny $]] B [[$ @@line1@@ $]]"}
+{"id": "fz-math-065", "source": "[[$  $]] and [[$   $]] and [[$ [[code]]x[[/code]] $]]"}
+{"id": "fz-math-066", "source": "text\n\n[[$ x^2 $]]"}
+{"id": "fz-math-067", "source": "[[$ {set} $]] and [[$ a$b $]] and [[$ $]]"}
+{"id": "fz-math-068", "source": "A [[$ x\ny $]] B and [[$ @@line1@@ $]] and [[$ x\ny $]]"}
+{"id": "fz-math-069", "source": "[[$ {set} $]]\n\nA [[$ x\ny $]] B\n\n[[$ @@line1@@ $]]"}
+{"id": "fz-math-070", "source": "[[$  $]]\n\n[[$ http://example.com/x $]]"}
+{"id": "fz-math-071", "source": "$$\n[[$ x^2 $]]"}
+{"id": "fz-math-072", "source": "A [[$ x\ny $]] B and [[$ @@line1@@ $]] and $$ and [[$ multi  space $]]"}
+{"id": "fz-math-073", "source": "A [[$ x\ny $]] B [[$ @@line1@@ $]]"}
+{"id": "fz-math-074", "source": "[[$ x $]\n\n[[$ tab\there $]]"}
+{"id": "fz-math-075", "source": "[[$ x\n\n[[$ a]]b $]]\n\n[[$ a]]b $]]"}
+{"id": "fz-math-076", "source": "[[$ a]]b $]]\n[[$ http://example.com/x $]]"}
+{"id": "fz-math-077", "source": "$$"}
+{"id": "fz-math-078", "source": "[[$ a $]] and [[$ b $]]"}
+{"id": "fz-math-079", "source": "$$\n\n[[$$]]\n\n[[$ e=mc^2 $]]"}
+{"id": "fz-math-080", "source": "text\n\nA [[$ x\ny $]] B\n\n[[$ @@line1@@ $]]"}
+{"id": "fz-math-081", "source": "[[$  lead and trail  $]]"}
+{"id": "fz-math-082", "source": "[[$ a|b $]]\n\n[[$ {set} $]]\n\n[[$ x^2 $]]"}
+{"id": "fz-math-083", "source": "[[$ @@raw text@@ $]]\n\nsome words\n\n[[$ x $]"}
+{"id": "fz-math-084", "source": "some words\n\n[[$ x\ny $]]\n\n[[$ http://example.com/x $]]"}
+{"id": "fz-math-085", "source": "[[$ a$b $]]\n\n[[$ [[code]]x[[/code]] $]]"}
+{"id": "fz-math-086", "source": "[[$ \\frac{1}{2} $]]\n\n[[$ e=mc^2 $]]\n\n[[$ a $]] and [[$ b $]]"}
+{"id": "fz-math-087", "source": "[[$ $]]\n[[$ [[code]]x[[/code]] $]]\n[[$ {set} $]]"}
+{"id": "fz-math-088", "source": "[[$ e=mc^2 $]]\n\n[[$ [[code]]x[[/code]] $]]"}
+{"id": "fz-math-089", "source": "[[$ http://example.com/x $]]"}
+{"id": "fz-math-090", "source": "[[$  $]]\n\n[[$ @@raw text@@ $]]"}
+{"id": "fz-math-091", "source": "[[$$]]\n[[$$]]"}
+{"id": "fz-math-092", "source": "[[$ http://example.com/x $]]"}
+{"id": "fz-math-093", "source": "[[$  a+b  $]]"}
+{"id": "fz-math-094", "source": "$$"}
+{"id": "fz-math-095", "source": "[[$ a|b $]] [[$ x\ny $]]"}
+{"id": "fz-math-096", "source": "[[$  $]]"}
+{"id": "fz-math-097", "source": "[[$ e=mc^2 $]]"}
+{"id": "fz-math-098", "source": "[[$a$b$]] A [[$ x\ny $]] B [[$ @@line1@@ $]]"}
+{"id": "fz-math-099", "source": "[[$$]] and [[$ a]]b $]]"}
+{"id": "fz-math-100", "source": "[[$ http://example.com/x $]]\n$$"}
+{"id": "fz-math-101", "source": "$ x $]] [[$ tab\there $]] [[$ a|b $]]"}
+{"id": "fz-math-102", "source": "[[$ @@raw text@@ $]]"}
+{"id": "fz-math-103", "source": "[[$ e=mc^2 $]]"}
+{"id": "fz-math-104", "source": "[[$ e=mc^2 $]]\n\n[[$ {set} $]]"}
+{"id": "fz-math-105", "source": "$$ A [[$ x\ny $]] B [[$ @@line1@@ $]] [[$ x $]"}
+{"id": "fz-math-106", "source": "[[$ x $] text [[$ a$b $]]"}
+{"id": "fz-math-107", "source": "[[$ x\ny $]]\n\nA [[$ x\ny $]] B\n\n[[$ @@line1@@ $]]\n\n[[$ x $]"}
+{"id": "fz-math-108", "source": "[[$  a+b  $]]\n\n[[$ http://example.com/x $]]"}
+{"id": "fz-math-109", "source": "[[$  $]]\n\n[[$ a$b $]]"}
+{"id": "fz-math-110", "source": "A [[$ x\ny $]] B [[$ @@line1@@ $]] A [[$ x\ny $]] B [[$ @@line1@@ $]]"}
+{"id": "fz-math-111", "source": "[[$ x"}
+{"id": "fz-math-112", "source": "text [[$ {set} $]] [[$ http://example.com/x $]]"}
+{"id": "fz-math-113", "source": "[[$ a]]b $]]\n\n[[$$]]\n\n[[$ tab\there $]]"}
+{"id": "fz-math-114", "source": "[[$ [[code]]x[[/code]] $]]"}
+{"id": "fz-math-115", "source": "[[$ x\ny $]] [[$ @@raw text@@ $]]"}
+{"id": "fz-math-116", "source": "[[$ a|b $]]\n[[$ x $]"}
+{"id": "fz-math-117", "source": "[[$ a$b $]] [[$  lead and trail  $]] [[$ a]]b $]]"}
+{"id": "fz-math-118", "source": "[[$ a|b $]]\ntext"}
+{"id": "fz-math-119", "source": "[[$ a$b $]]"}
+{"id": "fz-iw-000", "source": "[x9:Page.]\n\n[a_b:Page::Double]"}
+{"id": "fz-iw-001", "source": "[google:Albert_Einstein] [x9:a;b]"}
+{"id": "fz-iw-002", "source": "[dictionary:x#frag]"}
+{"id": "fz-iw-003", "source": "[pl.wikipedia:P~1 Label] [pl.wikipedia:Albert_Einstein] [wikipedia.pl:Albert_Einstein ]"}
+{"id": "fz-iw-004", "source": "[[Wikipedia:P~1]]\n\n[dictionary:Albert_Einstein]"}
+{"id": "fz-iw-005", "source": "[Wikipedia:C++] and [WIKIPEDIA:Page:Sub] and [nosuch:Page:Sub]"}
+{"id": "fz-iw-006", "source": "[google.:a;b] and [wikipedia.pl:a;b] and [en.wikipedia:a;b http://example.com/x]"}
+{"id": "fz-iw-007", "source": "some words"}
+{"id": "fz-iw-008", "source": "[nosuch:under_score-page Label]"}
+{"id": "fz-iw-009", "source": "[pl.wikipedia:A=B&C]"}
+{"id": "fz-iw-010", "source": "[Wikipedia:A=B&C]\n\n[nosuch:under_score-page]"}
+{"id": "fz-iw-011", "source": "[nosuch:Albert_Einstein] caf\u00e9 [google:Albert_Einstein http://example.com/x]"}
+{"id": "fz-iw-012", "source": "text"}
+{"id": "fz-iw-013", "source": "[pl.wikipedia:Albert_Einstein] [[pl.wikipedia:x#frag]] [en.wikipedia:C++ Label]"}
+{"id": "fz-iw-014", "source": "caf\u00e9 [wikipedia.pl:Page.] [en.wikipedia:a/b/c]"}
+{"id": "fz-iw-015", "source": "[[WIKIPEDIA:under_score-page]]"}
+{"id": "fz-iw-016", "source": "text [google.::Page] [wikipedia:Page:Sub]"}
+{"id": "fz-iw-017", "source": "[WIKIPEDIA:C++] and [wikipedia.pl::Page] and [Wikipedia:Page::Double Label]"}
+{"id": "fz-iw-018", "source": "[nosuch:Albert_Einstein http://example.com/x] [wikipedia:Albert_Einstein] [Wikipedia:under_score-page]"}
+{"id": "fz-iw-019", "source": "[wikipedia:A=B&C] and text and text"}
+{"id": "fz-iw-020", "source": "[a_b:Some_Page http://example.com/x]\n\n[Wikipedia:A=B&C]\n\n[wikipedia:Page:Sub Label]"}
+{"id": "fz-iw-021", "source": "[a_b:a;b]"}
+{"id": "fz-iw-022", "source": "[pl.wikipedia:Albert_Einstein]\n\n[x9:a;b Label]"}
+{"id": "fz-iw-023", "source": "[nosuch:Page::Double] [WIKIPEDIA:Page:Sub  lead]"}
+{"id": "fz-iw-024", "source": "some words\ncaf\u00e9\n[x9:Page:Sub]tail"}
+{"id": "fz-iw-025", "source": "text"}
+{"id": "fz-iw-026", "source": "[dictionary:Some_Page]"}
+{"id": "fz-iw-027", "source": "caf\u00e9"}
+{"id": "fz-iw-028", "source": "[a_b:C++]\n[wikipedia.pl:Page::Double]"}
+{"id": "fz-iw-029", "source": "some words\n\n[wikipedia:Some_Page]\n\n[wikipedia.pl:P~1]"}
+{"id": "fz-iw-030", "source": "x[wikipedia.pl:Some_Page]"}
+{"id": "fz-iw-031", "source": "caf\u00e9 and caf\u00e9 and [x9:C++]"}
+{"id": "fz-iw-032", "source": "[WIKIPEDIA:Page:Sub two words] and [nosuch:Albert_Einstein  lead] and [wikipedia:A=B&C]"}
+{"id": "fz-iw-033", "source": "[nosuch:P~1]\ncaf\u00e9\n[google.:a;b]"}
+{"id": "fz-iw-034", "source": "[pl.wikipedia:a/b/c] [pl.wikipedia:x#frag] text"}
+{"id": "fz-iw-035", "source": "[WIKIPEDIA:a;b]\n[en.wikipedia:C++ Label]"}
+{"id": "fz-iw-036", "source": "[google:a;b two words] and some words"}
+{"id": "fz-iw-037", "source": "some words"}
+{"id": "fz-iw-038", "source": "[x9:Albert_Einstein two words]\n[WIKIPEDIA:x#frag http://example.com/x]\ncaf\u00e9"}
+{"id": "fz-iw-039", "source": "[ nosuch:Page::Double]\n\n[WIKIPEDIA:A=B&C]"}
+{"id": "fz-iw-040", "source": "[[pl.wikipedia:a;b]]\n\n[nosuch:a/b/c]"}
+{"id": "fz-iw-041", "source": "[WIKIPEDIA:Albert_Einstein]"}
+{"id": "fz-iw-042", "source": "[nosuch:Page. http://example.com/x]"}
+{"id": "fz-iw-043", "source": "[WIKIPEDIA:Page::Double Label]\n\n[wikipedia.pl:Page:Sub]\n\n[wikipedia.pl:under_score-page  lead]"}
+{"id": "fz-iw-044", "source": "[wikipedia.pl:Page:Sub]tail\n[a_b:C++ two words]\nsome words"}
+{"id": "fz-iw-045", "source": "[google.:Some_Page]\ntext\n[Wikipedia:C++  lead]"}
+{"id": "fz-iw-046", "source": "[en.wikipedia:Page:Sub Label]"}
+{"id": "fz-iw-047", "source": "[Wikipedia:x#frag] [google.:A=B&C two words]"}
+{"id": "fz-iw-048", "source": "text and [en.wikipedia:Some_Page] and x[WIKIPEDIA:C++]"}
+{"id": "fz-iw-049", "source": "[nosuch:Albert_Einstein  lead] and [a_b:Page.  lead] and x[en.wikipedia:under_score-page]"}
+{"id": "fz-iw-050", "source": "[a_b:C++] text some words"}
+{"id": "fz-iw-051", "source": "[dictionary:a/b/c]\n[google.:Page.]\ncaf\u00e9"}
+{"id": "fz-iw-052", "source": "caf\u00e9\n\nx[pl.wikipedia:A=B&C]"}
+{"id": "fz-iw-053", "source": "[google::Page] and [google.:a/b/c http://example.com/x] and [google.:Some_Page]"}
+{"id": "fz-iw-054", "source": "[x9:P~1]\n[Wikipedia:a;b]\nx[wikipedia.pl:Some_Page]"}
+{"id": "fz-iw-055", "source": "[Wikipedia:under_score-page  lead]"}
+{"id": "fz-iw-056", "source": "[dictionary:a/b/c]\n\n[x9:Some_Page ]\n\n[wikipedia:x#frag]tail"}
+{"id": "fz-iw-057", "source": "[a_b:Page.]\n\n[pl.wikipedia:A=B&C]\n\n[a_b:Albert_Einstein  lead]"}
+{"id": "fz-iw-058", "source": "caf\u00e9\n[a_b:Some_Page]\n[wikipedia.pl:under_score-page ]"}
+{"id": "fz-iw-059", "source": "[dictionary:a;b] and [x9:Page::Double]"}
+{"id": "fz-iw-060", "source": "[Wikipedia:a;b] and [google.:under_score-page]tail and [x9:under_score-page]"}
+{"id": "fz-iw-061", "source": "[dictionary:A=B&C] and caf\u00e9 and caf\u00e9"}
+{"id": "fz-iw-062", "source": "[ x9:A=B&C] and [google:Page.] and text"}
+{"id": "fz-iw-063", "source": "[ nosuch:a/b/c] and [pl.wikipedia:Page.]"}
+{"id": "fz-iw-064", "source": "[[google:Some_Page]] [pl.wikipedia:Some_Page] [pl.wikipedia:Page::Double]"}
+{"id": "fz-iw-065", "source": "[wikipedia.pl:C++]\ntext"}
+{"id": "fz-iw-066", "source": "text\ncaf\u00e9"}
+{"id": "fz-iw-067", "source": "[WIKIPEDIA:Page::Double]\n[google.:Page:Sub]\n[Wikipedia:a;b]"}
+{"id": "fz-iw-068", "source": "[pl.wikipedia:Some_Page  lead] and [WIKIPEDIA:Page:Sub] and x[WIKIPEDIA:Page:Sub]"}
+{"id": "fz-iw-069", "source": "[google:Page:Sub two words]\n\n[[pl.wikipedia:P~1]]\n\n[nosuch:C++]"}
+{"id": "fz-iw-070", "source": "[ pl.wikipedia:Albert_Einstein] some words"}
+{"id": "fz-iw-071", "source": "[Wikipedia:C++] [Wikipedia::Page]"}
+{"id": "fz-iw-072", "source": "some words"}
+{"id": "fz-iw-073", "source": "[Wikipedia:Page:Sub ]\n\n[ en.wikipedia:P~1]"}
+{"id": "fz-iw-074", "source": "[wikipedia:C++  lead]\n\n[WIKIPEDIA:a;b]"}
+{"id": "fz-iw-075", "source": "[wikipedia:Page::Double two words] and [wikipedia:C++]"}
+{"id": "fz-iw-076", "source": "[a_b:a/b/c Label] [nosuch:P~1]"}
+{"id": "fz-iw-077", "source": "[pl.wikipedia:Page.] [WIKIPEDIA:a;b  lead]"}
+{"id": "fz-iw-078", "source": "[google.:Some_Page  lead] [WIKIPEDIA:a;b]"}
+{"id": "fz-iw-079", "source": "[dictionary::Page]\n[en.wikipedia:Page.]\n[google.:A=B&C]"}
+{"id": "fz-iw-080", "source": "[en.wikipedia:Page::Double] and [google:Page::Double]"}
+{"id": "fz-iw-081", "source": "[google:A=B&C http://example.com/x] and [WIKIPEDIA:Page::Double http://example.com/x] and [wikipedia.pl:P~1 Label]"}
+{"id": "fz-iw-082", "source": "[x9:under_score-page two words]"}
+{"id": "fz-iw-083", "source": "[en.wikipedia:Albert_Einstein two words] [pl.wikipedia:Albert_Einstein] [google:Page:Sub]"}
+{"id": "fz-iw-084", "source": "caf\u00e9\n[dictionary:Page.]"}
+{"id": "fz-iw-085", "source": "[wikipedia.pl:a/b/c ]\n\n[x9:C++]\n\n[[Wikipedia:A=B&C]]"}
+{"id": "fz-iw-086", "source": "[a_b:C++]"}
+{"id": "fz-iw-087", "source": "[ en.wikipedia:P~1]"}
+{"id": "fz-iw-088", "source": "[en.wikipedia:Page.] and caf\u00e9 and [Wikipedia:A=B&C]"}
+{"id": "fz-iw-089", "source": "[WIKIPEDIA:Page:Sub  lead]\n[google.:x#frag]"}
+{"id": "fz-iw-090", "source": "[wikipedia:Page:Sub] some words"}
+{"id": "fz-iw-091", "source": "[wikipedia.pl:Some_Page]"}
+{"id": "fz-iw-092", "source": "caf\u00e9"}
+{"id": "fz-iw-093", "source": "[WIKIPEDIA:A=B&C]"}
+{"id": "fz-iw-094", "source": "[x9:Page.] [WIKIPEDIA:A=B&C]"}
+{"id": "fz-iw-095", "source": "x[nosuch:P~1]\n\ntext\n\n[nosuch:A=B&C]"}
+{"id": "fz-iw-096", "source": "[ wikipedia.pl:Albert_Einstein]\n[Wikipedia:Some_Page]tail\ncaf\u00e9"}
+{"id": "fz-iw-097", "source": "[dictionary:a;b]"}
+{"id": "fz-iw-098", "source": "[pl.wikipedia:x#frag http://example.com/x]"}
+{"id": "fz-iw-099", "source": "[a_b:C++] and [ dictionary:P~1] and caf\u00e9"}
+{"id": "fz-iw-100", "source": "[dictionary:Some_Page]\n\n[pl.wikipedia:Albert_Einstein]\n\ntext"}
+{"id": "fz-iw-101", "source": "[google.:A=B&C]"}
+{"id": "fz-iw-102", "source": "[WIKIPEDIA:a;b] [wikipedia:A=B&C two words]"}
+{"id": "fz-iw-103", "source": "[a_b:a/b/c] and [dictionary:a;b] and [[wikipedia:a;b]]"}
+{"id": "fz-iw-104", "source": "[ a_b:Page.]\n\n[x9:x#frag]"}
+{"id": "fz-iw-105", "source": "[wikipedia.pl:Page:Sub] [a_b:Page:Sub]"}
+{"id": "fz-iw-106", "source": "[dictionary::Page]"}
+{"id": "fz-iw-107", "source": "[google:Page::Double]"}
+{"id": "fz-iw-108", "source": "some words and [Wikipedia:P~1] and [nosuch:x#frag http://example.com/x]"}
+{"id": "fz-iw-109", "source": "[nosuch:a;b] and [google:C++  lead]"}
+{"id": "fz-iw-110", "source": "some words"}
+{"id": "fz-iw-111", "source": "[pl.wikipedia:a/b/c Label]\nsome words\n[a_b:under_score-page]"}
+{"id": "fz-iw-112", "source": "some words\n\n[pl.wikipedia:A=B&C  lead]\n\n[wikipedia.pl:Page.]"}
+{"id": "fz-iw-113", "source": "[Wikipedia:C++]\n\n[WIKIPEDIA::Page]"}
+{"id": "fz-iw-114", "source": "x[google.:P~1]\n[dictionary::Page]"}
+{"id": "fz-iw-115", "source": "caf\u00e9\n[Wikipedia:a;b Label]"}
+{"id": "fz-iw-116", "source": "[Wikipedia:Page::Double]"}
+{"id": "fz-iw-117", "source": "caf\u00e9 [pl.wikipedia:P~1]"}
+{"id": "fz-iw-118", "source": "[x9:A=B&C]"}
+{"id": "fz-iw-119", "source": "caf\u00e9"}

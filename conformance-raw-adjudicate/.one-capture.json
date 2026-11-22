@@ -1,0 +1,12 @@
+{
+ "fn-empty4": {
+  "fullname": "muse-probe-rawadj-fn-empty4",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. ab</div>\n</div>",
+  "html_sha256": "a2227b9b3506b0749e4fde616772420c00f9b003aa2aec208756926b044c8b4a",
+  "source": "[[footnote]]a@@@@b[[/footnote]]",
+  "source_sha256": "3fc9234efde2f7468a2a18840f6ae58191519536d72462739bd31d280cf7fd01",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

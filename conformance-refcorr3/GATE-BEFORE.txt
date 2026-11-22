@@ -1,0 +1,54 @@
+# Baseline gate tallies retained before REFCORR3 (read from on-disk comparison files)
+## conformance-r43
+family-e2e-comparison.txt: TOTAL 1109 PASS 1109 EXCLUDED 0 FAIL 0 FATAL-AGREE 0 
+family-state-comparison.txt: TOTAL 1109 PASS 1109 EXCLUDED 0 FAIL 0 FATAL-AGREE 0 
+notes-full-e2e-comparison.txt: TOTAL 365 PASS 365 EXCLUDED 0 FAIL 0 FATAL-AGREE 0 
+notes-full-state-comparison.txt: TOTAL 365 PASS 365 EXCLUDED 0 FAIL 0 FATAL-AGREE 0 
+prose-full-e2e-comparison.txt: TOTAL 740 PASS 735 EXCLUDED 0 FAIL 5 FATAL-AGREE 0 FAILURES ["ga-24", "x22-coll-in-tab", "x23-div-in-tab", "x25-tab-in-coll-in-div", "x29-footnote-in-tab"] 
+prose-full-state-comparison.txt: TOTAL 740 PASS 740 EXCLUDED 0 FAIL 0 FATAL-AGREE 0 
+reg-r41-e2e-comparison.txt: TOTAL 365 PASS 365 EXCLUDED 0 FAIL 0 FATAL-AGREE 0 
+reg-r41-state-comparison.txt: TOTAL 365 PASS 365 EXCLUDED 0 FAIL 0 FATAL-AGREE 0 
+reg-r42-prefix-comparison.txt: TOTAL 740 PASS 740 EXCLUDED 0 FAIL 0 FATAL-AGREE 0 
+## conformance-r44
+family-e2e-comparison.txt: TOTAL 215 PASS 184 EXCLUDED 31 FAIL 0 FATAL-AGREE 0 
+family-state-comparison.txt: TOTAL 215 PASS 184 EXCLUDED 31 FAIL 0 FATAL-AGREE 0 
+notes-full-e2e-comparison.txt: TOTAL 365 PASS 316 EXCLUDED 49 FAIL 0 FATAL-AGREE 0 
+notes-full-state-comparison.txt: TOTAL 365 PASS 316 EXCLUDED 49 FAIL 0 FATAL-AGREE 0 
+prose-full-e2e-comparison.txt: TOTAL 740 PASS 512 EXCLUDED 228 FAIL 0 FATAL-AGREE 0 
+prose-full-state-comparison.txt: TOTAL 740 PASS 512 EXCLUDED 228 FAIL 0 FATAL-AGREE 0 
+reg-r41-e2e-comparison.txt: TOTAL 365 PASS 362 EXCLUDED 3 FAIL 0 FATAL-AGREE 0 
+reg-r41-state-comparison.txt: TOTAL 365 PASS 362 EXCLUDED 3 FAIL 0 FATAL-AGREE 0 
+reg-r42-prefix-comparison.txt: TOTAL 740 PASS 512 EXCLUDED 228 FAIL 0 FATAL-AGREE 0 
+reg-r43-family-comparison.txt: TOTAL 1109 PASS 1014 EXCLUDED 95 FAIL 0 FATAL-AGREE 0 
+## conformance-r45
+family-e2e-comparison.txt: TOTAL 381 PASS 340 EXCLUDED 41 FAIL 0 FATAL-AGREE 0 
+family-state-comparison.txt: TOTAL 381 PASS 340 EXCLUDED 41 FAIL 0 FATAL-AGREE 0 
+notes-full-e2e-comparison.txt: TOTAL 365 PASS 344 EXCLUDED 21 FAIL 0 FATAL-AGREE 0 
+notes-full-state-comparison.txt: TOTAL 365 PASS 344 EXCLUDED 21 FAIL 0 FATAL-AGREE 0 
+prose-full-e2e-comparison.txt: TOTAL 740 PASS 572 EXCLUDED 168 FAIL 0 FATAL-AGREE 0 
+prose-full-state-comparison.txt: TOTAL 740 PASS 572 EXCLUDED 168 FAIL 0 FATAL-AGREE 0 
+reg-r41-e2e-comparison.txt: TOTAL 365 PASS 362 EXCLUDED 3 FAIL 0 FATAL-AGREE 0 
+reg-r41-state-comparison.txt: TOTAL 365 PASS 362 EXCLUDED 3 FAIL 0 FATAL-AGREE 0 
+reg-r43-family-comparison.txt: TOTAL 1109 PASS 1050 EXCLUDED 59 FAIL 0 FATAL-AGREE 0 
+reg-r44-family-comparison.txt: TOTAL 215 PASS 190 EXCLUDED 25 FAIL 0 FATAL-AGREE 0 
+## conformance-r46
+family-e2e-comparison.txt: TOTAL 862 PASS 747 EXCLUDED 62 FAIL 53 FATAL-AGREE 0 FAILURES ["anchor/a34", "containx/x21-div-in-coll-in-tab", "containx/x22-coll-in-tab", "containx/x23-div-in-tab", "containx/x25-tab-in-coll-in-div", "containx/x29-footnote-in-tab", "date/d40-raw-format", "div/div-in-tabview", "div/nested-in-tab", "tabview/tv01-single", "tabview/tv02-two-tabs", "tabview/tv03-title-double-space", "tabview/tv04-title-trailing-space", "tabview/tv05-title-attr", "tabview/tv06-title-attr-spaces", "tabview/tv07-class-attr", "tabview/tv08-foo-attr", "tabview/tv09-attr-then-text", "tabview/tv10-text-then-attr", "tabview/tv11-untitled-bare", "tabview/tv12-untitled-spaces", "tabview/tv13-case-insensitive", "tabview/tv14-alias-tabs", "tabview/tv15-mixed-alias", "tabview/tv16-title-entities", "tabview/tv17-title-htmlchars", "tabview/tv18-nested-view", "tabview/tv19-nested-alias", "tabview/tv20-nested-deep", "tabview/tv21-nested-blank", "tabview/tv22-div-in-tab", "tabview/tv23-coll-in-tab", "tabview/tv24-div-in-coll-in-tab", "tabview/tv25-tab-in-div", "tabview/tv26-bold-in-tab", "tabview/tv27-span-in-tab", "tabview/tv28-para-in-tab", "tabview/tv29-empty-tab", "tabview/tv30-empty-body-blank", "tabview/tv37-double-tab-close", "tabview/tv38-prose-between", "tabview/tv41-inline-one-line", "tabview/tv42-inline-tight", "tabview/tv43-view-class", "tabview/tv44-view-unquoted", "tabview/tv45-view-id", "tabview/tv46-view-style", "tabview/tv47-view-singlequote", "tabview/tv48-view-multiple-attrs", "tabview/tv49-head-bracket", "tabview/tv50-head-comment", "tabview/tv51-head-bold", "tabview/tv52-title-raw"] 
+family-state-comparison.txt: TOTAL 862 PASS 800 EXCLUDED 62 FAIL 0 FATAL-AGREE 0 
+notes-full-e2e-comparison.txt: TOTAL 365 PASS 362 EXCLUDED 3 FAIL 0 FATAL-AGREE 0 
+notes-full-state-comparison.txt: TOTAL 365 PASS 362 EXCLUDED 3 FAIL 0 FATAL-AGREE 0 
+prose-full-e2e-comparison.txt: TOTAL 740 PASS 642 EXCLUDED 94 FAIL 4 FATAL-AGREE 0 FAILURES ["x22-coll-in-tab", "x23-div-in-tab", "x25-tab-in-coll-in-div", "x29-footnote-in-tab"] 
+prose-full-state-comparison.txt: TOTAL 740 PASS 646 EXCLUDED 94 FAIL 0 FATAL-AGREE 0 
+reg-r41-e2e-comparison.txt: TOTAL 365 PASS 362 EXCLUDED 3 FAIL 0 FATAL-AGREE 0 
+reg-r41-state-comparison.txt: TOTAL 365 PASS 362 EXCLUDED 3 FAIL 0 FATAL-AGREE 0 
+reg-r44-family-comparison.txt: TOTAL 215 PASS 210 EXCLUDED 5 FAIL 0 FATAL-AGREE 0 
+reg-r45-family-comparison.txt: TOTAL 381 PASS 376 EXCLUDED 5 FAIL 0 FATAL-AGREE 0 
+## conformance-r48
+gate-e2e.txt: TOTAL 643 PASS 563 EXCLUDED 75 FAIL 0 FATAL-AGREE 5 
+gate-notes-e2e.txt: TOTAL 365 PASS 365 EXCLUDED 0 FAIL 0 FATAL-AGREE 0 
+gate-notes.txt: TOTAL 365 PASS 365 EXCLUDED 0 FAIL 0 FATAL-AGREE 0 
+gate-prose-e2e.txt: TOTAL 740 PASS 735 EXCLUDED 1 FAIL 4 FATAL-AGREE 0 FAILURES ["x22-coll-in-tab", "x23-div-in-tab", "x25-tab-in-coll-in-div", "x29-footnote-in-tab"] 
+gate-prose.txt: TOTAL 740 PASS 740 EXCLUDED 0 FAIL 0 FATAL-AGREE 0 
+gate-r41-e2e.txt: TOTAL 365 PASS 365 EXCLUDED 0 FAIL 0 FATAL-AGREE 0 
+gate-r41-state.txt: TOTAL 365 PASS 365 EXCLUDED 0 FAIL 0 FATAL-AGREE 0 
+gate-r47-family.txt: TOTAL 156 PASS 147 EXCLUDED 9 FAIL 0 FATAL-AGREE 0 
+gate-state.txt: TOTAL 643 PASS 566 EXCLUDED 72 FAIL 0 FATAL-AGREE 5 

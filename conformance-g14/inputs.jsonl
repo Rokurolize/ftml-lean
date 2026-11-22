@@ -1,0 +1,11 @@
+{"id": "target", "source": "TARGET-CONTENT-START\nValue is {$marker}.\nTARGET-CONTENT-END"}
+{"id": "l4-upper", "source": "BEFORE-L4\n[[INCLUDE muse-probe-g14-target]]\nAFTER-L4"}
+{"id": "l3-nextline", "source": "BEFORE-L3\n[[include\nmuse-probe-g14-target]]\nAFTER-L3"}
+{"id": "l2-stray", "source": "BEFORE-L2\n[[include muse-probe-g14-target\n[[\n| marker=STRAYOK]]\nAFTER-L2"}
+{"id": "l2-control", "source": "BEFORE-L2C\n[[include muse-probe-g14-target | marker=CTRLOK]]\nAFTER-L2C"}
+{"id": "l1-quoted", "source": "BEFORE-L1\n> [[include muse-probe-g14-target]]\nAFTER-L1"}
+{"id": "l1-control", "source": "BEFORE-L1C\n> ordinary quoted text L1C\nAFTER-L1C"}
+{"id": "l1b-multiline", "source": "BEFORE-L1B\n> [[include muse-probe-g14-target]]\n> trailing quoted line L1B\nAFTER-L1B"}
+{"id": "l1c-depth2", "source": "BEFORE-L1C2\n>> [[include muse-probe-g14-target]]\nAFTER-L1C2"}
+{"id": "l1d-midtext", "source": "BEFORE-L1D\n> some text [[include muse-probe-g14-target]]\nAFTER-L1D"}
+{"id": "l1e-quotedarg", "source": "BEFORE-L1E\n> [[include muse-probe-g14-target\n> | marker=QUOTEDOK]]\nAFTER-L1E"}

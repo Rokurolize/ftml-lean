@@ -1,0 +1,34 @@
+{"id": "bq-nospace-only", "source": ">nospace", "tags": []}
+{"id": "bq-nospace-then-text", "source": ">nospace\nX", "tags": []}
+{"id": "bq-nospace-run", "source": ">one\n>two\nX", "tags": []}
+{"id": "bq-multi-nospace", "source": ">>>nospace\nX", "tags": []}
+{"id": "bq-space-control", "source": "> space\nX", "tags": []}
+{"id": "bq-comment-line", "source": "> [!-- hide --]\n> shown", "tags": []}
+{"id": "bq-comment-between", "source": "> one\n[!-- c --]\n> two", "tags": []}
+{"id": "if-trail-plus-untag", "source": "[[iftags +alpha,]]KEEP[[/iftags]]\nX", "tags": []}
+{"id": "if-empty-untag", "source": "[[iftags]]KEEP[[/iftags]]\nX", "tags": []}
+{"id": "if-dangling-minus-untag", "source": "[[iftags -]]KEEP[[/iftags]]\nX", "tags": []}
+{"id": "if-comment-closer-untag", "source": "[[iftags -beta]]KEEP[!-- [[/iftags]] --]TAIL", "tags": []}
+{"id": "cm-hides-if-open", "source": "[!-- [[iftags +alpha]] --]KEEP[[/iftags]]\nX", "tags": []}
+{"id": "cm-basic-inline", "source": "A[!-- hide --]B", "tags": []}
+{"id": "cm-own-line", "source": "a\n[!-- hide --]\nb", "tags": []}
+{"id": "cm-two-leading-nl", "source": "a\n\n[!-- hide --]\nb", "tags": []}
+{"id": "cm-indented", "source": "a\n  [!-- hide --]\nb", "tags": []}
+{"id": "cm-double-bracket", "source": "A[[!-- hide --]]B", "tags": []}
+{"id": "cm-in-code", "source": "[[code]]\n[!-- hide --]\n[[/code]]", "tags": []}
+{"id": "cm-extra-hyphen", "source": "A[!-- hide ---]B", "tags": []}
+{"id": "cm-two-inline", "source": "[!-- a --]X[!-- b --]Y", "tags": []}
+{"id": "cm-unterminated", "source": "A[!-- hide B", "tags": []}
+{"id": "cm-multiline", "source": "[!-- a\nb --]\nX", "tags": []}
+{"id": "if-plain-plus-tagged", "source": "[[iftags +alpha]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-trail-plus-tagged", "source": "[[iftags +alpha,]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-trail-bare-tagged", "source": "[[iftags alpha,]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-lead-comma-tagged", "source": "[[iftags ,+alpha]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-double-comma-tagged", "source": "[[iftags +alpha,,]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-trail-minus-tagged", "source": "[[iftags -beta,]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-trail-space-tagged", "source": "[[iftags +alpha, ]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-dangling-minus-tagged", "source": "[[iftags -]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-case-plus-tagged", "source": "[[iftags +ALPHA]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-nospace-tagged", "source": "[[iftags+alpha]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-newline-tagged", "source": "[[iftags +alpha\n+beta]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-nested-tagged", "source": "[[iftags +alpha]]A[[iftags -beta]]B[[/iftags]]C[[/iftags]]\nX", "tags": ["alpha"]}

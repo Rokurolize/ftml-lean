@@ -1,0 +1,71 @@
+R3.17 fixture generation transcript
+====================================
+
+Route: the worktree reference (ref-php/, snapshot-17 plus the
+R3.17 harness extension described below) copied to the WSL
+scratch /tmp/r317/ref-php; every run is PHP 8.5.4 through
+run_oracle.py (the R3.16 route): the batch is tarred over
+~/workspace/native-stack/bin/wsl-ssh.sh, the driver runs
+there, and the output tar returns. The drivers are
+ref-php/harness/state-restricted.php (an explicit rule list)
+and ref-php/harness/prefix-source.php (the full sixty-eight
+rule pipeline). state-restricted.php in this worktree
+carries one R3.17 extension over the canonical copy: it also
+serializes vars['scored_anchors'] as "scoredAnchors" (the
+Anchor rule's paragraph-interaction state, end placeholder
+then start placeholder, in insertion order), following the
+R3.4 equations pattern; the canonical record's driver is
+untouched.
+
+Scratch identity (md5 of the WSL scratch copy, verified
+equal to the worktree files before generation):
+  Anchor.php                 783c125cd9b2b6f3795fcd0dd4ca48f1
+  User.php                   77d611ac013ae0301a01c3c8e535007b
+  Button.php                 8f26d5d90c11ef7cf7c2af171e6ecdee
+  Embed.php                  c0d1fe43e9f4278ae6720643b2e0958e
+  Social.php                 d64712ba0f863e2956a5b6cde11ad339
+  File.php                   ef7d2450d209010312b9025161ed7969
+  Paragraph.php              fa42b2af39e67bafe03e45b1dc5138f1
+  harness/state-restricted.php
+                             dd8ae1256c67c4a8494c39ef4d73623c
+  harness/prefix-source.php  b2d62905e866bf3b45b879b6108cad75
+  Text/Wiki.php              3d946125e4b42382643563c600224433
+
+Corpus: final-all-cases.jsonl, 365 cases (assemble_corpus.py;
+corpus-provenance.json per case).
+
+Runs over the corpus (all rc 0, all stderr files 0 bytes):
+  full pipeline (68 rules, state-restricted.php)
+      -> expected-final-full.jsonl (308570 bytes)
+  full pipeline again -> expected-final-full-regen.jsonl:
+      byte-identical to expected-final-full.jsonl (cmp clean)
+  full pipeline (68 rules, prefix-source.php)
+      -> prefix-final-states.jsonl (273445 bytes)
+  restricted pipeline (67 rules: the full pipeline minus
+  Include, state-restricted.php)
+      -> restricted-final-states.jsonl (308318 bytes)
+  restricted minus Social (66 rules)
+      -> restricted-nosocial-final-states.jsonl (305788 bytes)
+  full minus Social (67 rules)
+      -> full-nosocial-final-states.jsonl (306040 bytes)
+
+Corpus-selection runs over the pooled candidates
+(candidates-a.jsonl, 3987 cases; all rc 0, stderr 0 bytes):
+  full pipeline -> candidates-a-full.jsonl
+  prefix through Social (50 rules) -> candidates-a-uptosocial.jsonl
+  prefix through Embed (49 rules) -> candidates-a-uptonosocial.jsonl
+  (the last two are byte-identical over the pooled candidates:
+  no pooled case contains a social shape at all; the
+  instrument itself was verified discriminating on authored
+  so-01/so-02, where the with-Social record differs.)
+
+Consistency (consistency_check_r317.py, before mirroring):
+  A prefix==fixture on family claims: 365/365
+  B restricted==full on family claims: 365/365, zero exclusions
+  B-so Social firing agreement: 365/365
+  C restricted==prefix on earlier claims: 364/365,
+    sole disagreement smoke-include (the Include boundary)
+
+Retirements (retirement_check.py): h18-anchor, s59, u50,
+sup59, typo69 RETIRED; smoke-include,
+iw43-61-include-site-pair, x30 STILL OPEN (controls).

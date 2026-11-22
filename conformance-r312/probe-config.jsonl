@@ -1,0 +1,9 @@
+{"id": "probe-iw-standalone", "source": "See [wikipedia:Albert_Einstein] now"}
+{"id": "probe-iw-described", "source": "See [wikipedia:Albert_Einstein Albert] now"}
+{"id": "probe-iw-unknown-described", "source": "See [nosuchsite:Some_Page A Label] now"}
+{"id": "probe-iw-unknown-standalone", "source": "See [nosuchsite:Some_Page] now"}
+{"id": "probe-url-pv", "source": "Val [%%FOO%% some label] end"}
+{"id": "probe-url-basic", "source": "See http://example.com/path now"}
+{"id": "probe-url-star", "source": "See *http://example.com/path now"}
+{"id": "probe-email-basic", "source": "Mail me at user@example.com please"}
+{"id": "probe-mathinline-basic", "source": "A [[$ x^2 $]] B"}

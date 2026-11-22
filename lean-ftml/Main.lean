@@ -1,0 +1,846 @@
+import LeanFtml
+
+def main : IO Unit :=
+  IO.println "lean-ftml: parser equivalence proofs; see LeanFtml/Depth.lean"
+
+-- Audit (2026-11-19): both theorems depend on Lean's standard core
+-- axioms [propext, Classical.choice, Quot.sound] and, critically, NOT on
+-- `sorryAx`: there is no `sorry` anywhere in the project. The stricter
+-- propext-only audit that lean-sql-opt achieves was not met here:
+-- `Quot.sound` enters through the `omega` tactic's proof terms (verified
+-- by bisection: a bare `omega` proof in this toolchain audits as
+-- [propext, Quot.sound]) and `Classical.choice` through one unisolated
+-- step in `finish_step`. Recorded as a proof-hygiene remainder in the
+-- gap ledger (G1.1) rather than silently claimed.
+#print axioms LeanFtml.processDepths_placed
+#print axioms LeanFtml.processDepths_good
+
+-- G1.2 (2026-11-20): block-end closer equivalence, LeanFtml/BlockEnd.lean.
+#print axioms LeanFtml.scan_eraseBlank
+#print axioms LeanFtml.scanCount_close_blank
+#print axioms LeanFtml.scan_tail
+#print axioms LeanFtml.recorded_pairing
+#print axioms LeanFtml.scanEnd_eq_some
+#print axioms LeanFtml.findIncludeEnd_spec
+#print axioms LeanFtml.splice_empty_eq_gaps
+#print axioms LeanFtml.gaps_sublist
+#print axioms LeanFtml.separated_shape
+#print axioms LeanFtml.pagesRust_eq
+#print axioms LeanFtml.parsePageRef_spec
+-- G1.4b (2026-11-20): the live sequential fold for include arguments.
+#print axioms LeanFtml.matchPat_eq_some
+#print axioms LeanFtml.repPass_no_occurs
+#print axioms LeanFtml.repPass_first_occurs
+#print axioms LeanFtml.substitute_append
+
+-- G1.5 (2026-11-20): ParagraphStack output-tree formation core,
+-- LeanFtml/ParagraphStack.lean. Every theorem audits as [propext] only,
+-- with no sorry and no Classical.choice in the compiled model.
+#print axioms LeanFtml.endParagraph_wrapped
+#print axioms LeanFtml.endParagraph_unwrapped
+#print axioms LeanFtml.endParagraph_empty
+#print axioms LeanFtml.push_unsafe_finishes
+#print axioms LeanFtml.push_unsafe_twice
+#print axioms LeanFtml.endParagraph_prefix
+#print axioms LeanFtml.pushSafeElements_empty
+#print axioms LeanFtml.pushSafeElements_all_breaks
+#print axioms LeanFtml.pushSafeElements_append
+#print axioms LeanFtml.buildParagraph_trims
+#print axioms LeanFtml.markUnwrapped_empty
+#print axioms LeanFtml.markUnwrapped_nonempty
+#print axioms LeanFtml.endBreak_whitespace_unwrapped
+#print axioms LeanFtml.endBreak_wrapped
+#print axioms LeanFtml.discardedControl_no_output_change
+#print axioms LeanFtml.intoElements_after_flush
+
+-- G1.6 (2026-11-20): seam typography adjudication, LeanFtml/SeamTypography.lean.
+-- The model uses List Char (never String.toList); no Classical.choice is used
+-- in the compiled model, and the axiom audit is checked below for every new
+-- theorem. The model's seam resolution equals the corrected expectation by
+-- definition; the equality with ftml's piecewise preprocessing is checked
+-- exhaustively over all 271,453 harness inputs by conformance-g16.
+#print axioms LeanFtml.seamResolve_eq_corrected
+#print axioms LeanFtml.charsOf_append
+#print axioms LeanFtml.charsOf_map_some
+#print axioms LeanFtml.charsOf_markPieces
+#print axioms LeanFtml.position_zero_eligibility
+#print axioms LeanFtml.seam_space_run_collapse
+#print axioms LeanFtml.seam_rules_compose
+
+-- R3.1 (2026-11-20): token-state infrastructure and the frame/Code
+-- mirrors, LeanFtml/TokenState.lean, LeanFtml/FrameRules.lean,
+-- LeanFtml/CodeRule.lean. The model uses List Char throughout; the
+-- theorems below are the stage's proved frame invariants, checked
+-- here for their axiom sets.
+#print axioms LeanFtml.byteForm_text
+#print axioms LeanFtml.convCR_no_cr
+#print axioms LeanFtml.expandTabs_no_tab
+#print axioms LeanFtml.delimiterRule_id
+-- R3.2 (2026-11-20): the byte-form infrastructure fact (no text
+-- byte is ever the placeholder delimiter) and the Raw scanner's
+-- no-opener identity, LeanFtml/FormRawRules.lean.
+#print axioms LeanFtml.utf8Bytes_no_ff
+#print axioms LeanFtml.rawScan_no_at
+-- R3.3 (2026-11-20): the Module family's invariants and worked
+-- examples (Modulepre claims nothing; the defense rewrites a
+-- nested match instead of claiming it; a plain Module654 claim),
+-- LeanFtml/ModuleRules.lean.
+#print axioms LeanFtml.modulepreRule_tokens
+#print axioms LeanFtml.moduleMatch_defense_example
+#print axioms LeanFtml.module654Match_claim_example
+-- R3.4 (2026-11-21): the NEXT family's invariants and worked
+-- examples (Iftags claims nothing and its gate on a kept and a
+-- dropped body; one worked match per rule; Math's guard firing
+-- after the counter's pre-throw increment),
+-- LeanFtml/NextRules.lean.
+#print axioms LeanFtml.iftagsRule_tokens
+#print axioms LeanFtml.iftagsGate_keep_example
+#print axioms LeanFtml.iftagsGate_drop_example
+#print axioms LeanFtml.commentMatchAt_example
+#print axioms LeanFtml.iframeMatch_example
+#print axioms LeanFtml.dateMatch1_example
+#print axioms LeanFtml.mathProcess_guard_example
+
+-- R3.5 (2026-11-21): the LINK family's invariants and worked
+-- examples (Concatlines claims nothing, its join and its
+-- div-opener exemption; two toUnixName shapes; one worked match
+-- and one worked claim per claiming rule),
+-- LeanFtml/LinkRules.lean.
+#print axioms LeanFtml.concatlinesRule_tokens
+#print axioms LeanFtml.concatScan_join_example
+#print axioms LeanFtml.concatScan_div_example
+#print axioms LeanFtml.toUnixName_double_colon_example
+#print axioms LeanFtml.toUnixName_case_example
+#print axioms LeanFtml.freelinkMatchAt_example
+#print axioms LeanFtml.freelinkRule_example
+#print axioms LeanFtml.erefMatchAt_example
+#print axioms LeanFtml.erefRule_example
+
+-- R3.6 (2026-11-21): the NOTES family's invariants and worked
+-- examples (Footnoteitem and Bibitem are identity rules; one
+-- worked match each for Footnote, the bibliography definition
+-- line, and Bibcite; the empty-collection Footnoteblock; a
+-- worked Bibitem registration), LeanFtml/NotesRules.lean.
+#print axioms LeanFtml.footnoteitemRule_id
+#print axioms LeanFtml.bibitemRule_id
+#print axioms LeanFtml.footnoteMatchAt_example
+#print axioms LeanFtml.footnoteblockProcess_empty_example
+#print axioms LeanFtml.bibDefMatch_example
+#print axioms LeanFtml.bibitemProcess_state_example
+#print axioms LeanFtml.bibciteMatchAt_example
+
+-- R3.7 (2026-11-21): the BLOCK family's worked examples (a
+-- Blockquote match, the depth-jump claim shape, the empty-run
+-- suppression; a Heading line match, the seven-plus non-match,
+-- the first heading's counter; a Toc match and a one-heading
+-- Toc claim), LeanFtml/BlockRules.lean.
+#print axioms LeanFtml.blockquoteMatchAt_example
+#print axioms LeanFtml.blockquoteProcess_jump_example
+#print axioms LeanFtml.blockquoteProcess_empty_example
+#print axioms LeanFtml.headingMatchLine_example
+#print axioms LeanFtml.headingMatchLine_seven_none
+#print axioms LeanFtml.headingProcess_first_example
+#print axioms LeanFtml.tocMatchAt_example
+#print axioms LeanFtml.tocProcess_one_example
+
+-- R3.8 (2026-11-21): the CONTAIN family's worked examples (the
+-- Span elision and a Span claim; the Size grammar, the invalid
+-- identity return, and the tempered-body non-match; the Div id
+-- isolation, a scored Div claim, and the empty Div suppression;
+-- the Collapsible counter discipline and first-closer match;
+-- the Tabview title rule and the token creation order),
+-- LeanFtml/ContainRules.lean.
+#print axioms LeanFtml.spanProcess_elides_empty
+#print axioms LeanFtml.spanProcess_claim_example
+#print axioms LeanFtml.sizeValid_examples
+#print axioms LeanFtml.sizeProcess_invalid_identity
+#print axioms LeanFtml.sizeMatchAt_recursive_example
+#print axioms LeanFtml.isolateId_examples
+#print axioms LeanFtml.divProcess_scored_example
+#print axioms LeanFtml.divArgs_emission_order
+#print axioms LeanFtml.divProcess_vanished_pair
+#print axioms LeanFtml.collProcess_count_example
+#print axioms LeanFtml.collMatchAt_first_closer_example
+#print axioms LeanFtml.tabTitle_examples
+#print axioms LeanFtml.tabviewProcess_token_order_example
+
+-- R3.9 (2026-11-21): the LIST family's worked examples (a
+-- two-item native run and a one-item native process; a
+-- definition item match and a one-item Deflist process; the
+-- explicit attribute allowlist; an explicit block's token
+-- creation order, with item tokens preceding the list tokens
+-- and the finalize Newline last; the Deflist no-claim
+-- identity), LeanFtml/ListRules.lean.
+#print axioms LeanFtml.native_run_two_items
+#print axioms LeanFtml.native_process_one_item
+#print axioms LeanFtml.def_item_simple
+#print axioms LeanFtml.def_process_one_item
+#print axioms LeanFtml.build_list_attrs_example
+#print axioms LeanFtml.list_rule_explicit_tokens
+#print axioms LeanFtml.deflist_rule_no_claim
+
+-- R3.10 (2026-11-21): the TABLE family's worked examples (a
+-- Table match and a one-row Table process with the start and
+-- end tokens claimed last; the Tableadv attribute filter pair
+-- by pair: keep-with-isolation, the always-dropped title, the
+-- owner-gated and zero cell spans, a kept data- attribute),
+-- LeanFtml/TableRules.lean.
+#print axioms LeanFtml.tableMatchAt_example
+#print axioms LeanFtml.tableProcess_example
+#print axioms LeanFtml.advAttrStep_id_example
+#print axioms LeanFtml.advAttrStep_title_example
+#print axioms LeanFtml.advAttrStep_span_owner_example
+#print axioms LeanFtml.advAttrStep_span_zero_example
+#print axioms LeanFtml.advAttrStep_data_example
+
+-- R3.11 (2026-11-21): the IMAGE / NEWLINE / PARAGRAPH family's
+-- worked examples (an Image match; a plain and an aligned Image
+-- process; the placeholder bail that keeps a raw-headed image
+-- literal; one Newline scan; one Paragraph match; the wrap,
+-- skip-list suppression, and scored-span suppression process
+-- outcomes), LeanFtml/ParaRules.lean.
+#print axioms LeanFtml.imageMatchAt_example
+#print axioms LeanFtml.imageProcess_example
+#print axioms LeanFtml.imageProcess_aligned_example
+#print axioms LeanFtml.imageProcess_placeholder_example
+#print axioms LeanFtml.newlineScan_example
+#print axioms LeanFtml.paraMatchAt_example
+#print axioms LeanFtml.paraProcess_wrap_example
+#print axioms LeanFtml.paraProcess_skip_example
+#print axioms LeanFtml.paraProcess_scored_example
+
+-- R3.12 (2026-11-21): the INLINE1 family's worked examples (a
+-- strict URL length and a described claim; the C4 cut at an
+-- inline-math opener; an address length and a described Email
+-- claim; the Mathinline placeholder resolution and its
+-- Newline suppression; an Interwiki claim, the unknown-site
+-- literal return, and the described form's site
+-- lowercasing), LeanFtml/Inline1Rules.lean.
+#print axioms LeanFtml.urlMatchLen_example
+#print axioms LeanFtml.urlDescrMatch_example
+#print axioms LeanFtml.urlInlineCut_example
+#print axioms LeanFtml.emailMatchLen_example
+#print axioms LeanFtml.emailDescrMatch_example
+#print axioms LeanFtml.mathResolve_text_example
+#print axioms LeanFtml.mathResolve_suppress_example
+#print axioms LeanFtml.interwikiStandaloneMatch_example
+#print axioms LeanFtml.interwikiStandaloneMatch_unknown_example
+#print axioms LeanFtml.interwikiDescrMatch_example
+#print axioms LeanFtml.interwikiDescrMatch_placeholder_label_none
+#print axioms LeanFtml.interwikiDescrMatch_bracket_label_none
+
+-- C-UFFFD-1 (2026-11-22): U+FFFD re-conversion in the render core.
+-- The byte restore and the ten decisive rescan examples.
+#print axioms LeanFtml.utf8Bytes_ufffd
+#print axioms LeanFtml.reconvertFffdBytes_marker
+#print axioms LeanFtml.reconvertFffdBytes_ascii
+#print axioms LeanFtml.ufffd_plain_mid
+#print axioms LeanFtml.ufffd_plain_end
+#print axioms LeanFtml.ufffd_plain_only
+#print axioms LeanFtml.ufffd_end_first_para
+#print axioms LeanFtml.ufffd_end_list
+#print axioms LeanFtml.ufffd_end_heading
+#print axioms LeanFtml.ufffd_fake_before_bold
+#print axioms LeanFtml.ufffd_pair_digits
+#print axioms LeanFtml.ufffd_pair_zero
+#print axioms LeanFtml.ufffd_only_two
+#print axioms LeanFtml.ufffd_no_marker
+
+-- R3.13 (2026-11-21): the INLINE2 family's worked examples (a
+-- Colortext claim; a Strong claim and the empty pair's silent
+-- consumption; an Emphasis claim, the empty pair's
+-- consumption, and the whitespace-padded body's literal
+-- return; an Underline claim, the empty pair's deletion, and
+-- the __a____b__ two-pair scan; a Strikethrough claim),
+-- LeanFtml/Inline2Rules.lean.
+#print axioms LeanFtml.colortextMatch_example
+#print axioms LeanFtml.strongMatch_example
+#print axioms LeanFtml.strongMatch_empty_example
+#print axioms LeanFtml.emphasisMatch_example
+#print axioms LeanFtml.emphasisMatch_empty_example
+#print axioms LeanFtml.emphasisMatch_padded_example
+#print axioms LeanFtml.underlineMatch_example
+#print axioms LeanFtml.underlineMatch_empty_example
+#print axioms LeanFtml.underlineScan_double_example
+#print axioms LeanFtml.strikethroughMatch_example
+
+-- R3.14 (2026-11-21): the INLINE3 family's worked examples (a
+-- Tt match, the greedy closing-brace run's match, and a
+-- padded Tt claim with both separator spaces; a Superscript
+-- claim and the empty pair's silent consumption; a
+-- Subscript claim and the empty pair's silent consumption;
+-- the Typography units statement on a metric shape and on
+-- the end-anchor shape; Tighten's newline deletion and a
+-- Colortext space hoist), LeanFtml/Inline3Rules.lean.
+#print axioms LeanFtml.ttMatch_example
+#print axioms LeanFtml.ttMatch_closeRun_example
+#print axioms LeanFtml.ttScan_example
+#print axioms LeanFtml.superscriptMatch_example
+#print axioms LeanFtml.superscriptMatch_empty_example
+#print axioms LeanFtml.subscriptMatch_example
+#print axioms LeanFtml.subscriptMatch_empty_example
+#print axioms LeanFtml.typoUnits_example
+#print axioms LeanFtml.typoUnits_anchor_example
+#print axioms LeanFtml.tighten_example
+#print axioms LeanFtml.tightenColor_example
+
+-- R3.17 (2026-11-21): the FINAL family's worked examples (a
+-- User match and its starred form; a Button match, the
+-- one-space tail's non-match, and the two-space tail's
+-- single-space group; an Embed match and the
+-- suffix-independent closer; a Social match, the bare form,
+-- the one-space non-match, and the bare replacement string;
+-- two File matches; the verbatim-href case test and slash
+-- test; the unsafe-href slug normalization; a named-anchor
+-- match; an element opener decomposition; the scored join's
+-- two strip outcomes), LeanFtml/FinalRules.lean, and the
+-- Paragraph scored-anchors example, LeanFtml/ParaRules.lean.
+#print axioms LeanFtml.userMatchAt_example
+#print axioms LeanFtml.userMatchAt_starred_example
+#print axioms LeanFtml.buttonMatchAt_example
+#print axioms LeanFtml.buttonTail_space_example
+#print axioms LeanFtml.buttonTail_twoSpace_example
+#print axioms LeanFtml.embedMatchAt_example
+#print axioms LeanFtml.embedMatchAt_suffix_example
+#print axioms LeanFtml.socialMatchAt_example
+#print axioms LeanFtml.socialMatchAt_bare_example
+#print axioms LeanFtml.socialMatchAt_oneSpace_example
+#print axioms LeanFtml.socialReplacement_bare_example
+#print axioms LeanFtml.fileMatchAt_pipe_example
+#print axioms LeanFtml.fileMatchAt_anchor_example
+#print axioms LeanFtml.isVerbatimHref_case_example
+#print axioms LeanFtml.isVerbatimHref_slash_example
+#print axioms LeanFtml.normalizeUnsafeHref_example
+#print axioms LeanFtml.namedAnchorMatchAt_example
+#print axioms LeanFtml.anchorOpenerAt_example
+#print axioms LeanFtml.scoredJoinStrip_example
+#print axioms LeanFtml.scoredJoinStrip_three_example
+#print axioms LeanFtml.paraProcess_anchor_example
+
+-- R4.1 (2026-11-21): Xhtml render-phase core (`LeanFtml/RenderCore.lean`)
+-- and NOTES pilot render mirror (`LeanFtml/NotesRender.lean`).
+-- General structural theorems (no-silent-stand-in exclusion, completeness,
+-- unreferenced-token irrelevance, parse->render bibSet/bibLookup bridge,
+-- per-rule universal characterizations) plus worked end-to-end R3.6->R4.1
+-- examples.
+#print axioms LeanFtml.renderRuleOfName_roundtrip
+#print axioms LeanFtml.htmlSpecialCharsCompat_invalid
+#print axioms LeanFtml.utf8Valid_ascii
+#print axioms LeanFtml.htmlSpecialCharsCompat_ascii
+#print axioms LeanFtml.htmlSpecialCharsQuotesSubst_ascii
+#print axioms LeanFtml.renderSegsLoop_unmirrored_mem
+#print axioms LeanFtml.renderWith_unmirrored_not_complete
+#print axioms LeanFtml.renderWith_all_mirrored_complete
+#print axioms LeanFtml.renderWith_lookup_ext
+#print axioms LeanFtml.postStripToc_no_nul
+#print axioms LeanFtml.postStripToc_strips_tags
+#print axioms LeanFtml.bibLookup_bibSet_same
+#print axioms LeanFtml.bibLookup_bibSet_other
+#print axioms LeanFtml.footnote_spec
+#print axioms LeanFtml.footnoteitem_parabreak
+#print axioms LeanFtml.footnoteitem_end
+#print axioms LeanFtml.footnoteitem_start_empty_body
+#print axioms LeanFtml.footnoteitem_start_nonempty_body
+#print axioms LeanFtml.footnoteblock_empty_doc
+#print axioms LeanFtml.footnoteblock_title_empty
+#print axioms LeanFtml.footnoteblock_title_default
+#print axioms LeanFtml.footnoteblock_end
+#print axioms LeanFtml.bibitem_end
+#print axioms LeanFtml.bibitem_start_empty_sep
+#print axioms LeanFtml.bibliography_nl
+#print axioms LeanFtml.bibliography_end
+#print axioms LeanFtml.bibliography_title_empty
+#print axioms LeanFtml.bibliography_title_default
+#print axioms LeanFtml.bibcite_not_found
+#print axioms LeanFtml.bibcite_found
+#print axioms LeanFtml.notes_e2e_bibcite_duplicate_example
+#print axioms LeanFtml.notes_e2e_parabreak_example
+#print axioms LeanFtml.notes_e2e_title_apostrophe_agreement
+#print axioms LeanFtml.notes_e2e_code_mirrored_complete
+
+-- R4.2 (2026-11-22): prose-core render mirror (`LeanFtml/ProseRules.lean`,
+-- `LeanFtml/ProseRender.lean`) and the fifty-four-rule stage prefix
+-- (`LeanFtml/Pipeline.lean`). Per-rule characterizations on concrete
+-- option maps, each proved by computation.
+#print axioms LeanFtml.pipelineR42_length
+#print axioms LeanFtml.pipelineR42_prefix
+#print axioms LeanFtml.paragraph_start
+#print axioms LeanFtml.paragraph_end
+#print axioms LeanFtml.paragraph_other
+#print axioms LeanFtml.newline_const
+#print axioms LeanFtml.break_const
+#print axioms LeanFtml.center_start
+#print axioms LeanFtml.center_end
+#print axioms LeanFtml.center_other
+#print axioms LeanFtml.horiz_const
+#print axioms LeanFtml.separator_const
+#print axioms LeanFtml.clearfloat_right
+#print axioms LeanFtml.clearfloat_left
+#print axioms LeanFtml.clearfloat_both_empty
+#print axioms LeanFtml.clearfloat_both_absent
+#print axioms LeanFtml.blockquote_start
+#print axioms LeanFtml.blockquote_end
+#print axioms LeanFtml.blockquote_other
+#print axioms LeanFtml.note_start
+#print axioms LeanFtml.note_end
+#print axioms LeanFtml.note_other
+#print axioms LeanFtml.divalign_start
+#print axioms LeanFtml.divalign_end
+#print axioms LeanFtml.divalign_other
+#print axioms LeanFtml.comment_const
+#print axioms LeanFtml.delimiter_text_bytes
+#print axioms LeanFtml.delimiter_text_str
+
+-- CAPSTONE: Include parse rule mirror and full sixty-eight-rule
+-- pipeline theorems (LeanFtml/IncludeRule.lean, LeanFtml/Pipeline.lean).
+-- The example theorems are stated against the corrected reference
+-- mechanisms (AUDIT-G13/G14B: raw-pipe segment splitting, no quoted
+-- consumption, host-gate resolution, next-line resumption).
+#print axioms LeanFtml.includeRule_tokens
+#print axioms LeanFtml.includeRule_fatal
+#print axioms LeanFtml.includePassesWith_zero
+#print axioms LeanFtml.refSubPass_eq_repPass
+#print axioms LeanFtml.refSubstitute_eq_substitute
+#print axioms LeanFtml.refPageId_g14_target_example
+#print axioms LeanFtml.refPageId_other_page_example
+#print axioms LeanFtml.refPageId_empty_page_example
+#print axioms LeanFtml.refPageId_site_other_page_example
+#print axioms LeanFtml.refPageId_g14b_target_example
+#print axioms LeanFtml.refPageId_notes_inc_src_example
+#print axioms LeanFtml.refFindCandidate_basic_example
+#print axioms LeanFtml.refFindCandidate_quoted_skipped_example
+#print axioms LeanFtml.refFindCandidate_quoted_then_plain_example
+#print axioms LeanFtml.refFindIncludeEnd_example
+#print axioms LeanFtml.refParseBlock_stray_example
+#print axioms LeanFtml.refSegments_raw_pipe_example
+#print axioms LeanFtml.refSegments_unclosed_comment_example
+#print axioms LeanFtml.refCanonicalSite_host_example
+#print axioms LeanFtml.refResolveRef_cross_site_example
+#print axioms LeanFtml.refResolveRef_leading_colons_example
+#print axioms LeanFtml.refResolveRef_site_empty_fallback_example
+#print axioms LeanFtml.refResolveRef_empty_norm_fires_example
+#print axioms LeanFtml.refResolveRef_char_gate_rejects_example
+#print axioms LeanFtml.refResolveRef_pair_char_gate_rejects_example
+#print axioms LeanFtml.refResolveRef_host_gate_fallback_example
+#print axioms LeanFtml.refResolveRef_empty_pair_page_fires_example
+#print axioms LeanFtml.refResolveRef_site_case_preserved_example
+#print axioms LeanFtml.refResolveRef_dotted_site_example
+#print axioms LeanFtml.refFetch_missing_cross_site_example
+#print axioms LeanFtml.refFetch_existing_fold_example
+#print axioms LeanFtml.refFindCandidate_success_shape
+#print axioms LeanFtml.refFindCandidate_adjacent
+#print axioms LeanFtml.refFindCandidate_skips_gt
+#print axioms LeanFtml.refFindCandidate_spaced_none
+#print axioms LeanFtml.refResolveRef_pair_spec
+#print axioms LeanFtml.refExpandPass_resumption_example
+#print axioms LeanFtml.refExpandPass_quoted_literal_example
+#print axioms LeanFtml.includePassesWith_self_cycle_bound_example
+#print axioms LeanFtml.includePassesWith_mutual_cycle_bound_example
+#print axioms LeanFtml.includePassesWith_nested_missing_example
+#print axioms LeanFtml.pipelineFull_length
+
+-- R4.3 (2026-11-22): inline-simple and typography render mirror
+-- (`LeanFtml/InlineSimpleRules.lean`, `LeanFtml/InlineRender.lean`)
+-- and the full-pipeline stage prefix (`LeanFtml/Pipeline.lean`).
+-- Per-rule characterizations on concrete option maps, each proved by
+-- computation.
+#print axioms LeanFtml.pipelineR43_length
+#print axioms LeanFtml.pipelineR43_full
+#print axioms LeanFtml.url_inline_plain
+#print axioms LeanFtml.url_descr_target
+#print axioms LeanFtml.url_hash_becomes_javascript
+#print axioms LeanFtml.url_hash_target_kept
+#print axioms LeanFtml.url_anchor_target_kept
+#print axioms LeanFtml.url_mailto_target_kept
+#print axioms LeanFtml.url_mailto_upper_target_kept
+#print axioms LeanFtml.url_text_apostrophe
+#print axioms LeanFtml.url_href_ampersand
+#print axioms LeanFtml.url_href_nonascii_percent
+#print axioms LeanFtml.url_footnote_wrap
+#print axioms LeanFtml.email_reversed
+#print axioms LeanFtml.mathinline_escapes
+#print axioms LeanFtml.mathinline_nul_space
+#print axioms LeanFtml.mathinline_amp_quote
+#print axioms LeanFtml.interwiki_wikipedia
+#print axioms LeanFtml.interwiki_page_raw
+#print axioms LeanFtml.interwiki_unknown_site_escaped
+#print axioms LeanFtml.interwiki_text_apostrophe
+#print axioms LeanFtml.normalizeColor_hex3_upper
+#print axioms LeanFtml.normalizeColor_named
+#print axioms LeanFtml.normalizeColor_rejects_semicolon
+#print axioms LeanFtml.colortext_named_start
+#print axioms LeanFtml.colortext_named_end
+#print axioms LeanFtml.colortext_hex3_start
+#print axioms LeanFtml.colortext_hex6_start
+#print axioms LeanFtml.colortext_ws_only_start
+#print axioms LeanFtml.colortext_invalid_start
+#print axioms LeanFtml.colortext_invalid_end
+#print axioms LeanFtml.colortext_collapses_runs
+#print axioms LeanFtml.colortext_other_type
+#print axioms LeanFtml.strong_start
+#print axioms LeanFtml.strong_end
+#print axioms LeanFtml.strong_other
+#print axioms LeanFtml.emphasis_start
+#print axioms LeanFtml.emphasis_end
+#print axioms LeanFtml.underline_start
+#print axioms LeanFtml.underline_end
+#print axioms LeanFtml.strikethrough_start
+#print axioms LeanFtml.strikethrough_end
+#print axioms LeanFtml.tt_start
+#print axioms LeanFtml.tt_end
+#print axioms LeanFtml.superscript_start
+#print axioms LeanFtml.superscript_end
+#print axioms LeanFtml.subscript_start
+#print axioms LeanFtml.subscript_end
+#print axioms LeanFtml.typography_ldquo
+#print axioms LeanFtml.typography_rdquo
+#print axioms LeanFtml.typography_lowquo
+#print axioms LeanFtml.typography_lsquo
+#print axioms LeanFtml.typography_apos
+#print axioms LeanFtml.typography_laquo
+#print axioms LeanFtml.typography_raquo
+#print axioms LeanFtml.typography_nbsp
+#print axioms LeanFtml.typography_ellipsis
+#print axioms LeanFtml.typography_emdash_long
+#print axioms LeanFtml.typography_emdash
+#print axioms LeanFtml.typography_unknown
+#print axioms LeanFtml.tighten_const
+
+-- R4.4 (2026-11-22): raw/form and heading/toc render mirror
+-- (`LeanFtml/RawHeadingRules.lean`, `LeanFtml/RawHeadingRender.lean`)
+-- and the full-pipeline stage prefix (`LeanFtml/Pipeline.lean`).
+-- Per-rule characterizations on concrete option maps, each proved by
+-- computation.
+#print axioms LeanFtml.pipelineR44_length
+#print axioms LeanFtml.pipelineR44_full
+#print axioms LeanFtml.escapeRaw_space_apos
+#print axioms LeanFtml.escapeRaw_significant_nul
+#print axioms LeanFtml.raw_wrapped
+#print axioms LeanFtml.raw_markup_literal
+#print axioms LeanFtml.rawold_plain_spaces
+#print axioms LeanFtml.rawold_apostrophe
+#print axioms LeanFtml.rawold_angle
+#print axioms LeanFtml.form_plain_line
+#print axioms LeanFtml.form_blank
+#print axioms LeanFtml.form_indent_one
+#print axioms LeanFtml.form_indent_two
+#print axioms LeanFtml.form_indent_three
+#print axioms LeanFtml.form_indent_four
+#print axioms LeanFtml.form_compat_shape
+#print axioms LeanFtml.heading_start_with_id
+#print axioms LeanFtml.heading_start_null_id
+#print axioms LeanFtml.heading_start_notoc
+#print axioms LeanFtml.heading_end_plain
+#print axioms LeanFtml.heading_other
+#print axioms LeanFtml.toc_list_start_plain
+#print axioms LeanFtml.toc_list_start_floatright
+#print axioms LeanFtml.toc_list_start_title_attr
+#print axioms LeanFtml.toc_list_end_plain
+#print axioms LeanFtml.toc_list_end_float
+#print axioms LeanFtml.toc_item_start_level
+#print axioms LeanFtml.toc_item_end_shape
+#print axioms LeanFtml.toc_other
+
+-- R4.5 (2026-11-22): list and table render mirror
+-- (`LeanFtml/ListTableRules.lean`, `LeanFtml/ListTableRender.lean`)
+-- and the full-pipeline stage prefix (`LeanFtml/Pipeline.lean`).
+-- Per-rule characterizations on concrete option maps, each proved by
+-- computation.
+#print axioms LeanFtml.pipelineR45_length
+#print axioms LeanFtml.pipelineR45_full
+#print axioms LeanFtml.list_bullet_start_top
+#print axioms LeanFtml.list_number_start_nested
+#print axioms LeanFtml.list_number_start_in_sublist
+#print axioms LeanFtml.list_number_start_format
+#print axioms LeanFtml.list_bullet_end_top_item
+#print axioms LeanFtml.list_bullet_end_top_sublist
+#print axioms LeanFtml.list_number_end_nested_item
+#print axioms LeanFtml.list_sublist_start_shape
+#print axioms LeanFtml.list_sublist_end_shape
+#print axioms LeanFtml.list_item_start_first
+#print axioms LeanFtml.list_item_start_later
+#print axioms LeanFtml.list_item_end_empty
+#print axioms LeanFtml.list_explicit_start_plain
+#print axioms LeanFtml.list_explicit_start_attrs
+#print axioms LeanFtml.list_explicit_end_trail
+#print axioms LeanFtml.list_explicit_item_start_plain
+#print axioms LeanFtml.list_explicit_item_end_lead
+#print axioms LeanFtml.list_explicit_none_start
+#print axioms LeanFtml.list_explicit_none_end
+#print axioms LeanFtml.list_explicit_wrapper_end
+#print axioms LeanFtml.list_explicit_br_no_nl_shape
+#print axioms LeanFtml.list_explicit_raw_nl_shape
+#print axioms LeanFtml.list_other
+#print axioms LeanFtml.deflist_start_shape
+#print axioms LeanFtml.deflist_end_shape
+#print axioms LeanFtml.deflist_term_shapes
+#print axioms LeanFtml.deflist_narr_shapes
+#print axioms LeanFtml.deflist_other
+#print axioms LeanFtml.table_start_class
+#print axioms LeanFtml.table_start_format
+#print axioms LeanFtml.table_end_shape
+#print axioms LeanFtml.table_caption_shapes
+#print axioms LeanFtml.table_row_shapes
+#print axioms LeanFtml.table_cell_plain
+#print axioms LeanFtml.table_cell_header
+#print axioms LeanFtml.table_cell_span
+#print axioms LeanFtml.table_cell_rowspan
+#print axioms LeanFtml.table_cell_align
+#print axioms LeanFtml.table_cell_header_span
+#print axioms LeanFtml.table_cell_end_shapes
+#print axioms LeanFtml.table_other
+#print axioms LeanFtml.tableadv_start_plain
+#print axioms LeanFtml.tableadv_start_attrs
+#print axioms LeanFtml.tableadv_row_end_shapes
+#print axioms LeanFtml.tableadv_cell_plain
+#print axioms LeanFtml.tableadv_cell_header
+#print axioms LeanFtml.tableadv_cell_attrs_order
+#print axioms LeanFtml.tableadv_other
+
+-- R4.6 (2026-11-22): interactive and link-pure render mirror
+-- (`LeanFtml/InteractiveRules.lean`, theorems in
+-- `LeanFtml/InteractiveRender.lean`), plus the pipeline theorems.
+#print axioms LeanFtml.pipelineR46_length
+#print axioms LeanFtml.pipelineR46_full
+#print axioms LeanFtml.eref_found
+#print axioms LeanFtml.eref_missing
+#print axioms LeanFtml.anchor_name_plain
+#print axioms LeanFtml.anchor_name_entity
+#print axioms LeanFtml.anchor_start_default
+#print axioms LeanFtml.anchor_start_attrs
+#print axioms LeanFtml.anchor_end
+#print axioms LeanFtml.anchor_invalid_named
+#print axioms LeanFtml.anchor_literal
+#print axioms LeanFtml.anchor_type_fallthrough
+#print axioms LeanFtml.collapsible_label_default_show
+#print axioms LeanFtml.collapsible_label_default_hide
+#print axioms LeanFtml.collapsible_label_spaces
+#print axioms LeanFtml.collapsible_start_default
+#print axioms LeanFtml.collapsible_start_unfolded
+#print axioms LeanFtml.collapsible_end_bottom
+#print axioms LeanFtml.collapsible_end_top
+#print axioms LeanFtml.tabview_start_one
+#print axioms LeanFtml.tabview_tab_empty_title
+#print axioms LeanFtml.tabview_tab_untitled
+#print axioms LeanFtml.tabview_tabstart_first
+#print axioms LeanFtml.tabview_tabstart_later
+#print axioms LeanFtml.tabview_tabstart_shared
+#print axioms LeanFtml.tabview_tabend
+#print axioms LeanFtml.tabview_end
+#print axioms LeanFtml.button_edit_default
+#print axioms LeanFtml.button_edit_full
+#print axioms LeanFtml.button_upper_type
+#print axioms LeanFtml.button_invalid_type
+#print axioms LeanFtml.button_settags_notext
+#print axioms LeanFtml.button_settags_text
+#print axioms LeanFtml.iframe_src_null_attr
+#print axioms LeanFtml.iframe_src_nonascii
+#print axioms LeanFtml.date_epoch
+#print axioms LeanFtml.date_basic
+#print axioms LeanFtml.date_format_class
+#print axioms LeanFtml.date_negative_day
+#print axioms LeanFtml.date_empty
+#print axioms LeanFtml.date_canon_clamp
+#print axioms LeanFtml.date_canon_leading_zeros
+#print axioms LeanFtml.file_plain
+#print axioms LeanFtml.file_path
+#print axioms LeanFtml.file_space
+#print axioms LeanFtml.size_shapes
+#print axioms LeanFtml.span_start_bare
+#print axioms LeanFtml.span_start_class
+#print axioms LeanFtml.span_end
+#print axioms LeanFtml.div_start_bare
+#print axioms LeanFtml.div_start_class_escaped
+#print axioms LeanFtml.div_end
+#print axioms LeanFtml.div_start_id_class_order
+#print axioms LeanFtml.div_vanished_start
+#print axioms LeanFtml.div_vanished_end
+
+-- R4.7 (2026-11-22): Code and Embed render mirror
+-- (`LeanFtml/CodeEmbedRules.lean`, theorems in
+-- `LeanFtml/CodeEmbedRender.lean`), plus the pipeline theorems.
+#print axioms LeanFtml.pipelineR47_length
+#print axioms LeanFtml.pipelineR47_full
+#print axioms LeanFtml.renderRuleOfName_roundtrip
+#print axioms LeanFtml.code_plain_basic
+#print axioms LeanFtml.code_empty_body
+#print axioms LeanFtml.code_whitespace_body
+#print axioms LeanFtml.code_tab_indent
+#print axioms LeanFtml.code_escape_compat
+#print axioms LeanFtml.code_unknown_type
+#print axioms LeanFtml.code_python_boundary
+#print axioms LeanFtml.code_python_upper_boundary
+#print axioms LeanFtml.code_boundary_excluded
+#print axioms LeanFtml.code_boundary_incomplete
+#print axioms LeanFtml.pcre_parse_a_plus
+#print axioms LeanFtml.pcre_match_a_plus_true
+#print axioms LeanFtml.pcre_match_a_plus_false
+#print axioms LeanFtml.anyiframe_fixture_in_table
+#print axioms LeanFtml.embed_no_patterns_error
+#print axioms LeanFtml.embed_anyiframe_passthrough
+#print axioms LeanFtml.embed_anyiframe_onclick_error
+#print axioms LeanFtml.embed_anyiframe_js_src_empty
+#print axioms LeanFtml.embed_anyiframe_dash_attr_error
+#print axioms LeanFtml.embed_language_strip
+
+-- R4.8 (2026-11-22): serving-layer and stubbed render mirror
+-- (`LeanFtml/ServingRules.lean`, theorems in
+-- `LeanFtml/ServingRender.lean`), plus the pipeline theorems.
+#print axioms LeanFtml.pipelineR48_length
+#print axioms LeanFtml.pipelineR48_full
+#print axioms LeanFtml.renderRuleOfName_roundtrip
+#print axioms LeanFtml.module_known_marker
+#print axioms LeanFtml.module_known_upper_marker
+#print axioms LeanFtml.module_unknown_error
+#print axioms LeanFtml.module_body_marker
+#print axioms LeanFtml.math_error_block
+#print axioms LeanFtml.math_unsupported_uppercase
+#print axioms LeanFtml.math_unsupported_empty
+#print axioms LeanFtml.user_not_found
+#print axioms LeanFtml.user_boundary_excluded
+#print axioms LeanFtml.user_boundary_incomplete
+#print axioms LeanFtml.freelink_title_boundary
+#print axioms LeanFtml.image_flickr_boundary
+#print axioms LeanFtml.image_first_no_boundary
+#print axioms LeanFtml.freelink_exists_anchor
+#print axioms LeanFtml.freelink_new_anchor
+#print axioms LeanFtml.freelink_title_missing_fallback
+#print axioms LeanFtml.image_plain_local
+#print axioms LeanFtml.image_first_empty
+#print axioms LeanFtml.gallery_local_mode_block
+#print axioms LeanFtml.gallery_one_local_row
+
+-- COVERAGE-PROSE (2026-11-22): the prose-core classification and its
+-- decidability/completeness/exhaustiveness theorems
+-- (LeanFtml/CoverageProse.lean). Every theorem is audited here; the axiom
+-- discipline for this lane is the programme standard (no sorryAx, core
+-- axioms at most).
+#print axioms LeanFtml.allClasses_nodup
+#print axioms LeanFtml.allClasses_length
+#print axioms LeanFtml.allClasses_mem
+#print axioms LeanFtml.classWhen_mem
+#print axioms LeanFtml.hzFire_of_count
+#print axioms LeanFtml.hzLiteral_of_count
+#print axioms LeanFtml.hzLiteral_not_alone
+#print axioms LeanFtml.spFire_of_count
+#print axioms LeanFtml.spLiteral_of_count
+#print axioms LeanFtml.cfDoubleSide_of_dashes
+#print axioms LeanFtml.cfBoth_of_dashes
+#print axioms LeanFtml.classify_sound
+#print axioms LeanFtml.classify_nonempty
+#print axioms LeanFtml.witness_classify
+#print axioms LeanFtml.classes_exhaustive
+#print axioms LeanFtml.prose_classification_complete
+#print axioms LeanFtml.exclusive_class_single
+#print axioms LeanFtml.pf_pad_always
+#print axioms LeanFtml.tn_newline_always
+#print axioms LeanFtml.ty_none_iff
+#print axioms LeanFtml.ty_none_exclusive
+#print axioms LeanFtml.delimiter_dead_branch_has_no_author_shape
+#print axioms LeanFtml.typography_dash3_statement_dead
+#print axioms LeanFtml.cov_prefilter_tab_four_spaces
+#print axioms LeanFtml.cov_delimiter_identity
+#print axioms LeanFtml.cov_horiz_three_literal
+#print axioms LeanFtml.cov_horiz_four_claims
+#print axioms LeanFtml.cov_separator_five_claims
+#print axioms LeanFtml.cov_clearfloat_doubled_side_literal
+#print axioms LeanFtml.cov_break_two_spaces_claims_once
+#print axioms LeanFtml.cov_center_keeps_trailing_equals
+#print axioms LeanFtml.cov_separator_run_unwrapped
+#print axioms LeanFtml.cov_concatlines_join
+#print axioms LeanFtml.cov_concatlines_div_opener
+#print axioms LeanFtml.cov_divprefilter_bare_prefix
+#print axioms LeanFtml.cov_tighten_folds_residual_run
+#print axioms LeanFtml.cov_typography_two_dashes
+#print axioms LeanFtml.cov_divalign_justify_render
+
+-- Coverage tier (2026-11-22): NOTES render classification,
+-- LeanFtml/CoverageNotes.lean. Partition of the six renderers'
+-- decision space, exclusivity of the cascades, and the proof that
+-- every token the NOTES parsers append lands in a non-fallthrough
+-- class.
+#print axioms LeanFtml.classify_isSome
+#print axioms LeanFtml.notes_class_complete
+#print axioms LeanFtml.notes_class_exclusive
+#print axioms LeanFtml.memClass_complete
+#print axioms LeanFtml.memClass_exclusive
+#print axioms LeanFtml.optTypeIs_exclusive
+#print axioms LeanFtml.notes_type_tags_distinct
+#print axioms LeanFtml.fni_parabreak_dominates
+#print axioms LeanFtml.fnb_empty_dominates
+#print axioms LeanFtml.bib_nl_excludes_start
+#print axioms LeanFtml.textVal_title_agrees
+#print axioms LeanFtml.titleOpt_class_agrees
+#print axioms LeanFtml.fnb_bool_false_divergence
+#print axioms LeanFtml.bib_bool_false_divergence
+#print axioms LeanFtml.notesReach_classified
+#print axioms LeanFtml.notes_stream_classified
+#print axioms LeanFtml.footnoteProcess_tokens
+#print axioms LeanFtml.fnb_empty_emits_nothing
+#print axioms LeanFtml.fniEmit_reach
+#print axioms LeanFtml.footnoteblockInside_tokens
+#print axioms LeanFtml.footnoteblockProcess_reach
+#print axioms LeanFtml.footnoteScan_reach
+#print axioms LeanFtml.bibciteScan_reach
+#print axioms LeanFtml.bibitemProcess_reach
+#print axioms LeanFtml.bibWalk_reach
+#print axioms LeanFtml.bibliographyProcess_reach
+
+-- R3.10 Tableadv: F-TABLEADV-1 repair (2026-11-22). The mirror now
+-- uses the reference enumeration search. The restated counterexample
+-- compares the legacy first-parse scanner against the repaired
+-- mirror; the equality and pin theorems quantify over the repair.
+#print axioms LeanFtml.tableadv_dfs_ne_enum
+#print axioms LeanFtml.tableadvWitness_length
+#print axioms LeanFtml.tableadv_mirror_eq_enum_scan
+#print axioms LeanFtml.mirror_enum_witness_family
+#print axioms LeanFtml.tableadvWitnessFamily_length
+#print axioms LeanFtml.tableadvWitnessFamily_nodup
+-- Coverage-tier classification of the eight INLINE render rules
+-- (Url, Interwiki, Email, Freelink, Image, Span, Size, Colortext) in
+-- LeanFtml/CoverageInline.lean. Partition theorems at the standard core
+-- axiom set or better; closed mirror computations at the programme
+-- standard [propext, Classical.choice, Quot.sound]. No sorryAx.
+#print axioms LeanFtml.inlineAllClasses_nodup
+#print axioms LeanFtml.inlineAllClasses_length
+#print axioms LeanFtml.inlineAllClasses_mem
+#print axioms LeanFtml.inline_classify_sound
+#print axioms LeanFtml.inline_classify_nonempty
+#print axioms LeanFtml.inline_witness_classify
+#print axioms LeanFtml.inline_classes_exhaustive
+#print axioms LeanFtml.inline_classification_complete
+#print axioms LeanFtml.inline_exclusive_class_single
+#print axioms LeanFtml.iw_exclusive
+#print axioms LeanFtml.span_exclusive
+#print axioms LeanFtml.size_exclusive
+#print axioms LeanFtml.fl_branch_exclusive
+#print axioms LeanFtml.im_source_exclusive
+#print axioms LeanFtml.im_align_exclusive
+#print axioms LeanFtml.url_link_always
+#print axioms LeanFtml.url_hash_exclusive
+#print axioms LeanFtml.ct_invalid_type_irrelevant
+#print axioms LeanFtml.inline_shapeOf_isSome
+#print axioms LeanFtml.inline_classOf_complete
+#print axioms LeanFtml.inline_classOf_sound
+#print axioms LeanFtml.inline_classOf_exclusive
+#print axioms LeanFtml.ct_exclusive
+#print axioms LeanFtml.inline_memClass_complete
+#print axioms LeanFtml.inline_memClass_sound
+#print axioms LeanFtml.interwiki_templates_all_have_percent_s
+#print axioms LeanFtml.email_current_render_has_no_escaping
+#print axioms LeanFtml.cov_url_link
+#print axioms LeanFtml.cov_url_hash
+#print axioms LeanFtml.cov_url_target
+#print axioms LeanFtml.cov_url_footnote
+#print axioms LeanFtml.cov_iw_known
+#print axioms LeanFtml.cov_iw_unknown
+#print axioms LeanFtml.cov_email_reversed
+#print axioms LeanFtml.cov_fl_url
+#print axioms LeanFtml.cov_fl_missing
+#print axioms LeanFtml.cov_im_url_source
+#print axioms LeanFtml.cov_span_bare
+#print axioms LeanFtml.cov_span_end
+#print axioms LeanFtml.cov_size_start
+#print axioms LeanFtml.ct_hex_start
+#print axioms LeanFtml.ct_empty_start
+#print axioms LeanFtml.ct_invalid_start

@@ -1,0 +1,44 @@
+{
+ "es-digg-language": {
+  "source": "[[embed]]<script language=\"JavaScript\" src=\"http://digg.com/diggjs/123\" type=\"text/javascript\"></script>[[/embed]]",
+  "ref": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "live": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "match": true
+ },
+ "es-both-bad": {
+  "source": "[[embed]]<iframe src=\"javascript:alert(1)\" onclick=\"x()\" width=\"1\" height=\"1\"></iframe>[[/embed]]",
+  "ref": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "live": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "match": true
+ },
+ "es-single-quote-js": {
+  "source": "[[embed]]<iframe src='javascript:alert(1)' width='1' height='1'></iframe>[[/embed]]",
+  "ref": "",
+  "live": "",
+  "match": true
+ },
+ "es-data-src": {
+  "source": "[[embed]]<img data-src=\"javascript:alert(1)\">[[/embed]]",
+  "ref": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "live": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "match": true
+ },
+ "es-src-xjs": {
+  "source": "[[embed]]<iframe src=\"xjavascript:alert(1)\"></iframe>[[/embed]]",
+  "ref": "<p><iframe src=\"xjavascript:alert(1)\"></iframe></p>",
+  "live": "<p><iframe src=\"xjavascript:alert(1)\"></iframe></p>",
+  "match": true
+ },
+ "es-glued-onclick": {
+  "source": "[[embed]]<iframe src=\"http://www.google.com/calendar/embed?x=1\" style=\"\"/onclick=\"go()\"></iframe>[[/embed]]",
+  "ref": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "live": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "match": true
+ },
+ "es-junk-zoho": {
+  "source": "[[embed]]junk<iframe src='http://x.zoho.com/a' width='1' height='1'></iframe>[[/embed]]",
+  "ref": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "live": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "match": true
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "x21-email-url-label": {
+  "fullname": "muse-probe-suspect-xrule-x21-email-url-label",
+  "source": "A [a@example.com http://example.com/a] B",
+  "action": "created"
+ },
+ "x22-email-newline-label": {
+  "fullname": "muse-probe-suspect-xrule-x22-email-newline-label",
+  "source": "A [a@example.com x\ny] B",
+  "action": "created"
+ },
+ "x23-color-url-spec": {
+  "fullname": "muse-probe-suspect-xrule-x23-color-url-spec",
+  "source": "A ##http://example.com|red## B",
+  "action": "created"
+ },
+ "x24-math-nested-email": {
+  "fullname": "muse-probe-suspect-xrule-x24-math-nested-email",
+  "source": "A [[$ [a@example.com http://example.com/a] $]] B",
+  "action": "created"
+ },
+ "x25-email-double-space": {
+  "fullname": "muse-probe-suspect-xrule-x25-email-double-space",
+  "source": "A [a@example.com  x http://example.com/a] B",
+  "action": "created"
+ },
+ "x26-email-shift": {
+  "fullname": "muse-probe-suspect-xrule-x26-email-shift",
+  "source": "A [[[Some Page]]] [a@example.com @@x@@] B",
+  "action": "created"
+ },
+ "x27-email-shift2": {
+  "fullname": "muse-probe-suspect-xrule-x27-email-shift2",
+  "source": "@@a@@ [a@example.com @@x@@] B",
+  "action": "created"
+ },
+ "x28-file-freelink-label": {
+  "fullname": "muse-probe-suspect-xrule-x28-file-freelink-label",
+  "source": "[[file foo|[[[Bar]]]]]",
+  "action": "created"
+ },
+ "x30-anchor-freelink-name": {
+  "fullname": "muse-probe-suspect-xrule-x30-anchor-freelink-name",
+  "source": "[[# [[[Bar]]] ]]",
+  "action": "created"
+ },
+ "x31-toc-ustrip": {
+  "fullname": "muse-probe-suspect-xrule-x31-toc-ustrip",
+  "source": "[[toc]]\n++ Grüüße",
+  "action": "created"
+ },
+ "x32-footnote-table": {
+  "fullname": "muse-probe-suspect-xrule-x32-footnote-table",
+  "source": ";[[footnote]]||a||b||[[/footnote]];\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "x33-div-attr-freelink": {
+  "fullname": "muse-probe-suspect-xrule-x33-div-attr-freelink",
+  "source": "[[div class=\"[[[Bar]]]\"]]x[[/div]]",
+  "action": "created"
+ }
+}

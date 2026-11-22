@@ -1,0 +1,42 @@
+{
+ "bare-empty": {
+  "fullname": "muse-probe-g12-bare-empty",
+  "html": "<div class=\"code\"></div>\n<p>ZZTAILZZ</p>",
+  "html_sha256": "39645e0053233f66989db2cafce15da240e6041e6a37dc3b2bedf58dd9be9792",
+  "source": "[[code]]\n\n[[/code]]\n\nZZTAILZZ",
+  "source_sha256": "8ffa87f33a57a6c0fcfcfd09b8a22315398aea9949f1e4d6d9aca11d8868b2bb",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "blank-empty": {
+  "fullname": "muse-probe-g12-blank-empty",
+  "html": "<div class=\"code\"></div>\n<p>ZZTAILZZ</p>",
+  "html_sha256": "39645e0053233f66989db2cafce15da240e6041e6a37dc3b2bedf58dd9be9792",
+  "source": "[[code]]\n\n[[/code]] \n\nZZTAILZZ",
+  "source_sha256": "0858fb1ab59bc5f7a687f138e44a07fc0497c66133a248cd7a9fdaa11c715df1",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bare-x": {
+  "fullname": "muse-probe-g12-bare-x",
+  "html": "<div class=\"code\">\n<pre><code>x</code></pre></div>\n<p>ZZTAILZZ</p>",
+  "html_sha256": "60679235fc611f5c59b81fb8a2572cca38b4250c5f04a07a37cdb39e72c33107",
+  "source": "[[code]]\nx\n[[/code]]\n\nZZTAILZZ",
+  "source_sha256": "c64aa5960179e55e97550c2b7c11696460a5c8a7a22122c7d6cbf75d7b90c763",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "blank-x": {
+  "fullname": "muse-probe-g12-blank-x",
+  "html": "<div class=\"code\">\n<pre><code>x</code></pre></div>\n<p>ZZTAILZZ</p>",
+  "html_sha256": "60679235fc611f5c59b81fb8a2572cca38b4250c5f04a07a37cdb39e72c33107",
+  "source": "[[code]]\nx\n[[/code]] \n\nZZTAILZZ",
+  "source_sha256": "6274e23f442221b3063b64686faf7aa2943c73829e0b227cb42682d51246e4f4",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

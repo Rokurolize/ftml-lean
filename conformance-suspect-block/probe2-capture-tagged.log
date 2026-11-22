@@ -1,0 +1,35 @@
+bq-if-false-tagged -> muse-probe-suspect-block-bq-if-false-tagged stable=True saved_source_matches=True valid=True
+if-spec-comment-tagged -> muse-probe-suspect-block-if-spec-comment-tagged stable=True saved_source_matches=True valid=True
+if-trail-forbid-hit-tagged -> muse-probe-suspect-block-if-trail-forbid-hit-tagged stable=True saved_source_matches=True valid=True
+{
+ "bq-if-false-tagged": {
+  "fullname": "muse-probe-suspect-block-bq-if-false-tagged",
+  "html": "<p>A</p>\n<p>B</p>",
+  "html_sha256": "af1a4520d4a128c82ff2db34cd6245cadd0d28c1f8e48878a23b9824b709322d",
+  "source": "A\n> [[iftags +beta]]KEEP[[/iftags]]\nB",
+  "source_sha256": "8790d5ea25365dff89f90441a5c031d74a1c8a8e41fbb238d662163e00a06b61",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "if-spec-comment-tagged": {
+  "fullname": "muse-probe-suspect-block-if-spec-comment-tagged",
+  "html": "<p>[[iftags +alpha]]KEEP[[/iftags]]<br />\nX</p>",
+  "html_sha256": "a63dad1fc6f8e694659c52c40d301d94fc2d412c396c535bdb0dde4855eb59a8",
+  "source": "[[iftags [!--x--]+alpha]]KEEP[[/iftags]]\nX",
+  "source_sha256": "adac09527f1fe431d8d9754628429168d21e573f48fbac03656c42a0b2065ffb",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "if-trail-forbid-hit-tagged": {
+  "fullname": "muse-probe-suspect-block-if-trail-forbid-hit-tagged",
+  "html": "<p>X</p>",
+  "html_sha256": "ad248596661a840f40c40032a10aabcc6de25f92a6220ba1d0dd826fab1b2156",
+  "source": "[[iftags -alpha,]]KEEP[[/iftags]]\nX",
+  "source_sha256": "fb64dcca92fc8dd98336e0adabde7e152eccd27c475bd53390a0334d0bbd8bc7",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

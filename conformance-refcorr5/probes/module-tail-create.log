@@ -1,0 +1,9 @@
+module-tail-css -> muse-probe-refcorr5-module-tail-css (created)
+1 probe pages left in place on sandbox-for-codex; the tool never deletes pages.
+{
+ "module-tail-css": {
+  "fullname": "muse-probe-refcorr5-module-tail-css",
+  "source": "[[module css]]\n.blue { color: blue; }\n[[/module]]",
+  "action": "created"
+ }
+}

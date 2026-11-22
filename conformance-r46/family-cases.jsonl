@@ -1,0 +1,862 @@
+{"id": "eref/e01", "source": "[[eref a]]"}
+{"id": "eref/e02", "source": "[[math a]]\nx\n[[/math]]\n[[eref a]]"}
+{"id": "eref/e03", "source": "[[eref a]]\n[[math a]]\nx\n[[/math]]"}
+{"id": "eref/e04", "source": "X[[eref a]]Y"}
+{"id": "eref/e05", "source": "[[math a]]\nx\n[[/math]]\nX[[eref a]]Y"}
+{"id": "eref/e06", "source": "[[math a]]\nx\n[[/math]]\n[[math b]]\ny\n[[/math]]\n[[eref a]] [[eref b]]"}
+{"id": "eref/e07", "source": "[[math a]]\nx\n[[/math]]\n[[math a]]\ny\n[[/math]]\n[[eref a]]"}
+{"id": "eref/e08", "source": "[[math a]]\nx\n[[/math]]\n[[eref a]]\n[[math b]]\ny\n[[/math]]\n[[eref b]]"}
+{"id": "eref/e51", "source": "[[math a]]\nx\n[[/math]]\n[[math b]]\ny\n[[/math]]\n[[eref b]]"}
+{"id": "eref/e52", "source": "[[math]]\nx\n[[/math]]\n[[math a]]\ny\n[[/math]]\n[[eref a]]"}
+{"id": "eref/e09", "source": "[[eref]]"}
+{"id": "eref/e10", "source": "[[eref ]]"}
+{"id": "eref/e11", "source": "[[eref  a]]"}
+{"id": "eref/e12", "source": "[[eref\ta]]"}
+{"id": "eref/e13", "source": "[[eref a ]]"}
+{"id": "eref/e14", "source": "[[eref  a  ]]"}
+{"id": "eref/e15", "source": "[[EREF a]]"}
+{"id": "eref/e16", "source": "[[Eref a]]"}
+{"id": "eref/e17", "source": "[[equation a]]"}
+{"id": "eref/e18", "source": "[[eqref a]]"}
+{"id": "eref/e19", "source": "[[eref_a]]"}
+{"id": "eref/e20", "source": "[[eref-a]]"}
+{"id": "eref/e21", "source": "[[eref a"}
+{"id": "eref/e22", "source": "[eref a]"}
+{"id": "eref/e23", "source": "[[eref a]]]"}
+{"id": "eref/e24", "source": "[[[eref a]]]"}
+{"id": "eref/e25", "source": "[[eref a]]]tail"}
+{"id": "eref/e26", "source": "[[eref a]]\n[[eref b]]"}
+{"id": "eref/e27", "source": "[[eref]] [[eref a]]"}
+{"id": "eref/e28", "source": "[[eref a]] [[eref]]"}
+{"id": "eref/e29", "source": "[[eref   ]]"}
+{"id": "eref/e30", "source": "[[eref a b]]"}
+{"id": "eref/e31", "source": "[[eref a-b]]"}
+{"id": "eref/e32", "source": "[[eref a_b]]"}
+{"id": "eref/e33", "source": "[[math a]]\nx\n[[/math]]\n[[eref A]]"}
+{"id": "eref/e34", "source": "[[math A]]\nx\n[[/math]]\n[[eref A]]"}
+{"id": "eref/e35", "source": "[[math a]]\nx\n[[/math]]\n[[eref a|text]]"}
+{"id": "eref/e36", "source": "[[math a]]\nx\n[[/math]]\n[[eref a]] and [[eref a]] again"}
+{"id": "eref/e38", "source": "[[math a type=\"align\"]]\nx\n[[/math]]\n[[eref a]]"}
+{"id": "eref/e55", "source": "[[math a:b]]\nx\n[[/math]]\n[[eref a:b]]"}
+{"id": "eref/e57", "source": "[[eref a]]\nafter"}
+{"id": "eref/e58", "source": "[[math a=b]]\nx\n[[/math]]\n[[eref a=b]]"}
+{"id": "eref/e39", "source": "[[math a]]\nx\n[[/math]]\n\n[[eref a]]\n"}
+{"id": "eref/e40", "source": "[[code]]\n[[eref a]]\n[[/code]]"}
+{"id": "eref/e41", "source": "[[div]]\n[[eref a]]\n[[/div]]"}
+{"id": "eref/e42", "source": "[[collapsible]]\n[[eref a]]\n[[/collapsible]]"}
+{"id": "eref/e43", "source": "text[[footnote]]\n[[math a]]\nx\n[[/math]]\n[[eref a]]\n[[/footnote]]"}
+{"id": "eref/e44", "source": "[[math a]]\nx\n[[/math]]\n[[$ y $]] [[eref a]]"}
+{"id": "eref/e45", "source": "[[math a]]\nx\n[[/math]][[eref a]]"}
+{"id": "eref/e46", "source": "[[math a]]\nx\n[[/math]] [[eref a]]"}
+{"id": "eref/e47", "source": "> [[eref a]]"}
+{"id": "eref/e48", "source": "**[[eref a]]**"}
+{"id": "eref/e49", "source": "[[eref b]] [[math a]]\nx\n[[/math]]\n[[math b]]\ny\n[[/math]]"}
+{"id": "eref/e50", "source": "[[math a]]\nx\n[[/math]]\n[[eref a]]b[[eref a]]"}
+{"id": "eref/e54", "source": "[[math a]]\n\\begin{align}\nx \\\\ y\n\\end{align}\n[[/math]]\n[[eref a]]"}
+{"id": "eref/e56", "source": "[[eref long-label-with-digits-123]]"}
+{"id": "eref/e53", "source": "[[math a]]\n\\alpha + \\beta\n[[/math]]\n[[eref a]]"}
+{"id": "linkx/x-concat-code-inside", "source": "[[code]]\na\\\nb\n[[/code]]\n"}
+{"id": "linkx/x-concat-code-outside", "source": "before\\\nafter [[code]]x[[/code]]\n"}
+{"id": "linkx/x-concat-code-before-open", "source": "a\\\n[[code]]\nx\n[[/code]]\n"}
+{"id": "linkx/x-concat-code-after-close", "source": "[[code]]\nx\n[[/code]]\\\ntail\n"}
+{"id": "linkx/x-concat-raw-inside", "source": "[[raw]]\na\\\nb\n[[/raw]]\n"}
+{"id": "linkx/x-concat-raw-before-open", "source": "a\\\n[[raw]]\nx\n[[/raw]]\n"}
+{"id": "linkx/x-concat-rawold-inside", "source": "[[rawold]]\na\\\nb\n[[/rawold]]\n"}
+{"id": "linkx/x-concat-comment-inside", "source": "[!-- a\\\nb --]tail\n"}
+{"id": "linkx/x-concat-comment-before", "source": "a\\\n[!-- hidden --]tail\n"}
+{"id": "linkx/x-concat-comment-after", "source": "[!-- hidden --]\\\ntail\n"}
+{"id": "linkx/x-concat-math-inside", "source": "[[math E]]\nx\\\ny\n[[/math]]\n"}
+{"id": "linkx/x-concat-freelink-join", "source": "[[[muse-probe-r2link-free-exists|some\\\ntext]]]\n"}
+{"id": "linkx/x-concat-eref-join", "source": "[[eref la\\\nbel]]\n"}
+{"id": "linkx/x-free-iftags-keep", "source": "[[iftags +alpha]]\n[[[muse-probe-r2link-free-exists]]]\n[[/iftags]]\n", "tags": ["alpha"]}
+{"id": "linkx/x-free-iftags-drop", "source": "[[iftags +beta]]\n[[[muse-probe-r2link-free-exists]]]\n[[/iftags]]\n", "tags": ["alpha"]}
+{"id": "linkx/x-free-iftags-keep-new", "source": "[[iftags +alpha]]\n[[[muse-probe-r2link-x-absent-page]]]\n[[/iftags]]\n", "tags": ["alpha"]}
+{"id": "linkx/x-free-iftags-drop-new", "source": "[[iftags +beta]]\n[[[muse-probe-r2link-x-absent-page]]]\n[[/iftags]]\n", "tags": ["alpha"]}
+{"id": "linkx/x-free-math-label", "source": "[[math [[[muse-probe-r2link-free-exists]]]]]\nx\n[[/math]]\n[[eref [[[muse-probe-r2link-free-exists]]]]]\n"}
+{"id": "linkx/x-free-math-body", "source": "[[math E]]\n[[[muse-probe-r2link-free-exists]]]\n[[/math]]\n"}
+{"id": "linkx/x-free-inside-code", "source": "[[code]]\n[[[muse-probe-r2link-free-exists]]]\n[[/code]]\n"}
+{"id": "linkx/x-free-inside-raw", "source": "[[raw]]\n[[[muse-probe-r2link-free-exists]]]\n[[/raw]]\n"}
+{"id": "linkx/x-free-inside-comment", "source": "[!-- [[[muse-probe-r2link-free-exists]]] --]tail\n"}
+{"id": "linkx/x-free-next-to-math", "source": "[[[muse-probe-r2link-free-exists]]][[math E]]x[[/math]]\n"}
+{"id": "linkx/x-eref-backward", "source": "[[math E]]\nx\n[[/math]]\n[[eref E]]\n"}
+{"id": "linkx/x-eref-forward", "source": "[[eref E]]\n[[math E]]\nx\n[[/math]]\n"}
+{"id": "linkx/x-eref-duplicate", "source": "[[math E]]\nx\n[[/math]]\n[[math E]]\ny\n[[/math]]\n[[eref E]]\n"}
+{"id": "linkx/x-eref-duplicate-forward", "source": "[[math E]]\nx\n[[/math]]\n[[eref E]]\n[[math E]]\ny\n[[/math]]\n"}
+{"id": "linkx/x-eref-suppressed-math", "source": "[[iftags -alpha]]\n[[math E]]\nx\n[[/math]]\n[[/iftags]]\n[[eref E]]\n", "tags": ["alpha"]}
+{"id": "linkx/x-eref-in-suppressed-body", "source": "[[math E]]\nx\n[[/math]]\n[[iftags -alpha]]\n[[eref E]]\n[[/iftags]]\n", "tags": ["alpha"]}
+{"id": "linkx/x-eref-kept-math", "source": "[[iftags +alpha]]\n[[math E]]\nx\n[[/math]]\n[[/iftags]]\n[[eref E]]\n", "tags": ["alpha"]}
+{"id": "linkx/x-eref-inside-code", "source": "[[code]]\n[[eref E]]\n[[/code]]\n"}
+{"id": "linkx/x-eref-inside-raw", "source": "[[raw]]\n[[eref E]]\n[[/raw]]\n"}
+{"id": "linkx/x-eref-inside-comment", "source": "[!-- [[eref E]] --]tail\n"}
+{"id": "linkx/x-eref-two-labels", "source": "[[math A]]\na\n[[/math]]\n[[math B]]\nb\n[[/math]]\n[[eref A]] [[eref B]]\n"}
+{"id": "linkx/x-eref-nested-freelink", "source": "[[math E]]\nx\n[[/math]]\n[[eref [[[muse-probe-r2link-free-exists]]]]]\n"}
+{"id": "linkx/x-eref-undefined", "source": "[[eref NO_SUCH_LABEL]]\n"}
+{"id": "date/d01-basic", "source": "[[date 1216153821]]"}
+{"id": "date/d02-basic-format", "source": "[[date 1216153821 format=\"%Y\"]]"}
+{"id": "date/d03-leading-zeros", "source": "[[date 00001216153821 format=\"%Y\"]]"}
+{"id": "date/d04-zero", "source": "[[date 0]]"}
+{"id": "date/d05-one", "source": "[[date 1]]"}
+{"id": "date/d06-negative", "source": "[[date -1000]]"}
+{"id": "date/d07-negative-one", "source": "[[date -1]]"}
+{"id": "date/d08-huge-14", "source": "[[date 99999999999999]]"}
+{"id": "date/d09-huge-20", "source": "[[date 99999999999999999999]]"}
+{"id": "date/d10-huge-42", "source": "[[date 999999999999999999999999999999999999999999]]"}
+{"id": "date/d11-neg-huge-14", "source": "[[date -99999999999999]]"}
+{"id": "date/d12-neg-huge-42", "source": "[[date -999999999999999999999999999999999999999999]]"}
+{"id": "date/d13-plus", "source": "[[date +1216153821 format=\"%Y\"]]"}
+{"id": "date/d14-iso-date", "source": "[[date 2009-12-25]]"}
+{"id": "date/d15-iso-datetime", "source": "[[date 2009-12-25T08:18:05+02:00]]"}
+{"id": "date/d16-rfc3339-z", "source": "[[date 2007-05-12T09:34:51Z]]"}
+{"id": "date/d17-now", "source": "[[date now]]"}
+{"id": "date/d18-NOW", "source": "[[date NOW]]"}
+{"id": "date/d19-dot", "source": "[[date .]]"}
+{"id": "date/d20-blank", "source": "[[date  ]]"}
+{"id": "date/d21-blank-with-format", "source": "[[date  format=\"%Y\"]]"}
+{"id": "date/d22-no-value", "source": "[[date]]"}
+{"id": "date/d23-nonnumeric", "source": "[[date foobar]]"}
+{"id": "date/d24-partial-date", "source": "[[date 2001-09]]"}
+{"id": "date/d25-quoted-number", "source": "[[date \"1216153821\"]]"}
+{"id": "date/d26-leading-tab", "source": "[[\tdate 1216153821]]"}
+{"id": "date/d27-decimal", "source": "[[date 1216153821.5]]"}
+{"id": "date/d28-hex", "source": "[[date 0x10]]"}
+{"id": "date/d29-unquoted-format", "source": "[[date 1216153821 format=%Y]]"}
+{"id": "date/d30-single-quoted-format", "source": "[[date 1216153821 format='%Y']]"}
+{"id": "date/d31-duplicate-format", "source": "[[date 1216153821 format=\"%Y\" format=\"%m\"]]"}
+{"id": "date/d32-unknown-attr", "source": "[[date 1216153821 foo=\"bar\"]]"}
+{"id": "date/d33-empty-format", "source": "[[date 1216153821 format=\"\"]]"}
+{"id": "date/d34-agohover", "source": "[[date 1216153821 format=\"%Y|agohover\"]]"}
+{"id": "date/d35-g-format", "source": "[[date 1216153821 format=\"%g\"]]"}
+{"id": "date/d36-spaced-format", "source": "[[date 1216153821 format=\"%d. %m. %Y\"]]"}
+{"id": "date/d37-html-format", "source": "[[date 1216153821 format=\"<b>&\"]]"}
+{"id": "date/d38-tz-attr", "source": "[[date 1216153821 format=\"%Y\" tz=\"+8\"]]"}
+{"id": "date/d39-hover", "source": "[[date 1216153821 hover=\"true\"]]"}
+{"id": "date/d40-raw-format", "source": "[[date 0 format=\"@@a@@\"]]"}
+{"id": "date/d41-case-DATE", "source": "[[DATE 1216153821]]"}
+{"id": "date/d42-case-Date", "source": "[[Date 1216153821]]"}
+{"id": "date/d43-case-dAtE", "source": "[[dAtE 1216153821]]"}
+{"id": "date/d44-midline", "source": "before [[date 1216153821]] after"}
+{"id": "date/d45-line-start", "source": "[[date 1216153821]]\ntail"}
+{"id": "date/d46-indented", "source": "  [[date 1216153821]]"}
+{"id": "date/d47-two-same-line", "source": "[[date 1]] and [[date 2]]"}
+{"id": "date/d48-trailing-tail", "source": "[[date 1216153821]]tail"}
+{"id": "date/d49-unterminated", "source": "[[date 1216153821"}
+{"id": "date/d50-unterminated-attr", "source": "[[date 1216153821 format=\"%Y\""}
+{"id": "date/d51-extra-bracket", "source": "[[date 1216153821]]]"}
+{"id": "date/d52-spaced-brackets", "source": "[[ date 1216153821 ]]"}
+{"id": "date/d53-no-space", "source": "[[date1216153821]]"}
+{"id": "date/d54-newline-in-opener", "source": "[[date\n1216153821]]"}
+{"id": "date/d55-iframe-then-date", "source": "[[iframe https://example.com/a]]\n[[date 1216153821]]"}
+{"id": "date/d56-date-then-math", "source": "[[date 1216153821]]\n[[math E]]\nx=1\n[[/math]]"}
+{"id": "date/d57-comment-hides-date", "source": "before[!-- [[date 1216153821]] --]after"}
+{"id": "date/d58-comment-in-format", "source": "[[date 1216153821 format=[!-- x --]\"%Y\"]]"}
+{"id": "date/d59-iftags-date", "source": "[[iftags +alpha]]\n[[date 1216153821]]\n[[/iftags]]"}
+{"id": "date/d60-date-in-code", "source": "[[code]]\n[[date 1216153821]]\n[[/code]]"}
+{"id": "iframe/if-scheme-http", "source": "[[iframe http://example.com/a]]"}
+{"id": "iframe/if-scheme-https", "source": "[[iframe https://example.com/a]]"}
+{"id": "iframe/if-scheme-ftp", "source": "[[iframe ftp://example.com/a]]"}
+{"id": "iframe/if-scheme-gopher", "source": "[[iframe gopher://example.com/a]]"}
+{"id": "iframe/if-scheme-news", "source": "[[iframe news://example.com/a]]"}
+{"id": "iframe/if-scheme-mailto", "source": "[[iframe mailto:a@example.com]]"}
+{"id": "iframe/if-scheme-mms", "source": "[[iframe mms://example.com/a]]"}
+{"id": "iframe/if-scheme-upper", "source": "[[iframe HTTPS://EXAMPLE.COM/A]]"}
+{"id": "iframe/if-scheme-mixed", "source": "[[iframe HtTp://Example.Com/MiXeD]]"}
+{"id": "iframe/if-scheme-news-upper", "source": "[[iframe NEWS://example.com/a]]"}
+{"id": "iframe/if-scheme-mms-upper", "source": "[[iframe MMS://example.com/a]]"}
+{"id": "iframe/if-scheme-git", "source": "[[iframe git://example.com/a]]"}
+{"id": "iframe/if-scheme-javascript", "source": "[[iframe javascript:alert(1)]]"}
+{"id": "iframe/if-scheme-data", "source": "[[iframe data:text/html,x]]"}
+{"id": "iframe/if-scheme-none", "source": "[[iframe example.com/a]]"}
+{"id": "iframe/if-scheme-empty-url", "source": "[[iframe ]]"}
+{"id": "iframe/if-scheme-no-opener", "source": "[[iframe]]"}
+{"id": "iframe/if-url-slash-segments", "source": "[[iframe https://example.com/a/b/c]]"}
+{"id": "iframe/if-url-no-path", "source": "[[iframe https://example.com]]"}
+{"id": "iframe/if-url-trailing-slash", "source": "[[iframe https://example.com/]]"}
+{"id": "iframe/if-url-doublequote", "source": "[[iframe http://example.com/a\"b]]"}
+{"id": "iframe/if-url-singlequote-final", "source": "[[iframe http://example.com/a'b]]"}
+{"id": "iframe/if-url-singlequote-mid", "source": "[[iframe http://example.com/a'b/c]]"}
+{"id": "iframe/if-url-singlequote-two", "source": "[[iframe http://example.com/a'b'c/d]]"}
+{"id": "iframe/if-url-space", "source": "[[iframe http://example.com/a b]]"}
+{"id": "iframe/if-url-tab", "source": "[[iframe http://example.com/a\tb]]"}
+{"id": "iframe/if-url-backslash", "source": "[[iframe http://example.com/a\\b]]"}
+{"id": "iframe/if-url-delim-u00ff", "source": "[[iframe http://example.com/ÿ]]"}
+{"id": "iframe/if-url-percent", "source": "[[iframe http://example.com/%20x]]"}
+{"id": "iframe/if-url-query-fragment", "source": "[[iframe http://example.com/?q=1&x=2#frag]]"}
+{"id": "iframe/if-url-utf8-path", "source": "[[iframe http://example.com/日本語]]"}
+{"id": "iframe/if-url-utf8-query", "source": "[[iframe http://example.com/?q=日本語#frag日]]"}
+{"id": "iframe/if-url-braces", "source": "[[iframe http://example.com/{a}]]"}
+{"id": "iframe/if-url-angle", "source": "[[iframe http://example.com/<x>]]"}
+{"id": "iframe/if-attr-none", "source": "[[iframe http://example.com/]]"}
+{"id": "iframe/if-attr-all-unquoted", "source": "[[iframe http://example.com/ align=left frameborder=0 height=7 scrolling=no width=100 class=z style=color:red]]"}
+{"id": "iframe/if-attr-all-quoted", "source": "[[iframe http://example.com/ align=\"left\" frameborder=\"0\" height=\"7\" scrolling=\"no\" width=\"100\" class=\"z\" style=\"color:red\"]]"}
+{"id": "iframe/if-attr-order-shuffled", "source": "[[iframe http://example.com/ style=\"color:red\" width=\"5\" scrolling=\"auto\" align=\"right\" frameborder=\"1\" height=\"7\" class=\"z\"]]"}
+{"id": "iframe/if-attr-unknown-filtered", "source": "[[iframe http://example.com/ title=\"T\" id=\"i\" data-x=\"1\" allowtransparency=\"true\" scrolling=\"auto\"]]"}
+{"id": "iframe/if-attr-duplicate", "source": "[[iframe http://example.com/ width=\"1\" width=\"2\"]]"}
+{"id": "iframe/if-attr-spaced-equals", "source": "[[iframe http://example.com/ id = \"my-example\" class=\"iframe\" width = \"90%\"]]"}
+{"id": "iframe/if-attr-mixed-spaced", "source": "[[iframe http://example.com/ width = \"1\" height=\"2\"]]"}
+{"id": "iframe/if-attr-single-quoted", "source": "[[iframe http://example.com/ width='1' height='2']]"}
+{"id": "iframe/if-attr-escaped-quote", "source": "[[iframe http://example.com/ class=\"a\\\"b\"]]"}
+{"id": "iframe/if-attr-empty-value", "source": "[[iframe http://example.com/ width=\"\"]]"}
+{"id": "iframe/if-attr-only-src-space", "source": "[[iframe http://example.com/   ]]"}
+{"id": "iframe/if-attr-scheme-and-attrs", "source": "[[iframe https://example.net/my-page frameborder=\"0\"]]"}
+{"id": "iframe/if-bad-unterminated", "source": "[[iframe http://example.com/"}
+{"id": "iframe/if-bad-unterminated-attrs", "source": "[[iframe http://example.com/ width=\"1\""}
+{"id": "iframe/if-bad-extra-brackets", "source": "[[iframe http://example.com/]]]"}
+{"id": "iframe/if-bad-double-opener", "source": "[[iframe http://a.com/]] [[iframe http://b.com/]]"}
+{"id": "iframe/if-bad-closer-only", "source": "[[/iframe]]"}
+{"id": "iframe/if-bad-no-space", "source": "[[iframehttp://example.com/]]"}
+{"id": "iframe/if-bad-newline-in-head", "source": "[[iframe\nhttp://example.com/]]"}
+{"id": "iframe/if-pos-midline", "source": "before [[iframe http://example.com/]] after"}
+{"id": "iframe/if-pos-line-start", "source": "text\n[[iframe http://example.com/]]"}
+{"id": "iframe/if-pos-leading-space", "source": "  [[iframe http://example.com/]]"}
+{"id": "iframe/if-pos-after-blank", "source": "a\n\n[[iframe http://example.com/]]"}
+{"id": "iframe/if-pos-two-lines", "source": "[[iframe http://a.com/]]\n[[iframe http://b.com/]]"}
+{"id": "iframe/if-pos-newline-then-text", "source": "[[iframe http://example.com/]]\nx ]]"}
+{"id": "iframe/if-tail-newline-closer", "source": "[[iframe http://e.com/]]\n[[/div]]"}
+{"id": "iframe/if-tail-no-newline-closer", "source": "[[iframe http://e.com/]][[/div]]"}
+{"id": "iframe/if-tail-two-closers", "source": "[[iframe http://e.com/]]\n[[/div]][[/span]]"}
+{"id": "iframe/if-tail-text-closer", "source": "[[iframe http://e.com/]]\nfoo\n[[/div]]"}
+{"id": "iframe/if-tail-space-stops", "source": "[[iframe http://e.com/]] foo]]"}
+{"id": "iframe/if-tail-tab-stops", "source": "[[iframe http://e.com/]]\nfoo\tx]]"}
+{"id": "iframe/if-tail-blank-span", "source": "[[iframe http://e.com/]]\n\n[[span]]y[[/span]]"}
+{"id": "iframe/if-tail-args-newline-closer", "source": "[[iframe http://e.com/ width=\"1\"]]\n[[/div]]"}
+{"id": "iframe/if-tail-surviving-close", "source": "[[div]]\n[[iframe http://example.com/]]\n[[/div]]\nspace here\n[[/div]]"}
+{"id": "iframe/if-tail-invalidates-div", "source": "[[div]]\n[[iframe http://example.com/]]\n[[/div]]"}
+{"id": "iframe/if-tail-keeps-div-after-args", "source": "[[div]]\n[[iframe http://example.com/ width=\"1\"]]\n[[/div]]"}
+{"id": "iframe/if-adj-iftags-seam-name", "source": "[[ifr[[iftags -zzz]][[/iftags]]ame http://example.com/]]"}
+{"id": "iframe/if-adj-iftags-seam-url", "source": "[[iframe http://a.example/b[[iftags -zzz]][[/iftags]]c]]"}
+{"id": "iframe/if-adj-comment-in-url", "source": "[[iframe https://exam[!--x--]ple.com/]]"}
+{"id": "iframe/if-adj-comment-before", "source": "[!-- hide --]\n[[iframe http://example.com/]]"}
+{"id": "iframe/if-adj-code-before", "source": "[[code]]\n[[iframe http://example.com/]]\n[[/code]]"}
+{"id": "iframe/if-adj-greedy-iftags-failing", "source": "[[iframe http://e.com/]]\n[[iftags a]]\nx\n[[/iftags]]\n[[/div]]"}
+{"id": "iframe/if-adj-greedy-iftags-kept", "source": "[[iframe http://e.com/]]\n[[iftags fruit]]\nx\n[[/iftags]]\n[[/div]]"}
+{"id": "iframe/if-adj-date-after", "source": "[[iframe http://example.com/]]\n[[date 0]]"}
+{"id": "iframe/if-adj-math-after", "source": "[[iframe http://example.com/]]\n[[math]]\nE=mc^2\n[[/math]]"}
+{"id": "iframe/if-adj-anchor-around", "source": "[[a href=\"/y\"]][[iframe http://example.org/embed width=\"1\"]][[/a]]"}
+{"id": "iframe/if-adj-span-around", "source": "[[span]][[iframe http://example.org/embed width=\"1\"]][[/span]]"}
+{"id": "iframe/if-adj-freelink-tail", "source": "[[iframe https://example.com/a]]\n[[https://example.com/b]]"}
+{"id": "nextx/x-comment-hides-iframe", "source": "before[!-- [[iframe https://example.com/a]] --]after\n"}
+{"id": "nextx/x-comment-hides-date", "source": "before[!-- [[date 1216153821]] --]after\n"}
+{"id": "nextx/x-comment-hides-math-open", "source": "before[!-- [[math E]] --]\nx=1\n[[/math]]\nafter\n"}
+{"id": "nextx/x-comment-hides-math-close", "source": "[[math E]]\nx=1\n[!-- [[/math]] --]\ny=2\n[[/math]]\nafter\n"}
+{"id": "nextx/x-comment-hides-iftags-open", "source": "[!-- [[iftags +alpha]] --]body[[/iftags]]\n"}
+{"id": "nextx/x-comment-hides-iftags-close", "source": "[[iftags +alpha]]body[!-- [[/iftags]] --]tail\n", "tags": ["alpha"]}
+{"id": "nextx/x-comment-inside-iframe-attr", "source": "[[iframe https://example.com/a width=[!-- 100 --]200]]\n"}
+{"id": "nextx/x-comment-inside-date-attr", "source": "[[date 1216153821 format=[!-- x --]\"%Y\"]]\n"}
+{"id": "nextx/x-comment-inside-math-body", "source": "[[math E]]\nx[!-- hidden --]=1\n[[/math]]\n"}
+{"id": "nextx/x-comment-multiline-hides-math", "source": "a[!--\n[[math E]]\nx=1\n[[/math]]\n--]b\n"}
+{"id": "nextx/x-iftags-keep-module", "source": "[[iftags +alpha]]\n[[module UnknownModuleX]]\nbody\n[[/module]]\n[[/iftags]]\n", "tags": ["alpha"]}
+{"id": "nextx/x-iftags-drop-module", "source": "[[iftags +beta]]\n[[module UnknownModuleX]]\nbody\n[[/module]]\n[[/iftags]]\n", "tags": ["alpha"]}
+{"id": "nextx/x-iftags-keep-math", "source": "[[iftags +alpha]]\n[[math E]]\nx=1\n[[/math]]\n[[/iftags]]\n", "tags": ["alpha"]}
+{"id": "nextx/x-iftags-drop-math", "source": "[[iftags +beta]]\n[[math E]]\nx=1\n[[/math]]\n[[/iftags]]\n", "tags": ["alpha"]}
+{"id": "nextx/x-iftags-keep-date", "source": "[[iftags +alpha]]\n[[date 1216153821]]\n[[/iftags]]\n", "tags": ["alpha"]}
+{"id": "nextx/x-iftags-drop-date", "source": "[[iftags +beta]]\n[[date 1216153821]]\n[[/iftags]]\n", "tags": ["alpha"]}
+{"id": "nextx/x-iftags-keep-iframe", "source": "[[iftags +alpha]]\n[[iframe https://example.com/a]]\n[[/iftags]]\n", "tags": ["alpha"]}
+{"id": "nextx/x-iftags-drop-iframe", "source": "[[iftags +beta]]\n[[iframe https://example.com/a]]\n[[/iftags]]\n", "tags": ["alpha"]}
+{"id": "nextx/x-iftags-drop-nested-math-iftags", "source": "[[iftags -alpha]]\n[[iftags +alpha]]\n[[math E]]\nx=1\n[[/math]]\n[[/iftags]]\n[[/iftags]]\n", "tags": ["alpha"]}
+{"id": "nextx/x-iftags-untagged-any", "source": "[[iftags alpha]]kept-or-dropped[[/iftags]]\n"}
+{"id": "nextx/x-iftags-comment-spec", "source": "[[iftags +alpha[!-- c --]]]\nbody\n[[/iftags]]\n", "tags": ["alpha"]}
+{"id": "nextx/x-module-body-math", "source": "[[module UnknownModuleX]]\n[[math E]]\nx=1\n[[/math]]\n[[/module]]\n"}
+{"id": "nextx/x-module-body-date", "source": "[[module UnknownModuleX]]\n[[date 1216153821]]\n[[/module]]\n"}
+{"id": "nextx/x-code-body-math", "source": "[[code]]\n[[math E]]\nx=1\n[[/math]]\n[[/code]]\n"}
+{"id": "nextx/x-raw-body-date", "source": "[[raw]]\n[[date 1216153821]]\n[[/raw]]\n"}
+{"id": "nextx/x-iframe-then-url", "source": "[[iframe https://example.com/a]]\n[[https://example.com/b]]\n"}
+{"id": "nextx/x-url-in-iframe-attr", "source": "[[iframe https://example.com/a style=\"background:url(https://example.com/i.png)\"]]\n"}
+{"id": "nextx/x-iframe-mailto", "source": "[[iframe mailto:someone@example.com]]\n"}
+{"id": "nextx/x-iframe-url-scheme-case", "source": "[[iframe HTTPS://EXAMPLE.COM/A]]\n"}
+{"id": "nextx/x-iframe-adjacent-date", "source": "[[iframe https://example.com/a]]\n[[date 1216153821]]\n"}
+{"id": "nextx/x-iframe-adjacent-math", "source": "[[iframe https://example.com/a]]\n[[math E]]\nx=1\n[[/math]]\n"}
+{"id": "nextx/x-iftags-comment-iframe-date-math", "source": "[[iftags +alpha]]a[!-- c --]b[[/iftags]][[iframe https://example.com/a]][[date 1216153821]][[math E]]\nx=1\n[[/math]]\n", "tags": ["alpha"]}
+{"id": "nextx/x-comment-then-iftags", "source": "[!-- hidden --]\n[[iftags +alpha]]body[[/iftags]]\n", "tags": ["alpha"]}
+{"id": "collapsible/c01-basic-line", "source": "[[collapsible]]\nApple\n[[/collapsible]]"}
+{"id": "collapsible/c02-inline", "source": "[[collapsible]]Banana[[/collapsible]]"}
+{"id": "collapsible/c03-empty", "source": "[[collapsible]]\n[[/collapsible]]"}
+{"id": "collapsible/c04-empty-inline", "source": "[[collapsible]][[/collapsible]]"}
+{"id": "collapsible/c05-leading-text", "source": "Before\n[[collapsible]]\nBody\n[[/collapsible]]\nAfter"}
+{"id": "collapsible/c06-trailing-space", "source": "[[collapsible]] \nBody\n[[/collapsible]]  "}
+{"id": "collapsible/c07-uppercase", "source": "[[COLLAPSIBLE id=\"up\" show=\"UPPER\" hide=\"lower\"]]\nBODY\n[[/COLLAPSIBLE]]"}
+{"id": "collapsible/c08-internal-space", "source": "[[ collapsible show=\"+ S\" hide=\"- H\" ]]\nBODY\n[[/collapsible]]"}
+{"id": "collapsible/c09-two-blocks", "source": "[[collapsible]]A[[/collapsible]]\n[[collapsible]]B[[/collapsible]]"}
+{"id": "collapsible/c10-adjacent-inline", "source": "[[collapsible]]A[[/collapsible]][[collapsible]]B[[/collapsible]]"}
+{"id": "collapsible/c11-show-only", "source": "[[collapsible show=\"+ Expand\"]]B[[/collapsible]]"}
+{"id": "collapsible/c12-hide-only", "source": "[[collapsible hide=\"- Collapse\"]]B[[/collapsible]]"}
+{"id": "collapsible/c13-show-hide", "source": "[[collapsible show=\"+ Open\" hide=\"- Close\"]]B[[/collapsible]]"}
+{"id": "collapsible/c14-showtext", "source": "[[collapsible showText=\"OPEN\" hideText=\"CLOSE\"]]B[[/collapsible]]"}
+{"id": "collapsible/c15-empty-labels", "source": "[[collapsible show=\"\" hide=\"\"]]B[[/collapsible]]"}
+{"id": "collapsible/c16-label-nbsp-tab", "source": "[[collapsible show=\"a\tb\" hide=\"x  y\"]]B[[/collapsible]]"}
+{"id": "collapsible/c17-label-entities", "source": "[[collapsible show=\"A &amp; B &lt;x&gt;\" hide=\"C &quot;d&quot;\"]]B[[/collapsible]]"}
+{"id": "collapsible/c18-label-newline", "source": "[[collapsible show=\"one\ntwo\"]]B[[/collapsible]]"}
+{"id": "collapsible/c19-folded-no", "source": "[[collapsible folded=\"no\"]]B[[/collapsible]]"}
+{"id": "collapsible/c20-folded-false", "source": "[[collapsible folded=\"false\"]]B[[/collapsible]]"}
+{"id": "collapsible/c21-folded-yes", "source": "[[collapsible folded=\"yes\"]]B[[/collapsible]]"}
+{"id": "collapsible/c22-hideloc-top", "source": "[[collapsible hideLocation=\"top\"]]B[[/collapsible]]"}
+{"id": "collapsible/c23-hideloc-bottom", "source": "[[collapsible hideLocation=\"bottom\"]]B[[/collapsible]]"}
+{"id": "collapsible/c24-hideloc-both", "source": "[[collapsible hideLocation=\"both\"]]B[[/collapsible]]"}
+{"id": "collapsible/c25-hideloc-neither", "source": "[[collapsible hideLocation=\"neither\"]]B[[/collapsible]]"}
+{"id": "collapsible/c26-hideloc-unknown", "source": "[[collapsible hideLocation=\"sideways\"]]B[[/collapsible]]"}
+{"id": "collapsible/c27-class", "source": "[[collapsible class=\"myc\"]]B[[/collapsible]]"}
+{"id": "collapsible/c28-id", "source": "[[collapsible id=\"hider\"]]B[[/collapsible]]"}
+{"id": "collapsible/c29-style", "source": "[[collapsible style=\"color: teal\"]]B[[/collapsible]]"}
+{"id": "collapsible/c30-data-unknown", "source": "[[collapsible data-x=\"ya\" bogus=\"z\"]]B[[/collapsible]]"}
+{"id": "collapsible/c31-single-quotes", "source": "[[collapsible show='+ SQ' hide='- SQ']]B[[/collapsible]]"}
+{"id": "collapsible/c32-unquoted-values", "source": "[[collapsible show=OPEN hide=CLOSE]]B[[/collapsible]]"}
+{"id": "collapsible/c33-duplicate-folded", "source": "[[collapsible folded=\"yes\" folded=\"no\"]]B[[/collapsible]]"}
+{"id": "collapsible/c34-unknown-key-only", "source": "[[collapsible bananas=\"yes\"]]B[[/collapsible]]"}
+{"id": "collapsible/c35-nested-same", "source": "[[collapsible show=\"L1\"]]\nA\n[[collapsible show=\"L2\"]]\nB\n[[/collapsible]]\nC\n[[/collapsible]]"}
+{"id": "collapsible/c36-nested-same-four", "source": "[[collapsible]]\nA\n[[collapsible]]\nB\n[[collapsible]]\nC\n[[/collapsible]]\n[[/collapsible]]\n[[/collapsible]]"}
+{"id": "collapsible/c37-first-closer-tail", "source": "[[collapsible]]\nA\n[[/collapsible]]\nTAIL\n[[/collapsible]]"}
+{"id": "collapsible/c38-opener-after-closer", "source": "[[collapsible]]A[[/collapsible]]\n[[collapsible]]B[[/collapsible]]\n[[collapsible]]C[[/collapsible]]"}
+{"id": "collapsible/c39-cross-div-in", "source": "[[collapsible]]\n[[div class=\"d\"]]\ninside\n[[/div]]\n[[/collapsible]]"}
+{"id": "collapsible/c40-div-out", "source": "[[div class=\"d\"]]\n[[collapsible]]\ninside\n[[/collapsible]]\n[[/div]]"}
+{"id": "collapsible/c41-cross-tab-in", "source": "[[collapsible]]\n[[tabview]]\n[[tab]]One[[/tab]]\n[[/tabview]]\n[[/collapsible]]"}
+{"id": "collapsible/c42-cross-footnote", "source": "[[collapsible]]\nA footnote [[footnote]]note[[/footnote]] here\n[[/collapsible]]"}
+{"id": "collapsible/c43-bold-inside", "source": "[[collapsible]]\n**bold** and //italic//\n[[/collapsible]]"}
+{"id": "collapsible/c44-link-inside", "source": "[[collapsible]]\n[[http://example.com|link]]\n[[/collapsible]]"}
+{"id": "collapsible/c45-heading-inside", "source": "[[collapsible]]\n= Heading =\nBody\n[[/collapsible]]"}
+{"id": "collapsible/c46-list-inside", "source": "[[collapsible]]\n* one\n* two\n[[/collapsible]]"}
+{"id": "collapsible/c47-quote-inside", "source": "[[collapsible]]\n> quoted\n[[/collapsible]]"}
+{"id": "collapsible/c48-code-inside", "source": "[[collapsible]]\n[[code]]\ncode body\n[[/code]]\n[[/collapsible]]"}
+{"id": "collapsible/c49-unterminated", "source": "[[collapsible]]\nNever closed\nmore text"}
+{"id": "collapsible/c50-stray-closer", "source": "text [[/collapsible]] more"}
+{"id": "collapsible/c51-closer-only-line", "source": "[[/collapsible]]"}
+{"id": "collapsible/c52-missing-opener", "source": "plain\n[[/collapsible]]\nplain"}
+{"id": "collapsible/c53-malformed-opener", "source": "[[collapsible show=BROKEN]]B[[/collapsible]]"}
+{"id": "collapsible/c54-unclosed-inline", "source": "before [[collapsible]] body after"}
+{"id": "collapsible/c55-wrong-closer", "source": "[[collapsible]]B[[/div]]"}
+{"id": "collapsible/c56-empty-attr-braces", "source": "[[collapsible ]]B[[/collapsible]]"}
+{"id": "collapsible/c57-newline-in-head", "source": "[[collapsible\n show=\"+ X\"\n]]\nB\n[[/collapsible]]"}
+{"id": "div/basic", "source": "[[div]]\nhello\n[[/div]]"}
+{"id": "div/basic-uppercase", "source": "[[DIV]]\nhello\n[[/DIV]]"}
+{"id": "div/basic-indented", "source": "  [[div]]\nhello\n[[/div]]"}
+{"id": "div/basic-trailing-blank", "source": "[[div]]\nhello\n\n[[/div]]"}
+{"id": "div/basic-two-paras", "source": "[[div]]\nA\n\nB\n[[/div]]"}
+{"id": "div/basic-heading", "source": "[[div]]\n+ Head\ntext\n[[/div]]"}
+{"id": "div/attr-class", "source": "[[div class=\"card\"]]\nBody\n[[/div]]"}
+{"id": "div/attr-id", "source": "[[div id=\"panel\"]]\nBody\n[[/div]]"}
+{"id": "div/attr-id-prefixed", "source": "[[div id=\"u-panel\"]]\nBody\n[[/div]]"}
+{"id": "div/attr-id-space", "source": "[[div id=\" \"]]\nx\n[[/div]]"}
+{"id": "div/attr-style", "source": "[[div style=\"color: red\"]]\nBody\n[[/div]]"}
+{"id": "div/attr-style-two", "source": "[[div style=\"color: red; background: blue\"]]\nBody\n[[/div]]"}
+{"id": "div/attr-role-type", "source": "[[div role=\"note\" type=\"tip\"]]\nBody\n[[/div]]"}
+{"id": "div/attr-data", "source": "[[div data-foo=\"one\" data-Bar=\"two\"]]\nBody\n[[/div]]"}
+{"id": "div/attr-data-empty-suffix", "source": "[[div data-=\"v\"]]\nT\n[[/div]]"}
+{"id": "div/attr-unknown", "source": "[[div foo=\"baz\" title=\"tip\" lang=\"en\"]]\nBody\n[[/div]]"}
+{"id": "div/attr-allowlist", "source": "[[div class=\"card\" id=\"panel\" style=\"color: red\" role=\"note\" type=\"t\" title=\"tip\" lang=\"en\" aria-label=\"label\" data-Foo=\"one\" data-bar=\"two\" foo=\"baz\"]]\nBody\n[[/div]]"}
+{"id": "div/attr-allowlist-mixed", "source": "[[div CLASS=\"upper\" ID=\"upper\" TYPE=\"u\" DATA-Mixed=\"three\" data-Mixed=\"four\"]]\nBody\n[[/div]]"}
+{"id": "div/attr-single-quote", "source": "[[div class='foo']]\nhello\n[[/div]]"}
+{"id": "div/attr-unquoted", "source": "[[div class=foo]]\nhello\n[[/div]]"}
+{"id": "div/attr-dupe-data", "source": "[[div data-Mixed=\"three\" data-mixed=\"four\"]]\nBody\n[[/div]]"}
+{"id": "div/attr-class-space", "source": "[[div class=\"a  b\"]]\nx\n[[/div]]"}
+{"id": "div/attr-empty-value", "source": "[[div class=\"\"]]\nx\n[[/div]]"}
+{"id": "div/attr-style-hidden-display", "source": "[[div style=\"display:none\"]]\nhello\n[[/div]]"}
+{"id": "div/attr-style-hidden-vis", "source": "[[div style=\"visibility:hidden\"]]\nhello\n[[/div]]"}
+{"id": "div/attr-style-hidden-mixed", "source": "[[div style=\"display: none; color: red\"]]\nhello\n[[/div]]"}
+{"id": "div/attr-style-hidden-space", "source": "[[div style=\"display : none\"]]\nhello\n[[/div]]"}
+{"id": "div/empty-plain", "source": "[[div]]\n[[/div]]\nB"}
+{"id": "div/empty-attr", "source": "[[div class=\"k\"]]\n[[/div]]\nB"}
+{"id": "div/empty-whitespace", "source": "[[div]]\n   \n[[/div]]\nB"}
+{"id": "div/empty-at-eof", "source": "[[div]]\n[[/div]]"}
+{"id": "div/unterminated", "source": "[[div]]\nhello"}
+{"id": "div/unterminated-attr", "source": "[[div class=\"k\"]]\nhello"}
+{"id": "div/stray", "source": "hello\n[[/div]]"}
+{"id": "div/stray-only", "source": "[[/div]]"}
+{"id": "div/stray-two", "source": "[[/div]]\n[[/div]]\nA"}
+{"id": "div/closer-midline", "source": "A [[/div]] B"}
+{"id": "div/closer-first", "source": "[[div]]\nA\n[[/div]]\nB\n[[/div]]"}
+{"id": "div/closer-multi", "source": "[[div]]\nA\n[[/div]]\nB\n[[/div]]\nC\n[[/div]]"}
+{"id": "div/closer-same-line", "source": "[[div]]\nA[[/div]]B\n[[/div]]"}
+{"id": "div/closer-upper", "source": "[[div]]\nA\n[[/DIV]]"}
+{"id": "div/inline-bold", "source": "[[div]]\n**bold** and //ital//\n[[/div]]"}
+{"id": "div/inline-span", "source": "[[div]]\n[[span]]egg[[/span]]\n[[/div]]"}
+{"id": "div/inline-link", "source": "[[div]]\n[http://example.com link]\n[[/div]]"}
+{"id": "div/inline-code", "source": "[[div]]\n{{code}}\n[[/div]]"}
+{"id": "div/crossed-span", "source": "[[div]]A1[[span]]B2[[/div]]C3[[/span]]D4"}
+{"id": "div/inline-content-scored", "source": "[[div_]]\n**bold** [[span]]egg[[/span]]\n[[/div]]"}
+{"id": "div/nested", "source": "[[div]]\nA\n[[div]]\nB\n[[/div]]\nC\n[[/div]]"}
+{"id": "div/nested-deep", "source": "[[div]]\n1\n[[div]]\n2\n[[div]]\n3\n[[/div]]\n2b\n[[/div]]\n1b\n[[/div]]"}
+{"id": "div/nested-attr", "source": "[[div class=\"outer\"]]\nA\n[[div class=\"inner\"]]\nB\n[[/div]]\n[[/div]]"}
+{"id": "div/nested-scored", "source": "[[div_]]\n1\n[[div_]]\n2\n[[/div]]\n3\n[[/div]]"}
+{"id": "div/nested-mixed", "source": "[[div]]\nA\n[[div_]]\nB\n[[/div]]\nC\n[[/div]]"}
+{"id": "div/div-in-collapsible", "source": "[[collapsible]]\n[[div]]\nA\n[[/div]]\n[[/collapsible]]"}
+{"id": "div/div-in-tabview", "source": "[[tabview]]\n[[tab T]]\n[[div]]\nA\n[[/div]]\n[[/tab]]\n[[/tabview]]"}
+{"id": "div/scored-in-collapsible", "source": "[[collapsible]]\n[[div_]]\nA\n[[/div]]\n[[/collapsible]]"}
+{"id": "div/nested-in-tab", "source": "[[tabview]]\n[[tab T]]\n[[div]]\nA\n[[div]]\nB\n[[/div]]\n[[/div]]\n[[/tab]]\n[[/tabview]]"}
+{"id": "div/malformed-division", "source": "[[division]]\nA\n[[/division]]"}
+{"id": "div/malformed-divx", "source": "[[divx]]\nA\n[[/divx]]"}
+{"id": "div/malformed-open-bracket", "source": "[[div\nA\n[[/div]]"}
+{"id": "div/malformed-close-bracket", "source": "[[div]]\nA\n[[/div]]]"}
+{"id": "div/malformed-extra-bracket", "source": "[[[div]]]\nA\n[[[/div]]]"}
+{"id": "div/malformed-star", "source": "[[div*]]\nA\n[[/div]]"}
+{"id": "div/malformed-empty-args", "source": "[[div ]]\nA\n[[/div]]"}
+{"id": "div/score-basic", "source": "[[div_]]\nhello\n[[/div]]"}
+{"id": "div/score-attr", "source": "[[div_ class=\"strip\"]]\nhello\n[[/div]]"}
+{"id": "div/score-attrs-full", "source": "[[div_ class=\"strip\" title=\"tip\" role=\"note\" data-x=\"y\"]]\nBody\n[[/div]]"}
+{"id": "div/score-attrs-id", "source": "[[div_ id=\"q\" role=\"note\" data-z=\"1\"]]\nx\n[[/div]]"}
+{"id": "div/score-empty", "source": "[[div_]]\n[[/div]]\nB"}
+{"id": "div/score-attr-empty", "source": "[[div_ class=\"k\"]]\n[[/div]]\nB"}
+{"id": "div/score-inline", "source": "[[div_]]Banana[[/div]]"}
+{"id": "div/score-two-lines", "source": "[[div_]]\napple\nbanana\n[[/div]]"}
+{"id": "div/score-unterminated", "source": "[[div_]]\nhello"}
+{"id": "div/score-stray", "source": "[[div_]]\nhello\n[[/div]]\n[[/div]]"}
+{"id": "div/score-uppercase", "source": "[[DIV_]]\nhello\n[[/DIV]]"}
+{"id": "div/score-style-hidden", "source": "[[div_ style=\"display:none\"]]\nhello\n[[/div]]"}
+{"id": "size/sz01-pct", "source": "[[size 90%]]Banana[[/size]]"}
+{"id": "size/sz02-px", "source": "[[size 4px]]Cherry[[/size]]"}
+{"id": "size/sz03-em-leading-dot", "source": "[[size .5em]]X[[/size]]"}
+{"id": "size/sz04-em-decimal", "source": "[[size 1.5em]]X[[/size]]"}
+{"id": "size/sz05-pct-integer", "source": "[[size 100%]]X[[/size]]"}
+{"id": "size/sz06-named-small", "source": "[[size small]]X[[/size]]"}
+{"id": "size/sz07-named-xxsmall", "source": "[[size xx-small]]X[[/size]]"}
+{"id": "size/sz08-named-medium", "source": "[[size medium]]X[[/size]]"}
+{"id": "size/sz09-named-larger", "source": "[[size larger]]X[[/size]]"}
+{"id": "size/sz10-named-xxlarge", "source": "[[size xx-large]]X[[/size]]"}
+{"id": "size/sz11-long-digits-px", "source": "[[size 123456px]]X[[/size]]"}
+{"id": "size/sz12-long-digits-pct", "source": "[[size 1000000%]]X[[/size]]"}
+{"id": "size/sz13-multi-dot-px", "source": "[[size 1.2.3px]]X[[/size]]"}
+{"id": "size/sz14-trailing-dot-px", "source": "[[size 1.px]]X[[/size]]"}
+{"id": "size/sz15-dot-only-px", "source": "[[size .px]]X[[/size]]"}
+{"id": "size/sz16-pt-unit", "source": "[[size 12pt]]X[[/size]]"}
+{"id": "size/sz17-rem-unit", "source": "[[size 1rem]]X[[/size]]"}
+{"id": "size/sz18-vh-unit", "source": "[[size 2vh]]X[[/size]]"}
+{"id": "size/sz19-negative-px", "source": "[[size -1px]]X[[/size]]"}
+{"id": "size/sz20-plus-px", "source": "[[size +1px]]X[[/size]]"}
+{"id": "size/sz21-exponent-pct", "source": "[[size 1e2%]]X[[/size]]"}
+{"id": "size/sz22-inf-pct", "source": "[[size inf%]]X[[/size]]"}
+{"id": "size/sz23-nan-pct", "source": "[[size NaN%]]X[[/size]]"}
+{"id": "size/sz24-upper-larger", "source": "[[size LARGER]]X[[/size]]"}
+{"id": "size/sz25-title-larger", "source": "[[size Larger]]X[[/size]]"}
+{"id": "size/sz26-upper-px", "source": "[[size 80PX]]X[[/size]]"}
+{"id": "size/sz27-upper-em", "source": "[[size 1EM]]X[[/size]]"}
+{"id": "size/sz28-upper-small", "source": "[[size SMALL]]X[[/size]]"}
+{"id": "size/sz29-upper-xlarge", "source": "[[size X-LARGE]]X[[/size]]"}
+{"id": "size/sz30-nbsp-arg", "source": "[[size  100% ]]X[[/size]]"}
+{"id": "size/sz31-no-arg", "source": "[[size]]X[[/size]]"}
+{"id": "size/sz32-junk", "source": "[[size banana]]X[[/size]]"}
+{"id": "size/sz33-opener-upper", "source": "[[SIZE 100%]]X[[/SIZE]]"}
+{"id": "size/sz34-opener-title", "source": "[[Size 100%]]X[[/Size]]"}
+{"id": "size/sz35-opener-mixed-closer", "source": "[[SiZe larger]]X[[/sIzE]]"}
+{"id": "size/sz36-leading-space-name", "source": "[[ size 100%]]X[[/size]]"}
+{"id": "size/sz37-double-space", "source": "[[size  100%]]X[[/size]]"}
+{"id": "size/sz38-tab-separator", "source": "[[size\t100%]]X[[/size]]"}
+{"id": "size/sz39-newline-in-head", "source": "[[size\n100%]]X[[/size]]"}
+{"id": "size/sz40-equals-form", "source": "[[size=100%]]X[[/size=]]"}
+{"id": "size/sz41-quoted-value", "source": "[[size \"100%\"]]X[[/size]]"}
+{"id": "size/sz42-trailing-head-space", "source": "[[size 100% ]]X[[/size]]"}
+{"id": "size/sz43-entity-head", "source": "[[size 100&#37;]]X[[/size]]"}
+{"id": "size/sz44-escaped-head", "source": "[[size 100\\%]]X[[/size]]"}
+{"id": "size/sz45-extra-close-in-head", "source": "[[size 100%]]]X[[/size]]"}
+{"id": "size/sz46-attr-like", "source": "[[size 100% class=\"x\"]]X[[/size]]"}
+{"id": "size/sz47-empty-body", "source": "[[size 100%]][[/size]]"}
+{"id": "size/sz48-whitespace-body", "source": "[[size 100%]]   [[/size]]"}
+{"id": "size/sz49-unterminated", "source": "[[size 100%]]text"}
+{"id": "size/sz50-stray-closer", "source": "text[[/size]]"}
+{"id": "size/sz51-space-before-close", "source": "[[size 120%]]x [[/size]]"}
+{"id": "size/sz52-double-close", "source": "[[size 80%]]x[[/size]]y[[/size]]"}
+{"id": "size/sz53-space-in-closer", "source": "[[size 80%]]x[[/size ]]"}
+{"id": "size/sz54-unpaired-close-preserved", "source": "[[SIZE]]outer [[size 80%]]valid[[/size]] tail[[/SIZE]] [[size 90%]]later[[/size]]"}
+{"id": "size/sz55-nested-pair", "source": "[[size 80%]]a[[size 90%]]b[[/size]]c[[/size]]"}
+{"id": "size/sz56-crossed-pair", "source": "[[size 80%]]a[[size 90%]]b[[/size]]c[[/size]]d"}
+{"id": "size/sz57-size-in-span", "source": "[[span class=\"x\"]]a[[size 80%]]b[[/size]]c[[/span]]"}
+{"id": "size/sz58-span-in-size", "source": "[[size 80%]]a[[span class=\"x\"]]b[[/span]]c[[/size]]"}
+{"id": "size/sz59-cross-size-span", "source": "[[size 80%]]a[[span class=\"x\"]]b[[/size]]c[[/span]]"}
+{"id": "size/sz60-size-in-color", "source": "[[color red]]a[[size 80%]]b[[/size]]c[[/color]]"}
+{"id": "size/sz61-color-in-size", "source": "[[color red]]a[[size 80%]]b[[/color]]c[[/size]]"}
+{"id": "size/sz62-size-in-strike", "source": "[[strikethrough]]a[[size 80%]]b[[/size]]c[[/strikethrough]]"}
+{"id": "size/sz63-strike-in-size", "source": "[[strikethrough]]a[[size 80%]]b[[/strikethrough]]c[[/size]]"}
+{"id": "size/sz64-size-in-div", "source": "[[div class=\"d\"]]\n[[size 80%]]x[[/size]]\n[[/div]]"}
+{"id": "size/sz65-size-in-blockquote", "source": "[[blockquote]]\n[[size 80%]]x[[/size]]\n[[/blockquote]]"}
+{"id": "size/sz66-size-in-list", "source": "* [[size 80%]]x[[/size]]\n* y"}
+{"id": "size/sz67-size-in-heading", "source": "+ [[size 80%]]x[[/size]]"}
+{"id": "size/sz68-div-in-size", "source": "[[size 80%]]a[[div class=\"d\"]]b[[/div]]c[[/size]]"}
+{"id": "size/sz69-list-in-size", "source": "[[size 80%]]a\n* x\n* y\n[[/size]]"}
+{"id": "size/sz70-size-crosses-div", "source": "[[size larger]]\n[[div class=\"outer\"]]\nheader\n[[div class=\"links\"]]\nlink\n[[/div]]\n[[div class=\"content\"]]\n[[/size]]\nbody\n[[/div]]\n[[/div]]"}
+{"id": "size/sz71-stray-close-bridge", "source": "[[size 80%]]a[[/size]][[/size]]b"}
+{"id": "size/sz72-crossed-closers", "source": "[[size 80%]]a[[size 90%]]b[[/size]]c[[/size]]"}
+{"id": "size/sz73-code-content-wrapped", "source": "[[size 80%]][[code]]x[[/code]][[/size]]"}
+{"id": "size/sz74-bold-crossed", "source": "**[[size 110%]]OVERWATCH COUNCIL**[[/size]]"}
+{"id": "size/sz75-list-bold-close", "source": "[[size 80%]]* **a**\n* b\n[[/size]]"}
+{"id": "size/sz76-unicode-body", "source": "[[size 80%]]café 日本語[[/size]]"}
+{"id": "size/sz77-entities-body", "source": "[[size 80%]]&amp; &lt; &#39;[[/size]]"}
+{"id": "size/sz78-comment-in-head", "source": "[[size [% comment %]80%]]X[[/size]]"}
+{"id": "size/sz79-nul-body", "source": "[[size 120%]]A\u0000B[[/size]]"}
+{"id": "size/sz80-multiple-pairs", "source": "[[size 80%]]a[[/size]] [[size 90%]]b[[/size]]"}
+{"id": "span/s01-plain", "source": "[[span]]X[[/span]]"}
+{"id": "span/s02-inline-context", "source": "BEGIN|[[span]]X[[/span]]|END"}
+{"id": "span/s03-empty", "source": "[[span]][[/span]]"}
+{"id": "span/s04-empty-spaces", "source": "[[span ]]  [[/span]]"}
+{"id": "span/s05-multiline", "source": "[[span]]line one\nline two[[/span]]"}
+{"id": "span/s06-uppercase", "source": "[[SPAN]]X[[/SPAN]]"}
+{"id": "span/s07-two-spans", "source": "[[span]]A[[/span]] [[span]]B[[/span]]"}
+{"id": "span/s08-leading-trailing", "source": "a [[span]] X [[/span]] b"}
+{"id": "span/s09-class", "source": "[[span class=\"c\"]]X[[/span]]"}
+{"id": "span/s10-id", "source": "[[span id=\"i\"]]X[[/span]]"}
+{"id": "span/s11-style", "source": "[[span style=\"color:red\"]]X[[/span]]"}
+{"id": "span/s12-style-two", "source": "[[span style=\"color:red; font-size:120%\"]]X[[/span]]"}
+{"id": "span/s13-style-hidden", "source": "[[span style=\"visibility:hidden\"]]X[[/span]]"}
+{"id": "span/s14-style-none", "source": "[[span style=\"display:none\"]]X[[/span]]"}
+{"id": "span/s15-title", "source": "[[span title=\"tip\"]]X[[/span]]"}
+{"id": "span/s16-role", "source": "[[span role=\"note\"]]X[[/span]]"}
+{"id": "span/s17-data", "source": "[[span data-x=\"value\"]]X[[/span]]"}
+{"id": "span/s18-unknown", "source": "[[span frobnicate=\"yes\"]]X[[/span]]"}
+{"id": "span/s19-onclick", "source": "[[span onclick=\"alert(1)\"]]X[[/span]]"}
+{"id": "span/s20-class-id-style", "source": "[[span class=\"c\" id=\"i\" style=\"color:red\"]]X[[/span]]"}
+{"id": "span/s21-single-quote", "source": "[[span class='c']]X[[/span]]"}
+{"id": "span/s22-unquoted", "source": "[[span class=c]]X[[/span]]"}
+{"id": "span/s23-attr-spaces", "source": "[[span  class=\"c\"  style=\"color:red\" ]]X[[/span]]"}
+{"id": "span/s24-nested", "source": "[[span]]outer [[span]]inner[[/span]][[/span]]"}
+{"id": "span/s24b-nested3", "source": "[[span]]a[[span]]b[[span]]c[[/span]][[/span]][[/span]]"}
+{"id": "span/s25-crossed", "source": "[[span]]A [[span]]B[[/span]] C[[/span]]"}
+{"id": "span/s26-stray-close", "source": "X [[/span]] Y"}
+{"id": "span/s27-unterminated", "source": "[[span]]unterminated"}
+{"id": "span/s28-close-first", "source": "[[/span]] [[span]]X[[/span]]"}
+{"id": "span/s29-span-size", "source": "[[span]]A [[size 120%]]B[[/size]] C[[/span]]"}
+{"id": "span/s30-span-color", "source": "[[span]]A ##red|B## C[[/span]]"}
+{"id": "span/s31-span-strike", "source": "[[span]]A --B-- C[[/span]]"}
+{"id": "span/s32-size-span", "source": "[[size 120%]]A [[span]]B[[/span]] C[[/size]]"}
+{"id": "span/s33-color-span", "source": "##red|A [[span]]B[[/span]] C##"}
+{"id": "span/s34-strike-span", "source": "--A [[span]]B[[/span]] C--"}
+{"id": "span/s35-span-size-cross", "source": "[[span]]A [[size 120%]]B[[/span]] C[[/size]]"}
+{"id": "span/s36-span-color-cross", "source": "[[span]]A ##red|B[[/span]] C##"}
+{"id": "span/s37-span-strike-cross", "source": "[[span]]A --B[[/span]] C--"}
+{"id": "span/s38-size-color-strike", "source": "[[size 120%]]A ##red|--B--## C[[/size]]"}
+{"id": "span/s39-span-in-span-block", "source": "[[span]]A\n[[span]]B[[/span]]\nC[[/span]]"}
+{"id": "span/s40-score-span", "source": "[[span_]]X[[/span]]"}
+{"id": "span/s41-score-span-extra", "source": "[[span_]]]X[[/span]]"}
+{"id": "span/s42-percent", "source": "%%hidden%%"}
+{"id": "span/s43-percent-span", "source": "[[span]]%%hidden%%[[/span]]"}
+{"id": "span/s44-malformed-opener", "source": "[[span class=\"c\"X[[/span]]"}
+{"id": "span/s45-missing-space", "source": "[[spanclass=\"c\"]]X[[/span]]"}
+{"id": "span/s46-double-open", "source": "[[span]][[span]]X[[/span]]"}
+{"id": "span/s47-newline-in-attr", "source": "[[span\nclass=\"c\"]]X[[/span]]"}
+{"id": "span/s48-span-in-div", "source": "[[div]]\n[[span]]X[[/span]]\n[[/div]]"}
+{"id": "span/s49-div-in-span", "source": "[[span]]A [[div]]B[[/div]] C[[/span]]"}
+{"id": "span/s50-span-across-div", "source": "[[span]]A\n[[div]]B[[/div]]\nC[[/span]]"}
+{"id": "span/s51-span-in-collapsible", "source": "[[collapsible]]\n[[span]]X[[/span]]\n[[/collapsible]]"}
+{"id": "span/s52-span-in-heading", "source": "+ [[span]]Head[[/span]]"}
+{"id": "span/s53-span-in-quote", "source": "> [[span]]Quoted[[/span]]\n\n"}
+{"id": "span/s54-span-in-list", "source": "* [[span]]item[[/span]]\n"}
+{"id": "span/s55-span-in-code", "source": "[[code]]\n[[span]]literal[[/span]]\n[[/code]]"}
+{"id": "span/s56-span-in-iftags", "source": "[[iftags +alpha]]\n[[span]]kept[[/span]]\n[[/iftags]]", "tags": ["alpha"]}
+{"id": "span/s57-span-block-content", "source": "[[span]]+ head\n* list[[/span]]"}
+{"id": "span/s58-span-attr-entity", "source": "[[span title=\"a &amp; b\"]]X[[/span]]"}
+{"id": "span/s59-span-class-empty", "source": "[[span class=\"\"]]X[[/span]]"}
+{"id": "span/s60-span-style-empty", "source": "[[span style=\"\"]]X[[/span]]"}
+{"id": "tabview/tv01-single", "source": "[[tabview]]\n[[tab solo]]\ndata here\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv02-two-tabs", "source": "[[tabview]]\n[[tab One]]\nfirst\n[[/tab]]\n[[tab Two]]\nsecond\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv03-title-double-space", "source": "[[tabview]]\n[[tab A  B]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv04-title-trailing-space", "source": "[[tabview]]\n[[tab A ]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv05-title-attr", "source": "[[tabview]]\n[[tab title=\"A\"]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv06-title-attr-spaces", "source": "[[tabview]]\n[[tab title=\"A B\"]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv07-class-attr", "source": "[[tabview]]\n[[tab class=\"c\"]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv08-foo-attr", "source": "[[tabview]]\n[[tab foo=\"A\"]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv09-attr-then-text", "source": "[[tabview]]\n[[tab class=\"c\" A]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv10-text-then-attr", "source": "[[tabview]]\n[[tab A class=\"c\"]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv11-untitled-bare", "source": "[[tabview]]\n[[tab]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv12-untitled-spaces", "source": "[[tabview]]\n[[tab  ]] x [[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv13-case-insensitive", "source": "[[TABVIEW]]\n[[TaB mixed]]\nx\n[[/tAb]]\n[[/TABVIEW]]"}
+{"id": "tabview/tv14-alias-tabs", "source": "[[tabs]]\n[[tab A]]\nx\n[[/tab]]\n[[/tabs]]"}
+{"id": "tabview/tv15-mixed-alias", "source": "[[tabview]]\n[[tab A]]\nx\n[[/tab]]\n[[/tabs]]"}
+{"id": "tabview/tv16-title-entities", "source": "[[tabview]]\n[[tab A &amp; B]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv17-title-htmlchars", "source": "[[tabview]]\n[[tab <em>x</em>]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv18-nested-view", "source": "[[tabview]]\n[[tab outer]]\nA\n[[tabview]]\n[[tab inner]]\nB\n[[/tab]]\n[[/tabview]]\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv19-nested-alias", "source": "[[tabview]]\n[[tab 1]]\nA\n[[tabs]]\n[[tab 2]]\nB\n[[/tabs]]\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv20-nested-deep", "source": "[[tabview]]\n[[tab 1]]\nA\n[[tabs]]\n[[tab 2]]\nB\n[[tabview]]\n[[tab 3]]\nC\n[[/tabview]]\n[[/tabs]]\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv21-nested-blank", "source": "[[tabview]]\n[[tab 1]]\nA\n\n[[tabview]]\n[[tab 2]]\nB\n[[/tab]]\n[[/tabview]]\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv22-div-in-tab", "source": "[[tabview]]\n[[tab A]]\n[[div class=x]]\ninner\n[[/div]]\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv23-coll-in-tab", "source": "[[tabview]]\n[[tab A]]\n[[collapsible]]\ninner\n[[/collapsible]]\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv24-div-in-coll-in-tab", "source": "[[tabview]]\n[[tab A]]\n[[collapsible show=show]]\n[[div class=x]]\ninner\n[[/div]]\n[[/collapsible]]\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv25-tab-in-div", "source": "[[div class=a]]\n[[tabview]]\n[[tab A]]\ninner\n[[/tab]]\n[[/tabview]]\n[[/div]]"}
+{"id": "tabview/tv26-bold-in-tab", "source": "[[tabview]]\n[[tab A]]\n**bold** and [[B]]\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv27-span-in-tab", "source": "[[tabview]]\n[[tab A]]\n[[span class=s]]text[[/span]]\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv28-para-in-tab", "source": "[[tabview]]\n[[tab A]]\none\n\ntwo\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv29-empty-tab", "source": "[[tabview]]\n[[tab A]]\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv30-empty-body-blank", "source": "[[tabview]]\n[[tab A]]\n\n\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv31-empty-view", "source": "[[tabview]][[/tabview]]"}
+{"id": "tabview/tv32-empty-view-newlines", "source": "[[tabview]]\n[[/tabview]]"}
+{"id": "tabview/tv33-unterminated-tab", "source": "[[tabview]]\n[[tab A]]\nbody\n[[/tabview]]"}
+{"id": "tabview/tv34-unterminated-view", "source": "[[tabview]]\n[[tab A]]\nbody\n[[/tab]]"}
+{"id": "tabview/tv35-stray-tab-first", "source": "[[tabview]]\n[[/tab]]\n[[tab A]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv36-stray-view-first", "source": "[[tabview]]\n[[/tabview]]\n[[tab A]]\nx\n[[/tab]]"}
+{"id": "tabview/tv37-double-tab-close", "source": "[[tabview]]\n[[tab A]]\nx\n[[/tab]][[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv38-prose-between", "source": "[[tabview]]\n[[tab A]] a [[/tab]]\nprose\n[[tab B]] b [[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv39-prose-before", "source": "[[tabview]]\nprose\n[[tab A]] a [[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv40-prose-after", "source": "[[tabview]]\n[[tab A]] a [[/tab]]\nprose\n[[/tabview]]"}
+{"id": "tabview/tv41-inline-one-line", "source": "[[tabview]] [[tab A]] 1 [[/tab]] [[tab B]] 2 [[/tab]] [[/tabview]]"}
+{"id": "tabview/tv42-inline-tight", "source": "[[tabview]][[tab A]]1[[/tab]][[/tabview]]"}
+{"id": "tabview/tv43-view-class", "source": "[[tabview class=\"x\"]]\n[[tab A]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv44-view-unquoted", "source": "[[tabview class=x]]\n[[tab A]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv45-view-id", "source": "[[tabview id=\"v\"]]\n[[tab A]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv46-view-style", "source": "[[tabview style=\"color:red\"]]\n[[tab A]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv47-view-singlequote", "source": "[[tabview class='c']]\n[[tab A]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv48-view-multiple-attrs", "source": "[[tabview class=\"a\" id=\"b\"]]\n[[tab A]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv49-head-bracket", "source": "[[tabview]]\n[[tab a]b]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv50-head-comment", "source": "[[tabview]]\n[[tab a[!-- c --]]] x [[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv51-head-bold", "source": "[[tabview]]\n[[tab **bold**]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv52-title-raw", "source": "[[tabview]]\n[[tab title=\"@@a@@\"]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv53-head-leading-space", "source": "[[tabview]]\n[[ tab A ]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "tabview/tv54-stray-view-end-only", "source": "[[tab A]]\nx\n[[/tab]]\n[[/tabview]]"}
+{"id": "containx/x01-span-size-cross", "source": "[[span class=a]]A[[size 12px]]B[[/span]]C[[/size]]"}
+{"id": "containx/x02-size-span-cross", "source": "[[size 12px]]A[[span class=a]]B[[/size]]C[[/span]]"}
+{"id": "containx/x03-span-color-nested", "source": "[[span class=a]]A##red|B##C[[/span]]"}
+{"id": "containx/x04-color-span-cross", "source": "##red|[[span class=a]]A##B[[/span]]"}
+{"id": "containx/x05-strike-span-cross", "source": "--A[[span class=a]]B--C[[/span]]"}
+{"id": "containx/x06-span-strike-nested", "source": "[[span class=a]]A--B--C[[/span]]"}
+{"id": "containx/x07-span-size-strike-cross", "source": "[[span class=a]]A[[size 12px]]B--C[[/span]]D[[/size]]E--"}
+{"id": "containx/x08-span-nested-same", "source": "[[span class=a]]A[[span class=b]]B[[/span]]C[[/span]]"}
+{"id": "containx/x09-size-nested-same", "source": "[[size 12px]]A[[size 14px]]B[[/size]]C[[/size]]"}
+{"id": "containx/x10-span-empty", "source": "[[span]] [[/span]]"}
+{"id": "containx/x11-span-size-cross-block", "source": "[[div class=d]]\n[[span class=a]]A[[size 12px]]B[[/span]]C[[/size]]\n[[/div]]"}
+{"id": "containx/x12-iftags-suppressed-div", "source": "[[iftags +alpha]]\n[[div class=x]]\ninside\n[[/div]]\n[[/iftags]]\nvisible", "tags": []}
+{"id": "containx/x13-iftags-active-div", "source": "[[iftags +alpha]]\n[[div class=x]]\ninside\n[[/div]]\n[[/iftags]]\nvisible", "tags": ["alpha"]}
+{"id": "containx/x14-iftags-suppressed-coll", "source": "[[iftags -alpha]]\n[[collapsible]]\ninside\n[[/collapsible]]\n[[/iftags]]\nvisible", "tags": ["alpha"]}
+{"id": "containx/x15-iftags-active-coll", "source": "[[iftags -alpha]]\n[[collapsible]]\ninside\n[[/collapsible]]\n[[/iftags]]\nvisible", "tags": []}
+{"id": "containx/x16-iftags-suppressed-tab", "source": "[[iftags +alpha]]\n[[tabview]]\n[[tab title=A]]\nbody\n[[/tab]]\n[[/tabview]]\n[[/iftags]]\nvisible", "tags": []}
+{"id": "containx/x17-code-inline-div", "source": "@@[[div class=x]] inside [[/div]]@@"}
+{"id": "containx/x18-code-block-div", "source": "[[code]]\n[[div]]\ninside\n[[/div]]\n[[/code]]"}
+{"id": "containx/x19-code-inline-coll", "source": "@@[[collapsible]]body[[/collapsible]]@@"}
+{"id": "containx/x20-span-code-div", "source": "[[span class=a]]A@@[[div]]x[[/div]]@@B[[/span]]"}
+{"id": "containx/x21-div-in-coll-in-tab", "source": "[[tabview]]\n[[tab title=A]]\n[[collapsible show=show]]\n[[div class=x]]\ninner\n[[/div]]\n[[/collapsible]]\n[[/tab]]\n[[/tabview]]"}
+{"id": "containx/x22-coll-in-tab", "source": "[[tabview]]\n[[tab title=A]]\n[[collapsible]]\ninner\n[[/collapsible]]\n[[/tab]]\n[[/tabview]]"}
+{"id": "containx/x23-div-in-tab", "source": "[[tabview]]\n[[tab title=A]]\n[[div class=x]]\ninner\n[[/div]]\n[[/tab]]\n[[/tabview]]"}
+{"id": "containx/x24-three-nested-divs", "source": "[[div class=a]]A\n[[div class=b]]B\n[[div class=c]]C\n[[/div]]\n[[/div]]\n[[/div]]"}
+{"id": "containx/x25-tab-in-coll-in-div", "source": "[[div class=a]]\n[[collapsible]]\n[[tabview]]\n[[tab title=A]]\ninner\n[[/tab]]\n[[/tabview]]\n[[/collapsible]]\n[[/div]]"}
+{"id": "containx/x26-coll-first-closer-wins", "source": "[[collapsible]]A[[collapsible]]B[[/collapsible]]C[[/collapsible]]"}
+{"id": "containx/x27-footnote-in-div", "source": "[[div class=x]]\ntext[[footnote]]note1[[/footnote]]\n[[footnoteblock]]\n[[/div]]"}
+{"id": "containx/x28-footnote-in-coll", "source": "[[collapsible]]\ntext[[footnote]]note1[[/footnote]]\n[[footnoteblock]]\n[[/collapsible]]"}
+{"id": "containx/x29-footnote-in-tab", "source": "[[tabview]]\n[[tab title=A]]\ntext[[footnote]]note1[[/footnote]]\n[[footnoteblock]]\n[[/tab]]\n[[/tabview]]"}
+{"id": "containx/x30-div-in-footnote", "source": "[[footnote]]\n[[div]]\ninside\n[[/div]]\n[[/footnote]]\n[[footnoteblock]]"}
+{"id": "containx/x31-span-in-footnote", "source": "[[footnote]][[span class=a]]S[[/span]][[/footnote]]\n[[footnoteblock]]"}
+{"id": "containx/x32-div-underscore-basic", "source": "[[div_]]\nbody\n[[/div]]"}
+{"id": "containx/x33-div-underscore-attrs", "source": "[[div_ class=\"x\"]]\nbody\n[[/div]]"}
+{"id": "containx/x34-div-underscore-inline", "source": "before [[div_]] body [[/div]] after"}
+{"id": "containx/x35-div-underscore-unterminated", "source": "[[div_]]\nbody"}
+{"id": "containx/x36-div-normal-control", "source": "[[div class=x]]\nbody\n[[/div]]"}
+{"id": "anchor/a01", "source": "[[# strawberry]]"}
+{"id": "anchor/a02", "source": "[[# _lemon-lime.2%20]]"}
+{"id": "anchor/a03", "source": "[[#durian]]"}
+{"id": "anchor/a04", "source": "[[# ]]"}
+{"id": "anchor/a05", "source": "[[#  a]]"}
+{"id": "anchor/a06", "source": "[[#  a  ]]"}
+{"id": "anchor/a07", "source": "[[# apple banana]]"}
+{"id": "anchor/a08", "source": "[[# apple banana]]]"}
+{"id": "anchor/a09", "source": "[[# symbol$%_foo]]"}
+{"id": "anchor/a10", "source": "[[# name]]]"}
+{"id": "anchor/a11", "source": "[[[# a]]]\n[[[# a | L]]]"}
+{"id": "anchor/a12", "source": "[[# top]]\n[[a href=\"#top\"]]jump[[/a]]"}
+{"id": "anchor/a13", "source": "[[a]]Test[[/a]]"}
+{"id": "anchor/a14", "source": "[[a]][[/a]]"}
+{"id": "anchor/a15", "source": "[[a href=\"some-page\"]]click[[/a]]"}
+{"id": "anchor/a16", "source": "[[a href=\"*some-page\"]]click[[/a]]"}
+{"id": "anchor/a17", "source": "[[a href=\"https://example.com\"]]click[[/a]]"}
+{"id": "anchor/a18", "source": "[[a href=\"*https://example.com\"]]click[[/a]]"}
+{"id": "anchor/a19", "source": "[[a href=\"*https://example.com\" target=\"_self\"]]click[[/a]]"}
+{"id": "anchor/a20", "source": "[[a href=\"#something\"]]click[[/a]]"}
+{"id": "anchor/a21", "source": "[[a href=\"*#something\"]]click[[/a]]"}
+{"id": "anchor/a22", "source": "[[a href=\"/local/path\"]]click[[/a]]"}
+{"id": "anchor/a23", "source": "[[a href=\"*/local/path\"]]click[[/a]]"}
+{"id": "anchor/a24", "source": "[[a href=\"mailto:user@example.com\"]]mail[[/a]]"}
+{"id": "anchor/a25", "source": "[[a href=\"ftp://files.example.com/pub\"]]ftp[[/a]]"}
+{"id": "anchor/a26", "source": "[[a href=\"javascript:alert(1)\"]]xss[[/a]]"}
+{"id": "anchor/a27", "source": "[[a href=\"JAVASCRIPT:alert(1)\"]]xss2[[/a]]"}
+{"id": "anchor/a28", "source": "[[a href=\"data:text/html,<b>x</b>\"]]data[[/a]]"}
+{"id": "anchor/a29", "source": "[[a href=\"HTTP://X/Y\"]]upper-http[[/a]]"}
+{"id": "anchor/a30", "source": "[[a href=\" http://x\"]]lead-sp[[/a]]\n[[a href=\"http://x \"]]trail-sp[[/a]]"}
+{"id": "anchor/a31", "source": "[[a href=\"http://example.com/a b\"]]sp1[[/a]]\n[[a href=\"/a b\"]]sp2[[/a]]\n[[a href=\"#a b\"]]sp3[[/a]]"}
+{"id": "anchor/a32", "source": "[[a href=\"https://example.com/a b/日本語\"]]enc[[/a]]"}
+{"id": "anchor/a33", "source": "[[a href=\"a::b\"]]c1[[/a]]\n[[a href=\"a - b\"]]c2[[/a]]\n[[a href=\":\"]]c3[[/a]]\n[[a href=\"abc=\"]]c4[[/a]]"}
+{"id": "anchor/a34", "source": "[[a href=\"@@a@@\"]]r1[[/a]]\n[[a class=\"@@a@@\" href=\"/x\"]]r2[[/a]]\n[[a href=\"/x@@a@@\"]]r3[[/a]]"}
+{"id": "anchor/a35", "source": "[[a href=\"*https://example.com\"]]star-ext[[/a]]\n[[a href=\"*some-page\"]]star-slug[[/a]]\n[[a href=\"*https://example.com\" target=\"_self\"]]star-override[[/a]]"}
+{"id": "anchor/a36", "source": "[[a href=\"/x\" id=\"i\" class=\"c\" style=\"s\" role=\"r\" type=\"t\" data-x=\"d\" target=\"_blank\"]]y[[/a]]"}
+{"id": "anchor/a37", "source": "[[a href=\"/x\" style=\"s\" class=\"c\" id=\"i\"]]y[[/a]]"}
+{"id": "anchor/a38", "source": "[[a href=\"/x\" data-z=\"1\" data-a=\"2\" data-m=\"3\"]]y[[/a]]"}
+{"id": "anchor/a39", "source": "[[a href=\"/x\" data-X=\"1\"]]y1[[/a]]\n[[a href=\"/x\" DATA-X=\"1\"]]y2[[/a]]\n[[a href=\"/x\" data-=\"1\"]]y3[[/a]]"}
+{"id": "anchor/a40", "source": "[[a href=\"/x\" name=\"n\" title=\"t\" rel=\"r\" onclick=\"o\" foo=\"f\" lang=\"en\" dir=\"ltr\" align=\"left\" tabindex=\"2\" aria-label=\"a\"]]y[[/a]]"}
+{"id": "anchor/a41", "source": "[[a href=\"/x\" CLASS=\"c\" HREF=\"/u\"]]y[[/a]]"}
+{"id": "anchor/a42", "source": "[[a data-x=\"\" id=\"i\"]]y1[[/a]]\n[[a href=\"/x\" class=\"a  b\"]]y2[[/a]]\n[[a href=\"/x\" class=\"c\" class=\"\"]]y3[[/a]]\n[[a href=\"/x\" href=\"/u\"]]y4[[/a]]"}
+{"id": "anchor/a43", "source": "[[A HREF=\"/x\" href=\"/y\"]]UPPER[[/A]]"}
+{"id": "anchor/a44", "source": "[[a href=\"/x\" class='single' id=unquoted style = \"spaced\"]]quote-forms[[/a]]"}
+{"id": "anchor/a45", "source": "[[a]] one [[/a]]\nx[[a]] one [[/a]]y\n[[a]]one[[/a]][[a]] two[[/a]]\n[[a]]one [[/a]][[a]]two[[/a]]"}
+{"id": "anchor/a46", "source": "[[a href=\"/1\"]]x[[a href=\"/2\"]]y[[/a]]z[[/a]]\n[[a href=\"/1\"]][[/a]] [[a href=\"/2\"]]y[[/a]]"}
+{"id": "anchor/a47", "source": "a[[a ]] b[[/a]]c"}
+{"id": "anchor/a48", "source": "[[anchor href=\"/x\"]]txt[[/anchor]]\n[[*a href=\"/x\"]]txt[[/a]]\n[[a href=\"/x\"]]txt[[/anchor]]"}
+{"id": "anchor/a49", "source": "[[a href=\"http://example.com\"]]unterminated\n[[div]]\ninside\n[[/div]]"}
+{"id": "anchor/a50", "source": "[[a href=\"/x\"]]txt[[/a]]]\n[[# name]]]"}
+{"id": "anchor/a51", "source": "[[a href=\"/x\"]]\nline1\nline2\n[[/a]]"}
+{"id": "anchor/a52", "source": "[[a href=\"/x\"]]line1\n\nline2[[/a]]"}
+{"id": "anchor/a53", "source": "[[a_]]X[[/a]]"}
+{"id": "anchor/a54", "source": "[[a_ href=\"https://example.com\"]]^^label^^[[/a]]"}
+{"id": "anchor/a55", "source": "PRE\n[[a_ href=\"https://example.com\"]]x[[/a]]\nPOST"}
+{"id": "anchor/a56", "source": "PRE\n\n[[a_ href=\"/x\"]]mid[[/a]]\n\nPOST"}
+{"id": "anchor/a57", "source": "[[a_ href=\"some-page\"]]\nline1\nline2\n[[/a]]"}
+{"id": "anchor/a58", "source": "[[a href=\"http://x/a--b\"]]label[[/a]]\nx"}
+{"id": "anchor/a59", "source": "[[a href=\"https://example.com\"]]^^label^^[[/a]]\nx"}
+{"id": "anchor/a60", "source": "[[a href=\"http://x\"]]__label__[[/a]]"}
+{"id": "button/bt-01", "source": "[[button edit]]"}
+{"id": "button/bt-02", "source": "[[button edit text=\"Edit\"]]"}
+{"id": "button/bt-03", "source": "[[button edit text=\"Edit\" class=\"c\" style=\"s\"]]"}
+{"id": "button/bt-04", "source": "[[button edit id=\"x\"]]"}
+{"id": "button/bt-05", "source": "[[button edit_button]]"}
+{"id": "button/bt-06", "source": "[[button EDIT]]"}
+{"id": "button/bt-07", "source": "[[button Edit_Type]]"}
+{"id": "button/bt-08", "source": "[[button edit text=\"a\" text=\"b\"]]"}
+{"id": "button/bt-09", "source": "[[button edit  ]]"}
+{"id": "button/bt-10", "source": "[[button edit ]]"}
+{"id": "button/bt-11", "source": "[[button edit x]]"}
+{"id": "button/bt-12", "source": "[[button edit text='single']]"}
+{"id": "button/bt-13", "source": "[[button edit text=\"a b\" class=\"c\"]]"}
+{"id": "button/bt-14", "source": "[[button 123]]"}
+{"id": "button/bt-15", "source": "[[button a-b_c]]"}
+{"id": "button/bt-16", "source": "[[BUTTON edit]]"}
+{"id": "button/bt-17", "source": "[[button]]"}
+{"id": "button/bt-18", "source": "[[button ]]"}
+{"id": "button/bt-19", "source": "[[button edit"}
+{"id": "button/bt-20", "source": "[[button edit text=\"a]]"}
+{"id": "button/bt-21", "source": "[[button edit text=\"a\" extra=\"1\"]]"}
+{"id": "button/bt-22", "source": "[[button edit text=\"a\\\"b\"]]"}
+{"id": "button/bt-23", "source": "[[button edit\ntext=\"a\"]]"}
+{"id": "button/bt-24", "source": "pre [[button edit text=\"a\"]] post"}
+{"id": "button/bt-25", "source": "[[button edit]] [[button history]]"}
+{"id": "button/bt-26", "source": "[[button edit text=\"a\" ]]"}
+{"id": "button/bt-27", "source": "[[button edit  text=\"a\"]]"}
+{"id": "button/bt-28", "source": "[[button edit text=\"a|b\"]]"}
+{"id": "button/bt-29", "source": "[[button e]]"}
+{"id": "button/bt-30", "source": "[[button edit class=\"c\" text=\"t\" style=\"s\" type=\"x\"]]"}
+{"id": "button/bt-31", "source": "[[button edit text=\"\"]]"}
+{"id": "button/bt-32", "source": "[[button a1_-b]]"}
+{"id": "button/bt-33", "source": "[[code]][[button edit]][[/code]]"}
+{"id": "button/bt-34", "source": "[[button edit text=\"a\""}
+{"id": "button/bt-35", "source": "[[button edit[]]"}
+{"id": "button/bt-36", "source": "[[Button EDIT Text=\"x\"]]"}
+{"id": "button/bt-37", "source": "[[button edit text=\"a\" class=\"b\" style=\"c\" text=\"z\"]]"}
+{"id": "button/bt-38", "source": "[[button edit text=\"a\nb\"]]"}
+{"id": "button/bt-39", "source": "[[button edit text=\"a\"]]tail"}
+{"id": "button/bt-40", "source": "+ [[button edit]]"}
+{"id": "button/bt-41", "source": "[[div]][[button edit]][[/div]]"}
+{"id": "button/bt-42", "source": "[[button edit\ttext=\"a\"]]"}
+{"id": "button/bt-43", "source": "[[button edit text=\"a\" class=\"b\"]]"}
+{"id": "button/bt-x01", "source": "[[button edit-append]]"}
+{"id": "button/bt-x02", "source": "[[button edit-sections]]"}
+{"id": "button/bt-x03", "source": "[[button history]]"}
+{"id": "button/bt-x04", "source": "[[button print]]"}
+{"id": "button/bt-x05", "source": "[[button files]]"}
+{"id": "button/bt-x06", "source": "[[button tags]]"}
+{"id": "button/bt-x07", "source": "[[button source]]"}
+{"id": "button/bt-x08", "source": "[[button talk]]"}
+{"id": "button/bt-x09", "source": "[[button backlinks]]"}
+{"id": "button/bt-x10", "source": "[[button set-tags]]"}
+{"id": "button/bt-x11", "source": "[[button set-tags text=\"Tag It\" tags=\"+a -b\"]]"}
+{"id": "button/bt-x12", "source": "[[button rename]]"}
+{"id": "button/bt-x13", "source": "[[button delete]]"}
+{"id": "button/bt-x14", "source": "[[button parent]]"}
+{"id": "button/bt-x15", "source": "[[button lock]]"}
+{"id": "button/bt-x16", "source": "[[button edit-meta]]"}
+{"id": "button/bt-x17", "source": "[[button watchers]]"}
+{"id": "button/bt-x18", "source": "[[button edit_append]]"}
+{"id": "button/bt-x19", "source": "[[button edit_sections]]"}
+{"id": "button/bt-x20", "source": "[[button edit text=\"a<b>c&d'e\"]]"}
+{"id": "button/bt-x21", "source": "[[button edit class=\"c1 c2\" style=\"color:red\"]]"}
+{"id": "button/bt-x22", "source": "[[button unknown-type]]"}
+{"id": "button/p01", "source": "[[button edit]]"}
+{"id": "button/p02", "source": "[[button edit-append]]\n[[button edit-sections]]"}
+{"id": "button/p03", "source": "[[button history]]\n[[button print]]\n[[button files]]"}
+{"id": "button/p04", "source": "[[button tags]]\n[[button source]]\n[[button talk]]\n[[button backlinks]]"}
+{"id": "button/p05", "source": "[[button edit_append]]\n[[button edit_sections]]"}
+{"id": "button/p06", "source": "[[button set-tags]]\n[[button set-tags text=\"Tag It\" tags=\"+a -b\"]]"}
+{"id": "button/p07", "source": "[[button rename]]\n[[button delete]]\n[[button parent]]\n[[button lock]]"}
+{"id": "button/p08", "source": "[[button edit-meta]]\n[[button watchers]]\n[[button unknown-type]]"}
+{"id": "button/p09", "source": "[[button edit text=\"Edit Page\"]]"}
+{"id": "button/p10", "source": "[[button edit text=\"Edit\" class=\"my-btn\" style=\"color: red;\"]]"}
+{"id": "button/p11", "source": "[[button edit id=\"x\" data-foo=\"bar\" title=\"t\"]]"}
+{"id": "button/p12", "source": "[[button edit text=\"\"]]"}
+{"id": "button/p13", "source": "[[button edit text=\"a<b>c&d'e\"]]"}
+{"id": "button/p14", "source": "[[BUTTON edit]]\n[[button EDIT]]\n[[button Edit_Sections]]"}
+{"id": "button/p15", "source": "[[button edit ]]"}
+{"id": "button/p16", "source": "[[button edit  ]]"}
+{"id": "button/p17", "source": "[[button edit x]]"}
+{"id": "button/p18", "source": "[[button edit text='single']]"}
+{"id": "button/p19", "source": "[[button edit\ntext=\"newline\"]]"}
+{"id": "button/p20", "source": "[[button edit\ttext=\"tab\"]]"}
+{"id": "button/p21", "source": "[[button]]\n[[button ]]"}
+{"id": "button/p22", "source": "[[button edit text=\"a\" text=\"b\"]]"}
+{"id": "file/fi-01", "source": "[[file a.txt]]"}
+{"id": "file/fi-02", "source": "[[file a.txt|Label]]"}
+{"id": "file/fi-03", "source": "[[file a.txt|]]"}
+{"id": "file/fi-04", "source": "[[file a.txt| ]]"}
+{"id": "file/fi-05", "source": "[[file  a.txt  ]]"}
+{"id": "file/fi-06", "source": "[[file a.txt | Label ]]"}
+{"id": "file/fi-07", "source": "[[FILE a.txt]]"}
+{"id": "file/fi-08", "source": "[[file a.txt|a|b]]"}
+{"id": "file/fi-09", "source": "[[file a\nb.txt]]"}
+{"id": "file/fi-10", "source": "[[file a.txt|x\ny]]"}
+{"id": "file/fi-11", "source": "[[file ]]"}
+{"id": "file/fi-12", "source": "[[file a.txt]] [[file b.txt|L]]"}
+{"id": "file/fi-13", "source": "[[div]][[file a.txt]][[/div]]"}
+{"id": "file/fi-14", "source": "[[a href=\"/x\"]][[file a.txt|L]][[/a]]"}
+{"id": "file/fi-15", "source": "[[code]][[file a.txt]][[/code]]"}
+{"id": "file/fi-16", "source": "[[file my file.txt]]"}
+{"id": "file/fi-17", "source": "[[file a.txt|Label With Spaces]]"}
+{"id": "file/fi-18", "source": "[[file a.txt|  ]]"}
+{"id": "file/fi-19", "source": "[[file |x]]"}
+{"id": "file/fi-20", "source": "[[file a|b|c]]"}
+{"id": "file/fi-21", "source": "[[file a]]]"}
+{"id": "file/fi-22", "source": "[[file a]b]]"}
+{"id": "file/fi-23", "source": "[[file café.txt]]"}
+{"id": "file/fi-24", "source": "[[file a.txt|[[math]]x[[/math]]]]"}
+{"id": "file/fi-25", "source": "[[file [[math]]x[[/math]].txt]]"}
+{"id": "file/fi-26", "source": "x[[file a.txt|L]]y"}
+{"id": "file/fi-27", "source": "[[file a.txt]]\n"}
+{"id": "file/fi-28", "source": "[[file a.txt |]]"}
+{"id": "file/fi-29", "source": "[[file a.txt| L]]"}
+{"id": "file/fi-30", "source": "[[file A.TXT|Label]]"}
+{"id": "file/fi-31", "source": "|| [[file a.txt]] ||"}
+{"id": "file/fi-32", "source": "* [[file a.txt]]"}
+{"id": "file/fi-33", "source": "[[file |]]"}
+{"id": "file/fi-34", "source": "[[file a.txt|b]]"}
+{"id": "file/fi-35", "source": "[[file  a.txt|b  ]]"}
+{"id": "file/fi-36", "source": "[[file a.txt]] and [[file b.txt]]"}
+{"id": "file/fi-37", "source": "[[social]] [[file a.txt]]"}
+{"id": "file/fi-38", "source": "[[embed]][[file a.txt]][[/embed]]"}
+{"id": "file/fi-39", "source": "[[note]]\n[[file a.txt]]\n[[/note]]"}
+{"id": "file/fi-40", "source": "[[file a|]x]]"}
+{"id": "file/fi-41", "source": "[[file\ta.txt]]"}
+{"id": "file/fi-42", "source": "> [[file a.txt]]"}
+{"id": "file/fi-43", "source": "[[file a.txt|L]]"}
+{"id": "file/fi-x01", "source": "[[file other-page/a.txt]]"}
+{"id": "file/fi-x02", "source": "[[file other-page/a.txt|Label]]"}
+{"id": "file/fi-x03", "source": "[[file /other-page/a.txt]]"}
+{"id": "file/fi-x04", "source": "[[file /other-page/a.txt|Label]]"}
+{"id": "file/fi-x05", "source": "[[file a/b/c.txt]]"}
+{"id": "file/fi-x06", "source": "[[file a.txt|**bold**]]"}
+{"id": "file/fi-x07", "source": "[[file a.txt|//italic//]]"}
+{"id": "file/fi-x08", "source": "[[file a\"b.txt|c<d>e]]"}
+{"id": "file/fi-x09", "source": "[[file a&b.txt|x&y]]"}
+{"id": "file/fi-x10", "source": "[[file]]"}
+{"id": "file/fi-x11", "source": "[[file a.txt]]"}
+{"id": "file/fi-x12", "source": "[[file :other-page/a.txt]]"}
+{"id": "file/fi-x13", "source": "[[file :site:page/a.txt]]"}
+{"id": "file/fi-x14", "source": "[[file cat:page/a.txt]]"}
+{"id": "file/fi-x15", "source": "[[file cat:page/a.txt|Cat File]]"}
+{"id": "file/fi-x16", "source": "[[file https://example.com/a.txt]]"}
+{"id": "file/fi-x17", "source": "[[*file a.txt]]"}
+{"id": "file/fi-x18", "source": "[[file a.txt|Label with \"quotes\"]]"}
+{"id": "file/fi-x19", "source": "[[file my file.txt|My File]]"}
+{"id": "file/fi-x20", "source": "[[file a.txt|Label]] tail"}
+{"id": "file/p01", "source": "[[file a.txt]]"}
+{"id": "file/p02", "source": "[[file a.txt|Label]]"}
+{"id": "file/p03", "source": "[[file other-page/a.txt]]"}
+{"id": "file/p04", "source": "[[file other-page/a.txt|Label]]"}
+{"id": "file/p05", "source": "[[file /other-page/a.txt]]"}
+{"id": "file/p06", "source": "[[file cat:page/a.txt|Cat File]]"}
+{"id": "file/p07", "source": "[[file :site:page/a.txt]]"}
+{"id": "file/p08", "source": "[[file a.txt|]]"}
+{"id": "file/p09", "source": "[[file a.txt| ]]"}
+{"id": "file/p10", "source": "[[file a.txt | Label ]]"}
+{"id": "file/p11", "source": "[[file  a.txt  ]]"}
+{"id": "file/p12", "source": "[[file |x]]\n[[file |]]"}
+{"id": "file/p13", "source": "[[file a|b|c]]"}
+{"id": "file/p14", "source": "[[FILE a.txt]]\n[[File a.txt|Label]]"}
+{"id": "file/p15", "source": "[[file my file.txt|My File]]\n[[file café.txt]]"}
+{"id": "file/p16", "source": "[[file a.txt|**bold**]]"}
+{"id": "file/p17", "source": "[[file a\"b.txt|c<d>e]]"}
+{"id": "file/p18", "source": "[[file a\nb.txt]]\n[[file a.txt|x\ny]]"}
+{"id": "file/p19", "source": "[[file ]]\n[[file]]\n[[*file a.txt]]"}
+{"id": "file/p20", "source": "[[file\ta.txt]]\n[[file a]]]\n[[file a]b]]"}

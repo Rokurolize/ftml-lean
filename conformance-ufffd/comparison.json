@@ -1,0 +1,326 @@
+[
+ {
+  "id": "control",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha bravo charlie delta",
+  "live_html": "<p>alpha bravo charlie delta</p>",
+  "ref": "<p>alpha bravo charlie delta</p>\n\n"
+ },
+ {
+  "id": "plain-mid",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha � bravo charlie delta",
+  "live_html": "<p>alpha bravo charlie delta</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "plain-start",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "� bravo charlie delta",
+  "live_html": "<p>bravo charlie delta</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "plain-end",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha bravo charlie �",
+  "live_html": "<p>alpha bravo charlie 2</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "plain-only",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "�",
+  "live_html": "<p>2</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "pair-text",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha � bravo � charlie delta",
+  "live_html": "<p>alpha bravo charlie delta</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "pair-digits",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha �42� charlie delta",
+  "live_html": "<p>alpha 42 charlie delta</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "near-token",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha **boldone** beta � gamma **boldtwo** delta epsilon",
+  "live_html": "<p>alpha <strong>boldone</strong> beta gamma <strong>boldtwo</strong> delta epsilon</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "swallow-bold",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha � beta **boldswallowed** gamma delta",
+  "live_html": "<p>alpha beta <strong>boldswallowed</strong> gamma delta</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "inside-bold",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha **bold � inside** omega tail",
+  "live_html": "<p>alpha <strong>bold inside</strong> omega tail</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "entity-dec",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha &#65533; bravo charlie",
+  "live_html": "<p>alpha &amp;#65533; bravo charlie</p>",
+  "ref": "<p>alpha &amp;#65533; bravo charlie</p>\n\n"
+ },
+ {
+  "id": "entity-hex",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha &#xFFFD; bravo charlie",
+  "live_html": "<p>alpha &amp;#xFFFD; bravo charlie</p>",
+  "ref": "<p>alpha &amp;#xFFFD; bravo charlie</p>\n\n"
+ },
+ {
+  "id": "code-token",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "[[code]]\nx � y\n[[/code]]\n\nafter alpha bravo",
+  "live_html": "<div class=\"code\">\n<pre><code>x � y</code></pre></div>\n<p>after alpha bravo</p>",
+  "ref": "\n<div class=\"code\">\n<pre><code>x � y</code></pre></div>\n\n<p>after alpha bravo</p>\n\n"
+ },
+ {
+  "id": "raw-token",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "[[raw]]x � y[[/raw]] after alpha bravo",
+  "live_html": "<p>[[raw]]x y[[/raw]] after alpha bravo</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "heading",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "+ Head � Word\n\nalpha bravo charlie",
+  "live_html": "<h1 id=\"toc0\"><span>Head Word</span></h1>\n<p>alpha bravo charlie</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "second-para",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "first para alpha\n\nsecond � para bravo tail",
+  "live_html": "<p>first para alpha</p>\n<p>second para bravo tail</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "list-item",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "* item � one\n* item two tail",
+  "live_html": "<ul>\n<li>item one</li>\n<li>item two tail</li>\n</ul>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "inc-target",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "included alpha � bravo tail end",
+  "live_html": "<p>included alpha bravo tail end</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "includer",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "before text [[include muse-probe-ufffd-inc-target]] after text",
+  "live_html": "<p>before text [[include muse-probe-ufffd-inc-target]] after text</p>",
+  "ref": "<p>before text [[include muse-probe-ufffd-inc-target]] after text</p>\n\n"
+ },
+ {
+  "id": "end-after-bold",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha **bold** �",
+  "live_html": "<p>alpha <strong>bold</strong> 2</p>",
+  "ref": "<p>alpha <strong>bold</strong> <p>1"
+ },
+ {
+  "id": "end-first-para",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha �\n\nbravo charlie",
+  "live_html": "<p>alpha 23bravo charlie</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "end-both-para",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha �\n\nbravo �",
+  "live_html": "<p>alpha 23bravo 4</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "only-two",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "��",
+  "live_html": "",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "pair-zero",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha �0� bravo charlie",
+  "live_html": "<p>alpha 0 bravo charlie</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "digits-text",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha � 42 bravo charlie",
+  "live_html": "<p>alpha 42 bravo charlie</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "unclosed-digits",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha �42 bravo charlie",
+  "live_html": "<p>alpha 42 bravo charlie</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "end-list",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "* item one �\n* item two",
+  "live_html": "<ul>\n<li>item one 34item two</li>\n</ul>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "end-heading",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "+ Head Word �\n\nbody alpha bravo",
+  "live_html": "<h1 id=\"toc0\"><span>Head Word 23body alpha bravo<br />\n<br /></span></h1>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "start-bold-after",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "� **bold** tail end",
+  "live_html": "<p><strong>bold</strong> tail end</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "mid-no-space",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha�bravo charlie",
+  "live_html": "<p>alphabravo charlie</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "end-no-space",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha bravo�",
+  "live_html": "<p>alpha bravo2</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "spaces-control",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha  bravo   charlie delta",
+  "live_html": "<p>alpha bravo charlie delta</p>",
+  "ref": "<p>alpha bravo charlie delta</p>\n\n"
+ },
+ {
+  "id": "fake-after-bold",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha **bold**� omega tail",
+  "live_html": "<p>alpha <strong>bold</strong> omega tail</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "fake-before-bold",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha �**bold** omega tail",
+  "live_html": "<p>alpha 3bold omega tail</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "fake-space-fake",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha � � bravo charlie",
+  "live_html": "<p>alpha bravo charlie</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ },
+ {
+  "id": "fake-digit-mid",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "source": "alpha �9 bravo\n\ncharlie delta",
+  "live_html": "<p>alpha 9 bravo</p>\n<p>charlie delta</p>",
+  "ref": "ERROR: Error: Call to a member function token() on null"
+ }
+]

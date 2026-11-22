@@ -1,0 +1,318 @@
+{"id": "u01-http", "source": "See http://example.com here"}
+{"id": "u02-https", "source": "https://example.com/a/b?x=1&y=2"}
+{"id": "u03-ftp", "source": "ftp://example.com/file.txt here"}
+{"id": "u04-gopher", "source": "gopher://example.com/g here"}
+{"id": "u05-news", "source": "news://example.com/n here"}
+{"id": "u06-mms", "source": "mms://example.com/m here"}
+{"id": "u07-mailto", "source": "mailto:user@example.com here"}
+{"id": "u08-ssh", "source": "Go ssh://example.com/a here"}
+{"id": "u09-git", "source": "Go git://example.com/b here"}
+{"id": "u10-sftp", "source": "Go sftp://example.com/c here"}
+{"id": "u11-svn", "source": "Go svn://example.com/d here"}
+{"id": "u12-telnet", "source": "Go telnet://example.com/e here"}
+{"id": "u13-cvs", "source": "Go cvs://example.com/f here"}
+{"id": "u14-www-schemeless", "source": "www.example.com and example.com/path here"}
+{"id": "u15-upper-scheme", "source": "HTTPS://EXAMPLE.COM/P here"}
+{"id": "u16-mixed-scheme", "source": "HtTpS://example.com/p here"}
+{"id": "u17-glued-digit", "source": "See 9https://example.com/a and x9gopher://example.com/b here"}
+{"id": "u18-bare-scheme", "source": "http:// here"}
+{"id": "u19-scheme-no-host", "source": "https:// here"}
+{"id": "u20-trailing-slash", "source": "https://example.com/ here"}
+{"id": "u21-query-fragment", "source": "https://example.com/search?q=free+wiki&lang=en#top here"}
+{"id": "u22-percent-encode", "source": "https://example.com/a%20b here"}
+{"id": "u23-port", "source": "http://example.com:8080/path here"}
+{"id": "u24-ip-host", "source": "http://127.0.0.1/index here"}
+{"id": "u25-subdomain", "source": "https://deep.sub.example.co.uk/page here"}
+{"id": "u26-inner-dot", "source": "https://example.com/a.b/c next"}
+{"id": "u27-tilde-underscore", "source": "https://example.com/a~b_c here"}
+{"id": "u28-plus-path", "source": "https://example.com/a+b here"}
+{"id": "u29-at-in-path", "source": "http://example.com/user@name here"}
+{"id": "u30-nonascii-path", "source": "http://example.com/pageここ here"}
+{"id": "u31-nbsp-in-url", "source": "https://example.com/a.png width= next"}
+{"id": "u32-terminal-period", "source": "Visit https://example.com/test. next"}
+{"id": "u33-period-eoi", "source": "Visit https://example.com/test."}
+{"id": "u34-period-linebreak", "source": "https://snippets.wikidot.com/code:collapsible-block-unleashed.\n"}
+{"id": "u35-exclaim-suite", "source": "See https://example.com/a!;:) next"}
+{"id": "u36-hash-tail", "source": "See https://example.com/b# here"}
+{"id": "u37-comma-tail", "source": "http://example.com/page, mid"}
+{"id": "u38-comma-inner", "source": "http://example.com/a,b next"}
+{"id": "u39-star-tail", "source": "http://example.com/b** end"}
+{"id": "u40-dash-tail", "source": "http://example.com/a-- next"}
+{"id": "u41-dash-inner", "source": "http://example.com/a--b next"}
+{"id": "u42-brace-tail", "source": "http://example.com/a}} next"}
+{"id": "u43-paren-open-close", "source": "(https://example.com/a) here"}
+{"id": "u44-paren-in-url", "source": "See https://example.com/a_(b) here"}
+{"id": "u45-bracket-in-url", "source": "See https://example.com/a[b]c here"}
+{"id": "u46-quote-pair", "source": "https://example.com/aa``bb''cc here"}
+{"id": "u47-described", "source": "[https://example.com Example Description]"}
+{"id": "u48-described-spaces", "source": "[https://example.com/example A label with many words]"}
+{"id": "u49-described-double-space", "source": "[https://example.com  Label Here]"}
+{"id": "u50-described-star", "source": "[*https://example.com Label]"}
+{"id": "u51-described-hash", "source": "[#anchor My Label]"}
+{"id": "u52-described-path", "source": "[/start Go Home]"}
+{"id": "u53-described-no-label", "source": "[http://x/]"}
+{"id": "u54-described-unterminated", "source": "[https://example.com label"}
+{"id": "u55-described-midline", "source": "Before [https://example.com Described] after"}
+{"id": "u56-double-bare", "source": "[[https://example.com/]]"}
+{"id": "u57-double-pipe", "source": "[[http://x/|raw]]"}
+{"id": "u58-double-pipe-raw", "source": "[[http://x/|@@raw@@]]"}
+{"id": "u59-double-pipe-multi", "source": "[[http://x/|a|b]]"}
+{"id": "u60-double-pipe-unterminated", "source": "[[http://x/|label here"}
+{"id": "u61-double-bare-midline", "source": "See [[http://x/]] and text"}
+{"id": "u62-double-pipe-midline", "source": "See [[http://x/|Label]] and text"}
+{"id": "u63-star-bare", "source": "*https://example.com/newtab"}
+{"id": "u64-star-mid", "source": "star mid *http://example.com/star-mid x"}
+{"id": "u65-bold-star", "source": "bold **http://example.com/b** end"}
+{"id": "u66-star-killed-fallback", "source": "[*https://a.example @@x@@ https://b.example]"}
+{"id": "u67-raw-adjacency", "source": "https://example.com/a@@b end"}
+{"id": "u68-raw-alt-terminates", "source": "https://example.com/@<x>@ end"}
+{"id": "u69-nonascii-terminates", "source": "http://example.com/pageす here"}
+{"id": "u70-block-syntax-stops", "source": "https://example.com/video[[/embedvideo]]"}
+{"id": "u71-empty-after-scheme", "source": "[# Label]"}
+{"id": "u72-tagged-pipe-url", "source": "[https://example.com Label|With Pipe]"}
+{"id": "u73-described-math-label", "source": "[https://example.com/target [[$x$]]]"}
+{"id": "u74-described-math-label-pin", "source": "[https://example.com [[$x$]]]"}
+{"id": "u75-double-pipe-many", "source": "[[http://x/|a|b|c]]"}
+{"id": "e41-01-bare-simple", "source": "abc@example.com"}
+{"id": "e41-02-bare-in-prose", "source": "Contact us: info@example.net"}
+{"id": "e41-03-bare-two-in-line", "source": "a@one.com and b@two.org"}
+{"id": "e41-04-bare-uppercase", "source": "User.Name@Example.COM"}
+{"id": "e41-05-bare-one-char", "source": "x@y.io"}
+{"id": "e41-06-bare-plus", "source": "user+tag@example.com"}
+{"id": "e41-07-bare-underscore", "source": "first_last@example.com"}
+{"id": "e41-08-bare-dash-local", "source": "first-last@example.com"}
+{"id": "e41-09-bare-dotted-local", "source": "first.middle.last@example.com"}
+{"id": "e41-10-bare-digits", "source": "123@456.com"}
+{"id": "e41-11-subdomain", "source": "user@mail.sub.example.co.uk"}
+{"id": "e41-12-domain-dash", "source": "user@some-domain.example.com"}
+{"id": "e41-13-domain-numeric-label", "source": "user@123.example"}
+{"id": "e41-14-single-label-host", "source": "user@localhost"}
+{"id": "e41-15-trailing-dot", "source": "user@example.com."}
+{"id": "e41-16-double-dot-domain", "source": "user@example..com"}
+{"id": "e41-17-leading-dash-domain", "source": "user@-example.com"}
+{"id": "e41-18-trailing-dash-domain", "source": "user@example-.com"}
+{"id": "e41-19-underscore-domain", "source": "user@example_com.net"}
+{"id": "e41-20-domain-close-paren", "source": "user@example.com)"}
+{"id": "e41-21-described", "source": "[user@example.com Contact us]"}
+{"id": "e41-22-described-multiword", "source": "[user@example.com The sales team here]"}
+{"id": "e41-23-described-upper", "source": "[USER@EXAMPLE.COM Mixed Case]"}
+{"id": "e41-24-described-two-spaces", "source": "[user@example.com  Double gap]"}
+{"id": "e41-25-described-no-space", "source": "[user@example.comContact]"}
+{"id": "e41-26-described-empty-label", "source": "[user@example.com ]"}
+{"id": "e41-27-described-unterminated", "source": "[user@example.com Label"}
+{"id": "e41-28-bracketed-bare", "source": "[user@example.com]"}
+{"id": "e41-29-angle-bracketed", "source": "<user@example.com>"}
+{"id": "e41-30-double-bracketed", "source": "[[user@example.com]]"}
+{"id": "e41-31-bracketed-mailto", "source": "[mailto:user@example.com]"}
+{"id": "e41-32-bracketed-mailto-label", "source": "[mailto:user@example.com Mail me]"}
+{"id": "e41-33-mailto-bare", "source": "mailto:user@example.com"}
+{"id": "e41-34-mailto-upper-scheme", "source": "MAILTO:User@Example.COM"}
+{"id": "e41-35-mailto-pipe-label", "source": "mailto:user@example.com|Mail me"}
+{"id": "e41-36-http-userinfo", "source": "see http://user@example.com/path here"}
+{"id": "e41-37-https-with-email-in-path", "source": "https://example.com/a/user@x.org/z"}
+{"id": "e41-38-url-then-email", "source": "http://example.com and user@example.com"}
+{"id": "e41-39-comma", "source": "Write to user@example.com, please"}
+{"id": "e41-40-semicolon-and-bang", "source": "user@example.com; and other@example.net!"}
+{"id": "e41-41-parenthesized", "source": "(user@example.com)"}
+{"id": "e41-42-question-and-colon", "source": "user@example.com? next: a@b.co"}
+{"id": "e41-43-quote-wrapped", "source": "\"user@example.com\""}
+{"id": "e41-44-apostrophe-after", "source": "user@example.com's mailbox"}
+{"id": "e41-45-exclamation-attached", "source": "Hi user@example.com!"}
+{"id": "e41-46-no-at", "source": "user.example.com"}
+{"id": "e41-47-no-domain-dot", "source": "user@example"}
+{"id": "e41-48-double-at", "source": "user@@example.com"}
+{"id": "e41-49-empty-local", "source": "@example.com"}
+{"id": "e41-50-empty-domain", "source": "user@"}
+{"id": "e41-51-local-space", "source": "user name@example.com"}
+{"id": "e41-52-plus-only", "source": "user+@example.com"}
+{"id": "e41-53-dot-start-local", "source": ".user@example.com"}
+{"id": "e41-54-trailing-underscore-local", "source": "user_@example.com"}
+{"id": "e41-55-cjk-local", "source": " użytkownik@example.com"}
+{"id": "e41-56-in-bold", "source": "**user@example.com**"}
+{"id": "e41-57-in-raw", "source": "@@user@example.com@@"}
+{"id": "e41-58-in-code", "source": "[[code]]\nuser@example.com\n[[/code]]"}
+{"id": "e41-59-in-table-cell", "source": "|| user@example.com || other@example.net ||"}
+{"id": "e41-60-comment-inside", "source": "support[!--x--]@wikidot.com"}
+{"id": "e41-61-email-then-comment", "source": "user@example.com[!--x--] tail"}
+{"id": "e41-62-mixed-document", "source": "Reach **sales@example.com** or [mailto:help@example.net Help] today."}
+{"id": "basic", "source": "A [[$ x^2 $]] B"}
+{"id": "no-spaces", "source": "[[$x^2$]]"}
+{"id": "left-space-only", "source": "[[$ x$]]"}
+{"id": "right-space-only", "source": "[[$x $]]"}
+{"id": "tabs-around", "source": "[[$\tx\t$]]"}
+{"id": "empty", "source": "[[$$]]"}
+{"id": "spaces-only", "source": "[[$   $]]"}
+{"id": "multiple-line", "source": "[[$ a $]] and [[$ b $]]"}
+{"id": "adjacent", "source": "[[$a$]][[$b$]]"}
+{"id": "dollar-in-content", "source": "[[$ a$b $]]"}
+{"id": "html-content", "source": "[[$ <b>x</b> $]]"}
+{"id": "entities-content", "source": "[[$ a &amp; b $]]"}
+{"id": "unicode-content", "source": "[[$ α + β $]]"}
+{"id": "label-like-word", "source": "[[$ label=x $]]"}
+{"id": "label-like-brackets", "source": "[[$ [foo] $]]"}
+{"id": "attr-like", "source": "[[$ type=\"align\" $]]"}
+{"id": "pipe-in-content", "source": "[[$ a|b $]]"}
+{"id": "backslash-commands", "source": "[[$ \\alpha + \\beta $]]"}
+{"id": "typography-dots", "source": "[[$ a...b $]]"}
+{"id": "typography-dashes", "source": "[[$ a--b $]]"}
+{"id": "comment-markers", "source": "[[$ [!-- c --] $]]"}
+{"id": "single-newline", "source": "[[$ E =\nmc^2 $]]"}
+{"id": "blank-line-inside", "source": "[[$ E =\n\nmc^2 $]]"}
+{"id": "newline-after-opener", "source": "[[$\nx$]]"}
+{"id": "newline-before-closer", "source": "[[$x\n$]]"}
+{"id": "unterminated", "source": "[[$ x"}
+{"id": "unterminated-empty", "source": "[[$"}
+{"id": "stray-closer", "source": "x $]]"}
+{"id": "close-first", "source": "$]] [[$ x $]]"}
+{"id": "triple-close", "source": "[[$x$]]]"}
+{"id": "quad-close", "source": "[[$x$]]]]"}
+{"id": "double-dollar-open", "source": "[[$$x$]]"}
+{"id": "shifted-close", "source": "[[$ x $]"}
+{"id": "shifted-open", "source": "[$ x $]]"}
+{"id": "in-span", "source": "[[span class=\"x\"]][[$ y $]][[/span]]"}
+{"id": "in-scored-span", "source": "[[span_]] [[$ y $]] [[/span]]"}
+{"id": "in-heading1", "source": "+ [[$ x $]]"}
+{"id": "in-heading2", "source": "++ Heading [[$ x $]]"}
+{"id": "in-table-cell", "source": "|| [[$ a $]] || [[$ b $]] ||"}
+{"id": "in-list", "source": "* [[$ x $]]"}
+{"id": "in-blockquote", "source": "> [[$ x $]]"}
+{"id": "in-div", "source": "[[div]]\n[[$ x $]]\n[[/div]]"}
+{"id": "in-code", "source": "[[code]][[$ x $]][[/code]]"}
+{"id": "in-raw", "source": "@@ [[$ x $]] @@"}
+{"id": "in-comment", "source": "[!-- [[$ x $]] --]"}
+{"id": "before-heading", "source": "[[$ x $]]\n+ Head"}
+{"id": "math-block-then-inline", "source": "[[math]]\nx\n[[/math]]\n[[$ y $]]"}
+{"id": "inline-then-math-block", "source": "[[$ y $]]\n[[math]]\nx\n[[/math]]"}
+{"id": "in-footnote", "source": "[[footnote]][[$ x $]][[/footnote]]"}
+{"id": "in-collapsible", "source": "[[collapsible]][[$ x $]][[/collapsible]]"}
+{"id": "comment-inside", "source": "[[$ a[!--c--]b $]]"}
+{"id": "comment-joined-close-1", "source": "[[$ a $[!--c--]]]"}
+{"id": "comment-joined-close-2", "source": "[[$ a $][!--c--]]]"}
+{"id": "raw-inside", "source": "[[$ a@@raw@@b $]]"}
+{"id": "crlf", "source": "[[$ x $]]\r\n[[$ y $]]\r\n"}
+{"id": "trailing-newline", "source": "[[$ x $]]\n"}
+{"id": "iw43-01-wikipedia-labeled", "source": "[wikipedia:Albert_Einstein Albert]"}
+{"id": "iw43-02-wikipedia-unlabeled", "source": "[wikipedia:Albert_Einstein]"}
+{"id": "iw43-03-wikipedia-upper-labeled", "source": "[WIKIPEDIA:Albert_Einstein Upper]"}
+{"id": "iw43-04-wikipedia-upper-unlabeled", "source": "[WIKIPEDIA:Albert_Einstein]"}
+{"id": "iw43-05-wikipedia-mixed-labeled", "source": "[Wikipedia:Albert_Einstein Mixed]"}
+{"id": "iw43-06-wikipedia-pl-labeled", "source": "[wikipedia.pl:Test Polski]"}
+{"id": "iw43-07-wikipedia-pl-unlabeled", "source": "[wikipedia.pl:Test]"}
+{"id": "iw43-08-pl-wikipedia-labeled", "source": "[pl.wikipedia:Test Pol]"}
+{"id": "iw43-09-pl-wikipedia-unlabeled", "source": "[pl.wikipedia:Test]"}
+{"id": "iw43-10-google-labeled", "source": "[google:free+wiki Google]"}
+{"id": "iw43-11-google-unlabeled", "source": "[google:free+wiki]"}
+{"id": "iw43-12-dictionary-labeled", "source": "[dictionary:wiki Dictionary]"}
+{"id": "iw43-13-dictionary-unlabeled", "source": "[dictionary:wiki]"}
+{"id": "iw43-14-google-upper-labeled", "source": "[GOOGLE:free+wiki Upper]"}
+{"id": "iw43-15-dictionary-upper-unlabeled", "source": "[DICTIONARY:wiki]"}
+{"id": "iw43-16-wp-labeled", "source": "[wp:SCP_Foundation WP]"}
+{"id": "iw43-17-wp-unlabeled", "source": "[wp:SCP_Foundation]"}
+{"id": "iw43-18-commons-labeled", "source": "[commons:File:SCP-682.jpg Commons]"}
+{"id": "iw43-19-nosuchwiki-labeled", "source": "[nosuchwiki:Mallard The duck]"}
+{"id": "iw43-20-nosuchwiki-unlabeled", "source": "[nosuchwiki:Mallard]"}
+{"id": "iw43-21-banana-labeled", "source": "[banana:fruit-salad Banana]"}
+{"id": "iw43-22-thesaurus-unlabeled", "source": "[thesaurus:oak]"}
+{"id": "iw43-23-ddg-labeled", "source": "[ddg:oak Duck]"}
+{"id": "iw43-24-wikipedia-com-labeled", "source": "[wikipedia.com:Test Near]"}
+{"id": "iw43-25-wiki-labeled", "source": "[wiki:Test Plain]"}
+{"id": "iw43-26-wikipedia-pl-upper-labeled", "source": "[WIKIPEDIA.PL:Test UpperDot]"}
+{"id": "iw43-27-pl-wikipedia-upper-unlabeled", "source": "[PL.WIKIPEDIA:Test]"}
+{"id": "iw43-28-wikipedia-pl-mixed-labeled", "source": "[Wikipedia.pl:Test MixedDot]"}
+{"id": "iw43-29-google-mixed-labeled", "source": "[GoOgLe:free+wiki MixedCase]"}
+{"id": "iw43-30-dictionary-mixed-unlabeled", "source": "[Dictionary:wiki]"}
+{"id": "iw43-31-multiword-label", "source": "[wikipedia:Albert_Einstein The great physicist]"}
+{"id": "iw43-32-two-spaces-label", "source": "[wikipedia:Albert_Einstein  Two spaces]"}
+{"id": "iw43-33-tab-label", "source": "[wikipedia:Albert_Einstein\tTab label]"}
+{"id": "iw43-34-empty-label-one-space", "source": "[wikipedia:Albert_Einstein ]"}
+{"id": "iw43-35-empty-label-two-spaces", "source": "[wikipedia:Albert_Einstein  ]"}
+{"id": "iw43-36-label-with-colon", "source": "[wikipedia:Albert_Einstein See: Einstein]"}
+{"id": "iw43-37-label-with-brackets", "source": "[wikipedia:Albert_Einstein [x] label]"}
+{"id": "iw43-38-label-with-pipe", "source": "[wikipedia:Albert_Einstein a|b]"}
+{"id": "iw43-39-label-trailing-space", "source": "[wikipedia:Albert_Einstein Label ]"}
+{"id": "iw43-40-label-leading-and-trailing", "source": "[wikipedia:Albert_Einstein  Padded  ]"}
+{"id": "iw43-41-path-colon", "source": "[wikipedia:it:Albert_Einstein Italiano]"}
+{"id": "iw43-42-path-plus", "source": "[google:free+wiki]"}
+{"id": "iw43-43-path-underscore-hyphen-dot-slash", "source": "[wikipedia:a_b-c.d/e Pathy]"}
+{"id": "iw43-44-path-visible-special", "source": "[wikipedia:a#b&c(d)e+f-g.h:i;j=k~l Specials]"}
+{"id": "iw43-45-path-percent", "source": "[wikipedia:Albert%20Einstein Percent]"}
+{"id": "iw43-46-path-nonascii", "source": "[wikipedia:Älbert NonAscii]"}
+{"id": "iw43-47-path-question", "source": "[google:what?query Question]"}
+{"id": "iw43-48-path-quote", "source": "[wikipedia:it's Quote]"}
+{"id": "iw43-49-empty-path", "source": "[wikipedia:]"}
+{"id": "iw43-50-double-colon-path", "source": "[wikipedia::Page DoubleColon]"}
+{"id": "iw43-51-unterminated-unlabeled", "source": "[wikipedia:Albert_Einstein"}
+{"id": "iw43-52-unterminated-labeled", "source": "[wikipedia:Albert_Einstein Some label"}
+{"id": "iw43-53-prefix-leading-digit", "source": "[1wiki:Page label]"}
+{"id": "iw43-54-prefix-underscore", "source": "[_wiki:Page label]"}
+{"id": "iw43-55-prefix-digit-unlabeled", "source": "[1wiki:Page]"}
+{"id": "iw43-56-space-after-open", "source": "[ wikipedia:Page label]"}
+{"id": "iw43-57-empty-prefix", "source": "[:Page label]"}
+{"id": "iw43-58-star-form", "source": "[*wikipedia:Albert_Einstein Star]"}
+{"id": "iw43-59-label-only-spaces", "source": "[wikipedia:Albert_Einstein    ]"}
+{"id": "iw43-60-double-bracket", "source": "[[wikipedia:Albert_Einstein]]"}
+{"id": "iw43-61-include-site-pair", "source": "[[include :wikipedia:Albert_Einstein]]"}
+{"id": "iw43-62-triple-bracket", "source": "[[[wikipedia:Albert_Einstein]]]"}
+{"id": "iw43-63-in-paragraphs", "source": "before\n\n[wikipedia:Albert_Einstein Albert]\n\nafter"}
+{"id": "iw43-64-multiple-on-line", "source": "[wikipedia:A First] and [google:g Second] and [nosuchwiki:N Third]"}
+{"id": "iw43-65-inside-span", "source": "[[span]][wikipedia:Albert_Einstein Lab][[/span]]"}
+{"id": "iw43-66-inside-code", "source": "[[code]][wikipedia:Albert_Einstein Lab][[/code]]"}
+{"id": "iw43-67-data-scheme", "source": "[data:text/plain,Hello Data]"}
+{"id": "iw43-68-direct-url", "source": "[https://example.com/ Control]"}
+{"id": "iw43-69-slash-target", "source": "[/path Relative]"}
+{"id": "iw43-70-interwiki-in-heading", "source": "= Heading [wikipedia:Albert_Einstein Albert]"}
+{"id": "x01", "source": "[https://example.com/target https://example.com/label]"}
+{"id": "x02", "source": "[https://example.com/target [[$x$]]]"}
+{"id": "x03", "source": "[https://example.com/target mailto:a@b.com]"}
+{"id": "x04", "source": "[[http://example.com|link]]"}
+{"id": "x05", "source": "[[http://example.com|https://example.com/other]]"}
+{"id": "x06", "source": "[[http://example.com/a?b=1&c=2|label]]"}
+{"id": "x07", "source": "https://example.com/mailto:a@b.com"}
+{"id": "x08", "source": "[mailto:a@b.com mail]"}
+{"id": "x09", "source": "[[mailto:a@b.com|mail]]"}
+{"id": "x10", "source": "https://user:pass@example.com/path"}
+{"id": "x11", "source": "[[span]]before [[$x$]] after[[/span]]"}
+{"id": "x12", "source": "+ heading [[$x$]] tail"}
+{"id": "x13", "source": "|| [[$x$]] || y ||"}
+{"id": "x14", "source": "||a||[[$x$]]||"}
+{"id": "x15", "source": "@@[[$x$]]@@"}
+{"id": "x16", "source": "[[code]]\n[[$x$]]\n[[/code]]"}
+{"id": "x17", "source": "--[[$x$]]--"}
+{"id": "x18", "source": "**[[$x$]]**"}
+{"id": "x19", "source": "{{[[$x$]]}}"}
+{"id": "x20", "source": "[[[$x$]]]"}
+{"id": "x21", "source": "[wikipedia:Albert_Einstein]"}
+{"id": "x22", "source": "[wikipedia:Albert_Einstein Einstein]"}
+{"id": "x23", "source": "[WIKIPEDIA:Albert_Einstein Einstein]"}
+{"id": "x24", "source": "[pl.wikipedia:Kot kot]"}
+{"id": "x25", "source": "[google:free+wiki G]"}
+{"id": "x26", "source": "[banana:fruit-salad B]"}
+{"id": "x27", "source": "[[wikipedia:Albert_Einstein]]"}
+{"id": "x28", "source": "[[[wikipedia:Albert_Einstein]]]"}
+{"id": "x29", "source": "[wikipedia:Albert_Einstein|label]"}
+{"id": "x30", "source": "[[include wikipedia:Albert_Einstein]]"}
+{"id": "x31", "source": "[[include :sandbox:other-page]]"}
+{"id": "x32", "source": "[[code]]\nhttp://example.com/a\n[[/code]]"}
+{"id": "x33", "source": "@@http://example.com/a@@"}
+{"id": "x34", "source": "[[code]]\n[wikipedia:X]\n[[/code]]"}
+{"id": "x35", "source": "@@[wikipedia:X]@@"}
+{"id": "x36", "source": "[[code]]\na@b.com\n[[/code]]"}
+{"id": "x37", "source": "@@a@b.com@@"}
+{"id": "x38", "source": "[[code]]\n[[http://x|y]]\n[[/code]]"}
+{"id": "x39", "source": "http://example.com/a@b.com"}
+{"id": "x40", "source": "a@b.com/path"}
+{"id": "x41", "source": "[http://example.com/a https://x] more http://y.com"}
+{"id": "x42", "source": "[[$http://example.com/a$]]"}
+{"id": "x43", "source": "[[$[wikipedia:X]$]]"}
+{"id": "x44", "source": "[wikipedia:X http://example.com/a]"}
+{"id": "x45", "source": "[[http://x|[[$y$]]]]"}
+{"id": "x46", "source": "[[span]][http://example.com/a L][[/span]]"}
+{"id": "smoke-code", "source": "[[code]]\n$x = 1;\n[[/code]]\n"}
+{"id": "smoke-collapsible", "source": "[[collapsible]]\nhidden body\n[[/collapsible]]\n"}
+{"id": "smoke-div", "source": "[[div class=\"x\"]]\ninside div\n[[/div]]\n"}
+{"id": "smoke-footnote", "source": "Text with a note[[footnote]]the note text[[/footnote]] here.\n\n[[footnoteblock]]\n"}
+{"id": "smoke-include", "source": "Before\n[[include muse-probe-g14-target]]\nAfter\n"}
+{"id": "smoke-link", "source": "A [[[some-page|link text]]] and [[[missing-page]]] here.\n"}
+{"id": "smoke-math", "source": "Math $x^2$ inline and:\n[[math]]\nx^2 + y^2\n[[/math]]\n"}
+{"id": "smoke-quote", "source": "> quoted line\n> more quote\n"}
+{"id": "smoke-table", "source": "||~ cell1 ||~ cell2 ||\n|| a || b ||\n"}

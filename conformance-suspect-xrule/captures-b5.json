@@ -1,0 +1,72 @@
+{
+ "x34-module-unknown-body": {
+  "fullname": "muse-probe-suspect-xrule-x34-module-unknown-body",
+  "html": "<div class=\"error-block\">[[module <em>Foo</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>",
+  "html_sha256": "2896ee95032a531c24fcbd421ba0019716c01d1dcc890862ad5f845b85998ae7",
+  "source": "[[module Foo]]\nplain body\n[[/module]]",
+  "source_sha256": "b83d8dccde6af523edf9c95ae6ad4d4d0be0dfd33d3e4c3337fc39aecf90c114",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x35-module-unknown-nobody": {
+  "fullname": "muse-probe-suspect-xrule-x35-module-unknown-nobody",
+  "html": "<div class=\"error-block\">[[module <em>Foo</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>",
+  "html_sha256": "2896ee95032a531c24fcbd421ba0019716c01d1dcc890862ad5f845b85998ae7",
+  "source": "[[module Foo]]",
+  "source_sha256": "3b59bbff181d96a510f9767b92d0234984a2fcb67353f8941b92551828a77f7f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x36-freelink-footnote-target": {
+  "fullname": "muse-probe-suspect-xrule-x36-freelink-footnote-target",
+  "html": "<p>A [[<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>]] B</p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. n</div>\n</div>",
+  "html_sha256": "c2d9eb177703adc0e214cdf364972d395126adb7eb9a5b39beecfe8ced6e55eb",
+  "source": "A [[[[footnote]]n[[/footnote]]]] B",
+  "source_sha256": "8748980061506bd2c59cd1dcc2b0b41c117dbdbac0cdb7221de468dd4c331103",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x37-form-raw-body": {
+  "fullname": "muse-probe-suspect-xrule-x37-form-raw-body",
+  "html": "<p><span style=\"white-space: pre-wrap;\">[[form]]</span><br />\n<span style=\"white-space: pre-wrap;\">@@x@@</span><br />\n<span style=\"white-space: pre-wrap;\">[[/form]]</span></p>",
+  "html_sha256": "beb30f5470493fa1f96fd5758f36637addf153cb5b79bc739cb231d3225e8be2",
+  "source": "[[form]]\n@@x@@\n[[/form]]",
+  "source_sha256": "e218267624060f38e9cc2163c0612d0e1251f427055f032771155418317e78af",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x38-form-code-midline": {
+  "fullname": "muse-probe-suspect-xrule-x38-form-code-midline",
+  "html": "<p><span style=\"white-space: pre-wrap;\">[[form]]</span><br />\n<span style=\"white-space: pre-wrap;\">a@@x@@b</span><br />\n<span style=\"white-space: pre-wrap;\">[[/form]]</span></p>",
+  "html_sha256": "440e3583aeed6ee6d95f66a74048141b875b7ed0fe5e2b14af3b91bdff2de763",
+  "source": "[[form]]\na@@x@@b\n[[/form]]",
+  "source_sha256": "d77cc4a176e75ae61dbe0dd0cfecea383cf37a0808fa8f0dfe47aa4cc1a4db90",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x39-ustrip-plain": {
+  "fullname": "muse-probe-suspect-xrule-x39-ustrip-plain",
+  "html": "<p>üüplainüü</p>",
+  "html_sha256": "ab8d57b703e6fab4d060f8ecd9e12f68245fcc0e3adce78f73490beeb1b17bc4",
+  "source": "üüplainüü",
+  "source_sha256": "7c11de89360501db4bb57f8df99a94e3ac29dfc35665b00831085815488fe2f5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x40-email-raw-shift3": {
+  "fullname": "muse-probe-suspect-xrule-x40-email-raw-shift3",
+  "html": "<p>A <span style=\"white-space: pre-wrap;\">a</span> <span style=\"white-space: pre-wrap;\">b</span> <span class=\"wiki-email\">moc.elpmaxe|a#�3�</span> B</p>",
+  "html_sha256": "0fd6a5a51e56f9b41d21bc64bc396473c4286d32ab1f394de28e9cba11885206",
+  "source": "A @@a@@ @@b@@ [a@example.com @@x@@] B",
+  "source_sha256": "33b600ed56d5697c8b852f2c2e21c795cf9334ce5b799d16aefcc0be847204fd",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

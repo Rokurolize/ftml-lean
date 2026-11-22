@@ -1,0 +1,17 @@
+{"id":"ro-trail","output":"<p>A&amp;B&quot;C&lt;D&gt;E'<\/p>\n\n"}
+{"id":"ro-plain","output":"<p>A&amp;B&quot;C&lt;D&gt;E\u00e9<\/p>\n\n"}
+{"id":"ro-interior","output":"<p>&#8216;`A&#8217;B``<\/p>\n\n"}
+{"id":"fl-label","output":"<p><a class=\"newpage\" href=\"\/htmlchars-nope\">O'Brien &amp;amp; &lt;x&gt; &quot;q&quot; \u00e9<\/a><\/p>\n\n"}
+{"id":"fl-url","output":"<p><a href=\"https:\/\/example.com\/a'b?x=1&amp;y=2\">U'R L&amp;&lt;&gt;<\/a><\/p>\n\n"}
+{"id":"fl-anchor","output":"<p><a class=\"newpage\" href=\"\/htmlchars-nope#an'chor&amp;x\">Anchor<\/a><\/p>\n\n"}
+{"id":"fl-extra","output":"<p><a class=\"newpage\" href=\"\/htmlchars-nope#\/ro'ute\">Extra<\/a><\/p>\n\n"}
+{"id":"bt-attrs","output":"<p><a class=\"c'd&amp;e\" style=\"s:'&amp;\u00e9\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\" >ok<\/a><\/p>\n\n"}
+{"id":"bt-class2","output":"<p><a class=\"only'one\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\" >edit<\/a><\/p>\n\n"}
+{"id":"im-attrs","output":"<a href=\"https:\/\/example.com\/x'y?a=1&amp;b=2\"><img src=\"https:\/\/example.com\/a'b.png\" title=\"T'B\" alt=\"A'B &amp; \u00e9\" class=\"image\" \/><\/a>"}
+{"id":"im-local","output":"<img src=\"\/local--files\/htmlchars\/a'b.png\" alt=\"a'b.png\" class=\"image\" \/>"}
+{"id":"im-altamp","output":"<img src=\"https:\/\/example.com\/p.png\" alt=\"A&amp;amp;B 'x'\" class=\"image\" \/>"}
+{"id":"url-desc","output":"<p><a href=\"https:\/\/example.com\/a'b?x=1&amp;y=2\">O'Brien &amp;amp; &lt;x&gt; &quot;q&quot; \u00e9<\/a><\/p>\n\n"}
+{"id":"url-star","output":"<p><a href=\"https:\/\/example.com\/a'b\" target=\"_blank\">Star's<\/a><\/p>\n\n"}
+{"id":"url-auto","output":"<p><a href=\"https:\/\/example.com\/?x=1&amp;y=2\">https:\/\/example.com\/?x=1&amp;y=2<\/a>'z<\/p>\n\n"}
+{"id":"iw-label","output":"<p><a href=\"https:\/\/en.wikipedia.org\/wiki\/Albert_Einstein\" onclick=\"window.open(this.href, '_blank'); return false;\">O'Brien &amp;amp; &lt;x&gt; &quot;q&quot; \u00e9<\/a><\/p>\n\n"}
+{"id":"iw-stand","output":"<p><a href=\"https:\/\/en.wikipedia.org\/wiki\/Albert_Einstein\" onclick=\"window.open(this.href, '_blank'); return false;\">Albert_Einstein<\/a><\/p>\n\n"}

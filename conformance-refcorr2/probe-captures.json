@@ -1,0 +1,182 @@
+{
+ "diva-a1": {
+  "fullname": "muse-probe-refcorr2-diva-a1",
+  "html": "<div id=\"u-b\" class=\"a\" style=\"color:green\">\n<p>X</p>\n</div>",
+  "html_sha256": "27b8b53e5406f0d6ff1aba178b6b665b77d7948c8f47d0bdafcc28dd85f9e2d9",
+  "source": "[[div class=\"a\" id=\"b\" style=\"color:green\"]]\nX\n[[/div]]",
+  "source_sha256": "b211e7a2151af6481abe81cf502d13e105858721d710840dce5416653883d1c6",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "diva-a2": {
+  "fullname": "muse-probe-refcorr2-diva-a2",
+  "html": "<div id=\"u-b\" class=\"a\" style=\"color:green\">\n<p>X</p>\n</div>",
+  "html_sha256": "27b8b53e5406f0d6ff1aba178b6b665b77d7948c8f47d0bdafcc28dd85f9e2d9",
+  "source": "[[div style=\"color:green\" id=\"b\" class=\"a\"]]\nX\n[[/div]]",
+  "source_sha256": "8fe8c073674ecc1551fc6c7dcdc4a2ecce699cb9af4458b44a88b9dc2ac463db",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "diva-a3": {
+  "fullname": "muse-probe-refcorr2-diva-a3",
+  "html": "<div id=\"u-b\" class=\"a\" style=\"color:green\">\n<p>X</p>\n</div>",
+  "html_sha256": "27b8b53e5406f0d6ff1aba178b6b665b77d7948c8f47d0bdafcc28dd85f9e2d9",
+  "source": "[[div style=\"color:green\" class=\"a\" id=\"b\"]]\nX\n[[/div]]",
+  "source_sha256": "05afb5c3f378ee95e42392599a7cef110635a45b468944c1b1de0c952d8be9d1",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "diva-a4": {
+  "fullname": "muse-probe-refcorr2-diva-a4",
+  "html": "<div id=\"u-b\" class=\"a\" style=\"color:green\">\n<p>X</p>\n</div>",
+  "html_sha256": "27b8b53e5406f0d6ff1aba178b6b665b77d7948c8f47d0bdafcc28dd85f9e2d9",
+  "source": "[[div id=\"b\" style=\"color:green\" class=\"a\"]]\nX\n[[/div]]",
+  "source_sha256": "6edc0b8bc6defa5c7bfbf4a3cc7c7d9fa32b35bbb7eab115f092f28e2c603370",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "diva-a5": {
+  "fullname": "muse-probe-refcorr2-diva-a5",
+  "html": "<div id=\"u-b\" class=\"a\" style=\"color:red\" role=\"r\" type=\"t\" data-z=\"9\">\n<p>X</p>\n</div>",
+  "html_sha256": "3b18202597fb8f033dbd04c63f3f9f248f14294ff47ac94efa76b9087350f3af",
+  "source": "[[div data-z=\"9\" type=\"t\" role=\"r\" style=\"color:red\" class=\"a\" id=\"b\"]]\nX\n[[/div]]",
+  "source_sha256": "65968f846eed0229d7a68fb3eb8b10beeafe9973ae30f50cff6a6c42dc1f9d23",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "diva-a6": {
+  "fullname": "muse-probe-refcorr2-diva-a6",
+  "html": "<div class=\"a\" data-z=\"9\" data-a=\"1\">\n<p>X</p>\n</div>",
+  "html_sha256": "77c135ba8842e340fa50761aee54a0c8e8e3415d3a035762487c3d46dc9b1e44",
+  "source": "[[div data-z=\"9\" data-a=\"1\" class=\"a\"]]\nX\n[[/div]]",
+  "source_sha256": "41a30834256fe28c57208025c736898278c6e9b0489d001dd4f87b9a1b019bda",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "diva-a7": {
+  "fullname": "muse-probe-refcorr2-diva-a7",
+  "html": "<div role=\"r\" type=\"t\">\n<p>X</p>\n</div>",
+  "html_sha256": "9ee560fdfe0aa44878f7a740d22647fb62bb3a9ed1b8f269a97198dba102ae3b",
+  "source": "[[div type=\"t\" role=\"r\"]]\nX\n[[/div]]",
+  "source_sha256": "cb4e64f85a728d885f1be4edd7fdda72b4fa9e79fd7cd17b717880b76e93a63c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "diva-a8": {
+  "fullname": "muse-probe-refcorr2-diva-a8",
+  "html": "<div id=\"u-b\" data-m=\"5\">\n<p>X</p>\n</div>",
+  "html_sha256": "b5adab9496fe539868015b1aa3c3fabfbf67adb44faf23a3b1c0898bc606e4b1",
+  "source": "[[div data-m=\"5\" id=\"b\"]]\nX\n[[/div]]",
+  "source_sha256": "1d29ec8793b68b05ff8ca0b6a6780dc74de7123ea32d5334945e83dab10742a4",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "divn-s1": {
+  "fullname": "muse-probe-refcorr2-divn-s1",
+  "html": "<p>[[div class=a]]A<br />\n[[/div]]</p>",
+  "html_sha256": "3f7432709a2a67401434c8d1710e8df95ef988a79239fbab02e71bf9e4443f7c",
+  "source": "[[div class=a]]A\n[[/div]]",
+  "source_sha256": "fc48794551b091e781073f538052c5002c9c69b3b7280b9ba92950cdd7bdd8ff",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "divn-s2": {
+  "fullname": "muse-probe-refcorr2-divn-s2",
+  "html": "<p>[[div class=&quot;a&quot;]]A<br />\n[[/div]]</p>",
+  "html_sha256": "c5370365033f8d699609fef882885aab4744b1084d8b61eedd7926b34f9e96c6",
+  "source": "[[div class=\"a\"]]A\n[[/div]]",
+  "source_sha256": "2125e0b41953af785de18445fafa962d96b1ecb47fa72de8feb293637593e6ff",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "divn-s3": {
+  "fullname": "muse-probe-refcorr2-divn-s3",
+  "html": "",
+  "html_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source": "[[div class=a]]A\n[[div class=b]]B\n[[/div]]\n[[/div]]",
+  "source_sha256": "231477638d2a425eedf1b9312dca480c2e6ec6fa9dbecf8a47a0c11b852a473f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "divn-s4": {
+  "fullname": "muse-probe-refcorr2-divn-s4",
+  "html": "<div class=\"a\"></div>\n<br />\n[[/div]]",
+  "html_sha256": "fb3ec455ae821ac4ebac495cab017b59987178b8920bf0ccd6d74a2a48b8c8bc",
+  "source": "[[div class=\"a\"]]A\n[[div class=\"b\"]]B\n[[div class=\"c\"]]C\n[[/div]]\n[[/div]]\n[[/div]]",
+  "source_sha256": "d8a928e8cb4edcbe7607bda434ef87d9718a0b68c612f2d87808fd07759d3c2d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "divn-s5": {
+  "fullname": "muse-probe-refcorr2-divn-s5",
+  "html": "<br />\n[[/div]]",
+  "html_sha256": "4d0484112eeff0ca0154611383d21d5b6a6c4b9d4decc754c774b0560f0acb29",
+  "source": "[[div class=a]]A\n[[div class=b]]B\n[[div class=c]]C\n[[/div]]\n[[/div]]\n[[/div]]",
+  "source_sha256": "04deeea38c253193c968ebbeeeaa6ca397578c69985676c8029df3e37647bcc2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "divn-s6": {
+  "fullname": "muse-probe-refcorr2-divn-s6",
+  "html": "<p>[[div class=a]]A[[/div]]</p>",
+  "html_sha256": "3a962e56cdbacfe68f993e79bd414fe038d328beaa7d58099227c2d0e7eb5709",
+  "source": "[[div class=a]]A[[/div]]",
+  "source_sha256": "c9f0c91e552479fa3daa7b6a0531915530f8cfacadda326e7b8042c028e24314",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "divn-s7": {
+  "fullname": "muse-probe-refcorr2-divn-s7",
+  "html": "<p>[[/div]]<br />\n[[/div]]</p>",
+  "html_sha256": "f91ddce15049dd9e8406dd2cf5352ed1be47cb46adff33b11de05fc768e9141c",
+  "source": "[[/div]]\n[[/div]]",
+  "source_sha256": "44ef9c7d9cb1ca4e28514b107b651c7a02054f5b250b7399dd46c916cdc419a3",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "divn-s8": {
+  "fullname": "muse-probe-refcorr2-divn-s8",
+  "html": "",
+  "html_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source": "[[div class=a]]A\n[[div class=b]]B\n[[div class=c]]C\n[[/div]]\n[[/div]]",
+  "source_sha256": "d78fe1ac17738f3774f57b16807fd06033eedd5534ba3f9793aad9ec10ae7700",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "divn-s9": {
+  "fullname": "muse-probe-refcorr2-divn-s9",
+  "html": "<div class=\"a\">\n<div class=\"b\">\n<div class=\"c\">\n<p>C</p>\n</div>\n</div>\n</div>",
+  "html_sha256": "f927fba0526ca832345af0f6ed77f20bfbd761acc78132c5afb5139c9f1d51a9",
+  "source": "[[div class=\"a\"]]\n[[div class=\"b\"]]\n[[div class=\"c\"]]\nC\n[[/div]]\n[[/div]]\n[[/div]]",
+  "source_sha256": "a4e93ee9688ba2029017002bdd03e25d73ce3f41ad67eb2f7b8334a5b28a0800",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "divn-s10": {
+  "fullname": "muse-probe-refcorr2-divn-s10",
+  "html": "<br />\n[[/div]]<br />\n[[/div]]",
+  "html_sha256": "cbccf713f2e1abcaef4d0772382d6b4138eddcf96f4c13a99fcd0e88ee6ef826",
+  "source": "[[div class=a]]A\n[[div class=b]]B\n[[div class=c]]C\n[[/div]]\n[[/div]]\n[[/div]]\n[[/div]]",
+  "source_sha256": "39940d8c7afccca9e9c1295f04b743ef26d6a2d38ebad630768dee5badb7858d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

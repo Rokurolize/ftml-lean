@@ -1,0 +1,68 @@
+{"id":"raw-basic","segments":[{"t":"\nbefore "},{"k":0},{"t":" after\n\n"}],"tokens":[["Raw",{"text":"raw **bold** [[link]]"}]]}
+{"id":"raw-basic-inline","segments":[{"t":"\n"},{"k":1},{"t":"\n\n"}],"tokens":{"1":["Raw",{"text":"hello"}]}}
+{"id":"raw-empty","segments":[{"t":"\na  b\n\n"}],"tokens":[]}
+{"id":"raw-ws-only","segments":[{"t":"\na "},{"k":2},{"t":" b\n\n"}],"tokens":{"2":["Raw",{"text":"   "}]}}
+{"id":"raw-tab-body","segments":[{"t":"\na "},{"k":3},{"t":" b\n\n"}],"tokens":{"3":["Raw",{"text":"    "}]}}
+{"id":"raw-multiline","segments":[{"t":"\nbefore\n@@line one\nline two@@\nafter\n\n"}],"tokens":[]}
+{"id":"raw-multiline-leading","segments":[{"t":"\n@@\nindented\n@@\n\n"}],"tokens":[]}
+{"id":"raw-nbsp","segments":[{"t":"\n"},{"k":4},{"t":"\n\n"}],"tokens":{"4":["Raw",{"text":"\u00a0x\u00a0"}]}}
+{"id":"raw-triple-open","segments":[{"t":"\na "},{"k":5},{"t":"@ b\n\n"}],"tokens":{"5":["Raw",{"text":"@x"}]}}
+{"id":"raw-quad","segments":[{"t":"\na x b\n\n"}],"tokens":[]}
+{"id":"raw-five-run","segments":[{"t":"\na @x@ b\n\n"}],"tokens":[]}
+{"id":"raw-at-end","segments":[{"t":"\na "},{"k":6},{"t":"@ b\n\n"}],"tokens":{"6":["Raw",{"text":"x"}]}}
+{"id":"raw-at-start","segments":[{"t":"\na "},{"k":7},{"t":" b\n\n"}],"tokens":{"7":["Raw",{"text":"@x"}]}}
+{"id":"raw-inner-at","segments":[{"t":"\n"},{"k":8},{"t":"\n\n"}],"tokens":{"8":["Raw",{"text":"x@y"}]}}
+{"id":"raw-adjacent","segments":[{"t":"\n"},{"k":9},{"t":"@@two@@\n\n"}],"tokens":{"9":["Raw",{"text":"one"}]}}
+{"id":"raw-unterminated","segments":[{"t":"\na @@never closed\n\n"}],"tokens":[]}
+{"id":"raw-lone","segments":[{"t":"\na @@ b\n\n"}],"tokens":[]}
+{"id":"raw-two-lone","segments":[{"t":"\na "},{"k":10},{"t":" c\n\n"}],"tokens":{"10":["Raw",{"text":" b "}]}}
+{"id":"raw-closer-only","segments":[{"t":"\na "},{"k":11},{"t":"@ c\n\n"}],"tokens":{"11":["Raw",{"text":" b "}]}}
+{"id":"raw-wikitext","segments":[{"t":"\n"},{"k":12},{"t":"\n\n"}],"tokens":{"12":["Raw",{"text":"\/\/italic\/\/ **bold** __under__++strikethrough++"}]}}
+{"id":"raw-brackets","segments":[{"t":"\n"},{"k":13},{"t":"\n\n"}],"tokens":{"13":["Raw",{"text":"[[wikilink]] [[\/bad]]"}]}}
+{"id":"raw-quotes","segments":[{"t":"\n"},{"k":14},{"t":"\n\n"}],"tokens":{"14":["Raw",{"text":"\"double\" 'single' & < >"}]}}
+{"id":"raw-html","segments":[{"t":"\n"},{"k":15},{"t":"\n\n"}],"tokens":{"15":["Raw",{"text":"<b>bold<\/b> <script>alert(1)<\/script>"}]}}
+{"id":"raw-entities","segments":[{"t":"\n"},{"k":16},{"t":"\n\n"}],"tokens":{"16":["Raw",{"text":"&amp; &lt; &quot; &#39;"}]}}
+{"id":"raw-code-markup","segments":[{"t":"\n"},{"k":17},{"t":"\n\n"}],"tokens":{"17":["Raw",{"text":"[[code]]inner[[\/code]]"}]}}
+{"id":"raw-form-markup","segments":[{"t":"\n"},{"k":18},{"t":"\n\n"}],"tokens":{"18":["Raw",{"text":"[[form]]x---y[[\/form]]"}]}}
+{"id":"raw-heading","segments":[{"t":"\n"},{"k":19},{"t":"\n\n"}],"tokens":{"19":["Raw",{"text":"= Heading ="}]}}
+{"id":"raw-list","segments":[{"t":"\n@@* item\n* item@@\n\n"}],"tokens":[]}
+{"id":"raw-link","segments":[{"t":"\n"},{"k":20},{"t":"\n\n"}],"tokens":{"20":["Raw",{"text":"http:\/\/example.com\/?a=1&b=2"}]}}
+{"id":"raw-accents","segments":[{"t":"\n"},{"k":21},{"t":"\n\n"}],"tokens":{"21":["Raw",{"text":"caf\u00e9 \u03b1 \u65e5\u672c"}]}}
+{"id":"raw-in-bold","segments":[{"t":"\n**before "},{"k":22},{"t":" after**\n\n"}],"tokens":{"22":["Raw",{"text":"raw"}]}}
+{"id":"raw-in-italic","segments":[{"t":"\n\/\/before "},{"k":23},{"t":" after\/\/\n\n"}],"tokens":{"23":["Raw",{"text":"raw"}]}}
+{"id":"raw-next-bold","segments":[{"t":"\n"},{"k":24},{"t":" **bold**\n\n"}],"tokens":{"24":["Raw",{"text":"raw"}]}}
+{"id":"raw-in-link","segments":[{"t":"\n[[http:\/\/x\/|"},{"k":25},{"t":"]]\n\n"}],"tokens":{"25":["Raw",{"text":"raw"}]}}
+{"id":"raw-in-div","segments":[{"t":"\n[[div class=\"x\"]]\n"},{"k":26},{"t":"\n[[\/div]]\n\n"}],"tokens":{"26":["Raw",{"text":"raw"}]}}
+{"id":"raw-in-quote","segments":[{"t":"\n> "},{"k":27},{"t":"\n\n"}],"tokens":{"27":["Raw",{"text":"raw"}]}}
+{"id":"old-basic","segments":[{"t":"\nbefore "},{"k":28},{"t":" after\n\n"}],"tokens":{"28":["Rawold",{"text":"raw **bold**"}]}}
+{"id":"old-empty","segments":[{"t":"\na ```` b\n\n"}],"tokens":[]}
+{"id":"old-ws-only","segments":[{"t":"\na "},{"k":29},{"t":" b\n\n"}],"tokens":{"29":["Rawold",{"text":"  "}]}}
+{"id":"old-multiline","segments":[{"t":"\nbefore\n"},{"k":30},{"t":"\nafter\n\n"}],"tokens":{"30":["Rawold",{"text":"line one\nline two"}]}}
+{"id":"old-apostrophe","segments":[{"t":"\na ``it's`` b\n\n"}],"tokens":[]}
+{"id":"old-triple","segments":[{"t":"\na "},{"k":31},{"t":"` b\n\n"}],"tokens":{"31":["Rawold",{"text":"`x"}]}}
+{"id":"old-unterminated","segments":[{"t":"\na ``never closed\n\n"}],"tokens":[]}
+{"id":"old-lone","segments":[{"t":"\na `` b\n\n"}],"tokens":[]}
+{"id":"old-wikitext","segments":[{"t":"\n"},{"k":32},{"t":"\n\n"}],"tokens":{"32":["Rawold",{"text":"\/\/italic\/\/ **bold** [[link]]"}]}}
+{"id":"old-html","segments":[{"t":"\n``<b>&\"'<\/b>``\n\n"}],"tokens":[]}
+{"id":"old-adjacent","segments":[{"t":"\n"},{"k":33},{"t":"``two``\n\n"}],"tokens":{"33":["Rawold",{"text":"one"}]}}
+{"id":"old-and-raw","segments":[{"t":"\n"},{"k":35},{"t":" "},{"k":34},{"t":"\n\n"}],"tokens":{"34":["Raw",{"text":"raw"}],"35":["Rawold",{"text":"old"}]}}
+{"id":"old-quote-run","segments":[{"t":"\na "},{"k":36},{"t":" b "},{"k":37},{"t":" c\n\n"}],"tokens":{"36":["Rawold",{"text":"x"}],"37":["Rawold",{"text":"y"}]}}
+{"id":"form-basic","segments":[{"t":"\n"},{"k":38},{"t":"\n"},{"k":39},{"t":"\n"},{"k":40},{"t":"\n"},{"k":41},{"t":"\n"},{"k":42},{"t":"\n"},{"k":43},{"t":"\n"},{"k":44},{"t":"\n"},{"k":45},{"t":"\n\n"}],"tokens":{"38":["Form",{"text":"[[form]]"}],"39":["Form",{"text":"fields:"}],"40":["Form",{"text":"  name:"}],"41":["Form",{"text":"    type: text"}],"42":["Form",{"text":"    label: Name"}],"43":["Form",{"text":"---"}],"44":["Form",{"text":"name: Alice"}],"45":["Form",{"text":"[[\/form]]"}]}}
+{"id":"form-no-data","segments":[{"t":"\n"},{"k":46},{"t":"\n"},{"k":47},{"t":"\n"},{"k":48},{"t":"\n"},{"k":49},{"t":"\n"},{"k":50},{"t":"\n"},{"k":51},{"t":"\n"},{"k":52},{"t":"\n"},{"k":53},{"t":"\n\n"}],"tokens":{"46":["Form",{"text":"[[form]]"}],"47":["Form",{"text":"fields:"}],"48":["Form",{"text":"  name:"}],"49":["Form",{"text":"    type: text"}],"50":["Form",{"text":"    label: Name"}],"51":["Form",{"text":"---"}],"52":["Form",{"blank":1}],"53":["Form",{"text":"[[\/form]]"}]}}
+{"id":"form-empty-body","segments":[{"t":"\n"},{"k":54},{"t":"\n"},{"k":55},{"t":"\n"},{"k":56},{"t":"\n"},{"k":57},{"t":"\n"},{"k":58},{"t":"\n\n"}],"tokens":{"54":["Form",{"text":"[[form]]"}],"55":["Form",{"blank":1}],"56":["Form",{"text":"---"}],"57":["Form",{"blank":1}],"58":["Form",{"text":"[[\/form]]"}]}}
+{"id":"form-unterminated","segments":[{"t":"\n[[form]]\nfields:\n  name:\n    type: text\n---\nname: x\n\n"}],"tokens":[]}
+{"id":"form-malformed-field","segments":[{"t":"\n"},{"k":59},{"t":"\n"},{"k":60},{"t":"\n"},{"k":61},{"t":"\n"},{"k":62},{"t":"\n"},{"k":63},{"t":"\n"},{"k":64},{"t":"\n\n"}],"tokens":{"59":["Form",{"text":"[[form]]"}],"60":["Form",{"text":"fields:"}],"61":["Form",{"text":"  name: [broken"}],"62":["Form",{"text":"---"}],"63":["Form",{"text":"name: x"}],"64":["Form",{"text":"[[\/form]]"}]}}
+{"id":"form-no-separator","segments":[{"t":"\n"},{"k":65},{"t":"\n"},{"k":66},{"t":"\n"},{"k":67},{"t":"\n"},{"k":68},{"t":"\n"},{"k":69},{"t":"\n\n"}],"tokens":{"65":["Form",{"text":"[[form]]"}],"66":["Form",{"text":"fields:"}],"67":["Form",{"text":"  name:"}],"68":["Form",{"text":"    type: text"}],"69":["Form",{"text":"[[\/form]]"}]}}
+{"id":"form-select","segments":[{"t":"\n"},{"k":70},{"t":"\n"},{"k":71},{"t":"\n"},{"k":72},{"t":"\n"},{"k":73},{"t":"\n"},{"k":74},{"t":"\n"},{"k":75},{"t":"\n"},{"k":76},{"t":"\n"},{"k":77},{"t":"\n"},{"k":78},{"t":"\n"},{"k":79},{"t":"\n"},{"k":80},{"t":"\n\n"}],"tokens":{"70":["Form",{"text":"[[form]]"}],"71":["Form",{"text":"fields:"}],"72":["Form",{"text":"  color:"}],"73":["Form",{"text":"    type: select"}],"74":["Form",{"text":"    label: Color"}],"75":["Form",{"text":"    options:"}],"76":["Form",{"text":"      r: Red"}],"77":["Form",{"text":"      b: Blue"}],"78":["Form",{"text":"---"}],"79":["Form",{"text":"color: r"}],"80":["Form",{"text":"[[\/form]]"}]}}
+{"id":"form-wiki","segments":[{"t":"\n"},{"k":81},{"t":"\n"},{"k":82},{"t":"\n"},{"k":83},{"t":"\n"},{"k":84},{"t":"\n"},{"k":85},{"t":"\n"},{"k":86},{"t":"\n"},{"k":87},{"t":"\n"},{"k":88},{"t":"\n\n"}],"tokens":{"81":["Form",{"text":"[[form]]"}],"82":["Form",{"text":"fields:"}],"83":["Form",{"text":"  note:"}],"84":["Form",{"text":"    type: wiki"}],"85":["Form",{"text":"    label: Note"}],"86":["Form",{"text":"---"}],"87":["Form",{"text":"note: **bold**"}],"88":["Form",{"text":"[[\/form]]"}]}}
+{"id":"form-in-div","segments":[{"t":"\n[[div class=\"x\"]]\n"},{"k":89},{"t":"\n"},{"k":90},{"t":"\n"},{"k":91},{"t":"\n"},{"k":92},{"t":"\n"},{"k":93},{"t":"\n[[\/div]]\n\n"}],"tokens":{"89":["Form",{"text":"[[form]]"}],"90":["Form",{"text":"x"}],"91":["Form",{"text":"---"}],"92":["Form",{"text":"y"}],"93":["Form",{"text":"[[\/form]]"}]}}
+{"id":"form-stray-closer","segments":[{"t":"\ntext\n[[\/form]]\nafter\n\n"}],"tokens":[]}
+{"id":"form-inline","segments":[{"t":"\nbefore [[form]]x---y[[\/form]] after\n\n"}],"tokens":[]}
+{"id":"raw-in-code","segments":[{"t":"\n\n\n"},{"k":94},{"t":"\n\n"}],"tokens":{"94":["Code",{"text":"\n@@raw@@\n","attr":{"type":""}}]}}
+{"id":"code-in-raw","segments":[{"t":"\n"},{"k":95},{"t":"\n\n"}],"tokens":{"95":["Raw",{"text":"[[code]]x[[\/code]]"}]}}
+{"id":"include-in-raw","segments":[{"t":"\n"},{"k":96},{"t":"\n\n"}],"tokens":{"96":["Raw",{"text":"[[include page=test]]"}]}}
+{"id":"raw-in-include","segments":[{"t":"\n[[include page=raw-include]]\n\n"}],"tokens":[]}
+{"id":"form-in-code","segments":[{"t":"\n\n\n"},{"k":97},{"t":"\n\n"}],"tokens":{"97":["Code",{"text":"\n[[form]]\nx\n---\ny\n[[\/form]]\n","attr":{"type":""}}]}}
+{"id":"code-in-form","segments":[{"t":"\n"},{"k":98},{"t":"\n"},{"k":99},{"t":"\n"},{"k":100},{"t":"\n"},{"k":101},{"t":"\n"},{"k":102},{"t":"\n"},{"k":103},{"t":"\n"},{"k":104},{"t":"\n\n"}],"tokens":{"98":["Form",{"text":"[[form]]"}],"99":["Form",{"text":"fields:"}],"100":["Form",{"text":"  note:"}],"101":["Form",{"text":"    type: wiki"}],"102":["Form",{"text":"---"}],"103":["Form",{"text":"note: [[code]]x[[\/code]]"}],"104":["Form",{"text":"[[\/form]]"}]}}
+{"id":"raw-after-code","segments":[{"t":"\n\n\n"},{"k":105},{"t":"\n"},{"k":106},{"t":"\n\n"}],"tokens":{"105":["Code",{"text":"x","attr":{"type":""}}],"106":["Raw",{"text":"raw"}]}}
+{"id":"old-in-code","segments":[{"t":"\n\n\n"},{"k":107},{"t":"\n\n"}],"tokens":{"107":["Code",{"text":"\n``old``\n","attr":{"type":""}}]}}

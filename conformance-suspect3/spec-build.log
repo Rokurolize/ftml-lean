@@ -1,0 +1,3 @@
+[lean-build] waiting for the serial slot: (cd /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/lean-ftml && lake env lean LeanFtml/SpecSuspect3.lean) at 2026-11-22T17:32:50+09:00
+[lean-build] slot acquired at 2026-11-22T17:33:26+09:00
+[lean-build] released (exit 0) at 2026-11-22T17:33:29+09:00

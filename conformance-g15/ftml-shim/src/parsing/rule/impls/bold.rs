@@ -1,0 +1,1317 @@
+/*
+ * parsing/rule/impls/bold.rs
+ *
+ * ftml - Library to parse Wikidot text
+ * Copyright (C) 2019-2026 Wikijump Team
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+use super::inline_delimiter::{
+    ReachableCloseMode, append_split_close_leftover, append_wikidot_line_close_space,
+    assert_unpadded_open, inline_body_padded_through_seams, prepend_split_close_leftover,
+    validate_reachable_close,
+};
+use super::prelude::*;
+use crate::parsing::ParseSuccess;
+use crate::parsing::collect::{SegmentCtx, TokenWindow, split_delimiter_end};
+use crate::parsing::inline_scope::SpanListCloseTail;
+use crate::tree::{
+    AttributeMap, Container, Element, PartialElement, WikidotBlockCloseKind,
+    WikidotBlockShell,
+};
+use std::borrow::Cow;
+
+pub const RULE_BOLD: Rule = Rule {
+    name: "bold",
+    position: LineRequirement::Any,
+    try_consume_fn,
+};
+
+fn try_consume_fn<'r, 't>(
+    parser: &mut Parser<'r, 't>,
+) -> ParseResult<'r, 't, Elements<'t>> {
+    debug!("Trying to create bold (strong) container");
+    let in_anchor_body = parser.in_wikidot_anchor_body();
+    if parser.current().token == Token::BulletItem {
+        return try_consume_split_delimiter(parser);
+    }
+    if let Some(after) = empty_list_bold_after(parser) {
+        parser.step_to_remaining(after);
+        return ok!(Elements::None);
+    }
+    validate_reachable_close(
+        parser,
+        Token::Bold,
+        Some(SplitDelimiter::Bold),
+        ReachableCloseMode::Standard,
+    )?;
+    assert_unpadded_open(parser, Token::Bold)?;
+    let close = [
+        ParseCondition::current(Token::Bold),
+        ParseCondition::SplitClose(SplitDelimiter::Bold),
+    ];
+    let invalid = [
+        ParseCondition::token_pair(Token::Bold, Token::Whitespace),
+        ParseCondition::token_pair(Token::Whitespace, Token::Bold),
+        ParseCondition::PaddedSplitClose(SplitDelimiter::Bold),
+    ];
+    let ctype = ContainerType::Bold;
+    let inside_note = parser.in_note()
+        || parser.wikidot_note_pair_encloses(parser.current().span.start);
+    let collected = collect_container(parser, RULE_BOLD, ctype, &close, &invalid, None)?;
+    finish_collected(parser, in_anchor_body, collected, inside_note)
+}
+
+fn is_break_token(token: Token) -> bool {
+    matches!(
+        token,
+        Token::LineBreak | Token::ParagraphBreak | Token::Whitespace
+    )
+}
+
+fn block_head_is(
+    tokens: &[ExtractedToken<'_>],
+    index: usize,
+    name: &str,
+    closing: bool,
+) -> bool {
+    let open = if closing {
+        Token::LeftBlockEnd
+    } else {
+        Token::LeftBlock
+    };
+    tokens.get(index).is_some_and(|token| token.token == open)
+        && tokens.get(index + 1).is_some_and(|token| {
+            token.token == Token::Identifier && token.slice.eq_ignore_ascii_case(name)
+        })
+        && tokens
+            .get(index + 2)
+            .is_some_and(|token| token.token == Token::RightBlock)
+}
+
+fn skip_breaks(tokens: &[ExtractedToken<'_>], mut index: usize) -> usize {
+    while tokens
+        .get(index)
+        .is_some_and(|token| is_break_token(token.token))
+    {
+        index += 1;
+    }
+    index
+}
+
+/// Classify the gap after a format pair's closer for the spanin and
+/// understrike list-close tail families (`mark_span_list_close_tail`,
+/// `mark_format_stop_at_list`). Closers of enclosing crossing pairs
+/// (`**__` after the list, at any nesting depth) and same-line whitespace
+/// sit inside the gap, so they are transparent: the only question is
+/// whether exactly one line break intervenes between the close and the
+/// next content. A line break then the enclosing scope's close yields
+/// `Break`; content directly adjacent to the close yields `Bare`;
+/// content after one line break yields `Lead`; an explicit list after one
+/// line break yields `Bare` (the break is already in place); an explicit
+/// list after a blank gap yields `Blank` (live drops the tail entirely);
+/// anything else (a blank line before other content, and so on) yields no
+/// tail, so the following paragraph wraps the way a normal after-list
+/// paragraph does.
+///
+/// Inside a blockquote the tail line's break and the scope-close row keep
+/// the same shape, only the next row's `>` marker intervenes in the token
+/// stream (`LineBreak, Quote, Whitespace, LeftBlockEnd, …`). A quote-row
+/// prefix there (and before post-break content) is transparent too: live
+/// keeps the tail break before `</blockquote>` exactly as at page root
+/// (saved-page probes `muse-probe-bqftail-bq-*`).
+fn quote_row_prefix_end(rest: &[ExtractedToken<'_>], mut index: usize) -> Option<usize> {
+    let mut saw_quote = false;
+    loop {
+        match rest.get(index) {
+            Some(token) if token.token == Token::Quote => {
+                saw_quote = true;
+                index += 1;
+            }
+            Some(token) if saw_quote && token.token == Token::Whitespace => {
+                index += 1;
+            }
+            _ => break,
+        }
+    }
+    saw_quote.then_some(index)
+}
+
+fn classify_tail_gap(
+    current: &ExtractedToken<'_>,
+    rest: &[ExtractedToken<'_>],
+    close_names: &[&str],
+) -> Option<SpanListCloseTail> {
+    let mut break_seen = false;
+    let mut blank_seen = false;
+    let mut cursor = 0usize;
+    loop {
+        let token: &ExtractedToken<'_> = if cursor == 0 {
+            current
+        } else {
+            rest.get(cursor - 1)?
+        };
+        cursor += 1;
+        match token.token {
+            Token::LineBreak => {
+                if break_seen {
+                    blank_seen = true;
+                    continue;
+                }
+                if close_names
+                    .iter()
+                    .any(|name| block_head_is(rest, cursor - 1, name, true))
+                    || quote_row_prefix_end(rest, cursor - 1).is_some_and(|after| {
+                        close_names
+                            .iter()
+                            .any(|name| block_head_is(rest, after, name, true))
+                    })
+                {
+                    return Some(SpanListCloseTail::Break);
+                }
+                break_seen = true;
+            }
+            // A quote-row prefix after the gap's line break (the `>` marker
+            // of the row carrying the scope close or the tail content).
+            // Before any break it is content, not a row prefix.
+            Token::Quote if break_seen => continue,
+            Token::ParagraphBreak => {
+                blank_seen = true;
+                continue;
+            }
+            Token::LeftBlockEnd => {
+                if blank_seen {
+                    return None;
+                }
+                let is_close_head = |name: &str| {
+                    if cursor == 1 {
+                        rest.first().is_some_and(|t| {
+                            t.token == Token::Identifier
+                                && t.slice.eq_ignore_ascii_case(name)
+                        }) && rest.get(1).is_some_and(|t| t.token == Token::RightBlock)
+                    } else {
+                        block_head_is(rest, cursor - 2, name, true)
+                    }
+                };
+                if close_names.iter().any(|name| is_close_head(name)) {
+                    return Some(SpanListCloseTail::Fold);
+                }
+                return None;
+            }
+            Token::RuntimeText | Token::Identifier | Token::Raw
+                if !token.slice.trim().is_empty() =>
+            {
+                if blank_seen {
+                    return None;
+                }
+                return Some(if break_seen {
+                    SpanListCloseTail::Lead
+                } else {
+                    SpanListCloseTail::Bare
+                });
+            }
+            Token::Whitespace
+            | Token::Bold
+            | Token::Italics
+            | Token::Underline
+            | Token::DoubleDash
+            | Token::Superscript
+            | Token::Subscript
+            | Token::LeftMonospace
+            | Token::RightMonospace => continue,
+            Token::LeftBlock => {
+                // An explicit list follower on the line after the close:
+                // the gap break survives as a bare break-only run before
+                // the second list (live keeps one bare break, never a
+                // paragraph). The break is already in place, so this
+                // stamps Bare rather than Lead. After a blank gap the
+                // tail is dropped instead (Blank). Any other block or an
+                // adjacent list yields no tail.
+                let is_list_head = if cursor == 1 {
+                    rest.first().is_some_and(|token| {
+                        token.token == Token::Identifier
+                            && (token.slice.eq_ignore_ascii_case("ul")
+                                || token.slice.eq_ignore_ascii_case("ol"))
+                    }) && rest
+                        .get(1)
+                        .is_some_and(|token| token.token == Token::RightBlock)
+                } else if cursor >= 2 {
+                    block_head_is(rest, cursor - 2, "ul", false)
+                        || block_head_is(rest, cursor - 2, "ol", false)
+                } else {
+                    // The list opens on the close's own line (no gap at
+                    // all): an adjacent follower, which yields no tail.
+                    // (Also guards the `cursor - 2` indexing below.)
+                    false
+                };
+                if is_list_head {
+                    if blank_seen {
+                        return Some(SpanListCloseTail::Blank);
+                    }
+                    if break_seen {
+                        return Some(SpanListCloseTail::Bare);
+                    }
+                }
+                return None;
+            }
+            _ => return None,
+        }
+    }
+}
+
+/// Stamp a crossed-pair tail marker and arm the pending-tail signal the
+/// paragraph stack reads at the next explicit list (fr73 P6a): the gap's
+/// break survives there instead of the L85 lone-break pop.
+fn stamp_tail_marker<'t>(
+    parser: &Parser<'_, 't>,
+    attributes: &mut AttributeMap<'t>,
+    marker: &'static str,
+) {
+    attributes.insert(marker, Cow::Borrowed(""));
+    parser.record_wikidot_crossed_pair_tail_pending();
+}
+
+/// Whether the gap after a format pair's closer holds a blank line: two line
+/// breaks, or a paragraph break, past the same transparent tokens
+/// `classify_tail_gap` skips (enclosing-pair closers, same-line whitespace).
+/// On the fr73 base `classify_tail_gap` reports list-after-blank as Blank;
+/// this still detects blank gaps with non-list followers (scope close, EOF,
+/// prose), where the sptail keep marks apply.
+fn gap_has_blank(current: &ExtractedToken<'_>, rest: &[ExtractedToken<'_>]) -> bool {
+    let mut breaks = 0u8;
+    let mut cursor = 0usize;
+    loop {
+        let token: &ExtractedToken<'_> = if cursor == 0 {
+            current
+        } else {
+            match rest.get(cursor - 1) {
+                Some(token) => token,
+                None => return false,
+            }
+        };
+        cursor += 1;
+        match token.token {
+            Token::LineBreak => {
+                breaks += 1;
+                if breaks >= 2 {
+                    return true;
+                }
+            }
+            Token::ParagraphBreak => return true,
+            Token::Whitespace
+            | Token::Bold
+            | Token::Italics
+            | Token::Underline
+            | Token::DoubleDash
+            | Token::Superscript
+            | Token::Subscript
+            | Token::LeftMonospace
+            | Token::RightMonospace => continue,
+            _ => return false,
+        }
+    }
+}
+
+fn span_tail_marker(tail: SpanListCloseTail) -> &'static str {
+    match tail {
+        SpanListCloseTail::Break => {
+            crate::tree::WIKIDOT_SPAN_LIST_CLOSE_TAIL_BREAK_MARKER
+        }
+        SpanListCloseTail::Bare => crate::tree::WIKIDOT_SPAN_LIST_CLOSE_TAIL_BARE_MARKER,
+        SpanListCloseTail::Lead => crate::tree::WIKIDOT_SPAN_LIST_CLOSE_TAIL_LEAD_MARKER,
+        SpanListCloseTail::Blank => {
+            crate::tree::WIKIDOT_SPAN_LIST_CLOSE_TAIL_BLANK_MARKER
+        }
+        SpanListCloseTail::Fold => crate::tree::WIKIDOT_SPAN_LIST_CLOSE_TAIL_FOLD_MARKER,
+    }
+}
+
+fn understrike_tail_marker(tail: SpanListCloseTail) -> &'static str {
+    match tail {
+        SpanListCloseTail::Break => {
+            crate::tree::WIKIDOT_UNDERSTRIKE_LIST_CLOSE_TAIL_BREAK_MARKER
+        }
+        SpanListCloseTail::Bare => {
+            crate::tree::WIKIDOT_UNDERSTRIKE_LIST_CLOSE_TAIL_BARE_MARKER
+        }
+        SpanListCloseTail::Lead => {
+            crate::tree::WIKIDOT_UNDERSTRIKE_LIST_CLOSE_TAIL_LEAD_MARKER
+        }
+        SpanListCloseTail::Fold => {
+            crate::tree::WIKIDOT_UNDERSTRIKE_LIST_CLOSE_TAIL_FOLD_MARKER
+        }
+        SpanListCloseTail::Blank => {
+            unreachable!("blank tails only stamp the span family")
+        }
+    }
+}
+
+fn empty_list_bold_after(parser: &Parser<'_, '_>) -> Option<usize> {
+    if !parser.settings().layout.legacy() {
+        return None;
+    }
+    if parser.current().token != Token::Bold {
+        return None;
+    }
+    let tokens = parser.remaining();
+    let list_name = if block_head_is(tokens, 0, "ul", false) {
+        "ul"
+    } else if block_head_is(tokens, 0, "ol", false) {
+        "ol"
+    } else {
+        return None;
+    };
+    if parser.current().span.end != tokens[0].span.start {
+        return None;
+    }
+    let mut index = skip_breaks(tokens, 3);
+    let mut items = 0;
+    loop {
+        if !block_head_is(tokens, index, "li", false) {
+            break;
+        }
+        items += 1;
+        index += 3;
+        while !block_head_is(tokens, index, "li", true) {
+            let token = tokens.get(index)?;
+            if !is_break_token(token.token) {
+                return None;
+            }
+            index += 1;
+        }
+        index += 3;
+        index = skip_breaks(tokens, index);
+    }
+    if items == 0 {
+        return None;
+    }
+    if !block_head_is(tokens, index, list_name, true) {
+        return None;
+    }
+    let close_right = index + 2;
+    index += 3;
+    tokens.get(index)?;
+    if tokens[index].token != Token::Bold {
+        return None;
+    }
+    if tokens[close_right].span.end != tokens[index].span.start {
+        return None;
+    }
+    Some(index + 1)
+}
+
+fn try_consume_split_delimiter<'r, 't>(
+    parser: &mut Parser<'r, 't>,
+) -> ParseResult<'r, 't, Elements<'t>> {
+    let in_anchor_body = parser.in_wikidot_anchor_body();
+    let inside_note = parser.in_note()
+        || parser.wikidot_note_pair_encloses(parser.current().span.start);
+    let Some(split_match) = split_delimiter_end(
+        TokenWindow::at(parser),
+        SegmentCtx::from_parser(parser),
+        SplitDelimiter::Bold,
+    ) else {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    };
+    validate_reachable_close(
+        parser,
+        Token::Bold,
+        Some(SplitDelimiter::Bold),
+        ReachableCloseMode::Standard,
+    )?;
+    while parser.current().span.start < split_match.consume_end
+        && parser.current().token != Token::InputEnd
+    {
+        parser.step()?;
+    }
+    if parser.current().token == Token::Whitespace {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+    let close = [
+        ParseCondition::current(Token::Bold),
+        ParseCondition::SplitClose(SplitDelimiter::Bold),
+    ];
+    let invalid = [
+        ParseCondition::current(Token::ParagraphBreak),
+        ParseCondition::token_pair(Token::Bold, Token::Whitespace),
+        ParseCondition::token_pair(Token::Whitespace, Token::Bold),
+        ParseCondition::PaddedSplitClose(SplitDelimiter::Bold),
+    ];
+    let collected = collect_container(
+        parser,
+        RULE_BOLD,
+        ContainerType::Bold,
+        &close,
+        &invalid,
+        None,
+    )?;
+    let collected = match &split_match.leftover {
+        Some(range) => {
+            let text = parser.full_text().inner()[range.clone()].to_owned();
+            prepend_split_close_leftover(collected, &text)
+        }
+        None => collected,
+    };
+    finish_collected(parser, in_anchor_body, collected, inside_note)
+}
+
+pub(super) fn bold_body_crosses_flow_block(elements: &Elements<'_>) -> bool {
+    let Elements::Single(Element::Container(container)) = elements else {
+        return false;
+    };
+    container.elements().iter().any(|element| match element {
+        Element::Container(inner) => {
+            matches!(
+                inner.ctype(),
+                ContainerType::Div | ContainerType::Note | ContainerType::Align(_)
+            )
+        }
+        Element::Table(_) | Element::Math { .. } | Element::Code(_) => true,
+        Element::Partial(
+            PartialElement::WikidotBlockOpen(WikidotBlockShell::Div { .. })
+            | PartialElement::WikidotBlockClose(WikidotBlockCloseKind::Div { .. })
+            | PartialElement::WikidotBlockOpen(WikidotBlockShell::Align { .. })
+            | PartialElement::WikidotBlockClose(WikidotBlockCloseKind::Align { .. })
+            | PartialElement::WikidotBlockClose(WikidotBlockCloseKind::Note { .. })
+            | PartialElement::WikidotBlockClose(WikidotBlockCloseKind::Collapsible {
+                ..
+            })
+            | PartialElement::WikidotBlockClose(
+                WikidotBlockCloseKind::CollapsibleCrossedBottom { .. },
+            ),
+        ) => true,
+        _ => false,
+    })
+}
+
+fn finish_collected<'r, 't>(
+    parser: &mut Parser<'r, 't>,
+    in_anchor_body: bool,
+    collected: ParseSuccess<Elements<'t>>,
+    inside_note: bool,
+) -> ParseResult<'r, 't, Elements<'t>> {
+    let leftover = collected.split_close_leftover.clone();
+    let (elements, errors, paragraph_safe) = collected.into();
+    if parser.settings().layout.legacy()
+        && matches!(
+            &elements,
+            Elements::Single(Element::Container(container))
+                if inline_body_padded_through_seams(container.elements())
+        )
+    {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+    if parser.settings().layout.legacy() && bold_body_crosses_flow_block(&elements) {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+    if parser.settings().layout.legacy()
+        && inside_note
+        && body_contains_literal_note_region(&elements)
+    {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+    if parser.settings().layout.legacy()
+        && super::inline_delimiter::legacy_format_body_code_preceded_by_content(&elements)
+    {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+    if parser.settings().layout.legacy()
+        && matches!(
+            &elements,
+            Elements::Single(Element::Container(container)) if container.elements().is_empty()
+        )
+    {
+        let base = if super::footnote_first::starts_footnote(parser) {
+            Elements::Single(Element::Partial(PartialElement::WikidotEmptyInlineOwner))
+        } else {
+            Elements::None
+        };
+        let elements = match leftover {
+            Some(leftover) => append_split_close_leftover(base, leftover),
+            None => base,
+        };
+        return ok!(paragraph_safe; elements, errors);
+    }
+    let elements =
+        append_wikidot_line_close_space(elements, parser.settings().layout.legacy());
+    let elements = match leftover {
+        Some(leftover) => append_split_close_leftover(elements, leftover),
+        None => elements,
+    };
+    let elements =
+        super::bold::mark_format_stop_at_list(parser, in_anchor_body, elements);
+    let elements = mark_span_list_close_tail(parser, in_anchor_body, elements);
+    ok!(paragraph_safe; elements, errors)
+}
+
+/// A literal note region inside a bold body (BRIEF-NN84): a `[[note]]` head
+/// (with or without arguments) followed later by a `[[/note]]` close, both
+/// collapsed to fallback text inside a note body. Live rejects the bold pair
+/// spanning such a region (its markers stay literal, and the following
+/// markers re-pair after the note); an unbalanced head, or the same text
+/// outside a note body, keeps the pair. Shared with italics and underline
+/// (BRIEF-IU84), whose probes show the identical rejection + re-pairing.
+pub(super) fn body_contains_literal_note_region(elements: &Elements<'_>) -> bool {
+    let mut text = String::new();
+    body_text_into(elements, &mut text);
+    let lower = text.to_ascii_lowercase();
+    let Some(head) = literal_note_head_at(&lower) else {
+        return false;
+    };
+    lower[head..].contains("[[/note]]")
+}
+
+fn body_text_into(elements: &Elements<'_>, text: &mut String) {
+    match elements {
+        Elements::Single(element) => body_element_text_into(element, text),
+        Elements::Multiple(elements) => {
+            for element in elements {
+                body_element_text_into(element, text);
+            }
+        }
+        Elements::None => {}
+    }
+}
+
+fn body_element_text_into(element: &Element<'_>, text: &mut String) {
+    match element {
+        Element::Text(data) => text.push_str(data),
+        Element::LineBreak | Element::LineBreaks { .. } => text.push('\n'),
+        Element::Container(container) => {
+            for child in container.elements() {
+                body_element_text_into(child, text);
+            }
+        }
+        Element::Partial(PartialElement::WikidotFoster(elements)) => {
+            for child in elements {
+                body_element_text_into(child, text);
+            }
+        }
+        _ => text.push('\n'),
+    }
+}
+
+/// The byte of the first literal note head (`[[note]]`, or with arguments)
+/// in lowercased body text: `[[note` followed by `]` or whitespace.
+fn literal_note_head_at(lower: &str) -> Option<usize> {
+    let bytes = lower.as_bytes();
+    let mut search = 0usize;
+    while let Some(rel) = lower[search..].find("[[note") {
+        let start = search + rel;
+        let after = start + "[[note".len();
+        if matches!(
+            bytes.get(after),
+            Some(b']') | Some(b'\t') | Some(b' ') | Some(b'\n')
+        ) {
+            return Some(start);
+        }
+        search = after;
+    }
+    None
+}
+
+/// The format container a spanin tail verdict applies to, as an index into
+/// `elements`: the collector returns the pair as a single element, or in a
+/// `Multiple` alongside the line-close space when the closer sits on its own
+/// line (spadj cell 1: matching only the single-container shape skipped
+/// stamping those tails entirely). The stopped family's
+/// `find_stop_at_list_container` already sees through that shape; this is
+/// the shared lookup for the bold/italics/superscript/subscript tail
+/// families.
+fn stampable_container_index(elements: &Elements<'_>) -> Option<usize> {
+    let at = |element: &Element<'_>| {
+        matches!(
+            element,
+            Element::Container(container)
+                if matches!(
+                    container.ctype(),
+                    ContainerType::Bold
+                        | ContainerType::Italics
+                        | ContainerType::Superscript
+                        | ContainerType::Subscript
+                )
+        )
+    };
+    match elements {
+        Elements::Single(element) if at(element) => Some(0),
+        Elements::Multiple(elements) => elements.iter().position(at),
+        _ => None,
+    }
+}
+
+fn stampable_container<'e, 't>(
+    elements: &'e Elements<'t>,
+    index: usize,
+) -> &'e Container<'t> {
+    match elements {
+        Elements::Single(Element::Container(container)) => container,
+        Elements::Multiple(elements) => match &elements[index] {
+            Element::Container(container) => container,
+            _ => unreachable!("stampable container index checked by the caller"),
+        },
+        _ => unreachable!("stampable container index checked by the caller"),
+    }
+}
+
+fn stampable_container_mut<'e, 't>(
+    elements: &'e mut Elements<'t>,
+    index: usize,
+) -> &'e mut Container<'t> {
+    match elements {
+        Elements::Single(Element::Container(container)) => container,
+        Elements::Multiple(elements) => match &mut elements[index] {
+            Element::Container(container) => container,
+            _ => unreachable!("stampable container index checked by the caller"),
+        },
+        _ => unreachable!("stampable container index checked by the caller"),
+    }
+}
+
+/// A bold, italics, superscript or subscript pair that closed beyond an
+/// explicit list inside a span or size body leaves live shapes on the
+/// following scope-content paragraph (spanin family). The syntax tree loses
+/// the newline-count distinction there, so the gap after the close marker is
+/// classified here, from the token stream, and stamped on the format
+/// container as an internal marker for inline-scope lowering: a single
+/// newline then `[[/span]]`/`[[/size]]` (break-only tail segment
+/// materialises after the list), adjacent content text (the after-list
+/// paragraph is bare with no inserted leading break), or content on the line
+/// after the close (the after-list paragraph keeps the scope's inline run,
+/// renders bare inside the scope with an inserted leading break). At this
+/// point the parser sits on the first token after the pair close.
+///
+/// The inverse shape (strong-x family) stamps the same markers: a span or
+/// size scope inside the format pair closes beyond the explicit list (its
+/// close sits in the pair's tail segment), so the paragraph after the list
+/// is likewise bare — with a leading break when the close is followed by a
+/// newline (`<br>[[/hidden]]`), and no leading break when content follows
+/// the pair close directly (`tail<br>...`).
+///
+/// Scopeless crossings are handled by `mark_scopeless_span_list_close_tail`.
+pub(super) fn mark_span_list_close_tail<'r, 't>(
+    parser: &Parser<'r, 't>,
+    in_anchor_body: bool,
+    mut elements: Elements<'t>,
+) -> Elements<'t> {
+    if !parser.settings().layout.legacy() {
+        return elements;
+    }
+    let in_span_body = parser.in_wikidot_span_body();
+    let in_size_body = parser.in_wikidot_size_body();
+    if !(in_span_body || in_size_body) {
+        return mark_scopeless_span_list_close_tail(parser, in_anchor_body, elements);
+    }
+    let Some(index) = stampable_container_index(&elements) else {
+        return elements;
+    };
+    let container = stampable_container(&elements, index);
+    let ctype = container.ctype();
+    let crosses_explicit_list = container
+        .elements()
+        .iter()
+        .any(crate::parsing::inline_scope::subtree_contains_explicit_list);
+    if !crosses_explicit_list {
+        return elements;
+    }
+    if container
+        .elements()
+        .iter()
+        .any(|child| crate::parsing::inline_scope::subtree_contains_flow_block(child))
+    {
+        return elements;
+    }
+    let current = parser.current();
+    let rest = parser.remaining();
+    let marker = match classify_tail_gap(current, rest, &["span", "size"]) {
+        Some(gap) => {
+            // The fold gap (pair closer immediately followed by the enclosing
+            // scope close) is the pw90 frozen shape: live closes the scope right
+            // after the pair's post-list segment, so that segment carries no
+            // trailing break. Only the bold/italics pair family is evidenced;
+            // superscript/subscript keep the previous (unmarked) behaviour.
+            if matches!(gap, SpanListCloseTail::Fold)
+                && !matches!(ctype, ContainerType::Bold | ContainerType::Italics)
+            {
+                return elements;
+            }
+            span_tail_marker(gap)
+        }
+        None => {
+            // Unclassifiable gap (non-list follower: scope close, EOF,
+            // prose — list-after-blank classifies as Blank above): stamp
+            // the blank mark only when the gap holds a blank line
+            // (sptail: the post-list tail then keeps the blank break
+            // inside the scope). Bold/italics only, mirroring the fold
+            // restriction above.
+            if gap_has_blank(current, rest)
+                && matches!(ctype, ContainerType::Bold | ContainerType::Italics)
+            {
+                crate::tree::WIKIDOT_SPAN_LIST_CLOSE_TAIL_BLANK_MARKER
+            } else {
+                return elements;
+            }
+        }
+    };
+    stamp_tail_marker(
+        parser,
+        stampable_container_mut(&mut elements, index).attributes_mut(),
+        marker,
+    );
+    elements
+}
+
+/// Scopeless list-crossing pair (page root or a block envelope such as
+/// div/note/collapsible, including unclosed openers that render literally):
+/// live applies the same bare/lead tail rule as the spanin family, with no
+/// scope to retire. Anchor bodies are owned by the stopped path in
+/// `mark_format_stop_at_list`; label-straddling pairs keep the
+/// inverse-shape handling.
+///
+/// The pair is looked up through the line-close space
+/// (`stampable_container_index`): an own-line closer leaves the body ending
+/// in a line break, so the collector returns
+/// `Multiple([Container, Text(" ")])` — the m3x3 root shape closes the pair
+/// on a line after the crossed list. A flow-block-crossed pair is rejected
+/// later by inline-scope lowering and its markers are re-emitted literally;
+/// the tail verdict is still stamped so the literalised output can carry it
+/// to the post-list run.
+fn mark_scopeless_span_list_close_tail<'r, 't>(
+    parser: &Parser<'r, 't>,
+    in_anchor_body: bool,
+    mut elements: Elements<'t>,
+) -> Elements<'t> {
+    let Some(index) = stampable_container_index(&elements) else {
+        return elements;
+    };
+    let container = stampable_container(&elements, index);
+    let crosses_explicit_list = container
+        .elements()
+        .iter()
+        .any(crate::parsing::inline_scope::subtree_contains_explicit_list);
+    if !crosses_explicit_list {
+        return elements;
+    }
+    let crosses_flow_block = container
+        .elements()
+        .iter()
+        .any(|child| crate::parsing::inline_scope::subtree_contains_flow_block(child));
+    let label_straddles =
+        crate::parsing::inline_scope::label_scope_straddles_list(container.elements());
+    let current = parser.current();
+    let rest = parser.remaining();
+    if !in_anchor_body && !label_straddles {
+        if let Some(gap) = classify_tail_gap(current, rest, &[])
+            && matches!(
+                gap,
+                SpanListCloseTail::Bare
+                    | SpanListCloseTail::Lead
+                    | SpanListCloseTail::Blank
+            )
+        {
+            stamp_tail_marker(
+                parser,
+                stampable_container_mut(&mut elements, index).attributes_mut(),
+                span_tail_marker(gap),
+            );
+        }
+        return elements;
+    }
+    if crosses_flow_block {
+        return elements;
+    }
+    let marker = if current.token == Token::LineBreak {
+        crate::tree::WIKIDOT_FORMAT_LABEL_LIST_CLOSE_TAIL_BREAK_MARKER
+    } else if matches!(current.token, Token::RuntimeText | Token::Identifier)
+        && !current.slice.trim().is_empty()
+        || current.token == Token::Whitespace
+            && rest.first().is_some_and(|next| {
+                matches!(next.token, Token::RuntimeText | Token::Identifier)
+                    && !next.slice.trim().is_empty()
+            })
+    {
+        crate::tree::WIKIDOT_FORMAT_LABEL_LIST_CLOSE_TAIL_BARE_MARKER
+    } else {
+        return elements;
+    };
+    stamp_tail_marker(
+        parser,
+        stampable_container_mut(&mut elements, index).attributes_mut(),
+        marker,
+    );
+    elements
+}
+
+/// An underline or strikethrough pair that closed beyond an explicit list
+/// inside a Wikidot inline scope (`[[span]]`, `[[size]]`, `[[a]]`) does not
+/// carry its styling across the list on live: only the segment before the
+/// list keeps its styling, the list and the post-list segment are unstyled,
+/// and both markers are consumed. (Bold, italics, superscript and subscript
+/// pair across the list in span/size bodies, and underline/strike pair
+/// across it outside an inline scope and inside `[[div]]`; inside an anchor
+/// body every format family stops.) Stamp the collected container so
+/// inline-scope lowering segments it that way, plus its post-list tail
+/// shape. The tail classification is the same token-after-close rule for
+/// post-list segments with and without content (a content-bearing segment
+/// is the fold shape: live closes the enclosing scope right after the
+/// post-list segment); the FOLD arm is the fallback for a close marker
+/// followed by something other than a newline+scope-close or adjacent text
+/// (e.g. `b__[[/span]]` on one line). At this point the parser sits on
+/// the first token after the close.
+pub(super) fn mark_format_stop_at_list<'r, 't>(
+    parser: &Parser<'r, 't>,
+    in_anchor_body: bool,
+    mut elements: Elements<'t>,
+) -> Elements<'t> {
+    if !parser.settings().layout.legacy()
+        || !(parser.in_wikidot_span_body()
+            || parser.in_wikidot_size_body()
+            || in_anchor_body)
+    {
+        // Scopeless underline/strikethrough crossing (page root or a block
+        // Only the tail marker is stamped — no stop marker — so lowering
+        // keeps the styling across the list and only unwraps the tail.
+        if parser.settings().layout.legacy()
+            && let Some(container) = find_stop_at_list_container(&elements)
+        {
+            let crossing = matches!(
+                container.ctype(),
+                ContainerType::Underline | ContainerType::Strikethrough
+            ) && container
+                .elements()
+                .iter()
+                .any(crate::parsing::inline_scope::subtree_contains_explicit_list)
+                && !container.elements().iter().any(|child| {
+                    crate::parsing::inline_scope::subtree_contains_native_list(child)
+                });
+            if crossing {
+                let current = parser.current();
+                let rest = parser.remaining();
+                if let Some(gap) = classify_tail_gap(current, rest, &[])
+                    && matches!(gap, SpanListCloseTail::Bare | SpanListCloseTail::Lead)
+                    && let Some(container) =
+                        find_stop_at_list_container_mut(&mut elements)
+                {
+                    stamp_tail_marker(
+                        parser,
+                        container.attributes_mut(),
+                        span_tail_marker(gap),
+                    );
+                }
+            }
+        }
+        return elements;
+    }
+    let in_anchor = in_anchor_body;
+
+    // Check for Element::Color
+    if let Some(color_info) = find_color_stop_at_list_info(&elements, in_anchor) {
+        let crosses_list = color_info
+            .elements_ref()
+            .iter()
+            .any(crate::parsing::inline_scope::subtree_contains_explicit_list);
+        if !crosses_list
+            || color_info.elements_ref().iter().any(|child| {
+                crate::parsing::inline_scope::subtree_contains_flow_block(child)
+                    || crate::parsing::inline_scope::subtree_contains_native_list(child)
+                    || crate::parsing::inline_scope::subtree_contains_blank_line_item(
+                        child,
+                    )
+            })
+        {
+            return elements;
+        }
+        let post_has_content =
+            crate::parsing::inline_scope::post_list_subtree_has_content(
+                color_info.elements_ref(),
+            );
+        let current = parser.current();
+        let rest = parser.remaining();
+        let (tail_marker, blank_companion) = if post_has_content {
+            match classify_tail_gap(current, rest, &["span", "size", "a"]) {
+                // Blank gap with post-list content: fr73 stamps no stopped
+                // tail (blank tails only stamp the span family), but the
+                // blank companion still records the gap for the sptail
+                // bare/wrap verdict below.
+                Some(SpanListCloseTail::Blank) => (
+                    None,
+                    Some(crate::tree::WIKIDOT_UNDERSTRIKE_LIST_CLOSE_TAIL_BLANK_MARKER),
+                ),
+                Some(tail) => (Some(understrike_tail_marker(tail)), None),
+                // Unclassifiable gap with post-list content: the fold
+                // fallback. A blank gap additionally carries the blank
+                // companion (sptail: it bares a following second-list tail
+                // and wraps a following content paragraph).
+                None => (
+                    Some(crate::tree::WIKIDOT_UNDERSTRIKE_LIST_CLOSE_TAIL_FOLD_MARKER),
+                    gap_has_blank(current, rest).then_some(
+                        crate::tree::WIKIDOT_UNDERSTRIKE_LIST_CLOSE_TAIL_BLANK_MARKER,
+                    ),
+                ),
+            }
+        } else {
+            (
+                classify_tail_gap(current, rest, &["span", "size", "a"]).and_then(
+                    |tail| {
+                        if matches!(tail, SpanListCloseTail::Blank) {
+                            None
+                        } else {
+                            Some(understrike_tail_marker(tail))
+                        }
+                    },
+                ),
+                None,
+            )
+        };
+        if let Some(attrs) = find_color_stop_at_list_attrs_mut(&mut elements) {
+            attrs.insert(
+                crate::tree::WIKIDOT_FORMAT_STOPS_AT_LIST_MARKER,
+                Cow::Borrowed(""),
+            );
+            if let Some(marker) = tail_marker {
+                stamp_tail_marker(parser, attrs, marker);
+            }
+            if let Some(marker) = blank_companion {
+                attrs.insert(marker, Cow::Borrowed(""));
+            }
+        }
+        return elements;
+    }
+
+    let Some(container) = find_stop_at_list_container(&elements) else {
+        return elements;
+    };
+    // Bold/italics pairs do not carry their styling across an explicit
+    // list inside an anchor body on live (li items and the post segment
+    // render unstyled; the pre segment keeps styling): the pair forms a
+    // stopped pair there, unlike in span/size/free scopes where it crosses
+    // normally. Superscript/subscript/monospace behave the same way in an
+    // anchor body (probed live: muse-probe-anc72-*-cont/multi/fold/nopost —
+    // items unstyled, markers consumed, bare/content/nothing tails),
+    // while they cross normally in span/size/free scopes.
+    if !match container.ctype() {
+        ContainerType::Underline | ContainerType::Strikethrough => true,
+        ContainerType::Bold
+        | ContainerType::Italics
+        | ContainerType::Superscript
+        | ContainerType::Subscript
+        | ContainerType::Monospace => in_anchor,
+        _ => false,
+    } {
+        return elements;
+    }
+    // A list nested inside an inner format pair (the nested stopped-pair
+    // shapes, e.g. `__**[[ul]]...**__`) crosses the outer pair too; the
+    // child segmentation pass at lowering turns it into a direct child
+    // before the stopped-pair path runs. The rule-exit check must see past
+    // direct children.
+    let crosses_list = container
+        .elements()
+        .iter()
+        .any(crate::parsing::inline_scope::subtree_contains_explicit_list);
+    if !crosses_list
+        || container.elements().iter().any(|child| {
+            crate::parsing::inline_scope::subtree_contains_flow_block(child)
+                || crate::parsing::inline_scope::subtree_contains_native_list(child)
+        })
+    {
+        return elements;
+    }
+    // Content between the last explicit list (at any depth) and the pair's
+    // closer; a nested inner pair's list is out of direct-children reach,
+    // so the post-list check looks past direct children.
+    let post_has_content =
+        crate::parsing::inline_scope::post_list_subtree_has_content(container.elements());
+    let current = parser.current();
+    let rest = parser.remaining();
+    // The gap after the stopped pair's closer: a line break then the
+    // enclosing scope's close block yields a bare break tail; adjacent
+    // content yields a bare content tail; content after one line break
+    // yields a bare tail with an inserted leading break. Markers of
+    // enclosing crossing formats (e.g. `**__` after the list in a nested
+    // stopped pair) sit between this closer and the gap, so they are
+    // transparent to the classification. A content-bearing post-list
+    // segment (the fold shape) stamps the same classification; the FOLD
+    // marker is the fallback for a close marker followed by something
+    // other than a newline+scope-close or adjacent text (e.g.
+    // `b__[[/span]]` on one line): live closes the enclosing scope right
+    // after the post-list segment.
+    let (tail_marker, blank_companion) = if post_has_content {
+        match classify_tail_gap(current, rest, &["span", "size", "a"]) {
+            // Blank gap with post-list content: fr73 stamps no stopped
+            // tail (blank tails only stamp the span family), but the
+            // blank companion still records the gap for the sptail
+            // bare/wrap verdict below.
+            Some(SpanListCloseTail::Blank) => (
+                None,
+                Some(crate::tree::WIKIDOT_UNDERSTRIKE_LIST_CLOSE_TAIL_BLANK_MARKER),
+            ),
+            Some(tail) => (Some(understrike_tail_marker(tail)), None),
+            // Unclassifiable gap with post-list content: the fold fallback.
+            // A blank gap additionally carries the blank companion (sptail:
+            // it bares a following second-list tail and wraps a following
+            // content paragraph).
+            None => (
+                Some(crate::tree::WIKIDOT_UNDERSTRIKE_LIST_CLOSE_TAIL_FOLD_MARKER),
+                gap_has_blank(current, rest).then_some(
+                    crate::tree::WIKIDOT_UNDERSTRIKE_LIST_CLOSE_TAIL_BLANK_MARKER,
+                ),
+            ),
+        }
+    } else {
+        (
+            classify_tail_gap(current, rest, &["span", "size", "a"]).and_then(|tail| {
+                if matches!(tail, SpanListCloseTail::Blank) {
+                    None
+                } else {
+                    Some(understrike_tail_marker(tail))
+                }
+            }),
+            None,
+        )
+    };
+    let Some(container) = find_stop_at_list_container_mut(&mut elements) else {
+        unreachable!("stop-at-list candidate checked above")
+    };
+    container.attributes_mut().insert(
+        crate::tree::WIKIDOT_FORMAT_STOPS_AT_LIST_MARKER,
+        Cow::Borrowed(""),
+    );
+    if let Some(marker) = tail_marker {
+        stamp_tail_marker(parser, container.attributes_mut(), marker);
+    }
+    if let Some(marker) = blank_companion {
+        container.attributes_mut().insert(marker, Cow::Borrowed(""));
+    }
+    elements
+}
+
+struct ColorStopInfo<'e, 't> {
+    elements: &'e [Element<'t>],
+}
+
+impl<'e, 't> ColorStopInfo<'e, 't> {
+    fn elements_ref(&self) -> &'e [Element<'t>] {
+        self.elements
+    }
+}
+
+fn find_color_stop_at_list_info<'e, 't>(
+    elements: &'e Elements<'t>,
+    _in_anchor: bool,
+) -> Option<ColorStopInfo<'e, 't>> {
+    fn candidate<'c, 't>(element: &'c Element<'t>) -> Option<ColorStopInfo<'c, 't>> {
+        let Element::Color { elements, .. } = element else {
+            return None;
+        };
+        Some(ColorStopInfo { elements })
+    }
+    match elements {
+        Elements::Single(element) => candidate(element),
+        Elements::Multiple(vec) => vec.iter().find_map(candidate),
+        Elements::None => None,
+    }
+}
+
+fn find_color_stop_at_list_attrs_mut<'e, 't>(
+    elements: &'e mut Elements<'t>,
+) -> Option<&'e mut AttributeMap<'t>> {
+    fn candidate_mut<'c, 't>(
+        element: &'c mut Element<'t>,
+    ) -> Option<&'c mut AttributeMap<'t>> {
+        let Element::Color { attributes, .. } = element else {
+            return None;
+        };
+        Some(attributes)
+    }
+    match elements {
+        Elements::Single(element) => candidate_mut(element),
+        Elements::Multiple(vec) => vec.iter_mut().find_map(candidate_mut),
+        Elements::None => None,
+    }
+}
+
+/// The format container a stop-at-list verdict applies to, whether it came
+/// back from the collector as a single element or in a Multiple alongside
+/// line-close artefacts (line-start `**` split-close leftovers). Only the
+/// format kinds eligible for the stop are considered.
+fn find_stop_at_list_container<'e, 't>(
+    elements: &'e Elements<'t>,
+) -> Option<&'e Container<'t>> {
+    fn candidate<'c, 't>(element: &'c Element<'t>) -> Option<&'c Container<'t>> {
+        let Element::Container(container) = element else {
+            return None;
+        };
+        matches!(
+            container.ctype(),
+            ContainerType::Underline
+                | ContainerType::Strikethrough
+                | ContainerType::Bold
+                | ContainerType::Italics
+                | ContainerType::Superscript
+                | ContainerType::Subscript
+                | ContainerType::Monospace
+        )
+        .then_some(container)
+    }
+    match elements {
+        Elements::Single(element) => candidate(element),
+        Elements::Multiple(vec) => vec.iter().find_map(candidate),
+        Elements::None => None,
+    }
+}
+
+fn find_stop_at_list_container_mut<'e, 't>(
+    elements: &'e mut Elements<'t>,
+) -> Option<&'e mut Container<'t>> {
+    fn candidate_mut<'c, 't>(
+        element: &'c mut Element<'t>,
+    ) -> Option<&'c mut Container<'t>> {
+        let Element::Container(container) = element else {
+            return None;
+        };
+        matches!(
+            container.ctype(),
+            ContainerType::Underline
+                | ContainerType::Strikethrough
+                | ContainerType::Bold
+                | ContainerType::Italics
+                | ContainerType::Superscript
+                | ContainerType::Subscript
+                | ContainerType::Monospace
+        )
+        .then_some(container)
+    }
+    match elements {
+        Elements::Single(element) => candidate_mut(element),
+        Elements::Multiple(vec) => vec.iter_mut().find_map(candidate_mut),
+        Elements::None => None,
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::data::PageInfo;
+    use crate::layout::Layout;
+    use crate::render::{Render, html::HtmlRender};
+    use crate::settings::{WikitextMode, WikitextSettings};
+
+    #[test]
+    fn unmatched_bold_does_not_swallow_the_next_block() {
+        let page_info = PageInfo::dummy();
+        let settings = WikitextSettings::from_mode(WikitextMode::Page, Layout::Wikidot);
+        let tokenization = crate::tokenize(concat!(
+            "[[collapsible show=\"A\" hide=\"A\"]]
+",
+            "**C6：**嗯，好的***的不得了。
+",
+            "[[/collapsible]]
+",
+            "[[collapsible show=\"B\" hide=\"B\"]]
+",
+            "**C6：**又是你，我真***的开心。
+",
+            "[[/collapsible]]
+",
+        ));
+        let (tree, _errors) = crate::parse(&tokenization, &page_info, &settings).into();
+        let html = HtmlRender.render(&tree, &page_info, &settings).body;
+        assert_eq!(
+            html.matches("collapsible-block-folded").count(),
+            2,
+            "{html}"
+        );
+        assert_eq!(html.matches("<strong>").count(), 2, "{html}");
+    }
+
+    #[test]
+    fn split_bold_opener_with_kept_segment_body_stays_literal() {
+        let page_info = PageInfo::dummy();
+        let settings = WikitextSettings::from_mode(WikitextMode::Page, Layout::Wikidot);
+        let tokenization = crate::tokenize("*[[iftags +tale]]YES[[/iftags]]*word**");
+        let (tree, _errors) = crate::parse(&tokenization, &page_info, &settings).into();
+        let html = HtmlRender.render(&tree, &page_info, &settings).body;
+        assert_eq!(html, "<p>*YES*word**</p>");
+    }
+
+    #[test]
+    fn wikidot_bold_comment_only_line_keeps_one_line_break() {
+        let page_info = PageInfo::dummy();
+        let settings = WikitextSettings::from_mode(WikitextMode::Page, Layout::Wikidot);
+        let tokenization = crate::tokenize("**a\n[!-- c --]\nb**");
+        let (tree, _errors) = crate::parse(&tokenization, &page_info, &settings).into();
+        let html = HtmlRender.render(&tree, &page_info, &settings).body;
+        assert_eq!(html, "<p><strong>a<br>\nb</strong></p>");
+    }
+
+    #[test]
+    fn wikidot_multiline_inline_formatting_matches_live_structure() {
+        let page_info = PageInfo::dummy();
+        let settings = WikitextSettings::from_mode(WikitextMode::Page, Layout::Wikidot);
+        let tokenization = crate::tokenize(concat!(
+            "**a\nb**\n\n",
+            "//a\nb//\n\n",
+            "--a\nb--\n\n",
+            "^^a\nb^^\n\n",
+            ",,a\nb,,\n\n",
+            "{{a\nb}}\n\n",
+            "##c00|a\nb##\n\n",
+            "__a\nb__\n\n",
+            "--a\n--\n\n",
+            "--a \nb--\n\n",
+            "--a\nb --\n\n",
+            "**a\n[!-- c --]\nb**\n",
+        ));
+        let (tree, _errors) = crate::parse(&tokenization, &page_info, &settings).into();
+        let html = HtmlRender.render(&tree, &page_info, &settings).body;
+        assert_eq!(
+            html,
+            concat!(
+                "<p><strong>a<br>\nb</strong></p>",
+                "<p><em>a<br>\nb</em></p>",
+                "<p><span style=\"text-decoration: line-through;\">a<br>\nb</span></p>",
+                "<p><sup>a<br>\nb</sup></p>",
+                "<p><sub>a<br>\nb</sub></p>",
+                "<p><tt>a<br>\nb</tt></p>",
+                "<p><span style=\"color: #c00\">a<br>\nb</span></p>",
+                "<p><span style=\"text-decoration: underline;\">a<br>\nb</span></p>",
+                "<p><span style=\"text-decoration: line-through;\">a<br></span></p>",
+                "<p><span style=\"text-decoration: line-through;\">a<br>\nb</span></p>",
+                "<p>\u{2014}a<br>\nb \u{2014}</p>",
+                "<p><strong>a<br>\nb</strong></p>",
+            ),
+        );
+    }
+
+    #[test]
+    fn bold_across_a_note_stays_a_paragraph_of_literals() {
+        let page_info = PageInfo::dummy();
+        let settings = WikitextSettings::from_mode(WikitextMode::Page, Layout::Wikidot);
+        let tokenization = crate::tokenize(concat!(
+            "**||[[=]]\n",
+            "[[note]]\n",
+            "----\n",
+            "[[/note]]\n",
+            "[[/=]]||**",
+        ));
+        let (tree, _errors) = crate::parse(&tokenization, &page_info, &settings).into();
+        let html = HtmlRender.render(&tree, &page_info, &settings).body;
+        assert!(
+            html.starts_with("<p>**||[[=]]</p><div class=\"wiki-note\">"),
+            "{html}",
+        );
+        assert!(html.contains("</div><br>\n[[/=]]||**"), "{html}");
+        assert!(!html.contains("<strong>"), "{html}");
+    }
+}

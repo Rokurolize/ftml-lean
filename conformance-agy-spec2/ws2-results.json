@@ -1,0 +1,370 @@
+{
+    "1_typography_dash": {
+        "full_pipeline": "<p>a &#8212;- b<\/p>\n\n<p>a &#8212; b<\/p>\n\n",
+        "direct_renderer_dash3": "&#8212;",
+        "direct_renderer_dash2": "&#8212;",
+        "warnings": [
+            {
+                "errno": 8192,
+                "errstr": "Creation of dynamic property Text_Wiki_Parse_Url::$regexLiberal is deprecated",
+                "file": "Url.php",
+                "line": 129
+            },
+            {
+                "errno": 8192,
+                "errstr": "Creation of dynamic property Text_Wiki_Render_Xhtml_Embed::$_patterns is deprecated",
+                "file": "Embed.php",
+                "line": 49
+            },
+            {
+                "errno": 8192,
+                "errstr": "Function utf8_encode() is deprecated since 8.2, visit the php.net documentation for various alternatives",
+                "file": "Wiki.php",
+                "line": 963
+            }
+        ]
+    },
+    "2_render_include_missing": {
+        "token_missing_local": "<div class=\"error-block\">\n<p>Included page &quot;foo&quot; does not exist (<a href=\"\/foo\/edit\/true\">create it now<\/a>)<\/p>\n<\/div>",
+        "token_missing_site": "<div class=\"error-block\">\n<p>Included page &quot;foo&quot; does not exist (<a href=\"https:\/\/bar.wikidot.com\/foo\/edit\/true\">create it now<\/a>)<\/p>\n<\/div>",
+        "token_missing_escape": "<div class=\"error-block\">\n<p>Included page &quot;a&lt;b&gt;&quot;c'd&quot; does not exist (<a href=\"\/a&lt;b&gt;&quot;c'd\/edit\/true\">create it now<\/a>)<\/p>\n<\/div>",
+        "full_pipeline_nonexistent": "<div class=\"error-block\"><p>Included page &quot;nonexistent-page-xyz&quot; does not exist (<a href=\"\/nonexistent-page-xyz\/edit\/true\">create it now<\/a>)<\/p>\n\n<\/div>",
+        "warnings": [
+            {
+                "errno": 8192,
+                "errstr": "Creation of dynamic property Text_Wiki_Parse_Url::$regexLiberal is deprecated",
+                "file": "Url.php",
+                "line": 129
+            },
+            {
+                "errno": 2,
+                "errstr": "Text_Wiki_Parse_Url::processDescr(): Argument #1 ($matches) must be passed by reference, value given",
+                "file": "Url.php",
+                "line": 158
+            },
+            {
+                "errno": 8192,
+                "errstr": "Creation of dynamic property Text_Wiki_Render_Xhtml_Embed::$_patterns is deprecated",
+                "file": "Embed.php",
+                "line": 49
+            },
+            {
+                "errno": 8192,
+                "errstr": "Function utf8_encode() is deprecated since 8.2, visit the php.net documentation for various alternatives",
+                "file": "Wiki.php",
+                "line": 963
+            }
+        ]
+    },
+    "3_delimiter_xff": {
+        "render_a_xff_b_hex": "3c703e61ff623c2f703e0a0a",
+        "render_a_xff_b_raw": "<p>a\ufffdb<\/p>\n\n",
+        "parse_tokens": {
+            "51": [
+                "Delimiter",
+                {
+                    "text": "\ufffd"
+                }
+            ],
+            "52": [
+                "Paragraph",
+                {
+                    "type": "start"
+                }
+            ],
+            "53": [
+                "Paragraph",
+                {
+                    "type": "end"
+                }
+            ],
+            "54": [
+                "Typography",
+                {
+                    "char": "``"
+                }
+            ],
+            "55": [
+                "Typography",
+                {
+                    "char": "''"
+                }
+            ],
+            "56": [
+                "Typography",
+                {
+                    "char": ",,"
+                }
+            ],
+            "57": [
+                "Typography",
+                {
+                    "char": "''"
+                }
+            ],
+            "58": [
+                "Typography",
+                {
+                    "char": "`"
+                }
+            ],
+            "59": [
+                "Typography",
+                {
+                    "char": "'"
+                }
+            ],
+            "60": [
+                "Typography",
+                {
+                    "char": "<<"
+                }
+            ],
+            "61": [
+                "Typography",
+                {
+                    "char": ">>"
+                }
+            ],
+            "62": [
+                "Typography",
+                {
+                    "char": " "
+                }
+            ],
+            "63": [
+                "Typography",
+                {
+                    "char": " "
+                }
+            ],
+            "64": [
+                "Typography",
+                {
+                    "char": "..."
+                }
+            ],
+            "65": [
+                "Typography",
+                {
+                    "char": "--"
+                }
+            ],
+            "66": [
+                "Typography",
+                {
+                    "char": "---"
+                }
+            ]
+        },
+        "render_fake_tok0_hex": "3c703e3c7374726f6e673e61ff30ff623c2f7374726f6e673e3c2f703e0a0a",
+        "render_fake_tok0_raw": "<p><strong>a\ufffd0\ufffdb<\/strong><\/p>\n\n",
+        "warnings": [
+            {
+                "errno": 8192,
+                "errstr": "Creation of dynamic property Text_Wiki_Parse_Url::$regexLiberal is deprecated",
+                "file": "Url.php",
+                "line": 129
+            },
+            {
+                "errno": 8192,
+                "errstr": "Creation of dynamic property Text_Wiki_Render_Xhtml_Embed::$_patterns is deprecated",
+                "file": "Embed.php",
+                "line": 49
+            },
+            {
+                "errno": 8192,
+                "errstr": "Function utf8_encode() is deprecated since 8.2, visit the php.net documentation for various alternatives",
+                "file": "Wiki.php",
+                "line": 963
+            },
+            {
+                "errno": 8192,
+                "errstr": "Creation of dynamic property Text_Wiki_Parse_Url::$regexLiberal is deprecated",
+                "file": "Url.php",
+                "line": 129
+            },
+            {
+                "errno": 8192,
+                "errstr": "Creation of dynamic property Text_Wiki_Parse_Url::$regexLiberal is deprecated",
+                "file": "Url.php",
+                "line": 129
+            },
+            {
+                "errno": 8192,
+                "errstr": "Creation of dynamic property Text_Wiki_Render_Xhtml_Embed::$_patterns is deprecated",
+                "file": "Embed.php",
+                "line": 49
+            },
+            {
+                "errno": 8192,
+                "errstr": "Function utf8_encode() is deprecated since 8.2, visit the php.net documentation for various alternatives",
+                "file": "Wiki.php",
+                "line": 963
+            }
+        ]
+    },
+    "4_footnote_dead_reads": {
+        "full_pipeline": "<p>text<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1<\/a><\/sup><\/p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes<\/div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1<\/a>. body<\/div><\/div>",
+        "warnings": [
+            {
+                "errno": 2,
+                "errstr": "Undefined array key 2",
+                "file": "Footnoteblock.php",
+                "line": 86
+            },
+            {
+                "errno": 8192,
+                "errstr": "trim(): Passing null to parameter #1 ($string) of type string is deprecated",
+                "file": "Parse.php",
+                "line": 226
+            },
+            {
+                "errno": 2,
+                "errstr": "Undefined array key \"title\"",
+                "file": "Footnoteblock.php",
+                "line": 87
+            },
+            {
+                "errno": 8192,
+                "errstr": "Creation of dynamic property Text_Wiki_Parse_Url::$regexLiberal is deprecated",
+                "file": "Url.php",
+                "line": 129
+            },
+            {
+                "errno": 8192,
+                "errstr": "Creation of dynamic property Text_Wiki_Render_Xhtml_Embed::$_patterns is deprecated",
+                "file": "Embed.php",
+                "line": 49
+            },
+            {
+                "errno": 2,
+                "errstr": "Undefined array key \"label\"",
+                "file": "Footnote.php",
+                "line": 40
+            },
+            {
+                "errno": 8192,
+                "errstr": "Function utf8_encode() is deprecated since 8.2, visit the php.net documentation for various alternatives",
+                "file": "Wiki.php",
+                "line": 963
+            }
+        ]
+    },
+    "5_heading_collapse": {
+        "startContent": "\n<div style=\"padding: 0px; margin: 0px; border: none;\" id=\"toc0__content\">\n",
+        "endContent": "\n<\/div>\n",
+        "start": "\n<h1 id=\"toc0\"><span>",
+        "warnings": []
+    },
+    "6_freelink_site_branch": {
+        "output": null,
+        "exception": "Error: Class \"GlobalProperties\" not found",
+        "warnings": []
+    },
+    "7_embed_multi_pattern_bug": {
+        "embed_conf_files": [
+            "default.php"
+        ],
+        "simulated_buggy_merge_count": 1,
+        "simulated_buggy_merge_values": [
+            "\/bar\/"
+        ],
+        "expected_merge_count": 2,
+        "warnings": []
+    },
+    "8_social_bookmarks": {
+        "full_pipeline_hex": "3c703ec3be6d6f64756c65202671756f743b77696b692f736f6369616c2f536f6369616c426f6f6b6d61726b734d6f64756c652671756f743b2073697465732533442532326469676725324372617773756761722532437961686f6f6d797765622532434469676725323220c3be3c2f703e0a0a",
+        "full_pipeline": "<p>\u00femodule &quot;wiki\/social\/SocialBookmarksModule&quot; sites%3D%22digg%2Crawsugar%2Cyahoomyweb%2CDigg%22 \u00fe<\/p>\n\n",
+        "render_all_contains_TITTLE": true,
+        "render_all_contains_blank_yahoo_param": false,
+        "render_rawsugar_yahoo": "<a href=\"http:\/\/www.rawsugar.com\/tagger\/?turl=http%3A%2F%2Fexample.wikidot.com%2Fsample-page&amp;tttl=TITTLE\" style=\"margin: 0 2px\"><img src=\"\/common--images\/social\/rawsugar.png\" alt=\"RawSugar\"\/><\/a><a href=\"http:\/\/myweb2.search.yahoo.com\/myresults\/bookmarklet?u=http%3A%2F%2Fexample.wikidot.com%2Fsample-page&amp;=Sample+Title\" style=\"margin: 0 2px\"><img src=\"\/common--images\/social\/yahoomyweb.png\" alt=\"YahooMyWeb\"\/><\/a>",
+        "render_Digg_uppercase": "<a href=\"\" style=\"margin: 0 2px\"><img src=\"\/common--images\/social\/\" alt=\"\"\/><\/a>",
+        "warnings": [
+            {
+                "errno": 8192,
+                "errstr": "Function utf8_encode() is deprecated since 8.2, visit the php.net documentation for various alternatives",
+                "file": "Social.php",
+                "line": 49
+            },
+            {
+                "errno": 8192,
+                "errstr": "Creation of dynamic property Text_Wiki_Parse_Url::$regexLiberal is deprecated",
+                "file": "Url.php",
+                "line": 129
+            },
+            {
+                "errno": 8192,
+                "errstr": "Creation of dynamic property Text_Wiki_Render_Xhtml_Embed::$_patterns is deprecated",
+                "file": "Embed.php",
+                "line": 49
+            },
+            {
+                "errno": 8192,
+                "errstr": "Function utf8_encode() is deprecated since 8.2, visit the php.net documentation for various alternatives",
+                "file": "Wiki.php",
+                "line": 963
+            },
+            {
+                "errno": 2,
+                "errstr": "Undefined array key \"Digg\"",
+                "file": "Social.php",
+                "line": 157
+            },
+            {
+                "errno": 2,
+                "errstr": "Trying to access array offset on null",
+                "file": "Social.php",
+                "line": 172
+            },
+            {
+                "errno": 8192,
+                "errstr": "str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated",
+                "file": "Social.php",
+                "line": 173
+            },
+            {
+                "errno": 2,
+                "errstr": "Trying to access array offset on null",
+                "file": "Social.php",
+                "line": 177
+            },
+            {
+                "errno": 2,
+                "errstr": "Trying to access array offset on null",
+                "file": "Social.php",
+                "line": 177
+            }
+        ]
+    },
+    "9_parse_url_matches6": {
+        "match_count": 1,
+        "group_keys": [
+            0,
+            1,
+            2,
+            3,
+            4
+        ],
+        "group_3": "http:\/\/example.com",
+        "group_4": "",
+        "group_6_isset": false,
+        "warnings": [
+            {
+                "errno": 8192,
+                "errstr": "Creation of dynamic property Text_Wiki_Parse_Url::$regexLiberal is deprecated",
+                "file": "Url.php",
+                "line": 129
+            }
+        ]
+    },
+    "10_table_and_url_unreachable": {
+        "table_caption_start": "<caption>\n",
+        "table_caption_end": "<\/caption>\n",
+        "table_cell_rowspan2": "<td rowspan=\"2\">",
+        "url_img_auto": "<img src=\"http:\/\/example.com\/a.png\" alt=\"a.png\" \/>",
+        "url_img_apos_stale_htmlchars_check": "<img src=\"http:\/\/example.com\/a&#039;b.png\" alt=\"a&amp;#039;b.png\" \/>",
+        "url_footnote": "<sup><a href=\"http:\/\/example.com\">1<\/a><\/sup>",
+        "warnings": []
+    }
+}

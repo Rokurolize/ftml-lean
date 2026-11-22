@@ -1,0 +1,318 @@
+{"id": "cov-20261122-brFire-00", "class": "brFire", "source": "a _\nb"}
+{"id": "cov-20261122-brFire-01", "class": "brFire", "source": "a  _\nb"}
+{"id": "cov-20261122-brFire-02", "class": "brFire", "source": "a _\nb"}
+{"id": "cov-20261122-brFire-03", "class": "brFire", "source": "a _\nb"}
+{"id": "cov-20261122-brFire-04", "class": "brFire", "source": "xy _\nhello"}
+{"id": "cov-20261122-brFire-05", "class": "brFire", "source": "a _\nb"}
+{"id": "cov-20261122-brLiteral-00", "class": "brLiteral", "source": "a _ b"}
+{"id": "cov-20261122-brLiteral-01", "class": "brLiteral", "source": "a  _ \nb"}
+{"id": "cov-20261122-brLiteral-02", "class": "brLiteral", "source": "a  _ \nb"}
+{"id": "cov-20261122-brLiteral-03", "class": "brLiteral", "source": "a  _ \nb"}
+{"id": "cov-20261122-brLiteral-04", "class": "brLiteral", "source": "a _ b"}
+{"id": "cov-20261122-brLiteral-05", "class": "brLiteral", "source": "a  _ \nb"}
+{"id": "cov-20261122-cfBoth-00", "class": "cfBoth", "source": "~~~~~~~~\ny"}
+{"id": "cov-20261122-cfBoth-01", "class": "cfBoth", "source": "~~~~~~\ny"}
+{"id": "cov-20261122-cfBoth-02", "class": "cfBoth", "source": "~~~~~~~~\n\nz"}
+{"id": "cov-20261122-cfBoth-03", "class": "cfBoth", "source": "x\n~~~~~~~"}
+{"id": "cov-20261122-cfBoth-04", "class": "cfBoth", "source": "~~~~~~~~\n\nz"}
+{"id": "cov-20261122-cfBoth-05", "class": "cfBoth", "source": "~~~~~"}
+{"id": "cov-20261122-cfDoubleSide-00", "class": "cfDoubleSide", "source": "~~~~~~~~>>\ny"}
+{"id": "cov-20261122-cfDoubleSide-01", "class": "cfDoubleSide", "source": "~~~~~~~<<"}
+{"id": "cov-20261122-cfDoubleSide-02", "class": "cfDoubleSide", "source": "~~~~~~~>>"}
+{"id": "cov-20261122-cfDoubleSide-03", "class": "cfDoubleSide", "source": "~~~~~~~<<"}
+{"id": "cov-20261122-cfDoubleSide-04", "class": "cfDoubleSide", "source": "x\n~~~~~~<<\ny"}
+{"id": "cov-20261122-cfDoubleSide-05", "class": "cfDoubleSide", "source": "~~~~~~<<"}
+{"id": "cov-20261122-cfLeft-00", "class": "cfLeft", "source": "~~~~~<\ny"}
+{"id": "cov-20261122-cfLeft-01", "class": "cfLeft", "source": "~~~~~~~<\ny"}
+{"id": "cov-20261122-cfLeft-02", "class": "cfLeft", "source": "~~~~<"}
+{"id": "cov-20261122-cfLeft-03", "class": "cfLeft", "source": "~~~~~~~<"}
+{"id": "cov-20261122-cfLeft-04", "class": "cfLeft", "source": "x\n~~~~~~~<"}
+{"id": "cov-20261122-cfLeft-05", "class": "cfLeft", "source": "x\n~~~~~<\ny"}
+{"id": "cov-20261122-cfLiteral-00", "class": "cfLiteral", "source": "~~~\nx"}
+{"id": "cov-20261122-cfLiteral-01", "class": "cfLiteral", "source": "~~~\nx"}
+{"id": "cov-20261122-cfLiteral-02", "class": "cfLiteral", "source": "~~~\nx"}
+{"id": "cov-20261122-cfLiteral-03", "class": "cfLiteral", "source": "~~~~ x"}
+{"id": "cov-20261122-cfLiteral-04", "class": "cfLiteral", "source": "~~~~>\nx"}
+{"id": "cov-20261122-cfLiteral-05", "class": "cfLiteral", "source": "~~~~ x"}
+{"id": "cov-20261122-cfRight-00", "class": "cfRight", "source": "~~~~~~>"}
+{"id": "cov-20261122-cfRight-01", "class": "cfRight", "source": "~~~~~~~~>\ny"}
+{"id": "cov-20261122-cfRight-02", "class": "cfRight", "source": "~~~~>\ny"}
+{"id": "cov-20261122-cfRight-03", "class": "cfRight", "source": "~~~~>\ny"}
+{"id": "cov-20261122-cfRight-04", "class": "cfRight", "source": "~~~~~>\n\nz"}
+{"id": "cov-20261122-cfRight-05", "class": "cfRight", "source": "~~~~~~~>\n\nz"}
+{"id": "cov-20261122-clDivOpen-00", "class": "clDivOpen", "source": "a\\\n[[div]]\nb\n[[/div]]"}
+{"id": "cov-20261122-clDivOpen-01", "class": "clDivOpen", "source": "body\\\n[[div class=\"x\"]]\nzz\n[[/div]]"}
+{"id": "cov-20261122-clDivOpen-02", "class": "clDivOpen", "source": "a\\\n[[div]]\nb\n[[/div]]"}
+{"id": "cov-20261122-clDivOpen-03", "class": "clDivOpen", "source": "xy\\\n[[div class=\"x\"]]\nhello\n[[/div]]"}
+{"id": "cov-20261122-clDivOpen-04", "class": "clDivOpen", "source": "body\\\n[[div class=\"x\"]]\na\n[[/div]]"}
+{"id": "cov-20261122-clDivOpen-05", "class": "clDivOpen", "source": "body\\\n[[div class=\"x\"]]\nhello\n[[/div]]"}
+{"id": "cov-20261122-clIdentity-00", "class": "clIdentity", "source": "a\nb"}
+{"id": "cov-20261122-clIdentity-01", "class": "clIdentity", "source": "x\ny\nz"}
+{"id": "cov-20261122-clIdentity-02", "class": "clIdentity", "source": "a\nb"}
+{"id": "cov-20261122-clIdentity-03", "class": "clIdentity", "source": "x\ny\nz"}
+{"id": "cov-20261122-clIdentity-04", "class": "clIdentity", "source": "a\nb"}
+{"id": "cov-20261122-clIdentity-05", "class": "clIdentity", "source": "x\ny\nz"}
+{"id": "cov-20261122-clJoin-00", "class": "clJoin", "source": "a\\\nb\\\nc"}
+{"id": "cov-20261122-clJoin-01", "class": "clJoin", "source": "a\\\nb"}
+{"id": "cov-20261122-clJoin-02", "class": "clJoin", "source": "a\\\nb\\\nc"}
+{"id": "cov-20261122-clJoin-03", "class": "clJoin", "source": "zz\\\na"}
+{"id": "cov-20261122-clJoin-04", "class": "clJoin", "source": "a\\\nb\\\nc"}
+{"id": "cov-20261122-clJoin-05", "class": "clJoin", "source": "a\\\nb\\\nc"}
+{"id": "cov-20261122-clTokenized-00", "class": "clTokenized", "source": "[[code]]\na\\\na\n[[/code]]\ny"}
+{"id": "cov-20261122-clTokenized-01", "class": "clTokenized", "source": "[[code]]\na\\\na\n[[/code]]\ny"}
+{"id": "cov-20261122-clTokenized-02", "class": "clTokenized", "source": "[[code]]\na\\\nb\n[[/code]]\nx"}
+{"id": "cov-20261122-clTokenized-03", "class": "clTokenized", "source": "[[code]]\nq7\\\na\n[[/code]]\ny"}
+{"id": "cov-20261122-clTokenized-04", "class": "clTokenized", "source": "[[code]]\nq7\\\nhello\n[[/code]]\ny"}
+{"id": "cov-20261122-clTokenized-05", "class": "clTokenized", "source": "[[code]]\na\\\nb\n[[/code]]\nx"}
+{"id": "cov-20261122-ctFire-00", "class": "ctFire", "source": "x\n= q7 =\ny"}
+{"id": "cov-20261122-ctFire-01", "class": "ctFire", "source": "x\n= hello =\ny"}
+{"id": "cov-20261122-ctFire-02", "class": "ctFire", "source": "x\n= q7 =\ny"}
+{"id": "cov-20261122-ctFire-03", "class": "ctFire", "source": "= hello\nx"}
+{"id": "cov-20261122-ctFire-04", "class": "ctFire", "source": "= zz\n= zz\nx"}
+{"id": "cov-20261122-ctFire-05", "class": "ctFire", "source": "= zz\nx"}
+{"id": "cov-20261122-ctLiteral-00", "class": "ctLiteral", "source": "=a\nx"}
+{"id": "cov-20261122-ctLiteral-01", "class": "ctLiteral", "source": "=body\nx"}
+{"id": "cov-20261122-ctLiteral-02", "class": "ctLiteral", "source": "x = y"}
+{"id": "cov-20261122-ctLiteral-03", "class": "ctLiteral", "source": "== x"}
+{"id": "cov-20261122-ctLiteral-04", "class": "ctLiteral", "source": "== x"}
+{"id": "cov-20261122-ctLiteral-05", "class": "ctLiteral", "source": "== x"}
+{"id": "cov-20261122-daCenter-00", "class": "daCenter", "source": "[[=]]\nhello\n[[/=]]\ny"}
+{"id": "cov-20261122-daCenter-01", "class": "daCenter", "source": "[[=]]\nq7\n[[/=]]\ny"}
+{"id": "cov-20261122-daCenter-02", "class": "daCenter", "source": "[[=]]\nzz\n[[/=]]\ny"}
+{"id": "cov-20261122-daCenter-03", "class": "daCenter", "source": "[[=]]\nq7\n[[/=]]\ny"}
+{"id": "cov-20261122-daCenter-04", "class": "daCenter", "source": "[[=]]\nbody\n[[/=]]\ny"}
+{"id": "cov-20261122-daCenter-05", "class": "daCenter", "source": "[[=]]\na\n[[/=]]\ny"}
+{"id": "cov-20261122-daJustify-00", "class": "daJustify", "source": "[[==]]\na\n[[/==]]\ny"}
+{"id": "cov-20261122-daJustify-01", "class": "daJustify", "source": "[[==]]\nq7\n[[/==]]\ny"}
+{"id": "cov-20261122-daJustify-02", "class": "daJustify", "source": "[[==]]\nbody\n[[/==]]\ny"}
+{"id": "cov-20261122-daJustify-03", "class": "daJustify", "source": "[[==]]\nbody\n[[/==]]\ny"}
+{"id": "cov-20261122-daJustify-04", "class": "daJustify", "source": "[[==]]\nzz\n[[/==]]\ny"}
+{"id": "cov-20261122-daJustify-05", "class": "daJustify", "source": "[[==]]\nzz\n[[/==]]\ny"}
+{"id": "cov-20261122-daLeft-00", "class": "daLeft", "source": "[[<]]\nzz\n[[/<]]\ny"}
+{"id": "cov-20261122-daLeft-01", "class": "daLeft", "source": "[[<]]\nzz\n[[/<]]\ny"}
+{"id": "cov-20261122-daLeft-02", "class": "daLeft", "source": "[[<]]\nxy\n[[/<]]\ny"}
+{"id": "cov-20261122-daLeft-03", "class": "daLeft", "source": "[[<]]\nhello\n[[/<]]\ny"}
+{"id": "cov-20261122-daLeft-04", "class": "daLeft", "source": "[[<]]\na\n[[/<]]\ny"}
+{"id": "cov-20261122-daLeft-05", "class": "daLeft", "source": "[[<]]\nhello\n[[/<]]\ny"}
+{"id": "cov-20261122-daLiteral-00", "class": "daLiteral", "source": "[[=]]\nbody\ny"}
+{"id": "cov-20261122-daLiteral-01", "class": "daLiteral", "source": "[[=]]\na\ny"}
+{"id": "cov-20261122-daLiteral-02", "class": "daLiteral", "source": "[[=]]\na\ny"}
+{"id": "cov-20261122-daLiteral-03", "class": "daLiteral", "source": "[[=]]\nq7\ny"}
+{"id": "cov-20261122-daLiteral-04", "class": "daLiteral", "source": "[[=]]\nxy\ny"}
+{"id": "cov-20261122-daLiteral-05", "class": "daLiteral", "source": "[[==]]x[[/==]]"}
+{"id": "cov-20261122-daRepeat-00", "class": "daRepeat", "source": "[[=]]\n[[>]]\nq7\n[[/>]]\n[[/=]]\ny"}
+{"id": "cov-20261122-daRepeat-01", "class": "daRepeat", "source": "[[=]]\n[[>]]\nq7\n[[/>]]\n[[/=]]\ny"}
+{"id": "cov-20261122-daRepeat-02", "class": "daRepeat", "source": "[[=]]\n[[>]]\na\n[[/>]]\n[[/=]]\ny"}
+{"id": "cov-20261122-daRepeat-03", "class": "daRepeat", "source": "[[=]]\n[[>]]\nq7\n[[/>]]\n[[/=]]\ny"}
+{"id": "cov-20261122-daRepeat-04", "class": "daRepeat", "source": "[[=]]\n[[>]]\nzz\n[[/>]]\n[[/=]]\ny"}
+{"id": "cov-20261122-daRepeat-05", "class": "daRepeat", "source": "[[=]]\n[[>]]\na\n[[/>]]\n[[/=]]\ny"}
+{"id": "cov-20261122-daRight-00", "class": "daRight", "source": "[[>]]\nxy\n[[/>]]\ny"}
+{"id": "cov-20261122-daRight-01", "class": "daRight", "source": "[[>]]\nbody\n[[/>]]\ny"}
+{"id": "cov-20261122-daRight-02", "class": "daRight", "source": "[[>]]\nhello\n[[/>]]\ny"}
+{"id": "cov-20261122-daRight-03", "class": "daRight", "source": "[[>]]\nbody\n[[/>]]\ny"}
+{"id": "cov-20261122-daRight-04", "class": "daRight", "source": "[[>]]\nhello\n[[/>]]\ny"}
+{"id": "cov-20261122-daRight-05", "class": "daRight", "source": "[[>]]\nxy\n[[/>]]\ny"}
+{"id": "cov-20261122-dlAuthored-00", "class": "dlAuthored", "source": "ÿ\nx"}
+{"id": "cov-20261122-dlAuthored-01", "class": "dlAuthored", "source": "aÿb\nx"}
+{"id": "cov-20261122-dlAuthored-02", "class": "dlAuthored", "source": "aÿb\nx"}
+{"id": "cov-20261122-dlAuthored-03", "class": "dlAuthored", "source": "aÿb\nx"}
+{"id": "cov-20261122-dlAuthored-04", "class": "dlAuthored", "source": "ß\nx"}
+{"id": "cov-20261122-dlAuthored-05", "class": "dlAuthored", "source": "aÿb\nx"}
+{"id": "cov-20261122-dpJoin-00", "class": "dpJoin", "source": "[[/div]] [[divx]]\nx"}
+{"id": "cov-20261122-dpJoin-01", "class": "dpJoin", "source": "[[/DIV]] [[DIV]]\nx\n[[/DIV]]"}
+{"id": "cov-20261122-dpJoin-02", "class": "dpJoin", "source": "[[/div]]  \n [[divx]]\nx"}
+{"id": "cov-20261122-dpJoin-03", "class": "dpJoin", "source": "[[/div]] [[div]]\nx\n[[/div]]"}
+{"id": "cov-20261122-dpJoin-04", "class": "dpJoin", "source": "[[/div]]\n[[div]]\nx\n[[/div]]"}
+{"id": "cov-20261122-dpJoin-05", "class": "dpJoin", "source": "[[/DIV]]\n[[DIV]]\nx\n[[/DIV]]"}
+{"id": "cov-20261122-dpLiteral-00", "class": "dpLiteral", "source": "[[/div]]\nx\n[[div]]"}
+{"id": "cov-20261122-dpLiteral-01", "class": "dpLiteral", "source": "[[/div]]\nx\n[[div]]"}
+{"id": "cov-20261122-dpLiteral-02", "class": "dpLiteral", "source": "[[/div]] x [[div]]"}
+{"id": "cov-20261122-dpLiteral-03", "class": "dpLiteral", "source": "[[/div]] x [[div]]"}
+{"id": "cov-20261122-dpLiteral-04", "class": "dpLiteral", "source": "[[/div]] x [[div]]"}
+{"id": "cov-20261122-dpLiteral-05", "class": "dpLiteral", "source": "[[/div]] x [[div]]"}
+{"id": "cov-20261122-hzFire-00", "class": "hzFire", "source": "---------\n\nz"}
+{"id": "cov-20261122-hzFire-01", "class": "hzFire", "source": "-----\ny"}
+{"id": "cov-20261122-hzFire-02", "class": "hzFire", "source": "x\n------\ny"}
+{"id": "cov-20261122-hzFire-03", "class": "hzFire", "source": "x\n-------\n\nz"}
+{"id": "cov-20261122-hzFire-04", "class": "hzFire", "source": "------"}
+{"id": "cov-20261122-hzFire-05", "class": "hzFire", "source": "--------\ny"}
+{"id": "cov-20261122-hzLiteral-00", "class": "hzLiteral", "source": "---- \nx"}
+{"id": "cov-20261122-hzLiteral-01", "class": "hzLiteral", "source": "---\nx"}
+{"id": "cov-20261122-hzLiteral-02", "class": "hzLiteral", "source": "a----b"}
+{"id": "cov-20261122-hzLiteral-03", "class": "hzLiteral", "source": "---- \nx"}
+{"id": "cov-20261122-hzLiteral-04", "class": "hzLiteral", "source": "---\nx"}
+{"id": "cov-20261122-hzLiteral-05", "class": "hzLiteral", "source": "--x"}
+{"id": "cov-20261122-pfCompress-00", "class": "pfCompress", "source": "hello\n\n\n\n\n\nhello"}
+{"id": "cov-20261122-pfCompress-01", "class": "pfCompress", "source": "xy\n\n\n\n\n\n\na"}
+{"id": "cov-20261122-pfCompress-02", "class": "pfCompress", "source": "xy\n\n\n\nzz"}
+{"id": "cov-20261122-pfCompress-03", "class": "pfCompress", "source": "xy\n\n\n\n\n\n\nhello"}
+{"id": "cov-20261122-pfCompress-04", "class": "pfCompress", "source": "body\n\n\n\n\n\nhello"}
+{"id": "cov-20261122-pfCompress-05", "class": "pfCompress", "source": "xy\n\n\n\nq7"}
+{"id": "cov-20261122-pfCr-00", "class": "pfCr", "source": "a\rb"}
+{"id": "cov-20261122-pfCr-01", "class": "pfCr", "source": "p\r\rq"}
+{"id": "cov-20261122-pfCr-02", "class": "pfCr", "source": "x\ry\rz"}
+{"id": "cov-20261122-pfCr-03", "class": "pfCr", "source": "a\rb"}
+{"id": "cov-20261122-pfCr-04", "class": "pfCr", "source": "x\ry\rz"}
+{"id": "cov-20261122-pfCr-05", "class": "pfCr", "source": "p\r\rq"}
+{"id": "cov-20261122-pfCrlf-00", "class": "pfCrlf", "source": "x\r\ny\r\nz"}
+{"id": "cov-20261122-pfCrlf-01", "class": "pfCrlf", "source": "x\r\ny\r\nz"}
+{"id": "cov-20261122-pfCrlf-02", "class": "pfCrlf", "source": "a\r\nb"}
+{"id": "cov-20261122-pfCrlf-03", "class": "pfCrlf", "source": "x\r\ny\r\nz"}
+{"id": "cov-20261122-pfCrlf-04", "class": "pfCrlf", "source": "x\r\ny\r\nz"}
+{"id": "cov-20261122-pfCrlf-05", "class": "pfCrlf", "source": "p\r\n\r\nq"}
+{"id": "cov-20261122-pfPad-00", "class": "pfPad", "source": "a\nb"}
+{"id": "cov-20261122-pfPad-01", "class": "pfPad", "source": "x"}
+{"id": "cov-20261122-pfPad-02", "class": "pfPad", "source": "one line only"}
+{"id": "cov-20261122-pfPad-03", "class": "pfPad", "source": "one line only"}
+{"id": "cov-20261122-pfPad-04", "class": "pfPad", "source": "a\nb"}
+{"id": "cov-20261122-pfPad-05", "class": "pfPad", "source": "one line only"}
+{"id": "cov-20261122-pfTab-00", "class": "pfTab", "source": "[[code]]\nxy\ta\n[[/code]]\nx"}
+{"id": "cov-20261122-pfTab-01", "class": "pfTab", "source": "[[code]]\nhello\tzz\n[[/code]]\nx"}
+{"id": "cov-20261122-pfTab-02", "class": "pfTab", "source": "[[code]]\nhello\ta\n[[/code]]\nx"}
+{"id": "cov-20261122-pfTab-03", "class": "pfTab", "source": "[[code]]\n\tbody\t\n[[/code]]\nx"}
+{"id": "cov-20261122-pfTab-04", "class": "pfTab", "source": "[[code]]\nbody\tq7\n[[/code]]\nx"}
+{"id": "cov-20261122-pfTab-05", "class": "pfTab", "source": "[[code]]\nzz\thello\n[[/code]]\nx"}
+{"id": "cov-20261122-pfWsLine-00", "class": "pfWsLine", "source": "a\n   \nb"}
+{"id": "cov-20261122-pfWsLine-01", "class": "pfWsLine", "source": "a\n\t\nb"}
+{"id": "cov-20261122-pfWsLine-02", "class": "pfWsLine", "source": "a\n \n \nb"}
+{"id": "cov-20261122-pfWsLine-03", "class": "pfWsLine", "source": "a\n\t\nb"}
+{"id": "cov-20261122-pfWsLine-04", "class": "pfWsLine", "source": "a\n   \nb"}
+{"id": "cov-20261122-pfWsLine-05", "class": "pfWsLine", "source": "a\n \n \nb"}
+{"id": "cov-20261122-pgEmpty-00", "class": "pgEmpty", "source": "a\n\n\nb"}
+{"id": "cov-20261122-pgEmpty-01", "class": "pgEmpty", "source": "a\n  \nb"}
+{"id": "cov-20261122-pgEmpty-02", "class": "pgEmpty", "source": "a\n  \nb"}
+{"id": "cov-20261122-pgEmpty-03", "class": "pgEmpty", "source": "a\n\n\nb"}
+{"id": "cov-20261122-pgEmpty-04", "class": "pgEmpty", "source": "a\n\n\nb"}
+{"id": "cov-20261122-pgEmpty-05", "class": "pgEmpty", "source": "a\n\n\nb"}
+{"id": "cov-20261122-pgScoredAnchor-00", "class": "pgScoredAnchor", "source": "[[a_]]zz[[/a]]\nx"}
+{"id": "cov-20261122-pgScoredAnchor-01", "class": "pgScoredAnchor", "source": "[[a_]]q7[[/a]]\nx"}
+{"id": "cov-20261122-pgScoredAnchor-02", "class": "pgScoredAnchor", "source": "[[a_]]q7[[/a]]\nx"}
+{"id": "cov-20261122-pgScoredAnchor-03", "class": "pgScoredAnchor", "source": "[[a_]]hello[[/a]]\nx"}
+{"id": "cov-20261122-pgScoredAnchor-04", "class": "pgScoredAnchor", "source": "p\n[[a_]]xy[[/a]]\nq"}
+{"id": "cov-20261122-pgScoredAnchor-05", "class": "pgScoredAnchor", "source": "[[a_]]a[[/a]]\nx"}
+{"id": "cov-20261122-pgScoredSpan-00", "class": "pgScoredSpan", "source": "p\n[[span_]]a[[/span]]\nq"}
+{"id": "cov-20261122-pgScoredSpan-01", "class": "pgScoredSpan", "source": "[[span_]]hello[[/span]]\nx"}
+{"id": "cov-20261122-pgScoredSpan-02", "class": "pgScoredSpan", "source": "[[span_]]zz[[/span]]\nx"}
+{"id": "cov-20261122-pgScoredSpan-03", "class": "pgScoredSpan", "source": "[[span_]]xy[[/span]]\nx"}
+{"id": "cov-20261122-pgScoredSpan-04", "class": "pgScoredSpan", "source": "[[span_]]a[[/span]]\nx"}
+{"id": "cov-20261122-pgScoredSpan-05", "class": "pgScoredSpan", "source": "p\n[[span_]]body[[/span]]\nq"}
+{"id": "cov-20261122-pgSkip-00", "class": "pgSkip", "source": "====\nx"}
+{"id": "cov-20261122-pgSkip-01", "class": "pgSkip", "source": "===\nx"}
+{"id": "cov-20261122-pgSkip-02", "class": "pgSkip", "source": "===\nx"}
+{"id": "cov-20261122-pgSkip-03", "class": "pgSkip", "source": "===\nx"}
+{"id": "cov-20261122-pgSkip-04", "class": "pgSkip", "source": "====\nx"}
+{"id": "cov-20261122-pgSkip-05", "class": "pgSkip", "source": "====\nx"}
+{"id": "cov-20261122-pgWrap-00", "class": "pgWrap", "source": "a\n\nhello"}
+{"id": "cov-20261122-pgWrap-01", "class": "pgWrap", "source": "one paragraph\n\nanother"}
+{"id": "cov-20261122-pgWrap-02", "class": "pgWrap", "source": "zz\n\nxy"}
+{"id": "cov-20261122-pgWrap-03", "class": "pgWrap", "source": "zz\n\nhello"}
+{"id": "cov-20261122-pgWrap-04", "class": "pgWrap", "source": "one paragraph\n\nanother"}
+{"id": "cov-20261122-pgWrap-05", "class": "pgWrap", "source": "xy\n\nbody"}
+{"id": "cov-20261122-spFire-00", "class": "spFire", "source": "====\n\nz"}
+{"id": "cov-20261122-spFire-01", "class": "spFire", "source": "=======\n\nz"}
+{"id": "cov-20261122-spFire-02", "class": "spFire", "source": "====="}
+{"id": "cov-20261122-spFire-03", "class": "spFire", "source": "===="}
+{"id": "cov-20261122-spFire-04", "class": "spFire", "source": "======\ny"}
+{"id": "cov-20261122-spFire-05", "class": "spFire", "source": "====\n\nz"}
+{"id": "cov-20261122-spLiteral-00", "class": "spLiteral", "source": "==== ="}
+{"id": "cov-20261122-spLiteral-01", "class": "spLiteral", "source": "a====b"}
+{"id": "cov-20261122-spLiteral-02", "class": "spLiteral", "source": "a====b"}
+{"id": "cov-20261122-spLiteral-03", "class": "spLiteral", "source": "= x"}
+{"id": "cov-20261122-spLiteral-04", "class": "spLiteral", "source": "==== ="}
+{"id": "cov-20261122-spLiteral-05", "class": "spLiteral", "source": "==== ="}
+{"id": "cov-20261122-tnColorEnd-00", "class": "tnColorEnd", "source": "##red|x ##"}
+{"id": "cov-20261122-tnColorEnd-01", "class": "tnColorEnd", "source": "##blue|a  ##"}
+{"id": "cov-20261122-tnColorEnd-02", "class": "tnColorEnd", "source": "##red|x ##"}
+{"id": "cov-20261122-tnColorEnd-03", "class": "tnColorEnd", "source": "##blue|zz  ##"}
+{"id": "cov-20261122-tnColorEnd-04", "class": "tnColorEnd", "source": "##blue|body  ##"}
+{"id": "cov-20261122-tnColorEnd-05", "class": "tnColorEnd", "source": "##blue|q7  ##"}
+{"id": "cov-20261122-tnColorStart-00", "class": "tnColorStart", "source": "##blue|  q7##"}
+{"id": "cov-20261122-tnColorStart-01", "class": "tnColorStart", "source": "##red| x##"}
+{"id": "cov-20261122-tnColorStart-02", "class": "tnColorStart", "source": "##blue|  body##"}
+{"id": "cov-20261122-tnColorStart-03", "class": "tnColorStart", "source": "##red| x##"}
+{"id": "cov-20261122-tnColorStart-04", "class": "tnColorStart", "source": "##red| x##"}
+{"id": "cov-20261122-tnColorStart-05", "class": "tnColorStart", "source": "##blue|  body##"}
+{"id": "cov-20261122-tnEdgeTrim-00", "class": "tnEdgeTrim", "source": "[[code]]\na\n[[/code]]  _\nb"}
+{"id": "cov-20261122-tnEdgeTrim-01", "class": "tnEdgeTrim", "source": "a  _\nb"}
+{"id": "cov-20261122-tnEdgeTrim-02", "class": "tnEdgeTrim", "source": "##red| x ##"}
+{"id": "cov-20261122-tnEdgeTrim-03", "class": "tnEdgeTrim", "source": "a  _\nb"}
+{"id": "cov-20261122-tnEdgeTrim-04", "class": "tnEdgeTrim", "source": "##red| x ##"}
+{"id": "cov-20261122-tnEdgeTrim-05", "class": "tnEdgeTrim", "source": "[[code]]\na\n[[/code]]  _\nb"}
+{"id": "cov-20261122-tnFold-00", "class": "tnFold", "source": "a\tb"}
+{"id": "cov-20261122-tnFold-01", "class": "tnFold", "source": "a  b"}
+{"id": "cov-20261122-tnFold-02", "class": "tnFold", "source": "a   b"}
+{"id": "cov-20261122-tnFold-03", "class": "tnFold", "source": "a \t b"}
+{"id": "cov-20261122-tnFold-04", "class": "tnFold", "source": "a   b"}
+{"id": "cov-20261122-tnFold-05", "class": "tnFold", "source": "a\tb"}
+{"id": "cov-20261122-tnNewline-00", "class": "tnNewline", "source": "xy\nhello\nxy"}
+{"id": "cov-20261122-tnNewline-01", "class": "tnNewline", "source": "a\nb"}
+{"id": "cov-20261122-tnNewline-02", "class": "tnNewline", "source": "zz\nxy\nhello"}
+{"id": "cov-20261122-tnNewline-03", "class": "tnNewline", "source": "q7\nhello\nbody"}
+{"id": "cov-20261122-tnNewline-04", "class": "tnNewline", "source": "a\na\nhello"}
+{"id": "cov-20261122-tnNewline-05", "class": "tnNewline", "source": "a\na\nq7"}
+{"id": "cov-20261122-tnSecondFold-00", "class": "tnSecondFold", "source": "##red| x##"}
+{"id": "cov-20261122-tnSecondFold-01", "class": "tnSecondFold", "source": "##blue|  xy##"}
+{"id": "cov-20261122-tnSecondFold-02", "class": "tnSecondFold", "source": "##blue|  body##"}
+{"id": "cov-20261122-tnSecondFold-03", "class": "tnSecondFold", "source": "##blue|  q7##"}
+{"id": "cov-20261122-tnSecondFold-04", "class": "tnSecondFold", "source": "##red| x##"}
+{"id": "cov-20261122-tnSecondFold-05", "class": "tnSecondFold", "source": "##red| x##"}
+{"id": "cov-20261122-tyDash2-00", "class": "tyDash2", "source": "a--b"}
+{"id": "cov-20261122-tyDash2-01", "class": "tyDash2", "source": "a--b"}
+{"id": "cov-20261122-tyDash2-02", "class": "tyDash2", "source": "--"}
+{"id": "cov-20261122-tyDash2-03", "class": "tyDash2", "source": "a--b"}
+{"id": "cov-20261122-tyDash2-04", "class": "tyDash2", "source": "a--b"}
+{"id": "cov-20261122-tyDash2-05", "class": "tyDash2", "source": "--"}
+{"id": "cov-20261122-tyEllipsis-00", "class": "tyEllipsis", "source": "..."}
+{"id": "cov-20261122-tyEllipsis-01", "class": "tyEllipsis", "source": "..."}
+{"id": "cov-20261122-tyEllipsis-02", "class": "tyEllipsis", "source": "..."}
+{"id": "cov-20261122-tyEllipsis-03", "class": "tyEllipsis", "source": "..."}
+{"id": "cov-20261122-tyEllipsis-04", "class": "tyEllipsis", "source": "a...b"}
+{"id": "cov-20261122-tyEllipsis-05", "class": "tyEllipsis", "source": "a...b"}
+{"id": "cov-20261122-tyLeftAngle-00", "class": "tyLeftAngle", "source": "<< x <<"}
+{"id": "cov-20261122-tyLeftAngle-01", "class": "tyLeftAngle", "source": "<<"}
+{"id": "cov-20261122-tyLeftAngle-02", "class": "tyLeftAngle", "source": "<<"}
+{"id": "cov-20261122-tyLeftAngle-03", "class": "tyLeftAngle", "source": "<< x <<"}
+{"id": "cov-20261122-tyLeftAngle-04", "class": "tyLeftAngle", "source": "<< x <<"}
+{"id": "cov-20261122-tyLeftAngle-05", "class": "tyLeftAngle", "source": "<< x <<"}
+{"id": "cov-20261122-tyNone-00", "class": "tyNone", "source": "plain"}
+{"id": "cov-20261122-tyNone-01", "class": "tyNone", "source": "plain"}
+{"id": "cov-20261122-tyNone-02", "class": "tyNone", "source": "a b c"}
+{"id": "cov-20261122-tyNone-03", "class": "tyNone", "source": "no pattern here"}
+{"id": "cov-20261122-tyNone-04", "class": "tyNone", "source": "plain"}
+{"id": "cov-20261122-tyNone-05", "class": "tyNone", "source": "a b c"}
+{"id": "cov-20261122-tyNumSpace-00", "class": "tyNumSpace", "source": "3 4 5"}
+{"id": "cov-20261122-tyNumSpace-01", "class": "tyNumSpace", "source": "1 2"}
+{"id": "cov-20261122-tyNumSpace-02", "class": "tyNumSpace", "source": "1 2"}
+{"id": "cov-20261122-tyNumSpace-03", "class": "tyNumSpace", "source": "3 4 5"}
+{"id": "cov-20261122-tyNumSpace-04", "class": "tyNumSpace", "source": "1 2"}
+{"id": "cov-20261122-tyNumSpace-05", "class": "tyNumSpace", "source": "1 2"}
+{"id": "cov-20261122-tyQuoteComma-00", "class": "tyQuoteComma", "source": ",,q7''"}
+{"id": "cov-20261122-tyQuoteComma-01", "class": "tyQuoteComma", "source": "a ,,a'' b"}
+{"id": "cov-20261122-tyQuoteComma-02", "class": "tyQuoteComma", "source": ",,zz''"}
+{"id": "cov-20261122-tyQuoteComma-03", "class": "tyQuoteComma", "source": "a ,,a'' b"}
+{"id": "cov-20261122-tyQuoteComma-04", "class": "tyQuoteComma", "source": ",,q7''"}
+{"id": "cov-20261122-tyQuoteComma-05", "class": "tyQuoteComma", "source": ",,zz''"}
+{"id": "cov-20261122-tyQuoteDouble-00", "class": "tyQuoteDouble", "source": "``body''"}
+{"id": "cov-20261122-tyQuoteDouble-01", "class": "tyQuoteDouble", "source": "``q7''"}
+{"id": "cov-20261122-tyQuoteDouble-02", "class": "tyQuoteDouble", "source": "``zz''"}
+{"id": "cov-20261122-tyQuoteDouble-03", "class": "tyQuoteDouble", "source": "a ``q7'' b"}
+{"id": "cov-20261122-tyQuoteDouble-04", "class": "tyQuoteDouble", "source": "a ``body'' b"}
+{"id": "cov-20261122-tyQuoteDouble-05", "class": "tyQuoteDouble", "source": "``zz''"}
+{"id": "cov-20261122-tyQuoteSingle-00", "class": "tyQuoteSingle", "source": "a `body' b"}
+{"id": "cov-20261122-tyQuoteSingle-01", "class": "tyQuoteSingle", "source": "`hello'"}
+{"id": "cov-20261122-tyQuoteSingle-02", "class": "tyQuoteSingle", "source": "a `body' b"}
+{"id": "cov-20261122-tyQuoteSingle-03", "class": "tyQuoteSingle", "source": "`zz'"}
+{"id": "cov-20261122-tyQuoteSingle-04", "class": "tyQuoteSingle", "source": "a `xy' b"}
+{"id": "cov-20261122-tyQuoteSingle-05", "class": "tyQuoteSingle", "source": "`body'"}
+{"id": "cov-20261122-tyRightAngle-00", "class": "tyRightAngle", "source": "x >> y"}
+{"id": "cov-20261122-tyRightAngle-01", "class": "tyRightAngle", "source": "x >> y"}
+{"id": "cov-20261122-tyRightAngle-02", "class": "tyRightAngle", "source": "x >> y"}
+{"id": "cov-20261122-tyRightAngle-03", "class": "tyRightAngle", "source": "x >> y"}
+{"id": "cov-20261122-tyRightAngle-04", "class": "tyRightAngle", "source": "x >> y"}
+{"id": "cov-20261122-tyRightAngle-05", "class": "tyRightAngle", "source": "x >>"}
+{"id": "cov-20261122-tyUnit-00", "class": "tyUnit", "source": "10 %%"}
+{"id": "cov-20261122-tyUnit-01", "class": "tyUnit", "source": "10 m"}
+{"id": "cov-20261122-tyUnit-02", "class": "tyUnit", "source": "10 kg"}
+{"id": "cov-20261122-tyUnit-03", "class": "tyUnit", "source": "10 px"}
+{"id": "cov-20261122-tyUnit-04", "class": "tyUnit", "source": "10 °C"}
+{"id": "cov-20261122-tyUnit-05", "class": "tyUnit", "source": "10 px"}

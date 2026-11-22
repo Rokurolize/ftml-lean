@@ -1,0 +1,42 @@
+{
+ "m2-nbsp-after-url": {
+  "source": "http://example.com/a--b?x=1 2\nx",
+  "ref": "<p><a href=\"http://example.com/a--b?x=1%C2%A02\">http://example.com/a--b?x=1 2</a><br />\nx</p>",
+  "stderr": "PHP Warning:  Undefined array key \"externalLinks\" in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Url.php on line 132\nWarning: Undefined array "
+ },
+ "m2-nbsp-after-url-inline": {
+  "source": "A http://example.com/a B C",
+  "ref": "<p>A <a href=\"http://example.com/a\">http://example.com/a</a> B C</p>",
+  "stderr": "PHP Warning:  Undefined array key \"externalLinks\" in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Render/Xhtml/Url.php on line 132\nWarning: Undefined array "
+ },
+ "m2-include-colon-part": {
+  "source": "[[include :sandbox-for-codex:foo:bar]]",
+  "ref": "<div class=\"error-block\"><p>Included page &quot;foo:bar&quot; does not exist (<a href=\"https://sandbox-for-codex.wikidot.com/foo:bar/edit/true\">create it now</a>)</p>\n\n</div>",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Url::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Tex"
+ },
+ "m2-include-colon-part-cross": {
+  "source": "[[include :sandbox-for-codex:category:page]]",
+  "ref": "<div class=\"error-block\"><p>Included page &quot;category:page&quot; does not exist (<a href=\"https://sandbox-for-codex.wikidot.com/category:page/edit/true\">create it now</a>)</p>\n\n</div>",
+  "stderr": "PHP Warning:  Text_Wiki_Parse_Url::processDescr(): Argument #1 ($matches) must be passed by reference, value given in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Tex"
+ },
+ "m2-m654-upper-nested": {
+  "source": "[[MODULE654 CSS]]\n[[module654 Rate]]\n[[/module]]\n[[/module]]",
+  "ref": "þmodule \"CSS\" +module_body%3D%22%255B%255Bmodule654%2BRate%255D%255D%22 þ<p>[[/module]]</p>",
+  "stderr": ""
+ },
+ "m2-m654-upper-inline-empty": {
+  "source": "[[MODULE654 Rate]][[/module]]",
+  "ref": "<p>[[MODULE654 Rate]][[/module]]</p>",
+  "stderr": ""
+ },
+ "m2-m654-control-module": {
+  "source": "[[module Rate]]\n[[/module]]",
+  "ref": "þmodule \"Rate\"þ<p>[[/module]]</p>",
+  "stderr": "PHP Warning:  Undefined array key 2 in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Parse/Default/Module.php on line 93\nWarning: Undefined array key 2 in /h"
+ },
+ "m2-m654-control-plain": {
+  "source": "just plain text",
+  "ref": "<p>just plain text</p>",
+  "stderr": ""
+ }
+}

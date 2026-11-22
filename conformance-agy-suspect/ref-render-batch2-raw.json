@@ -1,0 +1,22 @@
+{
+  "f01-email-ee": {
+    "hex": "3c703e3c7370616e20636c6173733d2277696b692d656d61696c223e6d6f632e627c6123a9c3a9c33c2f7370616e3e3c2f703e0a0a",
+    "repr": "b'<p><span class=\"wiki-email\">moc.b|a#\\xa9\\xc3\\xa9\\xc3</span></p>\\n\\n'"
+  },
+  "x03-email-url-label": {
+    "hex": "3c703e3c7370616e20636c6173733d2277696b692d656d61696c223e6d6f632e627c6123ff32ff3c2f7370616e3e3c2f703e0a0a",
+    "repr": "b'<p><span class=\"wiki-email\">moc.b|a#\\xff2\\xff</span></p>\\n\\n'"
+  },
+  "x05-email-raw-label": {
+    "hex": "3c703e3c7370616e20636c6173733d2277696b692d656d61696c223e6d6f632e627c6123ff30ff3c2f7370616e3e3c2f703e0a0a",
+    "repr": "b'<p><span class=\"wiki-email\">moc.b|a#\\xff0\\xff</span></p>\\n\\n'"
+  },
+  "x06-color-raw-spec": {
+    "hex": "3c703e2323ff30ff7c68656c6c6f23233c2f703e0a0a",
+    "repr": "b'<p>##\\xff0\\xff|hello##</p>\\n\\n'"
+  },
+  "x08-div-raw-attr": {
+    "hex": "3c64697620646174612d783d2261ff30ff63223e3c703e68693c2f703e0a0a3c2f6469763e",
+    "repr": "b'<div data-x=\"a\\xff0\\xffc\"><p>hi</p>\\n\\n</div>'"
+  }
+}

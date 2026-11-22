@@ -1,0 +1,11 @@
+{"id":"target","output":"TARGET-CONTENT-START\nValue is {$marker}.\nTARGET-CONTENT-END","pages":[]}
+{"id":"l4-upper","output":"BEFORE-L4\n\nTARGET-CONTENT-START\nValue is {$marker}.\nTARGET-CONTENT-END\n\nAFTER-L4","pages":["muse-probe-g14-target"]}
+{"id":"l3-nextline","output":"BEFORE-L3\n\nTARGET-CONTENT-START\nValue is {$marker}.\nTARGET-CONTENT-END\n\nAFTER-L3","pages":["muse-probe-g14-target"]}
+{"id":"l2-stray","output":"BEFORE-L2\n\nTARGET-CONTENT-START\nValue is STRAYOK.\nTARGET-CONTENT-END\n\nAFTER-L2","pages":["muse-probe-g14-target"]}
+{"id":"l2-control","output":"BEFORE-L2C\n\nTARGET-CONTENT-START\nValue is CTRLOK.\nTARGET-CONTENT-END\n\nAFTER-L2C","pages":["muse-probe-g14-target"]}
+{"id":"l1-quoted","output":"BEFORE-L1\n> [[include muse-probe-g14-target]]\nAFTER-L1","pages":[]}
+{"id":"l1-control","output":"BEFORE-L1C\n> ordinary quoted text L1C\nAFTER-L1C","pages":[]}
+{"id":"l1b-multiline","output":"BEFORE-L1B\n> [[include muse-probe-g14-target]]\n> trailing quoted line L1B\nAFTER-L1B","pages":[]}
+{"id":"l1c-depth2","output":"BEFORE-L1C2\n>> [[include muse-probe-g14-target]]\nAFTER-L1C2","pages":[]}
+{"id":"l1d-midtext","output":"BEFORE-L1D\n> some text [[include muse-probe-g14-target]]\nAFTER-L1D","pages":[]}
+{"id":"l1e-quotedarg","output":"BEFORE-L1E\n> [[include muse-probe-g14-target\n> | marker=QUOTEDOK]]\nAFTER-L1E","pages":[]}

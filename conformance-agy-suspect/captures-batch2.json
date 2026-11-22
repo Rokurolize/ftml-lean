@@ -1,0 +1,202 @@
+{
+ "f01-email-ee": {
+  "fullname": "muse-probe-agy-suspect-f01-email-ee",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#�é�</span></p>",
+  "html_sha256": "3290578359d7f5267ce0d9a2cd100e5339e32262153f63ca5902bf95e14a4dc0",
+  "source": "[a@b.com éé]",
+  "source_sha256": "0e2e50e97609b712a96726d7bd0a1daa63c2297dd7348377f7b87eb0392361d5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "f02-email-apos-amp": {
+  "fullname": "muse-probe-agy-suspect-f02-email-apos-amp",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#d\"c&amp;b'a</span></p>",
+  "html_sha256": "d51f21cb6cecc2b260df1795ff28053b77d23ff3e41e0cd4d4c937d02944a5b1",
+  "source": "[a@b.com a'b&c\"d]",
+  "source_sha256": "29e1b47449d172bd57d39d642c9f5f25193dc7260768a7ee4e3a122985795a50",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "f03-freelink-translit": {
+  "fullname": "muse-probe-agy-suspect-f03-freelink-translit",
+  "html": "<p><a class=\"newpage\" href=\"/aeoeuess-n-c-z-acelnoszz-cafe123\">äöüß ñ ç ž ąćęłńóśźż café123</a></p>",
+  "html_sha256": "4f7b733656d3c22627c393aa69cab5d56a4c4dcd587bb1b2c02304ac976304c0",
+  "source": "[[[äöüß ñ ç ž ąćęłńóśźż café123]]]",
+  "source_sha256": "ee5f1504fdc89553207464fbdb4c1f5d7a8340fbea19006f539be21245f09192",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "f04-ul-upper-open": {
+  "fullname": "muse-probe-agy-suspect-f04-ul-upper-open",
+  "html": "<ul>\n<li>Case<br />",
+  "html_sha256": "77b5ca165a5b529534be52c678b814b515f697cb4146f563477883a186ea0da2",
+  "source": "[[UL]]\n[[LI]]Case[[/li]]\n[[/ul]]",
+  "source_sha256": "694fe2ecb42d049c3e7f8f05b91162e0dc47030605e00494c65f09b0607d3f05",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "f05-ul-upper-close": {
+  "fullname": "muse-probe-agy-suspect-f05-ul-upper-close",
+  "html": "<ul>\n<li>Case</li>\n</ul>\n<br />",
+  "html_sha256": "439b7764cc8ead481e098a920a7e81b0ae506531e8b0961df581218db315950c",
+  "source": "[[ul]]\n[[li]]Case[[/LI]]\n[[/UL]]",
+  "source_sha256": "e1344c882500e2934c2cc76f37c02f115e5cce39ec55e23d58d4a3e4580cfd5d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "f06-ul-upper-after": {
+  "fullname": "muse-probe-agy-suspect-f06-ul-upper-after",
+  "html": "<ul>\n<li>A</li>\n<li>B<br />\nAFTER</li>\n</ul>",
+  "html_sha256": "b7bd195320b29fe62b6b1b71e9dbc5495164cc2a3f0ebcfe37a9d2df23186086",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[LI]]B[[/LI]]\n[[/UL]]\n\nAFTER",
+  "source_sha256": "641b7a06799fe69ef7d6694c935f1621cdb089fcd3b1aed4eb69de9de2f0176b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "f07-modulepre-upper-tail": {
+  "fullname": "muse-probe-agy-suspect-f07-modulepre-upper-tail",
+  "html": "<p>[[MODULE654 css]]tail</p>",
+  "html_sha256": "b03b1541c11b4bd8e3770cb0e0d3444f5edc7711ac386e131529ba2bfac764cb",
+  "source": "[[MODULE654 css]]tail",
+  "source_sha256": "8df1def046f7c54b0f4932656ac76003ed482056c77fbf6ef8e57cc1fa802e59",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "f08-iftags-lead-comma": {
+  "fullname": "muse-probe-agy-suspect-f08-iftags-lead-comma",
+  "html": "<p>A B</p>",
+  "html_sha256": "036156d0e73a072ff96f2631eb56732be5bb90733f7a01685ac90cb54344f72d",
+  "source": "A [[iftags ,-foo]]KEPT[[/iftags]] B",
+  "source_sha256": "102ad862b0cbab26da9b6b0be3995e50351d1cf7a60cc8b10244f01d171b0d07",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "f09-div-attr-escapes": {
+  "fullname": "muse-probe-agy-suspect-f09-div-attr-escapes",
+  "html": "<div data-x=\"a&amp;b&lt;c&gt;d'e&quot;f\">\n<p>hi</p>\n</div>",
+  "html_sha256": "634bcbf1a1bce901413e59bdd143d3e1ffa53566fb83833e7f5f9472b2d34ab5",
+  "source": "[[div data-x=\"a&b<c>d'e\\\"f\"]]\nhi\n[[/div]]",
+  "source_sha256": "3044c3b1237a1687d8c66d15627eccd320abee6e51acb697a586de4cd23fa344",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "f10-interwiki-unknown-apos": {
+  "fullname": "muse-probe-agy-suspect-f10-interwiki-unknown-apos",
+  "html": "<p>O'Brien &amp; &lt;b&gt;x&lt;/b&gt;</p>",
+  "html_sha256": "3bb59032b097da523e39883c6f7cf5e86bd67767cc1b2d1ba96a1a03ee76b6bc",
+  "source": "[nosuchwiki:Mallard O'Brien & <b>x</b>]",
+  "source_sha256": "97730108553c48cdd8193179be99b79c051a26fade7e6c354940b6b6435ec571",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x01-raw-empty-interwiki": {
+  "fullname": "muse-probe-agy-suspect-x01-raw-empty-interwiki",
+  "html": "<p>[wikipedia:X ab]</p>",
+  "html_sha256": "819713764246fa3c61c25a407051411d769f6087ba910cd179f728e04232e0e4",
+  "source": "[wikipedia:X a@@@@b]",
+  "source_sha256": "e85c75683d520ae5c88961de92886e9d8486fdb41803497f4b177f08847dd5c4",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x02-raw-in-date": {
+  "fullname": "muse-probe-agy-suspect-x02-raw-in-date",
+  "html": "<p><span class=\"odate time_0 format_a%FF1%FFb\">01 Jan 1970 00:00</span> and <span class=\"odate time_0 format_a%FF2%FFb\">01 Jan 1970 00:00</span></p>",
+  "html_sha256": "183abfc6e3ef4797ee0e6ba77c0c9e353a6c21fb6ecb25f5d12bac7ef5c68858",
+  "source": "[[date 0 format=\"a@@raw@@b\"]] and [[date 0 format=\"a@@@@b\"]]",
+  "source_sha256": "77effdfa82c2fc767930b53d69a7223535097043f9cd7809543cd603ed043e0b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x03-email-url-label": {
+  "fullname": "muse-probe-agy-suspect-x03-email-url-label",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#�3�</span></p>",
+  "html_sha256": "fa00ffe43f3a14741384cfba4fddf5cfd95a8569b56ee3a6123fd8b1f5d8385a",
+  "source": "[a@b.com http://example.com]",
+  "source_sha256": "e2dd88e3df44a647a1021753aed2c42bdccfcd6d853a585d966b6648d3391bbd",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x04-email-bracket-label": {
+  "fullname": "muse-probe-agy-suspect-x04-email-bracket-label",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#x[</span> label]</p>",
+  "html_sha256": "ceaebeb0a8c6a8677ca6ed2a8cf529d6284848fa3b49cc3042bcfeed9e4d4e56",
+  "source": "[a@b.com [x] label]",
+  "source_sha256": "86ea40738f5dc00bf68480889f5893f247d68679816c6046942b06d3341b7528",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x05-email-raw-label": {
+  "fullname": "muse-probe-agy-suspect-x05-email-raw-label",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#�1�</span></p>",
+  "html_sha256": "eff00ed810f59094287c14d03dffb52694effc5c12cc8b6e42f4d0afbc635e5d",
+  "source": "[a@b.com @@raw@@]",
+  "source_sha256": "e21239977e54f1d4303d56858e2b5c5707b6312dffd00fdc2f3394ce1252d53f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x06-color-raw-spec": {
+  "fullname": "muse-probe-agy-suspect-x06-color-raw-spec",
+  "html": "<p>##<span style=\"white-space: pre-wrap;\">red</span>|hello##</p>",
+  "html_sha256": "b3748f17b75c8bd684ad1fafdcd643bbf334e1af43022df6247943eae5260cf8",
+  "source": "##@@red@@|hello##",
+  "source_sha256": "bd8311a6d7f68d8aa3fe3c7e80d1b394f63b60da65c0dfc0b408fcdf624404c6",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x07-bq-raw-nospace": {
+  "fullname": "muse-probe-agy-suspect-x07-bq-raw-nospace",
+  "html": "<p>A</p>\n<p>B</p>",
+  "html_sha256": "af1a4520d4a128c82ff2db34cd6245cadd0d28c1f8e48878a23b9824b709322d",
+  "source": "A\n\n>@@hello@@\n\nB",
+  "source_sha256": "af87cbc5cbe130e0940e2b9b7fd7e3a4b9bb4e7f9c7e0105bde11c262e65e26b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x08-div-raw-attr": {
+  "fullname": "muse-probe-agy-suspect-x08-div-raw-attr",
+  "html": "<div data-x=\"\">\n<p>hi</p>\n</div>",
+  "html_sha256": "79dc53659f5df4cbbecd5e56d7b42a31711f9c4b23b5bb206abe85fc499096ef",
+  "source": "[[div data-x=\"a@@b@@c\"]]\nhi\n[[/div]]",
+  "source_sha256": "ce92b0e63c239de20da385a8486e88b869a5cc1516403c08868b88b16310b996",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x09-deflist-raw-empty": {
+  "fullname": "muse-probe-agy-suspect-x09-deflist-raw-empty",
+  "html": "<dl>\n<dd>def</dd>\n</dl>",
+  "html_sha256": "829781a511a3044a09130881164df9071c8932c3737cb52baf6d8a81736699c7",
+  "source": ": @@@@ : def",
+  "source_sha256": "e4e984367180c735c9737d52cdde78b9ccf619322f7d8ef67e93b7925d7fdbcc",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "x10-url-star-mailto": {
+  "fullname": "muse-probe-agy-suspect-x10-url-star-mailto",
+  "html": "<p><a href=\"mailto:a@b.com\" target=\"_blank\">mail</a> and <a href=\"#foo\">plain</a></p>",
+  "html_sha256": "71c1b5c52eeb8c23931353795511aa2641bfb68a9ad3d7d080c8bd1d70c6a177",
+  "source": "[*mailto:a@b.com mail] and [#foo plain]",
+  "source_sha256": "2306af6bfa2f33ba3edf49c0ec1f688393723d3d0cd608f49fde942b9a318ccb",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

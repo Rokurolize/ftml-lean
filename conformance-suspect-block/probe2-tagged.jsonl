@@ -1,0 +1,3 @@
+{"id": "bq-if-false-tagged", "source": "A\n> [[iftags +beta]]KEEP[[/iftags]]\nB", "tags": ["alpha"]}
+{"id": "if-spec-comment-tagged", "source": "[[iftags [!--x--]+alpha]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}
+{"id": "if-trail-forbid-hit-tagged", "source": "[[iftags -alpha,]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}

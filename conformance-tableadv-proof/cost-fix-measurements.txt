@@ -1,0 +1,3 @@
+r310-stage-185: strings=185 mirror_min=0.057s dfs_min=0.031s ratio=1.81 mirror_runs=[0.057, 0.083, 0.065] dfs_runs=[0.044, 0.039, 0.031]
+witness-family-14: strings=14 mirror_min=0.021s dfs_min=0.021s ratio=1.00 mirror_runs=[0.021, 0.025, 0.03] dfs_runs=[0.021, 0.021, 0.026]
+grammar-185662: strings=185662 mirror_min=8.064s dfs_min=3.945s ratio=2.04 mirror_runs=[14.129, 9.791, 8.064] dfs_runs=[3.945, 4.054, 4.321]

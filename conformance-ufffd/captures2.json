@@ -1,0 +1,122 @@
+{
+ "end-after-bold": {
+  "fullname": "muse-probe-ufffd2-end-after-bold",
+  "html": "<p>alpha <strong>bold</strong> 2</p>",
+  "html_sha256": "6f4baaec4c5d1545aa9f8b4816b51bc56b267af00c66e3bba1d2ae1c88a86ccf",
+  "source": "alpha **bold** �",
+  "source_sha256": "e5590efafff8ed0673136c75c1d3cf812d903df6a223f4d0c5543e6439556a66",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "end-first-para": {
+  "fullname": "muse-probe-ufffd2-end-first-para",
+  "html": "<p>alpha 23bravo charlie</p>",
+  "html_sha256": "25b45dfcc223bec061eff0c855df4fcd1f935d61759ebeb9cd33d4ad14bb220b",
+  "source": "alpha �\n\nbravo charlie",
+  "source_sha256": "74067f720ecf8d664dae1621a056209ce12c78b16343c82edc38ecd007c41e18",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "end-both-para": {
+  "fullname": "muse-probe-ufffd2-end-both-para",
+  "html": "<p>alpha 23bravo 4</p>",
+  "html_sha256": "d9dd989668725472cd58388013db8e08fed3564504514c32586d970fd78c92e0",
+  "source": "alpha �\n\nbravo �",
+  "source_sha256": "a292b8c0e9c9c6b67aa0d517d677a826e9f67de030e2a4b337266bdc928a970b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "only-two": {
+  "fullname": "muse-probe-ufffd2-only-two",
+  "html": "",
+  "html_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source": "��",
+  "source_sha256": "52793f8dc1d85e409f8c88be99d8b31d58f676246340150f406289e04a11151e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "pair-zero": {
+  "fullname": "muse-probe-ufffd2-pair-zero",
+  "html": "<p>alpha 0 bravo charlie</p>",
+  "html_sha256": "e1098a46c3e2d3581393b6266e29abc907f8346dd26174e762e3b938a123e915",
+  "source": "alpha �0� bravo charlie",
+  "source_sha256": "3c9691f83e5a5899c19ea3968b08fa2a0243f860ba2575bb509bf07f3c67fa89",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "digits-text": {
+  "fullname": "muse-probe-ufffd2-digits-text",
+  "html": "<p>alpha 42 bravo charlie</p>",
+  "html_sha256": "598b00a87f63ec0f25fd00dc68ce8f36115b3fb715694f08b07aa79fb74919ca",
+  "source": "alpha � 42 bravo charlie",
+  "source_sha256": "aef94ebb0f607dee8d326317824b8db242da17159a3e4e5c4891d6ae16b0a2d9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "unclosed-digits": {
+  "fullname": "muse-probe-ufffd2-unclosed-digits",
+  "html": "<p>alpha 42 bravo charlie</p>",
+  "html_sha256": "598b00a87f63ec0f25fd00dc68ce8f36115b3fb715694f08b07aa79fb74919ca",
+  "source": "alpha �42 bravo charlie",
+  "source_sha256": "d7310f1eaa7f6099b268d7ceef70d0ca786bc7772445ccc853da1a8d1f96bbaa",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "end-list": {
+  "fullname": "muse-probe-ufffd2-end-list",
+  "html": "<ul>\n<li>item one 34item two</li>\n</ul>",
+  "html_sha256": "f337cb6b9de7a9549dcc5d211e324ab24a4326f601b76e8366096aecb8c91d15",
+  "source": "* item one �\n* item two",
+  "source_sha256": "8cb0f9f05a1b8199786b6481eb8d476e69228f4c9595599bfd8a6ce4ef5c2173",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "end-heading": {
+  "fullname": "muse-probe-ufffd2-end-heading",
+  "html": "<h1 id=\"toc0\"><span>Head Word 23body alpha bravo<br />\n<br /></span></h1>",
+  "html_sha256": "cc03796597b97b41899488b554bfef55e6e1c006ddc62f9c8b03f71421761264",
+  "source": "+ Head Word �\n\nbody alpha bravo",
+  "source_sha256": "98c420225449b781032db88342be24ba971897d094185cb022f470eba2aad0eb",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "start-bold-after": {
+  "fullname": "muse-probe-ufffd2-start-bold-after",
+  "html": "<p><strong>bold</strong> tail end</p>",
+  "html_sha256": "c30a563fffee81cb07cecf53ad725ca5091f598a9002f6a09b4d5ce02fa6ff6f",
+  "source": "� **bold** tail end",
+  "source_sha256": "c252305d9ecbe3acdff72282381701c0700f82268fe6f7ad9606eda8b2190e66",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "mid-no-space": {
+  "fullname": "muse-probe-ufffd2-mid-no-space",
+  "html": "<p>alphabravo charlie</p>",
+  "html_sha256": "9cfdfdad1b0f56427a52a8808e36da03af067a08beb6df560f58ba8413e5a254",
+  "source": "alpha�bravo charlie",
+  "source_sha256": "89a71d1352a81cf0ccf7a9afecd8808a22a8c34bc1adba175cfbd5e88d99d44c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "end-no-space": {
+  "fullname": "muse-probe-ufffd2-end-no-space",
+  "html": "<p>alpha bravo2</p>",
+  "html_sha256": "d2dcefd1cda0f8f8f2831864447db5fd829b12ba8ee5ae3af8baae3f8b7a8e01",
+  "source": "alpha bravo�",
+  "source_sha256": "90bb2bb825f3748be42bfddf62bd2d5438380eaef6d80f8d7421a5204b6665f1",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

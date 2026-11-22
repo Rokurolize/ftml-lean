@@ -1,0 +1,5382 @@
+/*
+ * parsing/rule/impls/block/blocks/list.rs
+ *
+ * ftml - Library to parse Wikidot text
+ * Copyright (C) 2019-2026 Wikijump Team
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+use super::element_source_offset;
+use super::prelude::*;
+use crate::parsing::rule::impls::block::parser::{
+    BlockBodyStart, WikidotStashFollowerChrome,
+};
+use crate::parsing::{ParagraphSplitKind, ParserWrap, strip_newlines};
+use crate::tree::{
+    AcceptsPartial, AttributeMap, Container, ContainerType, ListItem, ListType,
+    PartialElement, TableType, WIKIDOT_LIST_ITEM_BLANK_LINE_MARKER,
+    WIKIDOT_LIST_TAIL_LEAD_SPACE_MARKER, WIKIDOT_POST_LIST_BLANK_GAP_MARKER,
+    WikidotBlockCloseKind,
+};
+use std::borrow::Cow;
+
+pub const BLOCK_UL: BlockRule = BlockRule {
+    name: "block-list-unordered",
+    accepts_names: &["ul"],
+    accepts_star: false,
+    accepts_score: true,
+    accepts_newlines_outside_body: true,
+    parse_fn: parse_unordered_block,
+};
+
+pub const BLOCK_OL: BlockRule = BlockRule {
+    name: "block-list-ordered",
+    accepts_names: &["ol"],
+    accepts_star: false,
+    accepts_score: true,
+    accepts_newlines_outside_body: true,
+    parse_fn: parse_ordered_block,
+};
+
+pub const BLOCK_LI: BlockRule = BlockRule {
+    name: "block-list-item",
+    accepts_names: &["li"],
+    accepts_star: false,
+    accepts_score: true,
+    accepts_newlines_outside_body: true,
+    parse_fn: parse_list_item,
+};
+
+fn parse_unordered_block<'r, 't>(
+    parser: &mut Parser<'r, 't>,
+    name: &str,
+    _opener_start: usize,
+    flag_star: bool,
+    flag_score: bool,
+    in_head: bool,
+) -> ParseResult<'r, 't, Elements<'t>> {
+    let block = (&BLOCK_UL, ListType::Bullet);
+
+    parse_list_block(
+        block,
+        parser,
+        name,
+        _opener_start,
+        flag_star,
+        flag_score,
+        in_head,
+    )
+}
+
+fn parse_ordered_block<'r, 't>(
+    parser: &mut Parser<'r, 't>,
+    name: &str,
+    _opener_start: usize,
+    flag_star: bool,
+    flag_score: bool,
+    in_head: bool,
+) -> ParseResult<'r, 't, Elements<'t>> {
+    let block = (&BLOCK_OL, ListType::Numbered);
+
+    parse_list_block(
+        block,
+        parser,
+        name,
+        _opener_start,
+        flag_star,
+        flag_score,
+        in_head,
+    )
+}
+
+fn parse_list_block<'r, 't>(
+    (block_rule, list_type): (&BlockRule, ListType),
+    parser: &mut Parser<'r, 't>,
+    name: &str,
+    _opener_start: usize,
+    flag_star: bool,
+    flag_score: bool,
+    in_head: bool,
+) -> ParseResult<'r, 't, Elements<'t>> {
+    let depth = parser.wikidot_li_pairing_depth();
+    parser.set_wikidot_li_pairing_depth(depth + 1);
+    let track_collect = parser.settings().layout.legacy();
+    if track_collect {
+        parser.push_wikidot_li_collect(None);
+        // BRIEF-MF65b: enclosing-list kind for the multi-formation
+        // escape decision (nested lists push/pop their own kind).
+        parser.push_enclosing_list_numbered(list_type == ListType::Numbered);
+    }
+    let result = parse_list_block_impl(
+        (block_rule, list_type),
+        parser,
+        name,
+        _opener_start,
+        flag_star,
+        flag_score,
+        in_head,
+    );
+    if track_collect {
+        parser.pop_wikidot_li_collect();
+        parser.pop_enclosing_list_numbered();
+    }
+    if result.is_err() && depth == 0 {
+        parser.wikidot_li_cross_clear();
+    }
+    parser.set_wikidot_li_pairing_depth(depth);
+    result
+}
+
+fn parse_list_block_impl<'r, 't>(
+    (block_rule, list_type): (&BlockRule, ListType),
+    parser: &mut Parser<'r, 't>,
+    name: &str,
+    opener_start: usize,
+    flag_star: bool,
+    flag_score: bool,
+    in_head: bool,
+) -> ParseResult<'r, 't, Elements<'t>> {
+    let rule_name = block_rule.name;
+    debug!(
+        "{name}/{rule_name}/{} head={in_head} score={flag_score}",
+        list_type.name(),
+    );
+
+    let nested = parser.accepts_partial() == AcceptsPartial::ListItem;
+    let wikidot = parser.settings().layout.legacy();
+    let parser = &mut ParserWrap::new(parser, AcceptsPartial::ListItem);
+
+    assert!(!flag_star, "List block doesn't allow star flag");
+    assert_block_name(block_rule, name);
+
+    // Drop anchor-chrome strays from lists whose returns never ran;
+    // entries of still-open outer lists are shallower and survive.
+    if wikidot {
+        parser.drop_wikidot_list_anchor_chromes_at(parser.wikidot_li_pairing_depth());
+        parser.drop_wikidot_run_formations_at(parser.wikidot_li_pairing_depth());
+    }
+
+    let arguments = parser.get_head_map_wikidot(block_rule, in_head)?;
+    let attributes = arguments.to_attribute_map(parser.settings());
+    // lihoist p6 (discriminated per LT46 and MF65b probes): a list head on
+    // an item line stays literal in live only when the enclosing explicit
+    // list is UNORDERED, the head is not an `ol`, and the body has no deep
+    // marker line; otherwise the head opens a lost-owner formation.
+    let head_name = block_rule.accepts_names[0];
+    let li_head_for_gate = parser.wikidot_li_collect_head();
+    let gate_body_end = li_head_for_gate.and_then(|head| {
+        crate::parsing::rule::impls::line_owner::own_line_li_close_after(
+            parser.full_text().inner(),
+            head,
+        )
+        .or_else(|| parser.wikidot_li_body_end_by_head(head))
+    });
+    let gate_has_deep = gate_body_end.is_some_and(|end| {
+        crate::parsing::rule::impls::line_owner::body_has_deep_marker(
+            parser.full_text().inner(),
+            opener_start,
+            end,
+        )
+    });
+    if wikidot
+        && !parser.wikidot_enclosing_list_numbered()
+        && !head_name.eq_ignore_ascii_case("ol")
+        && crate::parsing::rule::impls::line_owner::head_on_list_item_line(
+            parser.full_text().inner(),
+            opener_start,
+        )
+        && li_head_for_gate.is_some()
+        && !gate_has_deep
+        && !crate::parsing::rule::impls::line_owner::list_closer_in_range(
+            parser,
+            opener_start,
+            gate_body_end.unwrap_or(parser.full_text().inner().len()),
+        )
+    {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+    if wikidot && parser.wikidot_li_pairing_depth() == 1 {
+        parser.compute_wikidot_li_pairing();
+        parser.compute_wikidot_li_cross_scan();
+    }
+    if parser.settings().layout.legacy() && !parser.has_body_end_block(block_rule) {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+    // Live leaves the opener literal when a bare-scheme [[iframe]] head on the
+    // line before the closer absorbed every closer for the block. Item 88: an
+    // unowned-dissolve candidate accepts either list close, so both names
+    // count against the greedy-tail veto.
+    let greedy_names: &[&str] = if parser.wikidot_li_cross_list_close() {
+        &["ul", "ol"]
+    } else {
+        &[block_rule.accepts_names[0]]
+    };
+    if wikidot && parser.wikidot_greedy_tail_eats_closers(opener_start, greedy_names) {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+    if wikidot
+        && note_list_would_take_enclosing_closer(
+            parser,
+            opener_start,
+            block_rule.accepts_names[0],
+        )
+    {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+
+    // Depth-1 explicit lists in an advanced table cell get a stable
+    // ordinal for cross-li break relocation (see `wikidot_div_list_ordinal`).
+    let this_list_ordinal = if wikidot
+        && parser.wikidot_li_pairing_depth() == 1
+        && parser.in_wikidot_advanced_table_cell_body()
+    {
+        Some(parser.wikidot_cell_list_ordinal())
+    } else {
+        None
+    };
+
+    // BRIEF-CB91 (item 91(c) residual): a blank deeper quote row between the
+    // list head and the degraded head triggers `display: inline` on live but
+    // leaves no element, so the sighting is scanned here (head position, like
+    // the shallower-text gate) and carried to the item pushes below as a
+    // plain bool — no new parser state.
+    let deeper_blank_before_content = wikidot
+        && parser.has_deeper_blank_row_before_content(
+            block_rule,
+            parser.native_blockquote_depth().unwrap_or(0),
+        );
+
+    let body = if wikidot
+        && let Some(depth) = parser.native_blockquote_depth()
+        && (parser.has_native_blockquote_body_end(block_rule, depth)
+            || parser.has_surplus_quote_list_close(block_rule, depth)
+            || parser.has_shallower_quote_list_close(block_rule, depth)
+            || (matches!(
+                block_rule.name,
+                "block-list-unordered" | "block-list-ordered"
+            ) && parser.has_shallower_quote_li_close(depth))
+            || (matches!(
+                block_rule.name,
+                "block-list-unordered" | "block-list-ordered"
+            ) && parser.has_shallower_quote_text_line(block_rule, depth))
+            || (matches!(
+                block_rule.name,
+                "block-list-unordered" | "block-list-ordered"
+            ) && parser.has_shallower_quote_evaporation(block_rule, depth))
+            || (matches!(
+                block_rule.name,
+                "block-list-unordered" | "block-list-ordered"
+            ) && parser.has_li_close_before_list_close(depth).is_some()))
+    {
+        parser.get_body_elements_with_literal_quote_context(
+            block_rule,
+            false,
+            BlockBodyStart::NextPhysicalLine,
+            None,
+        )?
+    } else {
+        parser.get_body_elements(block_rule, false)?
+    };
+    let fused_close = parser.wikidot_body_closed_with_fused_close(block_rule);
+    let list_end = parser.current().span.start;
+    let closer_has_same_line_residual =
+        !matches!(
+            parser.current().token,
+            Token::LineBreak | Token::ParagraphBreak | Token::InputEnd
+        ) && !wikidot_list_closer_residual_is_blank(parser);
+    // A closer on a list-item line (`* [[/ul]]`, `# [[/ul]]`) leaves no
+    // post-list break in live: with a bullet marker the break is dropped,
+    // with a numbered marker an empty unclosed anchor list takes its
+    // place (LT46 s-family probes).
+    let closer_line_marker = if wikidot && !fused_close {
+        crate::parsing::rule::impls::line_owner::consumed_closer_line_marker(
+            parser,
+            list_end,
+            block_rule.accepts_names[0],
+        )
+    } else {
+        None
+    };
+    let (mut elements, mut errors, _) = body.into();
+    // BRIEF-UE57b: pre-li soft-end left the body empty. Live dissolves
+    // the list entirely — emit nothing instead of the
+    // dissolve-to-break the ordinary empty body uses.
+    if parser.take_wikidot_evaporated_list() {
+        return ok!(false; Elements::None, errors);
+    }
+
+    if wikidot && name != block_rule.accepts_names[0] {
+        strip_newlines(&mut elements);
+        if fused_close {
+            elements.push(text!("]"));
+        }
+        if !closer_has_same_line_residual {
+            elements.push(Element::LineBreak);
+        }
+        return ok!(false; elements, errors);
+    }
+
+    // BRIEF-MF65b: anchor chromes stamped at this list's depth by numbered
+    // lost-owner formations closing in its body; counted before the take,
+    // because the escaped case moves them to the pending slot.
+    let hoist_count = if wikidot {
+        parser.wikidot_list_anchor_chromes_len_at(parser.wikidot_li_pairing_depth())
+    } else {
+        0
+    };
+    // Anchor lists for decomposed numbered lost-owner formations inside
+    // this list's body (LT46 p23-ord): re-emitted after this list's
+    // close when it is numbered (the L85 slot below), dropped otherwise.
+    let anchor_chromes = if wikidot {
+        parser.take_wikidot_list_anchor_chromes_at(parser.wikidot_li_pairing_depth())
+    } else {
+        Vec::new()
+    };
+    let anchor_unstarred = if wikidot {
+        parser.take_wikidot_anchor_unstarred_at(parser.wikidot_li_pairing_depth())
+    } else {
+        false
+    };
+
+    let mut items = Vec::new();
+    let mut literal_elements = Vec::new();
+    let mut partial_item_indices: Vec<usize> = Vec::new();
+    let mut partial_count = 0usize;
+    let mut skipped_empty_partial = false;
+
+    // BRIEF-F7R83 (b/c): degraded (none-styled) items form in the element
+    // loop below, never through parse_list_item's segment assembly, so the
+    // post-heading wrap gate arrives as a plain bool (frame || follower).
+    // BRIEF-RM83 shape 4: the follower can also VETO the frame wrap (a
+    // formed flat-pair head / heading / `----` right after the closer).
+    let wrap_gates = if wikidot {
+        wikidot_list_wrap_gates(parser, opener_start)
+    } else {
+        WikidotListWrapGates {
+            wrap_enclosing: false,
+            mid_join_enclosed: false,
+            head_is_own_line: false,
+        }
+    };
+    let li_wrap_enclosing = wrap_gates.wrap_enclosing;
+    let mid_join_enclosed = wrap_gates.mid_join_enclosed;
+    let head_is_own_line = wrap_gates.head_is_own_line;
+
+    if flag_score {
+        strip_newlines(&mut elements);
+    }
+
+    if elements.is_empty() {
+        if parser.settings().layout.legacy() {
+            return if nested {
+                ok!(false; Elements::None, errors)
+            } else {
+                record_wikidot_explicit_list_end(parser);
+                if parser.wikidot_preserve_empty_lists()
+                    && parser.body_end_boundaries_is_empty()
+                {
+                    ok!(false; Element::List {
+                        ltype: list_type,
+                        items: Vec::new(),
+                        attributes: attributes.clone(),
+                        wikidot_explicit_block: true,
+                        wikidot_marker_head_spawn: false,
+                        wikidot_unclosed: false,
+                    }, errors)
+                } else {
+                    ok!(false; Element::LineBreak, errors)
+                }
+            };
+        }
+        return Err(parser.make_err(ParseErrorKind::ListEmpty));
+    }
+
+    let content_follows = wikidot_content_follows(parser.remaining());
+
+    // Cross-li splice transfer keeps the emptied yielding item in `items`
+    // so same-list truncation and whole-list ejection below can address
+    // it. Only when the fallback transfer actually fired.
+    let cross_keep_empty = wikidot
+        && parser.wikidot_explicit_list_yield_tail_peek()
+        && parser.has_wikidot_li_tail_transfer()
+        && parser.wikidot_cell_div_li_opener().is_some()
+        && parser.wikidot_table_wrapped_by_flat_block();
+
+    for element in elements {
+        match element {
+            Element::Partial(PartialElement::ListItem(list_item)) => {
+                push_literal_list_item(
+                    &mut items,
+                    &mut literal_elements,
+                    wikidot,
+                    flag_score,
+                    content_follows,
+                    li_wrap_enclosing,
+                    deeper_blank_before_content,
+                );
+                partial_count += 1;
+                let empty_partial = matches!(
+                    &list_item,
+                    ListItem::Elements { elements, .. } if elements.is_empty()
+                );
+                if empty_partial {
+                    // NLFG (G): still shields the b5 gate below exactly as
+                    // when the empty partial was skipped.
+                    skipped_empty_partial = true;
+                }
+                if !empty_partial || cross_keep_empty || wikidot {
+                    // NLFG (G): in the Wikidot layout an empty explicit item
+                    // is kept as a plain-item boundary: following literal
+                    // content starts (or joins) a plain item, never a
+                    // none-styled degraded item (saved-page probes
+                    // muse-probe-nlfg-g*). Still-empty items are removed
+                    // after the loop.
+                    partial_item_indices.push(items.len());
+                    items.push(list_item);
+                }
+            }
+
+            element @ Element::List { .. } => {
+                // PU81 (plainul-text-mid): literal content between two
+                // native lists joins the open list-derived item instead of
+                // starting a degraded none-styled item (saved-page probes
+                // muse-probe-pu81-*): each blank-separated run wraps as one
+                // paragraph (MIDBLANK probes muse-probe-midblank-*), formed
+                // blocks join as-is. DIVMID: the same join runs inside an
+                // enclosing flat frame or table cell (saved-page probes
+                // muse-probe-divmid-*); F7PROBE: it also runs at page root
+                // under any follower (saved-page probes
+                // muse-probe-f7probe-root-mid-*). The arriving list then
+                // joins the same item through the ordinary push below.
+                // Whitespace-only gaps keep the old merge path. Explicit
+                // [[li]] partials, scored/nested lists, and hoisted heads
+                // keep the old behavior (unprobed or live-split there).
+                if wikidot
+                    && !flag_score
+                    && !nested
+                    && (!li_wrap_enclosing || head_is_own_line)
+                    && partial_count == 0
+                    && literal_elements
+                        .iter()
+                        .any(|element| !element.is_whitespace())
+                    && matches!(
+                        items.last(),
+                        Some(ListItem::SubList { .. } | ListItem::Elements { .. }),
+                    )
+                {
+                    inline_wikidot_sublist_item(&mut items);
+                    if let Some(ListItem::Elements {
+                        elements: item_elements,
+                        ..
+                    }) = items.last_mut()
+                    {
+                        join_wikidot_mid_list_literals(
+                            parser.full_text().inner(),
+                            item_elements,
+                            &mut literal_elements,
+                        );
+                    }
+                } else {
+                    // MIDBLANK (before-first): text before the first native
+                    // list splits at blank gaps like live (the body-leading
+                    // run stays bare, the rest wrap as paragraphs;
+                    // muse-probe-midblank-before-*). Only the plain
+                    // before-first creation qualifies: anywhere else with
+                    // content here is scored/nested/enclosed/partial shaped.
+                    if wikidot
+                        && !flag_score
+                        && !nested
+                        && !li_wrap_enclosing
+                        && partial_count == 0
+                        && items.is_empty()
+                    {
+                        wikidot_assemble_blank_runs(
+                            parser.full_text().inner(),
+                            &mut literal_elements,
+                            true,
+                            false,
+                        );
+                    }
+                    push_literal_list_item(
+                        &mut items,
+                        &mut literal_elements,
+                        wikidot,
+                        flag_score,
+                        content_follows,
+                        li_wrap_enclosing,
+                        // CB91: blank-deeper-row sighting rides the ordinary
+                        // push; the PU81 join path above takes no style.
+                        deeper_blank_before_content,
+                    );
+                }
+                if wikidot
+                    && !flag_score
+                    && matches!(items.last(), Some(ListItem::SubList { .. }))
+                {
+                    // Live puts sibling native lists under one outer item:
+                    // each interior list joins the open inline-styled item
+                    // instead of opening one of its own.
+                    if let Some(ListItem::SubList { element: sub }) = items.pop() {
+                        let mut attributes = AttributeMap::new();
+                        assert!(
+                            attributes.insert(
+                                "style",
+                                cow!("list-style: none; display: inline")
+                            )
+                        );
+                        items.push(ListItem::Elements {
+                            elements: vec![*sub],
+                            attributes,
+                        });
+                    }
+                }
+                if parser.settings().layout.legacy()
+                    && let Some(ListItem::Elements { elements, .. }) = items.last_mut()
+                {
+                    elements.push(element);
+                    continue;
+                }
+                let element = Box::new(element);
+                items.push(ListItem::SubList { element });
+            }
+
+            element if element.is_whitespace() && literal_elements.is_empty() => continue,
+
+            element => literal_elements.push(element),
+        }
+    }
+    // PU81 (plainul-text-mid): trailing literal content after a lone native
+    // list joins it as one inline-styled item with the text bare
+    // (saved-page probes muse-probe-pu81-after-*). The ordinary append
+    // path below then glues the text exactly like the multi-list case.
+    // DIVMID: inside an enclosing flat frame the frame's paragraph flow owns
+    // the tail, so the same text joins as a paragraph instead
+    // (saved-page probes muse-probe-divmid-div-after-ul/-div-mid-tail).
+    // MIDBLANK: blank-separated trailing runs split like live (every run
+    // but the body-final one wraps as a paragraph;
+    // muse-probe-midblank-after-*).
+    let mut trailing_joined = false;
+    if wikidot
+        && !flag_score
+        && !nested
+        && partial_count == 0
+        && literal_elements
+            .iter()
+            .any(|element| !element.is_whitespace())
+    {
+        let joined_frame_tail = mid_join_enclosed
+            && join_wikidot_frame_tail_literals(
+                parser.full_text().inner(),
+                &mut items,
+                &mut literal_elements,
+            );
+        if !joined_frame_tail
+            && !li_wrap_enclosing
+            && matches!(items.last(), Some(ListItem::SubList { .. }))
+        {
+            inline_wikidot_sublist_item(&mut items);
+            wikidot_assemble_blank_runs(
+                parser.full_text().inner(),
+                &mut literal_elements,
+                false,
+                true,
+            );
+            trailing_joined = true;
+        }
+    }
+    // MIDBLANK (text-only and degraded appends): a list-free body splits
+    // like live (the body-leading and body-final runs stay bare, interior
+    // runs wrap; muse-probe-midblank-textonly-*), and text appended to a
+    // degraded item after its lists splits like the trailing path above
+    // (muse-probe-midblank-before-after-blank).
+    if !trailing_joined
+        && wikidot
+        && !flag_score
+        && !nested
+        && !li_wrap_enclosing
+        && partial_count == 0
+    {
+        if items.is_empty() {
+            wikidot_assemble_blank_runs(
+                parser.full_text().inner(),
+                &mut literal_elements,
+                true,
+                true,
+            );
+        } else if matches!(items.last(), Some(ListItem::Elements { .. })) {
+            wikidot_assemble_blank_runs(
+                parser.full_text().inner(),
+                &mut literal_elements,
+                false,
+                true,
+            );
+        }
+    }
+    push_literal_list_item(
+        &mut items,
+        &mut literal_elements,
+        wikidot,
+        flag_score,
+        content_follows,
+        li_wrap_enclosing,
+        deeper_blank_before_content,
+    );
+
+    // NLFG (G): drop the still-empty boundary items kept above; an
+    // all-empty list dissolves through the `items.is_empty()` path below,
+    // exactly as when the empty items were skipped during the loop. When
+    // the cross-li splice is armed the kept empties are the splice's own
+    // bookkeeping and are left in place.
+    if wikidot && !flag_score && !cross_keep_empty {
+        items.retain(|item| {
+            !matches!(
+                item,
+                ListItem::Elements { elements, .. } if elements.is_empty()
+            )
+        });
+    }
+
+    let mut b5_escaped: Option<Vec<Element<'t>>> = None;
+    if wikidot
+        && !flag_score
+        && !skipped_empty_partial
+        && items
+            .iter()
+            .all(|item| matches!(item, ListItem::Elements { .. }))
+    {
+        let pairing_depth = parser.wikidot_li_pairing_depth();
+        let (heads, closes) = parser.wikidot_li_items_at_depth(pairing_depth);
+        if partial_count > 0
+            && heads.len() == partial_count
+            && closes.len() == partial_count
+            && partial_item_indices.len() == partial_count
+            && partial_item_indices
+                .windows(2)
+                .all(|pair| pair[1] == pair[0] + 1)
+        {
+            b5_escaped = wikidot_li_apply_b5(
+                parser,
+                list_type,
+                &mut items,
+                &partial_item_indices,
+                &heads,
+                &closes,
+            );
+        }
+    }
+
+    // Scored-list items keep the item-final break live renders when
+    // the closer sits on its own line (probes muse-probe-colmod-*:
+    // after a div, after text, after a literal line alike), so the
+    // assembled elements are left as they are. A trailing break after
+    // a trailing nested list is already suppressed during assembly.
+    // The one exception is an item whose last line is an unformed
+    // scored block head rendered as literal text: live treats that
+    // line as a block line and ends the item without the break,
+    // unlike an unformed non-scored head or plain text.
+    if wikidot && flag_score {
+        for item in &mut items {
+            if let ListItem::Elements { elements, .. } = item
+                && matches!(elements.last(), Some(Element::LineBreak))
+                && wikidot_li_trailing_text_is_unformed_scored_head(elements)
+            {
+                elements.pop();
+            }
+        }
+    }
+
+    // The div list's ordinal is recorded as soon as any list owning the
+    // div item assembles, even before the yielding list is parsed, so
+    // cell-stage break relocation can find it. The pairing scan starts
+    // just after the `[[ul]]` head, so this list's direct li heads sit
+    // at scan depth 0.
+    if wikidot
+        && this_list_ordinal.is_some()
+        && let Some(div_opener) = parser.wikidot_cell_div_li_opener()
+    {
+        let (all_heads, _) = parser.wikidot_li_items_at_depth(0);
+        if all_heads
+            .iter()
+            .any(|head| *head > opener_start && *head < list_end && *head == div_opener)
+        {
+            parser.record_wikidot_div_list_ordinal(this_list_ordinal.unwrap());
+        }
+    }
+
+    // Cross-li splice transfer (list-assembly half): eject the yielding
+    // list's content strictly after the first div item. Same-list keeps
+    // the prefix and stashes the intermediates; a separate yielding list
+    // ejects whole under the outer-wrap slot.
+    if wikidot
+        && parser.wikidot_explicit_list_yield_tail_peek()
+        && parser.has_wikidot_li_tail_transfer()
+        && parser.wikidot_table_wrapped_by_flat_block()
+        && let Some(div_opener) = parser.wikidot_cell_div_li_opener()
+    {
+        let (all_heads, _) = parser.wikidot_li_items_at_depth(0);
+        let heads: Vec<usize> = all_heads
+            .iter()
+            .copied()
+            .filter(|head| *head > opener_start && *head < list_end)
+            .collect();
+        if heads.len() == items.len() {
+            if let Some(ordinal) = this_list_ordinal
+                && heads.contains(&div_opener)
+            {
+                parser.record_wikidot_div_list_ordinal(ordinal);
+            }
+            match heads.iter().position(|head| *head == div_opener) {
+                Some(div_index) if div_index + 1 < items.len() => {
+                    let ejected = items.split_off(div_index + 1);
+                    let mut eject_vec: Vec<Element<'t>> = Vec::new();
+                    for item in ejected {
+                        match item {
+                            ListItem::Elements { elements, .. } => {
+                                eject_vec.extend(elements);
+                            }
+                            ListItem::SubList { element } => {
+                                eject_vec.push(*element);
+                            }
+                        }
+                    }
+                    parser.extend_wikidot_cross_li_eject(eject_vec);
+                    parser.set_wikidot_cross_li_fired();
+                }
+                Some(_) => {}
+                None => {
+                    // Separate yielding list: eject whole, suppress the
+                    // cell element, stash the outer for re-wrapping.
+                    let outer = Element::List {
+                        ltype: list_type,
+                        items: std::mem::take(&mut items),
+                        attributes: attributes.clone(),
+                        wikidot_explicit_block: true,
+                        wikidot_marker_head_spawn: false,
+                        wikidot_unclosed: false,
+                    };
+                    parser.set_wikidot_cross_li_outer(outer);
+                    parser.set_wikidot_cross_li_fired();
+                    // Keep the yielding out of the cell: return no element.
+                    return ok!(false; Elements::None, errors);
+                }
+            }
+        } else if matches!(
+            items.last(),
+            Some(ListItem::Elements { elements, .. }) if elements.is_empty()
+        ) {
+            // Heads do not line up (literal items in play): restore the
+            // pre-cross behaviour by dropping the kept empty yielding item.
+            items.pop();
+        }
+    }
+
+    // BRIEF-MF65b: the multi-formation escape — live closes the outer
+    // numbered list at the first numbered lost-owner formation's consumed
+    // starred close; the remaining items and elements render at top level.
+    let mut escape_tail: Option<Vec<Element<'t>>> = None;
+    if wikidot && !flag_score && list_type == ListType::Numbered && b5_escaped.is_none() {
+        escape_tail = multi_formation_escape(parser, &mut items, hoist_count);
+        if escape_tail.is_some() {
+            parser.set_wikidot_tail_mode(0);
+        }
+    }
+
+    if items.is_empty() {
+        if let Some(escaped) = b5_escaped {
+            let count = escaped.len();
+            let mut success =
+                crate::parsing::ParseSuccess::new(escaped.into(), errors, false);
+            success.paragraph_split =
+                Some(vec![(count, false, ParagraphSplitKind::Paragraph)]);
+            return Ok(success);
+        }
+        if parser.settings().layout.legacy() {
+            return if nested {
+                ok!(false; Elements::None, errors)
+            } else {
+                record_wikidot_explicit_list_end(parser);
+                if parser.wikidot_preserve_empty_lists()
+                    && parser.body_end_boundaries_is_empty()
+                {
+                    ok!(false; Element::List {
+                        ltype: list_type,
+                        items: Vec::new(),
+                        attributes: attributes.clone(),
+                        wikidot_explicit_block: true,
+                        wikidot_marker_head_spawn: false,
+                        wikidot_unclosed: false,
+                    }, errors)
+                } else {
+                    ok!(false; Element::LineBreak, errors)
+                }
+            };
+        }
+        return Err(parser.make_err(ParseErrorKind::ListEmpty));
+    }
+
+    let mut element = Element::List {
+        ltype: list_type,
+        items,
+        attributes,
+        wikidot_explicit_block: parser.settings().layout.legacy(),
+        wikidot_marker_head_spawn: false,
+        wikidot_unclosed: false,
+    };
+    // Live's inline pairing sees the source whitespace before the first tail
+    // content: a marker that opens the post-list tail is padded, which the
+    // segment join must know (paragraph gathering trims the space first).
+    if parser.settings().layout.legacy()
+        && wikidot_tail_lead_space(parser)
+        && let Element::List { attributes, .. } = &mut element
+    {
+        attributes.insert(WIKIDOT_LIST_TAIL_LEAD_SPACE_MARKER, Cow::Borrowed(""));
+    }
+    // s7 (65d): run items after a matching closer rejoin the list item
+    // set. A `* [[/ul]]` closer on a Bullet list absorbs following `*`
+    // run items; a `# [[/ol]]` closer on a Numbered list absorbs `#`
+    // items. No blank line may separate them (the blank-line follower
+    // case stays split). Absorption uses the native list rule so each
+    // item's content is parsed identically to a normal run item.
+    // The opener must not be on a list-item line: when `* [[ul]]`
+    // appears inside a native bullet run (pool idx 3732), the following
+    // `*` lines belong to the outer run, not to this block's rejoin.
+    let opener_on_list_item_line = wikidot
+        && crate::parsing::rule::impls::line_owner::list_item_line_marker(
+            parser.full_text().inner(),
+            opener_start,
+        )
+        .is_some();
+    let rejoin_marker =
+        if wikidot && !nested && !flag_score && !fused_close && !opener_on_list_item_line
+        {
+            match (closer_line_marker, &element) {
+                (
+                    Some('*'),
+                    Element::List {
+                        ltype: ListType::Bullet,
+                        ..
+                    },
+                ) => Some(ListType::Bullet),
+                (
+                    Some('#'),
+                    Element::List {
+                        ltype: ListType::Numbered,
+                        ..
+                    },
+                ) => Some(ListType::Numbered),
+                _ => None,
+            }
+        } else {
+            None
+        };
+    if let Some(rejoin_ltype) = rejoin_marker
+        && !closer_has_same_line_residual
+        && !parser.body_end_boundary_accepts("iftags")
+        && !parser.has_pending_iftags_end_ahead()
+    {
+        // Try to absorb consecutive native run items of the same type.
+        // Skip only the closer's own line break (not a paragraph break).
+        let mut absorb = (**parser).clone();
+        // Position: after the closer was consumed by get_body_elements.
+        // If we're at a line break, step past it to reach the next line.
+        if absorb.current().token == Token::LineBreak {
+            let _ = absorb.step();
+        }
+        // Only rejoin if the next line starts a matching native list item
+        // (no paragraph break intervened).
+        if absorb.start_of_line()
+            && matches!(
+                absorb.current().token,
+                Token::BulletItem | Token::NumberedItem
+            )
+        {
+            let next_ltype = match absorb.current().token {
+                Token::BulletItem => ListType::Bullet,
+                Token::NumberedItem => ListType::Numbered,
+                _ => ListType::Generic,
+            };
+            if next_ltype == rejoin_ltype
+                && let Ok(success) =
+                    crate::parsing::rule::impls::list::RULE_LIST.try_consume(&mut absorb)
+            {
+                let (extra_elements, extra_errors, _): (
+                    Elements<'t>,
+                    Vec<ParseError>,
+                    bool,
+                ) = success.into();
+                let extra_elements: Vec<Element<'t>> =
+                    extra_elements.into_iter().collect();
+                if let Element::List {
+                    items: ref mut base_items,
+                    ..
+                } = element
+                {
+                    for extra in extra_elements {
+                        match extra {
+                            Element::List {
+                                items: extra_items,
+                                ltype: extra_lt,
+                                ..
+                            } if extra_lt == rejoin_ltype => {
+                                base_items.extend(extra_items);
+                            }
+                            _ => {
+                                // Unexpected structure from RULE_LIST; do not absorb.
+                            }
+                        }
+                    }
+                    if !extra_errors.is_empty() {
+                        errors.extend(extra_errors);
+                    }
+                    let _ = &mut *parser;
+                    parser.update(&absorb);
+                }
+            }
+        }
+    }
+    if let Some(escaped) = b5_escaped {
+        let mut output = vec![element];
+        if fused_close {
+            output.push(text!("]"));
+        }
+        let list_count = output.len();
+        let escaped_count = escaped.len();
+        output.extend(escaped);
+        let mut success = crate::parsing::ParseSuccess::new(output.into(), errors, false);
+        success.paragraph_split = Some(vec![
+            (list_count, false, ParagraphSplitKind::Paragraph),
+            (escaped_count, false, ParagraphSplitKind::Paragraph),
+        ]);
+        return Ok(success);
+    }
+    // L85: live drops the post-list break element before same-para content
+    // (ul-post-e, closeout, cross `G`); the break token itself is dropped
+    // top-level by gather. Blank lines and input end keep the break, as
+    // does content inside a kept iftags gate body (kept-gate pin: boundary
+    // or still-pending designated end).
+    record_wikidot_explicit_list_end(parser);
+    // The escaped tail renders right after the list's close element.
+    if let Some(escape_tail) = escape_tail {
+        // BRIEF-MF65b: the closing list's anchor chrome — the first
+        // formation's — renders after the escaped region in live (input
+        // end). Anchors of escaped formations render nothing in live.
+        // Item 86(a): with a post-list follower at absolute end, live
+        // suppresses the chrome and paragraph-wraps the follower (the
+        // pw65a follower-wrap family reaches the escaped path here).
+        let stash_formed = list_type == ListType::Numbered && !anchor_chromes.is_empty();
+        let follower_wrap = closer_line_marker.is_some() || stash_formed;
+        let content_after_list = (parser.wikidot_next_line_has_content()
+            || (follower_wrap && parser.wikidot_next_line_has_content_skipping_blanks()))
+            && !parser.body_end_boundary_accepts("iftags")
+            && !parser.has_pending_iftags_end_ahead();
+        if wikidot && !nested && follower_wrap {
+            parser.record_wikidot_post_list_follower_wrap(stash_formed);
+        }
+        if stash_formed && !content_after_list {
+            let mut chromes = anchor_chromes;
+            let first = chromes.remove(0);
+            parser.stash_pending_tail_chromes(vec![first]);
+        }
+        let mut output = vec![element];
+        if fused_close {
+            output.push(text!("]"));
+        }
+        output.extend(escape_tail);
+        return ok!(false; output, errors);
+    }
+    // pw65a: a marker-line closer or a stashed numbered lost-owner anchor
+    // chrome marks this list as re-attaching to its follower as a paragraph
+    // in live — even across blank lines (probe rounds pw65a-1/2/3, o5/r3c/
+    // r3e with blank-separated prose). The blank-tolerant peek applies only
+    // to those shapes; plain/degraded lists keep the untolerant check.
+    let stash_formed = !anchor_chromes.is_empty();
+    let stash_o4 = wikidot && !nested && stash_formed && anchor_unstarred;
+    let follower_wrap = closer_line_marker.is_some() || (stash_formed && !stash_o4);
+    let content_after_list = (parser.wikidot_next_line_has_content()
+        || (follower_wrap && parser.wikidot_next_line_has_content_skipping_blanks())
+        || crate::parsing::rule::impls::wikidot_spill_closer_drops_post_list_break(
+            parser,
+        ))
+        && !parser.body_end_boundary_accepts("iftags")
+        && !parser.has_pending_iftags_end_ahead();
+    // BF79 (e-residual): the stash anchor chrome varies by follower type on
+    // live (probes muse-probe-bf79-*): kept CLOSED before an immediate
+    // structural block (heading/hr/quote/multiline div/note/collapsible),
+    // dropped before code/math/raw blocks, single-line containers, prose,
+    // tables, and across a blank line; kept unclosed at end of input.
+    // End-of-input preserves the historic emission for non-stash shapes.
+    let stash_chrome = if stash_formed {
+        parser.wikidot_stash_follower_chrome()
+    } else {
+        WikidotStashFollowerChrome::EndOfInput
+    };
+    if stash_o4 {
+        use crate::parsing::rule::impls::line_owner::WikidotAnchorFollower as F;
+        let class =
+            crate::parsing::rule::impls::line_owner::wikidot_anchor_follower_after_close(
+                parser.full_text().inner(),
+                list_end,
+                parser.current().token == Token::ParagraphBreak,
+                parser.current().token == Token::LineBreak,
+            );
+        match class {
+            F::InlineRun { blank } if list_type == ListType::Numbered && !fused_close => {
+                let mut chromes = anchor_chromes;
+                let mut chrome = chromes.first_mut().cloned();
+                if let Some(Element::List {
+                    wikidot_unclosed, ..
+                }) = chrome.as_mut()
+                {
+                    *wikidot_unclosed = false;
+                }
+                parser.arm_wikidot_anchor_capture(chrome, blank, false);
+                let mut output = vec![element];
+                if fused_close {
+                    output.push(text!("]"));
+                }
+                return ok!(false; output, errors);
+            }
+            F::MathBlock { blank } if list_type == ListType::Numbered && !fused_close => {
+                let _ = anchor_chromes;
+                parser.arm_wikidot_anchor_capture(None, blank, true);
+                let mut output = vec![element];
+                if fused_close {
+                    output.push(text!("]"));
+                }
+                return ok!(false; output, errors);
+            }
+            F::TableBlank if list_type == ListType::Numbered => {
+                let mut chromes = anchor_chromes;
+                for chrome in &mut chromes {
+                    if let Element::List {
+                        wikidot_unclosed, ..
+                    } = chrome
+                    {
+                        *wikidot_unclosed = false;
+                    }
+                }
+                let mut output = vec![element];
+                if fused_close {
+                    output.push(text!("]"));
+                }
+                output.extend(chromes);
+                return success_elements_with_paragraph_safety(false, output, errors);
+            }
+            _ => {}
+        }
+    }
+    if wikidot && !nested && follower_wrap {
+        parser.record_wikidot_post_list_follower_wrap(stash_formed);
+    }
+    if parser.settings().layout.legacy()
+        && !nested
+        && !flag_score
+        && !closer_has_same_line_residual
+        && !content_after_list
+        && !parser.pending_note_list_closer()
+        && !parser.wikidot_cross_list_terminated_body()
+    {
+        maybe_stamp_post_list_blank_gap(parser, &mut element, list_end);
+        let mut output = vec![element];
+        if fused_close {
+            // A fused closer's residual `]` occupies the line-end slot: live
+            // renders `[[/ul]]]` at EOF as `</ul>]` and a following blank
+            // line ends the run without a break, but a single source line
+            // break still shows as `<br />` (captured 2026-11-05).
+            output.push(text!("]"));
+            if parser.current().token == Token::LineBreak {
+                output.push(Element::LineBreak);
+            }
+        } else {
+            // s7 (65d): a type-matching closer (`*` on ul, `#` on ol) drops
+            // the break and enables rejoin; a `#` closer on a ul keeps the
+            // anchor (s6). An unmatched `*` on ol drops the break without
+            // rejoin/anchor. BL79 (e): live drops the closer-line anchor
+            // before a following block (code, div, table, …); keep it only
+            // when no block follows (EOF / heading takes the content path).
+            let closer_anchor = matches!(
+                (closer_line_marker, list_type),
+                (Some('#'), ListType::Bullet)
+            ) && !parser.wikidot_next_skipping_blanks_is_block();
+            let closer_drops_break = closer_line_marker.is_some() && !closer_anchor;
+            if closer_anchor {
+                output.push(Element::List {
+                    ltype: ListType::Bullet,
+                    items: Vec::new(),
+                    attributes: AttributeMap::new(),
+                    wikidot_explicit_block: true,
+                    wikidot_marker_head_spawn: false,
+                    wikidot_unclosed: true,
+                });
+            }
+            // A numbered list re-emits the anchor lists stashed by
+            // decomposed numbered lost-owner formations in the break's
+            // place (LT46 p23-ord). With neither suppressed nor stashed
+            // material, the ordinary post-list break remains. BF79
+            // (e-residual): before a keep-class block follower live closes
+            // the chrome; before a drop-class follower (code/math/raw,
+            // single-line container, prose, table, or across a blank) the
+            // chrome vanishes; at end of input it stays unclosed.
+            if list_type == ListType::Numbered && !anchor_chromes.is_empty() {
+                let mut anchor_chromes = anchor_chromes;
+                match stash_chrome {
+                    WikidotStashFollowerChrome::Drop => {}
+                    WikidotStashFollowerChrome::KeepClosed => {
+                        for chrome in &mut anchor_chromes {
+                            if let Element::List {
+                                wikidot_unclosed, ..
+                            } = chrome
+                            {
+                                *wikidot_unclosed = false;
+                            }
+                        }
+                        output.extend(anchor_chromes);
+                    }
+                    WikidotStashFollowerChrome::EndOfInput => {
+                        output.extend(anchor_chromes);
+                    }
+                }
+            } else if !closer_drops_break && !closer_anchor {
+                output.push(Element::LineBreak);
+            }
+        }
+        ok!(false; output, errors)
+    } else if fused_close {
+        ok!(false; vec![element, text!("]")], errors)
+    } else if list_type == ListType::Numbered
+        && !anchor_chromes.is_empty()
+        && stash_chrome == WikidotStashFollowerChrome::KeepClosed
+    {
+        // Content path (heading/hr/quote followers): the chrome is emitted
+        // closed before the follower block.
+        let mut anchor_chromes = anchor_chromes;
+        for chrome in &mut anchor_chromes {
+            if let Element::List {
+                wikidot_unclosed, ..
+            } = chrome
+            {
+                *wikidot_unclosed = false;
+            }
+        }
+        let mut output = vec![element];
+        output.extend(anchor_chromes);
+        success_elements_with_paragraph_safety(false, output, errors)
+    } else {
+        // HMFOL: live keeps the attached post-list break before a keep-class
+        // block head (heading, leaf quote, `----`; saved-page probes
+        // `muse-probe-hmfol-ul/ol-adj-h1/h2/h6/hr/quote`). Emit it here with
+        // the break token consumed, so the downstream own-line skip never
+        // sees it; the stack routes the pending break past the follower's
+        // prose absorb (see `wikidot_post_list_keep_block`). Scoped to plain
+        // root lists: stash-formed and marker-closer lists keep their
+        // established routing (bf79 pins), and blank separation or EOF never
+        // reaches the helper (it requires a current line break).
+        if wikidot
+            && !nested
+            && !follower_wrap
+            && parser.current().token == Token::LineBreak
+            && parser.wikidot_next_line_is_post_list_keep_head()
+        {
+            parser.step()?;
+            return ok!(false; vec![element, Element::LineBreak], errors);
+        }
+        maybe_stamp_post_list_blank_gap(parser, &mut element, list_end);
+        success_elements_with_paragraph_safety(false, element, errors)
+    }
+}
+
+fn wikidot_list_closer_residual_is_blank(parser: &Parser<'_, '_>) -> bool {
+    let inner = parser.full_text().inner();
+    let rest = inner.get(parser.current().span.start..).unwrap_or("");
+    let line = rest.split('\n').next().unwrap_or("");
+    !line.is_empty() && line.chars().all(|c| c == ' ' || c == '\t')
+}
+
+/// Whether a list's items paragraph-wrap their post-heading trailing chunk
+/// (BRIEF-F7R83 (c), BRIEF-RM83 shape 4). The gate is:
+///   * the follower line right after the enclosing list's own-line closer
+///     wraps (plain text, inline content, blank line, ...), OR
+///   * a flat-pair frame spans the item AND the follower does not veto the
+///     frame wrap (only a formed flat-pair head, a heading line, or `----`
+///     veto; a list head vetoes only the follower wrap, and EOF vetoes
+///     nothing).
+///
+/// Probes: muse-probe-f7r-* (follower classes without a frame) and
+/// muse-probe-rm83-fda1..fda17 (frame open, one probe per follower class).
+fn wikidot_li_wrap_enclosing(parser: &Parser<'_, '_>, from_byte: usize) -> bool {
+    wikidot_list_wrap_gates(parser, from_byte).wrap_enclosing
+}
+
+/// The two item-assembly gates that share the enclosing-list follower scan.
+struct WikidotListWrapGates {
+    /// Whether the items paragraph-wrap their post-heading trailing chunk.
+    wrap_enclosing: bool,
+    /// Whether the PU81 mid join also runs inside an enclosing flat frame or
+    /// advanced table cell (BRIEF-DIVMID). Live keeps text between two
+    /// native lists joined into one inline-styled item inside
+    /// div/note/collapsible/align bodies and table cells exactly as at page
+    /// root; the frame-veto followers still opt the frame tail back out
+    /// (BRIEF-RM83 shape 4).
+    mid_join_enclosed: bool,
+    /// Whether the list head starts its own line (only indentation before
+    /// it). A head hoisted off a list or quote item line is a lost-owner
+    /// formation whose items are emitted at the owner level, where live
+    /// keeps the inter-list text unjoined (frozen pin
+    /// list/hoisted-between-lazy-line).
+    head_is_own_line: bool,
+}
+
+fn wikidot_list_wrap_gates(
+    parser: &Parser<'_, '_>,
+    from_byte: usize,
+) -> WikidotListWrapGates {
+    use crate::parsing::rule::impls::line_owner::{
+        WikidotListFollower, wikidot_list_follower_kind,
+    };
+    let follower = wikidot_list_follower_kind(parser.full_text().inner(), from_byte);
+    let follower_wraps = follower.is_some_and(WikidotListFollower::wraps);
+    let follower_vetoes_frame =
+        follower.is_some_and(WikidotListFollower::suppresses_frame);
+    let frame_open = parser.wikidot_flat_pair_open_at(from_byte);
+    let head_is_own_line =
+        wikidot_list_head_is_own_line(parser.full_text().inner(), from_byte);
+    let mid_join_enclosed = head_is_own_line
+        && (frame_open || parser.in_wikidot_advanced_table_cell_body())
+        && !follower_vetoes_frame;
+    WikidotListWrapGates {
+        wrap_enclosing: follower_wraps || (frame_open && !follower_vetoes_frame),
+        mid_join_enclosed,
+        head_is_own_line,
+    }
+}
+
+/// Whether the first content of the list's post-list tail is preceded by
+/// source whitespace on its own line. Live's inline pairing sees that pad (the
+/// marker cannot close a symmetric format pair), while paragraph gathering
+/// trims it before FTML's inline pairing runs. A line break reset matters:
+/// `[[/ul]] \n__ d` keeps the pad on the close line but the closer sits on the
+/// next line, so live pairs it.
+fn wikidot_tail_lead_space(parser: &Parser) -> bool {
+    let mut padding = false;
+    for token in std::iter::once(parser.current()).chain(parser.remaining()) {
+        match token.token {
+            Token::Whitespace => padding = true,
+            Token::LineBreak | Token::ParagraphBreak => padding = false,
+            Token::InputEnd => return false,
+            _ => return padding,
+        }
+    }
+    false
+}
+
+fn record_wikidot_explicit_list_end(parser: &Parser) {
+    if parser.settings().layout.legacy() {
+        parser.record_wikidot_explicit_list_end(parser.current().span.start);
+    }
+}
+
+fn post_list_blank_gap(parser: &Parser<'_, '_>, list_end: usize) -> bool {
+    let source = parser.full_text().inner();
+    let between = source.get(list_end..parser.current().span.start);
+    let Some(between) = between else {
+        return false;
+    };
+    if !between
+        .bytes()
+        .all(|byte| matches!(byte, b' ' | b'\t' | b'\r' | b'\n'))
+    {
+        return false;
+    }
+    let mut rest = parser.remaining();
+    if parser.current().token == Token::LineBreak {
+        while matches!(
+            rest.first().map(|token| token.token),
+            Some(Token::Whitespace)
+        ) {
+            rest = &rest[1..];
+        }
+        if !matches!(
+            rest.first().map(|token| token.token),
+            Some(Token::ParagraphBreak)
+        ) {
+            return false;
+        }
+        rest = &rest[1..];
+    } else if parser.current().token != Token::ParagraphBreak {
+        return false;
+    }
+    while matches!(
+        rest.first().map(|token| token.token),
+        Some(Token::Whitespace)
+    ) {
+        rest = &rest[1..];
+    }
+    !matches!(
+        rest.first().map(|token| token.token),
+        None | Some(
+            Token::LineBreak
+                | Token::ParagraphBreak
+                | Token::InputEnd
+                | Token::LeftBlock
+                | Token::LeftBlockStar
+                | Token::LeftBlockEnd
+                | Token::RightBlock
+                | Token::Heading
+                | Token::Equals
+                | Token::Quote
+                | Token::TableColumn
+                | Token::TableColumnTitle
+                | Token::TableColumnCenter
+                | Token::TableColumnRight
+        )
+    )
+}
+
+fn maybe_stamp_post_list_blank_gap(
+    parser: &Parser<'_, '_>,
+    element: &mut Element<'_>,
+    list_end: usize,
+) {
+    if !parser.settings().layout.legacy() {
+        return;
+    }
+    let Element::List {
+        wikidot_explicit_block: true,
+        attributes,
+        ..
+    } = element
+    else {
+        return;
+    };
+    if post_list_blank_gap(parser, list_end) {
+        attributes.insert(WIKIDOT_POST_LIST_BLANK_GAP_MARKER, Cow::Borrowed(""));
+    }
+}
+
+/// PU81 (plainul-text-mid): turns a trailing lone native sub-list into the
+/// open inline-styled item the sibling-list merge below produces, so
+/// pending literal content (or the arriving list) can join it.
+fn inline_wikidot_sublist_item<'t>(items: &mut Vec<ListItem<'t>>) {
+    if matches!(items.last(), Some(ListItem::SubList { .. }))
+        && let Some(ListItem::SubList { element: sub }) = items.pop()
+    {
+        let mut attributes = AttributeMap::new();
+        assert!(attributes.insert("style", cow!("list-style: none; display: inline")));
+        items.push(ListItem::Elements {
+            elements: vec![*sub],
+            attributes,
+        });
+    }
+}
+
+/// Whether the list head token starts its own line (only indentation before
+/// it). A head after a list/quote marker belongs to a lost-owner formation.
+fn wikidot_list_head_is_own_line(source: &str, head_byte: usize) -> bool {
+    let line_start = source[..head_byte]
+        .rfind('\n')
+        .map_or(0, |offset| offset + 1);
+    source[line_start..head_byte]
+        .trim_matches([' ', '\t'])
+        .is_empty()
+}
+
+/// DIVMID: inside an enclosing flat frame, item-trailing literal content
+/// after a native list joins the open item as paragraphs (the frame's
+/// paragraph flow owns the tail; live renders `<p>text</p>`, saved-page
+/// probes muse-probe-divmid-div-after-ul and -div-mid-tail). Returns
+/// whether the content joined an item that ends with a native list.
+/// Blank-separated runs split like the page-root mid join (MIDBLANK).
+fn join_wikidot_frame_tail_literals<'t>(
+    source: &str,
+    items: &mut Vec<ListItem<'t>>,
+    pending: &mut Vec<Element<'t>>,
+) -> bool {
+    if matches!(items.last(), Some(ListItem::SubList { .. })) {
+        inline_wikidot_sublist_item(items);
+    }
+    let Some(ListItem::Elements { elements, .. }) = items.last_mut() else {
+        return false;
+    };
+    if !matches!(elements.last(), Some(Element::List { .. })) {
+        return false;
+    }
+    join_wikidot_mid_list_literals(source, elements, pending);
+    true
+}
+
+/// MIDBLANK: whether the source line directly above `content_start` is
+/// blank (empty or whitespace-only). Only that one line is inspected, so
+/// block markup between two runs can never fake a blank.
+fn wikidot_blank_line_before(source: &str, content_start: usize) -> bool {
+    let bytes = source.as_bytes();
+    if content_start == 0 || content_start > bytes.len() {
+        return false;
+    }
+    let mut index = content_start;
+    while index > 0 && (bytes[index - 1] == b' ' || bytes[index - 1] == b'\t') {
+        index -= 1;
+    }
+    if index == 0 || bytes[index - 1] != b'\n' {
+        return false;
+    }
+    index -= 1;
+    if index > 0 && bytes[index - 1] == b'\r' {
+        index -= 1;
+    }
+    while index > 0 && (bytes[index - 1] == b' ' || bytes[index - 1] == b'\t') {
+        index -= 1;
+    }
+    index == 0 || bytes[index - 1] == b'\n' || bytes[index - 1] == b'\r'
+}
+
+/// MIDBLANK: one blank-delimited piece of pending mid literals. A run
+/// records whether a blank gap precedes it; anything not paragraph-safe
+/// (e.g. a formed div) is its own segment.
+enum WikidotBlankSegment<'t> {
+    Run {
+        elements: Vec<Element<'t>>,
+        blank_before: bool,
+    },
+    Other(Element<'t>),
+}
+
+/// MIDBLANK: splits pending mid literals at source-anchored blank lines
+/// (saved-page probes muse-probe-midblank-*: each blank-separated run is
+/// its own paragraph). The blank-line distinction is lost during body
+/// gathering (a blank collapses to one `LineBreak`, byte-identical to a
+/// plain line break), so the split is re-anchored here: a break cluster is
+/// a blank boundary exactly when the next content element starts its line
+/// after a blank line. Elements store no spans, so the next content
+/// element's start comes from its borrowed text address, like the other
+/// source-anchored list scans.
+#[allow(clippy::disallowed_methods)]
+fn wikidot_split_blank_runs<'t>(
+    source: &str,
+    pending: Vec<Element<'t>>,
+) -> Vec<WikidotBlankSegment<'t>> {
+    let source_ptr = source.as_ptr() as usize;
+    let mut pending = pending;
+    while pending.first().is_some_and(|element| {
+        element.is_whitespace() || matches!(element, Element::LineBreaks(_))
+    }) {
+        pending.remove(0);
+    }
+    while pending.last().is_some_and(|element| {
+        element.is_whitespace() || matches!(element, Element::LineBreaks(_))
+    }) {
+        pending.pop();
+    }
+    let mut segments = Vec::new();
+    let mut run: Vec<Element<'t>> = Vec::new();
+    let mut run_blank_before = false;
+    let mut cluster: Vec<Element<'t>> = Vec::new();
+    let flush_run = |segments: &mut Vec<WikidotBlankSegment<'t>>,
+                     run: &mut Vec<Element<'t>>,
+                     run_blank_before: &mut bool| {
+        if !run.is_empty() {
+            segments.push(WikidotBlankSegment::Run {
+                elements: std::mem::take(run),
+                blank_before: *run_blank_before,
+            });
+        }
+        *run_blank_before = false;
+    };
+    for element in pending {
+        if element.is_whitespace() || matches!(element, Element::LineBreaks(_)) {
+            cluster.push(element);
+            continue;
+        }
+        if !element.paragraph_safe() {
+            flush_run(&mut segments, &mut run, &mut run_blank_before);
+            cluster.clear();
+            segments.push(WikidotBlankSegment::Other(element));
+            continue;
+        }
+        if !cluster.is_empty() {
+            let blank = element_source_offset(source_ptr, &element)
+                .is_some_and(|start| wikidot_blank_line_before(source, start));
+            if blank {
+                flush_run(&mut segments, &mut run, &mut run_blank_before);
+                cluster.clear();
+                run_blank_before = true;
+            } else {
+                run.append(&mut cluster);
+            }
+        }
+        run.push(element);
+    }
+    flush_run(&mut segments, &mut run, &mut run_blank_before);
+    segments
+}
+
+/// MIDBLANK: appends one run bare (no paragraph wrap), dropping its
+/// trailing breaks (they are separators, not run content). Leading breaks
+/// stay: they glue the run to a preceding formed block on live
+/// (muse-probe-midblank-mid-div-textlast-noblank renders `<br>t1` bare).
+fn wikidot_push_bare_mid_run<'t>(
+    item_elements: &mut Vec<Element<'t>>,
+    run: &mut Vec<Element<'t>>,
+) {
+    while run.last().is_some_and(|element| {
+        matches!(element, Element::LineBreak | Element::LineBreaks(_))
+    }) {
+        run.pop();
+    }
+    if run.is_empty() {
+        return;
+    }
+    item_elements.append(run);
+}
+
+/// MIDBLANK: reassembles blank-delimited runs for a degraded or trailing
+/// flush. `first_bare` keeps the opening run bare (before-first and
+/// text-only live keep the body-leading run bare); `last_bare` keeps the
+/// closing run bare (after-last and text-only live keep the body-final run
+/// bare). Interior runs always wrap as one paragraph each. Anything but a
+/// clean split (formed blocks present, a single blank-free run, only
+/// whitespace) restores the legacy pending untouched.
+fn wikidot_assemble_blank_runs(
+    source: &str,
+    pending: &mut Vec<Element<'_>>,
+    first_bare: bool,
+    last_bare: bool,
+) {
+    if !pending.iter().all(Element::paragraph_safe) {
+        return;
+    }
+    let mut runs: Vec<Vec<Element<'_>>> = Vec::new();
+    for segment in wikidot_split_blank_runs(source, std::mem::take(pending)) {
+        match segment {
+            WikidotBlankSegment::Run { elements, .. } => runs.push(elements),
+            WikidotBlankSegment::Other(element) => runs.push(vec![element]),
+        }
+    }
+    if runs.len() <= 1 {
+        *pending = runs.into_iter().flatten().collect();
+        return;
+    }
+    let last = runs.len() - 1;
+    let mut combined = Vec::new();
+    for (index, mut run) in runs.into_iter().enumerate() {
+        if (index == 0 && first_bare) || (index == last && last_bare) {
+            wikidot_push_bare_mid_run(&mut combined, &mut run);
+        } else {
+            push_wikidot_mid_list_paragraph(&mut combined, &mut run);
+        }
+    }
+    *pending = combined;
+}
+
+/// PU81 (plainul-text-mid): appends pending literal content between two
+/// native lists to the open item. Each blank-separated run wraps as one
+/// paragraph (saved-page probes muse-probe-midblank-*: a blank-free run is
+/// one `<p>`, inner line breaks stay inside it); anything else (e.g. a
+/// formed div, probe muse-probe-pu81b-mid-div) joins as-is, and a run
+/// glued to a preceding formed block stays bare like live
+/// (muse-probe-midblank-mid-div-textlast-noblank).
+fn join_wikidot_mid_list_literals<'t>(
+    source: &str,
+    item_elements: &mut Vec<Element<'t>>,
+    pending: &mut Vec<Element<'t>>,
+) {
+    let segments = wikidot_split_blank_runs(source, std::mem::take(pending));
+    let mut bare_after_other = false;
+    for segment in segments {
+        match segment {
+            WikidotBlankSegment::Other(element) => {
+                item_elements.push(element);
+                bare_after_other = true;
+            }
+            WikidotBlankSegment::Run {
+                mut elements,
+                blank_before,
+            } => {
+                if bare_after_other && !blank_before {
+                    wikidot_push_bare_mid_run(item_elements, &mut elements);
+                } else {
+                    push_wikidot_mid_list_paragraph(item_elements, &mut elements);
+                }
+                bare_after_other = false;
+            }
+        }
+    }
+}
+
+/// Wraps one pending paragraph-safe run as a paragraph, dropping the
+/// run's trailing breaks (they belong to line separation, not the
+/// paragraph body).
+fn push_wikidot_mid_list_paragraph<'t>(
+    item_elements: &mut Vec<Element<'t>>,
+    run: &mut Vec<Element<'t>>,
+) {
+    while run.last().is_some_and(|element| {
+        matches!(element, Element::LineBreak | Element::LineBreaks(_))
+    }) {
+        run.pop();
+    }
+    if run.is_empty() {
+        return;
+    }
+    item_elements.push(Element::Container(Container::new(
+        ContainerType::Paragraph,
+        std::mem::take(run),
+        AttributeMap::new(),
+    )));
+}
+
+fn push_literal_list_item<'t>(
+    items: &mut Vec<ListItem<'t>>,
+    elements: &mut Vec<Element<'t>>,
+    append_to_last: bool,
+    outer_list_is_scored: bool,
+    content_follows: bool,
+    f7_enclosing: bool,
+    deeper_blank_before_content: bool,
+) {
+    while elements.last().is_some_and(Element::is_whitespace) {
+        elements.pop();
+    }
+    if elements.is_empty() {
+        return;
+    }
+
+    if append_to_last
+        && let Some(ListItem::Elements {
+            elements: item_elements,
+            ..
+        }) = items.last_mut()
+    {
+        // Live joins an un-item'd line after a list with a break: the
+        // newline after the list's last line shows as `<br>` before the
+        // text, while a following list stays glued to it. NLFG: inside an
+        // explicit [[li]] item or at page root live glues the text directly
+        // (saved-page probes muse-probe-nlfg7-*); the break holds when the
+        // list sits inside an enclosing flat block (the hoisted-between
+        // lazy-line pin), which is the `f7_enclosing` flag.
+        if f7_enclosing
+            && matches!(item_elements.last(), Some(Element::List { .. }))
+            && elements
+                .first()
+                .is_some_and(|element| !element.is_whitespace())
+        {
+            item_elements.push(Element::LineBreak);
+        }
+        item_elements.append(elements);
+    } else {
+        if f7_enclosing {
+            wrap_post_heading_segments(elements, true, false);
+        }
+        if append_to_last && !outer_list_is_scored {
+            wrap_wikidot_malformed_scored_items(elements, content_follows);
+        }
+        // Item 91(c), Wikidot layout only (`append_to_last` carries the
+        // legacy-layout flag at every call site): a degraded literal item
+        // whose first element is a blockquote — i.e. a quote row deeper
+        // than the list's own quote level preceded the degraded head in
+        // source — renders with `display: inline` on live (saved-page
+        // probes muse-probe-di91-*: content-agnostic across blockquote
+        // paragraphs, native/explicit lists, tables, headings; order
+        // sensitive — a deeper row after the head, or any same-depth row
+        // before it, keeps the plain none style). Same-depth block
+        // children (e.g. a formed table first) do not trigger it. The
+        // gate keeps the Wikijump-layout degraded trees (which form such
+        // items for shapes Wikidot pairs cleanly) byte-identical to base.
+        // BRIEF-CB91: a BLANK deeper quote row also triggers inline on
+        // live but leaves no element, so the first-element test cannot see
+        // it; the head-time region scan (`deeper_blank_before_content`,
+        // saved-page probes muse-probe-cb91-*) carries that sighting here.
+        let style = if append_to_last
+            && (elements.first().is_some_and(|element| {
+                matches!(
+                    element,
+                    Element::Container(container)
+                        if container.ctype() == ContainerType::Blockquote
+                )
+            }) || deeper_blank_before_content)
+        {
+            "list-style: none; display: inline"
+        } else {
+            "list-style: none"
+        };
+        let mut attributes = AttributeMap::new();
+        assert!(attributes.insert("style", cow!(style)));
+        items.push(ListItem::Elements {
+            elements: std::mem::take(elements),
+            attributes,
+        });
+    }
+}
+
+fn wikidot_li_flat_spans(
+    parser: &Parser<'_, '_>,
+    items: &[ListItem],
+) -> Vec<(usize, usize)> {
+    let mut spans = Vec::new();
+    for item in items {
+        let ListItem::Elements { elements, .. } = item else {
+            continue;
+        };
+        for element in elements {
+            let Element::Partial(partial) = element else {
+                continue;
+            };
+            let head = match partial {
+                PartialElement::WikidotBlockOpen(shell) => shell.head_byte(),
+                PartialElement::WikidotBlockClose(kind) => kind.head_byte(),
+                _ => continue,
+            };
+            if let Some(pair) = parser.wikidot_block_pair_at_head_byte(head) {
+                let span = (pair.head_byte, pair.closer_byte);
+                if !spans.contains(&span) {
+                    spans.push(span);
+                }
+            }
+        }
+    }
+    spans
+}
+
+fn wikidot_li_span_covers(spans: &[(usize, usize)], pos: usize) -> bool {
+    spans
+        .iter()
+        .any(|(head, closer)| *head < pos && pos < *closer)
+}
+
+fn wikidot_li_open_heads(elements: &[Element]) -> Vec<usize> {
+    elements
+        .iter()
+        .filter_map(|element| match element {
+            Element::Partial(PartialElement::WikidotBlockOpen(shell)) => {
+                Some(shell.head_byte())
+            }
+            _ => None,
+        })
+        .collect()
+}
+
+fn wikidot_li_apply_b5<'t>(
+    parser: &Parser<'_, '_>,
+    list_type: ListType,
+    items: &mut Vec<ListItem<'t>>,
+    partial_item_indices: &[usize],
+    heads: &[usize],
+    closes: &[usize],
+) -> Option<Vec<Element<'t>>> {
+    let spans = wikidot_li_flat_spans(parser, items);
+    if spans.is_empty() {
+        return None;
+    }
+    let base = partial_item_indices.first().copied().unwrap_or(0);
+    let mut merged: Vec<ListItem<'t>> = Vec::with_capacity(items.len());
+    merged.extend(items.drain(..base));
+    let mut partials: std::collections::VecDeque<ListItem<'t>> =
+        items.drain(..).collect();
+    let mut hi = 0usize;
+    while let Some(outer) = partials.pop_front() {
+        let Some(&close_pos) = closes.get(hi) else {
+            merged.push(outer);
+            continue;
+        };
+        let dropped = wikidot_li_span_covers(&spans, close_pos);
+        let mut inner_count = 0usize;
+        while hi + inner_count + 1 < heads.len()
+            && wikidot_li_span_covers(&spans, heads[hi + inner_count + 1])
+        {
+            inner_count += 1;
+        }
+        if !dropped || inner_count == 0 {
+            merged.push(outer);
+            hi += 1;
+            continue;
+        }
+        let (mut outer_elements, outer_attributes) = match outer {
+            ListItem::Elements {
+                elements,
+                attributes,
+            } => (elements, attributes),
+            other => {
+                merged.push(other);
+                hi += 1;
+                continue;
+            }
+        };
+        let outer_heads = wikidot_li_open_heads(&outer_elements);
+        let mut inner_items: Vec<(Vec<Element<'t>>, crate::tree::AttributeMap<'t>)> =
+            Vec::new();
+        for _ in 0..inner_count {
+            let Some(inner) = partials.pop_front() else {
+                break;
+            };
+            let ListItem::Elements {
+                elements,
+                attributes,
+            } = inner
+            else {
+                continue;
+            };
+            inner_items.push((elements, attributes));
+        }
+        let mut post = Vec::new();
+        let mut close_element = None;
+        if let Some((elements, attributes)) = inner_items.pop() {
+            let split_at = elements.iter().position(|element| {
+                let Element::Partial(PartialElement::WikidotBlockClose(kind)) = element
+                else {
+                    return false;
+                };
+                outer_heads.contains(&kind.head_byte())
+            });
+            match split_at {
+                Some(at) => {
+                    let mut elements = elements;
+                    post = elements.split_off(at + 1);
+                    close_element = elements.pop();
+                    let pre = elements;
+                    if !pre.is_empty() {
+                        inner_items.push((pre, attributes));
+                    }
+                }
+                None => inner_items.push((elements, attributes)),
+            }
+        }
+        if !inner_items.is_empty() {
+            let inner_list_items: Vec<ListItem> = inner_items
+                .into_iter()
+                .map(|(elements, attributes)| ListItem::Elements {
+                    elements,
+                    attributes,
+                })
+                .collect();
+            outer_elements.push(Element::List {
+                ltype: list_type,
+                items: inner_list_items,
+                attributes: crate::tree::AttributeMap::new(),
+                wikidot_explicit_block: true,
+                wikidot_marker_head_spawn: false,
+                wikidot_unclosed: false,
+            });
+        }
+        if let Some(close) = close_element {
+            outer_elements.push(close);
+        }
+        outer_elements.extend(post);
+        merged.push(ListItem::Elements {
+            elements: outer_elements,
+            attributes: outer_attributes,
+        });
+        hi += 1 + inner_count;
+    }
+    *items = merged;
+    wikidot_li_split_external_close(items, heads, closes)
+}
+
+fn wikidot_li_split_external_close<'t>(
+    items: &mut Vec<ListItem<'t>>,
+    heads: &[usize],
+    closes: &[usize],
+) -> Option<Vec<Element<'t>>> {
+    let ranges: Vec<(usize, usize)> = heads
+        .iter()
+        .zip(closes.iter())
+        .map(|(head, close)| (*head, *close))
+        .collect();
+    let head_inside = |head: usize| {
+        ranges
+            .iter()
+            .any(|(start, end)| *start < head && head < *end)
+    };
+    let found = items.iter().enumerate().find_map(|(item_index, item)| {
+        let ListItem::Elements { elements, .. } = item else {
+            return None;
+        };
+        elements
+            .iter()
+            .position(|element| {
+                let Element::Partial(PartialElement::WikidotBlockClose(kind)) = element
+                else {
+                    return false;
+                };
+                !head_inside(kind.head_byte())
+            })
+            .map(|at| (item_index, at))
+    });
+    let (item_index, at) = found?;
+    let mut escaped = match &mut items[item_index] {
+        ListItem::Elements { elements, .. } => elements.split_off(at),
+        _ => return None,
+    };
+    let mut drained: Vec<Element<'t>> = Vec::new();
+    for later in items.drain(item_index + 1..) {
+        let ListItem::Elements { elements, .. } = later else {
+            continue;
+        };
+        drained.extend(elements);
+    }
+    escaped.extend(drained);
+    if matches!(
+        &items[item_index],
+        ListItem::Elements { elements, .. } if elements.is_empty()
+    ) {
+        items.remove(item_index);
+    }
+    Some(escaped)
+}
+
+fn wikidot_content_follows(tokens: &[ExtractedToken<'_>]) -> bool {
+    let mut in_comment = false;
+    let mut in_block_end = false;
+    let mut comment_tail_dashes = false;
+    for extracted in tokens {
+        if in_block_end {
+            if extracted.token == Token::RightBlock {
+                in_block_end = false;
+            }
+            continue;
+        }
+        if in_comment {
+            if comment_tail_dashes && extracted.token == Token::RightBracket {
+                in_comment = false;
+                comment_tail_dashes = false;
+            } else {
+                comment_tail_dashes = extracted.slice.ends_with("--");
+            }
+            continue;
+        }
+        match extracted.token {
+            Token::InputEnd => return false,
+            Token::LineBreak | Token::ParagraphBreak | Token::Whitespace => {}
+            Token::LeftComment => in_comment = true,
+            Token::LeftBlockEnd => in_block_end = true,
+            Token::Other if extracted.slice.trim().is_empty() => {}
+            _ => return true,
+        }
+    }
+    false
+}
+
+fn wrap_wikidot_malformed_scored_items(
+    elements: &mut Vec<Element<'_>>,
+    content_follows: bool,
+) {
+    let mut lines = vec![Vec::new()];
+    for element in std::mem::take(elements) {
+        if element == Element::LineBreak {
+            lines.push(Vec::new());
+        } else {
+            lines.last_mut().unwrap().push(element);
+        }
+    }
+    let line_text = |line: &[Element]| {
+        line.iter()
+            .filter_map(|element| match element {
+                Element::Text(text) => Some(text.as_ref()),
+                _ => None,
+            })
+            .collect::<String>()
+    };
+    if line_text(&lines[0]) != "[[li_]]" {
+        *elements = join_lines(lines);
+        return;
+    }
+    let Some(paragraph_start) = lines
+        .iter()
+        .enumerate()
+        .skip(1)
+        .find_map(|(index, line)| (line_text(line) == "[[li_]]").then_some(index))
+    else {
+        *elements = join_lines(lines);
+        return;
+    };
+
+    let paragraph_lines = lines.split_off(paragraph_start);
+    *elements = join_lines(lines);
+    for line in paragraph_lines {
+        if line.is_empty() {
+            continue;
+        }
+        if line
+            .iter()
+            .all(|element| matches!(element, Element::Text(_)))
+            && line_text(&line) == "[[/li]]"
+            && !content_follows
+        {
+            elements.extend(line);
+            continue;
+        }
+        let paragraph =
+            Container::new(ContainerType::Paragraph, line, AttributeMap::new());
+        elements.push(Element::Container(paragraph));
+    }
+}
+
+fn join_lines<'t>(lines: Vec<Vec<Element<'t>>>) -> Vec<Element<'t>> {
+    let mut elements = Vec::new();
+    for (index, line) in lines.into_iter().enumerate() {
+        if index > 0 {
+            elements.push(Element::LineBreak);
+        }
+        elements.extend(line);
+    }
+    elements
+}
+
+/// Live's Bibliography rule ends its replacement with a newline of its own, so a
+/// source line break after the bibliography block is a blank line: no `<br>`
+/// is produced for it. The list item raw-body heuristic must not add one.
+/// Whether an explicit `[[li]]` body's last non-blank line is a block closer
+/// for a NON-list block (e.g. `* [[/div]]` whose formation dissolved into a
+/// native run). In that case the dissolved formation's trailing break is
+/// kept after the resulting list, unlike after a `* [[/ul]]`/`[[li]]` close.
+/// Item 65(c): unwrap a dissolved unowned-formation run list in an
+/// explicit li body. Returns per-li element vecs (first = this li's
+/// new content, rest = sibling split items), or None if not applicable.
+fn unowned_dissolve_unwrap<'t>(
+    elements: &mut Vec<Element<'t>>,
+    _li_attributes: &AttributeMap<'t>,
+) -> Option<Vec<Vec<Element<'t>>>> {
+    // Sole-element: the entire li body is the dissolved run list.
+    if elements.len() == 1
+        && let Some(Element::List {
+            items,
+            wikidot_explicit_block: false,
+            wikidot_marker_head_spawn: _,
+            wikidot_unclosed: false,
+            ..
+        }) = elements.first()
+    {
+        let items = items.clone();
+        let out: Vec<Vec<Element<'t>>> = items
+            .into_iter()
+            .map(|item| match item {
+                ListItem::Elements { elements, .. } => elements,
+                ListItem::SubList { element } => vec![*element],
+            })
+            .collect();
+        return if out.is_empty() { None } else { Some(out) };
+    }
+    // Mixed: find a dissolved run list element and split around it. The
+    // dissolve marker was taken for this body range, so the FIRST
+    // non-explicit run-formed list here is the dissolution product; a
+    // later run list is ordinary body content that must not be mistaken
+    // for it (muse-probe-x88f-g1-hash-after-item).
+    let pos = elements.iter().position(|e| {
+        matches!(
+            e,
+            Element::List {
+                wikidot_explicit_block: false,
+                wikidot_marker_head_spawn: _,
+                wikidot_unclosed: false,
+                ..
+            }
+        )
+    })?;
+    let Element::List { items, .. } = elements.remove(pos) else {
+        return None;
+    };
+    let mut dissolved: Vec<Vec<Element<'t>>> = items
+        .into_iter()
+        .map(|item| match item {
+            ListItem::Elements { elements, .. } => elements,
+            ListItem::SubList { element } => vec![*element],
+        })
+        .collect();
+    if dissolved.is_empty() {
+        return None;
+    }
+    // Content BEFORE the dissolved formation stays in this li: live keeps
+    // it as the leading item and the dissolved items follow as siblings
+    // (harvest-c1live probes after-text/after-item).
+    // Content AFTER the dissolved formation continues the LAST dissolved
+    // item in place instead of opening a new sibling (item 88 follow-up,
+    // saved-page probes muse-probe-x88f-g1-*): uafter<br> for plain text,
+    // u<ul>...</ul> for a following run, etc.
+    let trailing: Vec<Element<'t>> = elements.split_off(pos);
+    let before = std::mem::take(elements);
+    if !trailing.is_empty()
+        && let Some(last) = dissolved.last_mut()
+    {
+        // Live separates a following formed block from the dissolved
+        // item's text with one break (probes muse-probe-x88f-g1-hash-
+        // after-heading/-div/-quote); a following run, code block, or
+        // inline content joins with no break (after-item/-itemtext/
+        // -after-code/-after-inline).
+        let block_follower = matches!(
+            trailing.first(),
+            Some(Element::Container(container))
+                if matches!(
+                    container.ctype(),
+                    ContainerType::Div
+                        | ContainerType::Header(_)
+                        | ContainerType::Blockquote
+                        | ContainerType::Note
+                        | ContainerType::Align(_)
+                )
+        );
+        if block_follower && !matches!(last.last(), Some(Element::LineBreak)) {
+            last.push(Element::LineBreak);
+        }
+        last.extend(trailing);
+    }
+    let mut result = Vec::with_capacity(1 + dissolved.len());
+    if !before.is_empty() {
+        result.push(before);
+    }
+    result.extend(dissolved);
+    Some(result)
+}
+
+/// NLFG (F): does the li body end with a bare flat pair (div, note, or
+/// collapsible) whose close is the body's last line and whose bare open
+/// appears earlier? Live keeps the item trailing break after a trailing
+/// nested list for a dissolved bare div pair (lihoist p5) or a formed
+/// note/collapsible pair; pairs with text in their lines, inline pairs,
+/// and code/html pairs do not count (saved-page probes muse-probe-nlfg*).
+fn wikidot_li_body_ends_with_dissolved_bare_div(source: &str) -> bool {
+    fn bare_marker_line(line: &str) -> Option<&str> {
+        let mut text = line.trim();
+        // Strip quote and native-list prefixes.
+        loop {
+            let trimmed = text.trim_start_matches([' ', '\t', '>']);
+            if trimmed == text {
+                break;
+            }
+            text = trimmed;
+        }
+        // Strip repeated native-list markers (`* * [[/div]]` is a bare
+        // marker line too).
+        loop {
+            let mut stripped = false;
+            for marker in ["* ", "# "] {
+                if let Some(rest) = text.strip_prefix(marker) {
+                    text = rest.trim();
+                    stripped = true;
+                    break;
+                }
+            }
+            if !stripped {
+                break;
+            }
+        }
+        if text == "*" || text == "#" {
+            return None;
+        }
+        if !text.starts_with("[[") || !text.ends_with("]]") {
+            return None;
+        }
+        let inner = &text[2..text.len() - 2];
+        if inner.is_empty() || inner.chars().any(|c| c.is_whitespace()) {
+            return None;
+        }
+        Some(inner)
+    }
+
+    let lowered = source.to_ascii_lowercase();
+    let body = lowered
+        .rfind("[[/li")
+        .map(|index| &source[..index])
+        .unwrap_or(source);
+    let Some(close_line) = body.lines().rev().find(|line| !line.trim().is_empty()) else {
+        return false;
+    };
+    let Some(close_inner) = bare_marker_line(close_line) else {
+        return false;
+    };
+    let Some(name) = close_inner.strip_prefix('/') else {
+        return false;
+    };
+    // Only pairs whose formation actually forms (note, collapsible) or
+    // dissolves (bare div) keep the break; code/html pairs stay literal.
+    if !matches!(name, "div" | "note" | "collapsible") {
+        return false;
+    }
+    body.lines()
+        .any(|line| bare_marker_line(line).is_some_and(|inner| inner == name))
+}
+
+/// NLFG (F): does this element tree hold a formed flat block (div, note,
+/// or collapsible)? Live keeps the item trailing break after a trailing
+/// nested list when a flat-block formation actually formed in the item
+/// body (saved-page probes muse-probe-nlfg*).
+fn wikidot_li_element_has_formed_flat_container(element: &Element<'_>) -> bool {
+    match element {
+        Element::Container(container) => {
+            matches!(container.ctype(), ContainerType::Div | ContainerType::Note)
+                || container
+                    .elements()
+                    .iter()
+                    .any(wikidot_li_element_has_formed_flat_container)
+        }
+        Element::Collapsible { elements, .. } => elements
+            .iter()
+            .any(wikidot_li_element_has_formed_flat_container),
+        // Note/collapsible formations land as wikidot block frames at this
+        // stage (note-x-between, coll-x-between probes).
+        Element::WikidotBlockFrame { .. } => true,
+        Element::List { items, .. } => items.iter().any(|item| match item {
+            ListItem::Elements { elements, .. } => elements
+                .iter()
+                .any(wikidot_li_element_has_formed_flat_container),
+            ListItem::SubList { element } => {
+                wikidot_li_element_has_formed_flat_container(element)
+            }
+        }),
+        _ => false,
+    }
+}
+
+/// NL81 (D): an empty native marker line (`* ` / `# ` with no content)
+/// takes the item body's closing break with it on live.
+fn wikidot_li_body_ends_with_empty_native_marker(source: &str) -> bool {
+    let lowered = source.to_ascii_lowercase();
+    let body = lowered
+        .rfind("[[/li")
+        .map(|index| &source[..index])
+        .unwrap_or(source);
+    let Some(line) = body.lines().rev().find(|line| !line.trim().is_empty()) else {
+        return false;
+    };
+    let line = line.trim_end_matches('\r');
+    let trimmed_start = line.trim_start_matches([' ', '\t']);
+    // `* ` or `# ` (marker + at least one space) with no further content.
+    // `*` / `#` alone is NOT an empty marker line that takes the break.
+    let rest = if let Some(r) = trimmed_start.strip_prefix("* ") {
+        r
+    } else if let Some(r) = trimmed_start.strip_prefix("# ") {
+        r
+    } else {
+        return false;
+    };
+    rest.trim().is_empty()
+}
+
+fn wikidot_li_text_is_bare_block_marker(text: &str) -> bool {
+    let text = text.trim();
+    if !text.starts_with("[[") || !text.ends_with("]]") {
+        return false;
+    }
+    let inner = &text[2..text.len() - 2];
+    let inner = inner.strip_prefix('/').unwrap_or(inner);
+    let name = inner.split_whitespace().next().unwrap_or(inner);
+    !name.is_empty()
+        && name
+            .bytes()
+            .all(|b| b.is_ascii_alphanumeric() || b == b'-' || b == b'_')
+}
+
+fn wikidot_li_is_inline_marker_partial(element: &Element<'_>) -> bool {
+    matches!(
+        element,
+        Element::Partial(
+            PartialElement::InlineSizeOpen(..)
+                | PartialElement::InlineSizeClose(_)
+                | PartialElement::InlineSpanOpen(..)
+                | PartialElement::InlineSpanClose(_)
+                | PartialElement::InlineFormatOpen(_)
+                | PartialElement::InlineFormatClose(_)
+                | PartialElement::InlineColorOpen(..)
+                | PartialElement::InlineColorClose
+                | PartialElement::InlineAnchorOpen(..)
+                | PartialElement::InlineAnchorClose(_)
+        )
+    )
+}
+
+/// NL81 (C): marker-only nested native list at item end — every direct
+/// item is only a bare block marker (possibly split across text nodes or
+/// inline marker partials). Live drops the trailing break.
+fn wikidot_li_marker_only_nested_list(element: &Element<'_>) -> bool {
+    let Element::List { items, .. } = element else {
+        return false;
+    };
+    !items.is_empty()
+        && items.iter().all(|item| match item {
+            ListItem::Elements { elements, .. } => {
+                let mut joined = String::new();
+                let mut saw_marker_partial = false;
+                for e in elements {
+                    match e {
+                        Element::Text(t) => joined.push_str(t),
+                        Element::LineBreak => {}
+                        _ if wikidot_li_is_inline_marker_partial(e) => {
+                            saw_marker_partial = true;
+                        }
+                        _ => return false,
+                    }
+                }
+                let joined = joined.trim();
+                if joined.is_empty() {
+                    saw_marker_partial
+                } else {
+                    wikidot_li_text_is_bare_block_marker(joined)
+                }
+            }
+            ListItem::SubList { .. } => false,
+        })
+}
+
+fn trailing_wikidot_bibliography(elements: &[Element<'_>]) -> bool {
+    matches!(
+        elements.last(),
+        Some(Element::BibliographyBlock { .. })
+            | Some(Element::Partial(PartialElement::WikidotBlockClose(
+                WikidotBlockCloseKind::BibliographyCrossed { .. }
+            )))
+    )
+}
+
+fn note_list_would_take_enclosing_closer<'r, 't>(
+    parser: &Parser<'r, 't>,
+    opener_start: usize,
+    kind: &str,
+) -> bool
+where
+    'r: 't,
+{
+    // The enclosing list has to have opened inside this footnote. A list
+    // that is still open from outside the footnote keeps its own closer.
+    let Some(depth_at_footnote) = parser.list_depth_at_footnote() else {
+        return false;
+    };
+    if !parser.in_note() || parser.wikidot_li_pairing_depth() <= depth_at_footnote + 1 {
+        return false;
+    }
+    if same_kind_list_depth_before(parser.full_text().inner(), opener_start, kind) <= 0 {
+        return false;
+    }
+    same_kind_closers_ahead(parser, kind) < 2
+}
+
+fn same_kind_list_depth_before(source: &str, opener_start: usize, kind: &str) -> i32 {
+    let end = opener_start.min(source.len());
+    let mut depth = 0i32;
+    let mut index = 0usize;
+    let text = &source[..end];
+    while let Some(found) = text[index..].find("[[") {
+        let start = index + found;
+        match list_marker_at(text, start, kind) {
+            Some(true) => depth += 1,
+            Some(false) => depth -= 1,
+            None => {}
+        }
+        index = start + 2;
+    }
+    depth
+}
+
+fn same_kind_closers_ahead<'r, 't>(parser: &Parser<'r, 't>, kind: &str) -> usize
+where
+    'r: 't,
+{
+    let mut scan = parser.clone();
+    let mut nested = 0i32;
+    let mut closers = 0usize;
+    loop {
+        if scan.current().token == Token::InputEnd || scan.at_hard_body_end_boundary() {
+            break;
+        }
+        let before = scan.current().span.start;
+        match scan.current().token {
+            Token::LeftBlock => {
+                let mut probe = scan.clone();
+                if let Ok((name, _, _)) = probe.get_block_name(false) {
+                    let name = name.strip_suffix('_').unwrap_or(&name);
+                    if name.eq_ignore_ascii_case(kind) {
+                        nested += 1;
+                    }
+                }
+            }
+            Token::LeftBlockEnd => {
+                let mut probe = scan.clone();
+                if let Ok(name) = probe.get_end_block() {
+                    let name = name.strip_suffix('_').unwrap_or(&name);
+                    if name.eq_ignore_ascii_case(kind) {
+                        if nested == 0 {
+                            closers += 1;
+                        } else {
+                            nested -= 1;
+                        }
+                    }
+                    scan.update(&probe);
+                    if scan.current().span.start != before {
+                        continue;
+                    }
+                }
+            }
+            _ => {}
+        }
+        if scan.step().is_err() || scan.current().span.start == before {
+            break;
+        }
+    }
+    closers
+}
+
+/// `Some(true)` is an opener, `Some(false)` a closer, of `kind`.
+fn list_marker_at(text: &str, start: usize, kind: &str) -> Option<bool> {
+    let rest = text.get(start..)?;
+    let (closer, name_at) = if let Some(rest) = rest.strip_prefix("[[/") {
+        (true, rest)
+    } else {
+        (false, rest.strip_prefix("[[")?)
+    };
+    let name = name_at.get(..kind.len())?;
+    if !name.eq_ignore_ascii_case(kind) {
+        return None;
+    }
+    let after = name_at.get(kind.len()..)?;
+    if closer {
+        after.starts_with("]]").then_some(false)
+    } else if after.starts_with("]]") || after.starts_with([' ', '\t']) {
+        Some(true)
+    } else {
+        None
+    }
+}
+
+fn parse_list_item<'r, 't>(
+    parser: &mut Parser<'r, 't>,
+    name: &str,
+    opener_start: usize,
+    flag_star: bool,
+    flag_score: bool,
+    in_head: bool,
+) -> ParseResult<'r, 't, Elements<'t>> {
+    debug!("List item block: name={name}, in_head={in_head}, score={flag_score}");
+    let wikidot = parser.settings().layout.legacy();
+    assert!(!flag_star, "List item block doesn't allow star flag");
+    assert_block_name(&BLOCK_LI, name);
+    if flag_score && wikidot {
+        return Err(parser.make_err(ParseErrorKind::BlockMalformedArguments));
+    }
+
+    let arguments = parser.get_head_map_wikidot(&BLOCK_LI, in_head)?;
+    let mut attributes = arguments.to_attribute_map(parser.settings());
+    let body_start = parser.current().span.start;
+    if wikidot && parser.wikidot_li_inside_item_body() {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+    if wikidot && parser.wikidot_greedy_tail_eats_closers(opener_start, &["li"]) {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+    let pending_list_scope = wikidot && parser.wikidot_pending_paired_list_close();
+    if wikidot && (parser.wikidot_li_pairing_depth() > 0 || pending_list_scope) {
+        if !parser.wikidot_li_head_paired(opener_start) {
+            return Err(parser.make_err(ParseErrorKind::RuleFailed));
+        }
+    } else if wikidot && !parser.has_body_end_block(&BLOCK_LI) {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+
+    // Post-yield row-tail items: once an explicit list yields at the splice,
+    // the row-tail [[li]] heads after it are live-structural items whose
+    // content ejects to the foster as lists (wrapper- and div-independent;
+    // probes l1-plain/l2-nowrap/l4-li3 and the frozen laterli shape). They
+    // assemble like list items (li segment assembly, so trailing-break
+    // handling matches list membership) but return as foster content
+    // instead of a ListItem, which row extract does not accept.
+    let post_yield_scope = wikidot
+        && parser.wikidot_li_pairing_depth() == 0
+        && parser.wikidot_explicit_list_yield_tail_peek();
+
+    if wikidot
+        && (parser.wikidot_li_pairing_depth() > 0
+            || post_yield_scope
+            || pending_list_scope)
+        && !parser.discarding_hidden_body()
+    {
+        parser.push_wikidot_li_collect(Some(opener_start));
+        let previous_cursor = parser.quote_body_cursor();
+        let installed = if previous_cursor.is_none()
+            && let Some(depth) = parser.native_blockquote_depth()
+        {
+            parser
+                .install_quote_body_cursor_at_current_line_with_literal_residuals(depth);
+            true
+        } else {
+            false
+        };
+        let body = parser.get_wikidot_li_body_segments(&BLOCK_LI);
+        if installed {
+            parser.set_quote_body_cursor(previous_cursor);
+        }
+        parser.pop_wikidot_li_collect();
+        let body = body?;
+        let source_end = parser.current().span.start;
+        let fused_close = parser.wikidot_body_closed_with_fused_close(&BLOCK_LI);
+        let (segments, errors, _) = body.into();
+        // Cross-li splice transfer trigger (first-wins, cell-scoped): a
+        // completed `[[div]]` pair inside this item's body arms the later
+        // yielding item in the same cell.
+        if wikidot
+            && parser.in_wikidot_advanced_table_cell_body()
+            && parser.wikidot_cell_div_li_opener().is_none()
+            && segments.iter().any(|segment| {
+                segment.iter().any(|element| {
+                    matches!(
+                        element,
+                        Element::Partial(PartialElement::WikidotBlockClose(
+                            WikidotBlockCloseKind::Div { .. }
+                        ))
+                    )
+                })
+            })
+        {
+            parser.record_wikidot_cell_div_li_opener(opener_start);
+        }
+        let source = &parser.full_text().inner()[body_start..source_end];
+        if wikidot && wikidot_li_body_has_inner_blank_line(source) {
+            attributes.insert(WIKIDOT_LIST_ITEM_BLANK_LINE_MARKER, cow!(""));
+        }
+        let consumed = parser.wikidot_consumed_li_close();
+        let terminated_at_cross_close = (parser.current().token == Token::LeftBlockEnd
+            && parser
+                .wikidot_li_cross_pair_at(parser.current().span.start)
+                .is_some_and(|(_, crossed)| crossed))
+            || consumed.is_some();
+        // BRIEF-F7R83 (c) + BRIEF-RM83 shape 4: the post-heading wrap is
+        // gated by what follows the enclosing list — see
+        // `wikidot_li_wrap_enclosing` (probes muse-probe-f7r-* and
+        // muse-probe-rm83-fda*).
+        let enclosing_block = wikidot_li_wrap_enclosing(parser, body_start);
+        // NL81 (E): take shadowed-div-region signal before assembly so the
+        // region-end break can be positioned. Clear swallowed-block's
+        // all-linebreaks flag state separately.
+        let shadowed_div_region = !post_yield_scope
+            && parser.take_wikidot_li_shadowed_div_region_at(body_start, source_end);
+        // BRIEF-TB74 (ledger item 74(e)): the trailing plain run after a
+        // blank line merges bare into the item flow when it sits in the
+        let remainder = &parser.full_text().inner()[source_end..];
+        let chunk_is_doc_final = wikidot_li_last_run_is_doc_final(remainder);
+        let quote_follower =
+            crate::parsing::rule::impls::line_owner::wikidot_list_follower_kind(
+                parser.full_text().inner(),
+                body_start,
+            )
+            .is_some_and(|follower| {
+                matches!(
+                    follower,
+                    crate::parsing::rule::impls::line_owner::WikidotListFollower::Quote
+                )
+            });
+        let last_run_is_doc_final =
+            (!enclosing_block || quote_follower) && chunk_is_doc_final;
+        // A nested item's chunk ends at its own enclosing list close:
+        // content the outer item carries afterwards does not flip the run
+        // (probes muse-probe-plainrun-2-a/c and -27). A flat block spanning
+        // the item still forces the paragraph (probe -2-b).
+        let plain_run_is_doc_final = !parser.wikidot_flat_pair_open_at(body_start)
+            && (chunk_is_doc_final || parser.wikidot_li_collect_inside_item());
+        let mut elements = assemble_wikidot_li_segments(
+            segments,
+            source,
+            LiSegmentFlags {
+                in_bibliography_body: parser.in_wikidot_bibliography_body(),
+                note_yielded_list_closer: parser.pending_note_list_closer()
+                    || parser.wikidot_cross_list_terminated_body(),
+                terminated_at_cross_close,
+                in_cell: parser.in_wikidot_advanced_table_cell_body(),
+                enclosing_block,
+                shadowed_div_region,
+                suppress_trail: parser.in_footnote()
+                    || crate::parsing::rule::impls::line_owner::wikidot_list_contains_footnote_open(
+                        parser.full_text().inner(),
+                        body_start,
+                    ),
+                quoted_li_close_hoisted: parser
+                    .peek_wikidot_quote_boundary_quoted_li_close(),
+            },
+            DocFinalSignals {
+                literal: last_run_is_doc_final,
+                plain: plain_run_is_doc_final,
+            },
+        );
+        // NL81 (E, all-linebreaks-body): no content survived inside the
+        // shadowed region — the region-end break goes before any content
+        // that followed the region (or keeps the item alive when empty).
+        // Only prepend when the li does not already start with a formed
+        // block (a swallowed div nested inside other structures must not
+        // inject a break at the outer li's start).
+        if !post_yield_scope
+            && parser.take_wikidot_li_swallowed_block_at(body_start, source_end)
+        {
+            let starts_with_formed_block = elements.first().is_some_and(|element| {
+                matches!(
+                    element,
+                    Element::Container(_)
+                        | Element::Collapsible { .. }
+                        | Element::Code { .. }
+                        | Element::Table(_)
+                        | Element::Module(_)
+                        | Element::HorizontalRule
+                        | Element::ContentSeparator
+                        | Element::Math { .. }
+                        | Element::TabView(_)
+                        | Element::List { .. }
+                        | Element::Html { .. }
+                        | Element::Iframe { .. }
+                        | Element::Include { .. }
+                        | Element::BibliographyBlock { .. }
+                        | Element::Partial(PartialElement::WikidotBlockOpen(_))
+                        | Element::Partial(PartialElement::WikidotFoster(_))
+                )
+            });
+            if elements.is_empty() {
+                elements.push(Element::LineBreak);
+            } else if !starts_with_formed_block {
+                elements.insert(0, Element::LineBreak);
+            }
+        }
+        if consumed.is_some() {
+            parser.clear_wikidot_consumed_li_close();
+        }
+        if parser.wikidot_li_closed_at_shallower_quote_line()
+            && matches!(elements.last(), Some(Element::LineBreak))
+        {
+            elements.pop();
+        }
+        if fused_close {
+            elements.push(text!("]"));
+        }
+        // Post-yield row-tail items eject as foster content (see the
+        // post_yield_scope decision above); keep placement before the
+        // run-formation splits, which are list-item specific.
+        if post_yield_scope {
+            let element = Element::Partial(PartialElement::WikidotFoster(elements));
+            return success_elements_with_paragraph_safety(false, element, errors);
+        }
+        // Item 65(c): an unowned lost-owner list formation dissolved its
+        // content into this explicit li. Unwrap the dissolved run list so
+        // its items become this li's content / split into sibling items.
+        if parser.take_wikidot_li_unowned_dissolve_at(body_start, source_end)
+            && let Some(mut output) = unowned_dissolve_unwrap(&mut elements, &attributes)
+        {
+            // output[0] replaces this li's elements; rest are sibling partials
+            if output.len() == 1 {
+                elements = output.pop().unwrap();
+            } else {
+                let first = output.remove(0);
+                let element =
+                    Element::Partial(PartialElement::ListItem(ListItem::Elements {
+                        elements: first,
+                        attributes: attributes.clone(),
+                    }));
+                let mut result = vec![element];
+                for elems in output {
+                    result.push(Element::Partial(PartialElement::ListItem(
+                        ListItem::Elements {
+                            elements: elems,
+                            attributes: AttributeMap::new(),
+                        },
+                    )));
+                }
+                return success_elements_with_paragraph_safety(
+                    false,
+                    Elements::Multiple(result),
+                    errors,
+                );
+            }
+        }
+        if wikidot && !post_yield_scope {
+            let full = parser.full_text().inner();
+            let splice_from = splice_dissolved_formation_run(&mut elements, source);
+            wrap_dissolved_formation_tail(
+                &mut elements,
+                source,
+                full,
+                body_start,
+                splice_from,
+            );
+        }
+        // lihoist p23: a body folding to a single native run list whose only
+        // items are depth-2+ marker lines is no formation in live — the
+        // lines dissolve to a paragraph when a starred list pair formation
+        // closes inside the body, and to bare text otherwise.
+        if elements.len() == 1
+            && let Some(Element::List { items, .. }) = elements.first()
+            && !items.is_empty()
+            && items.iter().all(|item| {
+                matches!(
+                    item,
+                    ListItem::Elements { elements: inner, .. }
+                        if !inner.is_empty()
+                            && deep_marker_head(&inner[0])
+                            && inner.iter().all(|element| matches!(element, Element::Text(_) | Element::LineBreak))
+                )
+            })
+        {
+            let deep_formation =
+                crate::parsing::rule::impls::line_owner::starred_list_closer_in_source(
+                    source,
+                );
+            let [Element::List { items, .. }] = elements.as_slice() else {
+                unreachable!()
+            };
+            let inner: Vec<Element<'t>> = items
+                .iter()
+                .flat_map(|item| match item {
+                    ListItem::Elements { elements: inner, .. } => inner.clone(),
+                    ListItem::SubList { .. } => Vec::new(),
+                })
+                .collect();
+            if deep_formation {
+                elements = vec![Element::Container(Container::new(
+                    ContainerType::Paragraph,
+                    inner,
+                    AttributeMap::new(),
+                ))];
+            } else {
+                elements = inner;
+            }
+        }
+        // lihoist p23-early (LT46): an explicit-list body item that is a
+        // depth-2+ marker line (a `(none)`-styled literal item starting at
+        // the deep line) escapes the single-list body into paragraph
+        // segments in live: the deep line becomes its own paragraph, the
+        // remaining item lines reassemble into native lists, dissolving
+        // single-list wrappers (the run's fuse/promote semantics).
+        // Starred or unstarred closers behave the same (p23-early/e3/e4
+        // probes); the rule keys on the literal item, not the closer.
+        let mixed_deep = elements.len() == 1
+            && matches!(elements.first(), Some(Element::List { ltype: ListType::Bullet, items, .. })
+            if items.iter().any(|item| {
+                matches!(item, ListItem::Elements { attributes, elements }
+                    if attributes.get().get("style").is_some_and(|style| style == "list-style: none")
+                        && elements.first().is_some_and(deep_marker_head))
+            }));
+        if mixed_deep {
+            let single = elements
+                .first()
+                .cloned()
+                .expect("checked single element above");
+            if let Some(segments) = split_mixed_deep_marker_list(single) {
+                elements = segments;
+            }
+        }
+        // Live ends a run formation inside an explicit [[li]] body at the
+        // completing pair's closer: run items after the closer escape to
+        // the enclosing list as its items instead of re-forming a second
+        // list inside this item (lihoist p12/p15/d6-24.3). When the
+        // assembled body is exactly [formation list, native tail list],
+        // split the tail list's items out as sibling items. The escape
+        // requires a recorded explicit-list end inside this body (the
+        // completing pair's closer); without one the tail list is a
+        // re-typed continuation of the run (e.g. `* a` then `# b`) and live
+        // keeps both lists nested inside the item.
+        let core_end = elements
+            .iter()
+            .rposition(|element| !element.is_whitespace())
+            .map_or(0, |index| index + 1);
+        let plain_native = |items: &Vec<ListItem<'t>>| {
+            !items.is_empty()
+                && items.iter().all(|item| {
+                    matches!(
+                        item,
+                        ListItem::Elements { elements, .. }
+                            if elements
+                                .iter()
+                                .all(|element| matches!(element, Element::Text(_)))
+                    )
+                })
+        };
+        let escaped_items: Option<Vec<ListItem<'t>>> = match &elements[..core_end] {
+            [
+                Element::List {
+                    items: head_items,
+                    wikidot_explicit_block: false,
+                    ..
+                },
+                Element::List {
+                    items: tail_items,
+                    wikidot_explicit_block: false,
+                    ..
+                },
+            ] if plain_native(head_items) && plain_native(tail_items) => {
+                Some(tail_items.clone())
+            }
+            _ => None,
+        };
+        // The escape requires a recorded explicit-list end inside this body
+        // (the completing pair's closer); see the comment above.
+        let completing_pair_in_body = !parser
+            .wikidot_explicit_list_ends_between(body_start, source_end)
+            .is_empty();
+        let escaped_items = escaped_items.filter(|_| completing_pair_in_body);
+        if let Some(tail_items) = escaped_items {
+            elements.truncate(core_end - 1);
+            // The removed tail list's leading line break joins the escaped
+            // items, matching the break the enclosing list puts between items.
+            let element =
+                Element::Partial(PartialElement::ListItem(ListItem::Elements {
+                    elements,
+                    attributes,
+                }));
+            let mut output = vec![element];
+            output.extend(
+                tail_items
+                    .into_iter()
+                    .map(|item| Element::Partial(PartialElement::ListItem(item))),
+            );
+            return success_elements_with_paragraph_safety(
+                false,
+                Elements::Multiple(output),
+                errors,
+            );
+        }
+        // Item-level closer escape (d6-24.3): the completing explicit-list
+        // pair can end a run formation in the middle of the tail list, with
+        // the items after its closer belonging to the enclosing list while
+        // the items before it stay in this item. Unlike the whole-tail
+        // escape above, the head list may carry a block frame (the d6-24
+        // note), so only the tail is required to be plain; the split itself
+        // is purely positional — the first recorded explicit-list end inside
+        // this body that straddles the tail items' borrowed-text offsets.
+        // No end (a lone closer, lihoist p19) or no straddle (the note-split
+        // pin) means no escape.
+        let partial_escape: Option<(usize, Vec<ListItem<'t>>)> =
+            match &elements[..core_end] {
+                [
+                    Element::List {
+                        wikidot_explicit_block: false,
+                        ..
+                    },
+                    Element::List {
+                        items: tail_items,
+                        wikidot_explicit_block: false,
+                        ..
+                    },
+                    rest @ ..,
+                ] if plain_native(tail_items)
+                    && rest.iter().all(|element| {
+                        element.is_whitespace()
+                            || matches!(
+                                element,
+                                Element::Partial(PartialElement::WikidotBlockClose(_))
+                            )
+                    }) =>
+                {
+                    super::wikidot_straddle_split_at_explicit_list_end(
+                        parser, tail_items, body_start, source_end,
+                    )
+                    .map(|split| (split, tail_items[split..].to_vec()))
+                }
+                _ => None,
+            };
+        if let Some((split, escaped_items)) = partial_escape {
+            if let Some(Element::List { items, .. }) = elements.get_mut(1) {
+                items.truncate(split);
+            }
+            let element =
+                Element::Partial(PartialElement::ListItem(ListItem::Elements {
+                    elements,
+                    attributes,
+                }));
+            let mut output = vec![element];
+            output.extend(
+                escaped_items
+                    .into_iter()
+                    .map(|item| Element::Partial(PartialElement::ListItem(item))),
+            );
+            return success_elements_with_paragraph_safety(
+                false,
+                Elements::Multiple(output),
+                errors,
+            );
+        }
+        // A run formation that never fused (no complete explicit list pair)
+        // leaves its lone list-closer line escaped after the run list; live
+        // keeps the closer as an item of the run list instead (lihoist
+        // p19). Reattach it when the escaped tail right after a plain native
+        // list holds exactly one literal list closer — whether the tail was
+        // paragraph-wrapped or stayed bare (item 88 G3 keeps the bare run:
+        // probes muse-probe-x88f-g3-*).
+        if let [
+            Element::List {
+                items,
+                wikidot_explicit_block: false,
+                ..
+            },
+            rest @ ..,
+        ] = &elements[..]
+            && !rest.is_empty()
+            && rest.iter().all(|element| match element {
+                Element::Text(_) | Element::LineBreak => true,
+                Element::Container(container) => {
+                    container.ctype() == ContainerType::Paragraph
+                }
+                other => other.is_whitespace(),
+            })
+            && items.iter().all(|item| {
+                matches!(
+                    item,
+                    ListItem::Elements { elements, .. }
+                        if !elements.is_empty()
+                            && elements
+                                .iter()
+                                .all(|element| matches!(element, Element::Text(_)))
+                )
+            })
+        {
+            let closer_text: String = rest
+                .iter()
+                .flat_map(|element| match element {
+                    Element::Text(text) => vec![text.as_ref()],
+                    Element::Container(container) => container
+                        .elements()
+                        .iter()
+                        .filter_map(|element| match element {
+                            Element::Text(text) => Some(text.as_ref()),
+                            _ => None,
+                        })
+                        .collect(),
+                    _ => Vec::new(),
+                })
+                .collect();
+            if matches!(closer_text.as_str(), "[[/li]]" | "[[/ul]]" | "[[/ol]]") {
+                elements.truncate(1);
+                if let Some(Element::List { items: target, .. }) = elements.last_mut() {
+                    target.push(ListItem::Elements {
+                        attributes: AttributeMap::new(),
+                        elements: vec![Element::Text(Cow::Owned(closer_text))],
+                    });
+                }
+            }
+        }
+        let list_item = ListItem::Elements {
+            elements,
+            attributes,
+        };
+        let element = if parser.accepts_partial() == AcceptsPartial::ListItem {
+            Element::Partial(PartialElement::ListItem(list_item))
+        } else {
+            Element::List {
+                ltype: ListType::Bullet,
+                items: vec![list_item],
+                attributes: AttributeMap::new(),
+                wikidot_explicit_block: true,
+                wikidot_marker_head_spawn: false,
+                wikidot_unclosed: false,
+            }
+        };
+        return success_elements_with_paragraph_safety(false, element, errors);
+    }
+
+    let body = parser.get_body_elements(&BLOCK_LI, false)?;
+    let source_end = parser.current().span.start;
+    let fused_close = parser.wikidot_body_closed_with_fused_close(&BLOCK_LI);
+    let (mut elements, errors, _) = body.into();
+
+    if flag_score {
+        strip_newlines(&mut elements);
+    }
+    if wikidot {
+        let source = &parser.full_text().inner()[body_start..source_end];
+        let body = source
+            .to_ascii_lowercase()
+            .rfind("[[/li")
+            .map(|index| &source[..index])
+            .unwrap_or(source);
+        if body.starts_with("\n\n") || body.ends_with("\n\n") {
+            strip_newlines(&mut elements);
+        } else if body.ends_with('\n')
+            && !matches!(elements.last(), Some(Element::LineBreak))
+            && !parser.in_wikidot_bibliography_body()
+            && !trailing_wikidot_bibliography(&elements)
+        {
+            elements.push(Element::LineBreak);
+        }
+        while matches!(elements.last(), Some(Element::Text(text)) if text == " ") {
+            elements.pop();
+        }
+        trim_wikidot_block_gaps(&mut elements);
+    }
+
+    if fused_close {
+        elements.push(text!("]"));
+    }
+
+    let element = Element::Partial(PartialElement::ListItem(ListItem::Elements {
+        elements,
+        attributes,
+    }));
+
+    success_elements_with_paragraph_safety(false, element, errors)
+}
+
+/// Whether an explicit list item's authored body carries a blank line that
+/// live's stage-1 inline pairing treats as a real paragraph break: any
+/// whitespace-only line after the item's leading blanks (the list rule
+/// absorbs those) and outside nested explicit lists (a blank between two
+/// nested items behaves like one between top-level items: the pair forms).
+/// A blank before a nested list opener, after item text, at the item end, or
+/// inside a literal block body all reject the crossed pair.
+fn wikidot_li_body_has_inner_blank_line(source: &str) -> bool {
+    // The body slice ends right before the closer; its final newline is the
+    // line break that put the closer on its own line, not a blank line.
+    let body = source.strip_suffix('\n').unwrap_or(source);
+    let mut nested_lists = 0i32;
+    let mut seen_content = false;
+    for line in body.split('\n') {
+        let blank = line
+            .bytes()
+            .all(|byte| byte == b' ' || byte == b'\t' || byte == b'\r');
+        if blank {
+            if seen_content && nested_lists == 0 {
+                return true;
+            }
+        } else {
+            seen_content = true;
+            nested_lists += explicit_list_depth_delta(line);
+            if nested_lists < 0 {
+                nested_lists = 0;
+            }
+        }
+    }
+    false
+}
+
+/// Net change in nested explicit-list depth across one source line.
+fn explicit_list_depth_delta(line: &str) -> i32 {
+    let lowered = line.to_ascii_lowercase();
+    let mut delta = 0i32;
+    let mut index = 0usize;
+    while let Some(offset) = lowered[index..].find("[[") {
+        let start = index + offset;
+        let rest = &lowered[start..];
+        let closer = rest.starts_with("[[/");
+        if closer {
+            if rest.starts_with("[[/ul]]") || rest.starts_with("[[/ol]]") {
+                delta -= 1;
+                index = start + 7;
+                continue;
+            }
+        } else if rest.starts_with("[[ul]]") || rest.starts_with("[[ol]]") {
+            delta += 1;
+            index = start + 6;
+            continue;
+        }
+        index = start + 2;
+    }
+    delta
+}
+
+fn wikidot_li_closer_line_is_quote_prefix(body: &str) -> bool {
+    let tail = body.trim_end_matches([' ', '\t']);
+    if tail.ends_with('\n') {
+        return false;
+    }
+    let Some(newline) = tail.rfind('\n') else {
+        return false;
+    };
+    let after = &tail[newline + 1..];
+    !after.is_empty() && after.bytes().all(|byte| byte == b'>')
+}
+
+fn wikidot_li_break_saves_vanishing_item(elements: &[Element<'_>]) -> bool {
+    !elements.is_empty()
+        && elements.iter().all(|element| match element {
+            Element::Container(container) => {
+                container.ctype() == ContainerType::Div
+                    && container.attributes().get().is_empty()
+                    && container.elements().is_empty()
+            }
+            other => other.is_whitespace(),
+        })
+}
+
+fn wikidot_li_segment_is_blank(segment: &[Element]) -> bool {
+    segment.iter().all(Element::is_whitespace)
+}
+
+fn segment_is_inline_content(segment: &[Element]) -> bool {
+    !segment.is_empty() && segment.iter().all(Element::paragraph_safe)
+}
+
+fn segment_has_block_marker(segment: &[Element]) -> bool {
+    segment
+        .iter()
+        .any(|element| matches!(element, Element::Text(text) if text.contains("[[")))
+}
+
+/// Whether a post-list run carries visible content. Inline-format
+/// containers count; bare breaks and inline-format control partials do not.
+fn post_list_run_has_content(run: &[Element]) -> bool {
+    run.iter().any(|element| match element {
+        Element::LineBreak | Element::LineBreaks(_) => false,
+        Element::Delayed(delayed) if delayed.is_suppression_seam() => false,
+        Element::Text(text) => !text.trim().is_empty(),
+        Element::Partial(_) => false,
+        _ => true,
+    })
+}
+
+/// Document-final chunk flags for a post-list run assembly: the literal
+/// (marker-carrying) signal and the narrower plain-run signal.
+#[derive(Clone, Copy)]
+struct DocFinalSignals {
+    literal: bool,
+    plain: bool,
+}
+
+fn deep_marker_head(element: &Element) -> bool {
+    matches!(element, Element::Text(text) if text.starts_with("**") || text.starts_with("##"))
+}
+
+fn splice_dissolved_formation_run<'t>(
+    elements: &mut Vec<Element<'t>>,
+    body_source: &str,
+) -> Option<usize> {
+    use crate::parsing::rule::impls::line_owner::{
+        deep_formation_in_source, starred_list_closer_in_source, strict_item_marker_line,
+    };
+    if starred_list_closer_in_source(body_source)
+        || !deep_formation_in_source(body_source)
+        || strict_item_marker_line(body_source)
+    {
+        return None;
+    }
+    let mut splice_from = None;
+    loop {
+        let Some(Element::List {
+            items,
+            wikidot_explicit_block: false,
+            ..
+        }) = elements.last()
+        else {
+            return splice_from;
+        };
+        if items.is_empty() {
+            return splice_from;
+        }
+        let spliceable = items.iter().all(|item| {
+            matches!(item, ListItem::Elements { elements: inner, .. }
+            if !inner.is_empty()
+                && inner.iter().all(|element| matches!(
+                    element,
+                    Element::Text(_) | Element::LineBreak
+                )))
+        });
+        if !spliceable {
+            return splice_from;
+        }
+        if splice_from.is_none() {
+            splice_from = Some(elements.len() - 1);
+        }
+        let Some(Element::List { items, .. }) = elements.pop() else {
+            return splice_from;
+        };
+        for item in items {
+            if let ListItem::Elements {
+                elements: inner, ..
+            } = item
+            {
+                elements.extend(inner);
+            }
+        }
+    }
+}
+
+fn wrap_dissolved_formation_tail<'t>(
+    elements: &mut Vec<Element<'t>>,
+    body_source: &str,
+    full_source: &str,
+    body_start: usize,
+    splice_from: Option<usize>,
+) {
+    use crate::parsing::rule::impls::line_owner::{
+        deep_formation_in_source, wikidot_anchor_follower_kind,
+    };
+    if !deep_formation_in_source(body_source) {
+        return;
+    }
+    let safe_from = elements
+        .iter()
+        .rposition(|element| !element.paragraph_safe())
+        .map_or(0, |index| index + 1);
+    let wrap_from = splice_from.map_or(safe_from, |index| index.max(safe_from));
+    let run = &elements[wrap_from..];
+    if run.is_empty() || run.iter().all(Element::is_whitespace) {
+        return;
+    }
+    if !run.iter().all(Element::paragraph_safe) {
+        return;
+    }
+    let follower_wraps = wikidot_anchor_follower_kind(full_source, body_start)
+        .is_some_and(|follower| follower.wraps());
+    if !follower_wraps {
+        return;
+    }
+    let tail: Vec<Element<'t>> = elements.split_off(wrap_from);
+    elements.push(Element::Container(Container::new(
+        ContainerType::Paragraph,
+        tail,
+        AttributeMap::new(),
+    )));
+}
+
+/// lihoist p23-early (LT46): splits one list whose items mix deep-marker
+/// literal lines with other item lines into li-body segments: each deep
+/// line becomes its own paragraph, the remaining items regroup into
+/// native lists (run fuse/promote semantics, so single-list wrappers
+/// dissolve). Returns None (keep the body as-is) for line interiors the
+/// saved-page probes did not cover, e.g. text after a nested list or a
+/// non-inline block inside a deep line's item.
+fn split_mixed_deep_marker_list<'t>(list: Element<'t>) -> Option<Vec<Element<'t>>> {
+    let Element::List {
+        ltype,
+        items,
+        attributes,
+        ..
+    } = list
+    else {
+        unreachable!("checked bullet list above")
+    };
+    let mut segments: Vec<Element<'t>> = Vec::new();
+    let mut group: Vec<ListItem<'t>> = Vec::new();
+    let flush_group = |group: &mut Vec<ListItem<'t>>, segments: &mut Vec<Element<'t>>| {
+        if !group.is_empty() {
+            segments.push(Element::List {
+                ltype,
+                items: std::mem::take(group),
+                attributes: attributes.clone(),
+                wikidot_explicit_block: false,
+                wikidot_marker_head_spawn: false,
+                wikidot_unclosed: false,
+            });
+        }
+    };
+    for item in items {
+        let is_deep = matches!(&item, ListItem::Elements { attributes, elements }
+            if attributes.get().get("style").is_some_and(|style| style == "list-style: none")
+                && elements.first().is_some_and(deep_marker_head));
+        if !is_deep {
+            group.extend(crate::parsing::rule::impls::list::fuse_wikidot_run_item(
+                item,
+            ));
+            continue;
+        }
+        let ListItem::Elements { elements, .. } = item else {
+            unreachable!("checked deep item above")
+        };
+        let mut paragraph: Vec<Element<'t>> = Vec::new();
+        let mut seen_nested_list = false;
+        let mut valid = true;
+        for element in elements {
+            match element {
+                Element::List {
+                    items: inner_items, ..
+                } => {
+                    if !paragraph.is_empty() {
+                        let mut para = std::mem::take(&mut paragraph);
+                        while matches!(para.last(), Some(Element::LineBreak)) {
+                            para.pop();
+                        }
+                        if !para.is_empty() {
+                            flush_group(&mut group, &mut segments);
+                            segments.push(Element::Container(Container::new(
+                                ContainerType::Paragraph,
+                                para,
+                                AttributeMap::new(),
+                            )));
+                        }
+                    }
+                    for inner in inner_items {
+                        group.extend(
+                            crate::parsing::rule::impls::list::fuse_wikidot_run_item(
+                                inner,
+                            ),
+                        );
+                    }
+                    seen_nested_list = true;
+                }
+                element if element.paragraph_safe() => {
+                    if seen_nested_list {
+                        valid = false;
+                        break;
+                    }
+                    paragraph.push(element);
+                }
+                _ => {
+                    valid = false;
+                    break;
+                }
+            }
+        }
+        if !valid {
+            return None;
+        }
+        if !paragraph.is_empty() {
+            let mut para = paragraph;
+            while matches!(para.last(), Some(Element::LineBreak)) {
+                para.pop();
+            }
+            if !para.is_empty() {
+                flush_group(&mut group, &mut segments);
+                segments.push(Element::Container(Container::new(
+                    ContainerType::Paragraph,
+                    para,
+                    AttributeMap::new(),
+                )));
+            }
+        }
+    }
+    flush_group(&mut group, &mut segments);
+    (!segments.is_empty()).then_some(segments)
+}
+
+/// BLFOL: a post-list run made solely of single-line literal `[[div]]` /
+/// `[[note]]` pair lines stays bare beside a native nested list on live
+/// (probes muse-probe-blfol-bl-ref/-note/-div-attr/-hash/-quote-native/-two),
+/// while other marker runs (e.g. a lone `[[/hidden]]` closer) still wrap.
+/// Collapsible pairs form (bl-coll-lit matches), multiline pairs form, plain
+/// text was already bare, and page-root runs wrap under a different path —
+/// so this gate is narrow to failed-to-form div/note single-line pairs.
+/// Inside advanced table cells every run still wraps (LP42).
+fn line_is_single_literal_div_note_pair(line: &str) -> bool {
+    let line = line.trim();
+    if line.is_empty() {
+        return false;
+    }
+    let lower = line.to_ascii_lowercase();
+    let rest = match lower.strip_prefix("[[") {
+        Some(rest) => rest,
+        None => return false,
+    };
+    let opener_end = match rest.find("]]") {
+        Some(index) => index,
+        None => return false,
+    };
+    let opener_inner = match rest.get(..opener_end) {
+        Some(inner) => inner,
+        None => return false,
+    };
+    let tag = opener_inner.split_whitespace().next().unwrap_or("");
+    if tag != "div" && tag != "note" {
+        return false;
+    }
+    if opener_inner.contains('[') || opener_inner.contains(']') {
+        return false;
+    }
+    let after_opener = match rest.get(opener_end + 2..) {
+        Some(after) => after,
+        None => return false,
+    };
+    let closer = format!("[[/{tag}]]");
+    let closer_rel = match after_opener.find(&closer) {
+        Some(index) => index,
+        None => return false,
+    };
+    let between = match after_opener.get(..closer_rel) {
+        Some(between) => between,
+        None => return false,
+    };
+    if between.contains("[[") || between.contains("]]") {
+        return false;
+    }
+    let after = match after_opener.get(closer_rel + closer.len()..) {
+        Some(after) => after,
+        None => return false,
+    };
+    after.trim().is_empty()
+}
+
+fn collect_pair_span_text(element: &Element, out: &mut String) -> bool {
+    match element {
+        Element::Text(content) | Element::Raw(content) => {
+            out.push_str(content);
+            true
+        }
+        Element::LineBreak | Element::LineBreaks(_) => {
+            out.push('\n');
+            true
+        }
+        Element::Container(container) if element.paragraph_safe() => container
+            .elements()
+            .iter()
+            .all(|inner| collect_pair_span_text(inner, out)),
+        _ => false,
+    }
+}
+
+fn post_table_run_is_pair_span(segment: &[Element], from: usize) -> bool {
+    let mut text = String::new();
+    let mut index = from;
+    while index < segment.len() && segment[index].paragraph_safe() {
+        if !collect_pair_span_text(&segment[index], &mut text) {
+            return false;
+        }
+        index += 1;
+    }
+    let trimmed = text.trim();
+    if trimmed.len() >= 4 && trimmed.starts_with("**") && trimmed.ends_with("**") {
+        return true;
+    }
+    contains_same_name_block_pair(&text)
+}
+
+fn contains_same_name_block_pair(text: &str) -> bool {
+    let mut index = 0;
+    while let Some(found) = text[index..].find("[[") {
+        let open = index + found;
+        let after = open + 2;
+        if text[after..].starts_with('/') {
+            index = after;
+            continue;
+        }
+        let Some(end) = text[after..].find("]]") else {
+            break;
+        };
+        let name = &text[after..after + end];
+        if !name.is_empty()
+            && name
+                .chars()
+                .all(|c| c.is_alphanumeric() || c == '-' || c == '_')
+        {
+            let mut closer = String::from("[[/");
+            closer.push_str(name);
+            closer.push_str("]]");
+            if text[after + end + 2..].contains(&closer) {
+                return true;
+            }
+        }
+        index = after + end + 2;
+    }
+    false
+}
+
+fn post_list_run_is_bare_literal_pair(run: &[Element]) -> bool {
+    let mut text = String::new();
+    for element in run {
+        match element {
+            Element::Text(content) | Element::Raw(content) => {
+                text.push_str(content);
+            }
+            Element::LineBreak | Element::LineBreaks(_) => text.push('\n'),
+            Element::Delayed(delayed) if delayed.is_suppression_seam() => {}
+            _ => return false,
+        }
+    }
+    let mut saw_pair = false;
+    for line in text.split('\n') {
+        if line.trim().is_empty() {
+            continue;
+        }
+        if !line_is_single_literal_div_note_pair(line) {
+            return false;
+        }
+        saw_pair = true;
+    }
+    saw_pair
+}
+
+/// lihoist p23: a depth-2+ marker line (e.g. `** deep`) becomes its own
+/// paragraph segment when a list follows it in the segment or a starred
+/// list pair formation closes inside the body; otherwise it stays a bare
+/// continuation (g2-style).
+fn wrap_inline_line_after_list(
+    segment: &mut Vec<Element>,
+    formation_present: bool,
+    in_cell: bool,
+    doc_final: DocFinalSignals,
+    segment_is_last: bool,
+    terminated_at_cross_close: bool,
+    run_followed_by_blank: bool,
+) {
+    let mut index = 0;
+    while index < segment.len() {
+        let after_table = matches!(
+            segment[index],
+            Element::Table(ref table) if table.table_type == TableType::Simple
+        );
+        if !after_table
+            && !matches!(
+                segment[index],
+                Element::List {
+                    wikidot_explicit_block: false,
+                    ..
+                }
+            )
+        {
+            index += 1;
+            continue;
+        }
+        if after_table {
+            let mut run_end = index + 1;
+            while run_end < segment.len() && segment[run_end].paragraph_safe() {
+                run_end += 1;
+            }
+            if run_end != segment.len() || post_table_run_is_pair_span(segment, index + 1)
+            {
+                index += 1;
+                continue;
+            }
+        }
+        let start = index + 1;
+        if start >= segment.len() || !segment[start].paragraph_safe() {
+            index += 1;
+            continue;
+        }
+        let mut end = start;
+        while end < segment.len() && segment[end].paragraph_safe() {
+            end += 1;
+        }
+        // A post-list run is live-bare only when nothing else follows it
+        // in the item (the run reaches the end of the final segment) and
+        // the item's trailing chunk is the document-final chunk (probes
+        // muse-probe-g3x*: trailing text after the enclosing close, or a
+        // further list line in the body, flips the same cell to a
+        // paragraph).
+        let run_is_item_final = segment_is_last && end == segment.len();
+        // A plain run in a cross-terminated item is not the item's real
+        // final run: live keeps it bare (probe
+        // muse-probe-x88f-g1-hash-after-text). A blank line between the
+        // run and the item closer flips it to a paragraph even when the
+        // chunk is document-final (probes muse-probe-plainrun-*).
+        let plain_run_gate = doc_final.plain
+            && run_is_item_final
+            && !terminated_at_cross_close
+            && !run_followed_by_blank;
+        let mut run: Vec<Element> = segment.drain(start..end).collect();
+        let deep_paragraph = !run.is_empty()
+            && deep_marker_head(&run[0])
+            && !segment_has_block_marker(&run)
+            && (formation_present
+                || matches!(
+                    segment.get(start),
+                    Some(Element::List {
+                        wikidot_explicit_block: false,
+                        ..
+                    })
+                ));
+        if !deep_paragraph && !in_cell && post_list_run_is_bare_literal_pair(&run) {
+            // Live glues consecutive literal lines (bl-two has no inner
+            // break), keeping only the trailing break.
+            let mut trailing = 0;
+            for element in run.iter().rev() {
+                if matches!(element, Element::LineBreak | Element::LineBreaks(_)) {
+                    trailing += 1;
+                } else {
+                    break;
+                }
+            }
+            let keep_from = run.len().saturating_sub(trailing);
+            let mut bare: Vec<Element> = Vec::with_capacity(run.len());
+            for (offset, element) in run.into_iter().enumerate() {
+                if offset < keep_from
+                    && matches!(element, Element::LineBreak | Element::LineBreaks(_))
+                {
+                    continue;
+                }
+                bare.push(element);
+            }
+            while matches!(
+                bare.first(),
+                Some(Element::LineBreak | Element::LineBreaks(_))
+            ) {
+                bare.remove(0);
+            }
+            segment.splice(start..start, bare);
+            index = start + 1;
+            continue;
+        }
+        let bare_run = if segment_has_block_marker(&run) {
+            doc_final.literal && run_is_item_final
+        } else {
+            plain_run_gate
+        };
+        if !deep_paragraph && ((!in_cell && bare_run) || !post_list_run_has_content(&run))
+        {
+            segment.splice(start..start, run);
+            index = start + 1;
+            continue;
+        }
+        if deep_paragraph {
+            // The break that ended the deep line does not belong inside its
+            // paragraph (p23-after-item).
+            while matches!(run.last(), Some(Element::LineBreak)) {
+                run.pop();
+            }
+        }
+        // Outside a table cell, a post-list run that is not the item's
+        // final run in the document-final chunk is paragraph-wrapped,
+        // whether or not it carries a literal block marker (e.g. a lone
+        // `[[/hidden]]` line, or a plain continuation line after a list).
+        // Inside an advanced table cell, live paragraph-wraps every
+        // post-list text run (LP42: tail/zzz/pre**/midlexer shapes).
+        segment.insert(
+            start,
+            Element::Container(Container::new(
+                ContainerType::Paragraph,
+                run,
+                AttributeMap::new(),
+            )),
+        );
+        index = start + 1;
+    }
+}
+
+/// L85 scope-5: live keeps a single break after these formed blocks in
+/// item bodies (li-div/align/code/coll/note-contained; li-tabview per
+/// probes muse-probe-f8g3793-span-min2/table-min3/table-min4/span-min1 and
+/// muse-probe-f8g3793-div-nested-tabview); every other paragraph-unsafe
+/// element (tables, rules, lists) still drops it.
+fn tabview_break_stays_in_open_span(segment: &[Element<'_>], index: usize) -> bool {
+    if !matches!(
+        segment.get(index.wrapping_sub(1)),
+        Some(Element::TabView(_))
+    ) {
+        return false;
+    }
+    let mut depth = 0i32;
+    for element in &segment[..index] {
+        match element {
+            Element::Partial(PartialElement::InlineSpanOpen(..)) => depth += 1,
+            Element::Partial(PartialElement::InlineSpanClose(_)) => depth -= 1,
+            _ => {}
+        }
+    }
+    depth > 0
+}
+
+fn wikidot_li_frame_depth_delta(element: &Element) -> i32 {
+    match element {
+        Element::Partial(PartialElement::WikidotBlockOpen(_)) => 1,
+        Element::Partial(PartialElement::WikidotBlockClose(_)) => -1,
+        _ => 0,
+    }
+}
+
+/// Whether the trailing text run of an assembled item (the text
+/// elements after the last non-text element, ignoring a final line
+/// break) is an unformed scored block head line: literal text
+/// starting with `[[<name>_`, as a single-line `[[div_ ...]]` inside
+/// an item renders on live.
+fn wikidot_li_trailing_text_is_unformed_scored_head(elements: &[Element]) -> bool {
+    let mut run = String::new();
+    for element in elements.iter().rev() {
+        match element {
+            Element::LineBreak | Element::LineBreaks(_) if run.is_empty() => {}
+            // The dissolved close of the unformed head line itself.
+            Element::Partial(crate::tree::PartialElement::WikidotBlockClose(
+                crate::tree::WikidotBlockCloseKind::Div { scored: true, .. },
+            )) if run.is_empty() => {}
+            Element::Text(text) => run.insert_str(0, text),
+            _ => break,
+        }
+    }
+    let Some(rest) = run.strip_prefix("[[") else {
+        return false;
+    };
+    let name_len = rest
+        .bytes()
+        .take_while(|byte| byte.is_ascii_alphanumeric() || *byte == b'-')
+        .count();
+    name_len > 0 && rest.as_bytes().get(name_len) == Some(&b'_')
+}
+
+/// Follower set for the break a nested list leaves before a formed
+/// block in an item body (probes muse-probe-colmod-*). Deliberately not
+/// the same set as `wikidot_li_break_kept_after_block`: live drops the
+/// break before code, align, and tabview blocks, and keeps it before
+/// headings and rules.
+fn wikidot_li_break_kept_before_block(element: &Element) -> bool {
+    match element {
+        Element::Container(container) => matches!(
+            container.ctype(),
+            ContainerType::Div | ContainerType::Note | ContainerType::Header(_)
+        ),
+        Element::Collapsible { .. } | Element::HorizontalRule => true,
+        _ => false,
+    }
+}
+
+fn wikidot_li_break_kept_after_block(element: &Element) -> bool {
+    match element {
+        Element::Container(container) => matches!(
+            container.ctype(),
+            ContainerType::Div | ContainerType::Align(_) | ContainerType::Note
+        ),
+        Element::Collapsible { .. } | Element::Code { .. } | Element::TabView(_) => true,
+        _ => false,
+    }
+}
+
+fn wikidot_li_trailing_break_dropped_after_block_blank(element: &Element) -> bool {
+    match element {
+        Element::Math { .. } => true,
+        Element::Collapsible { .. } | Element::Code { .. } => true,
+        Element::TableOfContents { .. } => true,
+        Element::Container(container) => matches!(
+            container.ctype(),
+            ContainerType::Div | ContainerType::Align(_) | ContainerType::Note
+        ),
+        _ => false,
+    }
+}
+
+/// Drop trailing break in normal case (no trailing blank)
+fn wikidot_li_trailing_break_dropped_after_block_always(element: &Element) -> bool {
+    matches!(
+        element,
+        Element::Math { .. } | Element::TableOfContents { .. }
+    )
+}
+
+fn wikidot_li_doc_final_block_follower_cut(stream: &str) -> Option<usize> {
+    let mut pos = 0;
+    for line in stream.split_inclusive('\n') {
+        let stripped = line.trim_start_matches([' ', '\t']);
+        let is_quote = stripped.starts_with('>');
+        let pluses = stripped.bytes().take_while(|byte| *byte == b'+').count();
+        let is_heading =
+            (1..=6).contains(&pluses) && stripped[pluses..].starts_with([' ', '\t']);
+        if is_quote || is_heading {
+            return Some(pos);
+        }
+        pos += line.len();
+    }
+    None
+}
+
+/// BRIEF-TB74 (ledger item 74(e)): does the item's trailing plain run sit
+/// in the document-final paragraph chunk? Live merges a blank-separated
+/// trailing run bare (`text1text2<br>`) when no later chunk carries content,
+/// and paragraph-wraps it otherwise (probes muse-probe-tb74-*). `remainder`
+/// is the raw source after this item's `[[li]]` close. Item/list tags are
+/// transparent (a following item's text joins the current chunk, with its
+/// leading blank trimmed); a blank line or a `[[/ul]]`/`[[/ol]]` close ends
+/// the current chunk; formed blocks after the list close are not paragraph
+/// content. The caller gates this on `!enclosing_block` (items inside a
+/// div always wrap).
+fn wikidot_li_last_run_is_doc_final(remainder: &str) -> bool {
+    let mut stream = remainder.to_string();
+    if let Some(cut) = wikidot_li_doc_final_block_follower_cut(&stream) {
+        stream.truncate(cut);
+    }
+    // Remove formed blocks (`[[div]]` et al. incl. body) — not paragraph
+    // content after the list close (probe muse-probe-tb74-ulclose-div-after).
+    for name in ["div", "note", "code", "math", "collapsible"] {
+        loop {
+            let lower = stream.to_ascii_lowercase();
+            let open_pat = "[[".to_string().to_string() + name;
+            let Some(open_rel) = lower.find(&open_pat) else {
+                break;
+            };
+            let after_name = open_rel + open_pat.len();
+            if !matches!(
+                lower.as_bytes().get(after_name),
+                Some(b']') | Some(b' ') | Some(b'\t')
+            ) {
+                break;
+            }
+            let close_pat = format!("[[/{}]]", name);
+            let Some(close_rel) = lower[after_name..].find(&close_pat) else {
+                break;
+            };
+            let end = after_name + close_rel + close_pat.len();
+            stream.replace_range(open_rel..end, "");
+        }
+    }
+    // Remove `[[li]]` openers (with leading-blank trim) and `[[/li]]`.
+    // Removing a lone-on-its-line tag must not synthesize a blank line:
+    // swallow the following newline run with the tag.
+    loop {
+        let lower = stream.to_ascii_lowercase();
+        let Some(open_rel) = lower.find("[[li") else {
+            break;
+        };
+        let after_name = open_rel + 4;
+        if !matches!(
+            lower.as_bytes().get(after_name),
+            Some(b']') | Some(b' ') | Some(b'\t')
+        ) {
+            break;
+        }
+        let Some(tag_end_rel) = lower[after_name..].find("]]") else {
+            break;
+        };
+        let mut end = after_name + tag_end_rel + 2;
+        // Trim the following item's leading blank lines.
+        let mut rest = &stream[end..];
+        loop {
+            if let Some(stripped) = rest.strip_prefix('\n') {
+                rest = stripped;
+                continue;
+            }
+            let trimmed = rest.trim_start_matches([' ', '\t']);
+            if rest.len() > trimmed.len()
+                && let Some(after_blank) = trimmed.strip_prefix('\n')
+            {
+                rest = after_blank;
+                continue;
+            }
+            break;
+        }
+        end = stream.len() - rest.len();
+        stream.replace_range(open_rel..end, "");
+    }
+    loop {
+        let lower = stream.to_ascii_lowercase();
+        let Some(close_rel) = lower.find("[[/li") else {
+            break;
+        };
+        let Some(tag_end_rel) = lower[close_rel..].find("]]") else {
+            break;
+        };
+        let mut end = close_rel + tag_end_rel + 2;
+        // Join across the close: swallow one following newline so removing
+        // the tag cannot synthesize a blank line.
+        if stream.as_bytes().get(end) == Some(&b'\n') {
+            end += 1;
+        }
+        stream.replace_range(close_rel..end, "");
+    }
+    // Chunk split: blank line or `[[/ul]]`/`[[/ol]]` ends a chunk. Bare iff
+    // no later chunk holds non-tag content.
+    let lower = stream.to_ascii_lowercase();
+    let mut separators = Vec::new();
+    for pat in ["[[/ul]]", "[[/ol]]"] {
+        let mut from = 0;
+        while let Some(rel) = lower[from..].find(pat) {
+            separators.push(from + rel);
+            from += rel + pat.len();
+        }
+    }
+    let mut pos = 0;
+    while pos < stream.len() {
+        if stream.as_bytes()[pos] == b'\n' {
+            let mut probe = pos + 1;
+            while probe < stream.len() && matches!(stream.as_bytes()[probe], b' ' | b'\t')
+            {
+                probe += 1;
+            }
+            if probe < stream.len() && stream.as_bytes()[probe] == b'\n' {
+                separators.push(probe);
+            }
+        }
+        pos += 1;
+    }
+    separators.sort_unstable();
+    separators.dedup();
+    // Later chunks are those after the first separator.
+    let Some(&first) = separators.first() else {
+        return true;
+    };
+    // Skip the separator itself: advance past its end.
+    let rest = &stream[first..];
+    // Determine separator end: list close or blank line's second newline.
+    let lower_rest = rest.to_ascii_lowercase();
+    // Blank separators are stored at the second newline's index, so the
+    // separator ends one byte after `first`; list closes end after `]]`.
+    let sep_end =
+        if lower_rest.starts_with("[[/ul]]") || lower_rest.starts_with("[[/ol]]") {
+            7
+        } else {
+            1
+        };
+    let mut chunk_start = first + sep_end.min(rest.len());
+    while chunk_start < stream.len() {
+        // Find next separator at/after chunk_start (excluding `first`).
+        let next_sep = separators
+            .iter()
+            .copied()
+            .find(|&sep| sep > first && sep >= chunk_start);
+        let chunk_end = next_sep.unwrap_or(stream.len());
+        let chunk = &stream[chunk_start..chunk_end];
+        // Strip remaining `[[...]]` tags; content = non-whitespace.
+        let mut content = chunk.to_string();
+        loop {
+            let cl = content.to_ascii_lowercase();
+            let Some(tag_rel) = cl.find("[[") else { break };
+            let Some(tag_end_rel) = cl[tag_rel..].find("]]") else {
+                break;
+            };
+            content.replace_range(tag_rel..tag_rel + tag_end_rel + 2, "");
+        }
+        if content.chars().any(|c| !c.is_whitespace()) {
+            return false;
+        }
+        let Some(sep) = next_sep else { break };
+        let sep_rest = &stream[sep..];
+        let sep_rest_lower = sep_rest.to_ascii_lowercase();
+        let step = if sep_rest_lower.starts_with("[[/ul]]")
+            || sep_rest_lower.starts_with("[[/ol]]")
+        {
+            7
+        } else {
+            1
+        };
+        chunk_start = sep + step;
+    }
+    true
+}
+
+struct LiSegmentFlags {
+    in_bibliography_body: bool,
+    note_yielded_list_closer: bool,
+    terminated_at_cross_close: bool,
+    in_cell: bool,
+    enclosing_block: bool,
+    shadowed_div_region: bool,
+    suppress_trail: bool,
+    quoted_li_close_hoisted: bool,
+}
+
+fn assemble_wikidot_li_segments<'t>(
+    mut segments: Vec<Vec<Element<'t>>>,
+    source: &str,
+    flags: LiSegmentFlags,
+    doc_final: DocFinalSignals,
+) -> Vec<Element<'t>> {
+    let mut had_trailing_empty = false;
+    while segments
+        .last()
+        .is_some_and(|segment| wikidot_li_segment_is_blank(segment))
+    {
+        segments.pop();
+        had_trailing_empty = true;
+    }
+    let mut had_leading_empty = false;
+    while segments
+        .first()
+        .is_some_and(|segment| wikidot_li_segment_is_blank(segment))
+    {
+        segments.remove(0);
+        had_leading_empty = true;
+    }
+    let segment_count = segments.len();
+    for (segment_index, segment) in segments.iter_mut().enumerate() {
+        let mut index = 1;
+        let mut frame_depth = segment.first().map_or(0, wikidot_li_frame_depth_delta);
+        while index < segment.len() {
+            let break_after_outermost_close = frame_depth == 0
+                && matches!(
+                    segment[index - 1],
+                    Element::Partial(PartialElement::WikidotBlockClose(_))
+                )
+                && segment
+                    .get(index + 1)
+                    .is_some_and(|element| element.paragraph_safe());
+            // NL81 (E): a shadowed div region's end break (live puts <br>
+            // where the region ended, before text after the region).
+            let shadowed_region_end_break = flags.shadowed_div_region
+                && matches!(segment[index - 1], Element::List { .. })
+                && segment
+                    .get(index + 1)
+                    .is_some_and(|element| element.paragraph_safe());
+            let shadowed_insert_break = flags.shadowed_div_region
+                && matches!(segment[index - 1], Element::List { .. })
+                && segment[index] != Element::LineBreak
+                && segment[index].paragraph_safe();
+            // A single break between a nested list and a following formed
+            // block stays (probes muse-probe-colmod-t4/t5/v-*): live keeps
+            // it before div/note containers, collapsibles, headings, and
+            // rules, and drops it before code/align/tabview/lists/inline
+            // content.
+            let list_to_block_break = matches!(segment[index - 1], Element::List { .. })
+                && segment
+                    .get(index + 1)
+                    .is_some_and(wikidot_li_break_kept_before_block);
+            if shadowed_insert_break {
+                segment.insert(index, Element::LineBreak);
+                frame_depth += wikidot_li_frame_depth_delta(&segment[index]);
+                index += 1;
+            } else if segment[index] == Element::LineBreak
+                && !segment[index - 1].paragraph_safe()
+                && !wikidot_li_break_kept_after_block(&segment[index - 1])
+                && !break_after_outermost_close
+                && !tabview_break_stays_in_open_span(segment, index)
+                && !shadowed_region_end_break
+                && !list_to_block_break
+            {
+                segment.remove(index);
+            } else {
+                frame_depth += wikidot_li_frame_depth_delta(&segment[index]);
+                index += 1;
+            }
+        }
+        wrap_inline_line_after_list(
+            segment,
+            crate::parsing::rule::impls::line_owner::starred_list_closer_in_source(
+                source,
+            ),
+            flags.in_cell,
+            doc_final,
+            segment_index + 1 == segment_count,
+            flags.terminated_at_cross_close,
+            had_trailing_empty,
+        );
+    }
+    if let Some(first) = segments.first_mut() {
+        while matches!(first.first(), Some(Element::LineBreak)) {
+            first.remove(0);
+        }
+    }
+    let mut kept: Vec<Vec<Element<'t>>> = Vec::with_capacity(segments.len());
+    // A segment boundary in this path is always a swallowed blank line (the
+    // li body consumer splits segments only at ParagraphBreak). Live emits no
+    // break across the boundary for paragraph-unsafe formed blocks (probes
+    // muse-probe-mi6x4/5-*: div/note/code/coll/align/math, blank, then text),
+    // but keeps one after an inner list (test/list/item-blank-after-block-break).
+    let last_index = segments.len().saturating_sub(1);
+    for (index, segment) in segments.into_iter().enumerate() {
+        if index > 0 && index < last_index && wikidot_li_segment_is_blank(&segment) {
+            continue;
+        }
+        kept.push(segment);
+    }
+    let mut joins: Vec<bool> = Vec::new();
+    for pair in kept.windows(2) {
+        // Only an inner list keeps the break across a swallowed blank line
+        // (test/list/item-blank-after-block-break); formed blocks and math
+        // join with nothing (probes muse-probe-mi6x4/5-*).
+        let boundary = matches!(pair[0].last(), Some(Element::List { .. }))
+            && pair[1].first().is_some_and(Element::paragraph_safe);
+        joins.push(boundary);
+    }
+    // The slice includes the closer. A newline before that closer means
+    // the closer sits on the next line.
+    let lowered = source.to_ascii_lowercase();
+    let body_before_close = lowered
+        .rfind("[[/li")
+        .map(|index| &source[..index])
+        .unwrap_or(source);
+    // A blank line between a post-list run and the item closer flips the
+    // run to a paragraph even when nothing follows the enclosing list
+    // (probes muse-probe-plainrun-29/36/41-44/46).
+    let trailing_blank_post_list_run = had_trailing_empty
+        && kept.len() >= 2
+        && segment_is_inline_content(&kept[kept.len() - 1])
+        && !segment_has_block_marker(&kept[kept.len() - 1])
+        && kept[kept.len() - 2]
+            .iter()
+            .rev()
+            .find(|element| {
+                !matches!(element, Element::LineBreak | Element::LineBreaks(_))
+            })
+            .is_some_and(|element| matches!(element, Element::List { .. }));
+    let last_plain_run_is_paragraph = matches!(
+        kept.as_slice(),
+        [.., penultimate, last]
+            if (body_before_close.ends_with('\n') || !doc_final.literal)
+                && segment_is_inline_content(last)
+                && segment_is_inline_content(penultimate)
+    );
+    let mut elements: Vec<Element<'t>> = Vec::new();
+    let kept_last = kept.len().saturating_sub(1);
+    for (index, segment) in kept.into_iter().enumerate() {
+        if index > 0 && joins[index - 1] {
+            elements.push(Element::LineBreak);
+        } else if index > 0 {
+            // Blank-line segment boundaries inside a flat-shell body are
+            // paragraph boundaries for the post-heading wrap below; the
+            // empty-text marker is consumed there and never renders.
+            elements.push(Element::Text(std::borrow::Cow::Borrowed("")));
+        }
+        // Live merges this run bare only in the document-final paragraph chunk
+        // (probes muse-probe-tb74-*); elsewhere it wraps even with the closer on
+        // the run's line and literal block markers in the run.
+        let middle_inline =
+            index > 0 && index < kept_last && segment_is_inline_content(&segment);
+        let closing_paragraph = index == kept_last
+            && ((last_plain_run_is_paragraph
+                && (!doc_final.literal || had_trailing_empty))
+                || trailing_blank_post_list_run);
+        if middle_inline || closing_paragraph {
+            elements.push(Element::Container(Container::new(
+                ContainerType::Paragraph,
+                segment,
+                AttributeMap::new(),
+            )));
+        } else {
+            elements.extend(segment);
+        }
+    }
+    if had_leading_empty || had_trailing_empty {
+        strip_newlines(&mut elements);
+    }
+    // L85 scope-6: a trailing newline after a nested list stays raw on live
+    // (no break element). A trailing blockquote does too. Other trailing
+    // content keeps the break.
+    // L85 scope-5: same for a trailing simple table (T5-item-table-end).
+    // Exception: when the li body's last line closes a NON-list block (for
+    // example a `* [[/div]]` line whose formation dissolved into the list),
+    // live keeps the break after the list (lihoist p5).
+    // NL81 (C): marker-only nested native list drops the trailing break.
+    let marker_only_trailing_nested_list = {
+        let effective = elements.iter().rev().find(|element| {
+            !matches!(
+                element,
+                Element::Partial(PartialElement::WikidotBlockClose(_))
+            )
+        });
+        effective.is_some_and(wikidot_li_marker_only_nested_list)
+    };
+    let trailing_nested_list = {
+        let effective = elements.iter().rev().find(|element| {
+            !matches!(
+                element,
+                Element::Partial(PartialElement::WikidotBlockClose(_))
+            )
+        });
+        match effective {
+            Some(Element::List { .. }) => {
+                // NLFG (F): live keeps the item trailing break after a
+                // trailing nested list only when a bare div pair dissolved
+                // at the body tail (lihoist p5) or a flat block (div/note/
+                // collapsible) formed anywhere in the item body;
+                // span/size/anchor/code/html content and bare non-div pairs
+                // drop it (saved-page probes muse-probe-nlfg*). The
+                // marker-only pop below still drops the frozen dissolved
+                // bare pair.
+                !(wikidot_li_body_ends_with_dissolved_bare_div(source)
+                    || elements
+                        .iter()
+                        .any(wikidot_li_element_has_formed_flat_container))
+            }
+            _ => false,
+        }
+    };
+    let trailing_table = matches!(elements.last(), Some(Element::Table(_)));
+    let trailing_blockquote = matches!(
+        elements.last(),
+        Some(Element::Container(container))
+            if container.ctype() == ContainerType::Blockquote
+    );
+    // Live drops the trailing break after trailing blocks in an item body
+    let trailing_block_drops_break_blank = elements
+        .last()
+        .is_some_and(wikidot_li_trailing_break_dropped_after_block_blank);
+    let trailing_block_drops_break_always = elements
+        .last()
+        .is_some_and(wikidot_li_trailing_break_dropped_after_block_always);
+    // d446-neighbors: after a heading, rule, or separator at item top level
+    // live puts the trailing break after the whole list, not inside the item
+    // (a4/a16/a17, h3/h4/h10); [[...]]-formed blocks and quote/table keep it
+    // inside (h1-h8).
+    let trailing_line_block = matches!(
+        elements.last(),
+        Some(Element::Container(container))
+            if matches!(container.ctype(), ContainerType::Header(_))
+    ) || matches!(
+        elements.last(),
+        Some(Element::HorizontalRule | Element::ContentSeparator)
+    );
+    let empty_marker_takes_break = !flags.terminated_at_cross_close
+        && wikidot_li_body_ends_with_empty_native_marker(source);
+    if !flags.terminated_at_cross_close
+        && had_trailing_empty
+        && elements.last().is_some_and(|element| {
+            !element.paragraph_safe()
+                && !matches!(
+                    element,
+                    Element::Container(container)
+                        if container.ctype() == ContainerType::Paragraph
+                )
+        })
+        && !trailing_nested_list
+        && !trailing_line_block
+        && !trailing_table
+        && !trailing_block_drops_break_blank
+    {
+        elements.push(Element::LineBreak);
+    } else if !had_trailing_empty && !flags.terminated_at_cross_close {
+        let body = source
+            .to_ascii_lowercase()
+            .rfind("[[/li")
+            .map(|index| &source[..index])
+            .unwrap_or(source);
+        let quote_prefix_saves_item = wikidot_li_closer_line_is_quote_prefix(body)
+            && wikidot_li_break_saves_vanishing_item(&elements);
+        // Live keeps the trailing break after a formed block at the end of a
+        // quoted item (probes muse-probe-f8g3793-span-min2/span-min1/qdiv-li);
+        // a quote-prefixed closer line ends the body slice like a newline
+        let quote_block_tail_saves_item = wikidot_li_closer_line_is_quote_prefix(body)
+            && elements
+                .last()
+                .is_some_and(wikidot_li_break_kept_after_block);
+        let deep_trailing_paragraph = elements.last().is_some_and(|element| {
+            matches!(
+                element,
+                Element::Container(container)
+                    if container.ctype() == ContainerType::Paragraph
+                        && container
+                            .elements()
+                            .first()
+                            .is_some_and(deep_marker_head)
+            )
+        });
+        if (body.ends_with('\n')
+            || quote_prefix_saves_item
+            || quote_block_tail_saves_item)
+            && !matches!(elements.last(), Some(Element::LineBreak))
+            && !trailing_nested_list
+            && !trailing_table
+            && !trailing_blockquote
+            && !trailing_line_block
+            && !trailing_block_drops_break_always
+            && !flags.note_yielded_list_closer
+            && !flags.in_bibliography_body
+            && !trailing_wikidot_bibliography(&elements)
+            && !deep_trailing_paragraph
+            && !empty_marker_takes_break
+        {
+            if let Some(Element::Container(container)) = elements.last_mut()
+                && container.ctype() == ContainerType::Paragraph
+            {
+                if !matches!(container.elements().last(), Some(Element::LineBreak)) {
+                    container.elements_mut().push(Element::LineBreak);
+                }
+            } else {
+                elements.push(Element::LineBreak);
+            }
+        }
+    }
+    if empty_marker_takes_break && matches!(elements.last(), Some(Element::LineBreak)) {
+        elements.pop();
+    }
+    if marker_only_trailing_nested_list
+        && !flags.terminated_at_cross_close
+        && matches!(elements.last(), Some(Element::LineBreak))
+    {
+        elements.pop();
+    }
+    while matches!(elements.last(), Some(Element::Text(text)) if text == " ") {
+        elements.pop();
+    }
+    let trailing_quote_goes_bare = !body_before_close.ends_with('\n')
+        && elements.last().is_some_and(|element| match element {
+            Element::Container(container) => {
+                container.ctype() == ContainerType::Blockquote
+                    && match container.elements() {
+                        [Element::Container(paragraph)]
+                            if paragraph.ctype() == ContainerType::Paragraph
+                                && paragraph.attributes().get().is_empty() =>
+                        {
+                            paragraph.elements().iter().all(Element::paragraph_safe)
+                        }
+                        _ => false,
+                    }
+            }
+            _ => false,
+        });
+    if trailing_quote_goes_bare
+        && let Some(Element::Container(container)) = elements.last_mut()
+        && let [Element::Container(paragraph)] = container.elements_mut().as_mut_slice()
+    {
+        let mut bare = std::mem::take(paragraph.elements_mut());
+        std::mem::swap(container.elements_mut(), &mut bare);
+    }
+    // BRIEF-QC89 quoted-closer pairing: shallow text hoisted out before
+    // the quoted `[[/li]]` close takes the item's trailing break with
+    // it on live (a directly closed quoted item keeps its `<br />`).
+    if flags.quoted_li_close_hoisted {
+        while matches!(
+            elements.last(),
+            Some(Element::LineBreak | Element::LineBreaks(_))
+        ) {
+            elements.pop();
+        }
+    }
+    wrap_post_heading_segments(
+        &mut elements,
+        flags.enclosing_block,
+        flags.suppress_trail,
+    );
+    elements
+}
+
+/// BRIEF-F7W63 (ledger item 63): live wraps the inline runs that follow a
+/// heading inside a list item in `<p>`s when the item sits inside a block
+/// body (note/div/collapsible/align; crossed or contained), matching the
+/// top-level block-body rule (probe n4-n7/k1/u1). The gate, per live
+/// saved-page evidence (probe-f7w63.json):
+///
+/// - `soft`: a chunk terminated by a block that can open a paragraph after
+///   itself is wrapped even without an enclosing block frame (hr, separator,
+///   math, quote, note/div formed in the item, or another heading).
+/// - `enclosing_block`: without a following block, a trailing chunk is
+///   wrapped only when an enclosing block frame is open across the item
+///   (`wikidot_flat_pair_open_at`); a table line directly after a chunk
+///   keeps it bare in both cases, and a code/align block suppresses the
+///   wrap for the rest of the item.
+///
+/// Empty-text markers (`Text("")`) left by the segment merge are blank-line
+/// paragraph boundaries consumed here; no marker survives this pass.
+fn wrap_post_heading_segments<'t>(
+    elements: &mut Vec<Element<'t>>,
+    enclosing_block: bool,
+    suppress_trail: bool,
+) {
+    fn has_content(chunk: &[Element<'_>]) -> bool {
+        chunk.iter().any(|element| {
+            !matches!(element, Element::LineBreak | Element::LineBreaks(_))
+                && !matches!(element, Element::Text(text) if text.trim().is_empty())
+        })
+    }
+
+    // A footnote reference in the item keeps the trailing run bare on live
+    // (muse-probe-ad75-c1..c5 and the pool cases: any `[[footnote]]` ref in
+    // the item suppresses the paragraph wrap), as does parsing the item
+    // inside a footnote definition body. Walk the assembled elements for a
+    // footnote element so cell-nested refs count too.
+    fn subtree_has_footnote(elements: &[Element<'_>]) -> bool {
+        fn visit(element: &Element<'_>) -> bool {
+            matches!(element, Element::Footnote(_)) || {
+                let mut found = false;
+                crate::parsing::inline_scope::visit_children(element, &mut |children| {
+                    for child in children {
+                        if !found && visit(child) {
+                            found = true;
+                        }
+                    }
+                });
+                found
+            }
+        }
+        elements.iter().any(visit)
+    }
+    let suppress_trail = suppress_trail || subtree_has_footnote(elements);
+
+    enum Flush {
+        /// A block that can resume paragraph flow (hr, separator, math, quote,
+        /// note/div/collapsible formed in the item, or another heading).
+        Soft,
+        /// A table line: the chunk directly before it stays bare.
+        BeforeTable,
+        /// A blank-line segment boundary: wrapped only under a frame.
+        SegmentGap,
+        /// A code or align block: wraps the chunk before it, then latches.
+        CodeOrAlign,
+        /// End of the item body.
+        End,
+        BeforeMath,
+    }
+
+    let mut out: Vec<Element<'t>> = Vec::with_capacity(elements.len() + 4);
+    let mut chunk: Vec<Element<'t>> = Vec::new();
+    let mut after_heading = false;
+    let mut after_blank_boundary = false;
+    let mut after_ref_block = false;
+    let mut after_blockquote = false;
+    let mut latched = false;
+    let flush = |chunk: &mut Vec<Element<'t>>,
+                 out: &mut Vec<Element<'t>>,
+                 after_heading: bool,
+                 after_ref_block: bool,
+                 after_blank_boundary: bool,
+                 after_blockquote: bool,
+                 latched: bool,
+                 enclosing_block: bool,
+                 kind: Flush| {
+        if chunk.is_empty() {
+            return;
+        }
+        let chunk_has_partial = chunk
+            .iter()
+            .any(|element| matches!(element, Element::Partial(_)));
+        let tail_breaks_and_closes = chunk.iter().all(|element| {
+            matches!(
+                element,
+                Element::LineBreak
+                    | Element::LineBreaks(_)
+                    | Element::Partial(
+                        PartialElement::InlineSpanClose(_)
+                            | PartialElement::InlineSizeClose(_)
+                            | PartialElement::InlineAnchorClose(_)
+                            | PartialElement::InlineFormatClose(_)
+                            | PartialElement::InlineColorClose
+                    )
+            )
+        }) && chunk.iter().any(|element| {
+            matches!(element, Element::LineBreak | Element::LineBreaks(_))
+        });
+        // live p-wraps a break-only tail after a blockquote in a framed item
+        // body (probes muse-probe-f8g3793-tail-note-span and
+        // muse-probe-f8g3793-tail-span-only); unframed items keep the bare
+        // break. Trailing scope closes stay bare out in front of the
+        // paragraph
+        let after_blockquote_tail = matches!(kind, Flush::End)
+            && after_blockquote
+            && !suppress_trail
+            && !latched
+            && enclosing_block
+            && tail_breaks_and_closes;
+        let wrap = !latched
+            && ((has_content(chunk)
+                && ((after_heading
+                    && match kind {
+                        Flush::BeforeTable => false,
+                        Flush::SegmentGap | Flush::End => enclosing_block,
+                        Flush::Soft | Flush::CodeOrAlign | Flush::BeforeMath => true,
+                    })
+                    || (after_blank_boundary && matches!(kind, Flush::Soft))
+                    || (after_ref_block
+                        && !suppress_trail
+                        && !chunk_has_partial
+                        && (matches!(kind, Flush::BeforeMath)
+                            || (matches!(kind, Flush::End) && enclosing_block)))))
+                || after_blockquote_tail);
+        if after_blockquote_tail {
+            let mut breaks: Vec<Element<'t>> = Vec::new();
+            let mut closes: Vec<Element<'t>> = Vec::new();
+            for element in std::mem::take(chunk) {
+                if matches!(element, Element::LineBreak | Element::LineBreaks(_)) {
+                    breaks.push(element);
+                } else {
+                    closes.push(element);
+                }
+            }
+            out.extend(closes);
+            out.push(Element::Container(Container::new(
+                ContainerType::Paragraph,
+                breaks,
+                AttributeMap::new(),
+            )));
+        } else if wrap {
+            out.push(Element::Container(Container::new(
+                ContainerType::Paragraph,
+                std::mem::take(chunk),
+                AttributeMap::new(),
+            )));
+        } else {
+            out.append(chunk);
+        }
+    };
+    for element in std::mem::take(elements) {
+        let is_boundary_marker =
+            matches!(&element, Element::Text(text) if text.is_empty());
+        let is_heading = matches!(
+            &element,
+            Element::Container(container) if matches!(container.ctype(), ContainerType::Header(_))
+        );
+        let is_table = matches!(&element, Element::Table(_));
+        let is_code_or_align = matches!(&element, Element::Code(_))
+            || matches!(
+                &element,
+                Element::Container(container)
+                    if matches!(container.ctype(), ContainerType::Align(_))
+            );
+        if is_boundary_marker {
+            flush(
+                &mut chunk,
+                &mut out,
+                after_heading,
+                after_ref_block,
+                after_blank_boundary,
+                after_blockquote,
+                latched,
+                enclosing_block,
+                Flush::SegmentGap,
+            );
+            after_blank_boundary = true;
+            after_blockquote = false;
+            continue;
+        }
+        if is_heading {
+            flush(
+                &mut chunk,
+                &mut out,
+                after_heading,
+                after_ref_block,
+                after_blank_boundary,
+                after_blockquote,
+                latched,
+                enclosing_block,
+                Flush::Soft,
+            );
+            out.push(element);
+            after_heading = true;
+            after_blockquote = false;
+            continue;
+        }
+        if is_table {
+            flush(
+                &mut chunk,
+                &mut out,
+                after_heading,
+                after_ref_block,
+                after_blank_boundary,
+                after_blockquote,
+                latched,
+                enclosing_block,
+                Flush::BeforeTable,
+            );
+            out.push(element);
+            after_ref_block = true;
+            after_blockquote = false;
+            continue;
+        }
+        if is_code_or_align {
+            flush(
+                &mut chunk,
+                &mut out,
+                after_heading,
+                after_ref_block,
+                after_blank_boundary,
+                after_blockquote,
+                latched,
+                enclosing_block,
+                Flush::CodeOrAlign,
+            );
+            out.push(element);
+            latched = true;
+            after_blockquote = false;
+            continue;
+        }
+        if !element.paragraph_safe() {
+            let is_math = matches!(element, Element::Math { .. });
+            let is_blockquote = matches!(
+                &element,
+                Element::Container(container)
+                    if container.ctype() == ContainerType::Blockquote
+            );
+            flush(
+                &mut chunk,
+                &mut out,
+                after_heading,
+                after_ref_block,
+                after_blank_boundary,
+                after_blockquote,
+                latched,
+                enclosing_block,
+                if is_math {
+                    Flush::BeforeMath
+                } else {
+                    Flush::Soft
+                },
+            );
+            out.push(element);
+            if is_math {
+                after_ref_block = true;
+            }
+            after_blockquote = is_blockquote;
+            continue;
+        }
+        chunk.push(element);
+    }
+    flush(
+        &mut chunk,
+        &mut out,
+        after_heading,
+        after_ref_block,
+        after_blank_boundary,
+        after_blockquote,
+        latched,
+        enclosing_block,
+        Flush::End,
+    );
+    *elements = out;
+}
+
+fn trim_wikidot_block_gaps(elements: &mut Vec<Element<'_>>) {
+    let mut index = 1;
+    while index + 1 < elements.len() {
+        if elements[index] == Element::LineBreak
+            && !elements[index - 1].paragraph_safe()
+            && !elements[index + 1].paragraph_safe()
+        {
+            elements.remove(index);
+        } else {
+            index += 1;
+        }
+    }
+}
+
+/// L85: parse an implicit nested list at a scan-marked `[[li]]` inside a
+/// div/collapsible body (l-ul-li-cross). Items reuse the li segment
+/// machinery; the list ends at a foreign scan-paired close (propagated),
+/// an explicit list close (propagated), or non-`[[li]]` content.
+pub(crate) fn parse_wikidot_implicit_list_block<'r, 't>(
+    parser: &mut Parser<'r, 't>,
+) -> ParseResult<'r, 't, Elements<'t>> {
+    let mut items: Vec<ListItem<'t>> = Vec::new();
+    let mut errors: Vec<ParseError> = Vec::new();
+    loop {
+        if parser.current().token == Token::InputEnd {
+            break;
+        }
+        if parser.wikidot_li_cross_foreign_stop_here(&BLOCK_LI) {
+            break;
+        }
+        if parser.current().token == Token::LeftBlockEnd {
+            break;
+        }
+        if parser.current().token != Token::LeftBlock {
+            break;
+        }
+        {
+            let mut probe = parser.clone();
+            let Ok((name, _, _)) = probe.get_block_name(false) else {
+                break;
+            };
+            let name = name.strip_suffix('_').unwrap_or(&name);
+            if !name.eq_ignore_ascii_case("li") {
+                break;
+            }
+        }
+        let head_pos = parser.current().span.start;
+        let (_, in_head, _) = parser
+            .get_block_name(false)
+            .map_err(|_| parser.make_err(ParseErrorKind::RuleFailed))?;
+        let arguments = parser.get_head_map_wikidot(&BLOCK_LI, in_head)?;
+        let attributes = arguments.to_attribute_map(parser.settings());
+        let body_start = parser.current().span.start;
+        parser.push_wikidot_li_collect(Some(head_pos));
+        let body = parser.get_wikidot_li_body_segments(&BLOCK_LI);
+        parser.pop_wikidot_li_collect();
+        let body = body?;
+        let source_end = parser.current().span.start;
+        let fused_close = parser.wikidot_body_closed_with_fused_close(&BLOCK_LI);
+        let (segments, segment_errors, _) = body.into();
+        errors.extend(segment_errors);
+        let source = &parser.full_text().inner()[body_start..source_end];
+        let consumed = parser.wikidot_consumed_li_close();
+        let terminated_at_cross_close = (parser.current().token == Token::LeftBlockEnd
+            && parser
+                .wikidot_li_cross_pair_at(parser.current().span.start)
+                .is_some_and(|(_, crossed)| crossed))
+            || consumed.is_some();
+        let enclosing_block = parser.wikidot_flat_pair_open_at(body_start);
+        let shadowed_div_region =
+            parser.take_wikidot_li_shadowed_div_region_at(body_start, source_end);
+        // BRIEF-TB74 (ledger item 74(e)): see the explicit-item call site.
+        let remainder = &parser.full_text().inner()[source_end..];
+        let chunk_is_doc_final = wikidot_li_last_run_is_doc_final(remainder);
+        let last_run_is_doc_final = !enclosing_block && chunk_is_doc_final;
+        // A nested item's chunk ends at its own enclosing list close:
+        // content the outer item carries afterwards does not flip the run
+        // (probes muse-probe-plainrun-2-a/c and -27). A flat block spanning
+        // the item still forces the paragraph (probe -2-b).
+        let plain_run_is_doc_final = !parser.wikidot_flat_pair_open_at(body_start)
+            && (chunk_is_doc_final || parser.wikidot_li_collect_inside_item());
+
+        let mut elements = assemble_wikidot_li_segments(
+            segments,
+            source,
+            LiSegmentFlags {
+                in_bibliography_body: parser.in_wikidot_bibliography_body(),
+                note_yielded_list_closer: parser.pending_note_list_closer()
+                    || parser.wikidot_cross_list_terminated_body(),
+                terminated_at_cross_close,
+                in_cell: parser.in_wikidot_advanced_table_cell_body(),
+                enclosing_block,
+                shadowed_div_region,
+                suppress_trail: parser.in_footnote()
+                    || crate::parsing::rule::impls::line_owner::wikidot_list_contains_footnote_open(
+                        parser.full_text().inner(),
+                        body_start,
+                    ),
+                quoted_li_close_hoisted: parser
+                    .peek_wikidot_quote_boundary_quoted_li_close(),
+            },
+            DocFinalSignals {
+                literal: last_run_is_doc_final,
+                plain: plain_run_is_doc_final,
+            },
+        );
+        if parser.take_wikidot_li_swallowed_block_at(body_start, source_end) {
+            if elements.is_empty() {
+                elements.push(Element::LineBreak);
+            } else {
+                elements.insert(0, Element::LineBreak);
+            }
+        }
+        if consumed.is_some() {
+            parser.clear_wikidot_consumed_li_close();
+        }
+        if parser.wikidot_li_closed_at_shallower_quote_line()
+            && matches!(elements.last(), Some(Element::LineBreak))
+        {
+            elements.pop();
+        }
+        if fused_close {
+            elements.push(text!("]"));
+        }
+        items.push(ListItem::Elements {
+            elements,
+            attributes,
+        });
+    }
+    if items.is_empty() {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+    let element = Element::List {
+        ltype: ListType::Bullet,
+        items,
+        attributes: AttributeMap::new(),
+        wikidot_explicit_block: true,
+        wikidot_marker_head_spawn: false,
+        wikidot_unclosed: false,
+    };
+    success_elements_with_paragraph_safety(false, element, errors)
+}
+/// BRIEF-MF65b: performs the multi-formation escape restructure.
+/// Returns the elements that render at top level after this list's close,
+/// or `None` when the restructure does not apply (no numbered lost-owner
+/// hoist, or nothing follows the first one).
+fn multi_formation_escape<'t>(
+    parser: &Parser<'_, 't>,
+    items: &mut Vec<ListItem<'t>>,
+    hoists: usize,
+) -> Option<Vec<Element<'t>>> {
+    if hoists == 0 {
+        return None;
+    }
+    // The escape fires only when the FIRST list formation in this body is a
+    // numbered lost-owner formation (live closes the enclosing numbered
+    // list there). A leading bullet formation or explicit list keeps the
+    // choreography nested.
+    if parser.wikidot_first_formation_numbered_at(parser.wikidot_li_pairing_depth())
+        != Some(true)
+    {
+        return None;
+    }
+    // The first numbered lost-owner formation sits inside the first item;
+    // its flipped list is the item's first non-explicit list.
+    let first_list = match items.first() {
+        Some(ListItem::Elements { elements, .. }) => {
+            elements.iter().position(|element| {
+                matches!(
+                    element,
+                    Element::List {
+                        wikidot_explicit_block: false,
+                        ..
+                    }
+                )
+            })
+        }
+        _ => return None,
+    };
+    let first_list = first_list?;
+    let split = first_list + 1;
+    let kept_len = match &items[0] {
+        ListItem::Elements { elements, .. } => elements.len(),
+        _ => return None,
+    };
+    if kept_len == split && items.len() == 1 {
+        // Nothing follows the first formation.
+        return None;
+    }
+    let (elements, attributes) = match std::mem::replace(
+        &mut items[0],
+        ListItem::Elements {
+            elements: Vec::new(),
+            attributes: AttributeMap::new(),
+        },
+    ) {
+        ListItem::Elements {
+            elements,
+            attributes,
+        } => (elements, attributes),
+        _ => unreachable!("the split requires elements items"),
+    };
+    let mut elements = elements;
+    let rest_elements = elements.split_off(split);
+    items[0] = ListItem::Elements {
+        elements,
+        attributes,
+    };
+    let rest_items = items.split_off(1);
+    Some(multi_formation_escaped_tail(
+        rest_elements,
+        rest_items,
+        hoists - 1,
+    ))
+}
+
+/// BRIEF-MF65b: regroups the escaped tail into renderable elements.
+/// Nested flipped formation lists render as numbered lists unless a plain
+/// text-like element has already appeared in the tail (then the bullet run
+/// wins, matching live) or every numbered hoist is consumed. Items fused
+/// into the would-be outer list regroup into one escaped list per hoist.
+fn multi_formation_escaped_tail<'t>(
+    rest_elements: Vec<Element<'t>>,
+    rest_items: Vec<ListItem<'t>>,
+    mut hoists: usize,
+) -> Vec<Element<'t>> {
+    let mut out: Vec<Element<'t>> = Vec::new();
+    let mut pending: Vec<ListItem<'t>> = Vec::new();
+    let mut text_seen = false;
+
+    fn flush<'t>(
+        pending: &mut Vec<ListItem<'t>>,
+        hoists: &mut usize,
+        text_seen: bool,
+        out: &mut Vec<Element<'t>>,
+    ) {
+        if pending.is_empty() {
+            return;
+        }
+        let ltype = if *hoists > 0 && !text_seen {
+            *hoists -= 1;
+            ListType::Numbered
+        } else {
+            ListType::Bullet
+        };
+        out.push(Element::List {
+            ltype,
+            items: std::mem::take(pending),
+            attributes: AttributeMap::new(),
+            wikidot_explicit_block: false,
+            wikidot_marker_head_spawn: false,
+            wikidot_unclosed: false,
+        });
+    }
+
+    for element in rest_elements {
+        match element {
+            Element::List {
+                ltype,
+                items,
+                attributes,
+                wikidot_explicit_block,
+                wikidot_marker_head_spawn,
+                wikidot_unclosed,
+            } => {
+                flush(&mut pending, &mut hoists, text_seen, &mut out);
+                let ltype = if hoists > 0 && !text_seen {
+                    hoists -= 1;
+                    ListType::Numbered
+                } else {
+                    ltype
+                };
+                out.push(Element::List {
+                    ltype,
+                    items,
+                    attributes,
+                    wikidot_explicit_block,
+                    wikidot_marker_head_spawn,
+                    wikidot_unclosed,
+                });
+            }
+            other => {
+                text_seen = true;
+                out.push(other);
+            }
+        }
+    }
+    for item in rest_items {
+        pending.push(item);
+    }
+    flush(&mut pending, &mut hoists, text_seen, &mut out);
+    out
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::data::PageInfo;
+    use crate::layout::Layout;
+    use crate::parsing::ParseError;
+    use crate::render::{Render, html::HtmlRender};
+    use crate::settings::{WikitextMode, WikitextSettings};
+
+    fn with_parse<R>(
+        source: &str,
+        check: impl for<'t> FnOnce(Vec<Element<'t>>, Vec<ParseError>) -> R,
+    ) -> R {
+        with_parse_layout(source, Layout::Wikidot, check)
+    }
+
+    fn with_parse_layout<R>(
+        source: &str,
+        layout: Layout,
+        check: impl for<'t> FnOnce(Vec<Element<'t>>, Vec<ParseError>) -> R,
+    ) -> R {
+        let page_info = PageInfo::dummy();
+        let settings = WikitextSettings::from_mode(WikitextMode::Page, layout);
+        let tokenization = crate::tokenize(source);
+        let (tree, errors) = crate::parse(&tokenization, &page_info, &settings).into();
+
+        check(tree.elements, errors)
+    }
+
+    fn element_text(elements: &[Element]) -> String {
+        elements
+            .iter()
+            .filter_map(|element| match element {
+                Element::Text(text) => Some(text.as_ref()),
+                _ => None,
+            })
+            .collect()
+    }
+
+    #[test]
+    fn wikidot_top_level_list_item_remains_literal_in_its_paragraph() {
+        let page_info = PageInfo::dummy();
+        let settings = WikitextSettings::from_mode(WikitextMode::Page, Layout::Wikidot);
+        let tokenization = crate::tokenize("[[li]]\nBaz\n[[/li]]");
+        let (tree, errors) = crate::parse(&tokenization, &page_info, &settings).into();
+        let html = HtmlRender.render(&tree, &page_info, &settings).body;
+
+        assert!(
+            errors
+                .iter()
+                .any(|error| error.kind() == ParseErrorKind::ListItemOutsideList),
+            "{errors:?}",
+        );
+        assert_eq!(html, "<p>[[li]]<br>\nBaz<br>\n[[/li]]</p>");
+    }
+
+    #[test]
+    fn unordered_block_list_preserves_attributes_and_items() {
+        with_parse(
+            r#"[[ul class="menu"]]
+[[li class="first"]]Alpha[[/li]]
+[[li]]Beta[[/li]]
+[[/ul]]"#,
+            |tree, errors| {
+                assert!(errors.is_empty(), "{errors:?}");
+                let [
+                    Element::List {
+                        ltype,
+                        attributes,
+                        items,
+                        ..
+                    },
+                    Element::LineBreak,
+                ] = tree.as_slice()
+                else {
+                    panic!("expected one unordered list, got {tree:?}");
+                };
+
+                assert_eq!(*ltype, ListType::Bullet);
+                assert_eq!(
+                    attributes.get().get("class").map(|value| value.as_ref()),
+                    Some("menu")
+                );
+                assert_eq!(items.len(), 2);
+
+                let ListItem::Elements {
+                    attributes,
+                    elements,
+                } = &items[0]
+                else {
+                    panic!("expected first list item, got {:?}", items[0]);
+                };
+                assert_eq!(
+                    attributes.get().get("class").map(|value| value.as_ref()),
+                    Some("first")
+                );
+                assert_eq!(element_text(elements), "Alpha");
+
+                let ListItem::Elements { elements, .. } = &items[1] else {
+                    panic!("expected second list item, got {:?}", items[1]);
+                };
+                assert_eq!(element_text(elements), "Beta");
+            },
+        );
+    }
+
+    #[test]
+    fn wikidot_list_item_drops_blank_line_between_adjacent_blocks() {
+        let source = "[[ul]]\n[[li]]\n[[div class=\"a\"]]\nA\n[[/div]]\n\n[[div class=\"b\"]]\nB\n[[/div]]\n[[/li]]\n[[/ul]]";
+        with_parse(source, |tree, errors| {
+            assert!(errors.is_empty(), "{errors:?}");
+            let [Element::List { items, .. }, Element::LineBreak] = tree.as_slice()
+            else {
+                panic!("expected Wikidot list and trailing break, got {tree:?}");
+            };
+            let [ListItem::Elements { elements, .. }] = items.as_slice() else {
+                panic!("expected one list item, got {items:?}");
+            };
+            let [
+                Element::Container(first),
+                Element::Container(second),
+                Element::LineBreak,
+            ] = elements.as_slice()
+            else {
+                panic!(
+                    "expected adjacent block elements and a terminal break, got {elements:?}"
+                );
+            };
+            assert_eq!(first.ctype(), ContainerType::Div);
+            assert_eq!(second.ctype(), ContainerType::Div);
+        });
+
+        with_parse_layout(source, Layout::Wikijump, |tree, errors| {
+            assert!(errors.is_empty(), "{errors:?}");
+            let [Element::List { items, .. }] = tree.as_slice() else {
+                panic!("expected Wikijump list, got {tree:?}");
+            };
+            let [ListItem::Elements { elements, .. }] = items.as_slice() else {
+                panic!("expected one Wikijump list item, got {items:?}");
+            };
+            assert!(matches!(
+                elements.as_slice(),
+                [
+                    Element::Container(_),
+                    Element::LineBreak,
+                    Element::Container(_),
+                    ..
+                ]
+            ));
+        });
+    }
+
+    #[test]
+    fn ordered_block_list_accepts_nested_sublist() {
+        with_parse(
+            r#"[[ol]]
+[[li]]Parent[[/li]]
+[[ul]]
+[[li]]Child[[/li]]
+[[/ul]]
+[[/ol]]"#,
+            |tree, errors| {
+                assert!(errors.is_empty(), "{errors:?}");
+                let [Element::List { ltype, items, .. }, Element::LineBreak] =
+                    tree.as_slice()
+                else {
+                    panic!("expected one ordered list, got {tree:?}");
+                };
+
+                assert_eq!(*ltype, ListType::Numbered);
+                assert_eq!(items.len(), 1);
+                let ListItem::Elements { elements, .. } = &items[0] else {
+                    panic!("expected parent item, got {:?}", items[0]);
+                };
+                assert_eq!(element_text(elements), "Parent");
+
+                let Some(element @ Element::List { .. }) = elements.last() else {
+                    panic!("expected nested sublist in parent item, got {elements:?}");
+                };
+                let Element::List {
+                    ltype,
+                    attributes,
+                    items,
+                    ..
+                } = element
+                else {
+                    panic!("expected nested list element, got {element:?}");
+                };
+
+                assert_eq!(*ltype, ListType::Bullet);
+                assert!(attributes.get().is_empty());
+                let [ListItem::Elements { elements, .. }] = items.as_slice() else {
+                    panic!("expected one nested list item, got {items:?}");
+                };
+                assert_eq!(element_text(elements), "Child");
+            },
+        );
+    }
+
+    #[test]
+    fn scored_list_keeps_nested_list_attached_after_literal_recovery() {
+        with_parse(
+            concat!(
+                "[[ul_]]\n",
+                "[[li_]]\n",
+                "Parent\n",
+                "[[/li]]\n",
+                "[[ul]]\n",
+                "[[li]]Child[[/li]]\n",
+                "[[/ul]]\n",
+                "[[/ul_]]",
+            ),
+            |tree, errors| {
+                assert!(!errors.is_empty());
+                let [Element::List { items, .. }] = tree.as_slice() else {
+                    panic!("expected one list, got {tree:?}");
+                };
+                let [ListItem::Elements { elements, .. }] = items.as_slice() else {
+                    panic!("expected one synthetic parent item, got {items:?}");
+                };
+                assert!(!elements.iter().any(|element| {
+                    matches!(
+                        element,
+                        Element::Container(container)
+                            if container.ctype() == ContainerType::Paragraph
+                    )
+                }));
+                let Some(items) = elements.iter().find_map(|element| match element {
+                    Element::List { items, .. } => Some(items),
+                    _ => None,
+                }) else {
+                    panic!(
+                        "expected nested list attached to parent item, got {elements:?}"
+                    );
+                };
+                let [ListItem::Elements { elements, .. }] = items.as_slice() else {
+                    panic!("expected one nested list item, got {items:?}");
+                };
+                assert_eq!(element_text(elements), "Child");
+            },
+        );
+    }
+
+    #[test]
+    fn scored_block_keeps_terminal_line_break() {
+        // Live keeps the item-final break when the closer sits on its
+        // own line (probe muse-probe-colmod-w1-loose-text-scored
+        // renders <li>Alpha<br></li>); only the leading break goes.
+        with_parse(
+            r#"[[ul_]]
+[[li]]
+Alpha
+[[/li]]
+[[/ul]]"#,
+            |tree, errors| {
+                assert!(errors.is_empty(), "{errors:?}");
+                let [Element::List { items, .. }] = tree.as_slice() else {
+                    panic!("expected one list, got {tree:?}");
+                };
+                let [ListItem::Elements { elements, .. }] = items.as_slice() else {
+                    panic!("expected one list item, got {items:?}");
+                };
+
+                assert_eq!(element_text(elements), "Alpha");
+                assert_eq!(
+                    elements
+                        .iter()
+                        .filter(|element| matches!(element, Element::LineBreak))
+                        .count(),
+                    1,
+                );
+                assert!(matches!(elements.last(), Some(Element::LineBreak)));
+            },
+        );
+    }
+
+    #[test]
+    fn wikidot_scored_item_preserves_a_terminal_inline_raw_line_break() {
+        let source = concat!(
+            "[[ul_]]\n",
+            "[[li]]\n",
+            "Alpha\n",
+            "@@ @@\n",
+            "[[/li]]\n",
+            "[[/ul]]",
+        );
+        let page_info = PageInfo::dummy();
+        let settings = WikitextSettings::from_mode(WikitextMode::Page, Layout::Wikidot);
+        let tokenization = crate::tokenize(source);
+        let (tree, errors) = crate::parse(&tokenization, &page_info, &settings).into();
+        let html = HtmlRender.render(&tree, &page_info, &settings).body;
+
+        assert!(errors.is_empty(), "{errors:?}");
+        assert_eq!(
+            html,
+            concat!(
+                "<ul>\n",
+                "<li>Alpha<br>\n",
+                r#"<span style="white-space: pre-wrap;">&#32;</span><br>"#,
+                "</li>\n",
+                "</ul>",
+            ),
+        );
+    }
+
+    #[test]
+    fn empty_block_list_becomes_a_trailing_line_break_like_wikidot() {
+        for input in [
+            "[[ul]][[/ul]]",
+            "[[ul]]\n[[/ul]]",
+            "[[ul]]   [[/ul]]",
+            "[[ul]]\n \n[[/ul]]",
+        ] {
+            with_parse(input, |tree, errors| {
+                assert!(errors.is_empty(), "{input:?}: {errors:?}");
+                assert_eq!(tree, [Element::LineBreak], "{input:?}");
+            });
+        }
+    }
+
+    #[test]
+    fn block_list_wraps_bare_body_like_wikidot() {
+        with_parse("[[ul]]_[[/ul]]", |tree, errors| {
+            assert!(errors.is_empty(), "{errors:#?}");
+            let [Element::List { items, .. }, Element::LineBreak] = tree.as_slice()
+            else {
+                panic!("expected one list, got {tree:?}");
+            };
+            let [
+                ListItem::Elements {
+                    elements,
+                    attributes,
+                },
+            ] = items.as_slice()
+            else {
+                panic!("expected one synthetic item, got {items:?}");
+            };
+            assert_eq!(element_text(elements), "_");
+            assert_eq!(
+                attributes.get().get("style").map(|value| value.as_ref()),
+                Some("list-style: none"),
+            );
+        });
+    }
+
+    #[test]
+    fn wikidot_rejects_spaced_and_scored_list_closers() {
+        let page_info = PageInfo::dummy();
+        let settings = WikitextSettings::from_mode(WikitextMode::Page, Layout::Wikidot);
+        for input in [
+            "[[ul]]\n[[li]]spaced[[/li ]]\n[[/ul ]]",
+            "[[ul_]]\n[[li_]]\ntext\n[[/li_]]\n[[/ul_]]",
+        ] {
+            let tokenization = crate::tokenize(input);
+            let (tree, _errors) =
+                crate::parse(&tokenization, &page_info, &settings).into();
+            let html = HtmlRender.render(&tree, &page_info, &settings).body;
+            assert!(!html.contains("<ul>"), "{input:?}: {html}");
+            assert!(html.contains("[[ul"), "{input:?}: {html}");
+        }
+    }
+
+    #[test]
+    fn malformed_scored_items_are_literal_only_in_wikidot_layout() {
+        let source = concat!(
+            "[[ul]]\n\n",
+            "[[li_]]\nALPHA\n[[/li]]\n\n",
+            "[[li_]]\n\nBETA\n\n[[/li]]\n",
+            "[[li]]GAMMA[[/li]]\n\n",
+            "[[li_]] DELTA [[/li]]\n\n",
+            "[[/ul]]",
+        );
+
+        with_parse_layout(source, Layout::Wikidot, |tree, errors| {
+            assert!(!errors.is_empty());
+            let [Element::List { items, .. }, Element::LineBreak] = tree.as_slice()
+            else {
+                panic!("expected Wikidot list and trailing break, got {tree:?}");
+            };
+            let [
+                ListItem::Elements {
+                    elements: malformed,
+                    attributes,
+                },
+                ListItem::Elements {
+                    elements: gamma, ..
+                },
+            ] = items.as_slice()
+            else {
+                panic!("expected two Wikidot items, got {items:?}");
+            };
+            assert_eq!(
+                attributes.get().get("style").map(|value| value.as_ref()),
+                Some("list-style: none"),
+            );
+            assert_eq!(
+                malformed
+                    .iter()
+                    .filter(|element| {
+                        matches!(
+                            element,
+                            Element::Container(container)
+                                if container.ctype() == ContainerType::Paragraph
+                        )
+                    })
+                    .count(),
+                2,
+            );
+            assert_eq!(element_text(gamma), "GAMMA[[li_]] DELTA [[/li]]");
+        });
+
+        with_parse_layout(source, Layout::Wikijump, |tree, errors| {
+            assert!(errors.is_empty(), "{errors:?}");
+            let [Element::List { items, .. }] = tree.as_slice() else {
+                panic!("expected one Wikijump list, got {tree:?}");
+            };
+            assert_eq!(items.len(), 4);
+            let text: Vec<_> = items
+                .iter()
+                .map(|item| match item {
+                    ListItem::Elements { elements, .. } => element_text(elements),
+                    ListItem::SubList { .. } => panic!("unexpected sublist"),
+                })
+                .collect();
+            assert_eq!(text, ["ALPHA", "BETA", "GAMMA", "DELTA "]);
+        });
+    }
+
+    #[test]
+    fn multiline_item_newline_policy_is_wikidot_only() {
+        let source = concat!(
+            "[[ol]]\n",
+            "[[li]]\nALPHA\n[[/li]]\n",
+            "[[li]]\n\nBETA\n\n[[/li]]\n",
+            "[[/ol]]",
+        );
+
+        with_parse_layout(source, Layout::Wikidot, |tree, errors| {
+            assert!(errors.is_empty(), "{errors:?}");
+            let [Element::List { items, .. }, Element::LineBreak] = tree.as_slice()
+            else {
+                panic!("expected Wikidot list and trailing break, got {tree:?}");
+            };
+            let [
+                ListItem::Elements {
+                    elements: alpha, ..
+                },
+                ListItem::Elements { elements: beta, .. },
+            ] = items.as_slice()
+            else {
+                panic!("expected two Wikidot items, got {items:?}");
+            };
+            assert_eq!(alpha, &[text!("ALPHA"), Element::LineBreak]);
+            assert_eq!(beta, &[text!("BETA")]);
+        });
+
+        with_parse_layout(source, Layout::Wikijump, |tree, errors| {
+            assert!(errors.is_empty(), "{errors:?}");
+            let [Element::List { items, .. }] = tree.as_slice() else {
+                panic!("expected one Wikijump list, got {tree:?}");
+            };
+            let [
+                ListItem::Elements {
+                    elements: alpha, ..
+                },
+                ListItem::Elements { elements: beta, .. },
+            ] = items.as_slice()
+            else {
+                panic!("expected two Wikijump items, got {items:?}");
+            };
+            assert_eq!(alpha, &[text!("ALPHA")]);
+            assert_eq!(
+                beta,
+                &[Element::LineBreak, text!("BETA"), Element::LineBreak],
+            );
+        });
+    }
+
+    #[test]
+    fn nested_list_attachment_is_wikidot_only() {
+        let source = "[[ol]][[li]]Parent[[/li]][[ul]][[li]]Child[[/li]][[/ul]][[/ol]]";
+
+        with_parse_layout(source, Layout::Wikidot, |tree, errors| {
+            assert!(errors.is_empty(), "{errors:?}");
+            let [Element::List { items, .. }, Element::LineBreak] = tree.as_slice()
+            else {
+                panic!("expected Wikidot list and trailing break, got {tree:?}");
+            };
+            let [ListItem::Elements { elements, .. }] = items.as_slice() else {
+                panic!("expected one Wikidot parent item, got {items:?}");
+            };
+            assert!(matches!(elements.last(), Some(Element::List { .. })));
+        });
+
+        with_parse_layout(source, Layout::Wikijump, |tree, errors| {
+            assert!(errors.is_empty(), "{errors:?}");
+            let [Element::List { items, .. }] = tree.as_slice() else {
+                panic!("expected one Wikijump list, got {tree:?}");
+            };
+            assert!(matches!(
+                items.as_slice(),
+                [ListItem::Elements { .. }, ListItem::SubList { .. }]
+            ));
+        });
+    }
+}

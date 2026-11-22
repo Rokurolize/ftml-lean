@@ -1,0 +1,21 @@
+DIFF x1-rawold-raw                  ref=b'<p>A  B</p>' live=b'<p>A B</p>'
+OK   x1c-rawold-plain               ref=b'<p>A x B</p>' live=b'<p>A x B</p>'
+OK   x2-freelink-raw                ref=b'<p>A [[[<span style="white-space: pre-wrap;">x</span>]]] B</p>' live=b'<p>A [[[<span style="white-space: pre-wrap;">x</span>]]] B</p>'
+DIFF x3-email-raw-label             ref=b'<p>A <span class="wiki-email">moc.elpmaxe|a#\xff0\xff</span> B</p>' live=b'<p>A <span class="wiki-email">moc.elpmaxe|a#\xef\xbf\xbd1\xef\xbf\xbd</span> B</p>'
+DIFF x4-email-free-label            ref=b'<p>A <span class="wiki-email">moc.elpmaxe|a#\xff0\xff</span> B</p>' live=b'<p>A <span class="wiki-email">moc.elpmaxe|a#\xef\xbf\xbd1\xef\xbf\xbd</span> B</p>'
+INVALID x5c-code-blank-line
+OK   x6-concat-heading              ref=b'<p>A+ Heading</p>' live=b'<p>A+ Heading</p>'
+OK   x7-concat-list                 ref=b'<p>A* item</p>' live=b'<p>A* item</p>'
+OK   x8-raw-code-cross              ref=b'<p>@@</p>\n<div class="code">\n<pre><code>a\nb</code></pre></div>\n<br>\n@@' live=b'<p>@@</p>\n<div class="code">\n<pre><code>a\nb</code></pre></div>\n<br>\n@@'
+OK   x9-iw-raw-label                ref=b'<p>A [site:page <span style="white-space: pre-wrap;">x</span>] B</p>' live=b'<p>A [site:page <span style="white-space: pre-wrap;">x</span>] B</p>'
+OK   x10-url-raw-label              ref=b'<p>A [b <a href="http://example.com/x">http://example.com/x</a> <span style="white-space: pre-wrap;">x</span>] B</p>' live=b'<p>A [b <a href="http://example.com/x">http://example.com/x</a> <span style="white-space: pre-wrap;">x</span>] B</p>'
+OK   x11-rawold-comment             ref=b'<p>A [!-- hidden --] B</p>' live=b'<p>A [!-- hidden --] B</p>'
+OK   x12-code-umlaut                ref=b'<div class="code">\n<pre><code>a\xc3\xbc\xc3\xbcb</code></pre></div>' live=b'<div class="code">\n<pre><code>a\xc3\xbc\xc3\xbcb</code></pre></div>'
+INVALID x14-pre-spaces-blanks
+OK   x15-comment-concat-heading     ref=b'<h1 id="toc0"><span>Heading</span></h1>' live=b'<h1 id="toc0"><span>Heading</span></h1>'
+OK   x16-pre-code-3blanks           ref=b'<div class="code">\n<pre><code>a\nb</code></pre></div>' live=b'<div class="code">\n<pre><code>a\nb</code></pre></div>'
+OK   x17-concat-raw                 ref=b'<p>@@xy@@</p>' live=b'<p>@@xy@@</p>'
+OK   x18-form-code                  ref=b'<p><span style="white-space: pre-wrap;">[[form]]</span><br>\n<br>\n<br>\n<br>\n<span style="white-space: pre-wrap;">[[/form]]</span></p>' live=b'<p><span style="white-space: pre-wrap;">[[form]]</span><br>\n<br>\n<br>\n<br>\n<span style="white-space: pre-wrap;">[[/form]]</span></p>'
+OK   x19-module-code                ref=b'<div class="error-block">[[module <em>Foo</em>]] No such module, please <a href="https://www.wikidot.com/doc:modules" target="_blank">check available modules</a> and fix this page.</div>\n<div class="code">\n<pre><code>x</code></pre></div>\n<br>\n[[/module]]' live=b'<div class="error-block">[[module <em>Foo</em>]] No such module, please <a href="https://www.wikidot.com/doc:modules" target="_blank">check available modules</a> and fix this page.</div>\n<div class="code">\n<pre><code>x</code></pre></div>\n<br>\n[[/module]]'
+OK   x20-ustrip                     ref=b'<p>\xc3\xbc\xc3\xbc<strong>x</strong>\xc3\xbc\xc3\xbc</p>' live=b'<p>\xc3\xbc\xc3\xbc<strong>x</strong>\xc3\xbc\xc3\xbc</p>'
+total=18 match=15 diff=3

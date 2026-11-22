@@ -1,0 +1,42 @@
+{
+ "l1b-multiline": {
+  "fullname": "muse-probe-g14-l1b-multiline",
+  "html": "<p>BEFORE-L1B</p>\n<blockquote>\n<p>[[include muse-probe-g14-target]]<br />\ntrailing quoted line L1B</p>\n</blockquote>\n<p>AFTER-L1B</p>",
+  "html_sha256": "1cee600ffd64915788d0cbce402b23940515afa357bd4571cdd78e3d8ddea8f6",
+  "source": "BEFORE-L1B\n> [[include muse-probe-g14-target]]\n> trailing quoted line L1B\nAFTER-L1B",
+  "source_sha256": "da275aa15867d0077806878cd599fe98c617324ce91a9b40cd63bb8285fa94d2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "l1c-depth2": {
+  "fullname": "muse-probe-g14-l1c-depth2",
+  "html": "<p>BEFORE-L1C2</p>\n<blockquote>\n<blockquote>\n<p>[[include muse-probe-g14-target]]</p>\n</blockquote>\n</blockquote>\n<p>AFTER-L1C2</p>",
+  "html_sha256": "fe1807f41b49915a4f0544391a509eb6c259553f6631535f18832e68f29301ea",
+  "source": "BEFORE-L1C2\n>> [[include muse-probe-g14-target]]\nAFTER-L1C2",
+  "source_sha256": "e80e533454188b8469c5c0afb25bc734fa269421316833f1bd52a3cd74d53911",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "l1d-midtext": {
+  "fullname": "muse-probe-g14-l1d-midtext",
+  "html": "<p>BEFORE-L1D</p>\n<blockquote>\n<p>some text [[include muse-probe-g14-target]]</p>\n</blockquote>\n<p>AFTER-L1D</p>",
+  "html_sha256": "49262971cf50aa3d82c1bd86f9ff378c96cc9990a0b22b3e0f0b648f379f9b7f",
+  "source": "BEFORE-L1D\n> some text [[include muse-probe-g14-target]]\nAFTER-L1D",
+  "source_sha256": "66d8e008455ff12f392891e5f1d7dbce1849ae686ad98e15fff853b6515e0713",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "l1e-quotedarg": {
+  "fullname": "muse-probe-g14-l1e-quotedarg",
+  "html": "<p>BEFORE-L1E</p>\n<blockquote>\n<p>[[include muse-probe-g14-target<br />\n| marker=QUOTEDOK]]</p>\n</blockquote>\n<p>AFTER-L1E</p>",
+  "html_sha256": "6cbdcaf3d5292307d74427ef5ea4f588d8512adb2fe17f32249aa1fa18381c39",
+  "source": "BEFORE-L1E\n> [[include muse-probe-g14-target\n> | marker=QUOTEDOK]]\nAFTER-L1E",
+  "source_sha256": "9fbd9834ac87342dc3dc319f6de62603badc10da6997d7b9d5df4c9acdceab4e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

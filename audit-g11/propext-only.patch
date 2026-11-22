@@ -1,0 +1,236 @@
+--- lean-ftml/LeanFtml/Depth.lean	2026-11-21 09:46:50.000000000 +0900
++++ audit/g11/lean-ftml/LeanFtml/Depth.lean	2026-11-21 10:49:43.851536327 +0900
+@@ -257,7 +257,8 @@
+       simp only [List.cons_append, placedStack, List.length_cons]
+       rw [placedStack_append rest b (i + 1), List.append_assoc]
+       congr 1
+-      have h : i + 1 + rest.length = i + (rest.length + 1) := by omega
++      have h : i + 1 + rest.length = i + (rest.length + 1) := by
++        rw [Nat.add_assoc, Nat.add_comm 1 rest.length]
+       rw [h]
+ 
+ theorem placedStack_framesOf : ∀ (n : Nat) (l : L) (i : Nat),
+@@ -347,7 +348,8 @@
+           simp only [placedStack]
+           rw [ih (i + 1) top htop']
+           have hidx : (i + 1) + (g :: rs).length - 1 = i + (f :: g :: rs).length - 1 := by
+-            simp only [List.length_cons]; omega
++            simp only [List.length_cons]
++            rw [Nat.add_assoc, Nat.add_comm 1 (rs.length + 1)]
+           rw [hidx]
+           exact (List.append_assoc _ _ _).symm
+ 
+@@ -381,7 +383,7 @@
+               have ih' := ih hlen
+               rw [e]
+               simp only [List.length_cons] at ih' ⊢
+-              omega
++              rw [ih', Nat.add_sub_cancel, Nat.add_sub_cancel]
+ 
+ theorem decrease_ne_nil : ∀ (s : List (Frame L T)), s ≠ [] → decrease s ≠ [] := by
+   intro s hs
+@@ -518,18 +520,20 @@
+       rw [Nat.sub_zero]
+   | succ n ih =>
+       intro s i hlen hgood htop
+-      have h2 : 2 ≤ s.length := by omega
++      have h2 : 2 ≤ s.length := Nat.le_trans (Nat.succ_le_succ (Nat.succ_le_succ (Nat.zero_le n))) hlen
+       have e : adjustDown (n + 1) s = adjustDown n (decrease s) := rfl
+       rw [e]
+       have hdeclen := decrease_length s h2
+-      have hdecne : n < (decrease s).length := by omega
++      have hdecne : n < (decrease s).length := by
++        rw [hdeclen]
++        exact Nat.lt_sub_of_add_lt hlen
+       have hdecgood := decrease_good s hgood (htop (by simp)) h2
+       have hdectop : TopNe (decrease s) := decrease_topNe s h2
+       have hdecplaced := decrease_placed s i h2
+       obtain ⟨hp, hl, hg, ht⟩ := ih (decrease s) i hdecne hdecgood (fun _ => hdectop)
+       refine ⟨?_, ?_, hg, ?_⟩
+       · rw [hp, hdecplaced]
+-      · rw [hl, hdeclen]; omega
++      · rw [hl, hdeclen, Nat.sub_sub, Nat.add_comm 1 n]
+       · intro _
+         cases n with
+         | zero => exact hdectop
+@@ -626,11 +630,12 @@
+       rw [hd, hnil]
+       simp [placedStack]
+     · have h2 : 2 ≤ s.stack.length := by
+-        have hpos : 0 < s.stack.length := by
+-          cases hstk : s.stack with
+-          | nil => exact absurd hstk hnil
+-          | cons a as => simp
+-        omega
++        cases hstk : s.stack with
++        | nil => exact absurd hstk hnil
++        | cons a as =>
++            cases as with
++            | nil => exact absurd (by simp [hstk]) h1
++            | cons b bs => simp
+       simp only [placedState]
+       congr 1
+       rw [placedStack_append, decrease_placed s.stack 0 h2]
+@@ -647,14 +652,15 @@
+     rw [newList_single]
+     simp [h1]
+   · have h2 : 2 ≤ s.stack.length := by
+-      have hpos : 0 < s.stack.length := by
+-        cases hstk : s.stack with
+-        | nil => exact absurd hstk hne
+-        | cons a as => simp
+-      omega
++      cases hstk : s.stack with
++      | nil => exact absurd hstk hne
++      | cons a as =>
++          cases as with
++          | nil => exact absurd (by simp [hstk]) h1
++          | cons b bs => simp
+     rw [newList_of_ne_single s l h1]
+-    simp [List.length_append, decrease_length s.stack h2]
+-    omega
++    simp only [List.length_append, List.length_singleton, decrease_length s.stack h2]
++    exact Nat.sub_add_cancel (Nat.le_trans (Nat.le_succ 1) h2)
+ 
+ theorem newList_good [DecidableEq (Forest L T)] (s : DState L T) (l : L)
+     (hgood : GoodState s) (htop : s.stack.length = 1 ∨ TopNe s.stack) :
+@@ -691,11 +697,12 @@
+       rw [hx]
+       trivial
+     · have h2 : 2 ≤ s.stack.length := by
+-        have hpos : 0 < s.stack.length := by
+-          cases hstk : s.stack with
+-          | nil => exact absurd hstk hnil
+-          | cons a as => simp
+-        omega
++        cases hstk : s.stack with
++        | nil => exact absurd hstk hnil
++        | cons a as =>
++            cases as with
++            | nil => exact absurd (by simp [hstk]) h1
++            | cons b bs => simp
+       have htop' : TopNe s.stack := match htop with
+         | .inl hh => absurd hh h1
+         | .inr hh => hh
+@@ -791,13 +798,14 @@
+ theorem framesOf_ne_nil {n : Nat} (hn : 0 < n) (l : L) :
+     (framesOf n l : List (Frame L T)) ≠ [] := by
+   intro hh
+-  have := congrArg List.length hh
+-  simp [framesOf_length] at this
+-  omega
++  have h0 := congrArg List.length hh
++  simp [framesOf_length] at h0
++  rw [h0] at hn
++  exact Nat.lt_irrefl 0 hn
+ 
+ theorem lastFrame_framesOf {n : Nat} (hn : 0 < n) (l : L) :
+     lastFrame (framesOf n l : List (Frame L T)) = some ⟨l, .nil⟩ := by
+-  have hn0 : ¬ n = 0 := by omega
++  have hn0 : ¬ n = 0 := Nat.ne_of_gt hn
+   show lastFrame (List.replicate n (⟨l, .nil⟩ : Frame L T)) = some ⟨l, .nil⟩
+   rw [lastFrame_replicate]
+   simp [hn0]
+@@ -824,8 +832,7 @@
+     have hlen' : ({ s with stack := s.stack ++ framesOf (r.depth - prev) r.ltype } : DState L T).stack.length
+         = r.depth + 1 := by
+       show (s.stack ++ framesOf (r.depth - prev) r.ltype).length = r.depth + 1
+-      rw [List.length_append, framesOf_length, hlen]
+-      omega
++      rw [List.length_append, framesOf_length, hlen, Nat.add_right_comm, Nat.add_sub_of_le hge]
+     have hgood' : GoodState { s with stack := s.stack ++ framesOf (r.depth - prev) r.ltype } := by
+       refine ⟨hgood.1, ?_⟩
+       show GoodStack (s.stack ++ framesOf (r.depth - prev) r.ltype)
+@@ -833,8 +840,7 @@
+     refine ⟨hplaced', hlen', hgood', ?_⟩
+     intro hcheck
+     by_cases hn : r.depth - prev = 0
+-    · have hdepth : r.depth = prev := by omega
+-      have hstk : s.stack ++ framesOf (r.depth - prev) r.ltype = s.stack := by
++    · have hstk : s.stack ++ framesOf (r.depth - prev) r.ltype = s.stack := by
+         rw [hn]
+         simp [framesOf]
+       show (({ s with stack := s.stack ++ framesOf (r.depth - prev) r.ltype } : DState L T).stack.length = 1
+@@ -845,24 +851,25 @@
+         rw [hlen, hprev0 hdone]
+       · right
+         exact htopne hdone
+-    · have hn' : 0 < r.depth - prev := by omega
++    · have hn' : 0 < r.depth - prev := Nat.pos_of_ne_zero hn
+       exfalso
+       apply hcheck
+       show (lastFrame (s.stack ++ framesOf (r.depth - prev) r.ltype)).map Frame.ltype = some r.ltype
+       rw [lastFrame_append (framesOf_ne_nil hn' _), lastFrame_framesOf hn']
+       rfl
+-  · have hlt : r.depth < prev := by omega
++  · have hlt : r.depth < prev := Nat.lt_of_not_le hge
+     have e : adjustStack s prev r
+         = { s with stack := adjustDown (prev - r.depth) s.stack } := by
+       simp [adjustStack, hge]
+     rw [e]
+     have hdone : done ≠ [] := by
+       intro hd
+-      have := hprev0 hd
+-      omega
++      have hp0 := hprev0 hd
++      rw [hp0] at hlt
++      exact Nat.not_lt_zero r.depth hlt
+     have hspec := adjustDown_spec (prev - r.depth) s.stack 0 (by
+-      have : prev - r.depth ≤ prev := by omega
+-      omega) hgood.2 (fun _ => htopne hdone)
++      rw [hlen]
++      exact Nat.lt_succ_of_le (Nat.sub_le prev r.depth)) hgood.2 (fun _ => htopne hdone)
+     obtain ⟨hp, hl, hg, ht⟩ := hspec
+     have hplaced' : placedState { s with stack := adjustDown (prev - r.depth) s.stack }
+         = placedState s := by
+@@ -873,15 +880,15 @@
+     have hlen' : ({ s with stack := adjustDown (prev - r.depth) s.stack } : DState L T).stack.length
+         = r.depth + 1 := by
+       show (adjustDown (prev - r.depth) s.stack).length = r.depth + 1
+-      rw [hl, hlen]
+-      omega
++      rw [hl, hlen, Nat.add_comm prev 1, Nat.add_sub_assoc (Nat.sub_le prev r.depth) 1,
++          Nat.sub_sub_self (Nat.le_of_lt hlt), Nat.add_comm 1 r.depth]
+     have hgood' : GoodState { s with stack := adjustDown (prev - r.depth) s.stack } :=
+       ⟨hgood.1, hg⟩
+     refine ⟨hplaced', hlen', hgood', ?_⟩
+     intro _
+     right
+     show TopNe (adjustDown (prev - r.depth) s.stack)
+-    exact ht (by omega)
++    exact ht (Nat.sub_pos_of_lt hlt)
+ 
+ theorem finish_step [DecidableEq L] [DecidableEq (Forest L T)] (s1 : DState L T)
+     (done : List (Row L T)) (r : Row L T)
+@@ -901,7 +908,7 @@
+           refine ⟨f, rfl, ?_⟩
+           have : (some f).map Frame.ltype = some r.ltype := by rw [← hcheck, hlast]
+           simpa using this
+-    have hidx : s1.stack.length - 1 = r.depth := by omega
++    have hidx : s1.stack.length - 1 = r.depth := by rw [hlen, Nat.add_sub_cancel]
+     refine ⟨?_, ?_, pushItem_good s1 r.item hgood, fun _ => pushItem_topNe s1 r.item, ?_⟩
+     · rw [pushItem_placed s1 r.item top htop, hidx, htopl, hplaced]
+       simp [List.map_append, rowPlaced]
+@@ -912,10 +919,10 @@
+     have hne : s1.stack ≠ [] := by
+       intro hh
+       rw [hh] at hlen
+-      simp at hlen
++      cases hlen
+     have hlen2 : (newList s1 r.ltype).stack.length = r.depth + 1 := by
+       rw [newList_length s1 r.ltype hne, hlen]
+-    have hidx : (newList s1 r.ltype).stack.length - 1 = r.depth := by omega
++    have hidx : (newList s1 r.ltype).stack.length - 1 = r.depth := by rw [hlen2, Nat.add_sub_cancel]
+     refine ⟨?_, ?_, ?_, fun _ => pushItem_topNe _ r.item, ?_⟩
+     · rw [pushItem_placed _ r.item ⟨r.ltype, .nil⟩ (newList_lastFrame s1 r.ltype),
+         hidx, newList_placed, hplaced]
+@@ -1101,7 +1108,8 @@
+     · intro _; rfl
+   by_cases hrows : rows = []
+   · subst hrows
+-    simp [processDepths, runRows, intoTrees, wrapFrames, Forest.appendForest]
++    intro p hp
++    simp [processDepths, runRows, intoTrees, wrapFrames, Forest.appendForest] at hp
+   · have hfinal := runRows_spec rows [] ⟨[], [⟨top, .nil⟩]⟩ 0 hinv
+     have e : processDepths top rows = intoTrees (runRows ⟨[], [⟨top, .nil⟩]⟩ 0 rows).1 := rfl
+     rw [e]

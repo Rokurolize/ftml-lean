@@ -1,0 +1,77 @@
+{"id": "tok-fn-0", "rule": "Footnote", "opts": {"id": 0, "label": "unused"}, "footnotes": [], "bibitemIds": [], "expect": "fnCite"}
+{"id": "tok-fn-1", "rule": "Footnote", "opts": {"id": 1, "label": "unused"}, "footnotes": [], "bibitemIds": [], "expect": "fnCite"}
+{"id": "tok-fn-2", "rule": "Footnote", "opts": {"id": 2, "label": "unused"}, "footnotes": [], "bibitemIds": [], "expect": "fnCite"}
+{"id": "tok-fn-10", "rule": "Footnote", "opts": {"id": 10, "label": "unused"}, "footnotes": [], "bibitemIds": [], "expect": "fnCite"}
+{"id": "tok-fni-para", "rule": "Footnoteitem", "opts": {"type": "parabreak"}, "footnotes": ["x"], "bibitemIds": "fniParabreak", "expect": null}
+{"id": "tok-fni-end", "rule": "Footnoteitem", "opts": {"type": "end", "id": 1}, "footnotes": ["x"], "bibitemIds": "fniEnd", "expect": null}
+{"id": "tok-fni-empty-blank", "rule": "Footnoteitem", "opts": {"type": "start", "id": 1}, "footnotes": [""], "bibitemIds": "fniStartEmpty", "expect": null}
+{"id": "tok-fni-empty-oor", "rule": "Footnoteitem", "opts": {"type": "start", "id": 3}, "footnotes": ["x"], "bibitemIds": "fniStartEmpty", "expect": null}
+{"id": "tok-fni-empty-zero", "rule": "Footnoteitem", "opts": {"type": "start", "id": 0}, "footnotes": ["x"], "bibitemIds": "fniStartEmpty", "expect": null}
+{"id": "tok-fni-body", "rule": "Footnoteitem", "opts": {"type": "start", "id": 1}, "footnotes": ["hello"], "bibitemIds": "fniStartBody", "expect": null}
+{"id": "tok-fni-body-second", "rule": "Footnoteitem", "opts": {"type": "start", "id": 2}, "footnotes": ["", "z"], "bibitemIds": "fniStartBody", "expect": null}
+{"id": "tok-fni-fall-missing", "rule": "Footnoteitem", "opts": {}, "footnotes": ["x"], "bibitemIds": "fniFallthrough", "expect": null}
+{"id": "tok-fni-fall-other", "rule": "Footnoteitem", "opts": {"type": "other"}, "footnotes": ["x"], "bibitemIds": "fniFallthrough", "expect": null}
+{"id": "tok-fnb-empty-start", "rule": "Footnoteblock", "opts": {"type": "start", "title": "T"}, "footnotes": [], "bibitemIds": "fnbNoNotes", "expect": null}
+{"id": "tok-fnb-empty-end", "rule": "Footnoteblock", "opts": {"type": "end", "title": "T"}, "footnotes": [], "bibitemIds": "fnbNoNotes", "expect": null}
+{"id": "tok-fnb-empty-nope", "rule": "Footnoteblock", "opts": {"type": "nope", "title": "T"}, "footnotes": [], "bibitemIds": "fnbNoNotes", "expect": null}
+{"id": "tok-fnb-def", "rule": "Footnoteblock", "opts": {"type": "start", "title": null}, "footnotes": ["x"], "bibitemIds": "fnbStartDefault", "expect": null}
+{"id": "tok-fnb-def-missing", "rule": "Footnoteblock", "opts": {"type": "start"}, "footnotes": ["x"], "bibitemIds": "fnbStartDefault", "expect": null}
+{"id": "tok-fnb-blank", "rule": "Footnoteblock", "opts": {"type": "start", "title": ""}, "footnotes": ["x"], "bibitemIds": "fnbStartBlank", "expect": null}
+{"id": "tok-fnb-auth-0", "rule": "Footnoteblock", "opts": {"type": "start", "title": "Notes"}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-fnb-auth-1", "rule": "Footnoteblock", "opts": {"type": "start", "title": "O'Brien"}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-fnb-auth-2", "rule": "Footnoteblock", "opts": {"type": "start", "title": "A & B"}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-fnb-auth-3", "rule": "Footnoteblock", "opts": {"type": "start", "title": "x<y>"}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-fnb-auth-4", "rule": "Footnoteblock", "opts": {"type": "start", "title": "n0"}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-fnb-auth-5", "rule": "Footnoteblock", "opts": {"type": "start", "title": "Footnotes"}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-fnb-auth-6", "rule": "Footnoteblock", "opts": {"type": "start", "title": "Bibliography"}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-fnb-auth-7", "rule": "Footnoteblock", "opts": {"type": "start", "title": "\u00e9"}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-fnb-auth-8", "rule": "Footnoteblock", "opts": {"type": "start", "title": "Q"}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-fnb-auth-9", "rule": "Footnoteblock", "opts": {"type": "start", "title": "title"}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-fnb-auth-10", "rule": "Footnoteblock", "opts": {"type": "start", "title": "n1"}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-fnb-auth-11", "rule": "Footnoteblock", "opts": {"type": "start", "title": "a b"}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-fnb-auth-12", "rule": "Footnoteblock", "opts": {"type": "start", "title": "cd"}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-fnb-auth-13", "rule": "Footnoteblock", "opts": {"type": "start", "title": "end"}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-fnb-auth-14", "rule": "Footnoteblock", "opts": {"type": "start", "title": "nl"}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-fnb-auth-15", "rule": "Footnoteblock", "opts": {"type": "start", "title": "0"}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-fnb-end", "rule": "Footnoteblock", "opts": {"type": "end"}, "footnotes": ["x"], "bibitemIds": "fnbEnd", "expect": null}
+{"id": "tok-fnb-fall", "rule": "Footnoteblock", "opts": {"type": "nope"}, "footnotes": ["x"], "bibitemIds": "fnbFallthrough", "expect": null}
+{"id": "tok-fnb-bool-false", "rule": "Footnoteblock", "opts": {"type": "start", "title": false}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-fnb-bool-true", "rule": "Footnoteblock", "opts": {"type": "start", "title": true}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-fnb-int0", "rule": "Footnoteblock", "opts": {"type": "start", "title": 0}, "footnotes": ["x"], "bibitemIds": "fnbStartTitled", "expect": null}
+{"id": "tok-bibi-empty-missing", "rule": "Bibitem", "opts": {"type": "start", "id": 1, "label": "a"}, "footnotes": [], "bibitemIds": [], "expect": "bibiStartSpace"}
+{"id": "tok-bibi-empty-false", "rule": "Bibitem", "opts": {"type": "start", "id": 1, "label": "a", "empty": false}, "footnotes": [], "bibitemIds": [], "expect": "bibiStartSpace"}
+{"id": "tok-bibi-empty-true", "rule": "Bibitem", "opts": {"type": "start", "id": 1, "label": "a", "empty": true}, "footnotes": [], "bibitemIds": [], "expect": "bibiStartTight"}
+{"id": "tok-bibi-empty-zero", "rule": "Bibitem", "opts": {"type": "start", "id": 1, "label": "a", "empty": 0}, "footnotes": [], "bibitemIds": [], "expect": "bibiStartSpace"}
+{"id": "tok-bibi-empty-one", "rule": "Bibitem", "opts": {"type": "start", "id": 1, "label": "a", "empty": 1}, "footnotes": [], "bibitemIds": [], "expect": "bibiStartTight"}
+{"id": "tok-bibi-empty-emptystr", "rule": "Bibitem", "opts": {"type": "start", "id": 1, "label": "a", "empty": ""}, "footnotes": [], "bibitemIds": [], "expect": "bibiStartSpace"}
+{"id": "tok-bibi-empty-str0", "rule": "Bibitem", "opts": {"type": "start", "id": 1, "label": "a", "empty": "0"}, "footnotes": [], "bibitemIds": [], "expect": "bibiStartSpace"}
+{"id": "tok-bibi-empty-str00", "rule": "Bibitem", "opts": {"type": "start", "id": 1, "label": "a", "empty": "00"}, "footnotes": [], "bibitemIds": [], "expect": "bibiStartTight"}
+{"id": "tok-bibi-end", "rule": "Bibitem", "opts": {"type": "end"}, "footnotes": [], "bibitemIds": [], "expect": "bibiEnd"}
+{"id": "tok-bibi-fall", "rule": "Bibitem", "opts": {"type": "nope"}, "footnotes": [], "bibitemIds": [], "expect": "bibiFallthrough"}
+{"id": "tok-bib-nl", "rule": "Bibliography", "opts": {"type": "nl"}, "footnotes": [], "bibitemIds": [], "expect": "bibNl"}
+{"id": "tok-bib-def", "rule": "Bibliography", "opts": {"type": "start", "title": null}, "footnotes": [], "bibitemIds": [], "expect": "bibStartDefault"}
+{"id": "tok-bib-blank", "rule": "Bibliography", "opts": {"type": "start", "title": ""}, "footnotes": [], "bibitemIds": [], "expect": "bibStartBlank"}
+{"id": "tok-bib-auth-0", "rule": "Bibliography", "opts": {"type": "start", "title": "Notes"}, "footnotes": [], "bibitemIds": [], "expect": "bibStartTitled"}
+{"id": "tok-bib-auth-1", "rule": "Bibliography", "opts": {"type": "start", "title": "O'Brien"}, "footnotes": [], "bibitemIds": [], "expect": "bibStartTitled"}
+{"id": "tok-bib-auth-2", "rule": "Bibliography", "opts": {"type": "start", "title": "A & B"}, "footnotes": [], "bibitemIds": [], "expect": "bibStartTitled"}
+{"id": "tok-bib-auth-3", "rule": "Bibliography", "opts": {"type": "start", "title": "x<y>"}, "footnotes": [], "bibitemIds": [], "expect": "bibStartTitled"}
+{"id": "tok-bib-auth-4", "rule": "Bibliography", "opts": {"type": "start", "title": "n0"}, "footnotes": [], "bibitemIds": [], "expect": "bibStartTitled"}
+{"id": "tok-bib-auth-5", "rule": "Bibliography", "opts": {"type": "start", "title": "Footnotes"}, "footnotes": [], "bibitemIds": [], "expect": "bibStartTitled"}
+{"id": "tok-bib-auth-6", "rule": "Bibliography", "opts": {"type": "start", "title": "Bibliography"}, "footnotes": [], "bibitemIds": [], "expect": "bibStartTitled"}
+{"id": "tok-bib-auth-7", "rule": "Bibliography", "opts": {"type": "start", "title": "\u00e9"}, "footnotes": [], "bibitemIds": [], "expect": "bibStartTitled"}
+{"id": "tok-bib-auth-8", "rule": "Bibliography", "opts": {"type": "start", "title": "Q"}, "footnotes": [], "bibitemIds": [], "expect": "bibStartTitled"}
+{"id": "tok-bib-auth-9", "rule": "Bibliography", "opts": {"type": "start", "title": "title"}, "footnotes": [], "bibitemIds": [], "expect": "bibStartTitled"}
+{"id": "tok-bib-auth-10", "rule": "Bibliography", "opts": {"type": "start", "title": "n1"}, "footnotes": [], "bibitemIds": [], "expect": "bibStartTitled"}
+{"id": "tok-bib-auth-11", "rule": "Bibliography", "opts": {"type": "start", "title": "a b"}, "footnotes": [], "bibitemIds": [], "expect": "bibStartTitled"}
+{"id": "tok-bib-auth-12", "rule": "Bibliography", "opts": {"type": "start", "title": "cd"}, "footnotes": [], "bibitemIds": [], "expect": "bibStartTitled"}
+{"id": "tok-bib-auth-13", "rule": "Bibliography", "opts": {"type": "start", "title": "end"}, "footnotes": [], "bibitemIds": [], "expect": "bibStartTitled"}
+{"id": "tok-bib-auth-14", "rule": "Bibliography", "opts": {"type": "start", "title": "nl"}, "footnotes": [], "bibitemIds": [], "expect": "bibStartTitled"}
+{"id": "tok-bib-auth-15", "rule": "Bibliography", "opts": {"type": "start", "title": "0"}, "footnotes": [], "bibitemIds": [], "expect": "bibStartTitled"}
+{"id": "tok-bib-end", "rule": "Bibliography", "opts": {"type": "end"}, "footnotes": [], "bibitemIds": [], "expect": "bibEnd"}
+{"id": "tok-bib-fall", "rule": "Bibliography", "opts": {"type": "nope"}, "footnotes": [], "bibitemIds": [], "expect": "bibFallthrough"}
+{"id": "tok-bib-bool-false", "rule": "Bibliography", "opts": {"type": "start", "title": false}, "footnotes": [], "bibitemIds": [], "expect": "bibStartTitled"}
+{"id": "tok-bib-bool-true", "rule": "Bibliography", "opts": {"type": "start", "title": true}, "footnotes": [], "bibitemIds": [], "expect": "bibStartTitled"}
+{"id": "tok-bibc-miss", "rule": "Bibcite", "opts": {"label": "zz"}, "footnotes": [], "bibitemIds": [], "expect": "bibcMissing"}
+{"id": "tok-bibc-miss-angle", "rule": "Bibcite", "opts": {"label": "a<b"}, "footnotes": [], "bibitemIds": [], "expect": "bibcMissing"}
+{"id": "tok-bibc-hit", "rule": "Bibcite", "opts": {"label": "a"}, "footnotes": [], "bibitemIds": [["a", 2]], "expect": "bibcResolved"}
+{"id": "tok-bibc-hit0", "rule": "Bibcite", "opts": {"label": "a"}, "footnotes": [], "bibitemIds": [["a", 0]], "expect": "bibcResolved"}

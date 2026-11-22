@@ -1,0 +1,15 @@
+{"id": "x1-rawold-raw", "source": "A ``@@x@@`` B"}
+{"id": "x1-rawold-raw2", "source": "``@@x@@``"}
+{"id": "x2-raw-code", "source": "A @@[[code]]x[[/code]]@@ B"}
+{"id": "x2-raw-form", "source": "A @@[[form]]\nx\n[[/form]]@@ B"}
+{"id": "x3-freelink-raw", "source": "A [[@@x@@]] B"}
+{"id": "x3-freelink-rawpipe", "source": "A [[foo|@@x@@]] B"}
+{"id": "x4-url-label-raw", "source": "A [@@x@@ http://example.com/a] B"}
+{"id": "x5-email-raw", "source": "A @@a@@@example.com B"}
+{"id": "x8-concat-heading", "source": "A\\\n+ Heading\n"}
+{"id": "x8-concat-list", "source": "A\\\n* item\n"}
+{"id": "x8-concat-collapsible", "source": "A\\\n[[collapsible]]x[[/collapsible]]\n"}
+{"id": "x8-concat-ul", "source": "A\\\n[[ul]]\n* x\n[[/ul]]\n"}
+{"id": "x10-pre-code-blankspaces", "source": "[[code]]a\n   \nb[[/code]]\n"}
+{"id": "x10-pre-raw-blankspaces", "source": "@@a\n   \nb@@\n"}
+{"id": "x10-pre-code-blank", "source": "[[code]]a\n\nb[[/code]]\n"}

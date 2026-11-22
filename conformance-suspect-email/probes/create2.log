@@ -1,0 +1,15 @@
+idx-url-shift -> muse-probe-suspect-email-idx-url-shift (created)
+idx-newline-shift -> muse-probe-suspect-email-idx-newline-shift (created)
+2 probe pages left in place on sandbox-for-codex; the tool never deletes pages.
+{
+ "idx-url-shift": {
+  "fullname": "muse-probe-suspect-email-idx-url-shift",
+  "source": "http://p.q/r [u@example.com http://a.b/x]",
+  "action": "created"
+ },
+ "idx-newline-shift": {
+  "fullname": "muse-probe-suspect-email-idx-newline-shift",
+  "source": "X\n[u@example.com A\nB]",
+  "action": "created"
+ }
+}

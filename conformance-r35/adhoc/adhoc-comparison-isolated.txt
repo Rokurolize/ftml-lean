@@ -1,0 +1,6 @@
+adhoc-concat-at-ph: PASS
+adhoc-eref-span-mid: PASS
+adhoc-target-span: PASS
+adhoc-target-span-nolabel: PASS
+SUMMARY: 4/4 cases match
+SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches

@@ -1,0 +1,22 @@
+{
+ "bare-empty": {
+  "fullname": "muse-probe-g12-bare-empty",
+  "source": "[[code]]\n\n[[/code]]\n\nZZTAILZZ",
+  "action": "created"
+ },
+ "blank-empty": {
+  "fullname": "muse-probe-g12-blank-empty",
+  "source": "[[code]]\n\n[[/code]] \n\nZZTAILZZ",
+  "action": "created"
+ },
+ "bare-x": {
+  "fullname": "muse-probe-g12-bare-x",
+  "source": "[[code]]\nx\n[[/code]]\n\nZZTAILZZ",
+  "action": "created"
+ },
+ "blank-x": {
+  "fullname": "muse-probe-g12-blank-x",
+  "source": "[[code]]\nx\n[[/code]] \n\nZZTAILZZ",
+  "action": "created"
+ }
+}

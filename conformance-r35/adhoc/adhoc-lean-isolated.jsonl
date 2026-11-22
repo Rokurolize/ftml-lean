@@ -1,0 +1,4 @@
+{"id":"adhoc-target-span","segments":[{"t":"\u000a"},{"k":1},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"span"}],["Freelink",{"site":null,"page":"a-0-b","text":"lab","anchor":"","extra":"","url":null,"textFromTitle":null}]],"equations":[],"mathId":null}
+{"id":"adhoc-target-span-nolabel","segments":[{"t":"\u000a"},{"k":1},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"span"}],["Freelink",{"site":null,"page":"0","text":{"$bytes":[255,48,255]},"anchor":"","extra":"","url":null,"textFromTitle":null}]],"equations":[],"mathId":null}
+{"id":"adhoc-eref-span-mid","segments":[{"t":"\u000a"},{"k":1},{"t":"\u000a\u000a"}],"tokens":[["Raw",{"text":"span"}],["Equationreference",{"label":{"$bytes":[97,255,48,255,98]}}]],"equations":[],"mathId":null}
+{"id":"adhoc-concat-at-ph","segments":[{"t":"\u000ax"},{"k":0},{"t":"y\u000a\u000a"}],"tokens":[["Raw",{"text":"span"}]],"equations":[],"mathId":null}

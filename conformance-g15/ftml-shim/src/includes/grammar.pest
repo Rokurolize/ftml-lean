@@ -1,0 +1,72 @@
+//
+// include/grammar.pest
+//
+// ftml - Library to parse Wikidot text
+// Copyright (C) 2019-2026 Wikijump Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program. If not, see <http://www.gnu.org/licenses/>.
+//
+
+// A simple parser generation exclusively to extract [[include]] directives
+// within the wikitext. Other elements should be ignored and left as-is.
+
+// Wikidot requires spacing between the target and an argument tail. Once the
+// tail starts, each pipe ends the current segment even when the pipe appears
+// between quotes. Segment recovery and argument validation are intentionally
+// handled by the include parser so one inert segment cannot reject the block.
+
+// Top-level rule
+// Live rejects any whitespace between "[[" and "include", so the opener is tight.
+include = {
+    SOI ~ // Because we slice from the start of an include block using regex
+    "[[" ~ ^"include" ~ whitespace ~
+    page_ref ~
+    (whitespace ~ stray_open_brackets? ~ argument_tail)? ~
+    include_end
+}
+
+include_end = _{
+    "]]" ~ &(NEWLINE | EOI)
+}
+
+argument_tail = {
+    (!include_end ~ ANY)*
+}
+
+// Wikidot tolerates a run of stray open brackets between the page reference and
+// the arguments, discarding it and parsing the arguments normally. Four pages in
+// the imported corpus rely on this, all writing a bare "[[" on the line after
+// the page reference; live renders their arguments and shows no bracket. Only
+// open brackets are accepted, and only in this position, because that is the
+// shape the evidence covers.
+stray_open_brackets = _{
+    !"[!--" ~ "["+ ~ space?
+}
+
+// Reference to a page, possibly not on this wiki
+
+page_ref = {
+    (":" ~ site_name ~ ":")? ~ page_name |
+    ":" ~ site_name ~ ":"
+}
+site_name = _{ (!(" " | "\n" | "\t" | "[" | "|" | "]" | ":" | "\"" | "'") ~ ANY)+ }
+page_name = _{ (!(" " | "\n" | "\t" | "[" | "|" | "]" | "\"" | "'") ~ ANY)+ }
+
+// Helpers
+
+comment = _{ "[!--" ~ (!("--]") ~ ANY)* ~ "--]" }
+space = _{ (" " | "\n" | "\t" | comment)+ }
+whitespace = _{ (" " | "\n" | "\t")+ }
+
+// vim: set fdm=marker foldlevel=0:

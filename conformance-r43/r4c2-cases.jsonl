@@ -1,0 +1,2 @@
+{"id": "p-list-body", "source": "X[[footnote]]\n* one\n* two\n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "p-div-first", "source": "X[[footnote]]\n[[div]]\nblock body\n[[/div]]\n[[/footnote]]\n\n[[footnoteblock]]"}

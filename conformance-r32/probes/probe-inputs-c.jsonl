@@ -1,0 +1,6 @@
+{"id": "g1-raw-around-form", "source": "@@[[form]]\nx\n---\ny\n[[/form]]@@"}
+{"id": "g2-rawold-across-form", "source": "``pre [[form]]\nx\n---\ny\n[[/form]] post``"}
+{"id": "g3-raw-crossline-formline", "source": "@@[[form]]\nx\n[[/form]]"}
+{"id": "g4-form-blank-and-case", "source": "[[FORM]]\n\n---\n\n[[/FORM]]"}
+{"id": "g5-form-sep-nospace", "source": "[[form]]\na\n---\n[[/form]]"}
+{"id": "g6-form-two-seps", "source": "[[form]]\na\n---\nb\n---\nc\n[[/form]]"}

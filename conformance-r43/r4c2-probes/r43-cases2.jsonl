@@ -1,0 +1,3 @@
+{"id": "span-first", "source": "X[[footnote]]\n[[span]]inline body[[/span]]\n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "heading-first", "source": "X[[footnote]]\n+ Head Line\n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "div-oneline-framed", "source": "X[[footnote]]\n[[div]]block body[[/div]]\n[[/footnote]]\n\n[[footnoteblock]]"}

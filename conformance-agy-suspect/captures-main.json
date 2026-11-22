@@ -1,0 +1,312 @@
+{
+ "p02-uu-pair": {
+  "fullname": "muse-probe-agy-suspect-p02-uu-pair",
+  "html": "<p>a üü<strong>bold</strong>üü b</p>",
+  "html_sha256": "ec428e3edf432a8ec6a26d726347c60eea096a316eb6bdd302b1e15608002d9e",
+  "source": "a üü**bold**üü b",
+  "source_sha256": "da0cba84062ce13818e3bb3bda8409ad135fa04b1188e8bd567c0d81c5e0142c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p03-freelink-cafe": {
+  "fullname": "muse-probe-agy-suspect-p03-freelink-cafe",
+  "html": "<p><a class=\"newpage\" href=\"/cafe\">café</a></p>",
+  "html_sha256": "4b94d97d7564967e563f385d498eca834497d616a649245d7cdad5f4c5514f37",
+  "source": "[[[café]]]",
+  "source_sha256": "08902d9432f06af2974a45b40f0b45f38d9f2ea784988553c6ef1c0effddfa6f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p04-freelink-polish": {
+  "fullname": "muse-probe-agy-suspect-p04-freelink-polish",
+  "html": "<p><a class=\"newpage\" href=\"/lodz\">Łódź</a></p>",
+  "html_sha256": "865b4d20999e1b7ba55a2b2b878c81cfc0db0e540a33e8525cba2d90af6e076a",
+  "source": "[[[Łódź]]]",
+  "source_sha256": "5dfb5805e6224de35be0c44b8f915a45c02e2b869df05e4e46dfae0664e93b82",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p05-tabview-attr": {
+  "fullname": "muse-probe-agy-suspect-p05-tabview-attr",
+  "html": "class=&quot;foo&quot; class=&quot;foo&quot;\n<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common--javascript/yahooui/tabview-min.js\"></script>\n<div id=\"wiki-tabview-6624df868db6b1386cef8d729fc63755\" class=\"yui-navset\">\n<ul class=\"yui-nav\">\n<li class=\"selected\"><a href=\"javascript:;\"><em>A</em></a></li>\n</ul>\n<div class=\"yui-content\">\n<div id=\"wiki-tab-0-0\">\n<p>body</p>\n</div>\n</div>\n</div>\n<script type=\"text/javascript\">\n//<![CDATA[\nOZONE.dom.onDomReady(function(){\n        var tabView6624df868db6b1386cef8d729fc63755 = new YAHOO.widget.TabView('wiki-tabview-6624df868db6b1386cef8d729fc63755');\n                }, \"dummy-ondomready-block\");\n        \n//]]>\n</script>",
+  "html_sha256": "5a37adc8be1543b32163c4d6a2744cb44cccbd435b05c49068663de91e48a687",
+  "source": "[[tabview class=\"foo\"]]\n[[tab A]]\nbody\n[[/tab]]\n[[/tabview]]",
+  "source_sha256": "bc94f54b3849bcfe46a39986b4dd824ec78490c1c5391d2ebea5dcda5cd92edc",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p06-deflist-raw-term": {
+  "fullname": "muse-probe-agy-suspect-p06-deflist-raw-term",
+  "html": "<dl>\n<dt><span style=\"white-space: pre-wrap;\">term</span></dt>\n<dd>definition</dd>\n</dl>",
+  "html_sha256": "0e8038543b9c1d06fc883a2d7e5c16603bee6fe37f4a0319df2f042c88403b3b",
+  "source": ": @@term@@ : definition",
+  "source_sha256": "4c66d3ad92c6bf9803fdd7c88cb150667598ea7066257b8dd692e2da8d0aea70",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p07-deflist-blank-merge": {
+  "fullname": "muse-probe-agy-suspect-p07-deflist-blank-merge",
+  "html": "<dl>\n<dt>t1</dt>\n<dd>d1</dd>\n<dt>t2</dt>\n<dd>d2</dd>\n</dl>",
+  "html_sha256": "7009333460535f90cd1d7682e604c3cfe8b56ed0f23cf52dd7a071c58a8ce4ff",
+  "source": ": t1 : d1\n\n: t2 : d2",
+  "source_sha256": "db541200cecd93a847cafb9de1eebc8dcf959b0b5f6e50f7b9305e30a1b3d3cb",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p08-strong-quad-follow": {
+  "fullname": "muse-probe-agy-suspect-p08-strong-quad-follow",
+  "html": "<p>x <strong>y</strong></p>",
+  "html_sha256": "44585dbc5e3dbbce7eacd2640c1b433e38cb03cf32002e96b7d0dcddad90773e",
+  "source": "**** x **y**",
+  "source_sha256": "75c90ef5a83b8624f0483610c55c7ea66bf5c16e46611e202cdecfad3f27db20",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p09-color-invalid-unesc": {
+  "fullname": "muse-probe-agy-suspect-p09-color-invalid-unesc",
+  "html": "<p>##&lt;i&gt;|hello##</p>",
+  "html_sha256": "d09ebb53b67e54addf6ba04a98e5ea3d12c00469f3ae903236bf60e755befedc",
+  "source": "##<i>|hello##",
+  "source_sha256": "b6bb39d9e63bb4d44616baf050a98c8fe940d0803891459ffd6ac35390152baf",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p10-color-invalid-hoist": {
+  "fullname": "muse-probe-agy-suspect-p10-color-invalid-hoist",
+  "html": "<p>x##a!b| hello ##y</p>",
+  "html_sha256": "3483b3addacba55b8a669b177ee61d002c9c91ba8f8c0b63bc973bec6faa0ccc",
+  "source": "x##a!b| hello ##y",
+  "source_sha256": "deea52ddbad7255eced07b2b8f02cead7c061aea3924dc424393660093117c76",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p11-module-upper-nested": {
+  "fullname": "muse-probe-agy-suspect-p11-module-upper-nested",
+  "html": "<p>[[MODULE outer]]<br />\n[[module inner]]<br />\n[[/module]]</p>",
+  "html_sha256": "df9265a8870c608d5b275fee45e6d398529172bfa4619e753986d978024d911d",
+  "source": "[[MODULE outer]]\n[[module inner]]\n[[/module]]",
+  "source_sha256": "e24d322695629052cba0e2af9ee996b07a119d3d22fbc449920929c7081a164f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p12-module654-upper-empty": {
+  "fullname": "muse-probe-agy-suspect-p12-module654-upper-empty",
+  "html": "<div class=\"error-block\">[[module <em>unknownmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>\n<p>[[/module]]</p>",
+  "html_sha256": "385dd71c3d87aa41f85a59da3530a2c162fedd31f3f1ee004a0f5c076dae1a9a",
+  "source": "[[MODULE654 unknownmod]]\n[[/module]]",
+  "source_sha256": "a1dd156e1095f097c53de386bfc9e1c26a0c8946b601cd882ad0d0d32def4765",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p13-rawold-trailing-apos": {
+  "fullname": "muse-probe-agy-suspect-p13-rawold-trailing-apos",
+  "html": "<p>abc'</p>",
+  "html_sha256": "95467dd5c8ed99273bc6056a4b608ec1796b4cc6552f09aa62e9d14ed317f63b",
+  "source": "``abc'``",
+  "source_sha256": "d024e6c4ec2a218da2c6c32260b77d8455a28dfef86959983eab2273dc9059a7",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p14-span-double-u-id": {
+  "fullname": "muse-probe-agy-suspect-p14-span-double-u-id",
+  "html": "<p><span id=\"u-foo\">hi</span></p>",
+  "html_sha256": "f4d378d98029a646406d9dce91ada00c2bb3f78d875050e7db14a1ccd8234ed0",
+  "source": "[[span id=\"u-foo\"]]hi[[/span]]",
+  "source_sha256": "76259cac736251862b47381c4fc78d9b53a97788af073ce788bd58a9bfc5cc28",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p15-typo-dollar-unit": {
+  "fullname": "muse-probe-agy-suspect-p15-typo-dollar-unit",
+  "html": "<p>10 $ and 10&#160;€</p>",
+  "html_sha256": "fbefa05989dca47872f81b4e7f1119aee5dd46f67c9f4fbf16ec7824404ad45b",
+  "source": "10 $ and 10 €",
+  "source_sha256": "874fe61de58381a3689cd680bf50fc61eccac4df2c00a9ce15477bae2b1132cf",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p16-interwiki-unknown-html": {
+  "fullname": "muse-probe-agy-suspect-p16-interwiki-unknown-html",
+  "html": "<p>&lt;i&gt;hi&lt;/i&gt;</p>",
+  "html_sha256": "9d3630c82a97bb7a9c9ad695cac577f0605feb8a04b85460280f041d3fb73ac1",
+  "source": "[nosuchwiki:Mallard <i>hi</i>]",
+  "source_sha256": "fd597e626cf338ea7dfa55708a4758b31d47ddeafd7f6eb23d6615cae5d3a574",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p17-url-star-hash": {
+  "fullname": "muse-probe-agy-suspect-p17-url-star-hash",
+  "html": "<p><a href=\"javascript:;\" target=\"_blank\">bare</a> and <a href=\"#foo\" target=\"_blank\">named</a></p>",
+  "html_sha256": "b69f7d2c0ad2141ef764a60190d1c96e06e270313f9d11d8108c85b4b1d19671",
+  "source": "[*# bare] and [*#foo named]",
+  "source_sha256": "2877f4f62ce72f9c95f96edb0b80050b9bb952b420e9366b147f6abea969d480",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p18-email-html": {
+  "fullname": "muse-probe-agy-suspect-p18-email-html",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#&lt;i&gt;</span></p>",
+  "html_sha256": "4db7c44e2f1df7b7e3a5a3ce8653a72099669c0c5b7eef4016c755d6215c33df",
+  "source": "[a@b.com >i<]",
+  "source_sha256": "adde5cf7d66c71c8a5b1490dd1e54da3cf7de80b570da49e9ba943dd4f068579",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p19-email-utf8": {
+  "fullname": "muse-probe-agy-suspect-p19-email-utf8",
+  "html": "<p><span class=\"wiki-email\">moc.b|a#��fac</span></p>",
+  "html_sha256": "1daf748b744f47c3d902761d0a095598b6fddd962d636f6b7592118d5586ebe0",
+  "source": "[a@b.com café]",
+  "source_sha256": "97be906d2cc01d42e0ec5cc0ca4ce7c0df5e88800c2c492f46b04fdc6e80c606",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p20-gallery-target-leak": {
+  "fullname": "muse-probe-agy-suspect-p20-gallery-target-leak",
+  "html": "<div class=\"gallery-box\" id=\"gallery-box-12283\">\n<div class=\"gallery-item thumbnail\">\n<table>\n<tr>\n<td><a href=\"https://example.com/1.png\" target=\"_blank\"><img src=\"https://example.com/1.png\" alt=\"\" class=\"gallery-image-size-thumbnail\" /></a></td>\n</tr>\n</table>\n</div>\n<div class=\"gallery-item thumbnail\">\n<table>\n<tr>\n<td><a href=\"https://example.com/2.png\" class=\"with-lb\"><img src=\"https://example.com/2.png\" alt=\"\" class=\"gallery-image-size-thumbnail\" /></a></td>\n</tr>\n</table>\n</div>\n</div>\n<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common--javascript/lightbox-jquery.js\"></script>\n<script type=\"text/javascript\">\n//<![CDATA[\n\njQuery(function(){\njQuery('#gallery-box-12283 a.with-lb').lightBox();    \n});         \n//]]>\n</script>",
+  "html_sha256": "8ce583c96ff943323c81a771f94aaea7720719cac1e753396834573e3384a1c7",
+  "source": "[[gallery]]\n: *https://example.com/1.png\n: https://example.com/2.png\n[[/gallery]]",
+  "source_sha256": "d61ed78f096feded2744daca8e4b9a0a27274bed832dcad0459d6f0cc38df871",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p21-date-ts-override": {
+  "fullname": "muse-probe-agy-suspect-p21-date-ts-override",
+  "html": "<p><span class=\"odate time_0\">01 Jan 1970 00:00</span> and <span class=\"odate time_0\">01 Jan 1970 00:00</span></p>",
+  "html_sha256": "a2e0828c09875c37b9f71d7adb38f7817badf84f8f1b3e2c4ec457a1c7ac9c5a",
+  "source": "[[date  timestamp=\"0\"]] and [[date 86400 timestamp=\"0\"]]",
+  "source_sha256": "c20f022b884a447bace2b1359d43eec0ab190681ee0e2e0fa44d5b836e0d3981",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p22-date-at-forge": {
+  "fullname": "muse-probe-agy-suspect-p22-date-at-forge",
+  "html": "<p><span class=\"odate time_0 format_%FF1%FF%40%40123%FF2%FF%40%40\">01 Jan 1970 00:00</span></p>",
+  "html_sha256": "7509cfb53f58f68c1f5533498600c5f8a6c37f949a66a05ea9d27ce09fc4291f",
+  "source": "[[date 0 format=\"@@@@@@123@@@@@@\"]]",
+  "source_sha256": "6a45af0c05b6c7b0b14ee39478e64131ed89dff9a462b5687b262ffd093b7eb9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p23-div-attr-unesc": {
+  "fullname": "muse-probe-agy-suspect-p23-div-attr-unesc",
+  "html": "<div data-x=\"a&quot;b\">\n<p>hi</p>\n</div>",
+  "html_sha256": "823855adaef32362dc785bc0cdd3f9e75343718e2e3d30c5d38573ecdd37993d",
+  "source": "[[div data-x=\"a\\\"b\"]]\nhi\n[[/div]]",
+  "source_sha256": "3f161ac627e32b3f984ae8975f48e3eb4162e193d44fdec31f63d978af3ddfdd",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p24-image-pct-typo": {
+  "fullname": "muse-probe-agy-suspect-p24-image-pct-typo",
+  "html": "A <img src=\"%%%foo%%\" alt=\"%%%foo%%\" class=\"image\" /> B <a href=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-agy-suspect-p24-image-pct-typo/%%foo%%\"><img src=\"https://sandbox-for-codex.wdfiles.com/local--resized-images/muse-probe-agy-suspect-p24-image-pct-typo/%%foo%%/medium.jpg\" alt=\"%%foo%%\" class=\"image\" /></a> C",
+  "html_sha256": "89c284f486aede52b00b6babf359b51b24ea9f9550aa05fd9f04805024c612b6",
+  "source": "A [[image %%%foo%%]] B [[image %%foo%%]] C",
+  "source_sha256": "e498e0b171cc60fb7dee32ba46ebe9d2907c3f6d6e2321385f22bd8998a77878",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p25-image-jpeg-resize": {
+  "fullname": "muse-probe-agy-suspect-p25-image-jpeg-resize",
+  "html": "<img src=\"https://sandbox-for-codex.wdfiles.com/local--files/page/a.jpg\" alt=\"a.jpg\" class=\"image\" /> and <a href=\"https://sandbox-for-codex.wdfiles.com/local--files/page/a.jpeg\"><img src=\"https://sandbox-for-codex.wdfiles.com/local--resized-images/page/a.jpeg/medium.jpg\" alt=\"a.jpeg\" class=\"image\" /></a>",
+  "html_sha256": "a4dd5c3769f18d4cfeba240e6f7b66778d450536d5dbf8827dcde18453def3f5",
+  "source": "[[image page/a.jpg]] and [[image page/a.jpeg]]",
+  "source_sha256": "59f50071e54715291751f048ea3c74afd48a54cb4edbcd645f860075bfff87e3",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p26-size-invalid-inner": {
+  "fullname": "muse-probe-agy-suspect-p26-size-invalid-inner",
+  "html": "<p><span style=\"font-size:large;\">outer[[size bad]]inner[[/size]]tail</span></p>",
+  "html_sha256": "dca7a333689796ad26bc01aedfd8dd19dcc5010b7397271db8812f20d0640fc9",
+  "source": "[[size large]]outer[[size bad]]inner[[/size]]tail[[/size]]",
+  "source_sha256": "2ff6ec332d71e35d35c7ce32acc3c5a353c4797f39aa7bb5472469fccf9b5ef2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p27-raw-triple-open-only": {
+  "fullname": "muse-probe-agy-suspect-p27-raw-triple-open-only",
+  "html": "<p>A @@@hello B</p>",
+  "html_sha256": "7ee5d3b4a95eae988ae1f4ecae5e8b5449753dcec002057f242485937568c491",
+  "source": "A @@@hello B",
+  "source_sha256": "4f771b24fe7912e7af2024ee112cf8af404083bd53d70f2f03084bdfddb4d734",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p28-iftags-trail-comma": {
+  "fullname": "muse-probe-agy-suspect-p28-iftags-trail-comma",
+  "html": "<p>A B</p>",
+  "html_sha256": "036156d0e73a072ff96f2631eb56732be5bb90733f7a01685ac90cb54344f72d",
+  "source": "A [[iftags -foo,]]KEPT[[/iftags]] B",
+  "source_sha256": "415970e2f886d850658cc7e4f8345639e93d6a07bb03eb9f7105fff6ca1214c6",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p29-apos-freelink-url": {
+  "fullname": "muse-probe-agy-suspect-p29-apos-freelink-url",
+  "html": "<p><a class=\"newpage\" href=\"/nonexist\">it's</a> <a href=\"https://example.com\">it's</a></p>",
+  "html_sha256": "945e2b492847a2725f0d96c2a5fe1f06acfb88045b82ed8727c1418318aff3f0",
+  "source": "[[[nonexist|it's]]] [https://example.com it's]",
+  "source_sha256": "a3cc037d3fe1a6a6c03411ce88490fbca3f94c9ddef80bbec8ba9d6f698e428c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p30-listblocks-upper": {
+  "fullname": "muse-probe-agy-suspect-p30-listblocks-upper",
+  "html": "<ul>\n<li>Case<br />",
+  "html_sha256": "77b5ca165a5b529534be52c678b814b515f697cb4146f563477883a186ea0da2",
+  "source": "[[UL]]\n[[LI]]Case[[/LI]]\n[[/UL]]",
+  "source_sha256": "8cfc619e46fa0a22817f7ab555006ea856be48228b7d11c4c6dcddf3d8e47fec",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p31-div-sameline": {
+  "fullname": "muse-probe-agy-suspect-p31-div-sameline",
+  "html": "<p>[[div]]hello[[/div]]</p>",
+  "html_sha256": "78ac921cc0803638b7cba66bc628a1af20172fda2f4d1c75739432af9e6c24a0",
+  "source": "[[div]]hello[[/div]]",
+  "source_sha256": "d96ba44c306eaedbeb87732cca4e27c1d069a11d014368aa511ce10b88b2a20d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p32-bq-lone-nospace": {
+  "fullname": "muse-probe-agy-suspect-p32-bq-lone-nospace",
+  "html": "<p>A</p>\n<p>B</p>",
+  "html_sha256": "af1a4520d4a128c82ff2db34cd6245cadd0d28c1f8e48878a23b9824b709322d",
+  "source": "A\n\n>nospace\n\nB",
+  "source_sha256": "05343e26f9beeafc9a55f58e811c3c05da7a6a87b24a33036684df788f29be1a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

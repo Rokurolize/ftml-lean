@@ -1,0 +1,25 @@
+{"id":"diva-a1","output":"<div id=\"u-b\" class=\"a\" style=\"color:green\"><p>X<\/p>\n\n<\/div>"}
+{"id":"diva-a2","output":"<div id=\"u-b\" class=\"a\" style=\"color:green\"><p>X<\/p>\n\n<\/div>"}
+{"id":"diva-a3","output":"<div id=\"u-b\" class=\"a\" style=\"color:green\"><p>X<\/p>\n\n<\/div>"}
+{"id":"diva-a4","output":"<div id=\"u-b\" class=\"a\" style=\"color:green\"><p>X<\/p>\n\n<\/div>"}
+{"id":"diva-a5","output":"<div id=\"u-b\" class=\"a\" style=\"color:red\" role=\"r\" type=\"t\" data-z=\"9\"><p>X<\/p>\n\n<\/div>"}
+{"id":"diva-a6","output":"<div class=\"a\" data-z=\"9\" data-a=\"1\"><p>X<\/p>\n\n<\/div>"}
+{"id":"diva-a7","output":"<div role=\"r\" type=\"t\"><p>X<\/p>\n\n<\/div>"}
+{"id":"diva-a8","output":"<div id=\"u-b\" data-m=\"5\"><p>X<\/p>\n\n<\/div>"}
+{"id":"divn-s1","output":"<p>[[div class=a]]A<br \/>\n[[\/div]]<\/p>\n\n"}
+{"id":"divn-s2","output":"<p>[[div class=&quot;a&quot;]]A<br \/>\n[[\/div]]<\/p>\n\n"}
+{"id":"divn-s3","output":""}
+{"id":"divn-s4","output":"<div class=\"a\"><\/div><br \/>\n[[\/div]]"}
+{"id":"divn-s5","output":"<br \/>\n[[\/div]]"}
+{"id":"divn-s6","output":"<p>[[div class=a]]A[[\/div]]<\/p>\n\n"}
+{"id":"divn-s7","output":"<p>[[\/div]]<br \/>\n[[\/div]]<\/p>\n\n"}
+{"id":"divn-s8","output":""}
+{"id":"divn-s9","output":"<div class=\"a\"><div class=\"b\"><div class=\"c\"><p>C<\/p>\n\n<\/div><\/div><\/div>"}
+{"id":"divn-s10","output":"<br \/>\n[[\/div]]<br \/>\n[[\/div]]"}
+{"id":"divn-r1","output":"<p>[[\/div]]<\/p>\n\n"}
+{"id":"divn-r2","output":"<p>[[\/div]]<\/p>\n\n"}
+{"id":"divn-r3","output":"<p>hello<\/p>\n\n"}
+{"id":"divn-s11","output":"<p>before<\/p>\n\n<br \/>\nafter"}
+{"id":"divn-s12","output":""}
+{"id":"divn-r2","output":"<p>[[\/div]]<\/p>\n\n"}
+{"id":"divn-r3","output":"<p>hello<\/p>\n\n"}

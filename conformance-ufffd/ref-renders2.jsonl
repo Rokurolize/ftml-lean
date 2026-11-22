@@ -1,0 +1,12 @@
+{"id":"end-after-bold","output":"<p>alpha <strong>bold<\/strong> <p>1"}
+{"id":"end-first-para","error":"Error: Call to a member function token() on null"}
+{"id":"end-both-para","error":"Error: Call to a member function token() on null"}
+{"id":"only-two","error":"Error: Call to a member function token() on null"}
+{"id":"pair-zero","error":"Error: Call to a member function token() on null"}
+{"id":"digits-text","error":"Error: Call to a member function token() on null"}
+{"id":"unclosed-digits","error":"Error: Call to a member function token() on null"}
+{"id":"end-list","error":"Error: Call to a member function token() on null"}
+{"id":"end-heading","error":"Error: Call to a member function token() on null"}
+{"id":"start-bold-after","error":"Error: Call to a member function token() on null"}
+{"id":"mid-no-space","error":"Error: Call to a member function token() on null"}
+{"id":"end-no-space","error":"Error: Call to a member function token() on null"}

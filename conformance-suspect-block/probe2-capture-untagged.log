@@ -1,0 +1,112 @@
+bq-nbsp-only -> muse-probe-suspect-block-bq-nbsp-only stable=True saved_source_matches=True valid=True
+bq-comment-only -> muse-probe-suspect-block-bq-comment-only stable=True saved_source_matches=True valid=True
+bq-spaced-marker -> muse-probe-suspect-block-bq-spaced-marker stable=True saved_source_matches=True valid=True
+bq-empty-in-run -> muse-probe-suspect-block-bq-empty-in-run stable=True saved_source_matches=True valid=True
+bq-indented-next -> muse-probe-suspect-block-bq-indented-next stable=True saved_source_matches=True valid=True
+cm-two-lines -> muse-probe-suspect-block-cm-two-lines stable=True saved_source_matches=True valid=True
+cm-nbsp-indent -> muse-probe-suspect-block-cm-nbsp-indent stable=True saved_source_matches=True valid=True
+cm-before-quote -> muse-probe-suspect-block-cm-before-quote stable=True saved_source_matches=True valid=True
+cm-nested -> muse-probe-suspect-block-cm-nested stable=True saved_source_matches=True valid=True
+cm-quote-bridge-blank -> muse-probe-suspect-block-cm-quote-bridge-blank stable=True saved_source_matches=True valid=True
+{
+ "bq-nbsp-only": {
+  "fullname": "muse-probe-suspect-block-bq-nbsp-only",
+  "html": "<p>X</p>\n<blockquote>\n<p>&nbsp;</p>\n</blockquote>\n<p>Y</p>",
+  "html_sha256": "2dad3b3bd88898808f356340440e0c1f9adf63df33d4cf94533a7fbe2f923c48",
+  "source": "X\n>  \nY",
+  "source_sha256": "b686a9935ce6e7262fbdd706e41c23bbb148f5353acedcfe47e0ff3bc9a71c01",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bq-comment-only": {
+  "fullname": "muse-probe-suspect-block-bq-comment-only",
+  "html": "<p>A</p>\n<p>B</p>",
+  "html_sha256": "af1a4520d4a128c82ff2db34cd6245cadd0d28c1f8e48878a23b9824b709322d",
+  "source": "A\n> [!--c--]\nB",
+  "source_sha256": "73d577dcf368c2bda860912a4664c7c97bcea4b94c1c991ade88b84297989bf1",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bq-spaced-marker": {
+  "fullname": "muse-probe-suspect-block-bq-spaced-marker",
+  "html": "<p>X</p>\n<blockquote>\n<p>&gt; q</p>\n</blockquote>\n<p>Y</p>",
+  "html_sha256": "e82fac465cb9845363aad2e6d8bf9ce9b91dbc4387171bd065da898c3a0f223b",
+  "source": "X\n> > q\nY",
+  "source_sha256": "fa49b4185fda298021018bf78c66426da04ccb201003dd9422e6db6bfec1a0cc",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bq-empty-in-run": {
+  "fullname": "muse-probe-suspect-block-bq-empty-in-run",
+  "html": "<p>A</p>\n<blockquote>\n<p>a</p>\n<p>b</p>\n</blockquote>\n<p>B</p>",
+  "html_sha256": "5ef17c433aa4453d80fe13e958663b413ee02fdf3ab21286769c9084842559ef",
+  "source": "A\n> a\n> \n> b\nB",
+  "source_sha256": "3656d59186bc0c853b747f64bcbe2928fc26a6401f1604ccb84dc971ecc825db",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "bq-indented-next": {
+  "fullname": "muse-probe-suspect-block-bq-indented-next",
+  "html": "<p>X</p>\n<blockquote>\n<p>a</p>\n</blockquote>\n<p>&gt; b<br />\nY</p>",
+  "html_sha256": "765cbed6aaf9471edf3af4167751a5e190b188be212b4c19e5e771f163006537",
+  "source": "X\n> a\n > b\nY",
+  "source_sha256": "74b8f6ab55ba8de3e19b755f937a4183c3a2223e1d65aed3d597532eeafa2542",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "cm-two-lines": {
+  "fullname": "muse-probe-suspect-block-cm-two-lines",
+  "html": "<p>a<br />\nb</p>",
+  "html_sha256": "a9cbfe60373c4c33a399fbc904966ca82bc750eed50beb32adf283236c9a9dfa",
+  "source": "a\n[!--1--]\n[!--2--]\nb",
+  "source_sha256": "651263fc39c177e2d3711cd1a6f01f5a0ab0bbc673252d3ecc39b2edd8fdc19c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "cm-nbsp-indent": {
+  "fullname": "muse-probe-suspect-block-cm-nbsp-indent",
+  "html": "<p>a<br />\n&nbsp;<br />\nb</p>",
+  "html_sha256": "3e200ab7e183cc066298ec2ed266c3f24a93057486999172a5aa6fbb36b6b404",
+  "source": "a\n [!--c--]\nb",
+  "source_sha256": "0f5dfaa78f73847043d71f5608e5ec2ec7b8196d0f03c47dd3fbc9b4a004e920",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "cm-before-quote": {
+  "fullname": "muse-probe-suspect-block-cm-before-quote",
+  "html": "<p>A&gt; q<br />\nB</p>",
+  "html_sha256": "e1cb59d396869ca42f165620b81f869237be31d7aef778ae610691f10fbb89c1",
+  "source": "A\n[!--c--]> q\nB",
+  "source_sha256": "9f0f4cd972f0ddcb6db0161b5b71c12656b52a38b4635ee86d4764d983994eeb",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "cm-nested": {
+  "fullname": "muse-probe-suspect-block-cm-nested",
+  "html": "<p>az&#8212;]b</p>",
+  "html_sha256": "72d84668cdf40c966a3a0fbb33fd243060e1cb2ae8d5ba94c07a6033c72421dd",
+  "source": "a[!--x[!--y--]z--]b",
+  "source_sha256": "1a7846f2780b1ec02249af008bef0c5ee7eabf3a648cfcfc56bd037181d5b2d7",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "cm-quote-bridge-blank": {
+  "fullname": "muse-probe-suspect-block-cm-quote-bridge-blank",
+  "html": "<p>A</p>\n<blockquote>\n<p>x</p>\n</blockquote>\n<blockquote>\n<p>y</p>\n</blockquote>\n<p>B</p>",
+  "html_sha256": "f4fa59d2b2e8cd398b3d14b8a35e576dff02c406e255ae14fd10df85ab635fe2",
+  "source": "A\n> x\n\n[!--c--]\n\n> y\nB",
+  "source_sha256": "d4615c979d50846fc394276d4184f4292cf896dbc620cfffd45d69ec51d0255e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

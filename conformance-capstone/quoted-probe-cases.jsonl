@@ -1,0 +1,5 @@
+{"id": "q1", "source": "[[include \"other-page\"]]"}
+{"id": "q2", "source": "[[include \"muse-probe-g14-target\" | marker=x]]"}
+{"id": "q3", "source": "[[include \"missing-page\"]]"}
+{"id": "q4", "source": "pre\n[[include \"other-page\"]]\npost"}
+{"id": "q5", "source": "[[include 'other-page']]"}

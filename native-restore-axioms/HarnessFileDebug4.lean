@@ -1,0 +1,42 @@
+import LeanFtml.InteractiveRender
+import LeanFtml.ContainRules
+
+namespace LeanFtml
+
+set_option maxRecDepth 8192
+
+theorem suspect_file_anchor_apostrophe :
+    renderFile [("file".toList, OptVal.str "dir/a.txt".toList),
+      ("anchor".toList, OptVal.str "it's".toList)] =
+      litBytes "<a href=\"/local--files/dir/a.txt\">it's</a>" := by
+  have hfile : optStrBytes [("file".toList, OptVal.str "dir/a.txt".toList),
+      ("anchor".toList, OptVal.str "it's".toList)] "file".toList =
+      litBytes "dir/a.txt" := rfl
+  have hanchor : optStrBytes [("file".toList, OptVal.str "dir/a.txt".toList),
+      ("anchor".toList, OptVal.str "it's".toList)] "anchor".toList =
+      litBytes "it's" := rfl
+  have hcont : (litBytes "dir/a.txt").contains 47 = true := rfl
+  have hqcFull : htmlSpecialCharsCompat (litBytes "/local--files/dir/a.txt") =
+      litBytes "/local--files/dir/a.txt" := by
+    have hascii : ∀ b ∈ litBytes "/local--files/dir/a.txt", b < 0x80 := by
+      decide
+    rw [htmlSpecialCharsCompat_ascii _ hascii]
+    rfl
+  have hqcAnchor : htmlSpecialCharsCompat (litBytes "it's") =
+      litBytes "it's" := by
+    have hascii : ∀ b ∈ litBytes "it's", b < 0x80 := by
+      decide
+    rw [htmlSpecialCharsCompat_ascii _ hascii]
+    rfl
+  unfold renderFile
+  rw [hfile, hanchor]
+  change litBytes "<a href=\"" ++
+      htmlSpecialCharsCompat (litBytes "/local--files/dir/a.txt") ++
+      (litBytes "\">" ++ htmlSpecialCharsCompat (litBytes "it's")) ++
+      litBytes "</a>" =
+    litBytes "<a href=\"/local--files/dir/a.txt\">it's</a>"
+  rw [hqcFull, hqcAnchor]
+
+#print axioms LeanFtml.suspect_file_anchor_apostrophe
+
+end LeanFtml

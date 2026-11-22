@@ -1,0 +1,18 @@
+{
+ "iw-empty4": "<p><a href=\"https://en.wikipedia.org/wiki/X\" onclick=\"window.open(this.href, '_blank'); return false;\">a�0�b</a></p>\n\n",
+ "iw-empty6": "<p><a href=\"https://en.wikipedia.org/wiki/X\" onclick=\"window.open(this.href, '_blank'); return false;\">a�0�@@b</a></p>\n\n",
+ "iw-nonempty": "<p><a href=\"https://en.wikipedia.org/wiki/X\" onclick=\"window.open(this.href, '_blank'); return false;\">a�0�b</a></p>\n\n",
+ "date-empty4": "<p><span class=\"odate time_0 format_a%FF0%FFb\">01 Jan 1970 00:00</span></p>\n\n",
+ "date-empty6": "<p><span class=\"odate time_0 format_a%FF0%FF%40%40b\">01 Jan 1970 00:00</span></p>\n\n",
+ "date-nonempty": "<p><span class=\"odate time_0 format_a%FF0%FFb\">01 Jan 1970 00:00</span></p>\n\n",
+ "date-index": "<p><span style=\"white-space: pre-wrap;\">x</span> <span class=\"odate time_0 format_q%FF1%FFr\">01 Jan 1970 00:00</span></p>\n\n",
+ "xl-basic": "<p>A <span style=\"white-space: pre-wrap;\">x</span> B</p>\n\n",
+ "xl-close3": "<p>A <span style=\"white-space: pre-wrap;\">x</span> @ B</p>\n\n",
+ "xl-open3": "<p>A <span style=\"white-space: pre-wrap;\">@x</span> B</p>\n\n",
+ "xl-two-nl": "<p>A @@x</p>\n\n<p>@@ B</p>\n\n",
+ "bare-3": "<p>A @@@ B</p>\n\n",
+ "bare-6": "<p>A @@ B</p>\n\n",
+ "trail-4": "<p>A <span style=\"white-space: pre-wrap;\">x</span>@@ B</p>\n\n",
+ "dl-empty4": "<dl>\n<dd>def</dd>\n</dl>\n",
+ "fn-empty4": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. ab</div></div>"
+}

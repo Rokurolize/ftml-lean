@@ -1,0 +1,292 @@
+{"id": "url-link-0", "output": "<a href=\"http://a.example\">a</a>", "phpClass": ["urlLink"], "null": false}
+{"id": "url-target-0", "output": "<a href=\"http://a.example\" target=\"_blank\">a</a>", "phpClass": ["urlLink", "urlTarget"], "null": false}
+{"id": "url-footnote-0", "output": "<sup><a href=\"http://a.example\">a</a></sup>", "phpClass": ["urlLink", "urlFootnote"], "null": false}
+{"id": "url-link-1", "output": "<a href=\"https://b.example/x\">hello</a>", "phpClass": ["urlLink"], "null": false}
+{"id": "url-target-1", "output": "<a href=\"https://b.example/x\" target=\"_blank\">hello</a>", "phpClass": ["urlLink", "urlTarget"], "null": false}
+{"id": "url-footnote-1", "output": "<sup><a href=\"https://b.example/x\">hello</a></sup>", "phpClass": ["urlLink", "urlFootnote"], "null": false}
+{"id": "url-link-2", "output": "<a href=\"http://c.example?q=1\">x y</a>", "phpClass": ["urlLink"], "null": false}
+{"id": "url-target-2", "output": "<a href=\"http://c.example?q=1\" target=\"_blank\">x y</a>", "phpClass": ["urlLink", "urlTarget"], "null": false}
+{"id": "url-footnote-2", "output": "<sup><a href=\"http://c.example?q=1\">x y</a></sup>", "phpClass": ["urlLink", "urlFootnote"], "null": false}
+{"id": "url-link-3", "output": "<a href=\"mailto:d@example.com\">O'Brien</a>", "phpClass": ["urlLink"], "null": false}
+{"id": "url-target-3", "output": "<a href=\"mailto:d@example.com\" target=\"_blank\">O'Brien</a>", "phpClass": ["urlLink", "urlTarget"], "null": false}
+{"id": "url-footnote-3", "output": "<sup><a href=\"mailto:d@example.com\">O'Brien</a></sup>", "phpClass": ["urlLink", "urlFootnote"], "null": false}
+{"id": "url-link-4", "output": "<a href=\"http://e.example/a/b\">a&amp;b</a>", "phpClass": ["urlLink"], "null": false}
+{"id": "url-target-4", "output": "<a href=\"http://e.example/a/b\" target=\"_blank\">a&amp;b</a>", "phpClass": ["urlLink", "urlTarget"], "null": false}
+{"id": "url-footnote-4", "output": "<sup><a href=\"http://e.example/a/b\">a&amp;b</a></sup>", "phpClass": ["urlLink", "urlFootnote"], "null": false}
+{"id": "url-hash-0", "output": "<a href=\"javascript:;\">a</a>", "phpClass": ["urlLink", "urlHash"], "null": false}
+{"id": "url-hash-1", "output": "<a href=\"javascript:;\" target=\"_blank\">hello</a>", "phpClass": ["urlLink", "urlHash", "urlTarget"], "null": false}
+{"id": "url-hash-2", "output": "<a href=\"javascript:;\">x y</a>", "phpClass": ["urlLink", "urlHash"], "null": false}
+{"id": "url-hash-3", "output": "<a href=\"javascript:;\" target=\"_blank\">O'Brien</a>", "phpClass": ["urlLink", "urlHash", "urlTarget"], "null": false}
+{"id": "url-hash-4", "output": "<a href=\"javascript:;\">a&amp;b</a>", "phpClass": ["urlLink", "urlHash"], "null": false}
+{"id": "url-hash-5", "output": "<a href=\"javascript:;\" target=\"_blank\">n0</a>", "phpClass": ["urlLink", "urlHash", "urlTarget"], "null": false}
+{"id": "url-hash-6", "output": "<a href=\"javascript:;\">zz</a>", "phpClass": ["urlLink", "urlHash"], "null": false}
+{"id": "url-hash-7", "output": "<a href=\"javascript:;\" target=\"_blank\">body</a>", "phpClass": ["urlLink", "urlHash", "urlTarget"], "null": false}
+{"id": "iw-known-0", "output": "<a href=\"https://en.wikipedia.org/wiki/Page_0\" onclick=\"window.open(this.href, '_blank'); return false;\">a</a>", "phpClass": ["iwKnown"], "null": false}
+{"id": "iw-known-1", "output": "<a href=\"https://pl.wikipedia.org/wiki/Page_1\" onclick=\"window.open(this.href, '_blank'); return false;\">hello</a>", "phpClass": ["iwKnown"], "null": false}
+{"id": "iw-known-2", "output": "<a href=\"https://pl.wikipedia.org/wiki/Page_2\" onclick=\"window.open(this.href, '_blank'); return false;\">x y</a>", "phpClass": ["iwKnown"], "null": false}
+{"id": "iw-known-3", "output": "<a href=\"https://www.google.com/search?q=Page_3\" onclick=\"window.open(this.href, '_blank'); return false;\">O'Brien</a>", "phpClass": ["iwKnown"], "null": false}
+{"id": "iw-known-4", "output": "<a href=\"https://dictionary.reference.com/browse/Page_4\" onclick=\"window.open(this.href, '_blank'); return false;\">a&amp;b</a>", "phpClass": ["iwKnown"], "null": false}
+{"id": "iw-unknown-0", "output": "a", "phpClass": ["iwUnknown"], "null": false}
+{"id": "iw-unknown-1", "output": "hello", "phpClass": ["iwUnknown"], "null": false}
+{"id": "iw-unknown-2", "output": "x y", "phpClass": ["iwUnknown"], "null": false}
+{"id": "iw-unknown-3", "output": "O'Brien", "phpClass": ["iwUnknown"], "null": false}
+{"id": "iw-unknown-4", "output": "a&amp;b", "phpClass": ["iwUnknown"], "null": false}
+{"id": "iw-unknown-5", "output": "n0", "phpClass": ["iwUnknown"], "null": false}
+{"id": "iw-unknown-6", "output": "zz", "phpClass": ["iwUnknown"], "null": false}
+{"id": "iw-unknown-7", "output": "body", "phpClass": ["iwUnknown"], "null": false}
+{"id": "email-0", "output": "<span class=\"wiki-email\">elpmaxe.b|0a#a</span>", "phpClass": ["emReversed"], "null": false}
+{"id": "email-1", "output": "<span class=\"wiki-email\">elpmaxe.b|1a#olleh</span>", "phpClass": ["emReversed"], "null": false}
+{"id": "email-2", "output": "<span class=\"wiki-email\">elpmaxe.b|2a#y x</span>", "phpClass": ["emReversed"], "null": false}
+{"id": "email-3", "output": "<span class=\"wiki-email\">elpmaxe.b|3a#neirB'O</span>", "phpClass": ["emReversed"], "null": false}
+{"id": "email-4", "output": "<span class=\"wiki-email\">elpmaxe.b|4a#b&a</span>", "phpClass": ["emReversed"], "null": false}
+{"id": "email-5", "output": "<span class=\"wiki-email\">elpmaxe.b|5a#0n</span>", "phpClass": ["emReversed"], "null": false}
+{"id": "email-6", "output": "<span class=\"wiki-email\">elpmaxe.b|6a#zz</span>", "phpClass": ["emReversed"], "null": false}
+{"id": "email-7", "output": "<span class=\"wiki-email\">elpmaxe.b|7a#ydob</span>", "phpClass": ["emReversed"], "null": false}
+{"id": "fl-url-0", "output": "<a href=\"http://x.example/0\">label0</a>", "phpClass": ["flUrl"], "null": false}
+{"id": "fl-exists-0", "output": "<a href=\"/other-page#a\">label0</a>", "phpClass": ["flExists"], "null": false}
+{"id": "fl-missing-0", "output": "<a class=\"newpage\" href=\"/no-page-0\">label0</a>", "phpClass": ["flMissing"], "null": false}
+{"id": "fl-nonbr-0", "output": "<a class=\"newpage\" href=\"/no-page-0\">two&nbsp;words&nbsp;0</a>", "phpClass": ["flMissing", "flNonbr"], "null": false}
+{"id": "fl-target-0", "output": "<a target=\"_blank\" href=\"http://x.example/0\">L</a>", "phpClass": ["flUrl", "flTarget"], "null": false}
+{"id": "fl-site-0", "error": "Error: Class \"GlobalProperties\" not found"}
+{"id": "fl-url-1", "output": "<a href=\"http://x.example/1\">label1</a>", "phpClass": ["flUrl"], "null": false}
+{"id": "fl-exists-1", "output": "<a href=\"/other-page#a\">label1</a>", "phpClass": ["flExists"], "null": false}
+{"id": "fl-missing-1", "output": "<a class=\"newpage\" href=\"/no-page-1\">label1</a>", "phpClass": ["flMissing"], "null": false}
+{"id": "fl-nonbr-1", "output": "<a class=\"newpage\" href=\"/no-page-1\">two&nbsp;words&nbsp;1</a>", "phpClass": ["flMissing", "flNonbr"], "null": false}
+{"id": "fl-target-1", "output": "<a target=\"_blank\" href=\"http://x.example/1\">L</a>", "phpClass": ["flUrl", "flTarget"], "null": false}
+{"id": "fl-site-1", "error": "Error: Class \"GlobalProperties\" not found"}
+{"id": "fl-url-2", "output": "<a href=\"http://x.example/2\">label2</a>", "phpClass": ["flUrl"], "null": false}
+{"id": "fl-exists-2", "output": "<a href=\"/other-page#a\">label2</a>", "phpClass": ["flExists"], "null": false}
+{"id": "fl-missing-2", "output": "<a class=\"newpage\" href=\"/no-page-2\">label2</a>", "phpClass": ["flMissing"], "null": false}
+{"id": "fl-nonbr-2", "output": "<a class=\"newpage\" href=\"/no-page-2\">two&nbsp;words&nbsp;2</a>", "phpClass": ["flMissing", "flNonbr"], "null": false}
+{"id": "fl-target-2", "output": "<a target=\"_blank\" href=\"http://x.example/2\">L</a>", "phpClass": ["flUrl", "flTarget"], "null": false}
+{"id": "fl-site-2", "error": "Error: Class \"GlobalProperties\" not found"}
+{"id": "fl-url-3", "output": "<a href=\"http://x.example/3\">label3</a>", "phpClass": ["flUrl"], "null": false}
+{"id": "fl-exists-3", "output": "<a href=\"/other-page#a\">label3</a>", "phpClass": ["flExists"], "null": false}
+{"id": "fl-missing-3", "output": "<a class=\"newpage\" href=\"/no-page-3\">label3</a>", "phpClass": ["flMissing"], "null": false}
+{"id": "fl-nonbr-3", "output": "<a class=\"newpage\" href=\"/no-page-3\">two&nbsp;words&nbsp;3</a>", "phpClass": ["flMissing", "flNonbr"], "null": false}
+{"id": "fl-target-3", "output": "<a target=\"_blank\" href=\"http://x.example/3\">L</a>", "phpClass": ["flUrl", "flTarget"], "null": false}
+{"id": "fl-site-3", "error": "Error: Class \"GlobalProperties\" not found"}
+{"id": "fl-url-4", "output": "<a href=\"http://x.example/4\">label4</a>", "phpClass": ["flUrl"], "null": false}
+{"id": "fl-exists-4", "output": "<a href=\"/other-page#a\">label4</a>", "phpClass": ["flExists"], "null": false}
+{"id": "fl-missing-4", "output": "<a class=\"newpage\" href=\"/no-page-4\">label4</a>", "phpClass": ["flMissing"], "null": false}
+{"id": "fl-nonbr-4", "output": "<a class=\"newpage\" href=\"/no-page-4\">two&nbsp;words&nbsp;4</a>", "phpClass": ["flMissing", "flNonbr"], "null": false}
+{"id": "fl-target-4", "output": "<a target=\"_blank\" href=\"http://x.example/4\">L</a>", "phpClass": ["flUrl", "flTarget"], "null": false}
+{"id": "fl-site-4", "error": "Error: Class \"GlobalProperties\" not found"}
+{"id": "fl-url-5", "output": "<a href=\"http://x.example/5\">label5</a>", "phpClass": ["flUrl"], "null": false}
+{"id": "fl-exists-5", "output": "<a href=\"/other-page#a\">label5</a>", "phpClass": ["flExists"], "null": false}
+{"id": "fl-missing-5", "output": "<a class=\"newpage\" href=\"/no-page-5\">label5</a>", "phpClass": ["flMissing"], "null": false}
+{"id": "fl-nonbr-5", "output": "<a class=\"newpage\" href=\"/no-page-5\">two&nbsp;words&nbsp;5</a>", "phpClass": ["flMissing", "flNonbr"], "null": false}
+{"id": "fl-target-5", "output": "<a target=\"_blank\" href=\"http://x.example/5\">L</a>", "phpClass": ["flUrl", "flTarget"], "null": false}
+{"id": "fl-site-5", "error": "Error: Class \"GlobalProperties\" not found"}
+{"id": "fl-url-6", "output": "<a href=\"http://x.example/6\">label6</a>", "phpClass": ["flUrl"], "null": false}
+{"id": "fl-exists-6", "output": "<a href=\"/other-page#a\">label6</a>", "phpClass": ["flExists"], "null": false}
+{"id": "fl-missing-6", "output": "<a class=\"newpage\" href=\"/no-page-6\">label6</a>", "phpClass": ["flMissing"], "null": false}
+{"id": "fl-nonbr-6", "output": "<a class=\"newpage\" href=\"/no-page-6\">two&nbsp;words&nbsp;6</a>", "phpClass": ["flMissing", "flNonbr"], "null": false}
+{"id": "fl-target-6", "output": "<a target=\"_blank\" href=\"http://x.example/6\">L</a>", "phpClass": ["flUrl", "flTarget"], "null": false}
+{"id": "fl-site-6", "error": "Error: Class \"GlobalProperties\" not found"}
+{"id": "fl-url-7", "output": "<a href=\"http://x.example/7\">label7</a>", "phpClass": ["flUrl"], "null": false}
+{"id": "fl-exists-7", "output": "<a href=\"/other-page#a\">label7</a>", "phpClass": ["flExists"], "null": false}
+{"id": "fl-missing-7", "output": "<a class=\"newpage\" href=\"/no-page-7\">label7</a>", "phpClass": ["flMissing"], "null": false}
+{"id": "fl-nonbr-7", "output": "<a class=\"newpage\" href=\"/no-page-7\">two&nbsp;words&nbsp;7</a>", "phpClass": ["flMissing", "flNonbr"], "null": false}
+{"id": "fl-target-7", "output": "<a target=\"_blank\" href=\"http://x.example/7\">L</a>", "phpClass": ["flUrl", "flTarget"], "null": false}
+{"id": "fl-site-7", "error": "Error: Class \"GlobalProperties\" not found"}
+{"id": "im-first-0", "output": "", "phpClass": ["imFirst"], "null": false}
+{"id": "im-flickr-0", "error": "Error: Class \"FlickrHandler\" not found"}
+{"id": "im-url-0", "output": "<img src=\"http://x.example/0.png\" alt=\"0.png\" class=\"image\" />", "phpClass": ["imUrlSource"], "null": false}
+{"id": "im-resized-0", "output": "<a href=\"/local--files/page0/a.webp\"><img src=\"/local--resized-images/page0/a.webp/small.jpg\" alt=\"a.webp\" class=\"image\" /></a>", "phpClass": ["imLocalResized"], "null": false}
+{"id": "im-plain-0", "output": "<img src=\"/local--files/page0/a.png\" alt=\"a.png\" class=\"image\" />", "phpClass": ["imLocalPlain"], "null": false}
+{"id": "im-linked-0", "output": "<a href=\"http://x.example/0\"><img src=\"/local--files//a0.png\" alt=\"a0.png\" class=\"image\" /></a>", "phpClass": ["imLocalPlain", "imLinked"], "null": false}
+{"id": "im-first-1", "output": "", "phpClass": ["imFirst"], "null": false}
+{"id": "im-flickr-1", "error": "Error: Class \"FlickrHandler\" not found"}
+{"id": "im-url-1", "output": "<img src=\"http://x.example/1.png\" alt=\"1.png\" class=\"image\" />", "phpClass": ["imUrlSource"], "null": false}
+{"id": "im-resized-1", "output": "<a href=\"/local--files/page1/a.webp\"><img src=\"/local--resized-images/page1/a.webp/medium.jpg\" alt=\"a.webp\" class=\"image\" /></a>", "phpClass": ["imLocalResized"], "null": false}
+{"id": "im-plain-1", "output": "<img src=\"/local--files/page1/a.png\" alt=\"a.png\" class=\"image\" />", "phpClass": ["imLocalPlain"], "null": false}
+{"id": "im-linked-1", "output": "<a href=\"http://x.example/1\"><img src=\"/local--files//a1.png\" alt=\"a1.png\" class=\"image\" /></a>", "phpClass": ["imLocalPlain", "imLinked"], "null": false}
+{"id": "im-first-2", "output": "", "phpClass": ["imFirst"], "null": false}
+{"id": "im-flickr-2", "error": "Error: Class \"FlickrHandler\" not found"}
+{"id": "im-url-2", "output": "<img src=\"http://x.example/2.png\" alt=\"2.png\" class=\"image\" />", "phpClass": ["imUrlSource"], "null": false}
+{"id": "im-resized-2", "output": "<a href=\"/local--files/page2/a.webp\"><img src=\"/local--resized-images/page2/a.webp/thumbnail.jpg\" alt=\"a.webp\" class=\"image\" /></a>", "phpClass": ["imLocalResized"], "null": false}
+{"id": "im-plain-2", "output": "<img src=\"/local--files/page2/a.png\" alt=\"a.png\" class=\"image\" />", "phpClass": ["imLocalPlain"], "null": false}
+{"id": "im-linked-2", "output": "<a href=\"http://x.example/2\"><img src=\"/local--files//a2.png\" alt=\"a2.png\" class=\"image\" /></a>", "phpClass": ["imLocalPlain", "imLinked"], "null": false}
+{"id": "im-first-3", "output": "", "phpClass": ["imFirst"], "null": false}
+{"id": "im-flickr-3", "error": "Error: Class \"FlickrHandler\" not found"}
+{"id": "im-url-3", "output": "<img src=\"http://x.example/3.png\" alt=\"3.png\" class=\"image\" />", "phpClass": ["imUrlSource"], "null": false}
+{"id": "im-resized-3", "output": "<a href=\"/local--files/page3/a.webp\"><img src=\"/local--resized-images/page3/a.webp/square.jpg\" alt=\"a.webp\" class=\"image\" /></a>", "phpClass": ["imLocalResized"], "null": false}
+{"id": "im-plain-3", "output": "<img src=\"/local--files/page3/a.png\" alt=\"a.png\" class=\"image\" />", "phpClass": ["imLocalPlain"], "null": false}
+{"id": "im-linked-3", "output": "<a href=\"http://x.example/3\"><img src=\"/local--files//a3.png\" alt=\"a3.png\" class=\"image\" /></a>", "phpClass": ["imLocalPlain", "imLinked"], "null": false}
+{"id": "im-first-4", "output": "", "phpClass": ["imFirst"], "null": false}
+{"id": "im-flickr-4", "error": "Error: Class \"FlickrHandler\" not found"}
+{"id": "im-url-4", "output": "<img src=\"http://x.example/4.png\" alt=\"4.png\" class=\"image\" />", "phpClass": ["imUrlSource"], "null": false}
+{"id": "im-resized-4", "output": "<a href=\"/local--files/page4/a.webp\"><img src=\"/local--resized-images/page4/a.webp/small.jpg\" alt=\"a.webp\" class=\"image\" /></a>", "phpClass": ["imLocalResized"], "null": false}
+{"id": "im-plain-4", "output": "<img src=\"/local--files/page4/a.png\" alt=\"a.png\" class=\"image\" />", "phpClass": ["imLocalPlain"], "null": false}
+{"id": "im-linked-4", "output": "<a href=\"http://x.example/4\"><img src=\"/local--files//a4.png\" alt=\"a4.png\" class=\"image\" /></a>", "phpClass": ["imLocalPlain", "imLinked"], "null": false}
+{"id": "im-first-5", "output": "", "phpClass": ["imFirst"], "null": false}
+{"id": "im-flickr-5", "error": "Error: Class \"FlickrHandler\" not found"}
+{"id": "im-url-5", "output": "<img src=\"http://x.example/5.png\" alt=\"5.png\" class=\"image\" />", "phpClass": ["imUrlSource"], "null": false}
+{"id": "im-resized-5", "output": "<a href=\"/local--files/page5/a.webp\"><img src=\"/local--resized-images/page5/a.webp/medium.jpg\" alt=\"a.webp\" class=\"image\" /></a>", "phpClass": ["imLocalResized"], "null": false}
+{"id": "im-plain-5", "output": "<img src=\"/local--files/page5/a.png\" alt=\"a.png\" class=\"image\" />", "phpClass": ["imLocalPlain"], "null": false}
+{"id": "im-linked-5", "output": "<a href=\"http://x.example/5\"><img src=\"/local--files//a5.png\" alt=\"a5.png\" class=\"image\" /></a>", "phpClass": ["imLocalPlain", "imLinked"], "null": false}
+{"id": "im-first-6", "output": "", "phpClass": ["imFirst"], "null": false}
+{"id": "im-flickr-6", "error": "Error: Class \"FlickrHandler\" not found"}
+{"id": "im-url-6", "output": "<img src=\"http://x.example/6.png\" alt=\"6.png\" class=\"image\" />", "phpClass": ["imUrlSource"], "null": false}
+{"id": "im-resized-6", "output": "<a href=\"/local--files/page6/a.webp\"><img src=\"/local--resized-images/page6/a.webp/thumbnail.jpg\" alt=\"a.webp\" class=\"image\" /></a>", "phpClass": ["imLocalResized"], "null": false}
+{"id": "im-plain-6", "output": "<img src=\"/local--files/page6/a.png\" alt=\"a.png\" class=\"image\" />", "phpClass": ["imLocalPlain"], "null": false}
+{"id": "im-linked-6", "output": "<a href=\"http://x.example/6\"><img src=\"/local--files//a6.png\" alt=\"a6.png\" class=\"image\" /></a>", "phpClass": ["imLocalPlain", "imLinked"], "null": false}
+{"id": "im-first-7", "output": "", "phpClass": ["imFirst"], "null": false}
+{"id": "im-flickr-7", "error": "Error: Class \"FlickrHandler\" not found"}
+{"id": "im-url-7", "output": "<img src=\"http://x.example/7.png\" alt=\"7.png\" class=\"image\" />", "phpClass": ["imUrlSource"], "null": false}
+{"id": "im-resized-7", "output": "<a href=\"/local--files/page7/a.webp\"><img src=\"/local--resized-images/page7/a.webp/square.jpg\" alt=\"a.webp\" class=\"image\" /></a>", "phpClass": ["imLocalResized"], "null": false}
+{"id": "im-plain-7", "output": "<img src=\"/local--files/page7/a.png\" alt=\"a.png\" class=\"image\" />", "phpClass": ["imLocalPlain"], "null": false}
+{"id": "im-linked-7", "output": "<a href=\"http://x.example/7\"><img src=\"/local--files//a7.png\" alt=\"a7.png\" class=\"image\" /></a>", "phpClass": ["imLocalPlain", "imLinked"], "null": false}
+{"id": "imAlignFLeft-0", "output": "<div class=\"image-container floatleft\"><img src=\"/local--files//a0.png\" alt=\"a0.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignFLeft"], "null": false}
+{"id": "imAlignFLeft-1", "output": "<div class=\"image-container floatleft\"><img src=\"/local--files//a1.png\" alt=\"a1.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignFLeft"], "null": false}
+{"id": "imAlignFLeft-2", "output": "<div class=\"image-container floatleft\"><img src=\"/local--files//a2.png\" alt=\"a2.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignFLeft"], "null": false}
+{"id": "imAlignFLeft-3", "output": "<div class=\"image-container floatleft\"><img src=\"/local--files//a3.png\" alt=\"a3.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignFLeft"], "null": false}
+{"id": "imAlignFLeft-4", "output": "<div class=\"image-container floatleft\"><img src=\"/local--files//a4.png\" alt=\"a4.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignFLeft"], "null": false}
+{"id": "imAlignFLeft-5", "output": "<div class=\"image-container floatleft\"><img src=\"/local--files//a5.png\" alt=\"a5.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignFLeft"], "null": false}
+{"id": "imAlignFLeft-6", "output": "<div class=\"image-container floatleft\"><img src=\"/local--files//a6.png\" alt=\"a6.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignFLeft"], "null": false}
+{"id": "imAlignFLeft-7", "output": "<div class=\"image-container floatleft\"><img src=\"/local--files//a7.png\" alt=\"a7.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignFLeft"], "null": false}
+{"id": "imAlignFRight-0", "output": "<div class=\"image-container floatright\"><img src=\"/local--files//a0.png\" alt=\"a0.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignFRight"], "null": false}
+{"id": "imAlignFRight-1", "output": "<div class=\"image-container floatright\"><img src=\"/local--files//a1.png\" alt=\"a1.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignFRight"], "null": false}
+{"id": "imAlignFRight-2", "output": "<div class=\"image-container floatright\"><img src=\"/local--files//a2.png\" alt=\"a2.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignFRight"], "null": false}
+{"id": "imAlignFRight-3", "output": "<div class=\"image-container floatright\"><img src=\"/local--files//a3.png\" alt=\"a3.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignFRight"], "null": false}
+{"id": "imAlignFRight-4", "output": "<div class=\"image-container floatright\"><img src=\"/local--files//a4.png\" alt=\"a4.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignFRight"], "null": false}
+{"id": "imAlignFRight-5", "output": "<div class=\"image-container floatright\"><img src=\"/local--files//a5.png\" alt=\"a5.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignFRight"], "null": false}
+{"id": "imAlignFRight-6", "output": "<div class=\"image-container floatright\"><img src=\"/local--files//a6.png\" alt=\"a6.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignFRight"], "null": false}
+{"id": "imAlignFRight-7", "output": "<div class=\"image-container floatright\"><img src=\"/local--files//a7.png\" alt=\"a7.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignFRight"], "null": false}
+{"id": "imAlignLeft-0", "output": "<div class=\"image-container alignleft\"><img src=\"/local--files//a0.png\" alt=\"a0.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignLeft"], "null": false}
+{"id": "imAlignLeft-1", "output": "<div class=\"image-container alignleft\"><img src=\"/local--files//a1.png\" alt=\"a1.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignLeft"], "null": false}
+{"id": "imAlignLeft-2", "output": "<div class=\"image-container alignleft\"><img src=\"/local--files//a2.png\" alt=\"a2.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignLeft"], "null": false}
+{"id": "imAlignLeft-3", "output": "<div class=\"image-container alignleft\"><img src=\"/local--files//a3.png\" alt=\"a3.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignLeft"], "null": false}
+{"id": "imAlignLeft-4", "output": "<div class=\"image-container alignleft\"><img src=\"/local--files//a4.png\" alt=\"a4.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignLeft"], "null": false}
+{"id": "imAlignLeft-5", "output": "<div class=\"image-container alignleft\"><img src=\"/local--files//a5.png\" alt=\"a5.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignLeft"], "null": false}
+{"id": "imAlignLeft-6", "output": "<div class=\"image-container alignleft\"><img src=\"/local--files//a6.png\" alt=\"a6.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignLeft"], "null": false}
+{"id": "imAlignLeft-7", "output": "<div class=\"image-container alignleft\"><img src=\"/local--files//a7.png\" alt=\"a7.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignLeft"], "null": false}
+{"id": "imAlignRight-0", "output": "<div class=\"image-container alignright\"><img src=\"/local--files//a0.png\" alt=\"a0.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignRight"], "null": false}
+{"id": "imAlignRight-1", "output": "<div class=\"image-container alignright\"><img src=\"/local--files//a1.png\" alt=\"a1.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignRight"], "null": false}
+{"id": "imAlignRight-2", "output": "<div class=\"image-container alignright\"><img src=\"/local--files//a2.png\" alt=\"a2.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignRight"], "null": false}
+{"id": "imAlignRight-3", "output": "<div class=\"image-container alignright\"><img src=\"/local--files//a3.png\" alt=\"a3.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignRight"], "null": false}
+{"id": "imAlignRight-4", "output": "<div class=\"image-container alignright\"><img src=\"/local--files//a4.png\" alt=\"a4.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignRight"], "null": false}
+{"id": "imAlignRight-5", "output": "<div class=\"image-container alignright\"><img src=\"/local--files//a5.png\" alt=\"a5.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignRight"], "null": false}
+{"id": "imAlignRight-6", "output": "<div class=\"image-container alignright\"><img src=\"/local--files//a6.png\" alt=\"a6.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignRight"], "null": false}
+{"id": "imAlignRight-7", "output": "<div class=\"image-container alignright\"><img src=\"/local--files//a7.png\" alt=\"a7.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignRight"], "null": false}
+{"id": "imAlignCenter-0", "output": "<div class=\"image-container aligncenter\"><img src=\"/local--files//a0.png\" alt=\"a0.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignCenter"], "null": false}
+{"id": "imAlignCenter-1", "output": "<div class=\"image-container aligncenter\"><img src=\"/local--files//a1.png\" alt=\"a1.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignCenter"], "null": false}
+{"id": "imAlignCenter-2", "output": "<div class=\"image-container aligncenter\"><img src=\"/local--files//a2.png\" alt=\"a2.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignCenter"], "null": false}
+{"id": "imAlignCenter-3", "output": "<div class=\"image-container aligncenter\"><img src=\"/local--files//a3.png\" alt=\"a3.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignCenter"], "null": false}
+{"id": "imAlignCenter-4", "output": "<div class=\"image-container aligncenter\"><img src=\"/local--files//a4.png\" alt=\"a4.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignCenter"], "null": false}
+{"id": "imAlignCenter-5", "output": "<div class=\"image-container aligncenter\"><img src=\"/local--files//a5.png\" alt=\"a5.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignCenter"], "null": false}
+{"id": "imAlignCenter-6", "output": "<div class=\"image-container aligncenter\"><img src=\"/local--files//a6.png\" alt=\"a6.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignCenter"], "null": false}
+{"id": "imAlignCenter-7", "output": "<div class=\"image-container aligncenter\"><img src=\"/local--files//a7.png\" alt=\"a7.png\" class=\"image\" /></div>", "phpClass": ["imLocalPlain", "imAlignCenter"], "null": false}
+{"id": "span-bare-0", "output": "<span>", "phpClass": ["spStartBare"], "null": false}
+{"id": "span-attrs-0", "output": "<span class=\"c0\" title=\"a&amp;b\">", "phpClass": ["spStartAttrs"], "null": false}
+{"id": "span-end-0", "output": "</span>", "phpClass": ["spEnd"], "null": false}
+{"id": "span-fall-0", "output": "", "phpClass": ["spFall"], "null": true}
+{"id": "size-start-0", "output": "<span style=\"font-size:8px;\">", "phpClass": ["szStart"], "null": false}
+{"id": "size-end-0", "output": "</span>", "phpClass": ["szEnd"], "null": false}
+{"id": "size-fall-0", "output": "", "phpClass": ["szFall"], "null": true}
+{"id": "span-bare-1", "output": "<span>", "phpClass": ["spStartBare"], "null": false}
+{"id": "span-attrs-1", "output": "<span class=\"c1\" title=\"a&amp;b\">", "phpClass": ["spStartAttrs"], "null": false}
+{"id": "span-end-1", "output": "</span>", "phpClass": ["spEnd"], "null": false}
+{"id": "span-fall-1", "output": "", "phpClass": ["spFall"], "null": true}
+{"id": "size-start-1", "output": "<span style=\"font-size:9px;\">", "phpClass": ["szStart"], "null": false}
+{"id": "size-end-1", "output": "</span>", "phpClass": ["szEnd"], "null": false}
+{"id": "size-fall-1", "output": "", "phpClass": ["szFall"], "null": true}
+{"id": "span-bare-2", "output": "<span>", "phpClass": ["spStartBare"], "null": false}
+{"id": "span-attrs-2", "output": "<span class=\"c2\" title=\"a&amp;b\">", "phpClass": ["spStartAttrs"], "null": false}
+{"id": "span-end-2", "output": "</span>", "phpClass": ["spEnd"], "null": false}
+{"id": "span-fall-2", "output": "", "phpClass": ["spFall"], "null": true}
+{"id": "size-start-2", "output": "<span style=\"font-size:10px;\">", "phpClass": ["szStart"], "null": false}
+{"id": "size-end-2", "output": "</span>", "phpClass": ["szEnd"], "null": false}
+{"id": "size-fall-2", "output": "", "phpClass": ["szFall"], "null": true}
+{"id": "span-bare-3", "output": "<span>", "phpClass": ["spStartBare"], "null": false}
+{"id": "span-attrs-3", "output": "<span class=\"c3\" title=\"a&amp;b\">", "phpClass": ["spStartAttrs"], "null": false}
+{"id": "span-end-3", "output": "</span>", "phpClass": ["spEnd"], "null": false}
+{"id": "span-fall-3", "output": "", "phpClass": ["spFall"], "null": true}
+{"id": "size-start-3", "output": "<span style=\"font-size:11px;\">", "phpClass": ["szStart"], "null": false}
+{"id": "size-end-3", "output": "</span>", "phpClass": ["szEnd"], "null": false}
+{"id": "size-fall-3", "output": "", "phpClass": ["szFall"], "null": true}
+{"id": "span-bare-4", "output": "<span>", "phpClass": ["spStartBare"], "null": false}
+{"id": "span-attrs-4", "output": "<span class=\"c4\" title=\"a&amp;b\">", "phpClass": ["spStartAttrs"], "null": false}
+{"id": "span-end-4", "output": "</span>", "phpClass": ["spEnd"], "null": false}
+{"id": "span-fall-4", "output": "", "phpClass": ["spFall"], "null": true}
+{"id": "size-start-4", "output": "<span style=\"font-size:12px;\">", "phpClass": ["szStart"], "null": false}
+{"id": "size-end-4", "output": "</span>", "phpClass": ["szEnd"], "null": false}
+{"id": "size-fall-4", "output": "", "phpClass": ["szFall"], "null": true}
+{"id": "span-bare-5", "output": "<span>", "phpClass": ["spStartBare"], "null": false}
+{"id": "span-attrs-5", "output": "<span class=\"c5\" title=\"a&amp;b\">", "phpClass": ["spStartAttrs"], "null": false}
+{"id": "span-end-5", "output": "</span>", "phpClass": ["spEnd"], "null": false}
+{"id": "span-fall-5", "output": "", "phpClass": ["spFall"], "null": true}
+{"id": "size-start-5", "output": "<span style=\"font-size:13px;\">", "phpClass": ["szStart"], "null": false}
+{"id": "size-end-5", "output": "</span>", "phpClass": ["szEnd"], "null": false}
+{"id": "size-fall-5", "output": "", "phpClass": ["szFall"], "null": true}
+{"id": "span-bare-6", "output": "<span>", "phpClass": ["spStartBare"], "null": false}
+{"id": "span-attrs-6", "output": "<span class=\"c6\" title=\"a&amp;b\">", "phpClass": ["spStartAttrs"], "null": false}
+{"id": "span-end-6", "output": "</span>", "phpClass": ["spEnd"], "null": false}
+{"id": "span-fall-6", "output": "", "phpClass": ["spFall"], "null": true}
+{"id": "size-start-6", "output": "<span style=\"font-size:14px;\">", "phpClass": ["szStart"], "null": false}
+{"id": "size-end-6", "output": "</span>", "phpClass": ["szEnd"], "null": false}
+{"id": "size-fall-6", "output": "", "phpClass": ["szFall"], "null": true}
+{"id": "span-bare-7", "output": "<span>", "phpClass": ["spStartBare"], "null": false}
+{"id": "span-attrs-7", "output": "<span class=\"c7\" title=\"a&amp;b\">", "phpClass": ["spStartAttrs"], "null": false}
+{"id": "span-end-7", "output": "</span>", "phpClass": ["spEnd"], "null": false}
+{"id": "span-fall-7", "output": "", "phpClass": ["spFall"], "null": true}
+{"id": "size-start-7", "output": "<span style=\"font-size:15px;\">", "phpClass": ["szStart"], "null": false}
+{"id": "size-end-7", "output": "</span>", "phpClass": ["szEnd"], "null": false}
+{"id": "size-fall-7", "output": "", "phpClass": ["szFall"], "null": true}
+{"id": "ctHex-0", "output": "<span style=\"color: #ff0000\">", "phpClass": ["ctHex"], "null": false}
+{"id": "ctHex-1", "output": "<span style=\"color: #c00\">", "phpClass": ["ctHex"], "null": false}
+{"id": "ctHex-2", "output": "<span style=\"color: #abcdef\">", "phpClass": ["ctHex"], "null": false}
+{"id": "ctHex-3", "output": "<span style=\"color: #ff0000\">", "phpClass": ["ctHex"], "null": false}
+{"id": "ctHex-4", "output": "<span style=\"color: #c00\">", "phpClass": ["ctHex"], "null": false}
+{"id": "ctHex-5", "output": "<span style=\"color: #abcdef\">", "phpClass": ["ctHex"], "null": false}
+{"id": "ctHex-6", "output": "<span style=\"color: #ff0000\">", "phpClass": ["ctHex"], "null": false}
+{"id": "ctHex-7", "output": "<span style=\"color: #c00\">", "phpClass": ["ctHex"], "null": false}
+{"id": "ctNamed-0", "output": "<span style=\"color: red\">", "phpClass": ["ctNamed"], "null": false}
+{"id": "ctNamed-1", "output": "<span style=\"color: rgb(1,2,3)\">", "phpClass": ["ctNamed"], "null": false}
+{"id": "ctNamed-2", "output": "<span style=\"color: var(--c)\">", "phpClass": ["ctNamed"], "null": false}
+{"id": "ctNamed-3", "output": "<span style=\"color: red\">", "phpClass": ["ctNamed"], "null": false}
+{"id": "ctNamed-4", "output": "<span style=\"color: rgb(1,2,3)\">", "phpClass": ["ctNamed"], "null": false}
+{"id": "ctNamed-5", "output": "<span style=\"color: var(--c)\">", "phpClass": ["ctNamed"], "null": false}
+{"id": "ctNamed-6", "output": "<span style=\"color: red\">", "phpClass": ["ctNamed"], "null": false}
+{"id": "ctNamed-7", "output": "<span style=\"color: rgb(1,2,3)\">", "phpClass": ["ctNamed"], "null": false}
+{"id": "ctEmpty-0", "output": "<span style=\"color:\">", "phpClass": ["ctEmpty"], "null": false}
+{"id": "ctEmpty-1", "output": "<span style=\"color:\">", "phpClass": ["ctEmpty"], "null": false}
+{"id": "ctEmpty-2", "output": "<span style=\"color:\">", "phpClass": ["ctEmpty"], "null": false}
+{"id": "ctEmpty-3", "output": "<span style=\"color:\">", "phpClass": ["ctEmpty"], "null": false}
+{"id": "ctEmpty-4", "output": "<span style=\"color:\">", "phpClass": ["ctEmpty"], "null": false}
+{"id": "ctEmpty-5", "output": "<span style=\"color:\">", "phpClass": ["ctEmpty"], "null": false}
+{"id": "ctEmpty-6", "output": "<span style=\"color:\">", "phpClass": ["ctEmpty"], "null": false}
+{"id": "ctEmpty-7", "output": "<span style=\"color:\">", "phpClass": ["ctEmpty"], "null": false}
+{"id": "ct-end-0", "output": "</span>", "phpClass": ["ctEnd"], "null": false}
+{"id": "ct-fall-0", "output": "", "phpClass": ["ctFall"], "null": true}
+{"id": "ct-invalid-start-0", "output": "##<0>|", "phpClass": ["ctInvalidStart"], "null": false}
+{"id": "ct-invalid-other-0", "output": "##", "phpClass": ["ctInvalidOther"], "null": false}
+{"id": "ct-end-1", "output": "</span>", "phpClass": ["ctEnd"], "null": false}
+{"id": "ct-fall-1", "output": "", "phpClass": ["ctFall"], "null": true}
+{"id": "ct-invalid-start-1", "output": "##<1>|", "phpClass": ["ctInvalidStart"], "null": false}
+{"id": "ct-invalid-other-1", "output": "##", "phpClass": ["ctInvalidOther"], "null": false}
+{"id": "ct-end-2", "output": "</span>", "phpClass": ["ctEnd"], "null": false}
+{"id": "ct-fall-2", "output": "", "phpClass": ["ctFall"], "null": true}
+{"id": "ct-invalid-start-2", "output": "##<2>|", "phpClass": ["ctInvalidStart"], "null": false}
+{"id": "ct-invalid-other-2", "output": "##", "phpClass": ["ctInvalidOther"], "null": false}
+{"id": "ct-end-3", "output": "</span>", "phpClass": ["ctEnd"], "null": false}
+{"id": "ct-fall-3", "output": "", "phpClass": ["ctFall"], "null": true}
+{"id": "ct-invalid-start-3", "output": "##<3>|", "phpClass": ["ctInvalidStart"], "null": false}
+{"id": "ct-invalid-other-3", "output": "##", "phpClass": ["ctInvalidOther"], "null": false}
+{"id": "ct-end-4", "output": "</span>", "phpClass": ["ctEnd"], "null": false}
+{"id": "ct-fall-4", "output": "", "phpClass": ["ctFall"], "null": true}
+{"id": "ct-invalid-start-4", "output": "##<4>|", "phpClass": ["ctInvalidStart"], "null": false}
+{"id": "ct-invalid-other-4", "output": "##", "phpClass": ["ctInvalidOther"], "null": false}
+{"id": "ct-end-5", "output": "</span>", "phpClass": ["ctEnd"], "null": false}
+{"id": "ct-fall-5", "output": "", "phpClass": ["ctFall"], "null": true}
+{"id": "ct-invalid-start-5", "output": "##<5>|", "phpClass": ["ctInvalidStart"], "null": false}
+{"id": "ct-invalid-other-5", "output": "##", "phpClass": ["ctInvalidOther"], "null": false}
+{"id": "ct-end-6", "output": "</span>", "phpClass": ["ctEnd"], "null": false}
+{"id": "ct-fall-6", "output": "", "phpClass": ["ctFall"], "null": true}
+{"id": "ct-invalid-start-6", "output": "##<6>|", "phpClass": ["ctInvalidStart"], "null": false}
+{"id": "ct-invalid-other-6", "output": "##", "phpClass": ["ctInvalidOther"], "null": false}
+{"id": "ct-end-7", "output": "</span>", "phpClass": ["ctEnd"], "null": false}
+{"id": "ct-fall-7", "output": "", "phpClass": ["ctFall"], "null": true}
+{"id": "ct-invalid-start-7", "output": "##<7>|", "phpClass": ["ctInvalidStart"], "null": false}
+{"id": "ct-invalid-other-7", "output": "##", "phpClass": ["ctInvalidOther"], "null": false}

@@ -1,0 +1,142 @@
+{
+ "t-a": {
+  "fullname": "muse-probe-suspect3-m3-t-a",
+  "source": "A ##red|``@@x@@`` B## C",
+  "action": "created"
+ },
+ "t-b": {
+  "fullname": "muse-probe-suspect3-m3-t-b",
+  "source": "A ##red|B ``@@x@@``## C",
+  "action": "created"
+ },
+ "t-c": {
+  "fullname": "muse-probe-suspect3-m3-t-c",
+  "source": "A\n``@@x@@`` B",
+  "action": "created"
+ },
+ "t-d1": {
+  "fullname": "muse-probe-suspect3-m3-t-d1",
+  "source": "``@@x@@`` A",
+  "action": "created"
+ },
+ "t-d2": {
+  "fullname": "muse-probe-suspect3-m3-t-d2",
+  "source": "A ``@@x@@``",
+  "action": "created"
+ },
+ "t-fold": {
+  "fullname": "muse-probe-suspect3-m3-t-fold",
+  "source": "A ``@@x@@`` ##red| B## C",
+  "action": "created"
+ },
+ "y-a": {
+  "fullname": "muse-probe-suspect3-m3-y-a",
+  "source": "A ..``@@x@@``.. B",
+  "action": "created"
+ },
+ "y-b": {
+  "fullname": "muse-probe-suspect3-m3-y-b",
+  "source": "A -``@@x@@``- B",
+  "action": "created"
+ },
+ "y-c1": {
+  "fullname": "muse-probe-suspect3-m3-y-c1",
+  "source": "A ``@@x@@'' B",
+  "action": "created"
+ },
+ "y-c2": {
+  "fullname": "muse-probe-suspect3-m3-y-c2",
+  "source": "A <<@@x@@>> B",
+  "action": "created"
+ },
+ "y-d": {
+  "fullname": "muse-probe-suspect3-m3-y-d",
+  "source": "A . ``@@x@@`` . . B",
+  "action": "created"
+ },
+ "y5": {
+  "fullname": "muse-probe-suspect3-m3-y5",
+  "source": "A .[!--x--].. B",
+  "action": "created"
+ },
+ "s1a": {
+  "fullname": "muse-probe-suspect3-m3-s1a",
+  "source": "[[bibliography]]\n: a : X\n: a : Y\n: b : Z\n[[/bibliography]]\nCite ((bibcite a)) and ((bibcite b)).",
+  "action": "created"
+ },
+ "s1b": {
+  "fullname": "muse-probe-suspect3-m3-s1b",
+  "source": "[[bibliography]]\n: a : X\n: b : Y\n: a : Z\n[[/bibliography]]\n((bibcite a))",
+  "action": "created"
+ },
+ "s1c": {
+  "fullname": "muse-probe-suspect3-m3-s1c",
+  "source": "[[bibliography]]\n: k : First\n: k : Second\n[[/bibliography]]\nCite ((bibcite k)).",
+  "action": "created"
+ },
+ "s3c": {
+  "fullname": "muse-probe-suspect3-m3-s3c",
+  "source": "[[bibliography]]\n: a : Entry A\n[[/bibliography]]\n[[bibliography]]\n: a : Entry A2\n[[/bibliography]]\nCite ((bibcite a)).",
+  "action": "created"
+ },
+ "s2c": {
+  "fullname": "muse-probe-suspect3-m3-s2c",
+  "source": "[[footnoteblock]]\n[[footnote]]see ((bibcite k))[[/footnote]]\n[[bibliography]]\n: k : Key\n[[/bibliography]]",
+  "action": "created"
+ },
+ "s5a": {
+  "fullname": "muse-probe-suspect3-m3-s5a",
+  "source": "[[footnote]]outer [[footnote]]inner[[/footnote]]",
+  "action": "created"
+ },
+ "s6b": {
+  "fullname": "muse-probe-suspect3-m3-s6b",
+  "source": "[[footnote]]A\n[[bibliography]]\n: k : Key\n[[/bibliography]][[/footnote]]",
+  "action": "created"
+ },
+ "t1a": {
+  "fullname": "muse-probe-suspect3-m3-t1a",
+  "source": "[[toc]]\n+ A\n++ B\n++++ D\n++++++ F",
+  "action": "created"
+ },
+ "t1b": {
+  "fullname": "muse-probe-suspect3-m3-t1b",
+  "source": "[[toc]]\n+ A\n+++++++ X\n++ B",
+  "action": "created"
+ },
+ "t2a": {
+  "fullname": "muse-probe-suspect3-m3-t2a",
+  "source": "+ Before\n[[toc]]\n+ After",
+  "action": "created"
+ },
+ "t2b": {
+  "fullname": "muse-probe-suspect3-m3-t2b",
+  "source": "[[toc]]\n+ A\n[[toc]]\n++ B",
+  "action": "created"
+ },
+ "t2c": {
+  "fullname": "muse-probe-suspect3-m3-t2c",
+  "source": "[[toc]]\n++ Same\n++ Same",
+  "action": "created"
+ },
+ "t3c": {
+  "fullname": "muse-probe-suspect3-m3-t3c",
+  "source": "[[toc numbered]]\n+ A",
+  "action": "created"
+ },
+ "t4a": {
+  "fullname": "muse-probe-suspect3-m3-t4a",
+  "source": "[[toc]]\n++ A **bold** B",
+  "action": "created"
+ },
+ "h2a": {
+  "fullname": "muse-probe-suspect3-m3-h2a",
+  "source": "[[toc]]\n+ A\n+* Skip\n+ B",
+  "action": "created"
+ },
+ "h2b": {
+  "fullname": "muse-probe-suspect3-m3-h2b",
+  "source": "[[toc]]\n+* Only\n+ A",
+  "action": "created"
+ }
+}

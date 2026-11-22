@@ -1,0 +1,740 @@
+{"id": "adj-before-heading", "verdict": "EXCLUDED", "unmirrored": ["Center"], "missingKeys": []}
+{"id": "adv07-after-heading", "verdict": "EXCLUDED", "unmirrored": ["Center", "Tableadv"], "missingKeys": []}
+{"id": "after-heading", "verdict": "EXCLUDED", "unmirrored": ["Center", "Code"], "missingKeys": []}
+{"id": "b03-continuation-lines", "verdict": "EXCLUDED", "unmirrored": ["Break", "List"], "missingKeys": []}
+{"id": "b08-list-hr-list", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "List"], "missingKeys": []}
+{"id": "bq01-simple", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq02-two-lines", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq03-nospace", "verdict": "PASS"}
+{"id": "bq04-marker-only", "verdict": "PASS"}
+{"id": "bq05-marker-space", "verdict": "PASS"}
+{"id": "bq06-at-doc-start", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq07-leading-blank", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq08-tab-after-marker", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq09-space-nested", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq10-tight-nested", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq11-depth3-space", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq12-depth3-tight", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq13-mixed-up", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq14-mixed-down", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq15-mixed-updown", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq16-depth-skip", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq17-depth4", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq18-block-basic", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "bq19-block-quote-alias", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "bq20-block-attr-class", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "bq21-block-attr-style", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "bq22-block-attr-id", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "bq23-block-unterminated", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "bq24-block-with-marker", "verdict": "EXCLUDED", "unmirrored": ["Blockquote", "Paragraph"], "missingKeys": []}
+{"id": "bq25-block-inline", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bq26-block-empty", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bq27-block-mixed-case", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "bq28-block-bogus-attr", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "bq29-quote-then-heading", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote", "Heading"], "missingKeys": []}
+{"id": "bq30-heading-then-quote", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq31-quote-then-list", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote", "List"], "missingKeys": []}
+{"id": "bq32-list-then-quote", "verdict": "EXCLUDED", "unmirrored": ["List", "Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq33-quote-then-div", "verdict": "EXCLUDED", "unmirrored": ["Blockquote", "Paragraph", "Div"], "missingKeys": []}
+{"id": "bq34-div-then-quote", "verdict": "EXCLUDED", "unmirrored": ["Div", "Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq35-quote-then-code", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote", "Code"], "missingKeys": []}
+{"id": "bq36-blank-in-run", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq37-quote-then-para", "verdict": "EXCLUDED", "unmirrored": ["Blockquote", "Paragraph"], "missingKeys": []}
+{"id": "bq38-para-then-quote", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq39-space-prefixed-marker", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bq40-quote-midline", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "bq41-double-space-after-marker", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq42-inline-bold", "verdict": "EXCLUDED", "unmirrored": ["Strong", "Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq43-inline-link", "verdict": "EXCLUDED", "unmirrored": ["Url", "Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq44-wikitext-body", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq45-unterminated-deep", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq46-shallower-after-run", "verdict": "EXCLUDED", "unmirrored": ["Blockquote", "Paragraph"], "missingKeys": []}
+{"id": "bq47-entities", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq48-unicode", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq49-quote-around-block", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "bq50-block-around-quote", "verdict": "EXCLUDED", "unmirrored": ["Blockquote", "Paragraph"], "missingKeys": []}
+{"id": "br-01", "verdict": "EXCLUDED", "unmirrored": ["Break", "Paragraph"], "missingKeys": []}
+{"id": "br-02", "verdict": "EXCLUDED", "unmirrored": ["Break", "Paragraph"], "missingKeys": []}
+{"id": "br-03", "verdict": "EXCLUDED", "unmirrored": ["Break", "Newline"], "missingKeys": []}
+{"id": "br-04", "verdict": "EXCLUDED", "unmirrored": ["Break", "Paragraph"], "missingKeys": []}
+{"id": "br-05", "verdict": "EXCLUDED", "unmirrored": ["Break", "Paragraph"], "missingKeys": []}
+{"id": "br-06", "verdict": "EXCLUDED", "unmirrored": ["Break", "Paragraph"], "missingKeys": []}
+{"id": "br-07", "verdict": "EXCLUDED", "unmirrored": ["Break", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "br-08", "verdict": "EXCLUDED", "unmirrored": ["Break", "Paragraph"], "missingKeys": []}
+{"id": "br-09", "verdict": "EXCLUDED", "unmirrored": ["Break", "Paragraph"], "missingKeys": []}
+{"id": "br-10", "verdict": "EXCLUDED", "unmirrored": ["Break", "Newline"], "missingKeys": []}
+{"id": "br-11", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "br-12", "verdict": "EXCLUDED", "unmirrored": ["Break", "Paragraph"], "missingKeys": []}
+{"id": "br-13", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "br-14", "verdict": "EXCLUDED", "unmirrored": ["Break", "Paragraph"], "missingKeys": []}
+{"id": "br-15", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "br-16", "verdict": "EXCLUDED", "unmirrored": ["Break", "Paragraph"], "missingKeys": []}
+{"id": "br-17", "verdict": "EXCLUDED", "unmirrored": ["Break", "Paragraph"], "missingKeys": []}
+{"id": "br-18", "verdict": "EXCLUDED", "unmirrored": ["Break", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "br-19", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "br-20", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "br-21", "verdict": "EXCLUDED", "unmirrored": ["Break", "Paragraph"], "missingKeys": []}
+{"id": "br-22", "verdict": "EXCLUDED", "unmirrored": ["Break", "Paragraph"], "missingKeys": []}
+{"id": "br-23", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Break", "Paragraph"], "missingKeys": []}
+{"id": "br-24", "verdict": "EXCLUDED", "unmirrored": ["Break", "Strong", "Paragraph"], "missingKeys": []}
+{"id": "br-25", "verdict": "EXCLUDED", "unmirrored": ["Break", "Span", "Paragraph"], "missingKeys": []}
+{"id": "br-26", "verdict": "EXCLUDED", "unmirrored": ["Break", "List"], "missingKeys": []}
+{"id": "br-27", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Paragraph"], "missingKeys": []}
+{"id": "br-28", "verdict": "EXCLUDED", "unmirrored": ["Code", "Newline"], "missingKeys": []}
+{"id": "br-29", "verdict": "EXCLUDED", "unmirrored": ["Break", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "br-30", "verdict": "EXCLUDED", "unmirrored": ["Break", "Paragraph", "Div", "Newline"], "missingKeys": []}
+{"id": "br-31", "verdict": "EXCLUDED", "unmirrored": ["Break", "Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "br-32", "verdict": "EXCLUDED", "unmirrored": ["Break", "Table"], "missingKeys": []}
+{"id": "br-33", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph", "Break"], "missingKeys": []}
+{"id": "br-34", "verdict": "EXCLUDED", "unmirrored": ["Break", "Newline", "Horiz", "Paragraph"], "missingKeys": []}
+{"id": "br-35", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Break", "Paragraph"], "missingKeys": []}
+{"id": "br-36", "verdict": "EXCLUDED", "unmirrored": ["Break", "Newline", "Separator", "Paragraph"], "missingKeys": []}
+{"id": "br-37", "verdict": "EXCLUDED", "unmirrored": ["Break", "Clearfloat", "Paragraph"], "missingKeys": []}
+{"id": "br-38", "verdict": "EXCLUDED", "unmirrored": ["Break", "Center", "Paragraph"], "missingKeys": []}
+{"id": "br-39", "verdict": "EXCLUDED", "unmirrored": ["Center", "Break", "Paragraph"], "missingKeys": []}
+{"id": "br-40", "verdict": "EXCLUDED", "unmirrored": ["Code", "Break"], "missingKeys": []}
+{"id": "br-41", "verdict": "EXCLUDED", "unmirrored": ["Break", "Paragraph", "Code"], "missingKeys": []}
+{"id": "br-42", "verdict": "EXCLUDED", "unmirrored": ["Break", "Newline"], "missingKeys": []}
+{"id": "br-43", "verdict": "EXCLUDED", "unmirrored": ["Break", "Newline"], "missingKeys": []}
+{"id": "br-44", "verdict": "EXCLUDED", "unmirrored": ["Break", "Newline", "Horiz", "Paragraph"], "missingKeys": []}
+{"id": "c45-heading-inside", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph", "Collapsible"], "missingKeys": []}
+{"id": "ce-01", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-02", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-03", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-04", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-05", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-06", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-07", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-08", "verdict": "EXCLUDED", "unmirrored": ["Strong", "Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-09", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-10", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-11", "verdict": "EXCLUDED", "unmirrored": ["Center"], "missingKeys": []}
+{"id": "ce-12", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "ce-13", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "ce-14", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "ce-15", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "ce-16", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Center"], "missingKeys": []}
+{"id": "ce-17", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-18", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-19", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-20", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-21", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-22", "verdict": "EXCLUDED", "unmirrored": ["Toc", "Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-23", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-24", "verdict": "EXCLUDED", "unmirrored": ["Center", "Strong", "Paragraph"], "missingKeys": []}
+{"id": "ce-25", "verdict": "EXCLUDED", "unmirrored": ["List", "Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-26", "verdict": "EXCLUDED", "unmirrored": ["Center", "Div", "Newline"], "missingKeys": []}
+{"id": "ce-27", "verdict": "EXCLUDED", "unmirrored": ["Blockquote", "Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-28", "verdict": "EXCLUDED", "unmirrored": ["Code", "Newline"], "missingKeys": []}
+{"id": "ce-29", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-30", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-31", "verdict": "EXCLUDED", "unmirrored": ["Url", "Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-32", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-33", "verdict": "EXCLUDED", "unmirrored": ["Center", "Horiz", "Paragraph"], "missingKeys": []}
+{"id": "ce-34", "verdict": "EXCLUDED", "unmirrored": ["Separator", "Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-35", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat", "Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-36", "verdict": "EXCLUDED", "unmirrored": ["Break", "Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-37", "verdict": "EXCLUDED", "unmirrored": ["Break", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "ce-38", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-39", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-40", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Center"], "missingKeys": []}
+{"id": "ce-41", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-42", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "ce-43", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Center", "Paragraph"], "missingKeys": []}
+{"id": "cf-01", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat"], "missingKeys": []}
+{"id": "cf-02", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat"], "missingKeys": []}
+{"id": "cf-03", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat"], "missingKeys": []}
+{"id": "cf-04", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat"], "missingKeys": []}
+{"id": "cf-05", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat"], "missingKeys": []}
+{"id": "cf-06", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat"], "missingKeys": []}
+{"id": "cf-07", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat"], "missingKeys": []}
+{"id": "cf-08", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat", "Paragraph"], "missingKeys": []}
+{"id": "cf-09", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat", "Paragraph"], "missingKeys": []}
+{"id": "cf-10", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat", "Paragraph"], "missingKeys": []}
+{"id": "cf-11", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Clearfloat"], "missingKeys": []}
+{"id": "cf-12", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Clearfloat"], "missingKeys": []}
+{"id": "cf-13", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "cf-14", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "cf-15", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "cf-16", "verdict": "EXCLUDED", "unmirrored": ["Typography", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "cf-17", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "cf-18", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "cf-19", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat", "Paragraph"], "missingKeys": []}
+{"id": "cf-20", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "cf-21", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "cf-22", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "cf-23", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "cf-24", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat", "Paragraph"], "missingKeys": []}
+{"id": "cf-25", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "cf-26", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat"], "missingKeys": []}
+{"id": "cf-27", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat"], "missingKeys": []}
+{"id": "cf-28", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat", "Paragraph"], "missingKeys": []}
+{"id": "cf-29", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Clearfloat", "Paragraph"], "missingKeys": []}
+{"id": "cf-30", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat", "Horiz", "Paragraph"], "missingKeys": []}
+{"id": "cf-31", "verdict": "EXCLUDED", "unmirrored": ["Separator", "Clearfloat", "Paragraph"], "missingKeys": []}
+{"id": "cf-32", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat", "Separator", "Paragraph"], "missingKeys": []}
+{"id": "cf-33", "verdict": "EXCLUDED", "unmirrored": ["Break", "Clearfloat", "Paragraph"], "missingKeys": []}
+{"id": "cf-34", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat", "Center", "Paragraph"], "missingKeys": []}
+{"id": "cf-35", "verdict": "EXCLUDED", "unmirrored": ["Toc", "Clearfloat", "Paragraph"], "missingKeys": []}
+{"id": "cf-36", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Clearfloat", "Paragraph"], "missingKeys": []}
+{"id": "cf-37", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat", "Strong", "Paragraph"], "missingKeys": []}
+{"id": "cf-38", "verdict": "EXCLUDED", "unmirrored": ["List", "Clearfloat", "Paragraph"], "missingKeys": []}
+{"id": "cf-39", "verdict": "EXCLUDED", "unmirrored": ["Code", "Newline"], "missingKeys": []}
+{"id": "cf-40", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "cf-41", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat", "Div", "Newline"], "missingKeys": []}
+{"id": "cf-42", "verdict": "EXCLUDED", "unmirrored": ["Blockquote", "Clearfloat", "Paragraph"], "missingKeys": []}
+{"id": "cf-43", "verdict": "EXCLUDED", "unmirrored": ["Code", "Clearfloat", "Paragraph"], "missingKeys": []}
+{"id": "cf-44", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Clearfloat"], "missingKeys": []}
+{"id": "cf-45", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat", "Paragraph"], "missingKeys": []}
+{"id": "cf-46", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat", "Paragraph"], "missingKeys": []}
+{"id": "da-01", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-02", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-03", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-04", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-05", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "da-06", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "da-07", "verdict": "EXCLUDED", "unmirrored": ["Divalign"], "missingKeys": []}
+{"id": "da-08", "verdict": "EXCLUDED", "unmirrored": ["Divalign"], "missingKeys": []}
+{"id": "da-09", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Divalign", "Newline"], "missingKeys": []}
+{"id": "da-10", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-11", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-12", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "da-13", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "da-14", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "da-15", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-16", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-17", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-18", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "da-19", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "da-20", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-21", "verdict": "EXCLUDED", "unmirrored": ["Divalign", "Newline"], "missingKeys": []}
+{"id": "da-22", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-23", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-24", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Newline", "Divalign"], "missingKeys": []}
+{"id": "da-25", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-26", "verdict": "EXCLUDED", "unmirrored": ["Divalign"], "missingKeys": []}
+{"id": "da-27", "verdict": "EXCLUDED", "unmirrored": ["Strong", "Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-28", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-29", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "da-30", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "da-31", "verdict": "EXCLUDED", "unmirrored": ["Divalign"], "missingKeys": []}
+{"id": "da-32", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-33", "verdict": "EXCLUDED", "unmirrored": ["Code", "Divalign"], "missingKeys": []}
+{"id": "da-34", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-35", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Divalign", "Newline"], "missingKeys": []}
+{"id": "da-36", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "da-37", "verdict": "EXCLUDED", "unmirrored": ["Divalign"], "missingKeys": []}
+{"id": "da-38", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-39", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Divalign"], "missingKeys": []}
+{"id": "da-40", "verdict": "EXCLUDED", "unmirrored": ["Divalign"], "missingKeys": []}
+{"id": "da-41", "verdict": "EXCLUDED", "unmirrored": ["Divalign"], "missingKeys": []}
+{"id": "da-42", "verdict": "EXCLUDED", "unmirrored": ["Center", "Divalign"], "missingKeys": []}
+{"id": "da-43", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat", "Divalign"], "missingKeys": []}
+{"id": "da-44", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Divalign"], "missingKeys": []}
+{"id": "da-45", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Newline", "Divalign"], "missingKeys": []}
+{"id": "da-46", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Newline", "Divalign"], "missingKeys": []}
+{"id": "da-47", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Divalign"], "missingKeys": []}
+{"id": "dp-01", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "dp-02", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-03", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-04", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-05", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-06", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-07", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-08", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-09", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-10", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-11", "verdict": "EXCLUDED", "unmirrored": ["Url", "Paragraph"], "missingKeys": []}
+{"id": "dp-12", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "dp-13", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "dp-14", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-15", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-16", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "dp-17", "verdict": "EXCLUDED", "unmirrored": ["Url", "Paragraph"], "missingKeys": []}
+{"id": "dp-18", "verdict": "PASS"}
+{"id": "dp-19", "verdict": "EXCLUDED", "unmirrored": ["Url", "Paragraph"], "missingKeys": []}
+{"id": "dp-20", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "dp-21", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-22", "verdict": "EXCLUDED", "unmirrored": ["Url", "Paragraph"], "missingKeys": []}
+{"id": "dp-23", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "dp-24", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-25", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-26", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-27", "verdict": "EXCLUDED", "unmirrored": ["Url", "Paragraph"], "missingKeys": []}
+{"id": "dp-28", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "dp-29", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-30", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-31", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-32", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-33", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-34", "verdict": "EXCLUDED", "unmirrored": ["Url", "Paragraph"], "missingKeys": []}
+{"id": "dp-35", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-36", "verdict": "EXCLUDED", "unmirrored": ["Url", "Paragraph"], "missingKeys": []}
+{"id": "dp-37", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-38", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-39", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "dp-40", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "dp-41", "verdict": "EXCLUDED", "unmirrored": ["Url", "Paragraph"], "missingKeys": []}
+{"id": "dp-42", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-43", "verdict": "EXCLUDED", "unmirrored": ["Url", "Paragraph"], "missingKeys": []}
+{"id": "dp-44", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "dp-45", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "em43", "verdict": "EXCLUDED", "unmirrored": ["Emphasis", "Center"], "missingKeys": []}
+{"id": "fn47-header-note", "verdict": "EXCLUDED", "unmirrored": ["Center"], "missingKeys": []}
+{"id": "ga-01", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-02", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-03", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-04", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-05", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-06", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-07", "verdict": "EXCLUDED", "unmirrored": ["Gallery", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "ga-08", "verdict": "EXCLUDED", "unmirrored": ["Gallery", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "ga-09", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Gallery"], "missingKeys": []}
+{"id": "ga-10", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "ga-11", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-12", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-13", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-14", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-15", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-16", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-17", "verdict": "EXCLUDED", "unmirrored": ["Gallery", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "ga-18", "verdict": "EXCLUDED", "unmirrored": ["Gallery", "Paragraph"], "missingKeys": []}
+{"id": "ga-19", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-20", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-21", "verdict": "EXCLUDED", "unmirrored": ["Gallery", "Paragraph"], "missingKeys": []}
+{"id": "ga-22", "verdict": "EXCLUDED", "unmirrored": ["Gallery", "Paragraph"], "missingKeys": []}
+{"id": "ga-23", "verdict": "EXCLUDED", "unmirrored": ["Gallery", "Paragraph"], "missingKeys": []}
+{"id": "ga-24", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-25", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-26", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-27", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-28", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-29", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-30", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-31", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "ga-32", "verdict": "EXCLUDED", "unmirrored": ["Gallery", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "ga-33", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-34", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-35", "verdict": "EXCLUDED", "unmirrored": ["Gallery", "Paragraph"], "missingKeys": []}
+{"id": "ga-36", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-37", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-38", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-39", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Gallery"], "missingKeys": []}
+{"id": "ga-40", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-41", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-42", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-43", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "ga-44", "verdict": "EXCLUDED", "unmirrored": ["Gallery"], "missingKeys": []}
+{"id": "heading-cont", "verdict": "EXCLUDED", "unmirrored": ["Center"], "missingKeys": []}
+{"id": "hz-01", "verdict": "EXCLUDED", "unmirrored": ["Horiz"], "missingKeys": []}
+{"id": "hz-02", "verdict": "EXCLUDED", "unmirrored": ["Horiz"], "missingKeys": []}
+{"id": "hz-03", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-04", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-05", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-06", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-07", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-08", "verdict": "EXCLUDED", "unmirrored": ["Typography", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "hz-09", "verdict": "EXCLUDED", "unmirrored": ["Typography", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "hz-10", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "hz-11", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Horiz"], "missingKeys": []}
+{"id": "hz-12", "verdict": "EXCLUDED", "unmirrored": ["Typography", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "hz-13", "verdict": "EXCLUDED", "unmirrored": ["Typography", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "hz-14", "verdict": "EXCLUDED", "unmirrored": ["Typography", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "hz-15", "verdict": "EXCLUDED", "unmirrored": ["Typography", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "hz-16", "verdict": "EXCLUDED", "unmirrored": ["Typography", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "hz-17", "verdict": "EXCLUDED", "unmirrored": ["Typography", "Paragraph"], "missingKeys": []}
+{"id": "hz-18", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "hz-19", "verdict": "EXCLUDED", "unmirrored": ["Horiz"], "missingKeys": []}
+{"id": "hz-20", "verdict": "EXCLUDED", "unmirrored": ["Horiz"], "missingKeys": []}
+{"id": "hz-21", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-22", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Separator"], "missingKeys": []}
+{"id": "hz-23", "verdict": "EXCLUDED", "unmirrored": ["Toc", "Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-24", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-25", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Strong", "Paragraph"], "missingKeys": []}
+{"id": "hz-26", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Span", "Paragraph"], "missingKeys": []}
+{"id": "hz-27", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-28", "verdict": "EXCLUDED", "unmirrored": ["List", "Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-29", "verdict": "EXCLUDED", "unmirrored": ["Table", "Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-30", "verdict": "EXCLUDED", "unmirrored": ["Code", "Newline"], "missingKeys": []}
+{"id": "hz-31", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "hz-32", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Div", "Newline"], "missingKeys": []}
+{"id": "hz-33", "verdict": "EXCLUDED", "unmirrored": ["Blockquote", "Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-34", "verdict": "EXCLUDED", "unmirrored": ["Break", "Newline", "Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-35", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Center", "Paragraph"], "missingKeys": []}
+{"id": "hz-36", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat", "Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-37", "verdict": "EXCLUDED", "unmirrored": ["Separator", "Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-38", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Separator", "Paragraph"], "missingKeys": []}
+{"id": "hz-39", "verdict": "EXCLUDED", "unmirrored": ["Code", "Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-40", "verdict": "EXCLUDED", "unmirrored": ["Strong", "Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-41", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Horiz", "Code"], "missingKeys": []}
+{"id": "hz-42", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Typography", "Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-43", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Horiz"], "missingKeys": []}
+{"id": "hz-44", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Paragraph"], "missingKeys": []}
+{"id": "hz-45", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Paragraph"], "missingKeys": []}
+{"id": "iw43-70-interwiki-in-heading", "verdict": "EXCLUDED", "unmirrored": ["Interwiki", "Center"], "missingKeys": []}
+{"id": "lb35", "verdict": "EXCLUDED", "unmirrored": ["List", "Note"], "missingKeys": []}
+{"id": "n38-01-single-break", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "n38-02-two-breaks", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "n38-03-four-lines", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "n38-04-doubled-break", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "n38-05-tripled-break", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "n38-06-leading-newline", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "n38-07-trailing-newline", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "n38-08-only-newlines", "verdict": "PASS"}
+{"id": "n38-09-break-with-spaces", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "n38-10-break-with-tabs", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "n38-11-before-div", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "n38-12-after-div", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div", "Newline"], "missingKeys": []}
+{"id": "n38-13-before-code", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Code"], "missingKeys": []}
+{"id": "n38-14-after-code", "verdict": "EXCLUDED", "unmirrored": ["Code", "Newline"], "missingKeys": []}
+{"id": "n38-15-before-quote", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "n38-16-after-quote", "verdict": "EXCLUDED", "unmirrored": ["Blockquote", "Paragraph"], "missingKeys": []}
+{"id": "n38-17-before-heading", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Heading"], "missingKeys": []}
+{"id": "n38-18-after-heading", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Paragraph"], "missingKeys": []}
+{"id": "n38-19-before-hr", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Horiz"], "missingKeys": []}
+{"id": "n38-20-after-hr", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Paragraph"], "missingKeys": []}
+{"id": "n38-21-before-table", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Table", "Paragraph"], "missingKeys": []}
+{"id": "n38-22-after-table", "verdict": "EXCLUDED", "unmirrored": ["Table", "Paragraph"], "missingKeys": []}
+{"id": "n38-23-before-ul", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "List"], "missingKeys": []}
+{"id": "n38-24-after-ul", "verdict": "EXCLUDED", "unmirrored": ["List", "Paragraph"], "missingKeys": []}
+{"id": "n38-25-before-ol", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "List"], "missingKeys": []}
+{"id": "n38-26-explicit-ul", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "List", "Newline"], "missingKeys": []}
+{"id": "n38-27-ul-two-items", "verdict": "EXCLUDED", "unmirrored": ["List"], "missingKeys": []}
+{"id": "n38-28-ol-two-items", "verdict": "EXCLUDED", "unmirrored": ["List"], "missingKeys": []}
+{"id": "n38-29-list-continuation", "verdict": "EXCLUDED", "unmirrored": ["List", "Paragraph"], "missingKeys": []}
+{"id": "n38-30-list-blank-between", "verdict": "EXCLUDED", "unmirrored": ["List"], "missingKeys": []}
+{"id": "n38-31-nested-list", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "List"], "missingKeys": []}
+{"id": "n38-32-table-two-rows", "verdict": "EXCLUDED", "unmirrored": ["Table"], "missingKeys": []}
+{"id": "n38-33-table-cell-break", "verdict": "EXCLUDED", "unmirrored": ["Table", "Paragraph"], "missingKeys": []}
+{"id": "n38-34-table-with-leading-text", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Table", "Paragraph"], "missingKeys": []}
+{"id": "n38-35-doubled-with-space", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "n38-36-doubled-after-block", "verdict": "EXCLUDED", "unmirrored": ["Div", "Paragraph"], "missingKeys": []}
+{"id": "n38-37-many-blank", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "n38-38-break-in-bold", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Strong", "Paragraph"], "missingKeys": []}
+{"id": "n38-39-break-in-span", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Span", "Paragraph"], "missingKeys": []}
+{"id": "n38-40-break-across-closer", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Strong", "Paragraph"], "missingKeys": []}
+{"id": "n38-41-break-in-color", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "n38-42-break-before-closer", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "n38-43-underscore-break", "verdict": "EXCLUDED", "unmirrored": ["Break", "Paragraph"], "missingKeys": []}
+{"id": "n38-44-underscore-doubled", "verdict": "EXCLUDED", "unmirrored": ["Break", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "n38-45-underscore-space", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "n38-46-crlf", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "n38-47-mixed-blocks", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Div", "Code", "Paragraph"], "missingKeys": []}
+{"id": "n38-48-break-after-comment", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "n38-49-comment-with-break", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "n38-50-break-after-freelink", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "n38-51-escape-continued", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "n38-52-break-with-inline-markup", "verdict": "EXCLUDED", "unmirrored": ["Strong", "Newline", "Emphasis", "Paragraph"], "missingKeys": []}
+{"id": "n38-53-bq-multiline", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "n38-54-bq-blank", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "n38-55-break-in-collapsible", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph", "Collapsible"], "missingKeys": []}
+{"id": "n38-56-empty-doc", "verdict": "PASS"}
+{"id": "n38-57-space-only", "verdict": "PASS"}
+{"id": "n38-58-only-block", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "n38-59-heading-then-text-blank", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Paragraph"], "missingKeys": []}
+{"id": "n38-60-mixed", "verdict": "EXCLUDED", "unmirrored": ["List", "Newline", "Table", "Paragraph"], "missingKeys": []}
+{"id": "nt-01", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-02", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-03", "verdict": "EXCLUDED", "unmirrored": ["Note"], "missingKeys": []}
+{"id": "nt-04", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-05", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "nt-06", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "nt-07", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-08", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-09", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-10", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-11", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note", "Newline"], "missingKeys": []}
+{"id": "nt-12", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-13", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-14", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-15", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-16", "verdict": "EXCLUDED", "unmirrored": ["Strong", "Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-17", "verdict": "EXCLUDED", "unmirrored": ["Code", "Note"], "missingKeys": []}
+{"id": "nt-18", "verdict": "EXCLUDED", "unmirrored": ["Note", "Newline"], "missingKeys": []}
+{"id": "nt-19", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "nt-20", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note", "Newline"], "missingKeys": []}
+{"id": "nt-21", "verdict": "EXCLUDED", "unmirrored": ["List", "Note"], "missingKeys": []}
+{"id": "nt-22", "verdict": "EXCLUDED", "unmirrored": ["List", "Note"], "missingKeys": []}
+{"id": "nt-23", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note", "Newline"], "missingKeys": []}
+{"id": "nt-24", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-25", "verdict": "EXCLUDED", "unmirrored": ["Note"], "missingKeys": []}
+{"id": "nt-26", "verdict": "EXCLUDED", "unmirrored": ["Note"], "missingKeys": []}
+{"id": "nt-27", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-28", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div", "Note"], "missingKeys": []}
+{"id": "nt-29", "verdict": "EXCLUDED", "unmirrored": ["Gallery", "Note"], "missingKeys": []}
+{"id": "nt-30", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-31", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-32", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-33", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-34", "verdict": "EXCLUDED", "unmirrored": ["Note"], "missingKeys": []}
+{"id": "nt-35", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Note"], "missingKeys": []}
+{"id": "nt-36", "verdict": "EXCLUDED", "unmirrored": ["Center", "Note"], "missingKeys": []}
+{"id": "nt-37", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "nt-38", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "nt-39", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-40", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-41", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "nt-42", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Note"], "missingKeys": []}
+{"id": "pg01-single-paragraph", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg02-two-paragraphs", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg03-three-paragraphs", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg04-multiple-blank-lines", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg05-leading-blank-lines", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg06-trailing-blank-lines", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg07-leading-and-trailing-blanks", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg08-blank-between-white-lines", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg09-blank-between-tab-lines", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg10-blank-between-formfeed-lines", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg11-single-line", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg12-single-line-inline", "verdict": "EXCLUDED", "unmirrored": ["Strong", "Paragraph"], "missingKeys": []}
+{"id": "pg13-two-lines-single-break", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "pg14-three-lines-single-breaks", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "pg15-inline-span-run", "verdict": "EXCLUDED", "unmirrored": ["Span", "Paragraph"], "missingKeys": []}
+{"id": "pg16-inline-link-run", "verdict": "EXCLUDED", "unmirrored": ["Url", "Paragraph"], "missingKeys": []}
+{"id": "pg17-leading-spaces", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg18-leading-tab", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg19-leading-mixed", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg20-trailing-spaces", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg21-trailing-tab", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg22-trailing-mixed", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg23-both-edges", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg24-tab-inside-flow", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg25-multiple-spaces-inside-flow", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg26-tab-at-run-boundary", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg27-empty-document", "verdict": "PASS"}
+{"id": "pg28-only-newlines", "verdict": "PASS"}
+{"id": "pg29-only-spaces", "verdict": "PASS"}
+{"id": "pg30-only-tabs", "verdict": "PASS"}
+{"id": "pg31-whitespace-run-between-text", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg32-blank-then-whitespace-only", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg33-heading-above", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "pg34-heading-below", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Center"], "missingKeys": []}
+{"id": "pg35-div-above", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg36-div-below", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg37-code-above", "verdict": "EXCLUDED", "unmirrored": ["Code", "Paragraph"], "missingKeys": []}
+{"id": "pg38-code-below", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Code"], "missingKeys": []}
+{"id": "pg39-list-above", "verdict": "EXCLUDED", "unmirrored": ["List", "Paragraph"], "missingKeys": []}
+{"id": "pg40-list-below", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "List"], "missingKeys": []}
+{"id": "pg41-table-above", "verdict": "EXCLUDED", "unmirrored": ["Table", "Paragraph"], "missingKeys": []}
+{"id": "pg42-table-below", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Table"], "missingKeys": []}
+{"id": "pg43-horiz-between", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Paragraph"], "missingKeys": []}
+{"id": "pg44-quote-between", "verdict": "EXCLUDED", "unmirrored": ["Blockquote", "Paragraph"], "missingKeys": []}
+{"id": "pg45-text-div-text", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "pg46-mixed-blocks", "verdict": "EXCLUDED", "unmirrored": ["Center", "List", "Paragraph"], "missingKeys": []}
+{"id": "pg47-only-div", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "pg48-only-code", "verdict": "EXCLUDED", "unmirrored": ["Code"], "missingKeys": []}
+{"id": "pg49-only-heading", "verdict": "EXCLUDED", "unmirrored": ["Center"], "missingKeys": []}
+{"id": "pg50-only-list", "verdict": "EXCLUDED", "unmirrored": ["List"], "missingKeys": []}
+{"id": "pg51-only-table", "verdict": "EXCLUDED", "unmirrored": ["Table"], "missingKeys": []}
+{"id": "pg52-only-quote", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "pg53-plain-span-run", "verdict": "EXCLUDED", "unmirrored": ["Span", "Paragraph"], "missingKeys": []}
+{"id": "pg54-scored-span-alone", "verdict": "EXCLUDED", "unmirrored": ["Span"], "missingKeys": []}
+{"id": "pg55-score-class-span-alone", "verdict": "EXCLUDED", "unmirrored": ["Span", "Paragraph"], "missingKeys": []}
+{"id": "pg56-score-class-with-text", "verdict": "EXCLUDED", "unmirrored": ["Span", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "s33", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "s44", "verdict": "EXCLUDED", "unmirrored": ["Strong", "Center", "Paragraph"], "missingKeys": []}
+{"id": "sep-01", "verdict": "EXCLUDED", "unmirrored": ["Separator"], "missingKeys": []}
+{"id": "sep-02", "verdict": "EXCLUDED", "unmirrored": ["Separator"], "missingKeys": []}
+{"id": "sep-03", "verdict": "EXCLUDED", "unmirrored": ["Separator", "Paragraph"], "missingKeys": []}
+{"id": "sep-04", "verdict": "EXCLUDED", "unmirrored": ["Separator", "Paragraph"], "missingKeys": []}
+{"id": "sep-05", "verdict": "EXCLUDED", "unmirrored": ["Separator", "Paragraph"], "missingKeys": []}
+{"id": "sep-06", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "sep-07", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "sep-08", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "sep-09", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Separator"], "missingKeys": []}
+{"id": "sep-10", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "sep-11", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "sep-12", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "sep-13", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "sep-14", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "sep-15", "verdict": "EXCLUDED", "unmirrored": ["Center"], "missingKeys": []}
+{"id": "sep-16", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "sep-17", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "sep-18", "verdict": "EXCLUDED", "unmirrored": ["Center"], "missingKeys": []}
+{"id": "sep-19", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "sep-20", "verdict": "EXCLUDED", "unmirrored": ["Separator"], "missingKeys": []}
+{"id": "sep-21", "verdict": "EXCLUDED", "unmirrored": ["Separator"], "missingKeys": []}
+{"id": "sep-22", "verdict": "EXCLUDED", "unmirrored": ["Separator", "Paragraph"], "missingKeys": []}
+{"id": "sep-23", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Separator", "Paragraph"], "missingKeys": []}
+{"id": "sep-24", "verdict": "EXCLUDED", "unmirrored": ["Separator", "Horiz", "Paragraph"], "missingKeys": []}
+{"id": "sep-25", "verdict": "EXCLUDED", "unmirrored": ["Clearfloat", "Separator", "Paragraph"], "missingKeys": []}
+{"id": "sep-26", "verdict": "EXCLUDED", "unmirrored": ["Separator", "Clearfloat", "Paragraph"], "missingKeys": []}
+{"id": "sep-27", "verdict": "EXCLUDED", "unmirrored": ["Break", "Newline", "Separator", "Paragraph"], "missingKeys": []}
+{"id": "sep-28", "verdict": "EXCLUDED", "unmirrored": ["Separator", "Center", "Paragraph"], "missingKeys": []}
+{"id": "sep-29", "verdict": "EXCLUDED", "unmirrored": ["Toc", "Separator", "Paragraph"], "missingKeys": []}
+{"id": "sep-30", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Separator", "Paragraph"], "missingKeys": []}
+{"id": "sep-31", "verdict": "EXCLUDED", "unmirrored": ["Separator", "Strong", "Paragraph"], "missingKeys": []}
+{"id": "sep-32", "verdict": "EXCLUDED", "unmirrored": ["List", "Separator", "Paragraph"], "missingKeys": []}
+{"id": "sep-33", "verdict": "EXCLUDED", "unmirrored": ["Code", "Newline"], "missingKeys": []}
+{"id": "sep-34", "verdict": "EXCLUDED", "unmirrored": ["Separator", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "sep-35", "verdict": "EXCLUDED", "unmirrored": ["Separator", "Div", "Newline"], "missingKeys": []}
+{"id": "sep-36", "verdict": "EXCLUDED", "unmirrored": ["Blockquote", "Separator", "Paragraph"], "missingKeys": []}
+{"id": "sep-37", "verdict": "EXCLUDED", "unmirrored": ["Code", "Separator", "Paragraph"], "missingKeys": []}
+{"id": "sep-38", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Separator"], "missingKeys": []}
+{"id": "sep-39", "verdict": "EXCLUDED", "unmirrored": ["Separator", "Paragraph"], "missingKeys": []}
+{"id": "sep-40", "verdict": "EXCLUDED", "unmirrored": ["Separator", "Paragraph"], "missingKeys": []}
+{"id": "sep-41", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Separator", "Paragraph"], "missingKeys": []}
+{"id": "smoke-code", "verdict": "EXCLUDED", "unmirrored": ["Code"], "missingKeys": []}
+{"id": "smoke-collapsible", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Collapsible"], "missingKeys": []}
+{"id": "smoke-div", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "smoke-footnote", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "smoke-include", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "smoke-link", "verdict": "EXCLUDED", "unmirrored": ["Freelink", "Paragraph"], "missingKeys": []}
+{"id": "smoke-math", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Math"], "missingKeys": []}
+{"id": "smoke-quote", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "smoke-table", "verdict": "EXCLUDED", "unmirrored": ["Table"], "missingKeys": []}
+{"id": "strike-s35", "verdict": "EXCLUDED", "unmirrored": ["Horiz"], "missingKeys": []}
+{"id": "sub46", "verdict": "EXCLUDED", "unmirrored": ["Subscript", "Center"], "missingKeys": []}
+{"id": "sup33", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "sup44", "verdict": "EXCLUDED", "unmirrored": ["Superscript", "Center", "Paragraph"], "missingKeys": []}
+{"id": "sz70-size-crosses-div", "verdict": "EXCLUDED", "unmirrored": ["Size", "Newline", "Paragraph", "Div"], "missingKeys": []}
+{"id": "t35-30-line-continuation", "verdict": "EXCLUDED", "unmirrored": ["Break", "Table"], "missingKeys": []}
+{"id": "t35-40-interrupted-by-hr", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Table"], "missingKeys": []}
+{"id": "toc74-clear-float", "verdict": "EXCLUDED", "unmirrored": ["Toc", "Clearfloat", "Heading"], "missingKeys": []}
+{"id": "tt51", "verdict": "EXCLUDED", "unmirrored": ["Tt", "Center"], "missingKeys": []}
+{"id": "typo08", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Paragraph"], "missingKeys": []}
+{"id": "typo10", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Paragraph"], "missingKeys": []}
+{"id": "typo12", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Paragraph"], "missingKeys": []}
+{"id": "typo14", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Paragraph"], "missingKeys": []}
+{"id": "typo16", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Paragraph"], "missingKeys": []}
+{"id": "typo18", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Paragraph"], "missingKeys": []}
+{"id": "typo83", "verdict": "EXCLUDED", "unmirrored": ["Typography", "Center", "Paragraph"], "missingKeys": []}
+{"id": "typo84", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Typography", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "x-anchor-across-containers", "verdict": "EXCLUDED", "unmirrored": ["Div", "Heading", "Toc"], "missingKeys": []}
+{"id": "x-anchor-collapsible-repeat", "verdict": "EXCLUDED", "unmirrored": ["Collapsible", "Heading", "Toc"], "missingKeys": []}
+{"id": "x-anchor-head-footnote", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Toc"], "missingKeys": []}
+{"id": "x-anchor-markup", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Strong", "Url", "Toc"], "missingKeys": []}
+{"id": "x-anchor-repeat", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Toc"], "missingKeys": []}
+{"id": "x-anchor-repeat-levels", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Toc"], "missingKeys": []}
+{"id": "x-anchor-skips", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Toc"], "missingKeys": []}
+{"id": "x-anchor-spaces", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Toc"], "missingKeys": []}
+{"id": "x-bq-attr", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x-bq-empty", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "x-bq-empty-lines", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "x-bq-footnote", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "x-bq-head", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Heading", "Toc"], "missingKeys": []}
+{"id": "x-bq-head-list-footnote", "verdict": "EXCLUDED", "unmirrored": ["Heading", "List", "Paragraph", "Toc"], "missingKeys": []}
+{"id": "x-bq-list", "verdict": "EXCLUDED", "unmirrored": ["List", "Paragraph"], "missingKeys": []}
+{"id": "x-bq-nested-head", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Newline", "Paragraph", "Toc"], "missingKeys": []}
+{"id": "x-bq-unterminated", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "x-mix-bq-head-toc", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Heading", "Toc"], "missingKeys": []}
+{"id": "x-mix-div-toc-iftags", "verdict": "EXCLUDED", "unmirrored": ["Toc", "Div", "Heading"], "missingKeys": []}
+{"id": "x-mix-toc-in-bq", "verdict": "EXCLUDED", "unmirrored": ["Toc", "Heading", "Paragraph"], "missingKeys": []}
+{"id": "x-quote-head", "verdict": "EXCLUDED", "unmirrored": ["Blockquote", "Heading", "Toc"], "missingKeys": []}
+{"id": "x-quote-list", "verdict": "EXCLUDED", "unmirrored": ["List", "Blockquote", "Paragraph"], "missingKeys": []}
+{"id": "x-toc-attr", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Toc"], "missingKeys": []}
+{"id": "x-toc-basic", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Toc"], "missingKeys": []}
+{"id": "x-toc-before", "verdict": "EXCLUDED", "unmirrored": ["Toc", "Heading"], "missingKeys": []}
+{"id": "x-toc-float-left", "verdict": "EXCLUDED", "unmirrored": ["Toc", "Heading"], "missingKeys": []}
+{"id": "x-toc-float-right", "verdict": "EXCLUDED", "unmirrored": ["Toc", "Heading"], "missingKeys": []}
+{"id": "x-toc-in-code", "verdict": "EXCLUDED", "unmirrored": ["Code", "Heading", "Toc"], "missingKeys": []}
+{"id": "x-toc-in-collapsible", "verdict": "EXCLUDED", "unmirrored": ["Collapsible", "Heading", "Toc"], "missingKeys": []}
+{"id": "x-toc-in-div", "verdict": "EXCLUDED", "unmirrored": ["Div", "Heading", "Toc"], "missingKeys": []}
+{"id": "x-toc-in-iftags-drop", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Toc"], "missingKeys": []}
+{"id": "x-toc-in-iftags-keep", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Toc"], "missingKeys": []}
+{"id": "x-toc-in-quote", "verdict": "EXCLUDED", "unmirrored": ["Blockquote", "Heading", "Toc"], "missingKeys": []}
+{"id": "x-toc-in-toc-div", "verdict": "EXCLUDED", "unmirrored": ["Div", "Heading", "Toc"], "missingKeys": []}
+{"id": "x-toc-two", "verdict": "EXCLUDED", "unmirrored": ["Toc", "Heading"], "missingKeys": []}
+{"id": "x-toc-untagged-iftags", "verdict": "EXCLUDED", "unmirrored": ["Heading", "Toc"], "missingKeys": []}
+{"id": "x01-image-alone", "verdict": "EXCLUDED", "unmirrored": ["Image"], "missingKeys": []}
+{"id": "x01-span-size-cross", "verdict": "EXCLUDED", "unmirrored": ["Span", "Size", "Paragraph"], "missingKeys": []}
+{"id": "x02-image-in-text-run", "verdict": "EXCLUDED", "unmirrored": ["Image", "Paragraph"], "missingKeys": []}
+{"id": "x02-size-span-cross", "verdict": "EXCLUDED", "unmirrored": ["Size", "Span", "Paragraph"], "missingKeys": []}
+{"id": "x03-image-between-paragraphs", "verdict": "EXCLUDED", "unmirrored": ["Image", "Paragraph"], "missingKeys": []}
+{"id": "x03-span-color-nested", "verdict": "EXCLUDED", "unmirrored": ["Colortext", "Span", "Paragraph"], "missingKeys": []}
+{"id": "x04-color-span-cross", "verdict": "EXCLUDED", "unmirrored": ["Colortext", "Span", "Paragraph"], "missingKeys": []}
+{"id": "x04-image-with-caption", "verdict": "EXCLUDED", "unmirrored": ["Image"], "missingKeys": []}
+{"id": "x05-aligned-image-in-paragraph", "verdict": "EXCLUDED", "unmirrored": ["Image", "Paragraph"], "missingKeys": []}
+{"id": "x05-strike-span-cross", "verdict": "EXCLUDED", "unmirrored": ["Strikethrough", "Span", "Paragraph"], "missingKeys": []}
+{"id": "x06-image-with-link", "verdict": "EXCLUDED", "unmirrored": ["Image"], "missingKeys": []}
+{"id": "x06-span-strike-nested", "verdict": "EXCLUDED", "unmirrored": ["Strikethrough", "Span", "Paragraph"], "missingKeys": []}
+{"id": "x07-span-size-strike-cross", "verdict": "EXCLUDED", "unmirrored": ["Span", "Size", "Strikethrough", "Paragraph"], "missingKeys": []}
+{"id": "x07-two-images-one-paragraph", "verdict": "EXCLUDED", "unmirrored": ["Image"], "missingKeys": []}
+{"id": "x08-image-after-newline", "verdict": "EXCLUDED", "unmirrored": ["Image", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "x08-span-nested-same", "verdict": "EXCLUDED", "unmirrored": ["Span", "Paragraph"], "missingKeys": []}
+{"id": "x09-image-in-simple-cell", "verdict": "EXCLUDED", "unmirrored": ["Image", "Table"], "missingKeys": []}
+{"id": "x09-size-nested-same", "verdict": "EXCLUDED", "unmirrored": ["Size", "Paragraph"], "missingKeys": []}
+{"id": "x10-image-in-adv-cell", "verdict": "EXCLUDED", "unmirrored": ["Image", "Tableadv"], "missingKeys": []}
+{"id": "x10-span-empty", "verdict": "PASS"}
+{"id": "x106", "verdict": "EXCLUDED", "unmirrored": ["Superscript", "Tt", "Subscript", "Center"], "missingKeys": []}
+{"id": "x11-image-in-div", "verdict": "EXCLUDED", "unmirrored": ["Image", "Div"], "missingKeys": []}
+{"id": "x11-span-size-cross-block", "verdict": "EXCLUDED", "unmirrored": ["Span", "Size", "Paragraph", "Div"], "missingKeys": []}
+{"id": "x12-iftags-suppressed-div", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x12-image-in-collapsible", "verdict": "EXCLUDED", "unmirrored": ["Image", "Collapsible"], "missingKeys": []}
+{"id": "x13-iftags-active-div", "verdict": "EXCLUDED", "unmirrored": ["Div", "Paragraph"], "missingKeys": []}
+{"id": "x13-image-in-quote", "verdict": "EXCLUDED", "unmirrored": ["Image", "Blockquote"], "missingKeys": []}
+{"id": "x14-iftags-suppressed-coll", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x14-image-caption-with-link", "verdict": "EXCLUDED", "unmirrored": ["Image", "Url"], "missingKeys": []}
+{"id": "x15-iftags-active-coll", "verdict": "EXCLUDED", "unmirrored": ["Collapsible", "Paragraph"], "missingKeys": []}
+{"id": "x15-image-caption-with-image", "verdict": "EXCLUDED", "unmirrored": ["Image"], "missingKeys": []}
+{"id": "x16-aligned-image-in-cell", "verdict": "EXCLUDED", "unmirrored": ["Image", "Table"], "missingKeys": []}
+{"id": "x16-iftags-suppressed-tab", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x17-code-inline-div", "verdict": "EXCLUDED", "unmirrored": ["Raw", "Paragraph"], "missingKeys": []}
+{"id": "x17-text-div-text", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "x18-code-block-div", "verdict": "EXCLUDED", "unmirrored": ["Code"], "missingKeys": []}
+{"id": "x18-text-collapsible-text", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Collapsible", "Newline"], "missingKeys": []}
+{"id": "x19-code-inline-coll", "verdict": "EXCLUDED", "unmirrored": ["Raw", "Paragraph"], "missingKeys": []}
+{"id": "x19-text-table-text", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Table", "Paragraph"], "missingKeys": []}
+{"id": "x2-01-scored-span-alone", "verdict": "EXCLUDED", "unmirrored": ["Span"], "missingKeys": []}
+{"id": "x2-02-scored-span-with-text", "verdict": "EXCLUDED", "unmirrored": ["Span", "Paragraph"], "missingKeys": []}
+{"id": "x2-03-scored-span-in-div", "verdict": "EXCLUDED", "unmirrored": ["Span", "Div"], "missingKeys": []}
+{"id": "x2-04-scored-span-then-block", "verdict": "EXCLUDED", "unmirrored": ["Span", "Paragraph"], "missingKeys": []}
+{"id": "x2-05-scored-span-then-heading", "verdict": "EXCLUDED", "unmirrored": ["Span", "Center", "Paragraph"], "missingKeys": []}
+{"id": "x2-06-image-caption-sentinel", "verdict": "EXCLUDED", "unmirrored": ["Image", "Paragraph"], "missingKeys": []}
+{"id": "x2-07-image-caption-link-sentinel", "verdict": "EXCLUDED", "unmirrored": ["Image", "Url", "Paragraph"], "missingKeys": []}
+{"id": "x2-08-aligned-image-caption-sentinel", "verdict": "EXCLUDED", "unmirrored": ["Image", "Paragraph"], "missingKeys": []}
+{"id": "x2-09-image-in-paragraph-sentinel", "verdict": "EXCLUDED", "unmirrored": ["Image", "Paragraph"], "missingKeys": []}
+{"id": "x2-10-image-after-break-sentinel", "verdict": "EXCLUDED", "unmirrored": ["Image", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "x2-11-text-table-sentinel", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Table", "Paragraph"], "missingKeys": []}
+{"id": "x2-12-text-deflist-sentinel", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Deflist", "Paragraph"], "missingKeys": []}
+{"id": "x20-span-code-div", "verdict": "EXCLUDED", "unmirrored": ["Raw", "Span", "Paragraph"], "missingKeys": []}
+{"id": "x20-text-adv-table-text", "verdict": "EXCLUDED", "unmirrored": ["Tableadv", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "x21-div-in-coll-in-tab", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div", "Collapsible", "Tabview"], "missingKeys": []}
+{"id": "x21-text-list-text", "verdict": "EXCLUDED", "unmirrored": ["List", "Paragraph"], "missingKeys": []}
+{"id": "x22-coll-in-tab", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Collapsible", "Tabview"], "missingKeys": []}
+{"id": "x22-text-deflist-text", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Deflist", "Paragraph"], "missingKeys": []}
+{"id": "x23-div-in-tab", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div", "Tabview"], "missingKeys": []}
+{"id": "x23-text-heading-text", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph"], "missingKeys": []}
+{"id": "x24-text-footnoteblock-text", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x24-three-nested-divs", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x25-list-hr", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "List"], "missingKeys": []}
+{"id": "x25-tab-in-coll-in-div", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Tabview", "Collapsible", "Div"], "missingKeys": []}
+{"id": "x25-text-code-text", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Code", "Newline"], "missingKeys": []}
+{"id": "x26-coll-first-closer-wins", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Collapsible"], "missingKeys": []}
+{"id": "x26-text-quote-text", "verdict": "EXCLUDED", "unmirrored": ["Blockquote", "Paragraph"], "missingKeys": []}
+{"id": "x27-div-text-div", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "x27-footnote-in-div", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "x28-footnote-in-coll", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Collapsible"], "missingKeys": []}
+{"id": "x28-heading-text-list", "verdict": "EXCLUDED", "unmirrored": ["Center", "Paragraph", "List"], "missingKeys": []}
+{"id": "x29-footnote-in-tab", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Tabview"], "missingKeys": []}
+{"id": "x29-text-toc-text", "verdict": "EXCLUDED", "unmirrored": ["Toc", "Paragraph"], "missingKeys": []}
+{"id": "x30-block-tabs-text", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "x30-div-in-footnote", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "x31-newline-in-div", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph", "Div"], "missingKeys": []}
+{"id": "x31-span-in-footnote", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Span"], "missingKeys": []}
+{"id": "x31-table-heading-table", "verdict": "EXCLUDED", "unmirrored": ["Center", "Table"], "missingKeys": []}
+{"id": "x32-div-underscore-basic", "verdict": "EXCLUDED", "unmirrored": ["Div"], "missingKeys": []}
+{"id": "x32-newline-in-collapsible", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph", "Collapsible"], "missingKeys": []}
+{"id": "x33-div-underscore-attrs", "verdict": "EXCLUDED", "unmirrored": ["Div"], "missingKeys": []}
+{"id": "x33-newline-in-simple-cell", "verdict": "EXCLUDED", "unmirrored": ["Table", "Paragraph"], "missingKeys": []}
+{"id": "x34-div-underscore-inline", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x34-newline-in-adv-cell", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Tableadv"], "missingKeys": []}
+{"id": "x35-div-underscore-unterminated", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph"], "missingKeys": []}
+{"id": "x35-newline-in-list", "verdict": "EXCLUDED", "unmirrored": ["List", "Paragraph"], "missingKeys": []}
+{"id": "x35-table-hr-table", "verdict": "EXCLUDED", "unmirrored": ["Horiz", "Table"], "missingKeys": []}
+{"id": "x36-div-normal-control", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "x36-doubled-newline-in-div", "verdict": "EXCLUDED", "unmirrored": ["Paragraph", "Div"], "missingKeys": []}
+{"id": "x37-heading-then-table", "verdict": "EXCLUDED", "unmirrored": ["Center", "Table"], "missingKeys": []}
+{"id": "x37-newline-in-quote", "verdict": "EXCLUDED", "unmirrored": ["Newline", "Paragraph", "Blockquote"], "missingKeys": []}
+{"id": "x38-newline-in-caption", "verdict": "EXCLUDED", "unmirrored": ["Image", "Newline"], "missingKeys": []}
+{"id": "x39-adv-heading-adv", "verdict": "EXCLUDED", "unmirrored": ["Center", "Tableadv"], "missingKeys": []}
+{"id": "x39-score-span-alone", "verdict": "EXCLUDED", "unmirrored": ["Span", "Paragraph"], "missingKeys": []}
+{"id": "x40-score-span-with-text", "verdict": "EXCLUDED", "unmirrored": ["Span", "Newline", "Paragraph"], "missingKeys": []}
+{"id": "x41-score-span-in-div", "verdict": "EXCLUDED", "unmirrored": ["Span", "Paragraph", "Div"], "missingKeys": []}
+{"id": "x42-tab-in-paragraph", "verdict": "EXCLUDED", "unmirrored": ["Paragraph"], "missingKeys": []}
+{"id": "x43-tab-in-list", "verdict": "EXCLUDED", "unmirrored": ["List"], "missingKeys": []}
+{"id": "x44-tab-in-cell", "verdict": "EXCLUDED", "unmirrored": ["Table"], "missingKeys": []}
+{"id": "x45-unclosed-image-opener", "verdict": "EXCLUDED", "unmirrored": ["Image"], "missingKeys": []}
+{"id": "x46-image-caption-unclosed", "verdict": "EXCLUDED", "unmirrored": ["Image", "Paragraph"], "missingKeys": []}
+{"id": "x53", "verdict": "EXCLUDED", "unmirrored": ["Strong", "Emphasis", "Underline", "Strikethrough", "Colortext", "Center"], "missingKeys": []}
+{"id": "x62", "verdict": "EXCLUDED", "unmirrored": ["Strong", "Emphasis", "Colortext", "Center"], "missingKeys": []}

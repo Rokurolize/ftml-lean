@@ -1,0 +1,500 @@
+{"id": "fz-color-000", "source": "## plain hashes\n##|body##"}
+{"id": "fz-color-001", "source": "#### and ###ff0000|[[$ e=mc^2 $]]##"}
+{"id": "fz-color-002", "source": "##a|b|[[$ e=mc^2 $]]##"}
+{"id": "fz-color-003", "source": "##rgb(1,2,3)|x | y##\n##red|unclosed\n##red|a\nb##"}
+{"id": "fz-color-004", "source": "###f00|a/b##"}
+{"id": "fz-color-005", "source": "##|##"}
+{"id": "fz-color-006", "source": "some words\n##bl ue|x | y##\n###ff0000| ##"}
+{"id": "fz-color-007", "source": "##rgb(1,2,3)|user@example.com## and ##red|a\nb## and ## plain hashes"}
+{"id": "fz-color-008", "source": "###f00|trail ## and ##var(--x)|##"}
+{"id": "fz-color-009", "source": "##a|b|c##\n##|body##"}
+{"id": "fz-color-010", "source": "## |caf\u00e9## ## plain hashes ###|two words##"}
+{"id": "fz-color-011", "source": "##|##\n##light blue|two words##"}
+{"id": "fz-color-012", "source": "###|two words## and ##123|a/b##"}
+{"id": "fz-color-013", "source": "###|x##\n\n##light blue|hy-phen##"}
+{"id": "fz-color-014", "source": "##red| lead## and some words and ##red|a\nb##"}
+{"id": "fz-color-015", "source": "##light blue|http://example.com/x## and ##red|##"}
+{"id": "fz-color-016", "source": "##|hy-phen##\n##red|a\nb##\nsome words"}
+{"id": "fz-color-017", "source": "###|trail ##"}
+{"id": "fz-color-018", "source": "some words and ##red|caf\u00e9##"}
+{"id": "fz-color-019", "source": "##bl ue|under_score## and text and ###| ##"}
+{"id": "fz-color-020", "source": "###ff0000|user@example.com##\n\n##red|unclosed"}
+{"id": "fz-color-021", "source": "## plain hashes"}
+{"id": "fz-color-022", "source": "##red|x##"}
+{"id": "fz-color-023", "source": "###ff0000|hy-phen##\n\n##|body##\n\n## plain hashes"}
+{"id": "fz-color-024", "source": "## |a##b## and ###ff0000|x## and ## plain hashes"}
+{"id": "fz-color-025", "source": "###f00|x## ##x|###"}
+{"id": "fz-color-026", "source": "some words ##red|a##b##"}
+{"id": "fz-color-027", "source": "##red|unclosed"}
+{"id": "fz-color-028", "source": "caf\u00e9 ##red|## ##rgb(1,2,3)| ##"}
+{"id": "fz-color-029", "source": "##rgb(1,2,3)|trail ##\nsome words\n##light blue|hy-phen##"}
+{"id": "fz-color-030", "source": "## plain hashes"}
+{"id": "fz-color-031", "source": "## red | body ##"}
+{"id": "fz-color-032", "source": "caf\u00e9 and ###ff0000|trail ## and ## | lead##"}
+{"id": "fz-color-033", "source": "text\n###|hy-phen##\ntext"}
+{"id": "fz-color-034", "source": "some words ###f00|[[$ e=mc^2 $]]##"}
+{"id": "fz-color-035", "source": "## plain hashes"}
+{"id": "fz-color-036", "source": "##|body##\n\n##red|##"}
+{"id": "fz-color-037", "source": "##light blue|x | y##"}
+{"id": "fz-color-038", "source": "## plain hashes\n## red | body ##\n##a|b|caf\u00e9##"}
+{"id": "fz-color-039", "source": "text"}
+{"id": "fz-color-040", "source": "some words\nsome words"}
+{"id": "fz-color-041", "source": "##a|b|trail ## caf\u00e9"}
+{"id": "fz-color-042", "source": "###f00|bold##\n\ncaf\u00e9\n\n## plain hashes"}
+{"id": "fz-color-043", "source": "##a|b|a##\n\nsome words\n\n##red|##"}
+{"id": "fz-color-044", "source": "##123|x##"}
+{"id": "fz-color-045", "source": "####\n##|body##"}
+{"id": "fz-color-046", "source": "##red|x##"}
+{"id": "fz-color-047", "source": "###ff0000|[wikipedia:Some_Page]## ##a|b|a##b## ##x|###"}
+{"id": "fz-color-048", "source": "pre ##blue|x## post ##red|a##b##"}
+{"id": "fz-color-049", "source": "some words some words ##|[wikipedia:Some_Page]##"}
+{"id": "fz-color-050", "source": "##red|a\nb##"}
+{"id": "fz-color-051", "source": "##|body##"}
+{"id": "fz-color-052", "source": "## red | body ## and ###f00|[wikipedia:Some_Page]## and ###ff0000|http://example.com/x##"}
+{"id": "fz-color-053", "source": "some words"}
+{"id": "fz-color-054", "source": "##a|b|http://example.com/x##\n##rgb(1,2,3)|hy-phen##\n##123|hy-phen##"}
+{"id": "fz-color-055", "source": "pre ##blue|x## post ##red|a\nb##"}
+{"id": "fz-color-056", "source": "####\ntext\nsome words"}
+{"id": "fz-color-057", "source": "##red|a|b##"}
+{"id": "fz-color-058", "source": "caf\u00e9"}
+{"id": "fz-color-059", "source": "####"}
+{"id": "fz-color-060", "source": "##var(--x)|bold##\nsome words\n###ff0000| both ##"}
+{"id": "fz-color-061", "source": "##var(--x)|two words##\n##red|a##b##\n###ff0000|[wikipedia:Some_Page]##"}
+{"id": "fz-color-062", "source": "## plain hashes\n\ncaf\u00e9"}
+{"id": "fz-color-063", "source": "##red|a##b##"}
+{"id": "fz-color-064", "source": "###f00| lead##"}
+{"id": "fz-color-065", "source": "##rgb(1,2,3)|a/b##\n###|a|b##\n##red| both ##"}
+{"id": "fz-color-066", "source": "##a|b| ##"}
+{"id": "fz-color-067", "source": "##light blue|x## and ###|x## and ##light blue| ##"}
+{"id": "fz-color-068", "source": "##rgb(1,2,3)|trail ##\n\n##123|x | y##\n\n## |bold##"}
+{"id": "fz-color-069", "source": "##123| both ##"}
+{"id": "fz-color-070", "source": "###|http://example.com/x##"}
+{"id": "fz-color-071", "source": "##var(--x)|bold## ###f00| both ## ##var(--x)|hy-phen##"}
+{"id": "fz-color-072", "source": "##red|a/b## ###f00|a## ###ff0000|user@example.com##"}
+{"id": "fz-color-073", "source": "##red|a##b## and ##red|unclosed and ###ff0000|caf\u00e9##"}
+{"id": "fz-color-074", "source": "##red|a/b##\n\n##rgb(1,2,3)|two words##\n\n####"}
+{"id": "fz-color-075", "source": "## plain hashes\n\n## plain hashes\n\n##123|a##b##"}
+{"id": "fz-color-076", "source": "## plain hashes"}
+{"id": "fz-color-077", "source": "text some words ##red|caf\u00e9##"}
+{"id": "fz-color-078", "source": "##light blue| ##"}
+{"id": "fz-color-079", "source": "##a|b|one\ntwo##\n##var(--x)|a##\n###ff0000|##"}
+{"id": "fz-color-080", "source": "##x|###\n\n##a|b|c##\n\ncaf\u00e9"}
+{"id": "fz-color-081", "source": "some words and pre ##blue|x## post and ##|two words##"}
+{"id": "fz-color-082", "source": "##red|a##b## ##red|a##b## ###f00|under_score##"}
+{"id": "fz-color-083", "source": "##a|b|c## ##red|## ##red|user@example.com##"}
+{"id": "fz-color-084", "source": "##rgb(1,2,3)|one\ntwo##\n##123|##\n##light blue|[wikipedia:Some_Page]##"}
+{"id": "fz-color-085", "source": "###ff0000|user@example.com## ##light blue|two words## ## plain hashes"}
+{"id": "fz-color-086", "source": "##rgb(1,2,3)|two words## ##red|##"}
+{"id": "fz-color-087", "source": "###|##\n\n###ff0000|hy-phen##"}
+{"id": "fz-color-088", "source": "## plain hashes and ###f00|a##"}
+{"id": "fz-color-089", "source": "##var(--x)|caf\u00e9## ##|under_score## ## |a##"}
+{"id": "fz-color-090", "source": "text\nsome words"}
+{"id": "fz-color-091", "source": "## |two words##\n##bl ue|two words##\n##| both ##"}
+{"id": "fz-color-092", "source": "###|a/b##\n\n##red|##"}
+{"id": "fz-color-093", "source": "## | lead##\n## plain hashes"}
+{"id": "fz-color-094", "source": "##a|b| ## and ###ff0000|bold## and ## plain hashes"}
+{"id": "fz-color-095", "source": "caf\u00e9 ##a|b|caf\u00e9## ##|under_score##"}
+{"id": "fz-color-096", "source": "##123|x | y## ###|trail ##"}
+{"id": "fz-color-097", "source": "##red|a\nb##\n###|a|b##"}
+{"id": "fz-color-098", "source": "pre ##blue|x## post"}
+{"id": "fz-color-099", "source": "## plain hashes\n\n##a|b| lead##"}
+{"id": "fz-strong-000", "source": "** **"}
+{"id": "fz-strong-001", "source": "** both **\nwor**d**in"}
+{"id": "fz-strong-002", "source": "some words **** ** both **"}
+{"id": "fz-strong-003", "source": "******x ****"}
+{"id": "fz-strong-004", "source": "**trail **"}
+{"id": "fz-strong-005", "source": "********a****** and **[[$ e=mc^2 $]]**"}
+{"id": "fz-strong-006", "source": "** x********\n\nsome words\n\n**x**"}
+{"id": "fz-strong-007", "source": "**one\ntwo**"}
+{"id": "fz-strong-008", "source": "**a** **b**\n\n**bold**\n\n**caf\u00e9**"}
+{"id": "fz-strong-009", "source": "caf\u00e9\n**a**b**c**\n********a**"}
+{"id": "fz-strong-010", "source": "****a b********\n**a**b**"}
+{"id": "fz-strong-011", "source": "********a b******"}
+{"id": "fz-strong-012", "source": "******\n**a\n----\nb**"}
+{"id": "fz-strong-013", "source": "**one\ntwo**"}
+{"id": "fz-strong-014", "source": "**one\ntwo**"}
+{"id": "fz-strong-015", "source": "**bold** and ********x ******"}
+{"id": "fz-strong-016", "source": "**a/b**"}
+{"id": "fz-strong-017", "source": "****ab******"}
+{"id": "fz-strong-018", "source": "**a/b** and **a**b**"}
+{"id": "fz-strong-019", "source": "**trail **\n\n******\n\n**a**"}
+{"id": "fz-strong-020", "source": "**bold** **[wikipedia:Some_Page]**"}
+{"id": "fz-strong-021", "source": "**two words** and some words and ******"}
+{"id": "fz-strong-022", "source": "**http://example.com/x**"}
+{"id": "fz-strong-023", "source": "**x**\n** both **"}
+{"id": "fz-strong-024", "source": "**x** ****a b********"}
+{"id": "fz-strong-025", "source": "**user@example.com** and ** **"}
+{"id": "fz-strong-026", "source": "**user@example.com**"}
+{"id": "fz-strong-027", "source": "******\n****\n**[wikipedia:Some_Page]**"}
+{"id": "fz-strong-028", "source": "**two words**"}
+{"id": "fz-strong-029", "source": "**a**b** **under_score**"}
+{"id": "fz-strong-030", "source": "**a**b**\ncaf\u00e9"}
+{"id": "fz-strong-031", "source": "******"}
+{"id": "fz-strong-032", "source": "some words and pre **** post and **a**b**c**"}
+{"id": "fz-strong-033", "source": "**a/b**"}
+{"id": "fz-strong-034", "source": "**under_score** and ****** and wor**d**in"}
+{"id": "fz-strong-035", "source": "********ab******"}
+{"id": "fz-strong-036", "source": "some words"}
+{"id": "fz-strong-037", "source": "**user@example.com**"}
+{"id": "fz-strong-038", "source": "**[[$ e=mc^2 $]]**"}
+{"id": "fz-strong-039", "source": "text ****** **a\n----\nb**"}
+{"id": "fz-strong-040", "source": "******x ******\n\n**[wikipedia:Some_Page]**"}
+{"id": "fz-strong-041", "source": "**caf\u00e9**"}
+{"id": "fz-strong-042", "source": "**two words** and **trail ** and ****x **"}
+{"id": "fz-strong-043", "source": "**user@example.com**"}
+{"id": "fz-strong-044", "source": "text\ntext"}
+{"id": "fz-strong-045", "source": "**  **"}
+{"id": "fz-strong-046", "source": "**a|b**"}
+{"id": "fz-strong-047", "source": "**one\ntwo** text ******a****"}
+{"id": "fz-strong-048", "source": "** lead**\n\ntext"}
+{"id": "fz-strong-049", "source": "pre **** post"}
+{"id": "fz-strong-050", "source": "**a****"}
+{"id": "fz-strong-051", "source": "********** and ****x ** and ** both **"}
+{"id": "fz-strong-052", "source": "********a b** and **http://example.com/x**"}
+{"id": "fz-strong-053", "source": "**hy-phen**\n********ab********"}
+{"id": "fz-strong-054", "source": "some words and **two words**"}
+{"id": "fz-strong-055", "source": "some words\n\n**a**b**c**\n\n** **"}
+{"id": "fz-strong-056", "source": "pre **** post\n\n**a**b**\n\ncaf\u00e9"}
+{"id": "fz-strong-057", "source": "**a|b**"}
+{"id": "fz-strong-058", "source": "**user@example.com**"}
+{"id": "fz-strong-059", "source": "**bold** some words"}
+{"id": "fz-strong-060", "source": "********x **"}
+{"id": "fz-strong-061", "source": "wor**d**in\n\n****ab********\n\n** x********"}
+{"id": "fz-strong-062", "source": "**caf\u00e9**\n** lead**"}
+{"id": "fz-strong-063", "source": "****\n\n********\n\n******a b********"}
+{"id": "fz-strong-064", "source": "**hy-phen**\n\n**[wikipedia:Some_Page]**"}
+{"id": "fz-strong-065", "source": "**user@example.com**"}
+{"id": "fz-strong-066", "source": "**a**b**"}
+{"id": "fz-strong-067", "source": "pre **** post"}
+{"id": "fz-strong-068", "source": "**[[$ e=mc^2 $]]**"}
+{"id": "fz-strong-069", "source": "***a***"}
+{"id": "fz-strong-070", "source": "**x ******"}
+{"id": "fz-strong-071", "source": "pre **** post"}
+{"id": "fz-strong-072", "source": "caf\u00e9"}
+{"id": "fz-strong-073", "source": "**user@example.com**"}
+{"id": "fz-strong-074", "source": "****a b**"}
+{"id": "fz-strong-075", "source": "**a**b**"}
+{"id": "fz-strong-076", "source": "****\n\nsome words"}
+{"id": "fz-strong-077", "source": "**** and **hy-phen** and **a|b**"}
+{"id": "fz-strong-078", "source": "************"}
+{"id": "fz-strong-079", "source": "**** and **hy-phen**"}
+{"id": "fz-strong-080", "source": "** x******\n\n********a b******\n\n**hy-phen**"}
+{"id": "fz-strong-081", "source": "**two words**\n**a|b**"}
+{"id": "fz-strong-082", "source": "**a\n----\nb** **  **"}
+{"id": "fz-strong-083", "source": "**bold** **a/b** ******** x********"}
+{"id": "fz-strong-084", "source": "**trail **"}
+{"id": "fz-strong-085", "source": "**  **"}
+{"id": "fz-strong-086", "source": "**hy-phen**\n\n******** x******"}
+{"id": "fz-strong-087", "source": "**user@example.com**"}
+{"id": "fz-strong-088", "source": "**trail **"}
+{"id": "fz-strong-089", "source": "****** **one\ntwo**"}
+{"id": "fz-strong-090", "source": "**** ** **"}
+{"id": "fz-strong-091", "source": "********ab********\n**a**\n** **"}
+{"id": "fz-strong-092", "source": "**a|b**\n**x**"}
+{"id": "fz-strong-093", "source": "******** **a**b** ******** x****"}
+{"id": "fz-strong-094", "source": "**bold**"}
+{"id": "fz-strong-095", "source": "********x ********\n\ntext\n\n**a** **b**"}
+{"id": "fz-strong-096", "source": "some words"}
+{"id": "fz-strong-097", "source": "**under_score**\ncaf\u00e9\nsome words"}
+{"id": "fz-strong-098", "source": "********a b******\n**** x**"}
+{"id": "fz-strong-099", "source": "**trail **"}
+{"id": "fz-em-000", "source": "//a//b//c//"}
+{"id": "fz-em-001", "source": "//trail // and //////"}
+{"id": "fz-em-002", "source": "////\n\nsome words"}
+{"id": "fz-em-003", "source": "text\n\n//  //\n\n//a|b//"}
+{"id": "fz-em-004", "source": "//x//"}
+{"id": "fz-em-005", "source": "caf\u00e9\n\n//bold//"}
+{"id": "fz-em-006", "source": "//x //\n//  //\n//example.com/a//"}
+{"id": "fz-em-007", "source": "text\n// lead//\n//bold//"}
+{"id": "fz-em-008", "source": "////////ab// ////// //under_score//"}
+{"id": "fz-em-009", "source": "//hy-phen//\n//a/b//"}
+{"id": "fz-em-010", "source": "//a//b//c//\n//[[$ x $]]//\n////////"}
+{"id": "fz-em-011", "source": "////////\n\na // b"}
+{"id": "fz-em-012", "source": "text ////////// // lead//"}
+{"id": "fz-em-013", "source": "//user@example.com//"}
+{"id": "fz-em-014", "source": "//// x//////// ////"}
+{"id": "fz-em-015", "source": "some words\n//example.com/a//\n////"}
+{"id": "fz-em-016", "source": "//x//\n//http://example.com/x//\ncaf\u00e9"}
+{"id": "fz-em-017", "source": "text //a/b//"}
+{"id": "fz-em-018", "source": "caf\u00e9\n\n//////"}
+{"id": "fz-em-019", "source": "//a//b//\n//[[$ x $]]//"}
+{"id": "fz-em-020", "source": "////x //////// and //////////"}
+{"id": "fz-em-021", "source": "//[[$ x $]]// //under_score// ////a b////"}
+{"id": "fz-em-022", "source": "//[[$ x $]]// //caf\u00e9// caf\u00e9"}
+{"id": "fz-em-023", "source": "////a b////\nsome words\ncaf\u00e9"}
+{"id": "fz-em-024", "source": "text"}
+{"id": "fz-em-025", "source": "//caf\u00e9// and http://example.com/a"}
+{"id": "fz-em-026", "source": "//////\n\nsome words"}
+{"id": "fz-em-027", "source": "//////////\n\n//////a////////"}
+{"id": "fz-em-028", "source": "////////x // and //[[$ e=mc^2 $]]//"}
+{"id": "fz-em-029", "source": "////x ////"}
+{"id": "fz-em-030", "source": "// both // and //ab////////"}
+{"id": "fz-em-031", "source": "//example.com/a\n\n//[[$ e=mc^2 $]]//\n\n// x////////"}
+{"id": "fz-em-032", "source": "//a//\n//user@example.com//\ntext"}
+{"id": "fz-em-033", "source": "//// x//// and //  //"}
+{"id": "fz-em-034", "source": "//user@example.com//\n\n////////////\n\n//a // b //"}
+{"id": "fz-em-035", "source": "//// ////// //[[$ x $]]//"}
+{"id": "fz-em-036", "source": "// both // and //bold// and //[[$ e=mc^2 $]]//"}
+{"id": "fz-em-037", "source": "//////a//////\n\n//http://example.com/x//\n\ncaf\u00e9"}
+{"id": "fz-em-038", "source": "////a//// and //example.com/a//"}
+{"id": "fz-em-039", "source": "////a b//// and ////////a b//////// and //example.com/a"}
+{"id": "fz-em-040", "source": "//example.com/a// //http://example.com/x//"}
+{"id": "fz-em-041", "source": "////////x //\n\n//a//b//c//"}
+{"id": "fz-em-042", "source": "//user@example.com//\n//ab//////\nsome words"}
+{"id": "fz-em-043", "source": "//a//b//c//"}
+{"id": "fz-em-044", "source": "//[[$ x $]]// //a// //two words//"}
+{"id": "fz-em-045", "source": "////ab////\n\n//a//b//c//"}
+{"id": "fz-em-046", "source": "caf\u00e9"}
+{"id": "fz-em-047", "source": "caf\u00e9\n\ntext\n\n//////////"}
+{"id": "fz-em-048", "source": "//[wikipedia:Some_Page]// and //a b// and //caf\u00e9//"}
+{"id": "fz-em-049", "source": "////////ab//////// and //example.com/a//"}
+{"id": "fz-em-050", "source": "//a b////"}
+{"id": "fz-em-051", "source": "//////a b//////// //one\ntwo// //////"}
+{"id": "fz-em-052", "source": "//x // and //a//b//c// and //////"}
+{"id": "fz-em-053", "source": "//example.com/a\n\n//[[$ e=mc^2 $]]//"}
+{"id": "fz-em-054", "source": "//one\ntwo//\n\n//user@example.com//"}
+{"id": "fz-em-055", "source": "//[[$ e=mc^2 $]]// //bold//"}
+{"id": "fz-em-056", "source": "//user@example.com// ////"}
+{"id": "fz-em-057", "source": "// lead//\n\n//ab//////\n\n//a/b//"}
+{"id": "fz-em-058", "source": "text and //// and // //"}
+{"id": "fz-em-059", "source": "////////a//////\n// lead//\n//a // b //"}
+{"id": "fz-em-060", "source": "caf\u00e9 and //caf\u00e9// and //a////"}
+{"id": "fz-em-061", "source": "//////\n//a////////\ncaf\u00e9"}
+{"id": "fz-em-062", "source": "text a // b"}
+{"id": "fz-em-063", "source": "//bold//\n//[[$ e=mc^2 $]]//"}
+{"id": "fz-em-064", "source": "////\n////////a////////"}
+{"id": "fz-em-065", "source": "//  // and caf\u00e9 and some words"}
+{"id": "fz-em-066", "source": "//////\n//////\n//one\ntwo//"}
+{"id": "fz-em-067", "source": "//x//"}
+{"id": "fz-em-068", "source": "//  //\n//a|b//"}
+{"id": "fz-em-069", "source": "//example.com/a //////"}
+{"id": "fz-em-070", "source": "////////x ////////\nsome words\ntext"}
+{"id": "fz-em-071", "source": "//////"}
+{"id": "fz-em-072", "source": "//a//b//\n//user@example.com//"}
+{"id": "fz-em-073", "source": "//  //\n\n//a // b //"}
+{"id": "fz-em-074", "source": "text"}
+{"id": "fz-em-075", "source": "//[[$ e=mc^2 $]]//\n//////// x//////\n// both //"}
+{"id": "fz-em-076", "source": "caf\u00e9\n//[[$ x $]]//\n//a//b//"}
+{"id": "fz-em-077", "source": "//////ab////////"}
+{"id": "fz-em-078", "source": "////a b//////// and //////a b//////"}
+{"id": "fz-em-079", "source": "//ab//////"}
+{"id": "fz-u-000", "source": "caf\u00e9\n________ x______"}
+{"id": "fz-u-001", "source": "________x ____ and text and __bold__"}
+{"id": "fz-u-002", "source": "__a____\n__________"}
+{"id": "fz-u-003", "source": "______\n\n__  __\n\n____________"}
+{"id": "fz-u-004", "source": "__two words__"}
+{"id": "fz-u-005", "source": "__  __ ________ab____ __user@example.com__"}
+{"id": "fz-u-006", "source": "__[wikipedia:Some_Page]__"}
+{"id": "fz-u-007", "source": "__a__"}
+{"id": "fz-u-008", "source": "__a__ and __  __"}
+{"id": "fz-u-009", "source": "____________\n\n__[wikipedia:Some_Page]__\n\n____x____"}
+{"id": "fz-u-010", "source": "a____b and __a|b__"}
+{"id": "fz-u-011", "source": "__bold__"}
+{"id": "fz-u-012", "source": "__a________\n\n______\n\n__  __"}
+{"id": "fz-u-013", "source": "__one\ntwo__\n\n____ab________\n\n__trail __"}
+{"id": "fz-u-014", "source": "__ both __"}
+{"id": "fz-u-015", "source": "text"}
+{"id": "fz-u-016", "source": "___a___ __caf\u00e9__"}
+{"id": "fz-u-017", "source": "caf\u00e9"}
+{"id": "fz-u-018", "source": "__a b________ and __http://example.com/x__ and __user@example.com__"}
+{"id": "fz-u-019", "source": "__caf\u00e9__"}
+{"id": "fz-u-020", "source": "____a__\n\n__a____b__"}
+{"id": "fz-u-021", "source": "some words"}
+{"id": "fz-u-022", "source": "some words and ______"}
+{"id": "fz-u-023", "source": "__trail __\n\n______a b____"}
+{"id": "fz-u-024", "source": "__[wikipedia:Some_Page]__\n\n____ab________\n\n__[[$ e=mc^2 $]]__"}
+{"id": "fz-u-025", "source": "__  __"}
+{"id": "fz-u-026", "source": "__a____\n______________"}
+{"id": "fz-u-027", "source": "text"}
+{"id": "fz-u-028", "source": "______a b__\n\na____b\n\n__ both __"}
+{"id": "fz-u-029", "source": "__a/b__"}
+{"id": "fz-u-030", "source": "__a/b__"}
+{"id": "fz-u-031", "source": "____ __caf\u00e9__ ____"}
+{"id": "fz-u-032", "source": "__bold__"}
+{"id": "fz-u-033", "source": "__a|b__"}
+{"id": "fz-u-034", "source": "____ab____"}
+{"id": "fz-u-035", "source": "caf\u00e9"}
+{"id": "fz-u-036", "source": "__caf\u00e9__\n____ab______"}
+{"id": "fz-u-037", "source": "________ x__"}
+{"id": "fz-u-038", "source": "______\nsome words"}
+{"id": "fz-u-039", "source": "__user@example.com__"}
+{"id": "fz-u-040", "source": "__a|b__\n______ab__\n____x____"}
+{"id": "fz-u-041", "source": "________a__ __trail __"}
+{"id": "fz-u-042", "source": "caf\u00e9 and ____ and __x__"}
+{"id": "fz-u-043", "source": "____ab__\n\ntext"}
+{"id": "fz-u-044", "source": "__ both __"}
+{"id": "fz-u-045", "source": "__ lead__"}
+{"id": "fz-u-046", "source": "____x____"}
+{"id": "fz-u-047", "source": "__[wikipedia:Some_Page]__ __x__ ____"}
+{"id": "fz-u-048", "source": "______a__"}
+{"id": "fz-u-049", "source": "caf\u00e9 and ____x ____"}
+{"id": "fz-u-050", "source": "__a__ some words __a________"}
+{"id": "fz-u-051", "source": "__under_score__ ____x____"}
+{"id": "fz-u-052", "source": "____ __caf\u00e9__"}
+{"id": "fz-u-053", "source": "caf\u00e9"}
+{"id": "fz-u-054", "source": "__a|b__\n\n__[[$ e=mc^2 $]]__"}
+{"id": "fz-u-055", "source": "________ some words __x __"}
+{"id": "fz-u-056", "source": "__a b__ __a__ __bold__"}
+{"id": "fz-u-057", "source": "______"}
+{"id": "fz-u-058", "source": "____"}
+{"id": "fz-u-059", "source": "____a________"}
+{"id": "fz-u-060", "source": "caf\u00e9\n__trail __"}
+{"id": "fz-u-061", "source": "________x ____ __ __ ___a___"}
+{"id": "fz-u-062", "source": "______ab__ __ lead__ ________a________"}
+{"id": "fz-u-063", "source": "text"}
+{"id": "fz-u-064", "source": "__ both __\n\n__ lead__\n\n__a__"}
+{"id": "fz-u-065", "source": "__hy-phen__\n__bold__\n________x ______"}
+{"id": "fz-u-066", "source": "__one\ntwo__ __a____b__ __one\ntwo__"}
+{"id": "fz-u-067", "source": "______x __"}
+{"id": "fz-u-068", "source": "__a____b__\n__x__"}
+{"id": "fz-u-069", "source": "____x____\n\n__http://example.com/x__"}
+{"id": "fz-u-070", "source": "__a____\ncaf\u00e9"}
+{"id": "fz-u-071", "source": "caf\u00e9 and ______a b______"}
+{"id": "fz-u-072", "source": "________a______\n\n___a___\n\n__a/b__"}
+{"id": "fz-u-073", "source": "__caf\u00e9__\n\n__http://example.com/x__\n\n__a b______"}
+{"id": "fz-u-074", "source": "__[[$ e=mc^2 $]]__\ntext"}
+{"id": "fz-u-075", "source": "__user@example.com__"}
+{"id": "fz-u-076", "source": "__ __\n________________\n________"}
+{"id": "fz-u-077", "source": "__trail __ and __hy-phen__ and ________"}
+{"id": "fz-u-078", "source": "__a__b__ caf\u00e9"}
+{"id": "fz-u-079", "source": "__a b____\n\n__two words__\n\n__ __"}
+{"id": "fz-strike-000", "source": "------ x------"}
+{"id": "fz-strike-001", "source": "--a/b--\na -- b\n----ab--------"}
+{"id": "fz-strike-002", "source": "-- x------\ncaf\u00e9\n--a\nb--"}
+{"id": "fz-strike-003", "source": "-- --"}
+{"id": "fz-strike-004", "source": "--x-- and --ab----"}
+{"id": "fz-strike-005", "source": "--------\n---- x----\n---"}
+{"id": "fz-strike-006", "source": "----"}
+{"id": "fz-strike-007", "source": "--x --\n\n--strike --"}
+{"id": "fz-strike-008", "source": "-- both -- and -- both -- and --ab------"}
+{"id": "fz-strike-009", "source": "--bold--\n\n--http://example.com/x--\n\n--a--------"}
+{"id": "fz-strike-010", "source": "--a|b--"}
+{"id": "fz-strike-011", "source": "--[wikipedia:Some_Page]-- --a--b--"}
+{"id": "fz-strike-012", "source": "text\n\n--http://example.com/x--"}
+{"id": "fz-strike-013", "source": "--user@example.com--\n--trail --"}
+{"id": "fz-strike-014", "source": "--http://example.com/x--"}
+{"id": "fz-strike-015", "source": "some words"}
+{"id": "fz-strike-016", "source": "--under_score--\n\n--------------\n\n--a b--------"}
+{"id": "fz-strike-017", "source": "--a/b--\n--[[$ e=mc^2 $]]--"}
+{"id": "fz-strike-018", "source": "------ab----\n\n---"}
+{"id": "fz-strike-019", "source": "------------\n\na -- b"}
+{"id": "fz-strike-020", "source": "--http://example.com/x--\n\n--  --"}
+{"id": "fz-strike-021", "source": "caf\u00e9\n\n--[wikipedia:Some_Page]--"}
+{"id": "fz-strike-022", "source": "caf\u00e9\n\ncaf\u00e9\n\ncaf\u00e9"}
+{"id": "fz-strike-023", "source": "----a---- and --x ------"}
+{"id": "fz-strike-024", "source": "----a------"}
+{"id": "fz-strike-025", "source": "--a|b--\na -- b\n--one\ntwo--"}
+{"id": "fz-strike-026", "source": "------ab------"}
+{"id": "fz-strike-027", "source": "--trail -- and --http://example.com/x-- and --http://example.com/x--"}
+{"id": "fz-strike-028", "source": "text text --one\ntwo--"}
+{"id": "fz-strike-029", "source": "--[wikipedia:Some_Page]-- --http://example.com/x--"}
+{"id": "fz-strike-030", "source": "--a/b-- and --a--b-- and ----"}
+{"id": "fz-strike-031", "source": "--------a b----"}
+{"id": "fz-strike-032", "source": "--a--b--c--\n\n------"}
+{"id": "fz-strike-033", "source": "--http://example.com-- ------x -------- ------a--"}
+{"id": "fz-strike-034", "source": "caf\u00e9"}
+{"id": "fz-strike-035", "source": "--ab------"}
+{"id": "fz-strike-036", "source": "some words --------a b---- --------------"}
+{"id": "fz-strike-037", "source": "--------x -- ------------ ----"}
+{"id": "fz-strike-038", "source": "----ab------"}
+{"id": "fz-strike-039", "source": "--[[$ e=mc^2 $]]--"}
+{"id": "fz-strike-040", "source": "----x ----"}
+{"id": "fz-strike-041", "source": "---- x--\n\n----x ------\n\n--caf\u00e9--"}
+{"id": "fz-strike-042", "source": "--ab--------\n\n------------"}
+{"id": "fz-strike-043", "source": "--------"}
+{"id": "fz-strike-044", "source": "-- both --"}
+{"id": "fz-strike-045", "source": "--a/b--"}
+{"id": "fz-strike-046", "source": "--[wikipedia:Some_Page]--"}
+{"id": "fz-strike-047", "source": "--a|b--\n----\nsome words"}
+{"id": "fz-strike-048", "source": "--http://example.com-- ------ --------ab--------"}
+{"id": "fz-strike-049", "source": "--two words--"}
+{"id": "fz-strike-050", "source": "------a----\n\n--a--\n\n--http://example.com/x--"}
+{"id": "fz-strike-051", "source": "------ ----x --"}
+{"id": "fz-strike-052", "source": "--------x ---- --strike -- --caf\u00e9--"}
+{"id": "fz-strike-053", "source": "--bold-- and ------"}
+{"id": "fz-strike-054", "source": "some words"}
+{"id": "fz-strike-055", "source": "-- strike--\n\n--x ----"}
+{"id": "fz-strike-056", "source": "------"}
+{"id": "fz-strike-057", "source": "some words"}
+{"id": "fz-strike-058", "source": "--hy-phen--"}
+{"id": "fz-strike-059", "source": "--a--b--c--"}
+{"id": "fz-strike-060", "source": "--one\ntwo--"}
+{"id": "fz-strike-061", "source": "--strike -- --a-- --------"}
+{"id": "fz-strike-062", "source": "--  --"}
+{"id": "fz-strike-063", "source": "--two words-- and -------- x-------- and text"}
+{"id": "fz-strike-064", "source": "-- x------\n--------------\n----a b------"}
+{"id": "fz-strike-065", "source": "--[wikipedia:Some_Page]--"}
+{"id": "fz-strike-066", "source": "------a b--------"}
+{"id": "fz-strike-067", "source": "-- both --\n--a|b--\ntext"}
+{"id": "fz-strike-068", "source": "some words"}
+{"id": "fz-strike-069", "source": "------ab--------"}
+{"id": "fz-strike-070", "source": "----"}
+{"id": "fz-strike-071", "source": "---- and ----"}
+{"id": "fz-strike-072", "source": "-- lead-- and --a b---- and ----"}
+{"id": "fz-strike-073", "source": "--bold--"}
+{"id": "fz-strike-074", "source": "----a b--------\n\n--caf\u00e9--\n\n--two words--"}
+{"id": "fz-strike-075", "source": "--hy-phen-- --under_score-- ----"}
+{"id": "fz-strike-076", "source": "----"}
+{"id": "fz-strike-077", "source": "------a b--\n\n--x --\n\n--hy-phen--"}
+{"id": "fz-strike-078", "source": "--  --\n\n--a--\n\n--ab------"}
+{"id": "fz-strike-079", "source": "caf\u00e9 and ---- x------ and some words"}
+{"id": "fz-mix-000", "source": "##red|**bold**##"}
+{"id": "fz-mix-001", "source": "//a **b// c** and text and **a\nb**"}
+{"id": "fz-mix-002", "source": "[[span]]##red|in span##[[/span]]"}
+{"id": "fz-mix-003", "source": "caf\u00e9"}
+{"id": "fz-mix-004", "source": "//__a__//\n##red|**bold**##"}
+{"id": "fz-mix-005", "source": "##blue|//x// __y__##"}
+{"id": "fz-mix-006", "source": "[[span]]##red|in span##[[/span]]\nplain words"}
+{"id": "fz-mix-007", "source": "[[div]]**in div**[[/div]] and __//a//__"}
+{"id": "fz-mix-008", "source": "##red|**bold**##\n|| **cell** || --cell-- ||\n**--a--**"}
+{"id": "fz-mix-009", "source": "plain words\n> quoted **bold** text\n|| **cell** || --cell-- ||"}
+{"id": "fz-mix-010", "source": "text\nplain words\n[[code]]**not bold**[[/code]]"}
+{"id": "fz-mix-011", "source": "@@--not strike--@@\n\n@@--not strike--@@"}
+{"id": "fz-mix-012", "source": "**a**//b//__c__--d-- > quoted **bold** text text"}
+{"id": "fz-mix-013", "source": "[[div]]**in div**[[/div]] and **a**//b//__c__--d-- and @@--not strike--@@"}
+{"id": "fz-mix-014", "source": "__//a//__\nplain words\n//__a__//"}
+{"id": "fz-mix-015", "source": "__a\nb__\n--**a**--\ncaf\u00e9"}
+{"id": "fz-mix-016", "source": "--**a**--"}
+{"id": "fz-mix-017", "source": "[[code]]**not bold**[[/code]]\nplain words\n//__a__//"}
+{"id": "fz-mix-018", "source": "##a**b|c##\n__a\nb__\n//a\nb//"}
+{"id": "fz-mix-019", "source": "**##red|x##**\n**--a--**"}
+{"id": "fz-mix-020", "source": "|| **cell** || --cell-- ||"}
+{"id": "fz-mix-021", "source": "__a\nb__"}
+{"id": "fz-mix-022", "source": "##red|a\nb##\n\n|| **cell** || --cell-- ||\n\n//a **b// c**"}
+{"id": "fz-mix-023", "source": "__a --b__ c--\ncaf\u00e9\n##red|**bold**##"}
+{"id": "fz-mix-024", "source": "**a //b** c//"}
+{"id": "fz-mix-025", "source": "**a**//b//__c__--d--"}
+{"id": "fz-mix-026", "source": "**a**//b//__c__--d-- //a\nb// * item with **bold**\n* item with //em//"}
+{"id": "fz-mix-027", "source": "plain words\n__a\nb__"}
+{"id": "fz-mix-028", "source": "caf\u00e9"}
+{"id": "fz-mix-029", "source": "**a**//b//__c__--d--"}
+{"id": "fz-mix-030", "source": "//__a__//"}
+{"id": "fz-mix-031", "source": "* item with **bold**\n* item with //em//\n\n##blue|//x// __y__##\n\n**a|b**"}
+{"id": "fz-mix-032", "source": "caf\u00e9\n**--a--**\nplain words"}
+{"id": "fz-mix-033", "source": "**a|b** plain words [[div]]**in div**[[/div]]"}
+{"id": "fz-mix-034", "source": "**a|b**"}
+{"id": "fz-mix-035", "source": "@@--not strike--@@"}
+{"id": "fz-mix-036", "source": "text"}
+{"id": "fz-mix-037", "source": "caf\u00e9"}
+{"id": "fz-mix-038", "source": "##red|a\nb##"}
+{"id": "fz-mix-039", "source": "[[div]]**in div**[[/div]]\n\nplain words\n\n|| **cell** || --cell-- ||"}
+{"id": "fz-mix-040", "source": "__//a//__ and --a\nb-- and ##blue|//x// __y__##"}
+{"id": "fz-mix-041", "source": "**a //b** c//\n**a //b** c//"}
+{"id": "fz-mix-042", "source": "caf\u00e9 and text and **a\nb**"}
+{"id": "fz-mix-043", "source": "caf\u00e9 text"}
+{"id": "fz-mix-044", "source": "//a\nb//"}
+{"id": "fz-mix-045", "source": "**a**//b//__c__--d--"}
+{"id": "fz-mix-046", "source": "--a\nb-- ##a**b|c## [[span]]##red|in span##[[/span]]"}
+{"id": "fz-mix-047", "source": "plain words"}
+{"id": "fz-mix-048", "source": "__//a//__\n\n__a\nb__"}
+{"id": "fz-mix-049", "source": "//__a__//\n\ncaf\u00e9\n\n__a\nb__"}
+{"id": "fz-mix-050", "source": "plain words\n@@--not strike--@@"}
+{"id": "fz-mix-051", "source": "text"}
+{"id": "fz-mix-052", "source": "##blue|//x// __y__## and **##red|x##**"}
+{"id": "fz-mix-053", "source": "//a\nb//\n\n**a\nb**\n\ntext"}
+{"id": "fz-mix-054", "source": "[[code]]**not bold**[[/code]]"}
+{"id": "fz-mix-055", "source": "__//a//__"}
+{"id": "fz-mix-056", "source": "**a //b** c//\n**a**//b//__c__--d--\n--a __b-- c__"}
+{"id": "fz-mix-057", "source": "caf\u00e9\n\n**##red|x##**"}
+{"id": "fz-mix-058", "source": "**a|b**\n--a __b-- c__\n--a\nb--"}
+{"id": "fz-mix-059", "source": "text\n\n[[div]]**in div**[[/div]]"}

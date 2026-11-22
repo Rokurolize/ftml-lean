@@ -1,0 +1,67 @@
+TEXT lbl-eacute             valid=True stable=True src=True
+TEXT lbl-emoji              valid=True stable=True src=True
+TEXT lbl-cjk                valid=True stable=True src=True
+TEXT lbl-mixed              valid=True stable=True src=True
+TEXT lbl-acute-only         valid=True stable=True src=True
+RAW  lbl-at                 valid=True stable=True src=True
+RAW  lbl-hash               valid=True stable=True src=True
+RAW  lbl-pipe               valid=True stable=True src=True
+RAW  lbl-close-inner        valid=True stable=True src=True
+RAW  lbl-open-bracket       valid=True stable=True src=True
+DIFF lbl-url                valid=True stable=True src=True
+  ref : '<p><span class="wiki-email">moc.elpmaxe|u#�2�</span></p>'
+  live: '<p><span class="wiki-email">moc.elpmaxe|u#�3�</span></p>'
+  span ref: 'moc.elpmaxe|u#�2�'  span live: 'moc.elpmaxe|u#�3�'
+RAW  lbl-email              valid=True stable=True src=True
+RAW  lbl-strong             valid=True stable=True src=True
+DIFF lbl-newline            valid=True stable=True src=True
+  ref : '<p><span class="wiki-email">moc.elpmaxe|u#2eniL�0�1eniL</span></p>'
+  live: '<p><span class="wiki-email">moc.elpmaxe|u#2eniL�1�1eniL</span></p>'
+  span ref: 'moc.elpmaxe|u#2eniL�0�1eniL'  span live: 'moc.elpmaxe|u#2eniL�1�1eniL'
+RAW  lbl-bracket-lead       valid=True stable=True src=True
+RAW  lbl-two-forms          valid=True stable=True src=True
+DIFF gap-tab                valid=True stable=True src=True
+  ref : '<p><span class="wiki-email">moc.elpmaxe|u#lebaL   </span></p>'
+  live: '<p><span class="wiki-email">moc.elpmaxe|u#lebaL</span></p>'
+  span ref: 'moc.elpmaxe|u#lebaL   '  span live: 'moc.elpmaxe|u#lebaL'
+DIFF gap-nbsp               valid=True stable=True src=True
+  ref : '<p>[<span class="wiki-email">moc.elpmaxe|u#moc.elpmaxe|u</span>\xa0Label]</p>'
+  live: '<p>[<span class="wiki-email">moc.elpmaxe|u#moc.elpmaxe|u</span>&nbsp;Label]</p>'
+  span ref: 'moc.elpmaxe|u#moc.elpmaxe|u'  span live: 'moc.elpmaxe|u#moc.elpmaxe|u'
+DIFF gap-three              valid=True stable=True src=True
+  ref : '<p><span class="wiki-email">moc.elpmaxe|u#lebaL  </span></p>'
+  live: '<p><span class="wiki-email">moc.elpmaxe|u#lebaL</span></p>'
+  span ref: 'moc.elpmaxe|u#lebaL  '  span live: 'moc.elpmaxe|u#lebaL'
+RAW  gap-trail              valid=True stable=True src=True
+DIFF gap-two-trail          valid=True stable=True src=True
+  ref : '<p><span class="wiki-email">moc.elpmaxe|u# lebaL </span></p>'
+  live: '<p><span class="wiki-email">moc.elpmaxe|u# lebaL</span></p>'
+  span ref: 'moc.elpmaxe|u# lebaL '  span live: 'moc.elpmaxe|u# lebaL'
+RAW  gap-control            valid=True stable=True src=True
+DIFF frame-trail-inline     valid=True stable=True src=True
+  ref : '<p><span class="wiki-email">moc.elpmaxe|u#lebaL </span> X</p>'
+  live: '<p><span class="wiki-email">moc.elpmaxe|u#lebaL</span> X</p>'
+  span ref: 'moc.elpmaxe|u#lebaL '  span live: 'moc.elpmaxe|u#lebaL'
+DIFF frame-trail-bracket    valid=True stable=True src=True
+  ref : '<p>(<span class="wiki-email">moc.elpmaxe|u#lebaL </span>)</p>'
+  live: '<p>(<span class="wiki-email">moc.elpmaxe|u#lebaL</span> )</p>'
+  span ref: 'moc.elpmaxe|u#lebaL '  span live: 'moc.elpmaxe|u#lebaL'
+RAW  addr-minimal           valid=True stable=True src=True
+RAW  addr-localhost         valid=True stable=True src=True
+RAW  addr-underscore-dom    valid=True stable=True src=True
+RAW  addr-double-dot        valid=True stable=True src=True
+RAW  addr-label-leading-dot valid=True stable=True src=True
+RAW  addr-label-trailing-dot valid=True stable=True src=True
+RAW  addr-double-at         valid=True stable=True src=True
+RAW  addr-trailing-dash     valid=True stable=True src=True
+RAW  addr-leading-dash      valid=True stable=True src=True
+RAW  addr-plus              valid=True stable=True src=True
+RAW  addr-tld-digit         valid=True stable=True src=True
+RAW  addr-upper             valid=True stable=True src=True
+RAW  addr-dots              valid=True stable=True src=True
+RAW  addr-trailing-dot      valid=True stable=True src=True
+RAW  addr-kelvin            valid=True stable=True src=True
+RAW  addr-acute-local       valid=True stable=True src=True
+RAW  adj-acute-before       valid=True stable=True src=True
+RAW  adj-acute-after        valid=True stable=True src=True
+raw byte match 29/42; decoded-text match 34/42

@@ -1,0 +1,25 @@
+{
+ "batch": {
+  "A": [
+   "toc0",
+   "toc1",
+   "toc2"
+  ],
+  "B": [
+   "toc0"
+  ]
+ },
+ "iso": {
+  "A": [
+   "toc0",
+   "toc1",
+   "toc2"
+  ],
+  "B": [
+   "toc0"
+  ]
+ },
+ "batch_B_eq_iso_B": false,
+ "batch_A_eq_iso_A": false,
+ "stderr": ""
+}

@@ -1,0 +1,9 @@
+{"id":"bq-raw-nospace","output":"<p>A<\/p>\n\n<p>B<\/p>\n\n"}
+{"id":"bq-raw-space-control","output":"<p>A<\/p>\n\n<blockquote><p><span style=\"white-space: pre-wrap;\">hello<\/span><\/p>\n\n<\/blockquote>\n<p>B<\/p>\n\n"}
+{"id":"bq-comment-after-marker","output":"<p>A<\/p>\n\n<p>B<\/p>\n\n"}
+{"id":"if-trail-forbid-untag","output":"<p>A B<\/p>\n\n"}
+{"id":"if-lead-forbid-untag","output":"<p>A B<\/p>\n\n"}
+{"id":"cm-in-raw","output":"<p><span style=\"white-space: pre-wrap;\">[!--&#32;c&#32;--]<\/span><\/p>\n\n"}
+{"id":"bq-comment-tail-text","output":"<blockquote><p>q<\/p>\n\n<\/blockquote>\n"}
+{"id":"if-comma-space-multi-tagged","output":"<p>KEEP<br \/>\nX<\/p>\n\n"}
+{"id":"if-only-comma-tagged","output":"<p>X<\/p>\n\n"}

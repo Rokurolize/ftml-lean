@@ -1,0 +1,20 @@
+{"id": "f01-email-ee", "source": "[a@b.com éé]"}
+{"id": "f02-email-apos-amp", "source": "[a@b.com a'b&c\"d]"}
+{"id": "f03-freelink-translit", "source": "[[[äöüß ñ ç ž ąćęłńóśźż café123]]]"}
+{"id": "f04-ul-upper-open", "source": "[[UL]]\n[[LI]]Case[[/li]]\n[[/ul]]"}
+{"id": "f05-ul-upper-close", "source": "[[ul]]\n[[li]]Case[[/LI]]\n[[/UL]]"}
+{"id": "f06-ul-upper-after", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[LI]]B[[/LI]]\n[[/UL]]\n\nAFTER"}
+{"id": "f07-modulepre-upper-tail", "source": "[[MODULE654 css]]tail"}
+{"id": "f08-iftags-lead-comma", "source": "A [[iftags ,-foo]]KEPT[[/iftags]] B"}
+{"id": "f09-div-attr-escapes", "source": "[[div data-x=\"a&b<c>d'e\\\"f\"]]\nhi\n[[/div]]"}
+{"id": "f10-interwiki-unknown-apos", "source": "[nosuchwiki:Mallard O'Brien & <b>x</b>]"}
+{"id": "x01-raw-empty-interwiki", "source": "[wikipedia:X a@@@@b]"}
+{"id": "x02-raw-in-date", "source": "[[date 0 format=\"a@@raw@@b\"]] and [[date 0 format=\"a@@@@b\"]]"}
+{"id": "x03-email-url-label", "source": "[a@b.com http://example.com]"}
+{"id": "x04-email-bracket-label", "source": "[a@b.com [x] label]"}
+{"id": "x05-email-raw-label", "source": "[a@b.com @@raw@@]"}
+{"id": "x06-color-raw-spec", "source": "##@@red@@|hello##"}
+{"id": "x07-bq-raw-nospace", "source": "A\n\n>@@hello@@\n\nB"}
+{"id": "x08-div-raw-attr", "source": "[[div data-x=\"a@@b@@c\"]]\nhi\n[[/div]]"}
+{"id": "x09-deflist-raw-empty", "source": ": @@@@ : def"}
+{"id": "x10-url-star-mailto", "source": "[*mailto:a@b.com mail] and [#foo plain]"}

@@ -1,0 +1,510 @@
+/*
+ * parsing/rule/impls/italics.rs
+ *
+ * ftml - Library to parse Wikidot text
+ * Copyright (C) 2019-2026 Wikijump Team
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+use super::inline_delimiter::{
+    ReachableCloseMode, append_split_close_leftover, append_wikidot_line_close_space,
+    assert_unpadded_open, block_name_at, inline_body_padded_through_seams, is_block_name,
+    legacy_format_body_code_preceded_by_content, legacy_format_body_contains_table,
+    link_name_at, prepend_split_close_leftover, validate_reachable_close,
+};
+use super::prelude::*;
+use crate::parsing::ParseSuccess;
+use crate::parsing::collect::{SegmentCtx, TokenWindow, split_delimiter_end};
+use crate::tree::Container;
+
+pub const RULE_ITALICS: Rule = Rule {
+    name: "italics",
+    position: LineRequirement::Any,
+    try_consume_fn,
+};
+
+fn try_consume_fn<'r, 't>(
+    parser: &mut Parser<'r, 't>,
+) -> ParseResult<'r, 't, Elements<'t>> {
+    debug!("Trying to create italics (emphasis) container");
+    let in_anchor_body = parser.in_wikidot_anchor_body();
+
+    if parser.current().token != Token::Italics {
+        return try_consume_split_delimiter(parser);
+    }
+
+    if has_ambiguous_crossed_bold_pair(parser) {
+        return collect_ambiguous_crossed_bold_italics(parser);
+    }
+
+    // Wikidot canonicalizes the real-world crossed pair
+    // `//**text//**` as italics containing bold. Handle only the unambiguous
+    // single-pair shape here; ordinary nested formatting continues through
+    // the standard collector below.
+    if has_crossed_bold_pair(parser) {
+        return collect_crossed_bold_italics(parser);
+    }
+
+    validate_reachable_close(
+        parser,
+        Token::Italics,
+        Some(SplitDelimiter::Italics),
+        ReachableCloseMode::Standard,
+    )?;
+    assert_unpadded_open(parser, Token::Italics)?;
+    let close = [
+        ParseCondition::current(Token::Italics),
+        ParseCondition::SplitClose(SplitDelimiter::Italics),
+    ];
+    let invalid = [
+        ParseCondition::token_pair(Token::Italics, Token::Whitespace),
+        ParseCondition::token_pair(Token::Whitespace, Token::Italics),
+        ParseCondition::PaddedSplitClose(SplitDelimiter::Italics),
+    ];
+    let ctype = ContainerType::Italics;
+    let inside_note = parser.in_note()
+        || parser.wikidot_note_pair_encloses(parser.current().span.start);
+    let collected =
+        collect_container(parser, RULE_ITALICS, ctype, &close, &invalid, None)?;
+    finish_collected(parser, in_anchor_body, collected, inside_note)
+}
+
+/// The two `/`s of an italics opener can be split by elided source
+/// text (`/[[iftags -zzz]][[/iftags]]/word//`): live Wikidot resolves
+/// the text before the delimiter forms, so the pair still opens
+/// italics. The shared split scan decides the match on the resolved
+/// text: a kept segment body contributes its text, so a body holding
+/// exactly the second `/` completes the opener, and a body with other
+/// text between the markers is not an italics opener on live either.
+fn try_consume_split_delimiter<'r, 't>(
+    parser: &mut Parser<'r, 't>,
+) -> ParseResult<'r, 't, Elements<'t>> {
+    let in_anchor_body = parser.in_wikidot_anchor_body();
+    let Some(split_match) = split_delimiter_end(
+        TokenWindow::at(parser),
+        SegmentCtx::from_parser(parser),
+        SplitDelimiter::Italics,
+    ) else {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    };
+    let inside_note = parser.in_note()
+        || parser.wikidot_note_pair_encloses(parser.current().span.start);
+    validate_reachable_close(
+        parser,
+        Token::Italics,
+        Some(SplitDelimiter::Italics),
+        ReachableCloseMode::Standard,
+    )?;
+    while parser.current().span.start < split_match.consume_end
+        && parser.current().token != Token::InputEnd
+    {
+        parser.step()?;
+    }
+    if parser.current().token == Token::Whitespace {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+    let close = [
+        ParseCondition::current(Token::Italics),
+        ParseCondition::SplitClose(SplitDelimiter::Italics),
+    ];
+    let invalid = [
+        ParseCondition::current(Token::ParagraphBreak),
+        ParseCondition::token_pair(Token::Italics, Token::Whitespace),
+        ParseCondition::token_pair(Token::Whitespace, Token::Italics),
+        ParseCondition::PaddedSplitClose(SplitDelimiter::Italics),
+    ];
+    let collected = collect_container(
+        parser,
+        RULE_ITALICS,
+        ContainerType::Italics,
+        &close,
+        &invalid,
+        None,
+    )?;
+    let collected = match &split_match.leftover {
+        Some(range) => {
+            let text = parser.full_text().inner()[range.clone()].to_owned();
+            prepend_split_close_leftover(collected, &text)
+        }
+        None => collected,
+    };
+    finish_collected(parser, in_anchor_body, collected, inside_note)
+}
+
+fn finish_collected<'r, 't>(
+    parser: &mut Parser<'r, 't>,
+    in_anchor_body: bool,
+    collected: ParseSuccess<Elements<'t>>,
+    inside_note: bool,
+) -> ParseResult<'r, 't, Elements<'t>> {
+    let leftover = collected.split_close_leftover.clone();
+    let (elements, errors, paragraph_safe) = collected.into();
+    if parser.settings().layout.legacy()
+        && matches!(
+            &elements,
+            Elements::Single(Element::Container(container))
+                if inline_body_padded_through_seams(container.elements())
+        )
+    {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+    if parser.settings().layout.legacy()
+        && super::bold::bold_body_crosses_flow_block(&elements)
+    {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+    if parser.settings().layout.legacy()
+        && inside_note
+        && super::bold::body_contains_literal_note_region(&elements)
+    {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+    if parser.settings().layout.legacy() && legacy_format_body_contains_table(&elements) {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+    if parser.settings().layout.legacy()
+        && legacy_format_body_code_preceded_by_content(&elements)
+    {
+        return Err(parser.make_err(ParseErrorKind::RuleFailed));
+    }
+    if parser.settings().layout.legacy()
+        && matches!(
+            &elements,
+            Elements::Single(Element::Container(container)) if container.elements().is_empty()
+        )
+    {
+        return match leftover {
+            Some(leftover) => {
+                let elements = append_split_close_leftover(Elements::None, leftover);
+                ok!(paragraph_safe; elements, errors)
+            }
+            None => ok!(paragraph_safe; Elements::None, errors),
+        };
+    }
+    let elements =
+        append_wikidot_line_close_space(elements, parser.settings().layout.legacy());
+    let elements = match leftover {
+        Some(leftover) => append_split_close_leftover(elements, leftover),
+        None => elements,
+    };
+    let elements =
+        super::bold::mark_format_stop_at_list(parser, in_anchor_body, elements);
+    let elements =
+        super::bold::mark_span_list_close_tail(parser, in_anchor_body, elements);
+    ok!(paragraph_safe; elements, errors)
+}
+
+fn has_ambiguous_crossed_bold_pair(parser: &Parser<'_, '_>) -> bool {
+    if !matches!(
+        parser.next_two_tokens(),
+        (Token::Italics, Some(Token::Bold))
+    ) {
+        return false;
+    }
+
+    // The first `//` decides: a crossed closer `//**` makes the pair
+    // ambiguous when bold was seen on the way, while a plain `//` closes these
+    // italics normally. Scanning past it would pair this opener with a later
+    // span's `//**`, swallowing everything in between (in a list, the following
+    // items too) and making every such span retry its neighbours.
+    let tokens = parser.remaining();
+    let mut saw_intermediate_bold = false;
+    let mut open_blocks: Vec<String> = Vec::new();
+    for (index, token) in tokens.iter().enumerate().skip(1) {
+        match token.token {
+            Token::Italics => {
+                return saw_intermediate_bold
+                    && tokens
+                        .get(index + 1)
+                        .is_some_and(|next| next.token == Token::Bold);
+            }
+            Token::Bold => saw_intermediate_bold = true,
+            Token::LeftBlock | Token::LeftBlockStar => {
+                let name = block_name_at(tokens, index);
+                if is_block_name(&name) {
+                    open_blocks.push(name);
+                }
+            }
+            Token::LeftLink => {
+                if let Some(name) = link_name_at(tokens, index) {
+                    open_blocks.push(name);
+                }
+            }
+            Token::LeftBlockEnd => {
+                let name = block_name_at(tokens, index);
+                if !is_block_name(&name) {
+                    // Literal text, not a block end.
+                } else if let Some(pos) = open_blocks.iter().rposition(|n| *n == name) {
+                    open_blocks.truncate(pos);
+                } else {
+                    // The enclosing block ends before any crossed closer.
+                    return false;
+                }
+            }
+            Token::ParagraphBreak | Token::InputEnd => return false,
+            _ => {}
+        }
+    }
+    false
+}
+
+fn collect_ambiguous_crossed_bold_italics<'r, 't>(
+    parser: &mut Parser<'r, 't>,
+) -> ParseResult<'r, 't, Elements<'t>> {
+    assert_step(parser, Token::Italics)?;
+    assert_step(parser, Token::Bold)?;
+    let source = collect_text(
+        parser,
+        RULE_ITALICS,
+        &[ParseCondition::token_pair(Token::Italics, Token::Bold)],
+        &[ParseCondition::current(Token::ParagraphBreak)],
+        None,
+    )?;
+    assert_step(parser, Token::Bold)?;
+
+    let bold = Element::Container(Container::new(
+        ContainerType::Bold,
+        vec![text!(source)],
+        AttributeMap::new(),
+    ));
+    let italics = Element::Container(Container::new(
+        ContainerType::Italics,
+        vec![bold],
+        AttributeMap::new(),
+    ));
+    success_elements(italics)
+}
+
+fn has_crossed_bold_pair(parser: &Parser<'_, '_>) -> bool {
+    if !matches!(
+        parser.next_two_tokens(),
+        (Token::Italics, Some(Token::Bold))
+    ) {
+        return false;
+    }
+
+    let tokens = parser.remaining();
+    let mut open_blocks: Vec<String> = Vec::new();
+    for (index, token) in tokens.iter().enumerate().skip(1) {
+        match token.token {
+            Token::Italics => {
+                return tokens
+                    .get(index + 1)
+                    .is_some_and(|next| next.token == Token::Bold);
+            }
+            Token::LeftBlock | Token::LeftBlockStar => {
+                let name = block_name_at(tokens, index);
+                if is_block_name(&name) {
+                    open_blocks.push(name);
+                }
+            }
+            Token::LeftLink => {
+                if let Some(name) = link_name_at(tokens, index) {
+                    open_blocks.push(name);
+                }
+            }
+            Token::LeftBlockEnd => {
+                let name = block_name_at(tokens, index);
+                if !is_block_name(&name) {
+                    // Literal text, not a block end.
+                } else if let Some(pos) = open_blocks.iter().rposition(|n| *n == name) {
+                    open_blocks.truncate(pos);
+                } else {
+                    // The enclosing block ends before any crossed closer.
+                    return false;
+                }
+            }
+            Token::Bold | Token::ParagraphBreak | Token::InputEnd => return false,
+            _ => {}
+        }
+    }
+
+    false
+}
+
+fn collect_crossed_bold_italics<'r, 't>(
+    parser: &mut Parser<'r, 't>,
+) -> ParseResult<'r, 't, Elements<'t>> {
+    assert_step(parser, Token::Italics)?;
+    assert_step(parser, Token::Bold)?;
+
+    let close = [ParseCondition::token_pair(Token::Italics, Token::Bold)];
+    let invalid = [ParseCondition::current(Token::ParagraphBreak)];
+    let inner = collect_container(
+        parser,
+        RULE_ITALICS,
+        ContainerType::Bold,
+        &close,
+        &invalid,
+        None,
+    )?;
+    assert_step(parser, Token::Bold)?;
+
+    let (inner, errors, paragraph_safe) = inner.into();
+    let elements = inner.into_iter().collect();
+    let outer = Element::Container(Container::new(
+        ContainerType::Italics,
+        elements,
+        AttributeMap::new(),
+    ));
+
+    Ok(ParseSuccess::new(outer.into(), errors, paragraph_safe))
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::data::PageInfo;
+    use crate::layout::Layout;
+    use crate::render::{Render, html::HtmlRender};
+    use crate::settings::{WikitextMode, WikitextSettings};
+    use std::time::{Duration, Instant};
+
+    #[test]
+    fn split_italics_opener_with_kept_segment_body_stays_literal() {
+        // The segment gate passes and its body is kept, so real text
+        // sits between the two s: not an italics opener, matching
+        // the text-level resolution live Wikidot performs.
+        let (html, _errors) = render("/[[iftags +tale]]YES[[/iftags]]/word//");
+        assert_eq!(html, "<p>/YES/word//</p>");
+    }
+
+    fn render(source: &str) -> (String, Vec<ParseError>) {
+        let page_info = PageInfo::dummy();
+        let settings = WikitextSettings::from_mode(WikitextMode::Page, Layout::Wikidot);
+        let tokenization = crate::tokenize(source);
+        let (tree, errors) = crate::parse(&tokenization, &page_info, &settings).into();
+        let html = HtmlRender.render(&tree, &page_info, &settings).body;
+        (html, errors)
+    }
+
+    #[test]
+    fn wikidot_crossed_bold_italics_pair_is_canonicalized() {
+        let (html, errors) = render("//**You liked this//**");
+
+        assert!(errors.is_empty(), "{errors:#?}");
+        assert!(
+            html.contains("<em><strong>You liked this</strong></em>"),
+            "{html}",
+        );
+    }
+
+    #[test]
+    fn ordinary_nested_bold_inside_italics_is_unchanged() {
+        let (html, errors) = render("//before **bold** after//");
+
+        assert!(errors.is_empty(), "{errors:#?}");
+        assert!(
+            html.contains("<em>before <strong>bold</strong> after</em>"),
+            "{html}",
+        );
+    }
+
+    #[test]
+    fn each_italic_bold_span_closes_at_its_own_closer() {
+        // The second case is EN from-120-s-archives-hub (source SHA-256
+        // 4919a9bc9c2eef4434204a694bbd373c282315f0ab1fb671dc0d3ffa11dd4eda), which
+        // Wikidot renders as `<em><strong>Warsaw Reconstruction Office</strong></em><br />
+        // <strong>GENIUS LOCI <em>DEPARTMENT</em></strong>`.
+        for (input, expected) in [
+            (
+                "//**A**// and //**B**//",
+                "<p><em><strong>A</strong></em> and <em><strong>B</strong></em></p>",
+            ),
+            (
+                "//**Warsaw Reconstruction Office**//\n**GENIUS LOCI //DEPARTMENT//**",
+                concat!(
+                    "<p><em><strong>Warsaw Reconstruction Office</strong></em><br>\n",
+                    "<strong>GENIUS LOCI <em>DEPARTMENT</em></strong></p>",
+                ),
+            ),
+        ] {
+            let (html, errors) = render(input);
+            assert!(errors.is_empty(), "{input:?}: {errors:#?}");
+            assert_eq!(html, expected, "{input:?}");
+        }
+    }
+
+    #[test]
+    fn italic_bold_list_items_stay_separate_in_bounded_time() {
+        // Reduced from EN vikander-kneed-technical-media-hub, a list of
+        // `//**Title**//` items. Pairing each opener with the next item's
+        // `//**` swallowed the items in between and took minutes to parse.
+        const ITEM_COUNT: usize = 200;
+        let input = "* //**Title**// by author\n".repeat(ITEM_COUNT);
+
+        let started = Instant::now();
+        let (html, errors) = render(&input);
+        let elapsed = started.elapsed();
+
+        assert!(errors.is_empty(), "{errors:#?}");
+        assert_eq!(html.matches("<li>").count(), ITEM_COUNT, "{html}");
+        assert_eq!(
+            html.matches("<li><em><strong>Title</strong></em> by author</li>")
+                .count(),
+            ITEM_COUNT,
+            "{html}",
+        );
+        assert!(
+            elapsed < Duration::from_millis(500),
+            "italic bold list parse took {elapsed:?}",
+        );
+    }
+
+    #[test]
+    fn ambiguous_crossed_delimiters_match_wikidot_nesting() {
+        let (html, errors) = render("//**one **two//**");
+
+        assert!(errors.is_empty(), "{errors:#?}");
+        assert_eq!(html, "<p><em><strong>one **two</strong></em></p>");
+    }
+
+    #[test]
+    fn unmatched_italics_does_not_swallow_the_next_block() {
+        // Real shape from en everhue-art-hub: a collapsible whose body
+        // ends in a lone `//` line, followed by more collapsibles, one
+        // of which contains a paired `//`. The lone delimiter must not
+        // pair across the block boundary; Wikidot renders all three
+        // collapsibles.
+        let (html, _errors) = render(concat!(
+            "[[collapsible show=\"A\" hide=\"A\"]]
+",
+            "[[image https://scp-wiki.wikidot.com/local--files/everhue-art-hub/TZRvldl.webp]]
+",
+            "//
+",
+            "[[/collapsible]]
+",
+            "[[collapsible show=\"B\" hide=\"B\"]]
+",
+            "[[image https://scp-wiki.wikidot.com/local--files/everhue-art-hub/Kuvbcu0.webp]]
+",
+            "[[/collapsible]]
+",
+            "[[collapsible show=\"C\" hide=\"C\"]]
+",
+            "//paired//
+",
+            "[[/collapsible]]
+",
+        ));
+        assert_eq!(
+            html.matches("collapsible-block-folded").count(),
+            3,
+            "{html}"
+        );
+        assert_eq!(html.matches("<em>").count(), 1, "{html}");
+    }
+}

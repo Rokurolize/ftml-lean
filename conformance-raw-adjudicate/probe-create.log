@@ -1,0 +1,100 @@
+2026-11-22 10:53:59,675 [wikidot/ERROR] AMC is respond status: "try_again" -> {'wikidot_token7': '***MASKED***', 'action': 'WikiPageAction', 'event': 'savePage', 'moduleName': 'Empty', 'mode': 'page', 'lock_id': '85376833', 'lock_secret': '***MASKED***', 'revision_id': '', 'wiki_page': 'muse-probe-rawadj-iw-empty4', 'page_id': '', 'title': '***MASKED***', 'source': '***MASKED***', 'comments': '***MASKED***'}
+iw-empty4 -> muse-probe-rawadj-iw-empty4 (created)
+iw-empty6 -> muse-probe-rawadj-iw-empty6 (created)
+iw-nonempty -> muse-probe-rawadj-iw-nonempty (created)
+date-empty4 -> muse-probe-rawadj-date-empty4 (created)
+date-empty6 -> muse-probe-rawadj-date-empty6 (created)
+date-nonempty -> muse-probe-rawadj-date-nonempty (created)
+date-index -> muse-probe-rawadj-date-index (created)
+xl-basic -> muse-probe-rawadj-xl-basic (created)
+xl-close3 -> muse-probe-rawadj-xl-close3 (created)
+xl-open3 -> muse-probe-rawadj-xl-open3 (created)
+xl-two-nl -> muse-probe-rawadj-xl-two-nl (created)
+bare-3 -> muse-probe-rawadj-bare-3 (created)
+bare-6 -> muse-probe-rawadj-bare-6 (created)
+trail-4 -> muse-probe-rawadj-trail-4 (created)
+dl-empty4 -> muse-probe-rawadj-dl-empty4 (created)
+fn-empty4 -> muse-probe-rawadj-fn-empty4 (created)
+16 probe pages left in place on sandbox-for-codex; the tool never deletes pages.
+{
+ "iw-empty4": {
+  "fullname": "muse-probe-rawadj-iw-empty4",
+  "source": "[wikipedia:X a@@@@b]",
+  "action": "created"
+ },
+ "iw-empty6": {
+  "fullname": "muse-probe-rawadj-iw-empty6",
+  "source": "[wikipedia:X a@@@@@@b]",
+  "action": "created"
+ },
+ "iw-nonempty": {
+  "fullname": "muse-probe-rawadj-iw-nonempty",
+  "source": "[wikipedia:X a@@x@@b]",
+  "action": "created"
+ },
+ "date-empty4": {
+  "fullname": "muse-probe-rawadj-date-empty4",
+  "source": "[[date 0 format=\"a@@@@b\"]]",
+  "action": "created"
+ },
+ "date-empty6": {
+  "fullname": "muse-probe-rawadj-date-empty6",
+  "source": "[[date 0 format=\"a@@@@@@b\"]]",
+  "action": "created"
+ },
+ "date-nonempty": {
+  "fullname": "muse-probe-rawadj-date-nonempty",
+  "source": "[[date 0 format=\"a@@x@@b\"]]",
+  "action": "created"
+ },
+ "date-index": {
+  "fullname": "muse-probe-rawadj-date-index",
+  "source": "@@x@@ [[date 0 format=\"q@@@@r\"]]",
+  "action": "created"
+ },
+ "xl-basic": {
+  "fullname": "muse-probe-rawadj-xl-basic",
+  "source": "A @@x\n@@ B",
+  "action": "created"
+ },
+ "xl-close3": {
+  "fullname": "muse-probe-rawadj-xl-close3",
+  "source": "A @@x\n@@@ B",
+  "action": "created"
+ },
+ "xl-open3": {
+  "fullname": "muse-probe-rawadj-xl-open3",
+  "source": "A @@@x\n@@ B",
+  "action": "created"
+ },
+ "xl-two-nl": {
+  "fullname": "muse-probe-rawadj-xl-two-nl",
+  "source": "A @@x\n\n@@ B",
+  "action": "created"
+ },
+ "bare-3": {
+  "fullname": "muse-probe-rawadj-bare-3",
+  "source": "A @@@ B",
+  "action": "created"
+ },
+ "bare-6": {
+  "fullname": "muse-probe-rawadj-bare-6",
+  "source": "A @@@@@@ B",
+  "action": "created"
+ },
+ "trail-4": {
+  "fullname": "muse-probe-rawadj-trail-4",
+  "source": "A @@x@@@@ B",
+  "action": "created"
+ },
+ "dl-empty4": {
+  "fullname": "muse-probe-rawadj-dl-empty4",
+  "source": ": @@@@ : def",
+  "action": "created"
+ },
+ "fn-empty4": {
+  "fullname": "muse-probe-rawadj-fn-empty4",
+  "source": "[[footnote]]a@@@@b[[/footnote]]",
+  "action": "created"
+ }
+}

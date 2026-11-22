@@ -1,0 +1,420 @@
+adj-before-heading: PASS
+adv07-after-heading: PASS
+after-heading: PASS
+b03-continuation-lines: PASS
+b08-list-hr-list: PASS
+br-01: PASS
+br-02: PASS
+br-03: PASS
+br-04: PASS
+br-05: PASS
+br-06: PASS
+br-07: PASS
+br-08: PASS
+br-09: PASS
+br-10: PASS
+br-11: PASS
+br-12: PASS
+br-13: PASS
+br-14: PASS
+br-15: PASS
+br-16: PASS
+br-17: PASS
+br-18: PASS
+br-19: PASS
+br-20: PASS
+br-21: PASS
+br-22: PASS
+br-23: PASS
+br-24: PASS
+br-25: PASS
+br-26: PASS
+br-27: PASS
+br-28: PASS
+br-29: PASS
+br-30: PASS
+br-31: PASS
+br-32: PASS
+br-33: PASS
+br-34: PASS
+br-35: PASS
+br-36: PASS
+br-37: PASS
+br-38: PASS
+br-39: PASS
+br-40: PASS
+br-41: PASS
+br-42: PASS
+br-43: PASS
+br-44: PASS
+c45-heading-inside: PASS
+ce-01: PASS
+ce-02: PASS
+ce-03: PASS
+ce-04: PASS
+ce-05: FAIL
+  expected segments: (('k', 2), ('t', 'x'), ('k', 3), ('k', 0), ('k', 1), ('k', 4), ('t', 'y'), ('k', 5))
+  got      segments: (('k', 2), ('t', 'x'), ('k', 3), ('k', 0), ('t', ' '), ('k', 1), ('k', 4), ('t', 'y'), ('k', 5))
+ce-06: FAIL
+  expected segments: (('k', 2), ('t', 'x'), ('k', 3), ('k', 0), ('t', 'padded'), ('k', 1), ('k', 4), ('t', 'y'), ('k', 5))
+  got      segments: (('k', 2), ('t', 'x'), ('k', 3), ('k', 0), ('t', ' padded'), ('k', 1), ('k', 4), ('t', 'y'), ('k', 5))
+ce-07: FAIL
+  expected segments: (('k', 2), ('t', 'x'), ('k', 3), ('k', 0), ('t', 'trailing'), ('k', 1), ('k', 4), ('t', 'y'), ('k', 5))
+  got      segments: (('k', 2), ('t', 'x'), ('k', 3), ('k', 0), ('t', 'trailing '), ('k', 1), ('k', 4), ('t', 'y'), ('k', 5))
+ce-08: PASS
+ce-09: PASS
+ce-10: PASS
+ce-11: PASS
+ce-12: PASS
+ce-13: PASS
+ce-14: PASS
+ce-15: PASS
+ce-16: PASS
+ce-17: PASS
+ce-18: FAIL
+  expected segments: (('k', 4), ('t', 'x'), ('k', 5), ('k', 0), ('t', 'a'), ('k', 1), ('k', 2), ('t', 'b'), ('k', 3), ('k', 6), ('t', 'y'), ('k', 7))
+  got      segments: (('k', 3), ('t', 'x'), ('k', 4), ('k', 0), ('t', 'a'), ('k', 1), ('k', 5), ('t', '= b'), ('k', 2), ('t', 'y'), ('k', 6))
+  expected tokens: (('Center', ('map', (('type', ('str', 'start')),))), ('Center', ('map', (('type', ('str', 'end')),))), ('Center', ('map', (('type', ('str', 'start')),))), ('Center', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Center', ('map', (('type', ('str', 'start')),))), ('Center', ('map', (('type', ('str', 'end')),))), ('Newline', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+ce-19: PASS
+ce-20: PASS
+ce-21: FAIL
+  expected segments: (('k', 6), ('t', 'x'), ('k', 7), ('k', 0), ('t', 'a'), ('k', 1), ('k', 2), ('t', 'b'), ('k', 3), ('k', 4), ('t', 'c'), ('k', 5), ('k', 8), ('t', 'y'), ('k', 9))
+  got      segments: (('k', 4), ('t', 'x'), ('k', 5), ('k', 0), ('t', 'a'), ('k', 1), ('k', 6), ('t', '= b'), ('k', 7), ('k', 2), ('t', 'c'), ('k', 3), ('k', 8), ('t', 'y'), ('k', 9))
+  expected tokens: (('Center', ('map', (('type', ('str', 'start')),))), ('Center', ('map', (('type', ('str', 'end')),))), ('Center', ('map', (('type', ('str', 'start')),))), ('Center', ('map', (('type', ('str', 'end')),))), ('Center', ('map', (('type', ('str', 'start')),))), ('Center', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Center', ('map', (('type', ('str', 'start')),))), ('Center', ('map', (('type', ('str', 'end')),))), ('Center', ('map', (('type', ('str', 'start')),))), ('Center', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+ce-22: PASS
+ce-23: PASS
+ce-24: PASS
+ce-25: PASS
+ce-26: PASS
+ce-27: PASS
+ce-28: PASS
+ce-29: PASS
+ce-30: PASS
+ce-31: PASS
+ce-32: PASS
+ce-33: PASS
+ce-34: FAIL
+  expected segments: (('k', 0), ('k', 1), ('t', 'a'), ('k', 2), ('k', 3), ('t', 'x'), ('k', 4))
+  got      segments: (('k', 3), ('k', 0), ('k', 4), ('k', 1), ('t', 'a'), ('k', 2), ('k', 5), ('t', 'x'), ('k', 6))
+  expected tokens: (('Separator', ('map', ())), ('Center', ('map', (('type', ('str', 'start')),))), ('Center', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Center', ('map', (('type', ('str', 'start')),))), ('Center', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+ce-35: PASS
+ce-36: PASS
+ce-37: PASS
+ce-38: PASS
+ce-39: PASS
+ce-40: PASS
+ce-41: PASS
+ce-42: PASS
+ce-43: PASS
+cf-01: PASS
+cf-02: PASS
+cf-03: PASS
+cf-04: PASS
+cf-05: PASS
+cf-06: PASS
+cf-07: PASS
+cf-08: PASS
+cf-09: PASS
+cf-10: PASS
+cf-11: PASS
+cf-12: PASS
+cf-13: PASS
+cf-14: PASS
+cf-15: PASS
+cf-16: PASS
+cf-17: PASS
+cf-18: PASS
+cf-19: PASS
+cf-20: PASS
+cf-21: PASS
+cf-22: PASS
+cf-23: PASS
+cf-24: PASS
+cf-25: PASS
+cf-26: PASS
+cf-27: PASS
+cf-28: PASS
+cf-29: PASS
+cf-30: PASS
+cf-31: FAIL
+  expected segments: (('k', 0), ('k', 1), ('k', 2), ('t', 'x'), ('k', 3))
+  got      segments: (('k', 2), ('k', 0), ('k', 3), ('k', 1), ('k', 4), ('t', 'x'), ('k', 5))
+  expected tokens: (('Separator', ('map', ())), ('Clearfloat', ('map', (('side', ('str', '>')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Clearfloat', ('map', (('side', ('str', '>')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+cf-32: FAIL
+  expected segments: (('k', 1), ('k', 0), ('k', 2), ('t', 'x'), ('k', 3))
+  got      segments: (('k', 1), ('k', 2), ('k', 0), ('k', 3), ('k', 4), ('t', 'x'), ('k', 5))
+  expected tokens: (('Separator', ('map', ())), ('Clearfloat', ('map', (('side', ('str', '<')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Clearfloat', ('map', (('side', ('str', '<')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+cf-33: PASS
+cf-34: PASS
+cf-35: PASS
+cf-36: PASS
+cf-37: PASS
+cf-38: PASS
+cf-39: PASS
+cf-40: PASS
+cf-41: PASS
+cf-42: PASS
+cf-43: PASS
+cf-44: PASS
+cf-45: PASS
+cf-46: PASS
+em43: PASS
+fn47-header-note: PASS
+heading-cont: PASS
+hz-01: PASS
+hz-02: PASS
+hz-03: PASS
+hz-04: PASS
+hz-05: PASS
+hz-06: PASS
+hz-07: PASS
+hz-08: PASS
+hz-09: PASS
+hz-10: PASS
+hz-11: PASS
+hz-12: PASS
+hz-13: PASS
+hz-14: PASS
+hz-15: PASS
+hz-16: PASS
+hz-17: PASS
+hz-18: PASS
+hz-19: PASS
+hz-20: PASS
+hz-21: PASS
+hz-22: FAIL
+  expected segments: (('k', 0), ('k', 1))
+  got      segments: (('k', 0), ('k', 2), ('k', 1), ('k', 3))
+  expected tokens: (('Horiz', ('map', ())), ('Separator', ('map', ())), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Horiz', ('map', ())), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+hz-23: PASS
+hz-24: PASS
+hz-25: PASS
+hz-26: PASS
+hz-27: PASS
+hz-28: PASS
+hz-29: PASS
+hz-30: PASS
+hz-31: PASS
+hz-32: PASS
+hz-33: PASS
+hz-34: PASS
+hz-35: PASS
+hz-36: PASS
+hz-37: FAIL
+  expected segments: (('k', 1), ('k', 0), ('k', 2), ('t', 'x'), ('k', 3))
+  got      segments: (('k', 2), ('k', 1), ('k', 3), ('k', 0), ('k', 4), ('t', 'x'), ('k', 5))
+  expected tokens: (('Horiz', ('map', ())), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Horiz', ('map', ())), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+hz-38: FAIL
+  expected segments: (('k', 2), ('t', 'x'), ('k', 3), ('k', 0), ('k', 1), ('k', 4), ('t', 'y'), ('k', 5))
+  got      segments: (('k', 2), ('t', 'x'), ('k', 3), ('k', 0), ('k', 4), ('k', 1), ('k', 5), ('k', 6), ('t', 'y'), ('k', 7))
+  expected tokens: (('Horiz', ('map', ())), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Horiz', ('map', ())), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+hz-39: PASS
+hz-40: PASS
+hz-41: PASS
+hz-42: PASS
+hz-43: PASS
+hz-44: PASS
+hz-45: PASS
+iw43-70-interwiki-in-heading: PASS
+n38-19-before-hr: PASS
+n38-20-after-hr: PASS
+n38-43-underscore-break: PASS
+n38-44-underscore-doubled: PASS
+pg33-heading-above: PASS
+pg34-heading-below: PASS
+pg43-horiz-between: PASS
+pg46-mixed-blocks: PASS
+pg49-only-heading: PASS
+s33: PASS
+s44: PASS
+sep-01: FAIL
+  expected segments: (('k', 0),)
+  got      segments: (('k', 1), ('k', 0), ('k', 2))
+  expected tokens: (('Separator', ('map', ())), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-02: FAIL
+  expected segments: (('k', 0),)
+  got      segments: (('k', 1), ('k', 0), ('k', 2))
+  expected tokens: (('Separator', ('map', ())), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-03: FAIL
+  expected segments: (('k', 1), ('t', 'x'), ('k', 2), ('k', 0), ('k', 3), ('t', 'y'), ('k', 4))
+  got      segments: (('k', 1), ('t', 'x'), ('k', 2), ('k', 3), ('k', 0), ('k', 4), ('k', 5), ('t', 'y'), ('k', 6))
+  expected tokens: (('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-04: FAIL
+  expected segments: (('k', 1), ('t', 'x'), ('k', 2), ('k', 0), ('k', 3), ('t', 'y'), ('k', 4))
+  got      segments: (('k', 1), ('t', 'x'), ('k', 2), ('k', 3), ('k', 0), ('k', 4), ('k', 5), ('t', 'y'), ('k', 6))
+  expected tokens: (('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-05: FAIL
+  expected segments: (('k', 1), ('t', 'x'), ('k', 2), ('k', 0), ('k', 3), ('t', 'y'), ('k', 4))
+  got      segments: (('k', 1), ('t', 'x'), ('k', 2), ('k', 3), ('k', 0), ('k', 4), ('k', 5), ('t', 'y'), ('k', 6))
+  expected tokens: (('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-06: PASS
+sep-07: PASS
+sep-08: PASS
+sep-09: FAIL
+  expected segments: (('k', 1), ('t', 'x'), ('k', 2), ('k', 0))
+  got      segments: (('k', 1), ('t', 'x'), ('k', 2), ('k', 3), ('k', 0), ('k', 4))
+  expected tokens: (('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-10: PASS
+sep-11: PASS
+sep-12: PASS
+sep-13: PASS
+sep-14: PASS
+sep-15: PASS
+sep-16: PASS
+sep-17: PASS
+sep-18: PASS
+sep-19: PASS
+sep-20: FAIL
+  expected segments: (('k', 0), ('k', 1))
+  got      segments: (('k', 2), ('k', 0), ('k', 3), ('k', 4), ('k', 1), ('k', 5))
+  expected tokens: (('Separator', ('map', ())), ('Separator', ('map', ())), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-21: FAIL
+  expected segments: (('k', 0), ('k', 1))
+  got      segments: (('k', 2), ('k', 0), ('k', 3), ('k', 4), ('k', 1), ('k', 5))
+  expected tokens: (('Separator', ('map', ())), ('Separator', ('map', ())), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-22: FAIL
+  expected segments: (('k', 2), ('t', 'a'), ('k', 3), ('k', 0), ('k', 4), ('t', 'b'), ('k', 5), ('k', 1), ('k', 6), ('t', 'c'), ('k', 7))
+  got      segments: (('k', 2), ('t', 'a'), ('k', 3), ('k', 4), ('k', 0), ('k', 5), ('k', 6), ('t', 'b'), ('k', 7), ('k', 8), ('k', 1), ('k', 9), ('k', 10), ('t', 'c'), ('k', 11))
+  expected tokens: (('Separator', ('map', ())), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-23: FAIL
+  expected segments: (('k', 0), ('k', 1), ('k', 2), ('t', 'x'), ('k', 3))
+  got      segments: (('k', 0), ('k', 2), ('k', 1), ('k', 3), ('k', 4), ('t', 'x'), ('k', 5))
+  expected tokens: (('Horiz', ('map', ())), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Horiz', ('map', ())), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-24: FAIL
+  expected segments: (('k', 1), ('k', 0), ('k', 2), ('t', 'x'), ('k', 3))
+  got      segments: (('k', 2), ('k', 1), ('k', 3), ('k', 0), ('k', 4), ('t', 'x'), ('k', 5))
+  expected tokens: (('Horiz', ('map', ())), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Horiz', ('map', ())), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-25: FAIL
+  expected segments: (('k', 1), ('k', 0), ('k', 2), ('t', 'x'), ('k', 3))
+  got      segments: (('k', 1), ('k', 2), ('k', 0), ('k', 3), ('k', 4), ('t', 'x'), ('k', 5))
+  expected tokens: (('Separator', ('map', ())), ('Clearfloat', ('map', (('side', ('str', 'null')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Clearfloat', ('map', (('side', ('str', 'null')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-26: FAIL
+  expected segments: (('k', 2), ('t', 'x'), ('k', 3), ('k', 0), ('k', 1), ('k', 4), ('t', 'y'), ('k', 5))
+  got      segments: (('k', 2), ('t', 'x'), ('k', 3), ('k', 4), ('k', 0), ('k', 5), ('k', 1), ('k', 6), ('t', 'y'), ('k', 7))
+  expected tokens: (('Separator', ('map', ())), ('Clearfloat', ('map', (('side', ('str', 'null')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Clearfloat', ('map', (('side', ('str', 'null')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-27: PASS
+sep-28: FAIL
+  expected segments: (('k', 3), ('t', 'x'), ('k', 4), ('k', 0), ('k', 1), ('t', 'centered'), ('k', 2), ('k', 5), ('t', 'y'), ('k', 6))
+  got      segments: (('k', 3), ('t', 'x'), ('k', 4), ('k', 5), ('k', 0), ('k', 6), ('k', 1), ('t', 'centered'), ('k', 2), ('k', 7), ('t', 'y'), ('k', 8))
+  expected tokens: (('Separator', ('map', ())), ('Center', ('map', (('type', ('str', 'start')),))), ('Center', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Center', ('map', (('type', ('str', 'start')),))), ('Center', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-29: FAIL
+  expected segments: (('k', 0), ('k', 1), ('k', 2), ('k', 3), ('t', 'x'), ('k', 4))
+  got      segments: (('k', 0), ('k', 1), ('k', 3), ('k', 2), ('k', 4), ('k', 5), ('t', 'x'), ('k', 6))
+  expected tokens: (('Toc', ('map', (('align', ('str', '')), ('attr', ('map', ())), ('level', ('str', '0')), ('type', ('str', 'list_start'))))), ('Toc', ('map', (('align', ('str', '')), ('level', ('str', '0')), ('type', ('str', 'list_end'))))), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Toc', ('map', (('align', ('str', '')), ('attr', ('map', ())), ('level', ('str', '0')), ('type', ('str', 'list_start'))))), ('Toc', ('map', (('align', ('str', '')), ('level', ('str', '0')), ('type', ('str', 'list_end'))))), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-30: FAIL
+  expected segments: (('k', 0), ('t', 'Head'), ('k', 1), ('k', 2), ('k', 3), ('t', 'x'), ('k', 4))
+  got      segments: (('k', 0), ('t', 'Head'), ('k', 1), ('k', 3), ('k', 2), ('k', 4), ('k', 5), ('t', 'x'), ('k', 6))
+  expected tokens: (('Heading', ('map', (('id', ('str', 'toc0')), ('level', ('str', '1')), ('text', ('str', 'Head')), ('type', ('str', 'start'))))), ('Heading', ('map', (('level', ('str', '1')), ('type', ('str', 'end'))))), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Heading', ('map', (('id', ('str', 'toc0')), ('level', ('str', '1')), ('text', ('str', 'Head')), ('type', ('str', 'start'))))), ('Heading', ('map', (('level', ('str', '1')), ('type', ('str', 'end'))))), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-31: FAIL
+  expected segments: (('k', 1), ('t', 'x'), ('k', 2), ('k', 0), ('k', 3), ('k', 5), ('t', 'bold'), ('k', 6), ('k', 4))
+  got      segments: (('k', 1), ('t', 'x'), ('k', 2), ('k', 3), ('k', 0), ('k', 4), ('k', 5), ('k', 7), ('t', 'bold'), ('k', 8), ('k', 6))
+  expected tokens: (('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Strong', ('map', (('type', ('str', 'start')),))), ('Strong', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Strong', ('map', (('type', ('str', 'start')),))), ('Strong', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-32: FAIL
+  expected segments: (('k', 1), ('k', 2), ('t', 'item'), ('k', 3), ('k', 4), ('k', 0), ('k', 5), ('t', 'x'), ('k', 6))
+  got      segments: (('k', 1), ('k', 2), ('t', 'item'), ('k', 3), ('k', 4), ('k', 5), ('k', 0), ('k', 6), ('k', 7), ('t', 'x'), ('k', 8))
+  expected tokens: (('Separator', ('map', ())), ('List', ('map', (('in_sublist', ('str', 'false')), ('level', ('str', '0')), ('type', ('str', 'bullet_list_start'))))), ('List', ('map', (('count', ('str', '0')), ('first', ('str', 'true')), ('level', ('str', '0')), ('type', ('str', 'bullet_item_start'))))), ('List', ('map', (('count', ('str', '0')), ('level', ('str', '0')), ('type', ('str', 'bullet_item_end'))))), ('List', ('map', (('in_sublist', ('str', 'false')), ('level', ('str', '0')), ('tail', ('str', 'item')), ('type', ('str', 'bullet_list_end'))))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('List', ('map', (('in_sublist', ('str', 'false')), ('level', ('str', '0')), ('type', ('str', 'bullet_list_start'))))), ('List', ('map', (('count', ('str', '0')), ('first', ('str', 'true')), ('level', ('str', '0')), ('type', ('str', 'bullet_item_start'))))), ('List', ('map', (('count', ('str', '0')), ('level', ('str', '0')), ('type', ('str', 'bullet_item_end'))))), ('List', ('map', (('in_sublist', ('str', 'false')), ('level', ('str', '0')), ('tail', ('str', 'item')), ('type', ('str', 'bullet_list_end'))))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-33: PASS
+sep-34: FAIL
+  expected segments: (('k', 2), ('t', '@@'), ('k', 3), ('k', 0), ('k', 4), ('t', '@@'), ('k', 1), ('t', 'x'), ('k', 5))
+  got      segments: (('k', 2), ('t', '@@'), ('k', 3), ('k', 4), ('k', 0), ('k', 5), ('k', 6), ('t', '@@'), ('k', 1), ('t', 'x'), ('k', 7))
+  expected tokens: (('Separator', ('map', ())), ('Newline', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Newline', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-35: FAIL
+  expected segments: (('k', 1), ('k', 0), ('k', 2), ('k', 3), ('t', 'x'))
+  got      segments: (('k', 1), ('k', 4), ('k', 0), ('k', 5), ('k', 2), ('k', 3), ('t', 'x'))
+  expected tokens: (('Separator', ('map', ())), ('Div', ('map', (('args', ('map', ())), ('type', ('str', 'start'))))), ('Div', ('map', (('type', ('str', 'end')),))), ('Newline', ('map', ())), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Div', ('map', (('args', ('map', ())), ('type', ('str', 'start'))))), ('Div', ('map', (('type', ('str', 'end')),))), ('Newline', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-36: FAIL
+  expected segments: (('k', 0), ('k', 3), ('t', 'quote'), ('k', 4), ('k', 1), ('k', 2), ('k', 5), ('t', 'x'), ('k', 6))
+  got      segments: (('k', 0), ('k', 3), ('t', 'quote'), ('k', 4), ('k', 1), ('k', 5), ('k', 2), ('k', 6), ('k', 7), ('t', 'x'), ('k', 8))
+  expected tokens: (('Blockquote', ('map', (('level', ('str', '0')), ('type', ('str', 'start'))))), ('Blockquote', ('map', (('level', ('str', '0')), ('type', ('str', 'end'))))), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Blockquote', ('map', (('level', ('str', '0')), ('type', ('str', 'start'))))), ('Blockquote', ('map', (('level', ('str', '0')), ('type', ('str', 'end'))))), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-37: FAIL
+  expected segments: (('k', 0), ('k', 1), ('k', 2), ('t', 'y'), ('k', 3))
+  got      segments: (('k', 0), ('k', 2), ('k', 1), ('k', 3), ('k', 4), ('t', 'y'), ('k', 5))
+  expected tokens: (('Code', ('map', (('attr', ('map', (('type', ('str', '')),))), ('text', ('str', '\nx\n'))))), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Code', ('map', (('attr', ('map', (('type', ('str', '')),))), ('text', ('str', '\nx\n'))))), ('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-38: FAIL
+  expected segments: (('k', 1), ('t', 'x'), ('k', 2), ('k', 0))
+  got      segments: (('k', 1), ('t', 'x'), ('k', 2), ('k', 3), ('k', 0), ('k', 4))
+  expected tokens: (('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-39: FAIL
+  expected segments: (('k', 0), ('k', 1), ('t', 'x'), ('k', 2))
+  got      segments: (('k', 1), ('k', 0), ('k', 2), ('k', 3), ('t', 'x'), ('k', 4))
+  expected tokens: (('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-40: FAIL
+  expected segments: (('k', 1), ('t', 'x'), ('k', 2), ('k', 0), ('k', 3), ('t', 'y'), ('k', 4))
+  got      segments: (('k', 1), ('t', 'x'), ('k', 2), ('k', 3), ('k', 0), ('k', 4), ('k', 5), ('t', 'y'), ('k', 6))
+  expected tokens: (('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+sep-41: FAIL
+  expected segments: (('k', 2), ('t', 'before'), ('k', 1), ('t', 'some ==== text'), ('k', 3), ('k', 0), ('k', 4), ('t', 'after'), ('k', 5))
+  got      segments: (('k', 2), ('t', 'before'), ('k', 1), ('t', 'some ==== text'), ('k', 3), ('k', 4), ('k', 0), ('k', 5), ('k', 6), ('t', 'after'), ('k', 7))
+  expected tokens: (('Separator', ('map', ())), ('Newline', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+  got      tokens: (('Separator', ('map', ())), ('Newline', ('map', ())), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Paragraph', ('map', (('type', ('str', 'start')),))), ('Paragraph', ('map', (('type', ('str', 'end')),))), ('Typography', ('map', (('char', ('str', '``')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', ',,')),))), ('Typography', ('map', (('char', ('str', "''")),))), ('Typography', ('map', (('char', ('str', '`')),))), ('Typography', ('map', (('char', ('str', "'")),))), ('Typography', ('map', (('char', ('str', '<<')),))), ('Typography', ('map', (('char', ('str', '>>')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', ' ')),))), ('Typography', ('map', (('char', ('str', '...')),))), ('Typography', ('map', (('char', ('str', '--')),))), ('Typography', ('map', (('char', ('str', '---')),))))
+smoke-code: PASS
+smoke-collapsible: PASS
+smoke-div: PASS
+smoke-footnote: PASS
+smoke-include: PASS
+smoke-link: PASS
+smoke-math: PASS
+smoke-quote: PASS
+smoke-table: PASS
+strike-s35: PASS
+sub46: PASS
+sup33: PASS
+sup44: PASS
+t35-30-line-continuation: PASS
+t35-40-interrupted-by-hr: PASS
+toc74-clear-float: PASS
+tt51: PASS
+typo08: PASS
+typo10: PASS
+typo12: PASS
+typo14: PASS
+typo16: PASS
+typo18: PASS
+typo83: PASS
+typo84: PASS
+x106: PASS
+x2-05-scored-span-then-heading: PASS
+x23-text-heading-text: PASS
+x25-list-hr: PASS
+x28-heading-text-list: PASS
+x31-table-heading-table: PASS
+x35-table-hr-table: PASS
+x37-heading-then-table: PASS
+x39-adv-heading-adv: PASS
+x53: PASS
+x62: PASS
+SUMMARY: 239/276 cases match
+SUMMARY-FATAL: 0 parse-fatal agreements, 0 fatal mismatches

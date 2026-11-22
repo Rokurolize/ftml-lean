@@ -1,0 +1,12 @@
+/home/hatch/workspace/ftml-lean-equivalence-r3-17/conformance-r317/retirement-restricted.jsonl rc: 0 bytes: 6894 stderr bytes: 0
+/home/hatch/workspace/ftml-lean-equivalence-r3-17/conformance-r317/retirement-full.jsonl rc: 0 bytes: 7696 stderr bytes: 0
+h18-anchor [R3.7 B] over 3 rules: RETIRED (expected RETIRED) ok
+s59 [R3.13 C] over 35 rules: RETIRED (expected RETIRED) ok
+u50 [R3.13 C] over 35 rules: RETIRED (expected RETIRED) ok
+sup59 [R3.14 C] over 43 rules: RETIRED (expected RETIRED) ok
+typo69 [R3.14 C] over 43 rules: RETIRED (expected RETIRED) ok
+smoke-include [R3.11 B (Include)] over 3 rules: STILL OPEN (expected STILL OPEN) ok
+iw43-61-include-site-pair [R3.12 B (Include)] over 4 rules: STILL OPEN (expected STILL OPEN) ok
+x30 [R3.12 B (Include)] over 4 rules: STILL OPEN (expected STILL OPEN) ok
+retired: 5 ['h18-anchor', 's59', 'u50', 'sup59', 'typo69']
+still open: 3 ['smoke-include', 'iw43-61-include-site-pair', 'x30']

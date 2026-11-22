@@ -1,0 +1,218 @@
+[
+ {
+  "id": "da-sib-class-escapes",
+  "class": "C1_class_escaping",
+  "source": "[[div class=\"a&b<c>d'e\"]]\nhi\n[[/div]]",
+  "expected": "<div class=\"a&amp;b&lt;c&gt;d'e\"><p>hi</p>\n\n</div>",
+  "got": "<div class=\"a&amp;b&lt;c&gt;d'e\"><p>hi</p>\n\n</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-class-singlequote",
+  "class": "C0_singlequote_not_attr",
+  "source": "[[div class='plain']]\nhi\n[[/div]]",
+  "expected": "<div><p>hi</p>\n\n</div>",
+  "got": "<div><p>hi</p>\n\n</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-style-escapes",
+  "class": "C1_style_escaping",
+  "source": "[[div style=\"a&b<c>d'e\"]]\nhi\n[[/div]]",
+  "expected": "<div style=\"a&amp;b&lt;c&gt;d'e\"><p>hi</p>\n\n</div>",
+  "got": "<div style=\"a&amp;b&lt;c&gt;d'e\"><p>hi</p>\n\n</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-role-escapes",
+  "class": "C1_role_escaping",
+  "source": "[[div role=\"a&b<c>d'e\"]]\nhi\n[[/div]]",
+  "expected": "<div role=\"a&amp;b&lt;c&gt;d'e\"><p>hi</p>\n\n</div>",
+  "got": "<div role=\"a&amp;b&lt;c&gt;d'e\"><p>hi</p>\n\n</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-type-escapes",
+  "class": "C1_type_escaping",
+  "source": "[[div type=\"a&b<c>d'e\"]]\nhi\n[[/div]]",
+  "expected": "<div type=\"a&amp;b&lt;c&gt;d'e\"><p>hi</p>\n\n</div>",
+  "got": "<div type=\"a&amp;b&lt;c&gt;d'e\"><p>hi</p>\n\n</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-id-escapes",
+  "class": "C1_id_escaping",
+  "source": "[[div id=\"a&b<c>d'e\"]]\nhi\n[[/div]]",
+  "expected": "<div id=\"u-a&amp;b&lt;c&gt;d'e\"><p>hi</p>\n\n</div>",
+  "got": "<div id=\"u-a&amp;b&lt;c&gt;d'e\"><p>hi</p>\n\n</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-double-entity",
+  "class": "C1_preencoded_entity",
+  "source": "[[div data-x=\"&amp;\"]]\nhi\n[[/div]]",
+  "expected": "<div data-x=\"&amp;amp;\"><p>hi</p>\n\n</div>",
+  "got": "<div data-x=\"&amp;amp;\"><p>hi</p>\n\n</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-scored-escapes",
+  "class": "C1_scored_div_escaping",
+  "source": "[[div_ data-x=\"a&b<c>d\"]]\nhi\n[[/div]]",
+  "expected": "<div data-x=\"a&amp;b&lt;c&gt;d\">hi</div>",
+  "got": "<div data-x=\"a&amp;b&lt;c&gt;d\">hi</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-scored-raw",
+  "class": "C2_scored_div_raw_clear",
+  "source": "[[div_ data-x=\"a@@b@@c\"]]\nhi\n[[/div]]",
+  "expected": "<div data-x=\"\">hi</div>",
+  "got": "<div data-x=\"\">hi</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-style-raw",
+  "class": "C2_style_raw_clear",
+  "source": "[[div style=\"a@@b@@c\"]]\nhi\n[[/div]]",
+  "expected": "<div style=\"\"><p>hi</p>\n\n</div>",
+  "got": "<div style=\"\"><p>hi</p>\n\n</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-role-raw",
+  "class": "C2_role_raw_clear",
+  "source": "[[div role=\"a@@b@@c\"]]\nhi\n[[/div]]",
+  "expected": "<div role=\"\"><p>hi</p>\n\n</div>",
+  "got": "<div role=\"\"><p>hi</p>\n\n</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-type-raw",
+  "class": "C2_type_raw_clear",
+  "source": "[[div type=\"a@@b@@c\"]]\nhi\n[[/div]]",
+  "expected": "<div type=\"\"><p>hi</p>\n\n</div>",
+  "got": "<div type=\"\"><p>hi</p>\n\n</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-comment-in-data",
+  "class": "C2_comment_token_in_data",
+  "source": "[[div data-x=\"a[!--c--]b\"]]\nhi\n[[/div]]",
+  "expected": "<div data-x=\"ab\"><p>hi</p>\n\n</div>",
+  "got": "<div data-x=\"ab\"><p>hi</p>\n\n</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-span-in-data",
+  "class": "C2_span_token_in_data",
+  "source": "[[div data-x=\"a[[span]]x[[/span]]b\"]]\nhi\n[[/div]]",
+  "expected": "<div data-x=\"\"><p>hi</p>\n\n</div>",
+  "got": "<div data-x=\"\"><p>hi</p>\n\n</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-date-in-data",
+  "class": "C2_date_token_in_data",
+  "source": "[[div data-x=\"a[[date 0]]b\"]]\nhi\n[[/div]]",
+  "expected": "<div data-x=\"\"><p>hi</p>\n\n</div>",
+  "got": "<div data-x=\"\"><p>hi</p>\n\n</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-mixed-data-one-raw",
+  "class": "C2_multi_data_partial_clear",
+  "source": "[[div data-a=\"clean\" data-b=\"a@@b@@c\"]]\nhi\n[[/div]]",
+  "expected": "<div data-a=\"clean\" data-b=\"\"><p>hi</p>\n\n</div>",
+  "got": "<div data-a=\"clean\" data-b=\"\"><p>hi</p>\n\n</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-empty-body-cleared-attr",
+  "class": "C3_cleared_attr_on_empty_div",
+  "source": "[[div data-x=\"a@@b@@c\"]]\n\n[[/div]]",
+  "expected": "<div data-x=\"\"></div>",
+  "got": "<div data-x=\"\"></div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-empty-body-cleared-id",
+  "class": "C3_cleared_id_on_empty_div",
+  "source": "[[div id=\"a@@b@@c\"]]\n\n[[/div]]",
+  "expected": "<div id=\"\"></div>",
+  "got": "<div id=\"\"></div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-upper-data-key",
+  "class": "C4_upper_attr_key",
+  "source": "[[div DATA-X=\"a&b\"]]\nhi\n[[/div]]",
+  "expected": "<div><p>hi</p>\n\n</div>",
+  "got": "<div><p>hi</p>\n\n</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-upper-class-style",
+  "class": "C4_upper_attr_key",
+  "source": "[[div CLASS=\"y\" STYLE=\"color:red\"]]\nhi\n[[/div]]",
+  "expected": "<div><p>hi</p>\n\n</div>",
+  "got": "<div><p>hi</p>\n\n</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-id-empty",
+  "class": "C4_id_empty",
+  "source": "[[div id=\"\"]]\nhi\n[[/div]]",
+  "expected": "<div><p>hi</p>\n\n</div>",
+  "got": "<div><p>hi</p>\n\n</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-id-space-u",
+  "class": "C4_id_leading_space_u",
+  "source": "[[div id=\" u-foo\"]]\nhi\n[[/div]]",
+  "expected": "<div id=\"u- u-foo\"><p>hi</p>\n\n</div>",
+  "got": "<div id=\"u- u-foo\"><p>hi</p>\n\n</div>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-span-escapes-check",
+  "class": "C5_span_sibling_control",
+  "source": "[[span data-x=\"a&b<c>d'e\"]]hi[[/span]]",
+  "expected": "<p><span data-x=\"a&amp;b&lt;c&gt;d'e\">hi</span></p>",
+  "got": "<p><span data-x=\"a&amp;b&lt;c&gt;d'e\">hi</span></p>",
+  "match": true,
+  "stderr": ""
+ },
+ {
+  "id": "da-sib-span-raw-check",
+  "class": "C5_span_raw_sibling_control",
+  "source": "[[span data-x=\"a@@b@@c\"]]hi[[/span]]",
+  "expected": "<p><span data-x=\"\">hi</span></p>",
+  "got": "<p><span data-x=\"\">hi</span></p>",
+  "match": true,
+  "stderr": ""
+ }
+]

@@ -1,0 +1,2 @@
+{"id":"f2-span-class-ws","source":"[[span class=\"   foo\"]]x[[/span]]"}
+{"id":"f4-html-list-ws","source":"[[html]]\n<ul><!--x-->   </ul>\n[[/html]]"}

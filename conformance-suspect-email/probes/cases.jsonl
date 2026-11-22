@@ -1,0 +1,42 @@
+{"id": "lbl-eacute", "source": "[u@example.com café]"}
+{"id": "lbl-emoji", "source": "[u@example.com A😀B]"}
+{"id": "lbl-cjk", "source": "[u@example.com 日本]"}
+{"id": "lbl-mixed", "source": "[u@example.com éX]"}
+{"id": "lbl-acute-only", "source": "[u@example.com é]"}
+{"id": "lbl-at", "source": "[u@example.com foo@bar]"}
+{"id": "lbl-hash", "source": "[u@example.com foo#bar]"}
+{"id": "lbl-pipe", "source": "[u@example.com foo|bar]"}
+{"id": "lbl-close-inner", "source": "[u@example.com a]b]"}
+{"id": "lbl-open-bracket", "source": "[u@example.com a[b]"}
+{"id": "lbl-url", "source": "[u@example.com http://example.org/x]"}
+{"id": "lbl-email", "source": "[u@example.com other@example.net]"}
+{"id": "lbl-strong", "source": "[u@example.com **bold**]"}
+{"id": "lbl-newline", "source": "[u@example.com Line1\nLine2]"}
+{"id": "lbl-bracket-lead", "source": "[u@example.com ]x]"}
+{"id": "lbl-two-forms", "source": "[u@example.com First] and [v@example.net Second]"}
+{"id": "gap-tab", "source": "[u@example.com\tLabel]"}
+{"id": "gap-nbsp", "source": "[u@example.com Label]"}
+{"id": "gap-three", "source": "[u@example.com   Label]"}
+{"id": "gap-trail", "source": "[u@example.com Label ]"}
+{"id": "gap-two-trail", "source": "[u@example.com  Label ]"}
+{"id": "gap-control", "source": "[u@example.com Label]"}
+{"id": "frame-trail-inline", "source": "[u@example.com  Label] X"}
+{"id": "frame-trail-bracket", "source": "([u@example.com  Label])"}
+{"id": "addr-minimal", "source": "a@b.c"}
+{"id": "addr-localhost", "source": "u@localhost"}
+{"id": "addr-underscore-dom", "source": "u@example_com.net"}
+{"id": "addr-double-dot", "source": "u@example..com"}
+{"id": "addr-label-leading-dot", "source": ".u@example.com"}
+{"id": "addr-label-trailing-dot", "source": "u.@example.com"}
+{"id": "addr-double-at", "source": "u@@example.com"}
+{"id": "addr-trailing-dash", "source": "u@example-.com"}
+{"id": "addr-leading-dash", "source": "u@-example.com"}
+{"id": "addr-plus", "source": "u+tag@example.com"}
+{"id": "addr-tld-digit", "source": "u@example.1"}
+{"id": "addr-upper", "source": "U@EXAMPLE.COM"}
+{"id": "addr-dots", "source": "a.b@example.com"}
+{"id": "addr-trailing-dot", "source": "u@example.com."}
+{"id": "addr-kelvin", "source": "K@example.com"}
+{"id": "addr-acute-local", "source": "éu@example.com"}
+{"id": "adj-acute-before", "source": "é u@example.com"}
+{"id": "adj-acute-after", "source": "u@example.com é"}

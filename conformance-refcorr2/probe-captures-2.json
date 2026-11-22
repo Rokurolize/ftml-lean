@@ -1,0 +1,42 @@
+{
+ "divn-s11": {
+  "fullname": "muse-probe-refcorr2-divn-s11",
+  "html": "<p>before</p>\n<br />\nafter",
+  "html_sha256": "f8f75efa6ada39a759030933991d65895202fdff4dfb456eeef03a0b5dedb7b9",
+  "source": "before\n[[div]]\n[[/div]]\nafter",
+  "source_sha256": "ea5146c426ef896aa67b4fa9dad11053f974aee7d0eb8cd030479608da309a7e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "divn-s12": {
+  "fullname": "muse-probe-refcorr2-divn-s12",
+  "html": "",
+  "html_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source": "[[div]]\n[[/div]]",
+  "source_sha256": "614b8b11c32e22b7ec242286d71e47b0d70198b67f5b6c54cd701c16e6a07423",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "divn-r2": {
+  "fullname": "muse-probe-refcorr2-divn-r2",
+  "html": "<p>[[/div]]</p>",
+  "html_sha256": "7b6f878f5a338c453c4d85ad4a790b53140fd84ae1c01cb1d84833e2819a6340",
+  "source": "[[/div]]",
+  "source_sha256": "9574eaafc266a648742fede23c6cfca938fd8f9f7b145a9f2daec5aaac00c0b1",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "divn-r3": {
+  "fullname": "muse-probe-refcorr2-divn-r3",
+  "html": "<p>hello</p>",
+  "html_sha256": "a5652be1ca864d36d25cfb54a41f384e2de1b3acf7513a925d72ed7258fdc0ae",
+  "source": "hello",
+  "source_sha256": "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824",
+  "saved_source_matches": false,
+  "stable": true,
+  "valid": false
+ }
+}

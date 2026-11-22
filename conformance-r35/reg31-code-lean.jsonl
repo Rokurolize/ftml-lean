@@ -1,0 +1,68 @@
+{"id":"basic-line","segments":[{"t":"\u000aBEFORE\u000a\u000a\u000a"},{"k":0},{"t":"\u000aAFTER\u000a\u000a"}],"tokens":[["Code",{"text":"\u000aalpha\u000abeta\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"basic-inline","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"alpha","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"basic-no-trailing-nl","segments":[{"t":"\u000ax\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000aalpha\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"basic-leading-text","segments":[{"t":"\u000apre [[code]]x[[/code]]\u000apost\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"basic-two-blocks","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a\u000a"},{"k":1},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"a","attr":{"type":""}}],["Code",{"text":"b","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"basic-in-paragraph","segments":[{"t":"\u000apara before [[code]]mid[[/code]] para after\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"empty","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"empty-lines","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"empty-two-lines","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"ws-body-spaces","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"   ","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"ws-body-tabs","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"        ","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"ws-body-blank-lines","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"body-tab","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a    x    \u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"body-tab-middle","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000aa    b\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"body-blank-run","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000aa\u000a\u000ab\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"body-leading-blanks","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a\u000ax\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"body-trailing-blanks","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000ax\u000a\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"body-spaces-line","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000ax\u000a\u000ay\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"body-mid-trailing-spaces","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000ax \u000ay \u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"body-leading-space-first","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"  indented\u000anext\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"body-nbsp","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a x \u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"body-ideographic","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a　x　\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"nested-openers","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a[[code]]\u000ainner\u000a[[/code]]\u000aouter\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"nested-one-line","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"a[[code]]b[[/code]]c","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"stray-closer","segments":[{"t":"\u000a[[/code]]\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"stray-closer-after-text","segments":[{"t":"\u000abefore\u000a[[/code]]\u000aafter\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"stray-closer-before","segments":[{"t":"\u000a[[/code]]\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"x","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"unterminated","segments":[{"t":"\u000a[[code]]\u000anever closed\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"unterminated-inline","segments":[{"t":"\u000a[[code]]abc\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"unterminated-then-other","segments":[{"t":"\u000a[[code]]\u000ax\u000a[[div]]y[[/div]]\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"closer-suffixed","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":" x\u000a\u000a"}],"tokens":[["Code",{"text":"a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"closer-trailing-space","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":" \u000aNEXT\u000a\u000a"}],"tokens":[["Code",{"text":"a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"closer-suffix-newline","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000aNEXT\u000a\u000a"}],"tokens":[["Code",{"text":"\u000aa\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"arg-type-python","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000aimport antigravity\u000a","attr":{"type":"python"}}]],"equations":[],"mathId":null}
+{"id":"arg-type-PYTHON","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000aimport antigravity\u000a","attr":{"type":"PYTHON"}}]],"equations":[],"mathId":null}
+{"id":"arg-type-css-inline","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"a { display: none; }","attr":{"type":"css"}}]],"equations":[],"mathId":null}
+{"id":"arg-type-unknown","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000aSELECT 1;\u000a","attr":{"type":"apache"}}]],"equations":[],"mathId":null}
+{"id":"arg-type-empty","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"x","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"arg-name","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000abody\u000a","attr":{"name":"Sample Heading","type":""}}]],"equations":[],"mathId":null}
+{"id":"arg-type-name","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000aclass A {}\u000a","attr":{"name":"a","type":"java"}}]],"equations":[],"mathId":null}
+{"id":"arg-unknown","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000abody\u000a","attr":{"foo":"bar","type":""}}]],"equations":[],"mathId":null}
+{"id":"arg-unquoted","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"x","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"arg-half-quote-1","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"x","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"arg-half-quote-2","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"x","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"arg-spaced-name","segments":[{"t":"\u000a[[ code ]]\u000aNESTED\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"arg-tab-after","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"x","attr":{"type":"css"}}]],"equations":[],"mathId":null}
+{"id":"arg-multi-space","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"x","attr":{"type":"css"}}]],"equations":[],"mathId":null}
+{"id":"arg-two-attrs","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"x","attr":{"type":"python","name":"n"}}]],"equations":[],"mathId":null}
+{"id":"arg-newline-after","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"x","attr":{"type":"css"}}]],"equations":[],"mathId":null}
+{"id":"body-wikitext","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a[[div]]\u000anot a div\u000a[[/div]]\u000a**not bold**\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"body-brackets","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a[[/code]]\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a[[foo]] [[bar baz]] [[]] ","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"body-quotes","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a\"double\" 'single' &amp; & < >\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"body-html","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a<b>bold</b> <script>alert(1)</script>\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"body-entities","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a&amp; &lt; &gt; &quot;\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"body-code-closer-literal","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":" literal\u000a[[/code]]\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"line-start-opener","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"x","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"mid-paragraph","segments":[{"t":"\u000aalpha [[code]]beta[[/code]] gamma\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}
+{"id":"after-heading","segments":[{"t":"\u000a= H =\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"x","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"three-blocks","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a\u000a"},{"k":1},{"t":"\u000a\u000a\u000a"},{"k":2},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"a","attr":{"type":""}}],["Code",{"text":"b","attr":{"type":""}}],["Code",{"text":"c","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"block-then-paragraph","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000aparagraph after\u000a\u000a"}],"tokens":[["Code",{"text":"x","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"crlf-basic","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000aalpha\u000abeta\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"crlf-empty","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"crlf-nested","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000a[[code]]x[[/code]]\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"crlf-args","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000ax=1\u000a","attr":{"type":"python"}}]],"equations":[],"mathId":null}
+{"id":"lone-cr-body","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000aa\u000ab\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"frame-tab-newlines","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000aline1    \u000a\u000aline2\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"frame-ueue","segments":[{"t":"\u000a\u000a\u000a"},{"k":0},{"t":"\u000a\u000a"}],"tokens":[["Code",{"text":"\u000aüü\u000a","attr":{"type":""}}]],"equations":[],"mathId":null}
+{"id":"frame-quoted","segments":[{"t":"\u000a>> [[code]]\u000a>> QUOTED_LITERAL\u000a>> [[/code]]\u000a\u000a"}],"tokens":[],"equations":[],"mathId":null}

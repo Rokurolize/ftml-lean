@@ -1,0 +1,5621 @@
+{
+ "cross_battery_id_collisions_with_different_sources": 163,
+ "per_source": {
+  "conformance-refphp/inline1/email/battery.jsonl": {
+   "battery": "inline1/email",
+   "lines_in": 62
+  },
+  "conformance-refphp/inline1/interwiki/battery.jsonl": {
+   "battery": "inline1/interwiki",
+   "lines_in": 70
+  },
+  "conformance-refphp/inline1/mathinline/battery.jsonl": {
+   "battery": "inline1/mathinline",
+   "lines_in": 56
+  },
+  "conformance-refphp/inline1/url/battery.jsonl": {
+   "battery": "inline1/url",
+   "lines_in": 75
+  },
+  "conformance-refphp/inline1/xbattery.jsonl": {
+   "battery": "inline1/xbattery",
+   "lines_in": 46
+  },
+  "conformance-refphp/inline2/color/battery.jsonl": {
+   "battery": "inline2/color",
+   "lines_in": 67
+  },
+  "conformance-refphp/inline2/em/battery.jsonl": {
+   "battery": "inline2/em",
+   "lines_in": 50
+  },
+  "conformance-refphp/inline2/strike/battery.jsonl": {
+   "battery": "inline2/strike",
+   "lines_in": 54
+  },
+  "conformance-refphp/inline2/strong/battery.jsonl": {
+   "battery": "inline2/strong",
+   "lines_in": 60
+  },
+  "conformance-refphp/inline2/u/battery.jsonl": {
+   "battery": "inline2/u",
+   "lines_in": 60
+  },
+  "conformance-refphp/inline2/xbattery.jsonl": {
+   "battery": "inline2/xbattery",
+   "lines_in": 63
+  },
+  "conformance-refphp/inline3/sub/battery.jsonl": {
+   "battery": "inline3/sub",
+   "lines_in": 55
+  },
+  "conformance-refphp/inline3/sup/battery.jsonl": {
+   "battery": "inline3/sup",
+   "lines_in": 66
+  },
+  "conformance-refphp/inline3/tighten/battery.jsonl": {
+   "battery": "inline3/tighten",
+   "lines_in": 70
+  },
+  "conformance-refphp/inline3/tt/battery.jsonl": {
+   "battery": "inline3/tt",
+   "lines_in": 55
+  },
+  "conformance-refphp/inline3/typo/battery.jsonl": {
+   "battery": "inline3/typo",
+   "lines_in": 92
+  },
+  "conformance-refphp/inline3/xbattery.jsonl": {
+   "battery": "inline3/xbattery",
+   "lines_in": 108
+  }
+ },
+ "provenance": {
+  "inline1-email/e41-01-bare-simple": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-01-bare-simple"
+  },
+  "inline1-email/e41-02-bare-in-prose": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-02-bare-in-prose"
+  },
+  "inline1-email/e41-03-bare-two-in-line": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-03-bare-two-in-line"
+  },
+  "inline1-email/e41-04-bare-uppercase": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-04-bare-uppercase"
+  },
+  "inline1-email/e41-05-bare-one-char": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-05-bare-one-char"
+  },
+  "inline1-email/e41-06-bare-plus": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-06-bare-plus"
+  },
+  "inline1-email/e41-07-bare-underscore": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-07-bare-underscore"
+  },
+  "inline1-email/e41-08-bare-dash-local": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-08-bare-dash-local"
+  },
+  "inline1-email/e41-09-bare-dotted-local": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-09-bare-dotted-local"
+  },
+  "inline1-email/e41-10-bare-digits": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-10-bare-digits"
+  },
+  "inline1-email/e41-11-subdomain": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-11-subdomain"
+  },
+  "inline1-email/e41-12-domain-dash": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-12-domain-dash"
+  },
+  "inline1-email/e41-13-domain-numeric-label": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-13-domain-numeric-label"
+  },
+  "inline1-email/e41-14-single-label-host": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-14-single-label-host"
+  },
+  "inline1-email/e41-15-trailing-dot": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-15-trailing-dot"
+  },
+  "inline1-email/e41-16-double-dot-domain": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-16-double-dot-domain"
+  },
+  "inline1-email/e41-17-leading-dash-domain": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-17-leading-dash-domain"
+  },
+  "inline1-email/e41-18-trailing-dash-domain": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-18-trailing-dash-domain"
+  },
+  "inline1-email/e41-19-underscore-domain": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-19-underscore-domain"
+  },
+  "inline1-email/e41-20-domain-close-paren": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-20-domain-close-paren"
+  },
+  "inline1-email/e41-21-described": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-21-described"
+  },
+  "inline1-email/e41-22-described-multiword": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-22-described-multiword"
+  },
+  "inline1-email/e41-23-described-upper": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-23-described-upper"
+  },
+  "inline1-email/e41-24-described-two-spaces": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-24-described-two-spaces"
+  },
+  "inline1-email/e41-25-described-no-space": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-25-described-no-space"
+  },
+  "inline1-email/e41-26-described-empty-label": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-26-described-empty-label"
+  },
+  "inline1-email/e41-27-described-unterminated": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-27-described-unterminated"
+  },
+  "inline1-email/e41-28-bracketed-bare": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-28-bracketed-bare"
+  },
+  "inline1-email/e41-29-angle-bracketed": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-29-angle-bracketed"
+  },
+  "inline1-email/e41-30-double-bracketed": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-30-double-bracketed"
+  },
+  "inline1-email/e41-31-bracketed-mailto": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-31-bracketed-mailto"
+  },
+  "inline1-email/e41-32-bracketed-mailto-label": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-32-bracketed-mailto-label"
+  },
+  "inline1-email/e41-33-mailto-bare": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-33-mailto-bare"
+  },
+  "inline1-email/e41-34-mailto-upper-scheme": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-34-mailto-upper-scheme"
+  },
+  "inline1-email/e41-35-mailto-pipe-label": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-35-mailto-pipe-label"
+  },
+  "inline1-email/e41-36-http-userinfo": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-36-http-userinfo"
+  },
+  "inline1-email/e41-37-https-with-email-in-path": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-37-https-with-email-in-path"
+  },
+  "inline1-email/e41-38-url-then-email": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-38-url-then-email"
+  },
+  "inline1-email/e41-39-comma": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-39-comma"
+  },
+  "inline1-email/e41-40-semicolon-and-bang": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-40-semicolon-and-bang"
+  },
+  "inline1-email/e41-41-parenthesized": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-41-parenthesized"
+  },
+  "inline1-email/e41-42-question-and-colon": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-42-question-and-colon"
+  },
+  "inline1-email/e41-43-quote-wrapped": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-43-quote-wrapped"
+  },
+  "inline1-email/e41-44-apostrophe-after": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-44-apostrophe-after"
+  },
+  "inline1-email/e41-45-exclamation-attached": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-45-exclamation-attached"
+  },
+  "inline1-email/e41-46-no-at": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-46-no-at"
+  },
+  "inline1-email/e41-47-no-domain-dot": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-47-no-domain-dot"
+  },
+  "inline1-email/e41-48-double-at": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-48-double-at"
+  },
+  "inline1-email/e41-49-empty-local": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-49-empty-local"
+  },
+  "inline1-email/e41-50-empty-domain": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-50-empty-domain"
+  },
+  "inline1-email/e41-51-local-space": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-51-local-space"
+  },
+  "inline1-email/e41-52-plus-only": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-52-plus-only"
+  },
+  "inline1-email/e41-53-dot-start-local": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-53-dot-start-local"
+  },
+  "inline1-email/e41-54-trailing-underscore-local": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-54-trailing-underscore-local"
+  },
+  "inline1-email/e41-55-cjk-local": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-55-cjk-local"
+  },
+  "inline1-email/e41-56-in-bold": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-56-in-bold"
+  },
+  "inline1-email/e41-57-in-raw": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-57-in-raw"
+  },
+  "inline1-email/e41-58-in-code": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-58-in-code"
+  },
+  "inline1-email/e41-59-in-table-cell": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-59-in-table-cell"
+  },
+  "inline1-email/e41-60-comment-inside": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-60-comment-inside"
+  },
+  "inline1-email/e41-61-email-then-comment": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-61-email-then-comment"
+  },
+  "inline1-email/e41-62-mixed-document": {
+   "battery": "inline1/email",
+   "file": "conformance-refphp/inline1/email/battery.jsonl",
+   "orig_id": "e41-62-mixed-document"
+  },
+  "inline1-interwiki/iw43-01-wikipedia-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-01-wikipedia-labeled"
+  },
+  "inline1-interwiki/iw43-02-wikipedia-unlabeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-02-wikipedia-unlabeled"
+  },
+  "inline1-interwiki/iw43-03-wikipedia-upper-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-03-wikipedia-upper-labeled"
+  },
+  "inline1-interwiki/iw43-04-wikipedia-upper-unlabeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-04-wikipedia-upper-unlabeled"
+  },
+  "inline1-interwiki/iw43-05-wikipedia-mixed-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-05-wikipedia-mixed-labeled"
+  },
+  "inline1-interwiki/iw43-06-wikipedia-pl-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-06-wikipedia-pl-labeled"
+  },
+  "inline1-interwiki/iw43-07-wikipedia-pl-unlabeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-07-wikipedia-pl-unlabeled"
+  },
+  "inline1-interwiki/iw43-08-pl-wikipedia-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-08-pl-wikipedia-labeled"
+  },
+  "inline1-interwiki/iw43-09-pl-wikipedia-unlabeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-09-pl-wikipedia-unlabeled"
+  },
+  "inline1-interwiki/iw43-10-google-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-10-google-labeled"
+  },
+  "inline1-interwiki/iw43-11-google-unlabeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-11-google-unlabeled"
+  },
+  "inline1-interwiki/iw43-12-dictionary-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-12-dictionary-labeled"
+  },
+  "inline1-interwiki/iw43-13-dictionary-unlabeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-13-dictionary-unlabeled"
+  },
+  "inline1-interwiki/iw43-14-google-upper-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-14-google-upper-labeled"
+  },
+  "inline1-interwiki/iw43-15-dictionary-upper-unlabeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-15-dictionary-upper-unlabeled"
+  },
+  "inline1-interwiki/iw43-16-wp-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-16-wp-labeled"
+  },
+  "inline1-interwiki/iw43-17-wp-unlabeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-17-wp-unlabeled"
+  },
+  "inline1-interwiki/iw43-18-commons-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-18-commons-labeled"
+  },
+  "inline1-interwiki/iw43-19-nosuchwiki-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-19-nosuchwiki-labeled"
+  },
+  "inline1-interwiki/iw43-20-nosuchwiki-unlabeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-20-nosuchwiki-unlabeled"
+  },
+  "inline1-interwiki/iw43-21-banana-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-21-banana-labeled"
+  },
+  "inline1-interwiki/iw43-22-thesaurus-unlabeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-22-thesaurus-unlabeled"
+  },
+  "inline1-interwiki/iw43-23-ddg-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-23-ddg-labeled"
+  },
+  "inline1-interwiki/iw43-24-wikipedia-com-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-24-wikipedia-com-labeled"
+  },
+  "inline1-interwiki/iw43-25-wiki-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-25-wiki-labeled"
+  },
+  "inline1-interwiki/iw43-26-wikipedia-pl-upper-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-26-wikipedia-pl-upper-labeled"
+  },
+  "inline1-interwiki/iw43-27-pl-wikipedia-upper-unlabeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-27-pl-wikipedia-upper-unlabeled"
+  },
+  "inline1-interwiki/iw43-28-wikipedia-pl-mixed-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-28-wikipedia-pl-mixed-labeled"
+  },
+  "inline1-interwiki/iw43-29-google-mixed-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-29-google-mixed-labeled"
+  },
+  "inline1-interwiki/iw43-30-dictionary-mixed-unlabeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-30-dictionary-mixed-unlabeled"
+  },
+  "inline1-interwiki/iw43-31-multiword-label": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-31-multiword-label"
+  },
+  "inline1-interwiki/iw43-32-two-spaces-label": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-32-two-spaces-label"
+  },
+  "inline1-interwiki/iw43-33-tab-label": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-33-tab-label"
+  },
+  "inline1-interwiki/iw43-34-empty-label-one-space": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-34-empty-label-one-space"
+  },
+  "inline1-interwiki/iw43-35-empty-label-two-spaces": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-35-empty-label-two-spaces"
+  },
+  "inline1-interwiki/iw43-36-label-with-colon": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-36-label-with-colon"
+  },
+  "inline1-interwiki/iw43-37-label-with-brackets": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-37-label-with-brackets"
+  },
+  "inline1-interwiki/iw43-38-label-with-pipe": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-38-label-with-pipe"
+  },
+  "inline1-interwiki/iw43-39-label-trailing-space": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-39-label-trailing-space"
+  },
+  "inline1-interwiki/iw43-40-label-leading-and-trailing": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-40-label-leading-and-trailing"
+  },
+  "inline1-interwiki/iw43-41-path-colon": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-41-path-colon"
+  },
+  "inline1-interwiki/iw43-42-path-plus": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-42-path-plus"
+  },
+  "inline1-interwiki/iw43-43-path-underscore-hyphen-dot-slash": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-43-path-underscore-hyphen-dot-slash"
+  },
+  "inline1-interwiki/iw43-44-path-visible-special": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-44-path-visible-special"
+  },
+  "inline1-interwiki/iw43-45-path-percent": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-45-path-percent"
+  },
+  "inline1-interwiki/iw43-46-path-nonascii": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-46-path-nonascii"
+  },
+  "inline1-interwiki/iw43-47-path-question": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-47-path-question"
+  },
+  "inline1-interwiki/iw43-48-path-quote": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-48-path-quote"
+  },
+  "inline1-interwiki/iw43-49-empty-path": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-49-empty-path"
+  },
+  "inline1-interwiki/iw43-50-double-colon-path": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-50-double-colon-path"
+  },
+  "inline1-interwiki/iw43-51-unterminated-unlabeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-51-unterminated-unlabeled"
+  },
+  "inline1-interwiki/iw43-52-unterminated-labeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-52-unterminated-labeled"
+  },
+  "inline1-interwiki/iw43-53-prefix-leading-digit": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-53-prefix-leading-digit"
+  },
+  "inline1-interwiki/iw43-54-prefix-underscore": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-54-prefix-underscore"
+  },
+  "inline1-interwiki/iw43-55-prefix-digit-unlabeled": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-55-prefix-digit-unlabeled"
+  },
+  "inline1-interwiki/iw43-56-space-after-open": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-56-space-after-open"
+  },
+  "inline1-interwiki/iw43-57-empty-prefix": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-57-empty-prefix"
+  },
+  "inline1-interwiki/iw43-58-star-form": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-58-star-form"
+  },
+  "inline1-interwiki/iw43-59-label-only-spaces": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-59-label-only-spaces"
+  },
+  "inline1-interwiki/iw43-60-double-bracket": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-60-double-bracket"
+  },
+  "inline1-interwiki/iw43-61-include-site-pair": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-61-include-site-pair"
+  },
+  "inline1-interwiki/iw43-62-triple-bracket": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-62-triple-bracket"
+  },
+  "inline1-interwiki/iw43-63-in-paragraphs": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-63-in-paragraphs"
+  },
+  "inline1-interwiki/iw43-64-multiple-on-line": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-64-multiple-on-line"
+  },
+  "inline1-interwiki/iw43-65-inside-span": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-65-inside-span"
+  },
+  "inline1-interwiki/iw43-66-inside-code": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-66-inside-code"
+  },
+  "inline1-interwiki/iw43-67-data-scheme": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-67-data-scheme"
+  },
+  "inline1-interwiki/iw43-68-direct-url": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-68-direct-url"
+  },
+  "inline1-interwiki/iw43-69-slash-target": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-69-slash-target"
+  },
+  "inline1-interwiki/iw43-70-interwiki-in-heading": {
+   "battery": "inline1/interwiki",
+   "file": "conformance-refphp/inline1/interwiki/battery.jsonl",
+   "orig_id": "iw43-70-interwiki-in-heading"
+  },
+  "inline1-mathinline/adjacent": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "adjacent"
+  },
+  "inline1-mathinline/attr-like": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "attr-like"
+  },
+  "inline1-mathinline/backslash-commands": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "backslash-commands"
+  },
+  "inline1-mathinline/basic": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "basic"
+  },
+  "inline1-mathinline/before-heading": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "before-heading"
+  },
+  "inline1-mathinline/blank-line-inside": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "blank-line-inside"
+  },
+  "inline1-mathinline/close-first": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "close-first"
+  },
+  "inline1-mathinline/comment-inside": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "comment-inside"
+  },
+  "inline1-mathinline/comment-joined-close-1": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "comment-joined-close-1"
+  },
+  "inline1-mathinline/comment-joined-close-2": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "comment-joined-close-2"
+  },
+  "inline1-mathinline/comment-markers": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "comment-markers"
+  },
+  "inline1-mathinline/crlf": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "crlf"
+  },
+  "inline1-mathinline/dollar-in-content": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "dollar-in-content"
+  },
+  "inline1-mathinline/double-dollar-open": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "double-dollar-open"
+  },
+  "inline1-mathinline/empty": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "empty"
+  },
+  "inline1-mathinline/entities-content": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "entities-content"
+  },
+  "inline1-mathinline/html-content": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "html-content"
+  },
+  "inline1-mathinline/in-blockquote": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "in-blockquote"
+  },
+  "inline1-mathinline/in-code": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "in-code"
+  },
+  "inline1-mathinline/in-collapsible": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "in-collapsible"
+  },
+  "inline1-mathinline/in-comment": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "in-comment"
+  },
+  "inline1-mathinline/in-div": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "in-div"
+  },
+  "inline1-mathinline/in-footnote": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "in-footnote"
+  },
+  "inline1-mathinline/in-heading1": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "in-heading1"
+  },
+  "inline1-mathinline/in-heading2": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "in-heading2"
+  },
+  "inline1-mathinline/in-list": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "in-list"
+  },
+  "inline1-mathinline/in-raw": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "in-raw"
+  },
+  "inline1-mathinline/in-scored-span": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "in-scored-span"
+  },
+  "inline1-mathinline/in-span": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "in-span"
+  },
+  "inline1-mathinline/in-table-cell": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "in-table-cell"
+  },
+  "inline1-mathinline/inline-then-math-block": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "inline-then-math-block"
+  },
+  "inline1-mathinline/label-like-brackets": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "label-like-brackets"
+  },
+  "inline1-mathinline/label-like-word": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "label-like-word"
+  },
+  "inline1-mathinline/left-space-only": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "left-space-only"
+  },
+  "inline1-mathinline/math-block-then-inline": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "math-block-then-inline"
+  },
+  "inline1-mathinline/multiple-line": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "multiple-line"
+  },
+  "inline1-mathinline/newline-after-opener": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "newline-after-opener"
+  },
+  "inline1-mathinline/newline-before-closer": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "newline-before-closer"
+  },
+  "inline1-mathinline/no-spaces": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "no-spaces"
+  },
+  "inline1-mathinline/pipe-in-content": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "pipe-in-content"
+  },
+  "inline1-mathinline/quad-close": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "quad-close"
+  },
+  "inline1-mathinline/raw-inside": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "raw-inside"
+  },
+  "inline1-mathinline/right-space-only": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "right-space-only"
+  },
+  "inline1-mathinline/shifted-close": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "shifted-close"
+  },
+  "inline1-mathinline/shifted-open": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "shifted-open"
+  },
+  "inline1-mathinline/single-newline": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "single-newline"
+  },
+  "inline1-mathinline/spaces-only": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "spaces-only"
+  },
+  "inline1-mathinline/stray-closer": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "stray-closer"
+  },
+  "inline1-mathinline/tabs-around": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "tabs-around"
+  },
+  "inline1-mathinline/trailing-newline": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "trailing-newline"
+  },
+  "inline1-mathinline/triple-close": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "triple-close"
+  },
+  "inline1-mathinline/typography-dashes": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "typography-dashes"
+  },
+  "inline1-mathinline/typography-dots": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "typography-dots"
+  },
+  "inline1-mathinline/unicode-content": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "unicode-content"
+  },
+  "inline1-mathinline/unterminated": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "unterminated"
+  },
+  "inline1-mathinline/unterminated-empty": {
+   "battery": "inline1/mathinline",
+   "file": "conformance-refphp/inline1/mathinline/battery.jsonl",
+   "orig_id": "unterminated-empty"
+  },
+  "inline1-url/u01-http": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u01-http"
+  },
+  "inline1-url/u02-https": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u02-https"
+  },
+  "inline1-url/u03-ftp": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u03-ftp"
+  },
+  "inline1-url/u04-gopher": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u04-gopher"
+  },
+  "inline1-url/u05-news": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u05-news"
+  },
+  "inline1-url/u06-mms": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u06-mms"
+  },
+  "inline1-url/u07-mailto": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u07-mailto"
+  },
+  "inline1-url/u08-ssh": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u08-ssh"
+  },
+  "inline1-url/u09-git": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u09-git"
+  },
+  "inline1-url/u10-sftp": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u10-sftp"
+  },
+  "inline1-url/u11-svn": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u11-svn"
+  },
+  "inline1-url/u12-telnet": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u12-telnet"
+  },
+  "inline1-url/u13-cvs": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u13-cvs"
+  },
+  "inline1-url/u14-www-schemeless": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u14-www-schemeless"
+  },
+  "inline1-url/u15-upper-scheme": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u15-upper-scheme"
+  },
+  "inline1-url/u16-mixed-scheme": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u16-mixed-scheme"
+  },
+  "inline1-url/u17-glued-digit": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u17-glued-digit"
+  },
+  "inline1-url/u18-bare-scheme": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u18-bare-scheme"
+  },
+  "inline1-url/u19-scheme-no-host": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u19-scheme-no-host"
+  },
+  "inline1-url/u20-trailing-slash": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u20-trailing-slash"
+  },
+  "inline1-url/u21-query-fragment": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u21-query-fragment"
+  },
+  "inline1-url/u22-percent-encode": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u22-percent-encode"
+  },
+  "inline1-url/u23-port": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u23-port"
+  },
+  "inline1-url/u24-ip-host": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u24-ip-host"
+  },
+  "inline1-url/u25-subdomain": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u25-subdomain"
+  },
+  "inline1-url/u26-inner-dot": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u26-inner-dot"
+  },
+  "inline1-url/u27-tilde-underscore": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u27-tilde-underscore"
+  },
+  "inline1-url/u28-plus-path": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u28-plus-path"
+  },
+  "inline1-url/u29-at-in-path": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u29-at-in-path"
+  },
+  "inline1-url/u30-nonascii-path": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u30-nonascii-path"
+  },
+  "inline1-url/u31-nbsp-in-url": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u31-nbsp-in-url"
+  },
+  "inline1-url/u32-terminal-period": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u32-terminal-period"
+  },
+  "inline1-url/u33-period-eoi": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u33-period-eoi"
+  },
+  "inline1-url/u34-period-linebreak": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u34-period-linebreak"
+  },
+  "inline1-url/u35-exclaim-suite": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u35-exclaim-suite"
+  },
+  "inline1-url/u36-hash-tail": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u36-hash-tail"
+  },
+  "inline1-url/u37-comma-tail": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u37-comma-tail"
+  },
+  "inline1-url/u38-comma-inner": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u38-comma-inner"
+  },
+  "inline1-url/u39-star-tail": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u39-star-tail"
+  },
+  "inline1-url/u40-dash-tail": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u40-dash-tail"
+  },
+  "inline1-url/u41-dash-inner": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u41-dash-inner"
+  },
+  "inline1-url/u42-brace-tail": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u42-brace-tail"
+  },
+  "inline1-url/u43-paren-open-close": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u43-paren-open-close"
+  },
+  "inline1-url/u44-paren-in-url": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u44-paren-in-url"
+  },
+  "inline1-url/u45-bracket-in-url": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u45-bracket-in-url"
+  },
+  "inline1-url/u46-quote-pair": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u46-quote-pair"
+  },
+  "inline1-url/u47-described": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u47-described"
+  },
+  "inline1-url/u48-described-spaces": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u48-described-spaces"
+  },
+  "inline1-url/u49-described-double-space": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u49-described-double-space"
+  },
+  "inline1-url/u50-described-star": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u50-described-star"
+  },
+  "inline1-url/u51-described-hash": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u51-described-hash"
+  },
+  "inline1-url/u52-described-path": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u52-described-path"
+  },
+  "inline1-url/u53-described-no-label": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u53-described-no-label"
+  },
+  "inline1-url/u54-described-unterminated": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u54-described-unterminated"
+  },
+  "inline1-url/u55-described-midline": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u55-described-midline"
+  },
+  "inline1-url/u56-double-bare": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u56-double-bare"
+  },
+  "inline1-url/u57-double-pipe": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u57-double-pipe"
+  },
+  "inline1-url/u58-double-pipe-raw": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u58-double-pipe-raw"
+  },
+  "inline1-url/u59-double-pipe-multi": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u59-double-pipe-multi"
+  },
+  "inline1-url/u60-double-pipe-unterminated": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u60-double-pipe-unterminated"
+  },
+  "inline1-url/u61-double-bare-midline": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u61-double-bare-midline"
+  },
+  "inline1-url/u62-double-pipe-midline": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u62-double-pipe-midline"
+  },
+  "inline1-url/u63-star-bare": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u63-star-bare"
+  },
+  "inline1-url/u64-star-mid": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u64-star-mid"
+  },
+  "inline1-url/u65-bold-star": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u65-bold-star"
+  },
+  "inline1-url/u66-star-killed-fallback": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u66-star-killed-fallback"
+  },
+  "inline1-url/u67-raw-adjacency": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u67-raw-adjacency"
+  },
+  "inline1-url/u68-raw-alt-terminates": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u68-raw-alt-terminates"
+  },
+  "inline1-url/u69-nonascii-terminates": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u69-nonascii-terminates"
+  },
+  "inline1-url/u70-block-syntax-stops": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u70-block-syntax-stops"
+  },
+  "inline1-url/u71-empty-after-scheme": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u71-empty-after-scheme"
+  },
+  "inline1-url/u72-tagged-pipe-url": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u72-tagged-pipe-url"
+  },
+  "inline1-url/u73-described-math-label": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u73-described-math-label"
+  },
+  "inline1-url/u74-described-math-label-pin": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u74-described-math-label-pin"
+  },
+  "inline1-url/u75-double-pipe-many": {
+   "battery": "inline1/url",
+   "file": "conformance-refphp/inline1/url/battery.jsonl",
+   "orig_id": "u75-double-pipe-many"
+  },
+  "inline1-xbattery/x01": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x01"
+  },
+  "inline1-xbattery/x02": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x02"
+  },
+  "inline1-xbattery/x03": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x03"
+  },
+  "inline1-xbattery/x04": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x04"
+  },
+  "inline1-xbattery/x05": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x05"
+  },
+  "inline1-xbattery/x06": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x06"
+  },
+  "inline1-xbattery/x07": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x07"
+  },
+  "inline1-xbattery/x08": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x08"
+  },
+  "inline1-xbattery/x09": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x09"
+  },
+  "inline1-xbattery/x10": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x10"
+  },
+  "inline1-xbattery/x11": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x11"
+  },
+  "inline1-xbattery/x12": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x12"
+  },
+  "inline1-xbattery/x13": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x13"
+  },
+  "inline1-xbattery/x14": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x14"
+  },
+  "inline1-xbattery/x15": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x15"
+  },
+  "inline1-xbattery/x16": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x16"
+  },
+  "inline1-xbattery/x17": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x17"
+  },
+  "inline1-xbattery/x18": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x18"
+  },
+  "inline1-xbattery/x19": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x19"
+  },
+  "inline1-xbattery/x20": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x20"
+  },
+  "inline1-xbattery/x21": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x21"
+  },
+  "inline1-xbattery/x22": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x22"
+  },
+  "inline1-xbattery/x23": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x23"
+  },
+  "inline1-xbattery/x24": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x24"
+  },
+  "inline1-xbattery/x25": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x25"
+  },
+  "inline1-xbattery/x26": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x26"
+  },
+  "inline1-xbattery/x27": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x27"
+  },
+  "inline1-xbattery/x28": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x28"
+  },
+  "inline1-xbattery/x29": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x29"
+  },
+  "inline1-xbattery/x30": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x30"
+  },
+  "inline1-xbattery/x31": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x31"
+  },
+  "inline1-xbattery/x32": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x32"
+  },
+  "inline1-xbattery/x33": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x33"
+  },
+  "inline1-xbattery/x34": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x34"
+  },
+  "inline1-xbattery/x35": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x35"
+  },
+  "inline1-xbattery/x36": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x36"
+  },
+  "inline1-xbattery/x37": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x37"
+  },
+  "inline1-xbattery/x38": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x38"
+  },
+  "inline1-xbattery/x39": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x39"
+  },
+  "inline1-xbattery/x40": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x40"
+  },
+  "inline1-xbattery/x41": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x41"
+  },
+  "inline1-xbattery/x42": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x42"
+  },
+  "inline1-xbattery/x43": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x43"
+  },
+  "inline1-xbattery/x44": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x44"
+  },
+  "inline1-xbattery/x45": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x45"
+  },
+  "inline1-xbattery/x46": {
+   "battery": "inline1/xbattery",
+   "file": "conformance-refphp/inline1/xbattery.jsonl",
+   "orig_id": "x46"
+  },
+  "inline2-color/c01": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c01"
+  },
+  "inline2-color/c02": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c02"
+  },
+  "inline2-color/c03": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c03"
+  },
+  "inline2-color/c04": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c04"
+  },
+  "inline2-color/c05": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c05"
+  },
+  "inline2-color/c06": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c06"
+  },
+  "inline2-color/c07": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c07"
+  },
+  "inline2-color/c08": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c08"
+  },
+  "inline2-color/c09": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c09"
+  },
+  "inline2-color/c10": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c10"
+  },
+  "inline2-color/c11": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c11"
+  },
+  "inline2-color/c12": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c12"
+  },
+  "inline2-color/c13": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c13"
+  },
+  "inline2-color/c14": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c14"
+  },
+  "inline2-color/c15": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c15"
+  },
+  "inline2-color/c16": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c16"
+  },
+  "inline2-color/c17": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c17"
+  },
+  "inline2-color/c18": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c18"
+  },
+  "inline2-color/c19": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c19"
+  },
+  "inline2-color/c20": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c20"
+  },
+  "inline2-color/c21": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c21"
+  },
+  "inline2-color/c22": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c22"
+  },
+  "inline2-color/c23": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c23"
+  },
+  "inline2-color/c24": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c24"
+  },
+  "inline2-color/c25": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c25"
+  },
+  "inline2-color/c26": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c26"
+  },
+  "inline2-color/c27": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c27"
+  },
+  "inline2-color/c28": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c28"
+  },
+  "inline2-color/c29": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c29"
+  },
+  "inline2-color/c30": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c30"
+  },
+  "inline2-color/c31": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c31"
+  },
+  "inline2-color/c32": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c32"
+  },
+  "inline2-color/c33": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c33"
+  },
+  "inline2-color/c34": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c34"
+  },
+  "inline2-color/c35": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c35"
+  },
+  "inline2-color/c36": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c36"
+  },
+  "inline2-color/c37": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c37"
+  },
+  "inline2-color/c38": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c38"
+  },
+  "inline2-color/c39": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c39"
+  },
+  "inline2-color/c40": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c40"
+  },
+  "inline2-color/c41": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c41"
+  },
+  "inline2-color/c42": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c42"
+  },
+  "inline2-color/c43": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c43"
+  },
+  "inline2-color/c44": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c44"
+  },
+  "inline2-color/c45": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c45"
+  },
+  "inline2-color/c46": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c46"
+  },
+  "inline2-color/c47": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c47"
+  },
+  "inline2-color/c48": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c48"
+  },
+  "inline2-color/c49": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c49"
+  },
+  "inline2-color/c50": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c50"
+  },
+  "inline2-color/c51": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c51"
+  },
+  "inline2-color/c52": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c52"
+  },
+  "inline2-color/c53": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c53"
+  },
+  "inline2-color/c54": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c54"
+  },
+  "inline2-color/c55": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c55"
+  },
+  "inline2-color/c56": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c56"
+  },
+  "inline2-color/c57": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c57"
+  },
+  "inline2-color/c58": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c58"
+  },
+  "inline2-color/c59": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c59"
+  },
+  "inline2-color/c60": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c60"
+  },
+  "inline2-color/c61": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c61"
+  },
+  "inline2-color/c62": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c62"
+  },
+  "inline2-color/c63": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c63"
+  },
+  "inline2-color/c64": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c64"
+  },
+  "inline2-color/c65": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c65"
+  },
+  "inline2-color/c66": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c66"
+  },
+  "inline2-color/c67": {
+   "battery": "inline2/color",
+   "file": "conformance-refphp/inline2/color/battery.jsonl",
+   "orig_id": "c67"
+  },
+  "inline2-em/em01": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em01"
+  },
+  "inline2-em/em02": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em02"
+  },
+  "inline2-em/em03": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em03"
+  },
+  "inline2-em/em04": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em04"
+  },
+  "inline2-em/em05": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em05"
+  },
+  "inline2-em/em06": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em06"
+  },
+  "inline2-em/em07": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em07"
+  },
+  "inline2-em/em08": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em08"
+  },
+  "inline2-em/em09": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em09"
+  },
+  "inline2-em/em10": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em10"
+  },
+  "inline2-em/em11": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em11"
+  },
+  "inline2-em/em12": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em12"
+  },
+  "inline2-em/em13": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em13"
+  },
+  "inline2-em/em14": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em14"
+  },
+  "inline2-em/em15": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em15"
+  },
+  "inline2-em/em16": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em16"
+  },
+  "inline2-em/em17": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em17"
+  },
+  "inline2-em/em18": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em18"
+  },
+  "inline2-em/em19": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em19"
+  },
+  "inline2-em/em20": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em20"
+  },
+  "inline2-em/em21": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em21"
+  },
+  "inline2-em/em22": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em22"
+  },
+  "inline2-em/em23": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em23"
+  },
+  "inline2-em/em24": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em24"
+  },
+  "inline2-em/em25": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em25"
+  },
+  "inline2-em/em26": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em26"
+  },
+  "inline2-em/em27": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em27"
+  },
+  "inline2-em/em28": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em28"
+  },
+  "inline2-em/em29": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em29"
+  },
+  "inline2-em/em30": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em30"
+  },
+  "inline2-em/em31": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em31"
+  },
+  "inline2-em/em32": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em32"
+  },
+  "inline2-em/em33": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em33"
+  },
+  "inline2-em/em34": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em34"
+  },
+  "inline2-em/em35": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em35"
+  },
+  "inline2-em/em36": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em36"
+  },
+  "inline2-em/em37": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em37"
+  },
+  "inline2-em/em38": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em38"
+  },
+  "inline2-em/em39": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em39"
+  },
+  "inline2-em/em40": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em40"
+  },
+  "inline2-em/em41": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em41"
+  },
+  "inline2-em/em42": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em42"
+  },
+  "inline2-em/em43": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em43"
+  },
+  "inline2-em/em44": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em44"
+  },
+  "inline2-em/em45": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em45"
+  },
+  "inline2-em/em46": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em46"
+  },
+  "inline2-em/em47": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em47"
+  },
+  "inline2-em/em48": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em48"
+  },
+  "inline2-em/em49": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em49"
+  },
+  "inline2-em/em50": {
+   "battery": "inline2/em",
+   "file": "conformance-refphp/inline2/em/battery.jsonl",
+   "orig_id": "em50"
+  },
+  "inline2-strike/s01": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s01"
+  },
+  "inline2-strike/s02": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s02"
+  },
+  "inline2-strike/s03": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s03"
+  },
+  "inline2-strike/s04": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s04"
+  },
+  "inline2-strike/s05": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s05"
+  },
+  "inline2-strike/s06": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s06"
+  },
+  "inline2-strike/s07": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s07"
+  },
+  "inline2-strike/s08": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s08"
+  },
+  "inline2-strike/s09": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s09"
+  },
+  "inline2-strike/s10": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s10"
+  },
+  "inline2-strike/s11": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s11"
+  },
+  "inline2-strike/s12": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s12"
+  },
+  "inline2-strike/s13": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s13"
+  },
+  "inline2-strike/s14": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s14"
+  },
+  "inline2-strike/s15": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s15"
+  },
+  "inline2-strike/s16": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s16"
+  },
+  "inline2-strike/s17": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s17"
+  },
+  "inline2-strike/s18": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s18"
+  },
+  "inline2-strike/s19": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s19"
+  },
+  "inline2-strike/s20": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s20"
+  },
+  "inline2-strike/s21": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s21"
+  },
+  "inline2-strike/s22": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s22"
+  },
+  "inline2-strike/s23": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s23"
+  },
+  "inline2-strike/s24": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s24"
+  },
+  "inline2-strike/s25": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s25"
+  },
+  "inline2-strike/s26": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s26"
+  },
+  "inline2-strike/s27": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s27"
+  },
+  "inline2-strike/s28": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s28"
+  },
+  "inline2-strike/s29": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s29"
+  },
+  "inline2-strike/s30": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s30"
+  },
+  "inline2-strike/s31": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s31"
+  },
+  "inline2-strike/s32": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s32"
+  },
+  "inline2-strike/s33": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s33"
+  },
+  "inline2-strike/s34": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s34"
+  },
+  "inline2-strike/s35": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s35"
+  },
+  "inline2-strike/s36": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s36"
+  },
+  "inline2-strike/s37": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s37"
+  },
+  "inline2-strike/s38": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s38"
+  },
+  "inline2-strike/s39": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s39"
+  },
+  "inline2-strike/s40": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s40"
+  },
+  "inline2-strike/s41": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s41"
+  },
+  "inline2-strike/s42": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s42"
+  },
+  "inline2-strike/s43": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s43"
+  },
+  "inline2-strike/s44": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s44"
+  },
+  "inline2-strike/s45": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s45"
+  },
+  "inline2-strike/s46": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s46"
+  },
+  "inline2-strike/s47": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s47"
+  },
+  "inline2-strike/s48": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s48"
+  },
+  "inline2-strike/s49": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s49"
+  },
+  "inline2-strike/s50": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s50"
+  },
+  "inline2-strike/s51": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s51"
+  },
+  "inline2-strike/s52": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s52"
+  },
+  "inline2-strike/s53": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s53"
+  },
+  "inline2-strike/s54": {
+   "battery": "inline2/strike",
+   "file": "conformance-refphp/inline2/strike/battery.jsonl",
+   "orig_id": "s54"
+  },
+  "inline2-strong/s01": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s01"
+  },
+  "inline2-strong/s02": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s02"
+  },
+  "inline2-strong/s03": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s03"
+  },
+  "inline2-strong/s04": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s04"
+  },
+  "inline2-strong/s05": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s05"
+  },
+  "inline2-strong/s06": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s06"
+  },
+  "inline2-strong/s07": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s07"
+  },
+  "inline2-strong/s08": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s08"
+  },
+  "inline2-strong/s09": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s09"
+  },
+  "inline2-strong/s10": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s10"
+  },
+  "inline2-strong/s11": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s11"
+  },
+  "inline2-strong/s12": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s12"
+  },
+  "inline2-strong/s13": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s13"
+  },
+  "inline2-strong/s14": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s14"
+  },
+  "inline2-strong/s15": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s15"
+  },
+  "inline2-strong/s16": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s16"
+  },
+  "inline2-strong/s17": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s17"
+  },
+  "inline2-strong/s18": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s18"
+  },
+  "inline2-strong/s19": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s19"
+  },
+  "inline2-strong/s20": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s20"
+  },
+  "inline2-strong/s21": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s21"
+  },
+  "inline2-strong/s22": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s22"
+  },
+  "inline2-strong/s23": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s23"
+  },
+  "inline2-strong/s24": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s24"
+  },
+  "inline2-strong/s25": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s25"
+  },
+  "inline2-strong/s26": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s26"
+  },
+  "inline2-strong/s27": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s27"
+  },
+  "inline2-strong/s28": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s28"
+  },
+  "inline2-strong/s29": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s29"
+  },
+  "inline2-strong/s30": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s30"
+  },
+  "inline2-strong/s31": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s31"
+  },
+  "inline2-strong/s32": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s32"
+  },
+  "inline2-strong/s33": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s33"
+  },
+  "inline2-strong/s34": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s34"
+  },
+  "inline2-strong/s35": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s35"
+  },
+  "inline2-strong/s36": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s36"
+  },
+  "inline2-strong/s37": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s37"
+  },
+  "inline2-strong/s38": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s38"
+  },
+  "inline2-strong/s39": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s39"
+  },
+  "inline2-strong/s40": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s40"
+  },
+  "inline2-strong/s41": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s41"
+  },
+  "inline2-strong/s42": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s42"
+  },
+  "inline2-strong/s43": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s43"
+  },
+  "inline2-strong/s44": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s44"
+  },
+  "inline2-strong/s45": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s45"
+  },
+  "inline2-strong/s46": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s46"
+  },
+  "inline2-strong/s47": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s47"
+  },
+  "inline2-strong/s48": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s48"
+  },
+  "inline2-strong/s49": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s49"
+  },
+  "inline2-strong/s50": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s50"
+  },
+  "inline2-strong/s51": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s51"
+  },
+  "inline2-strong/s52": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s52"
+  },
+  "inline2-strong/s53": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s53"
+  },
+  "inline2-strong/s54": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s54"
+  },
+  "inline2-strong/s55": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s55"
+  },
+  "inline2-strong/s56": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s56"
+  },
+  "inline2-strong/s57": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s57"
+  },
+  "inline2-strong/s58": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s58"
+  },
+  "inline2-strong/s59": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s59"
+  },
+  "inline2-strong/s60": {
+   "battery": "inline2/strong",
+   "file": "conformance-refphp/inline2/strong/battery.jsonl",
+   "orig_id": "s60"
+  },
+  "inline2-u/u01": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u01"
+  },
+  "inline2-u/u02": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u02"
+  },
+  "inline2-u/u03": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u03"
+  },
+  "inline2-u/u04": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u04"
+  },
+  "inline2-u/u05": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u05"
+  },
+  "inline2-u/u06": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u06"
+  },
+  "inline2-u/u07": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u07"
+  },
+  "inline2-u/u08": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u08"
+  },
+  "inline2-u/u09": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u09"
+  },
+  "inline2-u/u10": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u10"
+  },
+  "inline2-u/u11": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u11"
+  },
+  "inline2-u/u12": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u12"
+  },
+  "inline2-u/u13": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u13"
+  },
+  "inline2-u/u14": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u14"
+  },
+  "inline2-u/u15": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u15"
+  },
+  "inline2-u/u16": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u16"
+  },
+  "inline2-u/u17": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u17"
+  },
+  "inline2-u/u18": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u18"
+  },
+  "inline2-u/u19": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u19"
+  },
+  "inline2-u/u20": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u20"
+  },
+  "inline2-u/u21": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u21"
+  },
+  "inline2-u/u22": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u22"
+  },
+  "inline2-u/u23": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u23"
+  },
+  "inline2-u/u24": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u24"
+  },
+  "inline2-u/u25": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u25"
+  },
+  "inline2-u/u26": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u26"
+  },
+  "inline2-u/u27": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u27"
+  },
+  "inline2-u/u28": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u28"
+  },
+  "inline2-u/u29": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u29"
+  },
+  "inline2-u/u30": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u30"
+  },
+  "inline2-u/u31": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u31"
+  },
+  "inline2-u/u32": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u32"
+  },
+  "inline2-u/u33": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u33"
+  },
+  "inline2-u/u34": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u34"
+  },
+  "inline2-u/u35": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u35"
+  },
+  "inline2-u/u36": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u36"
+  },
+  "inline2-u/u37": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u37"
+  },
+  "inline2-u/u38": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u38"
+  },
+  "inline2-u/u39": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u39"
+  },
+  "inline2-u/u40": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u40"
+  },
+  "inline2-u/u41": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u41"
+  },
+  "inline2-u/u42": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u42"
+  },
+  "inline2-u/u43": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u43"
+  },
+  "inline2-u/u44": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u44"
+  },
+  "inline2-u/u45": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u45"
+  },
+  "inline2-u/u46": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u46"
+  },
+  "inline2-u/u47": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u47"
+  },
+  "inline2-u/u48": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u48"
+  },
+  "inline2-u/u49": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u49"
+  },
+  "inline2-u/u50": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u50"
+  },
+  "inline2-u/u51": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u51"
+  },
+  "inline2-u/u52": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u52"
+  },
+  "inline2-u/u53": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u53"
+  },
+  "inline2-u/u54": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u54"
+  },
+  "inline2-u/u55": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u55"
+  },
+  "inline2-u/u56": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u56"
+  },
+  "inline2-u/u57": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u57"
+  },
+  "inline2-u/u58": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u58"
+  },
+  "inline2-u/u59": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u59"
+  },
+  "inline2-u/u60": {
+   "battery": "inline2/u",
+   "file": "conformance-refphp/inline2/u/battery.jsonl",
+   "orig_id": "u60"
+  },
+  "inline2-xbattery/x01": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x01"
+  },
+  "inline2-xbattery/x02": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x02"
+  },
+  "inline2-xbattery/x03": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x03"
+  },
+  "inline2-xbattery/x04": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x04"
+  },
+  "inline2-xbattery/x05": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x05"
+  },
+  "inline2-xbattery/x06": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x06"
+  },
+  "inline2-xbattery/x07": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x07"
+  },
+  "inline2-xbattery/x08": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x08"
+  },
+  "inline2-xbattery/x09": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x09"
+  },
+  "inline2-xbattery/x10": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x10"
+  },
+  "inline2-xbattery/x11": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x11"
+  },
+  "inline2-xbattery/x12": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x12"
+  },
+  "inline2-xbattery/x13": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x13"
+  },
+  "inline2-xbattery/x14": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x14"
+  },
+  "inline2-xbattery/x15": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x15"
+  },
+  "inline2-xbattery/x16": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x16"
+  },
+  "inline2-xbattery/x17": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x17"
+  },
+  "inline2-xbattery/x18": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x18"
+  },
+  "inline2-xbattery/x19": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x19"
+  },
+  "inline2-xbattery/x20": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x20"
+  },
+  "inline2-xbattery/x21": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x21"
+  },
+  "inline2-xbattery/x22": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x22"
+  },
+  "inline2-xbattery/x23": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x23"
+  },
+  "inline2-xbattery/x24": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x24"
+  },
+  "inline2-xbattery/x25": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x25"
+  },
+  "inline2-xbattery/x26": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x26"
+  },
+  "inline2-xbattery/x27": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x27"
+  },
+  "inline2-xbattery/x28": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x28"
+  },
+  "inline2-xbattery/x29": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x29"
+  },
+  "inline2-xbattery/x30": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x30"
+  },
+  "inline2-xbattery/x31": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x31"
+  },
+  "inline2-xbattery/x32": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x32"
+  },
+  "inline2-xbattery/x33": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x33"
+  },
+  "inline2-xbattery/x34": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x34"
+  },
+  "inline2-xbattery/x35": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x35"
+  },
+  "inline2-xbattery/x36": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x36"
+  },
+  "inline2-xbattery/x37": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x37"
+  },
+  "inline2-xbattery/x38": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x38"
+  },
+  "inline2-xbattery/x39": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x39"
+  },
+  "inline2-xbattery/x40": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x40"
+  },
+  "inline2-xbattery/x41": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x41"
+  },
+  "inline2-xbattery/x42": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x42"
+  },
+  "inline2-xbattery/x43": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x43"
+  },
+  "inline2-xbattery/x44": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x44"
+  },
+  "inline2-xbattery/x45": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x45"
+  },
+  "inline2-xbattery/x46": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x46"
+  },
+  "inline2-xbattery/x47": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x47"
+  },
+  "inline2-xbattery/x48": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x48"
+  },
+  "inline2-xbattery/x49": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x49"
+  },
+  "inline2-xbattery/x50": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x50"
+  },
+  "inline2-xbattery/x51": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x51"
+  },
+  "inline2-xbattery/x52": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x52"
+  },
+  "inline2-xbattery/x53": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x53"
+  },
+  "inline2-xbattery/x54": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x54"
+  },
+  "inline2-xbattery/x55": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x55"
+  },
+  "inline2-xbattery/x56": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x56"
+  },
+  "inline2-xbattery/x57": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x57"
+  },
+  "inline2-xbattery/x58": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x58"
+  },
+  "inline2-xbattery/x59": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x59"
+  },
+  "inline2-xbattery/x60": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x60"
+  },
+  "inline2-xbattery/x61": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x61"
+  },
+  "inline2-xbattery/x62": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x62"
+  },
+  "inline2-xbattery/x63": {
+   "battery": "inline2/xbattery",
+   "file": "conformance-refphp/inline2/xbattery.jsonl",
+   "orig_id": "x63"
+  },
+  "inline3-sub/sub01": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub01"
+  },
+  "inline3-sub/sub02": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub02"
+  },
+  "inline3-sub/sub03": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub03"
+  },
+  "inline3-sub/sub04": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub04"
+  },
+  "inline3-sub/sub05": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub05"
+  },
+  "inline3-sub/sub06": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub06"
+  },
+  "inline3-sub/sub07": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub07"
+  },
+  "inline3-sub/sub08": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub08"
+  },
+  "inline3-sub/sub09": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub09"
+  },
+  "inline3-sub/sub10": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub10"
+  },
+  "inline3-sub/sub11": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub11"
+  },
+  "inline3-sub/sub12": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub12"
+  },
+  "inline3-sub/sub13": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub13"
+  },
+  "inline3-sub/sub14": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub14"
+  },
+  "inline3-sub/sub15": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub15"
+  },
+  "inline3-sub/sub16": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub16"
+  },
+  "inline3-sub/sub17": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub17"
+  },
+  "inline3-sub/sub18": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub18"
+  },
+  "inline3-sub/sub19": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub19"
+  },
+  "inline3-sub/sub20": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub20"
+  },
+  "inline3-sub/sub21": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub21"
+  },
+  "inline3-sub/sub22": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub22"
+  },
+  "inline3-sub/sub23": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub23"
+  },
+  "inline3-sub/sub24": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub24"
+  },
+  "inline3-sub/sub25": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub25"
+  },
+  "inline3-sub/sub26": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub26"
+  },
+  "inline3-sub/sub27": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub27"
+  },
+  "inline3-sub/sub28": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub28"
+  },
+  "inline3-sub/sub29": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub29"
+  },
+  "inline3-sub/sub30": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub30"
+  },
+  "inline3-sub/sub31": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub31"
+  },
+  "inline3-sub/sub32": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub32"
+  },
+  "inline3-sub/sub33": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub33"
+  },
+  "inline3-sub/sub34": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub34"
+  },
+  "inline3-sub/sub35": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub35"
+  },
+  "inline3-sub/sub36": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub36"
+  },
+  "inline3-sub/sub37": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub37"
+  },
+  "inline3-sub/sub38": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub38"
+  },
+  "inline3-sub/sub39": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub39"
+  },
+  "inline3-sub/sub40": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub40"
+  },
+  "inline3-sub/sub41": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub41"
+  },
+  "inline3-sub/sub42": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub42"
+  },
+  "inline3-sub/sub43": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub43"
+  },
+  "inline3-sub/sub44": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub44"
+  },
+  "inline3-sub/sub45": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub45"
+  },
+  "inline3-sub/sub46": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub46"
+  },
+  "inline3-sub/sub47": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub47"
+  },
+  "inline3-sub/sub48": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub48"
+  },
+  "inline3-sub/sub49": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub49"
+  },
+  "inline3-sub/sub50": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub50"
+  },
+  "inline3-sub/sub51": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub51"
+  },
+  "inline3-sub/sub52": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub52"
+  },
+  "inline3-sub/sub53": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub53"
+  },
+  "inline3-sub/sub54": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub54"
+  },
+  "inline3-sub/sub55": {
+   "battery": "inline3/sub",
+   "file": "conformance-refphp/inline3/sub/battery.jsonl",
+   "orig_id": "sub55"
+  },
+  "inline3-sup/sup01": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup01"
+  },
+  "inline3-sup/sup02": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup02"
+  },
+  "inline3-sup/sup03": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup03"
+  },
+  "inline3-sup/sup04": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup04"
+  },
+  "inline3-sup/sup05": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup05"
+  },
+  "inline3-sup/sup06": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup06"
+  },
+  "inline3-sup/sup07": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup07"
+  },
+  "inline3-sup/sup08": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup08"
+  },
+  "inline3-sup/sup09": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup09"
+  },
+  "inline3-sup/sup10": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup10"
+  },
+  "inline3-sup/sup11": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup11"
+  },
+  "inline3-sup/sup12": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup12"
+  },
+  "inline3-sup/sup13": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup13"
+  },
+  "inline3-sup/sup14": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup14"
+  },
+  "inline3-sup/sup15": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup15"
+  },
+  "inline3-sup/sup16": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup16"
+  },
+  "inline3-sup/sup17": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup17"
+  },
+  "inline3-sup/sup18": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup18"
+  },
+  "inline3-sup/sup19": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup19"
+  },
+  "inline3-sup/sup20": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup20"
+  },
+  "inline3-sup/sup21": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup21"
+  },
+  "inline3-sup/sup22": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup22"
+  },
+  "inline3-sup/sup23": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup23"
+  },
+  "inline3-sup/sup24": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup24"
+  },
+  "inline3-sup/sup25": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup25"
+  },
+  "inline3-sup/sup26": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup26"
+  },
+  "inline3-sup/sup27": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup27"
+  },
+  "inline3-sup/sup28": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup28"
+  },
+  "inline3-sup/sup29": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup29"
+  },
+  "inline3-sup/sup30": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup30"
+  },
+  "inline3-sup/sup31": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup31"
+  },
+  "inline3-sup/sup32": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup32"
+  },
+  "inline3-sup/sup33": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup33"
+  },
+  "inline3-sup/sup34": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup34"
+  },
+  "inline3-sup/sup35": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup35"
+  },
+  "inline3-sup/sup36": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup36"
+  },
+  "inline3-sup/sup37": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup37"
+  },
+  "inline3-sup/sup38": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup38"
+  },
+  "inline3-sup/sup39": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup39"
+  },
+  "inline3-sup/sup40": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup40"
+  },
+  "inline3-sup/sup41": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup41"
+  },
+  "inline3-sup/sup42": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup42"
+  },
+  "inline3-sup/sup43": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup43"
+  },
+  "inline3-sup/sup44": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup44"
+  },
+  "inline3-sup/sup45": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup45"
+  },
+  "inline3-sup/sup46": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup46"
+  },
+  "inline3-sup/sup47": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup47"
+  },
+  "inline3-sup/sup48": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup48"
+  },
+  "inline3-sup/sup49": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup49"
+  },
+  "inline3-sup/sup50": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup50"
+  },
+  "inline3-sup/sup51": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup51"
+  },
+  "inline3-sup/sup52": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup52"
+  },
+  "inline3-sup/sup53": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup53"
+  },
+  "inline3-sup/sup54": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup54"
+  },
+  "inline3-sup/sup55": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup55"
+  },
+  "inline3-sup/sup56": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup56"
+  },
+  "inline3-sup/sup57": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup57"
+  },
+  "inline3-sup/sup58": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup58"
+  },
+  "inline3-sup/sup59": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup59"
+  },
+  "inline3-sup/sup60": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup60"
+  },
+  "inline3-sup/sup61": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup61"
+  },
+  "inline3-sup/sup62": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup62"
+  },
+  "inline3-sup/sup63": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup63"
+  },
+  "inline3-sup/sup64": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup64"
+  },
+  "inline3-sup/sup65": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup65"
+  },
+  "inline3-sup/sup66": {
+   "battery": "inline3/sup",
+   "file": "conformance-refphp/inline3/sup/battery.jsonl",
+   "orig_id": "sup66"
+  },
+  "inline3-tighten/tighten01": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten01"
+  },
+  "inline3-tighten/tighten02": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten02"
+  },
+  "inline3-tighten/tighten03": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten03"
+  },
+  "inline3-tighten/tighten04": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten04"
+  },
+  "inline3-tighten/tighten05": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten05"
+  },
+  "inline3-tighten/tighten06": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten06"
+  },
+  "inline3-tighten/tighten07": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten07"
+  },
+  "inline3-tighten/tighten08": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten08"
+  },
+  "inline3-tighten/tighten09": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten09"
+  },
+  "inline3-tighten/tighten10": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten10"
+  },
+  "inline3-tighten/tighten11": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten11"
+  },
+  "inline3-tighten/tighten12": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten12"
+  },
+  "inline3-tighten/tighten13": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten13"
+  },
+  "inline3-tighten/tighten14": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten14"
+  },
+  "inline3-tighten/tighten15": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten15"
+  },
+  "inline3-tighten/tighten16": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten16"
+  },
+  "inline3-tighten/tighten17": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten17"
+  },
+  "inline3-tighten/tighten18": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten18"
+  },
+  "inline3-tighten/tighten19": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten19"
+  },
+  "inline3-tighten/tighten20": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten20"
+  },
+  "inline3-tighten/tighten21": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten21"
+  },
+  "inline3-tighten/tighten22": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten22"
+  },
+  "inline3-tighten/tighten23": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten23"
+  },
+  "inline3-tighten/tighten24": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten24"
+  },
+  "inline3-tighten/tighten25": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten25"
+  },
+  "inline3-tighten/tighten26": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten26"
+  },
+  "inline3-tighten/tighten27": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten27"
+  },
+  "inline3-tighten/tighten28": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten28"
+  },
+  "inline3-tighten/tighten29": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten29"
+  },
+  "inline3-tighten/tighten30": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten30"
+  },
+  "inline3-tighten/tighten31": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten31"
+  },
+  "inline3-tighten/tighten32": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten32"
+  },
+  "inline3-tighten/tighten33": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten33"
+  },
+  "inline3-tighten/tighten34": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten34"
+  },
+  "inline3-tighten/tighten35": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten35"
+  },
+  "inline3-tighten/tighten36": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten36"
+  },
+  "inline3-tighten/tighten37": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten37"
+  },
+  "inline3-tighten/tighten38": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten38"
+  },
+  "inline3-tighten/tighten39": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten39"
+  },
+  "inline3-tighten/tighten40": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten40"
+  },
+  "inline3-tighten/tighten41": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten41"
+  },
+  "inline3-tighten/tighten42": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten42"
+  },
+  "inline3-tighten/tighten43": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten43"
+  },
+  "inline3-tighten/tighten44": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten44"
+  },
+  "inline3-tighten/tighten45": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten45"
+  },
+  "inline3-tighten/tighten46": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten46"
+  },
+  "inline3-tighten/tighten47": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten47"
+  },
+  "inline3-tighten/tighten48": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten48"
+  },
+  "inline3-tighten/tighten49": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten49"
+  },
+  "inline3-tighten/tighten50": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten50"
+  },
+  "inline3-tighten/tighten51": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten51"
+  },
+  "inline3-tighten/tighten52": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten52"
+  },
+  "inline3-tighten/tighten53": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten53"
+  },
+  "inline3-tighten/tighten54": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten54"
+  },
+  "inline3-tighten/tighten55": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten55"
+  },
+  "inline3-tighten/tighten56": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten56"
+  },
+  "inline3-tighten/tighten57": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten57"
+  },
+  "inline3-tighten/tighten58": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten58"
+  },
+  "inline3-tighten/tighten59": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten59"
+  },
+  "inline3-tighten/tighten60": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten60"
+  },
+  "inline3-tighten/tighten61": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten61"
+  },
+  "inline3-tighten/tighten62": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten62"
+  },
+  "inline3-tighten/tighten63": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten63"
+  },
+  "inline3-tighten/tighten64": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten64"
+  },
+  "inline3-tighten/tighten65": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten65"
+  },
+  "inline3-tighten/tighten66": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten66"
+  },
+  "inline3-tighten/tighten67": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten67"
+  },
+  "inline3-tighten/tighten68": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten68"
+  },
+  "inline3-tighten/tighten69": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten69"
+  },
+  "inline3-tighten/tighten70": {
+   "battery": "inline3/tighten",
+   "file": "conformance-refphp/inline3/tighten/battery.jsonl",
+   "orig_id": "tighten70"
+  },
+  "inline3-tt/tt01": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt01"
+  },
+  "inline3-tt/tt02": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt02"
+  },
+  "inline3-tt/tt03": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt03"
+  },
+  "inline3-tt/tt04": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt04"
+  },
+  "inline3-tt/tt05": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt05"
+  },
+  "inline3-tt/tt06": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt06"
+  },
+  "inline3-tt/tt07": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt07"
+  },
+  "inline3-tt/tt08": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt08"
+  },
+  "inline3-tt/tt09": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt09"
+  },
+  "inline3-tt/tt10": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt10"
+  },
+  "inline3-tt/tt11": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt11"
+  },
+  "inline3-tt/tt12": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt12"
+  },
+  "inline3-tt/tt13": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt13"
+  },
+  "inline3-tt/tt14": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt14"
+  },
+  "inline3-tt/tt15": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt15"
+  },
+  "inline3-tt/tt16": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt16"
+  },
+  "inline3-tt/tt17": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt17"
+  },
+  "inline3-tt/tt18": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt18"
+  },
+  "inline3-tt/tt19": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt19"
+  },
+  "inline3-tt/tt20": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt20"
+  },
+  "inline3-tt/tt21": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt21"
+  },
+  "inline3-tt/tt22": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt22"
+  },
+  "inline3-tt/tt23": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt23"
+  },
+  "inline3-tt/tt24": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt24"
+  },
+  "inline3-tt/tt25": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt25"
+  },
+  "inline3-tt/tt26": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt26"
+  },
+  "inline3-tt/tt27": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt27"
+  },
+  "inline3-tt/tt28": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt28"
+  },
+  "inline3-tt/tt29": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt29"
+  },
+  "inline3-tt/tt30": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt30"
+  },
+  "inline3-tt/tt31": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt31"
+  },
+  "inline3-tt/tt32": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt32"
+  },
+  "inline3-tt/tt33": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt33"
+  },
+  "inline3-tt/tt34": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt34"
+  },
+  "inline3-tt/tt35": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt35"
+  },
+  "inline3-tt/tt36": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt36"
+  },
+  "inline3-tt/tt37": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt37"
+  },
+  "inline3-tt/tt38": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt38"
+  },
+  "inline3-tt/tt39": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt39"
+  },
+  "inline3-tt/tt40": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt40"
+  },
+  "inline3-tt/tt41": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt41"
+  },
+  "inline3-tt/tt42": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt42"
+  },
+  "inline3-tt/tt43": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt43"
+  },
+  "inline3-tt/tt44": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt44"
+  },
+  "inline3-tt/tt45": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt45"
+  },
+  "inline3-tt/tt46": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt46"
+  },
+  "inline3-tt/tt47": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt47"
+  },
+  "inline3-tt/tt48": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt48"
+  },
+  "inline3-tt/tt49": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt49"
+  },
+  "inline3-tt/tt50": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt50"
+  },
+  "inline3-tt/tt51": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt51"
+  },
+  "inline3-tt/tt52": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt52"
+  },
+  "inline3-tt/tt53": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt53"
+  },
+  "inline3-tt/tt54": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt54"
+  },
+  "inline3-tt/tt55": {
+   "battery": "inline3/tt",
+   "file": "conformance-refphp/inline3/tt/battery.jsonl",
+   "orig_id": "tt55"
+  },
+  "inline3-typo/typo01": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo01"
+  },
+  "inline3-typo/typo02": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo02"
+  },
+  "inline3-typo/typo03": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo03"
+  },
+  "inline3-typo/typo04": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo04"
+  },
+  "inline3-typo/typo05": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo05"
+  },
+  "inline3-typo/typo06": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo06"
+  },
+  "inline3-typo/typo07": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo07"
+  },
+  "inline3-typo/typo08": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo08"
+  },
+  "inline3-typo/typo09": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo09"
+  },
+  "inline3-typo/typo10": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo10"
+  },
+  "inline3-typo/typo11": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo11"
+  },
+  "inline3-typo/typo12": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo12"
+  },
+  "inline3-typo/typo13": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo13"
+  },
+  "inline3-typo/typo14": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo14"
+  },
+  "inline3-typo/typo15": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo15"
+  },
+  "inline3-typo/typo16": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo16"
+  },
+  "inline3-typo/typo17": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo17"
+  },
+  "inline3-typo/typo18": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo18"
+  },
+  "inline3-typo/typo19": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo19"
+  },
+  "inline3-typo/typo20": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo20"
+  },
+  "inline3-typo/typo21": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo21"
+  },
+  "inline3-typo/typo22": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo22"
+  },
+  "inline3-typo/typo23": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo23"
+  },
+  "inline3-typo/typo24": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo24"
+  },
+  "inline3-typo/typo25": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo25"
+  },
+  "inline3-typo/typo26": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo26"
+  },
+  "inline3-typo/typo27": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo27"
+  },
+  "inline3-typo/typo28": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo28"
+  },
+  "inline3-typo/typo29": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo29"
+  },
+  "inline3-typo/typo30": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo30"
+  },
+  "inline3-typo/typo31": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo31"
+  },
+  "inline3-typo/typo32": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo32"
+  },
+  "inline3-typo/typo33": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo33"
+  },
+  "inline3-typo/typo34": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo34"
+  },
+  "inline3-typo/typo35": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo35"
+  },
+  "inline3-typo/typo36": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo36"
+  },
+  "inline3-typo/typo37": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo37"
+  },
+  "inline3-typo/typo38": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo38"
+  },
+  "inline3-typo/typo39": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo39"
+  },
+  "inline3-typo/typo40": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo40"
+  },
+  "inline3-typo/typo41": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo41"
+  },
+  "inline3-typo/typo42": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo42"
+  },
+  "inline3-typo/typo43": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo43"
+  },
+  "inline3-typo/typo44": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo44"
+  },
+  "inline3-typo/typo45": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo45"
+  },
+  "inline3-typo/typo46": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo46"
+  },
+  "inline3-typo/typo47": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo47"
+  },
+  "inline3-typo/typo48": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo48"
+  },
+  "inline3-typo/typo49": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo49"
+  },
+  "inline3-typo/typo50": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo50"
+  },
+  "inline3-typo/typo51": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo51"
+  },
+  "inline3-typo/typo52": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo52"
+  },
+  "inline3-typo/typo53": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo53"
+  },
+  "inline3-typo/typo54": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo54"
+  },
+  "inline3-typo/typo55": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo55"
+  },
+  "inline3-typo/typo56": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo56"
+  },
+  "inline3-typo/typo57": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo57"
+  },
+  "inline3-typo/typo58": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo58"
+  },
+  "inline3-typo/typo59": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo59"
+  },
+  "inline3-typo/typo60": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo60"
+  },
+  "inline3-typo/typo61": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo61"
+  },
+  "inline3-typo/typo62": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo62"
+  },
+  "inline3-typo/typo63": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo63"
+  },
+  "inline3-typo/typo64": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo64"
+  },
+  "inline3-typo/typo65": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo65"
+  },
+  "inline3-typo/typo66": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo66"
+  },
+  "inline3-typo/typo67": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo67"
+  },
+  "inline3-typo/typo68": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo68"
+  },
+  "inline3-typo/typo69": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo69"
+  },
+  "inline3-typo/typo70": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo70"
+  },
+  "inline3-typo/typo71": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo71"
+  },
+  "inline3-typo/typo72": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo72"
+  },
+  "inline3-typo/typo73": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo73"
+  },
+  "inline3-typo/typo74": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo74"
+  },
+  "inline3-typo/typo75": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo75"
+  },
+  "inline3-typo/typo76": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo76"
+  },
+  "inline3-typo/typo77": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo77"
+  },
+  "inline3-typo/typo78": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo78"
+  },
+  "inline3-typo/typo79": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo79"
+  },
+  "inline3-typo/typo80": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo80"
+  },
+  "inline3-typo/typo81": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo81"
+  },
+  "inline3-typo/typo82": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo82"
+  },
+  "inline3-typo/typo83": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo83"
+  },
+  "inline3-typo/typo84": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo84"
+  },
+  "inline3-typo/typo85": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo85"
+  },
+  "inline3-typo/typo86": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo86"
+  },
+  "inline3-typo/typo87": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo87"
+  },
+  "inline3-typo/typo88": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo88"
+  },
+  "inline3-typo/typo89": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo89"
+  },
+  "inline3-typo/typo90": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo90"
+  },
+  "inline3-typo/typo91": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo91"
+  },
+  "inline3-typo/typo92": {
+   "battery": "inline3/typo",
+   "file": "conformance-refphp/inline3/typo/battery.jsonl",
+   "orig_id": "typo92"
+  },
+  "inline3-xbattery/x01": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x01"
+  },
+  "inline3-xbattery/x02": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x02"
+  },
+  "inline3-xbattery/x03": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x03"
+  },
+  "inline3-xbattery/x04": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x04"
+  },
+  "inline3-xbattery/x05": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x05"
+  },
+  "inline3-xbattery/x06": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x06"
+  },
+  "inline3-xbattery/x07": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x07"
+  },
+  "inline3-xbattery/x08": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x08"
+  },
+  "inline3-xbattery/x09": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x09"
+  },
+  "inline3-xbattery/x10": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x10"
+  },
+  "inline3-xbattery/x100": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x100"
+  },
+  "inline3-xbattery/x101": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x101"
+  },
+  "inline3-xbattery/x102": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x102"
+  },
+  "inline3-xbattery/x103": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x103"
+  },
+  "inline3-xbattery/x104": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x104"
+  },
+  "inline3-xbattery/x105": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x105"
+  },
+  "inline3-xbattery/x106": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x106"
+  },
+  "inline3-xbattery/x107": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x107"
+  },
+  "inline3-xbattery/x108": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x108"
+  },
+  "inline3-xbattery/x11": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x11"
+  },
+  "inline3-xbattery/x12": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x12"
+  },
+  "inline3-xbattery/x13": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x13"
+  },
+  "inline3-xbattery/x14": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x14"
+  },
+  "inline3-xbattery/x15": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x15"
+  },
+  "inline3-xbattery/x16": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x16"
+  },
+  "inline3-xbattery/x17": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x17"
+  },
+  "inline3-xbattery/x18": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x18"
+  },
+  "inline3-xbattery/x19": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x19"
+  },
+  "inline3-xbattery/x20": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x20"
+  },
+  "inline3-xbattery/x21": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x21"
+  },
+  "inline3-xbattery/x22": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x22"
+  },
+  "inline3-xbattery/x23": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x23"
+  },
+  "inline3-xbattery/x24": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x24"
+  },
+  "inline3-xbattery/x25": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x25"
+  },
+  "inline3-xbattery/x26": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x26"
+  },
+  "inline3-xbattery/x27": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x27"
+  },
+  "inline3-xbattery/x28": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x28"
+  },
+  "inline3-xbattery/x29": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x29"
+  },
+  "inline3-xbattery/x30": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x30"
+  },
+  "inline3-xbattery/x31": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x31"
+  },
+  "inline3-xbattery/x32": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x32"
+  },
+  "inline3-xbattery/x33": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x33"
+  },
+  "inline3-xbattery/x34": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x34"
+  },
+  "inline3-xbattery/x35": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x35"
+  },
+  "inline3-xbattery/x36": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x36"
+  },
+  "inline3-xbattery/x37": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x37"
+  },
+  "inline3-xbattery/x38": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x38"
+  },
+  "inline3-xbattery/x39": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x39"
+  },
+  "inline3-xbattery/x40": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x40"
+  },
+  "inline3-xbattery/x41": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x41"
+  },
+  "inline3-xbattery/x42": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x42"
+  },
+  "inline3-xbattery/x43": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x43"
+  },
+  "inline3-xbattery/x44": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x44"
+  },
+  "inline3-xbattery/x45": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x45"
+  },
+  "inline3-xbattery/x46": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x46"
+  },
+  "inline3-xbattery/x47": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x47"
+  },
+  "inline3-xbattery/x48": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x48"
+  },
+  "inline3-xbattery/x49": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x49"
+  },
+  "inline3-xbattery/x50": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x50"
+  },
+  "inline3-xbattery/x51": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x51"
+  },
+  "inline3-xbattery/x52": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x52"
+  },
+  "inline3-xbattery/x53": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x53"
+  },
+  "inline3-xbattery/x54": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x54"
+  },
+  "inline3-xbattery/x55": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x55"
+  },
+  "inline3-xbattery/x56": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x56"
+  },
+  "inline3-xbattery/x57": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x57"
+  },
+  "inline3-xbattery/x58": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x58"
+  },
+  "inline3-xbattery/x59": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x59"
+  },
+  "inline3-xbattery/x60": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x60"
+  },
+  "inline3-xbattery/x61": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x61"
+  },
+  "inline3-xbattery/x62": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x62"
+  },
+  "inline3-xbattery/x63": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x63"
+  },
+  "inline3-xbattery/x64": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x64"
+  },
+  "inline3-xbattery/x65": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x65"
+  },
+  "inline3-xbattery/x66": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x66"
+  },
+  "inline3-xbattery/x67": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x67"
+  },
+  "inline3-xbattery/x68": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x68"
+  },
+  "inline3-xbattery/x69": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x69"
+  },
+  "inline3-xbattery/x70": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x70"
+  },
+  "inline3-xbattery/x71": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x71"
+  },
+  "inline3-xbattery/x72": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x72"
+  },
+  "inline3-xbattery/x73": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x73"
+  },
+  "inline3-xbattery/x74": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x74"
+  },
+  "inline3-xbattery/x75": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x75"
+  },
+  "inline3-xbattery/x76": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x76"
+  },
+  "inline3-xbattery/x77": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x77"
+  },
+  "inline3-xbattery/x78": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x78"
+  },
+  "inline3-xbattery/x79": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x79"
+  },
+  "inline3-xbattery/x80": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x80"
+  },
+  "inline3-xbattery/x81": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x81"
+  },
+  "inline3-xbattery/x82": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x82"
+  },
+  "inline3-xbattery/x83": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x83"
+  },
+  "inline3-xbattery/x84": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x84"
+  },
+  "inline3-xbattery/x85": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x85"
+  },
+  "inline3-xbattery/x86": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x86"
+  },
+  "inline3-xbattery/x87": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x87"
+  },
+  "inline3-xbattery/x88": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x88"
+  },
+  "inline3-xbattery/x89": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x89"
+  },
+  "inline3-xbattery/x90": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x90"
+  },
+  "inline3-xbattery/x91": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x91"
+  },
+  "inline3-xbattery/x92": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x92"
+  },
+  "inline3-xbattery/x93": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x93"
+  },
+  "inline3-xbattery/x94": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x94"
+  },
+  "inline3-xbattery/x95": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x95"
+  },
+  "inline3-xbattery/x96": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x96"
+  },
+  "inline3-xbattery/x97": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x97"
+  },
+  "inline3-xbattery/x98": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x98"
+  },
+  "inline3-xbattery/x99": {
+   "battery": "inline3/xbattery",
+   "file": "conformance-refphp/inline3/xbattery.jsonl",
+   "orig_id": "x99"
+  }
+ },
+ "total": 1109
+}

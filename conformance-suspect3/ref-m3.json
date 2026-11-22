@@ -1,0 +1,142 @@
+{
+ "t-a": {
+  "source": "A ##red|``@@x@@`` B## C",
+  "ref": "<p>A <span style=\"color: red\"> B</span> C</p>",
+  "stderr": ""
+ },
+ "t-b": {
+  "source": "A ##red|B ``@@x@@``## C",
+  "ref": "<p>A <span style=\"color: red\">B </span> C</p>",
+  "stderr": ""
+ },
+ "t-c": {
+  "source": "A\n``@@x@@`` B",
+  "ref": "<p>A<br />\n B</p>",
+  "stderr": ""
+ },
+ "t-d1": {
+  "source": "``@@x@@`` A",
+  "ref": "<p> A</p>",
+  "stderr": ""
+ },
+ "t-d2": {
+  "source": "A ``@@x@@``",
+  "ref": "<p>A </p>",
+  "stderr": ""
+ },
+ "t-fold": {
+  "source": "A ``@@x@@`` ##red| B## C",
+  "ref": "<p>A  <span style=\"color: red\">B</span> C</p>",
+  "stderr": ""
+ },
+ "y-a": {
+  "source": "A ..``@@x@@``.. B",
+  "ref": "<p>A .... B</p>",
+  "stderr": ""
+ },
+ "y-b": {
+  "source": "A -``@@x@@``- B",
+  "ref": "<p>A -- B</p>",
+  "stderr": ""
+ },
+ "y-c1": {
+  "source": "A ``@@x@@'' B",
+  "ref": "<p>A &#8220;<span style=\"white-space: pre-wrap;\">x</span>&#8221; B</p>",
+  "stderr": ""
+ },
+ "y-c2": {
+  "source": "A <<@@x@@>> B",
+  "ref": "<p>A &#171;<span style=\"white-space: pre-wrap;\">x</span>&#187; B</p>",
+  "stderr": ""
+ },
+ "y-d": {
+  "source": "A . ``@@x@@`` . . B",
+  "ref": "<p>A .  . . B</p>",
+  "stderr": ""
+ },
+ "y5": {
+  "source": "A .[!--x--].. B",
+  "ref": "<p>A &#8230; B</p>",
+  "stderr": ""
+ },
+ "s1a": {
+  "source": "[[bibliography]]\n: a : X\n: a : Y\n: b : Z\n[[/bibliography]]\nCite ((bibcite a)) and ((bibcite b)).",
+  "ref": "<div class=\"bibitems\"><div class=\"title\">Bibliography</div><div class=\"bibitem\" id=\"bibitem-1\">1. X</div><div class=\"bibitem\" id=\"bibitem-2\">2. Y</div><div class=\"bibitem\" id=\"bibitem-2\">2. Z</div></div><p>Cite <a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-2\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-2')\">2</a> and <a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-2\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-2')\">2</a>.</p>",
+  "stderr": "PHP Warning:  Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Parse/Default/Bibliography.php on line 44\nWarning: Undefined array"
+ },
+ "s1b": {
+  "source": "[[bibliography]]\n: a : X\n: b : Y\n: a : Z\n[[/bibliography]]\n((bibcite a))",
+  "ref": "<div class=\"bibitems\"><div class=\"title\">Bibliography</div><div class=\"bibitem\" id=\"bibitem-1\">1. X</div><div class=\"bibitem\" id=\"bibitem-2\">2. Y</div><div class=\"bibitem\" id=\"bibitem-3\">3. Z</div></div><p><a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-3\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-3')\">3</a></p>",
+  "stderr": "PHP Warning:  Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Parse/Default/Bibliography.php on line 44\nWarning: Undefined array"
+ },
+ "s1c": {
+  "source": "[[bibliography]]\n: k : First\n: k : Second\n[[/bibliography]]\nCite ((bibcite k)).",
+  "ref": "<div class=\"bibitems\"><div class=\"title\">Bibliography</div><div class=\"bibitem\" id=\"bibitem-1\">1. First</div><div class=\"bibitem\" id=\"bibitem-2\">2. Second</div></div><p>Cite <a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-2\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-2')\">2</a>.</p>",
+  "stderr": "PHP Warning:  Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Parse/Default/Bibliography.php on line 44\nWarning: Undefined array"
+ },
+ "s3c": {
+  "source": "[[bibliography]]\n: a : Entry A\n[[/bibliography]]\n[[bibliography]]\n: a : Entry A2\n[[/bibliography]]\nCite ((bibcite a)).",
+  "ref": "<div class=\"bibitems\"><div class=\"title\">Bibliography</div><div class=\"bibitem\" id=\"bibitem-1\">1. Entry A</div></div><p>[[bibliography]]<br />\n<dl>\n<dt>a</dt>\n<dd>Entry A2</dd>\n</dl>\n</p>\n\n<p>[[/bibliography]]<br />\nCite <a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-1')\">1</a>.</p>",
+  "stderr": "PHP Warning:  Undefined array key \"title\" in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Parse/Default/Bibliography.php on line 44\nWarning: Undefined array"
+ },
+ "s2c": {
+  "source": "[[footnoteblock]]\n[[footnote]]see ((bibcite k))[[/footnote]]\n[[bibliography]]\n: k : Key\n[[/bibliography]]",
+  "ref": "<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. see <a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-1')\">1</a></div></div><br />\n<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><div class=\"bibitems\"><div class=\"title\">Bibliography</div><div class=\"bibitem\" id=\"bibitem-1\">1. Key</div></div>",
+  "stderr": "PHP Warning:  Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nWarning: Undefined array"
+ },
+ "s5a": {
+  "source": "[[footnote]]outer [[footnote]]inner[[/footnote]]",
+  "ref": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. outer [[footnote]]inner</div></div>",
+  "stderr": "PHP Warning:  Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nWarning: Undefined array"
+ },
+ "s6b": {
+  "source": "[[footnote]]A\n[[bibliography]]\n: k : Key\n[[/bibliography]][[/footnote]]",
+  "ref": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A<div class=\"bibitems\"><div class=\"title\">Bibliography</div><div class=\"bibitem\" id=\"bibitem-1\">1. Key</div></div></div></div>",
+  "stderr": "PHP Warning:  Undefined array key \"footnotes\" in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Parse/Default/Footnote.php on line 48\nWarning: Undefined array"
+ },
+ "t1a": {
+  "source": "[[toc]]\n+ A\n++ B\n++++ D\n++++++ F",
+  "ref": "<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\">\n\t<div style=\"margin-left: 1em;\"><a href=\"#toc0\">A</a></div>\n\t<div style=\"margin-left: 2em;\"><a href=\"#toc1\">B</a></div>\n\t<div style=\"margin-left: 4em;\"><a href=\"#toc2\">D</a></div>\n\t<div style=\"margin-left: 6em;\"><a href=\"#toc3\">F</a></div>\n</div></div></td></tr></table>\n\n\n<h1 id=\"toc0\"><span>A</span></h1>\n\n<h2 id=\"toc1\"><span>B</span></h2>\n\n<h4 id=\"toc2\"><span>D</span></h4>\n\n<h6 id=\"toc3\"><span>F</span></h6>",
+  "stderr": "PHP Warning:  Undefined array key \"headline_id\" in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Parse/Default/Heading.php on line 91\nWarning: Undefined arra"
+ },
+ "t1b": {
+  "source": "[[toc]]\n+ A\n+++++++ X\n++ B",
+  "ref": "<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\">\n\t<div style=\"margin-left: 1em;\"><a href=\"#toc0\">A</a></div>\n\t<div style=\"margin-left: 2em;\"><a href=\"#toc1\">B</a></div>\n</div></div></td></tr></table>\n\n\n<h1 id=\"toc0\"><span>A</span></h1>\n<p>+++++++ X</p>\n\n\n<h2 id=\"toc1\"><span>B</span></h2>",
+  "stderr": "PHP Warning:  Undefined array key \"headline_id\" in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Parse/Default/Heading.php on line 91\nWarning: Undefined arra"
+ },
+ "t2a": {
+  "source": "+ Before\n[[toc]]\n+ After",
+  "ref": "\n<h1 id=\"toc0\"><span>Before</span></h1>\n<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\">\n\t<div style=\"margin-left: 1em;\"><a href=\"#toc0\">Before</a></div>\n\t<div style=\"margin-left: 1em;\"><a href=\"#toc1\">After</a></div>\n</div></div></td></tr></table>\n\n\n<h1 id=\"toc1\"><span>After</span></h1>",
+  "stderr": "PHP Warning:  Undefined array key \"headline_id\" in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Parse/Default/Heading.php on line 91\nWarning: Undefined arra"
+ },
+ "t2b": {
+  "source": "[[toc]]\n+ A\n[[toc]]\n++ B",
+  "ref": "<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\">\n\t<div style=\"margin-left: 1em;\"><a href=\"#toc0\">A</a></div>\n\t<div style=\"margin-left: 2em;\"><a href=\"#toc1\">B</a></div>\n</div></div></td></tr></table>\n\n\n<h1 id=\"toc0\"><span>A</span></h1>\n<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\">\n\t<div style=\"margin-left: 1em;\"><a href=\"#toc0\">A</a></div>\n\t<div style=\"margin-left: 2em;\"><a href=\"#toc1\">B</a></div>\n</div></div></td></tr></table>\n\n\n<h2 id=\"toc1\"><span>B</span></h2>",
+  "stderr": "PHP Warning:  Undefined array key \"headline_id\" in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Parse/Default/Heading.php on line 91\nWarning: Undefined arra"
+ },
+ "t2c": {
+  "source": "[[toc]]\n++ Same\n++ Same",
+  "ref": "<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\">\n\t<div style=\"margin-left: 2em;\"><a href=\"#toc0\">Same</a></div>\n\t<div style=\"margin-left: 2em;\"><a href=\"#toc1\">Same</a></div>\n</div></div></td></tr></table>\n\n\n<h2 id=\"toc0\"><span>Same</span></h2>\n\n<h2 id=\"toc1\"><span>Same</span></h2>",
+  "stderr": "PHP Warning:  Undefined array key \"headline_id\" in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Parse/Default/Heading.php on line 91\nWarning: Undefined arra"
+ },
+ "t3c": {
+  "source": "[[toc numbered]]\n+ A",
+  "ref": "<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\">\n\t<div style=\"margin-left: 1em;\"><a href=\"#toc0\">A</a></div>\n</div></div></td></tr></table>\n\n\n<h1 id=\"toc0\"><span>A</span></h1>",
+  "stderr": "PHP Warning:  Undefined array key \"headline_id\" in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Parse/Default/Heading.php on line 91\nWarning: Undefined arra"
+ },
+ "t4a": {
+  "source": "[[toc]]\n++ A **bold** B",
+  "ref": "<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\">\n\t<div style=\"margin-left: 2em;\"><a href=\"#toc0\">A bold B</a></div>\n</div></div></td></tr></table>\n\n\n<h2 id=\"toc0\"><span>A <strong>bold</strong> B</span></h2>",
+  "stderr": "PHP Warning:  Undefined array key \"headline_id\" in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Parse/Default/Heading.php on line 91\nWarning: Undefined arra"
+ },
+ "h2a": {
+  "source": "[[toc]]\n+ A\n+* Skip\n+ B",
+  "ref": "<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\">\n\t<div style=\"margin-left: 1em;\"><a href=\"#toc0\">A</a></div>\n\t<div style=\"margin-left: 1em;\"><a href=\"#toc1\">B</a></div>\n</div></div></td></tr></table>\n\n\n<h1 id=\"toc0\"><span>A</span></h1>\n\n<h1><span>Skip</span></h1>\n\n<h1 id=\"toc1\"><span>B</span></h1>",
+  "stderr": "PHP Warning:  Undefined array key \"headline_id\" in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Parse/Default/Heading.php on line 91\nWarning: Undefined arra"
+ },
+ "h2b": {
+  "source": "[[toc]]\n+* Only\n+ A",
+  "ref": "<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\">\n\t<div style=\"margin-left: 1em;\"><a href=\"#toc0\">A</a></div>\n</div></div></td></tr></table>\n\n\n<h1><span>Only</span></h1>\n\n<h1 id=\"toc0\"><span>A</span></h1>",
+  "stderr": "PHP Warning:  Undefined array key \"headline_id\" in /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-suspect3/ref-php/text-wiki/Text/Wiki/Parse/Default/Heading.php on line 91\nWarning: Undefined arra"
+ }
+}

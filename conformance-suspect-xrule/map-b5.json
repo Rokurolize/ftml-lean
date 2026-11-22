@@ -1,0 +1,37 @@
+{
+ "x34-module-unknown-body": {
+  "fullname": "muse-probe-suspect-xrule-x34-module-unknown-body",
+  "source": "[[module Foo]]\nplain body\n[[/module]]",
+  "action": "created"
+ },
+ "x35-module-unknown-nobody": {
+  "fullname": "muse-probe-suspect-xrule-x35-module-unknown-nobody",
+  "source": "[[module Foo]]",
+  "action": "created"
+ },
+ "x36-freelink-footnote-target": {
+  "fullname": "muse-probe-suspect-xrule-x36-freelink-footnote-target",
+  "source": "A [[[[footnote]]n[[/footnote]]]] B",
+  "action": "created"
+ },
+ "x37-form-raw-body": {
+  "fullname": "muse-probe-suspect-xrule-x37-form-raw-body",
+  "source": "[[form]]\n@@x@@\n[[/form]]",
+  "action": "created"
+ },
+ "x38-form-code-midline": {
+  "fullname": "muse-probe-suspect-xrule-x38-form-code-midline",
+  "source": "[[form]]\na@@x@@b\n[[/form]]",
+  "action": "created"
+ },
+ "x39-ustrip-plain": {
+  "fullname": "muse-probe-suspect-xrule-x39-ustrip-plain",
+  "source": "üüplainüü",
+  "action": "created"
+ },
+ "x40-email-raw-shift3": {
+  "fullname": "muse-probe-suspect-xrule-x40-email-raw-shift3",
+  "source": "A @@a@@ @@b@@ [a@example.com @@x@@] B",
+  "action": "created"
+ }
+}

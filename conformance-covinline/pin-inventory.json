@@ -1,0 +1,421 @@
+{
+  "tree_state": "post-REFCORR4 post-TABLEADV-FIX",
+  "classes": {
+    "urlLink": {
+      "branch": "Url.php base anchor, ENT_COMPAT",
+      "live": [
+        "muse-probe-htmlchars-url-desc",
+        "muse-probe-htmlchars-url-auto"
+      ],
+      "battery": [
+        "u01-http",
+        "u47-described"
+      ],
+      "file": "conformance-htmlchars/probe-map.json; conformance-refphp/inline1/url/battery.jsonl"
+    },
+    "urlHash": {
+      "branch": "Url.php href '#' -> javascript:;",
+      "live": [
+        "muse-probe-suspect-inline-url-hash-star",
+        "muse-probe-suspect-inline-url-hash-unstar"
+      ],
+      "battery": [
+        "u51-described-hash"
+      ],
+      "file": "conformance-refphp/inline1/url/CORRECTION-CSUSPECT-INLINE-C1.md; conformance-refphp/inline1/url/battery.jsonl"
+    },
+    "urlTarget": {
+      "branch": "Url.php truthy target attribute",
+      "live": [
+        "muse-probe-htmlchars-url-star",
+        "muse-probe-suspect-inline-url-anchor-star",
+        "muse-probe-suspect-inline-url-anchor-star2",
+        "muse-probe-suspect-inline-url-mailto-lower",
+        "muse-probe-suspect-inline-url-mailto-star2"
+      ],
+      "battery": [
+        "u50-described-star",
+        "u63-star-bare"
+      ],
+      "file": "REPORT-REFCORR3.md; conformance-htmlchars/probe-map.json"
+    },
+    "urlFootnote": {
+      "branch": "Url.php footnote sup wrap",
+      "live": [],
+      "battery": [],
+      "designed": [
+        "renderUrlFootnoteIntent",
+        "ws2_10_table_and_url_unreachable_specs",
+        "url_footnote_wrap"
+      ],
+      "reason": "No page pin: Parse/Default/Url.php never emits type=footnote; SPEC-pinned direct token call",
+      "file": "REPORT-ANTIGRAVITY-SUSPECT.md; REPORT-AGY-SPEC2.md; InlineRender.lean:547"
+    },
+    "iwKnown": {
+      "branch": "Interwiki.php known site anchor + window.open",
+      "live": [
+        "muse-probe-r2in1-iw-p10-google-labeled",
+        "muse-probe-htmlchars-iw-label"
+      ],
+      "battery": [
+        "iw43-11-google-labeled"
+      ],
+      "file": "conformance-refphp/inline1/interwiki/probes/probe-map.json; conformance-htmlchars/probe-map.json"
+    },
+    "iwUnknown": {
+      "branch": "Interwiki.php unknown site escaped fallback (REFCORR4 C)",
+      "live": [
+        "muse-probe-agy-suspect-p16-interwiki-unknown-html",
+        "muse-probe-agy-suspect-f10-interwiki-unknown-apos"
+      ],
+      "battery": [
+        "iw43-19-nosuchwiki-labeled"
+      ],
+      "file": "REPORT-REFCORR4.md; conformance-refphp/inline1/interwiki/CORRECTION-AGY-INTERWIKI-FALLBACK.md"
+    },
+    "emReversed": {
+      "branch": "Email.php reversed/rotated form",
+      "live": [
+        "muse-probe-r2in1-mail-p01-bare",
+        "muse-probe-r2in1-mail-p04-described"
+      ],
+      "battery": [
+        "elp-p01-bare",
+        "e41-01-bare-simple"
+      ],
+      "file": "conformance-refphp/inline1/email/probes/probe-map.json; conformance-refphp/inline1/email/battery.jsonl"
+    },
+    "flUrl": {
+      "branch": "Freelink.php truthy url external anchor",
+      "live": [
+        "muse-probe-r2link-free-p-url-plain"
+      ],
+      "battery": [
+        "url-plain",
+        "url-subpath"
+      ],
+      "file": "conformance-refphp/link/freelink/probe-map.json"
+    },
+    "flSite": {
+      "branch": "Freelink.php fossil site branch",
+      "live": [],
+      "battery": [],
+      "reason": "No pin: unreachable after R2-LINK parse correction C3; reference fatals on undefined GlobalProperties. Designed direct-call pin: token() with site set",
+      "file": "REPORT-HTMLCHARS.md; REPORT-R48.md"
+    },
+    "flExists": {
+      "branch": "Freelink.php local existing page",
+      "live": [
+        "muse-probe-r2link-free-exists",
+        "muse-probe-r2link-free-p-exist-labeled"
+      ],
+      "battery": [
+        "exist-target-labeled"
+      ],
+      "file": "conformance-refphp/link/freelink/probe-map.json"
+    },
+    "flMissing": {
+      "branch": "Freelink.php local missing page, newpage class",
+      "live": [
+        "muse-probe-r2link-free-p-new-labeled"
+      ],
+      "battery": [
+        "new-target-labeled"
+      ],
+      "file": "conformance-refphp/link/freelink/probe-map.json"
+    },
+    "flNonbr": {
+      "branch": "Freelink nonbr &nbsp; modifier",
+      "live": [],
+      "battery": [],
+      "reason": "No pin: the corrected parse rule never sets nonbr (R2-LINK C4). Designed direct-call pin: token() with nonbr=true",
+      "file": "conformance-refphp/link/freelink/SECTION.md; ServingRules.lean:186-191"
+    },
+    "flTarget": {
+      "branch": "Freelink starred URL target attribute (REFCORR3 C-SUSPECT-SERVING-2)",
+      "live": [
+        "muse-probe-suspect-serving-free-star-url",
+        "muse-probe-suspect-serving-free-plain-url"
+      ],
+      "battery": [
+        "star-target",
+        "star-labeled"
+      ],
+      "file": "REPORT-REFCORR3.md; conformance-refphp/link/freelink/CORRECTION-CSUSPECT-SERVING-2.md"
+    },
+    "imFirst": {
+      "branch": "Image.php :first source, page lookup miss -> empty",
+      "live": [],
+      "battery": [],
+      "designed": [
+        "image_first_empty"
+      ],
+      "reason": "No battery case: harness page name unset; designed direct-token pin image_first_empty",
+      "file": "conformance-refphp/para/image/SECTION.md; REPORT-R48.md"
+    },
+    "imFlickr": {
+      "branch": "Image.php flickr source",
+      "live": [],
+      "battery": [],
+      "designed": [
+        "image_flickr_boundary"
+      ],
+      "reason": "No pin: formal serving disposition Image:FlickrHandler; excluded by Lean, fatal in reference. Designed direct-token pin",
+      "file": "conformance-refphp/para/image/SECTION.md; REPORT-R48.md"
+    },
+    "imUrlSource": {
+      "branch": "Image.php URL source passthrough",
+      "live": [
+        "muse-probe-r2para-img-p12-nonascii"
+      ],
+      "battery": [
+        "i37-11-external-https",
+        "i37-12-external-http-alt-suffix"
+      ],
+      "file": "conformance-refphp/para/image/battery.jsonl"
+    },
+    "imLocalResized": {
+      "branch": "Image.php local validated size / forced medium",
+      "live": [
+        "muse-probe-agy-suspect-p25-image-jpeg-resize",
+        "muse-probe-agy-suspect-p24-image-pct-typo"
+      ],
+      "battery": [
+        "i37-17-local-webp-resized",
+        "i37-38-attr-size-small",
+        "i37-39-attr-size-bogus"
+      ],
+      "file": "conformance-refphp/para/image/battery.jsonl; REPORT-ANTIGRAVITY-SUSPECT.md"
+    },
+    "imLocalPlain": {
+      "branch": "Image.php local plain source, generated alt, class=image",
+      "live": [
+        "muse-probe-r2para-img-p06-uppercase-name",
+        "muse-probe-htmlchars-im-local"
+      ],
+      "battery": [
+        "i37-01-plain",
+        "i37-15-local-png"
+      ],
+      "file": "conformance-refphp/para/image/SECTION.md; ftml test/image/basic"
+    },
+    "imLinked": {
+      "branch": "Image.php link -> anchor wrapper",
+      "live": [
+        "muse-probe-r2para-img-p08-fragment-link",
+        "muse-probe-htmlchars-im-attrs"
+      ],
+      "battery": [
+        "i37-45-link-page",
+        "i37-46-link-external"
+      ],
+      "file": "conformance-refphp/para/image/battery.jsonl"
+    },
+    "imAlignFLeft": {
+      "branch": "Image.php align f<",
+      "live": [
+        "muse-probe-r2para-img-p05-uppercase-align"
+      ],
+      "battery": [
+        "i37-05-float-left"
+      ],
+      "file": "conformance-refphp/para/image/battery.jsonl"
+    },
+    "imAlignFRight": {
+      "branch": "Image.php align f>",
+      "live": [],
+      "battery": [
+        "i37-07-float-right"
+      ],
+      "file": "conformance-refphp/para/image/battery.jsonl"
+    },
+    "imAlignLeft": {
+      "branch": "Image.php align <",
+      "live": [],
+      "battery": [
+        "i37-03-align-left"
+      ],
+      "file": "conformance-refphp/para/image/battery.jsonl"
+    },
+    "imAlignRight": {
+      "branch": "Image.php align >",
+      "live": [],
+      "battery": [
+        "i37-04-align-right"
+      ],
+      "file": "conformance-refphp/para/image/battery.jsonl"
+    },
+    "imAlignCenter": {
+      "branch": "Image.php align =",
+      "live": [],
+      "battery": [
+        "i37-02-align-center"
+      ],
+      "file": "conformance-refphp/para/image/battery.jsonl"
+    },
+    "spStartBare": {
+      "branch": "Span.php start, empty args -> bare span",
+      "live": [
+        "muse-probe-r2contain-span-p01-plain",
+        "muse-probe-r2contain-span-p02-empty"
+      ],
+      "battery": [
+        "s01-plain",
+        "s03-empty"
+      ],
+      "file": "conformance-refphp/contain/span/SECTION.md"
+    },
+    "spStartAttrs": {
+      "branch": "Span.php start with escaped attributes",
+      "live": [
+        "muse-probe-r2contain-span-p03-class",
+        "muse-probe-r2contain-span-p34-escaped-quote"
+      ],
+      "battery": [
+        "s09-class",
+        "s16-role",
+        "s58-span-attr-entity"
+      ],
+      "file": "conformance-refphp/contain/span/SECTION.md"
+    },
+    "spEnd": {
+      "branch": "Span.php end",
+      "live": [
+        "muse-probe-r2contain-span-p01-plain"
+      ],
+      "battery": [
+        "s01-plain"
+      ],
+      "file": "conformance-refphp/contain/span/probe-map.json"
+    },
+    "spFall": {
+      "branch": "Span.php implicit null fallthrough",
+      "live": [],
+      "battery": [],
+      "reason": "No page pin: parser never emits a non-start/end Span token. Designed direct-call pin: token() with type=other",
+      "file": "REPORT-R43.md; InteractiveRender.lean:1104-1117"
+    },
+    "szStart": {
+      "branch": "Size.php start, raw size interpolation",
+      "live": [
+        "muse-probe-r2contain-size-boundary-5-px",
+        "muse-probe-r2contain-size-boundary-5-pct"
+      ],
+      "battery": [
+        "sz01-pct",
+        "sz02-px",
+        "sz06-named-small"
+      ],
+      "file": "conformance-refphp/contain/size/battery.jsonl"
+    },
+    "szEnd": {
+      "branch": "Size.php end",
+      "live": [],
+      "battery": [
+        "sz01-pct",
+        "sz10-named-xxlarge"
+      ],
+      "reason": "Battery pin only: paired cases close the span; no dedicated end-only live probe",
+      "file": "conformance-refphp/contain/size/battery.jsonl"
+    },
+    "szFall": {
+      "branch": "Size.php implicit null fallthrough",
+      "live": [
+        "muse-probe-r2contain-size-space-before-close",
+        "muse-probe-r2contain-size-unpaired-close"
+      ],
+      "battery": [
+        "sz47-empty-body",
+        "sz54-unpaired-close-preserved"
+      ],
+      "file": "conformance-refphp/contain/size/battery.jsonl"
+    },
+    "ctHex": {
+      "branch": "Colortext normalizeColor 3/6-digit hex",
+      "live": [
+        "muse-probe-r2in2-color-c08",
+        "muse-probe-r2in2-color-c11"
+      ],
+      "battery": [
+        "c08",
+        "c11",
+        "c12"
+      ],
+      "file": "conformance-refphp/inline2/color/battery.jsonl"
+    },
+    "ctNamed": {
+      "branch": "Colortext admitted named/rgb()/var() spec",
+      "live": [
+        "muse-probe-r2in2-color-c01",
+        "muse-probe-r2in2-color-c15"
+      ],
+      "battery": [
+        "c01",
+        "c15",
+        "c16"
+      ],
+      "file": "conformance-refphp/inline2/color/battery.jsonl"
+    },
+    "ctEmpty": {
+      "branch": "Colortext whitespace-only spec -> style color:",
+      "live": [
+        "muse-probe-r2in2-color-c26",
+        "muse-probe-r2in2-color-c27"
+      ],
+      "battery": [
+        "c26",
+        "c27",
+        "c31"
+      ],
+      "file": "conformance-refphp/inline2/color/battery.jsonl"
+    },
+    "ctEnd": {
+      "branch": "Colortext admitted end -> </span>",
+      "live": [
+        "muse-probe-r2in2-color-c01"
+      ],
+      "battery": [
+        "c01",
+        "c13"
+      ],
+      "file": "conformance-refphp/inline2/color/battery.jsonl"
+    },
+    "ctFall": {
+      "branch": "Colortext admitted spec, other type -> empty",
+      "live": [
+        "muse-probe-r2in2-color-c41",
+        "muse-probe-r2in2-color-c42"
+      ],
+      "battery": [
+        "c41",
+        "c42"
+      ],
+      "file": "conformance-refphp/inline2/color/battery.jsonl"
+    },
+    "ctInvalidStart": {
+      "branch": "Colortext inadmissible spec, start -> literal ##raw|",
+      "live": [
+        "muse-probe-r2in2-color-c18",
+        "muse-probe-agy-suspect-p09-color-invalid-unesc"
+      ],
+      "battery": [
+        "c18",
+        "c20",
+        "c23"
+      ],
+      "file": "conformance-refphp/inline2/color/battery.jsonl; REPORT-ANTIGRAVITY-SUSPECT.md"
+    },
+    "ctInvalidOther": {
+      "branch": "Colortext inadmissible spec, other -> literal ##",
+      "live": [
+        "muse-probe-r2in2-color-c29",
+        "muse-probe-r2in2-color-c42"
+      ],
+      "battery": [
+        "c29",
+        "c42"
+      ],
+      "file": "conformance-refphp/inline2/color/battery.jsonl"
+    }
+  }
+}

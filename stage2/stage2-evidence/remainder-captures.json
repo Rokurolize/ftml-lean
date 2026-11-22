@@ -1,0 +1,392 @@
+{
+ "u1-span-then-em": {
+  "fullname": "muse-probe-stage2r-u1-span-then-em",
+  "html": "<p><strong>A <span style=\"color: red\">B <em>C</em></span> <em><span style=\"color: red\">D</span> E</em></strong></p>",
+  "html_sha256": "47223859bcb03a7ca2abd4296c7434bad8e743f147415002d872d5240b84ea04",
+  "source": "**A ##red|B //C** D## E//",
+  "source_sha256": "a0209b08ebb0efca04b3a47c72cd727f11efd782b507964b84e8aa938820f151",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u1-plain-between": {
+  "fullname": "muse-probe-stage2r-u1-plain-between",
+  "html": "<p><strong>A <em>B <span style=\"color: red\">C</span></em> <span style=\"color: red\"><em>D</em></span> <em>PLAIN</em></strong></p>",
+  "html_sha256": "9c2fd35838c813424462731c85827f4016b17d926d2fa952fa4fc77d7ac7231e",
+  "source": "**A //B ##red|C** D## PLAIN//",
+  "source_sha256": "9561d2e5a129a5f0d485e80a4cb2b26b685d7619cf81b4aedfa4829f09b1fae5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u1-tail-after": {
+  "fullname": "muse-probe-stage2r-u1-tail-after",
+  "html": "<p><strong>A <span style=\"color: red\">B <em>C</em></span> <em><span style=\"color: red\">D</span></em> <span style=\"color: red\">E</span> TAIL</strong></p>",
+  "html_sha256": "70b5ad9ac72b97d5ee454fabc79be4dd7e1abd55643511965b5788cb5f3f1a6d",
+  "source": "**A ##red|B //C** D// E## TAIL",
+  "source_sha256": "be8f227900045c5afb3ce09b80d6aceb7a5234a6d33426e6163e957c8e2bcb72",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u1-two-spans": {
+  "fullname": "muse-probe-stage2r-u1-two-spans",
+  "html": "<p><strong>A <span style=\"font-size:120%;\">B <span style=\"color: red\">C</span></span> <span style=\"font-size:120%;\">D</span> E</strong></p>",
+  "html_sha256": "52032c72a0101588f3ca496552080f766958758f6f019dbb17de33d8f16d21fb",
+  "source": "**A [[size 120%]]B ##red|C** D[[/size]] E##",
+  "source_sha256": "50267782ed366f62010bc57c3b75be3adf290b4c9b3969a8cef339f50557fa29",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u1-tt-span": {
+  "fullname": "muse-probe-stage2r-u1-tt-span",
+  "html": "<p><strong>A <tt>B <span style=\"color: red\">C</span></tt> <span style=\"color: red\"><tt>D</tt></span> <tt>E</tt></strong></p>",
+  "html_sha256": "c49f2ea64a6a6c9b4bdb057b0dfca77c20e0ebae1bd8bd7c5113cdc5ac583471",
+  "source": "**A {{B ##red|C** D## E}}",
+  "source_sha256": "c055b3aa40504e44f86bd8e0e18218965951e1a48cafd9e22d344a1ee1a20098",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u1-sup-span": {
+  "fullname": "muse-probe-stage2r-u1-sup-span",
+  "html": "<p><strong>A <sup>B <span style=\"color: red\">C</span></sup> <span style=\"color: red\"><sup>D</sup></span> <sup>E</sup></strong></p>",
+  "html_sha256": "3349cb22b76fa36aaea314948c84b7655c72e0af2cd3b403fcfe31c126363428",
+  "source": "**A ^^B ##red|C** D## E^^",
+  "source_sha256": "195a46e77b385781fa410766a0b980de2a6ce4c2867e635ca8f15aa035ee54f0",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u1-em-target": {
+  "fullname": "muse-probe-stage2r-u1-em-target",
+  "html": "<p><em>A <strong>B <span style=\"color: red\">C</span></strong> <span style=\"color: red\"><strong>D</strong> E</span></em></p>",
+  "html_sha256": "af73eaf009d89d06263261cfca12ea9bb257d0164d8f61f9542b5ee94b281dfc",
+  "source": "//A **B ##red|C// D** E##",
+  "source_sha256": "1a008f098402f6af3632c6bd71978098026793e8b7334ce5004e78ccd3ff045a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u1-three": {
+  "fullname": "muse-probe-stage2r-u1-three",
+  "html": "<p><strong>A <sup>B <em>C <span style=\"color: red\">D</span></em> <span style=\"color: red\"><sup><em>E</em></sup> <em><sup>F</sup></em> <sup>G</sup></span></sup></strong></p>",
+  "html_sha256": "807fa2399f2e519b58e2228628a825b2c0c47ba5eed6c686bfa1b2012bc99da5",
+  "source": "**A ^^B //C ##red|D** E## F// G^^",
+  "source_sha256": "efab726d8eb454f7f27003ed1db5645b18f1126d67632d4a5f79d33f1c534d6b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u1-underline": {
+  "fullname": "muse-probe-stage2r-u1-underline",
+  "html": "<p><strong>A <em>B <span style=\"text-decoration: underline;\">C</span></em> <span style=\"text-decoration: underline;\"><em>D</em></span> <em>E</em></strong></p>",
+  "html_sha256": "58d5c481126ef918da243219cc40776d42014c4b73d122b9dd4109667d4698c0",
+  "source": "**A //B __C** D__ E//",
+  "source_sha256": "33a4f3d65408d8a9537943c73462dbb6b518e65de35b3a965d5ab2934778a752",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u1-stray-star": {
+  "fullname": "muse-probe-stage2r-u1-stray-star",
+  "html": "<p><strong>A <em>B</em></strong> <em>C</em> D**</p>",
+  "html_sha256": "d7a3a1fda194000b530446c364aee7806685e44e2a708bbe22eb9e6d87818a66",
+  "source": "**A //B** C// D**",
+  "source_sha256": "e537bb0c9d6920192cf82181322bdade33840293c6e554fcfe3a8e0e23a3fc7e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u1-stray-slash": {
+  "fullname": "muse-probe-stage2r-u1-stray-slash",
+  "html": "<p><strong>A <em>B</em></strong> <em>C</em> D//</p>",
+  "html_sha256": "60f0ce8e4744b746e1d46fd43bce8eeb9ba46862b9fb4c4cc136ae06bd14f1c8",
+  "source": "**A //B** C// D//",
+  "source_sha256": "e36ce427b002094712f7ffaf6d13267fc73db36f69d8ec5c719f0f9c89f160f3",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u2-two-align": {
+  "fullname": "muse-probe-stage2r-u2-two-align",
+  "html": "<div class=\"a\">\n<p>A<br /></p>\n<div style=\"text-align: center;\">\n<p>B<br /></p>\n<div style=\"text-align: center;\">\n<p>C</p>\n</div>\n</div>\n</div>",
+  "html_sha256": "6ca9778b262951d2d13a109774dc07359ef3463f88f2b77427733f97ebce2825",
+  "source": "[[div class=\"a\"]]\nA\n[[=]]\nB\n[[=]]\nC\n[[/=]]\n[[/=]]\n[[/div]]",
+  "source_sha256": "27049740125b30e2bbadb9e9549b115a43dfe9c7f36e511fc2af461fd2c812ed",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u2-nested-collapsible": {
+  "fullname": "muse-probe-stage2r-u2-nested-collapsible",
+  "html": "<div class=\"a\">lead\n<div class=\"collapsible-block\">\n<div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block</a></div>\n<div class=\"collapsible-block-unfolded\" style=\"display:none\">\n<div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div>\n<div class=\"collapsible-block-content\">\n<p>x</p>\n</div>\n</div>\n</div>\n<div class=\"z\">\n<p>y</p>\n</div>\n</div>",
+  "html_sha256": "4ac62520bd2a9c12bf965828abbe4216b53b828449cf59db29af3a6e55a9c9db",
+  "source": "[[div class=\"a\"]]\nlead [[collapsible]]x[[/collapsible]]\n[[div class=\"z\"]]\ny\n[[/div]]\n[[/div]]",
+  "source_sha256": "e108f00ad27ee0e41245c35369f728eddf4ae9e137d9740d6df11cfea46b3ca8",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u2-table-then-div": {
+  "fullname": "muse-probe-stage2r-u2-table-then-div",
+  "html": "<div class=\"outer\">text<br />\n<table class=\"wiki-content-table\">\n<tr>\n<td>a</td>\n</tr>\n</table>\n<div class=\"z\">\n<p>more</p>\n</div>\n</div>",
+  "html_sha256": "c961f3d3ae1f8086aa624c1c3b6fe32b0abd15e115a720b28c3cfef933393da6",
+  "source": "[[div class=\"outer\"]]\ntext\n|| a ||\n[[div class=\"z\"]]\nmore\n[[/div]]\n[[/div]]",
+  "source_sha256": "b3e9f1c883406761bfe308206b5f691133f289988a3c9e0403c2b0db44bb91b7",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u2-root-collapsible": {
+  "fullname": "muse-probe-stage2r-u2-root-collapsible",
+  "html": "lead\n<div class=\"collapsible-block\">\n<div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block</a></div>\n<div class=\"collapsible-block-unfolded\" style=\"display:none\">\n<div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div>\n<div class=\"collapsible-block-content\">\n<p>body</p>\n</div>\n</div>\n</div>\ntail",
+  "html_sha256": "acd978060dd10427a88b406d380a1c2a5f3b257d504674b2076427a17f935ae4",
+  "source": "lead[[collapsible]]body[[/collapsible]]tail",
+  "source_sha256": "d4317328b6b8226e772c4513be259c97f91b43152db6a16aae604142681a8388",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u3-div-table": {
+  "fullname": "muse-probe-stage2r-u3-div-table",
+  "html": "<div class=\"a\">\n<p>a</p>\n</div>\n<br />\n<table class=\"wiki-content-table\">\n<tr>\n<td>b</td>\n</tr>\n</table>",
+  "html_sha256": "3da66a3ca1f4bed114185049e2ef5c6311deeb1b70f75afde76c4390bbffff34",
+  "source": "[[div class=\"a\"]]\na\n[[/div]]\n|| b ||",
+  "source_sha256": "882e5868f37efb1bba553919d9d95c12d45e9056378badd90b785752bd93e1bc",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u3-br-in-div": {
+  "fullname": "muse-probe-stage2r-u3-br-in-div",
+  "html": "<div class=\"a\">\n<div class=\"b\">\n<p>b</p>\n</div>\n<br />\n<table class=\"wiki-content-table\">\n<tr>\n<td>t</td>\n</tr>\n</table>\n</div>",
+  "html_sha256": "055157790b6eaa17c3893505006a67f26ca7a9ccfe2fa54bec10635e6559cd4a",
+  "source": "[[div class=\"a\"]]\n[[div class=\"b\"]]\nb\n[[/div]]\n|| t ||\n[[/div]]",
+  "source_sha256": "3af7ddf8f9e56fc72f803059f2f3cc522572de85a26314790039bd19613979ab",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u3-div-div": {
+  "fullname": "muse-probe-stage2r-u3-div-div",
+  "html": "<div class=\"a\">\n<p>a</p>\n</div>\n<div class=\"b\">\n<p>b</p>\n</div>",
+  "html_sha256": "0eab449ec400e26697acd1fb13e5c73b753871b8cf12e7c82e1c0622630d7514",
+  "source": "[[div class=\"a\"]]\na\n[[/div]]\n\n[[div class=\"b\"]]\nb\n[[/div]]",
+  "source_sha256": "6a9cbd35fbaad3e274fd18c4d9e3522b68e0380e25cbb2fbd5545601e0094717",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u3-p-table": {
+  "fullname": "muse-probe-stage2r-u3-p-table",
+  "html": "<p>para</p>\n<table class=\"wiki-content-table\">\n<tr>\n<td>a</td>\n</tr>\n</table>",
+  "html_sha256": "ff7cecc30bcf5dbd6de82ca3813295c2c33f579fc9579699bab6c2ec1eea00bf",
+  "source": "para\n\n|| a ||",
+  "source_sha256": "e3c45a0f355f1aba641255fb61ef709e1d932fbefc405e9e0ef894b8cd8e2a3a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u3-quote-list": {
+  "fullname": "muse-probe-stage2r-u3-quote-list",
+  "html": "<blockquote>\n<p>q</p>\n</blockquote>\n<ul>\n<li>item</li>\n</ul>",
+  "html_sha256": "1dc802b9216b83794ac820efa8827b7a2e6eaa31a5ba8ade59e90de23e64205e",
+  "source": "> q\n\n* item",
+  "source_sha256": "eea8d1513acfcbfd520c56eef6a03a28c20cd4be0ac21adc4f8827dd8b14ac79",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u3-div-list": {
+  "fullname": "muse-probe-stage2r-u3-div-list",
+  "html": "<div class=\"a\">\n<p>a</p>\n</div>\n<ul>\n<li>item</li>\n</ul>",
+  "html_sha256": "586601f7655f1ae4f4b7c9c6268e55ff0b67d159ca474b15ba7c6e902e002317",
+  "source": "[[div class=\"a\"]]\na\n[[/div]]\n* item",
+  "source_sha256": "70256c40a74a1cb494d29c4f507b5a6e845102c840eb51af3af53abece04ff78",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u4-two": {
+  "fullname": "muse-probe-stage2r-u4-two",
+  "html": "<p><a href=\"/x\">A <strong>B <em>C</em></strong></a> D E</p>",
+  "html_sha256": "8f2367762eee8ffb57d2527a7f64e17fc79b49c771ceaa2459781e2969d86751",
+  "source": "[[a href=\"/x\"]]A **B //C[[/a]] D** E//",
+  "source_sha256": "1f8e4f5e77f0542c1eff6ee5dfbfd6531f8999326968024628faf28a109b8772",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u4-three": {
+  "fullname": "muse-probe-stage2r-u4-three",
+  "html": "<p><a href=\"/x\">A <strong>B <em>C <tt>D</tt></em></strong></a> E F G</p>",
+  "html_sha256": "1bf573db79b562b4d69617fc2f5a9b140543a6ba66ecd31411a0fe549f8aaa19",
+  "source": "[[a href=\"/x\"]]A **B //C {{D[[/a]] E** F// G}}",
+  "source_sha256": "0285b96dc946f54ba00fbe60ae782958d26bbdc7a9045ae09f7cfdb41221a5de",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u4-span-em": {
+  "fullname": "muse-probe-stage2r-u4-span-em",
+  "html": "<p><a href=\"/x\">A <span style=\"color: red\">B <em>C</em></span></a> D E</p>",
+  "html_sha256": "42ada5767b29d31e2eb74de7ebe7df5ae9c95fde2db0ea1f0f55f2d3208df059",
+  "source": "[[a href=\"/x\"]]A ##red|B //C[[/a]] D## E//",
+  "source_sha256": "ca23c401fc1e321ce933e8038fbb998e65fc82ed07945efce82a281062218600",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u5-img": {
+  "fullname": "muse-probe-stage2r-u5-img",
+  "html": "<img src=\"http://example.com/a.png\" alt=\"a.png\" class=\"image\" />",
+  "html_sha256": "9618d1bd7e0dc3b9f9701021b806ec19744292437bac63b68c6e613b547f8620",
+  "source": "[[image http://example.com/a.png]]",
+  "source_sha256": "7ebea1e3647d0a22fc478cc1aa209911df5fd38ce5398f843b312dfc7fe85c3a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u5-hr": {
+  "fullname": "muse-probe-stage2r-u5-hr",
+  "html": "<hr />",
+  "html_sha256": "8d951300a4f85ad615a1fb82ea82c7aabf98dbe8d2a53325b5ff239840535d06",
+  "source": "----",
+  "source_sha256": "bd64bb8efa5b3f27e6442f23600c3b516127ea17e23724b41e50da4c22883edd",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u5-img-between": {
+  "fullname": "muse-probe-stage2r-u5-img-between",
+  "html": "<p>before</p>\n<img src=\"http://example.com/a.png\" alt=\"a.png\" class=\"image\" />\n<p>after</p>",
+  "html_sha256": "3027fb04a4953728f8f70d0fb598baa8414727051a0a7c69f3645f24fa24c4d3",
+  "source": "before\n\n[[image http://example.com/a.png]]\n\nafter",
+  "source_sha256": "953a53427277a896c970266911d6787151e99652ec8c39a3c5ae4525af72dc5a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "u5-hr-between": {
+  "fullname": "muse-probe-stage2r-u5-hr-between",
+  "html": "<p>before</p>\n<hr />\n<p>after</p>",
+  "html_sha256": "11125d94aa533c6680128a2e5eabf9ac43631c532c03cbcaf2cb5bfef571bfb4",
+  "source": "before\n\n----\n\nafter",
+  "source_sha256": "c148e6ebdc3486d6d39454d5632053ab2b9b6f4b32950d85040ab2407cd1c6a5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r43-div": {
+  "fullname": "muse-probe-stage2r-r43-div",
+  "html": "<p>X<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.\n<div>\n<p>block body</p>\n</div>\n</div>\n</div>",
+  "html_sha256": "0df09e4197fd62c7c99b7bd9d7c699f9e4b5eadb9339b34c6d3380566d211ecf",
+  "source": "X[[footnote]]\n[[div]]\nblock body\n[[/div]]\n[[/footnote]]\n\n[[footnoteblock]]",
+  "source_sha256": "ea31d856ee53ecebcad911e5b0e15b1f16864c077ea5a25d06d674ae966fbfc5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r43-list": {
+  "fullname": "muse-probe-stage2r-r43-list",
+  "html": "<p>X<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. * one\n<ul>\n<li>two</li>\n</ul>\n</div>\n</div>",
+  "html_sha256": "cd6dcc1d41082106ea67e386c596fe17d6b61341786812f77b09bb4f383783cc",
+  "source": "X[[footnote]]\n* one\n* two\n[[/footnote]]\n\n[[footnoteblock]]",
+  "source_sha256": "490a5aad7aee7d9128e1f6771ae5358dc64bbabe16f39cf05f1f9daa45481dad",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r43-text-list": {
+  "fullname": "muse-probe-stage2r-r43-text-list",
+  "html": "<p>X<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. lead\n<ul>\n<li>one</li>\n<li>two</li>\n</ul>\n</div>\n</div>",
+  "html_sha256": "3a9809a1a85fb2873c14fd98e6ed002b49532f33ae71b73894d592c493f479b2",
+  "source": "X[[footnote]]lead\n* one\n* two\n[[/footnote]]\n\n[[footnoteblock]]",
+  "source_sha256": "2de61aaf914b42d57344e1461061a55bd44d897723f0f129f52141de6776b33e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r43-code": {
+  "fullname": "muse-probe-stage2r-r43-code",
+  "html": "<p>X<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.\n<div class=\"code\">\n<pre><code>x</code></pre></div>\n</div>\n</div>",
+  "html_sha256": "2815c5731f0e3e467a7d36ccfe391c969c2e4d22197208c187a2bf6b8c6ca349",
+  "source": "X[[footnote]]\n[[code]]\nx\n[[/code]]\n[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "1655afeb127895faca098c8bcf9be92dcd5a576945fa2c2125e4e14467f8c60c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r43-collapsible": {
+  "fullname": "muse-probe-stage2r-r43-collapsible",
+  "html": "<p>X<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.\n<div class=\"collapsible-block\">\n<div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block</a></div>\n<div class=\"collapsible-block-unfolded\" style=\"display:none\">\n<div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div>\n<div class=\"collapsible-block-content\">\n<p>body</p>\n</div>\n</div>\n</div>\n</div>\n</div>",
+  "html_sha256": "0dc5279c01503da6d2b572adbccd73a404430a88c95919b15f8730d494c3218b",
+  "source": "X[[footnote]]\n[[collapsible]]\nbody\n[[/collapsible]]\n[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "d7b9d434571d84729e02a31928396e7f564bb8068a9db2edad53bd0aab52c5d7",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r43-two-div": {
+  "fullname": "muse-probe-stage2r-r43-two-div",
+  "html": "<p>X<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.\n<div>\n<p>A</p>\n</div>\n<div>\n<p>B</p>\n</div>\n</div>\n</div>",
+  "html_sha256": "9be1a809ac163b66e8abf442e043049676b758ae7a35fff515199ee406645dea",
+  "source": "X[[footnote]]\n[[div]]\nA\n[[/div]]\n[[div]]\nB\n[[/div]]\n[[/footnote]]\n\n[[footnoteblock]]",
+  "source_sha256": "820d0f7b12e491cf8e0c4811a2d253247f1cfbf0ea1b8133bcf08d97e8e6a253",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r43-text-div-text": {
+  "fullname": "muse-probe-stage2r-r43-text-div-text",
+  "html": "<p>X<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. lead\n<div>\n<p>A</p>\n</div>\n<br />\ntail</div>\n</div>",
+  "html_sha256": "6df1f1441b2044c902b62e781575559293703e499fdb320e03641c268b239657",
+  "source": "X[[footnote]]lead\n[[div]]\nA\n[[/div]]\ntail\n[[/footnote]]\n\n[[footnoteblock]]",
+  "source_sha256": "8dd418dff740d0729053e59ea68e0f4ee0a2ee50e832adf03ccbc31583f4331f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r43-span-div": {
+  "fullname": "muse-probe-stage2r-r43-span-div",
+  "html": "<p>X<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. <span>S</span>\n<div>\n<p>A</p>\n</div>\n</div>\n</div>",
+  "html_sha256": "4d081110f509ce1a14717d6eaca9dcc02ba0d7d5358ef06849dfde4abad8d9c0",
+  "source": "X[[footnote]]\n[[span]]S[[/span]]\n[[div]]\nA\n[[/div]]\n[[/footnote]]\n\n[[footnoteblock]]",
+  "source_sha256": "225322d8cd31cd7e132241b6ec6a88607151874a6316a872b0aa7b0ca3c763f5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r43-div-list": {
+  "fullname": "muse-probe-stage2r-r43-div-list",
+  "html": "<p>X<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.\n<div>\n<p>A</p>\n</div>\n<ul>\n<li>one</li>\n<li>two</li>\n</ul>\n</div>\n</div>",
+  "html_sha256": "be1a8d00dde591a68c03dfb8c7185c232fcefc84845e6e2c21d1c2b383ac4293",
+  "source": "X[[footnote]]\n[[div]]\nA\n[[/div]]\n* one\n* two\n[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "4cac83b46e249503630e3e56ba1dde4d42ce2632aa3a4837db9485f8735a670a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r43-heading": {
+  "fullname": "muse-probe-stage2r-r43-heading",
+  "html": "<p>X<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. + Head</div>\n</div>",
+  "html_sha256": "9eea8d58f589598d54bbc2665c1cf8ee5a63dc5f9a129b9713afe3dd6d34e46a",
+  "source": "X[[footnote]]\n+ Head\n[[/footnote]]\n\n[[footnoteblock]]",
+  "source_sha256": "f38619ffc1ae8f346860cc5381913086a790b8e5fa1b02981765571a281f80a1",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r43-table": {
+  "fullname": "muse-probe-stage2r-r43-table",
+  "html": "<p>X<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. || a || b ||</div>\n</div>",
+  "html_sha256": "5c45083908012461da42e58ea619accfe8f289bfc148a9e099d4be052a378dc2",
+  "source": "X[[footnote]]\n|| a || b ||\n[[/footnote]]\n\n[[footnoteblock]]",
+  "source_sha256": "46a1901c49f2e7790a782d75af829e2a0d6cf886597ff6c6287bacd4f52767fc",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

@@ -1,0 +1,156 @@
+{"id": "code/basic-line", "source": "BEFORE\n[[code]]\nalpha\nbeta\n[[/code]]\nAFTER"}
+{"id": "code/basic-inline", "source": "[[code]]alpha[[/code]]"}
+{"id": "code/basic-no-trailing-nl", "source": "x\n[[code]]\nalpha\n[[/code]]"}
+{"id": "code/basic-leading-text", "source": "pre [[code]]x[[/code]]\npost"}
+{"id": "code/basic-two-blocks", "source": "[[code]]a[[/code]]\n[[code]]b[[/code]]"}
+{"id": "code/basic-in-paragraph", "source": "para before [[code]]mid[[/code]] para after"}
+{"id": "code/empty", "source": "[[code]][[/code]]"}
+{"id": "code/empty-lines", "source": "[[code]]\n[[/code]]"}
+{"id": "code/empty-two-lines", "source": "[[code]]\n\n[[/code]]"}
+{"id": "code/ws-body-spaces", "source": "[[code]]   [[/code]]"}
+{"id": "code/ws-body-tabs", "source": "[[code]]\t\t[[/code]]"}
+{"id": "code/ws-body-blank-lines", "source": "[[code]]\n \n \n[[/code]]"}
+{"id": "code/body-tab", "source": "[[code]]\n\tx\t\n[[/code]]"}
+{"id": "code/body-tab-middle", "source": "[[code]]\na\tb\n[[/code]]"}
+{"id": "code/body-blank-run", "source": "[[code]]\na\n\n\n\nb\n[[/code]]"}
+{"id": "code/body-leading-blanks", "source": "[[code]]\n\n\nx\n[[/code]]"}
+{"id": "code/body-trailing-blanks", "source": "[[code]]\nx\n\n\n[[/code]]"}
+{"id": "code/body-spaces-line", "source": "[[code]]\nx\n   \ny\n[[/code]]"}
+{"id": "code/body-mid-trailing-spaces", "source": "[[code]]\nx \ny \n[[/code]]"}
+{"id": "code/body-leading-space-first", "source": "[[code]]  indented\nnext\n[[/code]]"}
+{"id": "code/body-nbsp", "source": "[[code]]\n x \n[[/code]]"}
+{"id": "code/body-ideographic", "source": "[[code]]\n　x　\n[[/code]]"}
+{"id": "code/nested-openers", "source": "[[code]]\n[[code]]\ninner\n[[/code]]\nouter\n[[/code]]"}
+{"id": "code/nested-one-line", "source": "[[code]]a[[code]]b[[/code]]c[[/code]]"}
+{"id": "code/stray-closer", "source": "[[/code]]"}
+{"id": "code/stray-closer-after-text", "source": "before\n[[/code]]\nafter"}
+{"id": "code/stray-closer-before", "source": "[[/code]]\n[[code]]x[[/code]]"}
+{"id": "code/unterminated", "source": "[[code]]\nnever closed"}
+{"id": "code/unterminated-inline", "source": "[[code]]abc"}
+{"id": "code/unterminated-then-other", "source": "[[code]]\nx\n[[div]]y[[/div]]"}
+{"id": "code/closer-suffixed", "source": "[[code]]a[[/code]] x"}
+{"id": "code/closer-trailing-space", "source": "[[code]]a[[/code]] \nNEXT"}
+{"id": "code/closer-suffix-newline", "source": "[[code]]\na\n[[/code]]\nNEXT"}
+{"id": "code/arg-type-python", "source": "[[code type=\"python\"]]\nimport antigravity\n[[/code]]"}
+{"id": "code/arg-type-PYTHON", "source": "[[code type=\"PYTHON\"]]\nimport antigravity\n[[/code]]"}
+{"id": "code/arg-type-css-inline", "source": "[[code type=\"css\"]]a { display: none; }[[/code]]"}
+{"id": "code/arg-type-unknown", "source": "[[code type=\"apache\"]]\nSELECT 1;\n[[/code]]"}
+{"id": "code/arg-type-empty", "source": "[[code type=\"\"]]x[[/code]]"}
+{"id": "code/arg-name", "source": "[[code name=\"Sample Heading\"]]\nbody\n[[/code]]"}
+{"id": "code/arg-type-name", "source": "[[code name=\"a\" type=\"java\"]]\nclass A {}\n[[/code]]"}
+{"id": "code/arg-unknown", "source": "[[code foo=\"bar\"]]\nbody\n[[/code]]"}
+{"id": "code/arg-unquoted", "source": "[[code type=css]]x[[/code]]"}
+{"id": "code/arg-half-quote-1", "source": "[[code type=\"css]]x[[/code]]"}
+{"id": "code/arg-half-quote-2", "source": "[[code type=css\"]]x[[/code]]"}
+{"id": "code/arg-spaced-name", "source": "[[ code ]]\nNESTED\n[[code]]\n[[/code]]"}
+{"id": "code/arg-tab-after", "source": "[[code\ttype=\"css\"]]x[[/code]]"}
+{"id": "code/arg-multi-space", "source": "[[code   type=\"css\"]]x[[/code]]"}
+{"id": "code/arg-two-attrs", "source": "[[code type=\"python\" name=\"n\"]]x[[/code]]"}
+{"id": "code/arg-newline-after", "source": "[[code\ntype=\"css\"]]x[[/code]]"}
+{"id": "code/body-wikitext", "source": "[[code]]\n[[div]]\nnot a div\n[[/div]]\n**not bold**\n[[/code]]"}
+{"id": "code/body-brackets", "source": "[[code]]\n[[foo]] [[bar baz]] [[]] [[/code]]\n[[/code]]"}
+{"id": "code/body-quotes", "source": "[[code]]\n\"double\" 'single' &amp; & < >\n[[/code]]"}
+{"id": "code/body-html", "source": "[[code]]\n<b>bold</b> <script>alert(1)</script>\n[[/code]]"}
+{"id": "code/body-entities", "source": "[[code]]\n&amp; &lt; &gt; &quot;\n[[/code]]"}
+{"id": "code/body-code-closer-literal", "source": "[[code]]\n[[/code]] literal\n[[/code]]"}
+{"id": "code/line-start-opener", "source": "[[code]]x[[/code]]"}
+{"id": "code/mid-paragraph", "source": "alpha [[code]]beta[[/code]] gamma"}
+{"id": "code/after-heading", "source": "= H =\n[[code]]x[[/code]]"}
+{"id": "code/three-blocks", "source": "[[code]]a[[/code]]\n[[code]]b[[/code]]\n[[code]]c[[/code]]"}
+{"id": "code/block-then-paragraph", "source": "[[code]]x[[/code]]\nparagraph after"}
+{"id": "code/crlf-basic", "source": "[[code]]\r\nalpha\r\nbeta\r\n[[/code]]\r\n"}
+{"id": "code/crlf-empty", "source": "[[code]]\r\n[[/code]]\r\n"}
+{"id": "code/crlf-nested", "source": "[[code]]\r\n[[code]]x[[/code]]\r\n[[/code]]"}
+{"id": "code/crlf-args", "source": "[[code type=\"python\"]]\r\nx=1\r\n[[/code]]"}
+{"id": "code/lone-cr-body", "source": "[[code]]\ra\rb\r[[/code]]"}
+{"id": "code/frame-tab-newlines", "source": "[[code]]\nline1\t\n\n\nline2\n[[/code]]"}
+{"id": "code/frame-ueue", "source": "[[code]]\nüü\n[[/code]]"}
+{"id": "code/frame-quoted", "source": ">> [[code]]\n>> QUOTED_LITERAL\n>> [[/code]]"}
+{"id": "embed/eb-01", "source": "[[embed]]body[[/embed]]"}
+{"id": "embed/eb-02", "source": "[[embedvideo]]body[[/embedvideo]]"}
+{"id": "embed/eb-03", "source": "[[embedaudio]]body[[/embedaudio]]"}
+{"id": "embed/eb-04", "source": "[[embedvideo]]body[[/embed]]"}
+{"id": "embed/eb-05", "source": "[[embed]]body[[/embedvideo]]"}
+{"id": "embed/eb-06", "source": "[[embed]]  padded  [[/embed]]"}
+{"id": "embed/eb-07", "source": "[[embed]]\n\nmultiline\n\n[[/embed]]"}
+{"id": "embed/eb-08", "source": "[[EMBED]]x[[/EMBED]]"}
+{"id": "embed/eb-09", "source": "[[EmbedVideo]]x[[/EmbedAudio]]"}
+{"id": "embed/eb-10", "source": "[[embed]]unclosed"}
+{"id": "embed/eb-11", "source": "[[embed]]a[[/embed]]b[[/embed]]"}
+{"id": "embed/eb-12", "source": "[[embed]][[embed]]x[[/embed]]"}
+{"id": "embed/eb-13", "source": "[[embedx]]y[[/embedx]]"}
+{"id": "embed/eb-14", "source": "[[embed]]x[[/embed]] [[embed]]y[[/embed]]"}
+{"id": "embed/eb-15", "source": "[[embed]] [[/embed]]"}
+{"id": "embed/eb-16", "source": "[[embed]][[/embed]]"}
+{"id": "embed/eb-17", "source": "[[embed]]a ] b[[/embed]]"}
+{"id": "embed/eb-18", "source": "[[embed]]a [[/embedx]] b[[/embed]]"}
+{"id": "embed/eb-19", "source": "[[embed]]a [[/embedvid]] b[[/embed]]"}
+{"id": "embed/eb-20", "source": "[[embed]]a [[/embedaudio]] b [[/embed]]"}
+{"id": "embed/eb-21", "source": "[[div]][[embed]]x[[/embed]][[/div]]"}
+{"id": "embed/eb-22", "source": "pre[[embed]]x[[/embed]]post"}
+{"id": "embed/eb-23", "source": "[[embed]]**bold**[[/embed]]"}
+{"id": "embed/eb-24", "source": "[[embed]] [[user x]] [[/embed]]"}
+{"id": "embed/eb-25", "source": "[[embedvideo]]"}
+{"id": "embed/eb-26", "source": "[[embed]]x[[/embed]]\n\n[[embed]]y[[/embed]]"}
+{"id": "embed/eb-27", "source": "[[embedaudio]]x[[/embedvideo]]"}
+{"id": "embed/eb-28", "source": "[[embed]]a[[embed]]b[[/embed]]c[[/embed]]"}
+{"id": "embed/eb-29", "source": "[[embed]]\t\n x \n\t[[/embed]]"}
+{"id": "embed/eb-30", "source": "[[embed ]]x[[/embed]]"}
+{"id": "embed/eb-31", "source": "[[embed]]x[[/embed ]]"}
+{"id": "embed/eb-32", "source": "[[embed]][[file a.txt]][[/embed]]"}
+{"id": "embed/eb-33", "source": "a [[embed]]x[[/embed]] b [[embed]]y[[/embed]] c"}
+{"id": "embed/eb-34", "source": "|| [[embed]]x[[/embed]] ||"}
+{"id": "embed/eb-35", "source": "[[embed]]\n[[/embed]]"}
+{"id": "embed/eb-36", "source": "[[embedvideo]]x[[/embedvideo]]y[[embedaudio]]z[[/embedaudio]]"}
+{"id": "embed/eb-37", "source": "[[embed]]x[[/embed]]\n[[social]]"}
+{"id": "embed/eb-38", "source": "[[embed]][[code]]c[[/code]][[/embed]]"}
+{"id": "embed/eb-39", "source": "[[embed]]long body with ]] inside[[/embed]]"}
+{"id": "embed/eb-40", "source": "[[a href=\"/x\"]][[embed]]y[[/embed]][[/a]]"}
+{"id": "embed/eb-41", "source": "[[embed]]x[[/embed]]"}
+{"id": "embed/eb-42", "source": "[[embed]]line1\nline2[[/embed]]"}
+{"id": "embed/eb-x01", "source": "[[embed]]\n<iframe src=\"http://example.com\" width=\"400\" height=\"300\"></iframe>\n[[/embed]]"}
+{"id": "embed/eb-x02", "source": "[[embed]]\n<iframe src=\"https://example.com\" width=\"400\" height=\"300\"></iframe>\n[[/embed]]"}
+{"id": "embed/eb-x03", "source": "[[embed]]\n<iframe src=\"http://example.com\" onclick=\"alert(1)\"></iframe>\n[[/embed]]"}
+{"id": "embed/eb-x04", "source": "[[embedvideo]]\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/dQw4w9WgXcQ\" frameborder=\"0\"></iframe>\n[[/embedvideo]]"}
+{"id": "embed/eb-x05", "source": "[[embedaudio]]\n<iframe width=\"100\" height=\"100\" src=\"https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/1\"></iframe>\n[[/embedaudio]]"}
+{"id": "embed/eb-x06", "source": "[[embed]]<iframe src=\"http://example.com\"></iframe>[[/embed]]"}
+{"id": "embed/eb-x07", "source": "[[embed]]<iframe src=\"http://example.com\" data-x=\"1\"></iframe>[[/embed]]"}
+{"id": "embed/eb-x08", "source": "[[embed]]<iframe src=\"http://example.com\">fallback</iframe>[[/embed]]"}
+{"id": "embed/eb-x09", "source": "[[embed]]<a href=\"http://example.com\">hi</a>[[/embed]]"}
+{"id": "embed/eb-x10", "source": "[[embed]]<div class=\"x\">hi</div>[[/embed]]"}
+{"id": "embed/eb-x11", "source": "[[embed]]\n<script type=\"text/javascript\" src=\"https://static.wikidot.com/common--misc/reflection.js\"></script>\n[[/embed]]"}
+{"id": "embed/eb-x12", "source": "[[embed]]\n<iframe src=\"http://wikimapia.org/s/123\"></iframe>\n[[/embed]]"}
+{"id": "embed/eb-x13", "source": "[[embed]]<iframe src=\"javascript:alert(1)\"></iframe>[[/embed]]"}
+{"id": "embed/eb-x14", "source": "[[embed]]\n<object width=\"425\" height=\"344\"><param name=\"movie\" value=\"http://www.youtube.com/v/abc\"></param><embed src=\"http://www.youtube.com/v/abc\" type=\"application/x-shockwave-flash\" width=\"425\" height=\"344\"></embed></object>\n[[/embed]]"}
+{"id": "embed/eb-x15", "source": "[[embed]]hello world[[/embed]]"}
+{"id": "embed/eb-x16", "source": "[[embedvideo]]hello world[[/embedvideo]]"}
+{"id": "embed/eb-x17", "source": "[[embedaudio]]hello world[[/embedaudio]]"}
+{"id": "embed/eb-x18", "source": "[[embed]]<iframe src=\"http://example.com\" width=\"200\" height=\"100\" allow=\"fullscreen\"></iframe>[[/embed]]"}
+{"id": "embed/eb-x19", "source": "pre [[embed]]hello[[/embed]] post"}
+{"id": "embed/eb-x20", "source": "[[div]]\n[[embed]]hello[[/embed]]\n[[/div]]"}
+{"id": "embed/p01", "source": "[[embed]]body[[/embed]]"}
+{"id": "embed/p02", "source": "[[embedvideo]]body[[/embedvideo]]"}
+{"id": "embed/p03", "source": "[[embedaudio]]body[[/embedaudio]]"}
+{"id": "embed/p04", "source": "[[embedvideo]]body[[/embed]]"}
+{"id": "embed/p05", "source": "[[embed]]body[[/embedvideo]]"}
+{"id": "embed/p06", "source": "[[EMBED]]x[[/EMBED]]\n[[EmbedVideo]]x[[/EmbedAudio]]"}
+{"id": "embed/p07", "source": "[[embed]][[/embed]]\n[[embed]] [[/embed]]"}
+{"id": "embed/p08", "source": "[[embed]]unclosed"}
+{"id": "embed/p09", "source": "[[embed]]a[[/embed]]b[[/embed]]"}
+{"id": "embed/p10", "source": "[[embed]][[embed]]x[[/embed]]"}
+{"id": "embed/p11", "source": "[[embed ]]x[[/embed]]\n[[embed]]x[[/embed ]]"}
+{"id": "embed/p12", "source": "[[embed]]\n<iframe src=\"http://example.com\" width=\"400\" height=\"300\"></iframe>\n[[/embed]]"}
+{"id": "embed/p13", "source": "[[embed]]\n<iframe src=\"https://example.com\" width=\"400\" height=\"300\"></iframe>\n[[/embed]]"}
+{"id": "embed/p14", "source": "[[embed]]\n<iframe src=\"http://example.com\" onclick=\"alert(1)\"></iframe>\n[[/embed]]"}
+{"id": "embed/p15", "source": "[[embedvideo]]\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/dQw4w9WgXcQ\" frameborder=\"0\"></iframe>\n[[/embedvideo]]"}
+{"id": "embed/p16", "source": "[[embed]]<iframe src=\"http://example.com\">fallback</iframe>[[/embed]]"}
+{"id": "embed/p17", "source": "[[embed]]<iframe src=\"javascript:alert(1)\"></iframe>[[/embed]]"}
+{"id": "embed/p18", "source": "[[embed]]<a href=\"http://example.com\">hi</a>[[/embed]]"}
+{"id": "embed/p19", "source": "[[embed]]**bold**[[/embed]]"}
+{"id": "embed/p20", "source": "pre [[embed]]hello[[/embed]] post"}
+{"id": "embedsupp/se01", "source": "[[embed]]<iframe src=\"http://example.com\" width=\"400\" height=\"300\"></iframe>[[/embed]]"}
+{"id": "embedsupp/se02", "source": "[[embed]]<iframe src=\"JaVaScRiPt:alert(1)\"></iframe>[[/embed]]"}
+{"id": "embedsupp/se03", "source": "[[embed]]<iframe src=\"http://example.com\" data-x=\"javascript:foo\"></iframe>[[/embed]]"}
+{"id": "embedsupp/se04", "source": "[[embed]]<iframe src=\"vbscript:msgbox\"></iframe>[[/embed]]"}
+{"id": "embedsupp/se05", "source": "[[embed]]<iframe src=\"data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==\"></iframe>[[/embed]]"}
+{"id": "embedsupp/se06", "source": "[[embed]]<iframe src=\" javascript:alert(1)\"></iframe>[[/embed]]"}

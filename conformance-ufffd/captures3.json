@@ -1,0 +1,52 @@
+{
+ "spaces-control": {
+  "fullname": "muse-probe-ufffd3-spaces-control",
+  "html": "<p>alpha bravo charlie delta</p>",
+  "html_sha256": "fd9f17000cc7a0b0048a476ea6d407d66c9ef90500f9eab59e5a02ff5bac6551",
+  "source": "alpha  bravo   charlie delta",
+  "source_sha256": "056f78b4427994aab6f443cc401859eb06831e8ed246ef14eabb686d861d7935",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "fake-after-bold": {
+  "fullname": "muse-probe-ufffd3-fake-after-bold",
+  "html": "<p>alpha <strong>bold</strong> omega tail</p>",
+  "html_sha256": "cafad28a34ace5f631446d40e690358532decacc50bf58242d1d23851edaec7e",
+  "source": "alpha **bold**� omega tail",
+  "source_sha256": "c960fd667469b3f83da976e6447fa054f59f175c92fbd0f8e90e3ba4204d56ec",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "fake-before-bold": {
+  "fullname": "muse-probe-ufffd3-fake-before-bold",
+  "html": "<p>alpha 3bold omega tail</p>",
+  "html_sha256": "40d63d12626e0ed2ffd55073ba905d8388eb4f0fd6e57c22d616d554147f5a5c",
+  "source": "alpha �**bold** omega tail",
+  "source_sha256": "2cef90afb87c1b86f54dfc45c5ce9d874e3f4fa1cd8316325eb8127eee03baea",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "fake-space-fake": {
+  "fullname": "muse-probe-ufffd3-fake-space-fake",
+  "html": "<p>alpha bravo charlie</p>",
+  "html_sha256": "f8a42f0e06d79a814ac68f38a0f3d2424fa17a9f5783a8d58edfffa9abc53622",
+  "source": "alpha � � bravo charlie",
+  "source_sha256": "861e9c7ee1ec4ffa8addee9859371517f87576ae02659ff27c7c3b5df755c227",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "fake-digit-mid": {
+  "fullname": "muse-probe-ufffd3-fake-digit-mid",
+  "html": "<p>alpha 9 bravo</p>\n<p>charlie delta</p>",
+  "html_sha256": "f429fbd1d131574ec9add80bcfb66d232c23b13c8415dbdd404dc265336be9da",
+  "source": "alpha �9 bravo\n\ncharlie delta",
+  "source_sha256": "d4eb6e3cb1f4071d86da4856885dffb930b97459904974e21a7afa3f2af90538",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

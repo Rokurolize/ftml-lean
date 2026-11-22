@@ -1,0 +1,9 @@
+{"id": "bq-raw-nospace", "source": "A\n\n>@@hello@@\n\nB", "tags": []}
+{"id": "bq-raw-space-control", "source": "A\n\n> @@hello@@\n\nB", "tags": []}
+{"id": "bq-comment-after-marker", "source": "A\n\n>[!-- c --]\n\nB", "tags": []}
+{"id": "if-trail-forbid-untag", "source": "A [[iftags -foo,]]KEPT[[/iftags]] B", "tags": []}
+{"id": "if-lead-forbid-untag", "source": "A [[iftags ,-foo]]KEPT[[/iftags]] B", "tags": []}
+{"id": "cm-in-raw", "source": "@@[!-- c --]@@", "tags": []}
+{"id": "bq-comment-tail-text", "source": "> [!-- c --] q", "tags": []}
+{"id": "if-comma-space-multi-tagged", "source": "[[iftags +alpha, +beta]]KEEP[[/iftags]]\nX", "tags": ["alpha", "beta"]}
+{"id": "if-only-comma-tagged", "source": "[[iftags ,]]KEEP[[/iftags]]\nX", "tags": ["alpha"]}

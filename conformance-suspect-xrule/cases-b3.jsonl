@@ -1,0 +1,5 @@
+{"id": "x21-email-url-label", "source": "A [a@example.com http://example.com/a] B"}
+{"id": "x22-email-newline-label", "source": "A [a@example.com x\ny] B"}
+{"id": "x23-color-url-spec", "source": "A ##http://example.com|red## B"}
+{"id": "x24-math-nested-email", "source": "A [[$ [a@example.com http://example.com/a] $]] B"}
+{"id": "x25-email-double-space", "source": "A [a@example.com  x http://example.com/a] B"}

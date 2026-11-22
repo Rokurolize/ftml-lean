@@ -1,0 +1,44 @@
+{"id":"ga-01","segments":[{"t":"\n\n"},{"k":0},{"t":"\n\n"}],"tokens":[["Gallery",{"sources":null}]],"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-02","segments":[{"t":"\n\n"},{"k":1},{"t":"\n\n"}],"tokens":{"1":["Gallery",{"sources":"\n: a.png"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-03","segments":[{"t":"\n\n"},{"k":2},{"t":"\n\n"}],"tokens":{"2":["Gallery",{"sources":"\n: a.png\n: b.png"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-04","segments":[{"t":"\n\n"},{"k":3},{"t":"\n\n"}],"tokens":{"3":["Gallery",{"size":"small","sources":"\n: a.png"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-05","segments":[{"t":"\n\n"},{"k":4},{"t":"\n\n"}],"tokens":{"4":["Gallery",{"size":"large","sources":null}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-06","segments":[{"t":"\n\n"},{"k":5},{"t":"\n\n\n: a.png"}],"tokens":{"5":["Gallery",{"sources":null}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-07","segments":[{"t":"\n\n"},{"k":6},{"t":"\n\n\nnot a source\n[[\/gallery]]"}],"tokens":{"6":["Gallery",{"sources":null}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-08","segments":[{"t":"\n\n"},{"k":7},{"t":"\n\n\n: a.png\nnot source\n[[\/gallery]]"}],"tokens":{"7":["Gallery",{"sources":null}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-09","segments":[{"t":"x\n\n\n"},{"k":8},{"t":"\n\n"}],"tokens":{"8":["Gallery",{"sources":"\n: a"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-10","segments":[{"t":"x [[gallery]]\n: a\n[[\/gallery]]"}],"tokens":[],"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-11","segments":[{"t":"\n\n"},{"k":9},{"t":"\n\n"}],"tokens":{"9":["Gallery",{"sources":"\n: a"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-12","segments":[{"t":"\n\n"},{"k":10},{"t":"\n\n"}],"tokens":{"10":["Gallery",{"size":"small","sources":"\n: a"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-13","segments":[{"t":"\n\n"},{"k":11},{"t":"\n\n"}],"tokens":{"11":["Gallery",{"sources":"\n: a"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-14","segments":[{"t":"\n\n"},{"k":12},{"t":"\n\n"}],"tokens":{"12":["Gallery",{"sources":"\n: a"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-15","segments":[{"t":"\n\n"},{"k":13},{"t":"\n\n"}],"tokens":{"13":["Gallery",{"sources":"\n: a"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-16","segments":[{"t":"\n\n"},{"k":14},{"t":"\n\n"}],"tokens":{"14":["Gallery",{"sources":"\n: a"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-17","segments":[{"t":"\n\n"},{"k":15},{"t":"\n\n\n:a.png\n[[\/gallery]]"}],"tokens":{"15":["Gallery",{"sources":null}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-18","segments":[{"t":"\n\n"},{"k":16},{"t":"\n\n\n: \n[[\/gallery]]"}],"tokens":{"16":["Gallery",{"sources":null}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-19","segments":[{"t":"\n\n"},{"k":17},{"t":"\n\n"}],"tokens":{"17":["Gallery",{"sources":"\n:  double space"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-20","segments":[{"t":"\n\n"},{"k":18},{"t":"\n\n\n: a.png\n: b.png"}],"tokens":{"18":["Gallery",{"sources":null}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-21","segments":[{"t":"\n\n"},{"k":19},{"t":"\n\n\ntail"}],"tokens":{"19":["Gallery",{"sources":"\n: a.png"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-22","segments":[{"t":"\n\n"},{"k":20},{"t":"\n\n extra"}],"tokens":{"20":["Gallery",{"sources":"\n: a.png"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-23","segments":[{"t":"\n\n"},{"k":21},{"t":"\n\n\n: a.png\n\n[[\/gallery]]"}],"tokens":{"21":["Gallery",{"sources":null}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-24","segments":[{"t":"\n\n"},{"k":22},{"t":"\n\n"}],"tokens":{"22":["Gallery",{"sources":"\n: [[span]]x[[\/span]]"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-25","segments":[{"t":"\n\n"},{"k":23},{"t":"\n\n"}],"tokens":{"23":["Gallery",{"sources":"\n: caf\u00e9.png"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-26","segments":[{"t":"\n\n"},{"k":24},{"t":"\n\n"}],"tokens":{"24":["Gallery",{"sources":"\n: a]b.png"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-27","segments":[{"t":"\n\n"},{"k":25},{"t":"\n\n"}],"tokens":{"25":["Gallery",{"size":"medium","sources":"\n: x"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-28","segments":[{"t":"\n\n"},{"k":26},{"t":"\n\n"}],"tokens":{"26":["Gallery",{"size":"small","sources":"\n: a\n: b\n: c"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-29","segments":[{"t":"\n\n"},{"k":27},{"t":"\n\n\n: a\n\n\n"},{"k":28},{"t":"\n\n"}],"tokens":{"27":["Gallery",{"sources":null}],"28":["Gallery",{"sources":"\n: b"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-30","segments":[{"t":"\n\n"},{"k":29},{"t":"\n\n\n\n\n"},{"k":30},{"t":"\n\n"}],"tokens":{"29":["Gallery",{"sources":"\n: a"}],"30":["Gallery",{"sources":"\n: b"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-31","segments":[{"t":" [[gallery]]\n: a\n[[\/gallery]]"}],"tokens":[],"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-32","segments":[{"t":"\n\n"},{"k":31},{"t":"\n\n \n: a\n[[\/gallery]]"}],"tokens":{"31":["Gallery",{"sources":null}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-33","segments":[{"t":"\n\n"},{"k":32},{"t":"\n\n"}],"tokens":{"32":["Gallery",{"sources":null}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-34","segments":[{"t":"\n\n"},{"k":33},{"t":"\n\n"}],"tokens":{"33":["Gallery",{"sources":null}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-35","segments":[{"t":"\n\n"},{"k":34},{"t":"\n\n\n: c\n[[\/gallery]]"}],"tokens":{"34":["Gallery",{"sources":"\n: a\n: b"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-36","segments":[{"t":"\n\n"},{"k":35},{"t":"\n\n"}],"tokens":{"35":["Gallery",{"size":"small","sources":"\n: a"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-37","segments":[{"t":"\n\n"},{"k":36},{"t":"\n\n"}],"tokens":{"36":["Gallery",{"sources":"\n: a.png "}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-38","segments":[{"t":"\n\n"},{"k":37},{"t":"\n\n"}],"tokens":{"37":["Gallery",{"sources":"\n: one.jpg"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-39","segments":[{"t":"text\n\n\n\n"},{"k":38},{"t":"\n\n"}],"tokens":{"38":["Gallery",{"sources":"\n: a"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-40","segments":[{"t":"\n\n"},{"k":39},{"t":"\n\n"}],"tokens":{"39":["Gallery",{"sources":"\n: [[code]]x[[\/code]]"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-41","segments":[{"t":"\n\n"},{"k":40},{"t":"\n\n\n\n\n"},{"k":41},{"t":"\n\n"}],"tokens":{"40":["Gallery",{"size":"small","sources":"\n: a"}],"41":["Gallery",{"sources":"\n: b"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-42","segments":[{"t":"\n\n"},{"k":42},{"t":"\n\n"}],"tokens":{"42":["Gallery",{"size":"wide","sources":null}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-43","segments":[{"t":"\n\n"},{"k":43},{"t":"\n\n"}],"tokens":{"43":["Gallery",{"size":"small","sources":"\n: a"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}
+{"id":"ga-44","segments":[{"t":"\n\n"},{"k":44},{"t":"\n\n\n"}],"tokens":{"44":["Gallery",{"sources":"\n: a"}]},"equations":[],"mathId":null,"footnotes":[],"bibitems":[],"bibitemIds":[]}

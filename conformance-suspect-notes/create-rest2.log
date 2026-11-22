@@ -1,0 +1,63 @@
+n3para -> muse-probe-suspect-notes-n3para (exists)
+n2para-ctrl -> muse-probe-suspect-notes-n2para-ctrl (exists)
+bib-res-blank -> muse-probe-suspect-notes-bib-res-blank (exists)
+bib-close-tail -> muse-probe-suspect-notes-bib-close-tail (created)
+bib-multi-space -> muse-probe-suspect-notes-bib-multi-space (created)
+bibc-case-rev -> muse-probe-suspect-notes-bibc-case-rev (created)
+fnb-title-brackets -> muse-probe-suspect-notes-fnb-title-brackets (created)
+bib-close-nbsp -> muse-probe-suspect-notes-bib-close-nbsp (created)
+bib-ctrl -> muse-probe-suspect-notes-bib-ctrl (created)
+bib-indent2 -> muse-probe-suspect-notes-bib-indent2 (created)
+10 probe pages left in place on sandbox-for-codex; the tool never deletes pages.
+{
+ "n3para": {
+  "fullname": "muse-probe-suspect-notes-n3para",
+  "source": "x[[footnote]]p1\n\np2\n\np3[[/footnote]]",
+  "action": "exists"
+ },
+ "n2para-ctrl": {
+  "fullname": "muse-probe-suspect-notes-n2para-ctrl",
+  "source": "x[[footnote]]p1\n\np2[[/footnote]]",
+  "action": "exists"
+ },
+ "bib-res-blank": {
+  "fullname": "muse-probe-suspect-notes-bib-res-blank",
+  "source": "[[bibliography]]\n: a : A\nfoo\n\nbar\n[[/bibliography]]\n((bibcite a))",
+  "action": "exists"
+ },
+ "bib-close-tail": {
+  "fullname": "muse-probe-suspect-notes-bib-close-tail",
+  "source": "[[bibliography]]\n: a : A\n[[/bibliography]] tail\n((bibcite a))",
+  "action": "created"
+ },
+ "bib-multi-space": {
+  "fullname": "muse-probe-suspect-notes-bib-multi-space",
+  "source": "((bibcite a))\n\n[[bibliography]]\n: a : A   B\n[[/bibliography]]",
+  "action": "created"
+ },
+ "bibc-case-rev": {
+  "fullname": "muse-probe-suspect-notes-bibc-case-rev",
+  "source": "((bibcite alpha))\n\n[[bibliography]]\n: Alpha : Upper\n[[/bibliography]]",
+  "action": "created"
+ },
+ "fnb-title-brackets": {
+  "fullname": "muse-probe-suspect-notes-fnb-title-brackets",
+  "source": "x[[footnote]]n[[/footnote]]\n[[footnoteblock title=\"A]]B\"]]",
+  "action": "created"
+ },
+ "bib-close-nbsp": {
+  "fullname": "muse-probe-suspect-notes-bib-close-nbsp",
+  "source": "[[bibliography]]\n: a : A\n[[/bibliography]] \n((bibcite a))",
+  "action": "created"
+ },
+ "bib-ctrl": {
+  "fullname": "muse-probe-suspect-notes-bib-ctrl",
+  "source": "((bibcite a))\n\n[[bibliography]]\n: a : A\n[[/bibliography]]",
+  "action": "created"
+ },
+ "bib-indent2": {
+  "fullname": "muse-probe-suspect-notes-bib-indent2",
+  "source": "x\n [[bibliography]]\n: a : A\n[[/bibliography]]\n((bibcite a))",
+  "action": "created"
+ }
+}

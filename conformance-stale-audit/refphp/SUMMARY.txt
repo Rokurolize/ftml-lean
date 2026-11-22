@@ -1,0 +1,18 @@
+contain/div            render ref-render-after.jsonl       n=75 byte-moved=61 attribution: R4-C3 Div stray space; REFCORR2 C-STAGE2-1/C-STAGE2-2; R2 Span empty-style correction
+                       tokens ref-tokens-after.jsonl       n=75 byte-moved=50 canon-real=7: ['empty-plain', 'empty-whitespace', 'empty-at-eof', 'inline-span', 'crossed-span', 'inline-content-scored', 'score-empty']
+contain                render x-ref-render-final.jsonl     n=36 byte-moved=13 attribution: R4-C3; REFCORR2; R2 Tabview/Footnote corrections
+                       tokens x-ref-tokens-final.jsonl     n=36 byte-moved=13 canon-real=1: ['x24-three-nested-divs']
+contain                render x-ref-tagged-render-final.jsonl n=5 byte-moved=2 attribution: R4-C3
+formraw                render ref-render-final.jsonl       n=68 byte-moved=5 attribution: R4-C3; R2 Tighten whitespace; R2 List indentation
+                       tokens ref-tokens-final.jsonl       n=68 byte-moved=1 canon-real=1: ['raw-list']
+inline1/interwiki      render ref-render-after.jsonl       n=70 byte-moved=3 attribution: X44; R2 Include error text; R4-C3; retained frame newline drift
+                       tokens ref-tokens-after.jsonl       n=70 byte-moved=25 canon-real=2: ['iw43-37-label-with-brackets', 'iw43-61-include-site-pair']
+inline1/url            render ref-render-after.jsonl       n=75 byte-moved=1 attribution: F-R2-68 non-ASCII href percent-encoding
+                       tokens ref-tokens-after.jsonl       n=75 byte-moved=0 canon-real=0: []
+link/freelink          render ref-render-after.jsonl       n=60 byte-moved=0 attribution: none
+                       tokens ref-tokens-after.jsonl       n=60 byte-moved=0 canon-real=0: []
+para                   render x-ref-render-final.jsonl     n=46 byte-moved=11 attribution: R4-C3; R2 Heading/Image/Tighten corrections
+                       tokens x-ref-tokens-final.jsonl     n=46 byte-moved=1 canon-real=1: ['x14-image-caption-with-link']
+para/image             render ref-render-final.jsonl       n=68 byte-moved=0 attribution: none
+                       tokens ref-tokens-final.jsonl       n=68 byte-moved=0 canon-real=0: []
+refval/button          render ref-render-corrected.jsonl   n=87 byte-moved=0 attribution: none

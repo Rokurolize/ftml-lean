@@ -1,0 +1,86 @@
+{"id": "lc-ctrl-ul-upper-all", "source": "[[UL]]\n[[LI]]Case[[/LI]]\n[[/UL]]"}
+{"id": "lc-ctrl-ul-upper-open-lower-close", "source": "[[UL]]\n[[LI]]Case[[/li]]\n[[/ul]]"}
+{"id": "lc-ctrl-ul-lower-open-upper-close", "source": "[[ul]]\n[[li]]Case[[/LI]]\n[[/UL]]"}
+{"id": "lc-ctrl-ol-lower-open-upper-close", "source": "[[ol]]\n[[li]]Case[[/LI]]\n[[/OL]]"}
+{"id": "lc-ctrl-ul-mixed-inner", "source": "[[ul]]\n[[LI]]A[[/LI]]\n[[/ul]]"}
+{"id": "lc-ctrl-lower-ul-degraded-noli", "source": "[[ul]]\nbody\n[[/ul]]"}
+{"id": "lc-sib-mixed-ul", "source": "[[Ul]]\n[[Li]]Mixed[[/Li]]\n[[/Ul]]"}
+{"id": "lc-sib-mixed-ol", "source": "[[Ol]]\n[[lI]]Mixed[[/lI]]\n[[/oL]]"}
+{"id": "lc-sib-lower-li-mixed-close", "source": "[[ul]]\n[[li]]Case[[/Li]]\n[[/Ul]]"}
+{"id": "lc-sib-scored-ul-upper", "source": "[[UL_]]\n[[LI]]A[[/LI]]\n[[/UL]]\n\nAFTER"}
+{"id": "lc-sib-scored-ol-upper", "source": "[[OL_]]\n[[LI]]A[[/LI]]\n[[/OL]]\n\nAFTER"}
+{"id": "lc-sib-scored-lower-open-upper-close", "source": "[[ul_]]\n[[li]]A[[/LI]]\n[[/UL]]\n\nAFTER"}
+{"id": "lc-sib-ul-upper-with-class", "source": "[[UL class=\"mycls\"]]\n[[LI style=\"color:red\"]]Item[[/LI]]\n[[/UL]]"}
+{"id": "lc-sib-nested-lower-ul-upper-ol", "source": "[[ul]]\n[[li]]a\n[[OL]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]"}
+{"id": "lc-sib-extra-bracket-upper-close", "source": "[[ul]]\n[[li]]a[[/LI]]]\n[[/UL]]]"}
+{"id": "lc-sib-lower-ul-upper-attr-data", "source": "[[ul DATA-foo=\"bar\" CLASS=\"c\"]]\n[[li DATA-item=\"1\"]]x[[/li]]\n[[/ul]]"}
+{"id": "lc-sib-lower-ul-data-mixed-val", "source": "[[ul Data-Mix=\"1\"]]\n[[li ID=\"x\"]]a[[/li]]\n[[/ul]]"}
+{"id": "lc-sib-upper-ul-degraded-noli", "source": "[[UL]]\nbody\n[[/UL]]"}
+{"id": "lc-sib-cross-ul-ol-upper", "source": "[[ul]]\n[[li]]a[[/li]]\n[[/OL]]"}
+{"id": "lc-sib-standalone-upper-li", "source": "[[LI]]a[[/LI]]"}
+{"id": "ct-ctrl-invalid-html", "source": "##<i>|hello##"}
+{"id": "ct-ctrl-invalid-tighten", "source": "x##a!b| hello ##y"}
+{"id": "ct-ctrl-invalid-raw-spec", "source": "##@@red@@|hello##"}
+{"id": "ct-sib-empty-spec", "source": "##|hello##"}
+{"id": "ct-sib-ws-spec", "source": "##   |hello##"}
+{"id": "ct-sib-ws-spec-tighten", "source": "x##  | hello ##y"}
+{"id": "ct-sib-hex3-hash", "source": "## #aBc |hi##"}
+{"id": "ct-sib-hex3-nohash", "source": "##abc|hi##"}
+{"id": "ct-sib-rgb", "source": "##rgb(1, 2, 3)|hi##"}
+{"id": "ct-sib-rgba-dot", "source": "##rgba(1, 2, 3, 0.5)|hi##"}
+{"id": "ct-sib-rgba-dot-bold", "source": "##a!b|**bold**##"}
+{"id": "ct-sib-bad-then-valid-sameline", "source": "##bad!|a##red|b##"}
+{"id": "ct-sib-html-then-valid-sameline", "source": "##<i>|a##blue|b##"}
+{"id": "ct-sib-url-bracket-in-spec", "source": "##[http://example.com a]|x##"}
+{"id": "ct-sib-span-token-in-spec", "source": "##[[span]]r[[/span]]|x##"}
+{"id": "ct-sib-comment-token-in-spec", "source": "##[!--c--]red|x##"}
+{"id": "ct-sib-quote-apos-in-spec", "source": "##a\"b'c|hello##"}
+{"id": "ct-sib-amp-in-spec", "source": "##a&b|hello##"}
+{"id": "ct-sib-nonascii-in-spec", "source": "##é|hello##"}
+{"id": "ct-sib-nonascii-tighten", "source": "x##é| hello ##y"}
+{"id": "ct-sib-rgba-tighten", "source": "x##rgba(1,2,3,0.5)| hello ##y"}
+{"id": "ct-sib-empty-body-invalid-spec", "source": "##a!b|##"}
+{"id": "ct-sib-ws-body-valid-spec", "source": "##red| ##"}
+{"id": "ct-sib-nested-valid", "source": "##red|a##blue|b####"}
+{"id": "dt-ctrl-ts-override", "source": "[[date 86400 timestamp=\"0\"]]"}
+{"id": "dt-ctrl-six-at-forge", "source": "[[date 0 format=\"@@@@@@123@@@@@@\"]]"}
+{"id": "dt-sib-raw-inside-format", "source": "[[date 0 format=\"a@@b@@c\"]]"}
+{"id": "dt-sib-comment-token-in-format", "source": "[[date 0 format=\"a[!--c--]b\"]]"}
+{"id": "dt-sib-percent-g", "source": "[[date 0 format=\"%g\"]]"}
+{"id": "dt-sib-ts-override-empty", "source": "[[date 86400 timestamp=\"\"]]"}
+{"id": "dt-sib-ts-override-empty-zero", "source": "[[date 0 timestamp=\"\"]]"}
+{"id": "dt-sib-ts-override-alpha", "source": "[[date 86400 timestamp=\"abc\"]]"}
+{"id": "dt-sib-ts-override-whitespace", "source": "[[date 86400 timestamp=\" 120 \"]]"}
+{"id": "dt-sib-ts-override-html-injection", "source": "[[date 0 timestamp=\"a&b<c\"]]"}
+{"id": "dt-sib-ts-override-neg", "source": "[[date 86400 timestamp=\"-86400\"]]"}
+{"id": "dt-sib-ts-override-leading-zero", "source": "[[date 86400 timestamp=\"00042\"]]"}
+{"id": "dt-sib-ts-override-overflow", "source": "[[date 0 timestamp=\"999999999999999999999\"]]"}
+{"id": "dt-sib-blank-pos-with-ts-attr", "source": "[[date  timestamp=\"86400\"]]"}
+{"id": "dt-sib-date-negative-zero", "source": "[[date -0]]"}
+{"id": "dt-sib-date-plus-ten", "source": "[[date +10]]"}
+{"id": "dt-sib-format-utf8", "source": "[[date 0 format=\"café\"]]"}
+{"id": "dt-sib-format-html", "source": "[[date 0 format=\"a&b<c\"]]"}
+{"id": "fl-ctrl-cafe", "source": "[[[café]]]"}
+{"id": "fl-ctrl-lodz", "source": "[[[Łódź]]]"}
+{"id": "fl-ctrl-translit-long", "source": "[[[äöüß ñ ç ž ąćęłńóśźż café123]]]"}
+{"id": "fl-sib-ascii-alnum-mix", "source": "[[[AéB09]]]"}
+{"id": "fl-sib-cat-ascii-page-nonascii", "source": "[[[cat:café]]]"}
+{"id": "fl-sib-cat-nonascii-page-ascii", "source": "[[[café:page]]]"}
+{"id": "fl-sib-default-prefix-cafe", "source": "[[[_default:café]]]"}
+{"id": "fl-sib-default-prefix-pure-nonascii", "source": "[[[_default:é]]]"}
+{"id": "fl-sib-anchor-suffix", "source": "[[[Aé#Anch01]]]"}
+{"id": "fl-sib-hash-route-extra", "source": "[[[café/#/route]]]"}
+{"id": "fl-sib-described-label", "source": "[[[café|Label Text]]]"}
+{"id": "fl-sib-described-apos", "source": "[[[café|O'Brien]]]"}
+{"id": "fl-sib-url-target-nonascii", "source": "[[[http://example.com/café]]]"}
+{"id": "fl-sib-unmapped-cjk-only", "source": "[[[日本語]]]"}
+{"id": "fl-sib-unmapped-cjk-ascii", "source": "[[[a日本語b1]]]"}
+{"id": "fl-sib-euro-ascii", "source": "[[[item€99]]]"}
+{"id": "fl-sib-cyrillic-only", "source": "[[[Москва]]]"}
+{"id": "fl-sib-cyrillic-ascii-digits", "source": "[[[testМосква123]]]"}
+{"id": "fl-sib-german-upper", "source": "[[[ÄÖÜß]]]"}
+{"id": "fl-sib-german-mixed", "source": "[[[Über10]]]"}
+{"id": "fl-sib-greek-ascii", "source": "[[[test_α_1]]]"}
+{"id": "fl-sib-leading-underscore", "source": "[[[_café]]]"}
+{"id": "fl-sib-underscore-hyphen-mix", "source": "[[[a_b-c_é]]]"}
+{"id": "fl-sib-double-space", "source": "[[[café  latte]]]"}

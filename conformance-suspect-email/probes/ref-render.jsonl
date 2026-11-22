@@ -1,0 +1,42 @@
+
+
+
+
+
+{"id":"lbl-at","output":"<p><span class=\"wiki-email\">moc.elpmaxe|u#rab|oof<\/span><\/p>\n\n"}
+{"id":"lbl-hash","output":"<p><span class=\"wiki-email\">moc.elpmaxe|u#rab#oof<\/span><\/p>\n\n"}
+{"id":"lbl-pipe","output":"<p><span class=\"wiki-email\">moc.elpmaxe|u#rab|oof<\/span><\/p>\n\n"}
+{"id":"lbl-close-inner","output":"<p><span class=\"wiki-email\">moc.elpmaxe|u#a<\/span>b]<\/p>\n\n"}
+{"id":"lbl-open-bracket","output":"<p><span class=\"wiki-email\">moc.elpmaxe|u#b[a<\/span><\/p>\n\n"}
+
+{"id":"lbl-email","output":"<p><span class=\"wiki-email\">moc.elpmaxe|u#ten.elpmaxe|rehto<\/span><\/p>\n\n"}
+{"id":"lbl-strong","output":"<p><span class=\"wiki-email\">moc.elpmaxe|u#**dlob**<\/span><\/p>\n\n"}
+
+{"id":"lbl-bracket-lead","output":"<p><span class=\"wiki-email\">moc.elpmaxe|u#x]<\/span><\/p>\n\n"}
+{"id":"lbl-two-forms","output":"<p><span class=\"wiki-email\">moc.elpmaxe|u#tsriF<\/span> and <span class=\"wiki-email\">ten.elpmaxe|v#dnoceS<\/span><\/p>\n\n"}
+{"id":"gap-tab","output":"<p><span class=\"wiki-email\">moc.elpmaxe|u#lebaL   <\/span><\/p>\n\n"}
+{"id":"gap-nbsp","output":"<p>[<span class=\"wiki-email\">moc.elpmaxe|u#moc.elpmaxe|u<\/span>\u00a0Label]<\/p>\n\n"}
+{"id":"gap-three","output":"<p><span class=\"wiki-email\">moc.elpmaxe|u#lebaL  <\/span><\/p>\n\n"}
+{"id":"gap-trail","output":"<p><span class=\"wiki-email\">moc.elpmaxe|u# lebaL<\/span><\/p>\n\n"}
+{"id":"gap-two-trail","output":"<p><span class=\"wiki-email\">moc.elpmaxe|u# lebaL <\/span><\/p>\n\n"}
+{"id":"gap-control","output":"<p><span class=\"wiki-email\">moc.elpmaxe|u#lebaL<\/span><\/p>\n\n"}
+{"id":"frame-trail-inline","output":"<p><span class=\"wiki-email\">moc.elpmaxe|u#lebaL <\/span> X<\/p>\n\n"}
+{"id":"frame-trail-bracket","output":"<p>(<span class=\"wiki-email\">moc.elpmaxe|u#lebaL <\/span>)<\/p>\n\n"}
+{"id":"addr-minimal","output":"<p><span class=\"wiki-email\">c.b|a#c.b|a<\/span><\/p>\n\n"}
+{"id":"addr-localhost","output":"<p>u@localhost<\/p>\n\n"}
+{"id":"addr-underscore-dom","output":"<p>u@example_com.net<\/p>\n\n"}
+{"id":"addr-double-dot","output":"<p>u@example..com<\/p>\n\n"}
+{"id":"addr-label-leading-dot","output":"<p>.<span class=\"wiki-email\">moc.elpmaxe|u#moc.elpmaxe|u<\/span><\/p>\n\n"}
+{"id":"addr-label-trailing-dot","output":"<p>u.@example.com<\/p>\n\n"}
+{"id":"addr-double-at","output":"<p>u@@example.com<\/p>\n\n"}
+{"id":"addr-trailing-dash","output":"<p><span class=\"wiki-email\">moc.-elpmaxe|u#moc.-elpmaxe|u<\/span><\/p>\n\n"}
+{"id":"addr-leading-dash","output":"<p><span class=\"wiki-email\">moc.elpmaxe-|u#moc.elpmaxe-|u<\/span><\/p>\n\n"}
+{"id":"addr-plus","output":"<p>u+<span class=\"wiki-email\">moc.elpmaxe|gat#moc.elpmaxe|gat<\/span><\/p>\n\n"}
+{"id":"addr-tld-digit","output":"<p><span class=\"wiki-email\">1.elpmaxe|u#1.elpmaxe|u<\/span><\/p>\n\n"}
+{"id":"addr-upper","output":"<p><span class=\"wiki-email\">MOC.ELPMAXE|U#MOC.ELPMAXE|U<\/span><\/p>\n\n"}
+{"id":"addr-dots","output":"<p><span class=\"wiki-email\">moc.elpmaxe|b.a#moc.elpmaxe|b.a<\/span><\/p>\n\n"}
+{"id":"addr-trailing-dot","output":"<p><span class=\"wiki-email\">moc.elpmaxe|u#moc.elpmaxe|u<\/span>.<\/p>\n\n"}
+{"id":"addr-kelvin","output":"<p>\u212a@example.com<\/p>\n\n"}
+{"id":"addr-acute-local","output":"<p>\u00e9<span class=\"wiki-email\">moc.elpmaxe|u#moc.elpmaxe|u<\/span><\/p>\n\n"}
+{"id":"adj-acute-before","output":"<p>\u00e9 <span class=\"wiki-email\">moc.elpmaxe|u#moc.elpmaxe|u<\/span><\/p>\n\n"}
+{"id":"adj-acute-after","output":"<p><span class=\"wiki-email\">moc.elpmaxe|u#moc.elpmaxe|u<\/span> \u00e9<\/p>\n\n"}

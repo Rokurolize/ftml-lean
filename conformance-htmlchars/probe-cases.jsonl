@@ -1,0 +1,17 @@
+{"id": "ro-trail", "source": "``A&B\"C<D>E'``"}
+{"id": "ro-plain", "source": "``A&B\"C<D>Eé``"}
+{"id": "ro-interior", "source": "``A'B``"}
+{"id": "fl-label", "source": "[[[htmlchars-nope|O'Brien &amp; <x> \"q\" é]]]"}
+{"id": "fl-url", "source": "[[[https://example.com/a'b?x=1&y=2|U'R L&<>]]]"}
+{"id": "fl-anchor", "source": "[[[htmlchars-nope#an'chor&x|Anchor]]]"}
+{"id": "fl-extra", "source": "[[[htmlchars-nope/#/ro'ute|Extra]]]"}
+{"id": "bt-attrs", "source": "[[button edit class=\"c'd&e\" style=\"s:'&é\" text=\"ok\"]]"}
+{"id": "bt-class2", "source": "[[button edit class=\"only'one\"]]"}
+{"id": "im-attrs", "source": "[[image https://example.com/a'b.png alt=\"A'B & é\" title=\"T'B\" link=\"https://example.com/x'y?a=1&b=2\"]]"}
+{"id": "im-local", "source": "[[image htmlchars/a'b.png]]"}
+{"id": "im-altamp", "source": "[[image https://example.com/p.png alt=\"A&amp;B 'x'\"]]"}
+{"id": "url-desc", "source": "[https://example.com/a'b?x=1&y=2 O'Brien &amp; <x> \"q\" é]"}
+{"id": "url-star", "source": "[*https://example.com/a'b Star's]"}
+{"id": "url-auto", "source": "https://example.com/?x=1&y=2'z"}
+{"id": "iw-label", "source": "[wikipedia:Albert_Einstein O'Brien &amp; <x> \"q\" é]"}
+{"id": "iw-stand", "source": "[wikipedia:Albert_Einstein]"}

@@ -1,0 +1,639 @@
+/*
+ * render/html/element/container.rs
+ *
+ * ftml - Library to parse Wikidot text
+ * Copyright (C) 2019-2026 Wikijump Team
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+use super::iframe::render_wikidot_inline_html_run;
+use super::prelude::*;
+use crate::tree::{
+    Container, ContainerType, HtmlTag, WIKIDOT_EMPTY_QUOTE_MARKER,
+    WIKIDOT_EMPTY_VALUE_ATTRIBUTE_MARKER, WIKIDOT_GENERATED_EMPTY_CLASS_MARKER,
+    WIKIDOT_HEADING_BARRIER_MARKER, WIKIDOT_HEADING_REOPEN_MARKER,
+    WIKIDOT_QUOTE_LIST_REPAIR_MARKER, WIKIDOT_TAB_PANEL_MARKER,
+};
+
+pub fn render_container(ctx: &mut HtmlContext, container: &Container) {
+    debug!("Rendering container '{}'", container.ctype().name());
+
+    if super::link::render_wikidot_paragraph_anchor_iframe(ctx, container) {
+        return;
+    }
+
+    if render_wikidot_split_tab_panel(ctx, container) {
+        return;
+    }
+
+    if render_plain_div_chain(ctx, container) {
+        return;
+    }
+
+    match container.ctype() {
+        ContainerType::RubyText => {
+            ctx.html().rp().contents("(");
+            render_container_internal(ctx, container);
+            ctx.html().rp().contents(")");
+        }
+
+        _ => render_container_internal(ctx, container),
+    }
+
+    // Live's libtidy repair of a numbered list crossing the quote boundary
+    // leaves a lone unclosed `<ul>` opener after the blockquote.
+    if ctx.layout().legacy()
+        && container.ctype() == ContainerType::Blockquote
+        && container
+            .attributes()
+            .get()
+            .contains_key(WIKIDOT_QUOTE_LIST_REPAIR_MARKER)
+    {
+        ctx.push_raw_str("<ul>");
+    }
+}
+
+/// A tab panel that live renders as a bare div in a later quote segment of a
+/// split tabview: `<div id="wiki-tab-0-N" style="display:none">…</div>`. The
+/// parser marks the container; the marker never reaches output.
+fn render_wikidot_split_tab_panel(ctx: &mut HtmlContext, container: &Container) -> bool {
+    if container.ctype() != ContainerType::Div {
+        return false;
+    }
+    let Some(index) = container.attributes().get().get(WIKIDOT_TAB_PANEL_MARKER) else {
+        return false;
+    };
+    if !ctx.layout().legacy() {
+        // The native layout never produces this marker; keep it invisible
+        // rather than leaking it into attributes.
+        ctx.html().div().contents(container.elements());
+        return true;
+    }
+    let index = index.parse::<usize>().unwrap_or(0);
+    let id = format!("wiki-tab-0-{index}");
+    ctx.html()
+        .div()
+        .attr(attr!("id" => &id, "style" => "display:none"))
+        .contents(container.elements());
+    true
+}
+
+fn render_plain_div_chain(ctx: &mut HtmlContext, container: &Container) -> bool {
+    if container.ctype() != ContainerType::Div || !container.attributes().get().is_empty()
+    {
+        return false;
+    }
+
+    let mut current = container;
+    let mut depth = 0usize;
+    loop {
+        ctx.push_raw_str("<div>");
+        depth += 1;
+
+        match current.elements() {
+            [Element::Container(child)]
+                if child.ctype() == ContainerType::Div
+                    && child.attributes().get().is_empty() =>
+            {
+                current = child;
+            }
+            elements => {
+                render_elements(ctx, elements);
+                break;
+            }
+        }
+    }
+
+    for _ in 0..depth {
+        ctx.push_raw_str("</div>");
+    }
+    true
+}
+
+pub fn render_container_internal(ctx: &mut HtmlContext, container: &Container) {
+    let layout = ctx.layout();
+    let wikidot_prev_sibling_is_table = ctx.wikidot_prev_sibling_is_table();
+    let tag_spec = container.ctype().html_tag(layout, ctx);
+
+    let random_id = choose_id(ctx, &tag_spec);
+
+    let mut tag = ctx.html().tag(tag_spec.tag());
+
+    let mut generated_class_attributes = None;
+    let mut empty_quote_attributes = None;
+    let mut explicit_empty_value_attributes = None;
+    let preserve_generated_empty_class = layout.legacy()
+        && container.ctype() == ContainerType::Span
+        && container
+            .attributes()
+            .get()
+            .contains_key(WIKIDOT_GENERATED_EMPTY_CLASS_MARKER);
+    // An ejected tabview leaves an empty blockquote run in live; the marker
+    // keeps it through tree cleanup and never reaches the output.
+    let strip_empty_quote_marker = container
+        .attributes()
+        .get()
+        .contains_key(WIKIDOT_EMPTY_QUOTE_MARKER);
+    // The quote/list repair marker only drives the raw suffix in
+    // `render_container`; it never reaches the emitted attributes.
+    let strip_quote_list_repair_marker = container
+        .attributes()
+        .get()
+        .contains_key(WIKIDOT_QUOTE_LIST_REPAIR_MARKER);
+    // Attributes whose Wikidot head value evaluated to empty are emitted as
+    // `key=""` by live, unlike attributes live omits entirely.
+    let explicit_empty_value_names = layout.legacy().then(|| {
+        container
+            .attributes()
+            .get()
+            .get(WIKIDOT_EMPTY_VALUE_ATTRIBUTE_MARKER)
+            .map(|names| {
+                names
+                    .split(' ')
+                    .filter(|name| {
+                        !name.is_empty()
+                            && name.chars().all(|character| {
+                                character.is_ascii_alphanumeric() || character == '-'
+                            })
+                    })
+                    .collect::<Vec<_>>()
+            })
+            .unwrap_or_default()
+    });
+    let preserve_explicit_empty_values = explicit_empty_value_names
+        .as_ref()
+        .is_some_and(|names| !names.is_empty());
+    // The collapsible-heading body marker only drives paragraph chunking in
+    // inline-scope lowering; it never reaches the emitted attributes.
+    let bytes = container.attributes().get();
+    let strip_heading_collapsible_body = bytes
+        .get(crate::tree::WIKIDOT_HEADING_COLLAPSIBLE_BODY_MARKER)
+        .is_some()
+        || bytes
+            .get(crate::tree::WIKIDOT_HEADING_COLLAPSIBLE_TAIL_MARKER)
+            .is_some()
+        || bytes
+            .get(crate::tree::WIKIDOT_HEADING_COLLAPSIBLE_LINE_END_MARKER)
+            .is_some();
+    let heading_barrier = layout.legacy()
+        && matches!(container.ctype(), ContainerType::Header(_))
+        && (container
+            .attributes()
+            .get()
+            .contains_key(WIKIDOT_HEADING_BARRIER_MARKER)
+            || container
+                .attributes()
+                .get()
+                .contains_key(WIKIDOT_HEADING_REOPEN_MARKER));
+    let mut heading_barrier_attributes = None;
+    let attributes = if heading_barrier {
+        let mut attributes = container.attributes().clone();
+        attributes.remove(WIKIDOT_HEADING_BARRIER_MARKER);
+        attributes.remove(WIKIDOT_HEADING_REOPEN_MARKER);
+        heading_barrier_attributes.insert(attributes)
+    } else if preserve_generated_empty_class {
+        let mut attributes = container.attributes().clone();
+        attributes.remove(WIKIDOT_GENERATED_EMPTY_CLASS_MARKER);
+        generated_class_attributes.insert(attributes)
+    } else if strip_empty_quote_marker {
+        let mut attributes = container.attributes().clone();
+        attributes.remove(WIKIDOT_EMPTY_QUOTE_MARKER);
+        empty_quote_attributes.insert(attributes)
+    } else if strip_quote_list_repair_marker {
+        let mut attributes = container.attributes().clone();
+        attributes.remove(WIKIDOT_QUOTE_LIST_REPAIR_MARKER);
+        empty_quote_attributes.insert(attributes)
+    } else if strip_heading_collapsible_body {
+        let mut attributes = container.attributes().clone();
+        attributes.remove(crate::tree::WIKIDOT_HEADING_COLLAPSIBLE_BODY_MARKER);
+        attributes.remove(crate::tree::WIKIDOT_HEADING_COLLAPSIBLE_TAIL_MARKER);
+        attributes.remove(crate::tree::WIKIDOT_HEADING_COLLAPSIBLE_LINE_END_MARKER);
+        empty_quote_attributes.insert(attributes)
+    } else if preserve_explicit_empty_values {
+        let mut attributes = container.attributes().clone();
+        attributes.remove(WIKIDOT_EMPTY_VALUE_ATTRIBUTE_MARKER);
+        for name in explicit_empty_value_names.iter().flatten() {
+            attributes.remove(name);
+        }
+        explicit_empty_value_attributes.insert(attributes)
+    } else {
+        container.attributes()
+    };
+
+    match tag_spec {
+        HtmlTag::Tag(_) => tag.attr(attr!(
+            "class" => ""; if preserve_generated_empty_class;;
+            attributes,
+        )),
+        HtmlTag::TagAndClass { class, .. } => tag.attr(attr!(
+            "class" => class;;
+            attributes,
+        )),
+        HtmlTag::TagAndStyle { style, .. } => tag.attr(attr!(
+            "style" => style;;
+            attributes,
+        )),
+        HtmlTag::TagAndId { id, .. } => {
+            let id = random_id.as_deref().unwrap_or(&id);
+            tag.attr(attr!("id" => id;; attributes))
+        }
+    };
+
+    if preserve_explicit_empty_values {
+        for name in explicit_empty_value_names.iter().flatten() {
+            tag.attr_single_quoted(name, &[]);
+        }
+    }
+
+    if layout.legacy() && wikidot_inline_container_folds_html(container) {
+        tag.inner(|ctx| render_wikidot_inline_html_run(ctx, container.elements()));
+    } else if layout.legacy() && matches!(container.ctype(), ContainerType::Header(_)) {
+        if container.elements().is_empty()
+            || heading_barrier
+            || has_wikidot_heading_label_span(container.elements())
+        {
+            tag.contents(container.elements());
+        } else {
+            tag.inner(|ctx| {
+                ctx.html().span().contents(container.elements());
+            });
+        }
+    } else if layout.legacy()
+        && container.ctype() == ContainerType::Blockquote
+        && let Some(elements) = wikidot_break_only_paragraph(container.elements())
+    {
+        tag.inner(|ctx| {
+            render_contents_dropping_final_break_newline(ctx, elements);
+        });
+    } else if layout.legacy()
+        && container.ctype() == ContainerType::Paragraph
+        && let Some(elements) = wikidot_peel_break_only_span_paragraph(
+            container.elements(),
+            wikidot_prev_sibling_is_table,
+        )
+    {
+        tag.contents(elements);
+    } else if layout.legacy() && container_trailing_break_drops_newline(container.ctype())
+    {
+        tag.inner(|ctx| {
+            render_contents_dropping_final_break_newline(ctx, container.elements());
+        });
+    } else {
+        tag.contents(container.elements());
+    }
+}
+
+/// A Wikidot blockquote whose whole body is one paragraph of line breaks is
+/// emitted without the paragraph wrapper: live renders the breaks directly
+/// inside the quote, not a paragraph shell.
+fn wikidot_break_only_paragraph<'a, 't>(
+    elements: &'a [Element<'t>],
+) -> Option<&'a [Element<'t>]> {
+    let [Element::Container(paragraph)] = elements else {
+        return None;
+    };
+    if paragraph.ctype() != ContainerType::Paragraph {
+        return None;
+    }
+    let elements = paragraph.elements();
+    (!elements.is_empty()
+        && elements.iter().all(|element| {
+            matches!(element, Element::LineBreak | Element::LineBreaks(_))
+        }))
+    .then_some(elements)
+}
+
+fn wikidot_peel_break_only_span_paragraph<'a, 't>(
+    elements: &'a [Element<'t>],
+    prev_sibling_is_table: bool,
+) -> Option<&'a [Element<'t>]> {
+    if !prev_sibling_is_table {
+        return None;
+    }
+    if elements.len() != 1 {
+        return None;
+    }
+    let Element::Container(span) = &elements[0] else {
+        return None;
+    };
+    if span.ctype() != ContainerType::Span || !wikidot_break_only_span_tree(&elements[0])
+    {
+        return None;
+    }
+    Some(span.elements())
+}
+
+fn wikidot_break_only_span_tree(element: &Element<'_>) -> bool {
+    let Element::Container(container) = element else {
+        return false;
+    };
+    if container.ctype() != ContainerType::Span {
+        return false;
+    }
+    let elements = container.elements();
+    !elements.is_empty()
+        && elements.iter().all(|child| {
+            matches!(child, Element::LineBreak | Element::LineBreaks(_))
+                || wikidot_break_only_span_tree(child)
+        })
+}
+
+fn wikidot_inline_container_folds_html(container: &Container) -> bool {
+    matches!(container.ctype(), ContainerType::Span | ContainerType::Size)
+        && container
+            .elements()
+            .iter()
+            .any(|element| matches!(element, Element::Html { .. }))
+}
+
+/// Render `elements` into the already-open tag, dropping the newline that
+/// `render_line_break()` appends after a break when that break is the run's
+/// final element. Live writes `<br />\n` only when content follows the break,
+/// and never between a break and the closing tag that ends the run; the inline
+/// containers that mirror live's byte strip it through this helper.
+pub(super) fn render_contents_dropping_final_break_newline(
+    ctx: &mut HtmlContext,
+    elements: &[Element],
+) {
+    let (final_break, rest) = match elements.split_last() {
+        Some((Element::LineBreak, rest)) => (1, rest),
+        Some((Element::LineBreaks(amount), rest)) => (amount.get(), rest),
+        _ => {
+            render_elements(ctx, elements);
+            return;
+        }
+    };
+
+    render_elements(ctx, rest);
+
+    for _ in 1..final_break {
+        super::render_line_break(ctx);
+    }
+
+    ctx.html().br();
+}
+
+/// Containers whose content mirrors live's trailing-break byte. Live
+/// writes `<br />` with no following newline immediately before a closing tag,
+/// while FTML's break emitter always appends `\n`; these containers strip it.
+/// Verified per container on saved pages (harvest-szbyte for the inline set;
+/// the item-93 confirmation pass for paragraph, blockquote, div, note, align).
+fn container_trailing_break_drops_newline(ctype: ContainerType) -> bool {
+    matches!(
+        ctype,
+        ContainerType::Bold
+            | ContainerType::Italics
+            | ContainerType::Monospace
+            | ContainerType::Size
+            | ContainerType::Span
+            | ContainerType::Strikethrough
+            | ContainerType::Superscript
+            | ContainerType::Subscript
+            | ContainerType::Underline
+            | ContainerType::Paragraph
+            | ContainerType::Blockquote
+            | ContainerType::Div
+            | ContainerType::Note
+            | ContainerType::Align(_)
+    )
+}
+
+fn has_wikidot_heading_label_span(elements: &[Element]) -> bool {
+    if let [element] = elements {
+        match element {
+            Element::Container(container)
+                if matches!(
+                    container.ctype(),
+                    ContainerType::Span
+                        | ContainerType::Size
+                        | ContainerType::HeadingLabel
+                ) =>
+            {
+                if container.ctype() == ContainerType::HeadingLabel {
+                    true
+                } else {
+                    has_wikidot_heading_label_span(container.elements())
+                }
+            }
+            Element::Anchor { elements, .. } | Element::Color { elements, .. } => {
+                has_wikidot_heading_label_span(elements)
+            }
+            _ => false,
+        }
+    } else {
+        false
+    }
+}
+
+pub fn render_color(
+    ctx: &mut HtmlContext,
+    color: &str,
+    background: bool,
+    elements: &[Element],
+) {
+    debug!("Rendering color container (color '{color}')");
+
+    let property = if background {
+        "background-color"
+    } else {
+        "color"
+    };
+    let style = if ctx.layout().legacy() {
+        if color.is_empty() {
+            format!("{property}:")
+        } else {
+            format!("{property}: {color}")
+        }
+    } else {
+        format!("{property}: {color};")
+    };
+    ctx.html()
+        .span()
+        .attr(attr!("style" => &style))
+        .inner(|ctx| match elements.split_last() {
+            Some((Element::LineBreak, rest)) if ctx.layout().legacy() => {
+                render_elements(ctx, rest);
+                ctx.html().br();
+            }
+            _ => render_elements(ctx, elements),
+        });
+}
+
+fn choose_id(ctx: &mut HtmlContext, tag_spec: &HtmlTag) -> Option<String> {
+    if matches!(tag_spec, HtmlTag::TagAndId { .. }) && !ctx.settings().use_true_ids {
+        Some(ctx.random().generate_html_id())
+    } else {
+        None
+    }
+}
+
+#[test]
+fn container_rendering_covers_special_tag_variants() {
+    use crate::data::PageInfo;
+    use crate::layout::Layout;
+    use crate::render::Render;
+    use crate::render::html::HtmlRender;
+    use crate::settings::{WikitextMode, WikitextSettings};
+    use crate::tree::{
+        Alignment, AttributeMap, Container, Heading, HeadingLevel, SyntaxTree,
+    };
+
+    let page_info = PageInfo::dummy();
+    let wikijump = WikitextSettings::from_mode(WikitextMode::Page, Layout::Wikijump);
+
+    let wikijump_tree = SyntaxTree {
+        elements: vec![
+            Element::Container(Container::new(
+                ContainerType::RubyText,
+                vec![Element::Text(cow!("go"))],
+                AttributeMap::new(),
+            )),
+            Element::Container(Container::new(
+                ContainerType::Monospace,
+                vec![Element::Text(cow!("mono"))],
+                AttributeMap::new(),
+            )),
+            Element::Container(Container::new(
+                ContainerType::Header(Heading {
+                    level: HeadingLevel::Two,
+                    has_toc: true,
+                }),
+                vec![Element::Text(cow!("Heading"))],
+                AttributeMap::new(),
+            )),
+        ],
+        ..SyntaxTree::default()
+    };
+    let wikijump_output = HtmlRender.render(&wikijump_tree, &page_info, &wikijump);
+
+    assert!(
+        wikijump_output
+            .body
+            .contains("<rp>(</rp><rt>go</rt><rp>)</rp>")
+    );
+    assert!(
+        wikijump_output
+            .body
+            .contains(r#"<code class="wj-monospace">mono</code>"#)
+    );
+    assert!(
+        wikijump_output
+            .body
+            .contains(r#"<h2 id="toc0">Heading</h2>"#)
+    );
+
+    let wikidot = WikitextSettings::from_mode(WikitextMode::Page, Layout::Wikidot);
+    let wikidot_tree = SyntaxTree {
+        elements: vec![
+            Element::Container(Container::new(
+                ContainerType::Align(Alignment::Right),
+                vec![Element::Text(cow!("right"))],
+                AttributeMap::new(),
+            )),
+            Element::Container(Container::new(
+                ContainerType::Header(Heading {
+                    level: HeadingLevel::Two,
+                    has_toc: true,
+                }),
+                vec![Element::Text(cow!("Heading"))],
+                AttributeMap::new(),
+            )),
+        ],
+        ..SyntaxTree::default()
+    };
+    let wikidot_output = HtmlRender.render(&wikidot_tree, &page_info, &wikidot);
+
+    assert_eq!(
+        wikidot_output.body,
+        r#"<div style="text-align: right;">right</div><h2 id="toc0"><span>Heading</span></h2>"#
+    );
+}
+
+#[test]
+fn wikidot_underline_uses_the_live_span_style_dom() {
+    use crate::data::PageInfo;
+    use crate::layout::Layout;
+    use crate::render::Render;
+    use crate::render::html::HtmlRender;
+    use crate::settings::{WikitextMode, WikitextSettings};
+    use crate::tree::{AttributeMap, Container, ContainerType, SyntaxTree};
+
+    let page_info = PageInfo::dummy();
+    let tree = SyntaxTree {
+        elements: vec![Element::Container(Container::new(
+            ContainerType::Underline,
+            vec![Element::Text(cow!("underlined"))],
+            AttributeMap::new(),
+        ))],
+        ..SyntaxTree::default()
+    };
+
+    let wikidot = WikitextSettings::from_mode(WikitextMode::Page, Layout::Wikidot);
+    let wikijump = WikitextSettings::from_mode(WikitextMode::Page, Layout::Wikijump);
+
+    assert_eq!(
+        HtmlRender.render(&tree, &page_info, &wikidot).body,
+        r#"<span style="text-decoration: underline;">underlined</span>"#,
+    );
+    assert_eq!(
+        HtmlRender.render(&tree, &page_info, &wikijump).body,
+        "<u>underlined</u>",
+    );
+}
+
+#[test]
+fn choose_id_generates_random_ids_only_when_true_ids_are_disabled() {
+    use crate::data::PageInfo;
+    use crate::layout::Layout;
+    use crate::render::Handle;
+    use crate::settings::{WikitextMode, WikitextSettings};
+    use crate::tree::BibliographyList;
+
+    let page_info = PageInfo::dummy();
+    let handle = Handle;
+    let bibliographies = BibliographyList::new();
+    let tag_with_id = HtmlTag::with_id("h2", str!("toc0"));
+
+    let mut random_id_settings =
+        WikitextSettings::from_mode(WikitextMode::Draft, Layout::Wikijump);
+    random_id_settings.use_true_ids = false;
+    let mut random_id_ctx = HtmlContext::new(
+        &page_info,
+        &handle,
+        &random_id_settings,
+        &[],
+        &[],
+        &bibliographies,
+        0,
+    );
+    assert_eq!(
+        choose_id(&mut random_id_ctx, &tag_with_id).as_deref(),
+        Some("wj-id-zvGvLlhGI6VEZFKj"),
+    );
+
+    let true_id_settings =
+        WikitextSettings::from_mode(WikitextMode::Page, Layout::Wikijump);
+    let mut true_id_ctx = HtmlContext::new(
+        &page_info,
+        &handle,
+        &true_id_settings,
+        &[],
+        &[],
+        &bibliographies,
+        0,
+    );
+    assert_eq!(choose_id(&mut true_id_ctx, &tag_with_id), None);
+    assert_eq!(choose_id(&mut true_id_ctx, &HtmlTag::new("h2")), None);
+}

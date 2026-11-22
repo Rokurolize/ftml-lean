@@ -1,0 +1,539 @@
+{
+ "fzc-7-0005": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "aaa [[separator]] bbb\n[[INCLUDE :foo_bar:other-page | [ stray | a=1]]"
+ },
+ "fzc-7-0006": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x [[INCLUDE other-page|a=1 y\n > [[include  :sandbox:other-page|a=1]] \npre [[INCLUDE ::other-page | marker=]] y text = more text\nplain line\n[[include  empty-page | marker=[[include muse-probe-g14-target]]]]\n\n[[include a/b\n[[include  muse-probe-g14-target]]\n\n"
+ },
+ "fzc-7-0009": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[include\nother-page]]\n"
+ },
+ "fzc-7-0011": {
+  "components": [
+   "segments"
+  ],
+  "source": "=  spaced  \na = b = c\n[[include  muse-probe-r2link-free-exists | ]]"
+ },
+ "fzc-7-0013": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "> [[include \"missing-page\" | marker=x]]x\n\n[[div]]\n[[Include :foo_bar:other-page | a={$a}]]\n[[/div]]\noutro text = more text\n== Title\na = b = c\n"
+ },
+ "fzc-7-0016": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include  empty-page]]\n"
+ },
+ "fzc-7-0023": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[include\nmuse-probe-g14-target]]\n"
+ },
+ "fzc-7-0027": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "aaa\n[[separator]]\nbbb\n\n>> [[include\t\"empty-page\" | marker=x]]x\naaa\n[[div align=\"center\"]]\nbbb\n[[/div]]\nccc\n[[include :sandbox.:other-page | a=hello]]\n"
+ },
+ "fzc-7-0030": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include  other-page]]\n"
+ },
+ "fzc-7-0037": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[INCLUDE muse-probe-g14-target]]\n"
+ },
+ "fzc-7-0045": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[Include :sandbox.:other-page | =noval]]"
+ },
+ "fzc-7-0048": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include foo/bar]]\n\n[[include\nempty-page]]\n\n\n[[include\n[[Include other-page]]\n\n"
+ },
+ "fzc-7-0055": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x = y\n[[include  muse-probe-r2link-free-exists2 | a={$a}]]\n[[include\n[[include\tmuse-probe-g14-target]]\n  > [[include \":sandbox:other-page\" | marker=x]]\n> quoted text\n"
+ },
+ "fzc-7-0058": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[include muse-probe-g14-target]]\n"
+ },
+ "fzc-7-0060": {
+  "components": [
+   "segments"
+  ],
+  "source": "=  spaced  \ntext = more text\nplain line\n[[include\n:a:b:other-page|a=1]]"
+ },
+ "fzc-7-0081": {
+  "components": [
+   "segments"
+  ],
+  "source": "plain line\n=  spaced  \n[[include muse-probe-r2notes-x-inc-src | a=1 | b=2]]"
+ },
+ "fzc-7-0093": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[include other-page]]\n"
+ },
+ "fzc-7-0095": {
+  "components": [
+   "segments"
+  ],
+  "source": "=  spaced  "
+ },
+ "fzc-7-0097": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "one paragraph\n\n[[separator]]\n\nanother\n[[include a.b | a=1 | b=2]] text [[div align=\"right\"]] inner [[/div]] tail\n[[Include :SANDBOX:other-page | a=1 | b=2]]\n\n>> [[INCLUDE 'other-page']]x\n> quoted text\n\t> [[include \"Other-Page\" | marker=[!-- a|b --]]]\n\n"
+ },
+ "fzc-7-0100": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[include muse-probe-g14-target]]\n"
+ },
+ "fzc-7-0101": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "intro\n[[div class=\"x\"]]\n[[INCLUDE :sandbox.:other-page | marker=]]\n[[/div]]\noutro"
+ },
+ "fzc-7-0107": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[include empty-page]]\n"
+ },
+ "fzc-7-0121": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[INCLUDE other-page]]\n"
+ },
+ "fzc-7-0123": {
+  "components": [
+   "segments"
+  ],
+  "source": "=Title\n=  spaced  "
+ },
+ "fzc-7-0135": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[include\tmuse-probe-g14-target]]\n"
+ },
+ "fzc-7-0143": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "intro\n[[div class=\"x\"]]\n[[include\t:foo_bar:other-page | marker=  | b={$a}]]\n[[/div]]\noutro"
+ },
+ "fzc-7-0151": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x = y\n== Title\n = Title\n[[include :SANDBOX:other-page | a=x]]"
+ },
+ "fzc-7-0160": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[div class=\"x\"]]\n[[include\ncafé-page | marker=x|y | b=]]\n[[/div]]\n[[include a/b\n[[include empty-page]]\n\n"
+ },
+ "fzc-7-0164": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include  :sandbox.:other-page | noval]]"
+ },
+ "fzc-7-0174": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[include muse-probe-g14-target]]\n [[include ]]\n\n[[include  empty-page]]\n "
+ },
+ "fzc-7-0177": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include\tmuse-probe-g14-target]]\n"
+ },
+ "fzc-7-0184": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include  muse-probe-g14-target]]\n"
+ },
+ "fzc-7-0185": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "intro\n[[blockquote]]\n[[INCLUDE :sandbox:--- | marker=a=b | b=[[include muse-probe-g14-target]]]]\n[[/blockquote]]"
+ },
+ "fzc-7-0192": {
+  "components": [
+   "tokens"
+  ],
+  "source": "[[code]]\n[[INCLUDE :foo_bar:other-page | ]]\n[[/code]]\noutro"
+ },
+ "fzc-7-0198": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include  empty-page]]\n"
+ },
+ "fzc-7-0205": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include muse-probe-g14-target]]\n"
+ },
+ "fzc-7-0207": {
+  "components": [
+   "segments"
+  ],
+  "source": "=  spaced  \n=Title"
+ },
+ "fzc-7-0216": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "\n>[[INCLUDE :sandbox:Other-Page | a=a b] tailpre\n[[Include :sandbox: | marker=m1 | other=o yx\n> [[Include no-such-page | =noval]\n\n[[include\n[[include\u000bmuse-probe-g14-target]]\nintro\n[[Include missing-page | a = spaced ]]"
+ },
+ "fzc-7-0226": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include muse-probe-g14-target]]\n"
+ },
+ "fzc-7-0249": {
+  "components": [
+   "segments"
+  ],
+  "source": "a = b = c\n=  spaced  \n== Title"
+ },
+ "fzc-7-0251": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[include empty-page]]\n\n[[include ]]\n\n[[include\nempty-page]]\npre  > [[INCLUDE :sandbox:Other-Page]]x y"
+ },
+ "fzc-7-0261": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[Include empty-page]]\n"
+ },
+ "fzc-7-0268": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[INCLUDE empty-page]]\n"
+ },
+ "fzc-7-0279": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[Include :sandbox.:other-page]]\noutro\n\n[[blockquote]]\n[[include :sandbox: | [ stray | a=1]]\n[[/blockquote]]\n[[include foo/bar]]\n\n[[include\tother-page]]\n\n"
+ },
+ "fzc-7-0286": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[div class=\"x\"]]\n[[INCLUDE :foo_bar:other-page | a = spaced ]]\n[[/div]] [[code]]\n[[Include :foo_bar:other-page | a=1 | a=2]]\n[[/code]]\noutro"
+ },
+ "fzc-7-0289": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[INCLUDE other-page]]\n"
+ },
+ "fzc-7-0290": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "intro\n[[div]]\n[[include  :sandbox.:other-page | marker=pre [!-- a|b --] post]]\n[[/div]]\noutro"
+ },
+ "fzc-7-0303": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[INCLUDE other-page]]\n"
+ },
+ "fzc-7-0304": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "intro\n[[include\t:SANDBOX:other-page | marker=]]"
+ },
+ "fzc-7-0305": {
+  "components": [
+   "segments"
+  ],
+  "source": " = Title\n=  spaced  \n=Title\n[[include\t:sandbox.wikidot.com:other-page | marker=]]"
+ },
+ "fzc-7-0307": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "= Title\n= Title  > [[INCLUDE \"missing-page\"]]\n\ntext = more text\n[[include :sandbox:missing-page | =noval]]\n"
+ },
+ "fzc-7-0314": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include  muse-probe-r2link-free-exists2 | marker=m1 | other=o]] intro\n[[blockquote]]\n[[include :sandbox.:other-page | marker=m1 | other=o]]\n[[/blockquote]]\noutroaaa\n[[separator]]\nbbb"
+ },
+ "fzc-7-0319": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": " = Title\n=  spaced  \n[[Include :foo_bar:other-page | a=1 | b=2]]"
+ },
+ "fzc-7-0338": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[Include empty-page]]\n"
+ },
+ "fzc-7-0340": {
+  "components": [
+   "segments"
+  ],
+  "source": "=  spaced  \n== Title\n== Title"
+ },
+ "fzc-7-0345": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[include\nother-page]]\n"
+ },
+ "fzc-7-0347": {
+  "components": [
+   "segments"
+  ],
+  "source": "text = more text\n=  spaced  \n== Title"
+ },
+ "fzc-7-0356": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "pre\nx [[include\t:sandbox: | a=1 | a=2]\n\n* [[include\u000b:sandbox:--- | a={$marker}]]  y> [[include\nOther-Page | [ stray | a=1\n\ntext [[div align=\"right\"]] inner [[/div]] tail\n[[Include :foo_bar:other-page | =noval]]\n\n"
+ },
+ "fzc-7-0361": {
+  "components": [
+   "segments"
+  ],
+  "source": "=  spaced  \na = b = c\n== Title"
+ },
+ "fzc-7-0367": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "intro\n[[div]]\n[[include :foo_bar:other-page | noval]]\n[[/div]]"
+ },
+ "fzc-7-0384": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "x\n[[include\t:foo_bar:other-page | a={$marker}]] \n\n one paragraph\n\n[[separator]]\n\nanother\n[[Include missing-page | a={$a}]] "
+ },
+ "fzc-7-0387": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[INCLUDE empty-page]]\n"
+ },
+ "fzc-7-0391": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": ">[[include \"muse-probe-g14-target\" | =noval]]\n> quoted text\n[[include foo/bar]]\n\n[[include other-page]]\n text = more text\n= Title\n=  spaced   "
+ },
+ "fzc-7-0394": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[include  empty-page]]\n"
+ },
+ "fzc-7-0397": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "aaa [[separator]] bbb\n[[include :sandbox.:other-page | noval]]"
+ },
+ "fzc-7-0408": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include  empty-page]]\n"
+ },
+ "fzc-7-0418": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "one paragraph\n\n[[separator]]\n\nanother\n[[include\n:sandbox:--- | marker=]]"
+ },
+ "fzc-7-0426": {
+  "components": [
+   "segments"
+  ],
+  "source": "=  spaced  \nx = y\n[[include\tmuse-probe-r2notes-x-inc-src]] pre >> [[Include ::other-page | a = spaced ]] \npre >> [[include\n:sandbox:other-page | marker=[[include muse-probe-g14-target]]pre [[Include café-page | marker=]] intro\n[[blockquote]]\n[[include\n---]]\n[[/blockquote]]\noutro "
+ },
+ "fzc-7-0429": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[include  muse-probe-g14-target]]\n"
+ },
+ "fzc-7-0447": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include\n[[include\tmuse-probe-g14-target]]\n\n\n>[[include \":sandbox:other-page\" | marker=[!-- a|b --]]]\n "
+ },
+ "fzc-7-0457": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include bad.page\n[[include\nmuse-probe-g14-target]]\n"
+ },
+ "fzc-7-0461": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include foo/bar]]\n\n[[INCLUDE other-page]]\n\ntext = more text\n = Title\n[[INCLUDE :sandbox.:other-page | a=1 | b=2]]\n\n"
+ },
+ "fzc-7-0471": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[INCLUDE other-page]]\n"
+ },
+ "fzc-7-0472": {
+  "components": [
+   "tokens"
+  ],
+  "source": "intro\n[[code]]\n[[include\t:foo_bar:other-page | noval]]\n[[/code]]"
+ },
+ "fzc-7-0473": {
+  "components": [
+   "segments"
+  ],
+  "source": "=  spaced  \ntext = more text"
+ },
+ "fzc-7-0478": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include  empty-page]]\n"
+ },
+ "fzc-7-0480": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "= Title\n=  spaced  \n== Title\n[[INCLUDE missing-page | a=pre [!-- a|b --] post]]"
+ },
+ "fzc-7-0494": {
+  "components": [
+   "segments"
+  ],
+  "source": "text = more text\n=  spaced  "
+ },
+ "fzc-7-0499": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[include a/b\n[[include\nempty-page]]\n"
+ }
+}

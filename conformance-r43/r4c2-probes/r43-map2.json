@@ -1,0 +1,17 @@
+{
+ "span-first": {
+  "fullname": "muse-probe-r43-span-first",
+  "source": "X[[footnote]]\n[[span]]inline body[[/span]]\n[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "heading-first": {
+  "fullname": "muse-probe-r43-heading-first",
+  "source": "X[[footnote]]\n+ Head Line\n[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "div-oneline-framed": {
+  "fullname": "muse-probe-r43-div-oneline-framed",
+  "source": "X[[footnote]]\n[[div]]block body[[/div]]\n[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "created"
+ }
+}

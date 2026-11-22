@@ -1,0 +1,22 @@
+{
+ "f2-span-class-ws": {
+  "fullname": "muse-probe-tidyfp-f2-span-class-ws",
+  "html": "<p><span class=\"foo\">x</span></p>",
+  "html_sha256": "960d0a859fdcc9684e69682996bc01be85c922d4f9595408a47d6c24893fa601",
+  "source": "[[span class=\"   foo\"]]x[[/span]]",
+  "source_sha256": "c3d578f1128d23c249f5da8c6f8117c30d70503b6c821e8e3759756f1aa44c15",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "f4-html-list-ws": {
+  "fullname": "muse-probe-tidyfp-f4-html-list-ws",
+  "html": "<p><iframe src=\"/muse-probe-tidyfp-f4-html-list-ws/html/92779dd03e11331c5a6644d50d0053ea518c35fc-4624064001517860564\" allowtransparency=\"true\" frameborder=\"0\" class=\"html-block-iframe\"></iframe></p>",
+  "html_sha256": "3d8596e5f5df8cffcd96cd4e86212effe8e9c6e62d34e1c071d5cd217797f91f",
+  "source": "[[html]]\n<ul><!--x-->   </ul>\n[[/html]]",
+  "source_sha256": "93b71dcb1df6a6eda02e17d5261c7253f49fb1113cf0f988f82e8d303b3d03bf",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

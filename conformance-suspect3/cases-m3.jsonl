@@ -1,0 +1,28 @@
+{"id": "t-a", "source": "A ##red|``@@x@@`` B## C"}
+{"id": "t-b", "source": "A ##red|B ``@@x@@``## C"}
+{"id": "t-c", "source": "A\n``@@x@@`` B"}
+{"id": "t-d1", "source": "``@@x@@`` A"}
+{"id": "t-d2", "source": "A ``@@x@@``"}
+{"id": "t-fold", "source": "A ``@@x@@`` ##red| B## C"}
+{"id": "y-a", "source": "A ..``@@x@@``.. B"}
+{"id": "y-b", "source": "A -``@@x@@``- B"}
+{"id": "y-c1", "source": "A ``@@x@@'' B"}
+{"id": "y-c2", "source": "A <<@@x@@>> B"}
+{"id": "y-d", "source": "A . ``@@x@@`` . . B"}
+{"id": "y5", "source": "A .[!--x--].. B"}
+{"id": "s1a", "source": "[[bibliography]]\n: a : X\n: a : Y\n: b : Z\n[[/bibliography]]\nCite ((bibcite a)) and ((bibcite b))."}
+{"id": "s1b", "source": "[[bibliography]]\n: a : X\n: b : Y\n: a : Z\n[[/bibliography]]\n((bibcite a))"}
+{"id": "s1c", "source": "[[bibliography]]\n: k : First\n: k : Second\n[[/bibliography]]\nCite ((bibcite k))."}
+{"id": "s3c", "source": "[[bibliography]]\n: a : Entry A\n[[/bibliography]]\n[[bibliography]]\n: a : Entry A2\n[[/bibliography]]\nCite ((bibcite a))."}
+{"id": "s2c", "source": "[[footnoteblock]]\n[[footnote]]see ((bibcite k))[[/footnote]]\n[[bibliography]]\n: k : Key\n[[/bibliography]]"}
+{"id": "s5a", "source": "[[footnote]]outer [[footnote]]inner[[/footnote]]"}
+{"id": "s6b", "source": "[[footnote]]A\n[[bibliography]]\n: k : Key\n[[/bibliography]][[/footnote]]"}
+{"id": "t1a", "source": "[[toc]]\n+ A\n++ B\n++++ D\n++++++ F"}
+{"id": "t1b", "source": "[[toc]]\n+ A\n+++++++ X\n++ B"}
+{"id": "t2a", "source": "+ Before\n[[toc]]\n+ After"}
+{"id": "t2b", "source": "[[toc]]\n+ A\n[[toc]]\n++ B"}
+{"id": "t2c", "source": "[[toc]]\n++ Same\n++ Same"}
+{"id": "t3c", "source": "[[toc numbered]]\n+ A"}
+{"id": "t4a", "source": "[[toc]]\n++ A **bold** B"}
+{"id": "h2a", "source": "[[toc]]\n+ A\n+* Skip\n+ B"}
+{"id": "h2b", "source": "[[toc]]\n+* Only\n+ A"}

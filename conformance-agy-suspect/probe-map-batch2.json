@@ -1,0 +1,102 @@
+{
+ "f01-email-ee": {
+  "fullname": "muse-probe-agy-suspect-f01-email-ee",
+  "source": "[a@b.com éé]",
+  "action": "created"
+ },
+ "f02-email-apos-amp": {
+  "fullname": "muse-probe-agy-suspect-f02-email-apos-amp",
+  "source": "[a@b.com a'b&c\"d]",
+  "action": "created"
+ },
+ "f03-freelink-translit": {
+  "fullname": "muse-probe-agy-suspect-f03-freelink-translit",
+  "source": "[[[äöüß ñ ç ž ąćęłńóśźż café123]]]",
+  "action": "created"
+ },
+ "f04-ul-upper-open": {
+  "fullname": "muse-probe-agy-suspect-f04-ul-upper-open",
+  "source": "[[UL]]\n[[LI]]Case[[/li]]\n[[/ul]]",
+  "action": "created"
+ },
+ "f05-ul-upper-close": {
+  "fullname": "muse-probe-agy-suspect-f05-ul-upper-close",
+  "source": "[[ul]]\n[[li]]Case[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "f06-ul-upper-after": {
+  "fullname": "muse-probe-agy-suspect-f06-ul-upper-after",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[LI]]B[[/LI]]\n[[/UL]]\n\nAFTER",
+  "action": "created"
+ },
+ "f07-modulepre-upper-tail": {
+  "fullname": "muse-probe-agy-suspect-f07-modulepre-upper-tail",
+  "source": "[[MODULE654 css]]tail",
+  "action": "created"
+ },
+ "f08-iftags-lead-comma": {
+  "fullname": "muse-probe-agy-suspect-f08-iftags-lead-comma",
+  "source": "A [[iftags ,-foo]]KEPT[[/iftags]] B",
+  "action": "created"
+ },
+ "f09-div-attr-escapes": {
+  "fullname": "muse-probe-agy-suspect-f09-div-attr-escapes",
+  "source": "[[div data-x=\"a&b<c>d'e\\\"f\"]]\nhi\n[[/div]]",
+  "action": "created"
+ },
+ "f10-interwiki-unknown-apos": {
+  "fullname": "muse-probe-agy-suspect-f10-interwiki-unknown-apos",
+  "source": "[nosuchwiki:Mallard O'Brien & <b>x</b>]",
+  "action": "created"
+ },
+ "x01-raw-empty-interwiki": {
+  "fullname": "muse-probe-agy-suspect-x01-raw-empty-interwiki",
+  "source": "[wikipedia:X a@@@@b]",
+  "action": "created"
+ },
+ "x02-raw-in-date": {
+  "fullname": "muse-probe-agy-suspect-x02-raw-in-date",
+  "source": "[[date 0 format=\"a@@raw@@b\"]] and [[date 0 format=\"a@@@@b\"]]",
+  "action": "created"
+ },
+ "x03-email-url-label": {
+  "fullname": "muse-probe-agy-suspect-x03-email-url-label",
+  "source": "[a@b.com http://example.com]",
+  "action": "created"
+ },
+ "x04-email-bracket-label": {
+  "fullname": "muse-probe-agy-suspect-x04-email-bracket-label",
+  "source": "[a@b.com [x] label]",
+  "action": "created"
+ },
+ "x05-email-raw-label": {
+  "fullname": "muse-probe-agy-suspect-x05-email-raw-label",
+  "source": "[a@b.com @@raw@@]",
+  "action": "created"
+ },
+ "x06-color-raw-spec": {
+  "fullname": "muse-probe-agy-suspect-x06-color-raw-spec",
+  "source": "##@@red@@|hello##",
+  "action": "created"
+ },
+ "x07-bq-raw-nospace": {
+  "fullname": "muse-probe-agy-suspect-x07-bq-raw-nospace",
+  "source": "A\n\n>@@hello@@\n\nB",
+  "action": "created"
+ },
+ "x08-div-raw-attr": {
+  "fullname": "muse-probe-agy-suspect-x08-div-raw-attr",
+  "source": "[[div data-x=\"a@@b@@c\"]]\nhi\n[[/div]]",
+  "action": "created"
+ },
+ "x09-deflist-raw-empty": {
+  "fullname": "muse-probe-agy-suspect-x09-deflist-raw-empty",
+  "source": ": @@@@ : def",
+  "action": "created"
+ },
+ "x10-url-star-mailto": {
+  "fullname": "muse-probe-agy-suspect-x10-url-star-mailto",
+  "source": "[*mailto:a@b.com mail] and [#foo plain]",
+  "action": "created"
+ }
+}

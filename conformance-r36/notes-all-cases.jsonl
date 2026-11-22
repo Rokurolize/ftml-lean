@@ -1,0 +1,367 @@
+{"id": "fn01-single", "source": "Alpha[[footnote]]note[[/footnote]]"}
+{"id": "fn02-two", "source": "A[[footnote]]one[[/footnote]] B[[footnote]]two[[/footnote]]"}
+{"id": "fn03-block-after", "source": "A[[footnote]]one[[/footnote]] B[[footnote]]two[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn04-block-before", "source": "[[footnoteblock]]\n\nA[[footnote]]one[[/footnote]] B[[footnote]]two[[/footnote]]"}
+{"id": "fn05-block-between", "source": "A[[footnote]]one[[/footnote]]\n\n[[footnoteblock]]\n\nB[[footnote]]two[[/footnote]]"}
+{"id": "fn06-two-blocks", "source": "A[[footnote]]one[[/footnote]]\n[[footnoteblock]]\n\nB[[footnote]]two[[/footnote]]\n[[footnoteblock]]"}
+{"id": "fn07-empty-body", "source": "A[[footnote]][[/footnote]] B[[footnote]] x [[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn08-bold-italic-body", "source": "A[[footnote]]**bold** and //ital// and __under__[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn09-link-body", "source": "A[[footnote]]see [http://example.com the site] and [[wikipedia:Footnote]]\\[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn10-code-body", "source": "A[[footnote]]code [[code]]x = 1;[[/code]] here[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn11-math-body", "source": "A[[footnote]]See [[math]] x^2 [[/math]] here[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn12-list-body", "source": "A[[footnote]]items\n* one\n* two[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn13-quote-body", "source": "A[[footnote]]excerpt\n> quoted text[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn14-multiline-body", "source": "Apple[[footnote]]\nfirst line\n\nsecond paragraph\nlast line\n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn15-unicode-body", "source": "A[[footnote]]naïve café 日本語 **gras**[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn16-uppercase-tag", "source": "A[[FOOTNOTE]]up[[/FOOTNOTE]] B[[footnote]]low[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn17-mixed-case-tag", "source": "A[[FootNote]]mix[[/footnote]] B[[footnote]]two[[/FootNote]]\n\n[[footnoteblock]]"}
+{"id": "fn18-space-in-opener", "source": "A[[footnote ]]sp[[/footnote]] B[[footnote]]two[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn19-unterminated", "source": "A[[footnote]]never closed B[[footnote]]also open\n\n[[footnoteblock]]"}
+{"id": "fn20-stray-closer", "source": "X[[/footnote]] then B[[footnote]]bee[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn21-nested-footnote", "source": "before[[footnote]]outer [[footnote]]inner[[/footnote]] after[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn22-block-in-footnote", "source": "A[[footnote]]body [[footnoteblock]] tail[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn23-fused-close", "source": "x [[footnote]]note[[/footnote]]] y\n\n[[footnoteblock]]"}
+{"id": "fn24-block-title", "source": "Apple[[footnote]]Banana[[/footnote]]\n\n[[footnoteblock title=\"The feet-noten\"]]\n\nMore stuff underneath"}
+{"id": "fn25-block-hide", "source": "Apple[[footnote]]Banana[[/footnote]]\n\n[[footnoteblock hide=\"true\"]]"}
+{"id": "fn26-block-bogus-arg", "source": "Apple[[footnote]]Banana[[/footnote]]\n\n[[footnoteblock bogus=\"true\"]]"}
+{"id": "fn27-block-title-empty", "source": "Apple[[footnote]]Banana[[/footnote]]\n\n[[footnoteblock title=\"\"]]"}
+{"id": "fn28-leading-newline", "source": "Text before.\n\n[[footnote]]on its own line[[/footnote]]\n\nText after.\n\n[[footnoteblock]]"}
+{"id": "fn29-leading-spaces", "source": "A   [[footnote]]spaced opener[[/footnote]]   B[[footnote]]two[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn30-many-notes", "source": "N1[[footnote]]body 1[[/footnote]] N2[[footnote]]body 2[[/footnote]] N3[[footnote]]body 3[[/footnote]] N4[[footnote]]body 4[[/footnote]] N5[[footnote]]body 5[[/footnote]] N6[[footnote]]body 6[[/footnote]] N7[[footnote]]body 7[[/footnote]] N8[[footnote]]body 8[[/footnote]] N9[[footnote]]body 9[[/footnote]] N10[[footnote]]body 10[[/footnote]] \n\n[[footnoteblock]]"}
+{"id": "fn31-block-then-more", "source": "A[[footnote]]alpha[[/footnote]]\n[[footnoteblock]]\nB[[footnote]]beta[[/footnote]]\nC[[footnote]]gamma[[/footnote]]"}
+{"id": "fn32-adj-bibitem", "source": "A[[footnote]]note[[/footnote]]\n\n[[bibliography]]\n[[bibitem Smith2020]]Smith, A. Title.[[/bibitem]]\n[[/bibliography]]\n\nSee [[bibcite Smith2020]].\n\n[[footnoteblock]]"}
+{"id": "fn33-adj-bibcite-before", "source": "See [[bibcite Smith2020]] and A[[footnote]]note[[/footnote]].\n\n[[bibliography]]\n[[bibitem Smith2020]]Smith, A. Title.[[/bibitem]]\n[[/bibliography]]\n\n[[footnoteblock]]"}
+{"id": "fn34-adj-undefined-bibcite", "source": "A[[footnote]]note[[/footnote]] and [[bibcite Missing]]\n\n[[footnoteblock]]"}
+{"id": "fn35-adj-footnoteitem", "source": "A[[footnote]]note[[/footnote]] B[[footnoteitem]]item[[/footnoteitem]]\n\n[[footnoteblock]]"}
+{"id": "fn36-div-wrapped", "source": "[[div class=\"x\"]]\nA[[footnote]]inside div[[/footnote]]\n[[/div]]\n\n[[footnoteblock]]"}
+{"id": "fn37-list-wrapped", "source": "* A[[footnote]]inside list[[/footnote]]\n* B[[footnote]]second[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn38-quote-wrapped", "source": "> A[[footnote]]inside quote[[/footnote]]\n> tail\n\n[[footnoteblock]]"}
+{"id": "fn39-collapsible-wrapped", "source": "[[collapsible show=\"open\"]]\nA[[footnote]]inside collapsible[[/footnote]]\n[[/collapsible]]\n\n[[footnoteblock]]"}
+{"id": "fn40-iftags-kept", "source": "A[[footnote]]before[[/footnote]][[iftags tags=\"fn\"]]TAGGED[[/iftags]]B[[footnote]]after[[/footnote]]\n\n[[footnoteblock]]", "tags": ["fn"]}
+{"id": "fn41-iftags-hidden", "source": "A[[footnote]]before[[/footnote]][[iftags tags=\"other\"]]HIDDEN[[/iftags]]B[[footnote]]after[[/footnote]]\n\n[[footnoteblock]]", "tags": ["fn"]}
+{"id": "fn42-brackets-in-body", "source": "A[[footnote]]a [[ b ]] and [single] and [[/footnote]] done\n\n[[footnoteblock]]"}
+{"id": "fn43-double-closer", "source": "A[[footnote]]one[[/footnote]][[/footnote]] B[[footnote]]two[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn44-across-paragraphs", "source": "A[[footnote]]para one\n\npara two[[/footnote]] B[[footnote]]plain[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn45-block-after-list", "source": "* item\n* item2\n\nA[[footnote]]note[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn46-table-cell", "source": "|| head ||\n|| A[[footnote]]in cell[[/footnote]] ||\n\n[[footnoteblock]]"}
+{"id": "fn47-header-note", "source": "= Header[[footnote]]in header[[/footnote]] =\n\n[[footnoteblock]]"}
+{"id": "fn48-no-notes", "source": "Just a plain document with no footnotes at all.\n\n[[footnoteblock]]"}
+{"id": "fn49-comment-around", "source": "a[[foot[!--x--]note]]n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn50-bracket-prefix", "source": "[[[[footnote]]n[[/footnote]]"}
+{"id": "fn51-underscore-closer", "source": "A[[footnote]]x[[/footnote_]] B[[footnote]]plain[[/footnote]]"}
+{"id": "fn52-sameline-code-close", "source": "A[[footnote]]See [[code]] x [[/code]] here[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fn53-empty-doc", "source": ""}
+{"id": "fni-01-one", "source": "Apple[[footnote]]Alpha[[/footnote]] banana.\n\n[[footnoteblock]]"}
+{"id": "fni-02-two", "source": "A[[footnote]]one[[/footnote]] B[[footnote]]two[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-03-three", "source": "a[[footnote]]first[[/footnote]] b[[footnote]]second[[/footnote]] c[[footnote]]third[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-04-four", "source": "w[[footnote]]W[[/footnote]] x[[footnote]]X[[/footnote]] y[[footnote]]Y[[/footnote]] z[[footnote]]Z[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-05-empty-one", "source": "A[[footnote]][[/footnote]] B\n\n[[footnoteblock]]"}
+{"id": "fni-06-empty-mixed", "source": "A[[footnote]][[/footnote]] B[[footnote]]plain[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-07-empty-ws", "source": "A[[footnote]]   [[/footnote]] B[[footnote]]\n\t\n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-08-all-empty", "source": "A[[footnote]][[/footnote]] B[[footnote]][[/footnote]] C[[footnote]][[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-09-bold-italic", "source": "X[[footnote]]This has **bold** and //italics// and ##mono##.[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-10-link", "source": "X[[footnote]]See [http://example.com the example] and [[wiki page]].[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-11-multiline", "source": "X[[footnote]]\nThis note spans two lines.\nAnd a third.\n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-12-paragraphs", "source": "X[[footnote]]First paragraph.\n\nSecond paragraph after a blank line.\n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-13-list-body", "source": "X[[footnote]]\n* one\n* two\n* three\n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-14-blockquote-body", "source": "X[[footnote]]\n> quoted note body\n> second line\n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-15-div-body", "source": "X[[footnote]]\n[[div class=\"note-body\"]]\nInside a div.\n[[/div]]\n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-16-code-body", "source": "X[[footnote]]A code span ``some <code> & raw`` inside.[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-17-html-special", "source": "X[[footnote]]Quotes \" and ' and amp & and < > tags.[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-18-nested-footnote", "source": "X[[footnote]]outer note[[footnote]]inner note[[/footnote]] tail[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-19-block-first", "source": "[[footnoteblock]]\n\nAlpha[[footnote]]note A[[/footnote]]\n\nBeta[[footnote]]note B[[/footnote]]"}
+{"id": "fni-20-block-middle", "source": "Alpha[[footnote]]note A[[/footnote]]\n\n[[footnoteblock]]\n\nBeta[[footnote]]note B[[/footnote]]"}
+{"id": "fni-21-block-last", "source": "Alpha[[footnote]]note A[[/footnote]]\n\nBeta[[footnote]]note B[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-22-two-blocks", "source": "Alpha[[footnote]]A[[/footnote]]\n[[footnoteblock]]\n\nBeta[[footnote]]B[[/footnote]]\n[[footnoteblock]]"}
+{"id": "fni-23-block-with-tail", "source": "Alpha[[footnote]]A[[/footnote]]\n\n[[footnoteblock]]\n\nTrailing paragraph after the block."}
+{"id": "fni-24-no-block", "source": "Alpha[[footnote]]note A[[/footnote]] and Beta[[footnote]]note B[[/footnote]] but no block."}
+{"id": "fni-25-empty-block", "source": "No notes at all here.\n\n[[footnoteblock]]"}
+{"id": "fni-26-empty-block-bare", "source": "[[footnoteblock]]"}
+{"id": "fni-27-two-empty-blocks", "source": "No notes.\n\n[[footnoteblock]]\n\n[[footnoteblock]]"}
+{"id": "fni-28-title", "source": "X[[footnote]]note[[/footnote]]\n\n[[footnoteblock title=\"My Notes\"]]"}
+{"id": "fni-29-title-empty", "source": "X[[footnote]]note[[/footnote]]\n\n[[footnoteblock title=\"\"]]"}
+{"id": "fni-30-title-special", "source": "X[[footnote]]note[[/footnote]]\n\n[[footnoteblock title=\"A & B's <notes>\"]]"}
+{"id": "fni-31-hide", "source": "X[[footnote]]note[[/footnote]]\n\n[[footnoteblock hide=\"true\"]]"}
+{"id": "fni-32-title-unquoted", "source": "X[[footnote]]note[[/footnote]]\n\n[[footnoteblock title=Custom]]"}
+{"id": "fni-33-unterminated-note", "source": "X[[footnote]]note with no close\n\n[[footnoteblock]]"}
+{"id": "fni-34-stray-close", "source": "X note with only a close[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-35-unterminated-then-good", "source": "X[[footnote]]bad no close\nY[[footnote]]good[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-36-fused-close", "source": "X[[footnote]]note A[[/footnote]][[footnote]]note B[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-37-malformed-block", "source": "X[[footnote]]note[[/footnote]]\n\n[[footnoteblock"}
+{"id": "fni-38-malformed-opener", "source": "X[[footnote ]]note[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-39-uppercase", "source": "X[[FOOTNOTE]]note[[/FOOTNOTE]]\n\n[[footnoteblock]]"}
+{"id": "fni-40-with-bib", "source": "A[[footnote]]note[[/footnote]] [[bibitem alpha]]Entry A[[/bibitem]]\n\n[[bibliography]]\n[[bibcite alpha]]\n[[/bibliography]]\n\n[[footnoteblock]]"}
+{"id": "fni-41-bibcite-before", "source": "A[[footnote]]note[[/footnote]] see [[bibcite alpha]].\n\n[[bibliography]]\n[[bibitem alpha]]Entry A[[/bibitem]]\n[[/bibliography]]\n\n[[footnoteblock]]"}
+{"id": "fni-42-undefined-bibcite", "source": "A[[footnote]]note[[/footnote]] see [[bibcite missing]].\n\n[[footnoteblock]]"}
+{"id": "fni-43-dup-biblabel", "source": "A[[footnote]]note[[/footnote]]\n\n[[bibliography]]\n[[bibitem alpha]]One[[/bibitem]]\n[[bibitem alpha]]Two[[/bibitem]]\n[[bibcite alpha]]\n[[/bibliography]]\n\n[[footnoteblock]]"}
+{"id": "fni-44-note-in-div", "source": "[[div]]\nInside[[footnote]]note in div[[/footnote]]\n[[/div]]\n\n[[footnoteblock]]"}
+{"id": "fni-45-note-in-quote", "source": "> Quoted[[footnote]]note in quote[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-46-note-in-list", "source": "* item[[footnote]]note in list[[/footnote]]\n* second\n\n[[footnoteblock]]"}
+{"id": "fni-47-note-in-collapsible", "source": "[[collapsible show=\"open\"]]\nInside[[footnote]]note in collapsible[[/footnote]]\n[[/collapsible]]\n\n[[footnoteblock]]"}
+{"id": "fni-48-unicode", "source": "Café[[footnote]] naïve résumé — 日本語 漢字 🎯[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-49-repeated-marker", "source": "Same[[footnote]]shared note[[/footnote]] and again[[footnote]]shared note[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fni-50-block-in-div", "source": "[[div]]\nA[[footnote]]note[[/footnote]]\n[[footnoteblock]]\n[[/div]]"}
+{"id": "fnb-01-block-after-notes", "source": "Intro[[footnote]]first note[[/footnote]] middle[[footnote]]second note[[/footnote]] out.\n\n[[footnoteblock]]"}
+{"id": "fnb-02-block-before-notes", "source": "[[footnoteblock]]\n\nIntro[[footnote]]first note[[/footnote]] middle[[footnote]]second note[[/footnote]] out."}
+{"id": "fnb-03-block-between-notes", "source": "A[[footnote]]note A[[/footnote]]\n\n[[footnoteblock]]\n\nB[[footnote]]note B[[/footnote]]"}
+{"id": "fnb-04-no-block-autoappend", "source": "Alpha[[footnote]]the only note[[/footnote]] beta. No explicit block anywhere."}
+{"id": "fnb-05-block-only-no-notes", "source": "Just text, no footnotes.\n\n[[footnoteblock]]"}
+{"id": "fnb-06-no-notes-no-block", "source": "Plain document with no footnotes and no block at all."}
+{"id": "fnb-07-two-blocks", "source": "Alpha[[footnote]]note one[[/footnote]]\n\n[[footnoteblock]]\n\nBeta[[footnote]]note two[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fnb-08-two-blocks-titles", "source": "A[[footnote]]n1[[/footnote]]\n\n[[footnoteblock title=\"First\"]]\n\nB[[footnote]]n2[[/footnote]]\n\n[[footnoteblock title=\"Second\"]]"}
+{"id": "fnb-09-two-blocks-empty-first", "source": "[[footnoteblock]]\n\nA[[footnote]]n1[[/footnote]]\n\n[[footnoteblock title=\"End\"]]"}
+{"id": "fnb-10-title-simple", "source": "A[[footnote]]n[[/footnote]]\n\n[[footnoteblock title=\"References\"]]"}
+{"id": "fnb-11-title-empty", "source": "A[[footnote]]n[[/footnote]]\n\n[[footnoteblock title=\"\"]]"}
+{"id": "fnb-12-title-spaces", "source": "A[[footnote]]n[[/footnote]]\n\n[[footnoteblock title=\"  Padded  \"]]"}
+{"id": "fnb-13-title-htmlspecial", "source": "A[[footnote]]n[[/footnote]]\n\n[[footnoteblock title=\"A & B <C> \\\"Q\\\"\"]]"}
+{"id": "fnb-14-title-singlequote", "source": "A[[footnote]]n[[/footnote]]\n\n[[footnoteblock title=\"It's fine\"]]"}
+{"id": "fnb-15-title-unicode", "source": "A[[footnote]]n[[/footnote]]\n\n[[footnoteblock title=\"脚注 – Notas\"]]"}
+{"id": "fnb-16-hide-true", "source": "Apple[[footnote]]Banana[[/footnote]]\n\n[[footnoteblock hide=\"true\"]]"}
+{"id": "fnb-17-hide-false", "source": "Apple[[footnote]]Banana[[/footnote]]\n\n[[footnoteblock hide=\"false\"]]"}
+{"id": "fnb-18-bogus-attr", "source": "Apple[[footnote]]Banana[[/footnote]]\n\n[[footnoteblock bogus=\"true\"]]"}
+{"id": "fnb-19-title-and-hide", "source": "A[[footnote]]n[[/footnote]]\n\n[[footnoteblock title=\"T\" hide=\"true\"]]"}
+{"id": "fnb-20-attr-singlequoted", "source": "A[[footnote]]n[[/footnote]]\n\n[[footnoteblock title='T']]"}
+{"id": "fnb-21-note-bold", "source": "Claim[[footnote]]a **bold** and //italic// bit[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fnb-22-note-link", "source": "Claim[[footnote]]see [http://example.com Example][[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fnb-23-note-multiline", "source": "Claim[[footnote]]first line\nsecond line\nthird line[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fnb-24-note-paragraphs", "source": "Claim[[footnote]]first para\n\nsecond para[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fnb-25-note-list", "source": "Claim[[footnote]]* one\n* two[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fnb-26-note-code", "source": "Claim[[footnote]]some [[code]]x = 1;[[/code]] here[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fnb-27-note-nested-div", "source": "[[div]]\ninside a div x[[footnote]]note in div[[/footnote]]\n[[/div]]\n\n[[footnoteblock]]"}
+{"id": "fnb-28-empty-note-body", "source": "A[[footnote]][[/footnote]] B\n\n[[footnoteblock]]"}
+{"id": "fnb-29-whitespace-note-body", "source": "A[[footnote]]   \n  [[/footnote]] B\n\n[[footnoteblock]]"}
+{"id": "fnb-30-unterminated-block", "source": "A[[footnote]]n[[/footnote]]\n\n[[footnoteblock"}
+{"id": "fnb-31-block-no-close-bracket", "source": "A[[footnote]]n[[/footnote]]\n\n[[footnoteblock title=\"T\"]"}
+{"id": "fnb-32-lowercase-variants-ignored", "source": "A[[footnote]]n[[/footnote]]\n\n[[Footnoteblock]]"}
+{"id": "fnb-33-uppercase-block", "source": "A[[footnote]]n[[/footnote]]\n\n[[FOOTNOTEBLOCK]]"}
+{"id": "fnb-34-block-extra-spaces", "source": "A[[footnote]]n[[/footnote]]\n\n[[footnoteblock   ]]"}
+{"id": "fnb-35-block-leading-space", "source": "A[[footnote]]n[[/footnote]]\n\n  [[footnoteblock]]"}
+{"id": "fnb-36-adjacent-bibitem", "source": "A[[footnote]]note[[/footnote]]\n\n[[bibitem key]]Entry[[/bibitem]]\n\n[[footnoteblock]]"}
+{"id": "fnb-37-adjacent-bibliography", "source": "A[[footnote]]note[[/footnote]]\n\n[[bibliography]]\n[[bibitem key]]Entry[[/bibitem]]\n[[/bibliography]]\n\n[[footnoteblock]]"}
+{"id": "fnb-38-adjacent-bibcite", "source": "A[[footnote]]note[[/footnote]] [[bibcite key]]\n\n[[footnoteblock]]"}
+{"id": "fnb-39-literal-footnoteitem", "source": "[[footnoteitem]]\n\nA[[footnote]]n[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "fnb-40-block-then-bibcite-before-def", "source": "[[footnoteblock]]\n\nA[[footnote]]n[[/footnote]] cites [[bibcite k]] defined [[bibitem k]]E[[/bibitem]]."}
+{"id": "fnb-41-block-in-div", "source": "A[[footnote]]n[[/footnote]]\n\n[[div]]\n[[footnoteblock]]\n[[/div]]"}
+{"id": "fnb-42-block-in-quote", "source": "A[[footnote]]n[[/footnote]]\n\n> [[footnoteblock]]"}
+{"id": "fnb-43-block-in-list", "source": "A[[footnote]]n[[/footnote]]\n\n* [[footnoteblock]]"}
+{"id": "fnb-44-block-inline", "source": "prefix [[footnoteblock]] suffix A[[footnote]]n[[/footnote]]"}
+{"id": "fnb-45-block-tight", "source": "A[[footnote]]n[[/footnote]] [[footnoteblock]]"}
+{"id": "fnb-46-many-notes", "source": "N1[[footnote]]body 1[[/footnote]] N2[[footnote]]body 2[[/footnote]] N3[[footnote]]body 3[[/footnote]] N4[[footnote]]body 4[[/footnote]] N5[[footnote]]body 5[[/footnote]] N6[[footnote]]body 6[[/footnote]] N7[[footnote]]body 7[[/footnote]] \n\n[[footnoteblock]]"}
+{"id": "fnb-47-block-then-note-then-title-block", "source": "[[footnoteblock title=\"A\"]]\n\nX[[footnote]]x[[/footnote]]\n\n[[footnoteblock title=\"B\"]]"}
+{"id": "fnb-48-block-with-newline-attr", "source": "A[[footnote]]n[[/footnote]]\n\n[[footnoteblock title=\"Line1\nLine2\"]]"}
+{"id": "b01-single", "source": "[[bibliography]]\n: a : Alpha source.\n[[/bibliography]]"}
+{"id": "b02-two", "source": "[[bibliography]]\n: a : Alpha source.\n: b : Bravo source.\n[[/bibliography]]"}
+{"id": "b03-three", "source": "[[bibliography]]\n: a : A.\n: b : B.\n: c : C.\n[[/bibliography]]"}
+{"id": "b04-dup-adjacent", "source": "[[bibliography]]\n: a : First A.\n: a : Second A.\n[[/bibliography]]"}
+{"id": "b05-dup-separated", "source": "[[bibliography]]\n: a : First A.\n: b : B.\n: a : Second A.\n[[/bibliography]]"}
+{"id": "b06-dup-then-third", "source": "Cite ((bibcite bell)).\n\n[[bibliography]]\n: bell : First bell.\n: bell : Second bell.\n: guy : Guy.\n[[/bibliography]]"}
+{"id": "b07-empty-body", "source": "[[bibliography]]\n: a :\n[[/bibliography]]"}
+{"id": "b08-two-empty", "source": "[[bibliography]]\n: a :\n: b :\n[[/bibliography]]"}
+{"id": "b09-empty-then-value", "source": "[[bibliography]]\n: a :\n: b : Bravo.\n[[/bibliography]]"}
+{"id": "b10-italic", "source": "[[bibliography]]\n: a : //Observation// of a source.\n[[/bibliography]]"}
+{"id": "b11-bold", "source": "[[bibliography]]\n: a : A **bold** source.\n[[/bibliography]]"}
+{"id": "b12-link", "source": "[[bibliography]]\n: a : See [http://example.com example].\n[[/bibliography]]"}
+{"id": "b13-self-cite", "source": "[[bibliography]]\n: a : See also ((bibcite a)).\n[[/bibliography]]"}
+{"id": "b14-nested-footnote", "source": "[[bibliography]]\n: a : Source with a note[[footnote]]the note[[/footnote]].\n[[/bibliography]]"}
+{"id": "b15-nested-code", "source": "[[bibliography]]\n: a : Source {{code here}} end.\n[[/bibliography]]"}
+{"id": "b16-forward-cite", "source": "See ((bibcite a)).\n\n[[bibliography]]\n: a : Alpha.\n[[/bibliography]]"}
+{"id": "b17-backward-cite", "source": "[[bibliography]]\n: a : Alpha.\n[[/bibliography]]\n\nSee ((bibcite a))."}
+{"id": "b18-undefined-cite", "source": "See ((bibcite zzz)).\n\n[[bibliography]]\n: a : Alpha.\n[[/bibliography]]"}
+{"id": "b19-cite-only", "source": "No bibliography here, only ((bibcite a))."}
+{"id": "b20-block-only", "source": "[[bibliography]]\n: a : Alpha.\n[[/bibliography]]"}
+{"id": "b21-title", "source": "[[bibliography title=\"Works Cited\"]]\n: a : Alpha.\n[[/bibliography]]"}
+{"id": "b22-hide", "source": "[[bibliography hide=\"true\"]]\n: a : Alpha.\n[[/bibliography]]"}
+{"id": "b23-title-hide", "source": "[[bibliography title=\"Refs\" hide=\"true\"]]\n: a : Alpha.\n: b : Bravo.\n[[/bibliography]]"}
+{"id": "b24-label-hyphen", "source": "((bibcite smith-2020))\n\n[[bibliography]]\n: smith-2020 : Never registered.\n[[/bibliography]]"}
+{"id": "b25-label-underscore", "source": "((bibcite alpha_2))\n\n[[bibliography]]\n: alpha_2 : Never registered.\n[[/bibliography]]"}
+{"id": "b26-no-space-before-colon", "source": "[[bibliography]]\n: a: Alpha.\n[[/bibliography]]"}
+{"id": "b27-two-spaces-before-colon", "source": "[[bibliography]]\n: a  : Alpha.\n[[/bibliography]]"}
+{"id": "b28-no-space-after-colon", "source": "[[bibliography]]\n: a :Bravo.\n[[/bibliography]]"}
+{"id": "b29-unterminated", "source": "[[bibliography]]\n: a : Alpha.\n"}
+{"id": "b30-no-entries", "source": "Intro text.\n\n[[bibliography]]\nnot a definition\n[[/bibliography]]\n\nOutro."}
+{"id": "b31-mixed-valid-invalid", "source": "[[bibliography]]\n: a : Alpha.\n: b :Bravo.\n: c : Charlie.\n[[/bibliography]]"}
+{"id": "b32-tab-separators", "source": "[[bibliography]]\n: a :\tAlpha.\n: b\t: Bravo.\n[[/bibliography]]"}
+{"id": "b33-uppercase-label", "source": "[[bibliography]]\n: Alpha : Uppercase label.\n[[/bibliography]]"}
+{"id": "b34-digit-label", "source": "[[bibliography]]\n: 2b : Digit-leading label.\n[[/bibliography]]"}
+{"id": "b35-in-div", "source": "[[div]]\n[[bibliography]]\n: a : Alpha.\n[[/bibliography]]\n[[/div]]"}
+{"id": "b36-in-collapsible", "source": "[[collapsible]]\n[[bibliography]]\n: a : Alpha.\n[[/bibliography]]\n[[/collapsible]]"}
+{"id": "b37-in-table", "source": "[[table]]\n[[row]]\n[[cell]]\n[[bibliography]]\n: a : Alpha.\n[[/bibliography]]\n[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "b38-adjacent-footnoteblock", "source": "Text[[footnote]]note[[/footnote]].\n\n[[bibliography]]\n: a : Alpha.\n[[/bibliography]]\n\n[[footnoteblock]]"}
+{"id": "b39-adjacent-footnote", "source": "[[bibliography]]\n: a : Alpha.\n[[/bibliography]]\n\nText[[footnote]]note[[/footnote]]."}
+{"id": "b40-two-blocks", "source": "Cite ((bibcite a)) and ((bibcite b)).\n\n[[bibliography]]\n: a : Entry A.\n[[/bibliography]]\n\nMiddle.\n\n[[bibliography]]\n: b : Entry B.\n[[/bibliography]]"}
+{"id": "b41-mixed-markup", "source": "[[bibliography]]\n: a : aa **bold** //ital// {{code}} end.\n[[/bibliography]]"}
+{"id": "b42-special-chars", "source": "[[bibliography]]\n: a : A & B < C > D \"q\" 's'.\n[[/bibliography]]"}
+{"id": "b43-multiple-cites", "source": "((bibcite a)) and ((bibcite a)) and ((bibcite b)).\n\n[[bibliography]]\n: a : Alpha.\n: b : Bravo.\n[[/bibliography]]"}
+{"id": "b44-leading-trailing-space", "source": "[[bibliography]]\n: a :    Alpha source.   \n[[/bibliography]]"}
+{"id": "b45-colon-in-body", "source": "[[bibliography]]\n: a : See http://example.com:8080/x now.\n[[/bibliography]]"}
+{"id": "b46-long-label", "source": "((bibcite abcdefghij1234))\n\n[[bibliography]]\n: abcdefghij1234 : Long label.\n[[/bibliography]]"}
+{"id": "b47-dup-nested-markup", "source": "[[bibliography]]\n: a : //First//.\n: a : **Second**.\n: b : Third.\n[[/bibliography]]"}
+{"id": "b48-empty-block-cite", "source": "Cite ((bibcite bell)).\n\n[[bibliography]]\n[[/bibliography]]"}
+{"id": "b49-span-inline", "source": "[[bibliography]]\n: a : aa [[span]]bb[[/span]] cc\n[[/bibliography]]"}
+{"id": "b50-size-inline", "source": "[[bibliography]]\n: a : aa [[size 150%]]bb[[/size]] cc\n[[/bibliography]]"}
+{"id": "b51-blank-lines", "source": "[[bibliography]]\n: a : Alpha.\n\n: b : Bravo.\n\n[[/bibliography]]"}
+{"id": "b52-title-empty", "source": "[[bibliography title=\"\"]]\n: a : Alpha.\n[[/bibliography]]"}
+{"id": "bib01-canonical-two", "source": "The first pulsar was observed by J. Bell and A. Hewish ((bibcite bell)).\nAnother reference [see ((bibcite guy))].\n\n[[bibliography]]\n: bell : Bell, J.; Hewish, A. //Observation of a Rapidly Pulsating Radio Source.// Nature 217, 709, 1968.\n: guy : Guy, R. K. //Modular Difference Sets.// Springer, 1994.\n[[/bibliography]]\n"}
+{"id": "bib02-cite-after", "source": "[[bibliography]]\n: alpha : Alpha reference.\n: beta : Beta reference.\n[[/bibliography]]\n\nSee ((bibcite alpha)) and ((bibcite beta)).\n"}
+{"id": "bib03-cite-both-sides", "source": "Before ((bibcite a)).\n\n[[bibliography]]\n: a : Entry A.\n[[/bibliography]]\n\nAfter ((bibcite a)).\n"}
+{"id": "bib04-duplicate-label", "source": "Cite ((bibcite bell)).\n\n[[bibliography]]\n: bell : First bell entry.\n: bell : Second bell entry.\n: guy : Guy entry.\n[[/bibliography]]\n"}
+{"id": "bib05-empty-block", "source": "Cite ((bibcite bell)).\n\n[[bibliography]]\n[[/bibliography]]\n"}
+{"id": "bib06-body-only-no-cite", "source": "[[bibliography]]\n: a : Entry A text.\n: b : Entry B text.\n[[/bibliography]]\n"}
+{"id": "bib07-alphabetical-order", "source": "((bibcite zeta)) ((bibcite alpha)) ((bibcite mu))\n\n[[bibliography]]\n: alpha : Alpha.\n: mu : Mu.\n: zeta : Zeta.\n[[/bibliography]]\n"}
+{"id": "bib08-citation-order", "source": "((bibcite c)) ((bibcite a)) ((bibcite b))\n\n[[bibliography]]\n: c : See C.\n: a : See A.\n: b : See B.\n[[/bibliography]]\n"}
+{"id": "bib09-definition-order", "source": "[[bibliography]]\n: z : Zed.\n: y : Why.\n: x : Ex.\n[[/bibliography]]\n\n((bibcite x)) ((bibcite y)) ((bibcite z))\n"}
+{"id": "bib10-two-blocks", "source": "Cite ((bibcite a)) and ((bibcite b)).\n\n[[bibliography]]\n: a : Entry A.\n[[/bibliography]]\n\nMiddle text.\n\n[[bibliography]]\n: b : Entry B.\n[[/bibliography]]\n"}
+{"id": "bib11-first-empty-second-full", "source": "[[bibliography]]\n[[/bibliography]]\n\n[[bibliography]]\n: a : Entry A.\n[[/bibliography]]\n"}
+{"id": "bib12-three-blocks", "source": "[[bibliography]]\n: a : A.\n[[/bibliography]]\n[[bibliography]]\n: b : B.\n[[/bibliography]]\n[[bibliography]]\n: c : C.\n[[/bibliography]]\n"}
+{"id": "bib13-title-double-quoted", "source": "[[bibliography title=\"Works Cited\"]]\n: a : Entry A.\n[[/bibliography]]\n"}
+{"id": "bib14-title-single-quoted", "source": "[[bibliography title='Works']]\n: a : Entry A.\n[[/bibliography]]\n"}
+{"id": "bib15-title-empty", "source": "[[bibliography title=\"\"]]\n: a : Entry A.\n[[/bibliography]]\n"}
+{"id": "bib16-title-special-chars", "source": "[[bibliography title=\"<Works & Sources>\"]]\n: a : A & B\n[[/bibliography]]\n"}
+{"id": "bib17-hide-yes", "source": "[[bibliography hide=\"yes\"]]\n: key : value\n[[/bibliography]]\n"}
+{"id": "bib18-hide-short-t", "source": "[[bibliography hide=\"t\"]]\n: k : V\n[[/bibliography]]\n"}
+{"id": "bib19-unknown-args", "source": "[[bibliography class=\"probe\" stray v7arg=\"one\"]]\n: a : Entry A.\n[[/bibliography]]\n"}
+{"id": "bib20-title-and-hide", "source": "[[bibliography title=\"Works\" hide=\"true\"]]\n: a : A\n[[/bibliography]]\n"}
+{"id": "bib21-unterminated", "source": "Before.\n\n[[bibliography]]\n: a : Entry A.\n"}
+{"id": "bib22-unterminated-empty", "source": "[[bibliography]]\n"}
+{"id": "bib23-name-case-uppercase", "source": "[[BIBLIOGRAPHY]]\n: a : A\n[[/BIBLIOGRAPHY]]\n"}
+{"id": "bib24-name-case-title", "source": "[[Bibliography]]\n: a : A\n[[/Bibliography]]\n"}
+{"id": "bib25-closer-uppercase", "source": "[[bibliography]]\n: a : A\n[[/BIBLIOGRAPHY]]\n"}
+{"id": "bib26-opener-leading-space", "source": "[[ bibliography]]\n: a : A\n[[/bibliography]]\n"}
+{"id": "bib27-opener-extra-close", "source": "[[bibliography]]]\n: a : A\n[[/bibliography]]\n"}
+{"id": "bib28-closer-trailing-spaces", "source": "[[bibliography]]\n: a : A\n[[/bibliography]]   \n\nafter\n"}
+{"id": "bib29-closer-trailing-tab", "source": "[[bibliography]]\n: a : A\n[[/bibliography]]\t\nafter\n"}
+{"id": "bib30-closer-trailing-text", "source": "start-[[bibliography]]\n: a : A\n[[/bibliography]]-middle\n"}
+{"id": "bib31-nested-bibliography", "source": "[[bibliography]]\n[[bibliography]]\nnested\n[[/bibliography]]\n[[/bibliography]]\n"}
+{"id": "bib32-overlap-bold-closer", "source": "[[bibliography]]\nouter [[bold]]inner\n[[/bibliography]][[/bold]]\n"}
+{"id": "bib33-inline-strong-em", "source": "((bibcite k))\n\n[[bibliography]]\n: k : aa **bold** and //italic// text\n[[/bibliography]]\n"}
+{"id": "bib34-inline-size-span", "source": "((bibcite k1)) ((bibcite k2))\n\n[[bibliography]]\n: k1 : aa [[size 150%]]bb[[/size]] cc\n: k2 : aa [[span]]bb[[/span]] cc\n[[/bibliography]]\n"}
+{"id": "bib35-line-anchored-list", "source": "[[bibliography]]\n: a : A\n* item one\n* item two\n[[/bibliography]]\n"}
+{"id": "bib36-line-anchored-heading", "source": "[[bibliography]]\n: a : A\n+ Heading\n[[/bibliography]]\n"}
+{"id": "bib37-bibcite-in-value", "source": "[[bibliography]]\n: alpha : ((bibcite alpha)) self\n[[/bibliography]]\n((bibcite alpha))\n"}
+{"id": "bib38-definition-separators", "source": "((bibcite a)) ((bibcite b)) ((bibcite c)) ((bibcite d)) ((bibcite e)) ((bibcite g)) ((bibcite h)) ((bibcite i))\n\n[[bibliography]]\n: a: Alpha.\n: b :Bravo.\n: c:  Charlie.\n: d :\tDelta.\n: i  : India.\n: e :\n\n: g: Golf.\n: h :Hotel.\n[[/bibliography]]\n"}
+{"id": "bib39-label-charset", "source": "((bibcite smith2020)) ((bibcite smith-2020)) ((bibcite alpha_2)) ((bibcite 2b))\n\n[[bibliography]]\n: smith2020 : Smith 2020.\n: smith-2020 : Never registered.\n: alpha_2 : Never registered.\n: 2b : Or not to be.\n[[/bibliography]]\n"}
+{"id": "bib40-tab-prefix-label", "source": "((bibcite alpha)) ((bibcite bell))\n\n[[bibliography]]\n: alpha : Alpha text.\n:\tbell : Bell text.\n[[/bibliography]]\n"}
+{"id": "bib41-next-line-value", "source": "((bibcite a)) ((bibcite b)) ((bibcite c)) ((bibcite d))\n\n[[bibliography]]\n: a:\nValue on next line.\n: b:\n: c : See text.\n: d:\n+ Not a heading.\n[[/bibliography]]\n"}
+{"id": "bib42-invalid-line-residual", "source": "((bibcite alpha)) ((bibcite omega))\n\n[[bibliography]]\n: bad-first : Bad first.\n: alpha : Alpha text.\n: bad-label : **bold** bad.\n: omega : Omega text.\ntrailing prose\n[[/bibliography]]\n"}
+{"id": "bib43-label-only-crossing", "source": "((bibcite alpha)) ((bibcite bell)) ((bibcite omega))\n\n[[bibliography]]\n: alpha : Alpha text.\n: bell\n: omega : Omega text.\n: solo\n[[/bibliography]]\n"}
+{"id": "bib44-whitespace-body", "source": "[[bibliography]]\n   \n\t\n[[/bibliography]]\n"}
+{"id": "bib45-footnote-then-bibliography", "source": "A claim[[footnote]]with a note[[/footnote]].\n\n[[bibliography]]\n: a : A\n[[/bibliography]]\n"}
+{"id": "bib46-bibliography-then-footnote", "source": "[[bibliography]]\n: a : A\n[[/bibliography]]\n\nA claim[[footnote]]with a note[[/footnote]].\n"}
+{"id": "bib47-bibliography-inside-footnote", "source": "[[footnote]]\n[[bibliography]]\n: a : A\n[[/bibliography]]\n[[/footnote]]\nafter\n"}
+{"id": "bib48-footnote-opened-in-bib-body", "source": "[[bibliography]]\n: a : A\n[[footnote]]\n: b : B\n[[/bibliography]]\n[[/footnote]]\nafter\n"}
+{"id": "bib49-bibliography-inside-list", "source": "[[ul]]\n[[li]]\n[[bibliography]]\n: a : A\n[[/bibliography]]\n[[/li]]\n[[/ul]]\nafter\n"}
+{"id": "bib50-item-inside-table", "source": "[[bibliography]]\n: a : A\n[[table]]\n[[row]]\n[[cell]]\n: b : B\n[[/cell]]\n[[/row]]\n[[/table]]\n: c : C\n[[/bibliography]]\nafter\n"}
+{"id": "bib51-iftags-kept", "source": "[[iftags -zzz]]\n[[bibliography]]\n: a : A\n[[/bibliography]]\n[[/iftags]]\nafter\n"}
+{"id": "bib52-iftags-closer-inside", "source": "[[bibliography]]\n: key : a[[iftags -zzz]]b\n[[/bibliography]]\nc[[/iftags]]d\n"}
+{"id": "bib53-tabview-residue", "source": "[[bibliography]]\n: key : Value\n[[tabview]]\n[[tab One]]\nBody one\n[[/tab]]\n[[/tabview]]\n[[/bibliography]]\n"}
+{"id": "bib54-trailing-paragraph", "source": "[[bibliography]]\n: key1 : Some reference\n\nafter para\n[[/bibliography]]\n"}
+{"id": "bib55-dashes-typography", "source": "((bibcite key1))\n\n[[bibliography]]\n: key1 : aa -- bb --- cc ... dd\n[[/bibliography]]\n"}
+{"id": "bib56-no-bibliography", "source": "Just a plain document with ((bibcite ghost)) and no bibliography block.\n"}
+{"id": "bibc-01-undef-basic", "source": "A((bibcite alpha))B"}
+{"id": "bibc-02-undef-adjacent", "source": "((bibcite a))((bibcite b))"}
+{"id": "bibc-03-undef-multi", "source": "See ((bibcite alpha)) and ((bibcite beta))."}
+{"id": "bibc-04-def-backward", "source": "[[bibliography]]\n: alpha : Alpha source\n[[/bibliography]]\n((bibcite alpha))"}
+{"id": "bibc-05-def-forward", "source": "((bibcite alpha))\n\n[[bibliography]]\n: alpha : Alpha source\n[[/bibliography]]"}
+{"id": "bibc-06-def-two-cites-forward", "source": "((bibcite alpha)) and ((bibcite beta))\n\n[[bibliography]]\n: alpha : A source\n: beta : B source\n[[/bibliography]]"}
+{"id": "bibc-07-def-two-cites-backward", "source": "[[bibliography]]\n: alpha : A source\n: beta : B source\n[[/bibliography]]\n((bibcite alpha)) and ((bibcite beta))"}
+{"id": "bibc-08-def-dup-label", "source": "((bibcite bell)) ((bibcite guy))\n\n[[bibliography]]\n: bell : first bell\n: bell : second bell\n: guy : a guy\n[[/bibliography]]"}
+{"id": "bibc-09-def-same-label-twice", "source": "((bibcite alpha)) ((bibcite alpha))\n\n[[bibliography]]\n: alpha : A\n[[/bibliography]]"}
+{"id": "bibc-10-def-case-mismatch", "source": "((bibcite ALPHA))\n\n[[bibliography]]\n: alpha : A\n[[/bibliography]]"}
+{"id": "bibc-11-def-mixed-case-label", "source": "((bibcite A9))\n\n[[bibliography]]\n: A9 : A9 source\n[[/bibliography]]"}
+{"id": "bibc-12-def-tabbed-cite", "source": "((bibcite\tTabbed))\n\n[[bibliography]]\n: Tabbed : T\n[[/bibliography]]"}
+{"id": "bibc-13-def-two-space", "source": "((bibcite  alpha))\n\n[[bibliography]]\n: alpha : A\n[[/bibliography]]"}
+{"id": "bibc-14-empty-body-bib", "source": "((bibcite alpha))\n\n[[bibliography]]\n: alpha : \n[[/bibliography]]"}
+{"id": "bibc-15-empty-bibliography", "source": "((bibcite alpha))\n\n[[bibliography]]\n[[/bibliography]]"}
+{"id": "bibc-16-no-bibliography", "source": "Just ((bibcite alpha)) text."}
+{"id": "bibc-17-two-bibliographies", "source": "[[bibliography]]\n: alpha : A\n[[/bibliography]]\n\n[[bibliography]]\n: beta : B\n[[/bibliography]]\n\n((bibcite alpha)) ((bibcite beta))"}
+{"id": "bibc-18-cite-inside-bibliography", "source": "[[bibliography]]\n: alpha : See ((bibcite beta)) in body\n: beta : B source\n[[/bibliography]]"}
+{"id": "bibc-19-undef-empty-label", "source": "((bibcite ))"}
+{"id": "bibc-20-undef-no-space", "source": "((bibcitealpha))"}
+{"id": "bibc-21-undef-missing-close", "source": "((bibcite alpha"}
+{"id": "bibc-22-undef-closer-only", "source": "alpha))"}
+{"id": "bibc-23-undef-extra-word", "source": "((bibcite alpha beta))"}
+{"id": "bibc-24-undef-unicode", "source": "((bibcite 日本語🙂))"}
+{"id": "bibc-25-undef-hyphen", "source": "((bibcite smith-2020))"}
+{"id": "bibc-26-undef-underscore", "source": "((bibcite alpha_2))"}
+{"id": "bibc-27-undef-upper-marker", "source": "((BIBCITE alpha))"}
+{"id": "bibc-28-undef-bibcite-word", "source": "((bibcite bibcite alpha))"}
+{"id": "bibc-29-undef-pipe", "source": "((bibcite alpha|beta))"}
+{"id": "bibc-30-undef-bold", "source": "((bibcite **alpha**))"}
+{"id": "bibc-31-undef-paragraph-break", "source": "((bibcite alpha\n\nbeta))"}
+{"id": "bibc-32-undef-single-newline", "source": "((bibcite alpha\nbeta))"}
+{"id": "bibc-33-undef-newline-after-bibcite", "source": "((bibcite\nalpha))"}
+{"id": "bibc-34-comment-in-label", "source": "[[bibliography]]\n: key : def\n[[/bibliography]]\n((bibcite k[!--x--]ey))"}
+{"id": "bibc-35-comment-tag-in-label", "source": "((bibcite alp[!--hidden--]ha))"}
+{"id": "bibc-36-code-owner", "source": "[[code]]\n((bibcite alpha))\n[[/code]]"}
+{"id": "bibc-37-raw-owner", "source": "@@((bibcite alpha))@@"}
+{"id": "bibc-38-heading-owner", "source": "+ ((bibcite alpha))"}
+{"id": "bibc-39-list-owner", "source": "* ((bibcite alpha))"}
+{"id": "bibc-40-table-owner", "source": "|| ((bibcite alpha)) ||"}
+{"id": "bibc-41-external-link-label", "source": "[https://example.com ((bibcite alpha))]"}
+{"id": "bibc-42-internal-link-label", "source": "[[[scp-002|((bibcite alpha))]]]"}
+{"id": "bibc-43-escaped-cite", "source": "\\((bibcite alpha))"}
+{"id": "bibc-44-span-attr-owner", "source": "[[span title=\"((bibcite alpha))\"]]X[[/span]]"}
+{"id": "bibc-45-footnote-adjacency", "source": "[[footnote]]A note[[/footnote]]\n\n[[bibliography]]\n: alpha : A\n[[/bibliography]]\n\n((bibcite alpha))"}
+{"id": "bibc-46-footnoteitem-adjacency", "source": "((bibcite alpha))\n\n[[footnoteitem]]item[[/footnoteitem]]\n\n[[footnoteblock]]\n\n[[bibliography]]\n: alpha : A\n[[/bibliography]]"}
+{"id": "bibc-47-iftags-seam-off", "source": "((bibcite alp[[iftags -zzz]][[/iftags]]ha))", "tags": []}
+{"id": "bibc-48-iftags-seam-on", "source": "((bibcite alp[[iftags -zzz]][[/iftags]]ha))", "tags": ["zzz"]}
+{"id": "bibc-49-block-undef", "source": "[[bibcite alpha]]"}
+{"id": "bibc-50-block-score-undef", "source": "[[bibcite_ alpha]]"}
+{"id": "bibc-51-block-defined", "source": "[[bibcite alpha]]\n\n[[bibliography]]\n: alpha : A\n[[/bibliography]]"}
+{"id": "bibc-52-anchor-adjacency", "source": "[[a href=\"/A\"]]x((bibcite b1))y[[/a]]\n\n[[bibliography]]\n: b1 : Title\n[[/bibliography]]"}
+{"id": "bibc-53-div-adjacency", "source": "[[div class=\"x\"]]\n((bibcite alpha))\n[[/div]]\n\n[[bibliography]]\n: alpha : A\n[[/bibliography]]"}
+{"id": "bibc-54-nested-in-note", "source": "[[footnote]]See ((bibcite alpha))[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "bibc-55-cite-in-bib-body", "source": "[[footnote]]x[[/footnote]]\n\n[[bibliography]]\n: alpha : A ((bibcite alpha))\n[[/bibliography]]"}
+{"id": "bibc-56-html-escape-label", "source": "((bibcite <script>alert_1</script>))"}
+{"id": "bibc-57-residual-para", "source": "[[bibliography]]\n: alpha : A\n\nresidual text\n[[/bibliography]]\n((bibcite alpha))"}
+{"id": "bibc-58-typography-adjacency", "source": "((bibcite alpha)) -- ''em'' and **bold**"}
+{"id": "bibc-59-colon-in-body", "source": "[[bibliography]]\n: alpha : A: with colon\n[[/bibliography]]\n((bibcite alpha))"}
+{"id": "bibc-60-multi-paragraph", "source": "First ((bibcite alpha)).\n\nSecond ((bibcite beta))."}
+{"id": "x-fn-in-div", "source": "[[div]]\nfirst [[footnote]]in div[[/footnote]] text\n[[/div]]\nsecond [[footnote]]outside[[/footnote]]\n[[footnoteblock]]\n"}
+{"id": "x-fn-in-collapsible", "source": "[[collapsible]]\n[[footnote]]in collapsible[[/footnote]]\n[[/collapsible]]\n[[footnote]]outside[[/footnote]]\n[[footnoteblock]]\n"}
+{"id": "x-fn-in-iftags-drop", "source": "[[iftags -alpha]]\n[[footnote]]suppressed[[/footnote]]\n[[/iftags]]\n[[footnote]]kept[[/footnote]]\n[[footnoteblock]]\n", "tags": ["alpha"]}
+{"id": "x-fn-in-iftags-keep", "source": "[[iftags +alpha]]\n[[footnote]]kept inside[[/footnote]]\n[[/iftags]]\n[[footnote]]outside[[/footnote]]\n[[footnoteblock]]\n", "tags": ["alpha"]}
+{"id": "x-fn-around-iftags", "source": "[[footnote]]before[[/footnote]]\n[[iftags -alpha]]\n[[footnote]]hidden[[/footnote]]\n[[/iftags]]\n[[footnote]]after[[/footnote]]\n[[footnoteblock]]\n", "tags": ["alpha"]}
+{"id": "x-fn-in-include", "source": "[[include muse-probe-g14-target]]\n[[footnote]]after include[[/footnote]]\n[[footnoteblock]]\n"}
+{"id": "x-fn-in-code", "source": "[[code]]\n[[footnote]]literal[[/footnote]]\n[[/code]]\nreal [[footnote]]note[[/footnote]]\n[[footnoteblock]]\n"}
+{"id": "x-fn-in-quote", "source": "> quoted [[footnote]]in quote[[/footnote]]\nplain [[footnote]]outside[[/footnote]]\n[[footnoteblock]]\n"}
+{"id": "x-fn-in-list", "source": "* item [[footnote]]in list[[/footnote]]\n* second\nplain [[footnote]]outside[[/footnote]]\n[[footnoteblock]]\n"}
+{"id": "x-fn-block-before", "source": "[[footnoteblock]]\nfirst [[footnote]]one[[/footnote]]\nsecond [[footnote]]two[[/footnote]]\n"}
+{"id": "x-fn-block-between", "source": "first [[footnote]]one[[/footnote]]\n[[footnoteblock]]\nsecond [[footnote]]two[[/footnote]]\n"}
+{"id": "x-fn-block-after", "source": "first [[footnote]]one[[/footnote]]\nsecond [[footnote]]two[[/footnote]]\n[[footnoteblock]]\n"}
+{"id": "x-fn-block-multiple", "source": "first [[footnote]]one[[/footnote]]\n[[footnoteblock]]\nsecond [[footnote]]two[[/footnote]]\n[[footnoteblock]]\n"}
+{"id": "x-fn-block-none", "source": "first [[footnote]]one[[/footnote]]\nsecond [[footnote]]two[[/footnote]]\n"}
+{"id": "x-fn-block-two-before", "source": "[[footnoteblock]]\n[[footnoteblock]]\n[[footnote]]one[[/footnote]]\n"}
+{"id": "x-fn-block-empty", "source": "no notes here\n[[footnoteblock]]\n"}
+{"id": "x-fn-block-title", "source": "[[footnote]]one[[/footnote]]\n[[footnoteblock title=\"Custom\"]]\n"}
+{"id": "x-fn-block-title-empty", "source": "[[footnote]]one[[/footnote]]\n[[footnoteblock title=\"\"]]\n"}
+{"id": "x-bib-def-order", "source": "[[bibliography]]\n: alpha : Alpha text\n: beta : Beta text\n: gamma : Gamma text\n[[/bibliography]]\nCite ((bibcite gamma)) and ((bibcite alpha)).\n"}
+{"id": "x-bib-unordered-labels", "source": "[[bibliography]]\n: zeta : Zeta text\n: alpha : Alpha text\n: mu : Mu text\n[[/bibliography]]\nCite ((bibcite mu)) and ((bibcite zeta)).\n"}
+{"id": "x-bib-cite-before", "source": "Cite ((bibcite gamma)) then ((bibcite alpha)) then ((bibcite beta)).\n[[bibliography]]\n: alpha : Alpha text\n: beta : Beta text\n: gamma : Gamma text\n[[/bibliography]]\n"}
+{"id": "x-bib-cite-after", "source": "[[bibliography]]\n: alpha : Alpha text\n: beta : Beta text\n[[/bibliography]]\nCite ((bibcite beta)) then ((bibcite alpha)).\n"}
+{"id": "x-bib-dup-label", "source": "[[bibliography]]\n: k : First k\n: k : Second k\n[[/bibliography]]\nCite ((bibcite k)).\n"}
+{"id": "x-bib-undefined", "source": "Cite ((bibcite missing)) with no such entry.\n[[bibliography]]\n: k : A real entry\n[[/bibliography]]\n"}
+{"id": "x-bib-multi-block", "source": "[[bibliography]]\n: a : Entry A\n[[/bibliography]]\nBetween.\n[[bibliography]]\n: b : Entry B\n[[/bibliography]]\nCite ((bibcite a)) and ((bibcite b)).\n"}
+{"id": "x-bib-title", "source": "[[bibliography title=\"References\"]]\n: k : Entry text\n[[/bibliography]]\nCite ((bibcite k)).\n"}
+{"id": "x-bib-empty", "source": "No entries.\n[[bibliography]]\n[[/bibliography]]\n"}
+{"id": "x-bib-empty-body", "source": "[[bibliography]]\n: k : \n[[/bibliography]]\nCite ((bibcite k)).\n"}
+{"id": "x-mix-fn-bib", "source": "[[footnote]]note one[[/footnote]] and ((bibcite k)).\n[[bibliography]]\n: k : Entry k\n[[/bibliography]]\n[[footnoteblock]]\n"}
+{"id": "x-mix-bibcite-in-fn", "source": "[[footnote]]see ((bibcite k))[[/footnote]]\n[[bibliography]]\n: k : Entry k\n[[/bibliography]]\n[[footnoteblock]]\n"}
+{"id": "x-mix-fn-in-bib", "source": "[[bibliography]]\n: k : Entry with [[footnote]]nested note[[/footnote]]\n[[/bibliography]]\nCite ((bibcite k)).\n[[footnoteblock]]\n"}
+{"id": "x-mix-blocks-interleaved", "source": "[[footnote]]fn[[/footnote]]\n[[bibliography]]\n: k : Entry\n[[/bibliography]]\n[[footnoteblock]]\nCite ((bibcite k)).\n"}
+{"id": "x-mix-bibcite-in-block", "source": "[[footnote]]note about ((bibcite k))[[/footnote]]\n[[bibliography]]\n: k : Entry k\n[[/bibliography]]\n[[footnoteblock]]\n"}
+{"id": "x-fn-nested-strong", "source": "[[footnote]]**bold** and //italic// text[[/footnote]]\n[[footnoteblock]]\n"}
+{"id": "x-bib-nested-markup", "source": "[[bibliography]]\n: k : **bold** text\n[[/bibliography]]\nCite ((bibcite k)).\n"}
+{"id": "x-fn-unterminated", "source": "[[footnote]]no closing tag\n[[footnoteblock]]\n"}
+{"id": "x-bib-unterminated", "source": "[[bibliography]]\n: k : no closing tag\n"}
+{"id": "x-fn-empty-body", "source": "[[footnote]][[/footnote]]\n[[footnoteblock]]\n"}
+{"id": "x-bib-cite-malformed", "source": "Cite ((bibcite K)) and ((bibcite k)) and ((bibcite)).\n[[bibliography]]\n: k : Entry k\n[[/bibliography]]\n"}
+{"id": "smoke-code", "source": "[[code]]\n$x = 1;\n[[/code]]\n"}
+{"id": "smoke-collapsible", "source": "[[collapsible]]\nhidden body\n[[/collapsible]]\n"}
+{"id": "smoke-div", "source": "[[div class=\"x\"]]\ninside div\n[[/div]]\n"}
+{"id": "smoke-footnote", "source": "Text with a note[[footnote]]the note text[[/footnote]] here.\n\n[[footnoteblock]]\n"}
+{"id": "smoke-include", "source": "Before\n[[include muse-probe-g14-target]]\nAfter\n"}
+{"id": "smoke-link", "source": "A [[[some-page|link text]]] and [[[missing-page]]] here.\n"}
+{"id": "smoke-math", "source": "Math $x^2$ inline and:\n[[math]]\nx^2 + y^2\n[[/math]]\n"}
+{"id": "smoke-quote", "source": "> quoted line\n> more quote\n"}
+{"id": "smoke-table", "source": "||~ cell1 ||~ cell2 ||\n|| a || b ||\n"}
