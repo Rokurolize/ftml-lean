@@ -1,0 +1,97 @@
+== rebuild drivers by name through wrapper
+   rebuild exit=0 jobs=Build completed successfully (173 jobs)
+== hygiene: no sorry token in any Lean source outside comments
+OK hygiene
+== axiom audit (Main #print axioms) through wrapper
+   lean exit=0
+OK  axioms: no sorryAx in build
+OK  all 21 R4.8 theorems within [propext, Classical.choice, Quot.sound]; no sorryAx
+== tier accounting
+OK  mirrored rules: 61
+OK  embed patterns: 75
+== corpus provenance
+OK provenance
+== gate 1 family state
+TOTAL 643
+PASS 566
+EXCLUDED 72
+FAIL 0
+FATAL-AGREE 5
+UNMIRRORED-TALLY {"Freelink:textFromTitle": 1, "User:DB_OzoneUserPeer": 71}
+OK  /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-verify-combined/vc-scratch/vc-r48-gate-state.txt: FAIL 0
+    counts 643/566/72/0/5
+OK exclusion-audit-state
+== gate 1 family e2e
+TOTAL 643
+PASS 563
+EXCLUDED 75
+FAIL 0
+FATAL-AGREE 5
+UNMIRRORED-TALLY {"BatchTokenIdCounter": 3, "Freelink:textFromTitle": 1, "User:DB_OzoneUserPeer": 71}
+OK  /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-verify-combined/vc-scratch/vc-r48-gate-e2e.txt: FAIL 0
+    counts 643/563/75/0/5
+OK exclusion-audit-e2e
+== gate 2 notes365 state
+TOTAL 365
+PASS 365
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+OK  /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-verify-combined/vc-scratch/vc-r48-gate-notes.txt: FAIL 0
+    counts 365/365/0/0/0
+== gate 2 notes365 e2e
+TOTAL 365
+PASS 365
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+OK  /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-verify-combined/vc-scratch/vc-r48-gate-notes-e2e.txt: FAIL 0
+    counts 365/365/0/0/0
+== gate 2 prose740 state
+TOTAL 740
+PASS 740
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+OK  /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-verify-combined/vc-scratch/vc-r48-gate-prose.txt: FAIL 0
+    counts 740/740/0/0/0
+== reported (non-gate) prose740 e2e
+TOTAL 740
+PASS 735
+EXCLUDED 1
+FAIL 4
+FATAL-AGREE 0
+UNMIRRORED-TALLY {"BatchTokenIdCounter": 1}
+FAILURES ["x22-coll-in-tab", "x23-div-in-tab", "x25-tab-in-coll-in-div", "x29-footnote-in-tab"]
+    counts 740/735/1/4/0
+== gate 3 r41 notes state
+TOTAL 365
+PASS 365
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+OK  /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-verify-combined/vc-scratch/vc-r48-gate-r41-state.txt: FAIL 0
+    counts 365/365/0/0/0
+== gate 3 r41 notes e2e
+TOTAL 365
+PASS 365
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+OK  /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-verify-combined/vc-scratch/vc-r48-gate-r41-e2e.txt: FAIL 0
+    counts 365/365/0/0/0
+== gate 3 r47 family state
+TOTAL 156
+PASS 147
+EXCLUDED 9
+FAIL 0
+FATAL-AGREE 0
+UNMIRRORED-TALLY {"Text_Highlighter:css": 4, "Text_Highlighter:java": 1, "Text_Highlighter:python": 4}
+OK  R4.7 family state: 156/147/9/0/0
+== close-out: token-free disposal
+OK token-free
+== candidate audit
+OK candidate-audit
+TOTAL DISAGREEMENTS 3
+GATES-DONE fail=0
+R48_RERUN_EXIT=0

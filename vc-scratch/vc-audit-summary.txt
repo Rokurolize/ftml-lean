@@ -1,0 +1,12 @@
+audit commands in Main.lean: 642
+distinct names in Main.lean: 640
+reported axiom lines parsed: 642
+distinct reported names: 640
+missing reports: 0
+count mismatches: 0
+unexpected reported names: 0
+sorryAx lines: 0
+axiom-free reports: 30
+standard-subset reports: 612
+nonstandard axiom sets: 0
+AUDIT-VERDICT: PASS

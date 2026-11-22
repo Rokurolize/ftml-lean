@@ -1,0 +1,9 @@
+<p>Before</p>
+
+<p>TARGET-CONTENT-START<br />
+Value is {$marker}.<br />
+TARGET-CONTENT-END</p>
+
+<p>After</p>
+
+

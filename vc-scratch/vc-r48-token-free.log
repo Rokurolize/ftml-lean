@@ -1,0 +1,15 @@
+OK  Include.php: no active addToken call
+OK  Prefilter.php: no active addToken call
+OK  Modulepre.php: no active addToken call
+OK  Iftags.php: no active addToken call
+OK  Concatlines.php: no active addToken call
+OK  Divprefilter.php: no active addToken call
+OK  Social.php: no active addToken call (its addToken is inside a /* ... */ block)
+OK  Tighten.php: no active addToken call
+OK  states-full.jsonl: 0 token-free-rule tokens
+OK  notes365-states-full.jsonl: 0 token-free-rule tokens
+OK  prose740-states-full.jsonl: 0 token-free-rule tokens
+OK  notes-prefix-states.jsonl: 0 token-free-rule tokens
+OK  family-states-full.jsonl: 0 token-free-rule tokens
+OK  Tighten: parse emits no token, but is mirrored as a render rule (renderRuleName .tighten in mirroredRenderRules)
+OK  disposal verified: 7 rules emit no tokens the dispatcher could receive; Tighten reconciled as mirrored

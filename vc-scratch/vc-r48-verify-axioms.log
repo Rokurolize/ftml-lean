@@ -1,0 +1,22 @@
+OK  pipelineR48_length: none
+OK  pipelineR48_full: none
+OK  renderRuleOfName_roundtrip: none
+OK  module_known_marker: ['Classical.choice', 'Quot.sound', 'propext']
+OK  module_known_upper_marker: ['Classical.choice', 'Quot.sound', 'propext']
+OK  module_unknown_error: ['Classical.choice', 'Quot.sound', 'propext']
+OK  module_body_marker: ['Classical.choice', 'Quot.sound', 'propext']
+OK  math_error_block: ['Classical.choice', 'Quot.sound', 'propext']
+OK  user_not_found: ['Classical.choice', 'Quot.sound', 'propext']
+OK  user_boundary_excluded: ['Classical.choice', 'Quot.sound', 'propext']
+OK  user_boundary_incomplete: ['Classical.choice', 'Quot.sound', 'propext']
+OK  freelink_title_boundary: ['Classical.choice', 'Quot.sound', 'propext']
+OK  image_flickr_boundary: ['Classical.choice', 'Quot.sound', 'propext']
+OK  image_first_no_boundary: ['Classical.choice', 'Quot.sound', 'propext']
+OK  freelink_exists_anchor: ['Classical.choice', 'Quot.sound', 'propext']
+OK  freelink_new_anchor: ['Classical.choice', 'Quot.sound', 'propext']
+OK  freelink_title_missing_fallback: ['Classical.choice', 'Quot.sound', 'propext']
+OK  image_plain_local: ['Classical.choice', 'Quot.sound', 'propext']
+OK  image_first_empty: ['Classical.choice', 'Quot.sound', 'propext']
+OK  gallery_local_mode_block: ['Classical.choice', 'Quot.sound', 'propext']
+OK  gallery_one_local_row: ['Classical.choice', 'Quot.sound', 'propext']
+OK  all 21 R4.8 theorems within [propext, Classical.choice, Quot.sound]; no sorryAx

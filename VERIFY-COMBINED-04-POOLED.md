@@ -1,0 +1,7 @@
+# VERIFY-COMBINED part 4 — CAPSTONE pooled comparison
+
+The capstone driver was rebuilt by name through the serial wrapper first (`lake build lean-ftml-conformance-capstone`, exit 0, 161 jobs, log `vc-scratch/vc-build-capstone.log`). The retained `conformance-capstone/pooled-cases.jsonl` was then used verbatim — 4,205 records, 4,205 distinct ids, no corpus reassembly — and a lane-owned script (`vc-scratch/vc_pooled.py`) regenerated the PHP full-pipeline side with the canonical `run_oracle.run("full", ...)` (rc 0, 4,230,437 bytes, zero stderr), ran the freshly rebuilt capstone driver through the wrapper (rc 0, only the wrapper's 132-byte queue commentary on stderr), and applied `pooled_run.py`/`compare.py`'s canonical `canon_state` comparison loop unchanged. The result is `pooled cases: 4205`, `PASS: 4204/4205 (including 5 parse-fatal agreements)`, `MISMATCH: 1`, with the sole mismatch `a34: tokens`. `lb07` is no longer a mismatch (MIRROR-FIX removed it) and REFCORR6 contributes zero movement. The fresh comparison is byte-identical to the canonical `conformance-capstone/pooled-comparison.txt` (`diff` clean). Outputs are `vc-scratch/vc-pooled-comparison.txt`, `vc-scratch/vc-pooled-mismatches.json`, `vc-scratch/vc-pooled-php-full.jsonl` and `vc-scratch/vc-pooled-lean.jsonl`; no canonical artifact was overwritten.
+
+POOLED RESULT: PASS 4,204/4,205, 1 mismatch, a34 (tokens), matching the expected combined result.
+
+COMPLETE

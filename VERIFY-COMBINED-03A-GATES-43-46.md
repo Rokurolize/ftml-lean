@@ -1,0 +1,9 @@
+# VERIFY-COMBINED part 3a — stage gates r43, r44, r45, r46
+
+Each of the four drivers was rebuilt by name through the serial wrapper immediately before it was run (`lake build lean-ftml-conformance-r43/-r44/-r45/-r46`, each exit 0 and each reporting 161 jobs), because a plain build can leave a stale driver binary. Every driver run was itself routed through the wrapper, one at a time, reading the canonical artifact JSONL files in this tree and writing freshly named `vc-scratch/vc-*-comparison.txt` files; no canonical artifact was overwritten. The 132-byte stderr sidecar on each run is only the wrapper's queue commentary, not a Lean error. All comparisons use the in-tree `compare_render.py` unchanged.
+
+r43 family state 1,109/1,109 PASS / 0 EXCLUDED / 0 FAIL and family e2e 1,109/1,109/0/0, both matching the baseline. r44 family state 215/215 PASS / 0 EXCLUDED / 0 FAIL and family e2e 215/215/0/0, both matching the baseline. r45 family state 381/381 PASS / 0 EXCLUDED / 0 FAIL and family e2e 381/381/0/0, both matching the 381/381 post-MIRROR-FIX baseline. r46 family state 862/862 PASS / 0 EXCLUDED / 0 FAIL, matching the baseline; r46 family e2e is 809 PASS / 0 EXCLUDED / 53 FAIL, the 53 standing counter-canonicalization cases, and the fresh `FAILURES` list was compared case id by case id with the canonical baseline list in `conformance-r46/family-e2e-comparison.txt`: 53 in each, no id only in the baseline, no id only in the fresh run, exact match (`anchor/a34`, `date/d40-raw-format`, `div/div-in-tabview`, `div/nested-in-tab`, the five `containx` tab cases and the 45 `tabview/*` cases). No deviation from any baseline is present, so no case id needs to be named as a regression driver output; the 53 e2e counter cases are named by their baseline identities. The full log is `vc-scratch/vc-gates-43-46.log`.
+
+GATES-43-46 RESULT: all baselines reproduced, 0 unexplained deviations.
+
+COMPLETE

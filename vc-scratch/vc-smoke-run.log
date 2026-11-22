@@ -1,0 +1,11 @@
+code.txt MATCH rc=0 outbytes=60 errbytes=0
+collapsible.txt MATCH rc=0 outbytes=427 errbytes=0
+div.txt MATCH rc=0 outbytes=41 errbytes=0
+footnote.txt MATCH rc=0 outbytes=419 errbytes=1426
+include.txt MATCH rc=0 outbytes=110 errbytes=0
+link.txt MATCH rc=0 outbytes=129 errbytes=0
+math.txt MATCH rc=0 outbytes=147 errbytes=349
+quote.txt MATCH rc=0 outbytes=64 errbytes=0
+table.txt MATCH rc=0 outbytes=118 errbytes=0
+smoke cases: 9
+byte-identical: 9/9
