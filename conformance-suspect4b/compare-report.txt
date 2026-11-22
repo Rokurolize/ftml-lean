@@ -1,0 +1,56 @@
+em-dquote AGREE
+em-quote-only AGREE
+em-amp-lt AGREE
+dt-g AGREE
+dt-gmid AGREE
+dt-pctres AGREE
+dt-nonascii AGREE
+dt-zeros AGREE
+dt-clamp AGREE
+dt-clampneg AGREE
+dt-negzero AGREE
+dt-rawfmt AGREE
+fl-mixed AGREE
+fl-digit AGREE
+fl-default-nonascii DIFFER
+  ref : '<p><a href="/cafe">Café</a> <a href="/aeoeue">ÄÖÜ</a> <a href="/_default:x">x</a></p>'
+  live: '<p><a href="/cafe">Café</a> <a href="/aeoeue">ÄÖÜ</a> <a href="/x">x</a></p>'
+fl-target-quote AGREE
+fl-star-local AGREE
+iw-case-standalone AGREE
+iw-case-descr AGREE
+iw-known AGREE
+iw-pagechars AGREE
+ct-pct AGREE
+ct-emptybody AGREE
+ct-dot AGREE
+ct-slash AGREE
+ct-hex6 AGREE
+sp-upper-u AGREE
+sp-u-dash AGREE
+sz-case AGREE
+sz-dots AGREE
+sz-upper2 AGREE
+sp-u-lower AGREE
+sp-u-upper2 AGREE
+gl-target-leak DIFFER
+  ref : '<div class="gallery-box"><div class="gallery-item thumbnail"><table><tr><td><a href="/local--files//a.png" target="_blank"><img alt src="/local--resized-images//a.png/thumbnail.jpg"></a></td></tr></table></div><div class="gallery-item thumbnail"><table><tr><td><a href="/local--files//b.png"><img alt src="/local--resized-images//b.png/thumbnail.jpg"></a></td></tr></table></div><div class="gallery-item thumbnail"><table><tr><td><a href="/local--files//c.png"><img alt src="/local--resized-images//c.png/thumbnail.jpg"></a></td></tr></table></div></div>'
+  live: '<div class="gallery-box" id="gallery-box-507625"> <div class="gallery-item thumbnail"> <table> <tr> <td><a href="https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-suspect4b-gl-target-leak/a.png" target="_blank"><img alt class="gallery-image-size-thumbnail" src="https://sandbox-for-codex.wdfiles.com/local--resized-images/muse-probe-suspect4b-gl-target-leak/a.png/thumbnail.jpg"></a></td> </tr> </table> </div> <div class="gallery-item thumbnail"> <table> <tr> <td><a class="with-lb" href="https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-suspect4b-gl-target-leak/b.png"><img alt class="gallery-image-size-thumbnail" src="https://sandbox-for-codex.wdfiles.com/local--resized-images/muse-probe-suspect4b-gl-target-leak/b.png/thumbnail.jpg"></a></td> </tr> </table> </div> <div class="gallery-item thumbnail"> <table> <tr> <td><a class="with-lb" href="https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-suspect4b-gl-target-leak/c.png"><img alt class="gallery-image-size-thumbnail" src="https://sandbox-for-codex.wdfiles.com/local--resized-images/muse-probe-suspect4b-gl-target-leak/c.png/thumbnail.jpg"></a></td> </tr> </table> </div> </div>'
+gl-link-star DIFFER
+  ref : '<div class="gallery-box"><div class="gallery-item thumbnail"><table><tr><td><a href="Target" target="_blank"><img alt src="/local--resized-images//a.png/thumbnail.jpg"></a></td></tr></table></div><div class="gallery-item thumbnail"><table><tr><td><a href="/local--files//b.png"><img alt src="/local--resized-images//b.png/thumbnail.jpg"></a></td></tr></table></div></div>'
+  live: '<div class="gallery-box" id="gallery-box-890195"> <div class="gallery-item thumbnail"> <table> <tr> <td><a href="Target" target="_blank"><img alt class="gallery-image-size-thumbnail" src="https://sandbox-for-codex.wdfiles.com/local--resized-images/muse-probe-suspect4b-gl-link-star/a.png/thumbnail.jpg"></a></td> </tr> </table> </div> <div class="gallery-item thumbnail"> <table> <tr> <td><a class="with-lb" href="https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-suspect4b-gl-link-star/b.png"><img alt class="gallery-image-size-thumbnail" src="https://sandbox-for-codex.wdfiles.com/local--resized-images/muse-probe-suspect4b-gl-link-star/b.png/thumbnail.jpg"></a></td> </tr> </table> </div> </div>'
+gl-link-scheme DIFFER
+  ref : '<div class="gallery-box"><div class="gallery-item thumbnail"><table><tr><td><a href="://x"><img alt src="/local--resized-images//a.png/thumbnail.jpg"></a></td></tr></table></div></div>'
+  live: '<div class="gallery-box" id="gallery-box-264521"> <div class="gallery-item thumbnail"> <table> <tr> <td><a class="with-lb" href="://x"><img alt class="gallery-image-size-thumbnail" src="https://sandbox-for-codex.wdfiles.com/local--resized-images/muse-probe-suspect4b-gl-link-scheme/a.png/thumbnail.jpg"></a></td> </tr> </table> </div> </div>'
+m1-nested-math AGREE
+m1-newline AGREE
+m1-code AGREE
+m1-code-close AGREE
+m1-two-rules AGREE
+m1-suppress-nested AGREE
+m1-raw AGREE
+m1-raw4 AGREE
+m1-image DIFFER
+  ref : '<p>A <span class="math-inline">$$</span> B</p>'
+  live: 'A <span class="math-inline">$$</span> B'
+SUMMARY {'agree': 40, 'differ': 5, 'invalid': 0, 'missing': 0}

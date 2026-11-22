@@ -1,0 +1,15 @@
+{"id":"f2-def-bare","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"f2-def-space-label","output":"<p><a class=\"newpage\" href=\"\/_default:x\">Label<\/a><\/p>\n\n"}
+{"id":"f2-def-tab","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"f2-def-2space","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"f2-def-mid","output":"<p><a class=\"newpage\" href=\"\/x-default:y\">y<\/a><\/p>\n\n"}
+{"id":"f2-def-space-cafe","output":"<p><a class=\"newpage\" href=\"\/_default:cafe\">Caf\u00e9<\/a><\/p>\n\n"}
+{"id":"f2-def-space-upper","output":"<p><a class=\"newpage\" href=\"\/_default:x\">X<\/a><\/p>\n\n"}
+{"id":"f2-def-colon-space","output":"<p><a class=\"newpage\" href=\"\/foo:bar\">bar<\/a><\/p>\n\n"}
+{"id":"f2-colon-bare","output":"<p><a class=\"newpage\" href=\"\/foo:bar\">bar<\/a><\/p>\n\n"}
+{"id":"f2-math-url-dollar","output":"<p>A <span class=\"math-inline\">$[http:\/\/example.com $]$<\/span> B<\/p>\n\n"}
+{"id":"f2-math-code-span","output":"<p>A <span class=\"math-inline\">$[[code]]x$<\/span> y[[\/code]] B<\/p>\n\n"}
+{"id":"f2-math-two-urls","output":"<p>A <span class=\"math-inline\">$[http:\/\/a.com x] [http:\/\/b.com y]$<\/span> B<\/p>\n\n"}
+{"id":"f2-math-free-in-email","output":"<p>A <span class=\"math-inline\">$$<\/span> B<\/p>\n\n"}
+{"id":"f2-fl-emoji","output":"<p><a class=\"newpage\" href=\"\/cafe-x\">Caf\u00e9\ud83d\ude42x<\/a><\/p>\n\n"}
+{"id":"f2-fl-digit-space","output":"<p><a class=\"newpage\" href=\"\/123abc\">123abc<\/a><\/p>\n\n"}

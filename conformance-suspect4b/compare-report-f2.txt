@@ -1,0 +1,25 @@
+f2-def-bare VALID AGREE
+f2-def-space-label VALID DIFFER
+  ref : '<p><a href="/_default:x">Label</a></p>'
+  live: '<p><a href="/x">Label</a></p>'
+f2-def-tab VALID DIFFER
+  ref : '<p><a href="/_default:x">x</a></p>'
+  live: '<p><a href="/x">x</a></p>'
+f2-def-2space VALID DIFFER
+  ref : '<p><a href="/_default:x">x</a></p>'
+  live: '<p><a href="/x">x</a></p>'
+f2-def-mid VALID AGREE
+f2-def-space-cafe VALID DIFFER
+  ref : '<p><a href="/_default:cafe">Café</a></p>'
+  live: '<p><a href="/cafe">Café</a></p>'
+f2-def-space-upper VALID DIFFER
+  ref : '<p><a href="/_default:x">X</a></p>'
+  live: '<p><a href="/x">X</a></p>'
+f2-def-colon-space VALID AGREE
+f2-colon-bare VALID AGREE
+f2-math-url-dollar VALID AGREE
+f2-math-code-span VALID AGREE
+f2-math-two-urls VALID AGREE
+f2-math-free-in-email VALID AGREE
+f2-fl-emoji VALID AGREE
+f2-fl-digit-space VALID AGREE

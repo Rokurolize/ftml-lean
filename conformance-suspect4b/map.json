@@ -1,0 +1,227 @@
+{
+ "em-dquote": {
+  "fullname": "muse-probe-suspect4b-em-dquote",
+  "source": "X [a@b.com say \"hi\" 'ok' & <x>] Y",
+  "action": "created"
+ },
+ "em-quote-only": {
+  "fullname": "muse-probe-suspect4b-em-quote-only",
+  "source": "X [a@b.com a'b\"c] Y",
+  "action": "created"
+ },
+ "em-amp-lt": {
+  "fullname": "muse-probe-suspect4b-em-amp-lt",
+  "source": "X [a@b.com <b>&amp;</b>] Y",
+  "action": "created"
+ },
+ "dt-g": {
+  "fullname": "muse-probe-suspect4b-dt-g",
+  "source": "[[date 0 format=\"%g\"]]",
+  "action": "created"
+ },
+ "dt-gmid": {
+  "fullname": "muse-probe-suspect4b-dt-gmid",
+  "source": "[[date 0 format=\"x%gy\"]]",
+  "action": "created"
+ },
+ "dt-pctres": {
+  "fullname": "muse-probe-suspect4b-dt-pctres",
+  "source": "[[date 0 format=\"a+b/c@d\"]]",
+  "action": "created"
+ },
+ "dt-nonascii": {
+  "fullname": "muse-probe-suspect4b-dt-nonascii",
+  "source": "[[date 0 format=\"café\"]]",
+  "action": "created"
+ },
+ "dt-zeros": {
+  "fullname": "muse-probe-suspect4b-dt-zeros",
+  "source": "[[date 00000123]]",
+  "action": "created"
+ },
+ "dt-clamp": {
+  "fullname": "muse-probe-suspect4b-dt-clamp",
+  "source": "[[date 99999999999999999999]]",
+  "action": "created"
+ },
+ "dt-clampneg": {
+  "fullname": "muse-probe-suspect4b-dt-clampneg",
+  "source": "[[date -99999999999999999999]]",
+  "action": "created"
+ },
+ "dt-negzero": {
+  "fullname": "muse-probe-suspect4b-dt-negzero",
+  "source": "[[date -0]]",
+  "action": "created"
+ },
+ "dt-rawfmt": {
+  "fullname": "muse-probe-suspect4b-dt-rawfmt",
+  "source": "[[date 0 format=\"%%g\"]]",
+  "action": "created"
+ },
+ "fl-mixed": {
+  "fullname": "muse-probe-suspect4b-fl-mixed",
+  "source": "[[[Café123]]] [[[ÄÖÜabc]]] [[[ab©cd]]] [[[Café Naïve]]]",
+  "action": "created"
+ },
+ "fl-digit": {
+  "fullname": "muse-probe-suspect4b-fl-digit",
+  "source": "[[[123abc]]] [[[3.14]]] [[[007]]]",
+  "action": "created"
+ },
+ "fl-default-nonascii": {
+  "fullname": "muse-probe-suspect4b-fl-default-nonascii",
+  "source": "[[[_default:Café]]] [[[_DEFAULT:ÄÖÜ]]] [[[ _default:x]]]",
+  "action": "created"
+ },
+ "fl-target-quote": {
+  "fullname": "muse-probe-suspect4b-fl-target-quote",
+  "source": "[[[*http://example.com|say \"hi\"]]]",
+  "action": "created"
+ },
+ "fl-star-local": {
+  "fullname": "muse-probe-suspect4b-fl-star-local",
+  "source": "[[[*Local Page]]]",
+  "action": "created"
+ },
+ "iw-case-standalone": {
+  "fullname": "muse-probe-suspect4b-iw-case-standalone",
+  "source": "[Wikipedia:Test] [GOOGLE:q]",
+  "action": "created"
+ },
+ "iw-case-descr": {
+  "fullname": "muse-probe-suspect4b-iw-case-descr",
+  "source": "[Wikipedia:Test Label] [GOOGLE:q Label]",
+  "action": "created"
+ },
+ "iw-known": {
+  "fullname": "muse-probe-suspect4b-iw-known",
+  "source": "[wikipedia:Test] [wikipedia:Test Label]",
+  "action": "created"
+ },
+ "iw-pagechars": {
+  "fullname": "muse-probe-suspect4b-iw-pagechars",
+  "source": "[wikipedia:a+b:c;d] [wikipedia:a--b]",
+  "action": "created"
+ },
+ "ct-pct": {
+  "fullname": "muse-probe-suspect4b-ct-pct",
+  "source": "##rgb(50%,0%,0%)|x##",
+  "action": "created"
+ },
+ "ct-emptybody": {
+  "fullname": "muse-probe-suspect4b-ct-emptybody",
+  "source": "##red|##",
+  "action": "created"
+ },
+ "ct-dot": {
+  "fullname": "muse-probe-suspect4b-ct-dot",
+  "source": "##red.5|x##",
+  "action": "created"
+ },
+ "ct-slash": {
+  "fullname": "muse-probe-suspect4b-ct-slash",
+  "source": "##red/2|x##",
+  "action": "created"
+ },
+ "ct-hex6": {
+  "fullname": "muse-probe-suspect4b-ct-hex6",
+  "source": "##AABBCC|x##",
+  "action": "created"
+ },
+ "sp-upper-u": {
+  "fullname": "muse-probe-suspect4b-sp-upper-u",
+  "source": "[[span id=\"U-foo\"]]x[[/span]]",
+  "action": "created"
+ },
+ "sp-u-dash": {
+  "fullname": "muse-probe-suspect4b-sp-u-dash",
+  "source": "[[span id=\"u-\"]]x[[/span]]",
+  "action": "created"
+ },
+ "sz-case": {
+  "fullname": "muse-probe-suspect4b-sz-case",
+  "source": "A [[size 12PX]]X[[/size]] B",
+  "action": "created"
+ },
+ "sz-dots": {
+  "fullname": "muse-probe-suspect4b-sz-dots",
+  "source": "[[size ...px]]X[[/size]] [[size 1.2.3em]]Y[[/size]] [[size .em]]Z[[/size]]",
+  "action": "created"
+ },
+ "sz-upper2": {
+  "fullname": "muse-probe-suspect4b-sz-upper2",
+  "source": "A [[size 12Em]]Y[[/size]] B",
+  "action": "created"
+ },
+ "sp-u-lower": {
+  "fullname": "muse-probe-suspect4b-sp-u-lower",
+  "source": "[[span id=\"u-foo\"]]x[[/span]]",
+  "action": "created"
+ },
+ "sp-u-upper2": {
+  "fullname": "muse-probe-suspect4b-sp-u-upper2",
+  "source": "[[span id=\"UU-foo\"]]x[[/span]]",
+  "action": "created"
+ },
+ "gl-target-leak": {
+  "fullname": "muse-probe-suspect4b-gl-target-leak",
+  "source": "[[gallery size=thumbnail]]\n: *a.png\n: b.png\n: c.png\n[[/gallery]]",
+  "action": "created"
+ },
+ "gl-link-star": {
+  "fullname": "muse-probe-suspect4b-gl-link-star",
+  "source": "[[gallery]]\n: a.png link=\"*Target\"\n: b.png\n[[/gallery]]",
+  "action": "created"
+ },
+ "gl-link-scheme": {
+  "fullname": "muse-probe-suspect4b-gl-link-scheme",
+  "source": "[[gallery]]\n: a.png link=\"://x\"\n[[/gallery]]",
+  "action": "created"
+ },
+ "m1-nested-math": {
+  "fullname": "muse-probe-suspect4b-m1-nested-math",
+  "source": "A [[$ a [[$ b $]] c $]] B",
+  "action": "created"
+ },
+ "m1-newline": {
+  "fullname": "muse-probe-suspect4b-m1-newline",
+  "source": "A [[$ x\ny $]] B",
+  "action": "created"
+ },
+ "m1-code": {
+  "fullname": "muse-probe-suspect4b-m1-code",
+  "source": "A [[$ [[code]]x[[/code]] $]] B",
+  "action": "created"
+ },
+ "m1-code-close": {
+  "fullname": "muse-probe-suspect4b-m1-code-close",
+  "source": "A [[$ [[code]]x[[/code]]$]] B",
+  "action": "created"
+ },
+ "m1-two-rules": {
+  "fullname": "muse-probe-suspect4b-m1-two-rules",
+  "source": "A [[$ [http://example.com [a@b.com Lab]] $]] B",
+  "action": "created"
+ },
+ "m1-suppress-nested": {
+  "fullname": "muse-probe-suspect4b-m1-suppress-nested",
+  "source": "A [[$ [http://example.com [[[Page]]]] $]] B",
+  "action": "created"
+ },
+ "m1-raw": {
+  "fullname": "muse-probe-suspect4b-m1-raw",
+  "source": "A [[$ @@x@@ $]] B",
+  "action": "created"
+ },
+ "m1-raw4": {
+  "fullname": "muse-probe-suspect4b-m1-raw4",
+  "source": "A [[$ @@@@ $]] B",
+  "action": "created"
+ },
+ "m1-image": {
+  "fullname": "muse-probe-suspect4b-m1-image",
+  "source": "A [[$ [[image http://example.com/x.png]] $]] B",
+  "action": "created"
+ }
+}

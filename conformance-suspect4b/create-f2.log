@@ -1,0 +1,93 @@
+f2-def-bare -> muse-probe-suspect4b-f2-f2-def-bare (created)
+f2-def-space-label -> muse-probe-suspect4b-f2-f2-def-space-label (created)
+f2-def-tab -> muse-probe-suspect4b-f2-f2-def-tab (created)
+f2-def-2space -> muse-probe-suspect4b-f2-f2-def-2space (created)
+f2-def-mid -> muse-probe-suspect4b-f2-f2-def-mid (created)
+f2-def-space-cafe -> muse-probe-suspect4b-f2-f2-def-space-cafe (created)
+f2-def-space-upper -> muse-probe-suspect4b-f2-f2-def-space-upper (created)
+f2-def-colon-space -> muse-probe-suspect4b-f2-f2-def-colon-space (created)
+f2-colon-bare -> muse-probe-suspect4b-f2-f2-colon-bare (created)
+f2-math-url-dollar -> muse-probe-suspect4b-f2-f2-math-url-dollar (created)
+f2-math-code-span -> muse-probe-suspect4b-f2-f2-math-code-span (created)
+f2-math-two-urls -> muse-probe-suspect4b-f2-f2-math-two-urls (created)
+f2-math-free-in-email -> muse-probe-suspect4b-f2-f2-math-free-in-email (created)
+f2-fl-emoji -> muse-probe-suspect4b-f2-f2-fl-emoji (created)
+f2-fl-digit-space -> muse-probe-suspect4b-f2-f2-fl-digit-space (created)
+15 probe pages left in place on sandbox-for-codex; the tool never deletes pages.
+{
+ "f2-def-bare": {
+  "fullname": "muse-probe-suspect4b-f2-f2-def-bare",
+  "source": "[[[_default:x]]]",
+  "action": "created"
+ },
+ "f2-def-space-label": {
+  "fullname": "muse-probe-suspect4b-f2-f2-def-space-label",
+  "source": "[[[ _default:x|Label]]]",
+  "action": "created"
+ },
+ "f2-def-tab": {
+  "fullname": "muse-probe-suspect4b-f2-f2-def-tab",
+  "source": "[[[\t_default:x]]]",
+  "action": "created"
+ },
+ "f2-def-2space": {
+  "fullname": "muse-probe-suspect4b-f2-f2-def-2space",
+  "source": "[[[  _default:x]]]",
+  "action": "created"
+ },
+ "f2-def-mid": {
+  "fullname": "muse-probe-suspect4b-f2-f2-def-mid",
+  "source": "[[[x _default:y]]]",
+  "action": "created"
+ },
+ "f2-def-space-cafe": {
+  "fullname": "muse-probe-suspect4b-f2-f2-def-space-cafe",
+  "source": "[[[ _default:Café]]]",
+  "action": "created"
+ },
+ "f2-def-space-upper": {
+  "fullname": "muse-probe-suspect4b-f2-f2-def-space-upper",
+  "source": "[[[ _DEFAULT:X]]]",
+  "action": "created"
+ },
+ "f2-def-colon-space": {
+  "fullname": "muse-probe-suspect4b-f2-f2-def-colon-space",
+  "source": "[[[ foo:bar]]]",
+  "action": "created"
+ },
+ "f2-colon-bare": {
+  "fullname": "muse-probe-suspect4b-f2-f2-colon-bare",
+  "source": "[[[foo:bar]]]",
+  "action": "created"
+ },
+ "f2-math-url-dollar": {
+  "fullname": "muse-probe-suspect4b-f2-f2-math-url-dollar",
+  "source": "A [[$ [http://example.com $] $]] B",
+  "action": "created"
+ },
+ "f2-math-code-span": {
+  "fullname": "muse-probe-suspect4b-f2-f2-math-code-span",
+  "source": "A [[$ [[code]]x$]] y[[/code]] B",
+  "action": "created"
+ },
+ "f2-math-two-urls": {
+  "fullname": "muse-probe-suspect4b-f2-f2-math-two-urls",
+  "source": "A [[$ [http://a.com x] [http://b.com y] $]] B",
+  "action": "created"
+ },
+ "f2-math-free-in-email": {
+  "fullname": "muse-probe-suspect4b-f2-f2-math-free-in-email",
+  "source": "A [[$ [a@b.com [[[Page]]] Label] $]] B",
+  "action": "created"
+ },
+ "f2-fl-emoji": {
+  "fullname": "muse-probe-suspect4b-f2-f2-fl-emoji",
+  "source": "[[[Café🙂x]]]",
+  "action": "created"
+ },
+ "f2-fl-digit-space": {
+  "fullname": "muse-probe-suspect4b-f2-f2-fl-digit-space",
+  "source": "[[[ 123abc]]]",
+  "action": "created"
+ }
+}

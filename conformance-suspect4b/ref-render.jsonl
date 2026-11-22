@@ -1,0 +1,45 @@
+{"id":"em-dquote","output":"<p>X <span class=\"wiki-email\">moc.b|a#&gt;x&lt; &amp; 'ko' \"ih\" yas<\/span> Y<\/p>\n\n"}
+{"id":"em-quote-only","output":"<p>X <span class=\"wiki-email\">moc.b|a#c\"b'a<\/span> Y<\/p>\n\n"}
+{"id":"em-amp-lt","output":"<p>X <span class=\"wiki-email\">moc.b|a#&gt;b\/&lt;;pma&amp;&gt;b&lt;<\/span> Y<\/p>\n\n"}
+{"id":"dt-g","output":"<p><span class=\"odate time_0 format_ago\">01 Jan 1970 00:00<\/span><\/p>\n\n"}
+{"id":"dt-gmid","output":"<p><span class=\"odate time_0 format_xagoy\">01 Jan 1970 00:00<\/span><\/p>\n\n"}
+{"id":"dt-pctres","output":"<p><span class=\"odate time_0 format_a%2Bb%2Fc%40d\">01 Jan 1970 00:00<\/span><\/p>\n\n"}
+{"id":"dt-nonascii","output":"<p><span class=\"odate time_0 format_caf%C3%A9\">01 Jan 1970 00:00<\/span><\/p>\n\n"}
+{"id":"dt-zeros","output":"<p><span class=\"odate time_123\">01 Jan 1970 00:02<\/span><\/p>\n\n"}
+{"id":"dt-clamp","output":"<p><span class=\"odate time_9223372036854775807\">04 Dec 292277026596 15:30<\/span><\/p>\n\n"}
+{"id":"dt-clampneg","output":"<p><span class=\"odate time_-9223372036854775808\">27 Jan -292277022657 08:29<\/span><\/p>\n\n"}
+{"id":"dt-negzero","output":"<p><span class=\"odate time_0\">01 Jan 1970 00:00<\/span><\/p>\n\n"}
+{"id":"dt-rawfmt","output":"<p><span class=\"odate time_0 format_%25ago\">01 Jan 1970 00:00<\/span><\/p>\n\n"}
+{"id":"fl-mixed","output":"<p><a class=\"newpage\" href=\"\/cafe123\">Caf\u00e9123<\/a> <a class=\"newpage\" href=\"\/aeoeueabc\">\u00c4\u00d6\u00dcabc<\/a> <a class=\"newpage\" href=\"\/ab-cd\">ab\u00a9cd<\/a> <a class=\"newpage\" href=\"\/cafe-naive\">Caf\u00e9 Na\u00efve<\/a><\/p>\n\n"}
+{"id":"fl-digit","output":"<p><a class=\"newpage\" href=\"\/123abc\">123abc<\/a> <a class=\"newpage\" href=\"\/3-14\">3.14<\/a> <a class=\"newpage\" href=\"\/007\">007<\/a><\/p>\n\n"}
+{"id":"fl-default-nonascii","output":"<p><a class=\"newpage\" href=\"\/cafe\">Caf\u00e9<\/a> <a class=\"newpage\" href=\"\/aeoeue\">\u00c4\u00d6\u00dc<\/a> <a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"fl-target-quote","output":"<p><a target=\"_blank\" href=\"http:\/\/example.com\">say &quot;hi&quot;<\/a><\/p>\n\n"}
+{"id":"fl-star-local","output":"<p><a class=\"newpage\" href=\"\/local-page\">*Local Page<\/a><\/p>\n\n"}
+{"id":"iw-case-standalone","output":"<p>[Wikipedia:Test] [GOOGLE:q]<\/p>\n\n"}
+{"id":"iw-case-descr","output":"<p><a href=\"https:\/\/en.wikipedia.org\/wiki\/Test\" onclick=\"window.open(this.href, '_blank'); return false;\">Label<\/a> <a href=\"https:\/\/www.google.com\/search?q=q\" onclick=\"window.open(this.href, '_blank'); return false;\">Label<\/a><\/p>\n\n"}
+{"id":"iw-known","output":"<p><a href=\"https:\/\/en.wikipedia.org\/wiki\/Test\" onclick=\"window.open(this.href, '_blank'); return false;\">Test<\/a> <a href=\"https:\/\/en.wikipedia.org\/wiki\/Test\" onclick=\"window.open(this.href, '_blank'); return false;\">Label<\/a><\/p>\n\n"}
+{"id":"iw-pagechars","output":"<p><a href=\"https:\/\/en.wikipedia.org\/wiki\/a+b:c;d\" onclick=\"window.open(this.href, '_blank'); return false;\">a+b:c;d<\/a> <a href=\"https:\/\/en.wikipedia.org\/wiki\/a--b\" onclick=\"window.open(this.href, '_blank'); return false;\">a--b<\/a><\/p>\n\n"}
+{"id":"ct-pct","output":"<p>##rgb(50%,0%,0%)|x##<\/p>\n\n"}
+{"id":"ct-emptybody","output":"<p>##red|##<\/p>\n\n"}
+{"id":"ct-dot","output":"<p>##red.5|x##<\/p>\n\n"}
+{"id":"ct-slash","output":"<p>##red\/2|x##<\/p>\n\n"}
+{"id":"ct-hex6","output":"<p><span style=\"color: #aabbcc\">x<\/span><\/p>\n\n"}
+{"id":"sp-upper-u","output":"<p><span id=\"u-U-foo\">x<\/span><\/p>\n\n"}
+{"id":"sp-u-dash","output":"<p><span id=\"u-\">x<\/span><\/p>\n\n"}
+{"id":"sz-case","output":"<p>A [[size 12PX]]X[[\/size]] B<\/p>\n\n"}
+{"id":"sz-dots","output":"<p><span style=\"font-size:...px;\">X<\/span> <span style=\"font-size:1.2.3em;\">Y<\/span> <span style=\"font-size:.em;\">Z<\/span><\/p>\n\n"}
+{"id":"sz-upper2","output":"<p>A [[size 12Em]]Y[[\/size]] B<\/p>\n\n"}
+{"id":"sp-u-lower","output":"<p><span id=\"u-foo\">x<\/span><\/p>\n\n"}
+{"id":"sp-u-upper2","output":"<p><span id=\"u-UU-foo\">x<\/span><\/p>\n\n"}
+{"id":"gl-target-leak","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" target=\"_blank\"><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/b.png\" ><img src=\"\/local--resized-images\/\/b.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/c.png\" ><img src=\"\/local--resized-images\/\/c.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gl-link-star","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"Target\" target=\"_blank\"><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/b.png\" ><img src=\"\/local--resized-images\/\/b.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gl-link-scheme","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\":\/\/x\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"m1-nested-math","output":"<p>A <span class=\"math-inline\">$a [[$ b$<\/span> c $]] B<\/p>\n\n"}
+{"id":"m1-newline","output":"<p>A <span class=\"math-inline\">$$<\/span> B<\/p>\n\n"}
+{"id":"m1-code","output":"<p>A <span class=\"math-inline\">$[[code]]x[[\/code]]$<\/span> B<\/p>\n\n"}
+{"id":"m1-code-close","output":"<p>A <span class=\"math-inline\">$[[code]]x[[\/code]]$<\/span> B<\/p>\n\n"}
+{"id":"m1-two-rules","output":"<p>A <span class=\"math-inline\">$[http:\/\/example.com [a@b.com Lab]]$<\/span> B<\/p>\n\n"}
+{"id":"m1-suppress-nested","output":"<p>A <span class=\"math-inline\">$$<\/span> B<\/p>\n\n"}
+{"id":"m1-raw","output":"<p>A <span class=\"math-inline\">$$<\/span> B<\/p>\n\n"}
+{"id":"m1-raw4","output":"<p>A <span class=\"math-inline\">$$<\/span> B<\/p>\n\n"}
+{"id":"m1-image","output":"<p>A <span class=\"math-inline\">$$<\/span> B<\/p>\n\n"}

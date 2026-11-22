@@ -1,0 +1,15 @@
+{"id": "f2-def-bare", "source": "[[[_default:x]]]"}
+{"id": "f2-def-space-label", "source": "[[[ _default:x|Label]]]"}
+{"id": "f2-def-tab", "source": "[[[\t_default:x]]]"}
+{"id": "f2-def-2space", "source": "[[[  _default:x]]]"}
+{"id": "f2-def-mid", "source": "[[[x _default:y]]]"}
+{"id": "f2-def-space-cafe", "source": "[[[ _default:Café]]]"}
+{"id": "f2-def-space-upper", "source": "[[[ _DEFAULT:X]]]"}
+{"id": "f2-def-colon-space", "source": "[[[ foo:bar]]]"}
+{"id": "f2-colon-bare", "source": "[[[foo:bar]]]"}
+{"id": "f2-math-url-dollar", "source": "A [[$ [http://example.com $] $]] B"}
+{"id": "f2-math-code-span", "source": "A [[$ [[code]]x$]] y[[/code]] B"}
+{"id": "f2-math-two-urls", "source": "A [[$ [http://a.com x] [http://b.com y] $]] B"}
+{"id": "f2-math-free-in-email", "source": "A [[$ [a@b.com [[[Page]]] Label] $]] B"}
+{"id": "f2-fl-emoji", "source": "[[[Café🙂x]]]"}
+{"id": "f2-fl-digit-space", "source": "[[[ 123abc]]]"}
