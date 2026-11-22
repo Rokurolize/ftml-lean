@@ -1,0 +1,38 @@
+=== conformance-r45/family-lean-state.jsonl: before=381 after=381 changed=1 added=0 removed=0
+  changed ids: listblocks/lb07
+  SAMPLE listblocks/lb07:
+    output: "<ul>\n<li>Case<br />\n<br /></li>\n</ul><br />\n" -> "<ul>\n<li>Case<br />"
+=== conformance-r45/family-lean-e2e.jsonl: before=381 after=381 changed=1 added=0 removed=0
+  changed ids: listblocks/lb07
+  SAMPLE listblocks/lb07:
+    output: "<ul>\n<li>Case</li>\n</ul><br />\n" -> "<ul>\n<li>Case<br />"
+=== conformance-r45/family-state-detail.jsonl: before=381 after=381 changed=0 added=0 removed=0
+  changed ids: 
+=== conformance-r45/family-e2e-detail.jsonl: before=381 after=381 changed=1 added=0 removed=0
+  changed ids: listblocks/lb07
+  SAMPLE listblocks/lb07:
+    .expected: REMOVED "b'<ul>\\n<li>Case<br />\\n<br /></li>\\n</ul><br />\\n'"
+    .got: REMOVED "b'<ul>\\n<li>Case</li>\\n</ul><br />\\n'"
+    verdict: "FAIL" -> "PASS"
+=== conformance-r46/family45-lean-state.jsonl: before=381 after=381 changed=1 added=0 removed=0
+  changed ids: listblocks/lb07
+  SAMPLE listblocks/lb07:
+    output: "<ul>\n<li>Case<br />\n<br /></li>\n</ul><br />\n" -> "<ul>\n<li>Case<br />"
+=== conformance-r47/family45-lean-state.jsonl: before=381 after=381 changed=1 added=0 removed=0
+  changed ids: listblocks/lb07
+  SAMPLE listblocks/lb07:
+    output: "<p>[[UL]]<br />\n[[LI]]Case[[/LI]]<br />\n[[/UL]]</p>\n\n" -> "<ul>\n<li>Case<br />"
+=== conformance-capstone/pooled-lean.jsonl: before=4205 after=4205 changed=1 added=0 removed=0
+  changed ids: lb07
+  SAMPLE lb07:
+    segments: len 8->4
+    segments[0].k: 3 -> 2
+    segments[3].k: 6 -> 0
+    tokens: len 20->16
+    tokens[2][1].attrs: ADDED {}
+    tokens[2][1].lead: REMOVED ""
+    tokens[2][1].list_type: ADDED "UL"
+    tokens[2][1].scored: ADDED false
+    tokens[2][1].type: "explicit_item_end" -> "explicit_list_start"
+    tokens[3][0]: "List" -> "Typography"
+full report: /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/coord-units/R7VERIFY/meta/movement_analysis.json

@@ -123,7 +123,7 @@
 {"id": "listblocks/lb04", "verdict": "PASS"}
 {"id": "listblocks/lb05", "verdict": "PASS"}
 {"id": "listblocks/lb06", "verdict": "PASS"}
-{"id": "listblocks/lb07", "verdict": "FAIL", "expected": "b'<ul>\\n<li>Case<br />\\n<br /></li>\\n</ul><br />\\n'", "got": "b'<ul>\\n<li>Case</li>\\n</ul><br />\\n'"}
+{"id": "listblocks/lb07", "verdict": "PASS"}
 {"id": "listblocks/lb08", "verdict": "PASS"}
 {"id": "listblocks/lb09", "verdict": "PASS"}
 {"id": "listblocks/lb10", "verdict": "PASS"}

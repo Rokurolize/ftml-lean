@@ -1,0 +1,8 @@
+{
+ "a34": {
+  "components": [
+   "tokens"
+  ],
+  "source": "[[a href=\"@@a@@\"]]r1[[/a]]\n[[a class=\"@@a@@\" href=\"/x\"]]r2[[/a]]\n[[a href=\"/x@@a@@\"]]r3[[/a]]"
+ }
+}

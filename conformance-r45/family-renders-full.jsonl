@@ -123,7 +123,7 @@
 {"id":"listblocks\/lb04","output":"<ul>\n<li>Inline<\/li>\n<li>list<\/li>\n<\/ul><br \/>\n"}
 {"id":"listblocks\/lb05","output":"<ol>\n<li>One<\/li>\n<li>Two<\/li>\n<\/ol><br \/>\n"}
 {"id":"listblocks\/lb06","output":"<ul>\n<li>Indented<\/li>\n<li>spaced<\/li>\n<\/ul><br \/>\n"}
-{"id":"listblocks\/lb07","output":"<ul>\n<li>Case<br \/>\n<br \/><\/li>\n<\/ul><br \/>\n"}
+{"id":"listblocks\/lb07","output":"<ul>\n<li>Case<br \/>"}
 {"id":"listblocks\/lb08","output":"<ul>\n<li>ALPHA<br \/><\/li>\n<li>BETA<br \/><\/li>\n<\/ul><br \/>\n"}
 {"id":"listblocks\/lb09","output":"<ul>\n<li>line1<br \/>\nline2<\/li>\n<\/ul><br \/>\n"}
 {"id":"listblocks\/lb10","output":"<ul>\n<li>u<\/li>\n<\/ul><ul>\n<li>u<\/li>\n<\/ul><br \/>\n"}

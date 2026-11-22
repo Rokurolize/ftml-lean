@@ -1,0 +1,1856 @@
+=== R7VERIFY gate r48 2026-11-23T01:53:08+09:00 ===
+[lean-build] 571594 waiting for queue 01:53:08
+[lean-build] 571594 acquired 01:53:08
+== build: library + every executable used, built explicitly by name
+⚠ [4/188] Replayed LeanFtml.Depth
+warning: LeanFtml/Depth.lean:104:18: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LeanFtml/Depth.lean:105:20: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LeanFtml/Depth.lean:307:39: This simp argument is unused:
+  modifyTop_ne_nil (s := g' :: rs) (by simp)
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [modifyTop]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/Depth.lean:623:31: This simp argument is unused:
+  placedForest_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hnil, placedState, placedStack]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/Depth.lean:624:31: This simp argument is unused:
+  placedForest_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hnil, placedState, placedStack, Forest.walk, placedForest]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/Depth.lean:903:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/Depth.lean:918:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/Depth.lean:967:30: This simp argument is unused:
+  Forest.walk_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Forest.walk, List.append_nil, walk_append]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/Depth.lean:986:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/Depth.lean:995:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [6/188] Replayed LeanFtml.BlockEnd
+warning: LeanFtml/BlockEnd.lean:88:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/BlockEnd.lean:90:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/BlockEnd.lean:110:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/BlockEnd.lean:112:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/BlockEnd.lean:387:16: This simp argument is unused:
+  true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanRecF, hnest, hn, hrej, ↓reduceIte, and_true, Option.map_some, Option.some.injEq,
+    Prod.mk.injEq] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:392:28: This simp argument is unused:
+  true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanRecF, hnest, hn, hrej, hc, ↓reduceIte, and_true, Bool.false_eq_true, Option.map_some,
+    Option.some.injEq, Prod.mk.injEq] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:404:28: This simp argument is unused:
+  true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanRecF, hnest, hn, hrej, hc, ↓reduceIte, and_true, Bool.false_eq_true, Option.map_some,
+    Option.some.injEq, Prod.mk.injEq] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:404:58: This simp argument is unused:
+  Option.map_some
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanRecF, hnest, hn, hrej, hc, ↓reduceIte, and_true, true_and, Bool.false_eq_true,
+    Option.some.injEq, Prod.mk.injEq] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:476:51: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, h, hacc, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:480:45: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, h, hacc, hcond, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:480:69: This simp argument is unused:
+  hrec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, herase, h, hacc, hcond, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:480:75: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, herase, h, hacc, hcond, hrec]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:481:45: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, h, hacc, hcond, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:486:51: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, h, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:490:45: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, h, hcond, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:490:63: This simp argument is unused:
+  hrec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, herase, h, hcond, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:490:69: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, herase, h, hcond, hrec]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:491:45: This simp argument is unused:
+  herase
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [scanFirst, eraseBlankItem, h, hcond, hrec, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:550:24: This simp argument is unused:
+  true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.map_cons, herase, scanRecF, haccEq, hacc2, and_true, ↓reduceIte, Option.map_some,
+    List.map_nil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:562:14: This simp argument is unused:
+  true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.map_cons, herase, scanRecF, hacc2, and_true, ↓reduceIte, Option.map_some, List.map_nil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:575:59: This simp argument is unused:
+  true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanRecF, hnest, hnE, hn, and_true, ↓reduceIte, Option.map_none]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:598:16: This simp argument is unused:
+  true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanRecF, hnest, hnE, hn, hrejE, hrej, and_true, ↓reduceIte, Option.map_some]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:615:28: This simp argument is unused:
+  true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanRecF, hnest, hnE, hn, hrejE, hrejF, hcE, hc, and_true, Bool.false_eq_true, ↓reduceIte,
+    Option.map_some]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:627:28: This simp argument is unused:
+  true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scanRecF, hnest, hnE, hn, hrejE, hrejF, hcE, hc, and_true, Bool.false_eq_true, ↓reduceIte,
+    Option.map_some]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/BlockEnd.lean:629:54: This simp argument is unused:
+  eraseBlankItem_idem
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [List.map_append, List.map_cons, eraseBlankItem]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8/188] Replayed LeanFtml.Include
+warning: LeanFtml/Include.lean:320:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/Include.lean:322:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/Include.lean:322:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/Include.lean:326:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/Include.lean:326:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/Include.lean:330:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/Include.lean:330:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/Include.lean:333:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/Include.lean:333:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [10/188] Replayed LeanFtml.IncludeGrammar
+warning: LeanFtml/IncludeGrammar.lean:105:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:107:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:108:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:109:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:120:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:143:56: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:149:36: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:152:67: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:157:43: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:158:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:172:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:179:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:200:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:205:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:211:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:221:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:239:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:242:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeGrammar.lean:246:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeGrammar.lean:251:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [12/188] Replayed LeanFtml.IncludeExpr
+warning: LeanFtml/IncludeExpr.lean:82:12: Variable name `h` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [14/188] Replayed LeanFtml.ParagraphStack
+warning: LeanFtml/ParagraphStack.lean:318:22: This simp argument is unused:
+  _h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [endParagraph]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [16/188] Replayed LeanFtml.SeamTypography
+warning: LeanFtml/SeamTypography.lean:266:33: This simp argument is unused:
+  charsOf
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [markPieces, charsOf_map_some]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [20/188] Replayed LeanFtml.IncludeRule
+warning: LeanFtml/IncludeRule.lean:600:19: This simp argument is unused:
+  hm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/IncludeRule.lean:605:19: This simp argument is unused:
+  hm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/IncludeRule.lean:625:29: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [refSubstitute, substitute, List.foldl_cons, refSubPass_eq_repPass]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/IncludeRule.lean:1027:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeRule.lean:1029:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeRule.lean:1031:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeRule.lean:1034:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeRule.lean:1099:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeRule.lean:1101:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeRule.lean:1105:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeRule.lean:1114:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeRule.lean:1123:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeRule.lean:1154:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeRule.lean:1199:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeRule.lean:1201:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeRule.lean:1207:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeRule.lean:1341:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeRule.lean:1343:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeRule.lean:1372:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeRule.lean:1392:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeRule.lean:1394:16: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeRule.lean:1396:16: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/IncludeRule.lean:1400:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/IncludeRule.lean:1402:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [22/188] Replayed LeanFtml.FrameRules
+warning: LeanFtml/FrameRules.lean:51:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FrameRules.lean:53:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/FrameRules.lean:123:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FrameRules.lean:125:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [26/188] Replayed LeanFtml.FormRawRules
+warning: LeanFtml/FormRawRules.lean:554:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FormRawRules.lean:557:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/FormRawRules.lean:559:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FormRawRules.lean:562:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/FormRawRules.lean:564:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: LeanFtml/FormRawRules.lean:567:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/FormRawRules.lean:614:45: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rawScan]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/FormRawRules.lean:616:46: This simp argument is unused:
+  hnil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rawScan, findSub, countRun]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/FormRawRules.lean:618:72: This simp argument is unused:
+  hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rawScan, findSub, countRun, hnil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [30/188] Replayed LeanFtml.NextRules
+warning: LeanFtml/NextRules.lean:339:9: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [40/188] Replayed LeanFtml.ListRules
+warning: LeanFtml/ListRules.lean:1331:6: Variable name `acc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _acc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [44/188] Replayed LeanFtml.TableadvEnum
+warning: LeanFtml/TableadvEnum.lean:146:12: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [h1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/TableadvEnum.lean:1143:5: Variable name `h` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [46/188] Replayed LeanFtml.ParaRules
+warning: LeanFtml/ParaRules.lean:360:6: Variable name `src` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _src
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [52/188] Replayed LeanFtml.Inline3Rules
+warning: LeanFtml/Inline3Rules.lean:462:6: Variable name `src` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _src
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [56/188] Replayed LeanFtml.Middle2Rules
+warning: LeanFtml/Middle2Rules.lean:213:14: Variable name `k2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _k2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LeanFtml/Middle2Rules.lean:213:18: Variable name `b2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [86/188] Replayed LeanFtml.InlineRender
+warning: LeanFtml/InlineRender.lean:163:4: This simp argument is unused:
+  Bool.true_eq_false
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hhref0, henc, hhrefE, hhash, htext0, htext, htarget0, htruth, htargetE, htype, Bool.false_eq_true,
+    ↓reduceIte, List.nil_append, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InlineRender.lean:163:36: This simp argument is unused:
+  List.nil_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hhref0, henc, hhrefE, hhash, htext0, htext, htarget0, htruth, htargetE, htype, Bool.false_eq_true,
+    Bool.true_eq_false, ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InlineRender.lean:255:4: This simp argument is unused:
+  List.nil_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hhref0, henc, hhrefE, hhash, htext0, htext, htarget0, htruth, htargetE, htype, Bool.false_eq_true,
+    ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InlineRender.lean:305:4: This simp argument is unused:
+  List.nil_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hhref0, henc, hhrefE, hhash, htext0, htext, htarget0, htruth, htargetE, htype, Bool.false_eq_true,
+    ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InlineRender.lean:354:4: This simp argument is unused:
+  List.nil_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hhref0, henc, hhrefE, hhash, htext0, htext, htarget0, htruth, htargetE, htype, Bool.false_eq_true,
+    ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InlineRender.lean:405:4: This simp argument is unused:
+  List.nil_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hhref0, henc, hhrefE, hhash, htext0, htext, htarget0, htruth, htargetE, htype, Bool.false_eq_true,
+    ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InlineRender.lean:646:16: This simp argument is unused:
+  List.nil_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hsite, hpage, htext0, hlookup, hfind, hsprintf, htext, ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InlineRender.lean:686:16: This simp argument is unused:
+  List.nil_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hsite, hpage, htext0, hlookup, hfind, hsprintf, htext, ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InlineRender.lean:741:16: This simp argument is unused:
+  List.nil_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hsite, hpage, htext0, hlookup, hfind, hsprintf, htext, ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [92/188] Replayed LeanFtml.InteractiveRender
+warning: LeanFtml/InteractiveRender.lean:457:54: This simp argument is unused:
+  hloc2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hom, hoptHide, hoptLoc, ht1, ht2, hlocv, Bool.true_or, Bool.false_eq_true, ↓reduceIte,
+    collapsible_label_default_hide, List.append_nil, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InteractiveRender.lean:459:36: This simp argument is unused:
+  List.append_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hom, hoptHide, hoptLoc, ht1, ht2, hlocv, hloc2, Bool.true_or, Bool.false_eq_true, ↓reduceIte,
+    collapsible_label_default_hide, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InteractiveRender.lean:481:18: This simp argument is unused:
+  hoptFold
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hom, hoptLoc, ht1, ht2, hlocF, Bool.false_eq_true, ↓reduceIte, List.append_nil, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InteractiveRender.lean:482:53: This simp argument is unused:
+  List.append_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hom, hoptFold, hoptLoc, ht1, ht2, hlocF, Bool.false_eq_true, ↓reduceIte, List.append_nil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InteractiveRender.lean:540:16: This simp argument is unused:
+  List.append_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [htab, htitle, hzero, hne, hqc, Bool.false_eq_true, ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InteractiveRender.lean:700:36: This simp argument is unused:
+  List.append_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hty, hallow, hnt, htext, hstyle, hclass, htruthT, htruthC, htruthS, hqsC, hqsS, hqc, hon,
+    Bool.not_true, Bool.false_and, Bool.false_eq_true, ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InteractiveRender.lean:819:34: This simp argument is unused:
+  Bool.not_false
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hty, hallow, hst, htext, hstyle, hclass, htruth, htruthE, hqs, hqc, hon, Bool.not_true,
+    Bool.true_and, Bool.false_eq_true, ↓reduceIte, List.append_nil, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InteractiveRender.lean:852:6: This simp argument is unused:
+  List.append_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hval, hcond, henc, hqc, hkey, ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InteractiveRender.lean:870:35: This simp argument is unused:
+  List.append_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hmap, joinSpaceBytes, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InteractiveRender.lean:897:6: This simp argument is unused:
+  List.append_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hval, hcond, henc, hqc, hkey, ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InteractiveRender.lean:903:35: This simp argument is unused:
+  List.append_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hmap, joinSpaceBytes, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InteractiveRender.lean:1005:16: This simp argument is unused:
+  List.append_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hfile, hanchor, hcont, hqc1, hqc2, Bool.false_eq_true, ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InteractiveRender.lean:1050:29: This simp argument is unused:
+  hcont
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hfile, hanchor, hcont', hcons, hqc1, hqc2, ↓reduceIte, List.append_nil, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InteractiveRender.lean:1051:16: This simp argument is unused:
+  List.append_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hfile, hanchor, hcont, hcont', hcons, hqc1, hqc2, ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/InteractiveRender.lean:1093:16: This simp argument is unused:
+  List.append_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hfile, hanchor, hcont, hqc1, hqc2, Bool.false_eq_true, ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [100/188] Replayed LeanFtml.CoverageNotes
+warning: LeanFtml/CoverageNotes.lean:308:16: This simp argument is unused:
+  hcs
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [titleBranch, mirrorTitleBranch, renderOptValBytes]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/CoverageNotes.lean:315:21: This simp argument is unused:
+  hcs
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [titleBranch, mirrorTitleBranch, renderOptValBytes, hflat, Bool.false_eq_true, ↓reduceIte]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/CoverageNotes.lean:477:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: LeanFtml/CoverageNotes.lean:896:57: This simp argument is unused:
+  ↓reduceIte
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [htw, htail, ht, hlen]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/CoverageNotes.lean:912:57: This simp argument is unused:
+  ↓reduceIte
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [htw, htail, ht, hlen]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanFtml/CoverageNotes.lean:929:57: This simp argument is unused:
+  ↓reduceIte
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [htw, htail, ht, hlen]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [102/188] Replayed LeanFtml.CoverageInline
+warning: LeanFtml/CoverageInline.lean:599:27: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp at hs
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [108/188] Replayed LeanFtml.CoverageHeading
+warning: LeanFtml/CoverageHeading.lean:826:27: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp at hs
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+ℹ [116/188] Replayed Main
+info: Main.lean:15:0: 'LeanFtml.processDepths_placed' depends on axioms: [propext]
+info: Main.lean:16:0: 'LeanFtml.processDepths_good' depends on axioms: [propext]
+info: Main.lean:19:0: 'LeanFtml.scan_eraseBlank' depends on axioms: [propext, Quot.sound]
+info: Main.lean:20:0: 'LeanFtml.scanCount_close_blank' depends on axioms: [propext]
+info: Main.lean:21:0: 'LeanFtml.scan_tail' depends on axioms: [propext, Quot.sound]
+info: Main.lean:22:0: 'LeanFtml.recorded_pairing' depends on axioms: [propext]
+info: Main.lean:23:0: 'LeanFtml.scanEnd_eq_some' depends on axioms: [propext, Quot.sound]
+info: Main.lean:24:0: 'LeanFtml.findIncludeEnd_spec' depends on axioms: [propext, Quot.sound]
+info: Main.lean:25:0: 'LeanFtml.splice_empty_eq_gaps' depends on axioms: [propext]
+info: Main.lean:26:0: 'LeanFtml.gaps_sublist' depends on axioms: [propext, Quot.sound]
+info: Main.lean:27:0: 'LeanFtml.separated_shape' depends on axioms: [propext]
+info: Main.lean:28:0: 'LeanFtml.pagesRust_eq' depends on axioms: [propext]
+info: Main.lean:29:0: 'LeanFtml.parsePageRef_spec' depends on axioms: [propext]
+info: Main.lean:31:0: 'LeanFtml.matchPat_eq_some' depends on axioms: [propext]
+info: Main.lean:32:0: 'LeanFtml.repPass_no_occurs' depends on axioms: [propext, Quot.sound]
+info: Main.lean:33:0: 'LeanFtml.repPass_first_occurs' depends on axioms: [propext, Quot.sound]
+info: Main.lean:34:0: 'LeanFtml.substitute_append' depends on axioms: [propext, Quot.sound]
+info: Main.lean:39:0: 'LeanFtml.endParagraph_wrapped' depends on axioms: [propext]
+info: Main.lean:40:0: 'LeanFtml.endParagraph_unwrapped' depends on axioms: [propext]
+info: Main.lean:41:0: 'LeanFtml.endParagraph_empty' depends on axioms: [propext]
+info: Main.lean:42:0: 'LeanFtml.push_unsafe_finishes' depends on axioms: [propext]
+info: Main.lean:43:0: 'LeanFtml.push_unsafe_twice' depends on axioms: [propext]
+info: Main.lean:44:0: 'LeanFtml.endParagraph_prefix' depends on axioms: [propext]
+info: Main.lean:45:0: 'LeanFtml.pushSafeElements_empty' depends on axioms: [propext]
+info: Main.lean:46:0: 'LeanFtml.pushSafeElements_all_breaks' depends on axioms: [propext]
+info: Main.lean:47:0: 'LeanFtml.pushSafeElements_append' depends on axioms: [propext]
+info: Main.lean:48:0: 'LeanFtml.buildParagraph_trims' depends on axioms: [propext]
+info: Main.lean:49:0: 'LeanFtml.markUnwrapped_empty' depends on axioms: [propext]
+info: Main.lean:50:0: 'LeanFtml.markUnwrapped_nonempty' depends on axioms: [propext]
+info: Main.lean:51:0: 'LeanFtml.endBreak_whitespace_unwrapped' depends on axioms: [propext]
+info: Main.lean:52:0: 'LeanFtml.endBreak_wrapped' depends on axioms: [propext]
+info: Main.lean:53:0: 'LeanFtml.discardedControl_no_output_change' depends on axioms: [propext]
+info: Main.lean:54:0: 'LeanFtml.intoElements_after_flush' depends on axioms: [propext]
+info: Main.lean:62:0: 'LeanFtml.seamResolve_eq_corrected' depends on axioms: [propext]
+info: Main.lean:63:0: 'LeanFtml.charsOf_append' depends on axioms: [propext]
+info: Main.lean:64:0: 'LeanFtml.charsOf_map_some' depends on axioms: [propext]
+info: Main.lean:65:0: 'LeanFtml.charsOf_markPieces' depends on axioms: [propext]
+info: Main.lean:66:0: 'LeanFtml.position_zero_eligibility' depends on axioms: [propext]
+info: Main.lean:67:0: 'LeanFtml.seam_space_run_collapse' depends on axioms: [propext]
+info: Main.lean:68:0: 'LeanFtml.seam_rules_compose' depends on axioms: [propext]
+info: Main.lean:75:0: 'LeanFtml.byteForm_text' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:76:0: 'LeanFtml.convCR_no_cr' depends on axioms: [propext, Quot.sound]
+info: Main.lean:77:0: 'LeanFtml.expandTabs_no_tab' depends on axioms: [propext]
+info: Main.lean:78:0: 'LeanFtml.delimiterRule_id' does not depend on any axioms
+info: Main.lean:82:0: 'LeanFtml.utf8Bytes_no_ff' depends on axioms: [propext, Quot.sound]
+info: Main.lean:83:0: 'LeanFtml.rawScan_no_at' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:88:0: 'LeanFtml.modulepreRule_tokens' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:89:0: 'LeanFtml.moduleMatch_defense_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:90:0: 'LeanFtml.module654Match_claim_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:96:0: 'LeanFtml.iftagsRule_tokens' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:97:0: 'LeanFtml.iftagsGate_keep_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:98:0: 'LeanFtml.iftagsGate_drop_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:99:0: 'LeanFtml.commentMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:100:0: 'LeanFtml.iframeMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:101:0: 'LeanFtml.dateMatch1_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:102:0: 'LeanFtml.mathProcess_guard_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:109:0: 'LeanFtml.concatlinesRule_tokens' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:110:0: 'LeanFtml.concatScan_join_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:111:0: 'LeanFtml.concatScan_div_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:112:0: 'LeanFtml.toUnixName_double_colon_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:113:0: 'LeanFtml.toUnixName_case_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:114:0: 'LeanFtml.freelinkMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:115:0: 'LeanFtml.freelinkRule_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:116:0: 'LeanFtml.erefMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:117:0: 'LeanFtml.erefRule_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:124:0: 'LeanFtml.footnoteitemRule_id' does not depend on any axioms
+info: Main.lean:125:0: 'LeanFtml.bibitemRule_id' does not depend on any axioms
+info: Main.lean:126:0: 'LeanFtml.footnoteMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:127:0: 'LeanFtml.footnoteblockProcess_empty_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:128:0: 'LeanFtml.bibDefMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:129:0: 'LeanFtml.bibitemProcess_state_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:130:0: 'LeanFtml.bibciteMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:137:0: 'LeanFtml.blockquoteMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:138:0: 'LeanFtml.blockquoteProcess_jump_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:139:0: 'LeanFtml.blockquoteProcess_empty_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:140:0: 'LeanFtml.headingMatchLine_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:141:0: 'LeanFtml.headingMatchLine_seven_none' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:142:0: 'LeanFtml.headingProcess_first_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:143:0: 'LeanFtml.tocMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:144:0: 'LeanFtml.tocProcess_one_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:153:0: 'LeanFtml.spanProcess_elides_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:154:0: 'LeanFtml.spanProcess_claim_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:155:0: 'LeanFtml.sizeValid_examples' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:156:0: 'LeanFtml.sizeProcess_invalid_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:157:0: 'LeanFtml.sizeMatchAt_recursive_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:158:0: 'LeanFtml.isolateId_examples' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:159:0: 'LeanFtml.divProcess_scored_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:160:0: 'LeanFtml.divArgs_emission_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:161:0: 'LeanFtml.divProcess_vanished_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:162:0: 'LeanFtml.collProcess_count_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:163:0: 'LeanFtml.collMatchAt_first_closer_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:164:0: 'LeanFtml.tabTitle_examples' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:165:0: 'LeanFtml.tabviewProcess_token_order_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:174:0: 'LeanFtml.native_run_two_items' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:175:0: 'LeanFtml.native_process_one_item' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:176:0: 'LeanFtml.def_item_simple' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:177:0: 'LeanFtml.def_process_one_item' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:178:0: 'LeanFtml.build_list_attrs_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:179:0: 'LeanFtml.list_rule_explicit_tokens' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:180:0: 'LeanFtml.deflist_rule_no_claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:188:0: 'LeanFtml.tableMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:189:0: 'LeanFtml.tableProcess_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:190:0: 'LeanFtml.advAttrStep_id_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:191:0: 'LeanFtml.advAttrStep_title_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:192:0: 'LeanFtml.advAttrStep_span_owner_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:193:0: 'LeanFtml.advAttrStep_span_zero_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:194:0: 'LeanFtml.advAttrStep_data_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:202:0: 'LeanFtml.imageMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:203:0: 'LeanFtml.imageProcess_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:204:0: 'LeanFtml.imageProcess_aligned_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:205:0: 'LeanFtml.imageProcess_placeholder_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:206:0: 'LeanFtml.newlineScan_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:207:0: 'LeanFtml.paraMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:208:0: 'LeanFtml.paraProcess_wrap_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:209:0: 'LeanFtml.paraProcess_skip_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:210:0: 'LeanFtml.paraProcess_scored_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:219:0: 'LeanFtml.urlMatchLen_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:220:0: 'LeanFtml.urlDescrMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:221:0: 'LeanFtml.urlInlineCut_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:222:0: 'LeanFtml.emailMatchLen_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:223:0: 'LeanFtml.emailDescrMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:224:0: 'LeanFtml.mathResolve_text_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:225:0: 'LeanFtml.mathResolve_suppress_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:226:0: 'LeanFtml.interwikiStandaloneMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:227:0: 'LeanFtml.interwikiStandaloneMatch_unknown_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:228:0: 'LeanFtml.interwikiDescrMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:229:0: 'LeanFtml.interwikiDescrMatch_placeholder_label_none' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:230:0: 'LeanFtml.interwikiDescrMatch_bracket_label_none' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:234:0: 'LeanFtml.utf8Bytes_ufffd' does not depend on any axioms
+info: Main.lean:235:0: 'LeanFtml.reconvertFffdBytes_marker' depends on axioms: [propext]
+info: Main.lean:236:0: 'LeanFtml.reconvertFffdBytes_ascii' depends on axioms: [propext]
+info: Main.lean:237:0: 'LeanFtml.ufffd_plain_mid' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:238:0: 'LeanFtml.ufffd_plain_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:239:0: 'LeanFtml.ufffd_plain_only' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:240:0: 'LeanFtml.ufffd_end_first_para' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:241:0: 'LeanFtml.ufffd_end_list' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:242:0: 'LeanFtml.ufffd_end_heading' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:243:0: 'LeanFtml.ufffd_fake_before_bold' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:244:0: 'LeanFtml.ufffd_pair_digits' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:245:0: 'LeanFtml.ufffd_pair_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:246:0: 'LeanFtml.ufffd_only_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:247:0: 'LeanFtml.ufffd_no_marker' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:256:0: 'LeanFtml.colortextMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:257:0: 'LeanFtml.strongMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:258:0: 'LeanFtml.strongMatch_empty_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:259:0: 'LeanFtml.emphasisMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:260:0: 'LeanFtml.emphasisMatch_empty_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:261:0: 'LeanFtml.emphasisMatch_padded_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:262:0: 'LeanFtml.underlineMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:263:0: 'LeanFtml.underlineMatch_empty_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:264:0: 'LeanFtml.underlineScan_double_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:265:0: 'LeanFtml.strikethroughMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:275:0: 'LeanFtml.ttMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:276:0: 'LeanFtml.ttMatch_closeRun_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:277:0: 'LeanFtml.ttScan_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:278:0: 'LeanFtml.superscriptMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:279:0: 'LeanFtml.superscriptMatch_empty_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:280:0: 'LeanFtml.subscriptMatch_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:281:0: 'LeanFtml.subscriptMatch_empty_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:282:0: 'LeanFtml.typoUnits_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:283:0: 'LeanFtml.typoUnits_anchor_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:284:0: 'LeanFtml.tighten_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:285:0: 'LeanFtml.tightenColor_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:298:0: 'LeanFtml.userMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:299:0: 'LeanFtml.userMatchAt_starred_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:300:0: 'LeanFtml.buttonMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:301:0: 'LeanFtml.buttonTail_space_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:302:0: 'LeanFtml.buttonTail_twoSpace_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:303:0: 'LeanFtml.embedMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:304:0: 'LeanFtml.embedMatchAt_suffix_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:305:0: 'LeanFtml.socialMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:306:0: 'LeanFtml.socialMatchAt_bare_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:307:0: 'LeanFtml.socialMatchAt_oneSpace_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:308:0: 'LeanFtml.socialReplacement_bare_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:309:0: 'LeanFtml.fileMatchAt_pipe_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:310:0: 'LeanFtml.fileMatchAt_anchor_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:311:0: 'LeanFtml.isVerbatimHref_case_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:312:0: 'LeanFtml.isVerbatimHref_slash_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:313:0: 'LeanFtml.normalizeUnsafeHref_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:314:0: 'LeanFtml.namedAnchorMatchAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:315:0: 'LeanFtml.anchorOpenerAt_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:316:0: 'LeanFtml.scoredJoinStrip_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:317:0: 'LeanFtml.scoredJoinStrip_three_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:318:0: 'LeanFtml.paraProcess_anchor_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:326:0: 'LeanFtml.renderRuleOfName_roundtrip' does not depend on any axioms
+info: Main.lean:327:0: 'LeanFtml.htmlSpecialCharsCompat_invalid' depends on axioms: [propext]
+info: Main.lean:328:0: 'LeanFtml.utf8Valid_ascii' depends on axioms: [propext]
+info: Main.lean:329:0: 'LeanFtml.htmlSpecialCharsCompat_ascii' depends on axioms: [propext]
+info: Main.lean:330:0: 'LeanFtml.htmlSpecialCharsQuotesSubst_ascii' depends on axioms: [propext, Quot.sound]
+info: Main.lean:331:0: 'LeanFtml.renderSegsLoop_unmirrored_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:332:0: 'LeanFtml.renderWith_unmirrored_not_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:333:0: 'LeanFtml.renderWith_all_mirrored_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:334:0: 'LeanFtml.renderWith_lookup_ext' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:335:0: 'LeanFtml.postStripToc_no_nul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:336:0: 'LeanFtml.postStripToc_strips_tags' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:337:0: 'LeanFtml.bibLookup_bibSet_same' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:338:0: 'LeanFtml.bibLookup_bibSet_other' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:339:0: 'LeanFtml.footnote_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:340:0: 'LeanFtml.footnoteitem_parabreak' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:341:0: 'LeanFtml.footnoteitem_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:342:0: 'LeanFtml.footnoteitem_start_empty_body' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:343:0: 'LeanFtml.footnoteitem_start_nonempty_body' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:344:0: 'LeanFtml.footnoteblock_empty_doc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:345:0: 'LeanFtml.footnoteblock_title_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:346:0: 'LeanFtml.footnoteblock_title_default' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:347:0: 'LeanFtml.footnoteblock_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:348:0: 'LeanFtml.bibitem_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:349:0: 'LeanFtml.bibitem_start_empty_sep' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:350:0: 'LeanFtml.bibliography_nl' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:351:0: 'LeanFtml.bibliography_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:352:0: 'LeanFtml.bibliography_title_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:353:0: 'LeanFtml.bibliography_title_default' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:354:0: 'LeanFtml.bibcite_not_found' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:355:0: 'LeanFtml.bibcite_found' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:356:0: 'LeanFtml.notes_e2e_bibcite_duplicate_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:357:0: 'LeanFtml.notes_e2e_parabreak_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:358:0: 'LeanFtml.notes_e2e_title_apostrophe_agreement' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:359:0: 'LeanFtml.notes_e2e_code_mirrored_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:365:0: 'LeanFtml.pipelineR42_length' does not depend on any axioms
+info: Main.lean:366:0: 'LeanFtml.pipelineR42_prefix' does not depend on any axioms
+info: Main.lean:367:0: 'LeanFtml.paragraph_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:368:0: 'LeanFtml.paragraph_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:369:0: 'LeanFtml.paragraph_other' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:370:0: 'LeanFtml.newline_const' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:371:0: 'LeanFtml.break_const' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:372:0: 'LeanFtml.center_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:373:0: 'LeanFtml.center_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:374:0: 'LeanFtml.center_other' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:375:0: 'LeanFtml.horiz_const' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:376:0: 'LeanFtml.separator_const' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:377:0: 'LeanFtml.clearfloat_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:378:0: 'LeanFtml.clearfloat_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:379:0: 'LeanFtml.clearfloat_both_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:380:0: 'LeanFtml.clearfloat_both_absent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:381:0: 'LeanFtml.blockquote_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:382:0: 'LeanFtml.blockquote_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:383:0: 'LeanFtml.blockquote_other' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:384:0: 'LeanFtml.note_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:385:0: 'LeanFtml.note_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:386:0: 'LeanFtml.note_other' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:387:0: 'LeanFtml.divalign_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:388:0: 'LeanFtml.divalign_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:389:0: 'LeanFtml.divalign_other' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:390:0: 'LeanFtml.comment_const' does not depend on any axioms
+info: Main.lean:391:0: 'LeanFtml.delimiter_text_bytes' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:392:0: 'LeanFtml.delimiter_text_str' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:399:0: 'LeanFtml.includeRule_tokens' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:400:0: 'LeanFtml.includeRule_fatal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:401:0: 'LeanFtml.includePassesWith_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:402:0: 'LeanFtml.refSubPass_eq_repPass' depends on axioms: [propext, Quot.sound]
+info: Main.lean:403:0: 'LeanFtml.refSubstitute_eq_substitute' depends on axioms: [propext, Quot.sound]
+info: Main.lean:404:0: 'LeanFtml.refPageId_g14_target_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:405:0: 'LeanFtml.refPageId_other_page_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:406:0: 'LeanFtml.refPageId_empty_page_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:407:0: 'LeanFtml.refPageId_site_other_page_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:408:0: 'LeanFtml.refPageId_g14b_target_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:409:0: 'LeanFtml.refPageId_notes_inc_src_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:410:0: 'LeanFtml.refFindCandidate_basic_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:411:0: 'LeanFtml.refFindCandidate_quoted_skipped_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:412:0: 'LeanFtml.refFindCandidate_quoted_then_plain_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:413:0: 'LeanFtml.refFindIncludeEnd_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:414:0: 'LeanFtml.refParseBlock_stray_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:415:0: 'LeanFtml.refSegments_raw_pipe_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:416:0: 'LeanFtml.refSegments_unclosed_comment_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:417:0: 'LeanFtml.refCanonicalSite_host_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:418:0: 'LeanFtml.refResolveRef_cross_site_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:419:0: 'LeanFtml.refResolveRef_leading_colons_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:420:0: 'LeanFtml.refResolveRef_site_empty_fallback_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:421:0: 'LeanFtml.refResolveRef_empty_norm_fires_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:422:0: 'LeanFtml.refResolveRef_char_gate_rejects_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:423:0: 'LeanFtml.refResolveRef_pair_char_gate_rejects_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:424:0: 'LeanFtml.refResolveRef_host_gate_fallback_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:425:0: 'LeanFtml.refResolveRef_empty_pair_page_fires_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:426:0: 'LeanFtml.refResolveRef_site_case_preserved_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:427:0: 'LeanFtml.refResolveRef_dotted_site_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:428:0: 'LeanFtml.refFetch_missing_cross_site_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:429:0: 'LeanFtml.refFetch_existing_fold_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:430:0: 'LeanFtml.refFindCandidate_success_shape' depends on axioms: [propext]
+info: Main.lean:431:0: 'LeanFtml.refFindCandidate_adjacent' depends on axioms: [propext]
+info: Main.lean:432:0: 'LeanFtml.refFindCandidate_skips_gt' depends on axioms: [propext, Quot.sound]
+info: Main.lean:433:0: 'LeanFtml.refFindCandidate_spaced_none' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:434:0: 'LeanFtml.refResolveRef_pair_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:435:0: 'LeanFtml.refExpandPass_resumption_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:436:0: 'LeanFtml.refExpandPass_quoted_literal_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:437:0: 'LeanFtml.includePassesWith_self_cycle_bound_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:438:0: 'LeanFtml.includePassesWith_mutual_cycle_bound_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:439:0: 'LeanFtml.includePassesWith_nested_missing_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:440:0: 'LeanFtml.pipelineFull_length' does not depend on any axioms
+info: Main.lean:447:0: 'LeanFtml.pipelineR43_length' does not depend on any axioms
+info: Main.lean:448:0: 'LeanFtml.pipelineR43_full' does not depend on any axioms
+info: Main.lean:449:0: 'LeanFtml.url_inline_plain' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:450:0: 'LeanFtml.url_descr_target' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:451:0: 'LeanFtml.url_hash_becomes_javascript' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:452:0: 'LeanFtml.url_hash_target_kept' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:453:0: 'LeanFtml.url_anchor_target_kept' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:454:0: 'LeanFtml.url_mailto_target_kept' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:455:0: 'LeanFtml.url_mailto_upper_target_kept' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:456:0: 'LeanFtml.url_text_apostrophe' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:457:0: 'LeanFtml.url_href_ampersand' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:458:0: 'LeanFtml.url_href_nonascii_percent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:459:0: 'LeanFtml.url_footnote_wrap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:460:0: 'LeanFtml.email_reversed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:470:0: 'LeanFtml.mathinline_escapes' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:471:0: 'LeanFtml.mathinline_nul_space' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:472:0: 'LeanFtml.mathinline_amp_quote' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:473:0: 'LeanFtml.interwiki_wikipedia' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:474:0: 'LeanFtml.interwiki_page_raw' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:475:0: 'LeanFtml.interwiki_unknown_site_escaped' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:476:0: 'LeanFtml.interwiki_text_apostrophe' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:477:0: 'LeanFtml.normalizeColor_hex3_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:478:0: 'LeanFtml.normalizeColor_named' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:479:0: 'LeanFtml.normalizeColor_rejects_semicolon' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:480:0: 'LeanFtml.colortext_named_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:481:0: 'LeanFtml.colortext_named_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:482:0: 'LeanFtml.colortext_hex3_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:483:0: 'LeanFtml.colortext_hex6_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:484:0: 'LeanFtml.colortext_ws_only_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:485:0: 'LeanFtml.colortext_invalid_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:486:0: 'LeanFtml.colortext_invalid_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:487:0: 'LeanFtml.colortext_collapses_runs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:488:0: 'LeanFtml.colortext_other_type' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:489:0: 'LeanFtml.strong_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:490:0: 'LeanFtml.strong_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:491:0: 'LeanFtml.strong_other' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:492:0: 'LeanFtml.emphasis_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:493:0: 'LeanFtml.emphasis_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:494:0: 'LeanFtml.underline_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:495:0: 'LeanFtml.underline_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:496:0: 'LeanFtml.strikethrough_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:497:0: 'LeanFtml.strikethrough_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:498:0: 'LeanFtml.tt_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:499:0: 'LeanFtml.tt_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:500:0: 'LeanFtml.superscript_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:501:0: 'LeanFtml.superscript_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:502:0: 'LeanFtml.subscript_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:503:0: 'LeanFtml.subscript_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:504:0: 'LeanFtml.typography_ldquo' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:505:0: 'LeanFtml.typography_rdquo' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:506:0: 'LeanFtml.typography_lowquo' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:507:0: 'LeanFtml.typography_lsquo' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:508:0: 'LeanFtml.typography_apos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:509:0: 'LeanFtml.typography_laquo' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:510:0: 'LeanFtml.typography_raquo' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:511:0: 'LeanFtml.typography_nbsp' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:512:0: 'LeanFtml.typography_ellipsis' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:513:0: 'LeanFtml.typography_emdash_long' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:514:0: 'LeanFtml.typography_emdash' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:515:0: 'LeanFtml.typography_unknown' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:516:0: 'LeanFtml.tighten_const' does not depend on any axioms
+info: Main.lean:523:0: 'LeanFtml.pipelineR44_length' does not depend on any axioms
+info: Main.lean:524:0: 'LeanFtml.pipelineR44_full' does not depend on any axioms
+info: Main.lean:525:0: 'LeanFtml.escapeRaw_space_apos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:526:0: 'LeanFtml.escapeRaw_significant_nul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:527:0: 'LeanFtml.raw_wrapped' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:528:0: 'LeanFtml.raw_markup_literal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:529:0: 'LeanFtml.rawold_plain_spaces' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:530:0: 'LeanFtml.rawold_apostrophe' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:531:0: 'LeanFtml.rawold_angle' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:532:0: 'LeanFtml.form_plain_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:533:0: 'LeanFtml.form_blank' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:534:0: 'LeanFtml.form_indent_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:535:0: 'LeanFtml.form_indent_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:536:0: 'LeanFtml.form_indent_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:537:0: 'LeanFtml.form_indent_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:538:0: 'LeanFtml.form_compat_shape' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:539:0: 'LeanFtml.heading_start_with_id' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:540:0: 'LeanFtml.heading_start_null_id' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:541:0: 'LeanFtml.heading_start_notoc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:542:0: 'LeanFtml.heading_end_plain' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:543:0: 'LeanFtml.heading_other' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:544:0: 'LeanFtml.toc_list_start_plain' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:545:0: 'LeanFtml.toc_list_start_floatright' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:546:0: 'LeanFtml.toc_list_start_title_attr' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:547:0: 'LeanFtml.toc_list_end_plain' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:548:0: 'LeanFtml.toc_list_end_float' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:549:0: 'LeanFtml.toc_item_start_level' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:550:0: 'LeanFtml.toc_item_end_shape' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:551:0: 'LeanFtml.toc_other' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:558:0: 'LeanFtml.pipelineR45_length' does not depend on any axioms
+info: Main.lean:559:0: 'LeanFtml.pipelineR45_full' does not depend on any axioms
+info: Main.lean:560:0: 'LeanFtml.list_bullet_start_top' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:561:0: 'LeanFtml.list_number_start_nested' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:562:0: 'LeanFtml.list_number_start_in_sublist' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:563:0: 'LeanFtml.list_number_start_format' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:564:0: 'LeanFtml.list_bullet_end_top_item' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:565:0: 'LeanFtml.list_bullet_end_top_sublist' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:566:0: 'LeanFtml.list_number_end_nested_item' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:567:0: 'LeanFtml.list_sublist_start_shape' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:568:0: 'LeanFtml.list_sublist_end_shape' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:569:0: 'LeanFtml.list_item_start_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:570:0: 'LeanFtml.list_item_start_later' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:571:0: 'LeanFtml.list_item_end_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:572:0: 'LeanFtml.list_explicit_start_plain' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:573:0: 'LeanFtml.list_explicit_start_attrs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:574:0: 'LeanFtml.list_explicit_end_trail' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:575:0: 'LeanFtml.list_explicit_item_start_plain' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:576:0: 'LeanFtml.list_explicit_item_end_lead' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:577:0: 'LeanFtml.list_explicit_none_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:578:0: 'LeanFtml.list_explicit_none_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:579:0: 'LeanFtml.list_explicit_wrapper_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:580:0: 'LeanFtml.list_explicit_br_no_nl_shape' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:581:0: 'LeanFtml.list_explicit_raw_nl_shape' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:582:0: 'LeanFtml.list_other' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:583:0: 'LeanFtml.deflist_start_shape' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:584:0: 'LeanFtml.deflist_end_shape' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:585:0: 'LeanFtml.deflist_term_shapes' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:586:0: 'LeanFtml.deflist_narr_shapes' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:587:0: 'LeanFtml.deflist_other' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:588:0: 'LeanFtml.table_start_class' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:589:0: 'LeanFtml.table_start_format' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:590:0: 'LeanFtml.table_end_shape' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:591:0: 'LeanFtml.table_caption_shapes' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:592:0: 'LeanFtml.table_row_shapes' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:593:0: 'LeanFtml.table_cell_plain' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:594:0: 'LeanFtml.table_cell_header' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:595:0: 'LeanFtml.table_cell_span' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:596:0: 'LeanFtml.table_cell_rowspan' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:597:0: 'LeanFtml.table_cell_align' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:598:0: 'LeanFtml.table_cell_header_span' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:599:0: 'LeanFtml.table_cell_end_shapes' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:600:0: 'LeanFtml.table_other' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:601:0: 'LeanFtml.tableadv_start_plain' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:602:0: 'LeanFtml.tableadv_start_attrs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:603:0: 'LeanFtml.tableadv_row_end_shapes' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:604:0: 'LeanFtml.tableadv_cell_plain' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:605:0: 'LeanFtml.tableadv_cell_header' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:606:0: 'LeanFtml.tableadv_cell_attrs_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:607:0: 'LeanFtml.tableadv_other' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:612:0: 'LeanFtml.pipelineR46_length' does not depend on any axioms
+info: Main.lean:613:0: 'LeanFtml.pipelineR46_full' does not depend on any axioms
+info: Main.lean:614:0: 'LeanFtml.eref_found' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:615:0: 'LeanFtml.eref_missing' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:616:0: 'LeanFtml.anchor_name_plain' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:617:0: 'LeanFtml.anchor_name_entity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:618:0: 'LeanFtml.anchor_start_default' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:619:0: 'LeanFtml.anchor_start_attrs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:620:0: 'LeanFtml.anchor_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:621:0: 'LeanFtml.anchor_invalid_named' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:622:0: 'LeanFtml.anchor_literal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:623:0: 'LeanFtml.anchor_type_fallthrough' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:624:0: 'LeanFtml.collapsible_label_default_show' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:625:0: 'LeanFtml.collapsible_label_default_hide' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:626:0: 'LeanFtml.collapsible_label_spaces' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:627:0: 'LeanFtml.collapsible_start_default' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:628:0: 'LeanFtml.collapsible_start_unfolded' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:629:0: 'LeanFtml.collapsible_end_bottom' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:630:0: 'LeanFtml.collapsible_end_top' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:631:0: 'LeanFtml.tabview_start_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:632:0: 'LeanFtml.tabview_tab_empty_title' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:633:0: 'LeanFtml.tabview_tab_untitled' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:634:0: 'LeanFtml.tabview_tabstart_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:635:0: 'LeanFtml.tabview_tabstart_later' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:636:0: 'LeanFtml.tabview_tabstart_shared' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:637:0: 'LeanFtml.tabview_tabend' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:638:0: 'LeanFtml.tabview_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:639:0: 'LeanFtml.button_edit_default' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:640:0: 'LeanFtml.button_edit_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:641:0: 'LeanFtml.button_upper_type' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:642:0: 'LeanFtml.button_invalid_type' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:643:0: 'LeanFtml.button_settags_notext' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:644:0: 'LeanFtml.button_settags_text' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:645:0: 'LeanFtml.iframe_src_null_attr' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:646:0: 'LeanFtml.iframe_src_nonascii' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:647:0: 'LeanFtml.date_epoch' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:648:0: 'LeanFtml.date_basic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:649:0: 'LeanFtml.date_format_class' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:650:0: 'LeanFtml.date_negative_day' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:651:0: 'LeanFtml.date_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:652:0: 'LeanFtml.date_canon_clamp' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:653:0: 'LeanFtml.date_canon_leading_zeros' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:654:0: 'LeanFtml.file_plain' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:655:0: 'LeanFtml.file_path' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:656:0: 'LeanFtml.file_space' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:657:0: 'LeanFtml.size_shapes' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:658:0: 'LeanFtml.span_start_bare' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:659:0: 'LeanFtml.span_start_class' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:660:0: 'LeanFtml.span_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:661:0: 'LeanFtml.div_start_bare' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:662:0: 'LeanFtml.div_start_class_escaped' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:663:0: 'LeanFtml.div_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:664:0: 'LeanFtml.div_start_id_class_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:665:0: 'LeanFtml.div_vanished_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:666:0: 'LeanFtml.div_vanished_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:671:0: 'LeanFtml.pipelineR47_length' does not depend on any axioms
+info: Main.lean:672:0: 'LeanFtml.pipelineR47_full' does not depend on any axioms
+info: Main.lean:673:0: 'LeanFtml.renderRuleOfName_roundtrip' does not depend on any axioms
+info: Main.lean:674:0: 'LeanFtml.code_plain_basic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:675:0: 'LeanFtml.code_empty_body' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:676:0: 'LeanFtml.code_whitespace_body' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:677:0: 'LeanFtml.code_tab_indent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:678:0: 'LeanFtml.code_escape_compat' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:679:0: 'LeanFtml.code_unknown_type' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:680:0: 'LeanFtml.code_python_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:681:0: 'LeanFtml.code_python_upper_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:682:0: 'LeanFtml.code_boundary_excluded' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:683:0: 'LeanFtml.code_boundary_incomplete' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:684:0: 'LeanFtml.pcre_parse_a_plus' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:685:0: 'LeanFtml.pcre_match_a_plus_true' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:686:0: 'LeanFtml.pcre_match_a_plus_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:687:0: 'LeanFtml.anyiframe_fixture_in_table' depends on axioms: [propext]
+info: Main.lean:688:0: 'LeanFtml.embed_no_patterns_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:689:0: 'LeanFtml.embed_anyiframe_passthrough' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:690:0: 'LeanFtml.embed_anyiframe_onclick_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:691:0: 'LeanFtml.embed_anyiframe_js_src_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:692:0: 'LeanFtml.embed_anyiframe_dash_attr_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:693:0: 'LeanFtml.embed_language_strip' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:698:0: 'LeanFtml.pipelineR48_length' does not depend on any axioms
+info: Main.lean:699:0: 'LeanFtml.pipelineR48_full' does not depend on any axioms
+info: Main.lean:700:0: 'LeanFtml.renderRuleOfName_roundtrip' does not depend on any axioms
+info: Main.lean:701:0: 'LeanFtml.module_known_marker' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:702:0: 'LeanFtml.module_known_upper_marker' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:703:0: 'LeanFtml.module_unknown_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:704:0: 'LeanFtml.module_body_marker' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:705:0: 'LeanFtml.math_error_block' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:706:0: 'LeanFtml.math_unsupported_uppercase' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:707:0: 'LeanFtml.math_unsupported_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:708:0: 'LeanFtml.user_not_found' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:709:0: 'LeanFtml.user_boundary_excluded' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:710:0: 'LeanFtml.user_boundary_incomplete' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:711:0: 'LeanFtml.freelink_title_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:712:0: 'LeanFtml.image_flickr_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:713:0: 'LeanFtml.image_first_no_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:714:0: 'LeanFtml.freelink_exists_anchor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:715:0: 'LeanFtml.freelink_new_anchor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:716:0: 'LeanFtml.freelink_title_missing_fallback' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:717:0: 'LeanFtml.image_plain_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:718:0: 'LeanFtml.image_first_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:719:0: 'LeanFtml.gallery_local_mode_block' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:720:0: 'LeanFtml.gallery_one_local_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:727:0: 'LeanFtml.allClasses_nodup' does not depend on any axioms
+info: Main.lean:728:0: 'LeanFtml.allClasses_length' does not depend on any axioms
+info: Main.lean:729:0: 'LeanFtml.allClasses_mem' depends on axioms: [propext]
+info: Main.lean:730:0: 'LeanFtml.classWhen_mem' depends on axioms: [propext]
+info: Main.lean:731:0: 'LeanFtml.hzFire_of_count' depends on axioms: [propext]
+info: Main.lean:732:0: 'LeanFtml.hzLiteral_of_count' depends on axioms: [propext]
+info: Main.lean:733:0: 'LeanFtml.hzLiteral_not_alone' depends on axioms: [propext]
+info: Main.lean:734:0: 'LeanFtml.spFire_of_count' depends on axioms: [propext]
+info: Main.lean:735:0: 'LeanFtml.spLiteral_of_count' depends on axioms: [propext]
+info: Main.lean:736:0: 'LeanFtml.cfDoubleSide_of_dashes' depends on axioms: [propext]
+info: Main.lean:737:0: 'LeanFtml.cfBoth_of_dashes' depends on axioms: [propext]
+info: Main.lean:738:0: 'LeanFtml.classify_sound' depends on axioms: [propext]
+info: Main.lean:739:0: 'LeanFtml.classify_nonempty' depends on axioms: [propext, Quot.sound]
+info: Main.lean:740:0: 'LeanFtml.witness_classify' depends on axioms: [propext, Quot.sound]
+info: Main.lean:741:0: 'LeanFtml.classes_exhaustive' depends on axioms: [propext, Quot.sound]
+info: Main.lean:742:0: 'LeanFtml.prose_classification_complete' depends on axioms: [propext, Quot.sound]
+info: Main.lean:743:0: 'LeanFtml.exclusive_class_single' depends on axioms: [propext]
+info: Main.lean:744:0: 'LeanFtml.pf_pad_always' depends on axioms: [propext]
+info: Main.lean:745:0: 'LeanFtml.tn_newline_always' depends on axioms: [propext]
+info: Main.lean:746:0: 'LeanFtml.ty_none_iff' depends on axioms: [propext, Quot.sound]
+info: Main.lean:747:0: 'LeanFtml.ty_none_exclusive' depends on axioms: [propext]
+info: Main.lean:748:0: 'LeanFtml.delimiter_dead_branch_has_no_author_shape' depends on axioms: [propext]
+info: Main.lean:749:0: 'LeanFtml.typography_dash3_statement_dead' depends on axioms: [propext, Quot.sound]
+info: Main.lean:750:0: 'LeanFtml.cov_prefilter_tab_four_spaces' does not depend on any axioms
+info: Main.lean:751:0: 'LeanFtml.cov_delimiter_identity' does not depend on any axioms
+info: Main.lean:752:0: 'LeanFtml.cov_horiz_three_literal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:753:0: 'LeanFtml.cov_horiz_four_claims' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:754:0: 'LeanFtml.cov_separator_five_claims' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:755:0: 'LeanFtml.cov_clearfloat_doubled_side_literal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:756:0: 'LeanFtml.cov_break_two_spaces_claims_once' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:757:0: 'LeanFtml.cov_center_keeps_trailing_equals' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:758:0: 'LeanFtml.cov_separator_run_unwrapped' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:759:0: 'LeanFtml.cov_concatlines_join' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:760:0: 'LeanFtml.cov_concatlines_div_opener' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:761:0: 'LeanFtml.cov_divprefilter_bare_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:762:0: 'LeanFtml.cov_tighten_folds_residual_run' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:763:0: 'LeanFtml.cov_typography_two_dashes' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:764:0: 'LeanFtml.cov_divalign_justify_render' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:771:0: 'LeanFtml.classify_isSome' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:772:0: 'LeanFtml.notes_class_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:773:0: 'LeanFtml.notes_class_exclusive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:774:0: 'LeanFtml.memClass_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:775:0: 'LeanFtml.memClass_exclusive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:776:0: 'LeanFtml.optTypeIs_exclusive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:777:0: 'LeanFtml.notes_type_tags_distinct' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:778:0: 'LeanFtml.fni_parabreak_dominates' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:779:0: 'LeanFtml.fnb_empty_dominates' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:780:0: 'LeanFtml.bib_nl_excludes_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:781:0: 'LeanFtml.textVal_title_agrees' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:782:0: 'LeanFtml.titleOpt_class_agrees' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:783:0: 'LeanFtml.fnb_bool_false_divergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:784:0: 'LeanFtml.bib_bool_false_divergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:785:0: 'LeanFtml.notesReach_classified' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:786:0: 'LeanFtml.notes_stream_classified' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:787:0: 'LeanFtml.footnoteProcess_tokens' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:788:0: 'LeanFtml.fnb_empty_emits_nothing' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:789:0: 'LeanFtml.fniEmit_reach' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:790:0: 'LeanFtml.footnoteblockInside_tokens' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:791:0: 'LeanFtml.footnoteblockProcess_reach' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:792:0: 'LeanFtml.footnoteScan_reach' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:793:0: 'LeanFtml.bibciteScan_reach' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:794:0: 'LeanFtml.bibitemProcess_reach' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:795:0: 'LeanFtml.bibWalk_reach' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:796:0: 'LeanFtml.bibliographyProcess_reach' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:802:0: 'LeanFtml.tableadv_dfs_ne_enum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:803:0: 'LeanFtml.tableadvWitness_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:804:0: 'LeanFtml.tableadv_mirror_eq_enum_scan' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:805:0: 'LeanFtml.mirror_enum_witness_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:806:0: 'LeanFtml.tableadvWitnessFamily_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:807:0: 'LeanFtml.tableadvWitnessFamily_nodup' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:813:0: 'LeanFtml.inlineAllClasses_nodup' does not depend on any axioms
+info: Main.lean:814:0: 'LeanFtml.inlineAllClasses_length' does not depend on any axioms
+info: Main.lean:815:0: 'LeanFtml.inlineAllClasses_mem' depends on axioms: [propext]
+info: Main.lean:816:0: 'LeanFtml.inline_classify_sound' depends on axioms: [propext]
+info: Main.lean:817:0: 'LeanFtml.inline_classify_nonempty' depends on axioms: [propext, Quot.sound]
+info: Main.lean:818:0: 'LeanFtml.inline_witness_classify' depends on axioms: [propext]
+info: Main.lean:819:0: 'LeanFtml.inline_classes_exhaustive' depends on axioms: [propext]
+info: Main.lean:820:0: 'LeanFtml.inline_classification_complete' depends on axioms: [propext, Quot.sound]
+info: Main.lean:821:0: 'LeanFtml.inline_exclusive_class_single' depends on axioms: [propext]
+info: Main.lean:822:0: 'LeanFtml.iw_exclusive' depends on axioms: [propext]
+info: Main.lean:823:0: 'LeanFtml.span_exclusive' depends on axioms: [propext]
+info: Main.lean:824:0: 'LeanFtml.size_exclusive' depends on axioms: [propext]
+info: Main.lean:825:0: 'LeanFtml.fl_branch_exclusive' depends on axioms: [propext]
+info: Main.lean:826:0: 'LeanFtml.im_source_exclusive' depends on axioms: [propext]
+info: Main.lean:827:0: 'LeanFtml.im_align_exclusive' depends on axioms: [propext]
+info: Main.lean:828:0: 'LeanFtml.url_link_always' depends on axioms: [propext]
+info: Main.lean:829:0: 'LeanFtml.url_hash_exclusive' depends on axioms: [propext, Quot.sound]
+info: Main.lean:830:0: 'LeanFtml.ct_invalid_type_irrelevant' depends on axioms: [propext]
+info: Main.lean:831:0: 'LeanFtml.inline_shapeOf_isSome' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:832:0: 'LeanFtml.inline_classOf_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:833:0: 'LeanFtml.inline_classOf_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:834:0: 'LeanFtml.inline_classOf_exclusive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:835:0: 'LeanFtml.ct_exclusive' depends on axioms: [propext]
+info: Main.lean:836:0: 'LeanFtml.inline_memClass_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:837:0: 'LeanFtml.inline_memClass_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:838:0: 'LeanFtml.interwiki_templates_all_have_percent_s' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:839:0: 'LeanFtml.email_current_render_has_no_escaping' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:840:0: 'LeanFtml.cov_url_link' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:841:0: 'LeanFtml.cov_url_hash' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:842:0: 'LeanFtml.cov_url_target' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:843:0: 'LeanFtml.cov_url_footnote' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:844:0: 'LeanFtml.cov_iw_known' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:845:0: 'LeanFtml.cov_iw_unknown' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:846:0: 'LeanFtml.cov_email_reversed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:847:0: 'LeanFtml.cov_fl_url' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:848:0: 'LeanFtml.cov_fl_missing' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:849:0: 'LeanFtml.cov_im_url_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:850:0: 'LeanFtml.cov_span_bare' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:851:0: 'LeanFtml.cov_span_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:852:0: 'LeanFtml.cov_size_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:853:0: 'LeanFtml.ct_hex_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:854:0: 'LeanFtml.ct_empty_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:855:0: 'LeanFtml.ct_invalid_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:859:0: 'LeanFtml.cmAllClasses_nodup' does not depend on any axioms
+info: Main.lean:860:0: 'LeanFtml.cmAllClasses_length' does not depend on any axioms
+info: Main.lean:861:0: 'LeanFtml.cmAllClasses_mem' depends on axioms: [propext]
+info: Main.lean:862:0: 'LeanFtml.cm_classify_sound' depends on axioms: [propext]
+info: Main.lean:863:0: 'LeanFtml.cm_classify_nonempty' depends on axioms: [propext, Quot.sound]
+info: Main.lean:864:0: 'LeanFtml.miClassifyWalk_nonempty' depends on axioms: [propext, Quot.sound]
+info: Main.lean:865:0: 'LeanFtml.cm_witness_classify' depends on axioms: [propext]
+info: Main.lean:866:0: 'LeanFtml.cm_classes_exhaustive' depends on axioms: [propext]
+info: Main.lean:867:0: 'LeanFtml.cm_classification_complete' depends on axioms: [propext, Quot.sound]
+info: Main.lean:868:0: 'LeanFtml.cm_exclusive_singleton' depends on axioms: [propext]
+info: Main.lean:869:0: 'LeanFtml.code_body_exclusive' depends on axioms: [propext]
+info: Main.lean:870:0: 'LeanFtml.code_trail_exclusive' depends on axioms: [propext]
+info: Main.lean:871:0: 'LeanFtml.math_kind_single' does not depend on any axioms
+info: Main.lean:872:0: 'LeanFtml.mi_suppress_short_circuit' depends on axioms: [propext]
+info: Main.lean:873:0: 'LeanFtml.cm_shapeOf_isSome' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:874:0: 'LeanFtml.cm_classOf_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:875:0: 'LeanFtml.cm_classOf_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:876:0: 'LeanFtml.cm_classOf_exclusive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:877:0: 'LeanFtml.cm_memClass_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:878:0: 'LeanFtml.cm_memClass_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:879:0: 'LeanFtml.cm_code_langs_fourteen' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:880:0: 'LeanFtml.cm_highlighter_nonclass' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:881:0: 'LeanFtml.cm_code_python_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:882:0: 'LeanFtml.cm_code_filename_dead' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:883:0: 'LeanFtml.cm_math_png_nonclass' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:884:0: 'LeanFtml.cm_claimed_at_end' depends on axioms: [propext]
+info: Main.lean:885:0: 'LeanFtml.cm_claimed_shorter' depends on axioms: [propext]
+info: Main.lean:886:0: 'LeanFtml.cm_claimed_partition' depends on axioms: [propext]
+info: Main.lean:887:0: 'LeanFtml.cm_code_trail_space' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:888:0: 'LeanFtml.cm_code_empty_shape' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:889:0: 'LeanFtml.cm_code_plain_shape' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:890:0: 'LeanFtml.cm_math_fatal_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:891:0: 'LeanFtml.cm_math_absent_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:892:0: 'LeanFtml.cm_math_valid_gather' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:893:0: 'LeanFtml.cm_math_invalid_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:894:0: 'LeanFtml.cm_math_invalid_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:895:0: 'LeanFtml.cm_counter_starts' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:896:0: 'LeanFtml.cm_counter_on_invalid' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:897:0: 'LeanFtml.cm_counter_on_fatal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:898:0: 'LeanFtml.cm_suppress_freelink' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:899:0: 'LeanFtml.cm_suppress_raw' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:900:0: 'LeanFtml.cm_suppress_newline' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:901:0: 'LeanFtml.cm_suppress_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:902:0: 'LeanFtml.cm_suppress_url_no' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:903:0: 'LeanFtml.cm_suppress_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:904:0: 'LeanFtml.cm_suppress_before_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:905:0: 'LeanFtml.cm_mi_absent_unknown' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:906:0: 'LeanFtml.cm_mi_depth_beats_suppress' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:907:0: 'LeanFtml.cm_mi_unknown_keeps' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:908:0: 'LeanFtml.cm_mi_cycle_keeps' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:909:0: 'LeanFtml.cm_mi_newline_suppress' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:910:0: 'LeanFtml.cm_mi_freelink_suppress' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:911:0: 'LeanFtml.cm_mi_raw_suppress' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:912:0: 'LeanFtml.cm_mi_image_suppress' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:913:0: 'LeanFtml.cm_mi_source_url' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:914:0: 'LeanFtml.cm_mi_fallback_text' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:918:0: 'LeanFtml.containAllClasses_nodup' does not depend on any axioms
+info: Main.lean:919:0: 'LeanFtml.containAllClasses_length' does not depend on any axioms
+info: Main.lean:920:0: 'LeanFtml.containAllClasses_mem' depends on axioms: [propext]
+info: Main.lean:921:0: 'LeanFtml.contain_classify_sound' depends on axioms: [propext]
+info: Main.lean:922:0: 'LeanFtml.contain_classify_nonempty' depends on axioms: [propext, Quot.sound]
+info: Main.lean:923:0: 'LeanFtml.contain_witness_classify' depends on axioms: [propext]
+info: Main.lean:924:0: 'LeanFtml.contain_classes_exhaustive' depends on axioms: [propext]
+info: Main.lean:925:0: 'LeanFtml.contain_classification_complete' depends on axioms: [propext, Quot.sound]
+info: Main.lean:926:0: 'LeanFtml.contain_exclusive_single' does not depend on any axioms
+info: Main.lean:927:0: 'LeanFtml.bq_render_exclusive' depends on axioms: [propext]
+info: Main.lean:928:0: 'LeanFtml.div_body_exclusive' depends on axioms: [propext]
+info: Main.lean:929:0: 'LeanFtml.div_head_exclusive' depends on axioms: [propext]
+info: Main.lean:930:0: 'LeanFtml.div_render_exclusive' depends on axioms: [propext]
+info: Main.lean:931:0: 'LeanFtml.co_fold_exclusive' depends on axioms: [propext]
+info: Main.lean:932:0: 'LeanFtml.co_show_exclusive' depends on axioms: [propext]
+info: Main.lean:933:0: 'LeanFtml.co_hide_exclusive' depends on axioms: [propext]
+info: Main.lean:934:0: 'LeanFtml.co_loc_exclusive' depends on axioms: [propext]
+info: Main.lean:935:0: 'LeanFtml.co_type_exclusive' depends on axioms: [propext]
+info: Main.lean:936:0: 'LeanFtml.tv_title_kind_exclusive' depends on axioms: [propext]
+info: Main.lean:937:0: 'LeanFtml.tv_title_source_exclusive' depends on axioms: [propext]
+info: Main.lean:938:0: 'LeanFtml.tv_label_exclusive' depends on axioms: [propext]
+info: Main.lean:939:0: 'LeanFtml.tv_selected_exclusive' depends on axioms: [propext]
+info: Main.lean:940:0: 'LeanFtml.bq_deleted_only' does not depend on any axioms
+info: Main.lean:941:0: 'LeanFtml.bq_kept_excludes_deleted' depends on axioms: [propext]
+info: Main.lean:942:0: 'LeanFtml.bq_line_dropped_iff' depends on axioms: [propext]
+info: Main.lean:943:0: 'LeanFtml.bq_kept_always_text' depends on axioms: [propext]
+info: Main.lean:944:0: 'LeanFtml.div_vanished_excludes_ordered' depends on axioms: [propext]
+info: Main.lean:945:0: 'LeanFtml.contain_shapeOf_isSome' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:946:0: 'LeanFtml.contain_classOf_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:947:0: 'LeanFtml.contain_classOf_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:948:0: 'LeanFtml.contain_classOf_exclusive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:949:0: 'LeanFtml.contain_memClass_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:950:0: 'LeanFtml.contain_memClass_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:951:0: 'LeanFtml.bq_block_form_unmatched' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:952:0: 'LeanFtml.cov_bq_nospace_deleted' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:953:0: 'LeanFtml.cov_bq_lone_gt_deleted' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:954:0: 'LeanFtml.cov_bq_empty_payload_deleted' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:955:0: 'LeanFtml.cov_bq_render_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:956:0: 'LeanFtml.cov_bq_render_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:957:0: 'LeanFtml.cov_bq_render_fall' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:958:0: 'LeanFtml.cov_bq_level_unread' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:959:0: 'LeanFtml.cov_div_vanished_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:960:0: 'LeanFtml.cov_div_vanished_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:961:0: 'LeanFtml.cov_div_bare' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:962:0: 'LeanFtml.cov_div_attr_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:963:0: 'LeanFtml.cov_div_id_shell_cleared' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:964:0: 'LeanFtml.cov_div_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:965:0: 'LeanFtml.cov_co_end_top' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:966:0: 'LeanFtml.cov_tv_panel_shown' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:967:0: 'LeanFtml.cov_tv_panel_hidden' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:968:0: 'LeanFtml.cov_tv_panel_end' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:977:0: 'LeanFtml.navAllClasses_nodup' does not depend on any axioms
+info: Main.lean:978:0: 'LeanFtml.navAllClasses_length' does not depend on any axioms
+info: Main.lean:979:0: 'LeanFtml.navAllClasses_mem' depends on axioms: [propext]
+info: Main.lean:980:0: 'LeanFtml.nav_classify_sound' depends on axioms: [propext]
+info: Main.lean:981:0: 'LeanFtml.nav_classify_nonempty' depends on axioms: [propext]
+info: Main.lean:982:0: 'LeanFtml.nav_witness_classify' depends on axioms: [propext]
+info: Main.lean:983:0: 'LeanFtml.nav_classes_exhaustive' depends on axioms: [propext]
+info: Main.lean:984:0: 'LeanFtml.nav_classification_complete' depends on axioms: [propext]
+info: Main.lean:985:0: 'LeanFtml.hd_hit_one_level' depends on axioms: [propext]
+info: Main.lean:986:0: 'LeanFtml.hd_hit_one_tocflag' does not depend on any axioms
+info: Main.lean:987:0: 'LeanFtml.hd_miss_no_level' depends on axioms: [propext]
+info: Main.lean:988:0: 'LeanFtml.hd_end_sign_exclusive' depends on axioms: [propext]
+info: Main.lean:989:0: 'LeanFtml.hd_hidden_implies_script' depends on axioms: [propext]
+info: Main.lean:990:0: 'LeanFtml.toc_start_one_align' depends on axioms: [propext]
+info: Main.lean:991:0: 'LeanFtml.toc_start_one_title' does not depend on any axioms
+info: Main.lean:992:0: 'LeanFtml.toc_end_one_wrap' does not depend on any axioms
+info: Main.lean:993:0: 'LeanFtml.an_name_exclusive' depends on axioms: [propext]
+info: Main.lean:994:0: 'LeanFtml.an_form_exclusive' depends on axioms: [propext]
+info: Main.lean:995:0: 'LeanFtml.an_href_exclusive' depends on axioms: [propext]
+info: Main.lean:996:0: 'LeanFtml.an_render_exclusive' depends on axioms: [propext]
+info: Main.lean:997:0: 'LeanFtml.toc_item_exclusive' depends on axioms: [propext]
+info: Main.lean:998:0: 'LeanFtml.nav_shapeOf_isSome' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:999:0: 'LeanFtml.nav_classOf_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1000:0: 'LeanFtml.nav_classOf_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1001:0: 'LeanFtml.nav_classOf_exclusive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1002:0: 'LeanFtml.nav_memClass_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1003:0: 'LeanFtml.nav_memClass_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1004:0: 'LeanFtml.hd_every_line' depends on axioms: [propext]
+info: Main.lean:1005:0: 'LeanFtml.toc_every_src' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1006:0: 'LeanFtml.an_every_name' depends on axioms: [propext]
+info: Main.lean:1007:0: 'LeanFtml.cov_hd_l1' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1008:0: 'LeanFtml.cov_hd_l2' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1009:0: 'LeanFtml.cov_hd_l3' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1010:0: 'LeanFtml.cov_hd_l4' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1011:0: 'LeanFtml.cov_hd_l5' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1012:0: 'LeanFtml.cov_hd_l6_notoc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1013:0: 'LeanFtml.cov_hd_miss_nospace' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1014:0: 'LeanFtml.cov_hd_seven' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1015:0: 'LeanFtml.cov_hd_toc0_id' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1016:0: 'LeanFtml.cov_hd_notoc_id' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1017:0: 'LeanFtml.cov_hd_notoc_counter' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1018:0: 'LeanFtml.cov_hd_toc_advances' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1019:0: 'LeanFtml.cov_toc_null' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1020:0: 'LeanFtml.cov_toc_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1021:0: 'LeanFtml.cov_toc_fleft' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1022:0: 'LeanFtml.cov_toc_fright' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1023:0: 'LeanFtml.cov_toc_miss' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1024:0: 'LeanFtml.cov_toc_skips_notoc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1025:0: 'LeanFtml.cov_toc_count_unrendered' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1026:0: 'LeanFtml.cov_toc_depth_level1' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1027:0: 'LeanFtml.cov_toc_sentinel_width' does not depend on any axioms
+info: Main.lean:1028:0: 'LeanFtml.cov_an_placeholder' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1029:0: 'LeanFtml.cov_an_blank' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1030:0: 'LeanFtml.cov_an_name_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1031:0: 'LeanFtml.cov_an_name_literal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1032:0: 'LeanFtml.cov_an_name_invalid' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1038:0: 'LeanFtml.tableAllClasses_nodup' does not depend on any axioms
+info: Main.lean:1039:0: 'LeanFtml.tableAllClasses_length' does not depend on any axioms
+info: Main.lean:1040:0: 'LeanFtml.tableAllClasses_mem' depends on axioms: [propext]
+info: Main.lean:1041:0: 'LeanFtml.table_classify_sound' depends on axioms: [propext]
+info: Main.lean:1042:0: 'LeanFtml.table_classify_nonempty' depends on axioms: [propext]
+info: Main.lean:1043:0: 'LeanFtml.table_witness_classify' depends on axioms: [propext]
+info: Main.lean:1044:0: 'LeanFtml.table_classes_exhaustive' depends on axioms: [propext]
+info: Main.lean:1045:0: 'LeanFtml.table_classification_complete' depends on axioms: [propext]
+info: Main.lean:1046:0: 'LeanFtml.tbl_attr_exclusive' depends on axioms: [propext]
+info: Main.lean:1047:0: 'LeanFtml.tbl_id_exclusive' depends on axioms: [propext]
+info: Main.lean:1048:0: 'LeanFtml.tbl_adv_out_exclusive' depends on axioms: [propext]
+info: Main.lean:1049:0: 'LeanFtml.tbl_marker_exclusive' depends on axioms: [propext]
+info: Main.lean:1050:0: 'LeanFtml.tbl_nest_exclusive' depends on axioms: [propext]
+info: Main.lean:1051:0: 'LeanFtml.tbl_scan_exclusive' depends on axioms: [propext]
+info: Main.lean:1052:0: 'LeanFtml.tbl_empty_row_discards_span' depends on axioms: [propext]
+info: Main.lean:1053:0: 'LeanFtml.tbl_no_row_dominates' depends on axioms: [propext]
+info: Main.lean:1054:0: 'LeanFtml.tbl_header_suppresses_align' depends on axioms: [propext]
+info: Main.lean:1055:0: 'LeanFtml.tbl_format_not_on_cell_end' depends on axioms: [propext]
+info: Main.lean:1056:0: 'LeanFtml.tbl_title_and_hidden_blocked' does not depend on any axioms
+info: Main.lean:1057:0: 'LeanFtml.tbl_plain_type_head' depends on axioms: [propext]
+info: Main.lean:1058:0: 'LeanFtml.tbl_adv_type_head' depends on axioms: [propext]
+info: Main.lean:1059:0: 'LeanFtml.tbl_marker_prefixes_distinct' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1060:0: 'LeanFtml.tbl_marker_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1061:0: 'LeanFtml.tbl_marker_plain' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1062:0: 'LeanFtml.tbl_key_shape' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1063:0: 'LeanFtml.tbl_safe_attr_facts' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1064:0: 'LeanFtml.tbl_rank_slots' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1065:0: 'LeanFtml.tbl_data_authored_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1066:0: 'LeanFtml.tbl_data_before_colspan' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1067:0: 'LeanFtml.tbl_parse_insert_sorts_data_names' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1068:0: 'LeanFtml.tbl_cov_cell_plain' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1069:0: 'LeanFtml.tbl_cov_cell_header' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1070:0: 'LeanFtml.tbl_isolate_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1071:0: 'LeanFtml.tbl_cov_apos_raw' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1072:0: 'LeanFtml.tbl_enum_frames_are_the_pin' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1073:0: 'LeanFtml.tbl_shapeOf_isSome' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1074:0: 'LeanFtml.tbl_render_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1075:0: 'LeanFtml.tbl_render_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1090:0: 'LeanFtml.serveAllClasses_nodup' does not depend on any axioms
+info: Main.lean:1091:0: 'LeanFtml.serveAllClasses_length' does not depend on any axioms
+info: Main.lean:1092:0: 'LeanFtml.bt_ok_nonempty' depends on axioms: [propext]
+info: Main.lean:1093:0: 'LeanFtml.serveAllClasses_mem' depends on axioms: [propext]
+info: Main.lean:1094:0: 'LeanFtml.serve_classify_sound' depends on axioms: [propext]
+info: Main.lean:1095:0: 'LeanFtml.serve_classify_nonempty' depends on axioms: [propext]
+info: Main.lean:1096:0: 'LeanFtml.serve_witness_classify' depends on axioms: [propext]
+info: Main.lean:1097:0: 'LeanFtml.serve_classes_exhaustive' depends on axioms: [propext]
+info: Main.lean:1098:0: 'LeanFtml.serve_classification_complete' depends on axioms: [propext]
+info: Main.lean:1099:0: 'LeanFtml.ga_size_exclusive' depends on axioms: [propext]
+info: Main.lean:1100:0: 'LeanFtml.ga_kind_exclusive' depends on axioms: [propext]
+info: Main.lean:1101:0: 'LeanFtml.ga_link_not_both' depends on axioms: [propext]
+info: Main.lean:1102:0: 'LeanFtml.bt_invalid_single' does not depend on any axioms
+info: Main.lean:1103:0: 'LeanFtml.bt_set_tags_empty_single' does not depend on any axioms
+info: Main.lean:1104:0: 'LeanFtml.bt_primary_mem' depends on axioms: [propext]
+info: Main.lean:1105:0: 'LeanFtml.us_single' does not depend on any axioms
+info: Main.lean:1106:0: 'LeanFtml.em_nomatch_single' does not depend on any axioms
+info: Main.lean:1107:0: 'LeanFtml.em_event_single' does not depend on any axioms
+info: Main.lean:1108:0: 'LeanFtml.em_src_javascript_single' does not depend on any axioms
+info: Main.lean:1109:0: 'LeanFtml.em_src_vbscript_single' does not depend on any axioms
+info: Main.lean:1110:0: 'LeanFtml.em_attr_javascript_single' does not depend on any axioms
+info: Main.lean:1111:0: 'LeanFtml.em_attr_vbscript_single' does not depend on any axioms
+info: Main.lean:1112:0: 'LeanFtml.em_pass_base' depends on axioms: [propext]
+info: Main.lean:1113:0: 'LeanFtml.serve_shapeOf_isSome' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1114:0: 'LeanFtml.mem_foldl_acc' depends on axioms: [propext]
+info: Main.lean:1115:0: 'LeanFtml.ga_row_not_flickr_of_any' depends on axioms: [propext]
+info: Main.lean:1116:0: 'LeanFtml.mem_box_realized' depends on axioms: [propext, Quot.sound]
+info: Main.lean:1117:0: 'LeanFtml.classes_realized_of_outcome' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1118:0: 'LeanFtml.gallery_classes_realized' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1119:0: 'LeanFtml.classesOfOutcome_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1120:0: 'LeanFtml.emClasses_nonempty' depends on axioms: [propext]
+info: Main.lean:1121:0: 'LeanFtml.btClasses_nonempty' depends on axioms: [propext]
+info: Main.lean:1122:0: 'LeanFtml.gallery_classOf_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1123:0: 'LeanFtml.user_classOf_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1124:0: 'LeanFtml.button_classOf_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1125:0: 'LeanFtml.embed_classOf_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1126:0: 'LeanFtml.isServe_of_bool' depends on axioms: [propext]
+info: Main.lean:1127:0: 'LeanFtml.serveClassOf_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1128:0: 'LeanFtml.serve_classOf_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1129:0: 'LeanFtml.serve_classOf_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1130:0: 'LeanFtml.serve_memClass_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1131:0: 'LeanFtml.serve_memClass_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1132:0: 'LeanFtml.gallery_falsy_is_page_miss' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1133:0: 'LeanFtml.explodeByte_nil_nonempty' does not depend on any axioms
+info: Main.lean:1134:0: 'LeanFtml.explodeByte_go_nonempty' depends on axioms: [propext]
+info: Main.lean:1135:0: 'LeanFtml.explodeByte_nonempty' depends on axioms: [propext]
+info: Main.lean:1136:0: 'LeanFtml.cov_gallery_page_miss' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1137:0: 'LeanFtml.cov_user_not_found' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1138:0: 'LeanFtml.cov_button_invalid' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Main.lean:1139:0: 'LeanFtml.button_allowlist_agrees' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (188 jobs).
+== hygiene: no sorry token in any Lean source outside comments
+OK  no sorry token in 110 Lean source files (comments and strings excluded)
+== hygiene: axiom audit (all 21 R4.8 theorems, via Main #print axioms)
+OK  axioms: no sorryAx in build
+OK  pipelineR48_length: none
+OK  pipelineR48_full: none
+OK  renderRuleOfName_roundtrip: none
+OK  module_known_marker: ['Classical.choice', 'Quot.sound', 'propext']
+OK  module_known_upper_marker: ['Classical.choice', 'Quot.sound', 'propext']
+OK  module_unknown_error: ['Classical.choice', 'Quot.sound', 'propext']
+OK  module_body_marker: ['Classical.choice', 'Quot.sound', 'propext']
+OK  math_error_block: ['Classical.choice', 'Quot.sound', 'propext']
+OK  user_not_found: ['Classical.choice', 'Quot.sound', 'propext']
+OK  user_boundary_excluded: ['Classical.choice', 'Quot.sound', 'propext']
+OK  user_boundary_incomplete: ['Classical.choice', 'Quot.sound', 'propext']
+OK  freelink_title_boundary: ['Classical.choice', 'Quot.sound', 'propext']
+OK  image_flickr_boundary: ['Classical.choice', 'Quot.sound', 'propext']
+OK  image_first_no_boundary: ['Classical.choice', 'Quot.sound', 'propext']
+OK  freelink_exists_anchor: ['Classical.choice', 'Quot.sound', 'propext']
+OK  freelink_new_anchor: ['Classical.choice', 'Quot.sound', 'propext']
+OK  freelink_title_missing_fallback: ['Classical.choice', 'Quot.sound', 'propext']
+OK  image_plain_local: ['Classical.choice', 'Quot.sound', 'propext']
+OK  image_first_empty: ['Classical.choice', 'Quot.sound', 'propext']
+OK  gallery_local_mode_block: ['Classical.choice', 'Quot.sound', 'propext']
+OK  gallery_one_local_row: ['Classical.choice', 'Quot.sound', 'propext']
+OK  all 21 R4.8 theorems within [propext, Classical.choice, Quot.sound]; no sorryAx
+== tier accounting: mirrored rules and embed allowlist
+OK  mirrored rules: 61
+OK  embed patterns: 75
+== corpus provenance: raw-id collision count and namespaced uniqueness
+OK  provenance: 12 batteries, 643 cases, 20 bare ids shared across batteries (recorded 20), all 643 assembled ids unique
+== gate 1: family gate (state mode)
+TOTAL 643
+PASS 566
+EXCLUDED 72
+FAIL 0
+FATAL-AGREE 5
+UNMIRRORED-TALLY {"Freelink:textFromTitle": 1, "User:DB_OzoneUserPeer": 71}
+OK  /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/coord-units/R7VERIFY/tree/conformance-r48/gate-state.txt: FAIL 0
+    counts(TOTAL/PASS/EXCLUDED/FAIL/FATAL-AGREE) 643/566/72/0/5
+OK  exclusion audit: 72 EXCLUDED, all causes named; 2 distinct names (see /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/coord-units/R7VERIFY/tree/conformance-r48/exclusion-audit-state.txt)
+== gate 1: family gate (e2e mode)
+TOTAL 643
+PASS 563
+EXCLUDED 75
+FAIL 0
+FATAL-AGREE 5
+UNMIRRORED-TALLY {"BatchTokenIdCounter": 3, "Freelink:textFromTitle": 1, "User:DB_OzoneUserPeer": 71}
+OK  /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/coord-units/R7VERIFY/tree/conformance-r48/gate-e2e.txt: FAIL 0
+    counts 643/563/75/0/5
+OK  exclusion audit: 75 EXCLUDED, all causes named; 3 distinct names (see /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/coord-units/R7VERIFY/tree/conformance-r48/exclusion-audit-e2e.txt)
+== gate 2: full pipeline, notes365 (state mode)
+TOTAL 365
+PASS 365
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+OK  /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/coord-units/R7VERIFY/tree/conformance-r48/gate-notes.txt: FAIL 0
+    counts (R4.7 baseline 365/364/1/0/0): 365/365/0/0/0
+== gate 2: full pipeline, notes365 (e2e mode)
+TOTAL 365
+PASS 365
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+OK  /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/coord-units/R7VERIFY/tree/conformance-r48/gate-notes-e2e.txt: FAIL 0
+    counts (R4.7 baseline 365/364/1/0/0): 365/365/0/0/0
+== gate 2: full pipeline, prose740 (state mode)
+TOTAL 740
+PASS 740
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+OK  /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/coord-units/R7VERIFY/tree/conformance-r48/gate-prose.txt: FAIL 0
+    counts (R4.7 baseline 740/671/69/0/0): 740/740/0/0/0
+== reported (non-gate): prose740 e2e, R4.7's four counter failures persist
+TOTAL 740
+PASS 735
+EXCLUDED 1
+FAIL 4
+FATAL-AGREE 0
+UNMIRRORED-TALLY {"BatchTokenIdCounter": 1}
+FAILURES ["x22-coll-in-tab", "x23-div-in-tab", "x25-tab-in-coll-in-div", "x29-footnote-in-tab"]
+    counts (R4.7 baseline 740/667/69/4/0): 740/735/1/4/0
+    remaining failures are the named tabview counter class
+== gate 3: regression R4.1 notes (state mode, R4.1 driver)
+TOTAL 365
+PASS 365
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+OK  /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/coord-units/R7VERIFY/tree/conformance-r48/gate-r41-state.txt: FAIL 0
+    counts (R4.7 adopted 365/364/1/0/0): 365/365/0/0/0
+== gate 3: regression R4.1 notes (e2e mode, R4.1 driver)
+TOTAL 365
+PASS 365
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+OK  /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/coord-units/R7VERIFY/tree/conformance-r48/gate-r41-e2e.txt: FAIL 0
+    counts (R4.7 adopted 365/364/1/0/0): 365/365/0/0/0
+== gate 3: regression R4.7 family (state mode, R4.7 driver)
+TOTAL 156
+PASS 147
+EXCLUDED 9
+FAIL 0
+FATAL-AGREE 0
+UNMIRRORED-TALLY {"Text_Highlighter:css": 4, "Text_Highlighter:java": 1, "Text_Highlighter:python": 4}
+OK  R4.7 family state: 156/147/9/0/0
+== close-out: token-free disposal verification
+OK  Include.php: no active addToken call
+OK  Prefilter.php: no active addToken call
+OK  Modulepre.php: no active addToken call
+OK  Iftags.php: no active addToken call
+OK  Concatlines.php: no active addToken call
+OK  Divprefilter.php: no active addToken call
+OK  Social.php: no active addToken call (its addToken is inside a /* ... */ block)
+OK  Tighten.php: no active addToken call
+OK  states-full.jsonl: 0 token-free-rule tokens
+OK  notes365-states-full.jsonl: 0 token-free-rule tokens
+OK  prose740-states-full.jsonl: 0 token-free-rule tokens
+OK  notes-prefix-states.jsonl: 0 token-free-rule tokens
+OK  family-states-full.jsonl: 0 token-free-rule tokens
+OK  Tighten: parse emits no token, but is mirrored as a render rule (renderRuleName .tighten in mirroredRenderRules)
+OK  disposal verified: 7 rules emit no tokens the dispatcher could receive; Tighten reconciled as mirrored
+== candidate audit: fresh family renders vs historical corrected records
+TOTAL DISAGREEMENTS 3
+GATES-DONE fail=0
+[lean-build] 571594 released status=0 01:53:10
+GATE_R48_WRAPPER_EXIT=0

@@ -1,0 +1,8 @@
+=== R7VERIFY pooled recheck 2026-11-23T01:53:28+09:00 ===
+SCRIPT: /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/coord-units/R7VERIFY/run_pooled_recheck_r7verify.py (R7VERIFY-local copy of conformance-refcorr6/run_pooled_recheck.py, ROOT repointed to R7VERIFY/tree, WRAPPER unchanged)
+lean driver rc 0 bytes 3400127 stderr 132
+pooled cases: 4205 (retained case list, no reassembly)
+PASS: 4204/4205 (including 5 parse-fatal agreements)
+MISMATCH: 1
+  a34: tokens
+POOLED_RECHECK_EXIT=0

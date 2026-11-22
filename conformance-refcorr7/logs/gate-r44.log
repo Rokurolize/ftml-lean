@@ -1,0 +1,37 @@
+=== R7VERIFY gate r44 2026-11-23T01:51:54+09:00 ===
+[lean-build] 571113 waiting for queue 01:51:54
+[lean-build] 571113 acquired 01:51:54
+["Footnote","Footnoteitem","Footnoteblock","Bibitem","Bibliography","Bibcite","Paragraph","Newline","Break","Center","Horiz","Separator","Clearfloat","Blockquote","Note","Divalign","Comment","Delimiter","Url","Email","Mathinline","Interwiki","Colortext","Strong","Emphasis","Underline","Strikethrough","Tt","Superscript","Subscript","Typography","Tighten","Raw","Rawold","Form","Heading","Toc","List","Deflist","Table","Tableadv","Equationreference","Anchor","Collapsible","Tabview","Button","Iframe","Date","File","Size","Span","Div","Code","Embed","Freelink","Module","Module654","Math","Image","Gallery","User"]
+TOTAL 215
+PASS 215
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+TOTAL 215
+PASS 215
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+TOTAL 365
+PASS 365
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+TOTAL 365
+PASS 365
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+TOTAL 740
+PASS 740
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+TOTAL 740
+PASS 735
+EXCLUDED 0
+FAIL 5
+FATAL-AGREE 0
+FAILURES ["ga-24", "x22-coll-in-tab", "x23-div-in-tab", "x25-tab-in-coll-in-div", "x29-footnote-in-tab"]
+[lean-build] 571113 released status=1 01:51:55
+GATE_R44_WRAPPER_EXIT=1

@@ -1,0 +1,60 @@
+=== R7VERIFY gate r43 2026-11-23T01:51:43+09:00 ===
+[lean-build] 570965 waiting for queue 01:51:43
+[lean-build] 570965 acquired 01:51:43
+== family-state
+TOTAL 1109
+PASS 1109
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+== family-e2e
+TOTAL 1109
+PASS 1109
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+== notes-full-state
+TOTAL 365
+PASS 365
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+== notes-full-e2e
+TOTAL 365
+PASS 365
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+== prose-full-state
+TOTAL 740
+PASS 740
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+== prose-full-e2e
+TOTAL 740
+PASS 735
+EXCLUDED 0
+FAIL 5
+FATAL-AGREE 0
+FAILURES ["ga-24", "x22-coll-in-tab", "x23-div-in-tab", "x25-tab-in-coll-in-div", "x29-footnote-in-tab"]
+== reg-r41-state
+TOTAL 365
+PASS 365
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+== reg-r41-e2e
+TOTAL 365
+PASS 365
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+== reg-r42-prefix
+TOTAL 740
+PASS 740
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+[lean-build] 570965 released status=0 01:51:43
+GATE_R43_WRAPPER_EXIT=0

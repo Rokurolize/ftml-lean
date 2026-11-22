@@ -1,0 +1,65 @@
+=== R7VERIFY gate r47 2026-11-23T01:52:53+09:00 ===
+[lean-build] 571412 waiting for queue 01:52:53
+[lean-build] 571412 acquired 01:52:53
+["Footnote","Footnoteitem","Footnoteblock","Bibitem","Bibliography","Bibcite","Paragraph","Newline","Break","Center","Horiz","Separator","Clearfloat","Blockquote","Note","Divalign","Comment","Delimiter","Url","Email","Mathinline","Interwiki","Colortext","Strong","Emphasis","Underline","Strikethrough","Tt","Superscript","Subscript","Typography","Tighten","Raw","Rawold","Form","Heading","Toc","List","Deflist","Table","Tableadv","Equationreference","Anchor","Collapsible","Tabview","Button","Iframe","Date","File","Size","Span","Div","Code","Embed","Freelink","Module","Module654","Math","Image","Gallery","User"]
+75
+TOTAL 156
+PASS 147
+EXCLUDED 9
+FAIL 0
+FATAL-AGREE 0
+UNMIRRORED-TALLY {"Text_Highlighter:css": 4, "Text_Highlighter:java": 1, "Text_Highlighter:python": 4}
+TOTAL 156
+PASS 147
+EXCLUDED 9
+FAIL 0
+FATAL-AGREE 0
+UNMIRRORED-TALLY {"Text_Highlighter:css": 4, "Text_Highlighter:java": 1, "Text_Highlighter:python": 4}
+TOTAL 365
+PASS 365
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+TOTAL 365
+PASS 365
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+TOTAL 740
+PASS 740
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+TOTAL 740
+PASS 735
+EXCLUDED 0
+FAIL 5
+FATAL-AGREE 0
+FAILURES ["ga-24", "x22-coll-in-tab", "x23-div-in-tab", "x25-tab-in-coll-in-div", "x29-footnote-in-tab"]
+TOTAL 365
+PASS 365
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+TOTAL 365
+PASS 365
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+TOTAL 215
+PASS 215
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+TOTAL 381
+PASS 381
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+TOTAL 862
+PASS 862
+EXCLUDED 0
+FAIL 0
+FATAL-AGREE 0
+[lean-build] 571412 released status=0 01:52:55
+GATE_R47_WRAPPER_EXIT=0
