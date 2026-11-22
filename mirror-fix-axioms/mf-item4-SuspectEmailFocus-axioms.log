@@ -1,0 +1,7 @@
+[lean-build] 423711 waiting for queue 20:08:53
+[lean-build] 423711 acquired 20:08:53
+'LeanFtml.SuspectSpec.confirmed_p18_p19_f01_f02_email_render' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.SuspectSpec.confirmed_p19_f01_email_bytewise_strrev' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+[lean-build] 423711 released status=0 20:09:01

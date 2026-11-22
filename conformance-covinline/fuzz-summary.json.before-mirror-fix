@@ -1,0 +1,536 @@
+{
+  "seed_runs": [
+    {
+      "seed": 20261122,
+      "cases": 292,
+      "failures": 8,
+      "class_mismatch": 0,
+      "uncomparable": 16,
+      "by_class": {
+        "urlLink": {
+          "n": 5,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "urlTarget": {
+          "n": 5,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "urlFootnote": {
+          "n": 5,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "urlHash": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "iwKnown": {
+          "n": 5,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "iwUnknown": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "emReversed": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "flUrl": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "flExists": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "flMissing": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "flNonbr": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "flTarget": {
+          "n": 8,
+          "fail": 8,
+          "uncomparable": 0,
+          "ids": [
+            "fl-target-0",
+            "fl-target-1",
+            "fl-target-2",
+            "fl-target-3",
+            "fl-target-4",
+            "fl-target-5",
+            "fl-target-6",
+            "fl-target-7"
+          ]
+        },
+        "flSite": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 8,
+          "ids": []
+        },
+        "imFirst": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "imFlickr": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 8,
+          "ids": []
+        },
+        "imUrlSource": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "imLocalResized": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "imLocalPlain": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "imLinked": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "imAlignFLeft": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "imAlignFRight": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "imAlignLeft": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "imAlignRight": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "imAlignCenter": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "spStartBare": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "spStartAttrs": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "spEnd": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "spFall": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "szStart": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "szEnd": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "szFall": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "ctHex": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "ctNamed": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "ctEmpty": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "ctEnd": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "ctFall": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "ctInvalidStart": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "ctInvalidOther": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        }
+      }
+    },
+    {
+      "seed": 7,
+      "cases": 292,
+      "failures": 8,
+      "class_mismatch": 0,
+      "uncomparable": 16,
+      "by_class": {
+        "urlLink": {
+          "n": 5,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "urlTarget": {
+          "n": 5,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "urlFootnote": {
+          "n": 5,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "urlHash": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "iwKnown": {
+          "n": 5,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "iwUnknown": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "emReversed": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "flUrl": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "flExists": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "flMissing": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "flNonbr": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "flTarget": {
+          "n": 8,
+          "fail": 8,
+          "uncomparable": 0,
+          "ids": [
+            "fl-target-0",
+            "fl-target-1",
+            "fl-target-2",
+            "fl-target-3",
+            "fl-target-4",
+            "fl-target-5",
+            "fl-target-6",
+            "fl-target-7"
+          ]
+        },
+        "flSite": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 8,
+          "ids": []
+        },
+        "imFirst": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "imFlickr": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 8,
+          "ids": []
+        },
+        "imUrlSource": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "imLocalResized": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "imLocalPlain": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "imLinked": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "imAlignFLeft": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "imAlignFRight": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "imAlignLeft": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "imAlignRight": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "imAlignCenter": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "spStartBare": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "spStartAttrs": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "spEnd": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "spFall": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "szStart": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "szEnd": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "szFall": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "ctHex": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "ctNamed": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "ctEmpty": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "ctEnd": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "ctFall": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "ctInvalidStart": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        },
+        "ctInvalidOther": {
+          "n": 8,
+          "fail": 0,
+          "uncomparable": 0,
+          "ids": []
+        }
+      }
+    }
+  ],
+  "classes": [
+    "urlLink",
+    "urlHash",
+    "urlTarget",
+    "urlFootnote",
+    "iwKnown",
+    "iwUnknown",
+    "emReversed",
+    "flUrl",
+    "flSite",
+    "flExists",
+    "flMissing",
+    "flNonbr",
+    "flTarget",
+    "imFirst",
+    "imFlickr",
+    "imUrlSource",
+    "imLocalResized",
+    "imLocalPlain",
+    "imLinked",
+    "imAlignFLeft",
+    "imAlignFRight",
+    "imAlignLeft",
+    "imAlignRight",
+    "imAlignCenter",
+    "spStartBare",
+    "spStartAttrs",
+    "spEnd",
+    "spFall",
+    "szStart",
+    "szEnd",
+    "szFall",
+    "ctHex",
+    "ctNamed",
+    "ctEmpty",
+    "ctEnd",
+    "ctFall",
+    "ctInvalidStart",
+    "ctInvalidOther"
+  ]
+}

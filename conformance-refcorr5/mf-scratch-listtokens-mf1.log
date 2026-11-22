@@ -1,0 +1,28 @@
+[lean-build] 416905 waiting for queue 19:53:02
+[lean-build] 416905 acquired 19:54:12
+WORK=[255, 51, 255, 255, 49, 255, 67, 97, 115, 101, 255, 48, 255, 255, 50, 255, 255, 52, 255, 255, 53, 255]
+TOK 0 rule=List type=some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'b', 'r', '_', 'n', 'o', '_', 'n',
+ 'l'] lead=none
+TOK 1 rule=List type=some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'i', 't', 'e', 'm', '_', 's', 't', 'a', 'r',
+ 't'] lead=some []
+TOK 2 rule=List type=some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'i', 't', 'e', 'm', '_', 'e', 'n',
+ 'd'] lead=some []
+TOK 3 rule=List type=some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'l', 'i', 's', 't', '_', 's', 't', 'a', 'r',
+ 't'] lead=none
+TOK 4 rule=List type=some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'l', 'i', 's', 't', '_', 'e', 'n',
+ 'd'] lead=none
+TOK 5 rule=Newline type=none lead=none
+TOK 6 rule=Typography type=none lead=none
+TOK 7 rule=Typography type=none lead=none
+TOK 8 rule=Typography type=none lead=none
+TOK 9 rule=Typography type=none lead=none
+TOK 10 rule=Typography type=none lead=none
+TOK 11 rule=Typography type=none lead=none
+TOK 12 rule=Typography type=none lead=none
+TOK 13 rule=Typography type=none lead=none
+TOK 14 rule=Typography type=none lead=none
+TOK 15 rule=Typography type=none lead=none
+TOK 16 rule=Typography type=none lead=none
+TOK 17 rule=Typography type=none lead=none
+TOK 18 rule=Typography type=none lead=none
+[lean-build] 416905 released status=0 19:54:13

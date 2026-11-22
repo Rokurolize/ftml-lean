@@ -1,0 +1,5 @@
+pooled cases: 4205 (retained case list, no reassembly)
+PASS: 4203/4205 (including 5 parse-fatal agreements)
+MISMATCH: 2
+  a34: tokens
+  lb07: segments,tokens

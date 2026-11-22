@@ -184,14 +184,17 @@ theorem confirmed_p32_x07_bq_nospace_deletion :
 
 /-- Live probes `muse-probe-agy-suspect-p19-email-utf8` and
     `muse-probe-agy-suspect-f01-email-ee`:
-    live performs bytewise `strrev` on the label (`C3 A9 C3 A9` -> `A9 [C3 A9] C3`,
-    serving `<span class="wiki-email">moc.b|a#é</span>`). Notice `renderEmail`
-    matches the bytewise reversal step before escaping/UTF-8 substitution. -/
+    live performs bytewise `strrev` on the label (`C3 A9 C3 A9` -> `A9 [C3 A9] C3`),
+    then REFCORR5 Batch 3's escape pass substitutes the invalid reversed
+    bytes with U+FFFD (`EF BF BD`), serving the escaped byte sequence below.
+    The theorem name and the bytewise-reversal claim stand; MIRROR-FIX
+    restates only the expected serving bytes where the statement depends
+    on them, matching `LiveSpec_email_render_escapes_and_substitutes`. -/
 theorem confirmed_p19_f01_email_bytewise_strrev :
     renderEmail [(['e','m','a','i','l'], OptVal.bytes [97,64,98,46,99,111,109]),
       (['t','e','x','t'], OptVal.bytes [0xC3, 0xA9, 0xC3, 0xA9])] =
     [60,115,112,97,110,32,99,108,97,115,115,61,34,119,105,107,105,45,101,109,97,105,108,34,62,
-     109,111,99,46,98,124,97,35,0xA9,0xC3,0xA9,0xC3,60,47,115,112,97,110,62] := rfl
+     109,111,99,46,98,124,97,35,0xEF,0xBF,0xBD,0xC3,0xA9,0xEF,0xBF,0xBD,60,47,115,112,97,110,62] := rfl
 
 /-- Live probes `muse-probe-agy-suspect-x04-email-bracket-label`,
     `muse-probe-agy-suspect-x03-email-url-label`, and
@@ -502,15 +505,18 @@ def LiveSpec_email_render_escapes_and_substitutes (fn : OptMap → List Nat) : P
     litBytes "<span class=\"wiki-email\">moc.b|a#" ++
       [0xEF, 0xBF, 0xBD, 0xC3, 0xA9, 0xEF, 0xBF, 0xBD] ++ litBytes "</span>"
 
-theorem diverges_p18_p19_f01_f02_email_render :
-    ¬ LiveSpec_email_render_escapes_and_substitutes renderEmail := by
-  intro ⟨h1, _, _⟩
-  have hbad :
-      renderEmail [("email".toList, OptVal.str "a@b.com".toList),
-        ("text".toList, OptVal.str ">i<".toList)] =
-      litBytes "<span class=\"wiki-email\">moc.b|a#<i></span>" := rfl
-  rw [hbad] at h1
-  exact absurd h1 (by decide)
+/-- REFCORR5 Batch 3 (C-SUSPECT-EMAIL-1/2) corrected renderEmail with
+    htmlSpecialCharsNoQuotesSubst, so this old divergence theorem is FALSE
+    against the current mirror. MIRROR-FIX flips it to a confirmation of the
+    same live rule under a confirmation name; the live rule's three
+    expected-byte positions are unchanged. -/
+theorem confirmed_p18_p19_f01_f02_email_render :
+    LiveSpec_email_render_escapes_and_substitutes renderEmail := by
+  constructor
+  · rfl
+  constructor
+  · rfl
+  · rfl
 
 /-- Live probe `muse-probe-agy-suspect-p27-raw-triple-open-only`:
     unclosed `A @@@hello B` remains literal on live; `rawRule` wrongly strips

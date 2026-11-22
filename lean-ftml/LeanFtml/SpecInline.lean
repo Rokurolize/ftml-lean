@@ -133,15 +133,20 @@ theorem spec_inline_interwiki_href_amp_raw :
       litBytes "a&amp;b</a>" := rfl
 
 set_option maxRecDepth 8192 in
-/-- Interwiki: an unknown site returns the token's label RAW. Live probe:
-    muse-probe-suspect-inline-iw-unknown-described (`[nosuch:page Label]`),
-    corroborated by the earlier R2-INLINE1 probe
-    muse-probe-r2in1-iw-p11-unknown-labeled. -/
+/-- Interwiki: an unknown site returns the token's label escaped with
+    ENT_COMPAT (REFCORR4 Batch C, CORRECTION-AGY-INTERWIKI-FALLBACK):
+    the earlier RAW expectation below was falsified by live probes
+    muse-probe-agy-suspect-p16-interwiki-unknown-html and
+    -f10-interwiki-unknown-apos, so MIRROR-FIX restates only its
+    expected bytes as a regression pin for the corrected fallback.
+    Live probe muse-probe-suspect-inline-iw-unknown-described
+    (`[nosuch:page Label]`) and the earlier R2-INLINE1 probe
+    muse-probe-r2in1-iw-p11-unknown-labeled remain the branch pins. -/
 theorem spec_inline_interwiki_unknown_raw :
     renderInterwiki [("site".toList, OptVal.str "nosuch".toList),
       ("page".toList, OptVal.str "page".toList),
       ("text".toList, OptVal.str "<b>&".toList)] =
-    litBytes "<b>&" := rfl
+    litBytes "&lt;b&gt;&amp;" := rfl
 
 /-- Colortext: an inadmissible spec restores the literal opener. Live probe:
     muse-probe-suspect-inline-color-invalid-semi (`##a;b|x##`). -/

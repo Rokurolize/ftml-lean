@@ -458,6 +458,15 @@ def main : IO Unit :=
 #print axioms LeanFtml.url_href_nonascii_percent
 #print axioms LeanFtml.url_footnote_wrap
 #print axioms LeanFtml.email_reversed
+-- MIRROR-FIX Item 4: the two REFCORR5 email restatements live in the
+-- deliberately unimported SpecEmail.lean and SuspectSpec.lean, so no
+-- executable #print axioms line for them belongs in this imported audit.
+-- Their confirmation names and isolated axiom audits ([propext,
+-- Classical.choice, Quot.sound] for each) are recorded here by reference:
+-- LeanFtml.spec_email_render_confirms_live_escaping and
+-- LeanFtml.SuspectSpec.confirmed_p18_p19_f01_f02_email_render, captured in
+-- mirror-fix-axioms/mf-item4-SpecEmail-axioms.log and
+-- mirror-fix-axioms/mf-item4-SuspectEmailFocus-axioms.log.
 #print axioms LeanFtml.mathinline_escapes
 #print axioms LeanFtml.mathinline_nul_space
 #print axioms LeanFtml.mathinline_amp_quote

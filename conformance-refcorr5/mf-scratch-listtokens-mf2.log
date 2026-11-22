@@ -1,0 +1,47 @@
+[lean-build] 419236 waiting for queue 19:57:51
+[lean-build] 419236 acquired 19:57:51
+=== take 43 work=[10, 255, 51, 255, 255, 49, 255, 67, 97, 115, 101, 10, 10, 10, 255, 48, 255, 255, 50, 255, 255, 52,
+ 255, 255, 53, 255]
+  0 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'b', 'r', '_', 'n', 'o', '_', 'n', 'l']
+  1 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'i', 't', 'e', 'm', '_', 's', 't', 'a', 'r', 't']
+  2 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'i', 't', 'e', 'm', '_', 'e', 'n', 'd']
+  3 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'l', 'i', 's', 't', '_', 's', 't', 'a', 'r', 't']
+  4 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'l', 'i', 's', 't', '_', 'e', 'n', 'd']
+  5 Newline none
+=== take 53 work=[10, 255, 51, 255, 255, 49, 255, 67, 97, 115, 101, 10, 10, 10, 255, 48, 255, 255, 50, 255, 255, 52,
+ 255, 255, 53, 255]
+  0 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'b', 'r', '_', 'n', 'o', '_', 'n', 'l']
+  1 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'i', 't', 'e', 'm', '_', 's', 't', 'a', 'r', 't']
+  2 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'i', 't', 'e', 'm', '_', 'e', 'n', 'd']
+  3 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'l', 'i', 's', 't', '_', 's', 't', 'a', 'r', 't']
+  4 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'l', 'i', 's', 't', '_', 'e', 'n', 'd']
+  5 Newline none
+=== take 54 work=[10, 255, 51, 255, 255, 49, 255, 67, 97, 115, 101, 10, 10, 10, 255, 48, 255, 255, 50, 255, 255, 52,
+ 255, 255, 53, 255]
+  0 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'b', 'r', '_', 'n', 'o', '_', 'n', 'l']
+  1 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'i', 't', 'e', 'm', '_', 's', 't', 'a', 'r', 't']
+  2 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'i', 't', 'e', 'm', '_', 'e', 'n', 'd']
+  3 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'l', 'i', 's', 't', '_', 's', 't', 'a', 'r', 't']
+  4 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'l', 'i', 's', 't', '_', 'e', 'n', 'd']
+  5 Newline none
+=== take 68 work=[255, 51, 255, 255, 49, 255, 67, 97, 115, 101, 255, 48, 255, 255, 50, 255, 255, 52, 255, 255, 53, 255]
+  0 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'b', 'r', '_', 'n', 'o', '_', 'n', 'l']
+  1 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'i', 't', 'e', 'm', '_', 's', 't', 'a', 'r', 't']
+  2 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'i', 't', 'e', 'm', '_', 'e', 'n', 'd']
+  3 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'l', 'i', 's', 't', '_', 's', 't', 'a', 'r', 't']
+  4 List some ['e', 'x', 'p', 'l', 'i', 'c', 'i', 't', '_', 'l', 'i', 's', 't', '_', 'e', 'n', 'd']
+  5 Newline none
+  6 Typography none
+  7 Typography none
+  8 Typography none
+  9 Typography none
+  10 Typography none
+  11 Typography none
+  12 Typography none
+  13 Typography none
+  14 Typography none
+  15 Typography none
+  16 Typography none
+  17 Typography none
+  18 Typography none
+[lean-build] 419236 released status=0 19:57:51

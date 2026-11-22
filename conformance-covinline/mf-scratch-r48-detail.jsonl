@@ -1,0 +1,643 @@
+{"id": "file-fi-01", "verdict": "PASS"}
+{"id": "file-fi-02", "verdict": "PASS"}
+{"id": "file-fi-03", "verdict": "PASS"}
+{"id": "file-fi-04", "verdict": "PASS"}
+{"id": "file-fi-05", "verdict": "PASS"}
+{"id": "file-fi-06", "verdict": "PASS"}
+{"id": "file-fi-07", "verdict": "PASS"}
+{"id": "file-fi-08", "verdict": "PASS"}
+{"id": "file-fi-09", "verdict": "PASS"}
+{"id": "file-fi-10", "verdict": "PASS"}
+{"id": "file-fi-11", "verdict": "PASS"}
+{"id": "file-fi-12", "verdict": "PASS"}
+{"id": "file-fi-13", "verdict": "PASS"}
+{"id": "file-fi-14", "verdict": "PASS"}
+{"id": "file-fi-15", "verdict": "PASS"}
+{"id": "file-fi-16", "verdict": "PASS"}
+{"id": "file-fi-17", "verdict": "PASS"}
+{"id": "file-fi-18", "verdict": "PASS"}
+{"id": "file-fi-19", "verdict": "PASS"}
+{"id": "file-fi-20", "verdict": "PASS"}
+{"id": "file-fi-21", "verdict": "PASS"}
+{"id": "file-fi-22", "verdict": "PASS"}
+{"id": "file-fi-23", "verdict": "PASS"}
+{"id": "file-fi-24", "verdict": "PASS"}
+{"id": "file-fi-25", "verdict": "PASS"}
+{"id": "file-fi-26", "verdict": "PASS"}
+{"id": "file-fi-27", "verdict": "PASS"}
+{"id": "file-fi-28", "verdict": "PASS"}
+{"id": "file-fi-29", "verdict": "PASS"}
+{"id": "file-fi-30", "verdict": "PASS"}
+{"id": "file-fi-31", "verdict": "PASS"}
+{"id": "file-fi-32", "verdict": "PASS"}
+{"id": "file-fi-33", "verdict": "PASS"}
+{"id": "file-fi-34", "verdict": "PASS"}
+{"id": "file-fi-35", "verdict": "PASS"}
+{"id": "file-fi-36", "verdict": "PASS"}
+{"id": "file-fi-37", "verdict": "PASS"}
+{"id": "file-fi-38", "verdict": "PASS"}
+{"id": "file-fi-39", "verdict": "PASS"}
+{"id": "file-fi-40", "verdict": "PASS"}
+{"id": "file-fi-41", "verdict": "PASS"}
+{"id": "file-fi-42", "verdict": "PASS"}
+{"id": "file-fi-43", "verdict": "PASS"}
+{"id": "file-fi-x01", "verdict": "PASS"}
+{"id": "file-fi-x02", "verdict": "PASS"}
+{"id": "file-fi-x03", "verdict": "PASS"}
+{"id": "file-fi-x04", "verdict": "PASS"}
+{"id": "file-fi-x05", "verdict": "PASS"}
+{"id": "file-fi-x06", "verdict": "PASS"}
+{"id": "file-fi-x07", "verdict": "PASS"}
+{"id": "file-fi-x08", "verdict": "PASS"}
+{"id": "file-fi-x09", "verdict": "PASS"}
+{"id": "file-fi-x10", "verdict": "PASS"}
+{"id": "file-fi-x11", "verdict": "PASS"}
+{"id": "file-fi-x12", "verdict": "PASS"}
+{"id": "file-fi-x13", "verdict": "PASS"}
+{"id": "file-fi-x14", "verdict": "PASS"}
+{"id": "file-fi-x15", "verdict": "PASS"}
+{"id": "file-fi-x16", "verdict": "PASS"}
+{"id": "file-fi-x17", "verdict": "PASS"}
+{"id": "file-fi-x18", "verdict": "PASS"}
+{"id": "file-fi-x19", "verdict": "PASS"}
+{"id": "file-fi-x20", "verdict": "PASS"}
+{"id": "file-p01", "verdict": "PASS"}
+{"id": "file-p02", "verdict": "PASS"}
+{"id": "file-p03", "verdict": "PASS"}
+{"id": "file-p04", "verdict": "PASS"}
+{"id": "file-p05", "verdict": "PASS"}
+{"id": "file-p06", "verdict": "PASS"}
+{"id": "file-p07", "verdict": "PASS"}
+{"id": "file-p08", "verdict": "PASS"}
+{"id": "file-p09", "verdict": "PASS"}
+{"id": "file-p10", "verdict": "PASS"}
+{"id": "file-p11", "verdict": "PASS"}
+{"id": "file-p12", "verdict": "PASS"}
+{"id": "file-p13", "verdict": "PASS"}
+{"id": "file-p14", "verdict": "PASS"}
+{"id": "file-p15", "verdict": "PASS"}
+{"id": "file-p16", "verdict": "PASS"}
+{"id": "file-p17", "verdict": "PASS"}
+{"id": "file-p18", "verdict": "PASS"}
+{"id": "file-p19", "verdict": "PASS"}
+{"id": "file-p20", "verdict": "PASS"}
+{"id": "filesupp-pf01", "verdict": "PASS"}
+{"id": "filesupp-pf02", "verdict": "PASS"}
+{"id": "filesupp-pf03", "verdict": "PASS"}
+{"id": "filesupp-pf04", "verdict": "PASS"}
+{"id": "filesupp-pf05", "verdict": "PASS"}
+{"id": "filesupp-pf06", "verdict": "PASS"}
+{"id": "freelink-adjacent-freelinks", "verdict": "PASS"}
+{"id": "freelink-anchor-alpha", "verdict": "PASS"}
+{"id": "freelink-anchor-colon", "verdict": "PASS"}
+{"id": "freelink-anchor-dash", "verdict": "PASS"}
+{"id": "freelink-anchor-digit", "verdict": "PASS"}
+{"id": "freelink-anchor-empty-first", "verdict": "PASS"}
+{"id": "freelink-anchor-label-only", "verdict": "PASS"}
+{"id": "freelink-anchor-label-only-space", "verdict": "PASS"}
+{"id": "freelink-anchor-underscore", "verdict": "PASS"}
+{"id": "freelink-case-mixed-exists", "verdict": "PASS"}
+{"id": "freelink-case-upper-exists", "verdict": "PASS"}
+{"id": "freelink-category", "verdict": "PASS"}
+{"id": "freelink-category-spaced", "verdict": "PASS"}
+{"id": "freelink-cross-site-colon", "verdict": "PASS"}
+{"id": "freelink-cross-site-colon-spaced", "verdict": "PASS"}
+{"id": "freelink-default-category", "verdict": "PASS"}
+{"id": "freelink-double-bracket", "verdict": "PASS"}
+{"id": "freelink-double-hash", "verdict": "PASS"}
+{"id": "freelink-double-open-triple-close", "verdict": "PASS"}
+{"id": "freelink-dup-pipes", "verdict": "PASS"}
+{"id": "freelink-dup-pipes-spaced", "verdict": "PASS"}
+{"id": "freelink-empty-label", "verdict": "PASS"}
+{"id": "freelink-empty-target", "verdict": "PASS"}
+{"id": "freelink-exist-target-anchor", "verdict": "PASS"}
+{"id": "freelink-exist-target-bare", "verdict": "PASS"}
+{"id": "freelink-exist-target-labeled", "verdict": "PASS"}
+{"id": "freelink-exist2-empty-label", "verdict": "EXCLUDED", "disposition": ["Freelink:textFromTitle"], "php_error": "Error: Call to undefined method DB_PagePeer::selectByPrimaryKey()", "unmirrored": ["Freelink:textFromTitle"], "missingKeys": []}
+{"id": "freelink-exist2-target-labeled", "verdict": "PASS"}
+{"id": "freelink-fossil-cross-site", "verdict": "PASS"}
+{"id": "freelink-fossil-cross-site-no-page", "verdict": "PASS"}
+{"id": "freelink-hash-route", "verdict": "PASS"}
+{"id": "freelink-inline-two", "verdict": "PASS"}
+{"id": "freelink-line-start", "verdict": "PASS"}
+{"id": "freelink-mid-line", "verdict": "PASS"}
+{"id": "freelink-multi-colon-empty", "verdict": "PASS"}
+{"id": "freelink-new-target-bare", "verdict": "PASS"}
+{"id": "freelink-new-target-empty-label", "verdict": "PASS"}
+{"id": "freelink-new-target-labeled", "verdict": "PASS"}
+{"id": "freelink-second-line", "verdict": "PASS"}
+{"id": "freelink-star-labeled", "verdict": "PASS"}
+{"id": "freelink-star-target", "verdict": "PASS"}
+{"id": "freelink-triple-closer-junk", "verdict": "PASS"}
+{"id": "freelink-triple-extra-close", "verdict": "PASS"}
+{"id": "freelink-triple-hash", "verdict": "PASS"}
+{"id": "freelink-triple-no-closer", "verdict": "PASS"}
+{"id": "freelink-triple-open-double-close", "verdict": "PASS"}
+{"id": "freelink-triple-quad", "verdict": "PASS"}
+{"id": "freelink-triple-quint", "verdict": "PASS"}
+{"id": "freelink-triple-short-closer", "verdict": "PASS"}
+{"id": "freelink-triple-space-opener", "verdict": "PASS"}
+{"id": "freelink-underscore-target", "verdict": "PASS"}
+{"id": "freelink-unicode-cjk", "verdict": "PASS"}
+{"id": "freelink-unicode-cyrillic", "verdict": "PASS"}
+{"id": "freelink-url-hash-route", "verdict": "PASS"}
+{"id": "freelink-url-leading-space", "verdict": "PASS"}
+{"id": "freelink-url-no-scheme", "verdict": "PASS"}
+{"id": "freelink-url-plain", "verdict": "PASS"}
+{"id": "freelink-url-subpath", "verdict": "PASS"}
+{"id": "freelink-url-trailing-space", "verdict": "PASS"}
+{"id": "freelink-whitespace-target", "verdict": "PASS"}
+{"id": "gallery-ga-01", "verdict": "PASS"}
+{"id": "gallery-ga-02", "verdict": "PASS"}
+{"id": "gallery-ga-03", "verdict": "PASS"}
+{"id": "gallery-ga-04", "verdict": "PASS"}
+{"id": "gallery-ga-05", "verdict": "PASS"}
+{"id": "gallery-ga-06", "verdict": "PASS"}
+{"id": "gallery-ga-07", "verdict": "PASS"}
+{"id": "gallery-ga-08", "verdict": "PASS"}
+{"id": "gallery-ga-09", "verdict": "PASS"}
+{"id": "gallery-ga-10", "verdict": "PASS"}
+{"id": "gallery-ga-11", "verdict": "PASS"}
+{"id": "gallery-ga-12", "verdict": "PASS"}
+{"id": "gallery-ga-13", "verdict": "PASS"}
+{"id": "gallery-ga-14", "verdict": "PASS"}
+{"id": "gallery-ga-15", "verdict": "PASS"}
+{"id": "gallery-ga-16", "verdict": "PASS"}
+{"id": "gallery-ga-17", "verdict": "PASS"}
+{"id": "gallery-ga-18", "verdict": "PASS"}
+{"id": "gallery-ga-19", "verdict": "PASS"}
+{"id": "gallery-ga-20", "verdict": "PASS"}
+{"id": "gallery-ga-21", "verdict": "PASS"}
+{"id": "gallery-ga-22", "verdict": "PASS"}
+{"id": "gallery-ga-23", "verdict": "PASS"}
+{"id": "gallery-ga-24", "verdict": "EXCLUDED", "unmirrored": ["BatchTokenIdCounter"], "missingKeys": [], "counter_note": "PHP batch token-id placeholder vs Lean case-local token id", "expected": "b'<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//\\xff6002\\xffx\\xff6003\\xff\" ><img src=\"/local--resized-images//\\xff6002\\xffx\\xff6003\\xff/thumbnail.jpg\" alt=\"\"/></a></td></tr></table></div></div>'", "got": "b'<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//\\xff0\\xffx\\xff1\\xff\" ><img src=\"/local--resized-images//\\xff0\\xffx\\xff1\\xff/thumbnail.jpg\" alt=\"\"/></a></td></tr></table></div></div>'"}
+{"id": "gallery-ga-25", "verdict": "PASS"}
+{"id": "gallery-ga-26", "verdict": "PASS"}
+{"id": "gallery-ga-27", "verdict": "PASS"}
+{"id": "gallery-ga-28", "verdict": "PASS"}
+{"id": "gallery-ga-29", "verdict": "PASS"}
+{"id": "gallery-ga-30", "verdict": "PASS"}
+{"id": "gallery-ga-31", "verdict": "PASS"}
+{"id": "gallery-ga-32", "verdict": "PASS"}
+{"id": "gallery-ga-33", "verdict": "PASS"}
+{"id": "gallery-ga-34", "verdict": "PASS"}
+{"id": "gallery-ga-35", "verdict": "PASS"}
+{"id": "gallery-ga-36", "verdict": "PASS"}
+{"id": "gallery-ga-37", "verdict": "PASS"}
+{"id": "gallery-ga-38", "verdict": "PASS"}
+{"id": "gallery-ga-39", "verdict": "PASS"}
+{"id": "gallery-ga-40", "verdict": "PASS"}
+{"id": "gallery-ga-41", "verdict": "PASS"}
+{"id": "gallery-ga-42", "verdict": "PASS"}
+{"id": "gallery-ga-43", "verdict": "PASS"}
+{"id": "gallery-ga-44", "verdict": "PASS"}
+{"id": "gallery-ga-x01", "verdict": "PASS"}
+{"id": "gallery-ga-x02", "verdict": "PASS"}
+{"id": "gallery-ga-x03", "verdict": "PASS"}
+{"id": "gallery-ga-x04", "verdict": "PASS"}
+{"id": "gallery-ga-x05", "verdict": "PASS"}
+{"id": "gallery-ga-x06", "verdict": "PASS"}
+{"id": "gallery-ga-x07", "verdict": "PASS"}
+{"id": "gallery-ga-x08", "verdict": "PASS"}
+{"id": "gallery-ga-x09", "verdict": "PASS"}
+{"id": "gallery-ga-x10", "verdict": "PASS"}
+{"id": "gallery-ga-x11", "verdict": "PASS"}
+{"id": "gallery-ga-x12", "verdict": "PASS"}
+{"id": "gallery-ga-x13", "verdict": "PASS"}
+{"id": "gallery-ga-x14", "verdict": "PASS"}
+{"id": "gallery-ga-x15", "verdict": "PASS"}
+{"id": "gallery-ga-x16", "verdict": "PASS"}
+{"id": "gallery-ga-x17", "verdict": "PASS"}
+{"id": "gallery-ga-x18", "verdict": "PASS"}
+{"id": "gallery-ga-x19", "verdict": "PASS"}
+{"id": "gallery-ga-x20", "verdict": "PASS"}
+{"id": "gallery-p01", "verdict": "PASS"}
+{"id": "gallery-p02", "verdict": "PASS"}
+{"id": "gallery-p03", "verdict": "PASS"}
+{"id": "gallery-p04", "verdict": "PASS"}
+{"id": "gallery-p05", "verdict": "PASS"}
+{"id": "gallery-p06", "verdict": "PASS"}
+{"id": "gallery-p07", "verdict": "PASS"}
+{"id": "gallery-p08", "verdict": "PASS"}
+{"id": "gallery-p09", "verdict": "PASS"}
+{"id": "gallery-p10", "verdict": "PASS"}
+{"id": "gallery-p11", "verdict": "PASS"}
+{"id": "gallery-p12", "verdict": "PASS"}
+{"id": "gallery-p13", "verdict": "PASS"}
+{"id": "gallery-p14", "verdict": "PASS"}
+{"id": "gallery-p15", "verdict": "PASS"}
+{"id": "gallery-p16", "verdict": "PASS"}
+{"id": "gallery-p17", "verdict": "PASS"}
+{"id": "gallery-p18", "verdict": "PASS"}
+{"id": "gallery-p19", "verdict": "PASS"}
+{"id": "gallery-p20", "verdict": "PASS"}
+{"id": "gallery-p21", "verdict": "PASS"}
+{"id": "gallery-p22", "verdict": "PASS"}
+{"id": "gallery-p23", "verdict": "PASS"}
+{"id": "gallery-p24", "verdict": "PASS"}
+{"id": "gallerysupp-pg01", "verdict": "PASS"}
+{"id": "gallerysupp-pg02", "verdict": "PASS"}
+{"id": "gallerysupp-pg03", "verdict": "PASS"}
+{"id": "gallerysupp-pg04", "verdict": "PASS"}
+{"id": "image-i37-01-plain", "verdict": "PASS"}
+{"id": "image-i37-02-align-center", "verdict": "PASS"}
+{"id": "image-i37-03-align-left", "verdict": "PASS"}
+{"id": "image-i37-04-align-right", "verdict": "PASS"}
+{"id": "image-i37-05-float-left", "verdict": "PASS"}
+{"id": "image-i37-06-float-center", "verdict": "PASS"}
+{"id": "image-i37-07-float-right", "verdict": "PASS"}
+{"id": "image-i37-08-uppercase-name", "verdict": "PASS"}
+{"id": "image-i37-09-titlecase-name", "verdict": "PASS"}
+{"id": "image-i37-10-uppercase-align", "verdict": "PASS"}
+{"id": "image-i37-11-external-https", "verdict": "PASS"}
+{"id": "image-i37-12-external-http-alt-suffix", "verdict": "PASS"}
+{"id": "image-i37-13-external-fragment", "verdict": "PASS"}
+{"id": "image-i37-14-external-trailing-slash", "verdict": "PASS"}
+{"id": "image-i37-15-local-png", "verdict": "PASS"}
+{"id": "image-i37-16-local-jpg-nosize", "verdict": "PASS"}
+{"id": "image-i37-17-local-webp-resized", "verdict": "PASS"}
+{"id": "image-i37-18-local-noext-resized", "verdict": "PASS"}
+{"id": "image-i37-19-page-qualified-png", "verdict": "PASS"}
+{"id": "image-i37-20-page-qualified-jpeg", "verdict": "PASS"}
+{"id": "image-i37-21-absolute-path", "verdict": "PASS"}
+{"id": "image-i37-22-absolute-page-path", "verdict": "PASS"}
+{"id": "image-i37-23-double-leading-slash", "verdict": "PASS"}
+{"id": "image-i37-24-multi-segment-path", "verdict": "PASS"}
+{"id": "image-i37-25-nonascii-filename", "verdict": "PASS"}
+{"id": "image-i37-26-comment-in-filename", "verdict": "PASS"}
+{"id": "image-i37-27-comment-gap", "verdict": "PASS"}
+{"id": "image-i37-28-quoted-url-source", "verdict": "PASS"}
+{"id": "image-i37-29-data-source", "verdict": "PASS"}
+{"id": "image-i37-30-mailto-source", "verdict": "PASS"}
+{"id": "image-i37-31-attr-class-style-title-alt", "verdict": "PASS"}
+{"id": "image-i37-32-attr-width-px", "verdict": "PASS"}
+{"id": "image-i37-33-attr-width-bare", "verdict": "PASS"}
+{"id": "image-i37-34-attr-width-percent", "verdict": "PASS"}
+{"id": "image-i37-35-attr-width-unquoted", "verdict": "PASS"}
+{"id": "image-i37-36-attr-width-empty", "verdict": "PASS"}
+{"id": "image-i37-37-attr-height", "verdict": "PASS"}
+{"id": "image-i37-38-attr-size-small", "verdict": "PASS"}
+{"id": "image-i37-39-attr-size-bogus", "verdict": "PASS"}
+{"id": "image-i37-40-attr-size-unquoted", "verdict": "PASS"}
+{"id": "image-i37-41-attr-unknown-key", "verdict": "PASS"}
+{"id": "image-i37-42-attr-key-case", "verdict": "PASS"}
+{"id": "image-i37-43-attr-single-quotes", "verdict": "PASS"}
+{"id": "image-i37-44-link-fragment", "verdict": "PASS"}
+{"id": "image-i37-45-link-page", "verdict": "PASS"}
+{"id": "image-i37-46-link-external", "verdict": "PASS"}
+{"id": "image-i37-47-link-leading-space-literal", "verdict": "PASS"}
+{"id": "image-i37-48-link-star", "verdict": "PASS"}
+{"id": "image-i37-49-link-star-space-literal", "verdict": "PASS"}
+{"id": "image-i37-50-link-star-page", "verdict": "PASS"}
+{"id": "image-i37-51-link-explicit-overrides", "verdict": "PASS"}
+{"id": "image-i37-52-caption-body", "verdict": "PASS"}
+{"id": "image-i37-53-caption-with-align", "verdict": "PASS"}
+{"id": "image-i37-54-empty-name", "verdict": "PASS"}
+{"id": "image-i37-55-empty-head-space", "verdict": "PASS"}
+{"id": "image-i37-56-unclosed", "verdict": "PASS"}
+{"id": "image-i37-57-double-equals", "verdict": "PASS"}
+{"id": "image-i37-58-double-float", "verdict": "PASS"}
+{"id": "image-i37-59-star-flag", "verdict": "PASS"}
+{"id": "image-i37-60-space-after-marker", "verdict": "PASS"}
+{"id": "image-i37-61-inline-in-text", "verdict": "PASS"}
+{"id": "image-i37-62-blank-line-after", "verdict": "PASS"}
+{"id": "image-i37-63-two-images-one-line", "verdict": "PASS"}
+{"id": "image-i37-64-image-then-paragraph", "verdict": "PASS"}
+{"id": "image-i37-65-paragraph-then-image", "verdict": "PASS"}
+{"id": "image-i37-66-source-typography", "verdict": "PASS"}
+{"id": "image-i37-67-raw-head-literal", "verdict": "PASS"}
+{"id": "image-i37-68-size-lookalike-in-alt", "verdict": "PASS"}
+{"id": "linkx-x-concat-code-after-close", "verdict": "PASS"}
+{"id": "linkx-x-concat-code-before-open", "verdict": "PASS"}
+{"id": "linkx-x-concat-code-inside", "verdict": "PASS"}
+{"id": "linkx-x-concat-code-outside", "verdict": "PASS"}
+{"id": "linkx-x-concat-comment-after", "verdict": "PASS"}
+{"id": "linkx-x-concat-comment-before", "verdict": "PASS"}
+{"id": "linkx-x-concat-comment-inside", "verdict": "PASS"}
+{"id": "linkx-x-concat-eref-join", "verdict": "PASS"}
+{"id": "linkx-x-concat-freelink-join", "verdict": "PASS"}
+{"id": "linkx-x-concat-math-inside", "verdict": "PASS"}
+{"id": "linkx-x-concat-raw-before-open", "verdict": "PASS"}
+{"id": "linkx-x-concat-raw-inside", "verdict": "PASS"}
+{"id": "linkx-x-concat-rawold-inside", "verdict": "PASS"}
+{"id": "linkx-x-eref-backward", "verdict": "PASS"}
+{"id": "linkx-x-eref-duplicate", "verdict": "PASS"}
+{"id": "linkx-x-eref-duplicate-forward", "verdict": "PASS"}
+{"id": "linkx-x-eref-forward", "verdict": "PASS"}
+{"id": "linkx-x-eref-in-suppressed-body", "verdict": "PASS"}
+{"id": "linkx-x-eref-inside-code", "verdict": "PASS"}
+{"id": "linkx-x-eref-inside-comment", "verdict": "PASS"}
+{"id": "linkx-x-eref-inside-raw", "verdict": "PASS"}
+{"id": "linkx-x-eref-kept-math", "verdict": "PASS"}
+{"id": "linkx-x-eref-nested-freelink", "verdict": "PASS"}
+{"id": "linkx-x-eref-suppressed-math", "verdict": "PASS"}
+{"id": "linkx-x-eref-two-labels", "verdict": "PASS"}
+{"id": "linkx-x-eref-undefined", "verdict": "PASS"}
+{"id": "linkx-x-free-iftags-drop", "verdict": "PASS"}
+{"id": "linkx-x-free-iftags-drop-new", "verdict": "PASS"}
+{"id": "linkx-x-free-iftags-keep", "verdict": "PASS"}
+{"id": "linkx-x-free-iftags-keep-new", "verdict": "PASS"}
+{"id": "linkx-x-free-inside-code", "verdict": "PASS"}
+{"id": "linkx-x-free-inside-comment", "verdict": "PASS"}
+{"id": "linkx-x-free-inside-raw", "verdict": "PASS"}
+{"id": "linkx-x-free-math-body", "verdict": "PASS"}
+{"id": "linkx-x-free-math-label", "verdict": "PASS"}
+{"id": "linkx-x-free-next-to-math", "verdict": "PASS"}
+{"id": "math-adjacent-two-blocks", "verdict": "PASS"}
+{"id": "math-after-comment", "verdict": "PASS"}
+{"id": "math-after-date", "verdict": "PASS"}
+{"id": "math-attr-hyphen-key", "verdict": "PASS"}
+{"id": "math-attr-label-and-type", "verdict": "PASS"}
+{"id": "math-attr-quoted-close-bracket", "verdict": "PASS"}
+{"id": "math-attr-underscore-key", "verdict": "PASS"}
+{"id": "math-attr-unknown", "verdict": "PASS"}
+{"id": "math-basic", "verdict": "PASS"}
+{"id": "math-body-empty", "verdict": "PASS"}
+{"id": "math-body-leading-blank", "verdict": "PASS"}
+{"id": "math-body-multiline", "verdict": "PASS"}
+{"id": "math-body-spaces", "verdict": "PASS"}
+{"id": "math-body-trailing-blank", "verdict": "PASS"}
+{"id": "math-body-whitespace-only", "verdict": "PASS"}
+{"id": "math-closer-blankline-tail", "verdict": "PASS"}
+{"id": "math-closer-case-upper", "verdict": "PASS"}
+{"id": "math-closer-eof-no-nl", "verdict": "PASS"}
+{"id": "math-closer-inline", "verdict": "PASS"}
+{"id": "math-closer-tail-text", "verdict": "PASS"}
+{"id": "math-closer-trailing-spaces", "verdict": "PASS"}
+{"id": "math-closer-trailing-tab", "verdict": "PASS"}
+{"id": "math-comment-in-body", "verdict": "PASS"}
+{"id": "math-eref-after", "verdict": "PASS"}
+{"id": "math-eref-before", "verdict": "PASS"}
+{"id": "math-in-blockquote", "verdict": "PASS"}
+{"id": "math-in-collapsible", "verdict": "PASS"}
+{"id": "math-in-div", "verdict": "PASS"}
+{"id": "math-in-iftags", "verdict": "PASS"}
+{"id": "math-include-brace", "verdict": "FATAL-AGREE"}
+{"id": "math-include-in-label-block", "verdict": "FATAL-AGREE"}
+{"id": "math-include-in-word", "verdict": "FATAL-AGREE"}
+{"id": "math-include-space", "verdict": "PASS"}
+{"id": "math-include-uppercase", "verdict": "FATAL-AGREE"}
+{"id": "math-input-brace", "verdict": "FATAL-AGREE"}
+{"id": "math-input-space", "verdict": "PASS"}
+{"id": "math-label-digits", "verdict": "PASS"}
+{"id": "math-label-dot", "verdict": "PASS"}
+{"id": "math-label-empty-spaces", "verdict": "PASS"}
+{"id": "math-label-equals", "verdict": "PASS"}
+{"id": "math-label-hyphen", "verdict": "PASS"}
+{"id": "math-label-mixed-case", "verdict": "PASS"}
+{"id": "math-label-nonascii", "verdict": "PASS"}
+{"id": "math-label-quoted", "verdict": "PASS"}
+{"id": "math-label-title", "verdict": "PASS"}
+{"id": "math-label-two-words", "verdict": "PASS"}
+{"id": "math-label-underscore", "verdict": "PASS"}
+{"id": "math-label-upper", "verdict": "PASS"}
+{"id": "math-mathinline-after", "verdict": "PASS"}
+{"id": "math-nested-labels", "verdict": "PASS"}
+{"id": "math-nested-outer-tail", "verdict": "PASS"}
+{"id": "math-nested-two", "verdict": "PASS"}
+{"id": "math-opener-after-text", "verdict": "PASS"}
+{"id": "math-opener-blank-line-before", "verdict": "PASS"}
+{"id": "math-opener-crlf", "verdict": "PASS"}
+{"id": "math-opener-leading-space", "verdict": "PASS"}
+{"id": "math-opener-leading-tab", "verdict": "PASS"}
+{"id": "math-opener-midline", "verdict": "PASS"}
+{"id": "math-opener-no-label", "verdict": "PASS"}
+{"id": "math-opener-no-space", "verdict": "PASS"}
+{"id": "math-opener-spaces-before-nl", "verdict": "PASS"}
+{"id": "math-opener-tab-before-nl", "verdict": "PASS"}
+{"id": "math-opener-trailing-space", "verdict": "PASS"}
+{"id": "math-stray-closer", "verdict": "PASS"}
+{"id": "math-type-align", "verdict": "PASS"}
+{"id": "math-type-empty", "verdict": "PASS"}
+{"id": "math-type-eqnarray", "verdict": "PASS"}
+{"id": "math-type-equation", "verdict": "PASS"}
+{"id": "math-type-gather", "verdict": "PASS"}
+{"id": "math-type-not-last", "verdict": "PASS"}
+{"id": "math-type-single-quote", "verdict": "PASS"}
+{"id": "math-type-spaces-eq", "verdict": "PASS"}
+{"id": "math-type-unquoted", "verdict": "PASS"}
+{"id": "math-type-uppercase", "verdict": "PASS"}
+{"id": "math-unterminated", "verdict": "PASS"}
+{"id": "math-unterminated-outer", "verdict": "PASS"}
+{"id": "module-mod-adjacent-module654", "verdict": "PASS"}
+{"id": "module-mod-attr-empty", "verdict": "PASS"}
+{"id": "module-mod-attr-extra-spaces", "verdict": "PASS"}
+{"id": "module-mod-attr-multiple", "verdict": "PASS"}
+{"id": "module-mod-attr-on-unknown", "verdict": "PASS"}
+{"id": "module-mod-attr-quoted", "verdict": "PASS"}
+{"id": "module-mod-attr-unquoted", "verdict": "PASS"}
+{"id": "module-mod-basic", "verdict": "PASS"}
+{"id": "module-mod-blank-lines", "verdict": "PASS"}
+{"id": "module-mod-body-empty", "verdict": "PASS"}
+{"id": "module-mod-body-inline-unknown", "verdict": "PASS"}
+{"id": "module-mod-body-present", "verdict": "PASS"}
+{"id": "module-mod-body-same-line", "verdict": "PASS"}
+{"id": "module-mod-body-unknown-newline", "verdict": "PASS"}
+{"id": "module-mod-closer-case", "verdict": "PASS"}
+{"id": "module-mod-closer-leading-space", "verdict": "PASS"}
+{"id": "module-mod-crlf", "verdict": "PASS"}
+{"id": "module-mod-invalid-head-quoted", "verdict": "PASS"}
+{"id": "module-mod-known-mixed", "verdict": "PASS"}
+{"id": "module-mod-known-uppercase", "verdict": "PASS"}
+{"id": "module-mod-leading-space", "verdict": "PASS"}
+{"id": "module-mod-lone-cr", "verdict": "PASS"}
+{"id": "module-mod-midline", "verdict": "PASS"}
+{"id": "module-mod-module-opener-module654-closer", "verdict": "PASS"}
+{"id": "module-mod-module654-basic", "verdict": "PASS"}
+{"id": "module-mod-module654-module-closer", "verdict": "PASS"}
+{"id": "module-mod-module654-unknown", "verdict": "PASS"}
+{"id": "module-mod-name-empty-nospace", "verdict": "PASS"}
+{"id": "module-mod-name-empty-space", "verdict": "PASS"}
+{"id": "module-mod-name-hyphen", "verdict": "PASS"}
+{"id": "module-mod-name-inner-slash", "verdict": "PASS"}
+{"id": "module-mod-name-leading-digit", "verdict": "PASS"}
+{"id": "module-mod-name-leading-hyphen", "verdict": "PASS"}
+{"id": "module-mod-name-leading-underscore", "verdict": "PASS"}
+{"id": "module-mod-name-slash", "verdict": "PASS"}
+{"id": "module-mod-name-underscore", "verdict": "PASS"}
+{"id": "module-mod-name-uppercase-unknown", "verdict": "PASS"}
+{"id": "module-mod-nested-two-openers", "verdict": "EXCLUDED", "unmirrored": ["BatchTokenIdCounter"], "missingKeys": [], "counter_note": "PHP batch token-id placeholder vs Lean case-local token id", "expected": "b'\\xc3\\xbemodule \"css\" +module_body%3D%22%25FF2086%25FF%22 \\xc3\\xbe'", "got": "b'\\xc3\\xbemodule \"css\" +module_body%3D%22%25FF0%25FF%22 \\xc3\\xbe'"}
+{"id": "module-mod-nested-unknown-in-body", "verdict": "PASS"}
+{"id": "module-mod-no-newline", "verdict": "PASS"}
+{"id": "module-mod-opener-MODULE", "verdict": "PASS"}
+{"id": "module-mod-opener-mixed", "verdict": "PASS"}
+{"id": "module-mod-spaces-then-newline", "verdict": "PASS"}
+{"id": "module-mod-stray-closer", "verdict": "PASS"}
+{"id": "module-mod-tab-after-opener", "verdict": "PASS"}
+{"id": "module-mod-two-adjacent", "verdict": "PASS"}
+{"id": "module-mod-two-adjacent-body", "verdict": "PASS"}
+{"id": "module-mod-unknown", "verdict": "PASS"}
+{"id": "module-mod-unknown-mixed", "verdict": "PASS"}
+{"id": "module-mod-unknown-stray-close", "verdict": "PASS"}
+{"id": "module-mod-unknown-tail", "verdict": "PASS"}
+{"id": "module-mod-unterminated", "verdict": "PASS"}
+{"id": "module654-control-module-basic", "verdict": "PASS"}
+{"id": "module654-control-plain", "verdict": "PASS"}
+{"id": "module654-m654-adjacent-module", "verdict": "PASS"}
+{"id": "module654-m654-after-blank", "verdict": "PASS"}
+{"id": "module654-m654-attr-bare", "verdict": "PASS"}
+{"id": "module654-m654-attr-empty", "verdict": "PASS"}
+{"id": "module654-m654-attr-multi-space", "verdict": "PASS"}
+{"id": "module654-m654-attr-one", "verdict": "PASS"}
+{"id": "module654-m654-attr-quoted-space", "verdict": "PASS"}
+{"id": "module654-m654-attr-tab", "verdict": "PASS"}
+{"id": "module654-m654-attr-two", "verdict": "PASS"}
+{"id": "module654-m654-body-absent", "verdict": "PASS"}
+{"id": "module654-m654-body-absent-newline", "verdict": "PASS"}
+{"id": "module654-m654-body-empty", "verdict": "PASS"}
+{"id": "module654-m654-body-inline", "verdict": "PASS"}
+{"id": "module654-m654-body-inline-empty", "verdict": "PASS"}
+{"id": "module654-m654-body-present", "verdict": "PASS"}
+{"id": "module654-m654-case-closer-mixed", "verdict": "PASS"}
+{"id": "module654-m654-case-closer-upper", "verdict": "PASS"}
+{"id": "module654-m654-case-opener-mixed", "verdict": "PASS"}
+{"id": "module654-m654-case-opener-upper", "verdict": "PASS"}
+{"id": "module654-m654-closer-654", "verdict": "PASS"}
+{"id": "module654-m654-closer-module", "verdict": "PASS"}
+{"id": "module654-m654-double-closer", "verdict": "PASS"}
+{"id": "module654-m654-leading-space", "verdict": "PASS"}
+{"id": "module654-m654-midline", "verdict": "PASS"}
+{"id": "module654-m654-module-closer-654", "verdict": "PASS"}
+{"id": "module654-m654-module-then-654", "verdict": "PASS"}
+{"id": "module654-m654-name-basic", "verdict": "PASS"}
+{"id": "module654-m654-name-digits-only", "verdict": "PASS"}
+{"id": "module654-m654-name-dot", "verdict": "PASS"}
+{"id": "module654-m654-name-empty", "verdict": "PASS"}
+{"id": "module654-m654-name-hyphen", "verdict": "PASS"}
+{"id": "module654-m654-name-leading-digit", "verdict": "PASS"}
+{"id": "module654-m654-name-leading-hyphen", "verdict": "PASS"}
+{"id": "module654-m654-name-leading-underscore", "verdict": "PASS"}
+{"id": "module654-m654-name-mixed", "verdict": "PASS"}
+{"id": "module654-m654-name-no-space", "verdict": "PASS"}
+{"id": "module654-m654-name-slash", "verdict": "PASS"}
+{"id": "module654-m654-name-underscore", "verdict": "PASS"}
+{"id": "module654-m654-name-unicode", "verdict": "PASS"}
+{"id": "module654-m654-name-uppercase", "verdict": "PASS"}
+{"id": "module654-m654-nested-654", "verdict": "PASS"}
+{"id": "module654-m654-nested-module", "verdict": "PASS"}
+{"id": "module654-m654-newline-crlf", "verdict": "PASS"}
+{"id": "module654-m654-newline-lone-cr", "verdict": "PASS"}
+{"id": "module654-m654-newline-none", "verdict": "PASS"}
+{"id": "module654-m654-newline-spaces", "verdict": "PASS"}
+{"id": "module654-m654-newline-tab-space", "verdict": "PASS"}
+{"id": "module654-m654-newline-two", "verdict": "PASS"}
+{"id": "module654-m654-stray-closer", "verdict": "PASS"}
+{"id": "module654-m654-stray-closer654", "verdict": "PASS"}
+{"id": "module654-m654-unterminated", "verdict": "PASS"}
+{"id": "module654-m654-vs-module-attr-unknown", "verdict": "PASS"}
+{"id": "module654-m654-vs-module-invalid-head", "verdict": "PASS"}
+{"id": "module654-m654-vs-module-newline-unknown", "verdict": "PASS"}
+{"id": "module654-m654-vs-module-sameclose", "verdict": "PASS"}
+{"id": "module654-m654-vs-module-tail", "verdict": "PASS"}
+{"id": "module654-m654-vs-module-unknown", "verdict": "PASS"}
+{"id": "modulex-x-654-body-module", "verdict": "PASS"}
+{"id": "modulex-x-654-body-module-attr", "verdict": "PASS"}
+{"id": "modulex-x-654-body-module-noclose", "verdict": "PASS"}
+{"id": "modulex-x-654-in-654", "verdict": "PASS"}
+{"id": "modulex-x-adjacent-654-mod", "verdict": "PASS"}
+{"id": "modulex-x-adjacent-mod-654", "verdict": "PASS"}
+{"id": "modulex-x-both-attr", "verdict": "PASS"}
+{"id": "modulex-x-both-body", "verdict": "PASS"}
+{"id": "modulex-x-both-crlf", "verdict": "PASS"}
+{"id": "modulex-x-both-empty-body", "verdict": "PASS"}
+{"id": "modulex-x-both-leading-space", "verdict": "PASS"}
+{"id": "modulex-x-both-no-newline", "verdict": "PASS"}
+{"id": "modulex-x-both-plain", "verdict": "PASS"}
+{"id": "modulex-x-both-spaces-newline", "verdict": "PASS"}
+{"id": "modulex-x-close-654-tag", "verdict": "PASS"}
+{"id": "modulex-x-close-both", "verdict": "PASS"}
+{"id": "modulex-x-close-mod-tag", "verdict": "PASS"}
+{"id": "modulex-x-close-stray-654", "verdict": "PASS"}
+{"id": "modulex-x-known-654-body-css", "verdict": "PASS"}
+{"id": "modulex-x-known-mod-body-654", "verdict": "EXCLUDED", "unmirrored": ["BatchTokenIdCounter"], "missingKeys": [], "counter_note": "PHP batch token-id placeholder vs Lean case-local token id", "expected": "b'\\xc3\\xbemodule \"CSS\" +module_body%3D%22%25FF3587%25FF%22 \\xc3\\xbe'", "got": "b'\\xc3\\xbemodule \"CSS\" +module_body%3D%22%25FF0%25FF%22 \\xc3\\xbe'"}
+{"id": "modulex-x-midline-654", "verdict": "PASS"}
+{"id": "modulex-x-midline-mod", "verdict": "PASS"}
+{"id": "modulex-x-mod-attr", "verdict": "PASS"}
+{"id": "modulex-x-mod-body", "verdict": "PASS"}
+{"id": "modulex-x-mod-body-654", "verdict": "PASS"}
+{"id": "modulex-x-mod-body-654-inline", "verdict": "PASS"}
+{"id": "modulex-x-mod-body-654-noinnerclose", "verdict": "PASS"}
+{"id": "modulex-x-mod-in-mod", "verdict": "PASS"}
+{"id": "modulex-x-mod-plain", "verdict": "PASS"}
+{"id": "user-p01", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-p02", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-p03", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-p04", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-p05", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-p06", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-p07", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-p08", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-p09", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-p10", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-p11", "verdict": "PASS"}
+{"id": "user-p12", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-p13", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-p14", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-p15", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-p16", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-p17", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-p18", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-p19", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-p20", "verdict": "PASS"}
+{"id": "user-us-01", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-02", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-03", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-04", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-05", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-06", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-07", "verdict": "PASS"}
+{"id": "user-us-08", "verdict": "PASS"}
+{"id": "user-us-09", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-10", "verdict": "PASS"}
+{"id": "user-us-11", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-12", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-13", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-14", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-15", "verdict": "PASS"}
+{"id": "user-us-16", "verdict": "PASS"}
+{"id": "user-us-17", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-18", "verdict": "PASS"}
+{"id": "user-us-19", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-20", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-21", "verdict": "PASS"}
+{"id": "user-us-22", "verdict": "PASS"}
+{"id": "user-us-23", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-24", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-25", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-26", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-27", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-28", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-29", "verdict": "PASS"}
+{"id": "user-us-30", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-31", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-32", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-33", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-34", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-35", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-36", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-37", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-38", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-39", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-40", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-41", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-42", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x01", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x02", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x03", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x04", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x05", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x06", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x07", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x08", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x09", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x10", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x11", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x12", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x13", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x14", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x15", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x16", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x17", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x18", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x19", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}
+{"id": "user-us-x20", "verdict": "EXCLUDED", "disposition": ["User:DB_OzoneUserPeer"], "php_error": "Error: Class \"Criteria\" not found", "unmirrored": ["User:DB_OzoneUserPeer"], "missingKeys": []}

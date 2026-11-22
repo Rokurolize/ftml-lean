@@ -1,7 +1,7 @@
 {
   "seed": 20261122,
   "cases": 292,
-  "failures": 8,
+  "failures": 0,
   "class_mismatch": 0,
   "uncomparable": 16,
   "by_class": {
@@ -73,18 +73,9 @@
     },
     "flTarget": {
       "n": 8,
-      "fail": 8,
+      "fail": 0,
       "uncomparable": 0,
-      "ids": [
-        "fl-target-0",
-        "fl-target-1",
-        "fl-target-2",
-        "fl-target-3",
-        "fl-target-4",
-        "fl-target-5",
-        "fl-target-6",
-        "fl-target-7"
-      ]
+      "ids": []
     },
     "flSite": {
       "n": 8,
@@ -243,56 +234,7 @@
       "ids": []
     }
   },
-  "failure_records": [
-    {
-      "id": "fl-target-0",
-      "class": "flTarget",
-      "php": "<a target=\"_blank\" href=\"http://x.example/0\">L</a>",
-      "lean": "<a href=\"http://x.example/0\">L</a>"
-    },
-    {
-      "id": "fl-target-1",
-      "class": "flTarget",
-      "php": "<a target=\"_blank\" href=\"http://x.example/1\">L</a>",
-      "lean": "<a href=\"http://x.example/1\">L</a>"
-    },
-    {
-      "id": "fl-target-2",
-      "class": "flTarget",
-      "php": "<a target=\"_blank\" href=\"http://x.example/2\">L</a>",
-      "lean": "<a href=\"http://x.example/2\">L</a>"
-    },
-    {
-      "id": "fl-target-3",
-      "class": "flTarget",
-      "php": "<a target=\"_blank\" href=\"http://x.example/3\">L</a>",
-      "lean": "<a href=\"http://x.example/3\">L</a>"
-    },
-    {
-      "id": "fl-target-4",
-      "class": "flTarget",
-      "php": "<a target=\"_blank\" href=\"http://x.example/4\">L</a>",
-      "lean": "<a href=\"http://x.example/4\">L</a>"
-    },
-    {
-      "id": "fl-target-5",
-      "class": "flTarget",
-      "php": "<a target=\"_blank\" href=\"http://x.example/5\">L</a>",
-      "lean": "<a href=\"http://x.example/5\">L</a>"
-    },
-    {
-      "id": "fl-target-6",
-      "class": "flTarget",
-      "php": "<a target=\"_blank\" href=\"http://x.example/6\">L</a>",
-      "lean": "<a href=\"http://x.example/6\">L</a>"
-    },
-    {
-      "id": "fl-target-7",
-      "class": "flTarget",
-      "php": "<a target=\"_blank\" href=\"http://x.example/7\">L</a>",
-      "lean": "<a href=\"http://x.example/7\">L</a>"
-    }
-  ],
+  "failure_records": [],
   "mismatch_records": [],
   "uncomparable_records": [
     {
