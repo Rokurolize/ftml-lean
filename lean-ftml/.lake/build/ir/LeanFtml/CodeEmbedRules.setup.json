@@ -1,0 +1,25 @@
+{"plugins": [],
+ "package": "lean-ftml",
+ "options": {},
+ "name": "LeanFtml.CodeEmbedRules",
+ "isModule": false,
+ "importArts":
+ {"LeanFtml.TokenState":
+  [["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/TokenState.olean"]],
+  "LeanFtml.RenderCore":
+  [["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/RenderCore.olean"]],
+  "LeanFtml.Pcre":
+  [["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/Pcre.olean"]],
+  "LeanFtml.ModuleRules":
+  [["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/ModuleRules.olean"]],
+  "LeanFtml.InlineSimpleRules":
+  [["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/InlineSimpleRules.olean"]],
+  "LeanFtml.FrameRules":
+  [["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/FrameRules.olean"]],
+  "LeanFtml.FormRawRules":
+  [["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/FormRawRules.olean"]],
+  "LeanFtml.EmbedPatterns":
+  [["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/EmbedPatterns.olean"]],
+  "LeanFtml.CodeRule":
+  [["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/CodeRule.olean"]]},
+ "dynlibs": []}

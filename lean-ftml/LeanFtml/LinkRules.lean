@@ -1001,17 +1001,25 @@ def transliterate (bs : List Nat) : List Nat :=
       | some (_, v) => v.map Char.toNat
       | none => [32])
 
-/-- REFCORR8: the exact byte prefix tolerated before a leading `_default:`
-    category on live: 0x09 tab, 0x0B vertical tab, 0x20 space, the two-byte
-    UTF-8 sequence C2 A0 (U+00A0) and the three-byte E3 80 80 (U+3000).
-    Multi-byte alternatives are consumed only as whole sequences, matching
-    the byte-oriented PHP pattern; no other byte is skipped. -/
+/-- REFCORR9: the exact byte prefix tolerated before a leading `_default:`
+    category on live. REFCORR8 established 0x09 tab, 0x0B vertical tab, 0x20
+    space, the two-byte UTF-8 sequence C2 A0 (U+00A0) and the three-byte
+    E3 80 80 (U+3000). REFCORR9 adds exactly three more live-cached lead
+    shapes: 0x0C form feed (C-R5B-P2-1), the three-byte UTF-8 sequence
+    E2 80 A8 (U+2028 line separator, C-R5B-P2-2) and the three-byte UTF-8
+    sequence EF BB BF (U+FEFF BOM, C-R5B-P2-3). No other Unicode whitespace
+    is admitted. Multi-byte alternatives are consumed only as whole
+    sequences, matching the byte-oriented PHP pattern; no other byte is
+    skipped. The signature and call wire shape are unchanged. -/
 def skipDefaultWsBytes : List Nat → List Nat
   | 9 :: t => skipDefaultWsBytes t
   | 11 :: t => skipDefaultWsBytes t
+  | 12 :: t => skipDefaultWsBytes t
   | 32 :: t => skipDefaultWsBytes t
   | 0xC2 :: 0xA0 :: t => skipDefaultWsBytes t
   | 0xE3 :: 0x80 :: 0x80 :: t => skipDefaultWsBytes t
+  | 0xE2 :: 0x80 :: 0xA8 :: t => skipDefaultWsBytes t
+  | 0xEF :: 0xBB :: 0xBF :: t => skipDefaultWsBytes t
   | t => t
 
 /-- process() for a Freelink match, transcribed step for step
@@ -1075,11 +1083,17 @@ def freelinkProcess (full raw labelRaw : List Nat)
       -- REFCORR7: live tolerates leading space/tab before the category, so
       -- skip that run before the anchored case-insensitive strip. REFCORR8
       -- widens the skipped run to exactly the live-cached whitespace class
-      -- (09, 0B, 20, C2 A0, E3 80 80) via skipDefaultWsBytes; the anchored
-      -- strip, option map and returned token shape are unchanged. A target
-      -- with no leading whitespace takes the unchanged nine-byte bare path,
-      -- and a non-matching prefix keeps raw1 exactly as before.
-      let afterWs := skipDefaultWsBytes raw1
+      -- (09, 0B, 20, C2 A0, E3 80 80) via skipDefaultWsBytes. REFCORR9 adds
+      -- the three further live-cached lead shapes 0C, E2 80 A8 and EF BB BF
+      -- to that same class, and consumes a leading star marker first under
+      -- the identical no-leading-space guard used for the URL branch (the
+      -- star is a marker, not whitespace: C-R5B-P2-4). The anchored strip,
+      -- option map and returned token shape are unchanged. A target with no
+      -- leading whitespace takes the unchanged nine-byte bare path, and a
+      -- non-matching prefix keeps raw1 exactly as before.
+      let starLead := !leadingSpace && raw1.head? == some 42
+      let noStar := if starLead then raw1.tail else raw1
+      let afterWs := skipDefaultWsBytes noStar
       let stripped := match matchLitCI (litBytes "_default:") afterWs with
         | some rest => rest
         | none => raw1

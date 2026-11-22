@@ -513,8 +513,13 @@ where
     return null: the result here is `none` for that case
     when the value starts with `u-` (the caller records a
     null, which the process's own empty-value unset then
-    always removes before any claim) and the bare prefix
-    otherwise. A valid value is trimmed, its
+    always removes before any claim). REFCORR9 C-R5B-R1-1:
+    for a placeholder-bearing value that does not start
+    with `u-`, the placeholder bytes are retained verbatim
+    instead of collapsing to the bare prefix, so the
+    render clear arm can clear a placeholder-consumed id
+    to `id=""` on live while a whitespace-only authored id
+    still keeps the bare `u-` shell (R5R1-D1). A valid value is trimmed, its
     whitespace runs collapsed to single spaces; an empty
     collapse yields the bare prefix, a value already
     starting with `u-` yields the collapse, and any other
@@ -524,7 +529,7 @@ def isolateId (v : List Nat) : Option (List Nat) :=
   if v.isEmpty then some []
   else if v.contains 255 then
     if (litBytes "u-").isPrefixOf v then none
-    else some (litBytes "u-")
+    else some v
   else
     let cs := utf8Decode v
     let leading := match cs with
@@ -729,7 +734,14 @@ end
     to empty (a whitespace-only `class=" "`) is still a kept attribute
     rendered as `""`; only a literally empty authored value is unset.
     Later authored occurrences overwrite earlier ones, matching the
-    PHP parse's `authoredValue` map. -/
+    PHP parse's `authoredValue` map.
+    REFCORR9 C-R5B-P1-5: the record is monotone across case-variant
+    duplicates. Once a lowercased key has a nonempty authored value
+    recorded, a later case-variant authored-empty value (for example
+    `data-Foo="1" data-foo=""`) no longer clears it; the empty last
+    value stays as `data-foo=""` on live. A sole authored-empty value
+    is still left unset. The authored table remains a parse-local
+    helper, so the `[rule, options]` token wire shape is unchanged. -/
 def divAuthoredNonEmpty (attr : List (List Nat × List Nat)) :
     List (List Nat) :=
   attr.foldl (fun acc (k, v) =>
@@ -741,8 +753,19 @@ def divAuthoredNonEmpty (attr : List (List Nat × List Nat)) :
     match key with
     | none => acc
     | some key =>
-        let acc' := acc.filter (fun x => x != key)
-        if v.isEmpty then acc' else acc' ++ [key]) []
+        if v.isEmpty || key ∈ acc then acc else acc ++ [key]) []
+
+/-- REFCORR9 C-R5B-P1-5: a later case-variant authored-empty value
+    keeps the earlier nonempty authored record, while a sole
+    authored-empty value is still unset and the REFCORR8
+    whitespace-only class record is still kept. All three are closed
+    computations, so no axiom beyond the standard envelope is used. -/
+theorem divAuthoredNonEmpty_case_variant_empty :
+    divAuthoredNonEmpty [(litBytes "data-Foo", litBytes "1"),
+        (litBytes "data-foo", [])] = [litBytes "data-foo"] ∧
+    divAuthoredNonEmpty [(litBytes "data-foo", [])] = [] ∧
+    divAuthoredNonEmpty [(litBytes "class", litBytes " ")] =
+      [litBytes "class"] := ⟨rfl, rfl, rfl⟩
 
 /-- Is an optional byte value empty for Div's purposes
     (a null value, or one whose full trim is empty)? -/
@@ -796,6 +819,16 @@ def divProcess (g1 score : List Nat) (g3 : Option (List Nat))
     let body' := collapseBlankRuns
       (trimRN body) ((trimRN body).length + 1)
     (g1 ++ startPh ++ body' ++ endPh, t2)
+
+/-- REFCORR9 C-R5B-P1-5 end to end: the DB-DATAEMPTY div head keeps
+    `data-foo=""` in the start token's `args` map, with the unchanged
+    `[rule, options]` wire shape (no compared field added). -/
+theorem divProcess_db_dataempty_keeps_attr :
+    (divProcess [] [] (some (litBytes " data-Foo=\"1\" data-foo=\"\""))
+        (litBytes "X") []).2[0]!.opts =
+      [("args".toList, OptVal.map
+          [("data-foo".toList, OptVal.str [])]),
+       ("type".toList, OptVal.str "start".toList)] := rfl
 
 /-- One Div pass: preg_replace_callback semantics over
     the byte form. -/
@@ -1308,6 +1341,15 @@ theorem isolateId_examples :
     isolateId (litBytes "foo") = some (litBytes "u-foo") ∧
     isolateId (litBytes " foo  bar ") = some (litBytes "u- foo bar") ∧
     isolateId [] = some [] := ⟨rfl, rfl, rfl⟩
+
+/-- REFCORR9 C-R5B-R1-1: a 0xFF placeholder-bearing authored id keeps its
+    marker bytes at the parse seam, while a whitespace-only authored id
+    still isolates to the bare `u-` shell (R5R1-D1). This is the distinction
+    the unchanged render clear arm consumes. -/
+theorem isolateId_placeholder_id_preserved :
+    isolateId [255, 48, 255, 120, 255, 49, 255] =
+        some [255, 48, 255, 120, 255, 49, 255] ∧
+    isolateId (litBytes "   ") = some (litBytes "u-") := ⟨rfl, rfl⟩
 
 /-- A scored div with a blank line in its body: the
     leading newline is emitted once and the blank-line

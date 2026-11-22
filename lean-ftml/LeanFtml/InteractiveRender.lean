@@ -1145,6 +1145,19 @@ theorem div_start_placeholder_attrs_cleared :
       ("type".toList, OptVal.str "start".toList)] =
     litBytes "<div class=\"\" id=\"u-\">" := rfl
 
+/-- REFCORR9 C-R5B-R1-1: a 0xFF placeholder-bearing authored id retains its
+    marker through `isolateId`, so the unchanged render clear arm emits an
+    empty value with the key kept, matching live `<div id="">` on capture
+    muse-probe-round5b-r1-r5br1-p2 (page-content sha256
+    2061a590abcadc604490830cf36c644802ef287f597b83cd98f5034bb4376101).
+    Complementary to `cov_div_id_shell_live`, which pins the whitespace-only
+    authored id `<div id="u-">` of R5R1-D1 and is deliberately unchanged. -/
+theorem div_start_placeholder_id_cleared :
+    renderDiv [("args".toList, OptVal.map
+        [("id".toList, OptVal.bytes [0xFF, 48, 0xFF, 120, 0xFF, 49, 0xFF])]),
+      ("type".toList, OptVal.str "start".toList)] =
+    litBytes "<div id=\"\">" := rfl
+
 /-- `Div` `end`. -/
 theorem div_end :
     renderDiv [("type".toList, OptVal.str "end".toList)] =

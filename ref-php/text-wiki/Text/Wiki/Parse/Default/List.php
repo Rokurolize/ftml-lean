@@ -286,13 +286,30 @@ $3$4',
         // with a none-item inner list and literal trailing closers. Normalize
         // that skeleton before pairing.
         $source = preg_replace(
-            '/^\s*(\[\[(?:ul|ol)\]\])\n(\[\[li\]\][^\n]*)\n(\[\[ol\]\])\n(\[\[li\]\][^\n]*)\[\[\/li\]\]\n\[\[\/(?:UL|OL)\]\](.*?)\n\[\[\/(?:ul|ol)\]\]\n\[\[\/li\]\]\n\[\[\/(?:ul|ol)\]\]\s*$/s',
+            '/^\s*(\[\[(?:ul|ol)\]\])\n(\[\[li\]\][^\n]*)\n(\[\[ol\]\])\n(\[\[li\]\][^\n]*)\[\[\/li\]\]\n\[\[\/(?:UL|OL)\]\](.*?)\n\[\[\/(?:ul|ol)\]\]\n\[\[\/li\]\]\n\[\[\/(?:ul|ol)\]\](.*)$/s',
             '$1
 $2
 $3
 $4
 [[/ol]] $5[[/li]]
 [[/ul]] [[/li]]
+[[/ul]]$6',
+            $source
+        );
+
+        // REFCORR9 C-R5B-P1-2: a raw-case outer opener whose body holds a
+        // raw-case nested list with lowercase items, closed by its own
+        // uppercase closer and the outer closers, parses on live as ONE list
+        // whose lowercase items are siblings and whose trailing text is
+        // absorbed into the last item. Normalize that skeleton before pairing;
+        // this is disjoint from the C-R5-S1-01 rewrite, which requires a
+        // lowercase inner opener and yields two sibling lists.
+        $source = preg_replace(
+            '/^\s*\[\[(?:UL|OL)(?:_)?(?:\s+[^\]]*)?\]\]\n(\[\[li\]\][^\n]*)\n\[\[(?:UL|OL)\]\]\n(\[\[li\]\][^\n]*)\[\[\/li\]\]\n\[\[\/(?:UL|OL)\]\]\n\[\[\/li\]\]\n\[\[\/(?:ul|ol)\]\]([^\n]*)\s*$/s',
+            '[[ul_]]
+$1
+[[/li]]
+$2$3[[/li]]
 [[/ul]]',
             $source
         );
@@ -441,6 +458,37 @@ $4
             // the residual tail is absorbed there too (f06). Fold a run of
             // three or more newlines left by the removed closer to two, the
             // live shape of a swallowed closer followed by a paragraph.
+            // REFCORR9 C-R5B-P1-1 / C-R5-S1-01: after a raw-case opener's first
+            // closer fails to pair, a following raw-case [[LI]] is NOT a new
+            // item on live. It stays literal inside the first item, the failed
+            // closer is consumed, and the surviving final closer is literal;
+            // the list is closed. The generic synthetic tail absorption below
+            // pairs both LI markers and leaves the list unclosed, so emit the
+            // one-item closed token sequence directly for this exact skeleton.
+            if (!empty($matchedPair['synthetic'])
+                && preg_match('/^\n\[\[LI\]\]([^\n]*)\[\[\/LI\]\]\n\[\[\/(?:UL|OL)\]\]\n(\[\[LI\]\].*)$/s', $body, $c1m)) {
+                $literalBody = $c1m[1] . rtrim($c1m[2]);
+                $start9 = $this->wiki->addToken($this->rule, array(
+                    'type' => 'explicit_list_start',
+                    'list_type' => $op['tag'],
+                    'attrs' => array(),
+                    'scored' => $op['scored'],
+                ));
+                $liStart9 = $this->wiki->addToken($this->rule, array(
+                    'type' => 'explicit_item_start', 'attrs' => array(), 'lead' => '',
+                ));
+                $liEnd9 = $this->wiki->addToken($this->rule, array(
+                    'type' => 'explicit_item_end', 'lead' => '',
+                ));
+                $end9 = $this->wiki->addToken($this->rule, array(
+                    'type' => 'explicit_list_end',
+                    'list_type' => $op['tag'], 'trail' => '', 'scored' => $op['scored'],
+                ));
+                $replacement = $start9 . $liStart9 . $literalBody . $liEnd9 . $end9;
+                $source = substr($source, 0, $op['start']) . $replacement . substr($source, $fullEnd);
+                continue;
+            }
+
             if (!empty($matchedPair['synthetic'])) {
                 $body = preg_replace('/\[\[\/(?:ul|ol)\]\]/i', '', $body);
                 $liClosePos = strripos($body, '[[/li]]');
@@ -735,6 +783,12 @@ $4
             $b = preg_replace('/^[ \t]+/', '', $b);
         }
 
+        // REFCORR9 C-R5B-P1-4: an uppercase opener's empty item carries exactly
+        // one trailing break on live; a whitespace-only body must not also leave
+        // a raw newline that the Newline rule turns into a second break.
+        if ($b !== '' && trim($b) === '' && count($item['attached_nested']) === 0) {
+            $b = $this->wiki->addToken($this->rule, array('type' => 'explicit_br_no_nl'));
+        }
         if ($b === '' && count($item['attached_nested']) === 0) {
             return '';
         }

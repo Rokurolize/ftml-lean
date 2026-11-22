@@ -338,9 +338,14 @@ def rawScan (prev : Option Nat) (src : List Nat) (toks : List TokenEntry) :
                   -- (trail == 1, i.e. closeRun == 3) after a 4+ opener is
                   -- literal too, so @@@@ZQ@@@ renders ZQ@@@; every other
                   -- closer run keeps the established trail-2 shaping.
+                  -- REFCORR9 C-R5B-P3-1: the two-run closer (trail == 0)
+                  -- keeps both bytes literal too, so @@@@ZQ@@ renders ZQ@@.
+                  -- For a two- or three-byte closer the literal count is
+                  -- the closer run length (trail + 2); longer runs keep
+                  -- the established shed-four shaping.
                   let (o, t) := rawScan (some 64) afterClose toks fuel
                   (List.replicate (lead - 2) 64 ++ body ++
-                    List.replicate (if trail == 1 then 3 else trail - 2) 64 ++ o, t)
+                    List.replicate (if trail <= 1 then trail + 2 else trail - 2) 64 ++ o, t)
                 else if 2 ≤ trail then
                   -- a closer run of 4+ is an empty raw followed by
                   -- an opener: the body is claimed and the full

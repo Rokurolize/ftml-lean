@@ -147,6 +147,20 @@ def lookupB : List (List Nat × List Nat) → List Nat → Option (List Nat)
   | [], _ => none
   | (k, v) :: rest, key => if k == key then some v else lookupB rest key
 
+/-- REFCORR9 R9-C: PHP `strtolower` on attribute-name bytes, ASCII
+    case folding only (the Math attribute names are ASCII). -/
+def lowerAsciiB (bs : List Nat) : List Nat :=
+  bs.map (fun b => if 65 ≤ b && b ≤ 90 then b + 32 else b)
+
+/-- REFCORR9 R9-C: an attribute key which ASCII-folds to `type` but is
+    not the exact lower-case spelling (`TYPE`, `Type`, `tYpE`, ...).
+    Live's case-sensitive lookup misses every such spelling and takes
+    the fossil `equation` fallback; this generalizes the REFCORR8
+    dedicated upper-case `TYPE` branch without moving the lower-case
+    value lookup, the absent-type `align` default or the counter. -/
+def isTypeVariantKey (k : List Nat) : Bool :=
+  k != (litBytes "type") && lowerAsciiB k == (litBytes "type")
+
 /-- The base class's `getAttrs` on bytes, returning the raw byte
     pairs (callers turn values into option values, since Iframe
     substitutes null for missing keys, Date copies every pair into
@@ -897,7 +911,9 @@ def eqSet (m : List (List Char × Nat)) (k : List Char) (v : Nat) :
     present (REFCORR3 C-SUSPECT-SERVING-1: no case-folding and no
     whitelist — an empty or upper-case value is preserved here and
     rejected later by the renderer); an ABSENT key defaults to
-    `align`. -/
+    `align`. The fossil `equation` fallback is selected by any case
+    variant of the attribute NAME other than the exact lower-case
+    spelling (REFCORR9 R9-C). -/
 def mathProcess (g1 : Option (List Nat)) (g2 : List Nat)
     (g3 : List Nat) (doc : DocState) : Option TokenEntry × DocState :=
   let id := doc.mathId.getD 1
@@ -907,20 +923,23 @@ def mathProcess (g1 : Option (List Nat)) (g2 : List Nat)
   if mathGuard content then (none, doc1)
   else
     let attrs := getAttrsBytes g2
-    -- REFCORR8 C-R5-P2-3: the lower-case `type` key wins; when it is
-    -- absent but the upper-case spelling `TYPE` is present (as in
-    -- `[[math a TYPE="align"]]`), live's case-sensitive lookup misses it
-    -- and takes the fossil fallback `equation`, serving the equation
-    -- envelope with the counter. A genuinely absent type key still
-    -- defaults to `align` (REFCORR3). The stray positional label `a` and
-    -- the counter increment are untouched, so the token wire shape and
-    -- the REFCORR3 valid/invalid cases are preserved.
+    -- REFCORR8 C-R5-P2-3 / REFCORR9 R9-C: the exact lower-case `type`
+    -- key wins and its value is kept verbatim. When that key is absent
+    -- but any other case variant of the NAME is present (`TYPE`, `Type`,
+    -- `tYpE`, `TyPe`, ... as in `[[math a tYpE="align"]]`), live's
+    -- case-sensitive lookup misses it and takes the fossil fallback
+    -- `equation`, serving the equation envelope with the counter. A
+    -- genuinely absent type key still defaults to `align` (REFCORR3).
+    -- The stray positional label `a` and the counter increment are
+    -- untouched, so the token wire shape and the REFCORR3 valid/invalid
+    -- value cases are preserved.
     let tyVal : OptVal := match lookupB attrs (litBytes "type") with
       | some v => textVal v
       | none =>
-          match lookupB attrs (litBytes "TYPE") with
-          | some _ => OptVal.str "equation".toList
-          | none => OptVal.str "align".toList
+          if attrs.any (fun kv => isTypeVariantKey kv.1) then
+            OptVal.str "equation".toList
+          else
+            OptVal.str "align".toList
     let entry : TokenEntry := { rule := "Math", opts :=
       [("label".toList, textVal label),
        ("content".toList, textVal content),
@@ -1051,5 +1070,60 @@ theorem mathProcess_uppercase_TYPE_keeps_label :
     (match (mathProcess none (litBytes "TYPE=\"align\"") (litBytes "x") {}).1 with
      | some e => omGet e.opts "label".toList
      | none => none) = some (OptVal.str "".toList) := rfl
+
+/-- REFCORR9 C-R5B-P2-5: a mixed-case `tYpE` attribute NAME is a case
+    variant of `type`, so live's case-sensitive lower-case lookup misses
+    it and the fossil `equation` fallback is stored; the label, content,
+    counter and wire shape are unchanged. -/
+theorem mathProcess_mixed_tYpE_defaults_equation :
+    (match (mathProcess none (litBytes "tYpE=\"align\"") (litBytes "x") {}).1 with
+     | some e => omGet e.opts "type".toList
+     | none => none) = some (OptVal.str "equation".toList) := rfl
+
+/-- REFCORR9 C-R5B-P2-6: a capital-T `Type` attribute NAME takes the
+    same generalized fallback branch. -/
+theorem mathProcess_mixed_Type_defaults_equation :
+    (match (mathProcess none (litBytes "Type=\"align\"") (litBytes "x") {}).1 with
+     | some e => omGet e.opts "type".toList
+     | none => none) = some (OptVal.str "equation".toList) := rfl
+
+/-- REFCORR9 R9-C: the whole Math token option map for a mixed-case
+    name keeps the four-key wire shape [label, content, id, type] with
+    the same values a normal Math token carries, except the generalized
+    `equation` fallback. -/
+theorem mathProcess_mixed_case_wire_shape :
+    (mathProcess none (litBytes "tYpE=\"align\"") (litBytes "x") {}).1 =
+      some { rule := "Math", opts :=
+        [("label".toList, OptVal.str "".toList),
+         ("content".toList, OptVal.str "x".toList),
+         ("id".toList, OptVal.int 1),
+         ("type".toList, OptVal.str "equation".toList)] } := rfl
+
+/-- REFCORR9 R9-C: the counter still advances exactly once from a fresh
+    document for a mixed-case name. -/
+theorem mathProcess_mixed_case_counter :
+    (mathProcess none (litBytes "tYpE=\"align\"") (litBytes "x") {}).2.mathId = some 2 := rfl
+
+/-- REFCORR9 R9-C regression: an exact lower-case `type` with an
+    upper-case VALUE is still stored verbatim for the renderer's
+    rejection (REFCORR3 C-SUSPECT-SERVING-1). -/
+theorem mathProcess_lowercase_type_upper_value_kept :
+    (match (mathProcess none (litBytes "type=\"ALIGN\"") (litBytes "x") {}).1 with
+     | some e => omGet e.opts "type".toList
+     | none => none) = some (OptVal.str "ALIGN".toList) := rfl
+
+/-- REFCORR9 R9-C regression: an empty lower-case value is still stored
+    verbatim (REFCORR3 invalid-type case). -/
+theorem mathProcess_lowercase_type_empty_value_kept :
+    (match (mathProcess none (litBytes "type=\"\"") (litBytes "x") {}).1 with
+     | some e => omGet e.opts "type".toList
+     | none => none) = some (OptVal.str "".toList) := rfl
+
+/-- REFCORR9 R9-C regression: the exact lower-case `type` key still
+    wins when a case-variant sibling is authored alongside it. -/
+theorem mathProcess_lowercase_type_wins_over_variant :
+    (match (mathProcess none (litBytes "type=\"gather\" tYpE=\"align\"") (litBytes "x") {}).1 with
+     | some e => omGet e.opts "type".toList
+     | none => none) = some (OptVal.str "gather".toList) := rfl
 
 end LeanFtml

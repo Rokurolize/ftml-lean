@@ -1,0 +1,65 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["ff467e40516c2571.olean"],
+  "m": false,
+  "i": "8fb362a6701ccfe9.ilean",
+  "c": "0c19512c3f5b88ac.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/LeanFtml/InlineRender.lean -o /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/InlineRender.olean -i /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/InlineRender.ilean -c /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/InlineRender.c --setup /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/InlineRender.setup.json --json",
+   "level": "trace"},
+  {"message":
+   "LeanFtml/InlineRender.lean:163:4: This simp argument is unused:\n  Bool.true_eq_false\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [hhref0, henc, hhrefE, hhash, htext0, htext, htarget0, htruth, htargetE, htype, Bool.false_eq_true,\n    ↓reduceIte, List.nil_append, List.append_assoc]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/InlineRender.lean:163:36: This simp argument is unused:\n  List.nil_append\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [hhref0, henc, hhrefE, hhash, htext0, htext, htarget0, htruth, htargetE, htype, Bool.false_eq_true,\n    Bool.true_eq_false, ↓reduceIte, List.append_assoc]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/InlineRender.lean:255:4: This simp argument is unused:\n  List.nil_append\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [hhref0, henc, hhrefE, hhash, htext0, htext, htarget0, htruth, htargetE, htype, Bool.false_eq_true,\n    ↓reduceIte, List.append_assoc]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/InlineRender.lean:305:4: This simp argument is unused:\n  List.nil_append\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [hhref0, henc, hhrefE, hhash, htext0, htext, htarget0, htruth, htargetE, htype, Bool.false_eq_true,\n    ↓reduceIte, List.append_assoc]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/InlineRender.lean:354:4: This simp argument is unused:\n  List.nil_append\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [hhref0, henc, hhrefE, hhash, htext0, htext, htarget0, htruth, htargetE, htype, Bool.false_eq_true,\n    ↓reduceIte, List.append_assoc]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/InlineRender.lean:405:4: This simp argument is unused:\n  List.nil_append\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [hhref0, henc, hhrefE, hhash, htext0, htext, htarget0, htruth, htargetE, htype, Bool.false_eq_true,\n    ↓reduceIte, List.append_assoc]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/InlineRender.lean:646:16: This simp argument is unused:\n  List.nil_append\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [hsite, hpage, htext0, hlookup, hfind, hsprintf, htext, ↓reduceIte, List.append_assoc]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/InlineRender.lean:686:16: This simp argument is unused:\n  List.nil_append\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [hsite, hpage, htext0, hlookup, hfind, hsprintf, htext, ↓reduceIte, List.append_assoc]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/InlineRender.lean:741:16: This simp argument is unused:\n  List.nil_append\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [hsite, hpage, htext0, hlookup, hfind, hsprintf, htext, ↓reduceIte, List.append_assoc]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+   "level": "warning"}],
+ "inputs":
+ [["deps",
+   [["«lean-ftml»/LeanFtml:extraDep",
+     [["@«lean-ftml»:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["LeanFtml.NotesRender transitive imports (legacy)", "50f0e071c6fa2410"],
+      ["LeanFtml.NotesRender:importAllArts", "41f52eaa4d529d00"],
+      ["LeanFtml.InlineSimpleRules transitive imports (legacy)",
+       "c3e21955a69ea716"],
+      ["LeanFtml.InlineSimpleRules:importAllArts", "07f55e7806c87ec1"],
+      ["LeanFtml.Pipeline transitive imports (legacy)", "c3e6626d7c338207"],
+      ["LeanFtml.Pipeline:importAllArts", "c57854f709f77512"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.36.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
+   "bd5dd4b1191d6a49"],
+  ["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/LeanFtml/InlineRender.lean",
+   "4d87e7fced16fc7f"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: LeanFtml.InlineRender", "14500bb31cc4779b"],
+  ["Package.id?: (some lean-ftml)", "351a917adcadf512"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "dbbd5a54ba4611ab"}

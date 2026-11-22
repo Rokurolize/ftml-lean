@@ -328,7 +328,16 @@ def moduleTryCands (src name : List Nat) (toks : List TokenEntry) :
           -- for a source-byte side effect).
           let repl := [10, 10] ++ ph ++ [10, 10] ++
             (if bodyHasCodeToken bodyRaw toks 0 then
-               bodyRaw ++ litBytes "[[/module]]"
+               -- REFCORR9 C-R5B-P3-3: the opener/closer regex matches the
+               -- closer case-insensitively (/ism), so the authored spelling
+               -- must survive the Code-token re-emit. `matched` ends at the
+               -- closer, whose fixed ASCII byte length is 11 ([[/module]]);
+               -- carry those exact matched bytes instead of a hard-coded
+               -- lowercase literal. The Code-only gate (REFCORR7 Raw
+               -- suppression, REFCORR8 narrowing) and the compared
+               -- [rule, options] wire shape are unchanged.
+               let authoredCloser := matched.drop (matched.length - 11)
+               bodyRaw ++ authoredCloser
              else [])
           some (repl, rest', t1)
 

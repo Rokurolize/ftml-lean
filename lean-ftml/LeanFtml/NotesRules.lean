@@ -182,19 +182,35 @@ where
         | _ => 0xFF :: go rest fuel toks
     | b :: rest, fuel + 1, toks => b :: go rest fuel toks
 
+/- REFCORR9 (C-R5B-R3-1 = C-R5B-P4-1): the REFCORR8 post-strip
+   re-trim must not fold a lone authored newline separator. The Newline
+   rule needs an inline byte immediately before the LF to emit a
+   rule-level `<br />`; on live that byte is the empty-Raw placeholder
+   that REFCORR7 stripped from the stored body. When the strip leaves
+   exactly one LF with only space/tab bytes around it, keep the pre-strip
+   placeholder-bearing bytes as the stored body. Every other remainder
+   (empty, horizontal whitespace only, two or more newlines, or a literal
+   remainder) keeps the REFCORR8 re-trim. The predicate is byte-local and
+   total and no token entry is added, removed or reindexed. -/
+def isLoneNewlineRemainder (bs : List Nat) : Bool :=
+  let core := bs.dropWhile (fun b => b == 32 || b == 9)
+  match core with
+  | 10 :: rest => (rest.dropWhile (fun b => b == 32 || b == 9)).isEmpty
+  | _ => false
+
 /-- process() for a Footnote match: the id is one plus the
-    number of notes collected so far; the trimmed body is
-    appended to the footnotes list at that index; the token
-    carries only the id. REFCORR7: the trimmed body first has its
-    empty-Raw placeholders stripped, mirroring PHP Footnote::process,
-    so Footnoteitem's existing `body.isEmpty` separator test sees the
-    live emptiness. A non-empty Raw token or a literal remainder such
-    as fn-six's `@@` is preserved. -/
+    number of notes collected so far; the body is appended to the
+    footnotes list at that index; the token carries only the id. REFCORR7
+    strips empty-Raw placeholders after the initial trim; REFCORR8 re-trims
+    the strip remainder; REFCORR9 keeps the pre-strip bytes for the single
+    newline separator so the authored break survives. A non-empty Raw token
+    or a literal remainder such as fn-six's `@@` is preserved. -/
 def footnoteProcess (body : List Nat) (doc : DocState)
     (toks : List TokenEntry) : List Nat × List TokenEntry × DocState :=
-  -- REFCORR8 (C-R5-R3-1): re-trim the whitespace remainder after the
-  -- empty-Raw strip; REFCORR7 trimmed only before the strip.
-  let content := trimBytes (stripEmptyRawPhNotes (trimBytes body) toks)
+  -- REFCORR8 (C-R5-R3-1) re-trim; REFCORR9 (C-R5B-R3-1) newline exception.
+  let preStrip := trimBytes body
+  let stripped := stripEmptyRawPhNotes preStrip toks
+  let content := if isLoneNewlineRemainder stripped then preStrip else trimBytes stripped
   let id := doc.footnotes.length + 1
   (phBytes toks.length,
    toks ++ [{ rule := "Footnote",
@@ -679,6 +695,33 @@ theorem bibitemRule_id (st : ParseState) :
 theorem footnoteMatchAt_example :
     footnoteMatchAt (litBytes "[[footnote]]body[[/footnote]]rest")
       = some (litBytes "body", litBytes "rest") := rfl
+
+private def r9hEmptyRaw2 : List TokenEntry :=
+  [{ rule := "Raw", opts := [("text".toList, OptVal.str [])] },
+   { rule := "Raw", opts := [("text".toList, OptVal.str [])] }]
+
+/- REFCORR9: a single authored newline between two empty-Raw placeholders
+   keeps the pre-strip placeholder-bearing body, so the LF has an inline
+   neighbour and renders as a rule-level break. -/
+theorem refcorr9_fn_lone_newline_keeps_placeholders :
+    (footnoteProcess (phBytes 0 ++ litBytes "\n" ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes =
+      [phBytes 0 ++ litBytes "\n" ++ phBytes 1] := rfl
+
+/- REFCORR9: the newline-plus-space sibling (live capture F02) keeps the
+   pre-strip bytes as well; the authored break is the same rule-level value. -/
+theorem refcorr9_fn_newline_space_keeps_placeholders :
+    (footnoteProcess (phBytes 0 ++ litBytes "\n " ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes =
+      [phBytes 0 ++ litBytes "\n " ++ phBytes 1] := rfl
+
+/- REFCORR9 controls: a pure horizontal separator and a two-newline
+   separator still re-trim to an empty stored body, so the REFCORR8
+   single-placeholder and space-separated cases, the R3B-19/F03 control and
+   the SpecRefcorr8 pin are unchanged. -/
+theorem refcorr9_fn_space_separator_still_folds :
+    (footnoteProcess (phBytes 0 ++ litBytes "  " ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes = [[]] ∧
+    (footnoteProcess (phBytes 0 ++ litBytes "\t" ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes = [[]] ∧
+    (footnoteProcess (phBytes 0 ++ litBytes "\n\n" ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes = [[]] :=
+  ⟨rfl, rfl, rfl⟩
 
 /-- A Footnoteblock with no collected notes claims nothing and
     replaces its match with nothing. -/

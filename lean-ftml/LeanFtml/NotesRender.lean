@@ -17,9 +17,9 @@
     local `$refs`; no observable effect.)
   * Footnoteitem: handles `type == "parabreak"` → `"\n"` (2026-11-21
     fnb24 correction), `type == "start"` (reads `doc.footnotes[id - 1]`
-    to emit the separator space `' '` iff the stored trimmed body is
-    non-empty, plus `conf.footnoteIdPrefix`), and `type == "end"` →
-    `"</div>"`.
+    to emit the separator space `' '` iff the token-aware empty-Raw
+    stripped and trimmed visible body is non-empty — REFCORR9 — plus
+    `conf.footnoteIdPrefix`), and `type == "end"` → `"</div>"`.
   * Footnoteblock: reads `doc.footnotes` (renders empty when no
     footnotes were collected); for `type == "start"`, defaults a
     missing/null title to `"Footnotes"`, omits `<div class="title">`
@@ -83,9 +83,43 @@ def renderFootnote (conf : RenderConf) (opts : OptMap) : List Nat :=
     litBytes "scrollToReference('footnote-" ++
     pfx ++ idBytes ++ litBytes "')\">" ++ idBytes ++ litBytes "</a></sup>"
 
+/-! ## REFCORR9 (C-R5B-R3-1): token-aware footnote separator -/
+
+/-- Placeholder ids referenced by a stored footnote body. Only the byte
+    pattern \xFF<digits>\xFF is scanned; the token table is read only. -/
+private def footnotePhIds (bs : List Nat) : List Nat :=
+  go bs bs.length
+where
+  go : List Nat → Nat → List Nat
+    | [], _ => []
+    | _, 0 => []
+    | 0xFF :: rest, fuel + 1 =>
+        let (digits, tail) := rest.span (fun b => 48 <= b && b <= 57)
+        match tail with
+        | 0xFF :: rest2 =>
+            (if digits.isEmpty then [] else
+              [digits.foldl (fun a b => a * 10 + (b - 48)) 0]) ++ go rest2 fuel
+        | _ => go rest fuel
+    | _ :: rest, fuel + 1 => go rest fuel
+
+/-- Materialize just the token slots the body references from the render-phase
+    lookup, so the existing `stripEmptyRawPhNotes` helper is reused unchanged.
+    Unreferenced slots get the default (non-Raw) entry; no token is added to or
+    removed from the compared parse state. -/
+private def footnoteToks (lookup : Nat → Option TokenEntry)
+    (body : List Nat) : List TokenEntry :=
+  let bound := (footnotePhIds body).foldl max 0 + 1
+  (List.range bound).map (fun k => (lookup k).getD { rule := "", opts := [] })
+
+/-- The visible footnote body: empty-Raw placeholders stripped, then trimmed.
+    This is the same computation `NotesRules.bibitemProcess` uses for its
+    `empty` flag and the adopted `Footnoteitem.php` uses for its separator. -/
+def footnoteVisibleBody (lookup : Nat → Option TokenEntry) (body : List Nat) : List Nat :=
+  trimBytes (stripEmptyRawPhNotes body (footnoteToks lookup body))
+
 /-- Mirror of `Text_Wiki_Render_Xhtml_Footnoteitem::token`. -/
-def renderFootnoteitem (conf : RenderConf) (doc : DocState) (opts : OptMap) :
-    List Nat :=
+def renderFootnoteitem (conf : RenderConf) (doc : DocState) (opts : OptMap)
+    (lookup : Nat → Option TokenEntry := fun _ => none) : List Nat :=
   if optTypeIs opts (litBytes "parabreak") then
     [10]
   else if optTypeIs opts (litBytes "start") then
@@ -93,7 +127,7 @@ def renderFootnoteitem (conf : RenderConf) (doc : DocState) (opts : OptMap) :
     let idNat := (optNat opts "id".toList).getD 0
     let pfx := conf.footnoteIdPrefix
     let body := if idNat > 0 then (doc.footnotes[idNat - 1]?).getD [] else []
-    let sep := if body.isEmpty then [] else [32]
+    let sep := if (footnoteVisibleBody lookup body).isEmpty then [] else [32]
     litBytes "<div class=\"footnote-footer\" id=\"footnote-" ++ pfx ++ idBytes ++
       litBytes "\"><a href=\"javascript:;\" onclick=\"" ++
       litBytes "WIKIDOT.page.utils.scrollToReference(" ++
@@ -260,12 +294,20 @@ def dispatchRenderR41 :
   | .gallery, _, _, opts => renderGallery opts
   | .user, _, _, opts => renderUser opts
 
+/-- REFCORR9: the R4.1 dispatcher with the render-phase token lookup threaded
+    into the one rule that now needs it. Every other rule delegates unchanged,
+    so the dispatcher type, token table shape and DocState are untouched. -/
+def dispatchRenderR41TokenAware (lookup : Nat → Option TokenEntry) :
+    RenderRuleId → RenderConf → DocState → OptMap → List Nat
+  | .footnoteitem, conf, doc, opts => renderFootnoteitem conf doc opts lookup
+  | rid, conf, doc, opts => dispatchRenderR41 rid conf doc opts
+
 /-- Render from an arbitrary token lookup function (used directly by
     the conformance driver on raw `state-restricted.php` batch states
     whose token keys are cumulative process-global ids). -/
 def renderWithR41 (lookup : Nat → Option TokenEntry) (conf : RenderConf)
     (work : List TSeg) (doc : DocState) : RenderOutcome :=
-  renderWith dispatchRenderR41 lookup conf work doc
+  renderWith (dispatchRenderR41TokenAware lookup) lookup conf work doc
 
 /-- Render an R3 `ParseState` (0-indexed `st.tokens`) under the R4.1
     mirrored render rules. -/
@@ -329,13 +371,15 @@ theorem footnote_spec (conf : RenderConf) (id : Nat) :
 
 /-- `Footnoteitem`'s `parabreak` token (2026-11-21 fnb24 correction) always
     renders as a single literal LF byte (`0x0A`), regardless of config or doc state. -/
-theorem footnoteitem_parabreak (conf : RenderConf) (doc : DocState) :
-    renderFootnoteitem conf doc [("type".toList, OptVal.str "parabreak".toList)] = [10] := by
+theorem footnoteitem_parabreak (conf : RenderConf) (doc : DocState)
+    (lookup : Nat → Option TokenEntry := fun _ => none) :
+    renderFootnoteitem conf doc [("type".toList, OptVal.str "parabreak".toList)] lookup = [10] := by
   rfl
 
 /-- `Footnoteitem`'s `end` token always renders `</div>`. -/
-theorem footnoteitem_end (conf : RenderConf) (doc : DocState) :
-    renderFootnoteitem conf doc [("type".toList, OptVal.str "end".toList)] =
+theorem footnoteitem_end (conf : RenderConf) (doc : DocState)
+    (lookup : Nat → Option TokenEntry := fun _ => none) :
+    renderFootnoteitem conf doc [("type".toList, OptVal.str "end".toList)] lookup =
       litBytes "</div>" := by
   rfl
 
@@ -361,7 +405,9 @@ private theorem litBytes_Footnotes_ne_nil : litBytes "Footnotes" ≠ [] := by de
 /-- `Footnoteitem` `start` omits the trailing space after `.` whenever the
     stored note body at `doc.footnotes[id - 1]` is empty (or out of range). -/
 theorem footnoteitem_start_empty_body (conf : RenderConf) (doc : DocState)
-    (id : Nat) (hpos : id > 0) (hempty : ((doc.footnotes[id - 1]?).getD []).isEmpty = true) :
+    (id : Nat) (hpos : id > 0)
+    (hempty : (footnoteVisibleBody (fun _ => none)
+      ((doc.footnotes[id - 1]?).getD [])).isEmpty = true) :
     renderFootnoteitem conf doc
       [("type".toList, OptVal.str "start".toList),
        ("id".toList, OptVal.int (id : Int))] =
@@ -380,7 +426,9 @@ theorem footnoteitem_start_empty_body (conf : RenderConf) (doc : DocState)
 /-- `Footnoteitem` `start` appends a single space after `.` whenever the
     stored note body at `doc.footnotes[id - 1]` is non-empty. -/
 theorem footnoteitem_start_nonempty_body (conf : RenderConf) (doc : DocState)
-    (id : Nat) (hpos : id > 0) (hne : ((doc.footnotes[id - 1]?).getD []).isEmpty = false) :
+    (id : Nat) (hpos : id > 0)
+    (hne : (footnoteVisibleBody (fun _ => none)
+      ((doc.footnotes[id - 1]?).getD [])).isEmpty = false) :
     renderFootnoteitem conf doc
       [("type".toList, OptVal.str "start".toList),
        ("id".toList, OptVal.int (id : Int))] =
@@ -395,6 +443,54 @@ theorem footnoteitem_start_nonempty_body (conf : RenderConf) (doc : DocState)
   have hnotlt : ¬ ((id : Int) < 0) := Int.not_lt.mpr hge
   simp [renderFootnoteitem, optTypeIs_start_parabreak, optTypeIs_start_start,
         optStrBytes, omGet, renderOptValBytes, optNat, intBytes, hpos, hge, hnotlt, hne]
+
+/-! ## REFCORR9 mirror-gap closure (C-R5B-R3-1): token-aware separator -/
+
+private def r9hmEmptyRaw2 : List TokenEntry :=
+  [{ rule := "Raw", opts := [("text".toList, OptVal.str [])] },
+   { rule := "Raw", opts := [("text".toList, OptVal.str [])] }]
+
+private def r9hmNonEmptyRaw : List TokenEntry :=
+  [{ rule := "Raw", opts := [("text".toList, OptVal.str "x".toList)] }]
+
+/-- The REFCORR9 retained placeholder-bearing lone-newline body has an empty
+    visible body, so the mirror emits no separator space, exactly as the
+    adopted Footnoteitem.php does. -/
+theorem refcorr9_footnoteitem_retained_newline_no_sep :
+    renderFootnoteitem {} { footnotes := [phBytes 0 ++ litBytes "\n" ++ phBytes 1] }
+      [("type".toList, OptVal.str "start".toList), ("id".toList, OptVal.int 1)]
+      (fun k => r9hmEmptyRaw2[k]?) =
+    litBytes "<div class=\"footnote-footer\" id=\"footnote-" ++ natBytes 1 ++
+      litBytes "\"><a href=\"javascript:;\" onclick=\"" ++
+      litBytes "WIKIDOT.page.utils.scrollToReference(" ++
+      litBytes "'footnoteref-" ++ natBytes 1 ++ litBytes "')\">" ++
+      natBytes 1 ++ litBytes "</a>." := by
+  rfl
+
+/-- A literal visible body still gets its separator space. -/
+theorem refcorr9_footnoteitem_literal_sep :
+    renderFootnoteitem {} { footnotes := [litBytes "x"] }
+      [("type".toList, OptVal.str "start".toList), ("id".toList, OptVal.int 1)]
+      (fun k => r9hmEmptyRaw2[k]?) =
+    litBytes "<div class=\"footnote-footer\" id=\"footnote-" ++ natBytes 1 ++
+      litBytes "\"><a href=\"javascript:;\" onclick=\"" ++
+      litBytes "WIKIDOT.page.utils.scrollToReference(" ++
+      litBytes "'footnoteref-" ++ natBytes 1 ++ litBytes "')\">" ++
+      natBytes 1 ++ litBytes "</a>." ++ [32] := by
+  rfl
+
+/-- Control: a body holding only a non-empty Raw placeholder still gets its
+    separator space, so stripping must be token-aware, not blanket. -/
+theorem refcorr9_footnoteitem_nonempty_raw_sep :
+    renderFootnoteitem {} { footnotes := [phBytes 0] }
+      [("type".toList, OptVal.str "start".toList), ("id".toList, OptVal.int 1)]
+      (fun k => r9hmNonEmptyRaw[k]?) =
+    litBytes "<div class=\"footnote-footer\" id=\"footnote-" ++ natBytes 1 ++
+      litBytes "\"><a href=\"javascript:;\" onclick=\"" ++
+      litBytes "WIKIDOT.page.utils.scrollToReference(" ++
+      litBytes "'footnoteref-" ++ natBytes 1 ++ litBytes "')\">" ++
+      natBytes 1 ++ litBytes "</a>." ++ [32] := by
+  rfl
 
 /-- When no footnotes were collected (`doc.footnotes = []`), `Footnoteblock`
     renders empty for every token option map. -/
@@ -663,7 +759,26 @@ theorem notes_e2e_bibcite_duplicate_example :
   constructor
   · rfl
   · have hloop :
-      (renderSegsLoop dispatchRenderR41
+      (renderSegsLoop (dispatchRenderR41TokenAware
+        (fun k =>
+          [ { rule := "Bibitem", opts := [("label".toList, .str ['a']),
+                ("id".toList, .int 1), ("type".toList, .str "start".toList),
+                ("empty".toList, .bool false)] },
+            { rule := "Bibitem", opts := [("type".toList, .str "end".toList)] },
+            { rule := "Bibitem", opts := [("label".toList, .str ['a']),
+                ("id".toList, .int 2), ("type".toList, .str "start".toList),
+                ("empty".toList, .bool false)] },
+            { rule := "Bibitem", opts := [("type".toList, .str "end".toList)] },
+            { rule := "Bibitem", opts := [("label".toList, .str ['b']),
+                ("id".toList, .int 2), ("type".toList, .str "start".toList),
+                ("empty".toList, .bool false)] },
+            { rule := "Bibitem", opts := [("type".toList, .str "end".toList)] },
+            { rule := "Bibliography", opts := [("type".toList, .str "start".toList),
+                ("title".toList, .null)] },
+            { rule := "Bibliography", opts := [("type".toList, .str "end".toList)] },
+            { rule := "Bibcite", opts := [("label".toList, .str ['a'])] },
+            { rule := "Bibcite", opts := [("label".toList, .str ['z'])] }
+          ][k]?))
         (fun k =>
           [ { rule := "Bibitem", opts := [("label".toList, .str ['a']),
                 ("id".toList, .int 1), ("type".toList, .str "start".toList),
@@ -757,7 +872,7 @@ theorem notes_e2e_bibcite_duplicate_example :
       have hy : xhtmlPreText ['Y'] = litBytes "Y" := rfl
       have hzt : xhtmlPreText ['Z'] = litBytes "Z" := rfl
       simp only [renderSegsLoop, List.getElem?_cons_zero, List.getElem?_cons_succ,
-                 renderRuleOfName, dispatchRenderR41,
+                 renderRuleOfName, dispatchRenderR41TokenAware, dispatchRenderR41,
                  bibliography_title_default, bibliography_end, bibitem_end,
                  renderBibcite, hm1, hm2, hm3, ha, hz, hrb,
                  hnl, hsp, hnl2, hx, hy, hzt,
@@ -817,7 +932,18 @@ theorem notes_e2e_parabreak_example :
   constructor
   · rfl
   · have hloop :
-      (renderSegsLoop dispatchRenderR41
+      (renderSegsLoop (dispatchRenderR41TokenAware
+        (fun k =>
+          [ { rule := "Footnote", opts := [("id".toList, .int 1)] },
+            { rule := "Footnoteitem", opts := [("type".toList, .str "parabreak".toList)] },
+            { rule := "Footnoteitem", opts := [("type".toList, .str "start".toList),
+                ("id".toList, .int 1)] },
+            { rule := "Footnoteitem", opts := [("type".toList, .str "end".toList),
+                ("id".toList, .int 1)] },
+            { rule := "Footnoteblock", opts := [("type".toList, .str "start".toList),
+                ("title".toList, .null)] },
+            { rule := "Footnoteblock", opts := [("type".toList, .str "end".toList)] }
+          ][k]?))
         (fun k =>
           [ { rule := "Footnote", opts := [("id".toList, .int 1)] },
             { rule := "Footnoteitem", opts := [("type".toList, .str "parabreak".toList)] },
@@ -851,7 +977,8 @@ theorem notes_e2e_parabreak_example :
       litBytes "\n\np2\n\n" ++ litBytes "</div>" ++
       litBytes "</div>" ++ litBytes "\n" := by
       have hfne : ({ footnotes := [litBytes "p1\n\np2"] } : DocState).footnotes.isEmpty = false := rfl
-      have hne1 : ((({ footnotes := [litBytes "p1\n\np2"] } : DocState).footnotes[1 - 1]?).getD []).isEmpty = false := rfl
+      have hne1 : (footnoteVisibleBody (fun _ => none)
+        ((({ footnotes := [litBytes "p1\n\np2"] } : DocState).footnotes[1 - 1]?).getD [])).isEmpty = false := rfl
       have hfn1 : renderFootnote {} [("id".toList, .int 1)] =
           litBytes "<sup class=\"footnoteref\"><a id=\"footnoteref-" ++ natBytes 1 ++
           litBytes "\" href=\"javascript:;\" class=\"footnoteref\"" ++
@@ -859,22 +986,26 @@ theorem notes_e2e_parabreak_example :
           litBytes "scrollToReference('footnote-" ++ natBytes 1 ++
           litBytes "')\">" ++ natBytes 1 ++ litBytes "</a></sup>" := by
         simpa using footnote_spec {} 1
-      have hfni1 : renderFootnoteitem {} { footnotes := [litBytes "p1\n\np2"] }
-          [("type".toList, .str "start".toList), ("id".toList, .int 1)] =
+      have hfni1 (lookup : Nat → Option TokenEntry) :
+          renderFootnoteitem {} { footnotes := [litBytes "p1\n\np2"] }
+          [("type".toList, .str "start".toList), ("id".toList, .int 1)] lookup =
           litBytes "<div class=\"footnote-footer\" id=\"footnote-" ++ natBytes 1 ++
           litBytes "\"><a href=\"javascript:;\" onclick=\"" ++
           litBytes "WIKIDOT.page.utils.scrollToReference(" ++
           litBytes "'footnoteref-" ++ natBytes 1 ++ litBytes "')\">" ++ natBytes 1 ++
           litBytes "</a>." ++ [32] := by
-        simpa using footnoteitem_start_nonempty_body {} { footnotes := [litBytes "p1\n\np2"] } 1 (by decide) hne1
-      have hfnend : renderFootnoteitem {} { footnotes := [litBytes "p1\n\np2"] }
-          [("type".toList, .str "end".toList), ("id".toList, .int 1)] = litBytes "</div>" := rfl
+        rfl
+      have hfnend (lookup : Nat → Option TokenEntry) :
+          renderFootnoteitem {} { footnotes := [litBytes "p1\n\np2"] }
+          [("type".toList, .str "end".toList), ("id".toList, .int 1)] lookup =
+            litBytes "</div>" := by
+        rfl
       have ht1 : xhtmlPreText "Claim".toList = litBytes "Claim" := rfl
       have ht2 : xhtmlPreText ['\n'] = litBytes "\n" := rfl
       have ht3 : xhtmlPreText "p1".toList = litBytes "p1" := rfl
       have ht4 : xhtmlPreText "\n\np2\n\n".toList = litBytes "\n\np2\n\n" := rfl
       simp only [renderSegsLoop, List.getElem?_cons_zero, List.getElem?_cons_succ,
-                 renderRuleOfName, dispatchRenderR41,
+                 renderRuleOfName, dispatchRenderR41TokenAware, dispatchRenderR41,
                  hfn1, footnoteitem_parabreak, hfni1,
                  hfnend, footnoteblock_title_default _ hfne, footnoteblock_end _ hfne,
                  hscCompat_Footnotes, ht1, ht2, ht3, ht4,
@@ -945,7 +1076,17 @@ theorem notes_e2e_title_apostrophe_agreement :
       rfl
     rw [hst1]
     have hloop1 :
-      (renderSegsLoop dispatchRenderR41
+      (renderSegsLoop (dispatchRenderR41TokenAware
+        (fun k =>
+          [ { rule := "Footnote", opts := [("id".toList, .int 1)] },
+            { rule := "Footnoteitem", opts := [("type".toList, .str "start".toList),
+                ("id".toList, .int 1)] },
+            { rule := "Footnoteitem", opts := [("type".toList, .str "end".toList),
+                ("id".toList, .int 1)] },
+            { rule := "Footnoteblock", opts := [("type".toList, .str "start".toList),
+                ("title".toList, .str "O'Brien".toList)] },
+            { rule := "Footnoteblock", opts := [("type".toList, .str "end".toList)] }
+          ][k]?))
         (fun k =>
           [ { rule := "Footnote", opts := [("id".toList, .int 1)] },
             { rule := "Footnoteitem", opts := [("type".toList, .str "start".toList),
@@ -977,7 +1118,8 @@ theorem notes_e2e_title_apostrophe_agreement :
       litBytes "</a>." ++ [32] ++ litBytes "n\n\n" ++ litBytes "</div>" ++
       litBytes "</div>" ++ litBytes "\n" := by
       have hfne : ({ footnotes := [litBytes "n"] } : DocState).footnotes.isEmpty = false := rfl
-      have hne1 : ((({ footnotes := [litBytes "n"] } : DocState).footnotes[1 - 1]?).getD []).isEmpty = false := rfl
+      have hne1 : (footnoteVisibleBody (fun _ => none)
+        ((({ footnotes := [litBytes "n"] } : DocState).footnotes[1 - 1]?).getD [])).isEmpty = false := rfl
       have hfn1 : renderFootnote {} [("id".toList, .int 1)] =
           litBytes "<sup class=\"footnoteref\"><a id=\"footnoteref-" ++ natBytes 1 ++
           litBytes "\" href=\"javascript:;\" class=\"footnoteref\"" ++
@@ -985,22 +1127,26 @@ theorem notes_e2e_title_apostrophe_agreement :
           litBytes "scrollToReference('footnote-" ++ natBytes 1 ++
           litBytes "')\">" ++ natBytes 1 ++ litBytes "</a></sup>" := by
         simpa using footnote_spec {} 1
-      have hfni1 : renderFootnoteitem {} { footnotes := [litBytes "n"] }
-          [("type".toList, .str "start".toList), ("id".toList, .int 1)] =
+      have hfni1 (lookup : Nat → Option TokenEntry) :
+          renderFootnoteitem {} { footnotes := [litBytes "n"] }
+          [("type".toList, .str "start".toList), ("id".toList, .int 1)] lookup =
           litBytes "<div class=\"footnote-footer\" id=\"footnote-" ++ natBytes 1 ++
           litBytes "\"><a href=\"javascript:;\" onclick=\"" ++
           litBytes "WIKIDOT.page.utils.scrollToReference(" ++
           litBytes "'footnoteref-" ++ natBytes 1 ++ litBytes "')\">" ++ natBytes 1 ++
           litBytes "</a>." ++ [32] := by
-        simpa using footnoteitem_start_nonempty_body {} { footnotes := [litBytes "n"] } 1 (by decide) hne1
-      have hfnend : renderFootnoteitem {} { footnotes := [litBytes "n"] }
-          [("type".toList, .str "end".toList), ("id".toList, .int 1)] = litBytes "</div>" := rfl
+        rfl
+      have hfnend (lookup : Nat → Option TokenEntry) :
+          renderFootnoteitem {} { footnotes := [litBytes "n"] }
+          [("type".toList, .str "end".toList), ("id".toList, .int 1)] lookup =
+            litBytes "</div>" := by
+        rfl
       have ht1 : xhtmlPreText ['A'] = litBytes "A" := rfl
       have ht2 : xhtmlPreText "\n\n\n".toList = litBytes "\n\n\n" := rfl
       have ht3 : xhtmlPreText "n\n\n".toList = litBytes "n\n\n" := rfl
       have ht4 : xhtmlPreText ['\n'] = litBytes "\n" := rfl
       simp only [renderSegsLoop, List.getElem?_cons_zero, List.getElem?_cons_succ,
-                 renderRuleOfName, dispatchRenderR41,
+                 renderRuleOfName, dispatchRenderR41TokenAware, dispatchRenderR41,
                  hfn1, hfni1,
                  hfnend, renderFootnoteblock_title_OBrien _ hfne, footnoteblock_end _ hfne,
                  ht1, ht2, ht3, ht4,
@@ -1030,7 +1176,16 @@ theorem notes_e2e_title_apostrophe_agreement :
       rfl
     rw [hst2]
     have hloop2 :
-      (renderSegsLoop dispatchRenderR41
+      (renderSegsLoop (dispatchRenderR41TokenAware
+        (fun k =>
+          [ { rule := "Bibitem", opts := [("label".toList, .str ['a']),
+                ("id".toList, .int 1), ("type".toList, .str "start".toList),
+                ("empty".toList, .bool false)] },
+            { rule := "Bibitem", opts := [("type".toList, .str "end".toList)] },
+            { rule := "Bibliography", opts := [("type".toList, .str "start".toList),
+                ("title".toList, .str "O'Brien".toList)] },
+            { rule := "Bibliography", opts := [("type".toList, .str "end".toList)] }
+          ][k]?))
         (fun k =>
           [ { rule := "Bibitem", opts := [("label".toList, .str ['a']),
                 ("id".toList, .int 1), ("type".toList, .str "start".toList),
@@ -1066,7 +1221,7 @@ theorem notes_e2e_title_apostrophe_agreement :
       have ht1 : xhtmlPreText ['\n'] = litBytes "\n" := rfl
       have ht2 : xhtmlPreText ['A'] = litBytes "A" := rfl
       simp only [renderSegsLoop, List.getElem?_cons_zero, List.getElem?_cons_succ,
-                 renderRuleOfName, dispatchRenderR41,
+                 renderRuleOfName, dispatchRenderR41TokenAware, dispatchRenderR41,
                  renderBibliography_title_OBrien, bibliography_end, bibitem_end,
                  hm1, ht1, ht2,
                  List.append_nil, List.append_assoc]

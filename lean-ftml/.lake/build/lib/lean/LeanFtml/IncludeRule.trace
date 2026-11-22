@@ -1,0 +1,112 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["74dfe445e219a80b.olean"],
+  "m": false,
+  "i": "1230867e91271825.ilean",
+  "c": "d1359183313e67e4.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/LeanFtml/IncludeRule.lean -o /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/IncludeRule.olean -i /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/IncludeRule.ilean -c /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/IncludeRule.c --setup /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/IncludeRule.setup.json --json",
+   "level": "trace"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:600:19: This simp argument is unused:\n  hm\n\nHint: Omit it from the simp argument list.\n  [apply] simp only\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:605:19: This simp argument is unused:\n  hm\n\nHint: Omit it from the simp argument list.\n  [apply] simp only\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:625:29: This simp argument is unused:\n  ih\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [refSubstitute, substitute, List.foldl_cons, refSubPass_eq_repPass]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1027:10: `if_pos` has been deprecated: Use `ite_eq_left` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1029:10: `if_neg` has been deprecated: Use `ite_eq_right` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1031:12: `if_pos` has been deprecated: Use `ite_eq_left` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1034:12: `if_neg` has been deprecated: Use `ite_eq_right` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1099:10: `if_pos` has been deprecated: Use `ite_eq_left` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1101:10: `if_neg` has been deprecated: Use `ite_eq_right` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1105:12: `if_pos` has been deprecated: Use `ite_eq_left` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1114:12: `if_neg` has been deprecated: Use `ite_eq_right` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1123:14: `if_pos` has been deprecated: Use `ite_eq_left` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1154:14: `if_neg` has been deprecated: Use `ite_eq_right` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1199:8: `if_pos` has been deprecated: Use `ite_eq_left` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1201:8: `if_neg` has been deprecated: Use `ite_eq_right` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1207:8: `if_pos` has been deprecated: Use `ite_eq_left` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1341:14: `if_pos` has been deprecated: Use `ite_eq_left` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1343:14: `if_neg` has been deprecated: Use `ite_eq_right` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1372:14: `if_pos` has been deprecated: Use `ite_eq_left` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1392:14: `if_neg` has been deprecated: Use `ite_eq_right` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1394:16: `if_pos` has been deprecated: Use `ite_eq_left` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1396:16: `if_neg` has been deprecated: Use `ite_eq_right` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1400:12: `if_pos` has been deprecated: Use `ite_eq_left` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/IncludeRule.lean:1402:12: `if_neg` has been deprecated: Use `ite_eq_right` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲",
+   "level": "warning"}],
+ "inputs":
+ [["deps",
+   [["«lean-ftml»/LeanFtml:extraDep",
+     [["@«lean-ftml»:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["LeanFtml.TokenState transitive imports (legacy)", "00000000000006bb"],
+      ["LeanFtml.TokenState:importAllArts", "5211adefdb2daa0b"],
+      ["LeanFtml.Include transitive imports (legacy)", "00000000000006bb"],
+      ["LeanFtml.Include:importAllArts", "66edd3d251feecfa"],
+      ["LeanFtml.IncludeGrammar transitive imports (legacy)",
+       "00000000000006bb"],
+      ["LeanFtml.IncludeGrammar:importAllArts", "038fba4d79612c33"],
+      ["LeanFtml.IncludeExpr transitive imports (legacy)", "00000000000006bb"],
+      ["LeanFtml.IncludeExpr:importAllArts", "8562ef1c480b3132"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.36.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
+   "bd5dd4b1191d6a49"],
+  ["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/LeanFtml/IncludeRule.lean",
+   "c0c33425146a8365"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: LeanFtml.IncludeRule", "02d3c04c3835b858"],
+  ["Package.id?: (some lean-ftml)", "351a917adcadf512"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "2cba4043e06b7723"}

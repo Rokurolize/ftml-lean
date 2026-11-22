@@ -1,0 +1,11 @@
+{"plugins": [],
+ "package": "lean-ftml",
+ "options": {},
+ "name": "LeanFtml.CodeRule",
+ "isModule": false,
+ "importArts":
+ {"LeanFtml.TokenState":
+  [["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/TokenState.olean"]],
+  "LeanFtml.FrameRules":
+  [["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/FrameRules.olean"]]},
+ "dynlibs": []}

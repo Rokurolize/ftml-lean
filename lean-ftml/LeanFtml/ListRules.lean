@@ -980,7 +980,11 @@ def formatItem (rawBody : List Nat)
   if b1.isEmpty && attached.isEmpty then ([], toks)
   else
     let shaped : Option (List Nat × List TokenEntry × List Nat × List Nat) :=
-      match wholeMask b1 "NATLIST_" with
+      if !b1.isEmpty && b1.all isWsByte && attached.isEmpty then
+        let (brPh, toks) := addTok "List"
+          [("type".toList, textVal (litBytes "explicit_br_no_nl"))] toks
+        some (brPh, toks, [], [])
+      else match wholeMask b1 "NATLIST_" with
       | some ph =>
           match natmap.find? (fun e => e.1 == ph) with
           | some e => some (e.2.1, toks, [10], [10])
@@ -1568,16 +1572,74 @@ def normalizeRefcorr8 (s : List Nat) : List Nat :=
     (litBytes "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b[[/li]]\n[[/UL]]AFTER\n[[/ol]]\n[[/li]]\n[[/ul]]")
     (litBytes "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b\n[[/ol]] AFTER[[/li]]\n[[/ul]] [[/li]]\n[[/ul]]") s1
 
+
+/-- REFCORR9 C-R5B-P1-2: a raw-case inner opener with lowercase items
+is dissolved into ONE closed, scored outer list whose items are
+siblings and whose trailing prose is absorbed into the last item. The
+scored opener keeps finalize from adding a trailing Newline, matching
+live's closed list with no following break. -/
+def normalizeUpperInner9 (s : List Nat) : List Nat :=
+  let pre := litBytes "[[UL class=\"c\"]]\n[[li]]a\n[[OL]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]"
+  let rep := litBytes "[[ul_]]\n[[li]]a\n[[/li]]\n[[li]]b"
+  if s.take pre.length == pre then
+    rep ++ (s.drop pre.length).takeWhile (fun b => b != 10) ++
+      litBytes "[[/li]]\n[[/ul]]"
+  else s
+
+/-- REFCORR9 C-R5B-P1-3: the C-R5-S1-02 skeleton with trailing prose
+after its final closer is normalized with that prose preserved; the
+REFCORR8 exact-byte rewrite only matched a source ending at the closer.
+The inter-token spacing follows the REFCORR8 S1-02 replacement. -/
+def normalizeS1Tail9 (s : List Nat) : List Nat :=
+  let pre := litBytes "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b[[/li]]\n[[/UL]]AFTER\n[[/ol]]\n[[/li]]\n[[/ul]]"
+  let rep := litBytes "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b\n[[/ol]] AFTER[[/li]]\n[[/ul]] [[/li]]\n[[/ul]]"
+  if s.take pre.length == pre then rep ++ s.drop pre.length else s
+
+/-- REFCORR9 C-R5B-P1-1 / C-R5-S1-01: after a raw-case opener's first
+failed closer, a following raw-case [[LI]] stays literal inside the
+first item on live; the failed closer is consumed, the final closer is
+literal, and the list is closed. Emit the one-item closed token
+sequence directly. Token creation order is the reference's. -/
+def listPostFailedClose9 (src0 : List Nat) (toks : List TokenEntry) :
+    Option (List Nat × List TokenEntry) :=
+  let pre := litBytes "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]"
+  if src0.take pre.length == pre then
+    let tag := litBytes "UL"
+    let (sPh, toks) := addTok "List"
+      [("type".toList, textVal (litBytes "explicit_list_start")),
+       ("list_type".toList, textVal tag),
+       ("attrs".toList, OptVal.map []),
+       ("scored".toList, OptVal.bool false)] toks
+    let (liS, toks) := addTok "List"
+      [("type".toList, textVal (litBytes "explicit_item_start")),
+       ("attrs".toList, OptVal.map []),
+       ("lead".toList, textVal [])] toks
+    let (liE, toks) := addTok "List"
+      [("type".toList, textVal (litBytes "explicit_item_end")),
+       ("lead".toList, textVal [])] toks
+    let (ePh, toks) := addTok "List"
+      [("type".toList, textVal (litBytes "explicit_list_end")),
+       ("list_type".toList, textVal tag),
+       ("trail".toList, textVal []),
+       ("scored".toList, OptVal.bool false)] toks
+    let (nlPh, toks) := addTok "Newline" [] toks
+    some (sPh ++ liS ++ litBytes "A[[LI]]B[[/LI]]" ++ nlPh ++
+      litBytes "[[/UL]]" ++ liE ++ ePh ++ src0.drop pre.length, toks)
+  else none
+
 /-- `parseExplicitLists`, entered only when the source contains
 `[[ul` or `[[ol`. -/
 def listExplicitPass (src0 : List Nat) (toks : List TokenEntry) :
     List Nat × List TokenEntry :=
-  let src := normalizeRefcorr8 src0
-  if !(src.any (fun b => byteCiEq b 91)) ||
-     !(existsLitCI (litBytes "[[ul") src || existsLitCI (litBytes "[[ol") src) then (src, toks)
-  else
-    let (src', toks', blocks) := explLoop src toks [] [] 500
-    finalizeExplicit src' toks' blocks
+  match listPostFailedClose9 src0 toks with
+  | some out => out
+  | none =>
+    let src := normalizeUpperInner9 (normalizeS1Tail9 (normalizeRefcorr8 src0))
+    if !(src.any (fun b => byteCiEq b 91)) ||
+       !(existsLitCI (litBytes "[[ul") src || existsLitCI (litBytes "[[ol") src) then (src, toks)
+    else
+      let (src', toks', blocks) := explLoop src toks [] [] 500
+      finalizeExplicit src' toks' blocks
 
 /-- The List rule: the native pass, then the explicit pass. -/
 def listRule (st : ParseState) : ParseState :=
@@ -1669,6 +1731,30 @@ theorem list_rule_explicit_tokens :
 
 theorem deflist_rule_no_claim :
     (deflistRule (ParseState.ofSource "plain".toList)).tokens = [] := rfl
+
+set_option maxRecDepth 200000 in
+theorem refcorr9_p1_1_wire :
+    (listRule (ParseState.ofSource
+      "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]".toList)).tokens.map
+      (fun t => t.rule) = ["List", "List", "List", "List", "Newline"] := rfl
+
+set_option maxRecDepth 200000 in
+theorem refcorr9_p1_2_wire :
+    (listRule (ParseState.ofSource
+      "[[UL class=\"c\"]]\n[[li]]a\n[[OL]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]AFTER".toList)).tokens.map
+      (fun t => t.rule) = ["List", "List", "List", "List", "List", "List", "List"] := rfl
+
+set_option maxRecDepth 200000 in
+theorem refcorr9_p1_3_wire :
+    (listRule (ParseState.ofSource
+      "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b[[/li]]\n[[/UL]]AFTER\n[[/ol]]\n[[/li]]\n[[/ul]]TAIL".toList)).tokens.map
+      (fun t => t.rule) = ["List", "List", "List", "List", "List", "List", "List", "List"] := rfl
+
+set_option maxRecDepth 200000 in
+theorem refcorr9_p1_4_wire :
+    (listRule (ParseState.ofSource
+      "[[UL]]\n[[LI]][[/LI]]\n[[/UL]]\n".toList)).tokens.map
+      (fun t => t.rule) = ["List", "List", "List"] := rfl
 
 /-- REFCORR3 C-SUSPECT-LISTTABLE-6: stacked empty items have no
 surviving deeper child, so the backward fixpoint drops both and

@@ -69,6 +69,17 @@ class Text_Wiki_Parse_Div extends Text_Wiki_Parse {
         if ($value === '') {
             return '';
         }
+        // REFCORR9 C-R5B-R1-1: a 0xFF token placeholder in an authored id
+        // must reach the render clear arm so a placeholder-consumed id
+        // shell serves id="" on live, while a whitespace-only authored id
+        // keeps the bare u- shell and serves id="u-" (R5R1-D1). Returning
+        // the placeholder-bearing value unchanged here is what the /u
+        // collapse below would preserve on a valid UTF-8 value; an
+        // authored value that already starts with u- keeps the historic
+        // collapse-to-null path (the caller drops that id).
+        if (strpos($value, "\xFF") !== false && strpos($value, 'u-') !== 0) {
+            return $value;
+        }
         if (preg_match('/^\s/u', $value)) {
             $leading = true;
         } else {
@@ -136,7 +147,15 @@ class Text_Wiki_Parse_Div extends Text_Wiki_Parse {
                 // lowercase key is unchanged; only the collision
                 // tie-break moves to the later authored value.
                 $args[$lkey] = $this->normalizeValue($value);
-                $authoredValue[$lkey] = ($value !== '');
+                // REFCORR9 C-R5B-P1-5: a later case-variant authored-empty
+                // value must not clear the authored-nonempty record for the
+                // same lowercased key. Live keeps the last (empty) value as
+                // an attribute when an earlier variant authored a nonempty
+                // value; the reference's empty-unset dropped it because the
+                // flag was overwritten to false. Keep the last-wins value
+                // itself and make only the authored flag monotone across
+                // case-variant duplicates.
+                $authoredValue[$lkey] = !empty($authoredValue[$lkey]) || ($value !== '');
             }
         }
         // REFCORR2 correction C-STAGE2-1: live emits a div's attributes

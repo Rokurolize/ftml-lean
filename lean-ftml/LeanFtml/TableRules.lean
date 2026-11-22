@@ -372,6 +372,23 @@ def advKeyOk (k : List Nat) : Bool :=
       (97 ≤ b && b ≤ 122) && rest.all (fun x =>
         (97 ≤ x && x ≤ 122) || (48 ≤ x && x ≤ 57) || x == 45)
 
+/-- REFCORR9 C-R5B-P3-2: after the REFCORR8 fold, live admits `_` in a
+    data-* key while the general block-head grammar still rejects it. This
+    is `^data-[a-z0-9_-]*$` on the folded key, byte for byte. The `data-`
+    prefix must already be lower case, so an upper-case `DATA-` prefix never
+    reaches this gate and is still dropped by `advKeyOk`. Leaving `advKeyOk`
+    itself unchanged preserves the CoverageTable key-shape pin. -/
+def advDataKeyOk (k : List Nat) : Bool :=
+  let p := litBytes "data-"
+  p.isPrefixOf k &&
+    (k.drop p.length).all (fun x =>
+      (97 ≤ x && x ≤ 122) || (48 ≤ x && x ≤ 57) || x == 45 || x == 95)
+
+/-- Which key grammar applies: the relaxed data-* one only to an already
+    lower-case `data-` prefix, otherwise the settled general one. -/
+def advAttrKeyOk (k : List Nat) : Bool :=
+  if (litBytes "data-").isPrefixOf k then advDataKeyOk k else advKeyOk k
+
 /-- REFCORR8 C-R5-P3-2: PHP `buildAttrs` folds a data-* key to lower case
     before the key grammar and allowlist run. The prefix must already be
     the exact lower-case `data-`, exactly as in the List and Div siblings;
@@ -396,7 +413,7 @@ def advAttrStep (owner : String)
     List (List Nat × List Nat) :=
   let k := foldDataKeyAdv kv.1
   let v := kv.2
-  if !advKeyOk k then acc
+  if !advAttrKeyOk k then acc
   else if !isSafeAttrB k || k == litBytes "title" ||
       k == litBytes "hidden" then acc
   else if owner != "cell" &&
@@ -954,6 +971,30 @@ theorem adv_attr_step_upper_prefix_data_dropped :
 
 theorem adv_attr_step_upper_class_dropped :
     advAttrStep "table" [] (litBytes "CLASS", litBytes "x") = [] := rfl
+
+/-- REFCORR9 C-R5B-P3-2: `data-Foo_Bar` folds to `data-foo_bar` and the
+    underscore survives only the data-* grammar, matching the cached live
+    table head. -/
+theorem adv_data_key_underscore_folded :
+    foldDataKeyAdv (litBytes "data-Foo_Bar") = litBytes "data-foo_bar" := rfl
+
+theorem adv_data_key_underscore_ok :
+    advAttrKeyOk (litBytes "data-foo_bar") = true := rfl
+
+theorem adv_attr_step_data_underscore_example :
+    advAttrStep "table" [] (litBytes "data-Foo_Bar", litBytes "UB") =
+      [(litBytes "data-foo_bar", litBytes "UB")] := rfl
+
+/-- The general grammar still rejects the underscore; only the data-* gate
+    admits it, so the CoverageTable `tbl_key_shape` pin is unchanged. -/
+theorem adv_key_ok_underscore_still_false :
+    advKeyOk (litBytes "data-foo_bar") = false := rfl
+
+theorem adv_attr_step_upper_prefix_underscore_dropped :
+    advAttrStep "table" [] (litBytes "DATA-Foo_Bar", litBytes "x") = [] := rfl
+
+theorem adv_attr_step_dot_data_dropped :
+    advAttrStep "table" [] (litBytes "data-foo.bar", litBytes "x") = [] := rfl
 
 /-- REFCORR3 C-R45-2 / C-R45-3: `align` and `aria-*` are not safe
 advanced-table attributes on live. -/

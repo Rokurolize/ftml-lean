@@ -1,0 +1,13 @@
+{"plugins": [],
+ "package": "lean-ftml",
+ "options": {},
+ "name": "LeanFtml.FormRawRules",
+ "isModule": false,
+ "importArts":
+ {"LeanFtml.TokenState":
+  [["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/TokenState.olean"]],
+  "LeanFtml.FrameRules":
+  [["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/FrameRules.olean"]],
+  "LeanFtml.CodeRule":
+  [["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/CodeRule.olean"]]},
+ "dynlibs": []}

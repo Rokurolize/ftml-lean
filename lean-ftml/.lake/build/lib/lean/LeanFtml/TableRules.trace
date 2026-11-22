@@ -1,0 +1,33 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["97487298250a6ee7.olean"],
+  "m": false,
+  "i": "0016b774e5236643.ilean",
+  "c": "84cf034147b8152a.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/LeanFtml/TableRules.lean -o /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/TableRules.olean -i /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/TableRules.ilean -c /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/TableRules.c --setup /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/TableRules.setup.json --json",
+   "level": "trace"}],
+ "inputs":
+ [["deps",
+   [["«lean-ftml»/LeanFtml:extraDep",
+     [["@«lean-ftml»:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["LeanFtml.ListRules transitive imports (legacy)", "4feb133ff3737ee4"],
+      ["LeanFtml.ListRules:importAllArts", "84611e9efe255686"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.36.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
+   "bd5dd4b1191d6a49"],
+  ["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/LeanFtml/TableRules.lean",
+   "2bc22cf5ea05bca8"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: LeanFtml.TableRules", "08c6909e64d1588c"],
+  ["Package.id?: (some lean-ftml)", "351a917adcadf512"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "11872734b0e321bd"}

@@ -1,0 +1,61 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["55a35a8252c38a77.olean"],
+  "m": false,
+  "i": "8edbb7bcecd44505.ilean",
+  "c": "05fb0a710b39037d.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/LeanFtml/Depth.lean -o /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/Depth.olean -i /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/Depth.ilean -c /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/Depth.c --setup /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/Depth.setup.json --json",
+   "level": "trace"},
+  {"message":
+   "LeanFtml/Depth.lean:104:18: Variable name `b` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _b\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/Depth.lean:105:20: Variable name `b` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _b\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/Depth.lean:307:39: This simp argument is unused:\n  modifyTop_ne_nil (s := g' :: rs) (by simp)\n\nHint: Omit it from the simp argument list.\n  [apply] simp [modifyTop]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/Depth.lean:623:31: This simp argument is unused:\n  placedForest_append\n\nHint: Omit it from the simp argument list.\n  [apply] simp [hnil, placedState, placedStack]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/Depth.lean:624:31: This simp argument is unused:\n  placedForest_append\n\nHint: Omit it from the simp argument list.\n  [apply] simp [hnil, placedState, placedStack, Forest.walk, placedForest]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/Depth.lean:903:8: `if_pos` has been deprecated: Use `ite_eq_left` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/Depth.lean:918:8: `if_neg` has been deprecated: Use `ite_eq_right` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/Depth.lean:967:30: This simp argument is unused:\n  Forest.walk_nil\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [Forest.walk, List.append_nil, walk_append]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/Depth.lean:986:12: `if_pos` has been deprecated: Use `ite_eq_left` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲",
+   "level": "warning"},
+  {"message":
+   "LeanFtml/Depth.lean:995:12: `if_neg` has been deprecated: Use `ite_eq_right` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲",
+   "level": "warning"}],
+ "inputs":
+ [["deps",
+   [["«lean-ftml»/LeanFtml:extraDep",
+     [["@«lean-ftml»:extraDep", "00000000000006bb"]]],
+    ["imports", "00000000000006bb"]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.36.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
+   "bd5dd4b1191d6a49"],
+  ["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/LeanFtml/Depth.lean",
+   "0e3dedbacfea58fe"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: LeanFtml.Depth", "d1069e45f19fbf38"],
+  ["Package.id?: (some lean-ftml)", "351a917adcadf512"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "c03325f321b6237f"}

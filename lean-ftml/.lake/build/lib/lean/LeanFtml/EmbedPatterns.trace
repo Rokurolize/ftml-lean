@@ -1,0 +1,31 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["c15b07591845ea2c.olean"],
+  "m": false,
+  "i": "f848ce29a49d46b9.ilean",
+  "c": "f1587e31414248cc.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/LeanFtml/EmbedPatterns.lean -o /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/EmbedPatterns.olean -i /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/EmbedPatterns.ilean -c /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/EmbedPatterns.c --setup /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/EmbedPatterns.setup.json --json",
+   "level": "trace"}],
+ "inputs":
+ [["deps",
+   [["«lean-ftml»/LeanFtml:extraDep",
+     [["@«lean-ftml»:extraDep", "00000000000006bb"]]],
+    ["imports", "00000000000006bb"]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.36.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
+   "bd5dd4b1191d6a49"],
+  ["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/LeanFtml/EmbedPatterns.lean",
+   "3eb867ea0388151d"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: LeanFtml.EmbedPatterns", "a0ad84019534140c"],
+  ["Package.id?: (some lean-ftml)", "351a917adcadf512"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "36749e839a9db132"}
