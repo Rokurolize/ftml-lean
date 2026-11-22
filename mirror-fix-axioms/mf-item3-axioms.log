@@ -1,0 +1,12 @@
+[lean-build] 422069 waiting for queue 20:03:21
+[lean-build] 422069 acquired 20:03:21
+/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-mirror-fix/mirror-fix-axioms/mf-item3-HarnessInline.lean:109:4: warning: This simp argument is unused:
+  List.nil_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hhref0, henc, hhrefE, hhash, htext0, htext, htarget0, htruth, htargetE, htype, Bool.false_eq_true,
+    ↓reduceIte, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'LeanFtml.spec_inline_interwiki_unknown_raw' depends on axioms: [propext, Classical.choice, Quot.sound]
+[lean-build] 422069 released status=0 20:03:27

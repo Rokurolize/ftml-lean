@@ -1,0 +1,6 @@
+[lean-build] 417902 waiting for queue 19:55:09
+[lean-build] 417902 acquired 19:55:09
+LeanFtml/SpecRefcorr6.lean:51:0: error: maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+[lean-build] 417902 released status=1 19:55:11

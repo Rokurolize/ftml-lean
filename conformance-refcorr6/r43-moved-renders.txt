@@ -1,0 +1,60 @@
+=== inline3-xbattery/x101
+src : '{{a[[div]]b}}c[[/div]] and ^^d[[div]]e^^f[[/div]]'
+old : '<p><tt>a[[div]]b</tt>c[<a href="/div]]">and ^^d[[div</a>]e^^f[[/div]]</p>\n\n'
+new : '<p><tt>a[[div]]b</tt>c[[/div]] and <sup>d[[div]]e</sup>f[[/div]]</p>\n\n'
+=== bib53-tabview-residue
+src : '[[bibliography]]\n: key : Value\n[[tabview]]\n[[tab One]]\nBody one\n[[/tab]]\n[[/tabview]]\n[[/bibliography]]\n'
+old : '<div class="bibitems"><div class="title">Bibliography</div><div class="bibitem" id="bibitem-1">1. Value</div>\n[[tabview]] [[tab One]] Body one [<a href="/tab]]">[[/tabview</a>]</div>'
+new : '<div class="bibitems"><div class="title">Bibliography</div><div class="bibitem" id="bibitem-1">1. Value</div>\n[[tabview]] [[tab One]] Body one [[/tab]] [[/tabview]]</div>'
+=== fn17-mixed-case-tag
+src : 'A[[FootNote]]mix[[/footnote]] B[[footnote]]two[[/FootNote]]\n\n[[footnoteblock]]'
+old : '<p>A[[FootNote]]mix[<a href="/footnote]]">B[[footnote</a>]two[[/FootNote]]</p>\n\n'
+new : '<p>A[[FootNote]]mix[[/footnote]] B[[footnote]]two[[/FootNote]]</p>\n\n'
+=== fn51-underscore-closer
+src : 'A[[footnote]]x[[/footnote_]] B[[footnote]]plain[[/footnote]]'
+old : '<p>A<sup class="footnoteref"><a id="footnoteref-1" href="javascript:;" class="footnoteref" onclick="WIKIDOT.page.utils.scrollToReference(\'footnote-1\')">1</a></sup></p>\n\n<div class="footnotes-footer"><div class="title">Footnotes</div><div class="footnote-footer" id="footnote-1"><a href="javascript:;" onclick="WIKIDOT.page.utils.scrollToReference(\'footnoteref-1\')">1</a>. x[<a href="/footnote_
+new : '<p>A<sup class="footnoteref"><a id="footnoteref-1" href="javascript:;" class="footnoteref" onclick="WIKIDOT.page.utils.scrollToReference(\'footnote-1\')">1</a></sup></p>\n\n<div class="footnotes-footer"><div class="title">Footnotes</div><div class="footnote-footer" id="footnote-1"><a href="javascript:;" onclick="WIKIDOT.page.utils.scrollToReference(\'footnoteref-1\')">1</a>. x[[/footnote_]] B[[fo
+=== fni-43-dup-biblabel
+src : 'A[[footnote]]note[[/footnote]]\n\n[[bibliography]]\n[[bibitem alpha]]One[[/bibitem]]\n[[bibitem alpha]]Two[[/bibitem]]\n[[bibcite alpha]]\n[[/bibliography]]\n\n[[footnoteblock]]'
+old : '<p>A<sup class="footnoteref"><a id="footnoteref-1" href="javascript:;" class="footnoteref" onclick="WIKIDOT.page.utils.scrollToReference(\'footnote-1\')">1</a></sup></p>\n\n<div class="bibitems"><div class="title">Bibliography</div>\n[[bibitem alpha]]One[<a href="/bibitem]]">[[bibitem alpha</a>]Two[<a href="/bibitem]]">[[bibcite alpha</a>]</div><div class="footnotes-footer"><div class="title">Foo
+new : '<p>A<sup class="footnoteref"><a id="footnoteref-1" href="javascript:;" class="footnoteref" onclick="WIKIDOT.page.utils.scrollToReference(\'footnote-1\')">1</a></sup></p>\n\n<div class="bibitems"><div class="title">Bibliography</div>\n[[bibitem alpha]]One[[/bibitem]] [[bibitem alpha]]Two[[/bibitem]] [[bibcite alpha]]</div><div class="footnotes-footer"><div class="title">Footnotes</div><div class="
+=== dp-11
+src : '[[/div]] [[span]]'
+old : '<p>[<a href="/div]]">[[span</a>]</p>\n\n'
+new : '<p>[[/div]] [[span]]</p>\n\n'
+=== dp-17
+src : '[[/div]] [[div]] [[div]]'
+old : '<p>[<a href="/div]][[div]]">[[div</a>]</p>\n\n'
+new : '<p>[[/div]][[div]] [[div]]</p>\n\n'
+=== dp-19
+src : '[[/div]] x [[div]]'
+old : '<p>[<a href="/div]]">x [[div</a>]</p>\n\n'
+new : '<p>[[/div]] x [[div]]</p>\n\n'
+=== dp-22
+src : '[[/div]] [[div class="a"]]'
+old : '<p>[<a href="/div]][[div">class=&quot;a&quot;</a>]</p>\n\n'
+new : '<p>[[/div]][[div class=&quot;a&quot;]]</p>\n\n'
+=== dp-27
+src : '[[/div]] [[div]] [[/div]] [[div]]'
+old : '<p>[<a href="/div]][[div]]">[[/div</a>][[div]]</p>\n\n'
+new : '<p>[[/div]][[div]] [[/div]][[div]]</p>\n\n'
+=== dp-34
+src : 'a [[/div]] b [[div]] c'
+old : '<p>a [<a href="/div]]">b [[div</a>] c</p>\n\n'
+new : '<p>a [[/div]] b [[div]] c</p>\n\n'
+=== dp-36
+src : '[[/div]] [[div]] [[/div]]'
+old : '<p>[<a href="/div]][[div]]">[[/div</a>]</p>\n\n'
+new : '<p>[[/div]][[div]] [[/div]]</p>\n\n'
+=== dp-41
+src : '[[/div]] [[div]] [[div]] [[/div]] [[div]]'
+old : '<p>[<a href="/div]][[div]]">[[div</a>] [[/div]][[div]]</p>\n\n'
+new : '<p>[[/div]][[div]] [[div]] [[/div]][[div]]</p>\n\n'
+=== dp-43
+src : '[[/div]] [[di]]'
+old : '<p>[<a href="/div]]">[[di</a>]</p>\n\n'
+new : '<p>[[/div]] [[di]]</p>\n\n'
+=== ga-24
+src : '[[gallery]]\n: [[span]]x[[/span]]\n[[/gallery]]'
+old : {'$bytes': [60, 100, 105, 118, 32, 99, 108, 97, 115, 115, 61, 34, 103, 97, 108, 108, 101, 114, 121, 45, 98, 111, 120, 34, 62, 60, 100, 105, 118, 32, 99, 108, 97, 115, 115, 61, 34, 103, 97, 108, 108, 101, 114, 121, 45, 105, 116, 101, 109, 32, 116, 104, 117, 109, 98, 110, 97, 105, 108, 34, 62, 60, 116, 97, 98, 108, 101, 62, 60, 116, 114, 62, 60, 116, 100, 62, 60, 97, 32, 104, 114, 101, 102, 61, 34, 
+new : {'$bytes': [60, 100, 105, 118, 32, 99, 108, 97, 115, 115, 61, 34, 103, 97, 108, 108, 101, 114, 121, 45, 98, 111, 120, 34, 62, 60, 100, 105, 118, 32, 99, 108, 97, 115, 115, 61, 34, 103, 97, 108, 108, 101, 114, 121, 45, 105, 116, 101, 109, 32, 116, 104, 117, 109, 98, 110, 97, 105, 108, 34, 62, 60, 116, 97, 98, 108, 101, 62, 60, 116, 114, 62, 60, 116, 100, 62, 60, 97, 32, 104, 114, 101, 102, 61, 34, 

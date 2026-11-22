@@ -398,8 +398,13 @@ def urlDescrMatch (bs : List Nat) (toks : List TokenEntry) :
           | 32 :: rest2 =>
               match descrTail (fun b => !(b == 93 || b == 255)) rest2 with
               | some (text, rest3) =>
-                  if (findSub [91, 91, 36] text).isSome then
-                    some (rest3, bs.take (bs.length - rest3.length), toks)
+                  let wholeMatch := bs.take (bs.length - rest3.length)
+                  if (findSub [91, 91, 36] text).isSome ||
+                      (findSub [36, 93] wholeMatch).isSome then
+                    -- REFCORR6 m1-code: a described match that has
+                    -- swallowed the math closer's `$]` fragment yields,
+                    -- so Mathinline claims the whole authored body.
+                    some (rest3, wholeMatch, toks)
                   else
                     let opts : OptMap :=
                       [("type".toList, OptVal.str "descr".toList),
@@ -575,34 +580,81 @@ where
           | b :: rest => b :: go rest fuel
           | [] => []
 
-/-- The replacement a token contributes to a Mathinline
-    body: its `text` option if string-valued, else its
-    `href` if string-valued, else the empty string. -/
+/-- REFCORR6 C-SUSPECT3-1. The mirror's token entries carry only a
+    rule name and an option map (TokenState.TokenEntry), with no side
+    table: unlike the reference's addToken, no mirrored claim site
+    hands its matched span to a shared choke point. For the rules that
+    can reach a Mathinline body, the option map determines that span
+    exactly, so this is a per-rule source-text reconstruction, the
+    mirror counterpart of the reference's carried source span. A
+    described Url is `[href text]`, a bare Url is its href, a described
+    Email is `[email text]`, a bare Email is its address, and a Code
+    block is its authored opener, body and closer. Every other rule
+    keeps the pre-correction one-level option substitution, so the
+    mirror changes only where live changes. -/
 def mathRepl (tok : TokenEntry) : List Nat :=
-  match (omGet tok.opts "text".toList).bind optStringBytes with
-  | some bs => bs
-  | none => ((omGet tok.opts "href".toList).bind optStringBytes).getD []
+  let fallback := match (omGet tok.opts "text".toList).bind optStringBytes with
+    | some bs => bs
+    | none => ((omGet tok.opts "href".toList).bind optStringBytes).getD []
+  let star := match omGet tok.opts "target".toList with
+    | some (OptVal.str s) => if s == "_blank".toList then [42] else []
+    | _ => []
+  match tok.rule with
+  | "Url" =>
+      let href := ((omGet tok.opts "href".toList).bind optStringBytes).getD fallback
+      let text := ((omGet tok.opts "text".toList).bind optStringBytes).getD href
+      match omGet tok.opts "type".toList with
+      | some (OptVal.str t) =>
+          if t == "descr".toList then [91] ++ star ++ href ++ [32] ++ text ++ [93]
+          else star ++ href
+      | _ => star ++ href
+  | "Email" =>
+      let addr := ((omGet tok.opts "email".toList).bind optStringBytes).getD fallback
+      let text := ((omGet tok.opts "text".toList).bind optStringBytes).getD addr
+      if addr == text then addr else [91] ++ addr ++ [32] ++ text ++ [93]
+  | "Code" =>
+      litBytes "[[code]]" ++
+        ((omGet tok.opts "text".toList).bind optStringBytes).getD fallback ++
+        litBytes "[[/code]]"
+  | _ => fallback
 
-/-- Correction C1's resolution: for each placeholder
-    occurrence of the (trimmed) content, in order, look the
-    token up in the table; a Newline or Raw token suppresses
-    the whole content to the empty string and stops the
-    fold; any other token's replacement is substituted for
-    every occurrence of that placeholder at once; a
-    placeholder naming no token is left in place. -/
+/-- REFCORR6 suppression set: the four rules the M1 battery proves
+    suppress the whole formula wherever they occur, at any depth. -/
+def mathSuppressRule (rule : String) : Bool :=
+  rule == "Freelink" || rule == "Raw" || rule == "Newline" || rule == "Image"
+
+/-- REFCORR6 C-SUSPECT3-1 recursive expansion. Each placeholder is
+    looked up and replaced with its token's authored source text; that
+    source is itself expanded, recursively, so a placeholder carried
+    inside a described email's label is resolved too. A suppression
+    rule found at any depth empties the whole body. `seen` is the
+    current chain of token ids and bounds a cyclic placeholder chain;
+    `depth` bounds accidental deep nesting. Unknown placeholders and
+    cycles are left in place. -/
+def mathResolveGo (content : List Nat) (toks : List TokenEntry)
+    (seen : List Nat) (fuel : Nat) : List Nat :=
+  go content (placeholdersOf content) fuel
+where
+  go : List Nat → List (List Nat × Nat) → Nat → List Nat
+    | c, _, 0 => c
+    | c, [], _ => c
+    | c, (whole, tid) :: rest, fuel + 1 =>
+        match toks[tid]? with
+        | none => go c rest fuel
+        | some tok =>
+            if mathSuppressRule tok.rule then []
+            else if tid ∈ seen then go c rest fuel
+            else
+              let src := mathRepl tok
+              let rep := go src (placeholdersOf src) fuel
+              go (replaceAllBytes c whole rep) rest fuel
+
+/-- The Mathinline entry point: expand the trimmed body from an empty
+    chain. The fuel bounds every expansion chain; it is far larger than
+    any placeholder count a document in the corpus can produce. -/
 def mathResolve (content : List Nat) (toks : List TokenEntry) :
     List Nat :=
-  if !content.contains 255 then content
-  else go content (placeholdersOf content)
-where
-  go : List Nat → List (List Nat × Nat) → List Nat
-    | c, [] => c
-    | c, (whole, tid) :: rest =>
-        match toks[tid]? with
-        | none => go c rest
-        | some tok =>
-            if tok.rule == "Newline" || tok.rule == "Raw" then []
-            else go (replaceAllBytes c whole (mathRepl tok)) rest
+  mathResolveGo content toks [] 10000
 
 /-- The Mathinline matcher at a scan position: the opener
     `[[$`, the lazy body, and the closer `$]]`; the claimed

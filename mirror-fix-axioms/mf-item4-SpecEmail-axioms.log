@@ -1,0 +1,7 @@
+[lean-build] 423307 waiting for queue 20:07:20
+[lean-build] 423307 acquired 20:07:20
+'LeanFtml.spec_email_render_confirms_live_escaping' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.spec_email_render_bytewise_reverse_non_ascii' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.spec_email_render_at_in_label' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.spec_email_render_hash_in_label' depends on axioms: [propext, Classical.choice, Quot.sound]
+[lean-build] 423307 released status=0 20:07:37

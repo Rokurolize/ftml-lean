@@ -38,7 +38,7 @@
 {"id": "email-1", "output": "<span class=\"wiki-email\">elpmaxe.b|1a#olleh</span>", "phpClass": ["emReversed"], "null": false}
 {"id": "email-2", "output": "<span class=\"wiki-email\">elpmaxe.b|2a#y x</span>", "phpClass": ["emReversed"], "null": false}
 {"id": "email-3", "output": "<span class=\"wiki-email\">elpmaxe.b|3a#neirB'O</span>", "phpClass": ["emReversed"], "null": false}
-{"id": "email-4", "output": "<span class=\"wiki-email\">elpmaxe.b|4a#b&a</span>", "phpClass": ["emReversed"], "null": false}
+{"id": "email-4", "output": "<span class=\"wiki-email\">elpmaxe.b|4a#b&amp;a</span>", "phpClass": ["emReversed"], "null": false}
 {"id": "email-5", "output": "<span class=\"wiki-email\">elpmaxe.b|5a#0n</span>", "phpClass": ["emReversed"], "null": false}
 {"id": "email-6", "output": "<span class=\"wiki-email\">elpmaxe.b|6a#zz</span>", "phpClass": ["emReversed"], "null": false}
 {"id": "email-7", "output": "<span class=\"wiki-email\">elpmaxe.b|7a#ydob</span>", "phpClass": ["emReversed"], "null": false}

@@ -327,7 +327,15 @@ def renderFreelink (opts : OptMap) : List Nat :=
   if phpTruthyBytes url then
     let t := htmlSpecialCharsCompat (phpTrimBytes text)
     let t := if nonbr then nbspSpaces t else t
-    litBytes "<a href=\"" ++ htmlSpecialCharsCompat url ++
+    -- MIRROR-FIX Item 2 (REFCORR3 C-SUSPECT-SERVING-2): the parse rule
+    -- appends a truthy target for a starred URL; the render must emit its
+    -- escaped attribute ahead of href, exactly as the corrected reference
+    -- and live do. A plain URL carries no target and is unchanged.
+    let target := optStrBytes opts "target".toList
+    let targetAttr := if target.isEmpty then [] else
+      litBytes " target=\"" ++ htmlSpecialCharsCompat target ++ litBytes "\""
+    litBytes "<a" ++ targetAttr ++ litBytes " href=\"" ++
+      htmlSpecialCharsCompat url ++
       litBytes "\">" ++ t ++ litBytes "</a>"
   else if phpTruthyBytes site then
     litBytes "<a href=\"http://" ++ site ++ litBytes "." ++

@@ -1,0 +1,411 @@
+{
+  "seed": 20261122,
+  "cases": 292,
+  "failures": 8,
+  "class_mismatch": 0,
+  "uncomparable": 16,
+  "by_class": {
+    "urlLink": {
+      "n": 5,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "urlTarget": {
+      "n": 5,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "urlFootnote": {
+      "n": 5,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "urlHash": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "iwKnown": {
+      "n": 5,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "iwUnknown": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "emReversed": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "flUrl": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "flExists": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "flMissing": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "flNonbr": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "flTarget": {
+      "n": 8,
+      "fail": 8,
+      "uncomparable": 0,
+      "ids": [
+        "fl-target-0",
+        "fl-target-1",
+        "fl-target-2",
+        "fl-target-3",
+        "fl-target-4",
+        "fl-target-5",
+        "fl-target-6",
+        "fl-target-7"
+      ]
+    },
+    "flSite": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 8,
+      "ids": []
+    },
+    "imFirst": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "imFlickr": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 8,
+      "ids": []
+    },
+    "imUrlSource": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "imLocalResized": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "imLocalPlain": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "imLinked": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "imAlignFLeft": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "imAlignFRight": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "imAlignLeft": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "imAlignRight": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "imAlignCenter": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "spStartBare": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "spStartAttrs": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "spEnd": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "spFall": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "szStart": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "szEnd": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "szFall": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "ctHex": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "ctNamed": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "ctEmpty": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "ctEnd": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "ctFall": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "ctInvalidStart": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    },
+    "ctInvalidOther": {
+      "n": 8,
+      "fail": 0,
+      "uncomparable": 0,
+      "ids": []
+    }
+  },
+  "failure_records": [
+    {
+      "id": "fl-target-0",
+      "class": "flTarget",
+      "php": "<a target=\"_blank\" href=\"http://x.example/0\">L</a>",
+      "lean": "<a href=\"http://x.example/0\">L</a>"
+    },
+    {
+      "id": "fl-target-1",
+      "class": "flTarget",
+      "php": "<a target=\"_blank\" href=\"http://x.example/1\">L</a>",
+      "lean": "<a href=\"http://x.example/1\">L</a>"
+    },
+    {
+      "id": "fl-target-2",
+      "class": "flTarget",
+      "php": "<a target=\"_blank\" href=\"http://x.example/2\">L</a>",
+      "lean": "<a href=\"http://x.example/2\">L</a>"
+    },
+    {
+      "id": "fl-target-3",
+      "class": "flTarget",
+      "php": "<a target=\"_blank\" href=\"http://x.example/3\">L</a>",
+      "lean": "<a href=\"http://x.example/3\">L</a>"
+    },
+    {
+      "id": "fl-target-4",
+      "class": "flTarget",
+      "php": "<a target=\"_blank\" href=\"http://x.example/4\">L</a>",
+      "lean": "<a href=\"http://x.example/4\">L</a>"
+    },
+    {
+      "id": "fl-target-5",
+      "class": "flTarget",
+      "php": "<a target=\"_blank\" href=\"http://x.example/5\">L</a>",
+      "lean": "<a href=\"http://x.example/5\">L</a>"
+    },
+    {
+      "id": "fl-target-6",
+      "class": "flTarget",
+      "php": "<a target=\"_blank\" href=\"http://x.example/6\">L</a>",
+      "lean": "<a href=\"http://x.example/6\">L</a>"
+    },
+    {
+      "id": "fl-target-7",
+      "class": "flTarget",
+      "php": "<a target=\"_blank\" href=\"http://x.example/7\">L</a>",
+      "lean": "<a href=\"http://x.example/7\">L</a>"
+    }
+  ],
+  "mismatch_records": [],
+  "uncomparable_records": [
+    {
+      "id": "fl-site-0",
+      "class": "flSite",
+      "reason": "Freelink site branch: reference fatals on undefined GlobalProperties; unreachable after parse correction",
+      "php": "Error: Class \"GlobalProperties\" not found",
+      "lean": "ok"
+    },
+    {
+      "id": "fl-site-1",
+      "class": "flSite",
+      "reason": "Freelink site branch: reference fatals on undefined GlobalProperties; unreachable after parse correction",
+      "php": "Error: Class \"GlobalProperties\" not found",
+      "lean": "ok"
+    },
+    {
+      "id": "fl-site-2",
+      "class": "flSite",
+      "reason": "Freelink site branch: reference fatals on undefined GlobalProperties; unreachable after parse correction",
+      "php": "Error: Class \"GlobalProperties\" not found",
+      "lean": "ok"
+    },
+    {
+      "id": "fl-site-3",
+      "class": "flSite",
+      "reason": "Freelink site branch: reference fatals on undefined GlobalProperties; unreachable after parse correction",
+      "php": "Error: Class \"GlobalProperties\" not found",
+      "lean": "ok"
+    },
+    {
+      "id": "fl-site-4",
+      "class": "flSite",
+      "reason": "Freelink site branch: reference fatals on undefined GlobalProperties; unreachable after parse correction",
+      "php": "Error: Class \"GlobalProperties\" not found",
+      "lean": "ok"
+    },
+    {
+      "id": "fl-site-5",
+      "class": "flSite",
+      "reason": "Freelink site branch: reference fatals on undefined GlobalProperties; unreachable after parse correction",
+      "php": "Error: Class \"GlobalProperties\" not found",
+      "lean": "ok"
+    },
+    {
+      "id": "fl-site-6",
+      "class": "flSite",
+      "reason": "Freelink site branch: reference fatals on undefined GlobalProperties; unreachable after parse correction",
+      "php": "Error: Class \"GlobalProperties\" not found",
+      "lean": "ok"
+    },
+    {
+      "id": "fl-site-7",
+      "class": "flSite",
+      "reason": "Freelink site branch: reference fatals on undefined GlobalProperties; unreachable after parse correction",
+      "php": "Error: Class \"GlobalProperties\" not found",
+      "lean": "ok"
+    },
+    {
+      "id": "im-flickr-0",
+      "class": "imFlickr",
+      "reason": "Image:FlickrHandler serving disposition: reference fatal, Lean excluded; not emitted by the parse rules",
+      "php": "Error: Class \"FlickrHandler\" not found",
+      "lean": "excluded"
+    },
+    {
+      "id": "im-flickr-1",
+      "class": "imFlickr",
+      "reason": "Image:FlickrHandler serving disposition: reference fatal, Lean excluded; not emitted by the parse rules",
+      "php": "Error: Class \"FlickrHandler\" not found",
+      "lean": "excluded"
+    },
+    {
+      "id": "im-flickr-2",
+      "class": "imFlickr",
+      "reason": "Image:FlickrHandler serving disposition: reference fatal, Lean excluded; not emitted by the parse rules",
+      "php": "Error: Class \"FlickrHandler\" not found",
+      "lean": "excluded"
+    },
+    {
+      "id": "im-flickr-3",
+      "class": "imFlickr",
+      "reason": "Image:FlickrHandler serving disposition: reference fatal, Lean excluded; not emitted by the parse rules",
+      "php": "Error: Class \"FlickrHandler\" not found",
+      "lean": "excluded"
+    },
+    {
+      "id": "im-flickr-4",
+      "class": "imFlickr",
+      "reason": "Image:FlickrHandler serving disposition: reference fatal, Lean excluded; not emitted by the parse rules",
+      "php": "Error: Class \"FlickrHandler\" not found",
+      "lean": "excluded"
+    },
+    {
+      "id": "im-flickr-5",
+      "class": "imFlickr",
+      "reason": "Image:FlickrHandler serving disposition: reference fatal, Lean excluded; not emitted by the parse rules",
+      "php": "Error: Class \"FlickrHandler\" not found",
+      "lean": "excluded"
+    },
+    {
+      "id": "im-flickr-6",
+      "class": "imFlickr",
+      "reason": "Image:FlickrHandler serving disposition: reference fatal, Lean excluded; not emitted by the parse rules",
+      "php": "Error: Class \"FlickrHandler\" not found",
+      "lean": "excluded"
+    },
+    {
+      "id": "im-flickr-7",
+      "class": "imFlickr",
+      "reason": "Image:FlickrHandler serving disposition: reference fatal, Lean excluded; not emitted by the parse rules",
+      "php": "Error: Class \"FlickrHandler\" not found",
+      "lean": "excluded"
+    }
+  ]
+}

@@ -1182,6 +1182,46 @@ where
 
 def tagIsRawCase (t : List Nat) : Bool := t != lowerBytes t
 
+/-- MIRROR-FIX Item 1: the byte offset of the last case-insensitive
+    `[[/li]]` in `bs`, or none. This is the mirror of PHP's `strripos`
+    on the synthetic-opener body; the last closer, not the first, bounds
+    the residual tail that is absorbed into the final item. -/
+def lastLiCloseIdx (bs : List Nat) : Option Nat :=
+  go 0 bs none
+where
+  go : Nat → List Nat → Option Nat → Option Nat
+    | _, [], acc => acc
+    | i, s@(_ :: rest), acc =>
+        go (i + 1) rest
+          (if (matchLitCI (litBytes "[[/li]]") s).isSome then some i else acc)
+
+/-- MIRROR-FIX Item 1: fold any run of three or more newlines to two.
+    This is the reference's `preg_replace('/\n{3,}/', "\n\n", $tail)` on
+    the residual tail of a synthetic (unmatched uppercase) opener. -/
+def foldNewlineRun3 (bs : List Nat) : List Nat :=
+  go [] 0 bs
+where
+  go : List Nat → Nat → List Nat → List Nat
+    | acc, n, [] => acc ++ List.replicate (min n 2) 10
+    | acc, n, 10 :: rest => go acc (n + 1) rest
+    | acc, n, b :: rest =>
+        go (acc ++ List.replicate (min n 2) 10 ++ [b]) 0 rest
+
+/-- MIRROR-FIX Item 1: absorb the residual tail after the last `[[/li]]`
+    back in front of that closer. The corrected reference swallows an
+    uppercase opener's would-be block closer and then re-homes everything
+    after the final item close into the last item body; the mirror's
+    `stripBlockCloserTag` already does the first half, and this helper
+    lands the second half so the item body renders the same <br /> bytes
+    instead of dropping the tail. -/
+def absorbLastLiTail (bs : List Nat) : List Nat :=
+  match lastLiCloseIdx bs with
+  | none => bs
+  | some i =>
+      let close := (bs.drop i).take 7
+      let tail := foldNewlineRun3 (bs.drop (i + 7))
+      bs.take i ++ tail ++ close
+
 /-- The build loop: repeatedly pair the first pairable closer with
 the topmost matching opener, build that block, splice, and rescan
 (the reference's 500-iteration guard). -/
@@ -1196,7 +1236,12 @@ def explLoop (src : List Nat) (toks : List TokenEntry)
           -- closer still enters list mode; its body runs to end of source.
           match (scanTags src).find? (fun t => t.isOpen && tagIsRawCase t.tag) with
           | some op =>
-              let body := stripBlockCloserTag (src.drop (op.start + op.len))
+              -- MIRROR-FIX Item 1: swallow the would-be block closer and
+              -- absorb the residual tail into the last item, bytewise as
+              -- the corrected reference does (lb07). The tail used to stay
+              -- after the final [[/li]] and was dropped from the item body.
+              let body := absorbLastLiTail
+                (stripBlockCloserTag (src.drop (op.start + op.len)))
               let (repl, toks', blocks') := buildExplicit op.tag op.scored
                 op.attrs body false toks blocks
               let src' := (src.take op.start) ++ repl

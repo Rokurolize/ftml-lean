@@ -1,0 +1,17 @@
+m1-plain                     NEWLINE
+m1-url                       NEWLINE
+m1-email-bare                NEWLINE
+m1-email-descr               NEWLINE
+m1-freelink                  NEWLINE
+m1-raw                       NEWLINE
+m1-code                      NEWLINE
+m1-newline                   NEWLINE
+m1-nested-email-url          NEWLINE
+m1-nested-email-free         NEWLINE
+m1-nested-email-raw          NEWLINE
+m1-nested-email-newline      NEWLINE
+m1-freelink-url              NEWLINE
+m1-image                     FRAME
+m1-email-descr-url-first     NEWLINE
+m1-two-urls                  NEWLINE
+raw-exact 0/16  newline-stripped 15/16  framed 16/16

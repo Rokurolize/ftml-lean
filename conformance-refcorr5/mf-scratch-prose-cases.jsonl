@@ -1,0 +1,5 @@
+{"id": "after1", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\nAFTER"}
+{"id": "after2", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n\nAFTER"}
+{"id": "scored", "source": "[[UL_]]\n[[LI]]A[[/LI]]\n[[/UL]]\n\nAFTER"}
+{"id": "lower", "source": "[[ul]]\n[[li]]A[[/li]]\n[[/ul]]"}
+{"id": "twoitems", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[LI]]B[[/LI]]\n[[/UL]]"}

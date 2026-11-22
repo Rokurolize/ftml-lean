@@ -4,12 +4,5 @@
    "tokens"
   ],
   "source": "[[a href=\"@@a@@\"]]r1[[/a]]\n[[a class=\"@@a@@\" href=\"/x\"]]r2[[/a]]\n[[a href=\"/x@@a@@\"]]r3[[/a]]"
- },
- "lb07": {
-  "components": [
-   "segments",
-   "tokens"
-  ],
-  "source": "[[UL]]\n[[LI]]Case[[/LI]]\n[[/UL]]"
  }
 }

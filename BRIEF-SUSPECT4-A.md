@@ -1,0 +1,17 @@
+# BRIEF-SUSPECT4-A — suspicion round 4, parse-side families, on post-correction ground
+
+This codebase is yours: what it's for and how it's built are your call, and you'll keep building on it.
+
+## Standing method (all lanes)
+
+Live Wikidot behavior is definitional, however malformed; the evidence order is (1) ftml corpus and integration pins, (2) frozen parity captures, (3) fresh live sandbox probes, fetched once, cached and reused. Never edit ftml. Never run cargo. Never set a repository-local git identity, identity environment variables, or -c user.* overrides. Every Lean invocation without exception goes through the serial queue wrapper at ~/.local/state/wikijump/muse-bhl/tools/lean-build.sh, strictly one at a time, with scratch files uniquely named inside your tree (this rule is hard; a sibling lane's parallel scratch elaborations exhausted the machine's memory on 2026-11-22). Write each deliverable to disk as soon as its part is done. Prose in files is flowing paragraphs on single lines, never hard-wrapped. This tree is the canonical programme tree after the REFCORR4, TABLEADV-FIX, REFCORR5, COVERAGE-INLINE, MIRROR-FIX and REFCORR6 adoptions.
+
+## The hunt
+
+This is a suspicion round in the programme's standing method: read the reference PHP for constructs no human would write on purpose, probe exactly those areas against live Wikidot, and report whether the reference (and by transcription the mirror) matches live. This lane changes no code: corrections, if any are confirmed, route to a later correction round through the coordinator. Your territory is the parse-side families whose ground just moved under the correction rounds, plus their neighbors: List and Deflist (post batch 1 and batch 8), Table and Tableadv (post enumeration repair), Include and Module (post REFCORR4 batch A and the batch 7 adjudication), Form, Raw and Tighten (post the Raw composite), and Prefilter. Hunt where the corrected code paths meet un-corrected neighbors: case-handling asymmetries the batch 1 fix may have introduced or left (mixed-case closers on nested lists, case variants of [[li]] attributes), the composite Raw token's interactions at Deflist and Tighten boundaries beyond the shapes already pinned, the module family's remaining tail and nesting shapes beside the adjudicated ones, and Tableadv's enumeration edges beside the fourteen witness frames.
+
+Probe discipline: use the wikidot-probe tooling on WSL (cd ~/.agents/skills/wikidot-py-operations && scripts/wikidot-python scripts/wikidot-probe create --site sandbox-for-codex --prefix muse-probe-suspect4a- --from cases.jsonl --out map.json, then capture --map map.json --out captures.json). Keep the muse-probe-suspect4a-* pages. Every suspicion gets a pre-probe ledger entry (the construct, why it looks wrong, what live byte would confirm or clear it) written to conformance-suspect4a/ before probing, and a verdict after: CONFIRMED with the capture evidence, or CLEARED with the probe set that cleared it. Compare each confirmed shape against the reference by running this tree's ref-php harness on the same source, so the report separates reference defects from serving-layer differences.
+
+## Deliverable
+
+REPORT-SUSPECT4-A.md at the tree root with the conformance-suspect4a/ evidence tree: every suspicion, its ledger reasoning, its verdict, and for confirmed divergences the minimal shape, the live bytes, and the reference bytes. End the report with COMPLETE or PARTIAL, and state the confirmed count plainly in the closing lines.

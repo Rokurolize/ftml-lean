@@ -8,12 +8,14 @@
   source-matching captures discriminate the behavior from the alternative
   prediction recorded in conformance-suspect-email/DESIGN.md.
 
-  CONFIRMED behaviors are stated here; the render-side DIVERGENCE settled
-  with the Antigravity SUSPECT mission is stated as a live rule and proved
-  NOT to hold of this mirror (the same statement is
-  `diverges_p18_p19_f01_f02_email_render` in that mission's SuspectSpec.lean).
+  CONFIRMED behaviors are stated here. The render-side live rule was a
+  DIVERGENCE when this file was first written, but REFCORR5 Batch 3 corrected
+  renderEmail to escape and substitute exactly as live does, and MIRROR-FIX
+  restates the affected theorem as a confirmation of
+  LiveSpec_email_render_escapes_and_substitutes (the same statement is
+  `diverges_p18_p19_f01_f02_email_render` in the pre-correction SuspectSpec).
   Candidate records are in conformance-suspect-email/candidates/ with their
-  own evidence; the mirror arms are deliberately NOT restated as live behavior.
+  own evidence.
   Agy probe names are cited alongside this lane's probes where both pin a
   behavior (Agy report section 2.2, captures under conformance-agy-suspect/).
 -/
@@ -51,8 +53,9 @@ theorem spec_email_descr_open_bracket_in_label :
     probes: muse-probe-suspect-email-lbl-url (`[u@example.com http://x/y]`),
     -idx-url-shift and -idx-newline-shift, alongside the Agy probes
     muse-probe-agy-suspect-x03-email-url-label, -x04-email-bracket-label and
-    -x05-email-raw-label; the parse-side over-claim is CONFIRMED, while the
-    rendered placeholder is a DIVERGENCE recorded at the end of this file. -/
+    -x05-email-raw-label; the parse-side over-claim is CONFIRMED, and the
+    rendered placeholder is escaped and substituted by REFCORR5 Batch 3's
+    corrected renderEmail. -/
 theorem spec_email_descr_placeholder_label_claims :
     emailDescrMatch
       (litBytes "[u@example.com " ++ phBytes 0 ++ litBytes "]") [] =
@@ -74,16 +77,19 @@ theorem spec_email_descr_trailing_space_label :
             ("text".toList, OptVal.str "Label ".toList)] }]) := rfl
 
 /-- Render: `strrev` is bytewise, so a two-byte UTF-8 local sequence is
-    emitted in reversed byte order, not as a valid character. Live probes:
+    reversed to an invalid byte order and the corrected escape pass then
+    substitutes U+FFFD for each invalid byte. Live probes:
     muse-probe-suspect-email-lbl-eacute (`café`), -lbl-acute-only (`é`), and
-    the Agy probes muse-probe-agy-suspect-p19-email-utf8 and -f01-email-ee;
-    the serving layer substitutes the invalid bytes with U+FFFD, the
-    settled render-side DIVERGENCE stated at the end of this file. -/
+    the Agy probes muse-probe-agy-suspect-p19-email-utf8 and -f01-email-ee.
+    The name and the bytewise-reversal claim stand; MIRROR-FIX updates only
+    the expected bytes to the served [EF BF BD EF BF BD] that REFCORR5
+    Batch 3's extra escape pass produces, since the pre-correction raw
+    [A9 C3] expectation is false against the corrected mirror. -/
 theorem spec_email_render_bytewise_reverse_non_ascii :
     renderEmail [("email".toList, OptVal.str "u@example.com".toList),
       ("text".toList, OptVal.bytes [195, 169])] =
     litBytes "<span class=\"wiki-email\">moc.elpmaxe|u#" ++
-      [169, 195] ++ litBytes "</span>" := rfl
+      [239, 191, 189, 239, 191, 189] ++ litBytes "</span>" := rfl
 
 /-- Render: the `@` → `|` replacement runs over the whole concatenation,
     including an `@` authored inside the label. Live probe:
@@ -159,14 +165,13 @@ theorem spec_email_overclaim_url_raw_placeholders :
       stRaw.tokens.any (fun t => t.rule == "Email")) = true := by
   decide
 
-/-- The render-side DIVERGENCE settled with the Agy probes
+/-- The render-side live rule settled with the Agy probes
     muse-probe-agy-suspect-p18-email-html (`[a@b.com >i<]`),
     -f02-email-apos-amp (`[a@b.com a'b&c"d]`), -p19-email-utf8 and
     -f01-email-ee: live escapes `&`, `<`, `>` with ENT_NOQUOTES and
-    substitutes U+FFFD for invalid reversed bytes, while this mirror emits
-    raw `<i>`, a raw `&`, and raw invalid UTF-8. The same live rule is
-    `LiveSpec_email_render_escapes_and_substitutes` in the Agy spec;
-    candidate records C-SUSPECT-EMAIL-1/2 carry this lane's evidence. -/
+    substitutes U+FFFD for invalid reversed bytes. REFCORR5 Batch 3 made
+    renderEmail satisfy this rule; candidate records C-SUSPECT-EMAIL-1/2
+    carry this lane's evidence. -/
 def LiveSpec_email_render_escapes_and_substitutes (fn : OptMap → List Nat) : Prop :=
   fn [("email".toList, OptVal.str "a@b.com".toList),
       ("text".toList, OptVal.str ">i<".toList)] =
@@ -179,14 +184,17 @@ def LiveSpec_email_render_escapes_and_substitutes (fn : OptMap → List Nat) : P
     litBytes "<span class=\"wiki-email\">moc.b|a#" ++
       [239, 191, 189, 195, 169, 239, 191, 189] ++ litBytes "</span>"
 
-theorem spec_email_render_diverges_from_live_escaping :
-    ¬ LiveSpec_email_render_escapes_and_substitutes renderEmail := by
-  intro ⟨h1, _, _⟩
-  have hbad :
-      renderEmail [("email".toList, OptVal.str "a@b.com".toList),
-        ("text".toList, OptVal.str ">i<".toList)] =
-      litBytes "<span class=\"wiki-email\">moc.b|a#<i></span>" := rfl
-  rw [hbad] at h1
-  exact absurd h1 (by decide)
+/-- REFCORR5 Batch 3 (C-SUSPECT-EMAIL-1/2) corrected renderEmail with
+    htmlSpecialCharsNoQuotesSubst, so the old divergence theorem is FALSE
+    against the current mirror. MIRROR-FIX flips it to a confirmation of the
+    live rule under a confirmation name; the three expected-byte positions
+    of LiveSpec_email_render_escapes_and_substitutes are unchanged. -/
+theorem spec_email_render_confirms_live_escaping :
+    LiveSpec_email_render_escapes_and_substitutes renderEmail := by
+  constructor
+  · rfl
+  constructor
+  · rfl
+  · rfl
 
 end LeanFtml

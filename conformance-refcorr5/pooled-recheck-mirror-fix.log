@@ -1,0 +1,5 @@
+conformance-capstone/pooled-php-full.jsonl rc: 0 bytes: 4230437 stderr bytes: 0
+pooled cases: 4205 (retained case list, no reassembly)
+PASS: 4204/4205 (including 5 parse-fatal agreements)
+MISMATCH: 1
+  a34: tokens

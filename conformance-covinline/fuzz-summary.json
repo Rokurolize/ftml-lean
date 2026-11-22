@@ -3,7 +3,7 @@
     {
       "seed": 20261122,
       "cases": 292,
-      "failures": 8,
+      "failures": 0,
       "class_mismatch": 0,
       "uncomparable": 16,
       "by_class": {
@@ -75,18 +75,9 @@
         },
         "flTarget": {
           "n": 8,
-          "fail": 8,
+          "fail": 0,
           "uncomparable": 0,
-          "ids": [
-            "fl-target-0",
-            "fl-target-1",
-            "fl-target-2",
-            "fl-target-3",
-            "fl-target-4",
-            "fl-target-5",
-            "fl-target-6",
-            "fl-target-7"
-          ]
+          "ids": []
         },
         "flSite": {
           "n": 8,
@@ -249,7 +240,7 @@
     {
       "seed": 7,
       "cases": 292,
-      "failures": 8,
+      "failures": 0,
       "class_mismatch": 0,
       "uncomparable": 16,
       "by_class": {
@@ -321,18 +312,9 @@
         },
         "flTarget": {
           "n": 8,
-          "fail": 8,
+          "fail": 0,
           "uncomparable": 0,
-          "ids": [
-            "fl-target-0",
-            "fl-target-1",
-            "fl-target-2",
-            "fl-target-3",
-            "fl-target-4",
-            "fl-target-5",
-            "fl-target-6",
-            "fl-target-7"
-          ]
+          "ids": []
         },
         "flSite": {
           "n": 8,

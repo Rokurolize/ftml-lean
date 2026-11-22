@@ -1,0 +1,4 @@
+{"id": "one", "source": "[[UL]]\n[[LI]]Case[[/LI]]\n[[/UL]]"}
+{"id": "two", "source": "[[UL]]\n[[LI]]Case[[/LI]]\n\n[[/UL]]"}
+{"id": "three", "source": "[[UL]]\n[[LI]]Case[[/LI]]\n\n\n[[/UL]]"}
+{"id": "none", "source": "[[UL]]\n[[LI]]Case[[/LI]][[/UL]]"}

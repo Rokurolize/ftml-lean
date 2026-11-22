@@ -1,0 +1,75 @@
+[lean-build] 423409 waiting for queue 20:07:37
+[lean-build] 423409 acquired 20:07:37
+/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-mirror-fix/mirror-fix-axioms/mf-item4-HarnessSuspectSpec.lean:223:21: error: Application type mismatch: The argument
+  phBytes 0
+has type
+  List Nat
+but is expected to have type
+  List TokenEntry
+in the application
+  termRendersEmpty (phBytes 0)
+/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-mirror-fix/mirror-fix-axioms/mf-item4-HarnessSuspectSpec.lean:223:35: error: Type mismatch
+  true
+has type
+  Bool
+but is expected to have type
+  List Nat → Bool
+/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-mirror-fix/mirror-fix-axioms/mf-item4-HarnessSuspectSpec.lean:290:4: error: Tactic `decide` proved that the proposition
+  postStripToc.go
+      (litBytes "<p>a " ++ [195, 188, 195, 188] ++ litBytes "<strong>bold</strong>" ++ [195, 188, 195, 188] ++
+        litBytes " b</p>")
+      ((litBytes "<p>a " ++ [195, 188, 195, 188] ++ litBytes "<strong>bold</strong>" ++ [195, 188, 195, 188] ++
+            litBytes " b</p>").length +
+        1)
+      [] =
+    litBytes "<p>a bold b</p>"
+is false
+/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-mirror-fix/mirror-fix-axioms/mf-item4-HarnessSuspectSpec.lean:309:85: error: Type mismatch
+  rfl
+has type
+  ?m.48 = ?m.48
+but is expected to have type
+  toUnixName (transliterate [99, 97, 102, 195, 169]) = litBytes "e"
+/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-mirror-fix/mirror-fix-axioms/mf-item4-HarnessSuspectSpec.lean:329:4: error: Tactic `decide` proved that the proposition
+  countTokType "Deflist" "term_start"
+      (deflistRule (rawRule (ParseState.ofSource "\n: @@term@@ : definition\n".toList))).tokens =
+    0
+is false
+/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-mirror-fix/mirror-fix-axioms/mf-item4-HarnessSuspectSpec.lean:373:4: error: Tactic `decide` proved that the proposition
+  (colortextRule (ParseState.ofSource "##<i>|hello##".toList)).tokens.isEmpty = false
+is false
+/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-mirror-fix/mirror-fix-axioms/mf-item4-HarnessSuspectSpec.lean:382:2: error: Tactic `decide` proved that the proposition
+  byteForm (tightenRule (colortextRule (ParseState.ofSource "x##a!b| hello ##y".toList))).work =
+    litBytes "x " ++ phBytes 0 ++ litBytes "hello" ++ phBytes 1 ++ litBytes " y"
+is false
+/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-mirror-fix/mirror-fix-axioms/mf-item4-HarnessSuspectSpec.lean:389:2: error: Tactic `decide` proved that the proposition
+  let st := colortextRule (rawRule (ParseState.ofSource "##@@red@@|hello##".toList));
+  byteForm st.work = phBytes 1 ++ litBytes "hello" ++ phBytes 2 ∧
+    ∃ tok, tok ∈ st.tokens ∧ tok.rule = "Colortext" ∧ getOptStr tok.opts "color" = some (phBytes 0)
+is false
+/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-mirror-fix/mirror-fix-axioms/mf-item4-HarnessSuspectSpec.lean:429:4: error: Tactic `rfl` failed: The left-hand side
+  (applyByteRule
+      (ParseState.ofSource
+        ['[', '[', 's', 'p', 'a', 'n', ' ', 'i', 'd', '=', '\"', 'u', '-', 'f', 'o', 'o', '\"', ']', ']', 'h', 'i', '[',
+          '[', '/', 's', 'p', 'a', 'n', ']', ']'])
+      fun src toks => spanPasses src toks (src.length + 2)).tokens
+is not definitionally equal to the right-hand side
+  [{ rule := "Span",
+      opts :=
+        [(['a', 'r', 'g', 's'], OptVal.map [(['i', 'd'], OptVal.str ['u', '-', 'u', '-', 'f', 'o', 'o'])]),
+          (['t', 'y', 'p', 'e'], OptVal.str ['s', 't', 'a', 'r', 't'])] },
+    { rule := "Span", opts := [(['t', 'y', 'p', 'e'], OptVal.str ['e', 'n', 'd'])] }]
+
+tok : TokenEntry
+hmem : tok ∈ (spanRule (ParseState.ofSource "[[span id=\"u-foo\"]]hi[[/span]]".toList)).tokens
+hrule : tok.rule = "Span"
+hid : ((getOptMap tok.opts "args").bind fun m => getOptStr m "id") = some (litBytes "u-foo")
+⊢ (applyByteRule
+        (ParseState.ofSource
+          ['[', '[', 's', 'p', 'a', 'n', ' ', 'i', 'd', '=', '\"', 'u', '-', 'f', 'o', 'o', '\"', ']', ']', 'h', 'i',
+            '[', '[', '/', 's', 'p', 'a', 'n', ']', ']'])
+        fun src toks => spanPasses src toks (src.length + 2)).tokens =
+    [{ rule := "Span",
+        opts :=
+    Terminated                 systemd-run --user --scope --quiet -p MemoryMax=22G -p MemorySwapMax=4G "$@"
+[lean-build] 423409 released status=143 20:08:26

@@ -1,0 +1,12 @@
+smoke cases: 9
+matched against conformance-refcorr5/final-gates per-case baselines: 9/9
+old conformance-refphp/inline1/smoke-final.txt (2026-11-20 R2-inline1 stage) differs on div.txt only: <div  class="x"> there, <div class="x"> in the current canonical tree; that Div spelling change predates REFCORR6 and is present in the REFCORR5 baseline.
+code.txt MATCH
+collapsible.txt MATCH
+div.txt MATCH
+footnote.txt MATCH
+include.txt MATCH
+link.txt MATCH
+math.txt MATCH
+quote.txt MATCH
+table.txt MATCH
