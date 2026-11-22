@@ -853,3 +853,287 @@ def main : IO Unit :=
 #print axioms LeanFtml.ct_hex_start
 #print axioms LeanFtml.ct_empty_start
 #print axioms LeanFtml.ct_invalid_start
+
+-- COVERAGE-CODEMATH audit block. Coordinator merge into Main.lean.
+-- Module: lean-ftml/LeanFtml/CoverageCodemath.lean
+#print axioms LeanFtml.cmAllClasses_nodup
+#print axioms LeanFtml.cmAllClasses_length
+#print axioms LeanFtml.cmAllClasses_mem
+#print axioms LeanFtml.cm_classify_sound
+#print axioms LeanFtml.cm_classify_nonempty
+#print axioms LeanFtml.miClassifyWalk_nonempty
+#print axioms LeanFtml.cm_witness_classify
+#print axioms LeanFtml.cm_classes_exhaustive
+#print axioms LeanFtml.cm_classification_complete
+#print axioms LeanFtml.cm_exclusive_singleton
+#print axioms LeanFtml.code_body_exclusive
+#print axioms LeanFtml.code_trail_exclusive
+#print axioms LeanFtml.math_kind_single
+#print axioms LeanFtml.mi_suppress_short_circuit
+#print axioms LeanFtml.cm_shapeOf_isSome
+#print axioms LeanFtml.cm_classOf_complete
+#print axioms LeanFtml.cm_classOf_sound
+#print axioms LeanFtml.cm_classOf_exclusive
+#print axioms LeanFtml.cm_memClass_complete
+#print axioms LeanFtml.cm_memClass_sound
+#print axioms LeanFtml.cm_code_langs_fourteen
+#print axioms LeanFtml.cm_highlighter_nonclass
+#print axioms LeanFtml.cm_code_python_boundary
+#print axioms LeanFtml.cm_code_filename_dead
+#print axioms LeanFtml.cm_math_png_nonclass
+#print axioms LeanFtml.cm_claimed_at_end
+#print axioms LeanFtml.cm_claimed_shorter
+#print axioms LeanFtml.cm_claimed_partition
+#print axioms LeanFtml.cm_code_trail_space
+#print axioms LeanFtml.cm_code_empty_shape
+#print axioms LeanFtml.cm_code_plain_shape
+#print axioms LeanFtml.cm_math_fatal_input
+#print axioms LeanFtml.cm_math_absent_input
+#print axioms LeanFtml.cm_math_valid_gather
+#print axioms LeanFtml.cm_math_invalid_empty
+#print axioms LeanFtml.cm_math_invalid_upper
+#print axioms LeanFtml.cm_counter_starts
+#print axioms LeanFtml.cm_counter_on_invalid
+#print axioms LeanFtml.cm_counter_on_fatal
+#print axioms LeanFtml.cm_suppress_freelink
+#print axioms LeanFtml.cm_suppress_raw
+#print axioms LeanFtml.cm_suppress_newline
+#print axioms LeanFtml.cm_suppress_image
+#print axioms LeanFtml.cm_suppress_url_no
+#print axioms LeanFtml.cm_suppress_four
+#print axioms LeanFtml.cm_suppress_before_source
+#print axioms LeanFtml.cm_mi_absent_unknown
+#print axioms LeanFtml.cm_mi_depth_beats_suppress
+#print axioms LeanFtml.cm_mi_unknown_keeps
+#print axioms LeanFtml.cm_mi_cycle_keeps
+#print axioms LeanFtml.cm_mi_newline_suppress
+#print axioms LeanFtml.cm_mi_freelink_suppress
+#print axioms LeanFtml.cm_mi_raw_suppress
+#print axioms LeanFtml.cm_mi_image_suppress
+#print axioms LeanFtml.cm_mi_source_url
+#print axioms LeanFtml.cm_mi_fallback_text
+
+-- Coverage-contain audit block, staged for the coordinator. Do not merge by this lane.
+-- Every theorem of LeanFtml.CoverageContain. No sorry, no sorryAx, no native_decide.
+#print axioms LeanFtml.containAllClasses_nodup
+#print axioms LeanFtml.containAllClasses_length
+#print axioms LeanFtml.containAllClasses_mem
+#print axioms LeanFtml.contain_classify_sound
+#print axioms LeanFtml.contain_classify_nonempty
+#print axioms LeanFtml.contain_witness_classify
+#print axioms LeanFtml.contain_classes_exhaustive
+#print axioms LeanFtml.contain_classification_complete
+#print axioms LeanFtml.contain_exclusive_single
+#print axioms LeanFtml.bq_render_exclusive
+#print axioms LeanFtml.div_body_exclusive
+#print axioms LeanFtml.div_head_exclusive
+#print axioms LeanFtml.div_render_exclusive
+#print axioms LeanFtml.co_fold_exclusive
+#print axioms LeanFtml.co_show_exclusive
+#print axioms LeanFtml.co_hide_exclusive
+#print axioms LeanFtml.co_loc_exclusive
+#print axioms LeanFtml.co_type_exclusive
+#print axioms LeanFtml.tv_title_kind_exclusive
+#print axioms LeanFtml.tv_title_source_exclusive
+#print axioms LeanFtml.tv_label_exclusive
+#print axioms LeanFtml.tv_selected_exclusive
+#print axioms LeanFtml.bq_deleted_only
+#print axioms LeanFtml.bq_kept_excludes_deleted
+#print axioms LeanFtml.bq_line_dropped_iff
+#print axioms LeanFtml.bq_kept_always_text
+#print axioms LeanFtml.div_vanished_excludes_ordered
+#print axioms LeanFtml.contain_shapeOf_isSome
+#print axioms LeanFtml.contain_classOf_complete
+#print axioms LeanFtml.contain_classOf_sound
+#print axioms LeanFtml.contain_classOf_exclusive
+#print axioms LeanFtml.contain_memClass_complete
+#print axioms LeanFtml.contain_memClass_sound
+#print axioms LeanFtml.bq_block_form_unmatched
+#print axioms LeanFtml.cov_bq_nospace_deleted
+#print axioms LeanFtml.cov_bq_lone_gt_deleted
+#print axioms LeanFtml.cov_bq_empty_payload_deleted
+#print axioms LeanFtml.cov_bq_render_start
+#print axioms LeanFtml.cov_bq_render_end
+#print axioms LeanFtml.cov_bq_render_fall
+#print axioms LeanFtml.cov_bq_level_unread
+#print axioms LeanFtml.cov_div_vanished_start
+#print axioms LeanFtml.cov_div_vanished_end
+#print axioms LeanFtml.cov_div_bare
+#print axioms LeanFtml.cov_div_attr_order
+#print axioms LeanFtml.cov_div_id_shell_cleared
+#print axioms LeanFtml.cov_div_end
+#print axioms LeanFtml.cov_co_end_top
+#print axioms LeanFtml.cov_tv_panel_shown
+#print axioms LeanFtml.cov_tv_panel_hidden
+#print axioms LeanFtml.cov_tv_panel_end
+-- Observed through lean-build.sh on conformance-covcontain/covcontain-axiom-scratch.lean (51 theorems):
+-- 4 depend on no axiom, 21 on [propext], 2 on [propext, Quot.sound]
+-- (contain_classify_nonempty, contain_classification_complete),
+-- 24 on [propext, Classical.choice, Quot.sound].
+-- No sorryAx, no native_decide, no axiom outside that set.
+
+-- Coverage-tier classification of Heading, Toc and Anchor
+-- in LeanFtml/CoverageHeading.lean.
+#print axioms LeanFtml.navAllClasses_nodup
+#print axioms LeanFtml.navAllClasses_length
+#print axioms LeanFtml.navAllClasses_mem
+#print axioms LeanFtml.nav_classify_sound
+#print axioms LeanFtml.nav_classify_nonempty
+#print axioms LeanFtml.nav_witness_classify
+#print axioms LeanFtml.nav_classes_exhaustive
+#print axioms LeanFtml.nav_classification_complete
+#print axioms LeanFtml.hd_hit_one_level
+#print axioms LeanFtml.hd_hit_one_tocflag
+#print axioms LeanFtml.hd_miss_no_level
+#print axioms LeanFtml.hd_end_sign_exclusive
+#print axioms LeanFtml.hd_hidden_implies_script
+#print axioms LeanFtml.toc_start_one_align
+#print axioms LeanFtml.toc_start_one_title
+#print axioms LeanFtml.toc_end_one_wrap
+#print axioms LeanFtml.an_name_exclusive
+#print axioms LeanFtml.an_form_exclusive
+#print axioms LeanFtml.an_href_exclusive
+#print axioms LeanFtml.an_render_exclusive
+#print axioms LeanFtml.toc_item_exclusive
+#print axioms LeanFtml.nav_shapeOf_isSome
+#print axioms LeanFtml.nav_classOf_complete
+#print axioms LeanFtml.nav_classOf_sound
+#print axioms LeanFtml.nav_classOf_exclusive
+#print axioms LeanFtml.nav_memClass_complete
+#print axioms LeanFtml.nav_memClass_sound
+#print axioms LeanFtml.hd_every_line
+#print axioms LeanFtml.toc_every_src
+#print axioms LeanFtml.an_every_name
+#print axioms LeanFtml.cov_hd_l1
+#print axioms LeanFtml.cov_hd_l2
+#print axioms LeanFtml.cov_hd_l3
+#print axioms LeanFtml.cov_hd_l4
+#print axioms LeanFtml.cov_hd_l5
+#print axioms LeanFtml.cov_hd_l6_notoc
+#print axioms LeanFtml.cov_hd_miss_nospace
+#print axioms LeanFtml.cov_hd_seven
+#print axioms LeanFtml.cov_hd_toc0_id
+#print axioms LeanFtml.cov_hd_notoc_id
+#print axioms LeanFtml.cov_hd_notoc_counter
+#print axioms LeanFtml.cov_hd_toc_advances
+#print axioms LeanFtml.cov_toc_null
+#print axioms LeanFtml.cov_toc_empty
+#print axioms LeanFtml.cov_toc_fleft
+#print axioms LeanFtml.cov_toc_fright
+#print axioms LeanFtml.cov_toc_miss
+#print axioms LeanFtml.cov_toc_skips_notoc
+#print axioms LeanFtml.cov_toc_count_unrendered
+#print axioms LeanFtml.cov_toc_depth_level1
+#print axioms LeanFtml.cov_toc_sentinel_width
+#print axioms LeanFtml.cov_an_placeholder
+#print axioms LeanFtml.cov_an_blank
+#print axioms LeanFtml.cov_an_name_valid
+#print axioms LeanFtml.cov_an_name_literal
+#print axioms LeanFtml.cov_an_name_invalid
+
+-- Coverage-tier classification of the table family (Table, Tableadv, Row,
+-- Cell) in LeanFtml/CoverageTable.lean. Partition theorems at the standard
+-- core axiom set or better. No sorryAx. Staged for the coordinator; this
+-- lane does not edit Main.lean.
+#print axioms LeanFtml.tableAllClasses_nodup
+#print axioms LeanFtml.tableAllClasses_length
+#print axioms LeanFtml.tableAllClasses_mem
+#print axioms LeanFtml.table_classify_sound
+#print axioms LeanFtml.table_classify_nonempty
+#print axioms LeanFtml.table_witness_classify
+#print axioms LeanFtml.table_classes_exhaustive
+#print axioms LeanFtml.table_classification_complete
+#print axioms LeanFtml.tbl_attr_exclusive
+#print axioms LeanFtml.tbl_id_exclusive
+#print axioms LeanFtml.tbl_adv_out_exclusive
+#print axioms LeanFtml.tbl_marker_exclusive
+#print axioms LeanFtml.tbl_nest_exclusive
+#print axioms LeanFtml.tbl_scan_exclusive
+#print axioms LeanFtml.tbl_empty_row_discards_span
+#print axioms LeanFtml.tbl_no_row_dominates
+#print axioms LeanFtml.tbl_header_suppresses_align
+#print axioms LeanFtml.tbl_format_not_on_cell_end
+#print axioms LeanFtml.tbl_title_and_hidden_blocked
+#print axioms LeanFtml.tbl_plain_type_head
+#print axioms LeanFtml.tbl_adv_type_head
+#print axioms LeanFtml.tbl_marker_prefixes_distinct
+#print axioms LeanFtml.tbl_marker_right
+#print axioms LeanFtml.tbl_marker_plain
+#print axioms LeanFtml.tbl_key_shape
+#print axioms LeanFtml.tbl_safe_attr_facts
+#print axioms LeanFtml.tbl_rank_slots
+#print axioms LeanFtml.tbl_data_authored_order
+#print axioms LeanFtml.tbl_data_before_colspan
+#print axioms LeanFtml.tbl_parse_insert_sorts_data_names
+#print axioms LeanFtml.tbl_cov_cell_plain
+#print axioms LeanFtml.tbl_cov_cell_header
+#print axioms LeanFtml.tbl_isolate_empty
+#print axioms LeanFtml.tbl_cov_apos_raw
+#print axioms LeanFtml.tbl_enum_frames_are_the_pin
+#print axioms LeanFtml.tbl_shapeOf_isSome
+#print axioms LeanFtml.tbl_render_complete
+#print axioms LeanFtml.tbl_render_sound
+-- Elaborated 2026-11-22 through lean-build.sh on CovtableAxiomScratch.lean.
+-- Record: conformance-covtable/axiom-scratch.log
+-- No axioms: tableAllClasses_nodup, tableAllClasses_length, tbl_title_and_hidden_blocked.
+-- [propext]: tableAllClasses_mem, table_classify_sound, table_classify_nonempty,
+-- table_witness_classify, table_classes_exhaustive, table_classification_complete,
+-- tbl_attr_exclusive, tbl_id_exclusive, tbl_adv_out_exclusive, tbl_marker_exclusive,
+-- tbl_nest_exclusive, tbl_scan_exclusive, tbl_empty_row_discards_span,
+-- tbl_no_row_dominates, tbl_header_suppresses_align, tbl_format_not_on_cell_end,
+-- tbl_plain_type_head, tbl_adv_type_head.
+-- [propext, Classical.choice, Quot.sound]: the remaining 17 theorems, including
+-- tbl_shapeOf_isSome, tbl_render_complete and tbl_render_sound.
+-- No sorryAx. No native_decide. Headline table_classification_complete is [propext].
+
+-- COVERAGE-SERVE (2026-11-22): staged audit lines for Main.lean. The coordinator merges this block; this lane does not edit Main.lean. Coverage-tier classification of Gallery, User, Button and Embed in LeanFtml/CoverageServe.lean. Fifty theorems: 12 depend on no axiom, 19 on [propext], 1 on [propext, Quot.sound], 18 on [propext, Classical.choice, Quot.sound]. The headline serve_classification_complete audits at [propext]. No sorry, no sorryAx, no native_decide.
+#print axioms LeanFtml.serveAllClasses_nodup
+#print axioms LeanFtml.serveAllClasses_length
+#print axioms LeanFtml.bt_ok_nonempty
+#print axioms LeanFtml.serveAllClasses_mem
+#print axioms LeanFtml.serve_classify_sound
+#print axioms LeanFtml.serve_classify_nonempty
+#print axioms LeanFtml.serve_witness_classify
+#print axioms LeanFtml.serve_classes_exhaustive
+#print axioms LeanFtml.serve_classification_complete
+#print axioms LeanFtml.ga_size_exclusive
+#print axioms LeanFtml.ga_kind_exclusive
+#print axioms LeanFtml.ga_link_not_both
+#print axioms LeanFtml.bt_invalid_single
+#print axioms LeanFtml.bt_set_tags_empty_single
+#print axioms LeanFtml.bt_primary_mem
+#print axioms LeanFtml.us_single
+#print axioms LeanFtml.em_nomatch_single
+#print axioms LeanFtml.em_event_single
+#print axioms LeanFtml.em_src_javascript_single
+#print axioms LeanFtml.em_src_vbscript_single
+#print axioms LeanFtml.em_attr_javascript_single
+#print axioms LeanFtml.em_attr_vbscript_single
+#print axioms LeanFtml.em_pass_base
+#print axioms LeanFtml.serve_shapeOf_isSome
+#print axioms LeanFtml.mem_foldl_acc
+#print axioms LeanFtml.ga_row_not_flickr_of_any
+#print axioms LeanFtml.mem_box_realized
+#print axioms LeanFtml.classes_realized_of_outcome
+#print axioms LeanFtml.gallery_classes_realized
+#print axioms LeanFtml.classesOfOutcome_nonempty
+#print axioms LeanFtml.emClasses_nonempty
+#print axioms LeanFtml.btClasses_nonempty
+#print axioms LeanFtml.gallery_classOf_nonempty
+#print axioms LeanFtml.user_classOf_nonempty
+#print axioms LeanFtml.button_classOf_nonempty
+#print axioms LeanFtml.embed_classOf_nonempty
+#print axioms LeanFtml.isServe_of_bool
+#print axioms LeanFtml.serveClassOf_empty
+#print axioms LeanFtml.serve_classOf_nonempty
+#print axioms LeanFtml.serve_classOf_sound
+#print axioms LeanFtml.serve_memClass_complete
+#print axioms LeanFtml.serve_memClass_sound
+#print axioms LeanFtml.gallery_falsy_is_page_miss
+#print axioms LeanFtml.explodeByte_nil_nonempty
+#print axioms LeanFtml.explodeByte_go_nonempty
+#print axioms LeanFtml.explodeByte_nonempty
+#print axioms LeanFtml.cov_gallery_page_miss
+#print axioms LeanFtml.cov_user_not_found
+#print axioms LeanFtml.cov_button_invalid
+#print axioms LeanFtml.button_allowlist_agrees

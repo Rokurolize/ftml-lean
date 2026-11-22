@@ -47,3 +47,8 @@ import LeanFtml.ServingRender
 import LeanFtml.CoverageProse
 import LeanFtml.CoverageNotes
 import LeanFtml.CoverageInline
+import LeanFtml.CoverageCodemath
+import LeanFtml.CoverageContain
+import LeanFtml.CoverageHeading
+import LeanFtml.CoverageTable
+import LeanFtml.CoverageServe
