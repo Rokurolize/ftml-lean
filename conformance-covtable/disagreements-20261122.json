@@ -1,0 +1,55 @@
+{
+  "failures": [
+    {
+      "id": "ta-rank-0",
+      "class": "taAttrRank",
+      "php": "<table>\n<tr>\n<td data-z=\"0\" data-a=\"q\">a0</td>\n</tr>\n</table>",
+      "lean": "<table>\n<tr>\n<td data-a=\"q\" data-z=\"0\">a0</td>\n</tr>\n</table>"
+    },
+    {
+      "id": "ta-rank-1",
+      "class": "taAttrRank",
+      "php": "<table>\n<tr>\n<td data-z=\"1\" data-a=\"q\">bb2</td>\n</tr>\n</table>",
+      "lean": "<table>\n<tr>\n<td data-a=\"q\" data-z=\"1\">bb2</td>\n</tr>\n</table>"
+    },
+    {
+      "id": "ta-rank-2",
+      "class": "taAttrRank",
+      "php": "<table>\n<tr>\n<td data-z=\"2\" data-a=\"q\">c d</td>\n</tr>\n</table>",
+      "lean": "<table>\n<tr>\n<td data-a=\"q\" data-z=\"2\">c d</td>\n</tr>\n</table>"
+    }
+  ],
+  "mismatches": [],
+  "uncomparable": [
+    {
+      "id": "ta-id-empty-0",
+      "class": "taIdEmpty",
+      "reason": "isolateId empty arm is unreachable from buildAttrs"
+    },
+    {
+      "id": "ta-id-empty-1",
+      "class": "taIdEmpty",
+      "reason": "isolateId empty arm is unreachable from buildAttrs"
+    },
+    {
+      "id": "ta-id-empty-2",
+      "class": "taIdEmpty",
+      "reason": "isolateId empty arm is unreachable from buildAttrs"
+    },
+    {
+      "id": "ta-id-empty-3",
+      "class": "taIdEmpty",
+      "reason": "isolateId empty arm is unreachable from buildAttrs"
+    },
+    {
+      "id": "ta-id-empty-4",
+      "class": "taIdEmpty",
+      "reason": "isolateId empty arm is unreachable from buildAttrs"
+    },
+    {
+      "id": "ta-id-empty-5",
+      "class": "taIdEmpty",
+      "reason": "isolateId empty arm is unreachable from buildAttrs"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "site": "sandbox-for-codex",
+  "fetched": "2026-11-22",
+  "pages": [
+    {
+      "fullname": "muse-probe-covtable-span-off",
+      "page_id": 1470055176,
+      "class": "taAttrSpanOffCell",
+      "source": "[[table]]\n[[row colspan=\"2\"]]\n[[cell]]Off[[/cell]]\n[[/row]]\n[[/table]]\n",
+      "live_table": "<table>\n<tr>\n<td>Off</td>\n</tr>\n</table>",
+      "note": "The colspan on the row is absent from the cell. Live and the reference agree."
+    },
+    {
+      "fullname": "muse-probe-covtable-norm-drop",
+      "page_id": 1470055177,
+      "class": "taAttrNormDrop",
+      "source": "[[table]]\n[[row]]\n[[cell class=\"   \"]]Blank[[/cell]]\n[[/row]]\n[[/table]]\n",
+      "live_table": "<table>\n<tr>\n<td class=\"\">Blank</td>\n</tr>\n</table>",
+      "reference_table": "<table>\n<tr>\n<td>Blank</td>\n</tr>\n</table>",
+      "note": "Live keeps an empty class attribute. The reference buildAttrs drops class, id, role, style and type when the normalized value is empty, and the mirror does the same."
+    },
+    {
+      "fullname": "muse-probe-covtable-id-lead",
+      "page_id": 1470055178,
+      "class": "taIdLeadWs",
+      "source": "[[table id=\" foo\"]]\n[[row]]\n[[cell]]Lead[[/cell]]\n[[/row]]\n[[/table]]\n",
+      "live_table": "<table id=\"u- foo\">\n<tr>\n<td>Lead</td>\n</tr>\n</table>",
+      "note": "Leading whitespace takes the prefix u- followed by a space. Live and the reference agree."
+    },
+    {
+      "fullname": "muse-probe-covtable-data-order",
+      "page_id": 1470055186,
+      "class": "taAttrRank",
+      "source": "[[table]]\n[[row]]\n[[cell data-z=\"1\" data-a=\"2\"]]Z[[/cell]]\n[[/row]]\n[[/table]]\n",
+      "live_table": "<table>\n<tr>\n<td data-z=\"1\" data-a=\"2\">Z</td>\n</tr>\n</table>",
+      "note": "Equal-rank data-* attributes keep authored order. Live and the reference agree. The parse mirror's name sort does not."
+    }
+  ]
+}

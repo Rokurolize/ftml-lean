@@ -1,0 +1,380 @@
+{"id": "tb-miss-0", "kind": "source", "source": "Note a0 0", "expect": ["tbMiss"], "target": "tbMiss"}
+{"id": "tb-hit-0", "kind": "source", "source": "|| a0 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbHit"}
+{"id": "tb-row-content-0", "kind": "source", "source": "|| a0 || 0 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbRowContent"}
+{"id": "tb-row-empty-0", "kind": "source", "source": "||||", "expect": ["tbHit", "tbRowEmpty", "tbSpanDiscard"], "target": "tbRowEmpty"}
+{"id": "tb-span-one-0", "kind": "source", "source": "||a0||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbSpanOne"}
+{"id": "tb-span-carry-0", "kind": "source", "source": "|||| a0 ||", "expect": ["tbHit", "tbRowContent", "tbSpanCarry", "tbCellPlain"], "target": "tbSpanCarry"}
+{"id": "tb-span-discard-0", "kind": "source", "source": "||||||", "expect": ["tbHit", "tbRowEmpty", "tbSpanDiscard"], "target": "tbSpanDiscard"}
+{"id": "tb-right-0", "kind": "source", "source": "||> a0 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellRight"], "target": "tbCellRight"}
+{"id": "tb-center-0", "kind": "source", "source": "||= a0 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellCenter"], "target": "tbCellCenter"}
+{"id": "tb-left-0", "kind": "source", "source": "||< a0 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellLeft"], "target": "tbCellLeft"}
+{"id": "tb-header-0", "kind": "source", "source": "||~ a0 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellHeader"], "target": "tbCellHeader"}
+{"id": "tb-plain-0", "kind": "source", "source": "||a0||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbCellPlain"}
+{"id": "ta-norow-0", "kind": "source", "source": "[[table]]nope a0[[/table]]", "expect": ["taNoRow", "taFlat"], "target": "taNoRow"}
+{"id": "ta-stray-row-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]a0[[/cell]]\n[[/row]]\njunk 0\n[[/table]]", "expect": ["taStrayRow", "taFlat"], "target": "taStrayRow"}
+{"id": "ta-nocell-0", "kind": "source", "source": "[[table]]\n[[row]]\nno cell a0\n[[/row]]\n[[/table]]", "expect": ["taNoCell", "taFlat"], "target": "taNoCell"}
+{"id": "ta-stray-cell-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]a0[[/cell]]\njunk 0\n[[/row]]\n[[/table]]", "expect": ["taStrayCell", "taFlat"], "target": "taStrayCell"}
+{"id": "ta-ok-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]a0[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taOk"}
+{"id": "ta-header-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[hcell]]a0[[/hcell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellHeader", "taCellTrim", "taFlat", "taAttrRank"], "target": "taCellHeader"}
+{"id": "ta-plain-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]a0[[/HCELL]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taCellPlain"}
+{"id": "ta-para-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]\n\na0\n\n[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellPara", "taFlat", "taAttrRank"], "target": "taCellPara"}
+{"id": "ta-trim-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]  a0  [[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taCellTrim"}
+{"id": "ta-nested-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]][[table]]\n[[row]]\n[[cell]]a0[[/cell]]\n[[/row]]\n[[/table]][[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taNested", "taAttrRank"], "target": "taNested"}
+{"id": "ta-flat-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]a0[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taFlat"}
+{"id": "ta-badkey-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell CLASS=\"c0\"]]a0[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrBadKey", "taAttrRank"], "target": "taAttrBadKey"}
+{"id": "ta-blocked-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell title=\"t0\"]]a0[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrBlocked", "taAttrRank"], "target": "taAttrBlocked"}
+{"id": "ta-unsafe-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell align=\"center\"]]a0[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrUnsafe", "taAttrRank"], "target": "taAttrUnsafe"}
+{"id": "ta-span-off-0", "kind": "source", "source": "[[table]]\n[[row colspan=\"1\"]]\n[[cell]]a0[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrSpanOffCell", "taAttrRank"], "target": "taAttrSpanOffCell"}
+{"id": "ta-empty-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell class=\"\"]]a0[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrEmptyVal", "taAttrRank"], "target": "taAttrEmptyVal"}
+{"id": "ta-zero-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell colspan=\"0\"]]a0[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrSpanZero", "taAttrRank"], "target": "taAttrSpanZero"}
+{"id": "ta-normdrop-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell class=\"   \"]]a0[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrNormDrop", "taAttrRank"], "target": "taAttrNormDrop"}
+{"id": "ta-keep-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell class=\"c0\"]]a0[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taAttrRank"], "target": "taAttrKeep"}
+{"id": "ta-id-empty-0", "kind": "direct", "expect": ["taIdEmpty"], "target": "taIdEmpty", "note": "isolateId empty arm is unreachable from buildAttrs"}
+{"id": "ta-id-already-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell id=\"u-f0\"]]a0[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taIdAlready", "taAttrRank"], "target": "taIdAlready"}
+{"id": "ta-id-lead-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell id=\" f0\"]]a0[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taIdLeadWs", "taAttrRank"], "target": "taIdLeadWs"}
+{"id": "ta-id-prefix-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell id=\"fruit0\"]]a0[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taIdPrefix", "taAttrRank"], "target": "taIdPrefix"}
+{"id": "ta-rank-0", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell data-z=\"0\" data-a=\"q\"]]a0[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taAttrRank"], "target": "taAttrRank"}
+{"id": "r-tstart-0", "kind": "token", "rule": "Table", "opts": {"type": "table_start", "rows": 1, "cols": 1}, "expect": ["tbRTableStart"], "target": "tbRTableStart"}
+{"id": "r-tend-0", "kind": "token", "rule": "Table", "opts": {"type": "table_end"}, "expect": ["tbRTableEnd"], "target": "tbRTableEnd"}
+{"id": "r-cstart-0", "kind": "token", "rule": "Table", "opts": {"type": "caption_start"}, "expect": ["tbRCaptionStart"], "target": "tbRCaptionStart"}
+{"id": "r-cend-0", "kind": "token", "rule": "Table", "opts": {"type": "caption_end"}, "expect": ["tbRCaptionEnd"], "target": "tbRCaptionEnd"}
+{"id": "r-rstart-0", "kind": "token", "rule": "Table", "opts": {"type": "row_start"}, "expect": ["tbRRowStart"], "target": "tbRRowStart"}
+{"id": "r-rend-0", "kind": "token", "rule": "Table", "opts": {"type": "row_end"}, "expect": ["tbRRowEnd"], "target": "tbRRowEnd"}
+{"id": "r-cell-0", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 1}, "expect": ["tbRCellStart", "tbRTd"], "target": "tbRCellStart"}
+{"id": "r-cellend-0", "kind": "token", "rule": "Table", "opts": {"type": "cell_end", "attr": null, "span": 1}, "expect": ["tbRCellEnd", "tbRTd"], "target": "tbRCellEnd"}
+{"id": "r-fall-0", "kind": "token", "rule": "Table", "opts": {"type": "other0"}, "expect": ["tbRFall"], "target": "tbRFall"}
+{"id": "r-th-0", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": "header", "span": 1}, "expect": ["tbRCellStart", "tbRTh"], "target": "tbRTh"}
+{"id": "r-td-0", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 1}, "expect": ["tbRCellStart", "tbRTd"], "target": "tbRTd"}
+{"id": "r-colspan-0", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 2}, "expect": ["tbRCellStart", "tbRTd", "tbRColspan"], "target": "tbRColspan"}
+{"id": "r-rowspan-0", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 1, "rowspan": 2}, "expect": ["tbRCellStart", "tbRTd", "tbRRowspan"], "target": "tbRRowspan"}
+{"id": "r-align-0", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": "right", "span": 1}, "expect": ["tbRCellStart", "tbRTd", "tbRAlign"], "target": "tbRAlign"}
+{"id": "r-format-0", "kind": "token", "rule": "Table", "opts": {"type": "table_start", "rows": 1, "cols": 1, "format": "data-0"}, "expect": ["tbRTableStart", "tbRFormat"], "target": "tbRFormat"}
+{"id": "ar-start-0", "kind": "token", "rule": "Tableadv", "opts": {"type": "start", "attrs": {}}, "expect": ["taRStart"], "target": "taRStart"}
+{"id": "ar-row-0", "kind": "token", "rule": "Tableadv", "opts": {"type": "rowStart", "attrs": {}}, "expect": ["taRRowStart"], "target": "taRRowStart"}
+{"id": "ar-cell-0", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": false, "attrs": {}}, "expect": ["taRCellStart", "taRTd"], "target": "taRCellStart"}
+{"id": "ar-cellend-0", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellEnd", "header": false}, "expect": ["taRCellEnd", "taRTd"], "target": "taRCellEnd"}
+{"id": "ar-rowend-0", "kind": "token", "rule": "Tableadv", "opts": {"type": "rowEnd"}, "expect": ["taRRowEnd"], "target": "taRRowEnd"}
+{"id": "ar-end-0", "kind": "token", "rule": "Tableadv", "opts": {"type": "end"}, "expect": ["taREnd"], "target": "taREnd"}
+{"id": "ar-fall-0", "kind": "token", "rule": "Tableadv", "opts": {"type": "nope0", "attrs": {}}, "expect": ["taRFall"], "target": "taRFall"}
+{"id": "ar-th-0", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": true, "attrs": {}}, "expect": ["taRCellStart", "taRTh"], "target": "taRTh"}
+{"id": "ar-td-0", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": false, "attrs": {}}, "expect": ["taRCellStart", "taRTd"], "target": "taRTd"}
+{"id": "ar-attrs-0", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": false, "attrs": {"class": "c0", "data-z": "z0"}}, "expect": ["taRCellStart", "taRTd", "taRAttrs"], "target": "taRAttrs"}
+{"id": "tb-miss-1", "kind": "source", "source": "Note bb2 1", "expect": ["tbMiss"], "target": "tbMiss"}
+{"id": "tb-hit-1", "kind": "source", "source": "|| bb2 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbHit"}
+{"id": "tb-row-content-1", "kind": "source", "source": "|| bb2 || 1 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbRowContent"}
+{"id": "tb-row-empty-1", "kind": "source", "source": "||||||", "expect": ["tbHit", "tbRowEmpty", "tbSpanDiscard"], "target": "tbRowEmpty"}
+{"id": "tb-span-one-1", "kind": "source", "source": "||bb2||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbSpanOne"}
+{"id": "tb-span-carry-1", "kind": "source", "source": "|||||| bb2 ||", "expect": ["tbHit", "tbRowContent", "tbSpanCarry", "tbCellPlain"], "target": "tbSpanCarry"}
+{"id": "tb-span-discard-1", "kind": "source", "source": "||||||||", "expect": ["tbHit", "tbRowEmpty", "tbSpanDiscard"], "target": "tbSpanDiscard"}
+{"id": "tb-right-1", "kind": "source", "source": "||> bb2 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellRight"], "target": "tbCellRight"}
+{"id": "tb-center-1", "kind": "source", "source": "||= bb2 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellCenter"], "target": "tbCellCenter"}
+{"id": "tb-left-1", "kind": "source", "source": "||< bb2 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellLeft"], "target": "tbCellLeft"}
+{"id": "tb-header-1", "kind": "source", "source": "||~ bb2 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellHeader"], "target": "tbCellHeader"}
+{"id": "tb-plain-1", "kind": "source", "source": "||bb2||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbCellPlain"}
+{"id": "ta-norow-1", "kind": "source", "source": "[[table]]nope bb2[[/table]]", "expect": ["taNoRow", "taFlat"], "target": "taNoRow"}
+{"id": "ta-stray-row-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]bb2[[/cell]]\n[[/row]]\njunk 1\n[[/table]]", "expect": ["taStrayRow", "taFlat"], "target": "taStrayRow"}
+{"id": "ta-nocell-1", "kind": "source", "source": "[[table]]\n[[row]]\nno cell bb2\n[[/row]]\n[[/table]]", "expect": ["taNoCell", "taFlat"], "target": "taNoCell"}
+{"id": "ta-stray-cell-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]bb2[[/cell]]\njunk 1\n[[/row]]\n[[/table]]", "expect": ["taStrayCell", "taFlat"], "target": "taStrayCell"}
+{"id": "ta-ok-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]bb2[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taOk"}
+{"id": "ta-header-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[hcell]]bb2[[/hcell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellHeader", "taCellTrim", "taFlat", "taAttrRank"], "target": "taCellHeader"}
+{"id": "ta-plain-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[hcell]]bb2[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taCellPlain"}
+{"id": "ta-para-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]\n\nbb2\n\n[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellPara", "taFlat", "taAttrRank"], "target": "taCellPara"}
+{"id": "ta-trim-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]  bb2  [[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taCellTrim"}
+{"id": "ta-nested-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]][[table]]\n[[row]]\n[[cell]]bb2[[/cell]]\n[[/row]]\n[[/table]][[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taNested", "taAttrRank"], "target": "taNested"}
+{"id": "ta-flat-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]bb2[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taFlat"}
+{"id": "ta-badkey-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell CLASS=\"c1\"]]bb2[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrBadKey", "taAttrRank"], "target": "taAttrBadKey"}
+{"id": "ta-blocked-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell hidden=\"1\"]]bb2[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrBlocked", "taAttrRank"], "target": "taAttrBlocked"}
+{"id": "ta-unsafe-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell aria-label=\"x\"]]bb2[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrUnsafe", "taAttrRank"], "target": "taAttrUnsafe"}
+{"id": "ta-span-off-1", "kind": "source", "source": "[[table]]\n[[row colspan=\"2\"]]\n[[cell]]bb2[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrSpanOffCell", "taAttrRank"], "target": "taAttrSpanOffCell"}
+{"id": "ta-empty-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell class=\"\"]]bb2[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrEmptyVal", "taAttrRank"], "target": "taAttrEmptyVal"}
+{"id": "ta-zero-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell colspan=\"0\"]]bb2[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrSpanZero", "taAttrRank"], "target": "taAttrSpanZero"}
+{"id": "ta-normdrop-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell class=\"   \"]]bb2[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrNormDrop", "taAttrRank"], "target": "taAttrNormDrop"}
+{"id": "ta-keep-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell class=\"c1\"]]bb2[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taAttrRank"], "target": "taAttrKeep"}
+{"id": "ta-id-empty-1", "kind": "direct", "expect": ["taIdEmpty"], "target": "taIdEmpty", "note": "isolateId empty arm is unreachable from buildAttrs"}
+{"id": "ta-id-already-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell id=\"u-f1\"]]bb2[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taIdAlready", "taAttrRank"], "target": "taIdAlready"}
+{"id": "ta-id-lead-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell id=\" f1\"]]bb2[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taIdLeadWs", "taAttrRank"], "target": "taIdLeadWs"}
+{"id": "ta-id-prefix-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell id=\"fruit1\"]]bb2[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taIdPrefix", "taAttrRank"], "target": "taIdPrefix"}
+{"id": "ta-rank-1", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell data-z=\"1\" data-a=\"q\"]]bb2[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taAttrRank"], "target": "taAttrRank"}
+{"id": "r-tstart-1", "kind": "token", "rule": "Table", "opts": {"type": "table_start", "rows": 2, "cols": 1}, "expect": ["tbRTableStart"], "target": "tbRTableStart"}
+{"id": "r-tend-1", "kind": "token", "rule": "Table", "opts": {"type": "table_end"}, "expect": ["tbRTableEnd"], "target": "tbRTableEnd"}
+{"id": "r-cstart-1", "kind": "token", "rule": "Table", "opts": {"type": "caption_start"}, "expect": ["tbRCaptionStart"], "target": "tbRCaptionStart"}
+{"id": "r-cend-1", "kind": "token", "rule": "Table", "opts": {"type": "caption_end"}, "expect": ["tbRCaptionEnd"], "target": "tbRCaptionEnd"}
+{"id": "r-rstart-1", "kind": "token", "rule": "Table", "opts": {"type": "row_start"}, "expect": ["tbRRowStart"], "target": "tbRRowStart"}
+{"id": "r-rend-1", "kind": "token", "rule": "Table", "opts": {"type": "row_end"}, "expect": ["tbRRowEnd"], "target": "tbRRowEnd"}
+{"id": "r-cell-1", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 1}, "expect": ["tbRCellStart", "tbRTd"], "target": "tbRCellStart"}
+{"id": "r-cellend-1", "kind": "token", "rule": "Table", "opts": {"type": "cell_end", "attr": null, "span": 1}, "expect": ["tbRCellEnd", "tbRTd"], "target": "tbRCellEnd"}
+{"id": "r-fall-1", "kind": "token", "rule": "Table", "opts": {"type": "other1"}, "expect": ["tbRFall"], "target": "tbRFall"}
+{"id": "r-th-1", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": "header", "span": 1}, "expect": ["tbRCellStart", "tbRTh"], "target": "tbRTh"}
+{"id": "r-td-1", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 1}, "expect": ["tbRCellStart", "tbRTd"], "target": "tbRTd"}
+{"id": "r-colspan-1", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 3}, "expect": ["tbRCellStart", "tbRTd", "tbRColspan"], "target": "tbRColspan"}
+{"id": "r-rowspan-1", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 1, "rowspan": 3}, "expect": ["tbRCellStart", "tbRTd", "tbRRowspan"], "target": "tbRRowspan"}
+{"id": "r-align-1", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": "center", "span": 1}, "expect": ["tbRCellStart", "tbRTd", "tbRAlign"], "target": "tbRAlign"}
+{"id": "r-format-1", "kind": "token", "rule": "Table", "opts": {"type": "table_start", "rows": 1, "cols": 1, "format": "data-1"}, "expect": ["tbRTableStart", "tbRFormat"], "target": "tbRFormat"}
+{"id": "ar-start-1", "kind": "token", "rule": "Tableadv", "opts": {"type": "start", "attrs": {}}, "expect": ["taRStart"], "target": "taRStart"}
+{"id": "ar-row-1", "kind": "token", "rule": "Tableadv", "opts": {"type": "rowStart", "attrs": {}}, "expect": ["taRRowStart"], "target": "taRRowStart"}
+{"id": "ar-cell-1", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": false, "attrs": {}}, "expect": ["taRCellStart", "taRTd"], "target": "taRCellStart"}
+{"id": "ar-cellend-1", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellEnd", "header": false}, "expect": ["taRCellEnd", "taRTd"], "target": "taRCellEnd"}
+{"id": "ar-rowend-1", "kind": "token", "rule": "Tableadv", "opts": {"type": "rowEnd"}, "expect": ["taRRowEnd"], "target": "taRRowEnd"}
+{"id": "ar-end-1", "kind": "token", "rule": "Tableadv", "opts": {"type": "end"}, "expect": ["taREnd"], "target": "taREnd"}
+{"id": "ar-fall-1", "kind": "token", "rule": "Tableadv", "opts": {"type": "nope1", "attrs": {}}, "expect": ["taRFall"], "target": "taRFall"}
+{"id": "ar-th-1", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": true, "attrs": {}}, "expect": ["taRCellStart", "taRTh"], "target": "taRTh"}
+{"id": "ar-td-1", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": 0, "attrs": {}}, "expect": ["taRCellStart", "taRTd"], "target": "taRTd"}
+{"id": "ar-attrs-1", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": false, "attrs": {"class": "c1", "data-z": "z1"}}, "expect": ["taRCellStart", "taRTd", "taRAttrs"], "target": "taRAttrs"}
+{"id": "tb-miss-2", "kind": "source", "source": "Note c d 2", "expect": ["tbMiss"], "target": "tbMiss"}
+{"id": "tb-hit-2", "kind": "source", "source": "|| c d ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbHit"}
+{"id": "tb-row-content-2", "kind": "source", "source": "|| c d || 2 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbRowContent"}
+{"id": "tb-row-empty-2", "kind": "source", "source": "||||||||", "expect": ["tbHit", "tbRowEmpty", "tbSpanDiscard"], "target": "tbRowEmpty"}
+{"id": "tb-span-one-2", "kind": "source", "source": "||c d||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbSpanOne"}
+{"id": "tb-span-carry-2", "kind": "source", "source": "|||||||| c d ||", "expect": ["tbHit", "tbRowContent", "tbSpanCarry", "tbCellPlain"], "target": "tbSpanCarry"}
+{"id": "tb-span-discard-2", "kind": "source", "source": "||||||||||", "expect": ["tbHit", "tbRowEmpty", "tbSpanDiscard"], "target": "tbSpanDiscard"}
+{"id": "tb-right-2", "kind": "source", "source": "||> c d ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellRight"], "target": "tbCellRight"}
+{"id": "tb-center-2", "kind": "source", "source": "||= c d ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellCenter"], "target": "tbCellCenter"}
+{"id": "tb-left-2", "kind": "source", "source": "||< c d ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellLeft"], "target": "tbCellLeft"}
+{"id": "tb-header-2", "kind": "source", "source": "||~ c d ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellHeader"], "target": "tbCellHeader"}
+{"id": "tb-plain-2", "kind": "source", "source": "||c d||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbCellPlain"}
+{"id": "ta-norow-2", "kind": "source", "source": "[[table]]nope c d[[/table]]", "expect": ["taNoRow", "taFlat"], "target": "taNoRow"}
+{"id": "ta-stray-row-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]c d[[/cell]]\n[[/row]]\njunk 2\n[[/table]]", "expect": ["taStrayRow", "taFlat"], "target": "taStrayRow"}
+{"id": "ta-nocell-2", "kind": "source", "source": "[[table]]\n[[row]]\nno cell c d\n[[/row]]\n[[/table]]", "expect": ["taNoCell", "taFlat"], "target": "taNoCell"}
+{"id": "ta-stray-cell-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]c d[[/cell]]\njunk 2\n[[/row]]\n[[/table]]", "expect": ["taStrayCell", "taFlat"], "target": "taStrayCell"}
+{"id": "ta-ok-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]c d[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taOk"}
+{"id": "ta-header-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[hcell]]c d[[/hcell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellHeader", "taCellTrim", "taFlat", "taAttrRank"], "target": "taCellHeader"}
+{"id": "ta-plain-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]c d[[/HCELL]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taCellPlain"}
+{"id": "ta-para-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]\n\nc d\n\n[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellPara", "taFlat", "taAttrRank"], "target": "taCellPara"}
+{"id": "ta-trim-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]  c d  [[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taCellTrim"}
+{"id": "ta-nested-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]][[table]]\n[[row]]\n[[cell]]c d[[/cell]]\n[[/row]]\n[[/table]][[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taNested", "taAttrRank"], "target": "taNested"}
+{"id": "ta-flat-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]c d[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taFlat"}
+{"id": "ta-badkey-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell CLASS=\"c2\"]]c d[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrBadKey", "taAttrRank"], "target": "taAttrBadKey"}
+{"id": "ta-blocked-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell title=\"t2\"]]c d[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrBlocked", "taAttrRank"], "target": "taAttrBlocked"}
+{"id": "ta-unsafe-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell foo=\"1\"]]c d[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrUnsafe", "taAttrRank"], "target": "taAttrUnsafe"}
+{"id": "ta-span-off-2", "kind": "source", "source": "[[table]]\n[[row colspan=\"3\"]]\n[[cell]]c d[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrSpanOffCell", "taAttrRank"], "target": "taAttrSpanOffCell"}
+{"id": "ta-empty-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell class=\"\"]]c d[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrEmptyVal", "taAttrRank"], "target": "taAttrEmptyVal"}
+{"id": "ta-zero-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell colspan=\"0\"]]c d[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrSpanZero", "taAttrRank"], "target": "taAttrSpanZero"}
+{"id": "ta-normdrop-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell class=\"   \"]]c d[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrNormDrop", "taAttrRank"], "target": "taAttrNormDrop"}
+{"id": "ta-keep-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell class=\"c2\"]]c d[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taAttrRank"], "target": "taAttrKeep"}
+{"id": "ta-id-empty-2", "kind": "direct", "expect": ["taIdEmpty"], "target": "taIdEmpty", "note": "isolateId empty arm is unreachable from buildAttrs"}
+{"id": "ta-id-already-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell id=\"u-f2\"]]c d[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taIdAlready", "taAttrRank"], "target": "taIdAlready"}
+{"id": "ta-id-lead-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell id=\" f2\"]]c d[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taIdLeadWs", "taAttrRank"], "target": "taIdLeadWs"}
+{"id": "ta-id-prefix-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell id=\"fruit2\"]]c d[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taIdPrefix", "taAttrRank"], "target": "taIdPrefix"}
+{"id": "ta-rank-2", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell data-z=\"2\" data-a=\"q\"]]c d[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taAttrRank"], "target": "taAttrRank"}
+{"id": "r-tstart-2", "kind": "token", "rule": "Table", "opts": {"type": "table_start", "rows": 3, "cols": 1}, "expect": ["tbRTableStart"], "target": "tbRTableStart"}
+{"id": "r-tend-2", "kind": "token", "rule": "Table", "opts": {"type": "table_end"}, "expect": ["tbRTableEnd"], "target": "tbRTableEnd"}
+{"id": "r-cstart-2", "kind": "token", "rule": "Table", "opts": {"type": "caption_start"}, "expect": ["tbRCaptionStart"], "target": "tbRCaptionStart"}
+{"id": "r-cend-2", "kind": "token", "rule": "Table", "opts": {"type": "caption_end"}, "expect": ["tbRCaptionEnd"], "target": "tbRCaptionEnd"}
+{"id": "r-rstart-2", "kind": "token", "rule": "Table", "opts": {"type": "row_start"}, "expect": ["tbRRowStart"], "target": "tbRRowStart"}
+{"id": "r-rend-2", "kind": "token", "rule": "Table", "opts": {"type": "row_end"}, "expect": ["tbRRowEnd"], "target": "tbRRowEnd"}
+{"id": "r-cell-2", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 1}, "expect": ["tbRCellStart", "tbRTd"], "target": "tbRCellStart"}
+{"id": "r-cellend-2", "kind": "token", "rule": "Table", "opts": {"type": "cell_end", "attr": null, "span": 1}, "expect": ["tbRCellEnd", "tbRTd"], "target": "tbRCellEnd"}
+{"id": "r-fall-2", "kind": "token", "rule": "Table", "opts": {"type": "other2"}, "expect": ["tbRFall"], "target": "tbRFall"}
+{"id": "r-th-2", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": "header", "span": 1}, "expect": ["tbRCellStart", "tbRTh"], "target": "tbRTh"}
+{"id": "r-td-2", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 1}, "expect": ["tbRCellStart", "tbRTd"], "target": "tbRTd"}
+{"id": "r-colspan-2", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 4}, "expect": ["tbRCellStart", "tbRTd", "tbRColspan"], "target": "tbRColspan"}
+{"id": "r-rowspan-2", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 1, "rowspan": 4}, "expect": ["tbRCellStart", "tbRTd", "tbRRowspan"], "target": "tbRRowspan"}
+{"id": "r-align-2", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": "left", "span": 1}, "expect": ["tbRCellStart", "tbRTd", "tbRAlign"], "target": "tbRAlign"}
+{"id": "r-format-2", "kind": "token", "rule": "Table", "opts": {"type": "table_start", "rows": 1, "cols": 1, "format": "data-2"}, "expect": ["tbRTableStart", "tbRFormat"], "target": "tbRFormat"}
+{"id": "ar-start-2", "kind": "token", "rule": "Tableadv", "opts": {"type": "start", "attrs": {}}, "expect": ["taRStart"], "target": "taRStart"}
+{"id": "ar-row-2", "kind": "token", "rule": "Tableadv", "opts": {"type": "rowStart", "attrs": {}}, "expect": ["taRRowStart"], "target": "taRRowStart"}
+{"id": "ar-cell-2", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": false, "attrs": {}}, "expect": ["taRCellStart", "taRTd"], "target": "taRCellStart"}
+{"id": "ar-cellend-2", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellEnd", "header": false}, "expect": ["taRCellEnd", "taRTd"], "target": "taRCellEnd"}
+{"id": "ar-rowend-2", "kind": "token", "rule": "Tableadv", "opts": {"type": "rowEnd"}, "expect": ["taRRowEnd"], "target": "taRRowEnd"}
+{"id": "ar-end-2", "kind": "token", "rule": "Tableadv", "opts": {"type": "end"}, "expect": ["taREnd"], "target": "taREnd"}
+{"id": "ar-fall-2", "kind": "token", "rule": "Tableadv", "opts": {"type": "nope2", "attrs": {}}, "expect": ["taRFall"], "target": "taRFall"}
+{"id": "ar-th-2", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": true, "attrs": {}}, "expect": ["taRCellStart", "taRTh"], "target": "taRTh"}
+{"id": "ar-td-2", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": false, "attrs": {}}, "expect": ["taRCellStart", "taRTd"], "target": "taRTd"}
+{"id": "ar-attrs-2", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": false, "attrs": {"class": "c2", "data-z": "z2"}}, "expect": ["taRCellStart", "taRTd", "taRAttrs"], "target": "taRAttrs"}
+{"id": "tb-miss-3", "kind": "source", "source": "Note O'Brien 3", "expect": ["tbMiss"], "target": "tbMiss"}
+{"id": "tb-hit-3", "kind": "source", "source": "|| O'Brien ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbHit"}
+{"id": "tb-row-content-3", "kind": "source", "source": "|| O'Brien || 3 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbRowContent"}
+{"id": "tb-row-empty-3", "kind": "source", "source": "||||||||||", "expect": ["tbHit", "tbRowEmpty", "tbSpanDiscard"], "target": "tbRowEmpty"}
+{"id": "tb-span-one-3", "kind": "source", "source": "||O'Brien||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbSpanOne"}
+{"id": "tb-span-carry-3", "kind": "source", "source": "|||||||||| O'Brien ||", "expect": ["tbHit", "tbRowContent", "tbSpanCarry", "tbCellPlain"], "target": "tbSpanCarry"}
+{"id": "tb-span-discard-3", "kind": "source", "source": "||||||||||||", "expect": ["tbHit", "tbRowEmpty", "tbSpanDiscard"], "target": "tbSpanDiscard"}
+{"id": "tb-right-3", "kind": "source", "source": "||> O'Brien ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellRight"], "target": "tbCellRight"}
+{"id": "tb-center-3", "kind": "source", "source": "||= O'Brien ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellCenter"], "target": "tbCellCenter"}
+{"id": "tb-left-3", "kind": "source", "source": "||< O'Brien ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellLeft"], "target": "tbCellLeft"}
+{"id": "tb-header-3", "kind": "source", "source": "||~ O'Brien ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellHeader"], "target": "tbCellHeader"}
+{"id": "tb-plain-3", "kind": "source", "source": "||O'Brien||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbCellPlain"}
+{"id": "ta-norow-3", "kind": "source", "source": "[[table]]nope O'Brien[[/table]]", "expect": ["taNoRow", "taFlat"], "target": "taNoRow"}
+{"id": "ta-stray-row-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]O'Brien[[/cell]]\n[[/row]]\njunk 3\n[[/table]]", "expect": ["taStrayRow", "taFlat"], "target": "taStrayRow"}
+{"id": "ta-nocell-3", "kind": "source", "source": "[[table]]\n[[row]]\nno cell O'Brien\n[[/row]]\n[[/table]]", "expect": ["taNoCell", "taFlat"], "target": "taNoCell"}
+{"id": "ta-stray-cell-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]O'Brien[[/cell]]\njunk 3\n[[/row]]\n[[/table]]", "expect": ["taStrayCell", "taFlat"], "target": "taStrayCell"}
+{"id": "ta-ok-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]O'Brien[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taOk"}
+{"id": "ta-header-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[hcell]]O'Brien[[/hcell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellHeader", "taCellTrim", "taFlat", "taAttrRank"], "target": "taCellHeader"}
+{"id": "ta-plain-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[hcell]]O'Brien[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taCellPlain"}
+{"id": "ta-para-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]\n\nO'Brien\n\n[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellPara", "taFlat", "taAttrRank"], "target": "taCellPara"}
+{"id": "ta-trim-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]  O'Brien  [[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taCellTrim"}
+{"id": "ta-nested-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]][[table]]\n[[row]]\n[[cell]]O'Brien[[/cell]]\n[[/row]]\n[[/table]][[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taNested", "taAttrRank"], "target": "taNested"}
+{"id": "ta-flat-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]O'Brien[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taFlat"}
+{"id": "ta-badkey-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell CLASS=\"c3\"]]O'Brien[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrBadKey", "taAttrRank"], "target": "taAttrBadKey"}
+{"id": "ta-blocked-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell hidden=\"1\"]]O'Brien[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrBlocked", "taAttrRank"], "target": "taAttrBlocked"}
+{"id": "ta-unsafe-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell align=\"center\"]]O'Brien[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrUnsafe", "taAttrRank"], "target": "taAttrUnsafe"}
+{"id": "ta-span-off-3", "kind": "source", "source": "[[table]]\n[[row colspan=\"4\"]]\n[[cell]]O'Brien[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrSpanOffCell", "taAttrRank"], "target": "taAttrSpanOffCell"}
+{"id": "ta-empty-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell class=\"\"]]O'Brien[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrEmptyVal", "taAttrRank"], "target": "taAttrEmptyVal"}
+{"id": "ta-zero-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell colspan=\"0\"]]O'Brien[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrSpanZero", "taAttrRank"], "target": "taAttrSpanZero"}
+{"id": "ta-normdrop-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell class=\"   \"]]O'Brien[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrNormDrop", "taAttrRank"], "target": "taAttrNormDrop"}
+{"id": "ta-keep-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell class=\"c3\"]]O'Brien[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taAttrRank"], "target": "taAttrKeep"}
+{"id": "ta-id-empty-3", "kind": "direct", "expect": ["taIdEmpty"], "target": "taIdEmpty", "note": "isolateId empty arm is unreachable from buildAttrs"}
+{"id": "ta-id-already-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell id=\"u-f3\"]]O'Brien[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taIdAlready", "taAttrRank"], "target": "taIdAlready"}
+{"id": "ta-id-lead-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell id=\" f3\"]]O'Brien[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taIdLeadWs", "taAttrRank"], "target": "taIdLeadWs"}
+{"id": "ta-id-prefix-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell id=\"fruit3\"]]O'Brien[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taIdPrefix", "taAttrRank"], "target": "taIdPrefix"}
+{"id": "ta-rank-3", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell colspan=\"2\" class=\"c3\"]]O'Brien[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taAttrRank"], "target": "taAttrRank"}
+{"id": "r-tstart-3", "kind": "token", "rule": "Table", "opts": {"type": "table_start", "rows": 4, "cols": 1}, "expect": ["tbRTableStart"], "target": "tbRTableStart"}
+{"id": "r-tend-3", "kind": "token", "rule": "Table", "opts": {"type": "table_end"}, "expect": ["tbRTableEnd"], "target": "tbRTableEnd"}
+{"id": "r-cstart-3", "kind": "token", "rule": "Table", "opts": {"type": "caption_start"}, "expect": ["tbRCaptionStart"], "target": "tbRCaptionStart"}
+{"id": "r-cend-3", "kind": "token", "rule": "Table", "opts": {"type": "caption_end"}, "expect": ["tbRCaptionEnd"], "target": "tbRCaptionEnd"}
+{"id": "r-rstart-3", "kind": "token", "rule": "Table", "opts": {"type": "row_start"}, "expect": ["tbRRowStart"], "target": "tbRRowStart"}
+{"id": "r-rend-3", "kind": "token", "rule": "Table", "opts": {"type": "row_end"}, "expect": ["tbRRowEnd"], "target": "tbRRowEnd"}
+{"id": "r-cell-3", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 1}, "expect": ["tbRCellStart", "tbRTd"], "target": "tbRCellStart"}
+{"id": "r-cellend-3", "kind": "token", "rule": "Table", "opts": {"type": "cell_end", "attr": null, "span": 1}, "expect": ["tbRCellEnd", "tbRTd"], "target": "tbRCellEnd"}
+{"id": "r-fall-3", "kind": "token", "rule": "Table", "opts": {"type": "other3"}, "expect": ["tbRFall"], "target": "tbRFall"}
+{"id": "r-th-3", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": "header", "span": 1}, "expect": ["tbRCellStart", "tbRTh"], "target": "tbRTh"}
+{"id": "r-td-3", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 1}, "expect": ["tbRCellStart", "tbRTd"], "target": "tbRTd"}
+{"id": "r-colspan-3", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 5}, "expect": ["tbRCellStart", "tbRTd", "tbRColspan"], "target": "tbRColspan"}
+{"id": "r-rowspan-3", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 1, "rowspan": 5}, "expect": ["tbRCellStart", "tbRTd", "tbRRowspan"], "target": "tbRRowspan"}
+{"id": "r-align-3", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": "right", "span": 1}, "expect": ["tbRCellStart", "tbRTd", "tbRAlign"], "target": "tbRAlign"}
+{"id": "r-format-3", "kind": "token", "rule": "Table", "opts": {"type": "table_start", "rows": 1, "cols": 1, "format": "data-3"}, "expect": ["tbRTableStart", "tbRFormat"], "target": "tbRFormat"}
+{"id": "ar-start-3", "kind": "token", "rule": "Tableadv", "opts": {"type": "start", "attrs": {}}, "expect": ["taRStart"], "target": "taRStart"}
+{"id": "ar-row-3", "kind": "token", "rule": "Tableadv", "opts": {"type": "rowStart", "attrs": {}}, "expect": ["taRRowStart"], "target": "taRRowStart"}
+{"id": "ar-cell-3", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": false, "attrs": {}}, "expect": ["taRCellStart", "taRTd"], "target": "taRCellStart"}
+{"id": "ar-cellend-3", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellEnd", "header": false}, "expect": ["taRCellEnd", "taRTd"], "target": "taRCellEnd"}
+{"id": "ar-rowend-3", "kind": "token", "rule": "Tableadv", "opts": {"type": "rowEnd"}, "expect": ["taRRowEnd"], "target": "taRRowEnd"}
+{"id": "ar-end-3", "kind": "token", "rule": "Tableadv", "opts": {"type": "end"}, "expect": ["taREnd"], "target": "taREnd"}
+{"id": "ar-fall-3", "kind": "token", "rule": "Tableadv", "opts": {"type": "nope3", "attrs": {}}, "expect": ["taRFall"], "target": "taRFall"}
+{"id": "ar-th-3", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": true, "attrs": {}}, "expect": ["taRCellStart", "taRTh"], "target": "taRTh"}
+{"id": "ar-td-3", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": 0, "attrs": {}}, "expect": ["taRCellStart", "taRTd"], "target": "taRTd"}
+{"id": "ar-attrs-3", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": false, "attrs": {"class": "c3", "data-z": "z3"}}, "expect": ["taRCellStart", "taRTd", "taRAttrs"], "target": "taRAttrs"}
+{"id": "tb-miss-4", "kind": "source", "source": "Note x&y 4", "expect": ["tbMiss"], "target": "tbMiss"}
+{"id": "tb-hit-4", "kind": "source", "source": "|| x&y ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbHit"}
+{"id": "tb-row-content-4", "kind": "source", "source": "|| x&y || 4 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbRowContent"}
+{"id": "tb-row-empty-4", "kind": "source", "source": "||||||||||||", "expect": ["tbHit", "tbRowEmpty", "tbSpanDiscard"], "target": "tbRowEmpty"}
+{"id": "tb-span-one-4", "kind": "source", "source": "||x&y||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbSpanOne"}
+{"id": "tb-span-carry-4", "kind": "source", "source": "|||||||||||| x&y ||", "expect": ["tbHit", "tbRowContent", "tbSpanCarry", "tbCellPlain"], "target": "tbSpanCarry"}
+{"id": "tb-span-discard-4", "kind": "source", "source": "||||||||||||||", "expect": ["tbHit", "tbRowEmpty", "tbSpanDiscard"], "target": "tbSpanDiscard"}
+{"id": "tb-right-4", "kind": "source", "source": "||> x&y ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellRight"], "target": "tbCellRight"}
+{"id": "tb-center-4", "kind": "source", "source": "||= x&y ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellCenter"], "target": "tbCellCenter"}
+{"id": "tb-left-4", "kind": "source", "source": "||< x&y ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellLeft"], "target": "tbCellLeft"}
+{"id": "tb-header-4", "kind": "source", "source": "||~ x&y ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellHeader"], "target": "tbCellHeader"}
+{"id": "tb-plain-4", "kind": "source", "source": "||x&y||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbCellPlain"}
+{"id": "ta-norow-4", "kind": "source", "source": "[[table]]nope x&y[[/table]]", "expect": ["taNoRow", "taFlat"], "target": "taNoRow"}
+{"id": "ta-stray-row-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]x&y[[/cell]]\n[[/row]]\njunk 4\n[[/table]]", "expect": ["taStrayRow", "taFlat"], "target": "taStrayRow"}
+{"id": "ta-nocell-4", "kind": "source", "source": "[[table]]\n[[row]]\nno cell x&y\n[[/row]]\n[[/table]]", "expect": ["taNoCell", "taFlat"], "target": "taNoCell"}
+{"id": "ta-stray-cell-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]x&y[[/cell]]\njunk 4\n[[/row]]\n[[/table]]", "expect": ["taStrayCell", "taFlat"], "target": "taStrayCell"}
+{"id": "ta-ok-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]x&y[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taOk"}
+{"id": "ta-header-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[hcell]]x&y[[/hcell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellHeader", "taCellTrim", "taFlat", "taAttrRank"], "target": "taCellHeader"}
+{"id": "ta-plain-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]x&y[[/HCELL]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taCellPlain"}
+{"id": "ta-para-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]\n\nx&y\n\n[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellPara", "taFlat", "taAttrRank"], "target": "taCellPara"}
+{"id": "ta-trim-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]  x&y  [[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taCellTrim"}
+{"id": "ta-nested-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]][[table]]\n[[row]]\n[[cell]]x&y[[/cell]]\n[[/row]]\n[[/table]][[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taNested", "taAttrRank"], "target": "taNested"}
+{"id": "ta-flat-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]x&y[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taFlat"}
+{"id": "ta-badkey-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell CLASS=\"c4\"]]x&y[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrBadKey", "taAttrRank"], "target": "taAttrBadKey"}
+{"id": "ta-blocked-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell title=\"t4\"]]x&y[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrBlocked", "taAttrRank"], "target": "taAttrBlocked"}
+{"id": "ta-unsafe-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell aria-label=\"x\"]]x&y[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrUnsafe", "taAttrRank"], "target": "taAttrUnsafe"}
+{"id": "ta-span-off-4", "kind": "source", "source": "[[table]]\n[[row colspan=\"5\"]]\n[[cell]]x&y[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrSpanOffCell", "taAttrRank"], "target": "taAttrSpanOffCell"}
+{"id": "ta-empty-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell class=\"\"]]x&y[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrEmptyVal", "taAttrRank"], "target": "taAttrEmptyVal"}
+{"id": "ta-zero-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell colspan=\"0\"]]x&y[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrSpanZero", "taAttrRank"], "target": "taAttrSpanZero"}
+{"id": "ta-normdrop-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell class=\"   \"]]x&y[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrNormDrop", "taAttrRank"], "target": "taAttrNormDrop"}
+{"id": "ta-keep-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell class=\"c4\"]]x&y[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taAttrRank"], "target": "taAttrKeep"}
+{"id": "ta-id-empty-4", "kind": "direct", "expect": ["taIdEmpty"], "target": "taIdEmpty", "note": "isolateId empty arm is unreachable from buildAttrs"}
+{"id": "ta-id-already-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell id=\"u-f4\"]]x&y[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taIdAlready", "taAttrRank"], "target": "taIdAlready"}
+{"id": "ta-id-lead-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell id=\" f4\"]]x&y[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taIdLeadWs", "taAttrRank"], "target": "taIdLeadWs"}
+{"id": "ta-id-prefix-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell id=\"fruit4\"]]x&y[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taIdPrefix", "taAttrRank"], "target": "taIdPrefix"}
+{"id": "ta-rank-4", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell colspan=\"2\" class=\"c4\"]]x&y[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taAttrRank"], "target": "taAttrRank"}
+{"id": "r-tstart-4", "kind": "token", "rule": "Table", "opts": {"type": "table_start", "rows": 5, "cols": 1}, "expect": ["tbRTableStart"], "target": "tbRTableStart"}
+{"id": "r-tend-4", "kind": "token", "rule": "Table", "opts": {"type": "table_end"}, "expect": ["tbRTableEnd"], "target": "tbRTableEnd"}
+{"id": "r-cstart-4", "kind": "token", "rule": "Table", "opts": {"type": "caption_start"}, "expect": ["tbRCaptionStart"], "target": "tbRCaptionStart"}
+{"id": "r-cend-4", "kind": "token", "rule": "Table", "opts": {"type": "caption_end"}, "expect": ["tbRCaptionEnd"], "target": "tbRCaptionEnd"}
+{"id": "r-rstart-4", "kind": "token", "rule": "Table", "opts": {"type": "row_start"}, "expect": ["tbRRowStart"], "target": "tbRRowStart"}
+{"id": "r-rend-4", "kind": "token", "rule": "Table", "opts": {"type": "row_end"}, "expect": ["tbRRowEnd"], "target": "tbRRowEnd"}
+{"id": "r-cell-4", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 1}, "expect": ["tbRCellStart", "tbRTd"], "target": "tbRCellStart"}
+{"id": "r-cellend-4", "kind": "token", "rule": "Table", "opts": {"type": "cell_end", "attr": null, "span": 1}, "expect": ["tbRCellEnd", "tbRTd"], "target": "tbRCellEnd"}
+{"id": "r-fall-4", "kind": "token", "rule": "Table", "opts": {"type": "other4"}, "expect": ["tbRFall"], "target": "tbRFall"}
+{"id": "r-th-4", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": "header", "span": 1}, "expect": ["tbRCellStart", "tbRTh"], "target": "tbRTh"}
+{"id": "r-td-4", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 1}, "expect": ["tbRCellStart", "tbRTd"], "target": "tbRTd"}
+{"id": "r-colspan-4", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 6}, "expect": ["tbRCellStart", "tbRTd", "tbRColspan"], "target": "tbRColspan"}
+{"id": "r-rowspan-4", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 1, "rowspan": 6}, "expect": ["tbRCellStart", "tbRTd", "tbRRowspan"], "target": "tbRRowspan"}
+{"id": "r-align-4", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": "center", "span": 1}, "expect": ["tbRCellStart", "tbRTd", "tbRAlign"], "target": "tbRAlign"}
+{"id": "r-format-4", "kind": "token", "rule": "Table", "opts": {"type": "table_start", "rows": 1, "cols": 1, "format": "data-4"}, "expect": ["tbRTableStart", "tbRFormat"], "target": "tbRFormat"}
+{"id": "ar-start-4", "kind": "token", "rule": "Tableadv", "opts": {"type": "start", "attrs": {}}, "expect": ["taRStart"], "target": "taRStart"}
+{"id": "ar-row-4", "kind": "token", "rule": "Tableadv", "opts": {"type": "rowStart", "attrs": {}}, "expect": ["taRRowStart"], "target": "taRRowStart"}
+{"id": "ar-cell-4", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": false, "attrs": {}}, "expect": ["taRCellStart", "taRTd"], "target": "taRCellStart"}
+{"id": "ar-cellend-4", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellEnd", "header": false}, "expect": ["taRCellEnd", "taRTd"], "target": "taRCellEnd"}
+{"id": "ar-rowend-4", "kind": "token", "rule": "Tableadv", "opts": {"type": "rowEnd"}, "expect": ["taRRowEnd"], "target": "taRRowEnd"}
+{"id": "ar-end-4", "kind": "token", "rule": "Tableadv", "opts": {"type": "end"}, "expect": ["taREnd"], "target": "taREnd"}
+{"id": "ar-fall-4", "kind": "token", "rule": "Tableadv", "opts": {"type": "nope4", "attrs": {}}, "expect": ["taRFall"], "target": "taRFall"}
+{"id": "ar-th-4", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": true, "attrs": {}}, "expect": ["taRCellStart", "taRTh"], "target": "taRTh"}
+{"id": "ar-td-4", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": false, "attrs": {}}, "expect": ["taRCellStart", "taRTd"], "target": "taRTd"}
+{"id": "ar-attrs-4", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": false, "attrs": {"class": "c4", "data-z": "z4"}}, "expect": ["taRCellStart", "taRTd", "taRAttrs"], "target": "taRAttrs"}
+{"id": "tb-miss-5", "kind": "source", "source": "Note n7 5", "expect": ["tbMiss"], "target": "tbMiss"}
+{"id": "tb-hit-5", "kind": "source", "source": "|| n7 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbHit"}
+{"id": "tb-row-content-5", "kind": "source", "source": "|| n7 || 5 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbRowContent"}
+{"id": "tb-row-empty-5", "kind": "source", "source": "||||||||||||||", "expect": ["tbHit", "tbRowEmpty", "tbSpanDiscard"], "target": "tbRowEmpty"}
+{"id": "tb-span-one-5", "kind": "source", "source": "||n7||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbSpanOne"}
+{"id": "tb-span-carry-5", "kind": "source", "source": "|||||||||||||| n7 ||", "expect": ["tbHit", "tbRowContent", "tbSpanCarry", "tbCellPlain"], "target": "tbSpanCarry"}
+{"id": "tb-span-discard-5", "kind": "source", "source": "||||||||||||||||", "expect": ["tbHit", "tbRowEmpty", "tbSpanDiscard"], "target": "tbSpanDiscard"}
+{"id": "tb-right-5", "kind": "source", "source": "||> n7 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellRight"], "target": "tbCellRight"}
+{"id": "tb-center-5", "kind": "source", "source": "||= n7 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellCenter"], "target": "tbCellCenter"}
+{"id": "tb-left-5", "kind": "source", "source": "||< n7 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellLeft"], "target": "tbCellLeft"}
+{"id": "tb-header-5", "kind": "source", "source": "||~ n7 ||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellHeader"], "target": "tbCellHeader"}
+{"id": "tb-plain-5", "kind": "source", "source": "||n7||", "expect": ["tbHit", "tbRowContent", "tbSpanOne", "tbCellPlain"], "target": "tbCellPlain"}
+{"id": "ta-norow-5", "kind": "source", "source": "[[table]]nope n7[[/table]]", "expect": ["taNoRow", "taFlat"], "target": "taNoRow"}
+{"id": "ta-stray-row-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]n7[[/cell]]\n[[/row]]\njunk 5\n[[/table]]", "expect": ["taStrayRow", "taFlat"], "target": "taStrayRow"}
+{"id": "ta-nocell-5", "kind": "source", "source": "[[table]]\n[[row]]\nno cell n7\n[[/row]]\n[[/table]]", "expect": ["taNoCell", "taFlat"], "target": "taNoCell"}
+{"id": "ta-stray-cell-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]n7[[/cell]]\njunk 5\n[[/row]]\n[[/table]]", "expect": ["taStrayCell", "taFlat"], "target": "taStrayCell"}
+{"id": "ta-ok-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]n7[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taOk"}
+{"id": "ta-header-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[hcell]]n7[[/hcell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellHeader", "taCellTrim", "taFlat", "taAttrRank"], "target": "taCellHeader"}
+{"id": "ta-plain-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[hcell]]n7[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taCellPlain"}
+{"id": "ta-para-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]\n\nn7\n\n[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellPara", "taFlat", "taAttrRank"], "target": "taCellPara"}
+{"id": "ta-trim-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]  n7  [[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taCellTrim"}
+{"id": "ta-nested-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]][[table]]\n[[row]]\n[[cell]]n7[[/cell]]\n[[/row]]\n[[/table]][[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taNested", "taAttrRank"], "target": "taNested"}
+{"id": "ta-flat-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell]]n7[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrRank"], "target": "taFlat"}
+{"id": "ta-badkey-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell CLASS=\"c5\"]]n7[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrBadKey", "taAttrRank"], "target": "taAttrBadKey"}
+{"id": "ta-blocked-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell hidden=\"1\"]]n7[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrBlocked", "taAttrRank"], "target": "taAttrBlocked"}
+{"id": "ta-unsafe-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell foo=\"1\"]]n7[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrUnsafe", "taAttrRank"], "target": "taAttrUnsafe"}
+{"id": "ta-span-off-5", "kind": "source", "source": "[[table]]\n[[row colspan=\"6\"]]\n[[cell]]n7[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrSpanOffCell", "taAttrRank"], "target": "taAttrSpanOffCell"}
+{"id": "ta-empty-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell class=\"\"]]n7[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrEmptyVal", "taAttrRank"], "target": "taAttrEmptyVal"}
+{"id": "ta-zero-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell colspan=\"0\"]]n7[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrSpanZero", "taAttrRank"], "target": "taAttrSpanZero"}
+{"id": "ta-normdrop-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell class=\"   \"]]n7[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrNormDrop", "taAttrRank"], "target": "taAttrNormDrop"}
+{"id": "ta-keep-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell class=\"c5\"]]n7[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taAttrRank"], "target": "taAttrKeep"}
+{"id": "ta-id-empty-5", "kind": "direct", "expect": ["taIdEmpty"], "target": "taIdEmpty", "note": "isolateId empty arm is unreachable from buildAttrs"}
+{"id": "ta-id-already-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell id=\"u-f5\"]]n7[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taIdAlready", "taAttrRank"], "target": "taIdAlready"}
+{"id": "ta-id-lead-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell id=\" f5\"]]n7[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taIdLeadWs", "taAttrRank"], "target": "taIdLeadWs"}
+{"id": "ta-id-prefix-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell id=\"fruit5\"]]n7[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taIdPrefix", "taAttrRank"], "target": "taIdPrefix"}
+{"id": "ta-rank-5", "kind": "source", "source": "[[table]]\n[[row]]\n[[cell colspan=\"2\" class=\"c5\"]]n7[[/cell]]\n[[/row]]\n[[/table]]", "expect": ["taOk", "taCellPlain", "taCellTrim", "taFlat", "taAttrKeep", "taAttrRank"], "target": "taAttrRank"}
+{"id": "r-tstart-5", "kind": "token", "rule": "Table", "opts": {"type": "table_start", "rows": 6, "cols": 1}, "expect": ["tbRTableStart"], "target": "tbRTableStart"}
+{"id": "r-tend-5", "kind": "token", "rule": "Table", "opts": {"type": "table_end"}, "expect": ["tbRTableEnd"], "target": "tbRTableEnd"}
+{"id": "r-cstart-5", "kind": "token", "rule": "Table", "opts": {"type": "caption_start"}, "expect": ["tbRCaptionStart"], "target": "tbRCaptionStart"}
+{"id": "r-cend-5", "kind": "token", "rule": "Table", "opts": {"type": "caption_end"}, "expect": ["tbRCaptionEnd"], "target": "tbRCaptionEnd"}
+{"id": "r-rstart-5", "kind": "token", "rule": "Table", "opts": {"type": "row_start"}, "expect": ["tbRRowStart"], "target": "tbRRowStart"}
+{"id": "r-rend-5", "kind": "token", "rule": "Table", "opts": {"type": "row_end"}, "expect": ["tbRRowEnd"], "target": "tbRRowEnd"}
+{"id": "r-cell-5", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 1}, "expect": ["tbRCellStart", "tbRTd"], "target": "tbRCellStart"}
+{"id": "r-cellend-5", "kind": "token", "rule": "Table", "opts": {"type": "cell_end", "attr": null, "span": 1}, "expect": ["tbRCellEnd", "tbRTd"], "target": "tbRCellEnd"}
+{"id": "r-fall-5", "kind": "token", "rule": "Table", "opts": {"type": "other5"}, "expect": ["tbRFall"], "target": "tbRFall"}
+{"id": "r-th-5", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": "header", "span": 1}, "expect": ["tbRCellStart", "tbRTh"], "target": "tbRTh"}
+{"id": "r-td-5", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 1}, "expect": ["tbRCellStart", "tbRTd"], "target": "tbRTd"}
+{"id": "r-colspan-5", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 7}, "expect": ["tbRCellStart", "tbRTd", "tbRColspan"], "target": "tbRColspan"}
+{"id": "r-rowspan-5", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": null, "span": 1, "rowspan": 7}, "expect": ["tbRCellStart", "tbRTd", "tbRRowspan"], "target": "tbRRowspan"}
+{"id": "r-align-5", "kind": "token", "rule": "Table", "opts": {"type": "cell_start", "attr": "left", "span": 1}, "expect": ["tbRCellStart", "tbRTd", "tbRAlign"], "target": "tbRAlign"}
+{"id": "r-format-5", "kind": "token", "rule": "Table", "opts": {"type": "table_start", "rows": 1, "cols": 1, "format": "data-5"}, "expect": ["tbRTableStart", "tbRFormat"], "target": "tbRFormat"}
+{"id": "ar-start-5", "kind": "token", "rule": "Tableadv", "opts": {"type": "start", "attrs": {}}, "expect": ["taRStart"], "target": "taRStart"}
+{"id": "ar-row-5", "kind": "token", "rule": "Tableadv", "opts": {"type": "rowStart", "attrs": {}}, "expect": ["taRRowStart"], "target": "taRRowStart"}
+{"id": "ar-cell-5", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": false, "attrs": {}}, "expect": ["taRCellStart", "taRTd"], "target": "taRCellStart"}
+{"id": "ar-cellend-5", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellEnd", "header": false}, "expect": ["taRCellEnd", "taRTd"], "target": "taRCellEnd"}
+{"id": "ar-rowend-5", "kind": "token", "rule": "Tableadv", "opts": {"type": "rowEnd"}, "expect": ["taRRowEnd"], "target": "taRRowEnd"}
+{"id": "ar-end-5", "kind": "token", "rule": "Tableadv", "opts": {"type": "end"}, "expect": ["taREnd"], "target": "taREnd"}
+{"id": "ar-fall-5", "kind": "token", "rule": "Tableadv", "opts": {"type": "nope5", "attrs": {}}, "expect": ["taRFall"], "target": "taRFall"}
+{"id": "ar-th-5", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": true, "attrs": {}}, "expect": ["taRCellStart", "taRTh"], "target": "taRTh"}
+{"id": "ar-td-5", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": 0, "attrs": {}}, "expect": ["taRCellStart", "taRTd"], "target": "taRTd"}
+{"id": "ar-attrs-5", "kind": "token", "rule": "Tableadv", "opts": {"type": "cellStart", "header": false, "attrs": {"class": "c5", "data-z": "z5"}}, "expect": ["taRCellStart", "taRTd", "taRAttrs"], "target": "taRAttrs"}
+{"id": "ta-enum-0", "kind": "source", "source": "[[table]][[row]][[cell]][[table\"]][[/table]]\"]][[/cell]][[/row]][[/table]]\n\nnote 7 0", "expect": ["taOk", "taCellPlain", "taCellTrim", "taEnumQuoted", "taAttrRank"], "target": "taEnumQuoted"}
+{"id": "ta-enum-1", "kind": "source", "source": "[[table]][[row]][[cell]][[table\"]][[/table]]\"]][[/hcell]][[/row]][[/table]]", "expect": ["taOk", "taCellHeader", "taCellTrim", "taEnumQuoted", "taAttrRank"], "target": "taEnumQuoted"}
+{"id": "ta-enum-2", "kind": "source", "source": "[[table]][[row]][[hcell]][[table\"]][[/table]]\"]][[/cell]][[/row]][[/table]]\n\nnote 7 2", "expect": ["taOk", "taCellPlain", "taCellTrim", "taEnumQuoted", "taAttrRank"], "target": "taEnumQuoted"}
+{"id": "ta-enum-3", "kind": "source", "source": "[[table]][[row]][[hcell]][[table\"]][[/table]]\"]][[/hcell]][[/row]][[/table]]", "expect": ["taOk", "taCellHeader", "taCellTrim", "taEnumQuoted", "taAttrRank"], "target": "taEnumQuoted"}
+{"id": "ta-enum-4", "kind": "source", "source": "[[table]][[row]][[cell colspan=\"2\"]][[table\"]][[/table]]\"]][[/cell]][[/row]][[/table]]\n\nnote 7 4", "expect": ["taOk", "taCellPlain", "taCellTrim", "taEnumQuoted", "taAttrKeep", "taAttrRank"], "target": "taEnumQuoted"}
+{"id": "ta-enum-5", "kind": "source", "source": "[[table]][[row]][[cell colspan=\"2\"]][[table\"]][[/table]]\"]][[/hcell]][[/row]][[/table]]", "expect": ["taOk", "taCellHeader", "taCellTrim", "taEnumQuoted", "taAttrKeep", "taAttrRank"], "target": "taEnumQuoted"}
+{"id": "ta-enum-6", "kind": "source", "source": "[[table]][[row]][[cell colspan=\"0\"]][[table\"]][[/table]]\"]][[/cell]][[/row]][[/table]]\n\nnote 7 6", "expect": ["taOk", "taCellPlain", "taCellTrim", "taEnumQuoted", "taAttrSpanZero", "taAttrRank"], "target": "taEnumQuoted"}
+{"id": "ta-enum-7", "kind": "source", "source": "[[table]][[row]][[cell colspan=\"0\"]][[table\"]][[/table]]\"]][[/hcell]][[/row]][[/table]]", "expect": ["taOk", "taCellHeader", "taCellTrim", "taEnumQuoted", "taAttrSpanZero", "taAttrRank"], "target": "taEnumQuoted"}
+{"id": "ta-enum-8", "kind": "source", "source": "[[table]][[row]][[cell colspan=\"abc\"]][[table\"]][[/table]]\"]][[/cell]][[/row]][[/table]]\n\nnote 7 8", "expect": ["taOk", "taCellPlain", "taCellTrim", "taEnumQuoted", "taAttrKeep", "taAttrRank"], "target": "taEnumQuoted"}
+{"id": "ta-enum-9", "kind": "source", "source": "[[table]][[row]][[cell colspan=\"abc\"]][[table\"]][[/table]]\"]][[/hcell]][[/row]][[/table]]", "expect": ["taOk", "taCellHeader", "taCellTrim", "taEnumQuoted", "taAttrKeep", "taAttrRank"], "target": "taEnumQuoted"}
+{"id": "ta-enum-10", "kind": "source", "source": "[[table]][[row]][[cell align=\"center\"]][[table\"]][[/table]]\"]][[/cell]][[/row]][[/table]]\n\nnote 7 10", "expect": ["taOk", "taCellPlain", "taCellTrim", "taEnumQuoted", "taAttrUnsafe", "taAttrRank"], "target": "taEnumQuoted"}
+{"id": "ta-enum-11", "kind": "source", "source": "[[table]][[row]][[cell align=\"center\"]][[table\"]][[/table]]\"]][[/hcell]][[/row]][[/table]]", "expect": ["taOk", "taCellHeader", "taCellTrim", "taEnumQuoted", "taAttrUnsafe", "taAttrRank"], "target": "taEnumQuoted"}
+{"id": "ta-enum-12", "kind": "source", "source": "[[table]][[row]][[cell foo=\"1\"]][[table\"]][[/table]]\"]][[/cell]][[/row]][[/table]]\n\nnote 7 12", "expect": ["taOk", "taCellPlain", "taCellTrim", "taEnumQuoted", "taAttrUnsafe", "taAttrRank"], "target": "taEnumQuoted"}
+{"id": "ta-enum-13", "kind": "source", "source": "[[table]][[row]][[cell foo=\"1\"]][[table\"]][[/table]]\"]][[/hcell]][[/row]][[/table]]", "expect": ["taOk", "taCellHeader", "taCellTrim", "taEnumQuoted", "taAttrUnsafe", "taAttrRank"], "target": "taEnumQuoted"}

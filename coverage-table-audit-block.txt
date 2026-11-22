@@ -1,0 +1,54 @@
+-- Coverage-tier classification of the table family (Table, Tableadv, Row,
+-- Cell) in LeanFtml/CoverageTable.lean. Partition theorems at the standard
+-- core axiom set or better. No sorryAx. Staged for the coordinator; this
+-- lane does not edit Main.lean.
+#print axioms LeanFtml.tableAllClasses_nodup
+#print axioms LeanFtml.tableAllClasses_length
+#print axioms LeanFtml.tableAllClasses_mem
+#print axioms LeanFtml.table_classify_sound
+#print axioms LeanFtml.table_classify_nonempty
+#print axioms LeanFtml.table_witness_classify
+#print axioms LeanFtml.table_classes_exhaustive
+#print axioms LeanFtml.table_classification_complete
+#print axioms LeanFtml.tbl_attr_exclusive
+#print axioms LeanFtml.tbl_id_exclusive
+#print axioms LeanFtml.tbl_adv_out_exclusive
+#print axioms LeanFtml.tbl_marker_exclusive
+#print axioms LeanFtml.tbl_nest_exclusive
+#print axioms LeanFtml.tbl_scan_exclusive
+#print axioms LeanFtml.tbl_empty_row_discards_span
+#print axioms LeanFtml.tbl_no_row_dominates
+#print axioms LeanFtml.tbl_header_suppresses_align
+#print axioms LeanFtml.tbl_format_not_on_cell_end
+#print axioms LeanFtml.tbl_title_and_hidden_blocked
+#print axioms LeanFtml.tbl_plain_type_head
+#print axioms LeanFtml.tbl_adv_type_head
+#print axioms LeanFtml.tbl_marker_prefixes_distinct
+#print axioms LeanFtml.tbl_marker_right
+#print axioms LeanFtml.tbl_marker_plain
+#print axioms LeanFtml.tbl_key_shape
+#print axioms LeanFtml.tbl_safe_attr_facts
+#print axioms LeanFtml.tbl_rank_slots
+#print axioms LeanFtml.tbl_data_authored_order
+#print axioms LeanFtml.tbl_data_before_colspan
+#print axioms LeanFtml.tbl_parse_insert_sorts_data_names
+#print axioms LeanFtml.tbl_cov_cell_plain
+#print axioms LeanFtml.tbl_cov_cell_header
+#print axioms LeanFtml.tbl_isolate_empty
+#print axioms LeanFtml.tbl_cov_apos_raw
+#print axioms LeanFtml.tbl_enum_frames_are_the_pin
+#print axioms LeanFtml.tbl_shapeOf_isSome
+#print axioms LeanFtml.tbl_render_complete
+#print axioms LeanFtml.tbl_render_sound
+-- Elaborated 2026-11-22 through lean-build.sh on CovtableAxiomScratch.lean.
+-- Record: conformance-covtable/axiom-scratch.log
+-- No axioms: tableAllClasses_nodup, tableAllClasses_length, tbl_title_and_hidden_blocked.
+-- [propext]: tableAllClasses_mem, table_classify_sound, table_classify_nonempty,
+-- table_witness_classify, table_classes_exhaustive, table_classification_complete,
+-- tbl_attr_exclusive, tbl_id_exclusive, tbl_adv_out_exclusive, tbl_marker_exclusive,
+-- tbl_nest_exclusive, tbl_scan_exclusive, tbl_empty_row_discards_span,
+-- tbl_no_row_dominates, tbl_header_suppresses_align, tbl_format_not_on_cell_end,
+-- tbl_plain_type_head, tbl_adv_type_head.
+-- [propext, Classical.choice, Quot.sound]: the remaining 17 theorems, including
+-- tbl_shapeOf_isSome, tbl_render_complete and tbl_render_sound.
+-- No sorryAx. No native_decide. Headline table_classification_complete is [propext].

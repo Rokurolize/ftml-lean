@@ -1,0 +1,642 @@
+{
+  "seed_runs": [
+    {
+      "seed": 20261122,
+      "cases": 380,
+      "failures": 3,
+      "class_mismatch": 0,
+      "uncomparable": 6,
+      "by_class": {
+        "tbMiss": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbHit": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRowContent": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRowEmpty": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbSpanOne": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbSpanCarry": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbSpanDiscard": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbCellRight": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbCellCenter": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbCellLeft": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbCellHeader": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbCellPlain": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taNoRow": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taStrayRow": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taNoCell": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taStrayCell": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taOk": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taCellHeader": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taCellPlain": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taCellPara": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taCellTrim": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taNested": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taFlat": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taAttrBadKey": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taAttrBlocked": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taAttrUnsafe": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taAttrSpanOffCell": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taAttrEmptyVal": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taAttrSpanZero": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taAttrNormDrop": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taAttrKeep": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taIdEmpty": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 6
+        },
+        "taIdAlready": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taIdLeadWs": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taIdPrefix": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taAttrRank": {
+          "n": 6,
+          "fail": 3,
+          "uncomparable": 0
+        },
+        "tbRTableStart": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRTableEnd": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRCaptionStart": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRCaptionEnd": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRRowStart": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRRowEnd": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRCellStart": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRCellEnd": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRFall": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRTh": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRTd": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRColspan": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRRowspan": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRAlign": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRFormat": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taRStart": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taRRowStart": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taRCellStart": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taRCellEnd": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taRRowEnd": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taREnd": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taRFall": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taRTh": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taRTd": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taRAttrs": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taEnumQuoted": {
+          "n": 14,
+          "fail": 0,
+          "uncomparable": 0
+        }
+      }
+    },
+    {
+      "seed": 7,
+      "cases": 380,
+      "failures": 3,
+      "class_mismatch": 0,
+      "uncomparable": 6,
+      "by_class": {
+        "tbMiss": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbHit": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRowContent": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRowEmpty": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbSpanOne": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbSpanCarry": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbSpanDiscard": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbCellRight": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbCellCenter": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbCellLeft": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbCellHeader": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbCellPlain": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taNoRow": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taStrayRow": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taNoCell": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taStrayCell": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taOk": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taCellHeader": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taCellPlain": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taCellPara": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taCellTrim": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taNested": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taFlat": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taAttrBadKey": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taAttrBlocked": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taAttrUnsafe": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taAttrSpanOffCell": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taAttrEmptyVal": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taAttrSpanZero": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taAttrNormDrop": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taAttrKeep": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taIdEmpty": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 6
+        },
+        "taIdAlready": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taIdLeadWs": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taIdPrefix": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taAttrRank": {
+          "n": 6,
+          "fail": 3,
+          "uncomparable": 0
+        },
+        "tbRTableStart": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRTableEnd": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRCaptionStart": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRCaptionEnd": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRRowStart": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRRowEnd": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRCellStart": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRCellEnd": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRFall": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRTh": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRTd": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRColspan": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRRowspan": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRAlign": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "tbRFormat": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taRStart": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taRRowStart": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taRCellStart": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taRCellEnd": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taRRowEnd": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taREnd": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taRFall": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taRTh": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taRTd": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taRAttrs": {
+          "n": 6,
+          "fail": 0,
+          "uncomparable": 0
+        },
+        "taEnumQuoted": {
+          "n": 14,
+          "fail": 0,
+          "uncomparable": 0
+        }
+      }
+    }
+  ]
+}
