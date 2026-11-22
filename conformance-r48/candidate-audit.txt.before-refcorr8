@@ -1,0 +1,21 @@
+== freelink-: fresh 60 vs historical 60; disagreements 0
+== linkx-: fresh 36 vs historical 36; disagreements 0
+== module-: fresh 52 vs historical 52; disagreements 1
+  DIFF module-mod-nested-two-openers
+    fresh: ('output', '"\\u00femodule \\"css\\" +module_body%3D%22%25FF2086%25FF%22 \\u00fe"')
+    hist:  ('output', '"\\u00femodule \\"css\\" +module_body%3D%22%25FF557%25FF%22 \\u00fe"')
+== modulex-: fresh 29 vs historical 29; disagreements 1
+  DIFF modulex-x-known-mod-body-654
+    fresh: ('output', '"\\u00femodule \\"CSS\\" +module_body%3D%22%25FF3587%25FF%22 \\u00fe"')
+    hist:  ('output', '"\\u00femodule \\"CSS\\" +module_body%3D%22%25FF425%25FF%22 \\u00fe"')
+== module654-: fresh 59 vs historical 59; disagreements 0
+== image-: fresh 68 vs historical 68; disagreements 0
+== gallery-: fresh 88 vs historical 87; disagreements 1
+  DIFF gallery-ga-24
+    fresh: ('output', '{"$bytes": [60, 100, 105, 118, 32, 99, 108, 97, 115, 115, 61, 34, 103, 97, 108, 108, 101, 114, 121, 45, 98, 111, 120, 34, 62, 60, 100, 105, 118, 32, 99, 108, 97, 115, 115, 61, 34, 103, 97, 108, 108, 101, 114, 121, 45, 105, 116, 101, 109, 32, 116, 104, 117, 109, 98, 110, 97, 105, 108, 34,
+    hist:  None
+== gallerysupp-: fresh 4 vs historical 4; disagreements 0
+== user-: fresh 82 vs historical 82; disagreements 0
+== file-: fresh 83 vs historical 83; disagreements 0
+== filesupp-: fresh 6 vs historical 6; disagreements 0
+TOTAL DISAGREEMENTS 3

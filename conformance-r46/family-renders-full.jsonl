@@ -333,7 +333,7 @@
 {"id":"div\/attr-class","output":"<div class=\"card\"><p>Body<\/p>\n\n<\/div>"}
 {"id":"div\/attr-id","output":"<div id=\"u-panel\"><p>Body<\/p>\n\n<\/div>"}
 {"id":"div\/attr-id-prefixed","output":"<div id=\"u-panel\"><p>Body<\/p>\n\n<\/div>"}
-{"id":"div\/attr-id-space","output":"<div id=\"\"><p>x<\/p>\n\n<\/div>"}
+{"id":"div\/attr-id-space","output":"<div id=\"u-\"><p>x<\/p>\n\n<\/div>"}
 {"id":"div\/attr-style","output":"<div style=\"color: red\"><p>Body<\/p>\n\n<\/div>"}
 {"id":"div\/attr-style-two","output":"<div style=\"color: red; background: blue\"><p>Body<\/p>\n\n<\/div>"}
 {"id":"div\/attr-role-type","output":"<div role=\"note\" type=\"tip\"><p>Body<\/p>\n\n<\/div>"}
@@ -344,7 +344,7 @@
 {"id":"div\/attr-allowlist-mixed","output":"<div data-mixed=\"four\"><p>Body<\/p>\n\n<\/div>"}
 {"id":"div\/attr-single-quote","output":"<div><p>hello<\/p>\n\n<\/div>"}
 {"id":"div\/attr-unquoted","output":"<div><p>hello<\/p>\n\n<\/div>"}
-{"id":"div\/attr-dupe-data","output":"<div data-mixed=\"three\"><p>Body<\/p>\n\n<\/div>"}
+{"id":"div\/attr-dupe-data","output":"<div data-mixed=\"four\"><p>Body<\/p>\n\n<\/div>"}
 {"id":"div\/attr-class-space","output":"<div class=\"a b\"><p>x<\/p>\n\n<\/div>"}
 {"id":"div\/attr-empty-value","output":"<div><p>x<\/p>\n\n<\/div>"}
 {"id":"div\/attr-style-hidden-display","output":"<div style=\"display:none\"><p>hello<\/p>\n\n<\/div>"}

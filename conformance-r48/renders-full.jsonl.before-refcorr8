@@ -1,0 +1,643 @@
+{"id":"freelink-exist-target-labeled","output":"<p><a href=\"\/muse-probe-r2link-free-exists\">shown<\/a><\/p>\n\n"}
+{"id":"freelink-exist2-target-labeled","output":"<p><a href=\"\/muse-probe-r2link-free-exists2\">Second<\/a><\/p>\n\n"}
+{"id":"freelink-exist-target-bare","output":"<p><a href=\"\/muse-probe-r2link-free-exists\">muse-probe-r2link-free-exists<\/a><\/p>\n\n"}
+{"id":"freelink-exist2-empty-label","error":"Error: Call to undefined method DB_PagePeer::selectByPrimaryKey()"}
+{"id":"freelink-new-target-labeled","output":"<p><a class=\"newpage\" href=\"\/missing-page\">Wanted<\/a><\/p>\n\n"}
+{"id":"freelink-new-target-bare","output":"<p><a class=\"newpage\" href=\"\/missing-page\">missing-page<\/a><\/p>\n\n"}
+{"id":"freelink-new-target-empty-label","output":"<p><a class=\"newpage\" href=\"\/missing-page\">missing-page<\/a><\/p>\n\n"}
+{"id":"freelink-case-upper-exists","output":"<p><a href=\"\/muse-probe-r2link-free-exists\">shown<\/a><\/p>\n\n"}
+{"id":"freelink-case-mixed-exists","output":"<p><a href=\"\/muse-probe-r2link-free-exists\">shown<\/a><\/p>\n\n"}
+{"id":"freelink-exist-target-anchor","output":"<p><a href=\"\/muse-probe-r2link-free-exists#sec\">shown<\/a><\/p>\n\n"}
+{"id":"freelink-double-bracket","output":"<p>[[some-page]]<\/p>\n\n"}
+{"id":"freelink-triple-quad","output":"<p>[<a class=\"newpage\" href=\"\/scp-001-ex\">SCP-001-EX<\/a>]<\/p>\n\n"}
+{"id":"freelink-triple-quint","output":"<p>[[<a class=\"newpage\" href=\"\/scp-001-ex\">SCP-001-EX<\/a>]]<\/p>\n\n"}
+{"id":"freelink-triple-short-closer","output":"<p>[[[some-page]]<\/p>\n\n"}
+{"id":"freelink-triple-no-closer","output":"<p>[[[some-page<\/p>\n\n"}
+{"id":"freelink-triple-closer-junk","output":"<p><a class=\"newpage\" href=\"\/some-page\">some-page<\/a>junk<\/p>\n\n"}
+{"id":"freelink-triple-extra-close","output":"<p><a class=\"newpage\" href=\"\/some-page\">some-page<\/a>]<\/p>\n\n"}
+{"id":"freelink-triple-space-opener","output":"<p><a class=\"newpage\" href=\"\/some-page\">Label<\/a><\/p>\n\n"}
+{"id":"freelink-double-open-triple-close","output":"<p>[[some-page|Label]]]<\/p>\n\n"}
+{"id":"freelink-triple-open-double-close","output":"<p>[[[some-page|Label]]<\/p>\n\n"}
+{"id":"freelink-empty-target","output":"<p>[[[|Label]]]<\/p>\n\n"}
+{"id":"freelink-whitespace-target","output":"<p><a class=\"newpage\" href=\"\/\">Label<\/a><\/p>\n\n"}
+{"id":"freelink-empty-label","output":"<p><a class=\"newpage\" href=\"\/some-page\">some-page<\/a><\/p>\n\n"}
+{"id":"freelink-dup-pipes","output":"<p><a class=\"newpage\" href=\"\/page-slug\">A|B|C<\/a><\/p>\n\n"}
+{"id":"freelink-dup-pipes-spaced","output":"<p><a class=\"newpage\" href=\"\/page-slug\">A | B | C<\/a><\/p>\n\n"}
+{"id":"freelink-triple-hash","output":"<p>[[[home###|Home]]]<\/p>\n\n"}
+{"id":"freelink-double-hash","output":"<p>[[[a##b]]]<\/p>\n\n"}
+{"id":"freelink-hash-route","output":"<p>[[[MAIN\/##\/page#toc1|Hash routing]]]<\/p>\n\n"}
+{"id":"freelink-anchor-digit","output":"<p><a class=\"newpage\" href=\"\/scp-series#001\">SCP-001 to SCP-099<\/a><\/p>\n\n"}
+{"id":"freelink-anchor-alpha","output":"<p><a class=\"newpage\" href=\"\/scp-series#section\">Label<\/a><\/p>\n\n"}
+{"id":"freelink-anchor-label-only","output":"<p>[[[#my-anchor|Label]]]<\/p>\n\n"}
+{"id":"freelink-anchor-label-only-space","output":"<p><a class=\"newpage\" href=\"\/#my-anchor\">Label<\/a><\/p>\n\n"}
+{"id":"freelink-anchor-empty-first","output":"<p>[[[#my-anchor]]]<\/p>\n\n"}
+{"id":"freelink-anchor-dash","output":"<p><a class=\"newpage\" href=\"\/scp-series#sec-1\">Label<\/a><\/p>\n\n"}
+{"id":"freelink-anchor-underscore","output":"<p><a class=\"newpage\" href=\"\/scp-series#sec_1\">Label<\/a><\/p>\n\n"}
+{"id":"freelink-anchor-colon","output":"<p><a class=\"newpage\" href=\"\/scp-series#sec:1\">Label<\/a><\/p>\n\n"}
+{"id":"freelink-cross-site-colon","output":"<p><a class=\"newpage\" href=\"\/scp-wiki:component:theme\">Sigma-9 Theme<\/a><\/p>\n\n"}
+{"id":"freelink-cross-site-colon-spaced","output":"<p><a class=\"newpage\" href=\"\/scp-wiki:system:recent-changes\">:scp-wiki : system : Recent Changes<\/a><\/p>\n\n"}
+{"id":"freelink-fossil-cross-site","output":"<p><a class=\"newpage\" href=\"\/site:page\">Label<\/a><\/p>\n\n"}
+{"id":"freelink-fossil-cross-site-no-page","output":"<p><a class=\"newpage\" href=\"\/site\">Label<\/a><\/p>\n\n"}
+{"id":"freelink-category","output":"<p><a class=\"newpage\" href=\"\/system:recent-changes\">Recent Changes<\/a><\/p>\n\n"}
+{"id":"freelink-category-spaced","output":"<p><a class=\"newpage\" href=\"\/system:recent-changes\">Recent Changes<\/a><\/p>\n\n"}
+{"id":"freelink-multi-colon-empty","output":"<p><a class=\"newpage\" href=\"\/a:b:c\">a:b:c<\/a><\/p>\n\n"}
+{"id":"freelink-default-category","output":"<p><a class=\"newpage\" href=\"\/a\">Label<\/a><\/p>\n\n"}
+{"id":"freelink-url-plain","output":"<p><a href=\"https:\/\/example.com\/\">Example<\/a><\/p>\n\n"}
+{"id":"freelink-url-leading-space","output":"<p><a class=\"newpage\" href=\"\/https:example-com\">Example<\/a><\/p>\n\n"}
+{"id":"freelink-url-trailing-space","output":"<p><a href=\"https:\/\/example.com\">Trailing<\/a><\/p>\n\n"}
+{"id":"freelink-url-no-scheme","output":"<p><a class=\"newpage\" href=\"\/example-com\">Example<\/a><\/p>\n\n"}
+{"id":"freelink-url-subpath","output":"<p><a class=\"newpage\" href=\"\/example-edit\">Edit page<\/a><\/p>\n\n"}
+{"id":"freelink-url-hash-route","output":"<p><a class=\"newpage\" href=\"\/main#\/page\">Hash routing<\/a><\/p>\n\n"}
+{"id":"freelink-line-start","output":"<p><a class=\"newpage\" href=\"\/some-page\">Line start<\/a><\/p>\n\n"}
+{"id":"freelink-mid-line","output":"<p>text before <a class=\"newpage\" href=\"\/some-page\">Mid line<\/a> text after<\/p>\n\n"}
+{"id":"freelink-second-line","output":"<p>first line<br \/>\n<a class=\"newpage\" href=\"\/some-page\">Second line<\/a><\/p>\n\n"}
+{"id":"freelink-inline-two","output":"<p><a class=\"newpage\" href=\"\/a\">A<\/a> and <a class=\"newpage\" href=\"\/b\">B<\/a><\/p>\n\n"}
+{"id":"freelink-adjacent-freelinks","output":"<p><a class=\"newpage\" href=\"\/a\">A<\/a><a class=\"newpage\" href=\"\/b\">B<\/a><\/p>\n\n"}
+{"id":"freelink-star-target","output":"<p><a class=\"newpage\" href=\"\/scp-001\">*SCP-001<\/a><\/p>\n\n"}
+{"id":"freelink-star-labeled","output":"<p><a class=\"newpage\" href=\"\/some-page\">Label<\/a><\/p>\n\n"}
+{"id":"freelink-underscore-target","output":"<p><a class=\"newpage\" href=\"\/_some-page\">Label<\/a><\/p>\n\n"}
+{"id":"freelink-unicode-cyrillic","output":"<p><a class=\"newpage\" href=\"\/dokument\">\u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442<\/a><\/p>\n\n"}
+{"id":"freelink-unicode-cjk","output":"<p><a class=\"newpage\" href=\"\/\">Label<\/a><\/p>\n\n"}
+{"id":"linkx-x-concat-code-inside","output":"\n<div class=\"code\">\n<pre><code>a\\\nb<\/code><\/pre><\/div>\n\n"}
+{"id":"linkx-x-concat-code-outside","output":"<p>beforeafter [[code]]x[[\/code]]<\/p>\n\n"}
+{"id":"linkx-x-concat-code-before-open","output":"<p>a<\/p>\n\n\n<div class=\"code\">\n<pre><code>x<\/code><\/pre><\/div>\n\n"}
+{"id":"linkx-x-concat-code-after-close","output":"<p>[[code]]<br \/>\nx<br \/>\n[[\/code]]tail<\/p>\n\n"}
+{"id":"linkx-x-concat-raw-inside","output":"<p>[[raw]]<br \/>\nab<br \/>\n[[\/raw]]<\/p>\n\n"}
+{"id":"linkx-x-concat-raw-before-open","output":"<p>a[[raw]]<br \/>\nx<br \/>\n[[\/raw]]<\/p>\n\n"}
+{"id":"linkx-x-concat-rawold-inside","output":"<p>[[rawold]]<br \/>\nab<br \/>\n[[\/rawold]]<\/p>\n\n"}
+{"id":"linkx-x-concat-comment-inside","output":"<p>tail<\/p>\n\n"}
+{"id":"linkx-x-concat-comment-before","output":"<p>a\\tail<\/p>\n\n"}
+{"id":"linkx-x-concat-comment-after","output":"<p>tail<\/p>\n\n"}
+{"id":"linkx-x-concat-math-inside","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"linkx-x-concat-freelink-join","output":"<p><a href=\"\/muse-probe-r2link-free-exists\">sometext<\/a><\/p>\n\n"}
+{"id":"linkx-x-concat-eref-join","output":"<p><a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-')\"><\/a><\/p>\n\n"}
+{"id":"linkx-x-free-iftags-keep","output":"<p><a href=\"\/muse-probe-r2link-free-exists\">muse-probe-r2link-free-exists<\/a><\/p>\n\n"}
+{"id":"linkx-x-free-iftags-drop","output":""}
+{"id":"linkx-x-free-iftags-keep-new","output":"<p><a class=\"newpage\" href=\"\/muse-probe-r2link-x-absent-page\">muse-probe-r2link-x-absent-page<\/a><\/p>\n\n"}
+{"id":"linkx-x-free-iftags-drop-new","output":""}
+{"id":"linkx-x-free-math-label","output":"<p>[[math <a href=\"\/muse-probe-r2link-free-exists\">muse-probe-r2link-free-exists<\/a>]]<br \/>\nx<br \/>\n[[\/math]]<br \/>\n<a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-')\"><\/a><\/p>\n\n"}
+{"id":"linkx-x-free-math-body","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"linkx-x-free-inside-code","output":"\n<div class=\"code\">\n<pre><code>[[[muse-probe-r2link-free-exists]]]<\/code><\/pre><\/div>\n\n"}
+{"id":"linkx-x-free-inside-raw","output":"<p>[[raw]]<br \/>\n<a href=\"\/muse-probe-r2link-free-exists\">muse-probe-r2link-free-exists<\/a><br \/>\n[[\/raw]]<\/p>\n\n"}
+{"id":"linkx-x-free-inside-comment","output":"<p>tail<\/p>\n\n"}
+{"id":"linkx-x-free-next-to-math","output":"<p><a href=\"\/muse-probe-r2link-free-exists\">muse-probe-r2link-free-exists<\/a>[[math E]]x[[\/math]]<\/p>\n\n"}
+{"id":"linkx-x-eref-backward","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div><p><a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-1')\">1<\/a><\/p>\n\n"}
+{"id":"linkx-x-eref-forward","output":"<p><a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-1')\">1<\/a><\/p>\n\n<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"linkx-x-eref-duplicate","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div><div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div><p><a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-2')\">2<\/a><\/p>\n\n"}
+{"id":"linkx-x-eref-duplicate-forward","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div><p><a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-2')\">2<\/a><\/p>\n\n<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"linkx-x-eref-suppressed-math","output":"<p><a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-')\"><\/a><\/p>\n\n"}
+{"id":"linkx-x-eref-in-suppressed-body","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"linkx-x-eref-kept-math","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div><p><a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-1')\">1<\/a><\/p>\n\n"}
+{"id":"linkx-x-eref-inside-code","output":"\n<div class=\"code\">\n<pre><code>[[eref E]]<\/code><\/pre><\/div>\n\n"}
+{"id":"linkx-x-eref-inside-raw","output":"<p>[[raw]]<br \/>\n<a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-')\"><\/a><br \/>\n[[\/raw]]<\/p>\n\n"}
+{"id":"linkx-x-eref-inside-comment","output":"<p>tail<\/p>\n\n"}
+{"id":"linkx-x-eref-two-labels","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div><div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div><p><a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-1')\">1<\/a> <a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-2')\">2<\/a><\/p>\n\n"}
+{"id":"linkx-x-eref-nested-freelink","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div><p><a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-')\"><\/a><\/p>\n\n"}
+{"id":"linkx-x-eref-undefined","output":"<p><a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-')\"><\/a><\/p>\n\n"}
+{"id":"module-mod-basic","output":"\u00femodule \"backlinks\"\u00fe"}
+{"id":"module-mod-known-uppercase","output":"\u00femodule \"BACKLINKS\"\u00fe"}
+{"id":"module-mod-known-mixed","output":"\u00femodule \"BackLinks\"\u00fe"}
+{"id":"module-mod-unknown","output":"<div class=\"error-block\">[[module <em>UnknownOracleModule<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module-mod-unknown-mixed","output":"<div class=\"error-block\">[[module <em>Unknown_Oracle-2<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module-mod-name-leading-digit","output":"<div class=\"error-block\">[[module <em>123abc<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module-mod-name-leading-underscore","output":"<div class=\"error-block\">[[module <em>_foo<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module-mod-name-leading-hyphen","output":"<div class=\"error-block\">[[module <em>-foo<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module-mod-name-slash","output":"<div class=\"error-block\">[[module <em>foo\/bar<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module-mod-name-inner-slash","output":"<div class=\"error-block\">[[module <em>foo\/bar-baz_qux<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module-mod-name-hyphen","output":"<div class=\"error-block\">[[module <em>foo-bar<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module-mod-name-underscore","output":"<div class=\"error-block\">[[module <em>foo_bar<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module-mod-name-uppercase-unknown","output":"<div class=\"error-block\">[[module <em>FOO_BAR<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module-mod-name-empty-space","output":"<p>[[module ]]<\/p>\n\n"}
+{"id":"module-mod-name-empty-nospace","output":"<p>[[module]]<\/p>\n\n"}
+{"id":"module-mod-attr-quoted","output":"\u00femodule \"rate\" show%3D%22foo%22 \u00fe"}
+{"id":"module-mod-attr-unquoted","output":"\u00femodule \"rate\" show%3Dfoo \u00fe"}
+{"id":"module-mod-attr-empty","output":"\u00femodule \"rate\" show%3D%22%22 \u00fe"}
+{"id":"module-mod-attr-multiple","output":"\u00femodule \"pagetree\" root%3D%22scp-001%22+depth%3D%222%22 \u00fe"}
+{"id":"module-mod-attr-on-unknown","output":"<div class=\"error-block\">[[module <em>UnknownOracleModule<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module-mod-attr-extra-spaces","output":"\u00femodule \"rate\" show%3D%22foo%22 \u00fe"}
+{"id":"module-mod-body-present","output":"\u00femodule \"css\" +module_body%3D%22.blue%2B%257B%2Bcolor%253A%2Bblue%253B%2B%257D%22 \u00fe"}
+{"id":"module-mod-body-empty","output":"\u00femodule \"css\"\u00fe<p>[[\/module]]<\/p>\n\n"}
+{"id":"module-mod-body-inline-unknown","output":"<p>[[module UnknownOracleModule]]preserved body[[\/module]]<\/p>\n\n"}
+{"id":"module-mod-body-unknown-newline","output":"<div class=\"error-block\">[[module <em>UnknownOracleModule<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module-mod-unterminated","output":"\u00femodule \"css\"\u00fe<p>.blue{color:blue}<\/p>\n\n"}
+{"id":"module-mod-stray-closer","output":"<p>[[\/module]]<\/p>\n\n"}
+{"id":"module-mod-body-same-line","output":"<p>[[module css]] body [[\/module]]<\/p>\n\n"}
+{"id":"module-mod-no-newline","output":"\u00femodule \"backlinks\"\u00fe"}
+{"id":"module-mod-spaces-then-newline","output":"\u00femodule \"backlinks\"\u00fe"}
+{"id":"module-mod-crlf","output":"\u00femodule \"backlinks\"\u00fe"}
+{"id":"module-mod-lone-cr","output":"\u00femodule \"backlinks\"\u00fe"}
+{"id":"module-mod-tab-after-opener","output":"\u00femodule \"backlinks\"\u00fe"}
+{"id":"module-mod-opener-MODULE","output":"\u00femodule \"backlinks\"\u00fe"}
+{"id":"module-mod-opener-mixed","output":"\u00femodule \"backlinks\"\u00fe"}
+{"id":"module-mod-closer-case","output":"\u00femodule \"css\" +module_body%3D%22body%22 \u00fe"}
+{"id":"module-mod-midline","output":"<p>prefix [[module backlinks]]<\/p>\n\n"}
+{"id":"module-mod-leading-space","output":"<p>[[ module backlinks ]]<\/p>\n\n"}
+{"id":"module-mod-closer-leading-space","output":"\u00femodule \"css\" +module_body%3D%22body%22 \u00fe"}
+{"id":"module-mod-nested-two-openers","output":"\u00femodule \"css\" +module_body%3D%22%25FF2086%25FF%22 \u00fe"}
+{"id":"module-mod-nested-unknown-in-body","output":"<div class=\"error-block\">[[module <em>UnknownOracleModule<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module-mod-adjacent-module654","output":"\u00femodule \"backlinks\"\u00fe\u00femodule \"rate\"\u00fe"}
+{"id":"module-mod-module654-basic","output":"\u00femodule \"rate\"\u00fe"}
+{"id":"module-mod-module654-unknown","output":"<div class=\"error-block\">[[module <em>UnknownOracleModule<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module-mod-module654-module-closer","output":"\u00femodule \"css\" +module_body%3D%22body%22 \u00fe"}
+{"id":"module-mod-module-opener-module654-closer","output":"\u00femodule \"css\"\u00fe<p>body<br \/>\n[[\/module654]]<\/p>\n\n"}
+{"id":"module-mod-two-adjacent","output":"\u00femodule \"backlinks\"\u00fe\u00femodule \"rate\"\u00fe"}
+{"id":"module-mod-unknown-tail","output":"<p>[[module UnknownOracleModule]]TAIL<\/p>\n\n"}
+{"id":"module-mod-unknown-stray-close","output":"<p>[[module UnknownOracleModule]][[\/module]]<\/p>\n\n"}
+{"id":"module-mod-invalid-head-quoted","output":"<p>[[module foo=&quot;bar&quot;]]<\/p>\n\n"}
+{"id":"module-mod-two-adjacent-body","output":"\u00femodule \"css\"\u00fe\u00femodule \"rate\"\u00fe<p>[[\/module]]<\/p>\n\n"}
+{"id":"module-mod-blank-lines","output":"\u00femodule \"backlinks\"\u00fe"}
+{"id":"module654-m654-name-basic","output":"\u00femodule \"Rate\" +module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-name-uppercase","output":"\u00femodule \"RATE\" +module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-name-mixed","output":"\u00femodule \"rate\" +module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-name-leading-digit","output":"<div class=\"error-block\">[[module <em>123abc<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module654-m654-name-digits-only","output":"<div class=\"error-block\">[[module <em>654<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module654-m654-name-slash","output":"<div class=\"error-block\">[[module <em>foo\/bar<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module654-m654-name-hyphen","output":"<div class=\"error-block\">[[module <em>foo-bar<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module654-m654-name-leading-hyphen","output":"<div class=\"error-block\">[[module <em>-foo<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module654-m654-name-underscore","output":"<div class=\"error-block\">[[module <em>foo_bar<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module654-m654-name-leading-underscore","output":"<div class=\"error-block\">[[module <em>_foo<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module654-m654-name-empty","output":"<p>[[module654 ]]<br \/>\nbody<br \/>\n[[\/module]]<\/p>\n\n"}
+{"id":"module654-m654-name-no-space","output":"<p>[[module654Rate]]<br \/>\nbody<br \/>\n[[\/module]]<\/p>\n\n"}
+{"id":"module654-m654-name-dot","output":"<p>[[module654 foo.bar]]<br \/>\nbody<br \/>\n[[\/module]]<\/p>\n\n"}
+{"id":"module654-m654-name-unicode","output":"<p>[[module654 \u00e9]]<br \/>\nbody<br \/>\n[[\/module]]<\/p>\n\n"}
+{"id":"module654-m654-attr-one","output":"\u00femodule \"Rate\" show%3D%22x%22+module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-attr-bare","output":"\u00femodule \"Rate\" foo+module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-attr-two","output":"\u00femodule \"Rate\" a%3D%221%22+b%3D%222%22+module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-attr-quoted-space","output":"\u00femodule \"Rate\" title%3D%22a+b%22+module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-attr-empty","output":"\u00femodule \"Rate\" %22%22+module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-attr-tab","output":"\u00femodule \"Rate\" foo%3D%22x%22+module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-attr-multi-space","output":"\u00femodule \"Rate\" foo%3D%22x%22+module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-body-present","output":"\u00femodule \"CSS\" +module_body%3D%22.red%2B%257B%2Bcolor%253A%2Bred%253B%2B%257D%22 \u00fe"}
+{"id":"module654-m654-body-empty","output":"\u00femodule \"CSS\"\u00fe"}
+{"id":"module654-m654-body-absent","output":"\u00femodule \"CSS\"\u00fe"}
+{"id":"module654-m654-body-absent-newline","output":"\u00femodule \"CSS\"\u00fe"}
+{"id":"module654-m654-body-inline","output":"<p>[[module Rate]]body[[\/module]]<\/p>\n\n"}
+{"id":"module654-m654-body-inline-empty","output":"<p>[[module Rate]][[\/module]]<\/p>\n\n"}
+{"id":"module654-m654-unterminated","output":"\u00femodule \"CSS\"\u00fe<p>body<\/p>\n\n"}
+{"id":"module654-m654-stray-closer","output":"<p>before<br \/>\n[[\/module]]<br \/>\nafter<\/p>\n\n"}
+{"id":"module654-m654-stray-closer654","output":"<p>before<br \/>\n[[\/module654]]<br \/>\nafter<\/p>\n\n"}
+{"id":"module654-m654-double-closer","output":"\u00femodule \"CSS\" +module_body%3D%22body%22 \u00fe<p>[[\/module]]<\/p>\n\n"}
+{"id":"module654-m654-newline-none","output":"<p>[[module CSS]]body<br \/>\n[[\/module]]<\/p>\n\n"}
+{"id":"module654-m654-newline-spaces","output":"\u00femodule \"CSS\" +module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-newline-crlf","output":"\u00femodule \"CSS\" +module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-newline-lone-cr","output":"\u00femodule \"CSS\" +module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-newline-two","output":"\u00femodule \"CSS\" +module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-newline-tab-space","output":"\u00femodule \"CSS\" +module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-case-opener-upper","output":"\u00femodule \"CSS\" +module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-case-opener-mixed","output":"\u00femodule \"CSS\" +module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-case-closer-upper","output":"\u00femodule \"CSS\" +module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-case-closer-mixed","output":"\u00femodule \"CSS\" +module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-midline","output":"<p>text [[module654 CSS]]<br \/>\nbody<br \/>\n[[\/module]]<\/p>\n\n"}
+{"id":"module654-m654-leading-space","output":"<p>[[module654 CSS]]<br \/>\nbody<br \/>\n[[\/module]]<\/p>\n\n"}
+{"id":"module654-m654-after-blank","output":"<p>before<\/p>\n\n\u00femodule \"CSS\" +module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-closer-654","output":"\u00femodule \"CSS\"\u00fe<p>body<br \/>\n[[\/module654]]<\/p>\n\n"}
+{"id":"module654-m654-closer-module","output":"\u00femodule \"CSS\" +module_body%3D%22body%22 \u00fe"}
+{"id":"module654-m654-module-closer-654","output":"\u00femodule \"CSS\"\u00fe<p>body<br \/>\n[[\/module654]]<\/p>\n\n"}
+{"id":"module654-m654-adjacent-module","output":"\u00femodule \"CSS\" +module_body%3D%22.a%257B%257D%22 \u00fe\u00femodule \"Rate\"\u00fe<p>[[\/module]]<\/p>\n\n"}
+{"id":"module654-m654-nested-module","output":"\u00femodule \"CSS\"\u00fe\u00femodule \"Rate\" +module_body%3D%22%255B%255B%252Fmodule%255D%255D%22 \u00fe"}
+{"id":"module654-m654-nested-654","output":"\u00femodule \"CSS\" +module_body%3D%22%255B%255Bmodule654%2BRate%255D%255D%22 \u00fe<p>[[\/module]]<\/p>\n\n"}
+{"id":"module654-m654-module-then-654","output":"\u00femodule \"Rate\"\u00fe\u00femodule \"CSS\" +module_body%3D%22%255B%255B%252Fmodule%255D%255D%22 \u00fe"}
+{"id":"module654-m654-vs-module-unknown","output":"<div class=\"error-block\">[[module <em>UnknownOracleModule<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module654-m654-vs-module-invalid-head","output":"<p>[[module654 class=&quot;&quot;]]<br \/>\nv7 body<br \/>\n[[\/module654]]<\/p>\n\n"}
+{"id":"module654-m654-vs-module-tail","output":"<p>[[module UnknownOracleModule]]TAIL<\/p>\n\n"}
+{"id":"module654-m654-vs-module-sameclose","output":"<p>[[module UnknownOracleModule]][[\/module]]<\/p>\n\n"}
+{"id":"module654-m654-vs-module-attr-unknown","output":"<div class=\"error-block\">[[module <em>UnknownOracleModule<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module654-m654-vs-module-newline-unknown","output":"<div class=\"error-block\">[[module <em>UnknownOracleModule<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"module654-control-module-basic","output":"\u00femodule \"Rate\"\u00fe<p>[[\/module]]<\/p>\n\n"}
+{"id":"module654-control-plain","output":"<p>just plain text<\/p>\n\n"}
+{"id":"modulex-x-both-plain","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"modulex-x-both-body","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"modulex-x-both-empty-body","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div><p>[[\/module]]<\/p>\n\n"}
+{"id":"modulex-x-both-attr","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"modulex-x-both-no-newline","output":"<p>[[module UnknownModuleX]]tail<\/p>\n\n"}
+{"id":"modulex-x-both-crlf","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"modulex-x-both-spaces-newline","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"modulex-x-both-leading-space","output":"<p>[[module654 UnknownModuleX]]<br \/>\nbody<br \/>\n[[\/module]]<\/p>\n\n"}
+{"id":"modulex-x-mod-plain","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"modulex-x-mod-body","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"modulex-x-mod-attr","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"modulex-x-654-body-module","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"modulex-x-654-body-module-attr","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"modulex-x-654-body-module-noclose","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div><div class=\"error-block\">[[module <em>AnotherUnknownY<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"modulex-x-mod-body-654","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"modulex-x-mod-body-654-noinnerclose","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div><p>before<\/p>\n\n<div class=\"error-block\">[[module <em>AnotherUnknownY<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"modulex-x-mod-body-654-inline","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div><p>[[\/module]]<\/p>\n\n"}
+{"id":"modulex-x-close-654-tag","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div><p>body<br \/>\n[[\/module654]]<\/p>\n\n"}
+{"id":"modulex-x-close-mod-tag","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div><p>body<br \/>\n[[\/module654]]<\/p>\n\n"}
+{"id":"modulex-x-close-both","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"modulex-x-close-stray-654","output":"<p>stray [[\/module654]] after<\/p>\n\n"}
+{"id":"modulex-x-654-in-654","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div><p>[[\/module]]<\/p>\n\n"}
+{"id":"modulex-x-mod-in-mod","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"modulex-x-adjacent-654-mod","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div><div class=\"error-block\">[[module <em>AnotherUnknownY<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"modulex-x-adjacent-mod-654","output":"<div class=\"error-block\">[[module <em>UnknownModuleX<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div><div class=\"error-block\">[[module <em>AnotherUnknownY<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"modulex-x-midline-654","output":"<p>prefix [[module654 UnknownModuleX]]<br \/>\nbody<br \/>\n[[\/module]]<\/p>\n\n"}
+{"id":"modulex-x-midline-mod","output":"<p>prefix [[module UnknownModuleX]]<br \/>\nbody<br \/>\n[[\/module]]<\/p>\n\n"}
+{"id":"modulex-x-known-654-body-css","output":"\u00femodule \"CSS\" +module_body%3D%22body%22 \u00fe"}
+{"id":"modulex-x-known-mod-body-654","output":"\u00femodule \"CSS\" +module_body%3D%22%25FF3587%25FF%22 \u00fe"}
+{"id":"image-i37-01-plain","output":"<img src=\"\/local--files\/\/photo.png\" alt=\"photo.png\" class=\"image\" \/>"}
+{"id":"image-i37-02-align-center","output":"<div class=\"image-container aligncenter\"><img src=\"\/local--files\/\/photo.png\" alt=\"photo.png\" class=\"image\" \/><\/div>"}
+{"id":"image-i37-03-align-left","output":"<div class=\"image-container alignleft\"><img src=\"\/local--files\/\/photo.png\" alt=\"photo.png\" class=\"image\" \/><\/div>"}
+{"id":"image-i37-04-align-right","output":"<div class=\"image-container alignright\"><img src=\"\/local--files\/\/photo.png\" alt=\"photo.png\" class=\"image\" \/><\/div>"}
+{"id":"image-i37-05-float-left","output":"<div class=\"image-container floatleft\"><img src=\"\/local--files\/\/photo.png\" alt=\"photo.png\" class=\"image\" \/><\/div>"}
+{"id":"image-i37-06-float-center","output":"<div class=\"image-container\"><img src=\"\/local--files\/\/photo.png\" alt=\"photo.png\" class=\"image\" \/><\/div>"}
+{"id":"image-i37-07-float-right","output":"<div class=\"image-container floatright\"><img src=\"\/local--files\/\/photo.png\" alt=\"photo.png\" class=\"image\" \/><\/div>"}
+{"id":"image-i37-08-uppercase-name","output":"<img src=\"https:\/\/example.com\/a.png\" alt=\"a.png\" class=\"image\" \/>"}
+{"id":"image-i37-09-titlecase-name","output":"<img src=\"https:\/\/example.com\/a.png\" alt=\"a.png\" class=\"image\" \/>"}
+{"id":"image-i37-10-uppercase-align","output":"<div class=\"image-container\"><img src=\"https:\/\/example.com\/a.png\" alt=\"a.png\" class=\"image\" \/><\/div>"}
+{"id":"image-i37-11-external-https","output":"<img src=\"https:\/\/example.com\/some-image.webp\" alt=\"some-image.webp\" class=\"image\" \/>"}
+{"id":"image-i37-12-external-http-alt-suffix","output":"<img src=\"https:\/\/example.com\/a.png?b=c\" alt=\"a.png?b=c\" class=\"image\" \/>"}
+{"id":"image-i37-13-external-fragment","output":"<img src=\"https:\/\/example.com\/a.png#frag\" alt=\"a.png#frag\" class=\"image\" \/>"}
+{"id":"image-i37-14-external-trailing-slash","output":"<img src=\"https:\/\/example.com\/\" alt=\"example.com\" class=\"image\" \/>"}
+{"id":"image-i37-15-local-png","output":"<img src=\"\/local--files\/\/filename.png\" alt=\"filename.png\" class=\"image\" \/>"}
+{"id":"image-i37-16-local-jpg-nosize","output":"<img src=\"\/local--files\/\/landscape.jpg\" alt=\"landscape.jpg\" class=\"image\" \/>"}
+{"id":"image-i37-17-local-webp-resized","output":"<a href=\"\/local--files\/\/picture.webp\"><img src=\"\/local--resized-images\/\/picture.webp\/medium.jpg\" alt=\"picture.webp\" class=\"image\" \/><\/a>"}
+{"id":"image-i37-18-local-noext-resized","output":"<a href=\"\/local--files\/\/picture\"><img src=\"\/local--resized-images\/\/picture\/medium.jpg\" alt=\"picture\" class=\"image\" \/><\/a>"}
+{"id":"image-i37-19-page-qualified-png","output":"<img src=\"\/local--files\/other-page\/photo.png\" alt=\"photo.png\" class=\"image\" \/>"}
+{"id":"image-i37-20-page-qualified-jpeg","output":"<a href=\"\/local--files\/other-page\/photo.jpeg\"><img src=\"\/local--resized-images\/other-page\/photo.jpeg\/medium.jpg\" alt=\"photo.jpeg\" class=\"image\" \/><\/a>"}
+{"id":"image-i37-21-absolute-path","output":"<img src=\"\/local--files\/my-picture.png\" alt=\"my-picture.png\" class=\"image\" \/>"}
+{"id":"image-i37-22-absolute-page-path","output":"<img src=\"\/local--files\/some-other-page\/my-picture.png\" alt=\"my-picture.png\" class=\"image\" \/>"}
+{"id":"image-i37-23-double-leading-slash","output":"<img src=\"\/local--files\/\/example.com\/x.png\" alt=\"x.png\" class=\"image\" \/>"}
+{"id":"image-i37-24-multi-segment-path","output":"<img src=\"\/local--files\/a\/b\/c.png\" alt=\"c.png\" class=\"image\" \/>"}
+{"id":"image-i37-25-nonascii-filename","output":"<img src=\"\/local--files\/\/%E6%97%A5%E6%9C%AC%E8%AA%9E.png\" alt=\"\u65e5\u672c\u8a9e.png\" class=\"image\" \/>"}
+{"id":"image-i37-26-comment-in-filename","output":"<img src=\"\/local--files\/\/ab.png\" alt=\"ab.png\" class=\"image\" \/>"}
+{"id":"image-i37-27-comment-gap","output":"<img src=\"\/local--files\/\/a.png\" alt=\"a.png\" class=\"image\" \/>"}
+{"id":"image-i37-28-quoted-url-source","output":"<img src=\"&quot;https:\/\/example.com\/a.png&quot;\" alt=\"a.png&quot;\" class=\"image\" \/>"}
+{"id":"image-i37-29-data-source","output":"<a href=\"\/local--files\/data:image\/png;base64,AAAA\"><img src=\"\/local--resized-images\/data:image\/png;base64,AAAA\/medium.jpg\" alt=\"png;base64,AAAA\" class=\"image\" \/><\/a>"}
+{"id":"image-i37-30-mailto-source","output":"<a href=\"\/local--files\/\/mailto:someone@example.com\"><img src=\"\/local--resized-images\/\/mailto:someone@example.com\/medium.jpg\" alt=\"mailto:someone@example.com\" class=\"image\" \/><\/a>"}
+{"id":"image-i37-31-attr-class-style-title-alt","output":"<img src=\"\/local--files\/\/foo.gif\" title=\"FOO\" style=\"border: 1em solid\" class=\"animated\" alt=\"A foobar\" \/>"}
+{"id":"image-i37-32-attr-width-px","output":"<img src=\"https:\/\/example.com\/a.png\" width=\"200px\" alt=\"a.png\" class=\"image\" \/>"}
+{"id":"image-i37-33-attr-width-bare","output":"<img src=\"https:\/\/example.com\/a.png\" width=\"200\" alt=\"a.png\" class=\"image\" \/>"}
+{"id":"image-i37-34-attr-width-percent","output":"<img src=\"https:\/\/example.com\/a.png\" width=\"50%\" alt=\"a.png\" class=\"image\" \/>"}
+{"id":"image-i37-35-attr-width-unquoted","output":"<img src=\"https:\/\/example.com\/a.png\" alt=\"a.png\" class=\"image\" \/>"}
+{"id":"image-i37-36-attr-width-empty","output":"<img src=\"https:\/\/example.com\/a.png\" width=\"\" alt=\"a.png\" class=\"image\" \/>"}
+{"id":"image-i37-37-attr-height","output":"<img src=\"https:\/\/example.com\/a.png\" height=\"120\" width=\"200\" alt=\"a.png\" class=\"image\" \/>"}
+{"id":"image-i37-38-attr-size-small","output":"<a href=\"\/local--files\/\/photo.jpeg\"><img src=\"\/local--resized-images\/\/photo.jpeg\/small.jpg\" alt=\"photo.jpeg\" class=\"image\" \/><\/a>"}
+{"id":"image-i37-39-attr-size-bogus","output":"<a href=\"\/local--files\/\/photo.jpeg\"><img src=\"\/local--resized-images\/\/photo.jpeg\/medium.jpg\" alt=\"photo.jpeg\" class=\"image\" \/><\/a>"}
+{"id":"image-i37-40-attr-size-unquoted","output":"<a href=\"\/local--files\/\/photo.jpeg\"><img src=\"\/local--resized-images\/\/photo.jpeg\/medium.jpg\" alt=\"photo.jpeg\" class=\"image\" \/><\/a>"}
+{"id":"image-i37-41-attr-unknown-key","output":"<img src=\"\/local--files\/\/foo.gif\" alt=\"foo.gif\" class=\"image\" \/>"}
+{"id":"image-i37-42-attr-key-case","output":"<img src=\"\/local--files\/\/foo.gif\" alt=\"foo.gif\" class=\"image\" \/>"}
+{"id":"image-i37-43-attr-single-quotes","output":"<img src=\"\/local--files\/\/foo.gif\" alt=\"foo.gif\" class=\"image\" \/>"}
+{"id":"image-i37-44-link-fragment","output":"<a href=\"#gif-sucks\"><img src=\"\/local--files\/\/foo.gif\" alt=\"foo.gif\" class=\"image\" \/><\/a>"}
+{"id":"image-i37-45-link-page","output":"<a href=\"\/some-page\"><img src=\"\/local--files\/\/foo.gif\" alt=\"foo.gif\" class=\"image\" \/><\/a>"}
+{"id":"image-i37-46-link-external","output":"<a href=\"https:\/\/example.com\/\"><img src=\"\/local--files\/\/foo.gif\" alt=\"foo.gif\" class=\"image\" \/><\/a>"}
+{"id":"image-i37-47-link-leading-space-literal","output":"<p>[[image foo.gif link=&quot; <a href=\"https:\/\/example.com\/\">https:\/\/example.com\/<\/a>&quot;]]<\/p>\n\n"}
+{"id":"image-i37-48-link-star","output":"<a href=\"https:\/\/example.com\/\" target=\"_blank\"><img src=\"\/local--files\/\/foo.gif\" alt=\"foo.gif\" class=\"image\" \/><\/a>"}
+{"id":"image-i37-49-link-star-space-literal","output":"<p>[[image foo.gif link=&quot;* <a href=\"https:\/\/example.com\/\">https:\/\/example.com\/<\/a>&quot;]]<\/p>\n\n"}
+{"id":"image-i37-50-link-star-page","output":"<a href=\"\/some-page\" target=\"_blank\"><img src=\"\/local--files\/\/foo.gif\" alt=\"foo.gif\" class=\"image\" \/><\/a>"}
+{"id":"image-i37-51-link-explicit-overrides","output":"<a href=\"https:\/\/example.com\/\"><img src=\"\/local--files\/\/foo.png\" alt=\"foo.png\" class=\"image\" \/><\/a>"}
+{"id":"image-i37-52-caption-body","output":"<img src=\"https:\/\/example.com\/a.png\" alt=\"a.png\" class=\"image\" \/>a caption[[\/image]]"}
+{"id":"image-i37-53-caption-with-align","output":"<div class=\"image-container alignleft\"><img src=\"https:\/\/example.com\/a.png\" alt=\"a.png\" class=\"image\" \/><\/div><p>caption[[\/image]]<\/p>\n\n"}
+{"id":"image-i37-54-empty-name","output":"<p>[[image]]<\/p>\n\n"}
+{"id":"image-i37-55-empty-head-space","output":"<a href=\"\/local--files\/\/\"><img src=\"\/local--resized-images\/\/\/medium.jpg\" alt=\"\" class=\"image\" \/><\/a>"}
+{"id":"image-i37-56-unclosed","output":"<p>[[image landscape.jpg<\/p>\n\n"}
+{"id":"image-i37-57-double-equals","output":"<p>[[==image landscape.jpg]]<\/p>\n\n"}
+{"id":"image-i37-58-double-float","output":"<p>[[ff&lt;image <a href=\"https:\/\/example.com\/a.png\">https:\/\/example.com\/a.png<\/a>]]<\/p>\n\n"}
+{"id":"image-i37-59-star-flag","output":"<p>[[*$image landscape.jpg]]<\/p>\n\n"}
+{"id":"image-i37-60-space-after-marker","output":"<p>[[= image <a href=\"https:\/\/example.com\/a.png\">https:\/\/example.com\/a.png<\/a>]]<\/p>\n\n"}
+{"id":"image-i37-61-inline-in-text","output":"<p>BASIC <img src=\"\/local--files\/\/filename.png\" alt=\"filename.png\" class=\"image\" \/><\/p>\n\n"}
+{"id":"image-i37-62-blank-line-after","output":"<p>BASIC <img src=\"\/local--files\/\/filename.png\" alt=\"filename.png\" class=\"image\" \/><\/p>\n\n<p>LEFT<\/p>\n\n"}
+{"id":"image-i37-63-two-images-one-line","output":"<div class=\"image-container alignleft\"><img src=\"\/local--files\/\/a.png\" alt=\"a.png\" class=\"image\" \/><\/div><div class=\"image-container alignright\"><img src=\"\/local--files\/\/b.jpg\" alt=\"b.jpg\" class=\"image\" \/><\/div>"}
+{"id":"image-i37-64-image-then-paragraph","output":"<img src=\"\/local--files\/\/a.png\" alt=\"a.png\" class=\"image\" \/><p>after paragraph<\/p>\n\n"}
+{"id":"image-i37-65-paragraph-then-image","output":"<p>before paragraph<\/p>\n\n<img src=\"\/local--files\/\/a.png\" alt=\"a.png\" class=\"image\" \/>"}
+{"id":"image-i37-66-source-typography","output":"<img src=\"\/local--files\/\/aa&lt;&lt;bb&gt;&gt;cc.png\" alt=\"aa&lt;&lt;bb&gt;&gt;cc.png\" class=\"image\" \/>"}
+{"id":"image-i37-67-raw-head-literal","output":"<p>[[image a.png alt=&quot;<span style=\"white-space: pre-wrap;\">a<\/span>&quot;]]<\/p>\n\n"}
+{"id":"image-i37-68-size-lookalike-in-alt","output":"<div class=\"image-container aligncenter\"><img src=\"\/local--files\/\/photo.png\" alt=\"a size=b\" class=\"image\" \/><\/div>"}
+{"id":"math-basic","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-opener-no-label","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-opener-after-text","output":"<p>intro<\/p>\n\n<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-opener-midline","output":"<p>prefix [[math]]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"math-opener-leading-space","output":"<p>[[math]]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"math-opener-leading-tab","output":"<p>[[math]]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"math-opener-no-space","output":"<p>[[mathE]]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"math-opener-trailing-space","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-opener-spaces-before-nl","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-opener-tab-before-nl","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-opener-crlf","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-opener-blank-line-before","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-label-upper","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-label-title","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-label-digits","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-label-underscore","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-label-mixed-case","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-label-hyphen","output":"<p>[[math a-b]]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"math-label-dot","output":"<p>[[math a.b]]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"math-label-nonascii","output":"<p>[[math \u00e9tude]]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"math-label-empty-spaces","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-label-equals","output":"<p>[[math a=b]]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"math-label-two-words","output":"<p>[[math a b]]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"math-label-quoted","output":"<p>[[math &quot;a&quot; type=&quot;align&quot;]]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"math-type-equation","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-type-eqnarray","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-type-align","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-type-gather","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-type-not-last","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-type-uppercase","output":"<div class=\"error-block\">Unsupported math environment \"ALIGN\"<\/div>"}
+{"id":"math-type-unquoted","output":"<p>[[math type=align]]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"math-type-single-quote","output":"<p>[[math type='align']]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"math-type-spaces-eq","output":"<p>[[math type = &quot;align&quot;]]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"math-type-empty","output":"<div class=\"error-block\">Unsupported math environment \"\"<\/div>"}
+{"id":"math-attr-unknown","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-attr-hyphen-key","output":"<p>[[math foo-bar=&quot;x&quot;]]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"math-attr-underscore-key","output":"<p>[[math foo_bar=&quot;x&quot;]]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"math-attr-label-and-type","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-attr-quoted-close-bracket","output":"<p>[[math a=&quot;x]]y&quot;]<br \/>\nz<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"math-body-leading-blank","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-body-trailing-blank","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-body-spaces","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-body-multiline","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-body-empty","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-body-whitespace-only","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-closer-trailing-spaces","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-closer-trailing-tab","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-closer-tail-text","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div><p>tail<\/p>\n\n"}
+{"id":"math-closer-eof-no-nl","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-closer-inline","output":"<p>[[math]]x[[\/math]]<\/p>\n\n"}
+{"id":"math-closer-case-upper","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-closer-blankline-tail","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div><p>tail<\/p>\n\n"}
+{"id":"math-nested-two","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div><p>[[\/math]]<\/p>\n\n"}
+{"id":"math-nested-outer-tail","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-nested-labels","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div><p>[[\/math]]<\/p>\n\n"}
+{"id":"math-adjacent-two-blocks","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div><div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-stray-closer","output":"<p>x<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"math-unterminated","output":"<p>[[math]]<br \/>\nx<\/p>\n\n"}
+{"id":"math-unterminated-outer","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-include-brace","error":"ProcessException: Invalid LaTeX expression(s) found."}
+{"id":"math-input-brace","error":"ProcessException: Invalid LaTeX expression(s) found."}
+{"id":"math-include-space","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-input-space","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-include-in-word","error":"ProcessException: Invalid LaTeX expression(s) found."}
+{"id":"math-include-uppercase","error":"ProcessException: Invalid LaTeX expression(s) found."}
+{"id":"math-include-in-label-block","error":"ProcessException: Invalid LaTeX expression(s) found."}
+{"id":"math-after-comment","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-comment-in-body","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-after-date","output":"<p><span class=\"odate time_1216153821\">15 Jul 2008 20:30<\/span><\/p>\n\n<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-eref-after","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div><p><a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-1')\">1<\/a><\/p>\n\n"}
+{"id":"math-eref-before","output":"<p><a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-1')\">1<\/a><\/p>\n\n<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"math-mathinline-after","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div><p><span class=\"math-inline\">$y$<\/span><\/p>\n\n"}
+{"id":"math-in-div","output":"<div class=\"box\"><div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div><\/div>"}
+{"id":"math-in-blockquote","output":"<blockquote><p>[[math]]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n<\/blockquote>\n"}
+{"id":"math-in-collapsible","output":"<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block<\/a><\/div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">\u2013&nbsp;hide&nbsp;block<\/a><\/div><div class=\"collapsible-block-content\"><div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div><\/div><\/div><\/div>"}
+{"id":"math-in-iftags","output":""}
+{"id":"gallery-ga-01","output":"<div class=\"error-block\">Error selecting page.<\/div>"}
+{"id":"gallery-ga-02","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-03","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/b.png\" ><img src=\"\/local--resized-images\/\/b.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-04","output":"<div class=\"gallery-box\"><div class=\"gallery-item small\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/small.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-05","output":"<div class=\"error-block\">Error selecting page.<\/div>"}
+{"id":"gallery-ga-06","output":"<div class=\"error-block\">Error selecting page.<\/div>"}
+{"id":"gallery-ga-07","output":"<div class=\"error-block\">Error selecting page.<\/div><p>not a source<br \/>\n[[\/gallery]]<\/p>\n\n"}
+{"id":"gallery-ga-08","output":"<div class=\"error-block\">Error selecting page.<\/div><p>not source<br \/>\n[[\/gallery]]<\/p>\n\n"}
+{"id":"gallery-ga-09","output":"<p>x<\/p>\n\n<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a\" ><img src=\"\/local--resized-images\/\/a\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-10","output":"<p>x [[gallery]]<br \/>\n[[\/gallery]]<\/p>\n\n"}
+{"id":"gallery-ga-11","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a\" ><img src=\"\/local--resized-images\/\/a\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-12","output":"<div class=\"gallery-box\"><div class=\"gallery-item small\"><table><tr><td><a href=\"\/local--files\/\/a\" ><img src=\"\/local--resized-images\/\/a\/small.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-13","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a\" ><img src=\"\/local--resized-images\/\/a\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-14","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a\" ><img src=\"\/local--resized-images\/\/a\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-15","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a\" ><img src=\"\/local--resized-images\/\/a\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-16","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a\" ><img src=\"\/local--resized-images\/\/a\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-17","output":"<div class=\"error-block\">Error selecting page.<\/div><p>:a.png<br \/>\n[[\/gallery]]<\/p>\n\n"}
+{"id":"gallery-ga-18","output":"<div class=\"error-block\">Error selecting page.<\/div><p>[[\/gallery]]<\/p>\n\n"}
+{"id":"gallery-ga-19","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/double\" ><img src=\"\/local--resized-images\/\/double\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-20","output":"<div class=\"error-block\">Error selecting page.<\/div>"}
+{"id":"gallery-ga-21","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div><p>tail<\/p>\n\n"}
+{"id":"gallery-ga-22","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div><p>extra<\/p>\n\n"}
+{"id":"gallery-ga-23","output":"<div class=\"error-block\">Error selecting page.<\/div><p>[[\/gallery]]<\/p>\n\n"}
+{"id":"gallery-ga-24","output":{"$bytes":[60,100,105,118,32,99,108,97,115,115,61,34,103,97,108,108,101,114,121,45,98,111,120,34,62,60,100,105,118,32,99,108,97,115,115,61,34,103,97,108,108,101,114,121,45,105,116,101,109,32,116,104,117,109,98,110,97,105,108,34,62,60,116,97,98,108,101,62,60,116,114,62,60,116,100,62,60,97,32,104,114,101,102,61,34,47,108,111,99,97,108,45,45,102,105,108,101,115,47,47,255,54,48,48,50,255,120,255,54,48,48,51,255,34,32,62,60,105,109,103,32,115,114,99,61,34,47,108,111,99,97,108,45,45,114,101,115,105,122,101,100,45,105,109,97,103,101,115,47,47,255,54,48,48,50,255,120,255,54,48,48,51,255,47,116,104,117,109,98,110,97,105,108,46,106,112,103,34,32,97,108,116,61,34,34,47,62,60,47,97,62,60,47,116,100,62,60,47,116,114,62,60,47,116,97,98,108,101,62,60,47,100,105,118,62,60,47,100,105,118,62]}}
+{"id":"gallery-ga-25","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/caf\u00e9.png\" ><img src=\"\/local--resized-images\/\/caf\u00e9.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-26","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a]b.png\" ><img src=\"\/local--resized-images\/\/a]b.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-27","output":"<div class=\"gallery-box\"><div class=\"gallery-item medium\"><table><tr><td><a href=\"\/local--files\/\/x\" ><img src=\"\/local--resized-images\/\/x\/medium.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-28","output":"<div class=\"gallery-box\"><div class=\"gallery-item small\"><table><tr><td><a href=\"\/local--files\/\/a\" ><img src=\"\/local--resized-images\/\/a\/small.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><div class=\"gallery-item small\"><table><tr><td><a href=\"\/local--files\/\/b\" ><img src=\"\/local--resized-images\/\/b\/small.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><div class=\"gallery-item small\"><table><tr><td><a href=\"\/local--files\/\/c\" ><img src=\"\/local--resized-images\/\/c\/small.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-29","output":"<div class=\"error-block\">Error selecting page.<\/div><div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/b\" ><img src=\"\/local--resized-images\/\/b\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-30","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a\" ><img src=\"\/local--resized-images\/\/a\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div><div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/b\" ><img src=\"\/local--resized-images\/\/b\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-31","output":"<p>[[gallery]]<br \/>\n[[\/gallery]]<\/p>\n\n"}
+{"id":"gallery-ga-32","output":"<div class=\"error-block\">Error selecting page.<\/div><p><br \/>\n[[\/gallery]]<\/p>\n\n"}
+{"id":"gallery-ga-33","output":"<div class=\"error-block\">Error selecting page.<\/div>"}
+{"id":"gallery-ga-34","output":"<div class=\"error-block\">Error selecting page.<\/div>"}
+{"id":"gallery-ga-35","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a\" ><img src=\"\/local--resized-images\/\/a\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/b\" ><img src=\"\/local--resized-images\/\/b\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div><p>[[\/gallery]]<\/p>\n\n"}
+{"id":"gallery-ga-36","output":"<div class=\"gallery-box\"><div class=\"gallery-item small\"><table><tr><td><a href=\"\/local--files\/\/a\" ><img src=\"\/local--resized-images\/\/a\/small.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-37","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-38","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/one.jpg\" ><img src=\"\/local--resized-images\/\/one.jpg\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-39","output":"<p>text<\/p>\n\n<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a\" ><img src=\"\/local--resized-images\/\/a\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-40","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/[[code]]x[[\/code]]\" ><img src=\"\/local--resized-images\/[[code]]x[[\/code]]\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-41","output":"<div class=\"gallery-box\"><div class=\"gallery-item small\"><table><tr><td><a href=\"\/local--files\/\/a\" ><img src=\"\/local--resized-images\/\/a\/small.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div><div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/b\" ><img src=\"\/local--resized-images\/\/b\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-42","output":"<div class=\"error-block\">Error selecting page.<\/div>"}
+{"id":"gallery-ga-43","output":"<div class=\"gallery-box\"><div class=\"gallery-item small\"><table><tr><td><a href=\"\/local--files\/\/a\" ><img src=\"\/local--resized-images\/\/a\/small.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-44","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a\" ><img src=\"\/local--resized-images\/\/a\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x01","output":"<div class=\"error-block\">Error selecting page.<\/div>"}
+{"id":"gallery-ga-x02","output":"<div class=\"gallery-box\"><div class=\"gallery-item medium\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/medium.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x03","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x04","output":"<div class=\"gallery-box\"><div class=\"gallery-item square\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/square.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x05","output":"<div class=\"gallery-box\"><div class=\"gallery-item original\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--files\/\/a.png\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x06","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x07","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x08","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/other-page\/a.png\" ><img src=\"\/local--resized-images\/other-page\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x09","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/other-page\/a.png\" ><img src=\"\/local--resized-images\/other-page\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x10","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"https:\/\/example.com\/a.png\" ><img src=\"https:\/\/example.com\/a.png\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x11","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"https:\/\/example.com\/a.png\" target=\"_blank\"><img src=\"https:\/\/example.com\/a.png\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x12","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"https:\/\/example.com\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x13","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"https:\/\/example.com\" target=\"_blank\"><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x14","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"some-page\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x15","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"My Alt\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x16","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x17","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"https:\/\/example.com\/b.png\" ><img src=\"https:\/\/example.com\/b.png\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x18","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x19","output":"<div class=\"gallery-box\"><div class=\"gallery-item small\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/small.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><div class=\"gallery-item small\"><table><tr><td><a href=\"\/local--files\/\/b.png\" ><img src=\"\/local--resized-images\/\/b.png\/small.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-ga-x20","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"http:\/\/example.com\/a.png\" ><img src=\"http:\/\/example.com\/a.png\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p01","output":"<div class=\"error-block\">Error selecting page.<\/div>"}
+{"id":"gallery-p02","output":"<div class=\"error-block\">Error selecting page.<\/div>"}
+{"id":"gallery-p03","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p04","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/b.png\" ><img src=\"\/local--resized-images\/\/b.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p05","output":"<div class=\"gallery-box\"><div class=\"gallery-item small\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/small.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p06","output":"<div class=\"gallery-box\"><div class=\"gallery-item medium\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/medium.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p07","output":"<div class=\"gallery-box\"><div class=\"gallery-item square\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/square.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p08","output":"<div class=\"gallery-box\"><div class=\"gallery-item original\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--files\/\/a.png\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p09","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p10","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p11","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p12","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/other-page\/a.png\" ><img src=\"\/local--resized-images\/other-page\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p13","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/other-page\/a.png\" ><img src=\"\/local--resized-images\/other-page\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p14","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"https:\/\/example.com\/a.png\" ><img src=\"https:\/\/example.com\/a.png\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p15","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"https:\/\/example.com\/a.png\" target=\"_blank\"><img src=\"https:\/\/example.com\/a.png\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p16","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"https:\/\/example.com\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p17","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"https:\/\/example.com\" target=\"_blank\"><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p18","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"some-page\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p19","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"My Alt\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p20","output":"<div class=\"error-block\">Error selecting page.<\/div><p>not a source<br \/>\n[[\/gallery]]<\/p>\n\n"}
+{"id":"gallery-p21","output":"<div class=\"error-block\">Error selecting page.<\/div>"}
+{"id":"gallery-p22","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p23","output":"<div class=\"gallery-box\"><div class=\"gallery-item small\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/small.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallery-p24","output":"<p>x [[gallery]]<br \/>\n[[\/gallery]]<\/p>\n\n"}
+{"id":"gallerysupp-pg01","output":"<div class=\"gallery-box\"><div class=\"gallery-item small\"><table><tr><td><a href=\"https:\/\/example.com\/a.png\" ><img src=\"https:\/\/example.com\/a.png\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallerysupp-pg02","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"https:\/\/example.com\/a.png\" ><img src=\"https:\/\/example.com\/a.png\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/b.png\" ><img src=\"\/local--resized-images\/\/b.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallerysupp-pg03","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/a.png\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"it's\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"gallerysupp-pg04","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/b.png\" ><img src=\"\/local--resized-images\/\/b.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"https:\/\/example.com\/a.png\" ><img src=\"https:\/\/example.com\/a.png\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"user-us-01","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-02","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-03","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-04","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-05","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-06","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-07","output":"<p>[[user]]<\/p>\n\n"}
+{"id":"user-us-08","output":"<p>[[user ]]<\/p>\n\n"}
+{"id":"user-us-09","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-10","output":"<p>[[user a]b]]<\/p>\n\n"}
+{"id":"user-us-11","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-12","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-13","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-14","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-15","output":"<p>[[user x]<\/p>\n\n"}
+{"id":"user-us-16","output":"<p>[[users x]]<\/p>\n\n"}
+{"id":"user-us-17","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-18","output":"<p>[[ user x]]<\/p>\n\n"}
+{"id":"user-us-19","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-20","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-21","output":"<p>[[*user]]<\/p>\n\n"}
+{"id":"user-us-22","output":"<p>[[**user x]]<\/p>\n\n"}
+{"id":"user-us-23","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-24","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-25","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-26","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-27","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-28","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-29","output":"\n<div class=\"code\">\n<pre><code>[[user a]]<\/code><\/pre><\/div>\n\n"}
+{"id":"user-us-30","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-31","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-32","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-33","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-34","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-35","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-36","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-37","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-38","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-39","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-40","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-41","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-42","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x01","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x02","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x03","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x04","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x05","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x06","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x07","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x08","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x09","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x10","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x11","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x12","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x13","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x14","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x15","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x16","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x17","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x18","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x19","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-us-x20","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p01","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p02","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p03","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p04","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p05","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p06","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p07","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p08","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p09","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p10","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p11","output":"<p>[[user]]<br \/>\n[[user ]]<br \/>\n[[*user]]<br \/>\n[[**user michal-frackowiak]]<\/p>\n\n"}
+{"id":"user-p12","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p13","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p14","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p15","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p16","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p17","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p18","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p19","error":"Error: Class \"Criteria\" not found"}
+{"id":"user-p20","output":"\n<div class=\"code\">\n<pre><code>[[user michal-frackowiak]]<\/code><\/pre><\/div>\n\n"}
+{"id":"file-fi-01","output":"<p><a href=\"\/a.txt\">a.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-02","output":"<p><a href=\"\/a.txt\">Label<\/a><\/p>\n\n"}
+{"id":"file-fi-03","output":"<p><a href=\"\/a.txt|\">a.txt|<\/a><\/p>\n\n"}
+{"id":"file-fi-04","output":"<p><a href=\"\/a.txt\">a.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-05","output":"<p><a href=\"\/a.txt\">a.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-06","output":"<p><a href=\"\/a.txt\">Label<\/a><\/p>\n\n"}
+{"id":"file-fi-07","output":"<p><a href=\"\/a.txt\">a.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-08","output":"<p><a href=\"\/a.txt\">a|b<\/a><\/p>\n\n"}
+{"id":"file-fi-09","output":"<p>[[file a<br \/>\nb.txt]]<\/p>\n\n"}
+{"id":"file-fi-10","output":"<p>[[file a.txt|x<br \/>\ny]]<\/p>\n\n"}
+{"id":"file-fi-11","output":"<p>[[file ]]<\/p>\n\n"}
+{"id":"file-fi-12","output":"<p><a href=\"\/a.txt\">a.txt<\/a> <a href=\"\/b.txt\">L<\/a><\/p>\n\n"}
+{"id":"file-fi-13","output":"<p>[[div]]<a href=\"\/a.txt\">a.txt<\/a>[[\/div]]<\/p>\n\n"}
+{"id":"file-fi-14","output":"<p><a href=\"\/x\"><a href=\"\/a.txt\">L<\/a><\/a><\/p>\n\n"}
+{"id":"file-fi-15","output":"\n<div class=\"code\">\n<pre><code>[[file a.txt]]<\/code><\/pre><\/div>\n\n"}
+{"id":"file-fi-16","output":"<p><a href=\"\/my%20file.txt\">my file.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-17","output":"<p><a href=\"\/a.txt\">Label With Spaces<\/a><\/p>\n\n"}
+{"id":"file-fi-18","output":"<p><a href=\"\/a.txt\">a.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-19","output":"<p><a href=\"\/|x\">|x<\/a><\/p>\n\n"}
+{"id":"file-fi-20","output":"<p><a href=\"\/a\">b|c<\/a><\/p>\n\n"}
+{"id":"file-fi-21","output":"<p><a href=\"\/a\">a<\/a>]<\/p>\n\n"}
+{"id":"file-fi-22","output":"<p><a href=\"\/a]b\">a]b<\/a><\/p>\n\n"}
+{"id":"file-fi-23","output":"<p><a href=\"\/caf%C3%A9.txt\">caf\u00e9.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-24","output":"<p><a href=\"\/a.txt\">[[math<\/a>x[[\/math]]]]<\/p>\n\n"}
+{"id":"file-fi-25","output":"<p><a href=\"\/[[math\">[[math<\/a>x[[\/math]].txt]]<\/p>\n\n"}
+{"id":"file-fi-26","output":"<p>x<a href=\"\/a.txt\">L<\/a>y<\/p>\n\n"}
+{"id":"file-fi-27","output":"<p><a href=\"\/a.txt\">a.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-28","output":"<p><a href=\"\/a.txt%20|\">a.txt |<\/a><\/p>\n\n"}
+{"id":"file-fi-29","output":"<p><a href=\"\/a.txt\">L<\/a><\/p>\n\n"}
+{"id":"file-fi-30","output":"<p><a href=\"\/A.TXT\">Label<\/a><\/p>\n\n"}
+{"id":"file-fi-31","output":"<table class=\"wiki-content-table\">\n<tr>\n<td><a href=\"\/a.txt\">a.txt<\/a><\/td>\n<\/tr>\n<\/table>"}
+{"id":"file-fi-32","output":"<ul>\n<li><a href=\"\/a.txt\">a.txt<\/a><\/li>\n<\/ul>"}
+{"id":"file-fi-33","output":"<p><a href=\"\/|\">|<\/a><\/p>\n\n"}
+{"id":"file-fi-34","output":"<p><a href=\"\/a.txt\">b<\/a><\/p>\n\n"}
+{"id":"file-fi-35","output":"<p><a href=\"\/a.txt\">b<\/a><\/p>\n\n"}
+{"id":"file-fi-36","output":"<p><a href=\"\/a.txt\">a.txt<\/a> and <a href=\"\/b.txt\">b.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-37","output":"<p>\u00femodule &quot;wiki\/social\/SocialBookmarksModule&quot;\u00fe <a href=\"\/a.txt\">a.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-38","output":"<p><div class=\"error-block\">Sorry, no match for the embedded content.<\/div><\/p>\n\n"}
+{"id":"file-fi-39","output":"<div class=\"wiki-note\"><p><a href=\"\/a.txt\">a.txt<\/a><\/p>\n\n<\/div>"}
+{"id":"file-fi-40","output":"<p><a href=\"\/a\">]x<\/a><\/p>\n\n"}
+{"id":"file-fi-41","output":"<p><a href=\"\/a.txt\">a.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-42","output":"<blockquote><p><a href=\"\/a.txt\">a.txt<\/a><\/p>\n\n<\/blockquote>\n"}
+{"id":"file-fi-43","output":"<p><a href=\"\/a.txt\">L<\/a><\/p>\n\n"}
+{"id":"file-fi-x01","output":"<p><a href=\"\/local--files\/other-page\/a.txt\">other-page\/a.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-x02","output":"<p><a href=\"\/local--files\/other-page\/a.txt\">Label<\/a><\/p>\n\n"}
+{"id":"file-fi-x03","output":"<p><a href=\"\/local--files\/other-page\/a.txt\">\/other-page\/a.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-x04","output":"<p><a href=\"\/local--files\/other-page\/a.txt\">Label<\/a><\/p>\n\n"}
+{"id":"file-fi-x05","output":"<p><a href=\"\/local--files\/a\/b\/c.txt\">a\/b\/c.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-x06","output":"<p><a href=\"\/a.txt\">**bold**<\/a><\/p>\n\n"}
+{"id":"file-fi-x07","output":"<p><a href=\"\/a.txt\">\/\/italic\/\/<\/a><\/p>\n\n"}
+{"id":"file-fi-x08","output":"<p><a href=\"\/a&quot;b.txt\">c&lt;d&gt;e<\/a><\/p>\n\n"}
+{"id":"file-fi-x09","output":"<p><a href=\"\/a&amp;b.txt\">x&amp;y<\/a><\/p>\n\n"}
+{"id":"file-fi-x10","output":"<p>[[file]]<\/p>\n\n"}
+{"id":"file-fi-x11","output":"<p><a href=\"\/a.txt\">a.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-x12","output":"<p><a href=\"\/local--files\/:other-page\/a.txt\">:other-page\/a.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-x13","output":"<p><a href=\"\/local--files\/:site:page\/a.txt\">:site:page\/a.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-x14","output":"<p><a href=\"\/local--files\/cat:page\/a.txt\">cat:page\/a.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-x15","output":"<p><a href=\"\/local--files\/cat:page\/a.txt\">Cat File<\/a><\/p>\n\n"}
+{"id":"file-fi-x16","output":"<p><a href=\"\/local--files\/https:\/\/example.com\/a.txt\">https:\/\/example.com\/a.txt<\/a><\/p>\n\n"}
+{"id":"file-fi-x17","output":"<p>[[*file a.txt]]<\/p>\n\n"}
+{"id":"file-fi-x18","output":"<p><a href=\"\/a.txt\">Label with &quot;quotes&quot;<\/a><\/p>\n\n"}
+{"id":"file-fi-x19","output":"<p><a href=\"\/my%20file.txt\">My File<\/a><\/p>\n\n"}
+{"id":"file-fi-x20","output":"<p><a href=\"\/a.txt\">Label<\/a> tail<\/p>\n\n"}
+{"id":"file-p01","output":"<p><a href=\"\/a.txt\">a.txt<\/a><\/p>\n\n"}
+{"id":"file-p02","output":"<p><a href=\"\/a.txt\">Label<\/a><\/p>\n\n"}
+{"id":"file-p03","output":"<p><a href=\"\/local--files\/other-page\/a.txt\">other-page\/a.txt<\/a><\/p>\n\n"}
+{"id":"file-p04","output":"<p><a href=\"\/local--files\/other-page\/a.txt\">Label<\/a><\/p>\n\n"}
+{"id":"file-p05","output":"<p><a href=\"\/local--files\/other-page\/a.txt\">\/other-page\/a.txt<\/a><\/p>\n\n"}
+{"id":"file-p06","output":"<p><a href=\"\/local--files\/cat:page\/a.txt\">Cat File<\/a><\/p>\n\n"}
+{"id":"file-p07","output":"<p><a href=\"\/local--files\/:site:page\/a.txt\">:site:page\/a.txt<\/a><\/p>\n\n"}
+{"id":"file-p08","output":"<p><a href=\"\/a.txt|\">a.txt|<\/a><\/p>\n\n"}
+{"id":"file-p09","output":"<p><a href=\"\/a.txt\">a.txt<\/a><\/p>\n\n"}
+{"id":"file-p10","output":"<p><a href=\"\/a.txt\">Label<\/a><\/p>\n\n"}
+{"id":"file-p11","output":"<p><a href=\"\/a.txt\">a.txt<\/a><\/p>\n\n"}
+{"id":"file-p12","output":"<p><a href=\"\/|x\">|x<\/a><br \/>\n<a href=\"\/|\">|<\/a><\/p>\n\n"}
+{"id":"file-p13","output":"<p><a href=\"\/a\">b|c<\/a><\/p>\n\n"}
+{"id":"file-p14","output":"<p><a href=\"\/a.txt\">a.txt<\/a><br \/>\n<a href=\"\/a.txt\">Label<\/a><\/p>\n\n"}
+{"id":"file-p15","output":"<p><a href=\"\/my%20file.txt\">My File<\/a><br \/>\n<a href=\"\/caf%C3%A9.txt\">caf\u00e9.txt<\/a><\/p>\n\n"}
+{"id":"file-p16","output":"<p><a href=\"\/a.txt\">**bold**<\/a><\/p>\n\n"}
+{"id":"file-p17","output":"<p><a href=\"\/a&quot;b.txt\">c&lt;d&gt;e<\/a><\/p>\n\n"}
+{"id":"file-p18","output":"<p>[[file a<br \/>\nb.txt]]<br \/>\n[[file a.txt|x<br \/>\ny]]<\/p>\n\n"}
+{"id":"file-p19","output":"<p>[[file ]]<br \/>\n[[file]]<br \/>\n[[*file a.txt]]<\/p>\n\n"}
+{"id":"file-p20","output":"<p><a href=\"\/a.txt\">a.txt<\/a><br \/>\n<a href=\"\/a\">a<\/a>]<br \/>\n<a href=\"\/a]b\">a]b<\/a><\/p>\n\n"}
+{"id":"filesupp-pf01","output":"<p><a href=\"\/a+b.txt\">a+b.txt<\/a><\/p>\n\n"}
+{"id":"filesupp-pf02","output":"<p><a href=\"\/a%b.txt\">a%b.txt<\/a><\/p>\n\n"}
+{"id":"filesupp-pf03","output":"<p><a href=\"\/a#b.txt\">a#b.txt<\/a><\/p>\n\n"}
+{"id":"filesupp-pf04","output":"<p><a href=\"\/local--files\/other-page\/my%20file.txt\">other-page\/my file.txt<\/a><\/p>\n\n"}
+{"id":"filesupp-pf05","output":"<p><a href=\"\/a&amp;b.txt\">a&amp;b.txt<\/a><\/p>\n\n"}
+{"id":"filesupp-pf06","output":"<p><a href=\"\/a.txt\">it's<\/a><\/p>\n\n"}
