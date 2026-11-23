@@ -260,6 +260,14 @@ def splitBytes (b : Nat) : List Nat → List (List Nat)
 
 /-! ## Raw -/
 
+/-- Close search for `@<...>@` on the same line: returns `(body, afterClose)`
+    when `>@` occurs before any `\n` in `bs`. -/
+def rawAngleClose (bs : List Nat) : Option (List Nat × List Nat) :=
+  match findSub [62, 64] bs, findSub [10] bs with
+  | none, _ => none
+  | some c, none => some (bs.take c, bs.drop (c + 2))
+  | some c, some l => if c < l then some (bs.take c, bs.drop (c + 2)) else none
+
 /-- The Raw rule's scanner over the byte form: a mechanical
     translation of the reference's parse(), which walks the source
     with an index, a previous-byte lookbehind, and `strpos` closer
@@ -276,7 +284,18 @@ def rawScan (prev : Option Nat) (src : List Nat) (toks : List TokenEntry) :
     match src with
     | [] => ([], toks)
     | b :: rest =>
-      if !(b == 64 && rest.head? == some 64 && prev != some 64) then
+      if b == 64 && rest.head? == some 60 && prev != some 64 then
+        -- REFCORR15: single-line @<...>@ raw delimiters scanned left-to-right
+        -- alongside @@...@@ so earlier @< wins over interior @@@@ (AT4).
+        match rawAngleClose rest.tail with
+        | some (body, afterClose) =>
+            let (ph, t1) := claimText "Raw" body toks
+            let (o, t) := rawScan (some 64) afterClose t1 fuel
+            (ph ++ o, t)
+        | none =>
+            let (o, t) := rawScan (some b) rest toks fuel
+            (b :: o, t)
+      else if !(b == 64 && rest.head? == some 64 && prev != some 64) then
         -- copy one byte verbatim (not an opener: wrong byte, no
         -- second '@', or the previous byte is '@')
         let (o, t) := rawScan (some b) rest toks fuel
@@ -653,10 +672,12 @@ theorem rawScan_no_at : ∀ (fuel : Nat) (prev : Option Nat)
           have h2 := hfuel
           simp only [List.length_cons] at h2
           omega
+        have hcondAngle : (b == 64 && rest.head? == some 60 &&
+            prev != some 64) = false := by simp [hb]
         have hcond : (b == 64 && rest.head? == some 64 &&
             prev != some 64) = false := by simp [hb]
         have step := ih (some b) rest toks hrest hlen
-        simp [rawScan, hcond, step]
+        simp [rawScan, hcondAngle, hcond, step]
 
 /-- A bare run of exactly three '@' bytes is kept whole (the
     C-SUSPECT-RAWHEAD-1 case): with no closer the early exit keeps

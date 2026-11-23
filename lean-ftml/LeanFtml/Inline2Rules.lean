@@ -292,36 +292,15 @@ where
         | b :: rest => go rest (b :: acc) fuel
         | [] => none
 
-/-- The Emphasis matcher at a scan position. The match
-    is fixed by the closer search alone; `process()`
-    then decides the replacement: an empty body is
-    consumed with no tokens (correction C1), a body
-    opening or closing on a whitespace byte returns the
-    whole match unchanged (the scan still advances past
-    it), and any other body is claimed as a start/end
-    pair carrying only the `type` option. -/
+/-- REFCORR15 (S_diag d27): `/\/\/\/\/|\/\/([^\s](?:.*[^\s])?)\/\//U`,
+    deleting `////` silently and pairing non-whitespace-delimited bodies
+    via the shared `pairClaim` search (so leading-space `// ...` does not
+    consume a later closing `//`). -/
 def emphasisMatch (bs : List Nat) (toks : List TokenEntry) :
     Option (List Nat × List Nat × List TokenEntry) :=
   match bs with
-  | 47 :: 47 :: rest0 =>
-      match emphCloseScan rest0 with
-      | some (body, rest) =>
-          if body.isEmpty then some (rest, [], toks)
-          else
-            match body with
-            | [] => none
-            | b :: _ =>
-                if isWsByte b ||
-                    isWsByte (body.reverse.headD 0) then
-                  some (rest, bs.take (bs.length - rest.length), toks)
-                else
-                  let (s, toks1) := claimTok "Emphasis"
-                    [("type".toList, OptVal.str "start".toList)] toks
-                  let (e, toks2) := claimTok "Emphasis"
-                    [("type".toList, OptVal.str "end".toList)] toks1
-                  some (rest, s ++ body ++ e, toks2)
-      | none => none
-  | _ => none
+  | 47 :: 47 :: 47 :: 47 :: rest => some (rest, [], toks)
+  | _ => pairClaim "Emphasis" 47 bs toks
 
 /-- The Emphasis rule mirror. -/
 def emphasisRule (st : ParseState) : ParseState :=
@@ -347,11 +326,52 @@ def underlineRule (st : ParseState) : ParseState :=
 
 /-! ## Strikethrough -/
 
-/-- The Strikethrough rule mirror: the pair form alone
-    (`/--([^\s](?:.*[^\s])?)--/U`, no correction), the
-    shared `pairClaim` search with the hyphen marker. -/
+/-- Does `body` open with a placeholder `\xFF<digits>\xFF` whose token in
+    `toks` is a `Span` `end` token? Rejects `--` glued to `[[/span]]` by
+    `Span::parse()` space trimming (REFCORR15, S_diag d30). -/
+def startsWithSpanEndTok (body : List Nat) (toks : List TokenEntry) : Bool :=
+  match body with
+  | 0xFF :: rest =>
+      let ds := rest.takeWhile (fun b => 48 ≤ b && b ≤ 57)
+      if ds.isEmpty then false
+      else
+        match rest.drop ds.length with
+        | 0xFF :: _ =>
+            let idx := ds.foldl (fun a d => a * 10 + (d - 48)) 0
+            match toks[idx]? with
+            | some t =>
+                t.rule == "Span" &&
+                  match omGet t.opts "type".toList with
+                  | some (OptVal.str ['e', 'n', 'd']) => true
+                  | _ => false
+            | none => false
+        | _ => false
+  | _ => false
+
+/-- Strikethrough matcher: `/--([^\s](?:.*[^\s])?)--/U` with the REFCORR15
+    guard rejecting an opening `--` immediately followed by a `Span` `end`
+    placeholder, keeping `--` literal and resuming right after `--`. -/
+def strikethroughMatch (bs : List Nat) (toks : List TokenEntry) :
+    Option (List Nat × List Nat × List TokenEntry) :=
+  match bs with
+  | 45 :: 45 :: rest0 =>
+      match pairBodyLen 45 rest0 with
+      | some l =>
+          let body := rest0.take l
+          if startsWithSpanEndTok body toks then
+            some (rest0, [45, 45], toks)
+          else
+            let (s, toks1) := claimTok "Strikethrough"
+              [("type".toList, OptVal.str "start".toList)] toks
+            let (e, toks2) := claimTok "Strikethrough"
+              [("type".toList, OptVal.str "end".toList)] toks1
+            some (rest0.drop (l + 2), s ++ body ++ e, toks2)
+      | none => none
+  | _ => none
+
+/-- The Strikethrough rule mirror. -/
 def strikethroughRule (st : ParseState) : ParseState :=
-  applyByteRule st (pregScan (pairClaim "Strikethrough" 45))
+  applyByteRule st (pregScan strikethroughMatch)
 
 /-! ## Worked examples
 
@@ -403,8 +423,7 @@ theorem emphasisMatch_empty_example :
     emphasisMatch (litBytes "////") [] = some ([], [], []) := rfl
 
 theorem emphasisMatch_padded_example :
-    emphasisMatch (litBytes "// pad //") [] =
-      some ([], litBytes "// pad //", []) := rfl
+    emphasisMatch (litBytes "// pad //") [] = none := rfl
 
 theorem underlineMatch_example :
     underlineMatch (litBytes "__u__") [] =

@@ -384,7 +384,7 @@
 {"id":"div\/malformed-divx","output":"<p>[[divx]]<br \/>\nA<br \/>\n[[\/divx]]<\/p>\n\n"}
 {"id":"div\/malformed-open-bracket","output":"<p>[[div<br \/>\nA<br \/>\n[[\/div]]<\/p>\n\n"}
 {"id":"div\/malformed-close-bracket","output":"<div><p>A<\/p>\n\n<\/div>]"}
-{"id":"div\/malformed-extra-bracket","output":"<p><a class=\"newpage\" href=\"\/div\">div<\/a><br \/>\nA<br \/>\n<a class=\"newpage\" href=\"\/div\">\/div<\/a><\/p>\n\n"}
+{"id":"div\/malformed-extra-bracket","output":"<p><a class=\"newpage\" href=\"\/div\">div<\/a><br \/>\nA<br \/>\n<a href=\"\/div\">\/div<\/a><\/p>\n\n"}
 {"id":"div\/malformed-star","output":"<p>[[div*]]<br \/>\nA<br \/>\n[[\/div]]<\/p>\n\n"}
 {"id":"div\/malformed-empty-args","output":"<div><p>A<\/p>\n\n<\/div>"}
 {"id":"div\/score-basic","output":"<div>hello<\/div>"}

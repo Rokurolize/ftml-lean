@@ -1006,6 +1006,20 @@ def freelinkSchemes : List (List Nat) :=
 def isUrlTarget (bs : List Nat) : Bool :=
   freelinkSchemes.any (fun s => (matchLitCI s bs).isSome)
 
+/-- Is the trimmed target a leading-slash absolute site path (`/path`, REFCORR15)? -/
+def isAbsPathTarget (bs : List Nat) : Bool :=
+  bs.head? == some 47
+
+/-- Percent-encode ASCII space bytes in a `/path` href as `%20`. -/
+def encodeSpacesPct20 (bs : List Nat) : List Nat :=
+  bs.flatMap (fun b => if b == 32 then [37, 50, 48] else [b])
+
+/-- Truncate local page slugs to Wikidot's 60-byte cap and strip any
+    trailing `-` left at the boundary (REFCORR15). -/
+def capSlug60 (bs : List Nat) : List Nat :=
+  if 60 < bs.length then ((bs.take 60).reverse.dropWhile (· == 45)).reverse
+  else bs
+
 /-- The reference's `freelink_transliterate` on a valid-UTF-8
     byte string: per character, the keep-set (`#`, `:`, `/`,
     space, `_`, `-`) passes through, a table entry is replaced
@@ -1151,11 +1165,14 @@ def freelinkProcess (full raw labelRaw : List Nat)
     -- only the starred URL token gains a trailing target option.
     let starUrl := !leadingSpace && trimmed0.head? == some 42
     let trimmed := if starUrl then trimmed0.tail else trimmed0
-    if !leadingSpace && isUrlTarget trimmed then
-      -- REFCORR13 D06/D07: carry the peeled anchor/route into the URL token
+    let isAbs := isAbsPathTarget trimmed
+    if (!leadingSpace && isUrlTarget trimmed) || isAbs then
+      -- REFCORR13 D06/D07 + REFCORR15: carry the peeled anchor/route into the URL token,
+      -- treat leading-slash /path targets identically (with %20 space encoding in href),
       -- and fall back to the slugified URL text on an empty pipe label.
       let emptyPipe := trimBytes labelRaw == [124]
       let urlPage := toUnixName trimmed
+      let urlHref := if isAbs then encodeSpacesPct20 trimmed else trimmed
       let text := if labelRaw.isEmpty then trimmed
                   else if emptyPipe then []
                   else labelRaw.drop 1
@@ -1165,7 +1182,7 @@ def freelinkProcess (full raw labelRaw : List Nat)
          ("text".toList, textVal text),
          ("anchor".toList, if anchor.isEmpty then OptVal.str [] else textVal anchor),
          ("extra".toList, if extra.isEmpty then OptVal.str [] else textVal ([47] ++ extra)),
-         ("url".toList, textVal trimmed),
+         ("url".toList, textVal urlHref),
          ("textFromTitle".toList, if emptyPipe then OptVal.bool true else OptVal.null)] ++
         (if starUrl then [("target".toList, OptVal.str "_blank".toList)] else [])
       (phBytes toks.length,
@@ -1188,7 +1205,7 @@ def freelinkProcess (full raw labelRaw : List Nat)
         | none => raw1
       let slug := if stripped.any (fun b => 128 ≤ b) && utf8Valid stripped
                   then transliterate stripped else stripped
-      let page := toUnixName slug
+      let page := capSlug60 (toUnixName slug)
       let (text, tft) : List Nat × OptVal :=
         if labelRaw.isEmpty then
           let t1 :=

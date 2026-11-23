@@ -46,7 +46,7 @@ theorem iftagsRule_work_eq (st : ParseState) :
     (iftagsRule st).work =
       parseBytes (iftagsScan
         (st.doc.page.tags.map (fun cs => cs.flatMap utf8Bytes))
-        (byteForm st.work) ((byteForm st.work).length + 1)) := rfl
+        (evalHashIf (byteForm st.work)) ((evalHashIf (byteForm st.work)).length + 1)) := rfl
 
 theorem commentRule_doc (st : ParseState) : (commentRule st).doc = st.doc := rfl
 
@@ -111,12 +111,13 @@ theorem commentRule_id_of_guard_and_bridge (st : ParseState)
   simp [hguard, hbridge]
 
 theorem iftagsRule_work_of_scan_id_and_bridge (st : ParseState)
+    (hif : evalHashIf (byteForm st.work) = byteForm st.work)
     (hs : iftagsScan (st.doc.page.tags.map (fun cs => cs.flatMap utf8Bytes))
             (byteForm st.work) ((byteForm st.work).length + 1) = byteForm st.work)
     (hbridge : parseBytes (byteForm st.work) = st.work) :
     (iftagsRule st).work = st.work := by
   unfold iftagsRule applyByteRule
-  simp [hs, hbridge]
+  simp [hif, hs, hbridge]
 
 /-! ## commentRule token-table monotonicity (kernel-free, all inputs) -/
 
