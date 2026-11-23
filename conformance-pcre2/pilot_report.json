@@ -1,0 +1,118 @@
+{
+  "php_version": "8.5.4",
+  "pcre_version": "10.46 2025-08-27",
+  "total_cases": 40,
+  "passed": 40,
+  "mismatches": 0,
+  "by_construct": {
+    "literal": {
+      "total": 2,
+      "pass": 2
+    },
+    "flag-i": {
+      "total": 1,
+      "pass": 1
+    },
+    "dot": {
+      "total": 1,
+      "pass": 1
+    },
+    "flag-s": {
+      "total": 2,
+      "pass": 2
+    },
+    "char-class": {
+      "total": 1,
+      "pass": 1
+    },
+    "negated-class": {
+      "total": 1,
+      "pass": 1
+    },
+    "class-escape": {
+      "total": 1,
+      "pass": 1
+    },
+    "captures": {
+      "total": 1,
+      "pass": 1
+    },
+    "alternation": {
+      "total": 1,
+      "pass": 1
+    },
+    "quantifier": {
+      "total": 3,
+      "pass": 3
+    },
+    "brace-quantifier": {
+      "total": 1,
+      "pass": 1
+    },
+    "lazy-quantifier": {
+      "total": 1,
+      "pass": 1
+    },
+    "flag-U": {
+      "total": 1,
+      "pass": 1
+    },
+    "flag-m": {
+      "total": 2,
+      "pass": 2
+    },
+    "bol": {
+      "total": 1,
+      "pass": 1
+    },
+    "eol": {
+      "total": 1,
+      "pass": 1
+    },
+    "flag-D": {
+      "total": 1,
+      "pass": 1
+    },
+    "positive-lookahead": {
+      "total": 1,
+      "pass": 1
+    },
+    "negative-lookahead": {
+      "total": 2,
+      "pass": 2
+    },
+    "positive-lookbehind": {
+      "total": 1,
+      "pass": 1
+    },
+    "negative-lookbehind": {
+      "total": 2,
+      "pass": 2
+    },
+    "backref": {
+      "total": 3,
+      "pass": 3
+    },
+    "(?R)-recursion": {
+      "total": 5,
+      "pass": 5
+    },
+    "pregReplaceCallback": {
+      "total": 1,
+      "pass": 1
+    },
+    "pregMatchAll": {
+      "total": 1,
+      "pass": 1
+    },
+    "word-boundary": {
+      "total": 1,
+      "pass": 1
+    },
+    "empty-loop-guard": {
+      "total": 1,
+      "pass": 1
+    }
+  },
+  "mismatch_detail": []
+}
