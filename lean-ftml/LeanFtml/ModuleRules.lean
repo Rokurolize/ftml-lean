@@ -231,6 +231,68 @@ def rewriteModulePrefix (m : List Nat) : List Nat :=
   if m.take 8 == litBytes "[[module" then litBytes "[[module654" ++ m.drop 8
   else m
 
+-- REFCORR10-MODFIX: the PHP defense's inline-opener newline insertion.
+-- R10-STRUCT's consumeModuleClosers generalized the mirror to claim the
+-- outer Module token and eat n-1 closers for every multi-opener match,
+-- which moved seven line-terminated shapes whose cached live bytes the
+-- PHP reference leaves unchanged. The live-correct rule is PHP's own:
+-- only an inline nested opener (one whose ]] is not followed by spaces
+-- and a newline) needs the newline that makes it claimable; a
+-- line-terminated opener is merely renamed by the defense and keeps its
+-- authored closer. The helpers below reproduce that narrow rule.
+
+/-- The `(?! *\n)` negative lookahead of the defense regex: true exactly
+    when the bytes after an opener's `]]` are spaces and then a newline.
+    End of source has no newline, so the lookahead fails and the newline
+    is inserted, matching PCRE. -/
+def spacesThenNewline : List Nat → Bool
+  | 10 :: _ => true
+  | 32 :: rest => spacesThenNewline rest
+  | _ => false
+
+/-- The byte length of a line-start `[[module ...]]` head: a
+    case-insensitive `[[module` literal, then the first `]]`, with no
+    lone `]` in between (the regex's `[^\]]*` group). This is the `$1` of
+    the PHP replacement. -/
+def moduleHeadEnd (src : List Nat) : Option Nat :=
+  match matchLitCI (litBytes "[[module") src with
+  | none => none
+  | some _ =>
+      let tail := src.drop 8
+      match findSub (litBytes "]]") tail with
+      | some c =>
+          if (tail.take c).any (fun b => b == 93) then none else some (8 + c + 2)
+      | none => none
+
+/-- One scan of the defense preg_replace. `prev` carries the byte before
+    the current position so `^` matches at the subject start and right
+    after a newline, as the regex's /m modifier requires. A head whose
+    tail already has spaces-then-newline is copied unchanged; an inline
+    head gets a newline inserted right after its `]]`, and scanning
+    resumes with that inserted newline as the new line-start predecessor.
+    The fuel is a length bound; every step consumes at least one byte. -/
+def insertInlineOpenerNewlinesGo (prev : Option Nat) (src : List Nat) :
+    Nat → List Nat
+  | 0 => src
+  | fuel + 1 =>
+      match src with
+      | [] => []
+      | b :: rest =>
+          if prev == none || prev == some 10 then
+            match moduleHeadEnd src with
+            | some n =>
+                let after := src.drop n
+                if spacesThenNewline after then
+                  src.take n ++ insertInlineOpenerNewlinesGo (some 93) after fuel
+                else
+                  src.take n ++ [10] ++ insertInlineOpenerNewlinesGo (some 10) after fuel
+            | none => b :: insertInlineOpenerNewlinesGo (some b) rest fuel
+          else b :: insertInlineOpenerNewlinesGo (some b) rest fuel
+
+/-- The whole defense replacement applied to a matched text. -/
+def insertInlineOpenerNewlines (src : List Nat) : List Nat :=
+  insertInlineOpenerNewlinesGo none src (src.length + 1)
+
 /-- Count the opener heads in a matched text the way Module's
     process() defense does: preg_match_all of the opener-only
     pattern (the shared head, ending at `]]`), anchored at line
@@ -309,7 +371,14 @@ def moduleTryCands (src name : List Nat) (toks : List TokenEntry) :
     | some (bodyRaw, rest') =>
         let matched := src.take (src.length - rest'.length)
         if countModuleOpeners none matched (matched.length + 1) > 1 then
-          some (rewriteModulePrefix matched, rest', toks)
+          -- REFCORR10-MODFIX: mirror PHP exactly. The defense rewrites the
+          -- leading `[[module` to `[[module654` and claims nothing; the
+          -- inline-opener newline insertion makes a C-R5C-P3-2 nested
+          -- opener claimable on the next pass. Line-terminated multi-opener
+          -- shapes are only renamed, so their authored closers survive
+          -- exactly as the cached live bytes and the PHP reference show.
+          some (rewriteModulePrefix (insertInlineOpenerNewlines matched),
+            rest', toks)
         else
           let (ph, t1) := claimModule "Module" name
             (trimBytes attrRaw) (trimBytes bodyRaw) toks
@@ -475,13 +544,16 @@ def module654Rule (st : ParseState) : ParseState :=
 theorem modulepreRule_tokens (st : ParseState) :
     (modulepreRule st).tokens = st.tokens := rfl
 
-/-- The defense, on the smallest nested shape: a Module match
-    whose body contains a second line-start opener is rewritten,
-    not claimed, so the token table is untouched and the matched
-    text comes back with only its leading prefix renamed. -/
-theorem moduleMatch_defense_example :
-    moduleMatch (litBytes "[[module a]]\n[[module b]]\n[[/module]]") [] =
-      some (litBytes "[[module654 a]]\n[[module b]]\n[[/module]]", [], []) :=
+/-- REFCORR10-MODFIX pin (the live-correct narrow rule): on the C-R5C-P3-2
+    inline nested shape the defense inserts the newline after the inline
+    inner opener and rewrites only the leading `[[module` to `[[module654`;
+    no token is claimed by the defense and the residual source keeps the
+    outer closer for the next pass. This is byte-for-byte PHP's
+    `preg_replace` composition, not the over-generalized outer claim. -/
+theorem moduleMatch_inline_defense_example :
+    moduleMatch (litBytes "[[module a]]\n[[module b]]INNER[[/module]]\n[[/module]]") [] =
+      some (litBytes "[[module654 a]]\n[[module b]]\nINNER[[/module]]",
+        litBytes "\n[[/module]]", []) := by
   rfl
 
 /-- A plain Module654 claim: the token carries the trimmed name,

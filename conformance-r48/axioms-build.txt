@@ -45,7 +45,7 @@
 'LeanFtml.utf8Bytes_no_ff' depends on axioms: [propext, Quot.sound]
 'LeanFtml.rawScan_no_at' depends on axioms: [propext, Classical.choice, Quot.sound]
 'LeanFtml.modulepreRule_tokens' depends on axioms: [propext, Classical.choice, Quot.sound]
-'LeanFtml.moduleMatch_defense_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.moduleMatch_inline_defense_example' depends on axioms: [propext, Classical.choice, Quot.sound]
 'LeanFtml.module654Match_claim_example' depends on axioms: [propext, Classical.choice, Quot.sound]
 'LeanFtml.iftagsRule_tokens' depends on axioms: [propext, Classical.choice, Quot.sound]
 'LeanFtml.iftagsGate_keep_example' depends on axioms: [propext, Classical.choice, Quot.sound]

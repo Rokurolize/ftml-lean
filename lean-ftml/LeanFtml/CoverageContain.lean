@@ -737,6 +737,13 @@ theorem cov_div_id_shell_live :
       ("args".toList, OptVal.map [("id".toList, OptVal.bytes [117, 45])])] =
       litBytes "<div id=\"u-\">" := rfl
 
+/-- REFCORR10 general rule: a 0xFF placeholder-bearing authored id whose body already starts with u- is retained by isolateId, so the single render clear arm emits an empty value with the key kept. Live C-R5C-R1-1 and C-R5C-S1-1 (capture muse-probe-round5c-r1-r5cr1-d1, page-content sha256 derived from conformance-round5c-r1) serve `<div id="">`; complementary to cov_div_id_shell_live, which stays live for the placeholder-free whitespace-only id. -/
+theorem cov_div_id_placeholder_u_prefix_cleared :
+    renderDiv [("type".toList, OptVal.bytes [115, 116, 97, 114, 116]),
+      ("args".toList, OptVal.map [("id".toList,
+        OptVal.bytes [117, 45, 255, 48, 255, 120, 255, 49, 255])])] =
+      litBytes "<div id=\"\">" := rfl
+
 theorem cov_div_end :
     renderDiv [("type".toList, OptVal.bytes [101, 110, 100])] =
       litBytes "</div>" := rfl

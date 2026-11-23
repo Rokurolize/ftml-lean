@@ -112,7 +112,7 @@ theorem refcorr8_math_upper_TYPE_selects_equation :
       | some e => omGet e.opts "type".toList
       | none => none) = some (OptVal.str "equation".toList) := rfl
 
-/- C-R5-P2-4, conformance-round5-p2/CANDIDATES.md and captures.json R5P2-17: a Date token anywhere in a math-inline body joins the suppression set, so the whole formula resolves to empty bytes rather than expanding the date source. -/
+/- C-R5-P2-4, conformance-round5-p2/CANDIDATES.md and captures.json R5P2-18: a Date token anywhere in a math-inline body joins the suppression set, so the whole formula resolves to empty bytes rather than expanding the date source. -/
 theorem refcorr8_mathinline_date_token_suppresses_all :
     mathResolve (litBytes "x " ++ phBytes 0 ++ litBytes " y")
       [{ rule := "Date", opts := [] }] = [] := rfl

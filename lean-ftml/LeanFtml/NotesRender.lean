@@ -117,6 +117,17 @@ private def footnoteToks (lookup : Nat → Option TokenEntry)
 def footnoteVisibleBody (lookup : Nat → Option TokenEntry) (body : List Nat) : List Nat :=
   trimBytes (stripEmptyRawPhNotes body (footnoteToks lookup body))
 
+/- REFCORR10 — the general live separator rule. The separator space follows
+   the back-reference only when the visible body (empty-Raw stripped, before
+   any trim) has a non-whitespace byte before its first authored LF. A body
+   whose first line is empty starts with a break and gets no space; literal
+   and NBSP first-line text keeps it. Whitespace is PHP trim's byte set, so
+   NBSP counts as visible text. This replaces the REFCORR9 `trim non-empty`
+   test, which wrongly spaced a leading break followed by literal text. -/
+def footnoteLeadVisible (lookup : Nat → Option TokenEntry) (body : List Nat) : List Nat :=
+  let vis := stripEmptyRawPhNotes body (footnoteToks lookup body)
+  (vis.takeWhile (fun b => b != 10)).filter (fun b => ! isTrimByte b)
+
 /-- Mirror of `Text_Wiki_Render_Xhtml_Footnoteitem::token`. -/
 def renderFootnoteitem (conf : RenderConf) (doc : DocState) (opts : OptMap)
     (lookup : Nat → Option TokenEntry := fun _ => none) : List Nat :=
@@ -127,7 +138,7 @@ def renderFootnoteitem (conf : RenderConf) (doc : DocState) (opts : OptMap)
     let idNat := (optNat opts "id".toList).getD 0
     let pfx := conf.footnoteIdPrefix
     let body := if idNat > 0 then (doc.footnotes[idNat - 1]?).getD [] else []
-    let sep := if (footnoteVisibleBody lookup body).isEmpty then [] else [32]
+    let sep := if (footnoteLeadVisible lookup body).isEmpty then [] else [32]
     litBytes "<div class=\"footnote-footer\" id=\"footnote-" ++ pfx ++ idBytes ++
       litBytes "\"><a href=\"javascript:;\" onclick=\"" ++
       litBytes "WIKIDOT.page.utils.scrollToReference(" ++
@@ -406,7 +417,7 @@ private theorem litBytes_Footnotes_ne_nil : litBytes "Footnotes" ≠ [] := by de
     stored note body at `doc.footnotes[id - 1]` is empty (or out of range). -/
 theorem footnoteitem_start_empty_body (conf : RenderConf) (doc : DocState)
     (id : Nat) (hpos : id > 0)
-    (hempty : (footnoteVisibleBody (fun _ => none)
+    (hempty : (footnoteLeadVisible (fun _ => none)
       ((doc.footnotes[id - 1]?).getD [])).isEmpty = true) :
     renderFootnoteitem conf doc
       [("type".toList, OptVal.str "start".toList),
@@ -427,7 +438,7 @@ theorem footnoteitem_start_empty_body (conf : RenderConf) (doc : DocState)
     stored note body at `doc.footnotes[id - 1]` is non-empty. -/
 theorem footnoteitem_start_nonempty_body (conf : RenderConf) (doc : DocState)
     (id : Nat) (hpos : id > 0)
-    (hne : (footnoteVisibleBody (fun _ => none)
+    (hne : (footnoteLeadVisible (fun _ => none)
       ((doc.footnotes[id - 1]?).getD [])).isEmpty = false) :
     renderFootnoteitem conf doc
       [("type".toList, OptVal.str "start".toList),
@@ -485,6 +496,32 @@ theorem refcorr9_footnoteitem_nonempty_raw_sep :
     renderFootnoteitem {} { footnotes := [phBytes 0] }
       [("type".toList, OptVal.str "start".toList), ("id".toList, OptVal.int 1)]
       (fun k => r9hmNonEmptyRaw[k]?) =
+    litBytes "<div class=\"footnote-footer\" id=\"footnote-" ++ natBytes 1 ++
+      litBytes "\"><a href=\"javascript:;\" onclick=\"" ++
+      litBytes "WIKIDOT.page.utils.scrollToReference(" ++
+      litBytes "'footnoteref-" ++ natBytes 1 ++ litBytes "')\">" ++
+      natBytes 1 ++ litBytes "</a>." ++ [32] := by
+  rfl
+
+/-- REFCORR10: a leading break followed by a literal tail gets NO separator
+    space (the general rule reads the first visible line, not the trimmed body). -/
+theorem refcorr10_footnoteitem_break_then_literal_no_sep :
+    renderFootnoteitem {} { footnotes := [phBytes 0 ++ litBytes "\n" ++ phBytes 1 ++ litBytes "@@"] }
+      [("type".toList, OptVal.str "start".toList), ("id".toList, OptVal.int 1)]
+      (fun k => r9hmEmptyRaw2[k]?) =
+    litBytes "<div class=\"footnote-footer\" id=\"footnote-" ++ natBytes 1 ++
+      litBytes "\"><a href=\"javascript:;\" onclick=\"" ++
+      litBytes "WIKIDOT.page.utils.scrollToReference(" ++
+      litBytes "'footnoteref-" ++ natBytes 1 ++ litBytes "')\">" ++
+      natBytes 1 ++ litBytes "</a>." := by
+  rfl
+
+/-- REFCORR10: an NBSP-flanked break keeps its separator space because NBSP
+    is not in PHP trim's byte set, matching live ` &nbsp;<br />`. -/
+theorem refcorr10_footnoteitem_nbsp_flank_sep :
+    renderFootnoteitem {} { footnotes := [phBytes 0 ++ [194, 160] ++ litBytes "\n" ++ phBytes 1] }
+      [("type".toList, OptVal.str "start".toList), ("id".toList, OptVal.int 1)]
+      (fun k => r9hmEmptyRaw2[k]?) =
     litBytes "<div class=\"footnote-footer\" id=\"footnote-" ++ natBytes 1 ++
       litBytes "\"><a href=\"javascript:;\" onclick=\"" ++
       litBytes "WIKIDOT.page.utils.scrollToReference(" ++

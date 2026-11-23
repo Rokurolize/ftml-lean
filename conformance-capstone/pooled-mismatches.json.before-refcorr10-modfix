@@ -1,0 +1,120 @@
+{
+ "a34": {
+  "components": [
+   "tokens"
+  ],
+  "source": "[[a href=\"@@a@@\"]]r1[[/a]]\n[[a class=\"@@a@@\" href=\"/x\"]]r2[[/a]]\n[[a href=\"/x@@a@@\"]]r3[[/a]]"
+ },
+ "m654-module-then-654": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[module Rate]]\n[[module654 CSS]]\n[[/module]]\n[[/module]]"
+ },
+ "m654-nested-module": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[module654 CSS]]\n[[module Rate]]\n[[/module]]\n[[/module]]"
+ },
+ "mod-nested-two-openers": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[module css]]\n[[module rate]]\n[[/module]]\n"
+ },
+ "mod-nested-unknown-in-body": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[module UnknownOracleModule]]\n[[module css]]\n[[/module]]\n"
+ },
+ "mod-two-adjacent-body": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[module css]]\n[[/module]]\n[[module rate]]\n[[/module]]\n"
+ },
+ "mp-654-body-has-module-closer": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[module654 css]]\n[[module rate]]\n[[/module]]\n[[/module]]"
+ },
+ "mp-nested-654-in-module": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[module css]]\n[[module654 rate]]\n[[/module]]"
+ },
+ "mp-nested-module-in-654": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[module654 css]]\n[[module rate]]\n[[/module]]"
+ },
+ "x-654-body-module": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[module654 UnknownModuleX]]\nbefore\n[[module AnotherUnknownY]]\ninner\n[[/module]]\nafter\n[[/module]]\n"
+ },
+ "x-654-body-module-attr": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[module654 UnknownModuleX a=\"1\"]]\n[[module AnotherUnknownY b=\"2\"]]\ninner\n[[/module]]\n[[/module]]\n"
+ },
+ "x-654-body-module-noclose": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[module654 UnknownModuleX]]\n[[module AnotherUnknownY]]\ninner\n[[/module]]\n"
+ },
+ "x-known-mod-body-654": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[module CSS]]\n[[module654 UnknownModuleX]]\ninner\n[[/module]]\n[[/module]]\n"
+ },
+ "x-mod-body-654": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[module UnknownModuleX]]\nbefore\n[[module654 AnotherUnknownY]]\ninner\n[[/module]]\nafter\n[[/module]]\n"
+ },
+ "x-mod-body-654-inline": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[module UnknownModuleX]]\n[[module654 AnotherUnknownY]]tail[[/module]]\n[[/module]]\n"
+ },
+ "x-mod-body-654-noinnerclose": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[module UnknownModuleX]]\nbefore\n[[module654 AnotherUnknownY]]\ninner\n[[/module]]\n"
+ },
+ "x-mod-in-mod": {
+  "components": [
+   "segments",
+   "tokens"
+  ],
+  "source": "[[module UnknownModuleX]]\nouter\n[[module AnotherUnknownY]]\ninner\n[[/module]]\n[[/module]]\n"
+ }
+}

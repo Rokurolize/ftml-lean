@@ -175,6 +175,31 @@ def countRun (b : Nat) : List Nat → Nat
   | [] => 0
   | x :: rest => if x == b then countRun b rest + 1 else 0
 
+/-- REFCORR10: does a run of four or more '@' bytes occur before the first
+    newline in `src`, i.e. on the same line? This is the "later 4+ run" that
+    makes ftml's finish_double_at_raw re-associate a short (two- or
+    three-byte) closer run: intervening text belongs to a Raw span closed at
+    the later run, and the short run is not a final closer (C-R5C-S1-2). -/
+def hasLaterQuad (src : List Nat) : Bool :=
+  go (src.length + 1) src
+where
+  go : Nat → List Nat → Bool
+  | 0, _ => false
+  | fuel + 1, xs =>
+      match xs with
+      | [] => false
+      | 10 :: _ => false
+      | ys@(64 :: 64 :: _) =>
+          let n := countRun 64 ys
+          if 4 <= n then true else go fuel (ys.drop n)
+      | _ :: rest => go fuel rest
+
+/-- REFCORR10: the general surplus-closer formula for a FINAL closer run of
+    length c after a 4+-opener body: c literal bytes when c is two or three,
+    c-4 when c is four or more (Nat subtraction truncates like PHP's
+    max(0, c-4)). Derived from cached bare cases c=2,3,4,5. -/
+def rawSurplusClose (c : Nat) : Nat := if c <= 3 then c else c - 4
+
 /-- Swap the case of an ASCII letter byte; identity otherwise. -/
 def swapByteCase (b : Nat) : Nat :=
   if 97 ≤ b && b ≤ 122 then b - 32
@@ -264,7 +289,15 @@ def rawScan (prev : Option Nat) (src : List Nat) (toks : List TokenEntry) :
             match findSub [64, 64] afterRun, findSub [10] afterRun with
             | none, _ => false
             | some _, none => true
-            | some c, some l => run < 4 || c < l
+            | some c, some l =>
+                -- REFCORR10: a short closer with a later 4+ run on the same
+                -- line is not final, so the opener takes the empty-Raw exit
+                -- and is re-scanned (C-R5C-S1-2).
+                let closeRun := countRun 64 (afterRun.drop c)
+                let laterQuad :=
+                  if closeRun <= 3 then hasLaterQuad (afterRun.drop (c + closeRun))
+                  else false
+                run < 4 || (c < l && !laterQuad)
           else true
         if run > 2 && !preOk then
           if run == 3 then
@@ -345,12 +378,15 @@ def rawScan (prev : Option Nat) (src : List Nat) (toks : List TokenEntry) :
                   -- the established shed-four shaping.
                   let (o, t) := rawScan (some 64) afterClose toks fuel
                   (List.replicate (lead - 2) 64 ++ body ++
-                    List.replicate (if trail <= 1 then trail + 2 else trail - 2) 64 ++ o, t)
+                    List.replicate (rawSurplusClose closeRun) 64 ++ o, t)
                 else if 2 ≤ trail then
                   -- a closer run of 4+ is an empty raw followed by
                   -- an opener: the body is claimed and the full
-                  -- trail count stays literal
-                  let (ph, t1) := claimText "Raw" body toks
+                  -- trail count stays literal. REFCORR10: a three-run
+                  -- opener's extra '@' belongs to the span body in every
+                  -- branch, including this one (C-R5C-S1-2).
+                  let text := (if lead == 1 then [64] else []) ++ body
+                  let (ph, t1) := claimText "Raw" text toks
                   let (o, t) := rawScan (some 64) afterClose t1 fuel
                   (ph ++ List.replicate trail 64 ++ o, t)
                 else

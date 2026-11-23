@@ -1,0 +1,20 @@
+pooled cases: 4205 (retained case list, no reassembly)
+PASS: 4188/4205 (including 5 parse-fatal agreements)
+MISMATCH: 17
+  a34: tokens
+  m654-module-then-654: segments,tokens
+  m654-nested-module: segments,tokens
+  mod-nested-two-openers: segments,tokens
+  mod-nested-unknown-in-body: segments,tokens
+  mod-two-adjacent-body: segments,tokens
+  mp-654-body-has-module-closer: segments,tokens
+  mp-nested-654-in-module: segments,tokens
+  mp-nested-module-in-654: segments,tokens
+  x-654-body-module: segments,tokens
+  x-654-body-module-attr: segments,tokens
+  x-654-body-module-noclose: segments,tokens
+  x-known-mod-body-654: segments,tokens
+  x-mod-body-654: segments,tokens
+  x-mod-body-654-inline: segments,tokens
+  x-mod-body-654-noinnerclose: segments,tokens
+  x-mod-in-mod: segments,tokens

@@ -182,35 +182,51 @@ where
         | _ => 0xFF :: go rest fuel toks
     | b :: rest, fuel + 1, toks => b :: go rest fuel toks
 
-/- REFCORR9 (C-R5B-R3-1 = C-R5B-P4-1): the REFCORR8 post-strip
-   re-trim must not fold a lone authored newline separator. The Newline
-   rule needs an inline byte immediately before the LF to emit a
-   rule-level `<br />`; on live that byte is the empty-Raw placeholder
-   that REFCORR7 stripped from the stored body. When the strip leaves
-   exactly one LF with only space/tab bytes around it, keep the pre-strip
-   placeholder-bearing bytes as the stored body. Every other remainder
-   (empty, horizontal whitespace only, two or more newlines, or a literal
-   remainder) keeps the REFCORR8 re-trim. The predicate is byte-local and
-   total and no token entry is added, removed or reindexed. -/
-def isLoneNewlineRemainder (bs : List Nat) : Bool :=
-  let core := bs.dropWhile (fun b => b == 32 || b == 9)
-  match core with
-  | 10 :: rest => (rest.dropWhile (fun b => b == 32 || b == 9)).isEmpty
-  | _ => false
+/- REFCORR10 — one general token-aware live rule for the footnote body.
+   The stored body is re-parsed as wiki source by Footnoteblock::process, so
+   empty-Raw placeholders are kept wherever an authored LF needs an inline
+   witness byte for the Newline rule to emit `<br />`. Emptiness and the
+   separator space are decided from the visible projection (the same body
+   with empty-Raw placeholders removed), which NotesRender uses for the
+   separator. This replaces every shape-specific REFCORR7/8/9 guard with a
+   single byte-local, total predicate and one control-byte filter. -/
+/-- A single authored line break: an LF with a non-LF byte immediately before
+    and a non-LF byte immediately after. Double-LF runs and bare or edge LFs
+    have no live `<br />` and are rejected. -/
+def hasSingleBreakByte (bs : List Nat) : Bool :=
+  go false bs
+where
+  go : Bool → List Nat → Bool
+    | _, [] => false
+    | prev, 10 :: rest =>
+        (prev && match rest with
+                 | b :: _ => b != 10
+                 | [] => false) || go false rest
+    | _, _ :: rest => go true rest
+
+/-- C0 control bytes live's purifyHtml drops: everything below 0x20 except
+    TAB 9, LF 10 and CR 13. Form feed 12 is the round-5c witness. -/
+def isLiveDroppedControl (b : Nat) : Bool :=
+  b < 32 && b != 9 && b != 10 && b != 13
+
+def stripLiveDroppedControls (bs : List Nat) : List Nat :=
+  bs.filter (fun b => ! isLiveDroppedControl b)
 
 /-- process() for a Footnote match: the id is one plus the
     number of notes collected so far; the body is appended to the
-    footnotes list at that index; the token carries only the id. REFCORR7
-    strips empty-Raw placeholders after the initial trim; REFCORR8 re-trims
-    the strip remainder; REFCORR9 keeps the pre-strip bytes for the single
-    newline separator so the authored break survives. A non-empty Raw token
-    or a literal remainder such as fn-six's `@@` is preserved. -/
+    footnotes list at that index; the token carries only the id. REFCORR10
+    keeps the placeholder-bearing trimmed body whenever it carries a single
+    authored break (dropping controls live purifies away), and otherwise
+    stores the re-trimmed visible body. A non-empty Raw token or a literal
+    remainder such as fn-six's `@@` is preserved. -/
 def footnoteProcess (body : List Nat) (doc : DocState)
     (toks : List TokenEntry) : List Nat × List TokenEntry × DocState :=
-  -- REFCORR8 (C-R5-R3-1) re-trim; REFCORR9 (C-R5B-R3-1) newline exception.
+  -- REFCORR10 general live rule (replaces the REFCORR8/9 narrow guards).
   let preStrip := trimBytes body
   let stripped := stripEmptyRawPhNotes preStrip toks
-  let content := if isLoneNewlineRemainder stripped then preStrip else trimBytes stripped
+  let content :=
+    if hasSingleBreakByte preStrip then stripLiveDroppedControls preStrip
+    else trimBytes stripped
   let id := doc.footnotes.length + 1
   (phBytes toks.length,
    toks ++ [{ rule := "Footnote",
@@ -721,6 +737,39 @@ theorem refcorr9_fn_space_separator_still_folds :
     (footnoteProcess (phBytes 0 ++ litBytes "  " ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes = [[]] ∧
     (footnoteProcess (phBytes 0 ++ litBytes "\t" ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes = [[]] ∧
     (footnoteProcess (phBytes 0 ++ litBytes "\n\n" ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes = [[]] :=
+  ⟨rfl, rfl, rfl⟩
+
+/- REFCORR10 general-rule pins. One token-aware rule reproduces every cached
+   live shape: two breaks, a trailing literal, an NBSP flank and a form-feed
+   flank all keep the placeholder-bearing body; the form-feed control byte is
+   dropped as live purifyHtml does. -/
+theorem refcorr10_fn_two_breaks_keeps_placeholders :
+    (footnoteProcess (phBytes 0 ++ litBytes "\n" ++ phBytes 1 ++ litBytes "\n" ++ phBytes 2) {}
+      (r9hEmptyRaw2 ++ [{ rule := "Raw", opts := [("text".toList, OptVal.str [])] }])).2.2.footnotes =
+      [phBytes 0 ++ litBytes "\n" ++ phBytes 1 ++ litBytes "\n" ++ phBytes 2] := by
+  rfl
+
+theorem refcorr10_fn_trailing_literal_keeps_placeholders :
+    (footnoteProcess (phBytes 0 ++ litBytes "\n" ++ phBytes 1 ++ litBytes "@@") {} r9hEmptyRaw2).2.2.footnotes =
+      [phBytes 0 ++ litBytes "\n" ++ phBytes 1 ++ litBytes "@@"] := by
+  rfl
+
+theorem refcorr10_fn_nbsp_flank_keeps_placeholders :
+    (footnoteProcess (phBytes 0 ++ [194, 160] ++ litBytes "\n" ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes =
+      [phBytes 0 ++ [194, 160] ++ litBytes "\n" ++ phBytes 1] := by
+  rfl
+
+theorem refcorr10_fn_formfeed_flank_drops_control :
+    (footnoteProcess (phBytes 0 ++ [12] ++ litBytes "\n" ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes =
+      [phBytes 0 ++ litBytes "\n" ++ phBytes 1] := by
+  rfl
+
+/- REFCORR10 controls: a bare LF, a double-LF run and a horizontal-only
+   remainder still fold to an empty stored body under the general rule. -/
+theorem refcorr10_fn_controls_still_fold :
+    (footnoteProcess (litBytes "\n") {} r9hEmptyRaw2).2.2.footnotes = [[]] ∧
+    (footnoteProcess (phBytes 0 ++ litBytes "\n\n" ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes = [[]] ∧
+    (footnoteProcess (litBytes "  ") {} r9hEmptyRaw2).2.2.footnotes = [[]] :=
   ⟨rfl, rfl, rfl⟩
 
 /-- A Footnoteblock with no collected notes claims nothing and

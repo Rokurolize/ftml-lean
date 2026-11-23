@@ -81,12 +81,12 @@ def main : IO Unit :=
 -- no-opener identity, LeanFtml/FormRawRules.lean.
 #print axioms LeanFtml.utf8Bytes_no_ff
 #print axioms LeanFtml.rawScan_no_at
--- R3.3 (2026-11-20): the Module family's invariants and worked
--- examples (Modulepre claims nothing; the defense rewrites a
--- nested match instead of claiming it; a plain Module654 claim),
--- LeanFtml/ModuleRules.lean.
+-- R3.3 (2026-11-20) / REFCORR10: the Module family's invariants and
+-- worked examples (Modulepre claims nothing; a nested match takes
+-- PHP's inline-opener newline insertion and renames only its leading
+-- opener; a plain Module654 claim), LeanFtml/ModuleRules.lean.
 #print axioms LeanFtml.modulepreRule_tokens
-#print axioms LeanFtml.moduleMatch_defense_example
+#print axioms LeanFtml.moduleMatch_inline_defense_example
 #print axioms LeanFtml.module654Match_claim_example
 -- R3.4 (2026-11-21): the NEXT family's invariants and worked
 -- examples (Iftags claims nothing and its gate on a kept and a

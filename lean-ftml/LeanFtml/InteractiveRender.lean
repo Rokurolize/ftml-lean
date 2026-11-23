@@ -1158,6 +1158,19 @@ theorem div_start_placeholder_id_cleared :
       ("type".toList, OptVal.str "start".toList)] =
     litBytes "<div id=\"\">" := rfl
 
+/-- REFCORR10 general rule: the render clear arm is uniform over every
+    0xFF-bearing value, so an authored u- prefix in the id body changes
+    nothing at render time. isolateId now retains the u--prefixed
+    placeholder bytes, and this closed reduction pins the live bytes of
+    C-R5C-R1-1 / C-R5C-S1-1. The placeholder-free bare u- shell stays
+    pinned verbatim by cov_div_id_shell_live and
+    div_start_placeholder_attrs_cleared. -/
+theorem div_start_ph_id_u_prefix_cleared :
+    renderDiv [("args".toList, OptVal.map
+        [("id".toList, OptVal.bytes [117, 45, 0xFF, 48, 0xFF, 120, 0xFF, 49, 0xFF])]),
+      ("type".toList, OptVal.str "start".toList)] =
+    litBytes "<div id=\"\">" := rfl
+
 /-- `Div` `end`. -/
 theorem div_end :
     renderDiv [("type".toList, OptVal.str "end".toList)] =

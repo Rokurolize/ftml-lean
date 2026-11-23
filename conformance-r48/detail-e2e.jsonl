@@ -170,7 +170,7 @@
 {"id": "gallery-ga-21", "verdict": "PASS"}
 {"id": "gallery-ga-22", "verdict": "PASS"}
 {"id": "gallery-ga-23", "verdict": "PASS"}
-{"id": "gallery-ga-24", "verdict": "EXCLUDED", "unmirrored": ["BatchTokenIdCounter"], "missingKeys": [], "counter_note": "PHP batch token-id placeholder vs Lean case-local token id", "expected": "b'<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//\\xff6002\\xffx\\xff6003\\xff\" ><img src=\"/local--resized-images//\\xff6002\\xffx\\xff6003\\xff/thumbnail.jpg\" alt=\"\"/></a></td></tr></table></div></div>'", "got": "b'<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//\\xff0\\xffx\\xff1\\xff\" ><img src=\"/local--resized-images//\\xff0\\xffx\\xff1\\xff/thumbnail.jpg\" alt=\"\"/></a></td></tr></table></div></div>'"}
+{"id": "gallery-ga-24", "verdict": "EXCLUDED", "unmirrored": ["BatchTokenIdCounter"], "missingKeys": [], "counter_note": "PHP batch token-id placeholder vs Lean case-local token id", "expected": "b'<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//\\xff6001\\xffx\\xff6002\\xff\" ><img src=\"/local--resized-images//\\xff6001\\xffx\\xff6002\\xff/thumbnail.jpg\" alt=\"\"/></a></td></tr></table></div></div>'", "got": "b'<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//\\xff0\\xffx\\xff1\\xff\" ><img src=\"/local--resized-images//\\xff0\\xffx\\xff1\\xff/thumbnail.jpg\" alt=\"\"/></a></td></tr></table></div></div>'"}
 {"id": "gallery-ga-25", "verdict": "PASS"}
 {"id": "gallery-ga-26", "verdict": "PASS"}
 {"id": "gallery-ga-27", "verdict": "PASS"}
@@ -549,7 +549,7 @@
 {"id": "modulex-x-close-mod-tag", "verdict": "PASS"}
 {"id": "modulex-x-close-stray-654", "verdict": "PASS"}
 {"id": "modulex-x-known-654-body-css", "verdict": "PASS"}
-{"id": "modulex-x-known-mod-body-654", "verdict": "EXCLUDED", "unmirrored": ["BatchTokenIdCounter"], "missingKeys": [], "counter_note": "PHP batch token-id placeholder vs Lean case-local token id", "expected": "b'\\xc3\\xbemodule \"CSS\" +module_body%3D%22%25FF3587%25FF%22 \\xc3\\xbe'", "got": "b'\\xc3\\xbemodule \"CSS\" +module_body%3D%22%25FF0%25FF%22 \\xc3\\xbe'"}
+{"id": "modulex-x-known-mod-body-654", "verdict": "EXCLUDED", "unmirrored": ["BatchTokenIdCounter"], "missingKeys": [], "counter_note": "PHP batch token-id placeholder vs Lean case-local token id", "expected": "b'\\xc3\\xbemodule \"CSS\" +module_body%3D%22%25FF3586%25FF%22 \\xc3\\xbe'", "got": "b'\\xc3\\xbemodule \"CSS\" +module_body%3D%22%25FF0%25FF%22 \\xc3\\xbe'"}
 {"id": "modulex-x-midline-654", "verdict": "PASS"}
 {"id": "modulex-x-midline-mod", "verdict": "PASS"}
 {"id": "modulex-x-mod-attr", "verdict": "PASS"}

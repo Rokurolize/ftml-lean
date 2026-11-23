@@ -372,17 +372,19 @@ def advKeyOk (k : List Nat) : Bool :=
       (97 ≤ b && b ≤ 122) && rest.all (fun x =>
         (97 ≤ x && x ≤ 122) || (48 ≤ x && x ≤ 57) || x == 45)
 
-/-- REFCORR9 C-R5B-P3-2: after the REFCORR8 fold, live admits `_` in a
-    data-* key while the general block-head grammar still rejects it. This
-    is `^data-[a-z0-9_-]*$` on the folded key, byte for byte. The `data-`
-    prefix must already be lower case, so an upper-case `DATA-` prefix never
-    reaches this gate and is still dropped by `advKeyOk`. Leaving `advKeyOk`
-    itself unchanged preserves the CoverageTable key-shape pin. -/
+/-- REFCORR9 C-R5B-P3-2 admitted `_` in a data-* key; REFCORR10 generalizes
+    the folded suffix to the live-observed class `^data-[a-z0-9._-]*$`:
+    lower-case letters (97..122), digits (48..57), underscore (95), hyphen
+    (45) and dot (46). This is the union of the cached live key shapes foo,
+    9foo, foo_, foo_bar-baz and foo.bar (C-R5C-P3-1). The `data-` prefix must
+    already be lower case, so an upper-case `DATA-` prefix never reaches this
+    gate and is still dropped by `advKeyOk`. Leaving `advKeyOk` itself
+    unchanged preserves the CoverageTable key-shape pin. -/
 def advDataKeyOk (k : List Nat) : Bool :=
   let p := litBytes "data-"
   p.isPrefixOf k &&
     (k.drop p.length).all (fun x =>
-      (97 ≤ x && x ≤ 122) || (48 ≤ x && x ≤ 57) || x == 45 || x == 95)
+      (97 ≤ x && x ≤ 122) || (48 ≤ x && x ≤ 57) || x == 45 || x == 95 || x == 46)
 
 /-- Which key grammar applies: the relaxed data-* one only to an already
     lower-case `data-` prefix, otherwise the settled general one. -/
@@ -993,8 +995,13 @@ theorem adv_key_ok_underscore_still_false :
 theorem adv_attr_step_upper_prefix_underscore_dropped :
     advAttrStep "table" [] (litBytes "DATA-Foo_Bar", litBytes "x") = [] := rfl
 
-theorem adv_attr_step_dot_data_dropped :
-    advAttrStep "table" [] (litBytes "data-foo.bar", litBytes "x") = [] := rfl
+/-- REFCORR10 flip of the former adv_attr_step_dot_data_dropped: the dot is
+    live-observed in a data-* key (C-R5C-P3-1), so the folded dotted key is
+    now admitted; the general advKeyOk class and the DATA- prefix drop are
+    unchanged. -/
+theorem adv_attr_step_dot_data_kept :
+    advAttrStep "table" [] (litBytes "data-Foo.Bar", litBytes "UB") =
+      [(litBytes "data-foo.bar", litBytes "UB")] := rfl
 
 /-- REFCORR3 C-R45-2 / C-R45-3: `align` and `aria-*` are not safe
 advanced-table attributes on live. -/

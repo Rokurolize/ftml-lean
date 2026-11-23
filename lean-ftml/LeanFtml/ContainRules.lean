@@ -507,29 +507,21 @@ where
 /-- Div's id isolation: a per-id isolation so one page's
     user-supplied id cannot collide with the wiki's own
     interface ids. The empty value isolates to the empty
-    string (the caller then omits the attribute). A value
-    that is not valid UTF-8 (in the model: one carrying a
-    placeholder byte) makes the reference's /u replacement
-    return null: the result here is `none` for that case
-    when the value starts with `u-` (the caller records a
-    null, which the process's own empty-value unset then
-    always removes before any claim). REFCORR9 C-R5B-R1-1:
-    for a placeholder-bearing value that does not start
-    with `u-`, the placeholder bytes are retained verbatim
-    instead of collapsing to the bare prefix, so the
-    render clear arm can clear a placeholder-consumed id
-    to `id=""` on live while a whitespace-only authored id
-    still keeps the bare `u-` shell (R5R1-D1). A valid value is trimmed, its
-    whitespace runs collapsed to single spaces; an empty
-    collapse yields the bare prefix, a value already
-    starting with `u-` yields the collapse, and any other
-    yields the prefix, a space when the raw value led with
-    whitespace, and the collapse. -/
+    string (the caller then omits the attribute). REFCORR10
+    general rule: any authored id body carrying a 0xFF token
+    placeholder is retained verbatim, whether or not it starts
+    with `u-`, so the render's single 0xFF clear arm emits
+    `id=""` with the key kept (C-R5C-R1-1, C-R5C-S1-1). The
+    former u-prefixed carve-out made the /u replacement return
+    null and the caller drop the id, contradicting live. A
+    placeholder-free valid value is trimmed, its whitespace
+    runs collapsed to single spaces; an empty collapse yields
+    the bare prefix, a value already starting with `u-` yields
+    the collapse, and any other yields the prefix, a space when
+    the raw value led with whitespace, and the collapse. -/
 def isolateId (v : List Nat) : Option (List Nat) :=
   if v.isEmpty then some []
-  else if v.contains 255 then
-    if (litBytes "u-").isPrefixOf v then none
-    else some v
+  else if v.contains 255 then some v
   else
     let cs := utf8Decode v
     let leading := match cs with
@@ -1350,6 +1342,17 @@ theorem isolateId_placeholder_id_preserved :
     isolateId [255, 48, 255, 120, 255, 49, 255] =
         some [255, 48, 255, 120, 255, 49, 255] ∧
     isolateId (litBytes "   ") = some (litBytes "u-") := ⟨rfl, rfl⟩
+
+/-- REFCORR10 general rule: the same 0xFF retention holds when the authored
+    id body already starts with `u-` (C-R5C-R1-1, C-R5C-S1-1). The retained
+    bytes carry a placeholder, so the unchanged render clear arm emits an
+    empty value with the key kept, `<div id="">`; a literal `u-` with no
+    placeholder still isolates to the bare shell and renders `id="u-"`. -/
+theorem isolateId_placeholder_u_prefix_preserved :
+    isolateId ([117, 45] ++ [255, 48, 255, 120, 255, 49, 255]) =
+        some ([117, 45] ++ [255, 48, 255, 120, 255, 49, 255]) ∧
+    isolateId (litBytes "u-") = some (litBytes "u-") ∧
+    isolateId (litBytes "   ") = some (litBytes "u-") := ⟨rfl, rfl, rfl⟩
 
 /-- A scored div with a blank line in its body: the
     leading newline is emitted once and the blank-line

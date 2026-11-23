@@ -1001,26 +1001,52 @@ def transliterate (bs : List Nat) : List Nat :=
       | some (_, v) => v.map Char.toNat
       | none => [32])
 
-/-- REFCORR9: the exact byte prefix tolerated before a leading `_default:`
-    category on live. REFCORR8 established 0x09 tab, 0x0B vertical tab, 0x20
-    space, the two-byte UTF-8 sequence C2 A0 (U+00A0) and the three-byte
-    E3 80 80 (U+3000). REFCORR9 adds exactly three more live-cached lead
-    shapes: 0x0C form feed (C-R5B-P2-1), the three-byte UTF-8 sequence
-    E2 80 A8 (U+2028 line separator, C-R5B-P2-2) and the three-byte UTF-8
-    sequence EF BB BF (U+FEFF BOM, C-R5B-P2-3). No other Unicode whitespace
-    is admitted. Multi-byte alternatives are consumed only as whole
-    sequences, matching the byte-oriented PHP pattern; no other byte is
-    skipped. The signature and call wire shape are unchanged. -/
-def skipDefaultWsBytes : List Nat → List Nat
-  | 9 :: t => skipDefaultWsBytes t
-  | 11 :: t => skipDefaultWsBytes t
-  | 12 :: t => skipDefaultWsBytes t
-  | 32 :: t => skipDefaultWsBytes t
-  | 0xC2 :: 0xA0 :: t => skipDefaultWsBytes t
-  | 0xE3 :: 0x80 :: 0x80 :: t => skipDefaultWsBytes t
-  | 0xE2 :: 0x80 :: 0xA8 :: t => skipDefaultWsBytes t
-  | 0xEF :: 0xBB :: 0xBF :: t => skipDefaultWsBytes t
-  | t => t
+/-- REFCORR10: the single general class of material tolerated before a
+    leading `_default:` category on live. It is the Unicode White_Space
+    property {U+0009..U+000D, U+0020, U+0085, U+00A0, U+1680, U+2000..U+200A,
+    U+2028, U+2029, U+202F, U+205F, U+3000} plus the U+FEFF BOM and the `*`
+    new-tab marker. Every byte shape cached live (09, 0B, 0C, 20, C2 A0,
+    E3 80 80, E2 80 A8, E2 80 A9, E2 80 83, E2 80 89, E2 80 AF, EF BB BF
+    and 2A) is a member; byte-zero NUL is not. The unevidenced White_Space
+    members are admitted only by the principled Unicode property, which is
+    the recorded limitation of adopting a general rule over per-byte patches. -/
+def isDefaultLeadCp (cp : Nat) : Bool :=
+  cp == 0x09 || cp == 0x0A || cp == 0x0B || cp == 0x0C || cp == 0x0D ||
+  cp == 0x20 || cp == 0x2A || cp == 0x85 || cp == 0xA0 || cp == 0x1680 ||
+  (0x2000 <= cp && cp <= 0x200A) || cp == 0x2028 || cp == 0x2029 ||
+  cp == 0x202F || cp == 0x205F || cp == 0x3000 || cp == 0xFEFF
+
+/-- The code point beginning a byte list and the number of bytes it occupies,
+    using the same UTF-8 decoding as `utf8Decode`; a byte that does not open
+    a valid sequence is its own code point of length one. -/
+def leadCpLen : List Nat → Nat × Nat
+  | [] => (0, 0)
+  | b :: rest =>
+      if b < 0x80 then (b, 1)
+      else if 0xC2 <= b && b < 0xE0 then
+        match rest with
+        | b2 :: _ =>
+            if isContByte b2 then ((b % 32) * 64 + (b2 % 64), 2) else (b, 1)
+        | [] => (b, 1)
+      else if 0xE0 <= b && b < 0xF0 then
+        match rest with
+        | b2 :: b3 :: _ =>
+            if isContByte b2 && isContByte b3 then
+              ((b % 16) * 4096 + (b2 % 64) * 64 + (b3 % 64), 3)
+            else (b, 1)
+        | _ => (b, 1)
+      else (b, 1)
+
+/-- Consume the maximal run of general lead code points. `fuel` is the input
+    length; every admitted step drops at least one byte, so the recursion is
+    structurally decreasing and needs no trust axiom. -/
+def skipDefaultLeadFuel : Nat → List Nat → List Nat
+  | 0, bs => bs
+  | fuel + 1, bs =>
+      let (cp, n) := leadCpLen bs
+      if n > 0 && isDefaultLeadCp cp then skipDefaultLeadFuel fuel (bs.drop n) else bs
+
+def skipDefaultLead (bs : List Nat) : List Nat := skipDefaultLeadFuel bs.length bs
 
 /-- process() for a Freelink match, transcribed step for step
     from the corrected rule file: the literal returns (the match
@@ -1046,13 +1072,19 @@ def freelinkProcess (full raw labelRaw : List Nat)
   else if 1 < (raw.filter (· == 35)).length &&
       (findSub (litBytes "/#/") raw).isNone then (full, toks)
   else
-    let (raw1, anchor, extra) : List Nat × List Nat × List Nat :=
+    -- REFCORR10-HASHROUTE: the no-label display text is the authored target
+    -- up to the route or anchor marker. The `/#/` peel takes raw.take i and
+    -- so drops the slash at i; textRaw takes i+1 and keeps it. The plain
+    -- anchor arm keeps its pre-`#` text source and the no-anchor arm keeps
+    -- the whole target, so only the hash-route auto label changes. raw1
+    -- still drives the slug and extra still drives the href, as in PHP.
+    let (raw1, anchor, extra, textRaw) : List Nat × List Nat × List Nat × List Nat :=
       match findSub (litBytes "/#/") raw with
-      | some i => (raw.take i, [], [35, 47] ++ raw.drop (i + 3))
+      | some i => (raw.take i, [], [35, 47] ++ raw.drop (i + 3), raw.take (i + 1))
       | none =>
           match findSub [35] raw with
-          | some i => (raw.take i, rtrimBytes (raw.drop i), [])
-          | none => (raw, [], [])
+          | some i => (raw.take i, rtrimBytes (raw.drop i), [], raw.take i)
+          | none => (raw, [], [], raw)
     let leadingSpace :=
       raw1.head? == some 32 || raw1.head? == some 9
     let trimmed0 := trimBytes raw1
@@ -1080,20 +1112,16 @@ def freelinkProcess (full raw labelRaw : List Nat)
     else
       -- REFCORR5 Batch 5: strip _default: before transliteration so the
       -- ASCII prefix is not corrupted into _: by the table fallback.
-      -- REFCORR7: live tolerates leading space/tab before the category, so
-      -- skip that run before the anchored case-insensitive strip. REFCORR8
-      -- widens the skipped run to exactly the live-cached whitespace class
-      -- (09, 0B, 20, C2 A0, E3 80 80) via skipDefaultWsBytes. REFCORR9 adds
-      -- the three further live-cached lead shapes 0C, E2 80 A8 and EF BB BF
-      -- to that same class, and consumes a leading star marker first under
-      -- the identical no-leading-space guard used for the URL branch (the
-      -- star is a marker, not whitespace: C-R5B-P2-4). The anchored strip,
-      -- option map and returned token shape are unchanged. A target with no
-      -- leading whitespace takes the unchanged nine-byte bare path, and a
-      -- non-matching prefix keeps raw1 exactly as before.
-      let starLead := !leadingSpace && raw1.head? == some 42
-      let noStar := if starLead then raw1.tail else raw1
-      let afterWs := skipDefaultWsBytes noStar
+      -- REFCORR10 replaces the enumerated REFCORR7/8/9 lead bytes and the
+      -- separate single-star ordering rule with one general predicate:
+      -- skip the maximal run of Unicode White_Space, U+FEFF BOM and `*`
+      -- markers before the anchored case-insensitive `_default:` strip.
+      -- The star multiplicity confirmed by C-R5C-P2-7 and the star-before-
+      -- space shape r2c-08 fall out of that run. The anchored strip, option
+      -- map and returned token shape are unchanged. A target with no lead
+      -- material takes the unchanged nine-byte bare path, and a non-matching
+      -- prefix keeps raw1 exactly as before.
+      let afterWs := skipDefaultLead raw1
       let stripped := match matchLitCI (litBytes "_default:") afterWs with
         | some rest => rest
         | none => raw1
@@ -1103,11 +1131,11 @@ def freelinkProcess (full raw labelRaw : List Nat)
       let (text, tft) : List Nat × OptVal :=
         if labelRaw.isEmpty then
           let t1 :=
-            if raw1.head? != some 58 && raw1.head? != some 47 then
-              match findSub [58] raw1 with
-              | some i => raw1.drop (i + 1)
-              | none => raw1
-            else raw1
+            if textRaw.head? != some 58 && textRaw.head? != some 47 then
+              match findSub [58] textRaw with
+              | some i => textRaw.drop (i + 1)
+              | none => textRaw
+            else textRaw
           (trimBytes t1, OptVal.null)
         else if trimBytes labelRaw == [124] then
           ([124], OptVal.bool true)

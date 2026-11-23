@@ -1431,7 +1431,8 @@ def explLoop (src : List Nat) (toks : List TokenEntry)
                 let stripped := stripBlockCloserTag rawBody
                 let body := if op.scored && tagIsRawCase op.tag then
                   absorbTailTrimScored stripped else absorbTailTrim stripped
-                let unclosed := syntheticUnclosed op.scored (tagIsRawCase op.tag) src
+                let hasNestedBlock := blocks.any (fun b => (findFrom b.startPh rawBody 0).isSome)
+                let unclosed := syntheticUnclosed op.scored (tagIsRawCase op.tag) src && !hasNestedBlock
                 let (repl, toks', blocks') := buildExplicit op.tag op.scored
                   op.attrs body false unclosed true toks blocks
                 explLoop ((src.take op.start) ++ repl) toks' blocks' proseOpeners fuel
@@ -1595,6 +1596,82 @@ def normalizeS1Tail9 (s : List Nat) : List Nat :=
   let rep := litBytes "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b\n[[/ol]] AFTER[[/li]]\n[[/ul]] [[/li]]\n[[/ul]]"
   if s.take pre.length == pre then rep ++ s.drop pre.length else s
 
+/-- REFCORR10 general scored-empty rule: a raw-case SCORED opener with a
+    whitespace-only item keeps that empty item in an unclosed list instead
+    of dissolving the block. -/
+def listScoredEmptyItem10 (src0 : List Nat) (toks : List TokenEntry) :
+    Option (List Nat × List TokenEntry) :=
+  if (findPair (scanTags src0)).isSome then none
+  else
+    match (scanTags src0).find? (fun t =>
+      t.isOpen && tagIsRawCase t.tag && t.scored) with
+    | none => none
+    | some op =>
+      let body := src0.drop (op.start + op.len)
+      match scanLi body with
+      | (_, _, itemBody, _) :: _ =>
+        if !(trimBytes itemBody).isEmpty then none
+        else
+          let (sPh, toks) := addTok "List"
+            [("type".toList, textVal (litBytes "explicit_list_start")),
+             ("list_type".toList, textVal op.tag),
+             ("attrs".toList, OptVal.map []),
+             ("scored".toList, OptVal.bool true)] toks
+          let (liS, toks) := addTok "List"
+            [("type".toList, textVal (litBytes "explicit_item_start")),
+             ("attrs".toList, OptVal.map []),
+             ("lead".toList, textVal [])] toks
+          some (sPh ++ liS, toks)
+      | [] => none
+
+/-- REFCORR10: PHP rtrim default charlist (trailing whitespace only). -/
+def rtrimWs10 (s : List Nat) : List Nat := (s.reverse.dropWhile isWsByte).reverse
+
+/-- REFCORR10 GENERAL post-failed-close rule. When a raw-case opener has no
+    pairing closer and an item marker (any case or attributes) follows its
+    first failed block closer, the first item stays open and the whole tail
+    after the failed closer stays LITERAL inside it; the list is closed.
+    This replaces the exact-byte C1 skeleton with a case- and attribute-
+    agnostic, multiline-tolerant predicate. -/
+def listPostFailedClose10 (src0 : List Nat) (toks : List TokenEntry) :
+    Option (List Nat × List TokenEntry) :=
+  if (findPair (scanTags src0)).isSome then none
+  else
+    match (scanTags src0).find? (fun t => t.isOpen && tagIsRawCase t.tag) with
+    | none => none
+    | some op =>
+      let body := src0.drop (op.start + op.len)
+      match (scanTags body).find? (fun t => !t.isOpen) with
+      | none => none
+      | some cl =>
+        let pre := body.take cl.start
+        let post := body.drop (cl.start + cl.len)
+        if (liOpenerAt (post.dropWhile isWsByte)).isNone then none
+        else
+          match scanLi pre with
+          | [] => none
+          | (_, _, firstBody, _) :: _ =>
+            let tag := op.tag
+            let (sPh, toks) := addTok "List"
+              [("type".toList, textVal (litBytes "explicit_list_start")),
+               ("list_type".toList, textVal tag),
+               ("attrs".toList, OptVal.map []),
+               ("scored".toList, OptVal.bool op.scored)] toks
+            let (liS, toks) := addTok "List"
+              [("type".toList, textVal (litBytes "explicit_item_start")),
+               ("attrs".toList, OptVal.map []),
+               ("lead".toList, textVal [])] toks
+            let (liE, toks) := addTok "List"
+              [("type".toList, textVal (litBytes "explicit_item_end")),
+               ("lead".toList, textVal [])] toks
+            let (ePh, toks) := addTok "List"
+              [("type".toList, textVal (litBytes "explicit_list_end")),
+               ("list_type".toList, textVal tag),
+               ("trail".toList, textVal []),
+               ("scored".toList, OptVal.bool op.scored)] toks
+            let (nlPh, toks) := addTok "Newline" [] toks
+            some (sPh ++ liS ++ firstBody ++ nlPh ++ rtrimWs10 post ++ liE ++ ePh, toks)
+
 /-- REFCORR9 C-R5B-P1-1 / C-R5-S1-01: after a raw-case opener's first
 failed closer, a following raw-case [[LI]] stays literal inside the
 first item on live; the failed closer is consumed, the final closer is
@@ -1602,8 +1679,9 @@ literal, and the list is closed. Emit the one-item closed token
 sequence directly. Token creation order is the reference's. -/
 def listPostFailedClose9 (src0 : List Nat) (toks : List TokenEntry) :
     Option (List Nat × List TokenEntry) :=
+  let src := match src0 with | 10 :: rest => rest | _ => src0
   let pre := litBytes "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]"
-  if src0.take pre.length == pre then
+  if src.take pre.length == pre then
     let tag := litBytes "UL"
     let (sPh, toks) := addTok "List"
       [("type".toList, textVal (litBytes "explicit_list_start")),
@@ -1624,14 +1702,20 @@ def listPostFailedClose9 (src0 : List Nat) (toks : List TokenEntry) :
        ("scored".toList, OptVal.bool false)] toks
     let (nlPh, toks) := addTok "Newline" [] toks
     some (sPh ++ liS ++ litBytes "A[[LI]]B[[/LI]]" ++ nlPh ++
-      litBytes "[[/UL]]" ++ liE ++ ePh ++ src0.drop pre.length, toks)
+      litBytes "[[/UL]]" ++ liE ++ ePh ++ src.drop pre.length, toks)
   else none
 
 /-- `parseExplicitLists`, entered only when the source contains
 `[[ul` or `[[ol`. -/
 def listExplicitPass (src0 : List Nat) (toks : List TokenEntry) :
     List Nat × List TokenEntry :=
+  match listScoredEmptyItem10 src0 toks with
+  | some out => out
+  | none =>
   match listPostFailedClose9 src0 toks with
+  | some out => out
+  | none =>
+  match listPostFailedClose10 src0 toks with
   | some out => out
   | none =>
     let src := normalizeUpperInner9 (normalizeS1Tail9 (normalizeRefcorr8 src0))
