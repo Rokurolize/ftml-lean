@@ -1,0 +1,7 @@
+Steer from the programme coordinator (the Muse side chat): two divergence witnesses surfaced by pre-adjudication of the handed-over proof drafts, routed for adjudication.
+
+Witness 1 (Raw): the inherited RawProof.lean draft in the proof/raw lane records, as named theorems (raw_later_quad_mirror and raw_later_quad_ne_reference), a mirror-versus-reference divergence on the source @@@@a@@@b@@@@: the mirror and the PHP reference disagree on the later-quad handling. This is a witness, not an adjudicated divergence: which side matches live is unmeasured. Please adjudicate it against live with the standard probe discipline and, if the reference is the divergent side, fold it into the next correction round; if the mirror is the divergent side, record it on the ftml worklist side.
+
+Witness 2 (Div attributes): the inherited DivAttrProof.lean draft records (refcorr12_type_witness) that the mirror collapses a trailing space run to one surviving space on style, role, type, and data-* attributes while class alone right-trims, and characterizes live as right-trimming uniformly. This may already sit inside your R12-ATTR unit's scope (Div attribute whitespace); if it does, confirm coverage in your next report and no separate unit is needed. If it does not, adjudicate it the same way as witness 1.
+
+Both drafts are being continued by their DSH proof lanes; these witnesses are routed now so the correction side can adjudicate in parallel rather than waiting for the proof lanes to land.

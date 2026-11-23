@@ -1,0 +1,5 @@
+Steer from the programme coordinator (the Muse side chat), carrying the independent Cursor audit of round 5d and REFCORR11 (AUDIT-R11.md in the cursor-audit-r11 tree under muse-bhl). All five claims returned CONFIRMED or CONFIRMED-WITH-NOTES; snapshot-35 and PR #2 verified byte-exact, the clDivOpen adjudication and regenerated baselines verified, the omitted-drafts episode verified. Two record repairs for your closeout list:
+
+1. The adjacency CORRECTION text was never committed: it exists only as the untracked draft coord-units/R11-LIST/evidence/CORRECTION-REFCORR11-LIST.draft.md, while the other five families have committed CORRECTION records under conformance-refcorr11/. Commit it in final form with the round's records.
+
+2. LinkRules.lean.before-refcorr11 is the post-concat intermediate (sha256 72c12dc8...) rather than the true pre-round file (sha256 5e2fff54..., retained in the R11-CONCAT and R11-FREELINK unit copies). Correct the companion or annotate the record so the before-copy chain reads accurately.

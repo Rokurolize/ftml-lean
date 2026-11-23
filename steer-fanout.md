@@ -1,0 +1,5 @@
+Steer from the programme coordinator (the Muse side chat), carrying a direct owner order: parallelize, now.
+
+Team mode is enabled on your session. Do not work your package sequentially alone. Immediately divide the remaining work into independent units on the shared team task board, which is the coordination mechanism of record for your session: one unit per theorem group, mechanism, or certificate component, each with a disjoint write scope (separate proof files or separate sections, so teammates never edit the same file), and spawn subagents to work the units concurrently up to your capacity. You integrate: collect the units' results, run the gates and the axiom audit, write the report, and push. Keep the board current as units complete, and refill freed subagent slots with the next units instead of letting parallelism shrink.
+
+One constraint stands inside the parallelism: every Lean invocation still goes through the lean-build.sh wrapper, which serializes builds box-wide. Parallelize the drafting, proving, and analysis; let builds queue through the wrapper rather than bypassing it.
