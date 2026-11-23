@@ -125,8 +125,8 @@ def refPatternsOf (r : RuleId) : List (List Nat) :=
 /-- The extracted primary patterns of a rule, parsed by PcreCore.
     Patterns PcreCore cannot parse are dropped; the conformance
     harness enumerates them (gate G2 evidence). -/
-def refParsed (r : RuleId) : List PcreParsed :=
-  (refPatternsOf r).filterMap parsePcreBytes
+def refParsed (r : RuleId) : List PcreCore.PcreParsed :=
+  (refPatternsOf r).filterMap PcreCore.parsePcreBytes
 
 /-- Splice placeholders for one pattern's matches into `bs`.
     Matches are non-overlapping and ascending (PcreCore's
@@ -153,7 +153,7 @@ def refWork (r : RuleId) (st : ParseState) :
   (refParsed r).foldl (fun acc p =>
     let (bs', claims) :=
       spliceMatches acc.1 (st.tokens.length + acc.2.length)
-        (pregMatchAll p acc.1)
+        (PcreCore.pregMatchAll p acc.1)
     (bs', acc.2 ++ claims)) (byteForm st.work, [])
 
 /-- The concrete reference application of one parse rule.  With no

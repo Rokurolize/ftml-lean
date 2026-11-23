@@ -69,6 +69,12 @@
 
 namespace LeanFtml
 
+-- The certified engine lives in its own sub-namespace: the F1-era
+-- `LeanFtml.Pcre` stub declares the same interface names and is
+-- still imported elsewhere in the library, so the two generations
+-- can only coexist namespaced apart.
+namespace PcreCore
+
 /-! ## Byte predicates -/
 
 def pcreIsWsByte (b : Nat) : Bool :=
@@ -724,5 +730,7 @@ theorem runMatch_eps_step (fl : Flags) (whole : RE) (subj : List Nat)
 theorem parseQuant_lazy_consumed (bs : List Nat) :
     (parseQuant (63 :: 63 :: bs)).2.2 = true := by
   simp [parseQuant, lazyMark]
+
+end PcreCore
 
 end LeanFtml

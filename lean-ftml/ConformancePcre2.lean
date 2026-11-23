@@ -16,6 +16,7 @@
 import LeanFtml.PcreCore
 
 open LeanFtml
+open LeanFtml.PcreCore
 
 def findFirst (p : PcreParsed) (subj : List Nat) : Option (Nat × MResult) :=
   let candidates : List (Nat × MResult) :=

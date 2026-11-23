@@ -36,6 +36,8 @@ set_option experimental.intrinsic true
 
 namespace LeanFtml
 
+open PcreCore
+
 /-- Fuel-indexed pure search: the first position at or after `pos`,
     trying at most `fuel` positions, whose match succeeds. -/
 def searchRef (p : PcreParsed) (subj : List Nat) (pos : Nat) :
