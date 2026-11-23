@@ -7,7 +7,7 @@
   bundle instantiation, for the Delimiter rule.
 
   What is proved here:
-  1. runRulesRef, the reference-side counterpart of Pipeline.runRules, and
+  1. runRulesRefW1, the reference-side counterpart of Pipeline.runRules, and
      the generic composition theorem runRules_eq_ref_of_bundles: any list
      of rules carrying RuleProofBundles relative to one reference function
      composes, kernel-checked, including the fatal-skip branch (a fatal
@@ -37,6 +37,17 @@
   documents the reference Delimiter regex (a single literal 0xFF byte)
   provably never matches, so the reference arm is the identity.
 
+  Integration note (after the F2 landing): the runner in item 1 was
+  originally named runRulesRef. F2's LeanFtml.RefApply later landed
+  the real extracted-reference runner under that same name, and the
+  two definitions collided at the LeanFtml namespace level once both
+  modules were imported into the library. The wave-1 scaffold runner
+  is therefore renamed runRulesRefW1, matching its scaffold reference
+  applyRuleRefW1; only the constant's name changed, and no theorem
+  statement's meaning. Retiring the scaffold (re-instantiating the
+  Delimiter bundle against F2's extracted applyRuleRef) remains a
+  named remainder and is not done by this rename.
+
   No new axioms, no sorry, no native_decide, no bv_decide; all theorem
   axioms are within [propext, Classical.choice, Quot.sound].
 -/
@@ -52,7 +63,7 @@ namespace LeanFtml
 /-- The reference-side runner: the exact counterpart of Pipeline.runRules
     with the reference function in place of applyRule, including the same
     fatal skip, so the composition theorem compares like with like. -/
-def runRulesRef (applyRuleRef : RuleId → ParseState → ParseState)
+def runRulesRefW1 (applyRuleRef : RuleId → ParseState → ParseState)
     (rules : List RuleId) (st : ParseState) : ParseState :=
   rules.foldl (fun s r => if s.fatal then s else applyRuleRef r s) st
 
@@ -66,7 +77,7 @@ theorem runRules_eq_ref_of_bundles (applyRuleRef : RuleId → ParseState → Par
     (rules : List RuleId) :
     (∀ r ∈ rules, RuleProofBundle applyRuleRef r) →
     ∀ (st : ParseState), WFState st →
-    runRules rules st = runRulesRef applyRuleRef rules st := by
+    runRules rules st = runRulesRefW1 applyRuleRef rules st := by
   induction rules with
   | nil => intro _ st _; rfl
   | cons r rs ih =>
@@ -78,9 +89,9 @@ theorem runRules_eq_ref_of_bundles (applyRuleRef : RuleId → ParseState → Par
       | true =>
           have e1 : runRules (r :: rs) st = runRules rs st := by
             simp [runRules, hf]
-          have e2 : runRulesRef applyRuleRef (r :: rs) st
-              = runRulesRef applyRuleRef rs st := by
-            simp [runRulesRef, hf]
+          have e2 : runRulesRefW1 applyRuleRef (r :: rs) st
+              = runRulesRefW1 applyRuleRef rs st := by
+            simp [runRulesRefW1, hf]
           rw [e1, e2]
           exact ih hsub st hwf
       | false =>
@@ -89,11 +100,11 @@ theorem runRules_eq_ref_of_bundles (applyRuleRef : RuleId → ParseState → Par
           have step := ih hsub (applyRule r st) hwf'
           have e1 : runRules (r :: rs) st = runRules rs (applyRule r st) := by
             simp [runRules, hf]
-          have e2 : runRulesRef applyRuleRef (r :: rs) st
-              = runRulesRef applyRuleRef rs (applyRule r st) := by
-            have e2' : runRulesRef applyRuleRef (r :: rs) st
-                = runRulesRef applyRuleRef rs (applyRuleRef r st) := by
-              simp [runRulesRef, hf]
+          have e2 : runRulesRefW1 applyRuleRef (r :: rs) st
+              = runRulesRefW1 applyRuleRef rs (applyRule r st) := by
+            have e2' : runRulesRefW1 applyRuleRef (r :: rs) st
+                = runRulesRefW1 applyRuleRef rs (applyRuleRef r st) := by
+              simp [runRulesRefW1, hf]
             rwa [← heq] at e2'
           rw [e1, e2]
           exact step
@@ -153,7 +164,7 @@ theorem delimiterBundleW1 : RuleProofBundle applyRuleRefW1 .delimiter :=
 /-- First instantiation of the generic composition theorem: the singleton
     pipeline [.delimiter] runs identically on mirror and reference. -/
 theorem runRules_delimiter_eq_ref (st : ParseState) (hwf : WFState st) :
-    runRules [.delimiter] st = runRulesRef applyRuleRefW1 [.delimiter] st :=
+    runRules [.delimiter] st = runRulesRefW1 applyRuleRefW1 [.delimiter] st :=
   runRules_eq_ref_of_bundles applyRuleRefW1 [.delimiter]
     (fun r hr => by
       have hr' : r = .delimiter := List.mem_singleton.mp hr

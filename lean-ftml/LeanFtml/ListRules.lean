@@ -722,8 +722,18 @@ def findPairOpener (stack : List TagMatch) (closeTag : List Nat) (rawClose : Boo
       else findPairOpener rest closeTag rawClose
 
 /-- The pairing walk: the first closer that has a partner pairs with
-the topmost matching opener on the stack. -/
-def findPair (tags : List TagMatch) : Option (TagMatch × TagMatch) :=
+the topmost matching opener on the stack. REFCORR16: when the
+partner is an inner opener while the outermost open list is a
+lowercase-tag list whose whole span so far holds no `[[/li]]`,
+the closer pairs with the outermost opener instead: a list
+whose span holds no complete item is a none-item on live and
+its body is literal text, so a nested opener inside it does
+not open a nested list (the colmod shape of the package 2.1
+holdout, h068). The override is same-type only, so the
+cross-type pairings of the REFCORR7/9/13 raw-case machinery
+are untouched by it. -/
+def findPair (src : List Nat) (tags : List TagMatch) :
+    Option (TagMatch × TagMatch) :=
   go tags []
 where
   go : List TagMatch → List TagMatch → Option (TagMatch × TagMatch)
@@ -733,8 +743,49 @@ where
         else
           match findPairOpener stack (lowerBytes t.tag) (tagIsRawCase t.tag) with
           | some (_, true) => go rest stack
-          | some (opener, false) => some (opener, t)
+          | some (opener, false) =>
+              match stack.getLast? with
+              | some bottom =>
+                  if bottom.start != opener.start &&
+                      !tagIsRawCase bottom.tag &&
+                      lowerBytes t.tag == bottom.tag &&
+                      !(existsLitCI (litBytes "[[/li]]")
+                        ((src.drop bottom.start).take
+                          (t.start - bottom.start))) then
+                    some (bottom, t)
+                  else some (opener, t)
+              | none => some (opener, t)
           | none => go rest stack
+
+/-- REFCORR16: the source spans of already-emitted none-item
+bodies, as (body start, body end) byte positions: from just
+after a List `explicit_none_item_start` placeholder to just
+before its matching `explicit_none_item_end` placeholder.
+Tags inside these spans are literal text and must not pair
+in later build iterations. -/
+def noneItemSpans (src : List Nat) (toks : List TokenEntry) :
+    List (Nat × Nat) :=
+  ((allPh src).foldl (fun (st : List (Nat × Nat) × Option Nat) occ =>
+    let (spans, openPos) := st
+    let (pos, key, len) := occ
+    match tokAt toks key with
+    | some e =>
+        if e.rule == "List" && tokTypeIs e "explicit_none_item_start" then
+          (spans, some (pos + len))
+        else if e.rule == "List" &&
+            tokTypeIs e "explicit_none_item_end" then
+          match openPos with
+          | some s0 => (spans ++ [(s0, pos)], none)
+          | none => (spans, openPos)
+        else (spans, openPos)
+    | none => (spans, openPos)) ([], none)).1
+
+/-- The tags eligible for pairing in the current source: the
+    full tag scan minus the tags inside none-item spans. -/
+def pairTags (src : List Nat) (toks : List TokenEntry) : List TagMatch :=
+  let nspans := noneItemSpans src toks
+  (scanTags src).filter (fun t =>
+    !(nspans.any (fun sp => sp.1 <= t.start && t.start < sp.2)))
 
 /-- `normalizeAttrValue`: strip control bytes (keeping tab, LF, CR),
 collapse whitespace runs to one space, trim spaces. REFCORR13: the dropped
@@ -1411,11 +1462,12 @@ def explLoop (src : List Nat) (toks : List TokenEntry)
     Nat → List Nat × List TokenEntry × List ExplBlock
   | 0 => (src, toks, blocks)
   | fuel + 1 =>
-      match findPair (scanTags src) with
+      let tags := pairTags src toks
+      match findPair src tags with
       | none =>
           -- REFCORR5 Batch 1: an uppercase/mixed opener with no pairing
           -- closer still enters list mode; its body runs to end of source.
-          match (scanTags src).find? (fun t =>
+          match tags.find? (fun t =>
             t.isOpen && tagIsRawCase t.tag && !(proseOpeners.contains t.start)) with
           | some op =>
               let rawBody := src.drop (op.start + op.len)
@@ -1676,7 +1728,7 @@ def normalizeNestedBoundary13 (s : List Nat) : List Nat :=
     of dissolving the block. -/
 def listScoredEmptyItem10 (src0 : List Nat) (toks : List TokenEntry) :
     Option (List Nat × List TokenEntry) :=
-  if (findPair (scanTags src0)).isSome then none
+  if (findPair src0 (pairTags src0 toks)).isSome then none
   else
     match (scanTags src0).find? (fun t =>
       t.isOpen && tagIsRawCase t.tag && t.scored) with
@@ -1876,7 +1928,7 @@ def emitFailedCloseWire12 (tag : List Nat) (scored : Bool)
     agnostic, multiline-tolerant predicate. -/
 def listPostFailedClose10 (src0 : List Nat) (toks : List TokenEntry) :
     Option (List Nat × List TokenEntry) :=
-  if (findPair (scanTags src0)).isSome then none
+  if (findPair src0 (pairTags src0 toks)).isSome then none
   else
     match (scanTags src0).find? (fun t => t.isOpen && tagIsRawCase t.tag) with
     | none => none

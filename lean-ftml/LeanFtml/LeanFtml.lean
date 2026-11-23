@@ -1,5 +1,6 @@
 import LeanFtml.Proof.Stage2
 import LeanFtml.Proof.Stage2Proof
+import LeanFtml.Proof.Stage2Conditions
 import LeanFtml.Proof.Stage2Certificate
 import LeanFtml.ModuleProof
 import LeanFtml.ModuleEnvProof

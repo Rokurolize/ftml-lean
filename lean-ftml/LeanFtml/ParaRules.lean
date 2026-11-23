@@ -393,27 +393,86 @@ def imageRule (st : ParseState) : ParseState :=
 
 /-! ## Newline -/
 
+/-- The rule name of token `n`, or the empty string when the
+    index is out of range (which the reference's table lookups
+    never produce on well-formed runs). -/
+def tokenRuleAt (toks : List TokenEntry) (n : Nat) : String :=
+  match (toks.drop n).head? with
+  | some t => t.rule
+  | none => ""
+
+/-- The skip list: lowercased rule names whose token, when it
+    opens a match, leaves the match unwrapped. The REFVAL
+    live validation (2026-11-21) added `separator` and the
+    bare `divalign` to the reference's list (the separator
+    block and the aligned div both serve without a paragraph
+    wrapper); the mirror follows. -/
+def paraSkipRules : List (List Nat) :=
+  ["blockquote", "code", "clearfloat", "heading", "horiz", "separator",
+   "deflist", "table", "tableadv", "list", "toc", "center", "tabview",
+   "div", "divalign", "divalignleft", "divalignright", "divaligncenter",
+   "divalignjustify", "collapsible", "note", "math", "module",
+   "module654", "footnoteblock", "footnoteitem", "bibliography",
+   "bibitem", "gallery", "image"].map litBytes
+
 /-- The Newline rule's scanner: at each byte, a match exactly
     when the byte is not a newline, the next byte is a newline,
     and the byte after that is not a newline (or the input
     ends); the match emits the byte and a Newline placeholder
-    and consumes the newline. -/
+    and consumes the newline. REFCORR16: a newline whose
+    preceding byte is the closing byte of a skip-list block
+    token's placeholder and whose following bytes open a
+    Tableadv token is layout, not a break (the reference's
+    table-after-table and div-end-to-table junctions), and is
+    emitted literally with no Newline claim. Placeholders are
+    consumed as units so the preceding-token test sees the
+    placeholder that ends at the newline. -/
 def newlineScan (src : List Nat) (toks : List TokenEntry) :
     List Nat × List TokenEntry :=
   go src toks (src.length + 1)
 where
+  junction (n : Nat) (after : List Nat) (toks : List TokenEntry) : Bool :=
+    paraSkipRules.contains
+        (asciiLower ((tokenRuleAt toks n).toList.map Char.toNat)) &&
+      match readPlaceholder after with
+      | some (n2, _) =>
+          asciiLower ((tokenRuleAt toks n2).toList.map Char.toNat) ==
+            litBytes "tableadv"
+      | none => false
   go : List Nat → List TokenEntry → Nat → List Nat × List TokenEntry
     | [], toks, _ => ([], toks)
     | src, toks, 0 => (src, toks)
-    | src@(b :: rest), toks, fuel + 1 =>
-        if b != 10 && rest.head? == some 10 &&
-            (rest.tail.head? != some 10) then
-          let (ph, toks1) := claimTok "Newline" [] toks
-          let (o, toks2) := go rest.tail toks1 fuel
-          (b :: (ph ++ o), toks2)
-        else
-          let (o, toks1) := go rest toks fuel
-          (b :: o, toks1)
+    | src, toks, fuel + 1 =>
+        match readPlaceholder src with
+        | some (n, rest) =>
+            -- The consumed placeholder is re-emitted byte-for-byte
+            -- (its original slice of the source), exactly as the
+            -- reference's byte-level pass leaves placeholders
+            -- untouched; only the newline decision is the rule's.
+            let origPh := src.take (src.length - rest.length)
+            if rest.head? == some 10 && (rest.tail.head? != some 10) then
+              if junction n rest.tail toks then
+                let (o, toks1) := go rest.tail toks fuel
+                (origPh ++ [10] ++ o, toks1)
+              else
+                let (ph, toks1) := claimTok "Newline" [] toks
+                let (o, toks2) := go rest.tail toks1 fuel
+                (origPh ++ ph ++ o, toks2)
+            else
+              let (o, toks1) := go rest toks fuel
+              (origPh ++ o, toks1)
+        | none =>
+            match src with
+            | [] => ([], toks)
+            | b :: rest =>
+                if b != 10 && rest.head? == some 10 &&
+                    (rest.tail.head? != some 10) then
+                  let (ph, toks1) := claimTok "Newline" [] toks
+                  let (o, toks2) := go rest.tail toks1 fuel
+                  (b :: (ph ++ o), toks2)
+                else
+                  let (o, toks1) := go rest toks fuel
+                  (b :: o, toks1)
 
 /-- The Newline rule mirror. -/
 def newlineRule (st : ParseState) : ParseState :=
@@ -457,14 +516,6 @@ where
         match unitAt src with
         | some (u, rest) => go rest (units ++ [u]) (bytes ++ unitBytes u) fuel
         | none => []
-
-/-- The rule name of token `n`, or the empty string when the
-    index is out of range (which the reference's table lookups
-    never produce on well-formed runs). -/
-def tokenRuleAt (toks : List TokenEntry) (n : Nat) : String :=
-  match (toks.drop n).head? with
-  | some t => t.rule
-  | none => ""
 
 /-- A run unit carries a break when it is an LF or CR byte, or
     a placeholder whose current token is a Newline token. -/
@@ -573,20 +624,6 @@ def paraMatchAt (src : List Nat) : Option (List Nat × List Nat) :=
           let len := line.length + 1 + (j + 1)
           some (src.take len, src.drop len)
 
-/-- The skip list: lowercased rule names whose token, when it
-    opens a match, leaves the match unwrapped. The REFVAL
-    live validation (2026-11-21) added `separator` and the
-    bare `divalign` to the reference's list (the separator
-    block and the aligned div both serve without a paragraph
-    wrapper); the mirror follows. -/
-def paraSkipRules : List (List Nat) :=
-  ["blockquote", "code", "clearfloat", "heading", "horiz", "separator",
-   "deflist", "table", "tableadv", "list", "toc", "center", "tabview",
-   "div", "divalign", "divalignleft", "divalignright", "divaligncenter",
-   "divalignjustify", "collapsible", "note", "math", "module",
-   "module654", "footnoteblock", "footnoteitem", "bibliography",
-   "bibitem", "gallery", "image"].map litBytes
-
 /-- The wrap: a Paragraph start claim and an end claim around
     the trimmed match, followed by a blank line. -/
 def paraWrap (m : List Nat) (toks : List TokenEntry) :
@@ -640,6 +677,71 @@ where
     | _, _, 0 => false
     | [], _, _ => false
 
+/-- The `type` option of token `n` as bytes (empty when the
+    token or the option is absent). -/
+def tokenTypeBytes (toks : List TokenEntry) (n : Nat) : List Nat :=
+  match (toks.drop n).head? with
+  | some t =>
+      match omGet t.opts "type".toList with
+      | some (OptVal.str v) => v.map Char.toNat
+      | _ => []
+  | none => []
+
+/-- The block-lead skip set: the Paragraph skip list without
+    the divalign family (REFCORR16: a lead before an alignment
+    block wraps on live, diag d31/d43 and holdout h019/h101,
+    unlike the div, table, collapsible and list lead-ins
+    measured bare). -/
+def paraSkipNoAlign : List (List Nat) :=
+  paraSkipRules.filter (fun r => !(litBytes "divalign").isPrefixOf r)
+
+/-- REFCORR16 block-lead: whether a Paragraph run leads from
+    text into a block span and so stays bare. A run qualifies
+    when it holds a non-whitespace text lead before the first
+    block token, at least one start-typed token of the
+    block-lead skip set, and no non-whitespace text at depth
+    zero after that first block token (depth is tracked over
+    the skip set's start/end-typed tokens). This is the
+    reference's runIsBlockLead (diag d42, holdout h132, h146
+    and h155) transcribed onto the byte model. -/
+def runIsBlockLead (m : List Nat) (toks : List TokenEntry) : Bool :=
+  go m false false 0 false (m.length + 1)
+where
+  settle (segNonWs seenBlock : Bool) (depth : Nat) (seenLead : Bool) :
+      Bool × Bool :=
+    (segNonWs && seenBlock && depth == 0, seenLead || (segNonWs && !seenBlock))
+  go : List Nat → Bool → Bool → Nat → Bool → Nat → Bool
+    | [], seenBlock, seenLead, depth, segNonWs, _ =>
+        let (bad, lead) := settle segNonWs seenBlock depth seenLead
+        !bad && seenBlock && lead
+    | _, _, _, _, _, 0 => false
+    | src, seenBlock, seenLead, depth, segNonWs, fuel + 1 =>
+        match readPlaceholder src with
+        | some (n, rest) =>
+            let (bad, lead) := settle segNonWs seenBlock depth seenLead
+            if bad then false
+            else
+              let rule :=
+                asciiLower ((tokenRuleAt toks n).toList.map Char.toNat)
+              if paraSkipNoAlign.contains rule then
+                let ty := tokenTypeBytes toks n
+                if ty == litBytes "start" ||
+                    bytesEndsWith ty (litBytes "_start") then
+                  go rest true lead (depth + 1) false fuel
+                else if ty == litBytes "end" ||
+                    bytesEndsWith ty (litBytes "_end") then
+                  go rest seenBlock lead (depth - 1) false fuel
+                else
+                  go rest seenBlock lead depth false fuel
+              else
+                go rest seenBlock lead depth false fuel
+        | none =>
+            match src with
+            | [] => false
+            | b :: rest =>
+                go rest seenBlock seenLead depth
+                  (segNonWs || !isTrimByte b) fuel
+
 /-- process() for one Paragraph match: empty after trimming
     means the empty string; a trimmed match that ends with a
     scored anchor's end placeholder and contains its start
@@ -657,6 +759,8 @@ def paraProcess (m : List Nat) (toks : List TokenEntry)
   if ! leads.isEmpty && runHasDivStart m toks &&
      leads.any (fun lead => trimBytes (stripPhBytes m) == lead)
   then (m, toks)
+  -- REFCORR16: a run that leads from text into a block span stays bare.
+  else if runIsBlockLead m toks then (m, toks)
   else if (trimBytes m).isEmpty then ([], toks)
   else if anchors.any (fun (e, s) =>
       bytesEndsWith (trimBytes m) e && bytesContains (trimBytes m) s)

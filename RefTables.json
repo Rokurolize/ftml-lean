@@ -24,7 +24,7 @@
     "positive-lookbehind",
     "quantifier"
   ],
-  "digest": "1431060f68c3856a5bd47a08f1de37c9b5c1b19882857288b9cabb7b843adf91",
+  "digest": "8935bb0d9afb59876565723eb7ec0f82e16957117b3b11abda47cecb30bd466e",
   "embed_patterns": [
     [
       "del_feed",
@@ -335,6 +335,7 @@
     "s",
     "u"
   ],
+  "php_version": "8.5.4",
   "rules": [
     {
       "class": "Include",
@@ -392,6 +393,8 @@
       "patterns": [
         "/^\\[\\[include ([a-zA-Z0-9\\s\\-:]+?)(\\s+.*?)?(?:\\]\\])$/ims"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/^\\[\\[include ([a-zA-Z0-9\\s\\-:]+?)(\\s+.*?)?(?:\\]\\])$/ims",
       "rule": "include",
       "source": "text-wiki/Text/Wiki/Parse/Default/Include.php"
     },
@@ -405,6 +408,8 @@
       ],
       "literal": null,
       "patterns": [],
+      "patterns_provenance": "literal",
+      "resolved_regex": null,
       "rule": "prefilter",
       "source": "text-wiki/Text/Wiki/Parse/Default/Prefilter.php"
     },
@@ -417,13 +422,25 @@
         }
       ],
       "literal": null,
-      "patterns": [],
+      "patterns": [
+        "/\u00ff/"
+      ],
+      "patterns_provenance": "php-resolved-dynamic",
+      "resolved_regex": "/\u00ff/",
       "rule": "delimiter",
       "source": "text-wiki/Text/Wiki/Parse/Default/Delimiter.php"
     },
     {
       "class": "Code",
       "inline": [
+        {
+          "api": "preg_match",
+          "pattern": "/\\G\\[\\[code(\\s[^\\]]*)?\\]\\]/i"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\G\\[\\[\\/code\\]\\](\\s|$)/msi"
+        },
         {
           "api": "dynamic-template",
           "pattern": "';^\\[\\[code(\\s[^\\]]*)?\\]\\]((?:(?R)|.)*?)\\[\\[/code\\]\\](\\s|$);msi'"
@@ -433,6 +450,8 @@
       "patterns": [
         ";^\\[\\[code(\\s[^\\]]*)?\\]\\]((?:(?R)|.)*?)\\[\\[/code\\]\\](\\s|$);msi"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": ";^\\[\\[code(\\s[^\\]]*)?\\]\\]((?:(?R)|.)*?)\\[\\[/code\\]\\](\\s|$);msi",
       "rule": "code",
       "source": "text-wiki/Text/Wiki/Parse/Default/Code.php"
     },
@@ -452,6 +471,8 @@
       "patterns": [
         "/\\[\\[form\\]\\]\\s*\\n(.*?)(?:\\n---\\s*\\n(.*?))?\\n\\[\\[\\/form\\]\\]/is"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\[\\[form\\]\\]\\s*\\n(.*?)(?:\\n---\\s*\\n(.*?))?\\n\\[\\[\\/form\\]\\]/is",
       "rule": "form",
       "source": "text-wiki/Text/Wiki/Parse/Default/Form.php"
     },
@@ -467,6 +488,8 @@
       "patterns": [
         "/(?<!@)@@(.*[^@]?)@@/U"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/(?<!@)@@(.*[^@]?)@@/U",
       "rule": "raw",
       "source": "text-wiki/Text/Wiki/Parse/Default/Raw.php"
     },
@@ -482,6 +505,8 @@
       "patterns": [
         "/(?<!`)``([^']*[^`])``/U"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/(?<!`)``([^']*[^`])``/U",
       "rule": "rawold",
       "source": "text-wiki/Text/Wiki/Parse/Default/Rawold.php"
     },
@@ -501,6 +526,8 @@
       "patterns": [
         "/^\\[\\[module654\\s([a-z0-9_\\-\\/]+)(\\s+.*?)?\\]\\](?:(.*?)\\[\\[\\/module\\]\\])?/ims"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/^\\[\\[module654\\s([a-z0-9_\\-\\/]+)(\\s+.*?)?\\]\\](?:(.*?)\\[\\[\\/module\\]\\])?/ims",
       "rule": "modulepre",
       "source": "text-wiki/Text/Wiki/Parse/Default/Modulepre.php"
     },
@@ -528,6 +555,8 @@
       "patterns": [
         "/^\\[\\[module\\s([a-z0-9_\\-\\/]+)(\\s+.*?)?\\]\\] *\n(?:(.+?)\\[\\[\\/module\\]\\])?/ism"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/^\\[\\[module\\s([a-z0-9_\\-\\/]+)(\\s+.*?)?\\]\\] *\n(?:(.+?)\\[\\[\\/module\\]\\])?/ism",
       "rule": "module",
       "source": "text-wiki/Text/Wiki/Parse/Default/Module.php"
     },
@@ -543,12 +572,22 @@
       "patterns": [
         "/^\\[\\[module654\\s([a-z0-9_\\-\\/]+)(\\s+.*?)?\\]\\][ \t]*\n(?:(.*?)\\[\\[\\/module\\]\\])?/ims"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/^\\[\\[module654\\s([a-z0-9_\\-\\/]+)(\\s+.*?)?\\]\\][ \t]*\n(?:(.*?)\\[\\[\\/module\\]\\])?/ims",
       "rule": "module654",
       "source": "text-wiki/Text/Wiki/Parse/Default/Module654.php"
     },
     {
       "class": "Iftags",
       "inline": [
+        {
+          "api": "preg_match",
+          "pattern": "/\\G\\[\\[iftags(\\s[^\\]]*)?\\]\\]/i"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\G\\[\\[\\/iftags\\]\\]/i"
+        },
         {
           "api": "preg_split",
           "pattern": ";[, ]+;"
@@ -562,6 +601,8 @@
       "patterns": [
         ";\\[\\[iftags(\\s[^\\]]*)?\\]\\]((?:(?R)|.)*?)\\[\\[/iftags\\]\\];msi"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": ";\\[\\[iftags(\\s[^\\]]*)?\\]\\]((?:(?R)|.)*?)\\[\\[/iftags\\]\\];msi",
       "rule": "iftags",
       "source": "text-wiki/Text/Wiki/Parse/Default/Iftags.php"
     },
@@ -585,6 +626,8 @@
       "patterns": [
         "/(\\n)?\\[!\\-\\-(.*?)\\-\\-\\]/si"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/(\\n)?\\[!\\-\\-(.*?)\\-\\-\\]/si",
       "rule": "comment",
       "source": "text-wiki/Text/Wiki/Parse/Default/Comment.php"
     },
@@ -602,8 +645,10 @@
       ],
       "literal": "public $regex =",
       "patterns": [
-        ""
+        ";\\[\\[iframe\\s+((?:(?:http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|gopher\\:\\/\\/|news\\:\\/\\/|mailto\\:|mms\\:\\/\\/)(?:[^ \\/\"\\'\u00ff]*\\/)*[^ \\t\\n\\/\"\u00ff]*?))(\\s+.*?)?\\]\\];si"
       ],
+      "patterns_provenance": "php-resolved-dynamic",
+      "resolved_regex": ";\\[\\[iframe\\s+((?:(?:http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|gopher\\:\\/\\/|news\\:\\/\\/|mailto\\:|mms\\:\\/\\/)(?:[^ \\/\"\\'\u00ff]*\\/)*[^ \\t\\n\\/\"\u00ff]*?))(\\s+.*?)?\\]\\];si",
       "rule": "iframe",
       "source": "text-wiki/Text/Wiki/Parse/Default/Iframe.php"
     },
@@ -625,6 +670,8 @@
         ";\\[\\[date\\s+(?=\\s|\\]\\])\\s*(.*?)\\]\\];",
         ";\\[\\[date\\s+\\]\\];"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": null,
       "rule": "date",
       "source": "text-wiki/Text/Wiki/Parse/Default/Date.php"
     },
@@ -636,6 +683,18 @@
           "pattern": ";include\\s*\\{|input\\s*\\{;is"
         },
         {
+          "api": "preg_match",
+          "pattern": "/\\G\\[\\[math(\\s+[a-z0-9_]*?)?((?:\\s+[a-z0-9]+=\"[^\"]*\"))*\\s*\\]\\]/i"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\G\\n\\[\\[\\/math\\]\\](\\s|$)/msi"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\G\\s*\\[\\[\\/math\\]\\]/"
+        },
+        {
           "api": "dynamic-template",
           "pattern": "';^\\[\\[math(\\s+[a-z0-9_]*?)?((?:\\s+[a-z0-9]+=\"[^\"]*\"))*\\s*\\]\\]((?:(?R)(?!\\s*\\[\\[/math\\]\\])|.)*?)\\n\\[\\[/math\\]\\](\\s|$);msi'"
         }
@@ -644,6 +703,8 @@
       "patterns": [
         ";^\\[\\[math(\\s+[a-z0-9_]*?)?((?:\\s+[a-z0-9]+=\"[^\"]*\"))*\\s*\\]\\]((?:(?R)(?!\\s*\\[\\[/math\\]\\])|.)*?)\\n\\[\\[/math\\]\\](\\s|$);msi"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": ";^\\[\\[math(\\s+[a-z0-9_]*?)?((?:\\s+[a-z0-9]+=\"[^\"]*\"))*\\s*\\]\\]((?:(?R)(?!\\s*\\[\\[/math\\]\\])|.)*?)\\n\\[\\[/math\\]\\](\\s|$);msi",
       "rule": "math",
       "source": "text-wiki/Text/Wiki/Parse/Default/Math.php"
     },
@@ -657,6 +718,8 @@
       ],
       "literal": null,
       "patterns": [],
+      "patterns_provenance": "literal",
+      "resolved_regex": null,
       "rule": "concatlines",
       "source": "text-wiki/Text/Wiki/Parse/Default/Concatlines.php"
     },
@@ -693,7 +756,11 @@
         }
       ],
       "literal": null,
-      "patterns": [],
+      "patterns": [
+        "/\\[\\[\\[([^\\]\\[]+?)(\\|[^\\]\\[]*)?\\]\\]\\]/"
+      ],
+      "patterns_provenance": "php-resolved-dynamic",
+      "resolved_regex": "/\\[\\[\\[([^\\]\\[]+?)(\\|[^\\]\\[]*)?\\]\\]\\]/",
       "rule": "freelink",
       "source": "text-wiki/Text/Wiki/Parse/Default/Freelink.php"
     },
@@ -709,6 +776,8 @@
       "patterns": [
         "/\\[\\[eref (.*?)\\]\\]/"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\[\\[eref (.*?)\\]\\]/",
       "rule": "equationreference",
       "source": "text-wiki/Text/Wiki/Parse/Default/Equationreference.php"
     },
@@ -736,6 +805,8 @@
       "patterns": [
         ";\\s*\\[\\[footnote\\]\\](.*?)\\[\\[/footnote\\]\\];s"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": ";\\s*\\[\\[footnote\\]\\](.*?)\\[\\[/footnote\\]\\];s",
       "rule": "footnote",
       "source": "text-wiki/Text/Wiki/Parse/Default/Footnote.php"
     },
@@ -749,6 +820,8 @@
       ],
       "literal": "public $regex =",
       "patterns": [],
+      "patterns_provenance": "literal",
+      "resolved_regex": null,
       "rule": "footnoteitem",
       "source": "text-wiki/Text/Wiki/Parse/Default/Footnoteitem.php"
     },
@@ -770,6 +843,8 @@
       ],
       "literal": "public $regex =",
       "patterns": [],
+      "patterns_provenance": "literal",
+      "resolved_regex": null,
       "rule": "footnoteblock",
       "source": "text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php"
     },
@@ -787,6 +862,8 @@
       ],
       "literal": null,
       "patterns": [],
+      "patterns_provenance": "literal",
+      "resolved_regex": null,
       "rule": "bibitem",
       "source": "text-wiki/Text/Wiki/Parse/Default/Bibitem.php"
     },
@@ -812,6 +889,8 @@
       ],
       "literal": "public $regex =",
       "patterns": [],
+      "patterns_provenance": "literal",
+      "resolved_regex": null,
       "rule": "bibliography",
       "source": "text-wiki/Text/Wiki/Parse/Default/Bibliography.php"
     },
@@ -827,6 +906,8 @@
       "patterns": [
         "/\\(\\(bibcite\\s([a-z0-9]+)\\)\\)/i"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\(\\(bibcite\\s([a-z0-9]+)\\)\\)/i",
       "rule": "bibcite",
       "source": "text-wiki/Text/Wiki/Parse/Default/Bibcite.php"
     },
@@ -842,6 +923,8 @@
       "patterns": [
         "/\\[\\[\\/div\\]\\](\\s*?)\\[\\[div/msi"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\[\\[\\/div\\]\\](\\s*?)\\[\\[div/msi",
       "rule": "divprefilter",
       "source": "text-wiki/Text/Wiki/Parse/Default/Divprefilter.php"
     },
@@ -921,6 +1004,8 @@
       "patterns": [
         "/(\\[\\[# )([-_A-Za-z0-9.%]+?)(\\]\\])/i"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/(\\[\\[# )([-_A-Za-z0-9.%]+?)(\\]\\])/i",
       "rule": "anchor",
       "source": "text-wiki/Text/Wiki/Parse/Default/Anchor.php"
     },
@@ -936,6 +1021,8 @@
       "patterns": [
         "/\\[\\[(\\*)?user ([^\\]]+)\\]\\]/i"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\[\\[(\\*)?user ([^\\]]+)\\]\\]/i",
       "rule": "user",
       "source": "text-wiki/Text/Wiki/Parse/Default/User.php"
     },
@@ -955,6 +1042,8 @@
       "patterns": [
         "/\\n((\\>).*\\n)(?!(\\>))/Us"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\n((\\>).*\\n)(?!(\\>))/Us",
       "rule": "blockquote",
       "source": "text-wiki/Text/Wiki/Parse/Default/Blockquote.php"
     },
@@ -970,6 +1059,8 @@
       "patterns": [
         "/^(\\+{1,6})(\\*?)[ \\t]+(.*)/m"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/^(\\+{1,6})(\\*?)[ \\t]+(.*)/m",
       "rule": "heading",
       "source": "text-wiki/Text/Wiki/Parse/Default/Heading.php"
     },
@@ -985,6 +1076,8 @@
       "patterns": [
         "/^(?:\n*)\\[\\[(f[<>])?toc( .*)?\\]\\](\n)*/m"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/^(?:\n*)\\[\\[(f[<>])?toc( .*)?\\]\\](\n)*/m",
       "rule": "toc",
       "source": "text-wiki/Text/Wiki/Parse/Default/Toc.php"
     },
@@ -1000,6 +1093,8 @@
       "patterns": [
         "/^([-]{4,})$/m"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/^([-]{4,})$/m",
       "rule": "horiz",
       "source": "text-wiki/Text/Wiki/Parse/Default/Horiz.php"
     },
@@ -1015,6 +1110,8 @@
       "patterns": [
         "/^([=]{4,})$/m"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/^([=]{4,})$/m",
       "rule": "separator",
       "source": "text-wiki/Text/Wiki/Parse/Default/Separator.php"
     },
@@ -1030,6 +1127,8 @@
       "patterns": [
         "/^([~]{4,})(>|<)?$/m"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/^([~]{4,})(>|<)?$/m",
       "rule": "clearfloat",
       "source": "text-wiki/Text/Wiki/Parse/Default/Clearfloat.php"
     },
@@ -1045,6 +1144,8 @@
       "patterns": [
         "/ _\\n/"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/ _\\n/",
       "rule": "break",
       "source": "text-wiki/Text/Wiki/Parse/Default/Break.php"
     },
@@ -1060,8 +1161,24 @@
           "pattern": "/[ \\t\\r\\n]+/"
         },
         {
+          "api": "preg_match",
+          "pattern": "/^[ \\t]+/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/[ \\t]+$/"
+        },
+        {
           "api": "preg_match_all",
           "pattern": "/([A-Za-z][A-Za-z0-9_-]*)\\s*=\\s*\"([^\"]*)/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\G\\[\\[span(\\s.[^\\]]*)?\\]\\]/si"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\G\\[\\[\\/span\\]\\]/i"
         },
         {
           "api": "dynamic-template",
@@ -1072,6 +1189,8 @@
       "patterns": [
         "/\\[\\[span(\\s.[^\\]]*)?\\]\\]((?:(?R)|.)*?)\\[\\[\\/span\\]\\]/msi"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\[\\[span(\\s.[^\\]]*)?\\]\\]((?:(?R)|.)*?)\\[\\[\\/span\\]\\]/msi",
       "rule": "span",
       "source": "text-wiki/Text/Wiki/Parse/Default/Span.php"
     },
@@ -1087,6 +1206,14 @@
           "pattern": "/[ \\t]+(?=\\n|$)/"
         },
         {
+          "api": "preg_match",
+          "pattern": "/\\G\\[\\[size\\s([^\\]]+)\\]\\]/i"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\G\\[\\[\\/size\\]\\]/i"
+        },
+        {
           "api": "dynamic-template",
           "pattern": "'/\\[\\[size\\s([^\\]]+)\\]\\]((?:(?R)|.)*?)\\[\\[\\/size\\]\\]/msi'"
         }
@@ -1095,6 +1222,8 @@
       "patterns": [
         "/\\[\\[size\\s([^\\]]+)\\]\\]((?:(?R)|.)*?)\\[\\[\\/size\\]\\]/msi"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\[\\[size\\s([^\\]]+)\\]\\]((?:(?R)|.)*?)\\[\\[\\/size\\]\\]/msi",
       "rule": "size",
       "source": "text-wiki/Text/Wiki/Parse/Default/Size.php"
     },
@@ -1142,12 +1271,18 @@
       "patterns": [
         "/(\\n)?\\[\\[div(_?)(\\s.*?)?\\]\\] *\\n((?:(?R)|.)*?)\\[\\[\\/div\\]\\] */msi"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/(\\n)?\\[\\[div(_?)(\\s.*?)?\\]\\] *\\n((?:(?R)|.)*?)\\[\\[\\/div\\]\\] */msi",
       "rule": "div",
       "source": "text-wiki/Text/Wiki/Parse/Default/Div.php"
     },
     {
       "class": "Divalign",
       "inline": [
+        {
+          "api": "preg_match",
+          "pattern": "/\\G\\[\\[(=|<|>|==)\\]\\]\\n/"
+        },
         {
           "api": "dynamic-template",
           "pattern": "'/^\\[\\[(=|<|>|==)\\]\\]\\n((?:(?R)|.)*?)\\[\\[\\/\\\\1\\]\\]$/msi'"
@@ -1157,6 +1292,8 @@
       "patterns": [
         "/^\\[\\[(=|<|>|==)\\]\\]\\n((?:(?R)|.)*?)\\[\\[\\/\\1\\]\\]$/msi"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/^\\[\\[(=|<|>|==)\\]\\]\\n((?:(?R)|.)*?)\\[\\[\\/\\1\\]\\]$/msi",
       "rule": "divalign",
       "source": "text-wiki/Text/Wiki/Parse/Default/Divalign.php"
     },
@@ -1172,6 +1309,8 @@
       "patterns": [
         "/(\\n)?\\[\\[collapsible(\\s.*?)?\\]\\](.*?)\\[\\[\\/collapsible\\]\\] */msi"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/(\\n)?\\[\\[collapsible(\\s.*?)?\\]\\](.*?)\\[\\[\\/collapsible\\]\\] */msi",
       "rule": "collapsible",
       "source": "text-wiki/Text/Wiki/Parse/Default/Collapsible.php"
     },
@@ -1203,6 +1342,8 @@
       "patterns": [
         "/^\\[\\[(?:tabview|tabs)(\\s.*?)?\\]\\]\\s*((?:\\[\\[tab(\\s.*?)?\\]\\].*?\\[\\[\\/tab\\]\\]\\s*)+)\\[\\[\\/(?:tabview|tabs)\\]\\] */msi"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/^\\[\\[(?:tabview|tabs)(\\s.*?)?\\]\\]\\s*((?:\\[\\[tab(\\s.*?)?\\]\\].*?\\[\\[\\/tab\\]\\]\\s*)+)\\[\\[\\/(?:tabview|tabs)\\]\\] */msi",
       "rule": "tabview",
       "source": "text-wiki/Text/Wiki/Parse/Default/Tabview.php"
     },
@@ -1218,6 +1359,8 @@
       "patterns": [
         "/(\\n)?\\[\\[note\\]\\]\\n(.*?)\\[\\[\\/note\\]\\]/msi"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/(\\n)?\\[\\[note\\]\\]\\n(.*?)\\[\\[\\/note\\]\\]/msi",
       "rule": "note",
       "source": "text-wiki/Text/Wiki/Parse/Default/Note.php"
     },
@@ -1233,6 +1376,8 @@
       "patterns": [
         "/^\\[\\[gallery(\\s[^\\]]*?)?\\]\\](?:((?:\n: [^\n]+)+)\n\\[\\[\\/gallery\\]\\])?/msi"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/^\\[\\[gallery(\\s[^\\]]*?)?\\]\\](?:((?:\n: [^\n]+)+)\n\\[\\[\\/gallery\\]\\])?/msi",
       "rule": "gallery",
       "source": "text-wiki/Text/Wiki/Parse/Default/Gallery.php"
     },
@@ -1262,6 +1407,10 @@
         {
           "api": "preg_replace",
           "pattern": "/^(\\s*)\\[\\[(ul|ol)\\]\\]\\n(\\[\\[[Ll][Ii](?:\\s+[^\\]]*)?\\]\\][^\\n\\[]*)\\[\\[(UL|OL)(?:_)?(?:\\s+[^\\]]*)?\\]\\]\\n(\\[\\[[Ll][Ii](?:\\s+[^\\]]*)?\\]\\].*?\\[\\[\\/[Ll][Ii]\\]\\])\\n\\[\\[\\/(?:UL|OL)\\]\\]\\n\\[\\[\\/[Ll][Ii]\\]\\]\\n\\[\\[\\/(?:ul|ol)\\]\\](.*)$/s"
+        },
+        {
+          "api": "preg_match_all",
+          "pattern": "/"
         },
         {
           "api": "preg_match",
@@ -1436,6 +1585,8 @@
       "patterns": [
         "/^((\\*|#) .*\\n)(?!\\2 |(?: {1,}((?:\\*|#) |\\n)))/Usm"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/^((\\*|#) .*\\n)(?!\\2 |(?: {1,}((?:\\*|#) |\\n)))/Usm",
       "rule": "list",
       "source": "text-wiki/Text/Wiki/Parse/Default/List.php"
     },
@@ -1459,6 +1610,8 @@
       "patterns": [
         "/\\n((: ).*\\n)(?!(: |\\n))/Us"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\n((: ).*\\n)(?!(: |\\n))/Us",
       "rule": "deflist",
       "source": "text-wiki/Text/Wiki/Parse/Default/Deflist.php"
     },
@@ -1474,12 +1627,22 @@
       "patterns": [
         "/\\n((\\|\\|).*)(\\n)(?!(\\|\\|))/Us"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\n((\\|\\|).*)(\\n)(?!(\\|\\|))/Us",
       "rule": "table",
       "source": "text-wiki/Text/Wiki/Parse/Default/Table.php"
     },
     {
       "class": "Tableadv",
       "inline": [
+        {
+          "api": "preg_match",
+          "pattern": "/\\G\\[\\[table((?:\"[^\"]*\"|[^\\]])*)\\]\\]/si"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\G\\[\\[\\/table\\]\\]/i"
+        },
         {
           "api": "preg_replace",
           "pattern": "/[\\x00-\\x1F\\x7F]/"
@@ -1509,6 +1672,8 @@
       "patterns": [
         "~\\[\\[table((?:\"[^\"]*\"|[^\\]])*)\\]\\]((?:(?R)|.)*?)\\[\\[/table\\]\\]~si"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "~\\[\\[table((?:\"[^\"]*\"|[^\\]])*)\\]\\]((?:(?R)|.)*?)\\[\\[/table\\]\\]~si",
       "rule": "tableadv",
       "source": "text-wiki/Text/Wiki/Parse/Default/Tableadv.php"
     },
@@ -1524,6 +1689,8 @@
       "patterns": [
         "/\\[\\[button\\s+([a-z0-9\\-_]+)(?:\\s+(.+?))?\\]\\]/is"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\[\\[button\\s+([a-z0-9\\-_]+)(?:\\s+(.+?))?\\]\\]/is",
       "rule": "button",
       "source": "text-wiki/Text/Wiki/Parse/Default/Button.php"
     },
@@ -1543,6 +1710,8 @@
       "patterns": [
         "/(\\[\\[((?:f)?[<>=])?image\\s+)(.*?)\\]\\]/is"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/(\\[\\[((?:f)?[<>=])?image\\s+)(.*?)\\]\\]/is",
       "rule": "image",
       "source": "text-wiki/Text/Wiki/Parse/Default/Image.php"
     },
@@ -1558,6 +1727,8 @@
       "patterns": [
         "/\\[\\[embed(?:audio|video)?\\]\\](.*?)\\[\\[\\/embed(?:audio|video)?\\]\\]/msi"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\[\\[embed(?:audio|video)?\\]\\](.*?)\\[\\[\\/embed(?:audio|video)?\\]\\]/msi",
       "rule": "embed",
       "source": "text-wiki/Text/Wiki/Parse/Default/Embed.php"
     },
@@ -1573,6 +1744,8 @@
       "patterns": [
         "/\\[\\[social(\\s+[^\\]]+?)?(?:\\]\\])/is"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\[\\[social(\\s+[^\\]]+?)?(?:\\]\\])/is",
       "rule": "social",
       "source": "text-wiki/Text/Wiki/Parse/Default/Social.php"
     },
@@ -1588,6 +1761,8 @@
       "patterns": [
         "/\\[\\[file\\s+(.+?)(?:\\|(.+?))?\\]\\]/i"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\[\\[file\\s+(.+?)(?:\\|(.+?))?\\]\\]/i",
       "rule": "file",
       "source": "text-wiki/Text/Wiki/Parse/Default/File.php"
     },
@@ -1603,12 +1778,18 @@
       "patterns": [
         "/^= (.*)$/m"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/^= (.*)$/m",
       "rule": "center",
       "source": "text-wiki/Text/Wiki/Parse/Default/Center.php"
     },
     {
       "class": "Newline",
       "inline": [
+        {
+          "api": "preg_match",
+          "pattern": "/^\\d+$/"
+        },
         {
           "api": "dynamic-template",
           "pattern": "'/([^\\n])\\n(?!\\n)/m'"
@@ -1618,6 +1799,8 @@
       "patterns": [
         "/([^\\n])\\n(?!\\n)/m"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/([^\\n])\\n(?!\\n)/m",
       "rule": "newline",
       "source": "text-wiki/Text/Wiki/Parse/Default/Newline.php"
     },
@@ -1641,6 +1824,14 @@
           "pattern": "/"
         },
         {
+          "api": "preg_split",
+          "pattern": "/("
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^"
+        },
+        {
           "api": "dynamic-template",
           "pattern": "\"/^.*?\\n\\s*?\\n/m\""
         }
@@ -1649,6 +1840,8 @@
       "patterns": [
         "/^.*?\n\\s*?\n/m"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/^.*?\n\\s*?\n/m",
       "rule": "paragraph",
       "source": "text-wiki/Text/Wiki/Parse/Default/Paragraph.php"
     },
@@ -1665,7 +1858,7 @@
         },
         {
           "api": "dynamic-template",
-          "pattern": "'/\\[(\\*)?((?:' . $this->regexLiberal . ')|(?:#[a-zA-Z0-9_\\-%]*)|(?:\\/[^ \\\\t\\\\n\\\"\\''.$this->wiki->delim.']*)) ([^\\]'.$this->wiki->delim.']+)\\]/'"
+          "pattern": "'/\\[(\\*)?((?:' . $this->regexLiberal . ')|(?:#(?!(?:ifexpr|expr)[\\s\\]])[a-zA-Z0-9_\\-%]*)|(?:\\/[^ \\\\t\\\\n\\\"\\''.$this->wiki->delim.']*)) ([^\\]'.$this->wiki->delim.']+)\\]/'"
         },
         {
           "api": "dynamic-template",
@@ -1677,7 +1870,11 @@
         }
       ],
       "literal": null,
-      "patterns": [],
+      "patterns": [
+        "(?:(?:http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|gopher\\:\\/\\/|news\\:\\/\\/|mailto\\:|mms\\:\\/\\/|ssh\\:\\/\\/|git\\:\\/\\/|sftp\\:\\/\\/|svn\\:\\/\\/|telnet\\:\\/\\/|cvs\\:\\/\\/)(?:[^ \\/\"\\'\u00ff]*\\/)*[^ \\t\\n\\/\"\\'\u00ff]*[A-Za-z%0-9\\/?=&~_])"
+      ],
+      "patterns_provenance": "php-resolved-dynamic",
+      "resolved_regex": "(?:(?:http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|gopher\\:\\/\\/|news\\:\\/\\/|mailto\\:|mms\\:\\/\\/|ssh\\:\\/\\/|git\\:\\/\\/|sftp\\:\\/\\/|svn\\:\\/\\/|telnet\\:\\/\\/|cvs\\:\\/\\/)(?:[^ \\/\"\\'\u00ff]*\\/)*[^ \\t\\n\\/\"\\'\u00ff]*[A-Za-z%0-9\\/?=&~_])",
       "rule": "url",
       "source": "text-wiki/Text/Wiki/Parse/Default/Url.php"
     },
@@ -1701,6 +1898,8 @@
       "patterns": [
         "[_a-z0-9\\-]+(?:\\.[_a-z0-9\\-]+)*@[a-z0-9\\-]+(?:\\.[a-z0-9\\-]+)+"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "[_a-z0-9\\-]+(?:\\.[_a-z0-9\\-]+)*@[a-z0-9\\-]+(?:\\.[a-z0-9\\-]+)+",
       "rule": "email",
       "source": "text-wiki/Text/Wiki/Parse/Default/Email.php"
     },
@@ -1720,6 +1919,8 @@
       "patterns": [
         "/\\[\\[\\$(.*?)\\$\\]\\]/"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\[\\[\\$(.*?)\\$\\]\\]/",
       "rule": "mathinline",
       "source": "text-wiki/Text/Wiki/Parse/Default/Mathinline.php"
     },
@@ -1743,6 +1944,8 @@
       "patterns": [
         "([A-Za-z0-9_\\.]+):((?!:)[A-Za-z0-9_\\/=&~#.:;\\-\\+]+)"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "([A-Za-z0-9_\\.]+):((?!:)[A-Za-z0-9_\\/=&~#.:;\\-\\+]+)",
       "rule": "interwiki",
       "source": "text-wiki/Text/Wiki/Parse/Default/Interwiki.php"
     },
@@ -1758,6 +1961,8 @@
       "patterns": [
         "/##([A-Za-z0-9#(),\\- \\t]+)\\|(.+?)##/"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/##([A-Za-z0-9#(),\\- \\t]+)\\|(.+?)##/",
       "rule": "colortext",
       "source": "text-wiki/Text/Wiki/Parse/Default/Colortext.php"
     },
@@ -1773,6 +1978,8 @@
       "patterns": [
         "/\\*\\*([^\\s\n](?:.*[^\\s\n])?|)\\*\\*/U"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\*\\*([^\\s\n](?:.*[^\\s\n])?|)\\*\\*/U",
       "rule": "strong",
       "source": "text-wiki/Text/Wiki/Parse/Default/Strong.php"
     },
@@ -1792,6 +1999,8 @@
       "patterns": [
         "/\\/\\/\\/\\/|\\/\\/([^\\s](?:.*[^\\s])?)\\/\\//U"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\/\\/\\/\\/|\\/\\/([^\\s](?:.*[^\\s])?)\\/\\//U",
       "rule": "emphasis",
       "source": "text-wiki/Text/Wiki/Parse/Default/Emphasis.php"
     },
@@ -1807,6 +2016,8 @@
       "patterns": [
         "/____|__([^\\s](?:.*[^\\s])?)__/U"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/____|__([^\\s](?:.*[^\\s])?)__/U",
       "rule": "underline",
       "source": "text-wiki/Text/Wiki/Parse/Default/Underline.php"
     },
@@ -1822,6 +2033,8 @@
       "patterns": [
         "/\\-\\-([^\\s](?:.*[^\\s])?)\\-\\-/U"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\-\\-([^\\s](?:.*[^\\s])?)\\-\\-/U",
       "rule": "strikethrough",
       "source": "text-wiki/Text/Wiki/Parse/Default/Strikethrough.php"
     },
@@ -1853,6 +2066,8 @@
       "patterns": [
         "/{{({*?.*}*?)}}/U"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/{{({*?.*}*?)}}/U",
       "rule": "tt",
       "source": "text-wiki/Text/Wiki/Parse/Default/Tt.php"
     },
@@ -1868,6 +2083,8 @@
       "patterns": [
         "/\\^\\^\\^\\^|\\^\\^([^\\s](?:.*[^\\s])?)\\^\\^/U"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\^\\^\\^\\^|\\^\\^([^\\s](?:.*[^\\s])?)\\^\\^/U",
       "rule": "superscript",
       "source": "text-wiki/Text/Wiki/Parse/Default/Superscript.php"
     },
@@ -1883,6 +2100,8 @@
       "patterns": [
         "/,,,,|,,([^\\s](?:.*[^\\s])?),,/U"
       ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/,,,,|,,([^\\s](?:.*[^\\s])?),,/U",
       "rule": "subscript",
       "source": "text-wiki/Text/Wiki/Parse/Default/Subscript.php"
     },
@@ -1928,6 +2147,8 @@
       ],
       "literal": null,
       "patterns": [],
+      "patterns_provenance": "literal",
+      "resolved_regex": null,
       "rule": "typography",
       "source": "text-wiki/Text/Wiki/Parse/Default/Typography.php"
     },
@@ -1973,12 +2194,14 @@
       ],
       "literal": null,
       "patterns": [],
+      "patterns_provenance": "literal",
+      "resolved_regex": null,
       "rule": "tighten",
       "source": "text-wiki/Text/Wiki/Parse/Default/Tighten.php"
     }
   ],
-  "snapshot_commit": "75f7d9dc3045d02bd81ab1f7abaedf4085851b6b",
-  "snapshot_tag": "snapshot-39",
+  "snapshot_commit": "79bb3a1263450b3faaf9fa4e56965c3453e5507d",
+  "snapshot_tag": "snapshot-40",
   "source_count": 70,
   "sources": [
     {
@@ -1995,7 +2218,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Code.php",
-      "sha256": "fe39cd265d7f27cf14d148ee65d7f5ab82e59e3ecef4bd87a43724c164c1391b"
+      "sha256": "95ae1d881b495a39827f25f27c5130a84030922b2c8fc6f0b122c5c83a856a81"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Form.php",
@@ -2023,7 +2246,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Iftags.php",
-      "sha256": "62edf55f7a122e2f729798b8b31ce598b957da4d82228f4f3d3ec6420cf597a6"
+      "sha256": "dcb098b4f99903e1731aac4a9445e9d1d7a08fb0da4e177591160172d27b449c"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Comment.php",
@@ -2039,7 +2262,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Math.php",
-      "sha256": "100821c1cf0ca90d4ed186facf715d0631a13240adce77bc9bacded6037df6a3"
+      "sha256": "250f7ad18a70a067d046caabd5c299b4f68d2b3eb0673338b59f341314a14d25"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Concatlines.php",
@@ -2119,11 +2342,11 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Span.php",
-      "sha256": "91f91c3ae760b2ef4cfd064ba5d3fa52edb1139ea144c9222f7d856a1687f6f5"
+      "sha256": "af9fd221d7db43ad8502248d34ae6464106804b8c17657e1b445f44cb48f6678"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Size.php",
-      "sha256": "3aad982e73868d08841d20ab5a3bd4451e92fbeb266c16761eb5f1531e526258"
+      "sha256": "6cbceef88528e398c53dfd2617c3344df7700bdbb84baeb90471f193795c9cdf"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Div.php",
@@ -2131,7 +2354,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Divalign.php",
-      "sha256": "900dff149423cb4cf9d2ed668a97b356a98cda1d94e950ac99bebae917c8bec8"
+      "sha256": "7d4739cd3b575dae8cdaf352e17975fd40775cc3d5a9b022e86deaf4d0978f86"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Collapsible.php",
@@ -2151,7 +2374,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/List.php",
-      "sha256": "6e0a394f3bf0d11bc2d87e944049b2d0aad6b7c945b931f366667081aebd0c02"
+      "sha256": "cede6c11a7a9fa3835db7b7b6238fbf09ea88630816d281d354e1c563afdbef6"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Deflist.php",
@@ -2163,7 +2386,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Tableadv.php",
-      "sha256": "9314a58ba4bf835df13be125523a704fa7d2a01c09691d4224b100ba651f9ecb"
+      "sha256": "1722b8c77e3ca9d3dfffcfc6e920cfe2fa0428d8a4c7b8631dde80983320acdb"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Button.php",
@@ -2191,15 +2414,15 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Newline.php",
-      "sha256": "0db2ebefe86ceb74289ff92e564e93535ad9201326d25e5c11069b63974ca26d"
+      "sha256": "a826517e1ca305448da8ed668d7354b828a7ff63915fe30c80d2e97c1bfcfed4"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Paragraph.php",
-      "sha256": "697ecc0627854a06678deeafce93a36759edc91b146993b35da1163f115ef106"
+      "sha256": "339e962265cde31dd4b1bbe9e99a0300f423304ee3f06a039aff42256360f282"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Url.php",
-      "sha256": "aa50fdf2b0e88179472423e5c42b6235ebe63804a88a5bbe24cba2ae01b28a27"
+      "sha256": "33aa045d00fe572eda8d4c7a43b3eb57645db5ca183b71b298d14ae6db6bb033"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Email.php",

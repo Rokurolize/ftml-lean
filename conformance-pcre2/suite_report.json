@@ -1,0 +1,38 @@
+{
+ "total_cases": 126781,
+ "patterns": 250,
+ "buckets": {
+  "main": 121615,
+  "u-boundary": 1932,
+  "php-error": 0,
+  "parse-gap": 0,
+  "both-fail": 3234
+ },
+ "u_boundary_agreements": 1525,
+ "compared_by_part": {
+  "A": 81291,
+  "B": 23348,
+  "C": 16976
+ },
+ "mismatches_total": 0,
+ "mismatches_by_part": {
+  "A": 0,
+  "B": 0,
+  "C": 0
+ },
+ "php_errors": {},
+ "parse_gap_patterns": {},
+ "both_fail_patterns": {
+  "3": 382,
+  "4": 494,
+  "5": 386,
+  "6": 386,
+  "9": 382,
+  "87": 436,
+  "90": 382,
+  "110": 386
+ },
+ "php_version": "8.5.4",
+ "pcre_version": "10.46 2025-08-27",
+ "cases_sha256": "23f4b821c4bcc9c297910a05b98db1415ca1aa18abbcb0c4fea0bb8fbf24c61c"
+}

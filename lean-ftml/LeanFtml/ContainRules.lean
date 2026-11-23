@@ -297,6 +297,14 @@ where
     empty is elided (no tokens, empty replacement). -/
 def spanProcess (g1 : Option (List Nat)) (body : List Nat)
     (toks : List TokenEntry) : List Nat × List TokenEntry :=
+  -- REFCORR16: the body's leading and trailing space/tab runs
+  -- are not dropped; they are emitted outside the element
+  -- (the lead before the start token, the trail after the
+  -- end token), as live renders the holdout's span instance.
+  -- The elision below still drops them with the empty span.
+  let lead := body.takeWhile isSpaceTab
+  let rest := body.dropWhile isSpaceTab
+  let trail := (rest.reverse.takeWhile isSpaceTab).reverse
   let content := trimSpaceTab body
   let attr := getAttrsBytes (g1.getD [])
   let idArg : OptMap := match lookupB attr (litBytes "id") with
@@ -339,7 +347,7 @@ def spanProcess (g1 : Option (List Nat)) (body : List Nat)
     let endPh := phBytes t1.length
     let t2 := t1 ++ [{ rule := "Span", opts :=
       [("type".toList, OptVal.str "end".toList)] }]
-    (startPh ++ content ++ endPh, t2)
+    (lead ++ startPh ++ content ++ endPh ++ trail, t2)
 
 /-- One Span pass: preg_replace_callback semantics over
     the byte form (matches are sought at every position;
@@ -1323,11 +1331,14 @@ theorem spanProcess_elides_empty :
 
 /-- A span claims its start token (id isolated first,
     then the whitelisted keys) and its end token, and
-    splices the edge-trimmed body between them. -/
+    splices the edge-trimmed body between them; since
+    REFCORR16 the body's edge space/tab runs are hoisted
+    outside the element, the lead before the start token
+    and the trail after the end token. -/
 theorem spanProcess_claim_example :
     spanProcess (some (litBytes " id=\"x\" class=\"c\""))
         (litBytes " body ") [] =
-      (phBytes 0 ++ litBytes "body" ++ phBytes 1,
+      ([32] ++ phBytes 0 ++ litBytes "body" ++ phBytes 1 ++ [32],
        [{ rule := "Span", opts :=
           [("args".toList, OptVal.map
              [("id".toList, OptVal.str "u-x".toList),

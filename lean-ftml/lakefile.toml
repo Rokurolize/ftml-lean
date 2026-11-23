@@ -126,6 +126,10 @@ name = "lean-ftml-conformance-capstone"
 root = "ConformanceCapstone"
 
 [[lean_exe]]
+name = "lean-ftml-conformance-pcre2"
+root = "ConformancePcre2"
+
+[[lean_exe]]
 name = "lean-ftml-conformance-r47"
 root = "ConformanceR47"
 
@@ -148,3 +152,7 @@ root = "ConformanceR310Legacy"
 [[lean_exe]]
 name = "lean-ftml-conformance-r45-legacy"
 root = "ConformanceR45Legacy"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-listcert"
+root = "ListCertDriver"
