@@ -24,7 +24,7 @@
     "positive-lookbehind",
     "quantifier"
   ],
-  "digest": "eb2dd3dc97261c986144a4024a795e4bebe89e9820399cf988b14b0f308556b9",
+  "digest": "91b105161a48f72aca08c7009d1d9bcb53b992777fc3e84d970dcf33f4f762c6",
   "embed_patterns": [
     [
       "del_feed",
@@ -1965,8 +1965,8 @@
       "source": "text-wiki/Text/Wiki/Parse/Default/Tighten.php"
     }
   ],
-  "snapshot_commit": "55fbb6ef888f500bded7b1a901d30b96a134b6cd",
-  "snapshot_tag": "snapshot-37",
+  "snapshot_commit": "64c0009379835d7da808fade6361b6e8cbdfd8be",
+  "snapshot_tag": "snapshot-38",
   "source_count": 70,
   "sources": [
     {
@@ -1991,7 +1991,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Raw.php",
-      "sha256": "5b48b446ec5838737b50d92529c78f7b69ebd6018c9ea4884ef471e929699fef"
+      "sha256": "6447af83f9042b276475b9c7f37d14224aa52112fb2e5cfcc56b984cebb389b2"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Rawold.php",

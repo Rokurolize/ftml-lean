@@ -28,14 +28,14 @@ import re
 import subprocess
 import sys
 
-SNAPSHOT_TAG = "snapshot-37"
-SNAPSHOT_COMMIT = "55fbb6ef888f500bded7b1a901d30b96a134b6cd"
+SNAPSHOT_TAG = "snapshot-38"
+SNAPSHOT_COMMIT = "64c0009379835d7da808fade6361b6e8cbdfd8be"
 DEFAULT_REF_REPO = "/home/roku/.local/state/wikijump/muse-bhl/wikidot-php-reference"
 DEFAULT_REF_PHP = "/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/ref-php"
 
 # 68 active rules, in the exact order of LeanFtml.Pipeline.pipelineFull.
 # (rule id, PHP class basename).  Generated from `inductive RuleId` at
-# proof-base-v1 (4bf28f7) and checked against all 68 files at snapshot-37.
+# proof-base-v1 (4bf28f7) and checked against all 68 files at snapshot-38.
 RULES = [
     ("include", "Include"), ("prefilter", "Prefilter"), ("delimiter", "Delimiter"),
     ("code", "Code"), ("form", "Form"), ("raw", "Raw"), ("rawold", "Rawold"),
@@ -73,7 +73,7 @@ PINNED = {
     "text-wiki/Text/Wiki/Parse/Default/Delimiter.php": "f57e57ade2019071fa0447f428385a1df1a876cebf73f6b4fac02912135de233",
     "text-wiki/Text/Wiki/Parse/Default/Code.php": "fe39cd265d7f27cf14d148ee65d7f5ab82e59e3ecef4bd87a43724c164c1391b",
     "text-wiki/Text/Wiki/Parse/Default/Form.php": "cde34fee2c6c4d7543e6013e27b32879f36716b91ac399a0db42a4050e6246bb",
-    "text-wiki/Text/Wiki/Parse/Default/Raw.php": "5b48b446ec5838737b50d92529c78f7b69ebd6018c9ea4884ef471e929699fef",
+    "text-wiki/Text/Wiki/Parse/Default/Raw.php": "6447af83f9042b276475b9c7f37d14224aa52112fb2e5cfcc56b984cebb389b2",
     "text-wiki/Text/Wiki/Parse/Default/Rawold.php": "0b2989a253420b508738aca076244a149dbd1851085a3d4df11b3ad153b2a708",
     "text-wiki/Text/Wiki/Parse/Default/Modulepre.php": "1d5336676e8e8e5484161540d989f49bf710209447cb117311fc6c8b98c1c6b4",
     "text-wiki/Text/Wiki/Parse/Default/Module.php": "b12b3715fe1ab466e831dd6c68be1b614245279476f6b6b147724c0edb48394d",
