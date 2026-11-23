@@ -52,3 +52,4 @@ import LeanFtml.CoverageContain
 import LeanFtml.CoverageHeading
 import LeanFtml.CoverageTable
 import LeanFtml.CoverageServe
+import LeanFtml.ProofEmail
