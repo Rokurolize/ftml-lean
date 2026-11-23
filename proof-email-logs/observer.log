@@ -1,0 +1,12 @@
+[lean-build] 2345618 waiting for queue 15:59:01
+[lean-build] 2345618 acquired 16:05:50
+'LeanFtml.decBytes_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.htmlSubst_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.renderEmail_claimed_placeholder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.digitsVal_decBytes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.tokRenumberBytes_phBytes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.email_tok_equiv_base_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.email_index_observer_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.email_index_observer_plus_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.email_renumber_index_injective' depends on axioms: [propext, Quot.sound]
+[lean-build] 2345618 released status=0 16:05:50

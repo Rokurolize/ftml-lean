@@ -1,0 +1,55 @@
+[lean-build] 2275825 waiting for queue 15:13:34
+[lean-build] 2275825 acquired 15:17:02
+LeanFtml/ProofEmail.lean:361:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  litBytes "<span class=\"wiki-email\">" ++
+    ((List.map atPipe (litBytes "a@b.com")).reverse ++
+      ([35] ++ (utf8Fffd ++ (decBytes k).reverse ++ utf8Fffd ++ litBytes "</span>")))
+in the target expression
+  litBytes "<span class=\"wiki-email\">" ++ (List.map atPipe (litBytes "a@b.com")).reverse ++ [35] ++ utf8Fffd ++
+          (decBytes k).reverse ++
+        utf8Fffd ++
+      litBytes "</span>" =
+    emailSpan (abcomIndex k)
+
+k : Nat
+hp : ∀ (b : Nat), b ∈ [] ++ [] → b < 128 ∧ b ≠ 38 ∧ b ≠ 60 ∧ b ≠ 62 ∧ b ≠ 64
+hk :
+  renderEmail
+      [("email".toList, OptVal.bytes (litBytes "a@b.com")), ("text".toList, OptVal.bytes ([] ++ phBytes k ++ []))] =
+    litBytes "<span class=\"wiki-email\">" ++ List.map atPipe (litBytes "a@b.com").reverse ++ [35] ++
+                List.map atPipe [].reverse ++
+              utf8Fffd ++
+            (decBytes k).reverse ++
+          utf8Fffd ++
+        List.map atPipe [].reverse ++
+      litBytes "</span>"
+hpad : phBytes k = [] ++ phBytes k ++ []
+hbody :
+  (List.map atPipe (litBytes "a@b.com")).reverse ++ [35] ++
+      (utf8Fffd ++ (decBytes k).reverse ++ utf8Fffd ++ litBytes "</span>") =
+    litBytes "moc.b|a#" ++ (utf8Fffd ++ (decBytes k).reverse ++ utf8Fffd ++ litBytes "</span>")
+hassoc :
+  litBytes "<span class=\"wiki-email\">" ++
+      ((List.map atPipe (litBytes "a@b.com")).reverse ++ [35] ++
+        (utf8Fffd ++ (decBytes k).reverse ++ utf8Fffd ++ litBytes "</span>")) =
+    litBytes "<span class=\"wiki-email\">" ++
+      ((List.map atPipe (litBytes "a@b.com")).reverse ++
+        ([35] ++ (utf8Fffd ++ (decBytes k).reverse ++ utf8Fffd ++ litBytes "</span>")))
+⊢ litBytes "<span class=\"wiki-email\">" ++ (List.map atPipe (litBytes "a@b.com")).reverse ++ [35] ++ utf8Fffd ++
+          (decBytes k).reverse ++
+        utf8Fffd ++
+      litBytes "</span>" =
+    emailSpan (abcomIndex k)
+'LeanFtml.ownedLiveIndex_plus_one' does not depend on any axioms
+'LeanFtml.claimTok_index' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.perDocument_index_restarts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.renderEmail_claimed_placeholder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.renderEmail_abcom_index' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'LeanFtml.renderEmail_reference_and_owned' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'LeanFtml.emailMatchLen_abcom_space' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.r5b_eight_owned_indices' does not depend on any axioms
+'LeanFtml.subst_wrapped' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.htmlSubst_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.phBytes_digits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanFtml.toString_toDigits' depends on axioms: [propext, Classical.choice, Quot.sound]
+[lean-build] 2275825 released status=1 15:17:05
