@@ -72,6 +72,14 @@ REFCORR12 cycle complete: final gates PASS with zero drift, snapshot-36 publishe
 
 Owner plan change: seven dedicated DSH lanes now own the handed-over proof packages (module remainders, email, tableadv, freelink, notes, divattr, raw) with their own clones and report to the coordinator side chat by review ping. Board tasks 33-36 were deleted to avoid duplication. Only P-INCLUDE (task 37) stays with this team because proof/include had no draft; proof/list remains closed by policy decision and is not revived. F1-F3 foundation has landed (F1 partially: two UTF-8 round-trip obligations remain honestly unproved), so task 37 is ready. The side chat coordinates the proof branches' rebase onto proof-base-v1.
 
+## REFCORR13 and round 5g (2026-11-23T17:20+09:00)
+
+REFCORR13 adopted 39 corrections (25 from round 5f plus 14 from the Antigravity hunt), with coupled list mirror follow-up, AGY hunt fixes, and proof handoff packets. Final gates PASS with zero drift; snapshot-37 published via PR #4 (reference main 55fbb6e, tag c6cd4c5), RefTables extractor repinned to snapshot-37 with byte-identical regeneration and --verify OK. ProofEmail adopted (umbrella left unimported due to ByteCore decBytes collision; two F2-held remainders registered), ProofInclude adopted PARTIAL (18 connected theorems, 119/119 grid), ProofNotes adopted PARTIAL after rebase on narrowed C0 ground (0 sorryAx across 77 axiom reports). DivAttr rebase still in flight. Round 5g (nine lanes) is running on the post-REFCORR13 ground; 2.1 remains open until a full zero round.
+
+## R14 and proof-package wave (2026-11-23T19:00+09:00)
+
+Round 5g returned 21 confirmations (P1 3, P2 7, P3 4, P4 0, R1 2, R2 3, R3 0, S1 2, S2 0) — the seventh successive non-zero round. R14 landed the cross-side Raw fixes (W-WIT mirror, W-EQ reference), retired two RawCert divergence theorems into seven agreement pins, adopted rebased PARTIAL Freelink proofs (198-point lead class, 187 theorems, build 278 jobs), and published snapshot-38 via PR #5 with extractor repinned and --verify OK. Adopted proof packages so far: Email PARTIAL, Include PARTIAL, Notes PARTIAL (rebase), Raw PARTIAL, DivAttr PARTIAL, Freelink PARTIAL. In flight: R14 gate verification, frame-include-code and next-final proof rebases, D-NF dispatch witness probe. Non-convergence of Boundary A remains recorded; under the brief the cycle continues until a full zero round.
+
 ## Closeout (after a zero round)
 
 | Unit | Purpose | Owner | State | Verdict |
@@ -88,3 +96,7 @@ Owner plan change: seven dedicated DSH lanes now own the handed-over proof packa
 - A subagent's claim is never evidence: verify by hash, tally, diff or firsthand elaboration before adopting.
 - Probe-tool smoke test passed at 2026-11-23T05:5x+09:00: one run-owned page `muse-probe-round5-lead-smoke` created on sandbox-for-codex, captured valid/stable/source-matching; left in place and listed here per sandbox boundaries.
 - Write deliverables to disk as each part completes; keep this board current.
+
+## FINAL STATE (2026-11-23T19:55+09:00)
+
+Eight full rounds (5, 5b, 5c, 5d, 5e, 5f, 5g, 5h) ran on corrected ground; none returned zero. REFCORR8-14 and snapshots 32-38 are published; proof-base-v1 frozen; F1-F3 foundation and ten PARTIAL proof packages adopted; canonical build green at 371 jobs. REPORT-ROUND5.md holds the register-by-register result and ends with NAMED REMAINDERS: WBS 2.1 (empirical non-convergence), mirror R46 dispatch correction, F1 UTF-8 bridges, G4/G5 proof bundles. Records and final push at a5aa648. Cycle stopped by the coordinator's recorded decision under the owner's means-not-an-end calibration; no human was attached to resolve the strategic question.
