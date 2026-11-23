@@ -18,6 +18,8 @@ theorem scan_of_chunks (cs : List TadvChunk) (head : List Nat)
 
 /-! ## Quote-trick witness, whole state of `tableadvScanGo` -/
 
+theorem attrsEmptyHeadPin : buildAttrsAdv ([] : List Nat) "table" = [] := by decide
+
 def witnessRep : List Nat :=
   phBytes 4 ++ phBytes 2 ++ phBytes 0 ++ enumCell ++ phBytes 1 ++ phBytes 3 ++ phBytes 5
 
@@ -41,7 +43,7 @@ theorem witness_process (fuel : Nat) (h : 80 ≤ fuel) :
         enum_one_row, List.isEmpty_cons, not_res_empty]
       rw [ite_eq_right (by decide : ¬ (false = true)),
         ite_eq_right (by decide : ¬ (false = true))]
-      simp [witness_rows, claimTok, witnessRep, witnessToks, tadvStart, tadvEnd]
+      simp [witness_rows, attrsEmptyHeadPin, claimTok, witnessRep, witnessToks, tadvStart, tadvEnd]
 
 theorem tableadvScanGo_witness (fuel : Nat) (h : 201 ≤ fuel) :
     tableadvScanGo tableadvWitness [] (fuel + 1) = (witnessRep, witnessToks) := by
