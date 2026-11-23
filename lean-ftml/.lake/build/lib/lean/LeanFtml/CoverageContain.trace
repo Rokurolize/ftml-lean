@@ -1,9 +1,9 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["ef864599d98ec116.olean"],
+ {"o": ["7e6377e8bb9aa68f.olean"],
   "m": false,
-  "i": "e9ff8b786ec6651b.ilean",
+  "i": "2bd72f719165eb57.ilean",
   "c": "e6483a54a93869c5.c"},
  "log":
  [{"message":
@@ -18,12 +18,12 @@
      [["@«lean-ftml»:extraDep", "00000000000006bb"]]],
     ["imports",
      [["LeanFtml.InteractiveRules transitive imports (legacy)",
-       "9eb0f5b789d54213"],
+       "6cbcb9ab543c1cc7"],
       ["LeanFtml.InteractiveRules:importAllArts", "50ff3dd5f0b55f63"],
-      ["LeanFtml.ProseRules transitive imports (legacy)", "c3e21955a69ea716"],
+      ["LeanFtml.ProseRules transitive imports (legacy)", "d29ffa38372ec642"],
       ["LeanFtml.ProseRules:importAllArts", "c24fb863aa30bd93"],
-      ["LeanFtml.BlockRules transitive imports (legacy)", "b24e46ae995c7259"],
-      ["LeanFtml.BlockRules:importAllArts", "8a82dc7ede17189f"]]]]],
+      ["LeanFtml.BlockRules transitive imports (legacy)", "de3eac8749e136a4"],
+      ["LeanFtml.BlockRules:importAllArts", "d621c9f0979e7fca"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -32,10 +32,10 @@
   ["Lean 4.36.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
    "bd5dd4b1191d6a49"],
   ["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/LeanFtml/CoverageContain.lean",
-   "614d04a90f91325e"],
+   "f8cf85f80d2d4c92"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: LeanFtml.CoverageContain", "81a1b71193899a6d"],
   ["Package.id?: (some lean-ftml)", "351a917adcadf512"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "29e254c65325f77a"}
+ "depHash": "146d388cf5e705bf"}

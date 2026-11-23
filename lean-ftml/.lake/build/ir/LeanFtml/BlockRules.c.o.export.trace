@@ -1,6 +1,6 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
- "outputs": "116517841e1543f9.o",
+ "outputs": "cc9c01ce1240242a.o",
  "log":
  [{"message":
    ".> /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/bin/clang -c -o /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/BlockRules.c.o.export /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/BlockRules.c -I /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/include -fstack-clash-protection -ffp-contract=off -fdata-sections -ffunction-sections -fPIC -fvisibility=hidden -Wno-unused-command-line-argument --sysroot /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0 -nostdinc -isystem /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/include/clang -O3 -DNDEBUG -DLEAN_EXPORTING",
@@ -8,11 +8,11 @@
  "inputs":
  [["LeanFtml.BlockRules:c",
    [["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/BlockRules.c",
-     "ae91a05dd4306342"],
+     "37441797619fab0a"],
     ["Lean 4.36.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
      "bd5dd4b1191d6a49"]]],
   ["Lean 4.36.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
    "bd5dd4b1191d6a49"],
   ["traceArgs: #[-O3, -DNDEBUG, -DLEAN_EXPORTING]", "c1efb66122fb2b9a"],
   ["x86_64-unknown-linux-gnu", "53a0e8937c307c28"]],
- "depHash": "1be433240909c4cd"}
+ "depHash": "5de7d4ce215c3b88"}

@@ -268,13 +268,24 @@ def imageUrlMatches : List Nat → Bool
   | [] => imageUrlHere []
   | s@(_ :: rest) => imageUrlHere s || imageUrlMatches rest
 
-/-- REFCORR11 C-R5D-P3-1: right-trim the accepted Image link value over the
-    rule's own ctype_space / PCRE `\s` byte set (space, tab, LF, VT, FF, CR),
-    the same set the leading-whitespace rejection guard tests, removing an
-    entire trailing run. Byte twin of Image.php's `rtrim` on the link value
-    only. -/
-def rtrimImageHrefWs (bs : List Nat) : List Nat :=
+/-- Right-trim an accepted Image attribute value over the rule's own
+    ctype_space / PCRE `\s` byte set (space, tab, LF, VT, FF, CR), the same
+    set the leading-whitespace rejection guard tests, removing an entire
+    trailing run. REFCORR11 applied it to `link` only; REFCORR12 extends the
+    same byte twin of Image.php's `rtrim` to `link`, `width` and `class`.
+    The name `rtrimImageHrefWs` is retained as an alias for prior pins. -/
+def rtrimImageAttrWs (bs : List Nat) : List Nat :=
   (bs.reverse.dropWhile isWsByte).reverse
+
+def rtrimImageHrefWs (bs : List Nat) : List Nat :=
+  rtrimImageAttrWs bs
+
+/-- REFCORR12 selective trim: the technical keys link, width and class are
+    right-trimmed; the text/label keys title, alt, style, height and size
+    keep their authored bytes. Byte twin of the PHP consumer loop. -/
+def imageTrimAttr (k : List Nat) (v : List Nat) : List Nat :=
+  if k == litBytes "link" || k == litBytes "width" ||
+      k == litBytes "class" then rtrimImageAttrWs v else v
 
 /-- process() for one Image match: the whole match, the
     alignment group, the body, and the current table, returning
@@ -313,13 +324,14 @@ def imageProcess (whole align body : List Nat) (toks : List TokenEntry) :
     else
       let srcStar := srcPart.head? == some 42
       let srcFinal := if srcStar then srcPart.tail else srcPart
-      -- REFCORR11 C-R5D-P3-1: the trailing-whitespace trim runs on the
-      -- accepted link value only, after the leading-space rejection and the
-      -- scheme guard above have already tested the authored bytes. Every
-      -- other attribute (title, style, class, alt, height, width, size) and
-      -- the target, order, source handling and alignment are byte-identical.
-      let attr4 := attr3.map (fun (k, v) =>
-        if k == litBytes "link" then (k, rtrimImageHrefWs v) else (k, v))
+      -- REFCORR12: the trailing-whitespace trim runs on the accepted
+      -- technical values link, width and class, after the leading-space
+      -- rejection and the scheme guard above have already tested the
+      -- authored bytes. The text/label values title, alt, style, height and
+      -- size keep their authored whitespace byte-for-byte (the P3E-06,
+      -- P3E-07 and P3E-10 boundary), as do the target, order, source
+      -- handling and alignment. C-R5D-P3-1 and C-R5E-P3-1/2/3.
+      let attr4 := attr3.map (fun (k, v) => (k, imageTrimAttr k v))
       let opts : OptMap :=
         [("src".toList, textVal srcFinal),
          ("attr".toList, OptVal.map

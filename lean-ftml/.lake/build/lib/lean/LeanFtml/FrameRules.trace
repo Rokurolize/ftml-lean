@@ -1,10 +1,10 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["d6d868c72e50b162.olean"],
+ {"o": ["701ee505deba56d3.olean"],
   "m": false,
   "i": "2380ce1ab788397d.ilean",
-  "c": "95c80abb226bcc5d.c"},
+  "c": "d3fbc11b21460ba3.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/LeanFtml/FrameRules.lean -o /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/FrameRules.olean -i /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/FrameRules.ilean -c /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/FrameRules.c --setup /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/FrameRules.setup.json --json",
@@ -27,7 +27,7 @@
      [["@«lean-ftml»:extraDep", "00000000000006bb"]]],
     ["imports",
      [["LeanFtml.TokenState transitive imports (legacy)", "00000000000006bb"],
-      ["LeanFtml.TokenState:importAllArts", "5211adefdb2daa0b"]]]]],
+      ["LeanFtml.TokenState:importAllArts", "c6f0e08b4ac5929c"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -42,4 +42,4 @@
   ["Module.name: LeanFtml.FrameRules", "7a0dd581c7e544b3"],
   ["Package.id?: (some lean-ftml)", "351a917adcadf512"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "fd2f1f2e16d9782f"}
+ "depHash": "4c4c1fde70c78d4a"}

@@ -205,9 +205,13 @@ where
     | _, _ :: rest => go true rest
 
 /-- C0 control bytes live's purifyHtml drops: everything below 0x20 except
-    TAB 9, LF 10 and CR 13. Form feed 12 is the round-5c witness. -/
+    TAB 9, LF 10, CR 13 and ESC 27. Form feed 12 is the round-5d witness;
+    ESC is kept verbatim in a note body on live (C-R5E-P4-1 / C-R5E-S1-2),
+    so REFCORR11's wider b != 9 && b != 10 && b != 13 predicate was one byte
+    too wide. This is the same discarded class as Inline3Rules.isDiscardedControl
+    and Tighten's residual drop. -/
 def isLiveDroppedControl (b : Nat) : Bool :=
-  b < 32 && b != 9 && b != 10 && b != 13
+  b < 32 && b != 9 && b != 10 && b != 13 && b != 27
 
 def stripLiveDroppedControls (bs : List Nat) : List Nat :=
   bs.filter (fun b => ! isLiveDroppedControl b)
@@ -527,8 +531,16 @@ def bibDefMatch (s : List Nat) :
     (`preg_replace('/\s+/', ' ', $text)` over a residual line;
     the line holds no newline byte, but the other PCRE
     whitespace bytes collapse too). The fuel is the input
-    length; every step consumes at least one byte. -/
-def collapseWs (bs : List Nat) : List Nat := go bs (bs.length + 1)
+    length; every step consumes at least one byte. REFCORR12 —
+    drop the live-discarded C0 set first, mirroring the PHP
+    Bibliography.php fallback: PCRE \s includes FF 12 and VT 11,
+    both discarded, so folding before dropping would turn an FF
+    into a space that the later Tighten drop cannot remove
+    (C-R5E-S1-3). TAB 9 and CR 13 are kept and still fold to one
+    space, and ESC 27 is kept verbatim. -/
+def collapseWs (bs : List Nat) : List Nat :=
+  let pure := stripLiveDroppedControls bs
+  go pure (pure.length + 1)
 where
   go : List Nat → Nat → List Nat
     | [], _ => []
@@ -815,6 +827,42 @@ theorem refcorr11_bib_formfeed_emits_empty_body :
     (bibitemProcess (litBytes "a") (phBytes 0 ++ [12] ++ phBytes 1) {} r9hEmptyRaw2).1 =
       phBytes 2 ++ phBytes 3 := by
   rfl
+
+/- REFCORR12 pins. Live keeps ESC 0x1B verbatim in a note body while the rest
+   of the live-discarded C0 set D is still dropped on every branch. A residual
+   Bibliography FF is dropped before the \s+ fold, so it cannot become a space
+   that the later Tighten pass would be unable to remove. -/
+theorem refcorr12_discarded_class_excludes_esc :
+    isLiveDroppedControl 27 = false ∧ isLiveDroppedControl 12 = true ∧
+    isLiveDroppedControl 11 = true ∧ isLiveDroppedControl 9 = false ∧
+    isLiveDroppedControl 10 = false ∧ isLiveDroppedControl 13 = false ∧
+    isLiveDroppedControl 26 = true ∧ isLiveDroppedControl 28 = true :=
+  ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩
+
+theorem refcorr12_fn_esc_kept_no_break :
+    (footnoteProcess ([65, 27, 66]) {} r9hEmptyRaw2).2.2.footnotes = [[65, 27, 66]] := by
+  rfl
+
+theorem refcorr12_fn_esc_kept_double_lf :
+    (footnoteProcess ([65, 27, 10, 10, 66]) {} r9hEmptyRaw2).2.2.footnotes =
+      [[65, 27, 10, 10, 66]] := by
+  rfl
+
+theorem refcorr12_fn_ff_dropped_esc_kept :
+    (footnoteProcess ([12, 27]) {} r9hEmptyRaw2).2.2.footnotes = [[27]] := by
+  rfl
+
+theorem refcorr12_bib_esc_kept :
+    (bibitemProcess (litBytes "a") ([65, 27, 66]) {} r9hEmptyRaw2).1 =
+      phBytes 2 ++ [65, 27, 66] ++ phBytes 3 := by
+  rfl
+
+theorem refcorr12_bib_residual_ff_dropped_before_fold :
+    collapseWs ([65, 12, 66]) = [65, 66] ∧
+    collapseWs ([65, 9, 66]) = [65, 32, 66] ∧
+    collapseWs ([65, 27, 66]) = [65, 27, 66] ∧
+    collapseWs ([65, 11, 66]) = [65, 66] :=
+  ⟨rfl, rfl, rfl, rfl⟩
 
 /-- A Footnoteblock with no collected notes claims nothing and
     replaces its match with nothing. -/

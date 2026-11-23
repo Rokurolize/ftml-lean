@@ -248,6 +248,20 @@ def spanBody (s : List Nat) : Nat → List (List Nat × List Nat)
 
 end
 
+/-- REFCORR12: did the raw Span opener author `k="` with at least one
+    byte of value before the closing quote, or with an unterminated
+    value (Span's opener capture stops at the first `]`, so a nested
+    placeholder leaves the quote open)? Byte twin of the PHP
+    `preg_match_all('/([A-Za-z][A-Za-z0-9_-]*)\s*=\s*"([^"]*)/')`
+    authorship record used to keep an emptied data-* key. -/
+def spanAuthoredNonEmptyEq (g : List Nat) (k : List Nat) : Bool :=
+  let pat := k ++ litBytes "=\""
+  match findSub pat g with
+  | none => false
+  | some i => match g.drop (i + pat.length) with
+      | b :: _ => b != 34
+      | [] => false
+
 /-- process() for a Span match: the body trimmed of edge
     spaces and tabs, the attribute group through getAttrs,
     and the args built by the live whitelist — `id` first
@@ -267,7 +281,18 @@ def spanProcess (g1 : Option (List Nat)) (body : List Nat)
           if (litBytes "u-").isPrefixOf v then v else litBytes "u-" ++ v))]
     | none => []
   let restArgs : OptMap := attr.foldl (fun acc (k, v) =>
-    if k == litBytes "id" || v.isEmpty then acc
+    if k == litBytes "id" then acc
+    else if v.isEmpty then
+      -- REFCORR12: a data-* key whose authored value was non-empty keeps
+      -- its key with an empty value when a nested-rule placeholder emptied
+      -- the capture; the render clear arm then emits data-x="" like live
+      -- (C-R5E-R1-3). id and class/style/role/type are deliberately not
+      -- retained: cached R5DR1-S1 (id) and R5BR1-S1 (class) drop their key
+      -- on the same placeholder shape.
+      if (litBytes "data-").isPrefixOf k &&
+          spanAuthoredNonEmptyEq (g1.getD []) (asciiLower k) then
+        omSet acc (utf8Decode (asciiLower k)) (textVal [])
+      else acc
     else if k == litBytes "class" || k == litBytes "style" ||
         k == litBytes "role" || k == litBytes "type" then
       omSet acc (utf8Decode k) (textVal v)
@@ -535,15 +560,27 @@ def isolateId (v : List Nat) : Option (List Nat) :=
       some (litBytes "u-" ++ (if leading then [32] else []) ++
         collapsed.flatMap utf8Bytes)
 
+/-- REFCORR12 general rule: right-trim the whole ctype_space / PCRE `\s`
+    byte set {space 0x20, tab 0x09, LF 0x0A, VT 0x0B, FF 0x0C, CR 0x0D}
+    from an attribute value. This is the byte twin of PHP's
+    `rtrim($v, " \t\n\r\f\v")` and shares `isWsByte` with the Image trim. -/
+def rtrimAttrWs (bs : List Nat) : List Nat :=
+  (bs.reverse.dropWhile isWsByte).reverse
+
 /-- Div's attribute value normalization: control bytes
     (0x00–0x1F and 0x7F) are removed, runs of space, tab,
-    CR, and LF collapse to a single space, and leading
-    spaces are stripped (`ltrim` on the space character
-    only; trailing whitespace survives except on class,
-    which the caller additionally rtrims). -/
+    CR, and LF collapse to a single space, and leading and
+    trailing spaces are stripped. REFCORR12: the former shape
+    only ltrimmed, leaving a trailing space on every normalized
+    key except class (whose caller rtrimmed separately); live
+    right-trims the whole family, so type/style/role/data-*
+    carried one byte live does not (C-R5E-R1-1). The final
+    `rtrimAttrWs` completes the collapse-and-ltrim pipeline for
+    every key uniformly; the class caller's `rtrimSpaceTab` is
+    now redundant but retained so cached class rows stay exact. -/
 def normalizeValue (v : List Nat) : List Nat :=
   let v1 := v.filter (fun b => !(b < 32 || b == 127))
-  (go v1 false).dropWhile (· == 32)
+  rtrimAttrWs ((go v1 false).dropWhile (· == 32))
 where
   go : List Nat → Bool → List Nat
     | [], _ => []

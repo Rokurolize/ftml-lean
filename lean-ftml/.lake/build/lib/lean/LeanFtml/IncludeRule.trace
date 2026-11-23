@@ -1,10 +1,10 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["74dfe445e219a80b.olean"],
+ {"o": ["b801e96f1ae0d7cf.olean"],
   "m": false,
   "i": "1230867e91271825.ilean",
-  "c": "d1359183313e67e4.c"},
+  "c": "ce3f5267b218c5a6.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/LeanFtml/IncludeRule.lean -o /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/IncludeRule.olean -i /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/IncludeRule.ilean -c /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/IncludeRule.c --setup /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/IncludeRule.setup.json --json",
@@ -87,7 +87,7 @@
      [["@«lean-ftml»:extraDep", "00000000000006bb"]]],
     ["imports",
      [["LeanFtml.TokenState transitive imports (legacy)", "00000000000006bb"],
-      ["LeanFtml.TokenState:importAllArts", "5211adefdb2daa0b"],
+      ["LeanFtml.TokenState:importAllArts", "c6f0e08b4ac5929c"],
       ["LeanFtml.Include transitive imports (legacy)", "00000000000006bb"],
       ["LeanFtml.Include:importAllArts", "66edd3d251feecfa"],
       ["LeanFtml.IncludeGrammar transitive imports (legacy)",
@@ -109,4 +109,4 @@
   ["Module.name: LeanFtml.IncludeRule", "02d3c04c3835b858"],
   ["Package.id?: (some lean-ftml)", "351a917adcadf512"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "2cba4043e06b7723"}
+ "depHash": "140c107c1f864675"}

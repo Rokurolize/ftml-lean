@@ -14,7 +14,7 @@
    [["«lean-ftml»/LeanFtml:extraDep",
      [["@«lean-ftml»:extraDep", "00000000000006bb"]]],
     ["imports",
-     [["LeanFtml.RenderCore transitive imports (legacy)", "fa778b779c222cc1"],
+     [["LeanFtml.RenderCore transitive imports (legacy)", "6947664e078ff60b"],
       ["LeanFtml.RenderCore:importAllArts", "0b1d3878a992e95c"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
@@ -30,4 +30,4 @@
   ["Module.name: LeanFtml.InlineSimpleRules", "400a45fecd1e1e7b"],
   ["Package.id?: (some lean-ftml)", "351a917adcadf512"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "01dfafe8a5049ab2"}
+ "depHash": "1b95c1e0cf69d6f6"}

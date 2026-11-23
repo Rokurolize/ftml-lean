@@ -15,11 +15,11 @@
      [["@«lean-ftml»:extraDep", "00000000000006bb"]]],
     ["imports",
      [["LeanFtml.TokenState transitive imports (legacy)", "00000000000006bb"],
-      ["LeanFtml.TokenState:importAllArts", "5211adefdb2daa0b"],
-      ["LeanFtml.FormRawRules transitive imports (legacy)", "2e271973f05f8e4f"],
-      ["LeanFtml.FormRawRules:importAllArts", "d3f9246809e9aee6"],
-      ["LeanFtml.ModuleRules transitive imports (legacy)", "1a790be0fd0f05dc"],
-      ["LeanFtml.ModuleRules:importAllArts", "5bbf0e4e19b4e4c2"]]]]],
+      ["LeanFtml.TokenState:importAllArts", "c6f0e08b4ac5929c"],
+      ["LeanFtml.FormRawRules transitive imports (legacy)", "f9bd871aa0b217ab"],
+      ["LeanFtml.FormRawRules:importAllArts", "e04e350b24ec2d0d"],
+      ["LeanFtml.ModuleRules transitive imports (legacy)", "bc2f8a98e749afde"],
+      ["LeanFtml.ModuleRules:importAllArts", "bec94cb1279f1d3a"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -34,4 +34,4 @@
   ["Module.name: LeanFtml.MiddleRules", "d9ef71259abe3b53"],
   ["Package.id?: (some lean-ftml)", "351a917adcadf512"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "7dc37aa295b7c9c5"}
+ "depHash": "ecd7838ce5b8297a"}

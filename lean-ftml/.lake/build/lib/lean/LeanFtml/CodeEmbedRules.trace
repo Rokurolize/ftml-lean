@@ -14,10 +14,10 @@
    [["«lean-ftml»/LeanFtml:extraDep",
      [["@«lean-ftml»:extraDep", "00000000000006bb"]]],
     ["imports",
-     [["LeanFtml.RenderCore transitive imports (legacy)", "fa778b779c222cc1"],
+     [["LeanFtml.RenderCore transitive imports (legacy)", "6947664e078ff60b"],
       ["LeanFtml.RenderCore:importAllArts", "0b1d3878a992e95c"],
       ["LeanFtml.InlineSimpleRules transitive imports (legacy)",
-       "c3e21955a69ea716"],
+       "d29ffa38372ec642"],
       ["LeanFtml.InlineSimpleRules:importAllArts", "07f55e7806c87ec1"],
       ["LeanFtml.Pcre transitive imports (legacy)", "00000000000006bb"],
       ["LeanFtml.Pcre:importAllArts", "608cba66228dff94"],
@@ -38,4 +38,4 @@
   ["Module.name: LeanFtml.CodeEmbedRules", "ceefd7f5881b3e50"],
   ["Package.id?: (some lean-ftml)", "351a917adcadf512"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "72817b3cc583cb40"}
+ "depHash": "57f293c812893270"}

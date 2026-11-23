@@ -132,11 +132,8 @@ def isDivOpenerLine (line : List Nat) : Bool :=
     left-to-right scan, exactly the corrected parse()'s loop. At
     a backslash immediately followed by a newline, the pair is
     dropped (the lines join), except when the next line is a
-    standalone div opener, where the two bytes are replaced by one
-    space: the opener no longer gets a blank-line boundary from the
-    doubled leading newline of Div::process, so the leading text is
-    left bare by paragraphRule (R11-CONCAT). Scanning resumes right
-    after the consumed
+    standalone div opener, where the backslash is dropped but the
+    newline is kept. Scanning resumes right after the consumed
     pair, in the original bytes: a backslash or newline newly
     exposed by a removal is not re-examined as a pair (the
     fossil's single-pass `str_replace` shape, which R2 settled
@@ -145,34 +142,15 @@ def concatScan : List Nat → List Nat
   | [] => []
   | 92 :: 10 :: rest =>
       let line := rest.takeWhile (fun b => b != 10)
-      (if isDivOpenerLine line then [32] else []) ++ concatScan rest
+      (if isDivOpenerLine line then [10] else []) ++ concatScan rest
   | b :: rest => b :: concatScan rest
-
-/-- R11-CONCAT: the plain lead texts of the lines joined into a
-    standalone div opener by a backslash continuation, in source
-    order. Mirrors the side channel Concatlines writes in PHP; the
-    lead is the current line's bytes, trimmed of space/tab, since
-    the last newline. -/
-def concatScanLeads : List Nat → List (List Nat) := leadsAux []
-where
-  leadsAux : List Nat → List Nat → List (List Nat)
-    | _, [] => []
-    | cur, 92 :: 10 :: rest =>
-        let line := rest.takeWhile (fun b => b != 10)
-        if isDivOpenerLine line then
-          trimSpaceTab cur :: leadsAux [] rest
-        else leadsAux cur rest
-    | _, 10 :: rest => leadsAux [] rest
-    | cur, b :: rest => leadsAux (cur ++ [b]) rest
 
 /-- The Concatlines rule mirror: a whole-source rewrite claiming
     no token. (The reference's `strpos` early return when no pair
     exists is an optimization; the pass without a pair is the
-    identity, so the mirror needs no guard.) R11-CONCAT also records
-    the continued-div lead side channel for the paragraph stage. -/
+    identity, so the mirror needs no guard.) -/
 def concatlinesRule (st : ParseState) : ParseState :=
-  let out := applyByteRule st (fun src toks => (concatScan src, toks))
-  { out with continuedDivLeads := concatScanLeads (byteForm st.work) }
+  applyByteRule st (fun src toks => (concatScan src, toks))
 
 /-! ## The character tables (extracted from the reference) -/
 /-- The Freelink transliteration table (codepoint to replacement
@@ -1259,15 +1237,11 @@ theorem concatlinesRule_tokens (st : ParseState) :
 theorem concatScan_join_example :
     concatScan (litBytes "a\\\nb") = litBytes "ab" := rfl
 
-/-- A worked Concatlines div exemption (R11-CONCAT): before a
-    standalone div opener the pair joins with one space, and the
-    plain lead text is recorded for the paragraph stage. -/
+/-- A worked Concatlines div exemption: before a standalone div
+    opener the backslash is dropped but the newline is kept. -/
 theorem concatScan_div_example :
     concatScan (litBytes "a\\\n[[div]]\nb")
-      = litBytes "a [[div]]\nb" := rfl
-
-theorem concatScanLeads_div_example :
-    concatScanLeads (litBytes "a\\\n[[div]]\nb") = [litBytes "a"] := rfl
+      = litBytes "a\n[[div]]\nb" := rfl
 
 /-- A worked toUnixName: the fossil `::` form collapses to one
     colon (the shape the R2 Freelink stage settled for

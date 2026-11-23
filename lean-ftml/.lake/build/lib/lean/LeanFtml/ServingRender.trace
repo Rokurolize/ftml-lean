@@ -1,10 +1,10 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["b755b9ec6a7187a1.olean"],
+ {"o": ["ce7db612ce926d31.olean"],
   "m": false,
   "i": "d69a5f3896a1dcf9.ilean",
-  "c": "550f3628ced85386.c"},
+  "c": "2027fe1a913ebab1.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/LeanFtml/ServingRender.lean -o /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/ServingRender.olean -i /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/ServingRender.ilean -c /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/ServingRender.c --setup /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/ServingRender.setup.json --json",
@@ -15,13 +15,13 @@
      [["@«lean-ftml»:extraDep", "00000000000006bb"]]],
     ["imports",
      [["LeanFtml.TokenState transitive imports (legacy)", "00000000000006bb"],
-      ["LeanFtml.TokenState:importAllArts", "5211adefdb2daa0b"],
-      ["LeanFtml.NotesRender transitive imports (legacy)", "50f0e071c6fa2410"],
-      ["LeanFtml.NotesRender:importAllArts", "41f52eaa4d529d00"],
-      ["LeanFtml.ServingRules transitive imports (legacy)", "cf7e2b36821a54e2"],
+      ["LeanFtml.TokenState:importAllArts", "c6f0e08b4ac5929c"],
+      ["LeanFtml.NotesRender transitive imports (legacy)", "5e65371b11094266"],
+      ["LeanFtml.NotesRender:importAllArts", "5aa615979e1612ae"],
+      ["LeanFtml.ServingRules transitive imports (legacy)", "453b7944b36da48c"],
       ["LeanFtml.ServingRules:importAllArts", "7c1fffda29c7baa3"],
-      ["LeanFtml.Pipeline transitive imports (legacy)", "c3e6626d7c338207"],
-      ["LeanFtml.Pipeline:importAllArts", "c57854f709f77512"]]]]],
+      ["LeanFtml.Pipeline transitive imports (legacy)", "d7f8956b71e1a789"],
+      ["LeanFtml.Pipeline:importAllArts", "2f6dc10ccdcd5f19"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -36,4 +36,4 @@
   ["Module.name: LeanFtml.ServingRender", "541dfc415d7e1040"],
   ["Package.id?: (some lean-ftml)", "351a917adcadf512"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "12d48a77d730505f"}
+ "depHash": "09f9686ed0a499ca"}

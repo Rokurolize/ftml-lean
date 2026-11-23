@@ -20,8 +20,8 @@
    [["«lean-ftml»/LeanFtml:extraDep",
      [["@«lean-ftml»:extraDep", "00000000000006bb"]]],
     ["imports",
-     [["LeanFtml.TableRules transitive imports (legacy)", "330e39ec963b03f2"],
-      ["LeanFtml.TableRules:importAllArts", "a005d6873d44e63d"]]]]],
+     [["LeanFtml.TableRules transitive imports (legacy)", "911cb6e5d1a296b3"],
+      ["LeanFtml.TableRules:importAllArts", "2f256110830f3db2"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -36,4 +36,4 @@
   ["Module.name: LeanFtml.TableadvEnum", "389f2b3961c62776"],
   ["Package.id?: (some lean-ftml)", "351a917adcadf512"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "394861f97722890b"}
+ "depHash": "8f65baf00cda6482"}

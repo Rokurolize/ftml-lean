@@ -965,13 +965,29 @@ def renderSize (opts : OptMap) : List Nat :=
     litBytes "</span>"
   else []
 
+/-- REFCORR12: the Span attribute fragment gains the uniform placeholder
+    clear arm already used by Div (`divAttrFragment`). A value carrying a
+    0xFF token marker renders as the empty string with its key kept, so an
+    authored data-x whose value was a nested rule emits `data-x=""` rather
+    than a bare `<span>` (C-R5E-R1-3). Other values use ENT_COMPAT, and
+    stored order is preserved. -/
+def spanAttrFragment : List (List Char × OptVal) → List Nat
+  | [] => []
+  | (k, v) :: rest =>
+      let raw := renderOptValBytes v
+      let val := if raw.any (fun b => b == 0xFF)
+                 then [] else htmlSpecialCharsCompat raw
+      [32] ++ k.flatMap utf8Bytes ++ litBytes "=\"" ++ val ++
+        litBytes "\"" ++ spanAttrFragment rest
+
 /-- Mirror of `Text_Wiki_Render_Xhtml_Span::token`: attribute
-    values escaped `ENT_COMPAT`, in stored order; an empty
-    attribute set emits the bare `<span>`. -/
+    values escaped `ENT_COMPAT`, in stored order, with the
+    REFCORR12 placeholder clear arm; an empty attribute set
+    emits the bare `<span>`. -/
 def renderSpan (opts : OptMap) : List Nat :=
   if intTypeIs opts (litBytes "start") then
     litBytes "<span" ++
-      attrsFragment htmlSpecialCharsCompat (attrPairs opts "args".toList) ++
+      spanAttrFragment (attrPairs opts "args".toList) ++
       litBytes ">"
   else if intTypeIs opts (litBytes "end") then
     litBytes "</span>"

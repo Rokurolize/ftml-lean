@@ -100,6 +100,8 @@ def main : IO Unit :=
 #print axioms LeanFtml.iframeMatch_example
 #print axioms LeanFtml.dateMatch1_example
 #print axioms LeanFtml.mathProcess_guard_example
+#print axioms LeanFtml.mathProcess_uppercase_TYPE_defaults_equation
+#print axioms LeanFtml.mathProcess_uppercase_TYPE_keeps_label
 
 -- R3.5 (2026-11-21): the LINK family's invariants and worked
 -- examples (Concatlines claims nothing, its join and its
@@ -468,6 +470,8 @@ def main : IO Unit :=
 -- mirror-fix-axioms/mf-item4-SpecEmail-axioms.log and
 -- mirror-fix-axioms/mf-item4-SuspectEmailFocus-axioms.log.
 #print axioms LeanFtml.mathinline_escapes
+#print axioms LeanFtml.mathSuppressRule_date_added
+#print axioms LeanFtml.mathSuppressRule_non_suppress_kept
 #print axioms LeanFtml.mathinline_nul_space
 #print axioms LeanFtml.mathinline_amp_quote
 #print axioms LeanFtml.interwiki_wikipedia
@@ -900,7 +904,7 @@ def main : IO Unit :=
 #print axioms LeanFtml.cm_suppress_newline
 #print axioms LeanFtml.cm_suppress_image
 #print axioms LeanFtml.cm_suppress_url_no
-#print axioms LeanFtml.cm_suppress_four
+#print axioms LeanFtml.cm_suppress_five
 #print axioms LeanFtml.cm_suppress_before_source
 #print axioms LeanFtml.cm_mi_absent_unknown
 #print axioms LeanFtml.cm_mi_depth_beats_suppress
@@ -910,6 +914,7 @@ def main : IO Unit :=
 #print axioms LeanFtml.cm_mi_freelink_suppress
 #print axioms LeanFtml.cm_mi_raw_suppress
 #print axioms LeanFtml.cm_mi_image_suppress
+#print axioms LeanFtml.cm_mi_date_suppress
 #print axioms LeanFtml.cm_mi_source_url
 #print axioms LeanFtml.cm_mi_fallback_text
 

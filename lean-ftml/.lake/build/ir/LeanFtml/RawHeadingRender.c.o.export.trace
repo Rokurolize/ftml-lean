@@ -1,6 +1,6 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
- "outputs": "97cd32b13a74dde1.o",
+ "outputs": "342ce7e827f06767.o",
  "log":
  [{"message":
    ".> /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/bin/clang -c -o /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/RawHeadingRender.c.o.export /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/RawHeadingRender.c -I /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/include -fstack-clash-protection -ffp-contract=off -fdata-sections -ffunction-sections -fPIC -fvisibility=hidden -Wno-unused-command-line-argument --sysroot /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0 -nostdinc -isystem /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/include/clang -O3 -DNDEBUG -DLEAN_EXPORTING",
@@ -8,11 +8,11 @@
  "inputs":
  [["LeanFtml.RawHeadingRender:c",
    [["/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/RawHeadingRender.c",
-     "7fe89fa36e138b3f"],
+     "5bad8f8aeba1a9a5"],
     ["Lean 4.36.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
      "bd5dd4b1191d6a49"]]],
   ["Lean 4.36.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
    "bd5dd4b1191d6a49"],
   ["traceArgs: #[-O3, -DNDEBUG, -DLEAN_EXPORTING]", "c1efb66122fb2b9a"],
   ["x86_64-unknown-linux-gnu", "53a0e8937c307c28"]],
- "depHash": "6ae0c0c01ed9fb51"}
+ "depHash": "20180daffc557865"}

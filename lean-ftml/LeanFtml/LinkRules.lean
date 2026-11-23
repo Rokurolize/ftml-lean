@@ -1023,26 +1023,49 @@ def transliterate (bs : List Nat) : List Nat :=
       | some (_, v) => v.map Char.toNat
       | none => [32])
 
-/-- REFCORR10: the single general class of material tolerated before a
-    leading `_default:` category on live. It is the Unicode White_Space
-    property {U+0009..U+000D, U+0020, U+0085, U+00A0, U+1680, U+2000..U+200A,
-    U+2028, U+2029, U+202F, U+205F, U+3000} plus the U+FEFF BOM and the `*`
-    new-tab marker. REFCORR11 adds exactly two live-evidenced Unicode Cf
-    format characters: U+200B ZERO WIDTH SPACE (C-R5D-P2-1) and U+2060 WORD
-    JOINER (C-R5D-P2-2). Every byte shape cached live (09, 0B, 0C, 20, C2 A0,
-    E3 80 80, E2 80 A8, E2 80 A9, E2 80 83, E2 80 89, E2 80 AF, EF BB BF,
-    2A, E2 80 8B and E2 81 A0) is a member; byte-zero NUL is not. The two new
-    members are the single immediate successors of U+200A and U+205F; sibling
-    format characters with no cached live capture (U+200C ZWNJ, U+200D ZWJ,
-    U+2061..U+2064) are deliberately not admitted. The unevidenced
-    White_Space members are admitted only by the principled Unicode property,
-    which is the recorded limitation of adopting a general rule over
-    per-byte patches. -/
+/-- REFCORR12: the single general class of material tolerated before a leading `_default:` category on live, symmetric with the PHP reference lead predicate.
+    It is the union of the Unicode format category Cf, the Unicode White_Space property, the U+FEFF BOM and the `*` new-tab marker; byte-zero NUL and every other C0/C1 control outside those sets are excluded.
+    Round 5e confirms U+200C, U+200D, U+2061, U+2064 and a mixed U+200B+U+200C run before `_default:` (C-R5E-R2-1..5, C-R5E-P2-1/2), each an immediate sibling of a REFCORR11 endpoint, so a byte-successor extension is again too narrow; the whole pinned Cf class is the single rule matching every live-evidenced lead.
+    Every cached live byte shape (09, 0B, 0C, 20, C2 A0, E3 80 80, E2 80 A8, E2 80 A9, E2 80 AF, EF BB BF, 2A, E2 80 8B, E2 81 A0, E2 80 8C, E2 80 8D, E2 81 A1, E2 81 A4) is a member and byte-zero NUL is not; the REFCORR11 uniform multi-hash rejection is preserved separately in freelinkProcess.
+    The range lists are pinned from Unicode 17.0 so this code-point predicate and the byte-oriented PHP predicate admit exactly the same set; no /u or Unicode-property reliance is introduced. -/
+def isUnicodeFormatCp (cp : Nat) : Bool :=
+  cp == 0xAD ||
+  (0x600 <= cp && cp <= 0x605) ||
+  cp == 0x61C ||
+  cp == 0x6DD ||
+  cp == 0x70F ||
+  (0x890 <= cp && cp <= 0x891) ||
+  cp == 0x8E2 ||
+  cp == 0x180E ||
+  (0x200B <= cp && cp <= 0x200F) ||
+  (0x202A <= cp && cp <= 0x202E) ||
+  (0x2060 <= cp && cp <= 0x2064) ||
+  (0x2066 <= cp && cp <= 0x206F) ||
+  cp == 0xFEFF ||
+  (0xFFF9 <= cp && cp <= 0xFFFB) ||
+  cp == 0x110BD ||
+  cp == 0x110CD ||
+  (0x13430 <= cp && cp <= 0x1343F) ||
+  (0x1BCA0 <= cp && cp <= 0x1BCA3) ||
+  (0x1D173 <= cp && cp <= 0x1D17A) ||
+  cp == 0xE0001 ||
+  (0xE0020 <= cp && cp <= 0xE007F)
+
+def isUnicodeWhiteSpaceCp (cp : Nat) : Bool :=
+  (0x9 <= cp && cp <= 0xD) ||
+  cp == 0x20 ||
+  cp == 0x85 ||
+  cp == 0xA0 ||
+  cp == 0x1680 ||
+  (0x2000 <= cp && cp <= 0x200A) ||
+  (0x2028 <= cp && cp <= 0x2029) ||
+  cp == 0x202F ||
+  cp == 0x205F ||
+  cp == 0x3000
+
 def isDefaultLeadCp (cp : Nat) : Bool :=
-  cp == 0x09 || cp == 0x0A || cp == 0x0B || cp == 0x0C || cp == 0x0D ||
-  cp == 0x20 || cp == 0x2A || cp == 0x85 || cp == 0xA0 || cp == 0x1680 ||
-  (0x2000 <= cp && cp <= 0x200B) || cp == 0x2028 || cp == 0x2029 ||
-  cp == 0x202F || cp == 0x205F || cp == 0x2060 || cp == 0x3000 || cp == 0xFEFF
+  cp != 0x00 &&
+  (isUnicodeFormatCp cp || isUnicodeWhiteSpaceCp cp || cp == 0xFEFF || cp == 0x2A)
 
 /-- The code point beginning a byte list and the number of bytes it occupies,
     using the same UTF-8 decoding as `utf8Decode`; a byte that does not open

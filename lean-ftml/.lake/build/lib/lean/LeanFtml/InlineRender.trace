@@ -1,10 +1,10 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["ff467e40516c2571.olean"],
+ {"o": ["13263af89feed639.olean"],
   "m": false,
   "i": "8fb362a6701ccfe9.ilean",
-  "c": "0c19512c3f5b88ac.c"},
+  "c": "9c34af19612ae5db.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/LeanFtml/InlineRender.lean -o /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/InlineRender.olean -i /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/InlineRender.ilean -c /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/InlineRender.c --setup /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/InlineRender.setup.json --json",
@@ -41,13 +41,13 @@
    [["«lean-ftml»/LeanFtml:extraDep",
      [["@«lean-ftml»:extraDep", "00000000000006bb"]]],
     ["imports",
-     [["LeanFtml.NotesRender transitive imports (legacy)", "50f0e071c6fa2410"],
-      ["LeanFtml.NotesRender:importAllArts", "41f52eaa4d529d00"],
+     [["LeanFtml.NotesRender transitive imports (legacy)", "5e65371b11094266"],
+      ["LeanFtml.NotesRender:importAllArts", "5aa615979e1612ae"],
       ["LeanFtml.InlineSimpleRules transitive imports (legacy)",
-       "c3e21955a69ea716"],
+       "d29ffa38372ec642"],
       ["LeanFtml.InlineSimpleRules:importAllArts", "07f55e7806c87ec1"],
-      ["LeanFtml.Pipeline transitive imports (legacy)", "c3e6626d7c338207"],
-      ["LeanFtml.Pipeline:importAllArts", "c57854f709f77512"]]]]],
+      ["LeanFtml.Pipeline transitive imports (legacy)", "d7f8956b71e1a789"],
+      ["LeanFtml.Pipeline:importAllArts", "2f6dc10ccdcd5f19"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -62,4 +62,4 @@
   ["Module.name: LeanFtml.InlineRender", "14500bb31cc4779b"],
   ["Package.id?: (some lean-ftml)", "351a917adcadf512"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "dbbd5a54ba4611ab"}
+ "depHash": "b87e8808e78c0a44"}

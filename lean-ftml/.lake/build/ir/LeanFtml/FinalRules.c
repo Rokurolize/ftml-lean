@@ -10818,147 +10818,150 @@ return v_res_2776_;
 LEAN_EXPORT lean_object* lp_lean_x2dftml_LeanFtml_anchorRule(lean_object* v_st_2777_){
 _start:
 {
-lean_object* v_work_2778_; lean_object* v_tokens_2779_; lean_object* v_doc_2780_; uint8_t v_fatal_2781_; lean_object* v___x_2783_; uint8_t v_isShared_2784_; uint8_t v_isSharedCheck_2819_; 
+lean_object* v_work_2778_; lean_object* v_tokens_2779_; lean_object* v_doc_2780_; uint8_t v_fatal_2781_; lean_object* v_continuedDivLeads_2782_; lean_object* v___x_2784_; uint8_t v_isShared_2785_; uint8_t v_isSharedCheck_2820_; 
 v_work_2778_ = lean_ctor_get(v_st_2777_, 0);
 v_tokens_2779_ = lean_ctor_get(v_st_2777_, 1);
 v_doc_2780_ = lean_ctor_get(v_st_2777_, 2);
-v_fatal_2781_ = lean_ctor_get_uint8(v_st_2777_, sizeof(void*)*3);
-v_isSharedCheck_2819_ = !lean_is_exclusive(v_st_2777_);
-if (v_isSharedCheck_2819_ == 0)
+v_fatal_2781_ = lean_ctor_get_uint8(v_st_2777_, sizeof(void*)*4);
+v_continuedDivLeads_2782_ = lean_ctor_get(v_st_2777_, 3);
+v_isSharedCheck_2820_ = !lean_is_exclusive(v_st_2777_);
+if (v_isSharedCheck_2820_ == 0)
 {
-v___x_2783_ = v_st_2777_;
-v_isShared_2784_ = v_isSharedCheck_2819_;
-goto v_resetjp_2782_;
+v___x_2784_ = v_st_2777_;
+v_isShared_2785_ = v_isSharedCheck_2820_;
+goto v_resetjp_2783_;
 }
 else
 {
+lean_inc(v_continuedDivLeads_2782_);
 lean_inc(v_doc_2780_);
 lean_inc(v_tokens_2779_);
 lean_inc(v_work_2778_);
 lean_dec(v_st_2777_);
-v___x_2783_ = lean_box(0);
-v_isShared_2784_ = v_isSharedCheck_2819_;
-goto v_resetjp_2782_;
+v___x_2784_ = lean_box(0);
+v_isShared_2785_ = v_isSharedCheck_2820_;
+goto v_resetjp_2783_;
 }
-v_resetjp_2782_:
+v_resetjp_2783_:
 {
-lean_object* v_input_2785_; lean_object* v___x_2786_; lean_object* v_fst_2787_; lean_object* v_snd_2788_; lean_object* v_page_2789_; lean_object* v_site_2790_; lean_object* v_inclusions_2791_; lean_object* v_inclusionsNotExist_2792_; lean_object* v_footnotes_2793_; lean_object* v_bibitems_2794_; lean_object* v_bibitemIds_2795_; lean_object* v_headlineId_2796_; lean_object* v_mathId_2797_; lean_object* v_equations_2798_; lean_object* v_collapsibleCount_2799_; lean_object* v_tabviewCounter_2800_; lean_object* v_scoredAnchors_2801_; lean_object* v___x_2803_; uint8_t v_isShared_2804_; uint8_t v_isSharedCheck_2818_; 
-v_input_2785_ = lp_lean_x2dftml_LeanFtml_byteForm(v_work_2778_);
-v___x_2786_ = lp_lean_x2dftml_LeanFtml_namedAnchorScan(v_input_2785_, v_tokens_2779_);
-v_fst_2787_ = lean_ctor_get(v___x_2786_, 0);
-lean_inc(v_fst_2787_);
-v_snd_2788_ = lean_ctor_get(v___x_2786_, 1);
-lean_inc(v_snd_2788_);
-lean_dec_ref(v___x_2786_);
-v_page_2789_ = lean_ctor_get(v_doc_2780_, 0);
-v_site_2790_ = lean_ctor_get(v_doc_2780_, 1);
-v_inclusions_2791_ = lean_ctor_get(v_doc_2780_, 2);
-v_inclusionsNotExist_2792_ = lean_ctor_get(v_doc_2780_, 3);
-v_footnotes_2793_ = lean_ctor_get(v_doc_2780_, 4);
-v_bibitems_2794_ = lean_ctor_get(v_doc_2780_, 5);
-v_bibitemIds_2795_ = lean_ctor_get(v_doc_2780_, 6);
-v_headlineId_2796_ = lean_ctor_get(v_doc_2780_, 7);
-v_mathId_2797_ = lean_ctor_get(v_doc_2780_, 8);
-v_equations_2798_ = lean_ctor_get(v_doc_2780_, 9);
-v_collapsibleCount_2799_ = lean_ctor_get(v_doc_2780_, 10);
-v_tabviewCounter_2800_ = lean_ctor_get(v_doc_2780_, 11);
-v_scoredAnchors_2801_ = lean_ctor_get(v_doc_2780_, 12);
-v_isSharedCheck_2818_ = !lean_is_exclusive(v_doc_2780_);
-if (v_isSharedCheck_2818_ == 0)
+lean_object* v_input_2786_; lean_object* v___x_2787_; lean_object* v_fst_2788_; lean_object* v_snd_2789_; lean_object* v_page_2790_; lean_object* v_site_2791_; lean_object* v_inclusions_2792_; lean_object* v_inclusionsNotExist_2793_; lean_object* v_footnotes_2794_; lean_object* v_bibitems_2795_; lean_object* v_bibitemIds_2796_; lean_object* v_headlineId_2797_; lean_object* v_mathId_2798_; lean_object* v_equations_2799_; lean_object* v_collapsibleCount_2800_; lean_object* v_tabviewCounter_2801_; lean_object* v_scoredAnchors_2802_; lean_object* v___x_2804_; uint8_t v_isShared_2805_; uint8_t v_isSharedCheck_2819_; 
+v_input_2786_ = lp_lean_x2dftml_LeanFtml_byteForm(v_work_2778_);
+v___x_2787_ = lp_lean_x2dftml_LeanFtml_namedAnchorScan(v_input_2786_, v_tokens_2779_);
+v_fst_2788_ = lean_ctor_get(v___x_2787_, 0);
+lean_inc(v_fst_2788_);
+v_snd_2789_ = lean_ctor_get(v___x_2787_, 1);
+lean_inc(v_snd_2789_);
+lean_dec_ref(v___x_2787_);
+v_page_2790_ = lean_ctor_get(v_doc_2780_, 0);
+v_site_2791_ = lean_ctor_get(v_doc_2780_, 1);
+v_inclusions_2792_ = lean_ctor_get(v_doc_2780_, 2);
+v_inclusionsNotExist_2793_ = lean_ctor_get(v_doc_2780_, 3);
+v_footnotes_2794_ = lean_ctor_get(v_doc_2780_, 4);
+v_bibitems_2795_ = lean_ctor_get(v_doc_2780_, 5);
+v_bibitemIds_2796_ = lean_ctor_get(v_doc_2780_, 6);
+v_headlineId_2797_ = lean_ctor_get(v_doc_2780_, 7);
+v_mathId_2798_ = lean_ctor_get(v_doc_2780_, 8);
+v_equations_2799_ = lean_ctor_get(v_doc_2780_, 9);
+v_collapsibleCount_2800_ = lean_ctor_get(v_doc_2780_, 10);
+v_tabviewCounter_2801_ = lean_ctor_get(v_doc_2780_, 11);
+v_scoredAnchors_2802_ = lean_ctor_get(v_doc_2780_, 12);
+v_isSharedCheck_2819_ = !lean_is_exclusive(v_doc_2780_);
+if (v_isSharedCheck_2819_ == 0)
 {
-v___x_2803_ = v_doc_2780_;
-v_isShared_2804_ = v_isSharedCheck_2818_;
-goto v_resetjp_2802_;
+v___x_2804_ = v_doc_2780_;
+v_isShared_2805_ = v_isSharedCheck_2819_;
+goto v_resetjp_2803_;
 }
 else
 {
-lean_inc(v_scoredAnchors_2801_);
-lean_inc(v_tabviewCounter_2800_);
-lean_inc(v_collapsibleCount_2799_);
-lean_inc(v_equations_2798_);
-lean_inc(v_mathId_2797_);
-lean_inc(v_headlineId_2796_);
-lean_inc(v_bibitemIds_2795_);
-lean_inc(v_bibitems_2794_);
-lean_inc(v_footnotes_2793_);
-lean_inc(v_inclusionsNotExist_2792_);
-lean_inc(v_inclusions_2791_);
-lean_inc(v_site_2790_);
-lean_inc(v_page_2789_);
+lean_inc(v_scoredAnchors_2802_);
+lean_inc(v_tabviewCounter_2801_);
+lean_inc(v_collapsibleCount_2800_);
+lean_inc(v_equations_2799_);
+lean_inc(v_mathId_2798_);
+lean_inc(v_headlineId_2797_);
+lean_inc(v_bibitemIds_2796_);
+lean_inc(v_bibitems_2795_);
+lean_inc(v_footnotes_2794_);
+lean_inc(v_inclusionsNotExist_2793_);
+lean_inc(v_inclusions_2792_);
+lean_inc(v_site_2791_);
+lean_inc(v_page_2790_);
 lean_dec(v_doc_2780_);
-v___x_2803_ = lean_box(0);
-v_isShared_2804_ = v_isSharedCheck_2818_;
-goto v_resetjp_2802_;
+v___x_2804_ = lean_box(0);
+v_isShared_2805_ = v_isSharedCheck_2819_;
+goto v_resetjp_2803_;
 }
-v_resetjp_2802_:
+v_resetjp_2803_:
 {
-lean_object* v_ms_2805_; lean_object* v___x_2806_; lean_object* v_snd_2807_; lean_object* v_fst_2808_; lean_object* v_fst_2809_; lean_object* v_snd_2810_; lean_object* v___x_2811_; lean_object* v___x_2813_; 
-lean_inc(v_fst_2787_);
-v_ms_2805_ = lp_lean_x2dftml_LeanFtml_anchorElemMatches(v_fst_2787_);
-v___x_2806_ = lp_lean_x2dftml_LeanFtml_anchorElemFold(v_fst_2787_, v_ms_2805_, v_snd_2788_, v_scoredAnchors_2801_);
-lean_dec(v_fst_2787_);
-v_snd_2807_ = lean_ctor_get(v___x_2806_, 1);
-lean_inc(v_snd_2807_);
-v_fst_2808_ = lean_ctor_get(v___x_2806_, 0);
-lean_inc(v_fst_2808_);
-lean_dec_ref(v___x_2806_);
-v_fst_2809_ = lean_ctor_get(v_snd_2807_, 0);
+lean_object* v_ms_2806_; lean_object* v___x_2807_; lean_object* v_snd_2808_; lean_object* v_fst_2809_; lean_object* v_fst_2810_; lean_object* v_snd_2811_; lean_object* v___x_2812_; lean_object* v___x_2814_; 
+lean_inc(v_fst_2788_);
+v_ms_2806_ = lp_lean_x2dftml_LeanFtml_anchorElemMatches(v_fst_2788_);
+v___x_2807_ = lp_lean_x2dftml_LeanFtml_anchorElemFold(v_fst_2788_, v_ms_2806_, v_snd_2789_, v_scoredAnchors_2802_);
+lean_dec(v_fst_2788_);
+v_snd_2808_ = lean_ctor_get(v___x_2807_, 1);
+lean_inc(v_snd_2808_);
+v_fst_2809_ = lean_ctor_get(v___x_2807_, 0);
 lean_inc(v_fst_2809_);
-v_snd_2810_ = lean_ctor_get(v_snd_2807_, 1);
-lean_inc(v_snd_2810_);
-lean_dec(v_snd_2807_);
-v___x_2811_ = lp_lean_x2dftml_LeanFtml_parseBytes(v_fst_2808_);
-if (v_isShared_2804_ == 0)
+lean_dec_ref(v___x_2807_);
+v_fst_2810_ = lean_ctor_get(v_snd_2808_, 0);
+lean_inc(v_fst_2810_);
+v_snd_2811_ = lean_ctor_get(v_snd_2808_, 1);
+lean_inc(v_snd_2811_);
+lean_dec(v_snd_2808_);
+v___x_2812_ = lp_lean_x2dftml_LeanFtml_parseBytes(v_fst_2809_);
+if (v_isShared_2805_ == 0)
 {
-lean_ctor_set(v___x_2803_, 12, v_snd_2810_);
-v___x_2813_ = v___x_2803_;
-goto v_reusejp_2812_;
+lean_ctor_set(v___x_2804_, 12, v_snd_2811_);
+v___x_2814_ = v___x_2804_;
+goto v_reusejp_2813_;
+}
+else
+{
+lean_object* v_reuseFailAlloc_2818_; 
+v_reuseFailAlloc_2818_ = lean_alloc_ctor(0, 13, 0);
+lean_ctor_set(v_reuseFailAlloc_2818_, 0, v_page_2790_);
+lean_ctor_set(v_reuseFailAlloc_2818_, 1, v_site_2791_);
+lean_ctor_set(v_reuseFailAlloc_2818_, 2, v_inclusions_2792_);
+lean_ctor_set(v_reuseFailAlloc_2818_, 3, v_inclusionsNotExist_2793_);
+lean_ctor_set(v_reuseFailAlloc_2818_, 4, v_footnotes_2794_);
+lean_ctor_set(v_reuseFailAlloc_2818_, 5, v_bibitems_2795_);
+lean_ctor_set(v_reuseFailAlloc_2818_, 6, v_bibitemIds_2796_);
+lean_ctor_set(v_reuseFailAlloc_2818_, 7, v_headlineId_2797_);
+lean_ctor_set(v_reuseFailAlloc_2818_, 8, v_mathId_2798_);
+lean_ctor_set(v_reuseFailAlloc_2818_, 9, v_equations_2799_);
+lean_ctor_set(v_reuseFailAlloc_2818_, 10, v_collapsibleCount_2800_);
+lean_ctor_set(v_reuseFailAlloc_2818_, 11, v_tabviewCounter_2801_);
+lean_ctor_set(v_reuseFailAlloc_2818_, 12, v_snd_2811_);
+v___x_2814_ = v_reuseFailAlloc_2818_;
+goto v_reusejp_2813_;
+}
+v_reusejp_2813_:
+{
+lean_object* v___x_2816_; 
+if (v_isShared_2785_ == 0)
+{
+lean_ctor_set(v___x_2784_, 2, v___x_2814_);
+lean_ctor_set(v___x_2784_, 1, v_fst_2810_);
+lean_ctor_set(v___x_2784_, 0, v___x_2812_);
+v___x_2816_ = v___x_2784_;
+goto v_reusejp_2815_;
 }
 else
 {
 lean_object* v_reuseFailAlloc_2817_; 
-v_reuseFailAlloc_2817_ = lean_alloc_ctor(0, 13, 0);
-lean_ctor_set(v_reuseFailAlloc_2817_, 0, v_page_2789_);
-lean_ctor_set(v_reuseFailAlloc_2817_, 1, v_site_2790_);
-lean_ctor_set(v_reuseFailAlloc_2817_, 2, v_inclusions_2791_);
-lean_ctor_set(v_reuseFailAlloc_2817_, 3, v_inclusionsNotExist_2792_);
-lean_ctor_set(v_reuseFailAlloc_2817_, 4, v_footnotes_2793_);
-lean_ctor_set(v_reuseFailAlloc_2817_, 5, v_bibitems_2794_);
-lean_ctor_set(v_reuseFailAlloc_2817_, 6, v_bibitemIds_2795_);
-lean_ctor_set(v_reuseFailAlloc_2817_, 7, v_headlineId_2796_);
-lean_ctor_set(v_reuseFailAlloc_2817_, 8, v_mathId_2797_);
-lean_ctor_set(v_reuseFailAlloc_2817_, 9, v_equations_2798_);
-lean_ctor_set(v_reuseFailAlloc_2817_, 10, v_collapsibleCount_2799_);
-lean_ctor_set(v_reuseFailAlloc_2817_, 11, v_tabviewCounter_2800_);
-lean_ctor_set(v_reuseFailAlloc_2817_, 12, v_snd_2810_);
-v___x_2813_ = v_reuseFailAlloc_2817_;
-goto v_reusejp_2812_;
+v_reuseFailAlloc_2817_ = lean_alloc_ctor(0, 4, 1);
+lean_ctor_set(v_reuseFailAlloc_2817_, 0, v___x_2812_);
+lean_ctor_set(v_reuseFailAlloc_2817_, 1, v_fst_2810_);
+lean_ctor_set(v_reuseFailAlloc_2817_, 2, v___x_2814_);
+lean_ctor_set(v_reuseFailAlloc_2817_, 3, v_continuedDivLeads_2782_);
+lean_ctor_set_uint8(v_reuseFailAlloc_2817_, sizeof(void*)*4, v_fatal_2781_);
+v___x_2816_ = v_reuseFailAlloc_2817_;
+goto v_reusejp_2815_;
 }
-v_reusejp_2812_:
+v_reusejp_2815_:
 {
-lean_object* v___x_2815_; 
-if (v_isShared_2784_ == 0)
-{
-lean_ctor_set(v___x_2783_, 2, v___x_2813_);
-lean_ctor_set(v___x_2783_, 1, v_fst_2809_);
-lean_ctor_set(v___x_2783_, 0, v___x_2811_);
-v___x_2815_ = v___x_2783_;
-goto v_reusejp_2814_;
-}
-else
-{
-lean_object* v_reuseFailAlloc_2816_; 
-v_reuseFailAlloc_2816_ = lean_alloc_ctor(0, 3, 1);
-lean_ctor_set(v_reuseFailAlloc_2816_, 0, v___x_2811_);
-lean_ctor_set(v_reuseFailAlloc_2816_, 1, v_fst_2809_);
-lean_ctor_set(v_reuseFailAlloc_2816_, 2, v___x_2813_);
-lean_ctor_set_uint8(v_reuseFailAlloc_2816_, sizeof(void*)*3, v_fatal_2781_);
-v___x_2815_ = v_reuseFailAlloc_2816_;
-goto v_reusejp_2814_;
-}
-v_reusejp_2814_:
-{
-return v___x_2815_;
+return v___x_2816_;
 }
 }
 }

@@ -5095,7 +5095,7 @@ return v_x_1198_;
 else
 {
 uint8_t v_fatal_1200_; 
-v_fatal_1200_ = lean_ctor_get_uint8(v_x_1198_, sizeof(void*)*3);
+v_fatal_1200_ = lean_ctor_get_uint8(v_x_1198_, sizeof(void*)*4);
 if (v_fatal_1200_ == 0)
 {
 lean_object* v_head_1201_; lean_object* v_tail_1202_; uint8_t v___x_1203_; lean_object* v___x_1204_; 

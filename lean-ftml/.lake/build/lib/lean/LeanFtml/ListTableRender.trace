@@ -1,10 +1,10 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["ed5a6a14444bd57b.olean"],
+ {"o": ["0bd8c83c29cb5fd4.olean"],
   "m": false,
   "i": "fe5cc2c9d4336897.ilean",
-  "c": "64bfc995399236e6.c"},
+  "c": "2cef2812c2b24d1d.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/LeanFtml/ListTableRender.lean -o /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/ListTableRender.olean -i /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/ListTableRender.ilean -c /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/ListTableRender.c --setup /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/ListTableRender.setup.json --json",
@@ -14,13 +14,13 @@
    [["«lean-ftml»/LeanFtml:extraDep",
      [["@«lean-ftml»:extraDep", "00000000000006bb"]]],
     ["imports",
-     [["LeanFtml.NotesRender transitive imports (legacy)", "50f0e071c6fa2410"],
-      ["LeanFtml.NotesRender:importAllArts", "41f52eaa4d529d00"],
+     [["LeanFtml.NotesRender transitive imports (legacy)", "5e65371b11094266"],
+      ["LeanFtml.NotesRender:importAllArts", "5aa615979e1612ae"],
       ["LeanFtml.ListTableRules transitive imports (legacy)",
-       "c3e21955a69ea716"],
+       "d29ffa38372ec642"],
       ["LeanFtml.ListTableRules:importAllArts", "1d74403ffcf1497b"],
-      ["LeanFtml.Pipeline transitive imports (legacy)", "c3e6626d7c338207"],
-      ["LeanFtml.Pipeline:importAllArts", "c57854f709f77512"]]]]],
+      ["LeanFtml.Pipeline transitive imports (legacy)", "d7f8956b71e1a789"],
+      ["LeanFtml.Pipeline:importAllArts", "2f6dc10ccdcd5f19"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -35,4 +35,4 @@
   ["Module.name: LeanFtml.ListTableRender", "5a0a712b052ee549"],
   ["Package.id?: (some lean-ftml)", "351a917adcadf512"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "13a8687a346ed053"}
+ "depHash": "657f596d493528be"}

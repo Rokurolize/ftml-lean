@@ -1113,6 +1113,16 @@ theorem span_start_class :
       ("type".toList, OptVal.str "start".toList)] =
     litBytes "<span class=\"a&quot;b\">" := rfl
 
+/-- REFCORR12 C-R5E-R1-3: a 0xFF placeholder-bearing data-* value keeps its
+    key and clears to an empty emitted value, so the live `<span data-x="">`
+    is matched rather than a bare `<span>`. The non-placeholder escape pins
+    span_start_class and span_start_bare are unchanged. -/
+theorem span_start_placeholder_data_key_cleared :
+    renderSpan [("args".toList, OptVal.map
+        [("data-x".toList, OptVal.bytes [0xFF, 49, 0xFF])]),
+      ("type".toList, OptVal.str "start".toList)] =
+    litBytes "<span data-x=\"\">" := rfl
+
 /-- `Span` `end`. -/
 theorem span_end :
     renderSpan [("type".toList, OptVal.str "end".toList)] =

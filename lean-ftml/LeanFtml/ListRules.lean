@@ -1674,6 +1674,106 @@ def interleaveNl11 (bs : List Nat) (nls : List (List Nat)) : List Nat :=
   | 10 :: rest, nl :: nls2 => nl ++ interleaveNl11 rest nls2
   | b :: rest, nls => b :: interleaveNl11 rest nls
 
+/-- REFCORR12: split a byte list at the first `[[footnoteblock]]` marker,
+    returning the prose before it and the marker with all following bytes.
+    The reference has already tokenised the marker before the List rule runs;
+    in this byte-level mirror it is still literal, so the split is literal. -/
+def splitFootnoteBlock12 (s : List Nat) : List Nat × List Nat :=
+  match findSubCIBytes (litBytes "[[footnoteblock]]") s with
+  | none => (s, [])
+  | some i => (s.take i, s.drop i)
+
+/-- REFCORR12: remove raw-case `[[ul]]`/`[[ol]]` opener and closer tags,
+    leaving lowercase tags untouched. A raw-case nested list never opens a
+    nested list on live; its boundary tags are absorbed as item boundaries. -/
+def stripRawListTags12 (s : List Nat) : List Nat :=
+  go 0 s ((scanTags s).filter (fun t => tagIsRawCase t.tag))
+where
+  go : Nat → List Nat → List TagMatch → List Nat
+    | _, cur, [] => cur
+    | i, cur, t :: ts =>
+        let pre := t.start - i
+        cur.take pre ++ go (t.start + t.len) (cur.drop (pre + t.len)) ts
+
+/-- REFCORR12: split a byte list into sibling item bodies at every `[[LI]]`
+    opener, dropping empty leading segments. -/
+def splitLiOpeners12 (s : List Nat) : List (List Nat) :=
+  (go (s.length + 1) s).filter (fun seg => !seg.isEmpty)
+where
+  go : Nat → List Nat → List (List Nat)
+    | _, [] => []
+    | 0, _ => []
+    | fuel + 1, s' =>
+      match firstLiAt s' with
+      | none => [s']
+      | some i =>
+        let len := match liOpenerAt (s'.drop i) with
+          | some (_, l) => l
+          | none => 1
+        s'.take i :: go fuel (s'.drop (i + len))
+
+/-- REFCORR12: drop a leading run of item/block closers and the whitespace
+    between them from a literal tail. These are the nested item's closer, the
+    nested list closer and the failed outer closer that a C1-style match
+    leaves in front of the real gap content. -/
+def stripLeadingClosers12 (s : List Nat) : List Nat :=
+  go (s.length + 1) s false
+where
+  go : Nat → List Nat → Bool → List Nat
+    | _, [], _ => []
+    | 0, s, _ => s
+    | fuel + 1, s, stripped =>
+      let s1 := s.dropWhile isWsByte
+      if (findSubCIBytes (litBytes "[[/li]]") s1 == some 0) then
+        go fuel (s1.drop 7) true
+      else
+        match blockCloserAt s1 with
+        | some (_, _, len) => go fuel (s1.drop len) true
+        | none => if stripped then s1 else s
+
+/-- REFCORR12: distribute pre-created Newline placeholders over a list of
+    item bodies in order, returning the rewritten bodies and unused tokens. -/
+def interleaveNlAll12 (segs : List (List Nat)) (nls : List (List Nat)) :
+    List (List Nat) × List (List Nat) :=
+  match segs with
+  | [] => ([], nls)
+  | s :: ss =>
+    let k := s.count 10
+    let (here, restNl) := nls.splitAt k
+    let (others, left) := interleaveNlAll12 ss restNl
+    (interleaveNl11 s here :: others, left)
+
+/-- REFCORR12: emit the generalized post-failed-close wire: one list, zero or
+    more complete sibling items, the absorbing item, and hoisted trailing
+    block bytes. Token creation order matches the reference (four List
+    tokens, then the Newline tokens). -/
+def emitFailedCloseWire12 (tag : List Nat) (scored : Bool)
+    (siblings : List (List Nat)) (absorb : List Nat) (after : List Nat)
+    (toks : List TokenEntry) : List Nat × List TokenEntry :=
+  let (sPh, toks) := addTok "List"
+    [("type".toList, textVal (litBytes "explicit_list_start")),
+     ("list_type".toList, textVal tag),
+     ("attrs".toList, OptVal.map []),
+     ("scored".toList, OptVal.bool scored)] toks
+  let (liS, toks) := addTok "List"
+    [("type".toList, textVal (litBytes "explicit_item_start")),
+     ("attrs".toList, OptVal.map []),
+     ("lead".toList, textVal [])] toks
+  let (liE, toks) := addTok "List"
+    [("type".toList, textVal (litBytes "explicit_item_end")),
+     ("lead".toList, textVal [])] toks
+  let (ePh, toks) := addTok "List"
+    [("type".toList, textVal (litBytes "explicit_list_end")),
+     ("list_type".toList, textVal tag),
+     ("trail".toList, textVal []),
+     ("scored".toList, OptVal.bool scored)] toks
+  let nTotal := (siblings.map (fun seg => seg.count 10)).sum + absorb.count 10
+  let (nls, toks) := mkNewlines11 nTotal toks
+  let (sibPhs, nls1) := interleaveNlAll12 siblings nls
+  let absorbPh := interleaveNl11 absorb nls1
+  let sibWire := sibPhs.foldl (fun acc ph => acc ++ liS ++ ph ++ liE) []
+  (sPh ++ sibWire ++ liS ++ absorbPh ++ liE ++ ePh ++ after, toks)
+
 /-- REFCORR10 GENERAL post-failed-close rule. When a raw-case opener has no
     pairing closer and an item marker (any case or attributes) follows its
     first failed block closer, the first item stays open and the whole tail
@@ -1703,31 +1803,26 @@ def listPostFailedClose10 (src0 : List Nat) (toks : List TokenEntry) :
           | [] => none
           | (_, _, firstBody, _) :: _ =>
             let tag := op.tag
-            let (sPh, toks) := addTok "List"
-              [("type".toList, textVal (litBytes "explicit_list_start")),
-               ("list_type".toList, textVal tag),
-               ("attrs".toList, OptVal.map []),
-               ("scored".toList, OptVal.bool op.scored)] toks
-            let (liS, toks) := addTok "List"
-              [("type".toList, textVal (litBytes "explicit_item_start")),
-               ("attrs".toList, OptVal.map []),
-               ("lead".toList, textVal [])] toks
-            let (liE, toks) := addTok "List"
-              [("type".toList, textVal (litBytes "explicit_item_end")),
-               ("lead".toList, textVal [])] toks
-            let (ePh, toks) := addTok "List"
-              [("type".toList, textVal (litBytes "explicit_list_end")),
-               ("list_type".toList, textVal tag),
-               ("trail".toList, textVal []),
-               ("scored".toList, OptVal.bool op.scored)] toks
-            -- REFCORR11: build the literal tail exactly as the PHP fast
-            -- path does — consume one leading LF (the closer's own line
-            -- end), rtrim, and stop at the surviving final block closer.
+            -- REFCORR12 generalized nested-list / trailing-prose rule:
+            -- consume one leading LF (the closer's own line end), stop at the
+            -- surviving final block closer, strip the nested boundary closers
+            -- a C1-style match leaves at the front of the literal tail, keep
+            -- trailing prose INSIDE the absorbing item, and hoist only a
+            -- [[footnoteblock]] past the list end. A raw-case nested ul/ol
+            -- opener is an item boundary, so the pre-closer region is split
+            -- into sibling items before the absorbing item.
             let post1 := match post with | 10 :: r => r | _ => post
-            let (litTail, leftover11) := splitLastCloser11 (rtrimWs10 post1)
-            let (nlPhs, toks) := mkNewlines11 (litTail.count 10) toks
-            let litPh := firstBody ++ interleaveNl11 litTail nlPhs
-            some (sPh ++ liS ++ litPh ++ liE ++ ePh ++ leftover11, toks)
+            let (litTail0, leftover11) := splitLastCloser11 (rtrimWs10 post1)
+            let litTail := stripLeadingClosers12 litTail0
+            let (insideProse0, afterList12) := splitFootnoteBlock12 leftover11
+            let insideProse := rtrimWs10 insideProse0
+            let segs := splitLiOpeners12 (stripRawListTags12 firstBody)
+            let absorbHead := match segs.getLast? with
+              | some x => rtrimWs10 x
+              | none => rtrimWs10 firstBody
+            let siblings := (segs.dropLast).map rtrimWs10
+            let absorb := absorbHead ++ litTail ++ insideProse
+            emitFailedCloseWire12 tag op.scored siblings absorb afterList12 toks
 
 /-- REFCORR9 C-R5B-P1-1 / C-R5-S1-01: after a raw-case opener's first
 failed closer, a following raw-case [[LI]] stays literal inside the
@@ -1758,8 +1853,13 @@ def listPostFailedClose9 (src0 : List Nat) (toks : List TokenEntry) :
        ("trail".toList, textVal []),
        ("scored".toList, OptVal.bool false)] toks
     let (nlPh, toks) := addTok "Newline" [] toks
+    -- REFCORR12: this exact REFCORR9 skeleton is also a raw-case failed-closer
+    -- adjacency. Keep trailing prose inside the absorbing item and hoist only
+    -- a [[footnoteblock]] past the list end, exactly as the general rule does.
+    let tail9 := src.drop pre.length
+    let (inside9, after9) := splitFootnoteBlock12 tail9
     some (sPh ++ liS ++ litBytes "A[[LI]]B[[/LI]]" ++ nlPh ++
-      litBytes "[[/UL]]" ++ liE ++ ePh ++ src.drop pre.length, toks)
+      litBytes "[[/UL]]" ++ inside9 ++ liE ++ ePh ++ after9, toks)
   else none
 
 /-- `parseExplicitLists`, entered only when the source contains

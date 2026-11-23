@@ -1,10 +1,10 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["f1447928b919b1d5.olean"],
+ {"o": ["284e13791e99659c.olean"],
   "m": false,
   "i": "9ed5ff5c3fa56adb.ilean",
-  "c": "7fe89fa36e138b3f.c"},
+  "c": "5bad8f8aeba1a9a5.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean /home/roku/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/LeanFtml/RawHeadingRender.lean -o /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/RawHeadingRender.olean -i /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/lib/lean/LeanFtml/RawHeadingRender.ilean -c /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/RawHeadingRender.c --setup /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/lean-ftml/.lake/build/ir/LeanFtml/RawHeadingRender.setup.json --json",
@@ -14,13 +14,13 @@
    [["«lean-ftml»/LeanFtml:extraDep",
      [["@«lean-ftml»:extraDep", "00000000000006bb"]]],
     ["imports",
-     [["LeanFtml.NotesRender transitive imports (legacy)", "50f0e071c6fa2410"],
-      ["LeanFtml.NotesRender:importAllArts", "41f52eaa4d529d00"],
+     [["LeanFtml.NotesRender transitive imports (legacy)", "5e65371b11094266"],
+      ["LeanFtml.NotesRender:importAllArts", "5aa615979e1612ae"],
       ["LeanFtml.RawHeadingRules transitive imports (legacy)",
-       "c3e21955a69ea716"],
+       "d29ffa38372ec642"],
       ["LeanFtml.RawHeadingRules:importAllArts", "9a6c08e044504436"],
-      ["LeanFtml.Pipeline transitive imports (legacy)", "c3e6626d7c338207"],
-      ["LeanFtml.Pipeline:importAllArts", "c57854f709f77512"]]]]],
+      ["LeanFtml.Pipeline transitive imports (legacy)", "d7f8956b71e1a789"],
+      ["LeanFtml.Pipeline:importAllArts", "2f6dc10ccdcd5f19"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -35,4 +35,4 @@
   ["Module.name: LeanFtml.RawHeadingRender", "c37e2c02084b1a6d"],
   ["Package.id?: (some lean-ftml)", "351a917adcadf512"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "dbdcbc89d6def799"}
+ "depHash": "1f32f275e43ba0c0"}
