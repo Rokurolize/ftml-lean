@@ -1,0 +1,22 @@
+{
+ "D3-IDFFSIZELEAD": {
+  "fullname": "muse-probe-round5d-p1-d3-idffsizelead",
+  "html": "<div id=\"\">\n<p>X</p>\n</div>",
+  "html_sha256": "2802c046b85ec9fbdfa4ded9f74f4b06c87dcb6c9c270e1a271155c6d89a2fce",
+  "source": "[[div id=\" [[size 12px]]x[[/size]]\"]]\nX[[/div]]",
+  "source_sha256": "f0db9a1553552db1ed49db4f547b594dc2cc5935dc9ea08ff17cc2154857b86c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "D4-IDFFSIZEBARE": {
+  "fullname": "muse-probe-round5d-p1-d4-idffsizebare",
+  "html": "<div id=\"\">\n<p>X</p>\n</div>",
+  "html_sha256": "2802c046b85ec9fbdfa4ded9f74f4b06c87dcb6c9c270e1a271155c6d89a2fce",
+  "source": "[[div id=\"[[size 12px]]x[[/size]]\"]]\nX[[/div]]",
+  "source_sha256": "ee7bc2ac0e8fa85bec312993d95de5130ce61c8ffc4ca1b18fe442776bc6fca8",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

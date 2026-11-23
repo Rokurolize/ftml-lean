@@ -1,0 +1,20 @@
+R3D-F1 -> muse-probe-round5d-r3-r3d-f1 (created)
+R3D-F2 -> muse-probe-round5d-r3-r3d-f2 (created)
+R3D-F3 -> muse-probe-round5d-r3-r3d-f3 (created)
+{
+ "R3D-F1": {
+  "fullname": "muse-probe-round5d-r3-r3d-f1",
+  "source": "[[footnote]]x@@@@\f\n\n@@@@y[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3D-F2": {
+  "fullname": "muse-probe-round5d-r3-r3d-f2",
+  "source": "[[footnote]]@@@@\f@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3D-F3": {
+  "fullname": "muse-probe-round5d-r3-r3d-f3",
+  "source": "[[footnote]]@@@@\f\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ }
+}

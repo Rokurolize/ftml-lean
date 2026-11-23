@@ -1,0 +1,7 @@
+# Mirror consequence record — R5D-S1
+
+One confirmed divergence, C-R5D-S1-1 (list/notes seam). The owning reference mechanism is the REFCORR9/REFCORR10 post-failed-close adjacency guard in `ref-php/text-wiki/Text/Wiki/Parse/Default/List.php` (line 489). The mirror counterpart is `lean-ftml/LeanFtml/ListRules.lean`: `listPostFailedClose10` (lines 1636-1677) and the earlier exact-byte `listPostFailedClose9` (lines 1680-1704), dispatched by `listExplicitPass` (lines 1713-1720).
+
+Both mirror guards require the following raw-case LI to be adjacent to the failed closer: `listPostFailedClose9` matches one exact literal prefix, and `listPostFailedClose10` checks `liOpenerAt (post.dropWhile isWsByte)` after the first body closer. With a footnote collected between the failed `[[/UL]]` and the `[[LI]]`, `dropWhile isWsByte` stops at `[[footnote]]`, so `liOpenerAt` is none, both guards fail, and the generic explicit-list parse forms two items. That is the same rule-level result the post-REFCORR10 PHP reference produces and the opposite of live's single item with a literal tail.
+
+The mirror therefore carries the same defect as the reference; the transcribed mechanism is present, not absent, and the correction must be applied symmetrically. This conclusion is from reading the canonical mirror source plus the recorded tokens-mode artifact (`ref.jsonl` row 1, two `explicit_item_start` tokens), not from running Lean. No Lean invocation, cargo run, ftml edit, canonical file write, git identity override or git stash was used in this unit.

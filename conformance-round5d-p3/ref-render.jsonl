@@ -1,0 +1,16 @@
+{"id":"p3d-01-tableadv-empty-data-suffix","output":"<table data-=\"UB\">\n<tr>\n<td>CELLX<\/td>\n<\/tr>\n<\/table>"}
+{"id":"p3d-02-tableadv-dot-edge-suffix","output":"<table data-.=\"UB\">\n<tr>\n<td>CELLX<\/td>\n<\/tr>\n<\/table>"}
+{"id":"p3d-03-tableadv-out-of-class-byte","output":"<table>\n<tr>\n<td>CELLX<\/td>\n<\/tr>\n<\/table>"}
+{"id":"p3d-04-module-three-level-nested","output":"<div class=\"error-block\">[[module <em>nosuchmod<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div><p>[[\/module]]<\/p>\n\n"}
+{"id":"p3d-05-module-attributed-inner","output":"<div class=\"error-block\">[[module <em>nosuchmod<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"p3d-06-raw-c2-later-quad","output":"<p>ZQ<span style=\"white-space: pre-wrap;\">P<\/span>@@<\/p>\n\n"}
+{"id":"p3d-07-raw-c3-later-five","output":"<p>AB<span style=\"white-space: pre-wrap;\">@CD<\/span>@@@<\/p>\n\n"}
+{"id":"p3d-08-raw-open3-close4","output":"<p><span style=\"white-space: pre-wrap;\">@ZQ<\/span>@@<\/p>\n\n"}
+{"id":"p3d-09-include-duplicate-args","output":"<p>A=AA B={$b}<\/p>\n\n"}
+{"id":"p3d-10-table-trailing-text","output":"<p>PRE<br \/>\n<table class=\"wiki-content-table\">\n<tr>\n<td>A<\/td>\n<td>B<\/td>\n<\/tr>\n<\/table><\/p>\n\n<p>POST<\/p>\n\n"}
+{"id":"p3d-11-image-link-trailing-space","output":"<a href=\"http:\/\/example.com\/x \"><img src=\"\/local--files\/\/IMG.png\" alt=\"IMG.png\" class=\"image\" \/><\/a>"}
+{"id":"p3d-12-gallery-size-large","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/img1.png\" ><img src=\"\/local--resized-images\/\/img1.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/img2.png\" ><img src=\"\/local--resized-images\/\/img2.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"p3d-13-file-percent-path","output":"<p><a href=\"\/local--files\/page\/100%.png\">A<\/a><\/p>\n\n"}
+{"id":"p3d-14-tableadv-upper-hcell-closer","output":"<table>\n<tr>\n<td>HD<\/td>\n<\/tr>\n<\/table>"}
+{"id":"p3d-15-file-question-path","output":"<p><a href=\"\/local--files\/page\/a?b.png\">L<\/a><\/p>\n\n"}
+{"id":"p3d-16-tableadv-dot-on-row","output":"<table>\n<tr data-foo.bar=\"UB\">\n<td>CELLX<\/td>\n<\/tr>\n<\/table>"}

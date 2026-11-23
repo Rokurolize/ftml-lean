@@ -1,0 +1,17 @@
+{"id":"L1-C1RESBR","output":"<ul>\n<li>A<li>B<br \/>"}
+{"id":"L2-C1BLANK","output":"<ul>\n<li>A<li>B<br \/>"}
+{"id":"L3-C1CROSSTAG","output":"<ul>\n<li>A[[LI]]B[[\/LI]]<br \/>\n[[\/UL]]<\/li>\n<\/ul>"}
+{"id":"L4-NATEMPTY","output":"<ul>\n<li>\n<ul>\n<li>x<\/li>\n<\/ul>\n<\/li>\n<\/ul>"}
+{"id":"L5-EMPTYNESTEDNL","output":"<ul>\n<li><br \/><\/li>\n<\/ul>\n<ul>\n<li>x<\/li>\n<\/ul>\n<br \/>\n"}
+{"id":"L6-NESTEDCLOSEEMPTY","output":"<ul>\n<li>A"}
+{"id":"L7-C4SCOREDNESTED","output":"<ul>\n<li><br \/><\/li>\n<\/ul>\n<ul>\n<li>x<\/li>\n<\/ul>\n<br \/>\n"}
+{"id":"D1-IDFFLEADWS","output":"<div id=\"u- \ufffdabc\"><p>X<\/p>\n\n<\/div>"}
+{"id":"D2-IDFFONLY","output":"<div id=\"u-\ufffd\"><p>X<\/p>\n\n<\/div>"}
+{"id":"P1-SCOREDSPANATTR","output":"<span class=\"c\">X<\/span>"}
+{"id":"P2-SCOREDANCHORMID","output":"<p>A <a href=\"x\">L<\/a> tail<\/p>\n\n"}
+{"id":"N1-BRK3SPACE","output":"<p>a <br \/>\nb<\/p>\n\n"}
+{"id":"B1-DEEPEMPTY","output":"<blockquote><p>a<\/p>\n\n<blockquote><blockquote><p>b<br \/>\nc<\/p>\n\n<\/blockquote>\n<\/blockquote>\n<\/blockquote>\n"}
+{"id":"B2-MARKERNOSPACE","output":""}
+{"id":"T1-TABATTRDUP","output":"<p>class=&quot;c&quot; class=&quot;c&quot;<script type=\"text\/javascript\" src=\"\/common--javascript\/yahooui\/element-beta-min.js\"><\/script>\n<script type=\"text\/javascript\" src=\"\/common--javascript\/yahooui\/tabview-min.js\"><\/script><div id=\"wiki-tabview-0\" class=\"yui-navset\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>untitled<\/em><\/a><\/li><\/ul><div class=\"yui-content\"><\/p>\n\n<div id=\"wiki-tab-0-0\"><p>X<\/p>\n\n<\/div><\/div><\/div><script type=\"text\/javascript\">\n(function(){\n\tvar tabView0 = new YAHOO.widget.TabView('wiki-tabview-0');\n})();\n<\/script>"}
+{"id":"T2-TABWS","output":"<script type=\"text\/javascript\" src=\"\/common--javascript\/yahooui\/element-beta-min.js\"><\/script>\n<script type=\"text\/javascript\" src=\"\/common--javascript\/yahooui\/tabview-min.js\"><\/script><div id=\"wiki-tabview-1\" class=\"yui-navset\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>A B<\/em><\/a><\/li><\/ul><div class=\"yui-content\"><div id=\"wiki-tab-1-0\"><p>X<\/p>\n\n<\/div><\/div><\/div><script type=\"text\/javascript\">\n(function(){\n\tvar tabView1 = new YAHOO.widget.TabView('wiki-tabview-1');\n})();\n<\/script>"}
+{"id":"C1-COLLTRAIL","output":"<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block<\/a><\/div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">\u2013&nbsp;hide&nbsp;block<\/a><\/div><div class=\"collapsible-block-content\"><p>A<\/p>\n\n<\/div><\/div><\/div>B[[\/collapsible]]"}

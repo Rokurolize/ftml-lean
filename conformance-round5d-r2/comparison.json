@@ -1,0 +1,534 @@
+[
+ {
+  "id": "r2d-01-freelink-u2000",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"/x\">x</a></p>",
+  "live_canon": "<p><a href=\"/x\">x</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "x"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "x"
+  },
+  "capture_id": "muse-probe-round5d-r2-r2d-01-freelink-u2000",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5"
+ },
+ {
+  "id": "r2d-02-freelink-u0085",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"/x\">x</a></p>",
+  "live_canon": "<p><a href=\"/x\">x</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "x"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "x"
+  },
+  "capture_id": "muse-probe-round5d-r2-r2d-02-freelink-u0085",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5"
+ },
+ {
+  "id": "r2d-03-freelink-u1680",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"/x\">x</a></p>",
+  "live_canon": "<p><a href=\"/x\">x</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "x"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "x"
+  },
+  "capture_id": "muse-probe-round5d-r2-r2d-03-freelink-u1680",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5"
+ },
+ {
+  "id": "r2d-04-freelink-u205f",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"/x\">x</a></p>",
+  "live_canon": "<p><a href=\"/x\">x</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "x"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "x"
+  },
+  "capture_id": "muse-probe-round5d-r2-r2d-04-freelink-u205f",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5"
+ },
+ {
+  "id": "r2d-05-freelink-nbsp-star",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"/x\">x</a></p>",
+  "live_canon": "<p><a href=\"/x\">x</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "x"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "x"
+  },
+  "capture_id": "muse-probe-round5d-r2-r2d-05-freelink-nbsp-star",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5"
+ },
+ {
+  "id": "r2d-06-freelink-feff-star",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"/x\">x</a></p>",
+  "live_canon": "<p><a href=\"/x\">x</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "x"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "x"
+  },
+  "capture_id": "muse-probe-round5d-r2-r2d-06-freelink-feff-star",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5"
+ },
+ {
+  "id": "r2d-07-freelink-triple-star",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"/x\">x</a></p>",
+  "live_canon": "<p><a href=\"/x\">x</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "x"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "x"
+  },
+  "capture_id": "muse-probe-round5d-r2-r2d-07-freelink-triple-star",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5"
+ },
+ {
+  "id": "r2d-08-freelink-mixed-run",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"/x\">x</a></p>",
+  "live_canon": "<p><a href=\"/x\">x</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "x"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "x"
+  },
+  "capture_id": "muse-probe-round5d-r2-r2d-08-freelink-mixed-run",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5"
+ },
+ {
+  "id": "r2d-09-freelink-route-label",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"/foo#/bar\">shown</a></p>",
+  "live_canon": "<p><a href=\"/foo#/bar\">shown</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/foo#/bar\">shown</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "shown"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/foo#/bar\">shown</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "shown"
+  },
+  "capture_id": "muse-probe-round5d-r2-r2d-09-freelink-route-label",
+  "html_sha256": "d16e5e03607ea587201003175327f088287a59295b7b54ec230d19408dc625c4"
+ },
+ {
+  "id": "r2d-10-freelink-route-empty-base",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"/#/bar\">/</a></p>",
+  "live_canon": "<p><a href=\"/#/bar\">/</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/#/bar\">/</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "/"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/#/bar\">/</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "/"
+  },
+  "capture_id": "muse-probe-round5d-r2-r2d-10-freelink-route-empty-base",
+  "html_sha256": "2f9536f96d4b0b4a6623cd57c71e80b4b69f329bc75f8fec087e3a5f36d919e6"
+ },
+ {
+  "id": "r2d-11-freelink-route-then-anchor",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": false,
+  "ref_canon": "<p><a href=\"/foo#/bar#baz\">foo/</a></p>",
+  "live_canon": "<p>[[[foo/#/bar#baz]]]</p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/foo#/bar#baz\">foo/</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "foo/"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "[[[foo/#/bar#baz]]]"
+  },
+  "capture_id": "muse-probe-round5d-r2-r2d-11-freelink-route-then-anchor",
+  "html_sha256": "fd6acf96b22efb613c509d43e8803e5c2bf14445eb64d36f0926448960d08778"
+ },
+ {
+  "id": "r2d-12-freelink-route-twice",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": false,
+  "ref_canon": "<p><a href=\"/a#/b/#/c\">a/</a></p>",
+  "live_canon": "<p>[[[a/#/b/#/c]]]</p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/a#/b/#/c\">a/</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "a/"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "[[[a/#/b/#/c]]]"
+  },
+  "capture_id": "muse-probe-round5d-r2-r2d-12-freelink-route-twice",
+  "html_sha256": "c569e3172f12dce029060e968eedf47617be91abf4747264f06b16c37178c342"
+ },
+ {
+  "id": "r2d-13-freelink-route-empty-rest",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"/foo#/\">foo/</a></p>",
+  "live_canon": "<p><a href=\"/foo#/\">foo/</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/foo#/\">foo/</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "foo/"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/foo#/\">foo/</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "foo/"
+  },
+  "capture_id": "muse-probe-round5d-r2-r2d-13-freelink-route-empty-rest",
+  "html_sha256": "66abb1ce5ab504deaa4462890d7d1b0331a8a18ba080e6cee8001b52d35332e0"
+ },
+ {
+  "id": "r2d-14-freelink-route-leading-space",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"/foo#/bar\">foo/</a></p>",
+  "live_canon": "<p><a href=\"/foo#/bar\">foo/</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"/foo#/bar\">foo/</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "foo/"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"/foo#/bar\">foo/</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "foo/"
+  },
+  "capture_id": "muse-probe-round5d-r2-r2d-14-freelink-route-leading-space",
+  "html_sha256": "fb78456199f5088fbe7ea9e0f2f19362aac018e0c0da449d871a97d0d52dcf2d"
+ },
+ {
+  "id": "r2d-15-url-upper-ext",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p><a href=\"https://example.com/PIC.JPG\">https://example.com/PIC.JPG</a></p>",
+  "live_canon": "<p><a href=\"https://example.com/PIC.JPG\">https://example.com/PIC.JPG</a></p>",
+  "ref_sig": {
+   "anchors": [
+    "<a href=\"https://example.com/PIC.JPG\">https://example.com/PIC.JPG</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "https://example.com/PIC.JPG"
+  },
+  "live_sig": {
+   "anchors": [
+    "<a href=\"https://example.com/PIC.JPG\">https://example.com/PIC.JPG</a>"
+   ],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "https://example.com/PIC.JPG"
+  },
+  "capture_id": "muse-probe-round5d-r2-r2d-15-url-upper-ext",
+  "html_sha256": "dc6a29ed346ff66f3454d3d953b354f1ba61040dc27f6cce5da395e47559405c"
+ },
+ {
+  "id": "r2d-16-interwiki-nonascii-page",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<p>[wikipedia:café]</p>",
+  "live_canon": "<p>[wikipedia:café]</p>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "[wikipedia:café]"
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": "[wikipedia:café]"
+  },
+  "capture_id": "muse-probe-round5d-r2-r2d-16-interwiki-nonascii-page",
+  "html_sha256": "a2bcbdfaee932f0892b10aa86a169bbd0ba493a6d58264f06a39965047323fcf"
+ },
+ {
+  "id": "r2d-17-image-nonascii-alt",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "ref_canon": "<img alt=\"café\" class=\"image\" src=\"http://x/y.png\">",
+  "live_canon": "<img alt=\"café\" class=\"image\" src=\"http://x/y.png\">",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"café\" class=\"image\" src=\"http://x/y.png\">"
+   ],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": ""
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [
+    "<img alt=\"café\" class=\"image\" src=\"http://x/y.png\">"
+   ],
+   "emails": [],
+   "mathinline": [],
+   "err": [],
+   "text": ""
+  },
+  "capture_id": "muse-probe-round5d-r2-r2d-17-image-nonascii-alt",
+  "html_sha256": "c89f2c2dc60c94333bbc17d81388fea61b3c9146b3f71e1eab4bd492ab791084"
+ },
+ {
+  "id": "r2d-18-embed-uppercase-event",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": true,
+  "ref_canon": "<p><div class=\"error-block\">Sorry, no match for the embedded content.</div></p>",
+  "live_canon": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "ref_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [
+    "<div class=\"error-block\">Sorry, no match for the embedded content.</div>"
+   ],
+   "text": "Sorry, no match for the embedded content."
+  },
+  "live_sig": {
+   "anchors": [],
+   "imgs": [],
+   "emails": [],
+   "mathinline": [],
+   "err": [
+    "<div class=\"error-block\">Sorry, no match for the embedded content.</div>"
+   ],
+   "text": "Sorry, no match for the embedded content."
+  },
+  "capture_id": "muse-probe-round5d-r2-r2d-18-embed-uppercase-event",
+  "html_sha256": "0d94a629bbda9bb7b87fcaf86579d5195ffef1ffcfd644fd09babead0f4c04b0"
+ }
+]

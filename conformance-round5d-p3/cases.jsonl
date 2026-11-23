@@ -1,0 +1,16 @@
+{"id": "p3d-01-tableadv-empty-data-suffix", "source": "[[table data-=\"UB\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3d-02-tableadv-dot-edge-suffix", "source": "[[table data-.=\"UB\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3d-03-tableadv-out-of-class-byte", "source": "[[table data-foo+bar=\"UB\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3d-04-module-three-level-nested", "source": "[[module nosuchmod]]\n[[module mid]]\n[[module inner]]INNER[[/module]]\n[[/module]]\n[[/module]]"}
+{"id": "p3d-05-module-attributed-inner", "source": "[[module nosuchmod]]\n[[module inner arg=val]]INNER[[/module]]\n[[/module]]"}
+{"id": "p3d-06-raw-c2-later-quad", "source": "@@@@ZQ@@P@@@@"}
+{"id": "p3d-07-raw-c3-later-five", "source": "@@@@AB@@@CD@@@@@"}
+{"id": "p3d-08-raw-open3-close4", "source": "@@@ZQ@@@@"}
+{"id": "p3d-09-include-duplicate-args", "source": "[[include muse-probe-round5d-p3-t-fold | a=AA | a=BB]]"}
+{"id": "p3d-10-table-trailing-text", "source": "PRE\n||A||B||TAIL\nPOST"}
+{"id": "p3d-11-image-link-trailing-space", "source": "[[image IMG.png link=\"http://example.com/x \"]]"}
+{"id": "p3d-12-gallery-size-large", "source": "[[gallery size=\"large\"]]\n: img1.png\n: img2.png\n[[/gallery]]"}
+{"id": "p3d-13-file-percent-path", "source": "[[file page/100%.png|A]]"}
+{"id": "p3d-14-tableadv-upper-hcell-closer", "source": "[[table]]\n[[row]]\n[[hcell]]HD[[/CELL]]\n[[/row]]\n[[/table]]"}
+{"id": "p3d-15-file-question-path", "source": "[[file page/a?b.png|L]]"}
+{"id": "p3d-16-tableadv-dot-on-row", "source": "[[table]]\n[[row data-Foo.Bar=\"UB\"]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"}

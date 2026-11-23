@@ -1,0 +1,82 @@
+{
+ "p3d-01-tableadv-empty-data-suffix": {
+  "fullname": "muse-probe-round5d-p3-p3d-01-tableadv-empty-data-suffix",
+  "source": "[[table data-=\"UB\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]",
+  "action": "created"
+ },
+ "p3d-02-tableadv-dot-edge-suffix": {
+  "fullname": "muse-probe-round5d-p3-p3d-02-tableadv-dot-edge-suffix",
+  "source": "[[table data-.=\"UB\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]",
+  "action": "created"
+ },
+ "p3d-03-tableadv-out-of-class-byte": {
+  "fullname": "muse-probe-round5d-p3-p3d-03-tableadv-out-of-class-byte",
+  "source": "[[table data-foo+bar=\"UB\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]",
+  "action": "created"
+ },
+ "p3d-04-module-three-level-nested": {
+  "fullname": "muse-probe-round5d-p3-p3d-04-module-three-level-nested",
+  "source": "[[module nosuchmod]]\n[[module mid]]\n[[module inner]]INNER[[/module]]\n[[/module]]\n[[/module]]",
+  "action": "created"
+ },
+ "p3d-05-module-attributed-inner": {
+  "fullname": "muse-probe-round5d-p3-p3d-05-module-attributed-inner",
+  "source": "[[module nosuchmod]]\n[[module inner arg=val]]INNER[[/module]]\n[[/module]]",
+  "action": "created"
+ },
+ "p3d-06-raw-c2-later-quad": {
+  "fullname": "muse-probe-round5d-p3-p3d-06-raw-c2-later-quad",
+  "source": "@@@@ZQ@@P@@@@",
+  "action": "created"
+ },
+ "p3d-07-raw-c3-later-five": {
+  "fullname": "muse-probe-round5d-p3-p3d-07-raw-c3-later-five",
+  "source": "@@@@AB@@@CD@@@@@",
+  "action": "created"
+ },
+ "p3d-08-raw-open3-close4": {
+  "fullname": "muse-probe-round5d-p3-p3d-08-raw-open3-close4",
+  "source": "@@@ZQ@@@@",
+  "action": "created"
+ },
+ "p3d-09-include-duplicate-args": {
+  "fullname": "muse-probe-round5d-p3-p3d-09-include-duplicate-args",
+  "source": "[[include muse-probe-round5d-p3-t-fold | a=AA | a=BB]]",
+  "action": "created"
+ },
+ "p3d-10-table-trailing-text": {
+  "fullname": "muse-probe-round5d-p3-p3d-10-table-trailing-text",
+  "source": "PRE\n||A||B||TAIL\nPOST",
+  "action": "created"
+ },
+ "p3d-11-image-link-trailing-space": {
+  "fullname": "muse-probe-round5d-p3-p3d-11-image-link-trailing-space",
+  "source": "[[image IMG.png link=\"http://example.com/x \"]]",
+  "action": "created"
+ },
+ "p3d-12-gallery-size-large": {
+  "fullname": "muse-probe-round5d-p3-p3d-12-gallery-size-large",
+  "source": "[[gallery size=\"large\"]]\n: img1.png\n: img2.png\n[[/gallery]]",
+  "action": "created"
+ },
+ "p3d-13-file-percent-path": {
+  "fullname": "muse-probe-round5d-p3-p3d-13-file-percent-path",
+  "source": "[[file page/100%.png|A]]",
+  "action": "created"
+ },
+ "p3d-14-tableadv-upper-hcell-closer": {
+  "fullname": "muse-probe-round5d-p3-p3d-14-tableadv-upper-hcell-closer",
+  "source": "[[table]]\n[[row]]\n[[hcell]]HD[[/CELL]]\n[[/row]]\n[[/table]]",
+  "action": "created"
+ },
+ "p3d-15-file-question-path": {
+  "fullname": "muse-probe-round5d-p3-p3d-15-file-question-path",
+  "source": "[[file page/a?b.png|L]]",
+  "action": "created"
+ },
+ "p3d-16-tableadv-dot-on-row": {
+  "fullname": "muse-probe-round5d-p3-p3d-16-tableadv-dot-on-row",
+  "source": "[[table]]\n[[row data-Foo.Bar=\"UB\"]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]",
+  "action": "created"
+ }
+}

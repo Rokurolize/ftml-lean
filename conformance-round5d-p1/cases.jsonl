@@ -1,0 +1,17 @@
+{"id": "L1-C1RESBR", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]]\n[[LI]]B[[/LI]]\n[[/UL]]"}
+{"id": "L2-C1BLANK", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n\n[[LI]]B[[/LI]]\n[[/UL]]"}
+{"id": "L3-C1CROSSTAG", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/OL]]\n[[LI]]B[[/LI]]\n[[/UL]]"}
+{"id": "L4-NATEMPTY", "source": "[[UL]]\n[[LI]]   \n\n* x\n\n[[/LI]]\n[[/UL]]"}
+{"id": "L5-EMPTYNESTEDNL", "source": "[[UL]]\n[[LI]] \t \n[[ul]]\n[[li]]x[[/li]]\n[[/ul]]\n\n[[/LI]]\n[[/UL]]"}
+{"id": "L6-NESTEDCLOSEEMPTY", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[ul]][[/ul]]\n[[/UL]]"}
+{"id": "L7-C4SCOREDNESTED", "source": "[[UL_]]\n[[LI]] \t \n[[ul]]\n[[li]]x[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]"}
+{"id": "D1-IDFFLEADWS", "source": "[[div id=\" �abc\"]]\nX[[/div]]"}
+{"id": "D2-IDFFONLY", "source": "[[div id=\"�\"]]\nX[[/div]]"}
+{"id": "P1-SCOREDSPANATTR", "source": "[[span_ class=\"c\"]]X[[/span]]"}
+{"id": "P2-SCOREDANCHORMID", "source": "A [[a_ href=\"x\"]]L[[/a]] tail"}
+{"id": "N1-BRK3SPACE", "source": "a   _\nb"}
+{"id": "B1-DEEPEMPTY", "source": "> a\n>>> b\n>>> c"}
+{"id": "B2-MARKERNOSPACE", "source": ">a\n>b"}
+{"id": "T1-TABATTRDUP", "source": "[[tabs class=\"c\"]]\n[[tab]]X[[/tab]]\n[[/tabs]]"}
+{"id": "T2-TABWS", "source": "[[tabview]]\n[[tab A\t \t B]]X[[/tab]]\n[[/tabview]]"}
+{"id": "C1-COLLTRAIL", "source": "[[collapsible]]A[[/collapsible]]B[[/collapsible]]"}

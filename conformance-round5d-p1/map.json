@@ -1,0 +1,87 @@
+{
+ "L1-C1RESBR": {
+  "fullname": "muse-probe-round5d-p1-l1-c1resbr",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]]\n[[LI]]B[[/LI]]\n[[/UL]]",
+  "action": "exists"
+ },
+ "L2-C1BLANK": {
+  "fullname": "muse-probe-round5d-p1-l2-c1blank",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n\n[[LI]]B[[/LI]]\n[[/UL]]",
+  "action": "exists"
+ },
+ "L3-C1CROSSTAG": {
+  "fullname": "muse-probe-round5d-p1-l3-c1crosstag",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/OL]]\n[[LI]]B[[/LI]]\n[[/UL]]",
+  "action": "exists"
+ },
+ "L4-NATEMPTY": {
+  "fullname": "muse-probe-round5d-p1-l4-natempty",
+  "source": "[[UL]]\n[[LI]]   \n\n* x\n\n[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "L5-EMPTYNESTEDNL": {
+  "fullname": "muse-probe-round5d-p1-l5-emptynestednl",
+  "source": "[[UL]]\n[[LI]] \t \n[[ul]]\n[[li]]x[[/li]]\n[[/ul]]\n\n[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "L6-NESTEDCLOSEEMPTY": {
+  "fullname": "muse-probe-round5d-p1-l6-nestedcloseempty",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[ul]][[/ul]]\n[[/UL]]",
+  "action": "created"
+ },
+ "L7-C4SCOREDNESTED": {
+  "fullname": "muse-probe-round5d-p1-l7-c4scorednested",
+  "source": "[[UL_]]\n[[LI]] \t \n[[ul]]\n[[li]]x[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "D1-IDFFLEADWS": {
+  "fullname": "muse-probe-round5d-p1-d1-idffleadws",
+  "source": "[[div id=\" �abc\"]]\nX[[/div]]",
+  "action": "created"
+ },
+ "D2-IDFFONLY": {
+  "fullname": "muse-probe-round5d-p1-d2-idffonly",
+  "source": "[[div id=\"�\"]]\nX[[/div]]",
+  "action": "created"
+ },
+ "P1-SCOREDSPANATTR": {
+  "fullname": "muse-probe-round5d-p1-p1-scoredspanattr",
+  "source": "[[span_ class=\"c\"]]X[[/span]]",
+  "action": "created"
+ },
+ "P2-SCOREDANCHORMID": {
+  "fullname": "muse-probe-round5d-p1-p2-scoredanchormid",
+  "source": "A [[a_ href=\"x\"]]L[[/a]] tail",
+  "action": "created"
+ },
+ "N1-BRK3SPACE": {
+  "fullname": "muse-probe-round5d-p1-n1-brk3space",
+  "source": "a   _\nb",
+  "action": "created"
+ },
+ "B1-DEEPEMPTY": {
+  "fullname": "muse-probe-round5d-p1-b1-deepempty",
+  "source": "> a\n>>> b\n>>> c",
+  "action": "created"
+ },
+ "B2-MARKERNOSPACE": {
+  "fullname": "muse-probe-round5d-p1-b2-markernospace",
+  "source": ">a\n>b",
+  "action": "created"
+ },
+ "T1-TABATTRDUP": {
+  "fullname": "muse-probe-round5d-p1-t1-tabattrdup",
+  "source": "[[tabs class=\"c\"]]\n[[tab]]X[[/tab]]\n[[/tabs]]",
+  "action": "created"
+ },
+ "T2-TABWS": {
+  "fullname": "muse-probe-round5d-p1-t2-tabws",
+  "source": "[[tabview]]\n[[tab A\t \t B]]X[[/tab]]\n[[/tabview]]",
+  "action": "created"
+ },
+ "C1-COLLTRAIL": {
+  "fullname": "muse-probe-round5d-p1-c1-colltrail",
+  "source": "[[collapsible]]A[[/collapsible]]B[[/collapsible]]",
+  "action": "created"
+ }
+}

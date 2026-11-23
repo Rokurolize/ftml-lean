@@ -1,0 +1,107 @@
+{
+ "s01-li-guard-footnote-gap": {
+  "fullname": "muse-probe-round5d-s1-s01-li-guard-footnote-gap",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]gap[[/footnote]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnoteblock]]",
+  "action": "exists"
+ },
+ "s02-li-empty-item-footnote-nested": {
+  "fullname": "muse-probe-round5d-s1-s02-li-empty-item-footnote-nested",
+  "source": "[[ul]]\n[[li]][[footnote]]n[[/footnote]][[ul]]\n[[li]]in[[/li]]\n[[/ul]][[/li]]\n[[/ul]]\n[[footnoteblock]]",
+  "action": "exists"
+ },
+ "s03-li-mixedcase-footnote-body": {
+  "fullname": "muse-probe-round5d-s1-s03-li-mixedcase-footnote-body",
+  "source": "[[ul]]\n[[li]][[footnote]]n1[[/footnote]][[/li]]\n[[LI]][[footnote]]n2[[/footnote]][[/LI]]\n[[/ul]]\n[[footnoteblock]]",
+  "action": "exists"
+ },
+ "s04-li-fn-newline-before-failed-close": {
+  "fullname": "muse-probe-round5d-s1-s04-li-fn-newline-before-failed-close",
+  "source": "[[UL]]\n[[LI]]A[[footnote]]@@@@\n@@@@[[/footnote]][[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnoteblock]]",
+  "action": "exists"
+ },
+ "s05-fl-u2002-pipe": {
+  "fullname": "muse-probe-round5d-s1-s05-fl-u2002-pipe",
+  "source": "A [[[ _default:Café|L]]] B",
+  "action": "exists"
+ },
+ "s06-fl-u1680-pipe": {
+  "fullname": "muse-probe-round5d-s1-s06-fl-u1680-pipe",
+  "source": "A [[[ _default:Café|L]]] B",
+  "action": "exists"
+ },
+ "s07-fl-u0085-pipe": {
+  "fullname": "muse-probe-round5d-s1-s07-fl-u0085-pipe",
+  "source": "A [[[_default:Café|L]]] B",
+  "action": "exists"
+ },
+ "s08-fl-mixed-nel-star-pipe": {
+  "fullname": "muse-probe-round5d-s1-s08-fl-mixed-nel-star-pipe",
+  "source": "A [[[*  _default:Café|L]]] B",
+  "action": "exists"
+ },
+ "s09-fn-newline-in-quote": {
+  "fullname": "muse-probe-round5d-s1-s09-fn-newline-in-quote",
+  "source": "> [[footnote]]@@@@\n@@@@[[/footnote]]\n> tail\n\n[[footnoteblock]]",
+  "action": "exists"
+ },
+ "s10-fn-leading-break-in-list": {
+  "fullname": "muse-probe-round5d-s1-s10-fn-leading-break-in-list",
+  "source": "[[ul]]\n[[li]]x[[footnote]]@@@@\n@@@@y[[/footnote]][[/li]]\n[[/ul]]\n[[footnoteblock]]",
+  "action": "exists"
+ },
+ "s11-fn-formfeed-in-quote": {
+  "fullname": "muse-probe-round5d-s1-s11-fn-formfeed-in-quote",
+  "source": "> [[footnote]]@@@@\f\n@@@@[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "exists"
+ },
+ "s12-fn-doublelf-in-list": {
+  "fullname": "muse-probe-round5d-s1-s12-fn-doublelf-in-list",
+  "source": "[[ul]]\n[[li]]x[[footnote]]@@@@\n\n@@@@[[/footnote]][[/li]]\n[[/ul]]\n[[footnoteblock]]",
+  "action": "exists"
+ },
+ "s13-div-ph-id-in-module": {
+  "fullname": "muse-probe-round5d-s1-s13-div-ph-id-in-module",
+  "source": "[[module nosuchmod]]\n[[div id=\"[[size 12px]]x[[/size]]\"]]\nX[[/div]]\n[[/module]]",
+  "action": "exists"
+ },
+ "s14-div-ph-id-u-prefix-in-module": {
+  "fullname": "muse-probe-round5d-s1-s14-div-ph-id-u-prefix-in-module",
+  "source": "[[module nosuchmod]]\n[[div id=\"u-[[size 12px]]x[[/size]]\"]]\nX[[/div]]\n[[/module]]",
+  "action": "exists"
+ },
+ "s15-div-ph-id-plus-class-in-nested-module": {
+  "fullname": "muse-probe-round5d-s1-s15-div-ph-id-plus-class-in-nested-module",
+  "source": "[[module nosuchmod]]\n[[module nosuchmod2]]\n[[div id=\"[[size 12px]]x[[/size]]\"]]\nY[[/div]]\n[[/module]]\n[[/module]]",
+  "action": "exists"
+ },
+ "s16-raw-surplus-include-before-quad": {
+  "fullname": "muse-probe-round5d-s1-s16-raw-surplus-include-before-quad",
+  "source": "A @@@@ZQ@@@ [[include muse-probe-round5d-s1-t-raw]] B @@@@ C",
+  "action": "exists"
+ },
+ "s17-raw-surplus-include-after": {
+  "fullname": "muse-probe-round5d-s1-s17-raw-surplus-include-after",
+  "source": "A @@@@ZQ@@ [[include muse-probe-round5d-s1-t-raw]] @@@@ C",
+  "action": "exists"
+ },
+ "s18-tableadv-data-dot-nested": {
+  "fullname": "muse-probe-round5d-s1-s18-tableadv-data-dot-nested",
+  "source": "[[table]]\n[[row]]\n[[cell]]\n[[table data-foo.bar=\"V\"]]\n[[row]]\n[[cell]]N[[/cell]]\n[[/row]]\n[[/table]]\n[[/cell]]\n[[/row]]\n[[/table]]",
+  "action": "exists"
+ },
+ "s19-tableadv-data-mixed-duplicate-nested": {
+  "fullname": "muse-probe-round5d-s1-s19-tableadv-data-mixed-duplicate-nested",
+  "source": "[[table]]\n[[row]]\n[[cell]]\n[[table]]\n[[row]]\n[[cell data-Foo.Bar=\"A\" data-foo.bar=\"B\"]]N[[/cell]]\n[[/row]]\n[[/table]]\n[[/cell]]\n[[/row]]\n[[/table]]",
+  "action": "exists"
+ },
+ "s20-module-nested-raw-token": {
+  "fullname": "muse-probe-round5d-s1-s20-module-nested-raw-token",
+  "source": "[[module nosuchmod]]\n[[module nosuchmod2]]@@X@@[[/module]]\n[[/module]]\nTAIL",
+  "action": "exists"
+ },
+ "t-raw": {
+  "fullname": "muse-probe-round5d-s1-t-raw",
+  "source": "SPLICE",
+  "action": "exists"
+ }
+}

@@ -1,0 +1,92 @@
+{
+ "r2d-01-freelink-u2000": {
+  "fullname": "muse-probe-round5d-r2-r2d-01-freelink-u2000",
+  "source": "[[[ _default:x]]]",
+  "action": "created"
+ },
+ "r2d-02-freelink-u0085": {
+  "fullname": "muse-probe-round5d-r2-r2d-02-freelink-u0085",
+  "source": "[[[_default:x]]]",
+  "action": "created"
+ },
+ "r2d-03-freelink-u1680": {
+  "fullname": "muse-probe-round5d-r2-r2d-03-freelink-u1680",
+  "source": "[[[ _default:x]]]",
+  "action": "created"
+ },
+ "r2d-04-freelink-u205f": {
+  "fullname": "muse-probe-round5d-r2-r2d-04-freelink-u205f",
+  "source": "[[[ _default:x]]]",
+  "action": "created"
+ },
+ "r2d-05-freelink-nbsp-star": {
+  "fullname": "muse-probe-round5d-r2-r2d-05-freelink-nbsp-star",
+  "source": "[[[ *_default:x]]]",
+  "action": "created"
+ },
+ "r2d-06-freelink-feff-star": {
+  "fullname": "muse-probe-round5d-r2-r2d-06-freelink-feff-star",
+  "source": "[[[﻿*_default:x]]]",
+  "action": "created"
+ },
+ "r2d-07-freelink-triple-star": {
+  "fullname": "muse-probe-round5d-r2-r2d-07-freelink-triple-star",
+  "source": "[[[***_default:x]]]",
+  "action": "created"
+ },
+ "r2d-08-freelink-mixed-run": {
+  "fullname": "muse-probe-round5d-r2-r2d-08-freelink-mixed-run",
+  "source": "[[[\t  　_default:x]]]",
+  "action": "created"
+ },
+ "r2d-09-freelink-route-label": {
+  "fullname": "muse-probe-round5d-r2-r2d-09-freelink-route-label",
+  "source": "[[[foo/#/bar|shown]]]",
+  "action": "created"
+ },
+ "r2d-10-freelink-route-empty-base": {
+  "fullname": "muse-probe-round5d-r2-r2d-10-freelink-route-empty-base",
+  "source": "[[[/#/bar]]]",
+  "action": "created"
+ },
+ "r2d-11-freelink-route-then-anchor": {
+  "fullname": "muse-probe-round5d-r2-r2d-11-freelink-route-then-anchor",
+  "source": "[[[foo/#/bar#baz]]]",
+  "action": "created"
+ },
+ "r2d-12-freelink-route-twice": {
+  "fullname": "muse-probe-round5d-r2-r2d-12-freelink-route-twice",
+  "source": "[[[a/#/b/#/c]]]",
+  "action": "created"
+ },
+ "r2d-13-freelink-route-empty-rest": {
+  "fullname": "muse-probe-round5d-r2-r2d-13-freelink-route-empty-rest",
+  "source": "[[[foo/#/]]]",
+  "action": "created"
+ },
+ "r2d-14-freelink-route-leading-space": {
+  "fullname": "muse-probe-round5d-r2-r2d-14-freelink-route-leading-space",
+  "source": "[[[ foo/#/bar]]]",
+  "action": "created"
+ },
+ "r2d-15-url-upper-ext": {
+  "fullname": "muse-probe-round5d-r2-r2d-15-url-upper-ext",
+  "source": "https://example.com/PIC.JPG",
+  "action": "created"
+ },
+ "r2d-16-interwiki-nonascii-page": {
+  "fullname": "muse-probe-round5d-r2-r2d-16-interwiki-nonascii-page",
+  "source": "[wikipedia:café]",
+  "action": "created"
+ },
+ "r2d-17-image-nonascii-alt": {
+  "fullname": "muse-probe-round5d-r2-r2d-17-image-nonascii-alt",
+  "source": "[[image http://x/y.png alt=\"café\"]]",
+  "action": "created"
+ },
+ "r2d-18-embed-uppercase-event": {
+  "fullname": "muse-probe-round5d-r2-r2d-18-embed-uppercase-event",
+  "source": "[[embed]]<iframe ONLOAD=\"x\"></iframe>[[/embed]]",
+  "action": "created"
+ }
+}

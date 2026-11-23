@@ -1,0 +1,20 @@
+{"id":"R5DP2-01","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5DP2-02","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5DP2-03","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"R5DP2-04","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"R5DP2-05","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"R5DP2-06","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"R5DP2-07","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"R5DP2-08","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"R5DP2-09","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"R5DP2-10","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"R5DP2-11","output":"<p><a class=\"newpage\" href=\"\/foo#\/bar\/baz\">foo\/<\/a><\/p>\n\n"}
+{"id":"R5DP2-12","output":"<p><a class=\"newpage\" href=\"\/foo#\/\">foo\/<\/a><\/p>\n\n"}
+{"id":"R5DP2-13","output":"<p><a class=\"newpage\" href=\"\/foo#\/bar#anchor\">foo\/<\/a><\/p>\n\n"}
+{"id":"R5DP2-14","output":"<p><a class=\"newpage\" href=\"\/foo#anchor\">foo<\/a><\/p>\n\n"}
+{"id":"R5DP2-15","output":"<p><a href=\"http:\/\/example.com\/#x\">Label<\/a><\/p>\n\n"}
+{"id":"R5DP2-16","output":"<p>label<\/p>\n\n"}
+{"id":"R5DP2-17","output":"<p><em>a<br \/>\nb<\/em><\/p>\n\n"}
+{"id":"R5DP2-18","output":"<p><span style=\"color: rgb(0,0,0)\">x<\/span><\/p>\n\n"}
+{"id":"R5DP2-19","output":"\n<div class=\"code\">\n<div class=\"hl-main\">\n<pre><span class=\"hl-identifier\">x<\/span><\/pre><\/div>\n<\/div>\n\n"}
+{"id":"R5DP2-20","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}

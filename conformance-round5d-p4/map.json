@@ -1,0 +1,77 @@
+{
+ "R5D-P4-C01": {
+  "fullname": "muse-probe-round5d-p4-r5d-p4-c01",
+  "source": "[[footnote]] @@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "exists"
+ },
+ "R5D-P4-C02": {
+  "fullname": "muse-probe-round5d-p4-r5d-p4-c02",
+  "source": "[[footnote]]　\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "exists"
+ },
+ "R5D-P4-C03": {
+  "fullname": "muse-probe-round5d-p4-r5d-p4-c03",
+  "source": "[[footnote]]@@@@\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "exists"
+ },
+ "R5D-P4-C04": {
+  "fullname": "muse-probe-round5d-p4-r5d-p4-c04",
+  "source": "[[footnote]]x\n@@@@\n\n@@@@y[[/footnote]]\n[[footnoteblock]]",
+  "action": "exists"
+ },
+ "R5D-P4-C05": {
+  "fullname": "muse-probe-round5d-p4-r5d-p4-c05",
+  "source": "[[footnote]]x\n\n@@@@\ny[[/footnote]]\n[[footnoteblock]]",
+  "action": "exists"
+ },
+ "R5D-P4-C06": {
+  "fullname": "muse-probe-round5d-p4-r5d-p4-c06",
+  "source": "[[footnote]]\f\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "exists"
+ },
+ "R5D-P4-C07": {
+  "fullname": "muse-probe-round5d-p4-r5d-p4-c07",
+  "source": "alpha\\\n[[div]]\nbravo[[/div]]",
+  "action": "exists"
+ },
+ "R5D-P4-C08": {
+  "fullname": "muse-probe-round5d-p4-r5d-p4-c08",
+  "source": "alpha\\\nbravo\\\ncharlie",
+  "action": "exists"
+ },
+ "R5D-P4-C10": {
+  "fullname": "muse-probe-round5d-p4-r5d-p4-c10",
+  "source": "alpha .... bravo",
+  "action": "created"
+ },
+ "R5D-P4-C11": {
+  "fullname": "muse-probe-round5d-p4-r5d-p4-c11",
+  "source": "alpha <<x>> bravo",
+  "action": "created"
+ },
+ "R5D-P4-C12": {
+  "fullname": "muse-probe-round5d-p4-r5d-p4-c12",
+  "source": "1 µ and 2 μ",
+  "action": "created"
+ },
+ "R5D-P4-C13": {
+  "fullname": "muse-probe-round5d-p4-r5d-p4-c13",
+  "source": ",,x'' and ``y''",
+  "action": "created"
+ },
+ "R5D-P4-C14": {
+  "fullname": "muse-probe-round5d-p4-r5d-p4-c14",
+  "source": "alpha   bravo",
+  "action": "created"
+ },
+ "R5D-P4-C15": {
+  "fullname": "muse-probe-round5d-p4-r5d-p4-c15",
+  "source": "alpha\fbravo",
+  "action": "created"
+ },
+ "R5D-P4-C16": {
+  "fullname": "muse-probe-round5d-p4-r5d-p4-c16",
+  "source": "alpha   bravo",
+  "action": "created"
+ }
+}

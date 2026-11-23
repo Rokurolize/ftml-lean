@@ -1,0 +1,20 @@
+{"id": "R3D-01", "source": "[[footnote]]@@@@\n@@@@\n@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3D-02", "source": "[[footnote]]@@@@\n@@@@@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3D-03", "source": "[[footnote]]@@@@\nX\n@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3D-04", "source": "[[footnote]]@@@@\n\f@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3D-05", "source": "[[footnote]]@@@@\f\n\f@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3D-06", "source": "[[footnote]]@@@@\f\n\n@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3D-07", "source": "[[footnote]]@@@@ \n\n@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3D-08", "source": "[[footnote]]@@@@ \nX\n@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3D-09", "source": "[[footnote]]@@@@\n@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3D-10", "source": "[[footnote]]x@@@@\n@@@@y[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3D-11", "source": "[[bibliography]]\n: a : @@@@\f@@@@\n[[/bibliography]]"}
+{"id": "R3D-12", "source": "[[bibliography]]\n: a : @@@@\t@@@@\n[[/bibliography]]"}
+{"id": "R3D-13", "source": "[[bibliography]]\n: a : @@@@ @@@@\n[[/bibliography]]"}
+{"id": "R3D-14", "source": "[[toc]]\n\n+ Alpha\n\n+ Beta"}
+{"id": "R3D-15", "source": "[[toc title=\"O'Brien\"]]\n\n+ One"}
+{"id": "R3D-16", "source": "[[f<toc]]\n\n+ One\n\n+* Hidden A\n\n+ Two\n\n+* Hidden B\n\n+ Three"}
+{"id": "R3D-17", "source": "[[# a%20b]] text"}
+{"id": "R3D-18", "source": "[[a href=\"*https://example.com\"]]x[[/a]]"}
+{"id": "R3D-19", "source": "+ Head[[footnote]]@@@@\n@@@@[[/footnote]]\n\n[[toc]]\n\n[[footnoteblock]]"}
+{"id": "R3D-20", "source": "[[toc]]\n\n++++++ Six\n\n+ One"}

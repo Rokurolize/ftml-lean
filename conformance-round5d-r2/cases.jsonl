@@ -1,0 +1,18 @@
+{"id": "r2d-01-freelink-u2000", "source": "[[[\u2000_default:x]]]"}
+{"id": "r2d-02-freelink-u0085", "source": "[[[\u0085_default:x]]]"}
+{"id": "r2d-03-freelink-u1680", "source": "[[[\u1680_default:x]]]"}
+{"id": "r2d-04-freelink-u205f", "source": "[[[\u205f_default:x]]]"}
+{"id": "r2d-05-freelink-nbsp-star", "source": "[[[\u00a0*_default:x]]]"}
+{"id": "r2d-06-freelink-feff-star", "source": "[[[\ufeff*_default:x]]]"}
+{"id": "r2d-07-freelink-triple-star", "source": "[[[***_default:x]]]"}
+{"id": "r2d-08-freelink-mixed-run", "source": "[[[\t \u00a0\u3000_default:x]]]"}
+{"id": "r2d-09-freelink-route-label", "source": "[[[foo/#/bar|shown]]]"}
+{"id": "r2d-10-freelink-route-empty-base", "source": "[[[/#/bar]]]"}
+{"id": "r2d-11-freelink-route-then-anchor", "source": "[[[foo/#/bar#baz]]]"}
+{"id": "r2d-12-freelink-route-twice", "source": "[[[a/#/b/#/c]]]"}
+{"id": "r2d-13-freelink-route-empty-rest", "source": "[[[foo/#/]]]"}
+{"id": "r2d-14-freelink-route-leading-space", "source": "[[[ foo/#/bar]]]"}
+{"id": "r2d-15-url-upper-ext", "source": "https://example.com/PIC.JPG"}
+{"id": "r2d-16-interwiki-nonascii-page", "source": "[wikipedia:caf\u00e9]"}
+{"id": "r2d-17-image-nonascii-alt", "source": "[[image http://x/y.png alt=\"caf\u00e9\"]]"}
+{"id": "r2d-18-embed-uppercase-event", "source": "[[embed]]<iframe ONLOAD=\"x\"></iframe>[[/embed]]"}

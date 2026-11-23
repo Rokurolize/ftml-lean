@@ -1,0 +1,154 @@
+{
+ "summary": {
+  "agree": 10,
+  "differ": 6,
+  "invalid": 0,
+  "missing": 0
+ },
+ "rows": [
+  {
+   "id": "p3d-01-tableadv-empty-data-suffix",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5d-p3-p3d-01-tableadv-empty-data-suffix",
+   "reference": "<table data-=\"UB\"> <tr> <td>CELLX</td> </tr> </table>",
+   "live": "<table data-=\"UB\"> <tr> <td>CELLX</td> </tr> </table>",
+   "live_sha256": "aba63c4de1a1eda79946aac1b0338aacef086a42d36ab82d2b8ec8938c2edde4",
+   "source": "[[table data-=\"UB\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"
+  },
+  {
+   "id": "p3d-02-tableadv-dot-edge-suffix",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5d-p3-p3d-02-tableadv-dot-edge-suffix",
+   "reference": "<table data-.=\"UB\"> <tr> <td>CELLX</td> </tr> </table>",
+   "live": "<table data-.=\"UB\"> <tr> <td>CELLX</td> </tr> </table>",
+   "live_sha256": "a7bea3452f6f970f7ffc4e44e021f958fc260de1f426c2fdcdae68f2ce60e680",
+   "source": "[[table data-.=\"UB\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"
+  },
+  {
+   "id": "p3d-03-tableadv-out-of-class-byte",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5d-p3-p3d-03-tableadv-out-of-class-byte",
+   "reference": "<table> <tr> <td>CELLX</td> </tr> </table>",
+   "live": "<table> <tr> <td>CELLX</td> </tr> </table>",
+   "live_sha256": "e71ade1a36ca580cde1c249dc85c138ed353c32d33307fb79a05c60332c42ca3",
+   "source": "[[table data-foo+bar=\"UB\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"
+  },
+  {
+   "id": "p3d-04-module-three-level-nested",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5d-p3-p3d-04-module-three-level-nested",
+   "reference": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div><p>[[/module]]</p>",
+   "live": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div> <p>[[/module]]</p>",
+   "live_sha256": "b75c05058fb97e1fcbfb284af8822ffe1dbb5e5bcfee201f035e7d09380dd3d7",
+   "source": "[[module nosuchmod]]\n[[module mid]]\n[[module inner]]INNER[[/module]]\n[[/module]]\n[[/module]]"
+  },
+  {
+   "id": "p3d-05-module-attributed-inner",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5d-p3-p3d-05-module-attributed-inner",
+   "reference": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>",
+   "live": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>",
+   "live_sha256": "b3e0122b100fe4f72c5544f83517a9ebb084d7e196270f9423657d7ad6758e9b",
+   "source": "[[module nosuchmod]]\n[[module inner arg=val]]INNER[[/module]]\n[[/module]]"
+  },
+  {
+   "id": "p3d-06-raw-c2-later-quad",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5d-p3-p3d-06-raw-c2-later-quad",
+   "reference": "<p>ZQ<span style=\"white-space: pre-wrap;\">P</span>@@</p>",
+   "live": "<p>ZQ<span style=\"white-space: pre-wrap;\">P</span>@@</p>",
+   "live_sha256": "670ab3ef5761ccd323d670a6a75639f826fa8a086ab312be9e020f586e85c7f9",
+   "source": "@@@@ZQ@@P@@@@"
+  },
+  {
+   "id": "p3d-07-raw-c3-later-five",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5d-p3-p3d-07-raw-c3-later-five",
+   "reference": "<p>AB<span style=\"white-space: pre-wrap;\">@CD</span>@@@</p>",
+   "live": "<p>AB<span style=\"white-space: pre-wrap;\">@CD</span>@@@</p>",
+   "live_sha256": "db889636b00665b430157fd7edd8944d38e5812537d970f652e5aacb5ea14054",
+   "source": "@@@@AB@@@CD@@@@@"
+  },
+  {
+   "id": "p3d-08-raw-open3-close4",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5d-p3-p3d-08-raw-open3-close4",
+   "reference": "<p><span style=\"white-space: pre-wrap;\">@ZQ</span>@@</p>",
+   "live": "<p><span style=\"white-space: pre-wrap;\">@ZQ</span>@@</p>",
+   "live_sha256": "4ba6ed5b56d44e5cf1f1ebc2653b8f2cfbf057523c65f9748ec8a627cc768aec",
+   "source": "@@@ZQ@@@@"
+  },
+  {
+   "id": "p3d-09-include-duplicate-args",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5d-p3-p3d-09-include-duplicate-args",
+   "reference": "<p>A=AA B={$b}</p>",
+   "live": "<p>A=AA B={$b}</p>",
+   "live_sha256": "b75762266548b81fd801141341ed318bd88aba78547c57573d3f768040dfed5a",
+   "source": "[[include muse-probe-round5d-p3-t-fold | a=AA | a=BB]]"
+  },
+  {
+   "id": "p3d-10-table-trailing-text",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5d-p3-p3d-10-table-trailing-text",
+   "reference": "<p>PRE<br> <table class=\"wiki-content-table\"> <tr> <td>A</td> <td>B</td> </tr> </table></p> <p>POST</p>",
+   "live": "PRE<br> <table class=\"wiki-content-table\"> <tr> <td>A</td> <td>B</td> </tr> </table> <p>POST</p>",
+   "live_sha256": "dbd9455d2221db162b6af7409b79bb861a0e71bf0423e1ef13f5e78e8bf9352b",
+   "source": "PRE\n||A||B||TAIL\nPOST"
+  },
+  {
+   "id": "p3d-11-image-link-trailing-space",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5d-p3-p3d-11-image-link-trailing-space",
+   "reference": "<a href=\"http://example.com/x \"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live": "<a href=\"http://example.com/x\"><img alt=\"IMG.png\" class=\"image\" src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5d-p3-p3d-11-image-link-trailing-space/IMG.png\"></a>",
+   "live_sha256": "62af6ab8ca808f9a3d9e15eb5c78cf8faea85921c9207a79280904b65b9dec52",
+   "source": "[[image IMG.png link=\"http://example.com/x \"]]"
+  },
+  {
+   "id": "p3d-12-gallery-size-large",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5d-p3-p3d-12-gallery-size-large",
+   "reference": "<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//img1.png\"><img alt src=\"/local--resized-images//img1.png/thumbnail.jpg\"></a></td></tr></table></div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//img2.png\"><img alt src=\"/local--resized-images//img2.png/thumbnail.jpg\"></a></td></tr></table></div></div>",
+   "live": "<div class=\"gallery-box\" id=\"gallery-box-479035\"> <div class=\"gallery-item thumbnail\"> <table> <tr> <td><a class=\"with-lb\" href=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5d-p3-p3d-12-gallery-size-large/img1.png\"><img alt class=\"gallery-image-size-thumbnail\" src=\"https://sandbox-for-codex.wdfiles.com/local--resized-images/muse-probe-round5d-p3-p3d-12-gallery-size-large/img1.png/thumbnail.jpg\"></a></td> </tr> </table> </div> <div class=\"gallery-item thumbnail\"> <table> <tr> <td><a class=\"with-lb\" href=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5d-p3-p3d-12-gallery-size-large/img2.png\"><img alt class=\"gallery-image-size-thumbnail\" src=\"https://sandbox-for-codex.wdfiles.com/local--resized-images/muse-probe-round5d-p3-p3d-12-gallery-size-large/img2.png/thumbnail.jpg\"></a></td> </tr> </table> </div> </div>",
+   "live_sha256": "9657cfe06a3f8765accec19ff6cf6f09a3b52dde54cba2cad9d56cc7576bb64f",
+   "source": "[[gallery size=\"large\"]]\n: img1.png\n: img2.png\n[[/gallery]]"
+  },
+  {
+   "id": "p3d-13-file-percent-path",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5d-p3-p3d-13-file-percent-path",
+   "reference": "<p><a href=\"/local--files/page/100%.png\">A</a></p>",
+   "live": "<p><a href=\"https://sandbox-for-codex.wdfiles.com/local--files/page/100%.png\">A</a></p>",
+   "live_sha256": "b308b7efa29fc456483f2bf7e0609fa297d7613034f372b44eff75095ab38b75",
+   "source": "[[file page/100%.png|A]]"
+  },
+  {
+   "id": "p3d-14-tableadv-upper-hcell-closer",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5d-p3-p3d-14-tableadv-upper-hcell-closer",
+   "reference": "<table> <tr> <td>HD</td> </tr> </table>",
+   "live": "<table> <tr> <td>HD</td> </tr> </table>",
+   "live_sha256": "45944a017ece319fecaf832f19866b495b8217add1fef1864a22e679d2da31cd",
+   "source": "[[table]]\n[[row]]\n[[hcell]]HD[[/CELL]]\n[[/row]]\n[[/table]]"
+  },
+  {
+   "id": "p3d-15-file-question-path",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5d-p3-p3d-15-file-question-path",
+   "reference": "<p><a href=\"/local--files/page/a?b.png\">L</a></p>",
+   "live": "<p><a href=\"https://sandbox-for-codex.wdfiles.com/local--files/page/a?b.png\">L</a></p>",
+   "live_sha256": "bf70ff1aaa94aa07d158c1309beb185802c0ae490ccaf5487b3e8411b75de7d9",
+   "source": "[[file page/a?b.png|L]]"
+  },
+  {
+   "id": "p3d-16-tableadv-dot-on-row",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5d-p3-p3d-16-tableadv-dot-on-row",
+   "reference": "<table> <tr data-foo.bar=\"UB\"> <td>CELLX</td> </tr> </table>",
+   "live": "<table> <tr data-foo.bar=\"UB\"> <td>CELLX</td> </tr> </table>",
+   "live_sha256": "ff81ce779788487c80d973ff52e816d6e925ad329495eafea6e29923cb2915e8",
+   "source": "[[table]]\n[[row data-Foo.Bar=\"UB\"]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]"
+  }
+ ]
+}

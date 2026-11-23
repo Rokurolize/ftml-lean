@@ -1,0 +1,3 @@
+wrote /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/coord-units/R5D-R2/classification.json {'CLEARED': 16, 'CONFIRMED': 2}
+r2d-11-freelink-route-then-anchor CONFIRMED valid/stable/source-matching live serves the source literal <p>[[[foo/#/bar#baz]]]</p> while the reference renders <a href="/foo#/bar#baz">foo/</a>; the reference's multi-hash guard exempts every target containing /#/, so a second # survives to the renderer, but live rejects the multi-hash target outright
+r2d-12-freelink-route-twice CONFIRMED valid/stable/source-matching live serves the source literal <p>[[[a/#/b/#/c]]]</p> while the reference renders <a href="/a#/b/#/c">a/</a>; two /#/ separators give two # bytes and the same over-broad reference exemption, while live rejects it

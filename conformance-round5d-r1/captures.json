@@ -1,0 +1,182 @@
+{
+ "R5DR1-D1": {
+  "fullname": "muse-probe-round5d-r1-r5dr1-d1",
+  "html": "<div id=\"\">\n<p>body</p>\n</div>",
+  "html_sha256": "2061a590abcadc604490830cf36c644802ef287f597b83cd98f5034bb4376101",
+  "source": "[[div id=\"u-  x[[size 12px]]y[[/size]]\"]]\nbody\n[[/div]]",
+  "source_sha256": "b1b7bcc84b858bb8dc2154c69568514ed27915545cb52d40db4623aaa6f8a3b6",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5DR1-D2": {
+  "fullname": "muse-probe-round5d-r1-r5dr1-d2",
+  "html": "<div id=\"\">\n<p>body</p>\n</div>",
+  "html_sha256": "2061a590abcadc604490830cf36c644802ef287f597b83cd98f5034bb4376101",
+  "source": "[[div id=\"@@x@@\"]]\nbody\n[[/div]]",
+  "source_sha256": "78d8fe06d1201cfbedd543423c4964aa8cc8fd774bd65bcecaf73b6ee0f3532e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5DR1-D3": {
+  "fullname": "muse-probe-round5d-r1-r5dr1-d3",
+  "html": "<div class=\"a b\">\n<p>body</p>\n</div>",
+  "html_sha256": "4d53e457e670f83b5730a018101d1ae9f6db44c9ae44856ada2a8be8576afca5",
+  "source": "[[div class=\"  a  b  \"]]\nbody\n[[/div]]",
+  "source_sha256": "dcf0b488b0b31deac5274d5ef0d09752e8675928aeae6e7cd9c1eb3dc2227de4",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5DR1-D4": {
+  "fullname": "muse-probe-round5d-r1-r5dr1-d4",
+  "html": "<div data-x=\"\">\n<p>body</p>\n</div>",
+  "html_sha256": "bc7318c23ce6b46dba57d8509e9542cda82ab5dcccfe3008e52032d85722e47e",
+  "source": "[[div data-X=\"L\" data-x=\"\"]]\nbody\n[[/div]]",
+  "source_sha256": "63c79fa571c218d9724495cd8ea18ced3da37ce7e7565f96fd412d8fc4e28d4d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5DR1-D5": {
+  "fullname": "muse-probe-round5d-r1-r5dr1-d5",
+  "html": "<div id=\"u-\">\n<p>body</p>\n</div>",
+  "html_sha256": "f1ad87bc749dd882348960ce72a4772667b35d3ca82f7d0177cab58395320736",
+  "source": "[[div id=\"u-  \"]]\nbody\n[[/div]]",
+  "source_sha256": "3ef39e2efbd391318cfbdc0fd48d22c6b7d2e440811e3622ffc58abd15bb9804",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5DR1-D6": {
+  "fullname": "muse-probe-round5d-r1-r5dr1-d6",
+  "html": "<div type=\"\">\n<p>body</p>\n</div>",
+  "html_sha256": "5005e0795388298f610f24a273ac311472af79c33a08f0c8f81dab3dd2d99dc3",
+  "source": "[[div type=\"[[span class=k]]s[[/span]]\"]]\nbody\n[[/div]]",
+  "source_sha256": "9d910fd781d67c95a7aecde53774c22f4ae779f06b152a1d3d413bc10f400363",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5DR1-S1": {
+  "fullname": "muse-probe-round5d-r1-r5dr1-s1",
+  "html": "<p><span>x[[/size]]&quot;]]body</span></p>",
+  "html_sha256": "aeef1e3f897627bf3854c9fc02e47f0adec463839367bf96180282dead5ed134",
+  "source": "[[span id=\"[[size 12px]]x[[/size]]\"]]body[[/span]]",
+  "source_sha256": "2a9533a8f788a2e2258fa8f9c72c6c7252d75698ccf18c59c959224cf7e88c88",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5DR1-Z1": {
+  "fullname": "muse-probe-round5d-r1-r5dr1-z1",
+  "html": "<p><span style=\"font-size:00012px;\">x</span></p>",
+  "html_sha256": "f40096b6fc09715ccc86b475b962619b6d2b5f3e5d1ca2218dc59236741d4b7e",
+  "source": "[[size 00012px]]x[[/size]]",
+  "source_sha256": "bfa2d942330a2d69281ad5453897c95202ef713f321f2162d8363a23f1a134ed",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5DR1-K1": {
+  "fullname": "muse-probe-round5d-r1-r5dr1-k1",
+  "html": "<div class=\"collapsible-block\">\n<div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block</a></div>\n<div class=\"collapsible-block-unfolded\" style=\"display:none\">\n<div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div>\n<div class=\"collapsible-block-content\">\n<p>body</p>\n</div>\n</div>\n</div>",
+  "html_sha256": "be3921efca1e85f43f942aeb106d1cc2088913dbfe2479435dc91d87db003ac4",
+  "source": "[[collapsible show=\"0\"]]body[[/collapsible]]",
+  "source_sha256": "744f2627801ada47e75a8cc6b593944dd84e096821b7cf602d365b608a7f5182",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5DR1-K2": {
+  "fullname": "muse-probe-round5d-r1-r5dr1-k2",
+  "html": "<div class=\"collapsible-block\">\n<div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block</a></div>\n<div class=\"collapsible-block-unfolded\" style=\"display:none\">\n<div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div>\n<div class=\"collapsible-block-content\">\n<p>body</p>\n</div>\n</div>\n</div>",
+  "html_sha256": "be3921efca1e85f43f942aeb106d1cc2088913dbfe2479435dc91d87db003ac4",
+  "source": "[[collapsible folded=\"FALSE\"]]body[[/collapsible]]",
+  "source_sha256": "0b2a355a0adcba960ac053471ec022a80e52f34ad735cdd0be3f0aae5cc7433f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5DR1-K3": {
+  "fullname": "muse-probe-round5d-r1-r5dr1-k3",
+  "html": "<div class=\"collapsible-block\">\n<div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">a&amp;&lt;b&quot;c'd</a></div>\n<div class=\"collapsible-block-unfolded\" style=\"display:none\">\n<div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div>\n<div class=\"collapsible-block-content\">\n<p>body</p>\n</div>\n</div>\n</div>",
+  "html_sha256": "4ef4232147523c7f30d5725216418cc3610c298b8a2a6c773d6cff47c801f634",
+  "source": "[[collapsible show=\"a&<b\\\"c'd\"]]body[[/collapsible]]",
+  "source_sha256": "62fd8204ea16a32616dc1bc140bfda11487fd66b6a1f3f78d73d0f13885834b8",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5DR1-T1": {
+  "fullname": "muse-probe-round5d-r1-r5dr1-t1",
+  "html": "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common--javascript/yahooui/tabview-min.js\"></script>\n<div id=\"wiki-tabview-87604b1db958b34a88f93c8edf4c405e\" class=\"yui-navset\">\n<ul class=\"yui-nav\">\n<li class=\"selected\"><a href=\"javascript:;\"></a></li>\n</ul>\n<div class=\"yui-content\">\n<div id=\"wiki-tab-0-0\">\n<p>a</p>\n</div>\n</div>\n</div>\n<script type=\"text/javascript\">\n//<![CDATA[\nOZONE.dom.onDomReady(function(){\n        var tabView87604b1db958b34a88f93c8edf4c405e = new YAHOO.widget.TabView('wiki-tabview-87604b1db958b34a88f93c8edf4c405e');\n                }, \"dummy-ondomready-block\");\n        \n//]]>\n</script>",
+  "html_sha256": "f640369ecea42eb79addf3df9e15219e3b79cec04c75c056be24e8eba6a13d2c",
+  "source": "[[tabview]][[tab title=\"@@x@@\"]]a[[/tab]][[/tabview]]",
+  "source_sha256": "26727f639b1929e5ead43e2216dc5623f7d1099dd2f8aa3721828ab21819e45b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5DR1-T2": {
+  "fullname": "muse-probe-round5d-r1-r5dr1-t2",
+  "html": "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common--javascript/yahooui/tabview-min.js\"></script>\n<div id=\"wiki-tabview-a4fb931b48e26d769c0c1c8f88f85d8c\" class=\"yui-navset\">\n<ul class=\"yui-nav\">\n<li class=\"selected\"><a href=\"javascript:;\"><em>a&amp;&lt;b&gt;c</em></a></li>\n</ul>\n<div class=\"yui-content\">\n<div id=\"wiki-tab-0-0\">\n<p>a</p>\n</div>\n</div>\n</div>\n<script type=\"text/javascript\">\n//<![CDATA[\nOZONE.dom.onDomReady(function(){\n        var tabViewa4fb931b48e26d769c0c1c8f88f85d8c = new YAHOO.widget.TabView('wiki-tabview-a4fb931b48e26d769c0c1c8f88f85d8c');\n                }, \"dummy-ondomready-block\");\n        \n//]]>\n</script>",
+  "html_sha256": "cca81aa1d3885f481c92584373aae718d2225f09c9dda8d0d8d3c8275b419d6b",
+  "source": "[[tabview]][[tab title=\"a&<b>c\"]]a[[/tab]][[/tabview]]",
+  "source_sha256": "269510c212e771d8205ce1409c1316afb09bf1bddf500b921e668c4704d490fa",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5DR1-T3": {
+  "fullname": "muse-probe-round5d-r1-r5dr1-t3",
+  "html": "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common--javascript/yahooui/tabview-min.js\"></script>\n<div id=\"wiki-tabview-d3a67e7717b76444f8702802fcd39053\" class=\"yui-navset\">\n<ul class=\"yui-nav\">\n<li class=\"selected\"><a href=\"javascript:;\"><em>untitled</em></a></li>\n</ul>\n<div class=\"yui-content\">\n<div id=\"wiki-tab-0-0\">\n<p>a</p>\n</div>\n</div>\n</div>\n<script type=\"text/javascript\">\n//<![CDATA[\nOZONE.dom.onDomReady(function(){\n        var tabViewd3a67e7717b76444f8702802fcd39053 = new YAHOO.widget.TabView('wiki-tabview-d3a67e7717b76444f8702802fcd39053');\n                }, \"dummy-ondomready-block\");\n        \n//]]>\n</script>",
+  "html_sha256": "bf3e0a49c5d155868fe1b1752e8460361fed75c6d6e911f241aee0f6e2c4a80e",
+  "source": "[[tabview]][[tab]]a[[/tab]][[/tabview]]",
+  "source_sha256": "7311cd637e40825cd26750e92cda2a7190deb15d4cfa98e8b2a551b0f82814dd",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5DR1-L1": {
+  "fullname": "muse-probe-round5d-r1-r5dr1-l1",
+  "html": "<ul>\n<li class=\"a&amp;b\">x<br />",
+  "html_sha256": "44c11234b0e978d9f30622956033c6125ad7b1581781c3189d3e1ab870b3eaae",
+  "source": "[[UL]]\n[[LI class=\"a&b\"]]x[[/LI]]\n[[/UL]]",
+  "source_sha256": "0aa77060ca6fbbcf9e9e3af8b5163c8842b99e81ea86b897db5f05220d17c657",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5DR1-L2": {
+  "fullname": "muse-probe-round5d-r1-r5dr1-l2",
+  "html": "<ul>\n<li>A</li>\n<li>B</li>\n</ul>\n<br />",
+  "html_sha256": "fa315513a22a85b109527beda2e786c5bfcf09b7aad6e3d53d5da1f98cf5bd6b",
+  "source": "[[ul]]\n[[li]]A[[/li]]\n[[LI]]B[[/LI]]\n[[/ul]]",
+  "source_sha256": "667daae04f2545fabebde2ed3feac862c455877f73c4e15686f1c9df3cf5d51c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5DR1-L3": {
+  "fullname": "muse-probe-round5d-r1-r5dr1-l3",
+  "html": "<ul>\n<li>a</li>\n</ul>\n<p>** b</p>\n<ul>\n<li>c</li>\n</ul>",
+  "html_sha256": "a4feaa4835c7d77f4703e8eb539c18a276a6f9c88c9fe599183966035aa71fe8",
+  "source": "* a\n** b\n* c",
+  "source_sha256": "935b25e1c7ba51f7ec0b6a7d36618d0838d63fb15f638013dff34dc200ad310c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5DR1-B1": {
+  "fullname": "muse-probe-round5d-r1-r5dr1-b1",
+  "html": "<blockquote>\n<p>a<br />\n&gt; b<br />\nc</p>\n</blockquote>",
+  "html_sha256": "22352fb64551560cc7fbeec7f6438f47119f463879009fb55ae72963fb1740ce",
+  "source": "> a\n> > b\n> c",
+  "source_sha256": "44b2724ddfb18a197cf3a64453448ac028e59824ef31cf2bb94d9f0164fe8119",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

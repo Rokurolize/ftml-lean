@@ -1,0 +1,25 @@
+wrote /home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/coord-units/R5D-R2/comparison.json rows 18 {'CLEAR': 15, 'DIFF': 3}
+r2d-01-freelink-u2000 CLEAR sig_equal=True
+r2d-02-freelink-u0085 CLEAR sig_equal=True
+r2d-03-freelink-u1680 CLEAR sig_equal=True
+r2d-04-freelink-u205f CLEAR sig_equal=True
+r2d-05-freelink-nbsp-star CLEAR sig_equal=True
+r2d-06-freelink-feff-star CLEAR sig_equal=True
+r2d-07-freelink-triple-star CLEAR sig_equal=True
+r2d-08-freelink-mixed-run CLEAR sig_equal=True
+r2d-09-freelink-route-label CLEAR sig_equal=True
+r2d-10-freelink-route-empty-base CLEAR sig_equal=True
+r2d-11-freelink-route-then-anchor DIFF sig_equal=False
+   ref : '<p><a href="/foo#/bar#baz">foo/</a></p>'
+   live: '<p>[[[foo/#/bar#baz]]]</p>'
+r2d-12-freelink-route-twice DIFF sig_equal=False
+   ref : '<p><a href="/a#/b/#/c">a/</a></p>'
+   live: '<p>[[[a/#/b/#/c]]]</p>'
+r2d-13-freelink-route-empty-rest CLEAR sig_equal=True
+r2d-14-freelink-route-leading-space CLEAR sig_equal=True
+r2d-15-url-upper-ext CLEAR sig_equal=True
+r2d-16-interwiki-nonascii-page CLEAR sig_equal=True
+r2d-17-image-nonascii-alt CLEAR sig_equal=True
+r2d-18-embed-uppercase-event DIFF sig_equal=True
+   ref : '<p><div class="error-block">Sorry, no match for the embedded content.</div></p>'
+   live: '<div class="error-block">Sorry, no match for the embedded content.</div>'

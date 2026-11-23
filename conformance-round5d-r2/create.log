@@ -1,0 +1,117 @@
+r2d-01-freelink-u2000 -> muse-probe-round5d-r2-r2d-01-freelink-u2000 (created)
+r2d-02-freelink-u0085 -> muse-probe-round5d-r2-r2d-02-freelink-u0085 (created)
+r2d-03-freelink-u1680 -> muse-probe-round5d-r2-r2d-03-freelink-u1680 (created)
+r2d-04-freelink-u205f -> muse-probe-round5d-r2-r2d-04-freelink-u205f (created)
+r2d-05-freelink-nbsp-star -> muse-probe-round5d-r2-r2d-05-freelink-nbsp-star (created)
+r2d-06-freelink-feff-star -> muse-probe-round5d-r2-r2d-06-freelink-feff-star (created)
+r2d-07-freelink-triple-star -> muse-probe-round5d-r2-r2d-07-freelink-triple-star (created)
+r2d-08-freelink-mixed-run -> muse-probe-round5d-r2-r2d-08-freelink-mixed-run (created)
+2026-11-23 10:45:51,350 [wikidot/ERROR] AMC is respond status: "try_again" -> {'wikidot_token7': '***MASKED***', 'action': 'WikiPageAction', 'event': 'savePage', 'moduleName': 'Empty', 'mode': 'page', 'lock_id': '85393255', 'lock_secret': '***MASKED***', 'revision_id': '', 'wiki_page': 'muse-probe-round5d-r2-r2d-09-freelink-route-label', 'page_id': '', 'title': '***MASKED***', 'source': '***MASKED***', 'comments': '***MASKED***'}
+2026-11-23 10:46:20,461 [wikidot/ERROR] AMC is respond status: "try_again" -> {'wikidot_token7': '***MASKED***', 'action': 'WikiPageAction', 'event': 'savePage', 'moduleName': 'Empty', 'mode': 'page', 'lock_id': '85393272', 'lock_secret': '***MASKED***', 'revision_id': '', 'wiki_page': 'muse-probe-round5d-r2-r2d-09-freelink-route-label', 'page_id': '', 'title': '***MASKED***', 'source': '***MASKED***', 'comments': '***MASKED***'}
+2026-11-23 10:46:49,428 [wikidot/ERROR] AMC is respond status: "try_again" -> {'wikidot_token7': '***MASKED***', 'action': 'WikiPageAction', 'event': 'savePage', 'moduleName': 'Empty', 'mode': 'page', 'lock_id': '85393291', 'lock_secret': '***MASKED***', 'revision_id': '', 'wiki_page': 'muse-probe-round5d-r2-r2d-09-freelink-route-label', 'page_id': '', 'title': '***MASKED***', 'source': '***MASKED***', 'comments': '***MASKED***'}
+r2d-09-freelink-route-label -> muse-probe-round5d-r2-r2d-09-freelink-route-label (created)
+r2d-10-freelink-route-empty-base -> muse-probe-round5d-r2-r2d-10-freelink-route-empty-base (created)
+2026-11-23 10:48:42,207 [wikidot/ERROR] AMC is respond status: "try_again" -> {'wikidot_token7': '***MASKED***', 'action': 'WikiPageAction', 'event': 'savePage', 'moduleName': 'Empty', 'mode': 'page', 'lock_id': '85393353', 'lock_secret': '***MASKED***', 'revision_id': '', 'wiki_page': 'muse-probe-round5d-r2-r2d-11-freelink-route-then-anchor', 'page_id': '', 'title': '***MASKED***', 'source': '***MASKED***', 'comments': '***MASKED***'}
+2026-11-23 10:49:08,476 [wikidot/ERROR] AMC is respond status: "try_again" -> {'wikidot_token7': '***MASKED***', 'action': 'WikiPageAction', 'event': 'savePage', 'moduleName': 'Empty', 'mode': 'page', 'lock_id': '85393368', 'lock_secret': '***MASKED***', 'revision_id': '', 'wiki_page': 'muse-probe-round5d-r2-r2d-11-freelink-route-then-anchor', 'page_id': '', 'title': '***MASKED***', 'source': '***MASKED***', 'comments': '***MASKED***'}
+r2d-11-freelink-route-then-anchor -> muse-probe-round5d-r2-r2d-11-freelink-route-then-anchor (created)
+r2d-12-freelink-route-twice -> muse-probe-round5d-r2-r2d-12-freelink-route-twice (created)
+2026-11-23 10:50:17,695 [wikidot/ERROR] AMC is respond status: "try_again" -> {'wikidot_token7': '***MASKED***', 'action': 'WikiPageAction', 'event': 'savePage', 'moduleName': 'Empty', 'mode': 'page', 'lock_id': '85393400', 'lock_secret': '***MASKED***', 'revision_id': '', 'wiki_page': 'muse-probe-round5d-r2-r2d-13-freelink-route-empty-rest', 'page_id': '', 'title': '***MASKED***', 'source': '***MASKED***', 'comments': '***MASKED***'}
+r2d-13-freelink-route-empty-rest -> muse-probe-round5d-r2-r2d-13-freelink-route-empty-rest (created)
+r2d-14-freelink-route-leading-space -> muse-probe-round5d-r2-r2d-14-freelink-route-leading-space (created)
+r2d-15-url-upper-ext -> muse-probe-round5d-r2-r2d-15-url-upper-ext (created)
+r2d-16-interwiki-nonascii-page -> muse-probe-round5d-r2-r2d-16-interwiki-nonascii-page (created)
+r2d-17-image-nonascii-alt -> muse-probe-round5d-r2-r2d-17-image-nonascii-alt (created)
+r2d-18-embed-uppercase-event -> muse-probe-round5d-r2-r2d-18-embed-uppercase-event (created)
+18 probe pages left in place on sandbox-for-codex; the tool never deletes pages.
+{
+ "r2d-01-freelink-u2000": {
+  "fullname": "muse-probe-round5d-r2-r2d-01-freelink-u2000",
+  "source": "[[[ _default:x]]]",
+  "action": "created"
+ },
+ "r2d-02-freelink-u0085": {
+  "fullname": "muse-probe-round5d-r2-r2d-02-freelink-u0085",
+  "source": "[[[_default:x]]]",
+  "action": "created"
+ },
+ "r2d-03-freelink-u1680": {
+  "fullname": "muse-probe-round5d-r2-r2d-03-freelink-u1680",
+  "source": "[[[ _default:x]]]",
+  "action": "created"
+ },
+ "r2d-04-freelink-u205f": {
+  "fullname": "muse-probe-round5d-r2-r2d-04-freelink-u205f",
+  "source": "[[[ _default:x]]]",
+  "action": "created"
+ },
+ "r2d-05-freelink-nbsp-star": {
+  "fullname": "muse-probe-round5d-r2-r2d-05-freelink-nbsp-star",
+  "source": "[[[ *_default:x]]]",
+  "action": "created"
+ },
+ "r2d-06-freelink-feff-star": {
+  "fullname": "muse-probe-round5d-r2-r2d-06-freelink-feff-star",
+  "source": "[[[﻿*_default:x]]]",
+  "action": "created"
+ },
+ "r2d-07-freelink-triple-star": {
+  "fullname": "muse-probe-round5d-r2-r2d-07-freelink-triple-star",
+  "source": "[[[***_default:x]]]",
+  "action": "created"
+ },
+ "r2d-08-freelink-mixed-run": {
+  "fullname": "muse-probe-round5d-r2-r2d-08-freelink-mixed-run",
+  "source": "[[[\t  　_default:x]]]",
+  "action": "created"
+ },
+ "r2d-09-freelink-route-label": {
+  "fullname": "muse-probe-round5d-r2-r2d-09-freelink-route-label",
+  "source": "[[[foo/#/bar|shown]]]",
+  "action": "created"
+ },
+ "r2d-10-freelink-route-empty-base": {
+  "fullname": "muse-probe-round5d-r2-r2d-10-freelink-route-empty-base",
+  "source": "[[[/#/bar]]]",
+  "action": "created"
+ },
+ "r2d-11-freelink-route-then-anchor": {
+  "fullname": "muse-probe-round5d-r2-r2d-11-freelink-route-then-anchor",
+  "source": "[[[foo/#/bar#baz]]]",
+  "action": "created"
+ },
+ "r2d-12-freelink-route-twice": {
+  "fullname": "muse-probe-round5d-r2-r2d-12-freelink-route-twice",
+  "source": "[[[a/#/b/#/c]]]",
+  "action": "created"
+ },
+ "r2d-13-freelink-route-empty-rest": {
+  "fullname": "muse-probe-round5d-r2-r2d-13-freelink-route-empty-rest",
+  "source": "[[[foo/#/]]]",
+  "action": "created"
+ },
+ "r2d-14-freelink-route-leading-space": {
+  "fullname": "muse-probe-round5d-r2-r2d-14-freelink-route-leading-space",
+  "source": "[[[ foo/#/bar]]]",
+  "action": "created"
+ },
+ "r2d-15-url-upper-ext": {
+  "fullname": "muse-probe-round5d-r2-r2d-15-url-upper-ext",
+  "source": "https://example.com/PIC.JPG",
+  "action": "created"
+ },
+ "r2d-16-interwiki-nonascii-page": {
+  "fullname": "muse-probe-round5d-r2-r2d-16-interwiki-nonascii-page",
+  "source": "[wikipedia:café]",
+  "action": "created"
+ },
+ "r2d-17-image-nonascii-alt": {
+  "fullname": "muse-probe-round5d-r2-r2d-17-image-nonascii-alt",
+  "source": "[[image http://x/y.png alt=\"café\"]]",
+  "action": "created"
+ },
+ "r2d-18-embed-uppercase-event": {
+  "fullname": "muse-probe-round5d-r2-r2d-18-embed-uppercase-event",
+  "source": "[[embed]]<iframe ONLOAD=\"x\"></iframe>[[/embed]]",
+  "action": "created"
+ }
+}

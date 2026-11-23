@@ -1,0 +1,155 @@
+[
+ {
+  "id": "L1-C1RESBR",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<ul><li>A]<br> [[LI]]B[[/LI]]<br> [[/UL]]</li></ul>",
+  "ref_rule": "<ul><li>A<li>B<br>"
+ },
+ {
+  "id": "L2-C1BLANK",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<ul><li>A<br> [[LI]]B[[/LI]]<br> [[/UL]]</li></ul>",
+  "ref_rule": "<ul><li>A<li>B<br>"
+ },
+ {
+  "id": "L3-C1CROSSTAG",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": true,
+  "live_rule": "<ul><li>A[[LI]]B[[/LI]]<br> [[/UL]]</li></ul>",
+  "ref_rule": "<ul><li>A[[LI]]B[[/LI]]<br> [[/UL]]</li></ul>"
+ },
+ {
+  "id": "L4-NATEMPTY",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<ul><li>x</li></ul><br>",
+  "ref_rule": "<ul><li><ul><li>x</li></ul></li></ul>"
+ },
+ {
+  "id": "L5-EMPTYNESTEDNL",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<ul><li><br></li></ul><ul><li>x</li></ul><br><br>",
+  "ref_rule": "<ul><li><br></li></ul><ul><li>x</li></ul><br>"
+ },
+ {
+  "id": "L6-NESTEDCLOSEEMPTY",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<ul><li>A</li></ul><br>",
+  "ref_rule": "<ul><li>A"
+ },
+ {
+  "id": "L7-C4SCOREDNESTED",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<ul><li><br></li></ul><ul><li>x</li></ul>",
+  "ref_rule": "<ul><li><br></li></ul><ul><li>x</li></ul><br>"
+ },
+ {
+  "id": "D1-IDFFLEADWS",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": true,
+  "live_rule": "<div id=\"u- �abc\"><p>X</p></div>",
+  "ref_rule": "<div id=\"u- �abc\"><p>X</p></div>"
+ },
+ {
+  "id": "D2-IDFFONLY",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": true,
+  "live_rule": "<div id=\"u-�\"><p>X</p></div>",
+  "ref_rule": "<div id=\"u-�\"><p>X</p></div>"
+ },
+ {
+  "id": "P1-SCOREDSPANATTR",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": true,
+  "live_rule": "<span class=\"c\">X</span>",
+  "ref_rule": "<span class=\"c\">X</span>"
+ },
+ {
+  "id": "P2-SCOREDANCHORMID",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": true,
+  "live_rule": "<p>A <a href=\"x\">L</a> tail</p>",
+  "ref_rule": "<p>A <a href=\"x\">L</a> tail</p>"
+ },
+ {
+  "id": "N1-BRK3SPACE",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<p>a<br> b</p>",
+  "ref_rule": "<p>a <br> b</p>"
+ },
+ {
+  "id": "B1-DEEPEMPTY",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": true,
+  "live_rule": "<blockquote><p>a</p><blockquote><blockquote><p>b<br> c</p></blockquote></blockquote></blockquote>",
+  "ref_rule": "<blockquote><p>a</p><blockquote><blockquote><p>b<br> c</p></blockquote></blockquote></blockquote>"
+ },
+ {
+  "id": "B2-MARKERNOSPACE",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": true,
+  "live_rule": "",
+  "ref_rule": ""
+ },
+ {
+  "id": "T1-TABATTRDUP",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "class=&quot;c&quot; class=&quot;c&quot; <div class=\"yui-navset\" id=\"wiki-tabview-X\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>untitled</em></a></li></ul><div class=\"yui-content\"><div id=\"wiki-tab-X\"><p>X</p></div></div></div>",
+  "ref_rule": "<p>class=&quot;c&quot; class=&quot;c&quot; <div class=\"yui-navset\" id=\"wiki-tabview-X\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>untitled</em></a></li></ul><div class=\"yui-content\"></p><div id=\"wiki-tab-X\"><p>X</p></div></div></div>"
+ },
+ {
+  "id": "T2-TABWS",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": true,
+  "live_rule": "<div class=\"yui-navset\" id=\"wiki-tabview-X\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>A B</em></a></li></ul><div class=\"yui-content\"><div id=\"wiki-tab-X\"><p>X</p></div></div></div>",
+  "ref_rule": "<div class=\"yui-navset\" id=\"wiki-tabview-X\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>A B</em></a></li></ul><div class=\"yui-content\"><div id=\"wiki-tab-X\"><p>X</p></div></div></div>"
+ },
+ {
+  "id": "C1-COLLTRAIL",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "rule_level_equal": false,
+  "live_rule": "<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+ show block</a></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">– hide block</a></div><div class=\"collapsible-block-content\"><p>A</p></div></div></div> B[[/collapsible]]",
+  "ref_rule": "<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+ show block</a></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">– hide block</a></div><div class=\"collapsible-block-content\"><p>A</p></div></div></div>B[[/collapsible]]"
+ }
+]

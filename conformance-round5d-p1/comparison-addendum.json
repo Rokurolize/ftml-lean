@@ -1,0 +1,24 @@
+[
+ {
+  "id": "D3-IDFFSIZELEAD",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "2802c046b85ec9fbdfa4ded9f74f4b06c87dcb6c9c270e1a271155c6d89a2fce",
+  "source_sha256": "f0db9a1553552db1ed49db4f547b594dc2cc5935dc9ea08ff17cc2154857b86c",
+  "live_norm": "<div id> <p>X</p> </div>",
+  "ref_norm": "<div id><p>X</p> </div>",
+  "equal": false
+ },
+ {
+  "id": "D4-IDFFSIZEBARE",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "2802c046b85ec9fbdfa4ded9f74f4b06c87dcb6c9c270e1a271155c6d89a2fce",
+  "source_sha256": "ee7bc2ac0e8fa85bec312993d95de5130ce61c8ffc4ca1b18fe442776bc6fca8",
+  "live_norm": "<div id> <p>X</p> </div>",
+  "ref_norm": "<div id><p>X</p> </div>",
+  "equal": false
+ }
+]

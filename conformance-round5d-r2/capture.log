@@ -1,0 +1,200 @@
+r2d-01-freelink-u2000 -> muse-probe-round5d-r2-r2d-01-freelink-u2000 stable=True saved_source_matches=True valid=True
+r2d-02-freelink-u0085 -> muse-probe-round5d-r2-r2d-02-freelink-u0085 stable=True saved_source_matches=True valid=True
+r2d-03-freelink-u1680 -> muse-probe-round5d-r2-r2d-03-freelink-u1680 stable=True saved_source_matches=True valid=True
+r2d-04-freelink-u205f -> muse-probe-round5d-r2-r2d-04-freelink-u205f stable=True saved_source_matches=True valid=True
+r2d-05-freelink-nbsp-star -> muse-probe-round5d-r2-r2d-05-freelink-nbsp-star stable=True saved_source_matches=True valid=True
+r2d-06-freelink-feff-star -> muse-probe-round5d-r2-r2d-06-freelink-feff-star stable=True saved_source_matches=True valid=True
+r2d-07-freelink-triple-star -> muse-probe-round5d-r2-r2d-07-freelink-triple-star stable=True saved_source_matches=True valid=True
+r2d-08-freelink-mixed-run -> muse-probe-round5d-r2-r2d-08-freelink-mixed-run stable=True saved_source_matches=True valid=True
+r2d-09-freelink-route-label -> muse-probe-round5d-r2-r2d-09-freelink-route-label stable=True saved_source_matches=True valid=True
+r2d-10-freelink-route-empty-base -> muse-probe-round5d-r2-r2d-10-freelink-route-empty-base stable=True saved_source_matches=True valid=True
+r2d-11-freelink-route-then-anchor -> muse-probe-round5d-r2-r2d-11-freelink-route-then-anchor stable=True saved_source_matches=True valid=True
+r2d-12-freelink-route-twice -> muse-probe-round5d-r2-r2d-12-freelink-route-twice stable=True saved_source_matches=True valid=True
+r2d-13-freelink-route-empty-rest -> muse-probe-round5d-r2-r2d-13-freelink-route-empty-rest stable=True saved_source_matches=True valid=True
+r2d-14-freelink-route-leading-space -> muse-probe-round5d-r2-r2d-14-freelink-route-leading-space stable=True saved_source_matches=True valid=True
+r2d-15-url-upper-ext -> muse-probe-round5d-r2-r2d-15-url-upper-ext stable=True saved_source_matches=True valid=True
+r2d-16-interwiki-nonascii-page -> muse-probe-round5d-r2-r2d-16-interwiki-nonascii-page stable=True saved_source_matches=True valid=True
+r2d-17-image-nonascii-alt -> muse-probe-round5d-r2-r2d-17-image-nonascii-alt stable=True saved_source_matches=True valid=True
+r2d-18-embed-uppercase-event -> muse-probe-round5d-r2-r2d-18-embed-uppercase-event stable=True saved_source_matches=True valid=True
+{
+ "r2d-01-freelink-u2000": {
+  "fullname": "muse-probe-round5d-r2-r2d-01-freelink-u2000",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[ _default:x]]]",
+  "source_sha256": "551d72b31fc6a6654ce3948abedba048a2f1b84528ce46f0aec4690f9c6f2368",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2d-02-freelink-u0085": {
+  "fullname": "muse-probe-round5d-r2-r2d-02-freelink-u0085",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[_default:x]]]",
+  "source_sha256": "58d97764649caa7ef44eae89825c7e3220204cb358292a29dc0a09a910631482",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2d-03-freelink-u1680": {
+  "fullname": "muse-probe-round5d-r2-r2d-03-freelink-u1680",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[ _default:x]]]",
+  "source_sha256": "70e24d2edc6255438486ed7ce24d6f8a20200af8b7fee29f3554816258094216",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2d-04-freelink-u205f": {
+  "fullname": "muse-probe-round5d-r2-r2d-04-freelink-u205f",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[ _default:x]]]",
+  "source_sha256": "a2e8f2ee021056097db4403b688176d5d9769062f6d35b4892a9a0900c70e149",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2d-05-freelink-nbsp-star": {
+  "fullname": "muse-probe-round5d-r2-r2d-05-freelink-nbsp-star",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[ *_default:x]]]",
+  "source_sha256": "c1499bed4575b48f730013edf7f1b903cf0dfd8532305e3f43602cbed20f3154",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2d-06-freelink-feff-star": {
+  "fullname": "muse-probe-round5d-r2-r2d-06-freelink-feff-star",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[﻿*_default:x]]]",
+  "source_sha256": "9ffd23dbaca78f2b4b4614e1f735ee1e42de25bb8687830d8f70bdabe2bdb38f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2d-07-freelink-triple-star": {
+  "fullname": "muse-probe-round5d-r2-r2d-07-freelink-triple-star",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[***_default:x]]]",
+  "source_sha256": "1f3948c986379f44fbc7d73b8abb1b52ae93531f016e5b4814760068f532f74c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2d-08-freelink-mixed-run": {
+  "fullname": "muse-probe-round5d-r2-r2d-08-freelink-mixed-run",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[\t  　_default:x]]]",
+  "source_sha256": "69a8af49088ae177aa55831ee2db28e2f0ffc6384fb99006f97d9ba305046067",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2d-09-freelink-route-label": {
+  "fullname": "muse-probe-round5d-r2-r2d-09-freelink-route-label",
+  "html": "<p><a class=\"newpage\" href=\"/foo#/bar\">shown</a></p>",
+  "html_sha256": "d16e5e03607ea587201003175327f088287a59295b7b54ec230d19408dc625c4",
+  "source": "[[[foo/#/bar|shown]]]",
+  "source_sha256": "558925bb46abb1f403db1a2434781e900f7179c81185f5bad8247f2ddbc689b5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2d-10-freelink-route-empty-base": {
+  "fullname": "muse-probe-round5d-r2-r2d-10-freelink-route-empty-base",
+  "html": "<p><a href=\"/#/bar\">/</a></p>",
+  "html_sha256": "2f9536f96d4b0b4a6623cd57c71e80b4b69f329bc75f8fec087e3a5f36d919e6",
+  "source": "[[[/#/bar]]]",
+  "source_sha256": "927efe8bea765f31f056c2b1717c0ca4fd793d6e27725256541aada2fc2ce7b3",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2d-11-freelink-route-then-anchor": {
+  "fullname": "muse-probe-round5d-r2-r2d-11-freelink-route-then-anchor",
+  "html": "<p>[[[foo/#/bar#baz]]]</p>",
+  "html_sha256": "fd6acf96b22efb613c509d43e8803e5c2bf14445eb64d36f0926448960d08778",
+  "source": "[[[foo/#/bar#baz]]]",
+  "source_sha256": "f268fbae88424456a18253b50fe99dbe3eeec7622c22c3ad6ca8db2041d33ee7",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2d-12-freelink-route-twice": {
+  "fullname": "muse-probe-round5d-r2-r2d-12-freelink-route-twice",
+  "html": "<p>[[[a/#/b/#/c]]]</p>",
+  "html_sha256": "c569e3172f12dce029060e968eedf47617be91abf4747264f06b16c37178c342",
+  "source": "[[[a/#/b/#/c]]]",
+  "source_sha256": "726d66b324fa3e94c421622d96ba38eb3f361baccb2dda5414ffc1cb71c2706e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2d-13-freelink-route-empty-rest": {
+  "fullname": "muse-probe-round5d-r2-r2d-13-freelink-route-empty-rest",
+  "html": "<p><a class=\"newpage\" href=\"/foo#/\">foo/</a></p>",
+  "html_sha256": "66abb1ce5ab504deaa4462890d7d1b0331a8a18ba080e6cee8001b52d35332e0",
+  "source": "[[[foo/#/]]]",
+  "source_sha256": "ae2d8e857d1208abb4b435ed0a1f186ffec09194674ffeb3aca863e1861cefaf",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2d-14-freelink-route-leading-space": {
+  "fullname": "muse-probe-round5d-r2-r2d-14-freelink-route-leading-space",
+  "html": "<p><a class=\"newpage\" href=\"/foo#/bar\">foo/</a></p>",
+  "html_sha256": "fb78456199f5088fbe7ea9e0f2f19362aac018e0c0da449d871a97d0d52dcf2d",
+  "source": "[[[ foo/#/bar]]]",
+  "source_sha256": "9483ba2e2971c19182c6a77d74d5c999402491765e91d7fc6f3a4767e53af654",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2d-15-url-upper-ext": {
+  "fullname": "muse-probe-round5d-r2-r2d-15-url-upper-ext",
+  "html": "<p><a href=\"https://example.com/PIC.JPG\">https://example.com/PIC.JPG</a></p>",
+  "html_sha256": "dc6a29ed346ff66f3454d3d953b354f1ba61040dc27f6cce5da395e47559405c",
+  "source": "https://example.com/PIC.JPG",
+  "source_sha256": "a36beff5d62beca26132453df2e1bbd7e0180330cbd5b19049420027c6960604",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2d-16-interwiki-nonascii-page": {
+  "fullname": "muse-probe-round5d-r2-r2d-16-interwiki-nonascii-page",
+  "html": "<p>[wikipedia:café]</p>",
+  "html_sha256": "a2bcbdfaee932f0892b10aa86a169bbd0ba493a6d58264f06a39965047323fcf",
+  "source": "[wikipedia:café]",
+  "source_sha256": "4025f8e15a3fa1ba05533cdef70f4f7bcdf28b6eb37c423233d56355db062b91",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2d-17-image-nonascii-alt": {
+  "fullname": "muse-probe-round5d-r2-r2d-17-image-nonascii-alt",
+  "html": "<img src=\"http://x/y.png\" alt=\"café\" class=\"image\" />",
+  "html_sha256": "c89f2c2dc60c94333bbc17d81388fea61b3c9146b3f71e1eab4bd492ab791084",
+  "source": "[[image http://x/y.png alt=\"café\"]]",
+  "source_sha256": "fd250c839f017406fcc533253a6c41e16959f6530c63564a2bbb3f98859a5251",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "r2d-18-embed-uppercase-event": {
+  "fullname": "muse-probe-round5d-r2-r2d-18-embed-uppercase-event",
+  "html": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "html_sha256": "0d94a629bbda9bb7b87fcaf86579d5195ffef1ffcfd644fd09babead0f4c04b0",
+  "source": "[[embed]]<iframe ONLOAD=\"x\"></iframe>[[/embed]]",
+  "source_sha256": "ba080f1e46c55625c16302e13461723455866a5d66b4bd557da46538a5d0cff9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

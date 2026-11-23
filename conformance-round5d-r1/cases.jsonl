@@ -1,0 +1,18 @@
+{"id": "R5DR1-D1", "source": "[[div id=\"u-  x[[size 12px]]y[[/size]]\"]]\nbody\n[[/div]]"}
+{"id": "R5DR1-D2", "source": "[[div id=\"@@x@@\"]]\nbody\n[[/div]]"}
+{"id": "R5DR1-D3", "source": "[[div class=\"  a  b  \"]]\nbody\n[[/div]]"}
+{"id": "R5DR1-D4", "source": "[[div data-X=\"L\" data-x=\"\"]]\nbody\n[[/div]]"}
+{"id": "R5DR1-D5", "source": "[[div id=\"u-  \"]]\nbody\n[[/div]]"}
+{"id": "R5DR1-D6", "source": "[[div type=\"[[span class=k]]s[[/span]]\"]]\nbody\n[[/div]]"}
+{"id": "R5DR1-S1", "source": "[[span id=\"[[size 12px]]x[[/size]]\"]]body[[/span]]"}
+{"id": "R5DR1-Z1", "source": "[[size 00012px]]x[[/size]]"}
+{"id": "R5DR1-K1", "source": "[[collapsible show=\"0\"]]body[[/collapsible]]"}
+{"id": "R5DR1-K2", "source": "[[collapsible folded=\"FALSE\"]]body[[/collapsible]]"}
+{"id": "R5DR1-K3", "source": "[[collapsible show=\"a&<b\\\"c'd\"]]body[[/collapsible]]"}
+{"id": "R5DR1-T1", "source": "[[tabview]][[tab title=\"@@x@@\"]]a[[/tab]][[/tabview]]"}
+{"id": "R5DR1-T2", "source": "[[tabview]][[tab title=\"a&<b>c\"]]a[[/tab]][[/tabview]]"}
+{"id": "R5DR1-T3", "source": "[[tabview]][[tab]]a[[/tab]][[/tabview]]"}
+{"id": "R5DR1-L1", "source": "[[UL]]\n[[LI class=\"a&b\"]]x[[/LI]]\n[[/UL]]"}
+{"id": "R5DR1-L2", "source": "[[ul]]\n[[li]]A[[/li]]\n[[LI]]B[[/LI]]\n[[/ul]]"}
+{"id": "R5DR1-L3", "source": "* a\n** b\n* c"}
+{"id": "R5DR1-B1", "source": "> a\n> > b\n> c"}

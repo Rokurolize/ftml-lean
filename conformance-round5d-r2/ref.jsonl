@@ -1,0 +1,18 @@
+{"id":"r2d-01-freelink-u2000","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"r2d-02-freelink-u0085","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"r2d-03-freelink-u1680","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"r2d-04-freelink-u205f","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"r2d-05-freelink-nbsp-star","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"r2d-06-freelink-feff-star","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"r2d-07-freelink-triple-star","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"r2d-08-freelink-mixed-run","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"r2d-09-freelink-route-label","output":"<p><a class=\"newpage\" href=\"\/foo#\/bar\">shown<\/a><\/p>\n\n"}
+{"id":"r2d-10-freelink-route-empty-base","output":"<p><a class=\"newpage\" href=\"\/#\/bar\">\/<\/a><\/p>\n\n"}
+{"id":"r2d-11-freelink-route-then-anchor","output":"<p><a class=\"newpage\" href=\"\/foo#\/bar#baz\">foo\/<\/a><\/p>\n\n"}
+{"id":"r2d-12-freelink-route-twice","output":"<p><a class=\"newpage\" href=\"\/a#\/b\/#\/c\">a\/<\/a><\/p>\n\n"}
+{"id":"r2d-13-freelink-route-empty-rest","output":"<p><a class=\"newpage\" href=\"\/foo#\/\">foo\/<\/a><\/p>\n\n"}
+{"id":"r2d-14-freelink-route-leading-space","output":"<p><a class=\"newpage\" href=\"\/foo#\/bar\">foo\/<\/a><\/p>\n\n"}
+{"id":"r2d-15-url-upper-ext","output":"<p><a href=\"https:\/\/example.com\/PIC.JPG\">https:\/\/example.com\/PIC.JPG<\/a><\/p>\n\n"}
+{"id":"r2d-16-interwiki-nonascii-page","output":"<p>[wikipedia:caf\u00e9]<\/p>\n\n"}
+{"id":"r2d-17-image-nonascii-alt","output":"<img src=\"http:\/\/x\/y.png\" alt=\"caf\u00e9\" class=\"image\" \/>"}
+{"id":"r2d-18-embed-uppercase-event","output":"<p><div class=\"error-block\">Sorry, no match for the embedded content.<\/div><\/p>\n\n"}

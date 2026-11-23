@@ -1,0 +1,7 @@
+# OWNED-ARTIFACTS — R5D-R2 owned-surface resolutions for raw DIFFs
+
+One of the three raw DIFFs is resolved to a standing owned class with an artifact, not with intent.
+
+Stage 2 tidy frame (r2d-18-embed-uppercase-event): the reference Stage 1 emits `<p><div class="error-block">Sorry, no match for the embedded content.</div></p>` for the embed no-match error, and the live saved-page view emits the bare `<div class="error-block">Sorry, no match for the embedded content.</div>`. The rule-level signature is byte-identical: compare.py reports sig_equal=true, with the same single error-block element and text on both sides. The only surviving bytes are the wrapper paragraph, which Stage 2 purifyHtml drops and hoists the div out of, exactly the owned frame class cleared in R5-R2, R5B-R2 (r2b-embed-data-scheme and r2b-embed-datasrc) and R5C-R2 (r2c-17 and r2c-18). The wrapper artifact is preserved as tidy-embed-stage2.html. Note also that the uppercase ONLOAD handler did not itself change the rule-level result: both sides take the no-match error branch, so R2D-18's actual suspicion (case-insensitive event matching) is CLEARED on the reference rule even before the frame mask.
+
+The token-id counter class and the parity Email index family were deliberately not re-probed: no case in cases.jsonl is an Email case, and no claimed-placeholder index is present. No Math PNG/no-PNG serving case was created either; the Math render family is represented only by the cleared Freelink/Url/Interwiki/Image/Embed shapes in this corpus.

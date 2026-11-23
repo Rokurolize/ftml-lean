@@ -1,0 +1,22 @@
+{
+ "R5D-P4-C17": {
+  "fullname": "muse-probe-round5d-p4-r5d-p4-c17",
+  "html": "<p>alpha</p>\n<div>\n<p>bravo</p>\n</div>",
+  "html_sha256": "542c4189d2f0861a89b844dffde962e86b472aa459b6edaefd7c0170322d6359",
+  "source": "alpha\n[[div]]\nbravo[[/div]]",
+  "source_sha256": "773c92a695f03c7583a38d6ee81d7be0d4606e4ae3717b9ba6ae9bf543c3a4a7",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5D-P4-C18": {
+  "fullname": "muse-probe-round5d-p4-r5d-p4-c18",
+  "html": "<p>gammadelta</p>",
+  "html_sha256": "415878323ac596924e3335ce1b1cd448074dfc0dbb74e60d4a08ef04d3ec20a6",
+  "source": "gamma\fdelta",
+  "source_sha256": "2094e6633395903ab1fa12e0dbce5cd13eaacc7f69e91f214fafe17ea5dcb517",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

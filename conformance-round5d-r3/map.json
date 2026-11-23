@@ -1,0 +1,102 @@
+{
+ "R3D-01": {
+  "fullname": "muse-probe-round5d-r3-r3d-01",
+  "source": "[[footnote]]@@@@\n@@@@\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3D-02": {
+  "fullname": "muse-probe-round5d-r3-r3d-02",
+  "source": "[[footnote]]@@@@\n@@@@@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3D-03": {
+  "fullname": "muse-probe-round5d-r3-r3d-03",
+  "source": "[[footnote]]@@@@\nX\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3D-04": {
+  "fullname": "muse-probe-round5d-r3-r3d-04",
+  "source": "[[footnote]]@@@@\n\f@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3D-05": {
+  "fullname": "muse-probe-round5d-r3-r3d-05",
+  "source": "[[footnote]]@@@@\f\n\f@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3D-06": {
+  "fullname": "muse-probe-round5d-r3-r3d-06",
+  "source": "[[footnote]]@@@@\f\n\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3D-07": {
+  "fullname": "muse-probe-round5d-r3-r3d-07",
+  "source": "[[footnote]]@@@@ \n\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3D-08": {
+  "fullname": "muse-probe-round5d-r3-r3d-08",
+  "source": "[[footnote]]@@@@ \nX\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3D-09": {
+  "fullname": "muse-probe-round5d-r3-r3d-09",
+  "source": "[[footnote]]@@@@\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3D-10": {
+  "fullname": "muse-probe-round5d-r3-r3d-10",
+  "source": "[[footnote]]x@@@@\n@@@@y[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3D-11": {
+  "fullname": "muse-probe-round5d-r3-r3d-11",
+  "source": "[[bibliography]]\n: a : @@@@\f@@@@\n[[/bibliography]]",
+  "action": "created"
+ },
+ "R3D-12": {
+  "fullname": "muse-probe-round5d-r3-r3d-12",
+  "source": "[[bibliography]]\n: a : @@@@\t@@@@\n[[/bibliography]]",
+  "action": "created"
+ },
+ "R3D-13": {
+  "fullname": "muse-probe-round5d-r3-r3d-13",
+  "source": "[[bibliography]]\n: a : @@@@ @@@@\n[[/bibliography]]",
+  "action": "created"
+ },
+ "R3D-14": {
+  "fullname": "muse-probe-round5d-r3-r3d-14",
+  "source": "[[toc]]\n\n+ Alpha\n\n+ Beta",
+  "action": "created"
+ },
+ "R3D-15": {
+  "fullname": "muse-probe-round5d-r3-r3d-15",
+  "source": "[[toc title=\"O'Brien\"]]\n\n+ One",
+  "action": "created"
+ },
+ "R3D-16": {
+  "fullname": "muse-probe-round5d-r3-r3d-16",
+  "source": "[[f<toc]]\n\n+ One\n\n+* Hidden A\n\n+ Two\n\n+* Hidden B\n\n+ Three",
+  "action": "created"
+ },
+ "R3D-17": {
+  "fullname": "muse-probe-round5d-r3-r3d-17",
+  "source": "[[# a%20b]] text",
+  "action": "created"
+ },
+ "R3D-18": {
+  "fullname": "muse-probe-round5d-r3-r3d-18",
+  "source": "[[a href=\"*https://example.com\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3D-19": {
+  "fullname": "muse-probe-round5d-r3-r3d-19",
+  "source": "+ Head[[footnote]]@@@@\n@@@@[[/footnote]]\n\n[[toc]]\n\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3D-20": {
+  "fullname": "muse-probe-round5d-r3-r3d-20",
+  "source": "[[toc]]\n\n++++++ Six\n\n+ One",
+  "action": "created"
+ }
+}

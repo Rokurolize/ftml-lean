@@ -1,0 +1,162 @@
+{
+ "p3d-01-tableadv-empty-data-suffix": {
+  "fullname": "muse-probe-round5d-p3-p3d-01-tableadv-empty-data-suffix",
+  "html": "<table data-=\"UB\">\n<tr>\n<td>CELLX</td>\n</tr>\n</table>",
+  "html_sha256": "aba63c4de1a1eda79946aac1b0338aacef086a42d36ab82d2b8ec8938c2edde4",
+  "source": "[[table data-=\"UB\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]",
+  "source_sha256": "7213257126e8f19996bf7fd12b4a292518950d20413bef8a878a6c4b16dc40d2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p3d-02-tableadv-dot-edge-suffix": {
+  "fullname": "muse-probe-round5d-p3-p3d-02-tableadv-dot-edge-suffix",
+  "html": "<table data-.=\"UB\">\n<tr>\n<td>CELLX</td>\n</tr>\n</table>",
+  "html_sha256": "a7bea3452f6f970f7ffc4e44e021f958fc260de1f426c2fdcdae68f2ce60e680",
+  "source": "[[table data-.=\"UB\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]",
+  "source_sha256": "8301ff43c1cff3b8da51604e8d8c4451b9dbb838e8007f7ac548dc7d109b7195",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p3d-03-tableadv-out-of-class-byte": {
+  "fullname": "muse-probe-round5d-p3-p3d-03-tableadv-out-of-class-byte",
+  "html": "<table>\n<tr>\n<td>CELLX</td>\n</tr>\n</table>",
+  "html_sha256": "e71ade1a36ca580cde1c249dc85c138ed353c32d33307fb79a05c60332c42ca3",
+  "source": "[[table data-foo+bar=\"UB\"]]\n[[row]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]",
+  "source_sha256": "f9cdc33d50647438bd9964f6315b3b42c554f91f18a4507de095059ed665fc49",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p3d-04-module-three-level-nested": {
+  "fullname": "muse-probe-round5d-p3-p3d-04-module-three-level-nested",
+  "html": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>\n<p>[[/module]]</p>",
+  "html_sha256": "b75c05058fb97e1fcbfb284af8822ffe1dbb5e5bcfee201f035e7d09380dd3d7",
+  "source": "[[module nosuchmod]]\n[[module mid]]\n[[module inner]]INNER[[/module]]\n[[/module]]\n[[/module]]",
+  "source_sha256": "aa1694952021f77e2dab62ee518785560abceb99e2aad3c7b4866448dada1d88",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p3d-05-module-attributed-inner": {
+  "fullname": "muse-probe-round5d-p3-p3d-05-module-attributed-inner",
+  "html": "<div class=\"error-block\">[[module <em>nosuchmod</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>",
+  "html_sha256": "b3e0122b100fe4f72c5544f83517a9ebb084d7e196270f9423657d7ad6758e9b",
+  "source": "[[module nosuchmod]]\n[[module inner arg=val]]INNER[[/module]]\n[[/module]]",
+  "source_sha256": "d9179f11e9f67f79d88124f2867080c1e1abd414b6d35fcf7b60ad2139b9cc74",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p3d-06-raw-c2-later-quad": {
+  "fullname": "muse-probe-round5d-p3-p3d-06-raw-c2-later-quad",
+  "html": "<p>ZQ<span style=\"white-space: pre-wrap;\">P</span>@@</p>",
+  "html_sha256": "670ab3ef5761ccd323d670a6a75639f826fa8a086ab312be9e020f586e85c7f9",
+  "source": "@@@@ZQ@@P@@@@",
+  "source_sha256": "0556a1aa5cd4e25675c77bf2d373fecb3c38b91f3e4e7a0949662699d7fc09a1",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p3d-07-raw-c3-later-five": {
+  "fullname": "muse-probe-round5d-p3-p3d-07-raw-c3-later-five",
+  "html": "<p>AB<span style=\"white-space: pre-wrap;\">@CD</span>@@@</p>",
+  "html_sha256": "db889636b00665b430157fd7edd8944d38e5812537d970f652e5aacb5ea14054",
+  "source": "@@@@AB@@@CD@@@@@",
+  "source_sha256": "676198faeb93e266af893b8c5e486228b370f43852d32f1e46811604c3bfc1c3",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p3d-08-raw-open3-close4": {
+  "fullname": "muse-probe-round5d-p3-p3d-08-raw-open3-close4",
+  "html": "<p><span style=\"white-space: pre-wrap;\">@ZQ</span>@@</p>",
+  "html_sha256": "4ba6ed5b56d44e5cf1f1ebc2653b8f2cfbf057523c65f9748ec8a627cc768aec",
+  "source": "@@@ZQ@@@@",
+  "source_sha256": "fc9530d62a6177f1a247c74621250fe9dd5b51e088ee3a8eb3432515500efa69",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p3d-09-include-duplicate-args": {
+  "fullname": "muse-probe-round5d-p3-p3d-09-include-duplicate-args",
+  "html": "<p>A=AA B={$b}</p>",
+  "html_sha256": "b75762266548b81fd801141341ed318bd88aba78547c57573d3f768040dfed5a",
+  "source": "[[include muse-probe-round5d-p3-t-fold | a=AA | a=BB]]",
+  "source_sha256": "d4920f97e702e1997b68d2e10a91f31f1c346591fcdf5b0b6b45d9bc49808ee4",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p3d-10-table-trailing-text": {
+  "fullname": "muse-probe-round5d-p3-p3d-10-table-trailing-text",
+  "html": "PRE<br />\n<table class=\"wiki-content-table\">\n<tr>\n<td>A</td>\n<td>B</td>\n</tr>\n</table>\n<p>POST</p>",
+  "html_sha256": "dbd9455d2221db162b6af7409b79bb861a0e71bf0423e1ef13f5e78e8bf9352b",
+  "source": "PRE\n||A||B||TAIL\nPOST",
+  "source_sha256": "1e7d4e3fad0fb05ec1a9d822c9cbb473d28a7e84edfb2cfbe3837244a303fc5e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p3d-11-image-link-trailing-space": {
+  "fullname": "muse-probe-round5d-p3-p3d-11-image-link-trailing-space",
+  "html": "<a href=\"http://example.com/x\"><img src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5d-p3-p3d-11-image-link-trailing-space/IMG.png\" alt=\"IMG.png\" class=\"image\" /></a>",
+  "html_sha256": "62af6ab8ca808f9a3d9e15eb5c78cf8faea85921c9207a79280904b65b9dec52",
+  "source": "[[image IMG.png link=\"http://example.com/x \"]]",
+  "source_sha256": "48e38b2c30ecd0615a184599d8f2536c8d1b72295f7f1dfd47099ebcd9e1828c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p3d-12-gallery-size-large": {
+  "fullname": "muse-probe-round5d-p3-p3d-12-gallery-size-large",
+  "html": "<div class=\"gallery-box\" id=\"gallery-box-479035\">\n<div class=\"gallery-item thumbnail\">\n<table>\n<tr>\n<td><a href=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5d-p3-p3d-12-gallery-size-large/img1.png\" class=\"with-lb\"><img src=\"https://sandbox-for-codex.wdfiles.com/local--resized-images/muse-probe-round5d-p3-p3d-12-gallery-size-large/img1.png/thumbnail.jpg\" alt=\"\" class=\"gallery-image-size-thumbnail\" /></a></td>\n</tr>\n</table>\n</div>\n<div class=\"gallery-item thumbnail\">\n<table>\n<tr>\n<td><a href=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5d-p3-p3d-12-gallery-size-large/img2.png\" class=\"with-lb\"><img src=\"https://sandbox-for-codex.wdfiles.com/local--resized-images/muse-probe-round5d-p3-p3d-12-gallery-size-large/img2.png/thumbnail.jpg\" alt=\"\" class=\"gallery-image-size-thumbnail\" /></a></td>\n</tr>\n</table>\n</div>\n</div>\n<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common--javascript/lightbox-jquery.js\"></script>\n<script type=\"text/javascript\">\n//<![CDATA[\n\njQuery(function(){\njQuery('#gallery-box-479035 a.with-lb').lightBox();    \n});         \n//]]>\n</script>",
+  "html_sha256": "9657cfe06a3f8765accec19ff6cf6f09a3b52dde54cba2cad9d56cc7576bb64f",
+  "source": "[[gallery size=\"large\"]]\n: img1.png\n: img2.png\n[[/gallery]]",
+  "source_sha256": "95b031b54d855974776deb73c1696a272d873de38a658e902609cb84c22a26e2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p3d-13-file-percent-path": {
+  "fullname": "muse-probe-round5d-p3-p3d-13-file-percent-path",
+  "html": "<p><a href=\"https://sandbox-for-codex.wdfiles.com/local--files/page/100%.png\">A</a></p>",
+  "html_sha256": "b308b7efa29fc456483f2bf7e0609fa297d7613034f372b44eff75095ab38b75",
+  "source": "[[file page/100%.png|A]]",
+  "source_sha256": "6cda799023980fdfe226a6c74a81d201d458ee6dfc48952d289c971102a3dbb3",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p3d-14-tableadv-upper-hcell-closer": {
+  "fullname": "muse-probe-round5d-p3-p3d-14-tableadv-upper-hcell-closer",
+  "html": "<table>\n<tr>\n<td>HD</td>\n</tr>\n</table>",
+  "html_sha256": "45944a017ece319fecaf832f19866b495b8217add1fef1864a22e679d2da31cd",
+  "source": "[[table]]\n[[row]]\n[[hcell]]HD[[/CELL]]\n[[/row]]\n[[/table]]",
+  "source_sha256": "14cf41207751d4a9a1fcca75a645bb92d61998463507761e4985f5f7bb048081",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p3d-15-file-question-path": {
+  "fullname": "muse-probe-round5d-p3-p3d-15-file-question-path",
+  "html": "<p><a href=\"https://sandbox-for-codex.wdfiles.com/local--files/page/a?b.png\">L</a></p>",
+  "html_sha256": "bf70ff1aaa94aa07d158c1309beb185802c0ae490ccaf5487b3e8411b75de7d9",
+  "source": "[[file page/a?b.png|L]]",
+  "source_sha256": "b02e6a787bfc2dbdd68a0da917287bb713b76a87bb1a09992f8cbd0f8af7ec25",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "p3d-16-tableadv-dot-on-row": {
+  "fullname": "muse-probe-round5d-p3-p3d-16-tableadv-dot-on-row",
+  "html": "<table>\n<tr data-foo.bar=\"UB\">\n<td>CELLX</td>\n</tr>\n</table>",
+  "html_sha256": "ff81ce779788487c80d973ff52e816d6e925ad329495eafea6e29923cb2915e8",
+  "source": "[[table]]\n[[row data-Foo.Bar=\"UB\"]]\n[[cell]]CELLX[[/cell]]\n[[/row]]\n[[/table]]",
+  "source_sha256": "8150522f4f0aea27beec75ab0097f5b14f6e9783327b96b73541f4d05187373c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

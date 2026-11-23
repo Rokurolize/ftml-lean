@@ -1,0 +1,20 @@
+{"id": "R5DP2-01", "source": "[[[\u200b_default:x]]]"}
+{"id": "R5DP2-02", "source": "[[[\u2060_default:x]]]"}
+{"id": "R5DP2-03", "source": "[[[\u0085_default:x]]]"}
+{"id": "R5DP2-04", "source": "[[[\u1680_default:x]]]"}
+{"id": "R5DP2-05", "source": "[[[\u2000_default:x]]]"}
+{"id": "R5DP2-06", "source": "[[[\u2002_default:x]]]"}
+{"id": "R5DP2-07", "source": "[[[\u2007_default:x]]]"}
+{"id": "R5DP2-08", "source": "[[[\u200a_default:x]]]"}
+{"id": "R5DP2-09", "source": "[[[\u205f_default:x]]]"}
+{"id": "R5DP2-10", "source": "[[[*\u0085\ufeff\u2000_default:x]]]"}
+{"id": "R5DP2-11", "source": "[[[foo/#/bar/baz]]]"}
+{"id": "R5DP2-12", "source": "[[[foo/#/]]]"}
+{"id": "R5DP2-13", "source": "[[[foo/#/bar#anchor]]]"}
+{"id": "R5DP2-14", "source": "[[[foo#anchor]]]"}
+{"id": "R5DP2-15", "source": "[http://example.com/#x Label]"}
+{"id": "R5DP2-16", "source": "[Wiki:Page label]"}
+{"id": "R5DP2-17", "source": "//a\nb//"}
+{"id": "R5DP2-18", "source": "##rgb(0,0,0)|x##"}
+{"id": "R5DP2-19", "source": "[[code type=\"python\"]]x[[/code]]"}
+{"id": "R5DP2-20", "source": "[[math]]\nx\n[[/math]]"}
