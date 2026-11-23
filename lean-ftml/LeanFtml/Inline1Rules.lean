@@ -370,7 +370,21 @@ def urlDescrHrefs (s : List Nat) : List (List Nat × List Nat) :=
     | 35 :: rest =>
         let n := runOf (fun b => isAlphaB b || (48 ≤ b && b ≤ 57) ||
           b == 95 || b == 45 || b == 37) rest
-        [(35 :: rest.take n, rest.drop n)]
+        let name := rest.take n
+        -- REFCORR16: the anchor form must not claim the reserved
+        -- parser-function heads #expr and #ifexpr (the reference's
+        -- negative lookahead): in [[#expr ...]] and
+        -- [[#ifexpr ...]] the inner bracket span is a parser
+        -- function, not an anchor link. The exclusion is by exact
+        -- head plus a following whitespace or bracket byte, so
+        -- anchors like #expression still claim.
+        if (name == [105, 102, 101, 120, 112, 114] ||
+            name == [101, 120, 112, 114]) &&
+            (match rest.drop n with
+             | b :: _ => isWsByte b || b == 93
+             | [] => false) then
+          []
+        else [(35 :: name, rest.drop n)]
     | _ => []
   let slash := match s with
     | 47 :: rest =>
