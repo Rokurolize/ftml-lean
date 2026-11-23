@@ -74,3 +74,6 @@ import LeanFtml.TableadvProof
 import LeanFtml.TableadvCertificate
 import LeanFtml.LeanFtml
 import LeanFtml.SpecRefcorr15
+import LeanFtml.Proof.ProofList
+import LeanFtml.Proof.ProofListQuotient
+import LeanFtml.Proof.ProofListCert
