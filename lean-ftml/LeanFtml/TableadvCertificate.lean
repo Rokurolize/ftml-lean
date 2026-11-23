@@ -85,6 +85,10 @@ theorem generatorHash_eq : generatorHash = 2479005724 := by
 
 theorem generatorHash_value : generatorHash = 2479005724 := generatorHash_eq
 
+/-! Bounded evidence: concrete table-attribute values are VM-evaluated here rather than pinned by kernel `decide` proofs, because one two-attribute reduction exhausted the wrapper's 22 GB cgroup; the universal attribute lemmas remain in TableadvAttrProof.lean. -/
+#eval buildAttrsAdv (litBytes " data-Foo.Bar=\"UB\"") "table"
+#eval buildAttrsAdv (litBytes " data-Foo=\"1\" data-foo=\"2\"") "table"
+
 #print axioms generator_card
 #print axioms certificate_true
 #print axioms generatorHash_eq

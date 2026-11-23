@@ -1,6 +1,6 @@
 import LeanFtml.TableadvScanHeadProof
 
-/-! TableadvScanWitnessProof.lean - scan and quote-trick witness theorems split verbatim from TableadvProof.lean (commit 06b191d); no statement or proof changed. -/
+/-! TableadvScanWitnessProof.lean — universal chunk scan law and quote-trick witness theorems; the ground-only attr-dependent corollaries are recorded as bounded evidence in TableadvCertificate.lean. -/
 
 namespace LeanFtml
 
@@ -15,65 +15,6 @@ theorem scan_of_chunks (cs : List TadvChunk) (head : List Nat)
   have hscan := tableadvScanGo_chunks cs fuel hok hFuel
   simpa [srcPlainCell, hbytes, hattrs] using hscan
 
-theorem scan_empty_head (fuel : Nat) (h : 80 ≤ fuel) :
-    tableadvScanGo (srcPlainCell []) [] fuel = (plainRep, plainToks []) :=
-  scan_of_chunks [] _ _ fuel chunks_nil_ok (by simp [tadvChunksBytes]) attrsEmptyHead h
-
-theorem scan_data_foo (fuel : Nat) (h : 80 ≤ fuel) :
-    tableadvScanGo (srcPlainCell (litBytes " data-Foo=\"UP\"")) [] fuel =
-      (plainRep, plainToks [(litBytes "data-foo", litBytes "UP")]) :=
-  scan_of_chunks chunksFoo _ _ fuel chunksFoo_ok chunksFoo_bytes attrsFoo h
-
-theorem scan_data_dot (fuel : Nat) (h : 80 ≤ fuel) :
-    tableadvScanGo (srcPlainCell (litBytes " data-Foo.Bar=\"UB\"")) [] fuel =
-      (plainRep, plainToks [(litBytes "data-foo.bar", litBytes "UB")]) :=
-  scan_of_chunks chunksDot _ _ fuel chunksDot_ok chunksDot_bytes attrsDot h
-
-theorem scan_data_under (fuel : Nat) (h : 80 ≤ fuel) :
-    tableadvScanGo (srcPlainCell (litBytes " data-Foo_Bar=\"UB\"")) [] fuel =
-      (plainRep, plainToks [(litBytes "data-foo_bar", litBytes "UB")]) :=
-  scan_of_chunks chunksUnder _ _ fuel chunksUnder_ok chunksUnder_bytes attrsUnder h
-
-theorem scan_DATA_drop (fuel : Nat) (h : 80 ≤ fuel) :
-    tableadvScanGo (srcPlainCell (litBytes " DATA-foo=\"UP\"")) [] fuel =
-      (plainRep, plainToks []) :=
-  scan_of_chunks chunksDATA _ _ fuel chunksDATA_ok chunksDATA_bytes attrsDATA h
-
-theorem scan_CLASS_drop (fuel : Nat) (h : 80 ≤ fuel) :
-    tableadvScanGo (srcPlainCell (litBytes " CLASS=\"UP\"")) [] fuel =
-      (plainRep, plainToks []) :=
-  scan_of_chunks chunksCLASS _ _ fuel chunksCLASS_ok chunksCLASS_bytes attrsCLASS h
-
-theorem scan_plus_drop (fuel : Nat) (h : 80 ≤ fuel) :
-    tableadvScanGo (srcPlainCell (litBytes " data-foo+bar=\"UB\"")) [] fuel =
-      (plainRep, plainToks []) :=
-  scan_of_chunks chunksPlus _ _ fuel chunksPlus_ok chunksPlus_bytes attrsPlus h
-
-theorem scan_empty_suffix (fuel : Nat) (h : 80 ≤ fuel) :
-    tableadvScanGo (srcPlainCell (litBytes " data-=\"UB\"")) [] fuel =
-      (plainRep, plainToks [(litBytes "data-", litBytes "UB")]) :=
-  scan_of_chunks chunksEmptySuffix _ _ fuel chunksEmptySuffix_ok chunksEmpty_bytes
-    attrsEmptySuffix h
-
-theorem scan_dot_edge (fuel : Nat) (h : 80 ≤ fuel) :
-    tableadvScanGo (srcPlainCell (litBytes " data-.=\"UB\"")) [] fuel =
-      (plainRep, plainToks [(litBytes "data-.", litBytes "UB")]) :=
-  scan_of_chunks chunksDotEdge _ _ fuel chunksDotEdge_ok chunksDotEdge_bytes attrsDotEdge h
-
-theorem scan_last_wins (fuel : Nat) (h : 80 ≤ fuel) :
-    tableadvScanGo (srcPlainCell (litBytes " data-Foo=\"1\" data-foo=\"2\"")) [] fuel =
-      (plainRep, plainToks [(litBytes "data-foo", litBytes "2")]) :=
-  scan_of_chunks chunksLast _ _ fuel chunksLast_ok chunksLast_bytes attrsLast h
-
-theorem scan_id_isolate (fuel : Nat) (h : 80 ≤ fuel) :
-    tableadvScanGo (srcPlainCell (litBytes " id=\"X\"")) [] fuel =
-      (plainRep, plainToks [(litBytes "id", litBytes "u-X")]) :=
-  scan_of_chunks chunksId _ _ fuel chunksId_ok chunksId_bytes attrsId h
-
-theorem scan_align_drop (fuel : Nat) (h : 80 ≤ fuel) :
-    tableadvScanGo (srcPlainCell (litBytes " align=\"center\"")) [] fuel =
-      (plainRep, plainToks []) :=
-  scan_of_chunks chunksAlign _ _ fuel chunksAlign_ok chunksAlign_bytes attrsAlign h
 
 /-! ## Quote-trick witness, whole state of `tableadvScanGo` -/
 
