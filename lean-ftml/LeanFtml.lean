@@ -77,5 +77,6 @@ import LeanFtml.Proof.ByteBridge
 import LeanFtml.Proof.F1Bridges
 import LeanFtml.TableadvProof
 import LeanFtml.TableadvCertificate
+import LeanFtml.TableadvQuotientProof
 import LeanFtml.LeanFtml
 import LeanFtml.SpecRefcorr15
