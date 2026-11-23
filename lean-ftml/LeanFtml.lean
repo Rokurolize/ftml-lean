@@ -62,3 +62,4 @@ import LeanFtml.Proof.FrameDelimiterProof
 import LeanFtml.Proof.IncludeRuleProof
 import LeanFtml.Proof.CodeRuleProof
 import LeanFtml.Proof.FrameIncludeAxiomAudit
+import LeanFtml.ProofNextFinal
