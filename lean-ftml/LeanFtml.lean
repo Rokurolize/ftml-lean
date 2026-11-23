@@ -70,6 +70,7 @@ import LeanFtml.Proof.AlphaComposition
 import LeanFtml.Proof.WfComposition
 import LeanFtml.Proof.BundlesWave1
 import LeanFtml.Proof.ByteBridge
+import LeanFtml.Proof.F1Bridges
 import LeanFtml.TableadvProof
 import LeanFtml.TableadvCertificate
 import LeanFtml.LeanFtml
