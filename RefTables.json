@@ -1,0 +1,2253 @@
+{
+  "constructs_observed": [
+    "(?R)-recursion",
+    "alternation",
+    "backref",
+    "bol",
+    "brace-quantifier",
+    "capturing-group",
+    "char-class",
+    "class-escape",
+    "control-escape",
+    "dot",
+    "eol",
+    "flag-D",
+    "flag-U",
+    "flag-i",
+    "flag-m",
+    "flag-s",
+    "flag-u",
+    "negative-lookahead",
+    "negative-lookbehind",
+    "noncapturing-group",
+    "positive-lookahead",
+    "positive-lookbehind",
+    "quantifier"
+  ],
+  "digest": "eb2dd3dc97261c986144a4024a795e4bebe89e9820399cf988b14b0f308556b9",
+  "embed_patterns": [
+    [
+      "del_feed",
+      ";^<script type=\"text/javascript\" src=\"http://del\\.icio\\.us/feeds/js/[^\"]*\"></script>(\\s?<noscript><a href=\"http://del\\.icio\\.us/[^\"]*\">[^<>]*</a></noscript>)?$;s"
+    ],
+    [
+      "del_save",
+      ";^<a href=\"http://del\\.icio\\.us/post\" onclick=\"window\\.open\\('http://del.icio.us/post[^\"]*\">[^<>]+</a>$;s"
+    ],
+    [
+      "digg_this",
+      ";^<script>\\s*digg_url\\s*=\\s*['\"][^'\"]+['\"]\\;\\s*</script>\\s*<script src=\"http://digg.com/api/diggthis.js\">\\s*</script>\\s*$;s"
+    ],
+    [
+      "statcounter",
+      ";^(<!\\-\\- Start of StatCounter Code \\-\\->\\s*)?<script type=\"text/javascript\"( language=\"javascript\")?>\\s*(<!\\-\\-)?\\s*(\\s*var sc_[a-z0-9_ =\",]+ *\\;)*\\s*(//\\-\\->)?\\s*</script>\\s*<script type=\"text/javascript\"( language=\"javascript\")?\\s*src=\"https?://(secure|www)\\.statcounter\\.com/[^\"]+\"></script>\\s*<noscript>(<div class=\"statcounter\">)?(<a\\s+(class=\"statcounter\")?\\s*href=\"http://www\\.statcounter\\.com/\"( target=\"_blank\")?>)?<img[^>]*>(</a>)?\\s*(</div>)?\\s*</noscript>\\s*(<!\\-\\- End of StatCounter Code \\-\\->)?(\\s*<br/?>\\s*<a href=\"http://[a-z0-9]+\\.statcounter\\.com/project/standard/stats\\.php[^\"]+\">[^<]*</a>)?$;si"
+    ],
+    [
+      "statcounter_html",
+      ";^(<!\\-\\- Start of StatCounter Code \\-\\->\\s*)?\\s*(<a\\s+href=\"http://www\\.statcounter\\.com/\" target=\"_blank\">)?<img[^>]*>(</a>)?\\s*(<!\\-\\- End of StatCounter Code \\-\\->)?(\\s*<br/?>\\s*<a href=\"http://[a-z0-9]+\\.statcounter\\.com/project/standard/stats\\.php[^\"]+\">[^<]*</a>)?$;si"
+    ],
+    [
+      "fb",
+      ";^<form Method=\"POST\" action=\"http://www\\.feedblitz\\.com/f/[^\"]*\">\\s*[^<]*(<br/?>)?<input name=\"EMAIL\" maxlength=\"255\" type=\"text\" size=\"30\" value=\"\">(<br/?>)?\\s*<input name=\"FEEDID\"[^>]*>\\s*<input type=\"submit\" value=\"[^\"]*\">\\s*(<br>(<a href=\"http://www\\.feedblitz\\.com/f\\?preview[^\"]+\">Preview</a> \\| )?Powered by <a href=\"http://www\\.feedblitz\\.com\">FeedBlitz</a>)?</form>$;s"
+    ],
+    [
+      "fb2",
+      ";^<a href=\"http://www\\.feedblitz\\.com/f/[^\"]*\">\\s*<img title=\"[^\"]*\" border=\"0\" src=\"http://www.feedblitz.com/i[^\"]*\"></a>$;"
+    ],
+    [
+      "wikimapia",
+      ";^<iframe src=\"?http://wikimapia\\.org/s/[^>]+></iframe>$;s"
+    ],
+    [
+      "quimble",
+      ";^<script type=['\"]text/javascript['\"] src=['\"]http://quimble\\.com/inpage/index/[0-9]+['\"]></script>$;s"
+    ],
+    [
+      "ybabelfish",
+      ";^<script\\s+type=\"text/javascript\"\\s+charset=\"UTF\\-8\"\\s+(language=\"JavaScript1\\.2\"\\s+)?src=\"http://[^\\.]+\\.babelfish\\.yahoo\\.com/free_trans_service/babelfish2\\.js\\?from_lang=([^\"&]*?)&region=us\"></script>$;s"
+    ],
+    [
+      "ybabelfish2",
+      ";^<script\\s+type=\"text/javascript\"\\s+charset=\"UTF\\-8\"\\s+(language=\"JavaScript1\\.2\"\\s+)?src=\"http://babelfish\\.yahoo\\.com/free_trans_service/babelfish1\\.js\"></script>\\s*<noscript><a href=\"http://babelfish\\.yahoo\\.com\">[^<]+</a></noscript>$;s"
+    ],
+    [
+      "quickmaps",
+      ";^<iframe\\s+src=\"http://quikmaps\\.com/[^\"]+\"\\s+[^>]*></iframe>$;s"
+    ],
+    [
+      "googlecalendar",
+      ";^<iframe src=\"http://www\\.google\\.com/calendar/embed[^\"]+\"\\s+style=\"[^\"]*\"[^>]*>\\s*</iframe>$;s"
+    ],
+    [
+      "zohosheet",
+      ";^<iframe src=('|\")http://(www\\.zohosheet|sheet\\.zoho)\\.com/[^'\"]+('|\") frameborder=('|\")[0-9]+('|\") style=('|\")height:[0-9]+px\\;\\s*width:[0-9]+px('|\") scrolling=('|\")?no('|\")?>\\s*</iframe>$;s"
+    ],
+    [
+      "zohosheer-range",
+      ";^<iframe src=('|\")http://(www\\.zohosheet|sheet\\.zoho)\\.com/[^'\"]+('|\") frameborder=('|\")[0-9]+('|\") style=('|\")height:[0-9]+px\\;\\s*width:[0-9]+px('|\") marginwidth=('|\")0('|\") marginheight=('|\")0('|\") scrolling=('|\")auto('|\")>\\s*</iframe>$;s"
+    ],
+    [
+      "zohowriter",
+      ";^<script src=\"http://(www\\.zohowriter|writer\\.zoho)\\.com/public/[^\"]+\"></script>$;si"
+    ],
+    [
+      "zohoshow",
+      ";^<iframe src=\"http://(www\\.zohoshow|show\\.zoho)\\.com/[^\"]+\" height=('|\")[0-9]+('|\") width=('|\")[0-9]+('|\") name=\"[^\"]+\" scrolling=('|\")?no('|\")? frameBorder=('|\")0('|\")\\s*></iframe>$;si"
+    ],
+    [
+      "zohopolls",
+      ";^<iframe\\s+(frameborder=('|\")0('|\")\\s*)?\\s*src=('|\")http://zohopolls\\.com/[^'\"]+('|\") width=('|\")[0-9]+('|\") height=('|\")[0-9]+('|\")></iframe>$;si"
+    ],
+    [
+      "zoho-generic",
+      ";^<iframe\\s+(frameborder=('|\")0('|\")\\s*)?\\s*src=('|\")http://[a-z0-9]+\\.zoho\\.com/[^'\"]+('|\") width=('|\")[0-9]+('|\") height=('|\")[0-9]+('|\")></iframe>$;si"
+    ],
+    [
+      "editgrid",
+      ";^<div style=\"[^\"]+\">\\s*<a style=\"[^\"]+\" href=\"http://www\\.editgrid\\.com/[^\"]+\" target=\"_blank\">EditGrid Spreadsheet</a> by <a style=\"[^\"]+\" href=\"http://www\\.editgrid\\.com/[^\"]*\" target=\"_blank\">[^<>]*</a>\\.?</div>\\s*((<iframe frameborder=\"0\" src=\"http://www.editgrid.com/publish/[^\"]+\" style=\"[^\"]*\">(&nbsp\\;)?</iframe>)|(<script type=\"text/javascript\" src=\"http://www\\.editgrid\\.com/[^\"]*\">(&nbsp\\;)?</script>))$;s"
+    ],
+    [
+      "photobucketwidget",
+      ";^<embed type=\"application/x-shockwave-flash\" wmode=\"transparent\" src=\"http://[a-z0-9]+.photobucket.com/pbwidget.swf\\?[^\"]+\" height=\"[0-9]+\" width=\"[0-9]+\"></embed>$;"
+    ],
+    [
+      "picassa",
+      ";^<div\\s+style=\"[^\"]+\"><div style=\"[^\"]*\"><a href=\"http://picasaweb\\.google\\.com/[^\"]+\"><img src=\"http://[a-z0-9]+\\.google\\.com/[^\"]*\" width=\"[0-9]+\" height=\"[0-9]+\" style=\"[^\"]+\"></a></div><a href=\"http://picasaweb\\.google\\.com/[^\"]*\"><div style=\"[^\"]+\">[^<]+</div></a><div style=\"[^\"]*\"></div></div>$;si"
+    ],
+    [
+      "meebowidget",
+      ";^(<!\\-\\-[^\\-]+\\-\\->)?\\s*<embed src=\"http://widget\\.meebo\\.com/mm.swf?[^\"]+\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"[0-9]+\" height=\"[0-9]+\"></embed>$;si"
+    ],
+    [
+      "gabbly-chat",
+      ";^<iframe src=('|\")http://cw\\.gabbly\\.com/gabbly/[^'\"]+('|\") scrolling=('|\")no('|\") style=('|\")[^'\"]*('|\") frameborder=('|\")0('|\")></iframe>$;si"
+    ],
+    [
+      "labpixies",
+      ";^<script\\s+type=\"text/javascript\"\\s+src=\"http://www\\.labpixies\\.com/lib/lp_gadget_syndication.php[^\"]+\">\\s*</script>$;s"
+    ],
+    [
+      "instacalc",
+      ";^<script>\\s*instacalc_embed_url = ('|\")http://instacalc\\.com/[^\"]+('|\")\\;\\s+instacalc_embed_height = [0-9]+\\;\\s*</script>\\s*<script src=\"http://instacalc\\.com/javascripts/embed\\.js\">\\s*</script>$;s"
+    ],
+    [
+      "googlegadgets",
+      ";^<script src=\"http://(www\\.)?gmodules\\.com/ig/ifr\\?[^\"]*\">\\s*</script>$;s"
+    ],
+    [
+      "feedburnercount",
+      ";^<a\\s*href=\"http://feeds\\.feedburner\\.com/[^\"]+\">\\s*<img\\s*src=\"http://feeds.feedburner.com/[^\"]+[^>]+/>\\s*</a>$;s"
+    ],
+    [
+      "feedburneremail",
+      "!^<form\\s+style=\"[^\"]+\"\\s+action=\"http://www\\.feedburner\\.com/fb/a/emailverify\"\\s+method=\"post\"\\s+target=\"popupwindow\"\\s+onsubmit=\"window.open\\('http://www\\.feedburner\\.com'[^\\)]+\\);return true\"><p>[^<]+</p><p><input type=\"text\" style=\"width:140px\" name=\"email\"/></p><input type=\"hidden\" value=\"http://feeds\\.feedburner\\.com/[^\"]+\" name=\"url\"/><input type=\"hidden\" value=\"[^\"]+\" name=\"title\"/><input type=\"submit\" value=\"[^\"]+\"\\s*/>(<p>Delivered by <a href=\"http://www.feedburner.com/\" target=\"_blank\">FeedBurner</a></p>)?\\s*</form>$!s"
+    ],
+    [
+      "snap",
+      ";^<script\\s+defer\\s+id=\"snap_preview_anywhere\"\\s+type=\"text/javascript\"\\s+src=\"http://spa\\.snap\\.com/snap_preview_anywhere\\.js[^\"]+\">\\s*</script>$;si"
+    ],
+    [
+      "snap2",
+      ";^<script\\s+type=\"text/javascript\"\\s+src=\"http://shots\\.snap\\.com/snap_shots\\.js\\?[^\"]+\">\\s*</script>$;si"
+    ],
+    [
+      "everytrail",
+      ";^<iframe\\s+src=\"http://www\\.everytrail.com/[^\"]+\"[^>]+>\\s*</iframe>$;si"
+    ],
+    [
+      "motionbased",
+      ";^<iframe\\s+src=\"http://trail\\.motionbased\\.com/[^\"]+\"[^>]*>\\s*</iframe>$;si"
+    ],
+    [
+      "widgetbox-panel",
+      ";^<script type=\"text/javascript\" src=\"http://widgetserver\\.com/syndication/[^\"]+\">\\s*</script>(<noscript>([^<>]*|<a href=\"http://www\\.widgetbox\\.com/[^>\"]*\">[^<>]*</a>|<a href=\"http://www\\.widgetbox\\.com\">[^<>]*</a>)*</noscript>)?$;si"
+    ],
+    [
+      "polldaddy",
+      ";^<script\\s*language=\"javascript\"\\s*src=\"http://www\\.polldaddy\\.com/p/[^\"]+\">\\s*</script>\\s*<noscript>\\s*<a href =\"http://www\\.polldaddy\\.com/[^\"]+\"\\s*>[^<]*</a>\\s*</noscript>$;si"
+    ],
+    [
+      "anyiframe",
+      ";^<iframe(\\s+[a-z0-9]+(\\s*=\\s*(\"[^\"]*\"|'[^']*'))?)+>\\s*</iframe>$;si"
+    ],
+    [
+      "mybloglog",
+      ";^<script\\s+type=('|\")text/javascript('|\") src=('|\")http://[a-z0-9]+\\.mybloglog\\.com/[^'\"]+('|\")>\\s*</script>$;si"
+    ],
+    [
+      "revver",
+      ";^<script\\s+src=\"http://[a-z]+\\.revver\\.com/player/[^\"]+\"\\s+type=\"text/javascript\">\\s*</script>$;si"
+    ],
+    [
+      "youtube",
+      ";^<embed[^>]*?src=\"http://video\\.google\\.com/googleplayer\\.swf[^\"]+\"[^>]*>\\s*</embed>$;is"
+    ],
+    [
+      "googlevideo",
+      "/^<object\\s+width=\"[0-9]+\"\\s+height=\"[0-9]+\">\\s*<param\\s+name=\"movie\"\\s+value=\"http:\\/\\/[a-z]*\\.youtube\\.com\\/.+?\">\\s*<\\/param>(\\s*<param[^>]*>\\s*<\\/param>\\s*)?\\s*<embed\\s+src=\"http:\\/\\/[a-z]*\\.youtube\\.com\\/.+?\"\\s+type=\"application\\/x\\-shockwave\\-flash\"[^>]*>\\s*<\\/embed>\\s*<\\/object>$/si"
+    ],
+    [
+      "aweber-form",
+      ";^<script type=\"text/javascript\" src=\"http://forms\\.aweber\\.com/form/[^\"]+\\.js\">\\s*</script>$;si"
+    ],
+    [
+      "platial-mapkit",
+      ";^(<!\\-\\- START MAPKIT \\-\\->)?\\s*<script type=\"text/javascript\" src=\"http://platial\\.com/mapkit/load[^\"]+\">\\s*</script>\\s*<script type=\"text/javascript\">MapKit\\.display\\(\\)\\;</script>\\s*(<!\\-\\- END MAPKIT \\-\\->)?$;si"
+    ],
+    [
+      "odeo1",
+      "/^<embed\\ssrc=\"http:\\/\\/www\\.odeo\\.com\\/flash\\/[a-z0-9_]+\\.swf\"[^<]*<\\/embed><br ?\\/><a style=\"[^\"]+\"\\s+href=\"http:\\/\\/(www\\.)?odeo\\.com[^\"]+\">powered by <strong>ODEO<\\/strong><\\/a>.*$/s"
+    ],
+    [
+      "odeo2",
+      ";^<embed src=\"http://odeo.com/flash/[^\"]*\"[^>]+></embed><br /><a[^>]+>powered by <strong>ODEO</strong></a>$;si"
+    ],
+    [
+      "dailymotion",
+      ";^<div><object width=\"[0-9]+\" height=\"[0-9]+\">\\s*<param name=\"movie\" value=\"http://www\\.dailymotion\\.com/swf/[^\"]+\"></param>\\s*<param name=\"allowfullscreen\" value=\"true\">\\s*</param>\\s*<embed src=\"http://www\\.dailymotion\\.com/swf/[^\"]+\" type=\"application/x\\-shockwave\\-flash\" width=\"[0-9]+\" height=\"[0-9]+\"[^>]+></embed></object>\\s*(<br /><b><a href=\"http://www\\.dailymotion\\.com/video/[^\"]+\">[^<]+</a></b><br /><i>[a-z0-9 ]+<a href=\"http://www\\.dailymotion\\.com/[^\"]+\">[^<]+</a></i>)?</div>$;si"
+    ],
+    [
+      "delicious_tagometer",
+      ";^(<script type=\"text/javascript\">\\s+if \\(typeof window\\.Delicious == \"undefined\"\\) window\\.Delicious = {}\\;\\s+Delicious\\.BLOGBADGE_DEFAULT_CLASS = 'delicious\\-blogbadge\\-line'\\;\\s*</script>\\s*)?<script src=\"http://images\\.del\\.icio.us/static/js/blogbadge\\.js\"></script>$;si"
+    ],
+    [
+      "finetune",
+      ";^<embed src=\"http://www\\.finetune\\.com/player/FineTuneShell\\.swf[^\"]+\"[^>]*></embed>$;si"
+    ],
+    [
+      "brainyquote",
+      ";^<script\\s+type=\"text/javascript\"\\s+src=\"http://www\\.brainyquote\\.com/link/quote[a-z]+\\.js\">\\s*</script>$;si"
+    ],
+    [
+      "skype_status",
+      ";^<!--[^\\-]*-->\\s*<script type=\"text/javascript\" src=\"http://download\\.skype\\.com/share/skypebuttons/js/skypeCheck\\.js\"></script>\\s*<a href=\"skype:[^\\?\"]+\\?call\"><img src=\"http://[a-z]+\\.skype\\.com/[^\"]+\"[^>]+/></a>$;si"
+    ],
+    [
+      "slideshare",
+      ";^<object type=\"application/x-shockwave-flash\" data=\"http://s3\\.amazonaws\\.com/slideshare/ssplayer\\.swf[^\"]+\" width=\"[0-9]+\" height=\"[0-9]+\"><param name=\"movie\" value=\"http://s3\\.amazonaws\\.com/slideshare/ssplayer\\.swf[^\"]+\"\\s*/></object>$;si"
+    ],
+    [
+      "googlecse_sb",
+      ";^<!\\-\\- Google CSE Search Box Begins  \\-\\->\\s*<form action=\"http://[^\"]+\" id=\"[^\"]*\">\\s*<input type=\"hidden\" name=\"cx\" value=\"[^\"]+\"\\s*/>\\s*<input type=\"hidden\" name=\"cof\" value=\"[^\"]+\" />\\s*<input (class=\"text\" )?type=\"text\" name=\"q\" size=\"25\" />\\s*<input (class=\"button\" )?type=\"submit\" name=\"sa\" value=\"Search\" />\\s*</form>\\s*<script type=\"text/javascript\" src=\"http://google\\.com/coop/cse/brand\\?form=searchbox_[^\"]+\"></script>\\s*<!\\-\\- Google CSE Search Box Ends \\-\\->$;is"
+    ],
+    [
+      "googlecse_r",
+      ";^<!\\-\\- Google Search Result Snippet Begins \\-\\->\\s*<div id=\"results_\"></div>\\s*<script type=\"text/javascript\">\\s*var googleSearchIframeName = \"results_\"\\;\\s*var googleSearchFormName = \"searchbox_\"\\;\\s*var googleSearchFrameWidth = [0-9]+\\;\\s*var googleSearchFrameborder = 0\\;\\s*var googleSearchDomain = \"google\\.com\"\\;\\s*var googleSearchPath = \"/cse\"\\;\\s*</script>\\s*<script type=\"text/javascript\" src=\"http://www\\.google\\.com/afsonline/show_afs_search\\.js\"></script>\\s*<!\\-\\- Google Search Result Snippet Ends \\-\\->$;si"
+    ],
+    [
+      "diggnew",
+      ";^(<script type=\"text/javascript\">(\\s*digg_[a-z]+ = '[^']+'\\;)+\\s*</script>)?\\s*<script src=\"http://digg\\.com/tools/diggthis\\.js\" type=\"text/javascript\"></script>$;"
+    ],
+    [
+      "wowdbtooltip",
+      ";^<script src=\"http://www\\.wowdb\\.com/js/extooltips\\.js\"></script>$;"
+    ],
+    [
+      "wowheadtooltip",
+      ";^<script src=\"http://www\\.wowhead\\.com/widgets/power\\.js\"></script>$;"
+    ],
+    [
+      "thottbottooltip",
+      ";^<script src=\"http://i\\.thottbot\\.com/power\\.js\"></script>$;"
+    ],
+    [
+      "schooltube",
+      ";^<object width=\"450\" height=\"375\"><param name=\"movie\" value=\"http://www\\.schooltube\\.com/v/[a-z0-9]+\"\\s*/><param name=\"wmode\" value=\"transparent\" /><param name=\"allowFullScreen\" value=\"true\" /><embed src=\"http://www\\.schooltube\\.com/v/[a-z0-9]+\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" allowFullScreen=\"true\" width=\"450\" height=\"375\"></embed></object>$;si"
+    ],
+    [
+      "teachertube",
+      ";^<embed src=\"http://www\\.teachertube\\.com/[a-z0-9\\-/]+/mediaplayer\\.swf\" width=\"425\" height=\"350\" type=\"application/x-shockwave-flash\" allowfullscreen=\"true\"\\s+(menu=\"false\")?\\s+flashvars=\"height=350&width=425&file=http://www\\.teachertube\\.com/flvideo/[a-z0-9]+\\.flv&image=http://www\\.teachertube\\.com/thumb/[a-z0-9]+\\.jpg&location=http://www\\.teachertube\\.com/[a-z0-9\\-/]+/mediaplayer\\.swf&logo=http://www\\.teachertube\\.com/images/greylogo\\.swf&searchlink=http://teachertube\\.com/search_result\\.php%3Fsearch_id%3D&frontcolor=0xffffff&backcolor=0x000000&lightcolor=0xFF0000&screencolor=0xffffff&autostart=false&volume=80&overstretch=fit&link=http://www\\.teachertube\\.com/view_video.php\\?viewkey=[a-z0-9]+&linkfromdisplay=true&recommendations=http://www\\.teachertube\\.com/embedplaylist\\.php\\?chid=[0-9]+\"></embed>$;si"
+    ],
+    [
+      "slideBoom",
+      ";^<object classid=\"clsid:d27cdb6e\\-ae6d\\-11cf\\-96b8\\-444553540000\" codebase=\"http://fpdownload\\.macromedia\\.com/pub/shockwave/cabs/flash/swflash\\.cab[^\"]*\" width=\"[0-9]+\" height=\"[0-9]+\" id=\"onlinePlayer\"><param name=\"allowScriptAccess\" value=\"always\" /><param name=\"movie\" value=\"http://www\\.slideboom\\.com/player/player\\.swf\\?id_resource=[0-9]+\" /><param name=\"quality\" value=\"high\" /><param name=\"bgcolor\" value=\"#ffffff\" /><param name=\"flashVars\" value=\"mode=[0-9]+&idResource=[0-9]+&siteUrl=http://www\\.slideboom\\.com&embed=[0-9]+\" /><param name=\"allowFullScreen\" value=\"true\" /><embed src=\"http://www\\.slideboom\\.com/player/player\\.swf\\?id_resource=[0-9]+\" quality=\"high\" bgcolor=\"#ffffff\" width=\"[0-9]+\" height=\"[0-9]+\" name=\"onlinePlayer\" allowScriptAccess=\"always\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www\\.macromedia\\.com/go/getflashplayer\" allowFullScreen=\"true\" flashVars=\"mode=[0-9]+&idResource=[0-9]+&siteUrl=http://www\\.slideboom\\.com&embed=[0-9]+\"></embed></object>$;si"
+    ],
+    [
+      "voicethread",
+      ";^<object width=\"[0-9]+\" height=\"[0-9]+\"><param name=\"movie\" value=\"http://voicethread\\.com/book.swf\\?b=[0-9]+\"></param><param name=\"wmode\" value=\"transparent\"></param><embed src=\"http://voicethread\\.com/book\\.swf\\?b=[0-9]+\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"[0-9]+\" height=\"[0-9]+\"></embed></object><img style=\"visibility:hidden\\;width:0px\\;height:0px\\;\" border=0 width=0 height=0 src=\"http://counters\\.gigya\\.com/wildfire/[^\"]+\" />$;si"
+    ],
+    [
+      "alexa",
+      "|^<!\\-\\- Alexa Graph Widget from http://www\\.alexa\\.com/site/site_stats/signup \\-\\->\\s*<script type=\"text/javascript\"\\s+src=\"http://widgets\\.alexa\\.com/traffic/javascript/graph\\.js\"></script>\\s*<script type=\"text/javascript\">/\\*\\s*<!\\[CDATA\\[\\*/\\s*// USER\\-EDITABLE VARIABLES\\s*// enter up to 3 domains, separated by a space\\s*var sites\\s*= \\['[^']+'\\];\\s*var opts = {\\s*width:\\s*[0-9]+,  // width in pixels \\(max 400\\)\\s+height:\\s*[0-9]+,  // height in pixels \\(max 300\\)\\s+type:\\s*'[a-z]',  // \"r\" Reach, \"n\" Rank, \"p\" Page Views\\s+range:\\s*'[^']+', // \"7d\", \"1m\", \"3m\", \"6m\", \"1y\", \"3y\", \"5y\", \"max\"\\s+bgcolor:\\s*'[a-z0-9]+' // hex value without \"#\" char \\(usually \"e6f3fc\"\\)\\s*};\\s*// END USER\\-EDITABLE VARIABLES\\s+AGraphManager\\.add\\( new AGraph\\(sites, opts\\) \\);\\s+//\\]\\]></script>\\s*<!-- end Alexa Graph Widget -->$|si"
+    ],
+    [
+      "dailymotion2",
+      ";^\\<div\\>\\<object\\s+width\\=\"[0-9]+\"\\s+height\\=\"[0-9]+\"\\>\\<param\\s+name\\=\"movie\"\\s+value\\=\"http\\://www\\.dailymotion\\.com/swf/[^\">]+\"\\>\\</param\\>\\<param\\s+name\\=\"allowFullScreen\"\\s+value\\=\"true\"\\>\\</param\\>\\<param\\s+name\\=\"allowScriptAccess\"\\s+value\\=\"always\"\\>\\</param\\>\\<embed\\s+src\\=\"http\\://www\\.dailymotion\\.com/swf/[^\">]+\"\\s+type\\=\"application/x-shockwave-flash\"\\s+width\\=\"[0-9]+\"\\s+height\\=\"[0-9]+\"\\s+allowFullScreen\\=\"true\"\\s+allowScriptAccess\\=\"always\"\\>\\</embed\\>\\</object\\>\\<br\\s+/\\>\\<b\\>\\<a\\s+href\\=\"http\\://www\\.dailymotion\\.com/video/[^\">]+\"\\>[^<>]+\\</a\\>\\</b\\>\\<br\\s+/\\>\\<i\\>[^<>]+\\<a\\s+href\\=\"http\\://www\\.dailymotion\\.com/[^\">]+\"\\>[^<>]+\\</a\\>\\</i\\>\\</div\\>$;si"
+    ],
+    [
+      "reflection.js",
+      ";^\\<script\\s+type\\=\"text/javascript\"\\s+src\\=\"https?\\://static\\.wikidot\\.com/common--misc/reflection\\.js\"\\>\\</script\\>$;si"
+    ],
+    [
+      "blip.tv",
+      ";^\\<embed\\s+src\\=\"http\\://blip\\.tv/play/[^\">]+\"\\s+type\\=\"application/x-shockwave-flash\"\\s+width\\=\"[0-9]+\"\\s+height\\=\"[0-9]+\"\\s+allowscriptaccess\\=\"always\"\\s+allowfullscreen\\=\"true\"\\>\\</embed\\>$;si"
+    ],
+    [
+      "flickrvideo",
+      ";^\\<object\\s+type\\=\"application/x-shockwave-flash\"\\s+width\\=\"[0-9]+\"\\s+height\\=\"[0-9]+\"\\s+data\\=\"http\\://www\\.flickr\\.com/apps/video/[^\">]+\"\\s+classid\\=\"[^\">]+\"\\>\\s+\\<param\\s+name\\=\"flashvars\"\\s+value\\=\"[^\">]+\"\\>\\</param\\>\\s+\\<param\\s+name\\=\"movie\"\\s+value\\=\"http\\://www\\.flickr\\.com/apps/video/[^\">]+\"\\>\\</param\\>\\s+\\<param\\s+name\\=\"bgcolor\"\\s+value\\=\"#[^\">]+\"\\>\\</param\\>\\s+\\<param\\s+name\\=\"allowFullScreen\"\\s+value\\=\"true\"\\>\\</param\\>\\s*\\<embed\\s+type\\=\"application/x-shockwave-flash\"\\s+src\\=\"http\\://www\\.flickr\\.com/apps/video/[^\">]+\"\\s+bgcolor\\=\"#[^\">]+\"\\s+allowfullscreen\\=\"true\"\\s+flashvars\\=\"[^\">]+\"\\s+height\\=\"[0-9]+\"\\s+width\\=\"[0-9]+\"\\>\\</embed\\>\\</object\\>$;si"
+    ],
+    [
+      "playlist",
+      ";^\\<div\\s+style\\=\"[^\">]+\"\\>\\<embed\\s+style\\=\"[^\">]+\"\\s+allowScriptAccess\\=\"never\"\\s+src\\=\"http\\://www\\.(musicplaylist\\.net|greatprofilemusic\\.com)/mc/mp3player-othersite\\.swf\\?config\\=http\\://www\\.(musicplaylist\\.net|greatprofilemusic\\.com)/mc/config/[^.\">]+\\.xml&mywidth\\=[0-9]+&myheight\\=[0-9]+&playlist_url\\=http\\://www\\.(musicplaylist\\.net|greatprofilemusic\\.com)/loadplaylist\\.php\\?playlist\\=[0-9]+\"\\s+menu\\=\"false\"\\s+quality\\=\"high\"\\s+width\\=\"[0-9]+\"\\s+height\\=\"[0-9]+\"\\s+name\\=\"mp3player\"\\s+wmode\\=\"transparent\"\\s+type\\=\"application/x-shockwave-flash\"\\s+pluginspage\\=\"http\\://www\\.macromedia\\.com/go/getflashplayer\"\\s+border\\=\"0\"/\\>\\<BR\\>\\<a\\s+href\\=http\\://www\\.(musicplaylist\\.net|greatprofilemusic\\.com)\\>\\<img\\s+src\\=http\\://www\\.(musicplaylist\\.net|greatprofilemusic\\.com)/mc/images/[^\">\\s+.]+\\.jpg\\s+border\\=0\\>\\</a\\>\\<a\\s+href\\=http\\://www\\.(musicplaylist\\.net|greatprofilemusic\\.com)/standalone/[0-9]+\\s+target\\=_blank\\>\\<img\\s+src\\=http\\://www\\.(musicplaylist\\.net|greatprofilemusic\\.com)/mc/images/[^\\s+.>\"]+\\.jpg\\s+border\\=0\\>\\</a\\>\\<a\\s+href\\=http\\://www\\.(musicplaylist\\.net|greatprofilemusic\\.com)/download/[0-9]+\\>\\<img\\s+src\\=http\\://www\\.(musicplaylist\\.net|greatprofilemusic\\.com)/mc/images/[^\\s+.>\"]+\\.jpg\\s+border\\=0\\>\\</a\\>\\s+\\</div\\>$;si"
+    ],
+    [
+      "vimeo",
+      ";^<object width=\"[0-9]+\" height=\"[0-9]+\">\\s*<param name=\"allowfullscreen\" value=\"true\" />\\s*<param name=\"allowscriptaccess\" value=\"always\" />\\s*<param name=\"movie\" value=\"http://www\\.vimeo\\.com/moogaloop\\.swf\\?clip_id=[0-9a-z]+&amp\\;server=www\\.vimeo\\.com&amp\\;show_title=[0-9]&amp\\;show_byline=[0-9]&amp\\;show_portrait=[0-9]&amp\\;color=&amp\\;fullscreen=[0-9]\" />\\s*<embed src=\"http://www\\.vimeo\\.com/moogaloop\\.swf\\?clip_id=[a-z0-9]+&amp\\;server=www\\.vimeo\\.com&amp\\;show_title=[0-9]+&amp\\;show_byline=[0-9]+&amp\\;show_portrait=[0-9]+&amp\\;color=&amp\\;fullscreen=[0-9]+\" type=\"application/x\\-shockwave\\-flash\" allowfullscreen=\"true\" allowscriptaccess=\"always\" width=\"[0-9]+\" height=\"[0-9]+\"></embed></object><br /><a href=\"http://www\\.vimeo.com/[0-9]+\\?pg=embed&(amp\\;)?sec=[0-9]+\">[^<>]+</a> from <a href=\"http://www\\.vimeo\\.com/[^\"]+\">[^<>]+</a> on <a href=\"http://vimeo.com\\?pg=embed&(amp\\;)?sec=[0-9]+\">Vimeo</a>\\.$;si"
+    ],
+    [
+      "ohloh",
+      ";^\\<script type\\=\"text/javascript\" src\\=\"http\\://www\\.ohloh\\.net/projects/[0-9]+/widgets/project_[^>\"]+\"\\>\\</script\\>$;si"
+    ],
+    [
+      "plugoo",
+      ";^\\<object\\s+type\\=\"application/x-shockwave-flash\"\\s+id\\=\"plugoo\"\\s+data\\=\\s*\"http\\://www\\.plugoo\\.com/plg\\.swf\\?go\\=[a-z0-9]+\"\\s+width\\=\"[0-9]+\"\\s+height\\=\"[0-9]+\"\\>\\s+\\<param\\s+name\\=\"movie\"\\s+value\\=\\s*\"http\\://www\\.plugoo\\.com/plg\\.swf\\?go\\=[A-Z0-9]+\"\\s+/\\>\\s+\\<param\\s+name\\=\"allowScriptAccess\"\\s+value\\=\"always\"\\s+/\\>\\s+\\<param\\s+name\\=\"wmode\"\\s+value\\=\"transparent\"\\s+/\\>\\s+\\</object\\>$;si"
+    ],
+    [
+      "jskit.rating",
+      ";^(\\<div\\sclass\\=\"js-kit-rating\"(\\s[a-z]+\\=\"[^\">]*\")*\\>\\</div\\>\\s*)+\\<script\\ssrc\\=\"http\\://js-kit\\.com/ratings\\.js\"\\>\\</script\\>$;si"
+    ],
+    [
+      "jskit.top",
+      ";^(\\<div\\sclass\\=\"js-kit-top\"(\\s[a-z]+\\=\"[^\">]*\")*\\>\\</div\\>\\s*)+\\<script\\ssrc\\=\"http\\://js-kit\\.com/top\\.js\"\\>\\</script\\>$;si"
+    ],
+    [
+      "picasa2",
+      ";^<embed type=\"application/x\\-shockwave\\-flash\" src=\"http://picasaweb\\.google\\.pl/s/c/bin/slideshow\\.swf\" width=\"[0-9]+\" height=\"[0-9]+\" flashvars=\"[^\"<>]+\" pluginspage=\"http://www\\.macromedia\\.com/go/getflashplayer\"></embed>$;si"
+    ],
+    [
+      "gametrailers",
+      ";^<object\\s+classid=\"clsid:[^\">]*\"\\s+codebase=\"[^\">]*\"\\s+id=\"gtembed\"\\s+width=\"[^\">]*\"\\s+height=\"[^\">]*\">\\s*<param\\s+name=\"allowScriptAccess\"\\s+value=\"sameDomain\"\\s*/>\\s*<param\\s+name=\"allowFullScreen\"\\s+value=\"true\"\\s*/>\\s*<param\\s+name=\"movie\"\\s+value=\"http://www.gametrailers.com/remote_wrap.php\\?mid=[0-9]+\"/>\\s*<param\\s+name=\"quality\"\\s+value=\"high\"\\s*/>\\s+<embed\\s+src=\"http://www.gametrailers.com/remote_wrap.php\\?mid=[0-9]+\"\\s+swLiveConnect=\"true\"\\s+name=\"gtembed\"\\s+align=\"middle\"\\s+allowScriptAccess=\"sameDomain\"\\s+allowFullScreen=\"true\"\\s+quality=\"high\"\\s+pluginspage=\"http://www.macromedia.com/go/getflashplayer\"\\s+type=\"application/x-shockwave-flash\"\\s+width=\"[0-9]*\"\\s+height=\"[0-9]*\"></embed>\\s*</object>$;si"
+    ],
+    [
+      "googlemaps",
+      ";^<iframe width=\"[0-9]+\" height=\"[0-9]+\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"http://maps\\.google\\.[a-z]{2,3}/[^\"<>]+\"></iframe>(<br /><small><a href=\"http://maps\\.google\\.[a-z]{2,3}/[^\"<>]+\" style=\"color:#[0-0A-F]{6}\\;text-align:left\">[^<>]+</a></small>)?$;si"
+    ],
+    [
+      "youtube-js",
+      ";^<script\\s+type='text/javascript' src='http://[a-z]*\\.youtube\\.com/watch_custom_player\\?id=[^'>]*'></script>$;si"
+    ]
+  ],
+  "flags_observed": [
+    "D",
+    "U",
+    "i",
+    "m",
+    "s",
+    "u"
+  ],
+  "rules": [
+    {
+      "class": "Include",
+      "inline": [
+        {
+          "api": "preg_match",
+          "pattern": "/^[A-Za-z0-9\\-_]+/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^[A-Za-z0-9\\-_:]+$/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^[A-Za-z0-9.\\-]+$/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^[A-Za-z0-9\\-_:]+$/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^([A-Za-z0-9-]+)\\.wikidot\\.com$/i"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/[^\\p{L}\\p{N} :\\-_]/u"
+        },
+        {
+          "api": "preg_split",
+          "pattern": "//u"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/^-+/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/-+$/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/-+/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/:+/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/^\\[\\[include ([a-zA-Z0-9\\s\\-:]+?)(\\s+.*?)?(?:\\]\\])$/ims'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/^\\[\\[include ([a-zA-Z0-9\\s\\-:]+?)(\\s+.*?)?(?:\\]\\])$/ims"
+      ],
+      "rule": "include",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Include.php"
+    },
+    {
+      "class": "Prefilter",
+      "inline": [
+        {
+          "api": "preg_replace",
+          "pattern": "/^\\s+$/m"
+        }
+      ],
+      "literal": null,
+      "patterns": [],
+      "rule": "prefilter",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Prefilter.php"
+    },
+    {
+      "class": "Delimiter",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/' . $this->wiki->delim . '/'"
+        }
+      ],
+      "literal": null,
+      "patterns": [],
+      "rule": "delimiter",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Delimiter.php"
+    },
+    {
+      "class": "Code",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "';^\\[\\[code(\\s[^\\]]*)?\\]\\]((?:(?R)|.)*?)\\[\\[/code\\]\\](\\s|$);msi'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        ";^\\[\\[code(\\s[^\\]]*)?\\]\\]((?:(?R)|.)*?)\\[\\[/code\\]\\](\\s|$);msi"
+      ],
+      "rule": "code",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Code.php"
+    },
+    {
+      "class": "Form",
+      "inline": [
+        {
+          "api": "preg_replace",
+          "pattern": "/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\[\\[form\\]\\]\\s*\\n(.*?)(?:\\n---\\s*\\n(.*?))?\\n\\[\\[\\/form\\]\\]/is'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\[\\[form\\]\\]\\s*\\n(.*?)(?:\\n---\\s*\\n(.*?))?\\n\\[\\[\\/form\\]\\]/is"
+      ],
+      "rule": "form",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Form.php"
+    },
+    {
+      "class": "Raw",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "\"/(?<!@)@@(.*[^@]?)@@/U\""
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/(?<!@)@@(.*[^@]?)@@/U"
+      ],
+      "rule": "raw",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Raw.php"
+    },
+    {
+      "class": "Rawold",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "\"/(?<!`)``([^']*[^`])``/U\""
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/(?<!`)``([^']*[^`])``/U"
+      ],
+      "rule": "rawold",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Rawold.php"
+    },
+    {
+      "class": "Modulepre",
+      "inline": [
+        {
+          "api": "preg_replace",
+          "pattern": "/^\\[\\[module654/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/^\\[\\[module654\\s([a-z0-9_\\-\\/]+)(\\s+.*?)?\\]\\](?:(.*?)\\[\\[\\/module\\]\\])?/ims'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/^\\[\\[module654\\s([a-z0-9_\\-\\/]+)(\\s+.*?)?\\]\\](?:(.*?)\\[\\[\\/module\\]\\])?/ims"
+      ],
+      "rule": "modulepre",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Modulepre.php"
+    },
+    {
+      "class": "Module",
+      "inline": [
+        {
+          "api": "preg_match_all",
+          "pattern": "/^\\[\\[module\\s([a-z0-9_\\-\\/]+)(\\s+.*?)?\\]\\]/smi"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/^(\\[\\[module[^\\]]*\\]\\])(?! *\\n)/mi"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/^\\[\\[module/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "\"/^\\[\\[module\\s([a-z0-9_\\-\\/]+)(\\s+.*?)?\\]\\] *\\n(?:(.+?)\\[\\[\\/module\\]\\])?/ism\""
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/^\\[\\[module\\s([a-z0-9_\\-\\/]+)(\\s+.*?)?\\]\\] *\n(?:(.+?)\\[\\[\\/module\\]\\])?/ism"
+      ],
+      "rule": "module",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Module.php"
+    },
+    {
+      "class": "Module654",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "\"/^\\[\\[module654\\s([a-z0-9_\\-\\/]+)(\\s+.*?)?\\]\\][ \\t]*\\n(?:(.*?)\\[\\[\\/module\\]\\])?/ims\""
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/^\\[\\[module654\\s([a-z0-9_\\-\\/]+)(\\s+.*?)?\\]\\][ \t]*\n(?:(.*?)\\[\\[\\/module\\]\\])?/ims"
+      ],
+      "rule": "module654",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Module654.php"
+    },
+    {
+      "class": "Iftags",
+      "inline": [
+        {
+          "api": "preg_split",
+          "pattern": ";[, ]+;"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "';\\[\\[iftags(\\s[^\\]]*)?\\]\\]((?:(?R)|.)*?)\\[\\[/iftags\\]\\];msi'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        ";\\[\\[iftags(\\s[^\\]]*)?\\]\\]((?:(?R)|.)*?)\\[\\[/iftags\\]\\];msi"
+      ],
+      "rule": "iftags",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Iftags.php"
+    },
+    {
+      "class": "Comment",
+      "inline": [
+        {
+          "api": "preg_match",
+          "pattern": "/^[ \\t]+$/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^[ \\t]*$/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/(\\n)?\\[!\\-\\-(.*?)\\-\\-\\]/si'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/(\\n)?\\[!\\-\\-(.*?)\\-\\-\\]/si"
+      ],
+      "rule": "comment",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Comment.php"
+    },
+    {
+      "class": "Iframe",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "''"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "';\\[\\[iframe\\s+('.$urlRegex.')(\\s+.*?)?\\]\\];si'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        ""
+      ],
+      "rule": "iframe",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Iframe.php"
+    },
+    {
+      "class": "Date",
+      "inline": [
+        {
+          "api": "preg_match",
+          "pattern": "/^-?[0-9]+$/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "array( ';\\[\\[date\\s+(-?[0-9]+)(\\s+.*?)?\\]\\];', ';\\[\\[date\\s+(?=\\s|\\]\\])\\s*(.*?)\\]\\];', ';\\[\\[date\\s+\\]\\];' )"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        ";\\[\\[date\\s+(-?[0-9]+)(\\s+.*?)?\\]\\];",
+        ";\\[\\[date\\s+(?=\\s|\\]\\])\\s*(.*?)\\]\\];",
+        ";\\[\\[date\\s+\\]\\];"
+      ],
+      "rule": "date",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Date.php"
+    },
+    {
+      "class": "Math",
+      "inline": [
+        {
+          "api": "preg_match",
+          "pattern": ";include\\s*\\{|input\\s*\\{;is"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "';^\\[\\[math(\\s+[a-z0-9_]*?)?((?:\\s+[a-z0-9]+=\"[^\"]*\"))*\\s*\\]\\]((?:(?R)(?!\\s*\\[\\[/math\\]\\])|.)*?)\\n\\[\\[/math\\]\\](\\s|$);msi'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        ";^\\[\\[math(\\s+[a-z0-9_]*?)?((?:\\s+[a-z0-9]+=\"[^\"]*\"))*\\s*\\]\\]((?:(?R)(?!\\s*\\[\\[/math\\]\\])|.)*?)\\n\\[\\[/math\\]\\](\\s|$);msi"
+      ],
+      "rule": "math",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Math.php"
+    },
+    {
+      "class": "Concatlines",
+      "inline": [
+        {
+          "api": "preg_match",
+          "pattern": "/^\\[\\[div_?(?:[ \\t].*)?\\]\\]$/i"
+        }
+      ],
+      "literal": null,
+      "patterns": [],
+      "rule": "concatlines",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Concatlines.php"
+    },
+    {
+      "class": "Freelink",
+      "inline": [
+        {
+          "api": "preg_match",
+          "pattern": "/^#[^ \\t]/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^[ \\t]/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^(?:[\\x09-\\x0D]|\\x1B|\\x20|\\x2A|\\xC2\\x85|\\xC2\\xA0|\\xC2\\xAD|\\xD8[\\x80-\\x85]|\\xD8\\x9C|\\xDB\\x9D|\\xDC\\x8F|\\xE0\\xA2[\\x90-\\x91]|\\xE0\\xA3\\xA2|\\xE1\\x9A\\x80|\\xE1\\xA0\\x8E|\\xE2\\x80[\\x80-\\x8F]|\\xE2\\x80[\\xA8-\\xAF]|\\xE2\\x81[\\x9F-\\xA4]|\\xE2\\x81\\xA5|\\xE2\\x81[\\xA6-\\xAF]|\\xE3\\x80\\x80|\\xEF\\xBB\\xBF|\\xEF\\xBF[\\xB9-\\xBB]|\\xF0\\x91\\x82\\xBD|\\xF0\\x91\\x83\\x8D|\\xF0\\x93\\x90[\\xB0-\\xBF]|\\xF0\\x9B\\xB2[\\xA0-\\xA3]|\\xF0\\x9D\\x85[\\xB3-\\xBA]|\\xF3\\xA0\\x80\\x81|\\xF3\\xA0\\x80[\\xA0-\\xBF]|\\xF3\\xA0\\x81[\\x80-\\xBF])*_default:/i"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/[^\\x00-\\x7F]/u"
+        },
+        {
+          "api": "preg_split",
+          "pattern": "//u"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^[A-Za-z0-9]$/D"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/'. \"\\\\[\\\\[\\\\[\". \"([^\\\\]\\\\[]+?)\". \"(\\\\|[^\\\\]\\\\[]*)?\". \"\\\\]\\\\]\\\\]\". '/'"
+        }
+      ],
+      "literal": null,
+      "patterns": [],
+      "rule": "freelink",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Freelink.php"
+    },
+    {
+      "class": "Equationreference",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\[\\[eref (.*?)\\]\\]/'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\[\\[eref (.*?)\\]\\]/"
+      ],
+      "rule": "equationreference",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Equationreference.php"
+    },
+    {
+      "class": "Footnote",
+      "inline": [
+        {
+          "api": "preg_replace_callback",
+          "pattern": "/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/[^\\n]\\n(?!\\n)/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/[\\x00-\\x08\\x0B\\x0C\\x0E-\\x1A\\x1C-\\x1F]/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "';\\s*\\[\\[footnote\\]\\](.*?)\\[\\[/footnote\\]\\];s'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        ";\\s*\\[\\[footnote\\]\\](.*?)\\[\\[/footnote\\]\\];s"
+      ],
+      "rule": "footnote",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Footnote.php"
+    },
+    {
+      "class": "Footnoteitem",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "null"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [],
+      "rule": "footnoteitem",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Footnoteitem.php"
+    },
+    {
+      "class": "Footnoteblock",
+      "inline": [
+        {
+          "api": "preg_replace_callback",
+          "pattern": "/\\n[ ]*\\n/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "null"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/(\\[\\[footnoteblock(\\s+[^\\]]+)?\\]\\])|($)/s'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [],
+      "rule": "footnoteblock",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php"
+    },
+    {
+      "class": "Bibitem",
+      "inline": [
+        {
+          "api": "preg_replace",
+          "pattern": "/[\\x00-\\x08\\x0B\\x0C\\x0E-\\x1A\\x1C-\\x1F]/"
+        },
+        {
+          "api": "preg_replace_callback",
+          "pattern": "/"
+        }
+      ],
+      "literal": null,
+      "patterns": [],
+      "rule": "bibitem",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Bibitem.php"
+    },
+    {
+      "class": "Bibliography",
+      "inline": [
+        {
+          "api": "preg_replace",
+          "pattern": "/[\\x00-\\x08\\x0B\\x0C\\x0E-\\x1A\\x1C-\\x1F]/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/\\s+/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "null"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/^\\[\\[bibliography(\\s+[^\\]]+)?\\]\\](.*?)\\[\\[\\/bibliography\\]\\][ ]*$/sm'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [],
+      "rule": "bibliography",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Bibliography.php"
+    },
+    {
+      "class": "Bibcite",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\(\\(bibcite\\s([a-z0-9]+)\\)\\)/i'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\(\\(bibcite\\s([a-z0-9]+)\\)\\)/i"
+      ],
+      "rule": "bibcite",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Bibcite.php"
+    },
+    {
+      "class": "Divprefilter",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\[\\[\\/div\\]\\](\\s*?)\\[\\[div/msi'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\[\\[\\/div\\]\\](\\s*?)\\[\\[div/msi"
+      ],
+      "rule": "divprefilter",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Divprefilter.php"
+    },
+    {
+      "class": "Anchor",
+      "inline": [
+        {
+          "api": "preg_match",
+          "pattern": "/^[-_A-Za-z0-9.%]+$/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^([ \\t]+)(.*)$/s"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^(.*?)([ \\t]+)$/s"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^([^\\n]*?)\\[\\[\\/a\\]\\]/i"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/([^\\n])(\\n{1,2})$/s"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^[ \\t]+/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/^[ \\t]+/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/[ \\t]+$/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/[ \\t]+$/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^\\n{1,2}(?=[^\\n])/s"
+        },
+        {
+          "api": "preg_split",
+          "pattern": "/(\\n{2,})/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^[ \\t\\n\\r]/"
+        },
+        {
+          "api": "preg_replace_callback",
+          "pattern": "/[^\\x20-\\x7E]/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/[\\x00-\\x08\\x0B\\x0C\\x0E-\\x1A\\x1C-\\x1F]/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/[ \\t\\n\\r]+/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/^(?:\\xC2\\xA0)+|(?:\\xC2\\xA0)+$/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/(\\[\\[# )([-_A-Za-z0-9.%]+?)(\\]\\])/i'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/(\\[\\[# )([-_A-Za-z0-9.%]+?)(\\]\\])/i"
+      ],
+      "rule": "anchor",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Anchor.php"
+    },
+    {
+      "class": "User",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\[\\[(\\*)?user ([^\\]]+)\\]\\]/i'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\[\\[(\\*)?user ([^\\]]+)\\]\\]/i"
+      ],
+      "rule": "user",
+      "source": "text-wiki/Text/Wiki/Parse/Default/User.php"
+    },
+    {
+      "class": "Blockquote",
+      "inline": [
+        {
+          "api": "preg_match_all",
+          "pattern": "=^(\\>+) (.*\\n)=Ums"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\n((\\>).*\\n)(?!(\\>))/Us'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\n((\\>).*\\n)(?!(\\>))/Us"
+      ],
+      "rule": "blockquote",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Blockquote.php"
+    },
+    {
+      "class": "Heading",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/^(\\+{1,6})(\\*?)[ \\t]+(.*)/m'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/^(\\+{1,6})(\\*?)[ \\t]+(.*)/m"
+      ],
+      "rule": "heading",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Heading.php"
+    },
+    {
+      "class": "Toc",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "\"/^(?:\\n*)\\[\\[(f[<>])?toc( .*)?\\]\\](\\n)*/m\""
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/^(?:\n*)\\[\\[(f[<>])?toc( .*)?\\]\\](\n)*/m"
+      ],
+      "rule": "toc",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Toc.php"
+    },
+    {
+      "class": "Horiz",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/^([-]{4,})$/m'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/^([-]{4,})$/m"
+      ],
+      "rule": "horiz",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Horiz.php"
+    },
+    {
+      "class": "Separator",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/^([=]{4,})$/m'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/^([=]{4,})$/m"
+      ],
+      "rule": "separator",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Separator.php"
+    },
+    {
+      "class": "Clearfloat",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/^([~]{4,})(>|<)?$/m'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/^([~]{4,})(>|<)?$/m"
+      ],
+      "rule": "clearfloat",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Clearfloat.php"
+    },
+    {
+      "class": "Break",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/ _\\n/'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/ _\\n/"
+      ],
+      "rule": "break",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Break.php"
+    },
+    {
+      "class": "Span",
+      "inline": [
+        {
+          "api": "preg_replace",
+          "pattern": "/[\\x00-\\x08\\x0B\\x0C\\x0E-\\x1A\\x1C-\\x1F]/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/[ \\t\\r\\n]+/"
+        },
+        {
+          "api": "preg_match_all",
+          "pattern": "/([A-Za-z][A-Za-z0-9_-]*)\\s*=\\s*\"([^\"]*)/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\[\\[span(\\s.[^\\]]*)?\\]\\]((?:(?R)|.)*?)\\[\\[\\/span\\]\\]/msi'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\[\\[span(\\s.[^\\]]*)?\\]\\]((?:(?R)|.)*?)\\[\\[\\/span\\]\\]/msi"
+      ],
+      "rule": "span",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Span.php"
+    },
+    {
+      "class": "Size",
+      "inline": [
+        {
+          "api": "preg_replace",
+          "pattern": "/[\\x00-\\x08\\x0B\\x0C\\x0E-\\x1A\\x1C-\\x1F]/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/[ \\t]+(?=\\n|$)/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\[\\[size\\s([^\\]]+)\\]\\]((?:(?R)|.)*?)\\[\\[\\/size\\]\\]/msi'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\[\\[size\\s([^\\]]+)\\]\\]((?:(?R)|.)*?)\\[\\[\\/size\\]\\]/msi"
+      ],
+      "rule": "size",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Size.php"
+    },
+    {
+      "class": "Div",
+      "inline": [
+        {
+          "api": "preg_replace",
+          "pattern": "/[\\x00-\\x08\\x0B\\x0C\\x0E-\\x1A\\x1C-\\x1F]/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/[ \\t\\r\\n]+/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^\\s/u"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/\\s+/u"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/\\n[ \\t]*(?:\\n[ \\t]*)+/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/(\\n)?\\[\\[div(_?)(\\s.*?)?\\]\\] *\\n((?:(?R)|.)*?)\\[\\[\\/div\\]\\] */msi'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/(\\n)?\\[\\[div(_?)(\\s.*?)?\\]\\] *\\n((?:(?R)|.)*?)\\[\\[\\/div\\]\\] */msi"
+      ],
+      "rule": "div",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Div.php"
+    },
+    {
+      "class": "Divalign",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/^\\[\\[(=|<|>|==)\\]\\]\\n((?:(?R)|.)*?)\\[\\[\\/\\\\1\\]\\]$/msi'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/^\\[\\[(=|<|>|==)\\]\\]\\n((?:(?R)|.)*?)\\[\\[\\/\\1\\]\\]$/msi"
+      ],
+      "rule": "divalign",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Divalign.php"
+    },
+    {
+      "class": "Collapsible",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/(\\n)?\\[\\[collapsible(\\s.*?)?\\]\\](.*?)\\[\\[\\/collapsible\\]\\] */msi'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/(\\n)?\\[\\[collapsible(\\s.*?)?\\]\\](.*?)\\[\\[\\/collapsible\\]\\] */msi"
+      ],
+      "rule": "collapsible",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Collapsible.php"
+    },
+    {
+      "class": "Tabview",
+      "inline": [
+        {
+          "api": "preg_replace_callback",
+          "pattern": ";\\[\\[tab(\\s+[^\\]]+?)?((?:\\s+[a-z0-9\\-_]+=\"[^\"]+\")+)?\\]\\](.*?)\\[\\[\\/tab\\]\\]\\n*;msi"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/@@.*@@|@<.*>@/s"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/\\s+/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": ";^[a-z0-9\\-_]+=\"[^\"]+\"$;si"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/^\\[\\[(?:tabview|tabs)(\\s.*?)?\\]\\]\\s*((?:\\[\\[tab(\\s.*?)?\\]\\].*?\\[\\[\\/tab\\]\\]\\s*)+)\\[\\[\\/(?:tabview|tabs)\\]\\] */msi'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/^\\[\\[(?:tabview|tabs)(\\s.*?)?\\]\\]\\s*((?:\\[\\[tab(\\s.*?)?\\]\\].*?\\[\\[\\/tab\\]\\]\\s*)+)\\[\\[\\/(?:tabview|tabs)\\]\\] */msi"
+      ],
+      "rule": "tabview",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Tabview.php"
+    },
+    {
+      "class": "Note",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/(\\n)?\\[\\[note\\]\\]\\n(.*?)\\[\\[\\/note\\]\\]/msi'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/(\\n)?\\[\\[note\\]\\]\\n(.*?)\\[\\[\\/note\\]\\]/msi"
+      ],
+      "rule": "note",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Note.php"
+    },
+    {
+      "class": "Gallery",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "\"/^\\[\\[gallery(\\s[^\\]]*?)?\\]\\](?:((?:\\n: [^\\n]+)+)\\n\\[\\[\\/gallery\\]\\])?/msi\""
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/^\\[\\[gallery(\\s[^\\]]*?)?\\]\\](?:((?:\n: [^\n]+)+)\n\\[\\[\\/gallery\\]\\])?/msi"
+      ],
+      "rule": "gallery",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Gallery.php"
+    },
+    {
+      "class": "List",
+      "inline": [
+        {
+          "api": "preg_match_all",
+          "pattern": "=^( {0,})(\\*|#) (.*)$=Ums"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/^\\s*(\\[\\[(?:UL|OL)(?:_)?(?:\\s+[^\\]]*)?\\]\\])\\n(\\[\\[li\\]\\][^\\n]*)\\n(\\[\\[(?:ul|ol)\\]\\]\\n.*?\\[\\[\\/(?:UL|OL)\\]\\])\\n\\[\\[\\/li\\]\\]\\n\\[\\[\\/(?:ul|ol)\\]\\](.*)$/s"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/^\\s*(\\[\\[(?:ul|ol)\\]\\])\\n(\\[\\[li\\]\\][^\\n]*)\\n\\[\\[(ul|ol)\\]\\]\\n(\\[\\[li\\]\\].*?)\\[\\[\\/li\\]\\]\\n\\[\\[\\/(?:UL|OL)\\]\\](.*?)\\n\\[\\[\\/(?:ul|ol)\\]\\]\\n\\[\\[\\/li\\]\\]\\n\\[\\[\\/(?:ul|ol)\\]\\](.*)$/s"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/^\\s*\\[\\[(?:UL|OL)(?:_)?(?:\\s+[^\\]]*)?\\]\\]\\n(\\[\\[li\\]\\][^\\n]*)\\n\\[\\[(?:UL|OL)(?:_)?(?:\\s+[^\\]]*)?\\]\\]\\n(\\[\\[li\\]\\][^\\n]*)\\[\\[\\/li\\]\\]\\n\\[\\[\\/(?:UL|OL)\\]\\]\\n\\[\\[\\/li\\]\\]\\n\\[\\[\\/(?:ul|ol)\\]\\](.*?)\\s*$/s"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/^(\\s*)\\[\\[(UL|OL)(?:_)?(?:\\s+[^\\]]*)?\\]\\]\\n(\\[\\[LI(?:\\s+[^\\]]*)?\\]\\][^\\n\\[]*)\\[\\[(ul|ol)(?:_)?(?:\\s+[^\\]]*)?\\]\\]\\n(\\[\\[[Ll][Ii](?:\\s+[^\\]]*)?\\]\\].*?\\[\\[\\/(?:ul|ol)\\]\\])\\s*\\[\\[\\/[Ll][Ii]\\]\\]\\n\\[\\[\\/(?:UL|OL)\\]\\](.*)$/s"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/^(\\s*)\\[\\[(ul|ol)\\]\\]\\n(\\[\\[[Ll][Ii](?:\\s+[^\\]]*)?\\]\\][^\\n\\[]*)\\[\\[(UL|OL)(?:_)?(?:\\s+[^\\]]*)?\\]\\]\\n(\\[\\[[Ll][Ii](?:\\s+[^\\]]*)?\\]\\].*?\\[\\[\\/[Ll][Ii]\\]\\])\\n\\[\\[\\/(?:UL|OL)\\]\\]\\n\\[\\[\\/[Ll][Ii]\\]\\]\\n\\[\\[\\/(?:ul|ol)\\]\\](.*)$/s"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\[\\[li(?:\\s+[^\\]]*)?\\]\\]/i"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\[\\[\\/(?:ul|ol)\\]\\]/i"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\n\\[\\[\\/(?:ul|ol)\\]\\]\\n{2,}/i"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/\\n\\[\\[\\/(?:ul|ol)\\]\\]\\n{2,}/i"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\n\\[\\[\\/(?:ul|ol)\\]\\]\\n/i"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/\\n\\[\\[\\/(?:ul|ol)\\]\\]\\n/i"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/\\n?\\[\\[\\/(?:ul|ol)\\]\\]\\n?/i"
+        },
+        {
+          "api": "preg_match_all",
+          "pattern": "/\\[\\[\\/(?:ul|ol)\\]\\]/i"
+        },
+        {
+          "api": "preg_match_all",
+          "pattern": "/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\[\\[(?:ul|ol)(?:_)?(?:\\s+[^\\]]*)?\\]\\]/i"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^\\n\\[\\[li(?:\\s+[^\\]]*)?\\]\\](.*?)\\[\\[\\/li\\]\\]\\n\\[\\[\\/(?:ul|ol)\\]\\](.*?\\[\\[li(?:\\s+[^\\]]*)?\\]\\].*)$/is"
+        },
+        {
+          "api": "preg_match_all",
+          "pattern": "/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\[\\[footnoteblock\\]\\]/i"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^(.*\\[\\[\\/(?:ul|ol)\\]\\])(.*)$/is"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/^(?:\\s*\\[\\[\\/li\\]\\]|\\s*\\[\\[\\/(?:ul|ol)\\]\\])+\\s*/i"
+        },
+        {
+          "api": "preg_replace_callback",
+          "pattern": "/\\[\\[(\\/?)(ul|ol)(_)?(?:\\s+[^\\]]*)?\\]\\]/i"
+        },
+        {
+          "api": "preg_split",
+          "pattern": "/\\[\\[li(?:\\s+[^\\]]*)?\\]\\]/i"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/\\[\\[\\/li\\]\\]/i"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/\\[\\[\\/(?:ul|ol)\\]\\]/i"
+        },
+        {
+          "api": "preg_replace_callback",
+          "pattern": "/\\[\\[((?:ul|ol))(_)?(?:\\s+[^\\]]*)?\\]\\](.*?)\\[\\[\\/\\1\\]\\](\\s*\\[\\[\\/li\\]\\])?/is"
+        },
+        {
+          "api": "preg_match_all",
+          "pattern": "/\\x02EXPLIST_\\d+\\x03/"
+        },
+        {
+          "api": "preg_match_all",
+          "pattern": "/\\x02EXPLIST_\\d+\\x03/"
+        },
+        {
+          "api": "preg_match_all",
+          "pattern": "/\\x02EXPLIST_\\d+\\x03/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/\\s|\\x02EXPLIST_\\d+\\x03/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/(?:\\x02EXPLIST_\\d+\\x03|\\x02NATLIST_\\d+\\x03|\\s)+/"
+        },
+        {
+          "api": "preg_match_all",
+          "pattern": "/\\x02(?:EXPLIST|NATLIST)_\\d+\\x03/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/^[ \\t]+|[ \\t]+$/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/^[ \\t]+/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^\\s*(\\x02NATLIST_\\d+\\x03)\\s*$/s"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^(.*?)\\s*(\\x02NATLIST_\\d+\\x03)\\s*$/s"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^(.*?)\\n(\\x02EXPLIST_\\d+\\x03)\\s*$/s"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/[ \\t]+$/"
+        },
+        {
+          "api": "preg_match_all",
+          "pattern": "/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/\\x02EXPDISSOLVED\\x03("
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^(\\s*\\[\\[\\/(?:h)?cell\\]\\]\\s*\\[\\[\\/row\\]\\]\\s*\\[\\[\\/table\\]\\])\\n(?=[^\\n])/i"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^(\\n+)("
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^\\n*$/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^\\n{2,}/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^[ \\t\\n\\r]/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/[\\x00-\\x08\\x0B\\x0C\\x0E-\\x1F\\x7F]/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/[ \\t\\n\\r]+/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/^((\\*|#) .*\\n)(?!\\2 |(?: {1,}((?:\\*|#) |\\n)))/Usm'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/^((\\*|#) .*\\n)(?!\\2 |(?: {1,}((?:\\*|#) |\\n)))/Usm"
+      ],
+      "rule": "list",
+      "source": "text-wiki/Text/Wiki/Parse/Default/List.php"
+    },
+    {
+      "class": "Deflist",
+      "inline": [
+        {
+          "api": "preg_match_all",
+          "pattern": "/^(: )(.*)?( : )(.*)?$/Ums"
+        },
+        {
+          "api": "preg_replace_callback",
+          "pattern": "/\\xFF(\\d+)\\xFF/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\n((: ).*\\n)(?!(: |\\n))/Us'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\n((: ).*\\n)(?!(: |\\n))/Us"
+      ],
+      "rule": "deflist",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Deflist.php"
+    },
+    {
+      "class": "Table",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\n((\\|\\|).*)(\\n)(?!(\\|\\|))/Us'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\n((\\|\\|).*)(\\n)(?!(\\|\\|))/Us"
+      ],
+      "rule": "table",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Table.php"
+    },
+    {
+      "class": "Tableadv",
+      "inline": [
+        {
+          "api": "preg_replace",
+          "pattern": "/[\\x00-\\x1F\\x7F]/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/\\s+/u"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^\\s/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^data-[a-z0-9._-]*$/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^[a-z][a-z0-9-]*$/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'~\\[\\[table((?:\"[^\"]*\"|[^\\]])*)\\]\\]((?:(?R)|.)*?)\\[\\[/table\\]\\]~si'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "~\\[\\[table((?:\"[^\"]*\"|[^\\]])*)\\]\\]((?:(?R)|.)*?)\\[\\[/table\\]\\]~si"
+      ],
+      "rule": "tableadv",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Tableadv.php"
+    },
+    {
+      "class": "Button",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\[\\[button\\s+([a-z0-9\\-_]+)(?:\\s+(.+?))?\\]\\]/is'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\[\\[button\\s+([a-z0-9\\-_]+)(?:\\s+(.+?))?\\]\\]/is"
+      ],
+      "rule": "button",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Button.php"
+    },
+    {
+      "class": "Image",
+      "inline": [
+        {
+          "api": "preg_replace",
+          "pattern": "/[\\x00-\\x08\\x0B\\x0C\\x0E-\\x1A\\x1C-\\x1F]/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/(\\[\\[((?:f)?[<>=])?image\\s+)(.*?)\\]\\]/is'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/(\\[\\[((?:f)?[<>=])?image\\s+)(.*?)\\]\\]/is"
+      ],
+      "rule": "image",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Image.php"
+    },
+    {
+      "class": "Embed",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\[\\[embed(?:audio|video)?\\]\\](.*?)\\[\\[\\/embed(?:audio|video)?\\]\\]/msi'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\[\\[embed(?:audio|video)?\\]\\](.*?)\\[\\[\\/embed(?:audio|video)?\\]\\]/msi"
+      ],
+      "rule": "embed",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Embed.php"
+    },
+    {
+      "class": "Social",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\[\\[social(\\s+[^\\]]+?)?(?:\\]\\])/is'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\[\\[social(\\s+[^\\]]+?)?(?:\\]\\])/is"
+      ],
+      "rule": "social",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Social.php"
+    },
+    {
+      "class": "File",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\[\\[file\\s+(.+?)(?:\\|(.+?))?\\]\\]/i'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\[\\[file\\s+(.+?)(?:\\|(.+?))?\\]\\]/i"
+      ],
+      "rule": "file",
+      "source": "text-wiki/Text/Wiki/Parse/Default/File.php"
+    },
+    {
+      "class": "Center",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/^= (.*)$/m'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/^= (.*)$/m"
+      ],
+      "rule": "center",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Center.php"
+    },
+    {
+      "class": "Newline",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/([^\\n])\\n(?!\\n)/m'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/([^\\n])\\n(?!\\n)/m"
+      ],
+      "rule": "newline",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Newline.php"
+    },
+    {
+      "class": "Paragraph",
+      "inline": [
+        {
+          "api": "preg_match_all",
+          "pattern": "/"
+        },
+        {
+          "api": "preg_match_all",
+          "pattern": "/("
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^"
+        },
+        {
+          "api": "preg_match_all",
+          "pattern": "/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "\"/^.*?\\n\\s*?\\n/m\""
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/^.*?\n\\s*?\n/m"
+      ],
+      "rule": "paragraph",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Paragraph.php"
+    },
+    {
+      "class": "Url",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "\"(?:(?:$schemes)\" . \"(?:\" . \"[^ \\\\/\\\"\\'{$this->wiki->delim}]*\\\\/\" . \")*\" . \"[^ \\\\t\\\\n\\\\/\\\"\\'{$this->wiki->delim}]*\" . \"[A-Za-z%0-9\\\\/?=&~_])\""
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "\"(?:(?:$schemes)\" . \"(?:\" . \"[^ \\\\/\\\"\\'{$this->wiki->delim}]*\\\\/\" . \")*\" . \"[^ \\\\t\\\\n\\\\/\\\"{$this->wiki->delim}]*)\""
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\[(\\*)?((?:' . $this->regexLiberal . ')|(?:#[a-zA-Z0-9_\\-%]*)|(?:\\/[^ \\\\t\\\\n\\\"\\''.$this->wiki->delim.']*)) ([^\\]'.$this->wiki->delim.']+)\\]/'"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\[(\\*)?(%%[^%]+%%[^ ]*) ([^\\]]+)\\]/'"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/(^|[^A-Za-z])(\\*)?(' . $this->regex . ')(.*?)/'"
+        }
+      ],
+      "literal": null,
+      "patterns": [],
+      "rule": "url",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Url.php"
+    },
+    {
+      "class": "Email",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'[_a-z0-9\\-]+(?:\\.[_a-z0-9\\-]+)*@[a-z0-9\\-]+(?:\\.[a-z0-9\\-]+)+'"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\[(' . $this->regex . ') (.+?)\\]/i'"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/' . $this->regex . '/i'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "[_a-z0-9\\-]+(?:\\.[_a-z0-9\\-]+)*@[a-z0-9\\-]+(?:\\.[a-z0-9\\-]+)+"
+      ],
+      "rule": "email",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Email.php"
+    },
+    {
+      "class": "Mathinline",
+      "inline": [
+        {
+          "api": "preg_match_all",
+          "pattern": "/\\xFF(\\d+)\\xFF/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\[\\[\\$(.*?)\\$\\]\\]/'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\[\\[\\$(.*?)\\$\\]\\]/"
+      ],
+      "rule": "mathinline",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Mathinline.php"
+    },
+    {
+      "class": "Interwiki",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'([A-Za-z0-9_\\.]+):((?!:)[A-Za-z0-9_\\/=&~#.:;\\-\\+]+)'"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\[(' . $this->regex . ')\\]/'"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\[' . $this->regex . ' ([^\\\\]\\\\[\\n' . $this->wiki->delim . ']+)\\]/'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "([A-Za-z0-9_\\.]+):((?!:)[A-Za-z0-9_\\/=&~#.:;\\-\\+]+)"
+      ],
+      "rule": "interwiki",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Interwiki.php"
+    },
+    {
+      "class": "Colortext",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "'/##([A-Za-z0-9#(),\\- \\t]+)\\|(.+?)##/'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/##([A-Za-z0-9#(),\\- \\t]+)\\|(.+?)##/"
+      ],
+      "rule": "colortext",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Colortext.php"
+    },
+    {
+      "class": "Strong",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "\"/\\*\\*([^\\s\\n](?:.*[^\\s\\n])?|)\\*\\*/U\""
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\*\\*([^\\s\n](?:.*[^\\s\n])?|)\\*\\*/U"
+      ],
+      "rule": "strong",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Strong.php"
+    },
+    {
+      "class": "Emphasis",
+      "inline": [
+        {
+          "api": "preg_match",
+          "pattern": "/^\\s|\\s$/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "\"/\\/\\/(.*)\\/\\//U\""
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\/\\/(.*)\\/\\//U"
+      ],
+      "rule": "emphasis",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Emphasis.php"
+    },
+    {
+      "class": "Underline",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "\"/____|__([^\\s](?:.*[^\\s])?)__/U\""
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/____|__([^\\s](?:.*[^\\s])?)__/U"
+      ],
+      "rule": "underline",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Underline.php"
+    },
+    {
+      "class": "Strikethrough",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "\"/\\-\\-([^\\s](?:.*[^\\s])?)\\-\\-/U\""
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\-\\-([^\\s](?:.*[^\\s])?)\\-\\-/U"
+      ],
+      "rule": "strikethrough",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Strikethrough.php"
+    },
+    {
+      "class": "Tt",
+      "inline": [
+        {
+          "api": "preg_replace",
+          "pattern": "/[ \\t]+/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\s/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/^\\{\\{[ \\t]/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\s/"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "\"/{{({*?.*}*?)}}/U\""
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/{{({*?.*}*?)}}/U"
+      ],
+      "rule": "tt",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Tt.php"
+    },
+    {
+      "class": "Superscript",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "\"/\\^\\^\\^\\^|\\^\\^([^\\s](?:.*[^\\s])?)\\^\\^/U\""
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\^\\^\\^\\^|\\^\\^([^\\s](?:.*[^\\s])?)\\^\\^/U"
+      ],
+      "rule": "superscript",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Superscript.php"
+    },
+    {
+      "class": "Subscript",
+      "inline": [
+        {
+          "api": "dynamic-template",
+          "pattern": "\"/,,,,|,,([^\\s](?:.*[^\\s])?),,/U\""
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/,,,,|,,([^\\s](?:.*[^\\s])?),,/U"
+      ],
+      "rule": "subscript",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Subscript.php"
+    },
+    {
+      "class": "Typography",
+      "inline": [
+        {
+          "api": "preg_replace",
+          "pattern": "/``(.*?)''/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/,,(.*?)''/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/`(.*?)'/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/<</"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/>>/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/(?<=[0-9]) (?=[0-9])/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/\n\t\t\t(?:([0-9])[ ]) # Number followed by space.\n\t\t\t("
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/\\-\\-/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/\\-\\-\\-/"
+        }
+      ],
+      "literal": null,
+      "patterns": [],
+      "rule": "typography",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Typography.php"
+    },
+    {
+      "class": "Tighten",
+      "inline": [
+        {
+          "api": "preg_replace",
+          "pattern": "/[\\x00-\\x08\\x0B\\x0C\\x0E-\\x1A\\x1C-\\x1F]/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/[ \\t]+/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/ "
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/[ \\t]+/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/ +"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/"
+        },
+        {
+          "api": "preg_replace",
+          "pattern": "/ +"
+        }
+      ],
+      "literal": null,
+      "patterns": [],
+      "rule": "tighten",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Tighten.php"
+    }
+  ],
+  "snapshot_commit": "55fbb6ef888f500bded7b1a901d30b96a134b6cd",
+  "snapshot_tag": "snapshot-37",
+  "source_count": 70,
+  "sources": [
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Include.php",
+      "sha256": "948551a863dca240ec92d292047b984dd306b473a306c48ac52aeb87c00e93f4"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Prefilter.php",
+      "sha256": "b40ead6a2a0214b72e88eb96069d9fb873ce17efda18e28ed73074af7e88996f"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Delimiter.php",
+      "sha256": "f57e57ade2019071fa0447f428385a1df1a876cebf73f6b4fac02912135de233"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Code.php",
+      "sha256": "fe39cd265d7f27cf14d148ee65d7f5ab82e59e3ecef4bd87a43724c164c1391b"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Form.php",
+      "sha256": "cde34fee2c6c4d7543e6013e27b32879f36716b91ac399a0db42a4050e6246bb"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Raw.php",
+      "sha256": "5b48b446ec5838737b50d92529c78f7b69ebd6018c9ea4884ef471e929699fef"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Rawold.php",
+      "sha256": "0b2989a253420b508738aca076244a149dbd1851085a3d4df11b3ad153b2a708"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Modulepre.php",
+      "sha256": "1d5336676e8e8e5484161540d989f49bf710209447cb117311fc6c8b98c1c6b4"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Module.php",
+      "sha256": "b12b3715fe1ab466e831dd6c68be1b614245279476f6b6b147724c0edb48394d"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Module654.php",
+      "sha256": "73f5137bcf8e483fa931140096827b6ae7824cd403da2bc885f71af99d2028ab"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Iftags.php",
+      "sha256": "44d94537b7714fb5a73e9eb7de2ee93814c00e36f7462f6f17b03fbf29387794"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Comment.php",
+      "sha256": "0fd39be074f3a3d0dbafdc0ad5254c46a6ec3a56e9c458394bb17ab723d28439"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Iframe.php",
+      "sha256": "bf76dfd40cdb13f8bfa63dbd22bc04f2bcb3168b4fa4461897bcf4cd52d5a0c1"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Date.php",
+      "sha256": "ff7cd510709557da4a7c4afe847f51801e31a41ed8ec7c66e20a9da4b7950c86"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Math.php",
+      "sha256": "100821c1cf0ca90d4ed186facf715d0631a13240adce77bc9bacded6037df6a3"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Concatlines.php",
+      "sha256": "c8d4367a2f798d3b03c9327bc31a01b8511dd962c4f908029014b6299a3ebce0"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Freelink.php",
+      "sha256": "49baed274bd7737b66080282251d95a2756ad3205b0c9e2a9aa9b90792d79a8c"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Equationreference.php",
+      "sha256": "e8d2fbd52057ba71bed2cbf6637f0adb3423038d4168f020df956dcf5bf786db"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Footnote.php",
+      "sha256": "fe45eeb2c5183f92e9d0fbdb2576843964bd0b24ec7205e91ce66b489679ad0d"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Footnoteitem.php",
+      "sha256": "6360b50d6349074f7cf8e10f37c2af4d160dc9fd7250f3aa6302cbd54c1a2770"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Footnoteblock.php",
+      "sha256": "42653a97371dc97e1fc458278dea7c31b8fc5dd0df1ffcc45464de2686500cbb"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Bibitem.php",
+      "sha256": "b21e2e4c2d95da0335c87bc4f9bb7ed6e9a7cd0aa843de9f924ef720f08b0f1c"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Bibliography.php",
+      "sha256": "ec741eb202bc9c44f8f623d40006f690bffe6bce8f0f34d2f1b901fa8535da66"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Bibcite.php",
+      "sha256": "7ac06082bcc29162df265d87cc05f2c33538f3c3b06b8b862d67948dfd983cb0"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Divprefilter.php",
+      "sha256": "4b1a5d62fc9fd5df47f2547f220f7cedd9e3160145ba02809f58f41890e2accb"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Anchor.php",
+      "sha256": "4fd84101a158915a76eca41ad7821ef148a820500f0ea222f4ec7ea8378b5ef5"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/User.php",
+      "sha256": "76a34e4730c037c4d5df95cec835a232124f1b3b6d0e686bccd3f5981f58a604"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Blockquote.php",
+      "sha256": "9294382a3d995092b51d9c31d560836a5fafe815765ca300909a8388dd21f84a"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Heading.php",
+      "sha256": "88650648749ce0f04da7ebb569e816a88399ea2f4a4dafc5796c39f04c0e3377"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Toc.php",
+      "sha256": "b9c4ff60f1a55cc8a2a20c05c18ac09e73bee5cdab4fa85ea293f5d6faf4ddcd"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Horiz.php",
+      "sha256": "36790ee36294c5d08478389b9a9238e888666f6e2aef01420713e14ff9c0c220"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Separator.php",
+      "sha256": "3501b01b94274b125a804c167565b84fe89a0801c745e5ba7a29f0049cba7ca7"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Clearfloat.php",
+      "sha256": "782a388aea4fc2717b37d472d58d9ddbf2ad6c8d607b31a343e1adf3d2086662"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Break.php",
+      "sha256": "c7b95838f81e268478593642d23b43d59316498d589651363c7bd9c0dbfe31be"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Span.php",
+      "sha256": "91f91c3ae760b2ef4cfd064ba5d3fa52edb1139ea144c9222f7d856a1687f6f5"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Size.php",
+      "sha256": "3aad982e73868d08841d20ab5a3bd4451e92fbeb266c16761eb5f1531e526258"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Div.php",
+      "sha256": "3d5f74509b67266e36af7cdff6ad31e121ae72250bc7da04164e95dc54f575f7"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Divalign.php",
+      "sha256": "900dff149423cb4cf9d2ed668a97b356a98cda1d94e950ac99bebae917c8bec8"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Collapsible.php",
+      "sha256": "5af5aac07a67edc48f3a8776965551aad115e7679007e8601830e9a752945cf4"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Tabview.php",
+      "sha256": "396879903379ca03f0bbfe814857cdb29988453a632da5c8c0f76e74c72d0034"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Note.php",
+      "sha256": "b79cc1650735f0d7400298f45c03fdee54bc9f3bf0fc2131a8c59b2390d36d56"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Gallery.php",
+      "sha256": "85407fafba2fd8828d2c451755bf3acf62cf3cf6c211ce8ccaef2af145977a06"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/List.php",
+      "sha256": "6e0a394f3bf0d11bc2d87e944049b2d0aad6b7c945b931f366667081aebd0c02"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Deflist.php",
+      "sha256": "1ccdb5730dc8e4317932e652ffd4622e8c53d0bbef3c95a2b43675ee706343df"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Table.php",
+      "sha256": "347244881ef295a412822785d562797059769d457ba2786a13944329f3eaa6b2"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Tableadv.php",
+      "sha256": "9314a58ba4bf835df13be125523a704fa7d2a01c09691d4224b100ba651f9ecb"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Button.php",
+      "sha256": "0856673d7d13b1eac56af6bc037ab7b452acca8997971e66d6134492f435cedf"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Image.php",
+      "sha256": "a9a9fc461c2f5e15f42eb3add70fe0c5a084e799f790ddf6f940df45615c0cff"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Embed.php",
+      "sha256": "2b2bfd5a71e02ee4bd837cd4dda449338081a350d44b41ccdf06dc7a7921b86f"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Social.php",
+      "sha256": "81c6b1af88320331f9b94bad2545b0f7433a7aee7791d49b58e0a8686c3cab62"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/File.php",
+      "sha256": "45f323c0e4c1de2dc70ce44d0bc6f31e8d66cc421feca1202beb3b332ba23e6c"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Center.php",
+      "sha256": "d558f00c75354bfe064028ec1ea5ab48c35f2ae264d63ab6489acd1cfa8972b7"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Newline.php",
+      "sha256": "0db2ebefe86ceb74289ff92e564e93535ad9201326d25e5c11069b63974ca26d"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Paragraph.php",
+      "sha256": "697ecc0627854a06678deeafce93a36759edc91b146993b35da1163f115ef106"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Url.php",
+      "sha256": "aa50fdf2b0e88179472423e5c42b6235ebe63804a88a5bbe24cba2ae01b28a27"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Email.php",
+      "sha256": "b3098d5463cb8f598e1722db2b84d2be587381e12742f6a796fb344a6c914121"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Mathinline.php",
+      "sha256": "0d02f3280fed8d6244e6769e63d3dee343d1ee65b8d0042cc25bdc3f667e3320"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Interwiki.php",
+      "sha256": "ca191fa743b7b72bff0a853aeb736039a747c6e6f317046ac58f1a5ff6b10de6"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Colortext.php",
+      "sha256": "9a70e640e696731078cc379b5848b695055c118debf83e4b7be5fa7010d1c483"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Strong.php",
+      "sha256": "3940a626283097cbaeb4a720595a0a3308efc128f495fddf6d7f79ea2c742933"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Emphasis.php",
+      "sha256": "fee79e8e3c00e02196e9b1ab3dcb0db6c0e812c3327510691c583bc7d78331a7"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Underline.php",
+      "sha256": "acf68df72796c63e9cce76dc4f5674f781f7c1e868965de52f2e534770487441"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Strikethrough.php",
+      "sha256": "5e2319640c26ffb22489f5e47f080689412528b25c3eefec179365c193140266"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Tt.php",
+      "sha256": "054bf04a2025219cce8177edc0a26e534d0b96bdea6b97301e38b203e8b7ab4d"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Superscript.php",
+      "sha256": "946f4768fe2f172d84593985ad05bc9379f63f81ad7a281261e570196d8b2bc3"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Subscript.php",
+      "sha256": "5c1408e7d4ddc84ef1fd42d24f457c88cc7bb2d150cdc09e0e4af2f8bf6bc67e"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Typography.php",
+      "sha256": "a1c5fc137efc7fe8bb5c6b931071a1f139515894c719754acc79a31873568fdd"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse/Default/Tighten.php",
+      "sha256": "0520ce49ccfacf6071debef082a26db995cf1e15b235f5c5beda5eb7d47fa408"
+    },
+    {
+      "path": "text-wiki/Text/Wiki/Parse.php",
+      "sha256": "61d1fe5900b0fabc07642c30859846700fe02c89b44f0660e6b6b4d4545c9877"
+    },
+    {
+      "path": "wikidot-root/conf/wikiparser/embed/default.php",
+      "sha256": "8d7ddce216e8f7fef5e166ab69dc70bea8b40efd259bf3cf38d79614536f0df1"
+    }
+  ]
+}
