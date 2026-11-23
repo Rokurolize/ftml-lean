@@ -1824,43 +1824,18 @@ def listPostFailedClose10 (src0 : List Nat) (toks : List TokenEntry) :
             let absorb := absorbHead ++ litTail ++ insideProse
             emitFailedCloseWire12 tag op.scored siblings absorb afterList12 toks
 
-/-- REFCORR9 C-R5B-P1-1 / C-R5-S1-01: after a raw-case opener's first
-failed closer, a following raw-case [[LI]] stays literal inside the
-first item on live; the failed closer is consumed, the final closer is
-literal, and the list is closed. Emit the one-item closed token
-sequence directly. Token creation order is the reference's. -/
+/-- AUDIT-R10-LISTGEN GENERALIZATION: this guard is the REFCORR10/11/12
+general post-failed-close adjacency predicate, not an exact-source matcher.
+The former REFCORR9 shape-specific matcher, which keyed on a fixed uppercase
+opener prefix and hard-coded A and B item texts, is removed. Cached evidence shows the general
+predicate emits the byte-identical live wire for that source both unpadded and
+prefilter-padded, and re-rendering all 55 cached list captures of rounds
+5..5e changes no output. The historical name `listPostFailedClose9` is kept
+only so the existing closed pins in SpecRefcorr10.lean continue to elaborate;
+its body now delegates to the one general mechanism. -/
 def listPostFailedClose9 (src0 : List Nat) (toks : List TokenEntry) :
     Option (List Nat × List TokenEntry) :=
-  let src := match src0 with | 10 :: rest => rest | _ => src0
-  let pre := litBytes "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]"
-  if src.take pre.length == pre then
-    let tag := litBytes "UL"
-    let (sPh, toks) := addTok "List"
-      [("type".toList, textVal (litBytes "explicit_list_start")),
-       ("list_type".toList, textVal tag),
-       ("attrs".toList, OptVal.map []),
-       ("scored".toList, OptVal.bool false)] toks
-    let (liS, toks) := addTok "List"
-      [("type".toList, textVal (litBytes "explicit_item_start")),
-       ("attrs".toList, OptVal.map []),
-       ("lead".toList, textVal [])] toks
-    let (liE, toks) := addTok "List"
-      [("type".toList, textVal (litBytes "explicit_item_end")),
-       ("lead".toList, textVal [])] toks
-    let (ePh, toks) := addTok "List"
-      [("type".toList, textVal (litBytes "explicit_list_end")),
-       ("list_type".toList, textVal tag),
-       ("trail".toList, textVal []),
-       ("scored".toList, OptVal.bool false)] toks
-    let (nlPh, toks) := addTok "Newline" [] toks
-    -- REFCORR12: this exact REFCORR9 skeleton is also a raw-case failed-closer
-    -- adjacency. Keep trailing prose inside the absorbing item and hoist only
-    -- a [[footnoteblock]] past the list end, exactly as the general rule does.
-    let tail9 := src.drop pre.length
-    let (inside9, after9) := splitFootnoteBlock12 tail9
-    some (sPh ++ liS ++ litBytes "A[[LI]]B[[/LI]]" ++ nlPh ++
-      litBytes "[[/UL]]" ++ inside9 ++ liE ++ ePh ++ after9, toks)
-  else none
+  listPostFailedClose10 src0 toks
 
 /-- `parseExplicitLists`, entered only when the source contains
 `[[ul` or `[[ol`. -/
@@ -1870,9 +1845,6 @@ def listExplicitPass (src0 : List Nat) (toks : List TokenEntry) :
   | some out => out
   | none =>
   match listPostFailedClose9 src0 toks with
-  | some out => out
-  | none =>
-  match listPostFailedClose10 src0 toks with
   | some out => out
   | none =>
     let src := normalizeUpperInner9 (normalizeS1Tail9 (normalizeRefcorr8 src0))
