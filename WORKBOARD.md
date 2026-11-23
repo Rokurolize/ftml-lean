@@ -70,7 +70,7 @@ REFCORR12 cycle complete: final gates PASS with zero drift, snapshot-36 publishe
 
 ## Proof-lane handover (2026-11-23, owner order)
 
-The paused Cursor proof fleet's drafts were handed over: shared tasks 33-37 hold P-MODULE (verified side-chat, Hard Core #4 remainders), P-EMAIL, P-TABLEADV, P-WAVE1 (freelink/notes/divattr/raw) and P-INCLUDE, all blocked behind F1-F3 and to be rebased onto proof-base-v1. proof/list was closed by policy decision and is not revived; its fresh Class C lane waits for proof-base-v1. Each draft will be adjudicated against ADVISOR-PROOF-POLICY section 4.3 keep/drop on pickup.
+Owner plan change: seven dedicated DSH lanes now own the handed-over proof packages (module remainders, email, tableadv, freelink, notes, divattr, raw) with their own clones and report to the coordinator side chat by review ping. Board tasks 33-36 were deleted to avoid duplication. Only P-INCLUDE (task 37) stays with this team because proof/include had no draft; proof/list remains closed by policy decision and is not revived. F1-F3 foundation has landed (F1 partially: two UTF-8 round-trip obligations remain honestly unproved), so task 37 is ready. The side chat coordinates the proof branches' rebase onto proof-base-v1.
 
 ## Closeout (after a zero round)
 
