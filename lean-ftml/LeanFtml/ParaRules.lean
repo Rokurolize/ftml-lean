@@ -268,6 +268,14 @@ def imageUrlMatches : List Nat → Bool
   | [] => imageUrlHere []
   | s@(_ :: rest) => imageUrlHere s || imageUrlMatches rest
 
+/-- REFCORR11 C-R5D-P3-1: right-trim the accepted Image link value over the
+    rule's own ctype_space / PCRE `\s` byte set (space, tab, LF, VT, FF, CR),
+    the same set the leading-whitespace rejection guard tests, removing an
+    entire trailing run. Byte twin of Image.php's `rtrim` on the link value
+    only. -/
+def rtrimImageHrefWs (bs : List Nat) : List Nat :=
+  (bs.reverse.dropWhile isWsByte).reverse
+
 /-- process() for one Image match: the whole match, the
     alignment group, the body, and the current table, returning
     the replacement bytes and the extended table. A match
@@ -305,10 +313,17 @@ def imageProcess (whole align body : List Nat) (toks : List TokenEntry) :
     else
       let srcStar := srcPart.head? == some 42
       let srcFinal := if srcStar then srcPart.tail else srcPart
+      -- REFCORR11 C-R5D-P3-1: the trailing-whitespace trim runs on the
+      -- accepted link value only, after the leading-space rejection and the
+      -- scheme guard above have already tested the authored bytes. Every
+      -- other attribute (title, style, class, alt, height, width, size) and
+      -- the target, order, source handling and alignment are byte-identical.
+      let attr4 := attr3.map (fun (k, v) =>
+        if k == litBytes "link" then (k, rtrimImageHrefWs v) else (k, v))
       let opts : OptMap :=
         [("src".toList, textVal srcFinal),
          ("attr".toList, OptVal.map
-           (attr3.map (fun (k, v) => (utf8Decode k, textVal v))))] ++
+           (attr4.map (fun (k, v) => (utf8Decode k, textVal v))))] ++
         (if linkTarget then [("target".toList, textVal (litBytes "_blank"))]
          else []) ++
         (if align.isEmpty then []
@@ -559,6 +574,39 @@ def bytesContains (s sub : List Nat) : Bool :=
   | [] => sub.isPrefixOf []
   | _ :: rest => sub.isPrefixOf s || bytesContains rest sub
 
+/-- R11-CONCAT: remove token placeholder byte sequences from a run,
+    leaving only the residual plain text. Used to compare a run with a
+    recorded continued-div lead. -/
+def stripPhBytes (bs : List Nat) : List Nat := go bs (bs.length + 1)
+where
+  go : List Nat → Nat → List Nat
+    | _, 0 => []
+    | 0xFF :: rest, n + 1 =>
+        let (digits, tail) := rest.span (fun b => 48 <= b && b <= 57)
+        match tail with
+        | 0xFF :: rest2 => go rest2 n
+        | _ => 0xFF :: go rest n
+    | b :: rest, n + 1 => b :: go rest n
+    | [], _ => []
+
+/-- R11-CONCAT: whether a paragraph run holds a div token. Narrowed by
+    the recorded lead so authored same-line openers keep their pinned
+    paragraph wrapper. -/
+def runHasDivStart (m : List Nat) (toks : List TokenEntry) : Bool :=
+  go m toks (m.length + 1)
+where
+  go : List Nat → List TokenEntry → Nat → Bool
+    | 0xFF :: rest, toks, n + 1 =>
+        let (digits, tail) := rest.span (fun b => 48 <= b && b <= 57)
+        match tail with
+        | 0xFF :: rest2 =>
+            let id := digits.foldl (fun a b => a * 10 + (b - 48)) 0
+            tokenRuleAt toks id == "Div" || go rest2 toks n
+        | _ => go rest toks n
+    | _ :: rest, toks, n + 1 => go rest toks n
+    | _, _, 0 => false
+    | [], _, _ => false
+
 /-- process() for one Paragraph match: empty after trimming
     means the empty string; a trimmed match that ends with a
     scored anchor's end placeholder and contains its start
@@ -569,9 +617,14 @@ def bytesContains (s sub : List Nat) : Bool :=
     unchanged; anything else is wrapped. -/
 def paraProcess (m : List Nat) (toks : List TokenEntry)
     (scored : List (Nat × List Nat))
-    (anchors : List (List Nat × List Nat)) :
+    (anchors : List (List Nat × List Nat))
+    (leads : List (List Nat)) :
     List Nat × List TokenEntry :=
-  if (trimBytes m).isEmpty then ([], toks)
+  -- R11-CONCAT: a continued block boundary keeps its lead text bare.
+  if ! leads.isEmpty && runHasDivStart m toks &&
+     leads.any (fun lead => trimBytes (stripPhBytes m) == lead)
+  then (m, toks)
+  else if (trimBytes m).isEmpty then ([], toks)
   else if anchors.any (fun (e, s) =>
       bytesEndsWith (trimBytes m) e && bytesContains (trimBytes m) s)
     then (m, toks)
@@ -591,6 +644,13 @@ def paraProcess (m : List Nat) (toks : List TokenEntry)
         | none => paraWrap m toks
     | _ => paraWrap m toks
 
+theorem paraProcess_continued_div_example :
+    let m := litBytes "alpha " ++ phBytes 0 ++ litBytes "\n\n"
+    let ts : List TokenEntry :=
+      [{ rule := "Div",
+         opts := [("type".toList, OptVal.str "start".toList)] }]
+    paraProcess m ts [] [] [litBytes "alpha"] = (m, ts) := rfl
+
 /-- The main pass: preg_replace_callback semantics for the
     paragraph pattern. Matches are attempted only at line
     starts (the pattern's multiline `^`); a match always ends
@@ -598,7 +658,8 @@ def paraProcess (m : List Nat) (toks : List TokenEntry)
     a failed attempt consumes nothing. -/
 def paraScan (src : List Nat) (toks : List TokenEntry)
     (scored : List (Nat × List Nat))
-    (anchors : List (List Nat × List Nat)) :
+    (anchors : List (List Nat × List Nat))
+    (leads : List (List Nat)) :
     List Nat × List TokenEntry :=
   go src toks scored true (src.length + 1)
 where
@@ -610,7 +671,7 @@ where
         if atStart then
           match paraMatchAt src with
           | some (m, r) =>
-              let (rep, toks1) := paraProcess m toks scored anchors
+              let (rep, toks1) := paraProcess m toks scored anchors leads
               let (o, toks2) := go r toks1 scored true fuel
               (rep ++ o, toks2)
           | none =>
@@ -629,7 +690,7 @@ where
 def paragraphRule (st : ParseState) : ParseState :=
   let input := byteForm st.work
   let (s1, t1, scored) := scoredScan input st.tokens
-  let (out, t2) := paraScan s1 t1 scored st.doc.scoredAnchors
+  let (out, t2) := paraScan s1 t1 scored st.doc.scoredAnchors st.continuedDivLeads
   { st with work := parseBytes out, tokens := t2 }
 
 /-! ## Worked examples (the stage's theorems)
@@ -694,7 +755,7 @@ theorem paraMatchAt_example :
       some (litBytes "foo\n\n", litBytes "bar") := rfl
 
 theorem paraProcess_wrap_example :
-    paraProcess (litBytes "foo\n\n") [] [] [] =
+    paraProcess (litBytes "foo\n\n") [] [] [] [] =
       (phBytes 0 ++ litBytes "foo" ++ phBytes 1 ++ [10, 10],
        [{ rule := "Paragraph", opts :=
           [("type".toList, OptVal.str "start".toList)] },
@@ -703,7 +764,7 @@ theorem paraProcess_wrap_example :
 
 theorem paraProcess_skip_example :
     paraProcess (phBytes 0 ++ litBytes "x\n\n")
-        [{ rule := "Table", opts := [] }] [] [] =
+        [{ rule := "Table", opts := [] }] [] [] [] =
       (phBytes 0 ++ litBytes "x\n\n",
        [{ rule := "Table", opts := [] }]) := rfl
 
@@ -712,13 +773,13 @@ theorem paraProcess_skip_example :
     unwrapped. -/
 theorem paraProcess_separator_skip_example :
     paraProcess (phBytes 0 ++ litBytes "x\n\n")
-        [{ rule := "Separator", opts := [] }] [] [] =
+        [{ rule := "Separator", opts := [] }] [] [] [] =
       (phBytes 0 ++ litBytes "x\n\n",
        [{ rule := "Separator", opts := [] }]) := rfl
 
 theorem paraProcess_divalign_skip_example :
     paraProcess (phBytes 0 ++ litBytes "x\n\n")
-        [{ rule := "Divalign", opts := [] }] [] [] =
+        [{ rule := "Divalign", opts := [] }] [] [] [] =
       (phBytes 0 ++ litBytes "x\n\n",
        [{ rule := "Divalign", opts := [] }]) := rfl
 
@@ -729,7 +790,7 @@ theorem paraProcess_scored_example :
              ("type".toList, OptVal.str "start".toList)] },
          { rule := "Span", opts :=
             [("type".toList, OptVal.str "end".toList)] }]
-        [(0, phBytes 0 ++ [88] ++ phBytes 1)] [] =
+        [(0, phBytes 0 ++ [88] ++ phBytes 1)] [] [] =
       ((phBytes 0 ++ [88] ++ phBytes 1) ++ [10, 10],
        [{ rule := "Span", opts :=
             [("args".toList, OptVal.map []),
@@ -748,7 +809,7 @@ theorem paraProcess_anchor_example :
             [("type".toList, OptVal.str "start".toList)] },
          { rule := "Anchor", opts :=
             [("type".toList, OptVal.str "end".toList)] }]
-        [] [(phBytes 1, phBytes 0)] =
+        [] [(phBytes 1, phBytes 0)] [] =
       ((phBytes 0 ++ [88] ++ phBytes 1) ++ [10, 10],
        [{ rule := "Anchor", opts :=
             [("type".toList, OptVal.str "start".toList)] },

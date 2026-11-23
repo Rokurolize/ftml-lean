@@ -1,0 +1,641 @@
+/-
+  LeanFtml.CoverageCodemath — the coverage-tier classification of the
+  code and math family (BRIEF-COVERAGE-CODEMATH, 2026-11-22): Code,
+  Math and Mathinline, across the parse decisions the brief names and
+  the render branches that are reachable under the harness.
+
+  The classes are the branch decisions of the reference, read from the
+  current mirror on post-REFCORR6 ground:
+
+  * Code token (`CodeEmbedRules.renderCode`, the R2/R4.7 mirror of
+    `Render/Xhtml/Code.php`): after `wikidotTrimCodeBody`, a type
+    outside the fourteen-name list is either the empty wrapper
+    (`phpTrim` of the trimmed body is empty) or the plain ENT_COMPAT
+    wrapper. The two outcomes are exclusive. The trailing-whitespace
+    claim is the REFCORR6 `process()` contract (`Parse/Default/Code.php`):
+    group 3, one whitespace byte or the empty `$` alternative, is
+    returned outside the token, and the claimed span is the match with
+    that group removed. The two trail outcomes are exclusive and compose
+    with the token class.
+  * Math type and counter (`NextRules.mathProcess`,
+    `ServingRules.renderMath`, REFCORR3 C-SUSPECT-SERVING-1): the
+    include/input guard throws before a token is built, but the
+    counter has already moved; otherwise an absent `type` key defaults
+    to `align`, a present value matching `^[a-z][a-z0-9]*$` is kept,
+    and any other present value is kept and rejected by the renderer.
+    The three type outcomes and the fatal guard are exclusive. Under
+    the harness the valid arm is the fossil failure block, because the
+    PNG never exists.
+  * Mathinline (`Inline1Rules.mathResolve` / `mathSuppressRule`, the
+    mirror of REFCORR6 `expandSource`): no placeholder is the plain
+    body; a depth/fuel guard returns the bytes unchanged; an unknown
+    id or a cyclic id stays literal; a token with a recorded source
+    span expands (the reference side table; the mirror reconstructs
+    Url, Email and Code and falls back to text-then-href for every
+    other rule); a token with no span takes that fallback; a Freelink,
+    Raw, Newline or Image token at any depth empties the whole body.
+    Suppression short-circuits to a single class. The other placeholder
+    kinds compose, as Url's modifiers do.
+
+  Two recorded dispositions are non-classes, never constructors.
+  Code's `Text_Highlighter` arm (a type in the fourteen-name list) is
+  the R4.7 external boundary: `codeShapeOf` returns `none` there.
+  Math's PNG-exists arm is the R4.8 unreachable boundary:
+  `renderMath` is only the unsupported block or the fossil block.
+  The harness `css_filename` conf is unset, so Code's filename prefix
+  is dead. `equationsArray` is written after the guard and is not a
+  render branch; Footnote's read of it is the dead read already
+  recorded by the notes lane.
+
+  Completeness over this decision structure is the predecessor
+  argument: membership is decidable, every class a shape yields is
+  declared, every shape yields at least one class, and every declared
+  class has a representable witness. `cm_classification_complete`
+  bundles those three. The real-input map `cmShapeOf` is total on
+  `cmInputInFamily` (Code tokens whose type is outside the highlighter
+  list, every Math input, every Mathinline walk).
+
+  No sorry and no sorryAx. Audit lines are staged in
+  coverage-codemath-audit-block.txt (Main.lean is not edited).
+-/
+
+import LeanFtml.ServingRules
+import LeanFtml.Inline1Rules
+
+namespace LeanFtml
+
+/-! ## The class enumeration -/
+
+/-- One branch class per decision the three reference rules take on
+    an input that is inside the family. The highlighter boundary and
+    the real-LaTeX path are not constructors. -/
+inductive CodemathClass where
+  /- Code.php token, harness css* unset, type outside the fourteen. -/
+  | codePlain | codeEmpty
+  /- Code.php process, REFCORR6: group 3 outside the claimed span. -/
+  | codeTrailWs | codeTrailEnd
+  /- Math.php process + token, C-SUSPECT-SERVING-1. -/
+  | mathFatal | mathTypeAbsent | mathTypeValid | mathTypeInvalid
+  /- Mathinline.php expandSource, REFCORR6. -/
+  | miPlain | miDepth | miUnknown | miCycle | miSource | miFallback
+  | miSuppressFreelink | miSuppressRaw | miSuppressNewline | miSuppressImage
+  | miSuppressDate
+  deriving DecidableEq, Repr
+
+/-- The declared class set, in reference rule order and then in the
+    order of the branches in each PHP body. -/
+def cmAllClasses : List CodemathClass :=
+  [ .codePlain, .codeEmpty, .codeTrailWs, .codeTrailEnd,
+    .mathFatal, .mathTypeAbsent, .mathTypeValid, .mathTypeInvalid,
+    .miPlain, .miDepth, .miUnknown, .miCycle, .miSource, .miFallback,
+    .miSuppressFreelink, .miSuppressRaw, .miSuppressNewline,
+    .miSuppressImage, .miSuppressDate ]
+
+theorem cmAllClasses_nodup : cmAllClasses.Nodup := by decide
+
+theorem cmAllClasses_length : cmAllClasses.length = 19 := by decide
+
+/-! ## Source shapes -/
+
+/-- Code's token outcome after the trim, for a type the highlighter
+    does not claim. -/
+inductive CodeBodyKind where
+  | plain | empty
+  deriving DecidableEq, Repr
+
+/-- Code's group-3 alternative: a whitespace byte, or the empty `$`. -/
+inductive CodeTrailKind where
+  | ws | atEnd
+  deriving DecidableEq, Repr
+
+/-- The two independent Code axes. A highlighter type is not a shape. -/
+structure CodeShape where
+  body : CodeBodyKind
+  trail : CodeTrailKind
+  deriving DecidableEq, Repr
+
+/-- Math's exclusive cascade: the guard, then the type key. -/
+inductive MathKind where
+  | fatal | absent | valid | invalid
+  deriving DecidableEq, Repr
+
+/-- One placeholder's decision in `expandSource`, in the reference's
+    test order (unknown, cycle, the four suppress names, source span,
+    option fallback). -/
+inductive MiPhKind where
+  | unknown | cycle | source | fallback
+  | supFree | supRaw | supNl | supImage | supDate
+  deriving DecidableEq, Repr
+
+/-- Mathinline's outer guard, the no-placeholder body, or the walk. -/
+inductive MiShape where
+  | depthCap | plain | walk (phs : List MiPhKind)
+  deriving DecidableEq, Repr
+
+/-- The family's shape space. -/
+inductive CodemathShape where
+  | code (s : CodeShape)
+  | math (k : MathKind)
+  | mathinline (s : MiShape)
+  deriving DecidableEq, Repr
+
+/-! ## Decision functions -/
+
+def codeBranches (s : CodeShape) : List CodemathClass :=
+  (match s.body with
+    | .plain => [CodemathClass.codePlain]
+    | .empty => [CodemathClass.codeEmpty]) ++
+  (match s.trail with
+    | .ws => [CodemathClass.codeTrailWs]
+    | .atEnd => [CodemathClass.codeTrailEnd])
+
+def mathBranches : MathKind → List CodemathClass
+  | .fatal => [.mathFatal]
+  | .absent => [.mathTypeAbsent]
+  | .valid => [.mathTypeValid]
+  | .invalid => [.mathTypeInvalid]
+
+def miPhClass : MiPhKind → CodemathClass
+  | .unknown => .miUnknown
+  | .cycle => .miCycle
+  | .source => .miSource
+  | .fallback => .miFallback
+  | .supFree => .miSuppressFreelink
+  | .supRaw => .miSuppressRaw
+  | .supNl => .miSuppressNewline
+  | .supImage => .miSuppressImage
+  | .supDate => .miSuppressDate
+
+def miIsSuppress : MiPhKind → Bool
+  | .supFree | .supRaw | .supNl | .supImage | .supDate => true
+  | _ => false
+
+/-- The walk: the first suppress name empties the whole body and is
+    the only class; otherwise each placeholder contributes its class.
+    An empty walk is the plain body. -/
+def miClassifyWalk (phs : List MiPhKind) : List CodemathClass :=
+  match phs.find? miIsSuppress with
+  | some k => [miPhClass k]
+  | none =>
+      match phs with
+      | [] => [.miPlain]
+      | _ => phs.map miPhClass
+
+def miBranches : MiShape → List CodemathClass
+  | .depthCap => [.miDepth]
+  | .plain => [.miPlain]
+  | .walk phs => miClassifyWalk phs
+
+def cmClassify : CodemathShape → List CodemathClass
+  | .code s => codeBranches s
+  | .math k => mathBranches k
+  | .mathinline s => miBranches s
+
+/-! ## Decidability, completeness, exhaustiveness, exclusivity -/
+
+def cmClassMemDecidable (s : CodemathShape) (c : CodemathClass) :
+    Decidable (c ∈ cmClassify s) := inferInstance
+
+theorem cmAllClasses_mem (c : CodemathClass) : c ∈ cmAllClasses := by
+  cases c <;> decide
+
+theorem cm_classify_sound (s : CodemathShape) {c : CodemathClass}
+    (_h : c ∈ cmClassify s) : c ∈ cmAllClasses :=
+  cmAllClasses_mem c
+
+theorem miClassifyWalk_nonempty (phs : List MiPhKind) :
+    ∃ c, c ∈ miClassifyWalk phs := by
+  cases hf : phs.find? miIsSuppress with
+  | some k =>
+      exact ⟨miPhClass k, by simp [miClassifyWalk, hf]⟩
+  | none =>
+      cases phs with
+      | nil => exact ⟨.miPlain, by simp [miClassifyWalk, hf]⟩
+      | cons a as =>
+          have hwalk : miClassifyWalk (a :: as) = (a :: as).map miPhClass := by
+            simp [miClassifyWalk, hf]
+          refine ⟨miPhClass a, ?_⟩
+          simp [hwalk]
+
+theorem cm_classify_nonempty (s : CodemathShape) : ∃ c, c ∈ cmClassify s := by
+  cases s with
+  | code cs =>
+      rcases cs with ⟨b, t⟩
+      cases b with
+      | plain => exact ⟨.codePlain, by cases t <;> decide⟩
+      | empty => exact ⟨.codeEmpty, by cases t <;> decide⟩
+  | math k =>
+      cases k with
+      | fatal => exact ⟨.mathFatal, by decide⟩
+      | absent => exact ⟨.mathTypeAbsent, by decide⟩
+      | valid => exact ⟨.mathTypeValid, by decide⟩
+      | invalid => exact ⟨.mathTypeInvalid, by decide⟩
+  | mathinline m =>
+      cases m with
+      | depthCap => exact ⟨.miDepth, by decide⟩
+      | plain => exact ⟨.miPlain, by decide⟩
+      | walk phs =>
+          obtain ⟨c, hc⟩ := miClassifyWalk_nonempty phs
+          exact ⟨c, by simpa [cmClassify, miBranches] using hc⟩
+
+def cmWitness : CodemathClass → CodemathShape
+  | .codePlain => .code ⟨.plain, .atEnd⟩
+  | .codeEmpty => .code ⟨.empty, .atEnd⟩
+  | .codeTrailWs => .code ⟨.plain, .ws⟩
+  | .codeTrailEnd => .code ⟨.empty, .atEnd⟩
+  | .mathFatal => .math .fatal
+  | .mathTypeAbsent => .math .absent
+  | .mathTypeValid => .math .valid
+  | .mathTypeInvalid => .math .invalid
+  | .miPlain => .mathinline .plain
+  | .miDepth => .mathinline .depthCap
+  | .miUnknown => .mathinline (.walk [.unknown])
+  | .miCycle => .mathinline (.walk [.cycle])
+  | .miSource => .mathinline (.walk [.source])
+  | .miFallback => .mathinline (.walk [.fallback])
+  | .miSuppressFreelink => .mathinline (.walk [.supFree])
+  | .miSuppressRaw => .mathinline (.walk [.supRaw])
+  | .miSuppressNewline => .mathinline (.walk [.supNl])
+  | .miSuppressImage => .mathinline (.walk [.supImage])
+  | .miSuppressDate => .mathinline (.walk [.supDate])
+
+theorem cm_witness_classify (c : CodemathClass) :
+    c ∈ cmClassify (cmWitness c) := by
+  cases c <;> decide
+
+theorem cm_classes_exhaustive (c : CodemathClass) :
+    c ∈ cmAllClasses ↔ ∃ s : CodemathShape, c ∈ cmClassify s := by
+  constructor
+  · intro _
+    exact ⟨cmWitness c, cm_witness_classify c⟩
+  · intro h
+    obtain ⟨s, hs⟩ := h
+    exact cm_classify_sound s hs
+
+theorem cm_classification_complete :
+    (∀ s c, (c ∈ cmClassify s) ∨ ¬ (c ∈ cmClassify s)) ∧
+    (∀ s : CodemathShape, ∃ c, c ∈ cmAllClasses ∧ c ∈ cmClassify s) ∧
+    (∀ c : CodemathClass, c ∈ cmAllClasses →
+      ∃ s : CodemathShape, c ∈ cmClassify s) := by
+  refine ⟨?_, ?_, ?_⟩
+  · intro s c
+    by_cases h : c ∈ cmClassify s
+    · exact Or.inl h
+    · exact Or.inr h
+  · intro s
+    obtain ⟨c, hc⟩ := cm_classify_nonempty s
+    exact ⟨c, cm_classify_sound s hc, hc⟩
+  · intro c _
+    exact ⟨cmWitness c, cm_witness_classify c⟩
+
+theorem cm_exclusive_singleton {s : CodemathShape} {c1 c2 : CodemathClass}
+    (h1 : cmClassify s = [c1]) (h2 : cmClassify s = [c2]) : c1 = c2 := by
+  rw [h1] at h2
+  exact (List.cons.inj h2).1
+
+theorem code_body_exclusive (s : CodeShape) :
+    ((.codePlain ∈ codeBranches s) ∨ (.codeEmpty ∈ codeBranches s)) ∧
+    ¬ ((.codePlain ∈ codeBranches s) ∧ (.codeEmpty ∈ codeBranches s)) := by
+  rcases s with ⟨b, t⟩
+  cases b <;> cases t <;> decide
+
+theorem code_trail_exclusive (s : CodeShape) :
+    ((.codeTrailWs ∈ codeBranches s) ∨ (.codeTrailEnd ∈ codeBranches s)) ∧
+    ¬ ((.codeTrailWs ∈ codeBranches s) ∧ (.codeTrailEnd ∈ codeBranches s)) := by
+  rcases s with ⟨b, t⟩
+  cases b <;> cases t <;> decide
+
+theorem math_kind_single (k : MathKind) : ∃ c, mathBranches k = [c] := by
+  cases k with
+  | fatal => exact ⟨.mathFatal, rfl⟩
+  | absent => exact ⟨.mathTypeAbsent, rfl⟩
+  | valid => exact ⟨.mathTypeValid, rfl⟩
+  | invalid => exact ⟨.mathTypeInvalid, rfl⟩
+
+theorem mi_suppress_short_circuit (phs : List MiPhKind) (k : MiPhKind)
+    (h : phs.find? miIsSuppress = some k) :
+    miClassifyWalk phs = [miPhClass k] := by
+  simp [miClassifyWalk, h]
+
+/-! ## The decision functions on real inputs -/
+
+/-- A Code type the vendored highlighter would claim. Not a class. -/
+def codeInBoundary (opts : OptMap) : Bool :=
+  codeLangs.contains (codeType opts)
+
+def codeShapeOf (opts : OptMap) (trailWs : Bool) : Option CodeShape :=
+  if codeInBoundary opts then none
+  else
+    let body := wikidotTrimCodeBody (optStrBytes opts "text".toList)
+    some {
+      body := if phpTrimBytes body == [] then .empty else .plain
+      trail := if trailWs then .ws else .atEnd }
+
+/-- Math's cascade on the attribute group and the raw body, the same
+    tests as `mathProcess` (trim, then the guard, then the type key). -/
+def mathKindOf (g2 content : List Nat) : MathKind :=
+  let content := trimBytes content
+  if mathGuard content then .fatal
+  else
+    match lookupB (getAttrsBytes g2) (litBytes "type") with
+    | none => .absent
+    | some v => if mathTypeValid v then .valid else .invalid
+
+/-- `expandSource`'s per-placeholder tests, in order. `present = false`
+    is a missing token id. -/
+def miPhOf (present : Bool) (rule : String) (hasSource seen : Bool) : MiPhKind :=
+  if !present then .unknown
+  else if seen then .cycle
+  else if rule == "Freelink" then .supFree
+  else if rule == "Raw" then .supRaw
+  else if rule == "Newline" then .supNl
+  else if rule == "Image" then .supImage
+  else if rule == "Date" then .supDate
+  else if hasSource then .source
+  else .fallback
+
+inductive CmInput where
+  | code (opts : OptMap) (trailWs : Bool)
+  | math (g2 content : List Nat)
+  | mi (s : MiShape)
+
+def cmInputInFamily : CmInput → Bool
+  | .code opts _ => !codeInBoundary opts
+  | .math _ _ => true
+  | .mi _ => true
+
+def cmShapeOf : CmInput → Option CodemathShape
+  | .code opts tw => (codeShapeOf opts tw).map CodemathShape.code
+  | .math g2 content => some (.math (mathKindOf g2 content))
+  | .mi s => some (.mathinline s)
+
+def cmClassOf (i : CmInput) : List CodemathClass :=
+  match cmShapeOf i with
+  | some s => cmClassify s
+  | none => []
+
+def cmMemClass (c : CodemathClass) (i : CmInput) : Bool :=
+  decide (c ∈ cmClassOf i)
+
+theorem cm_shapeOf_isSome (i : CmInput) (h : cmInputInFamily i = true) :
+    (cmShapeOf i).isSome = true := by
+  cases i with
+  | math _ _ => simp [cmShapeOf]
+  | mi _ => simp [cmShapeOf]
+  | code opts tw =>
+      simp only [cmInputInFamily] at h
+      have hbnd : codeInBoundary opts = false := by
+        cases hb : codeInBoundary opts <;> simp_all
+      simp [cmShapeOf, codeShapeOf, hbnd]
+
+theorem cm_classOf_complete (i : CmInput) (h : cmInputInFamily i = true) :
+    ∃ c, c ∈ cmClassOf i := by
+  unfold cmClassOf
+  cases hshape : cmShapeOf i with
+  | none =>
+      have hs : (cmShapeOf i).isSome = true := cm_shapeOf_isSome i h
+      rw [hshape] at hs
+      simp at hs
+  | some s =>
+      exact cm_classify_nonempty s
+
+theorem cm_classOf_sound (i : CmInput) {c : CodemathClass}
+    (h : c ∈ cmClassOf i) : c ∈ cmAllClasses := by
+  unfold cmClassOf at h
+  cases hshape : cmShapeOf i with
+  | none => simp [hshape] at h
+  | some s =>
+      simp [hshape] at h
+      exact cm_classify_sound s h
+
+theorem cm_classOf_exclusive (i : CmInput) (c1 c2 : CodemathClass)
+    (h1 : cmClassOf i = [c1]) (h2 : cmClassOf i = [c2]) : c1 = c2 := by
+  rw [h1] at h2
+  exact (List.cons.inj h2).1
+
+theorem cm_memClass_complete (i : CmInput) (h : cmInputInFamily i = true) :
+    ∃ c, cmMemClass c i = true := by
+  obtain ⟨c, hc⟩ := cm_classOf_complete i h
+  refine ⟨c, ?_⟩
+  simp [cmMemClass, hc]
+
+theorem cm_memClass_sound (c : CodemathClass) (i : CmInput)
+    (h : cmMemClass c i = true) : c ∈ cmAllClasses := by
+  simp [cmMemClass] at h
+  exact cm_classOf_sound i h
+
+/-! ## Non-classes: highlighter, filename, real LaTeX -/
+
+theorem cm_code_langs_fourteen : codeLangs.length = 14 := by decide
+
+theorem cm_highlighter_nonclass (opts : OptMap) (tw : Bool)
+    (h : codeInBoundary opts = true) : codeShapeOf opts tw = none := by
+  simp [codeShapeOf, h]
+
+/-- The fourteen-name boundary on a concrete token: `Python` lowers
+    into the list, so the input is not a class. -/
+theorem cm_code_python_boundary :
+    codeShapeOf
+      [("text".toList, OptVal.str "x".toList),
+       ("attr".toList, OptVal.map [("type".toList, OptVal.str "Python".toList)])]
+      false = none := rfl
+
+/-- Harness `css_filename` is null, and `renderCode` never reads a
+    filename. A plain token with `filename` renders as the same token
+    without it. -/
+theorem cm_code_filename_dead :
+    renderCode
+      [("text".toList, OptVal.str "x".toList),
+       ("attr".toList, OptVal.map
+         [("type".toList, OptVal.str []),
+          ("filename".toList, OptVal.str "a.txt".toList)])] =
+    renderCode
+      [("text".toList, OptVal.str "x".toList),
+       ("attr".toList, OptVal.map [("type".toList, OptVal.str [])])] := rfl
+
+/-- The PNG-exists arm is not a branch of the harness mirror: every
+    option map renders as the unsupported block or the fossil block. -/
+theorem cm_math_png_nonclass (opts : OptMap) :
+    renderMath opts =
+      (let ty := optStrBytes opts "type".toList
+       if !mathTypeValid ty then
+         litBytes "<div class=\"error-block\">Unsupported math " ++
+         litBytes "environment \"" ++ ty ++ litBytes "\"</div>"
+       else
+         litBytes "<div class=\"error-block\">The equation has not " ++
+         litBytes "been processed correctly. Most prabably it has " ++
+         litBytes "syntax error(s).</div>") := rfl
+
+/-! ## Code trailing-whitespace claim -/
+
+/-- The claimed span: the match with group 3 removed, which is what
+    `substr($matches[0], 0, strlen($matches[0]) - strlen($matches[3]))`
+    returns. -/
+def cmClaimed (whole g3 : List Nat) : List Nat :=
+  whole.take (whole.length - g3.length)
+
+theorem cm_claimed_at_end (whole : List Nat) :
+    cmClaimed whole [] = whole := by
+  rw [cmClaimed, List.length_nil, Nat.sub_zero, List.take_length]
+
+theorem cm_claimed_shorter (whole g3 : List Nat)
+    (hg : 0 < g3.length) (hle : g3.length ≤ whole.length) :
+    (cmClaimed whole g3).length < whole.length := by
+  rw [cmClaimed, List.length_take]
+  have hsub : whole.length - g3.length ≤ whole.length := Nat.sub_le _ _
+  rw [Nat.min_eq_left hsub]
+  exact Nat.sub_lt (Nat.lt_of_lt_of_le hg hle) hg
+
+/-- Group 3, when it is the suffix the regex consumed, partitions the
+    match with the claimed span. `n` is that suffix length. -/
+theorem cm_claimed_partition (whole : List Nat) (n : Nat) (hn : n ≤ whole.length) :
+    cmClaimed whole (whole.drop (whole.length - n)) ++
+      whole.drop (whole.length - n) = whole := by
+  have hg : (whole.drop (whole.length - n)).length = n := by
+    rw [List.length_drop]
+    exact Nat.sub_sub_self hn
+  rw [cmClaimed, hg]
+  exact List.take_append_drop (whole.length - n) whole
+
+theorem cm_code_trail_space :
+    cmClaimed (litBytes "[[code]]x[[/code]] ") [32] =
+      litBytes "[[code]]x[[/code]]" := rfl
+
+theorem cm_code_empty_shape :
+    codeShapeOf
+      [("text".toList, OptVal.str "".toList),
+       ("attr".toList, OptVal.map [("type".toList, OptVal.str [])])] false =
+      some ⟨.empty, .atEnd⟩ := rfl
+
+theorem cm_code_plain_shape :
+    codeShapeOf
+      [("text".toList, OptVal.str "x".toList),
+       ("attr".toList, OptVal.map [("type".toList, OptVal.str [])])] true =
+      some ⟨.plain, .ws⟩ := rfl
+
+/-! ## Math type validation and the counter -/
+
+theorem cm_math_fatal_input :
+    mathKindOf [] (litBytes "\\input{a}") = .fatal := rfl
+
+theorem cm_math_absent_input :
+    mathKindOf [] (litBytes "x") = .absent := rfl
+
+theorem cm_math_valid_gather :
+    mathKindOf (litBytes "type=\"gather\"") (litBytes "x") = .valid := rfl
+
+theorem cm_math_invalid_empty :
+    mathKindOf (litBytes "type=\"\"") (litBytes "x") = .invalid := rfl
+
+theorem cm_math_invalid_upper :
+    mathKindOf (litBytes "type=\"ALIGN\"") (litBytes "x") = .invalid := rfl
+
+/-- The counter starts at 1 on a fresh document and moves to 2, and
+    the token carries id 1. The type key was absent, so the stored
+    type is the `align` default. -/
+theorem cm_counter_starts :
+    (mathProcess none [] (litBytes "x") {}).2.mathId = some 2 ∧
+    (match (mathProcess none [] (litBytes "x") {}).1 with
+      | some e => omGet e.opts "id".toList
+      | none => none) = some (OptVal.int 1) ∧
+    (match (mathProcess none [] (litBytes "x") {}).1 with
+      | some e => omGet e.opts "type".toList
+      | none => none) = some (OptVal.str "align".toList) := by
+  refine ⟨rfl, rfl, rfl⟩
+
+/-- An invalid type still consumes an id. The next block, with no
+    type key, receives id 2 and the `align` default. -/
+theorem cm_counter_on_invalid :
+    let d1 := (mathProcess none (litBytes "type=\"ALIGN\"") (litBytes "a") {}).2
+    let r2 := mathProcess none [] (litBytes "b") d1
+    d1.mathId = some 2 ∧
+    (match r2.1 with
+      | some e => omGet e.opts "id".toList
+      | none => none) = some (OptVal.int 2) ∧
+    (match r2.1 with
+      | some e => omGet e.opts "type".toList
+      | none => none) = some (OptVal.str "align".toList) := by
+  refine ⟨rfl, rfl, rfl⟩
+
+/-- The guard throws no token, but the counter has already moved,
+    and the equations map is not written. -/
+theorem cm_counter_on_fatal :
+    (mathProcess none [] (litBytes "\\input{a}") {}).1 = none ∧
+    (mathProcess none [] (litBytes "\\input{a}") {}).2.mathId = some 2 ∧
+    (mathProcess none [] (litBytes "\\input{a}") {}).2.equations = [] := by
+  refine ⟨rfl, rfl, rfl⟩
+
+/-! ## Mathinline expansion and the four-rule set -/
+
+theorem cm_suppress_freelink : mathSuppressRule "Freelink" = true := rfl
+theorem cm_suppress_raw : mathSuppressRule "Raw" = true := rfl
+theorem cm_suppress_newline : mathSuppressRule "Newline" = true := rfl
+theorem cm_suppress_image : mathSuppressRule "Image" = true := rfl
+theorem cm_suppress_url_no : mathSuppressRule "Url" = false := rfl
+
+/-- REFCORR8 C-R5-P2-4: restated from `cm_suppress_four` (the REFCORR6
+    four-rule set) because live suppresses the whole formula for a Date
+    token too; the mirror suppression set is now five rules. -/
+theorem cm_suppress_five (rule : String) :
+    mathSuppressRule rule = true ↔
+      rule = "Freelink" ∨ rule = "Raw" ∨ rule = "Newline" ∨
+      rule = "Image" ∨ rule = "Date" := by
+  simp [mathSuppressRule, Bool.or_eq_true, beq_iff_eq, or_assoc]
+
+theorem cm_suppress_before_source (rule : String) (hasSource : Bool)
+    (h : mathSuppressRule rule = true) :
+    miIsSuppress (miPhOf true rule hasSource false) = true := by
+  unfold mathSuppressRule at h
+  cases h1 : rule == "Freelink" <;>
+    cases h2 : rule == "Raw" <;>
+    cases h3 : rule == "Newline" <;>
+    cases h4 : rule == "Image" <;>
+    cases h5 : rule == "Date" <;>
+    simp_all [miPhOf, miIsSuppress]
+
+theorem cm_mi_absent_unknown (rule : String) (hasSource seen : Bool) :
+    miPhOf false rule hasSource seen = .unknown := by
+  simp [miPhOf]
+
+theorem cm_mi_depth_beats_suppress :
+    mathResolveGo (phBytes 0)
+      [{ rule := "Newline", opts := [] }] [] 0 = phBytes 0 := rfl
+
+theorem cm_mi_unknown_keeps :
+    mathResolve (phBytes 7) [] = phBytes 7 := rfl
+
+theorem cm_mi_cycle_keeps :
+    mathResolveGo (phBytes 0)
+      [{ rule := "Url", opts := [("text".toList, OptVal.str "z".toList)] }]
+      [0] 5 = phBytes 0 := rfl
+
+theorem cm_mi_newline_suppress :
+    mathResolve (phBytes 0) [{ rule := "Newline", opts := [] }] = [] := rfl
+
+theorem cm_mi_freelink_suppress :
+    mathResolve (phBytes 0) [{ rule := "Freelink", opts := [] }] = [] := rfl
+
+theorem cm_mi_raw_suppress :
+    mathResolve (phBytes 0) [{ rule := "Raw", opts := [] }] = [] := rfl
+
+theorem cm_mi_image_suppress :
+    mathResolve (phBytes 0) [{ rule := "Image", opts := [] }] = [] := rfl
+
+/-- REFCORR8 C-R5-P2-4: a Date token suppresses the whole formula, as
+    live renders `[[$x [[date 0]] y$]]` to `$$`. -/
+theorem cm_mi_date_suppress :
+    mathResolve (phBytes 0) [{ rule := "Date", opts := [] }] = [] := rfl
+
+theorem cm_mi_source_url :
+    mathResolve (phBytes 0)
+      [{ rule := "Url", opts :=
+         [("text".toList, OptVal.str "http://x".toList)] }] =
+      litBytes "http://x" := rfl
+
+theorem cm_mi_fallback_text :
+    mathResolve (phBytes 0)
+      [{ rule := "Rawold", opts :=
+         [("text".toList, OptVal.str "zz".toList)] }] =
+      litBytes "zz" := rfl
+
+end LeanFtml

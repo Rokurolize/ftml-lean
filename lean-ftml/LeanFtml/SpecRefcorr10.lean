@@ -239,13 +239,12 @@ theorem refcorr10_tableadv_data_dot_key :
     advDataKeyOk (litBytes "DATA-FOO.BAR") = false := by
   decide
 
-/- C-R5C-P3-2: every nested module opener owns one closer and consumption runs through the last closer, leaving no residual literal closer. -/
+/- C-R5C-P3-2 (R10-MODFIX live-correct narrowing): only the inline nested-opener newline is inserted; the outer residual closer is retained as live serves it. The former consumeModuleClosers pin was retired with that helper. -/
 theorem refcorr10_module_nested_consumption :
-    (match moduleMatch (litBytes "[[module a]]\n[[module b]]INNER[[/module]]\n[[/module]]") [] with
-     | some (_, rest', t1) => rest'.isEmpty && t1.length == 1
-     | none => false) = true ∧
-    consumeModuleClosers 1 (litBytes " B [[/module]] C") = litBytes " C" := by
-  decide
+    moduleMatch (litBytes "[[module a]]\n[[module b]]INNER[[/module]]\n[[/module]]") [] =
+      some (litBytes "[[module654 a]]\n[[module b]]\nINNER[[/module]]",
+        litBytes "\n[[/module]]", []) := by
+  rfl
 
 /- C-R5C-S1-2: the general surplus-closer formula is f(c)=c for c in {2,3} and c-4 for c>=4, with re-association when a same-line later 4+-run follows a short run; the three-closer run before text is the round-5c witness. -/
 theorem refcorr10_raw_surplus_closer_formula :

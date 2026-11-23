@@ -147,20 +147,6 @@ def lookupB : List (List Nat × List Nat) → List Nat → Option (List Nat)
   | [], _ => none
   | (k, v) :: rest, key => if k == key then some v else lookupB rest key
 
-/-- REFCORR9 R9-C: PHP `strtolower` on attribute-name bytes, ASCII
-    case folding only (the Math attribute names are ASCII). -/
-def lowerAsciiB (bs : List Nat) : List Nat :=
-  bs.map (fun b => if 65 ≤ b && b ≤ 90 then b + 32 else b)
-
-/-- REFCORR9 R9-C: an attribute key which ASCII-folds to `type` but is
-    not the exact lower-case spelling (`TYPE`, `Type`, `tYpE`, ...).
-    Live's case-sensitive lookup misses every such spelling and takes
-    the fossil `equation` fallback; this generalizes the REFCORR8
-    dedicated upper-case `TYPE` branch without moving the lower-case
-    value lookup, the absent-type `align` default or the counter. -/
-def isTypeVariantKey (k : List Nat) : Bool :=
-  k != (litBytes "type") && lowerAsciiB k == (litBytes "type")
-
 /-- The base class's `getAttrs` on bytes, returning the raw byte
     pairs (callers turn values into option values, since Iframe
     substitutes null for missing keys, Date copies every pair into
@@ -723,7 +709,8 @@ def dateRule (st : ParseState) : ParseState :=
     matched k chunks, process() sees the k-th chunk alone, not
     the concatenation (the battery's type-not-last case: with
     `type="align" foo="bar"` the visible group is ` foo="bar"`,
-    the type key is absent, and the type defaults to align). -/
+    the type key is absent, and the type defaults to the `equation`
+    fallback after REFCORR11 C-R5D-P2-4). -/
 def mathAttrChunks (s : List Nat) : List (Nat × List Nat) :=
   go s 0 [(0, [])] (s.length + 1)
 where
@@ -907,13 +894,15 @@ def eqSet (m : List (List Char × Nat)) (k : List Char) (v : Nat) :
     so a throwing call still moves `mathId`; the equations map is
     written only after the guard passes. Returns the token (or
     `none` when the guard fires) and the new document state. The
-    type is getAttrs' `type` value VERBATIM when that key is
-    present (REFCORR3 C-SUSPECT-SERVING-1: no case-folding and no
+    type is getAttrs' exact lower-case `type` value VERBATIM when that
+    key is present (REFCORR3 C-SUSPECT-SERVING-1: no case-folding and no
     whitelist — an empty or upper-case value is preserved here and
-    rejected later by the renderer); an ABSENT key defaults to
-    `align`. The fossil `equation` fallback is selected by any case
-    variant of the attribute NAME other than the exact lower-case
-    spelling (REFCORR9 R9-C). -/
+    rejected later by the renderer). REFCORR11 C-R5D-P2-4 retires the
+    REFCORR3 absent-type default `align`: a missing exact lower-case
+    `type` key now always selects the fossil `equation` fallback,
+    whether genuinely absent (`[[math]]`) or present only as a case
+    variant of the NAME (`TYPE`, `tYpE`, ...) — every cached live Math
+    capture serves the `equation` envelope with the counter. -/
 def mathProcess (g1 : Option (List Nat)) (g2 : List Nat)
     (g3 : List Nat) (doc : DocState) : Option TokenEntry × DocState :=
   let id := doc.mathId.getD 1
@@ -923,23 +912,17 @@ def mathProcess (g1 : Option (List Nat)) (g2 : List Nat)
   if mathGuard content then (none, doc1)
   else
     let attrs := getAttrsBytes g2
-    -- REFCORR8 C-R5-P2-3 / REFCORR9 R9-C: the exact lower-case `type`
-    -- key wins and its value is kept verbatim. When that key is absent
-    -- but any other case variant of the NAME is present (`TYPE`, `Type`,
-    -- `tYpE`, `TyPe`, ... as in `[[math a tYpE="align"]]`), live's
-    -- case-sensitive lookup misses it and takes the fossil fallback
-    -- `equation`, serving the equation envelope with the counter. A
-    -- genuinely absent type key still defaults to `align` (REFCORR3).
-    -- The stray positional label `a` and the counter increment are
-    -- untouched, so the token wire shape and the REFCORR3 valid/invalid
-    -- value cases are preserved.
+    -- REFCORR8 C-R5-P2-3 / REFCORR9 R9-C / REFCORR11 C-R5D-P2-4: the
+    -- exact lower-case `type` key wins and its value is kept verbatim.
+    -- Every other spelling of the NAME (`TYPE`, `Type`, `tYpE`, ...) and
+    -- a genuinely absent key are alike to live's case-sensitive lookup,
+    -- so they all take the fossil `equation` fallback, serving the
+    -- equation envelope with the counter. The stray positional label `a`
+    -- and the counter increment are untouched, so the token wire shape
+    -- and the REFCORR3 valid/invalid value cases are preserved.
     let tyVal : OptVal := match lookupB attrs (litBytes "type") with
       | some v => textVal v
-      | none =>
-          if attrs.any (fun kv => isTypeVariantKey kv.1) then
-            OptVal.str "equation".toList
-          else
-            OptVal.str "align".toList
+      | none => OptVal.str "equation".toList
     let entry : TokenEntry := { rule := "Math", opts :=
       [("label".toList, textVal label),
        ("content".toList, textVal content),
@@ -1043,12 +1026,23 @@ theorem mathProcess_guard_example :
     (mathProcess none [] (litBytes "a \\input{b}") {}).2.mathId
       = some 2 := ⟨rfl, rfl⟩
 
-/-- REFCORR3 C-SUSPECT-SERVING-1: with no attribute group at all the
-    type option is the new `align` default (not the old `equation`). -/
-theorem mathProcess_absent_type_defaults_align :
+/-- REFCORR11 C-R5D-P2-4: with no attribute group at all the type option
+    is the fossil `equation` fallback (REFCORR3's `align` default is
+    retired); the counter still advances exactly once. -/
+theorem mathProcess_absent_type_defaults_equation :
     (match (mathProcess none [] (litBytes "x") {}).1 with
      | some e => omGet e.opts "type".toList
-     | none => none) = some (OptVal.str "align".toList) := rfl
+     | none => none) = some (OptVal.str "equation".toList) := rfl
+
+/-- REFCORR11 C-R5D-P2-4: a labelled opener with no type key takes the
+    same `equation` fallback, and the label survives unchanged. -/
+theorem mathProcess_labelled_absent_type_defaults_equation :
+    (match (mathProcess (some (litBytes "E")) [] (litBytes "x") {}).1 with
+     | some e => omGet e.opts "type".toList
+     | none => none) = some (OptVal.str "equation".toList) ∧
+    (match (mathProcess (some (litBytes "E")) [] (litBytes "x") {}).1 with
+     | some e => omGet e.opts "label".toList
+     | none => none) = some (OptVal.str "E".toList) := ⟨rfl, rfl⟩
 
 /-- REFCORR3 C-SUSPECT-SERVING-1: a present lower-case name outside
     the old two-name whitelist is preserved verbatim; no folding to

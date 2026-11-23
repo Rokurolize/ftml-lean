@@ -106,7 +106,7 @@ theorem refcorr8_freelink_u3000_before_default :
             ("url".toList, OptVal.null),
             ("textFromTitle".toList, OptVal.null)] }] := rfl
 
-/- C-R5-P2-3, conformance-round5-p2/CANDIDATES.md and ref.jsonl line 16: the upper-case TYPE attribute name is missed by the case-sensitive lower-case type lookup and the stored type is the live equation fallback; the REFCORR3 absent-type default align remains true and is deliberately not flipped. -/
+/- C-R5-P2-3, conformance-round5-p2/CANDIDATES.md and ref.jsonl line 16: the upper-case TYPE attribute name is missed by the case-sensitive lower-case type lookup and the stored type is the live equation fallback. At REFCORR8/9 time the REFCORR3 absent-type default align was deliberately not flipped; REFCORR11 C-R5D-P2-4 retires that default on fresh live evidence, so this pin keeps its own truth value (TYPE is still a case variant) while the absent-type default is now equation. -/
 theorem refcorr8_math_upper_TYPE_selects_equation :
     (match (mathProcess (some (litBytes "a")) (litBytes "TYPE=\"align\"") (litBytes "x") {}).1 with
       | some e => omGet e.opts "type".toList

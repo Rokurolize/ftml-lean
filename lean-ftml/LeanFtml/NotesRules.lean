@@ -221,11 +221,20 @@ def stripLiveDroppedControls (bs : List Nat) : List Nat :=
     remainder such as fn-six's `@@` is preserved. -/
 def footnoteProcess (body : List Nat) (doc : DocState)
     (toks : List TokenEntry) : List Nat × List TokenEntry × DocState :=
-  -- REFCORR10 general live rule (replaces the REFCORR8/9 narrow guards).
+  -- REFCORR11 — the live C0-control filter is unconditional, not branch-local:
+  -- purifyHtml drops every byte below 0x20 except TAB 9, LF 10 and CR 13 from
+  -- the emitted body on every shape. PHP trim (and isTrimByte) exclude form
+  -- feed 12, so the old REFCORR10 fallback branch left FF in the stored body
+  -- before a double-LF run or with no authored LF (C-R5D-R3-1 / R3D-F2).
+  -- Drop the class once, before the break decision and the visible projection,
+  -- so both branches store an already-pure body. Empty-Raw placeholders
+  -- (0xFF<id>0xFF) and TAB/LF/CR are untouched, so the single-authored-break
+  -- witness R3D-F3 still keeps its placeholders and renders its <br />.
   let preStrip := trimBytes body
-  let stripped := stripEmptyRawPhNotes preStrip toks
+  let pure := stripLiveDroppedControls preStrip
+  let stripped := stripEmptyRawPhNotes pure toks
   let content :=
-    if hasSingleBreakByte preStrip then stripLiveDroppedControls preStrip
+    if hasSingleBreakByte pure then pure
     else trimBytes stripped
   let id := doc.footnotes.length + 1
   (phBytes toks.length,
@@ -424,11 +433,21 @@ def bibitemProcess (label content : List Nat) (doc : DocState)
     (toks : List TokenEntry) : List Nat × List TokenEntry × DocState :=
   let content' :=
     trimBytes (content.map (fun b => if b == 10 then 32 else b))
+  -- REFCORR11 — apply the same unconditional live C0-control filter the
+  -- footnote branch applies, before the empty-Raw strip and re-trim. purifyHtml
+  -- drops every byte below 0x20 except TAB 9, LF 10 and CR 13 from the emitted
+  -- body on every shape; PHP trim excludes form feed 12, so a FF between two
+  -- empty-Raw placeholders survived REFCORR8 as a non-empty body and separator
+  -- space (C-R5D-R3-2) where live settles an empty entry. The stored bibitems
+  -- state (content') is set below from the unfiltered bytes and stays
+  -- byte-identical, so no compared field is added and only the emitted body
+  -- and the existing 'empty' flag value change.
+  let pure := stripLiveDroppedControls content'
   -- REFCORR8 (C-R5-R3-2): re-trim the visible remainder after the
   -- empty-Raw strip, and emit it as the body; the stored bibitems state
   -- (content') is set above and stays byte-identical, so no compared
   -- field is added and only the existing 'empty' flag value changes.
-  let visible := trimBytes (stripEmptyRawPhNotes content' toks)
+  let visible := trimBytes (stripEmptyRawPhNotes pure toks)
   let id := doc.bibitemIds.length + 1
   let doc1 : DocState := { doc with
     bibitems := bibSet doc.bibitems label content',
@@ -771,6 +790,31 @@ theorem refcorr10_fn_controls_still_fold :
     (footnoteProcess (phBytes 0 ++ litBytes "\n\n" ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes = [[]] ∧
     (footnoteProcess (litBytes "  ") {} r9hEmptyRaw2).2.2.footnotes = [[]] :=
   ⟨rfl, rfl, rfl⟩
+
+/- REFCORR11 pins. The C0-control filter is unconditional, so a form feed on
+   the old branch-local fallback (double-LF run, or no authored LF at all) now
+   folds to an empty stored body exactly as live purifyHtml does. The
+   single-authored-break witness is preserved: the FF is dropped but the
+   placeholder-bearing LF body is still stored, so Newline emits <br />. The
+   bibitem FF between empty-Raw placeholders now emits an empty body and an
+   empty flag, settling the entry as `1.` with no separator space. -/
+theorem refcorr11_fn_formfeed_double_lf_folds :
+    (footnoteProcess (phBytes 0 ++ [12] ++ litBytes "\n\n" ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes = [[]] := by
+  rfl
+
+theorem refcorr11_fn_formfeed_no_break_folds :
+    (footnoteProcess (phBytes 0 ++ [12] ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes = [[]] := by
+  rfl
+
+theorem refcorr11_fn_single_break_still_keeps_placeholders :
+    (footnoteProcess (phBytes 0 ++ [12] ++ litBytes "\n" ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes =
+      [phBytes 0 ++ litBytes "\n" ++ phBytes 1] := by
+  rfl
+
+theorem refcorr11_bib_formfeed_emits_empty_body :
+    (bibitemProcess (litBytes "a") (phBytes 0 ++ [12] ++ phBytes 1) {} r9hEmptyRaw2).1 =
+      phBytes 2 ++ phBytes 3 := by
+  rfl
 
 /-- A Footnoteblock with no collected notes claims nothing and
     replaces its match with nothing. -/

@@ -614,6 +614,17 @@ def hasUfffdBytes : List Nat → Bool
   | _ :: rest => hasUfffdBytes rest
   | [] => false
 
+/-- R11-CONCAT: the discarded C0 control byte set live's purifyHtml
+    removes from residual text: 0x00-0x08, 0x0B, 0x0C, 0x0E-0x1A and
+    0x1C-0x1F. TAB, LF, CR and ESC are kept (ESC is the round-5d D7
+    witness). This is exactly the class the Size rule already uses. -/
+def isDiscardedControl (b : Nat) : Bool :=
+  (b <= 8) || (b >= 11 && b <= 12) ||
+  (b >= 14 && b <= 26) || (b >= 28 && b <= 31)
+
+def stripDiscardedControls (bs : List Nat) : List Nat :=
+  bs.filter (fun b => ! isDiscardedControl b)
+
 /-- Tighten's parse(): delete every newline, fold
     space/tab runs, run the color pass, fold again, run
     the edge pass. The token table is read, never
@@ -621,7 +632,7 @@ def hasUfffdBytes : List Nat → Bool
 def tightenBytes (bs : List Nat) (toks : List TokenEntry) :
     List Nat :=
   let s0 := if hasUfffdBytes bs then bs else stripEmptyRawPh bs toks
-  let s1 := s0.filter (fun b => b != 10)
+  let s1 := stripDiscardedControls (s0.filter (fun b => b != 10))
   let s2 := collapsePad s1
   let s3 := tightenColorPass s2 toks 0
   let s4 := collapsePad s3
@@ -682,6 +693,14 @@ theorem typoUnits_anchor_example :
 
 theorem tighten_example :
     tightenBytes (litBytes "a\nb") [] = litBytes "ab" := rfl
+
+theorem tighten_c0drop_example :
+    tightenBytes (litBytes "alpha" ++ [12] ++ litBytes "bravo") [] =
+      litBytes "alphabravo" := rfl
+
+theorem tighten_esc_kept_example :
+    tightenBytes (litBytes "A" ++ [27] ++ litBytes "B") [] =
+      litBytes "A" ++ [27] ++ litBytes "B" := rfl
 
 theorem tightenColor_example :
     tightenBytes (phBytes 0 ++ litBytes " x")

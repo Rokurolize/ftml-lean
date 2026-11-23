@@ -132,8 +132,11 @@ def isDivOpenerLine (line : List Nat) : Bool :=
     left-to-right scan, exactly the corrected parse()'s loop. At
     a backslash immediately followed by a newline, the pair is
     dropped (the lines join), except when the next line is a
-    standalone div opener, where the backslash is dropped but the
-    newline is kept. Scanning resumes right after the consumed
+    standalone div opener, where the two bytes are replaced by one
+    space: the opener no longer gets a blank-line boundary from the
+    doubled leading newline of Div::process, so the leading text is
+    left bare by paragraphRule (R11-CONCAT). Scanning resumes right
+    after the consumed
     pair, in the original bytes: a backslash or newline newly
     exposed by a removal is not re-examined as a pair (the
     fossil's single-pass `str_replace` shape, which R2 settled
@@ -142,15 +145,34 @@ def concatScan : List Nat → List Nat
   | [] => []
   | 92 :: 10 :: rest =>
       let line := rest.takeWhile (fun b => b != 10)
-      (if isDivOpenerLine line then [10] else []) ++ concatScan rest
+      (if isDivOpenerLine line then [32] else []) ++ concatScan rest
   | b :: rest => b :: concatScan rest
+
+/-- R11-CONCAT: the plain lead texts of the lines joined into a
+    standalone div opener by a backslash continuation, in source
+    order. Mirrors the side channel Concatlines writes in PHP; the
+    lead is the current line's bytes, trimmed of space/tab, since
+    the last newline. -/
+def concatScanLeads : List Nat → List (List Nat) := leadsAux []
+where
+  leadsAux : List Nat → List Nat → List (List Nat)
+    | _, [] => []
+    | cur, 92 :: 10 :: rest =>
+        let line := rest.takeWhile (fun b => b != 10)
+        if isDivOpenerLine line then
+          trimSpaceTab cur :: leadsAux [] rest
+        else leadsAux cur rest
+    | _, 10 :: rest => leadsAux [] rest
+    | cur, b :: rest => leadsAux (cur ++ [b]) rest
 
 /-- The Concatlines rule mirror: a whole-source rewrite claiming
     no token. (The reference's `strpos` early return when no pair
     exists is an optimization; the pass without a pair is the
-    identity, so the mirror needs no guard.) -/
+    identity, so the mirror needs no guard.) R11-CONCAT also records
+    the continued-div lead side channel for the paragraph stage. -/
 def concatlinesRule (st : ParseState) : ParseState :=
-  applyByteRule st (fun src toks => (concatScan src, toks))
+  let out := applyByteRule st (fun src toks => (concatScan src, toks))
+  { out with continuedDivLeads := concatScanLeads (byteForm st.work) }
 
 /-! ## The character tables (extracted from the reference) -/
 /-- The Freelink transliteration table (codepoint to replacement
@@ -1005,16 +1027,22 @@ def transliterate (bs : List Nat) : List Nat :=
     leading `_default:` category on live. It is the Unicode White_Space
     property {U+0009..U+000D, U+0020, U+0085, U+00A0, U+1680, U+2000..U+200A,
     U+2028, U+2029, U+202F, U+205F, U+3000} plus the U+FEFF BOM and the `*`
-    new-tab marker. Every byte shape cached live (09, 0B, 0C, 20, C2 A0,
-    E3 80 80, E2 80 A8, E2 80 A9, E2 80 83, E2 80 89, E2 80 AF, EF BB BF
-    and 2A) is a member; byte-zero NUL is not. The unevidenced White_Space
-    members are admitted only by the principled Unicode property, which is
-    the recorded limitation of adopting a general rule over per-byte patches. -/
+    new-tab marker. REFCORR11 adds exactly two live-evidenced Unicode Cf
+    format characters: U+200B ZERO WIDTH SPACE (C-R5D-P2-1) and U+2060 WORD
+    JOINER (C-R5D-P2-2). Every byte shape cached live (09, 0B, 0C, 20, C2 A0,
+    E3 80 80, E2 80 A8, E2 80 A9, E2 80 83, E2 80 89, E2 80 AF, EF BB BF,
+    2A, E2 80 8B and E2 81 A0) is a member; byte-zero NUL is not. The two new
+    members are the single immediate successors of U+200A and U+205F; sibling
+    format characters with no cached live capture (U+200C ZWNJ, U+200D ZWJ,
+    U+2061..U+2064) are deliberately not admitted. The unevidenced
+    White_Space members are admitted only by the principled Unicode property,
+    which is the recorded limitation of adopting a general rule over
+    per-byte patches. -/
 def isDefaultLeadCp (cp : Nat) : Bool :=
   cp == 0x09 || cp == 0x0A || cp == 0x0B || cp == 0x0C || cp == 0x0D ||
   cp == 0x20 || cp == 0x2A || cp == 0x85 || cp == 0xA0 || cp == 0x1680 ||
-  (0x2000 <= cp && cp <= 0x200A) || cp == 0x2028 || cp == 0x2029 ||
-  cp == 0x202F || cp == 0x205F || cp == 0x3000 || cp == 0xFEFF
+  (0x2000 <= cp && cp <= 0x200B) || cp == 0x2028 || cp == 0x2029 ||
+  cp == 0x202F || cp == 0x205F || cp == 0x2060 || cp == 0x3000 || cp == 0xFEFF
 
 /-- The code point beginning a byte list and the number of bytes it occupies,
     using the same UTF-8 decoding as `utf8Decode`; a byte that does not open
@@ -1067,10 +1095,13 @@ def freelinkProcess (full raw labelRaw : List Nat)
       (match raw with
        | _ :: b2 :: _ => b2 != 32 && b2 != 9
        | _ => false) then (full, toks)
-  else if (findSub (litBytes "##") raw).isSome &&
-      (findSub (litBytes "/#/") raw).isNone then (full, toks)
-  else if 1 < (raw.filter (· == 35)).length &&
-      (findSub (litBytes "/#/") raw).isNone then (full, toks)
+  -- REFCORR11: the old `(findSub "/#/" raw).isNone` exemption let a single
+  -- route carry a second hash byte; live rejects every two-hash target even
+  -- with a /#/ route (foo/#/bar#baz, a/#/b/#/c), while one-route targets
+  -- (foo/#/bar, foo/#/, /#/bar) have exactly one hash and still link. Both
+  -- guards reject uniformly on the raw target.
+  else if (findSub (litBytes "##") raw).isSome then (full, toks)
+  else if 1 < (raw.filter (· == 35)).length then (full, toks)
   else
     -- REFCORR10-HASHROUTE: the no-label display text is the authored target
     -- up to the route or anchor marker. The `/#/` peel takes raw.take i and
@@ -1237,11 +1268,15 @@ theorem concatlinesRule_tokens (st : ParseState) :
 theorem concatScan_join_example :
     concatScan (litBytes "a\\\nb") = litBytes "ab" := rfl
 
-/-- A worked Concatlines div exemption: before a standalone div
-    opener the backslash is dropped but the newline is kept. -/
+/-- A worked Concatlines div exemption (R11-CONCAT): before a
+    standalone div opener the pair joins with one space, and the
+    plain lead text is recorded for the paragraph stage. -/
 theorem concatScan_div_example :
     concatScan (litBytes "a\\\n[[div]]\nb")
-      = litBytes "a\n[[div]]\nb" := rfl
+      = litBytes "a [[div]]\nb" := rfl
+
+theorem concatScanLeads_div_example :
+    concatScanLeads (litBytes "a\\\n[[div]]\nb") = [litBytes "a"] := rfl
 
 /-- A worked toUnixName: the fossil `::` form collapses to one
     colon (the shape the R2 Freelink stage settled for

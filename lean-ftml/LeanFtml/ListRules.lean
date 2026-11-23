@@ -1627,6 +1627,53 @@ def listScoredEmptyItem10 (src0 : List Nat) (toks : List TokenEntry) :
 /-- REFCORR10: PHP rtrim default charlist (trailing whitespace only). -/
 def rtrimWs10 (s : List Nat) : List Nat := (s.reverse.dropWhile isWsByte).reverse
 
+/-- REFCORR11 R11-LIST GENERAL adjacency helpers. `firstLiAt` finds the
+    first offset at which an LI opener begins, searching EVERY offset so
+    that arbitrary intervening material (whitespace, footnote blocks, other
+    block markers, a residual bracket) between a failed uppercase closer and
+    the following LI cannot defeat the post-failed-close guard. -/
+def firstLiAt (s : List Nat) : Option Nat :=
+  go s 0
+where
+  go : List Nat → Nat → Option Nat
+    | [], _ => none
+    | cur@(_ :: rest), i =>
+        if (liOpenerAt cur).isSome then some i
+        else go rest (i + 1)
+
+/-- REFCORR11: split a byte list at the final block closer, returning the
+    part through that closer and the material after it. The surviving final
+    closer ends the literal tail; trailing material such as a
+    `[[footnoteblock]]` is processed by the normal pipeline after the list. -/
+def splitLastCloser11 (s : List Nat) : List Nat × List Nat :=
+  match ((scanTags s).filter (fun t => !t.isOpen)).getLast? with
+  | some t =>
+      let e := t.start + t.len - (if t.residual then 1 else 0)
+      (s.take e, s.drop e)
+  | none => (s, [])
+
+/-- REFCORR11: create `n` Newline tokens in table order and return their
+    placeholders. The PHP fast path creates its four list tokens first and
+    the Newline rule appends the break tokens later; the mirror keeps that
+    token-table order even though the placeholders sit inside the item. -/
+def mkNewlines11 (n : Nat) (toks : List TokenEntry) : List (List Nat) × List TokenEntry :=
+  go n [] toks
+where
+  go : Nat → List (List Nat) → List TokenEntry → List (List Nat) × List TokenEntry
+    | 0, acc, toks => (acc.reverse, toks)
+    | n + 1, acc, toks =>
+        let (nl, toks1) := addTok "Newline" [] toks
+        go n (nl :: acc) toks1
+
+/-- REFCORR11: place the pre-created Newline placeholders at each LF of a
+    literal byte string, so the byte-level mirror renders the same breaks as
+    PHP's Newline rule over its raw literal tail. -/
+def interleaveNl11 (bs : List Nat) (nls : List (List Nat)) : List Nat :=
+  match bs, nls with
+  | [], _ => []
+  | 10 :: rest, nl :: nls2 => nl ++ interleaveNl11 rest nls2
+  | b :: rest, nls => b :: interleaveNl11 rest nls
+
 /-- REFCORR10 GENERAL post-failed-close rule. When a raw-case opener has no
     pairing closer and an item marker (any case or attributes) follows its
     first failed block closer, the first item stays open and the whole tail
@@ -1645,8 +1692,12 @@ def listPostFailedClose10 (src0 : List Nat) (toks : List TokenEntry) :
       | none => none
       | some cl =>
         let pre := body.take cl.start
-        let post := body.drop (cl.start + cl.len)
-        if (liOpenerAt (post.dropWhile isWsByte)).isNone then none
+        -- REFCORR11: keep a residual `]` after the closer in the literal
+        -- tail, matching the PHP regex which consumes only `[[/ul]]`.
+        let post := body.drop (cl.start + cl.len - (if cl.residual then 1 else 0))
+        -- REFCORR11 GENERAL adjacency: search every offset, not only the
+        -- whitespace prefix, for the following LI opener.
+        if (firstLiAt post).isNone then none
         else
           match scanLi pre with
           | [] => none
@@ -1669,8 +1720,14 @@ def listPostFailedClose10 (src0 : List Nat) (toks : List TokenEntry) :
                ("list_type".toList, textVal tag),
                ("trail".toList, textVal []),
                ("scored".toList, OptVal.bool op.scored)] toks
-            let (nlPh, toks) := addTok "Newline" [] toks
-            some (sPh ++ liS ++ firstBody ++ nlPh ++ rtrimWs10 post ++ liE ++ ePh, toks)
+            -- REFCORR11: build the literal tail exactly as the PHP fast
+            -- path does — consume one leading LF (the closer's own line
+            -- end), rtrim, and stop at the surviving final block closer.
+            let post1 := match post with | 10 :: r => r | _ => post
+            let (litTail, leftover11) := splitLastCloser11 (rtrimWs10 post1)
+            let (nlPhs, toks) := mkNewlines11 (litTail.count 10) toks
+            let litPh := firstBody ++ interleaveNl11 litTail nlPhs
+            some (sPh ++ liS ++ litPh ++ liE ++ ePh ++ leftover11, toks)
 
 /-- REFCORR9 C-R5B-P1-1 / C-R5-S1-01: after a raw-case opener's first
 failed closer, a following raw-case [[LI]] stays literal inside the

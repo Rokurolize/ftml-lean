@@ -18,14 +18,16 @@
     that group removed. The two trail outcomes are exclusive and compose
     with the token class.
   * Math type and counter (`NextRules.mathProcess`,
-    `ServingRules.renderMath`, REFCORR3 C-SUSPECT-SERVING-1): the
-    include/input guard throws before a token is built, but the
-    counter has already moved; otherwise an absent `type` key defaults
-    to `align`, a present value matching `^[a-z][a-z0-9]*$` is kept,
-    and any other present value is kept and rejected by the renderer.
-    The three type outcomes and the fatal guard are exclusive. Under
-    the harness the valid arm is the fossil failure block, because the
-    PNG never exists.
+    `ServingRules.renderMath`, REFCORR3 C-SUSPECT-SERVING-1 and
+    REFCORR11 C-R5D-P2-4): the include/input guard throws before a
+    token is built, but the counter has already moved; otherwise a
+    missing exact lower-case `type` key (whether genuinely absent or
+    present only as a case variant of the name) defaults to `equation`,
+    a present value matching `^[a-z][a-z0-9]*$` is kept, and any other
+    present value is kept and rejected by the renderer. The three type
+    outcomes and the fatal guard are exclusive. Under the harness the
+    valid arm is the fossil failure block, because the PNG never
+    exists.
   * Mathinline (`Inline1Rules.mathResolve` / `mathSuppressRule`, the
     mirror of REFCORR6 `expandSource`): no placeholder is the plain
     body; a depth/fuel guard returns the bytes unchanged; an unknown
@@ -532,7 +534,7 @@ theorem cm_math_invalid_upper :
 
 /-- The counter starts at 1 on a fresh document and moves to 2, and
     the token carries id 1. The type key was absent, so the stored
-    type is the `align` default. -/
+    type is the `equation` fallback (REFCORR11 C-R5D-P2-4). -/
 theorem cm_counter_starts :
     (mathProcess none [] (litBytes "x") {}).2.mathId = some 2 ∧
     (match (mathProcess none [] (litBytes "x") {}).1 with
@@ -540,11 +542,11 @@ theorem cm_counter_starts :
       | none => none) = some (OptVal.int 1) ∧
     (match (mathProcess none [] (litBytes "x") {}).1 with
       | some e => omGet e.opts "type".toList
-      | none => none) = some (OptVal.str "align".toList) := by
+      | none => none) = some (OptVal.str "equation".toList) := by
   refine ⟨rfl, rfl, rfl⟩
 
 /-- An invalid type still consumes an id. The next block, with no
-    type key, receives id 2 and the `align` default. -/
+    type key, receives id 2 and the `equation` fallback. -/
 theorem cm_counter_on_invalid :
     let d1 := (mathProcess none (litBytes "type=\"ALIGN\"") (litBytes "a") {}).2
     let r2 := mathProcess none [] (litBytes "b") d1
@@ -554,7 +556,7 @@ theorem cm_counter_on_invalid :
       | none => none) = some (OptVal.int 2) ∧
     (match r2.1 with
       | some e => omGet e.opts "type".toList
-      | none => none) = some (OptVal.str "align".toList) := by
+      | none => none) = some (OptVal.str "equation".toList) := by
   refine ⟨rfl, rfl, rfl⟩
 
 /-- The guard throws no token, but the counter has already moved,
