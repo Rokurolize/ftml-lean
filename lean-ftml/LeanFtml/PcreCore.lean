@@ -7,7 +7,7 @@
   extent for the 79 Embed-render patterns; it has no captures, no m/U/D
   flags, no lookarounds, no backreferences and no (?R).  The 68 parse rules
   need all of those: the mechanically extracted table in RefTables.lean
-  (snapshot-36) records `(?R)` recursion in Code/Iftags/Math/Div/Divalign/
+  (snapshot-39) records `(?R)` recursion in Code/Iftags/Math/Div/Divalign/
   Size/Span/Collapsible/Tableadv, lookahead and lookbehind in Raw/Rawold/
   Newline/Blockquote/Footnote, backreference \1 in Divalign, and the D/U/m
   flags on Freelink, the inline families and the line-anchored rules.
@@ -22,8 +22,36 @@
   by construction and per-rule proofs only have to discharge the ~10-40 LOC
   `process()` callback (policy §1.3 note).
 
+  DESIGN DECISION (F2, recorded per BRIEF-F2-PCCRECORE).  PCRE is a
+  backtracking engine, and this engine models backtracking faithfully
+  rather than simulating an NFA: `runMatch` enumerates match results
+  in PCRE preference order (alternation left to right; greedy
+  quantifiers longest-first unless lazy or `/U`), and the public
+  drivers take the head of that enumeration, which is exactly the
+  match PHP's `preg_match` reports.  The vcgen pilot's greedy-star
+  question therefore does not arise here: preference order is a
+  property of the enumeration, and greedy and lazy stars are the
+  same `rep` node with a branch-order flag.  The certified fragment
+  (call it F_pcre, the PCRE2 byte-mode subset the 68 rules actually
+  use) is: literals and escapes (\n \r \t \f \v and identity
+  escapes), character classes with ranges, negation, and the
+  \s \S \d \D \w \W items inside and outside classes, `.`,
+  anchors `^`, `$`, \b, \B, capturing and non-capturing groups,
+  alternation, greedy and lazy quantifiers `* + ? {n} {n,} {n,m}`,
+  backreferences \1-\9, positive and negative lookahead and
+  lookbehind, whole-pattern recursion `(?R)`, and the flags
+  i, s, m, U, D (u parsed and carried; its semantics are F3
+  UnicodeCore's).  The extractor reports exactly this construct set
+  for snapshot-39 (23 constructs, 6 flags); anything outside it
+  (atomic groups, possessive quantifiers, conditionals, \K, \G,
+  callouts, `(?1)` subroutines, `(?(DEFINE))`) is absent from the
+  corpus and unimplemented, and the parser rejects it rather than
+  approximating it.  The do-notation `StateM` driver over this
+  engine, proved with vcgen per the pilot, lives in
+  LeanFtml.PcreCoreScan.
+
   SCOPE / HONEST REMAINDER.  This is a byte engine.  It implements exactly
-  the syntactic constructs the extractor reports for snapshot-36 except the
+  the syntactic constructs the extractor reports for snapshot-39 except the
   `/u` UTF-8 mode (4 rules: Include, Freelink, Div, Tableadv), which is F3's
   UnicodeCore responsibility; the `utf8` flag is parsed and carried but the
   byte matcher deliberately does not claim Unicode semantics.  Configured
@@ -114,6 +142,7 @@ inductive RE where
   | rep : RE → Nat → Option Nat → Bool → RE
   | grp : Nat → RE → RE
   | back : Nat → RE
+  | gpos : RE
   | posLA : RE → RE
   | negLA : RE → RE
   | posLB : RE → RE
@@ -171,41 +200,43 @@ where
     preference order (greedy-first unless `/U` or a lazy marker inverted it).
     The fuel argument makes the engine structurally recursive; `pcreFuel`
     below is the certificate bound used at every public entry. -/
-def runMatch (fl : Flags) (whole : RE) (subj : List Nat)
+def runMatch (fl : Flags) (whole : RE) (subj : List Nat) (anchor : Nat)
     (todo : List Task) (pos : Nat) (caps : Caps) : Nat → Results
   | 0 => []
   | fuel + 1 => match todo with
     | [] => [{ pos := pos, caps := caps }]
-    | .close i s :: rest => runMatch fl whole subj rest pos (setCap i s pos caps) fuel
+    | .close i s :: rest => runMatch fl whole subj anchor rest pos (setCap i s pos caps) fuel
     | .node re :: rest => match re with
-      | .eps => runMatch fl whole subj rest pos caps fuel
+      | .eps => runMatch fl whole subj anchor rest pos caps fuel
       | .byte pb =>
           match subj.drop pos with
           | b :: _ => if byteMatchCI fl.ci pb b
-              then runMatch fl whole subj rest (pos + 1) caps fuel else []
+              then runMatch fl whole subj anchor rest (pos + 1) caps fuel else []
           | [] => []
       | .dot =>
           match subj.drop pos with
           | b :: _ => if fl.dotall || b != 10
-              then runMatch fl whole subj rest (pos + 1) caps fuel else []
+              then runMatch fl whole subj anchor rest (pos + 1) caps fuel else []
           | [] => []
       | .cls neg items =>
           match subj.drop pos with
           | b :: _ => if clsMatch neg items fl.ci b
-              then runMatch fl whole subj rest (pos + 1) caps fuel else []
+              then runMatch fl whole subj anchor rest (pos + 1) caps fuel else []
           | [] => []
       | .bol =>
           let prev := match (subj.drop (pos - 1)).head? with
             | some b => pos > 0 && b == 10
             | none => false
           if pos == 0 || (fl.multiline && prev)
-          then runMatch fl whole subj rest pos caps fuel else []
+          then runMatch fl whole subj anchor rest pos caps fuel else []
       | .eol =>
           let here := match (subj.drop pos).head? with | some b => b | none => 0
           let atEnd := pos == subj.length
-          let beforeNL := pos < subj.length && here == 10
-          if atEnd || (beforeNL && (fl.multiline || !fl.dollarEndOnly))
-          then runMatch fl whole subj rest pos caps fuel else []
+          let beforeAnyNL := pos < subj.length && here == 10
+          let beforeFinalNL := pos + 1 == subj.length && here == 10
+          if atEnd || (beforeAnyNL && fl.multiline) ||
+              (beforeFinalNL && !fl.dollarEndOnly)
+          then runMatch fl whole subj anchor rest pos caps fuel else []
       | .wordB => 
           let before := match (subj.drop (pos - 1)).head? with
             | some b => pos > 0 && isWrdByte b
@@ -213,7 +244,7 @@ def runMatch (fl : Flags) (whole : RE) (subj : List Nat)
           let after := match (subj.drop pos).head? with
             | some b => isWrdByte b
             | none => false
-          if before != after then runMatch fl whole subj rest pos caps fuel else []
+          if before != after then runMatch fl whole subj anchor rest pos caps fuel else []
       | .nwordB =>
           let before := match (subj.drop (pos - 1)).head? with
             | some b => pos > 0 && isWrdByte b
@@ -221,13 +252,13 @@ def runMatch (fl : Flags) (whole : RE) (subj : List Nat)
           let after := match (subj.drop pos).head? with
             | some b => isWrdByte b
             | none => false
-          if before == after then runMatch fl whole subj rest pos caps fuel else []
-      | .seq a b => runMatch fl whole subj (.node a :: .node b :: rest) pos caps fuel
+          if before == after then runMatch fl whole subj anchor rest pos caps fuel else []
+      | .seq a b => runMatch fl whole subj anchor (.node a :: .node b :: rest) pos caps fuel
       | .alt a b => dedupResults
-          (runMatch fl whole subj (.node a :: rest) pos caps fuel ++
-           runMatch fl whole subj (.node b :: rest) pos caps fuel)
+          (runMatch fl whole subj anchor (.node a :: rest) pos caps fuel ++
+           runMatch fl whole subj anchor (.node b :: rest) pos caps fuel)
       | .rep r mn mx greedy =>
-          let one := runMatch fl whole subj [.node r] pos caps fuel
+          let one := runMatch fl whole subj anchor [.node r] pos caps fuel
           let canMore := match mx with
             | none => true
             | some 0 => false
@@ -242,46 +273,49 @@ def runMatch (fl : Flags) (whole : RE) (subj : List Nat)
             res.pos > pos || mn > 0 || res.caps != caps
           let takeBranch := if canMore then
               usable.flatMap fun res =>
-                runMatch fl whole subj
+                runMatch fl whole subj anchor
                   (.node (RE.rep r nextMn nextMx greedy) :: rest) res.pos res.caps fuel
             else []
           let stopBranch := if mn == 0
-              then runMatch fl whole subj rest pos caps fuel else []
+              then runMatch fl whole subj anchor rest pos caps fuel else []
           dedupResults (if greedy then takeBranch ++ stopBranch
                         else stopBranch ++ takeBranch)
-      | .grp i r => runMatch fl whole subj (.node r :: .close i pos :: rest) pos caps fuel
+      | .grp i r => runMatch fl whole subj anchor (.node r :: .close i pos :: rest) pos caps fuel
       | .back i =>
           match capBytes subj i caps with
           | none => []
           | some want =>
               let actual := (subj.drop pos).take want.length
               if actual == want
-              then runMatch fl whole subj rest (pos + want.length) caps fuel else []
+              then runMatch fl whole subj anchor rest (pos + want.length) caps fuel else []
+      | .gpos =>
+          if pos == anchor
+          then runMatch fl whole subj anchor rest pos caps fuel else []
       | .posLA r =>
-          match (runMatch fl whole subj [.node r] pos caps fuel).head? with
-          | some res => runMatch fl whole subj rest pos res.caps fuel
+          match (runMatch fl whole subj anchor [.node r] pos caps fuel).head? with
+          | some res => runMatch fl whole subj anchor rest pos res.caps fuel
           | none => []
       | .negLA r =>
-          if (runMatch fl whole subj [.node r] pos caps fuel).isEmpty
-          then runMatch fl whole subj rest pos caps fuel else []
+          if (runMatch fl whole subj anchor [.node r] pos caps fuel).isEmpty
+          then runMatch fl whole subj anchor rest pos caps fuel else []
       | .posLB r =>
           let starts := (List.range (pos + 1)).reverse
           let hits := starts.flatMap fun s =>
-            (runMatch fl whole subj [.node r] s caps fuel).filter
+            (runMatch fl whole subj anchor [.node r] s caps fuel).filter
               (fun res => res.pos == pos)
           match hits.head? with
-          | some res => runMatch fl whole subj rest pos res.caps fuel
+          | some res => runMatch fl whole subj anchor rest pos res.caps fuel
           | none => []
       | .negLB r =>
           let starts := (List.range (pos + 1)).reverse
           let hits := starts.flatMap fun s =>
-            (runMatch fl whole subj [.node r] s caps fuel).filter
+            (runMatch fl whole subj anchor [.node r] s caps fuel).filter
               (fun res => res.pos == pos)
-          if hits.isEmpty then runMatch fl whole subj rest pos caps fuel else []
-      | .recurse => runMatch fl whole subj (.node whole :: rest) pos caps fuel
+          if hits.isEmpty then runMatch fl whole subj anchor rest pos caps fuel else []
+      | .recurse => runMatch fl whole subj anchor (.node whole :: rest) pos caps fuel
 
 /-- Certificate bound.  Exceeds pattern atoms × subject length for every
-    snapshot-36 pattern; the torture suite exercises the bound explicitly. -/
+    snapshot-39 pattern; the torture suite exercises the bound explicitly. -/
 def pcreFuel : Nat := 32768
 
 /-! ## Public drivers -/
@@ -291,11 +325,26 @@ structure PcreParsed where
   flags : Flags
 deriving Inhabited, Repr, DecidableEq, BEq
 
+def pcreEndsAnchored (p : PcreParsed) (subj : List Nat) (anchor pos : Nat) :
+    Results :=
+  runMatch p.flags p.ast subj anchor [.node p.ast] pos [] pcreFuel
+
+/-- All matches of `p` starting exactly at `pos`; the `\G` anchor is
+    `pos` itself, which is PHP's semantics for `preg_match` with an
+    offset argument and for each continuation of `preg_match_all` /
+    `preg_replace_callback`. -/
 def pcreEnds (p : PcreParsed) (subj : List Nat) (pos : Nat) : Results :=
-  runMatch p.flags p.ast subj [.node p.ast] pos [] pcreFuel
+  pcreEndsAnchored p subj pos pos
 
 def pcreFirst (p : PcreParsed) (subj : List Nat) (pos : Nat) : Option MResult :=
   (pcreEnds p subj pos).head?
+
+/-- The first match at `pos` with the `\G` anchor held at `anchor`
+    (PHP's `preg_match` without an offset holds `\G` at 0 while it
+    scans). -/
+def pcreFirstAnchored (p : PcreParsed) (subj : List Nat)
+    (anchor pos : Nat) : Option MResult :=
+  (pcreEndsAnchored p subj anchor pos).head?
 
 def pcreMatch (p : PcreParsed) (subj : List Nat) : Bool :=
   (List.range (subj.length + 1)).any fun s => !(pcreEnds p subj s).isEmpty
@@ -319,6 +368,21 @@ where
 def matchGroups (subj : List Nat) (caps : Caps) : List (Option (List Nat)) :=
   (List.range 9).map fun k => capBytes subj (k + 1) caps
 
+/-- The first match at or after `pos` with the `\G` anchor held at
+    `anchor`.  This is the search both global drivers perform: PHP
+    scans forward from the current offset, but `\G` always refers
+    to that offset (the end of the previous match, or the initial
+    offset), never to the scan position. -/
+def searchAnchored (p : PcreParsed) (subj : List Nat) (anchor pos : Nat) :
+    Option (Nat × MResult) :=
+  go (subj.length + 1 - pos) pos
+where
+  go : Nat → Nat → Option (Nat × MResult)
+    | 0, _ => none
+    | fuel + 1, s => match pcreFirstAnchored p subj anchor s with
+      | some res => some (s, res)
+      | none => go fuel (s + 1)
+
 /-- PHP `preg_replace_callback`: leftmost non-overlapping matches; each
     match's full text and groups 1..9 are handed to `f`.  Zero-length matches
     emit the replacement and advance one byte, as PHP does. -/
@@ -326,21 +390,18 @@ def pregReplaceCallback (p : PcreParsed) (subj : List Nat)
     (f : List Nat → List (Option (List Nat)) → List Nat) : List Nat :=
   go 0 (subj.length + 1)
 where
-  go (pos : Nat) : Nat → List Nat
-    | 0 => subj.drop pos
-    | fuel + 1 =>
-      if pos > subj.length then []
-      else match pcreFirst p subj pos with
-        | some res =>
-            let full := (subj.drop pos).take (res.pos - pos)
-            let rep := f full (matchGroups subj res.caps)
-            if res.pos > pos then rep ++ go res.pos fuel
-            else rep ++ (match subj.drop pos with
-                          | b :: _ => b :: go (pos + 1) fuel
-                          | [] => [])
-        | none => match subj.drop pos with
-            | b :: _ => b :: go (pos + 1) fuel
-            | [] => []
+  go (anchor : Nat) : Nat → List Nat
+    | 0 => subj.drop anchor
+    | fuel + 1 => match searchAnchored p subj anchor anchor with
+      | none => subj.drop anchor
+      | some (s, res) =>
+          let gap := (subj.drop anchor).take (s - anchor)
+          let full := (subj.drop s).take (res.pos - s)
+          let rep := f full (matchGroups subj res.caps)
+          if res.pos > s then gap ++ rep ++ go res.pos fuel
+          else gap ++ rep ++ (match subj.drop s with
+                                | b :: _ => b :: go (s + 1) fuel
+                                | [] => [])
 
 /-- PHP `preg_match_all`: (start, end, groups 1..9) for every non-overlapping
     match, left to right. -/
@@ -348,16 +409,14 @@ def pregMatchAll (p : PcreParsed) (subj : List Nat) :
     List (Nat × Nat × List (Option (List Nat))) :=
   go 0 (subj.length + 1)
 where
-  go (pos : Nat) : Nat → List (Nat × Nat × List (Option (List Nat)))
+  go (anchor : Nat) : Nat → List (Nat × Nat × List (Option (List Nat)))
     | 0 => []
-    | fuel + 1 =>
-      if pos > subj.length then []
-      else match pcreFirst p subj pos with
-        | some res =>
-            let groups := matchGroups subj res.caps
-            if res.pos > pos then (pos, res.pos, groups) :: go res.pos fuel
-            else (pos, pos, groups) :: (if pos < subj.length then go (pos + 1) fuel else [])
-        | none => if pos < subj.length then go (pos + 1) fuel else []
+    | fuel + 1 => match searchAnchored p subj anchor anchor with
+      | none => []
+      | some (s, res) =>
+          let groups := matchGroups subj res.caps
+          if res.pos > s then (s, res.pos, groups) :: go res.pos fuel
+          else (s, s, groups) :: go (s + 1) fuel
 
 /-! ## Parser -/
 
@@ -384,6 +443,35 @@ inductive ClassPiece where
   | chr : Nat → ClassPiece
 deriving Inhabited, Repr, DecidableEq, BEq
 
+def hexDigitVal (c : Nat) : Option Nat :=
+  if 48 ≤ c && c ≤ 57 then some (c - 48)
+  else if 97 ≤ c && c ≤ 102 then some (c - 87)
+  else if 65 ≤ c && c ≤ 70 then some (c - 55)
+  else none
+
+/-- One or two hex digits after `\x`, as a byte value and rest. -/
+def hexByte : List Nat → Option (Nat × List Nat)
+  | c1 :: c2 :: rest => match hexDigitVal c1, hexDigitVal c2 with
+      | some h1, some h2 => some (h1 * 16 + h2, rest)
+      | some h1, none => some (h1, c2 :: rest)
+      | _, _ => none
+  | c1 :: rest => match hexDigitVal c1 with
+      | some h1 => some (h1, rest)
+      | none => none
+  | [] => none
+
+/-- Up to two further octal digits after a `\0`, as a byte value
+    and rest (PCRE reads at most three octal digits in total). -/
+def octByte : List Nat → Nat × List Nat
+  | c1 :: c2 :: rest =>
+      if 48 ≤ c1 && c1 ≤ 55 && 48 ≤ c2 && c2 ≤ 55
+      then ((c1 - 48) * 8 + (c2 - 48), rest)
+      else if 48 ≤ c1 && c1 ≤ 55 then (c1 - 48, c2 :: rest)
+      else (0, c1 :: c2 :: rest)
+  | c1 :: rest =>
+      if 48 ≤ c1 && c1 ≤ 55 then (c1 - 48, rest) else (0, c1 :: rest)
+  | [] => (0, [])
+
 def classChar : List Nat → Option (ClassPiece × List Nat)
   | 92 :: c :: rest => match c with
       | 115 => some (.item .wsp, rest)
@@ -392,6 +480,16 @@ def classChar : List Nat → Option (ClassPiece × List Nat)
       | 68 => some (.item .ndg, rest)
       | 119 => some (.item .wrd, rest)
       | 87 => some (.item .nwr, rest)
+      | 110 => some (.chr 10, rest)
+      | 114 => some (.chr 13, rest)
+      | 116 => some (.chr 9, rest)
+      | 102 => some (.chr 12, rest)
+      | 118 => some (.chr 11, rest)
+      | 98 => some (.chr 8, rest)
+      | 120 => match hexByte rest with
+        | some (v, r) => some (.chr v, r)
+        | none => some (.chr 120, rest)
+      | 48 => let (v, r) := octByte rest; some (.chr v, r)
       | _ => some (.chr c, rest)
   | c :: rest => some (.chr c, rest)
   | [] => none
@@ -544,12 +642,17 @@ def parseGo (ungreedy : Bool) : ParseTask → Nat → Nat → List Nat →
       | 119 => some (.cls false [.wrd], g, rest)
       | 87 => some (.cls true [.wrd], g, rest)
       | 98 => some (.wordB, g, rest)
+      | 71 => some (.gpos, g, rest)
       | 66 => some (.nwordB, g, rest)
       | 110 => some (.byte 10, g, rest)
       | 114 => some (.byte 13, g, rest)
       | 116 => some (.byte 9, g, rest)
       | 102 => some (.byte 12, g, rest)
       | 118 => some (.byte 11, g, rest)
+      | 120 => match hexByte rest with
+        | some (v, r) => some (.byte v, g, r)
+        | none => some (.byte 120, g, rest)
+      | 48 => let (v, r) := octByte rest; some (.byte v, g, r)
       | d => if 49 ≤ d && d ≤ 57
              then some (.back (d - 48), g, rest)
              else some (.byte d, g, rest)
@@ -566,9 +669,22 @@ def flagsOfBytes (bs : List Nat) : Flags :=
     dollarEndOnly := bs.contains 68,
     utf8 := bs.contains 117 }
 
-/-- Primary parser entry: a byte-literal delimited PHP pattern. -/
+/-- Primary parser entry: a byte-literal PHP pattern.  A pattern
+    whose first byte could not be a PHP delimiter (alphanumeric or
+    one of `_([\\`) is a bare, undelimited pattern with no flags,
+    as stored by Email.php and Interwiki.php and interpolated into a
+    delimited whole at the call site; it is parsed as a bare body,
+    mirroring the extractor's `pattern_flags` convention. -/
 def parsePcreBytes (bs : List Nat) : Option PcreParsed :=
-  match splitPattern bs with
+  let bare := match bs with
+    | c :: _ => (48 ≤ c && c ≤ 57) || (65 ≤ c && c ≤ 90) ||
+        (97 ≤ c && c ≤ 122) || c == 95 || c == 40 || c == 91 || c == 92
+    | [] => false
+  if bare then
+    match parseGo false .alt (bs.length * 4 + 16) 0 bs with
+    | some (ast, _, []) => some { ast := ast, flags := {} }
+    | _ => none
+  else match splitPattern bs with
   | some (body, flags) =>
       let fl := flagsOfBytes flags
       match parseGo fl.ungreedy .alt (body.length * 4 + 16) 0 body with
@@ -585,8 +701,8 @@ def parsePcre (s : String) : Option PcreParsed :=
 /-! ## Universal engine lemmas (kernel-checked, no axioms beyond core) -/
 
 theorem runMatch_zero (fl : Flags) (whole : RE) (subj : List Nat)
-    (todo : List Task) (pos : Nat) (caps : Caps) :
-    runMatch fl whole subj todo pos caps 0 = [] := rfl
+    (anchor : Nat) (todo : List Task) (pos : Nat) (caps : Caps) :
+    runMatch fl whole subj anchor todo pos caps 0 = [] := rfl
 
 theorem setCap_getCap (i s e : Nat) (caps : Caps) :
     getCap i (setCap i s e caps) = some (s, e) := by
@@ -600,9 +716,10 @@ theorem dedupResults_go_step (x : MResult) (xs : Results) (fuel : Nat) :
       x :: dedupResults.go (xs.filter fun y => y != x) fuel := rfl
 
 theorem runMatch_eps_step (fl : Flags) (whole : RE) (subj : List Nat)
-    (rest : List Task) (pos : Nat) (caps : Caps) (fuel : Nat) :
-    runMatch fl whole subj (.node .eps :: rest) pos caps (fuel + 1) =
-      runMatch fl whole subj rest pos caps fuel := rfl
+    (anchor : Nat) (rest : List Task) (pos : Nat) (caps : Caps)
+    (fuel : Nat) :
+    runMatch fl whole subj anchor (.node .eps :: rest) pos caps (fuel + 1) =
+      runMatch fl whole subj anchor rest pos caps fuel := rfl
 
 theorem parseQuant_lazy_consumed (bs : List Nat) :
     (parseQuant (63 :: 63 :: bs)).2.2 = true := by

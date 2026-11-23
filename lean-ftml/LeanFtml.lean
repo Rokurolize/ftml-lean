@@ -26,6 +26,10 @@ import LeanFtml.Inline1Rules
 import LeanFtml.Inline2Rules
 import LeanFtml.Inline3Rules
 import LeanFtml.Pipeline
+import LeanFtml.PcreCore
+import LeanFtml.PcreCoreScan
+import LeanFtml.RefTables
+import LeanFtml.RefApply
 import LeanFtml.RenderCore
 import LeanFtml.ProseRules
 import LeanFtml.NotesRender
