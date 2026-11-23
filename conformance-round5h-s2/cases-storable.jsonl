@@ -1,0 +1,30 @@
+{"id": "s2h-01-lead-2066-isolate", "source": "[[[⁦_default:x]]]"}
+{"id": "s2h-02-lead-bom", "source": "[[[﻿_default:x]]]"}
+{"id": "s2h-03-lead-soft-hyphen", "source": "[[[­_default:x]]]"}
+{"id": "s2h-04-lead-180e", "source": "[[[᠎_default:x]]]"}
+{"id": "s2h-05-lead-fragment-query", "source": "[[[foo/#/bar#anchor?x=1]]]"}
+{"id": "s2h-06-notes-vt-single-lf", "source": "[[footnote]]A\u000b\nB[[/footnote]]\n[[footnoteblock]]"}
+{"id": "s2h-07-notes-sub-single-lf", "source": "[[footnote]]A\u001a\nB[[/footnote]]\n[[footnoteblock]]"}
+{"id": "s2h-08-notes-ff-lead-single-lf", "source": "[[footnote]]A\f\nB[[/footnote]]\n[[footnoteblock]]"}
+{"id": "s2h-09-notes-ff-lead-double-lf", "source": "[[footnote]]A\f\n\nB[[/footnote]]\n[[footnoteblock]]"}
+{"id": "s2h-10-div-class-esc", "source": "[[div class=\"A\u001bB\"]]\nbody\n[[/div]]"}
+{"id": "s2h-11-span-style-ff", "source": "[[span style=\"color:red\f\"]]b[[/span]]"}
+{"id": "s2h-12-image-class-esc", "source": "[[image IMG.png class=\"a\u001bb\"]]"}
+{"id": "s2h-13-anchor-id-trailws", "source": "[[a id=\"  x  \"]]y[[/a]]"}
+{"id": "s2h-14-list-ft-inside-final-li", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[LI]]B[[footnote]]gap[[/footnote]][[/LI]]\n[[footnoteblock]]\n[[/UL]]"}
+{"id": "s2h-15-list-hoist-then-prose", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]gap[[/footnote]]\n[[footnoteblock]]\n[[LI]]B[[/LI]]\n[[/UL]]\nZZZ"}
+{"id": "s2h-16-list-nested-hoist", "source": "[[ul]]\n[[li]]outer\n[[ul]]\n[[li]]in[[footnote]]gp[[/footnote]][[/li]]\n[[footnoteblock]][[/ul]][[/li]]\n[[/ul]]"}
+{"id": "s2h-17-gallery-large-external", "source": "[[gallery size=\"large\"]]\n: http://example.com/a.png\n: http://example.com/b.png\n[[/gallery]]"}
+{"id": "s2h-18-gallery-local-pair", "source": "[[gallery]]\n: img1.png\n: img2.png\n[[/gallery]]"}
+{"id": "s2h-19-embed-http-url", "source": "[[embed]]http://example.com[[/embed]]"}
+{"id": "s2h-20-embed-javascript-scheme", "source": "[[embed]]<iframe src=\"javascript:alert(1)\"></iframe>[[/embed]]"}
+{"id": "s2h-21-raw-w-wit", "source": "@@@@a@@@b@@@@"}
+{"id": "s2h-22-raw-w-eq", "source": "@@@@a@@@b@@"}
+{"id": "s2h-23-raw-w-c2", "source": "@@@@a@@b@@@@"}
+{"id": "s2h-24-raw-w-b3", "source": "@@@@a@@@b"}
+{"id": "s2h-25-raw-w-2q", "source": "@@@@a@@@@"}
+{"id": "s2h-26-raw-w-r5", "source": "A @@@@ZQ@@@ B @@@@ C"}
+{"id": "s2h-27-raw-w-pl", "source": "@@x@@"}
+{"id": "s2h-28-iframe-backslash", "source": "A [[iframe http://exa\\mple.com]] B"}
+{"id": "s2h-29-nbsp-autolink", "source": "A http://example.com tail B"}
+{"id": "s2h-30-ufffd-quad-owned", "source": "[[ul]]\n[[li]]x �\n@@@@\n@@@@\n@@@@\n@@@@\n[[/li]]\n[[/ul]]"}

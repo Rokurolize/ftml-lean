@@ -1,0 +1,414 @@
+[
+ {
+  "id": "s2h-01-lead-2066-isolate",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p><a href=\"/x\">x</a></p>",
+  "norm_ref": "<p><a href=\"/x\">x</a></p>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-02-lead-bom",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p><a href=\"/x\">x</a></p>",
+  "norm_ref": "<p><a href=\"/x\">x</a></p>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-03-lead-soft-hyphen",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p><a href=\"/x\">x</a></p>",
+  "norm_ref": "<p><a href=\"/x\">x</a></p>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-04-lead-180e",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p><a href=\"/x\">x</a></p>",
+  "norm_ref": "<p><a href=\"/x\">x</a></p>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-05-lead-fragment-query",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p>[[[foo/#/bar#anchor?x=1]]]</p>",
+  "norm_ref": "<p>[[[foo/#/bar#anchor?x=1]]]</p>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-06-notes-vt-single-lf",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A<br> B</div></div>",
+  "norm_ref": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A<br> B</div></div>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [
+   "Stage 2 tidy footnote footer wrapper newline (owned Stage 2 frame)"
+  ],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-07-notes-sub-single-lf",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A<br> B</div></div>",
+  "norm_ref": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A<br> B</div></div>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [
+   "Stage 2 tidy footnote footer wrapper newline (owned Stage 2 frame)"
+  ],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-08-notes-ff-lead-single-lf",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A<br> B</div></div>",
+  "norm_ref": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A<br> B</div></div>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [
+   "Stage 2 tidy footnote footer wrapper newline (owned Stage 2 frame)"
+  ],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-09-notes-ff-lead-double-lf",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A <p>B</p></div></div>",
+  "norm_ref": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A <p>B</p></div></div>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [
+   "Stage 2 tidy footnote footer wrapper newline (owned Stage 2 frame)"
+  ],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-10-div-class-esc",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<div class=\"A\u001bB\"><p>body</p></div>",
+  "norm_ref": "<div class=\"A\u001bB\"><p>body</p></div>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-11-span-style-ff",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p><span style=\"color:red\">b</span></p>",
+  "norm_ref": "<p><span style=\"color:red\">b</span></p>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-12-image-class-esc",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<img alt=\"IMG.png\" class=\"a\u001bb\" src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5h-s2-s2h-12-image-class-esc/IMG.png\">",
+  "norm_ref": "<img alt=\"IMG.png\" class=\"a\u001bb\" src=\"/local--files//IMG.png\">",
+  "norm_equal": false,
+  "first_diff": 36,
+  "owning_surface_hints": [],
+  "verdict": "DIFFER"
+ },
+ {
+  "id": "s2h-13-anchor-id-trailws",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p><a href id=\"u- x\">y</a></p>",
+  "norm_ref": "<p><a href id=\"u- x\">y</a></p>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-14-list-ft-inside-final-li",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<ul><li>A</li><li>B<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></li></ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. gap</div></div><br>",
+  "norm_ref": "<ul><li>A<li>B<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. gap</div></div>",
+  "norm_equal": false,
+  "first_diff": 10,
+  "owning_surface_hints": [
+   "Stage 2 tidy footnote footer wrapper newline (owned Stage 2 frame)"
+  ],
+  "verdict": "DIFFER"
+ },
+ {
+  "id": "s2h-15-list-hoist-then-prose",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<ul><li>A<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></li></ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. gap</div></div><p>[[LI]]B[[/LI]]<br> [[/UL]]<br> ZZZ</p>",
+  "norm_ref": "<ul><li>A<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></li></ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. gap</div></div>[[LI]]B[[/LI]]<br> [[/UL]]<br> ZZZ",
+  "norm_equal": false,
+  "first_diff": 396,
+  "owning_surface_hints": [
+   "Stage 2 tidy footnote footer wrapper newline (owned Stage 2 frame)"
+  ],
+  "verdict": "DIFFER"
+ },
+ {
+  "id": "s2h-16-list-nested-hoist",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<ul><li>outer<br><ul><li>in<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. gp</div></div></li></ul></li></ul><br>",
+  "norm_ref": "<ul><li>outer<br><ul><li>in<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></li></ul></li></ul><br>",
+  "norm_equal": false,
+  "first_diff": 187,
+  "owning_surface_hints": [
+   "Stage 2 tidy footnote footer wrapper newline (owned Stage 2 frame)"
+  ],
+  "verdict": "DIFFER"
+ },
+ {
+  "id": "s2h-17-gallery-large-external",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<div class=\"gallery-box\" id=\"gallery-box-561245\"><div class=\"gallery-item thumbnail\"><table><tr><td><a class=\"with-lb\" href=\"http://example.com/a.png\"><img alt class=\"gallery-image-size-thumbnail\" src=\"http://example.com/a.png\"></a></td></tr></table></div><div class=\"gallery-item thumbnail\"><table><tr><td><a class=\"with-lb\" href=\"http://example.com/b.png\"><img alt class=\"gallery-image-size-thumbnail\" src=\"http://example.com/b.png\"></a></td></tr></table></div></div>",
+  "norm_ref": "<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"http://example.com/a.png\"><img alt src=\"http://example.com/a.png\"></a></td></tr></table></div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"http://example.com/b.png\"><img alt src=\"http://example.com/b.png\"></a></td></tr></table></div></div>",
+  "norm_equal": false,
+  "first_diff": 24,
+  "owning_surface_hints": [
+   "CDN script injected by the served layer (dropped by norm body mask)",
+   "gallery image size class injected by the served layer (C-REFVAL2-6)",
+   "gallery random per-render id (owned serving surface, REPORT-R48.md Gallery boundary)",
+   "lightbox hook class injected by the served Stage 2 layer"
+  ],
+  "verdict": "DIFFER"
+ },
+ {
+  "id": "s2h-18-gallery-local-pair",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<div class=\"gallery-box\" id=\"gallery-box-104531\"><div class=\"gallery-item thumbnail\"><table><tr><td><a class=\"with-lb\" href=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5h-s2-s2h-18-gallery-local-pair/img1.png\"><img alt class=\"gallery-image-size-thumbnail\" src=\"https://sandbox-for-codex.wdfiles.com/local--resized-images/muse-probe-round5h-s2-s2h-18-gallery-local-pair/img1.png/thumbnail.jpg\"></a></td></tr></table></div><div class=\"gallery-item thumbnail\"><table><tr><td><a class=\"with-lb\" href=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5h-s2-s2h-18-gallery-local-pair/img2.png\"><img alt class=\"gallery-image-size-thumbnail\" src=\"https://sandbox-for-codex.wdfiles.com/local--resized-images/muse-probe-round5h-s2-s2h-18-gallery-local-pair/img2.png/thumbnail.jpg\"></a></td></tr></table></div></div>",
+  "norm_ref": "<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//img1.png\"><img alt src=\"/local--resized-images//img1.png/thumbnail.jpg\"></a></td></tr></table></div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//img2.png\"><img alt src=\"/local--resized-images//img2.png/thumbnail.jpg\"></a></td></tr></table></div></div>",
+  "norm_equal": false,
+  "first_diff": 24,
+  "owning_surface_hints": [
+   "CDN script injected by the served layer (dropped by norm body mask)",
+   "gallery image size class injected by the served layer (C-REFVAL2-6)",
+   "gallery random per-render id (owned serving surface, REPORT-R48.md Gallery boundary)",
+   "lightbox hook class injected by the served Stage 2 layer"
+  ],
+  "verdict": "DIFFER"
+ },
+ {
+  "id": "s2h-19-embed-http-url",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+  "norm_ref": "<p><div class=\"error-block\">Sorry, no match for the embedded content.</div></p>",
+  "norm_equal": false,
+  "first_diff": 1,
+  "owning_surface_hints": [
+   "Math/Module harness serving error block (named boundary, REPORT-R48.md section 1)"
+  ],
+  "verdict": "DIFFER"
+ },
+ {
+  "id": "s2h-20-embed-javascript-scheme",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "",
+  "norm_ref": "<p></p>",
+  "norm_equal": false,
+  "first_diff": 0,
+  "owning_surface_hints": [],
+  "verdict": "DIFFER"
+ },
+ {
+  "id": "s2h-21-raw-w-wit",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p>a<span style=\"white-space: pre-wrap;\">@b</span>@@</p>",
+  "norm_ref": "<p>a<span style=\"white-space: pre-wrap;\">@b</span>@@</p>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-22-raw-w-eq",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p>a<span style=\"white-space: pre-wrap;\">@b</span></p>",
+  "norm_ref": "<p>a<span style=\"white-space: pre-wrap;\">@b</span></p>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-23-raw-w-c2",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p>a<span style=\"white-space: pre-wrap;\">b</span>@@</p>",
+  "norm_ref": "<p>a<span style=\"white-space: pre-wrap;\">b</span>@@</p>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-24-raw-w-b3",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p>a@@@b</p>",
+  "norm_ref": "<p>a@@@b</p>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-25-raw-w-2q",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p>a</p>",
+  "norm_ref": "<p>a</p>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-26-raw-w-r5",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p>A ZQ<span style=\"white-space: pre-wrap;\">@ B </span>@@ C</p>",
+  "norm_ref": "<p>A ZQ<span style=\"white-space: pre-wrap;\">@ B </span>@@ C</p>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-27-raw-w-pl",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p><span style=\"white-space: pre-wrap;\">x</span></p>",
+  "norm_ref": "<p><span style=\"white-space: pre-wrap;\">x</span></p>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-28-iframe-backslash",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p>A <iframe align class frameborder height scrolling src=\"http://exa/mple.com\" style width></iframe> B</p>",
+  "norm_ref": "<p>A <iframe align class frameborder height scrolling src=\"http://exa\\mple.com\" style width></iframe> B</p>",
+  "norm_equal": false,
+  "first_diff": 69,
+  "owning_surface_hints": [
+   "iframe src backslash/slash spelling (routed M27 served surface, WORKLIST-FTML.md:28 / GAP-LEDGER.md:30/182)"
+  ],
+  "verdict": "DIFFER"
+ },
+ {
+  "id": "s2h-29-nbsp-autolink",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<p>A <a href=\"http://example.com%C2%A0tail\">http://example.com tail</a> B</p>",
+  "norm_ref": "<p>A <a href=\"http://example.com%C2%A0tail\">http://example.com tail</a> B</p>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [],
+  "verdict": "CLEARED"
+ },
+ {
+  "id": "s2h-30-ufffd-quad-owned",
+  "valid": true,
+  "stable": true,
+  "saved_source_matches": true,
+  "norm_live": "<ul><li>x 91102113124136814",
+  "norm_ref": "<ul><li>x 11112213314457910",
+  "norm_equal": false,
+  "first_diff": 10,
+  "owning_surface_hints": [],
+  "verdict": "DIFFER"
+ },
+ {
+  "id": "s2h-31-cr-control-byte",
+  "valid": false,
+  "stable": true,
+  "saved_source_matches": false,
+  "norm_live": "<p><a href=\"/y\">y</a></p>",
+  "norm_ref": "<p><a href=\"/y\">y</a></p>",
+  "norm_equal": true,
+  "first_diff": null,
+  "owning_surface_hints": [],
+  "verdict": "UNTESTABLE"
+ },
+ {
+  "id": "s2h-32-nul-control-byte",
+  "valid": false,
+  "stable": true,
+  "saved_source_matches": false,
+  "norm_live": "<p><a href=\"/y\">y</a></p>",
+  "norm_ref": "<p><a href=\"/_default:y\">y</a></p>",
+  "norm_equal": false,
+  "first_diff": 13,
+  "owning_surface_hints": [],
+  "verdict": "UNTESTABLE"
+ }
+]
