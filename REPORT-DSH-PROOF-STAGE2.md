@@ -36,10 +36,30 @@ A full functional equality `Stage2TidyCore = libtidy.so.58` is not a Lean theore
 
 ## 4. Axiom audit and gates
 
-<<GATES SECTION>>
+### Axiom audit
+
+`bash proof-stage2-audit/axiom-audit.sh` PASS (exit 0). It audited 34 theorems (27 in `Stage2Proof`, 7 in `Stage2Certificate`): every reported dependency is inside the allowed set `[propext, Classical.choice, Quot.sound]`, and the seven certificate theorems report no axioms. The scanner also found no `sorry`, `sorryAx`, `native_decide`, `bv_decide`, `axiom`, `unsafe` or `implemented_by` token in the delivered proof or certificate modules. Captured output is `proof-stage2-audit/axioms.log`.
+
+### Clean-extraction build
+
+As the brief requires, the final build evidence was taken from a clean extraction of the committed state, not from the working tree. I committed the package as `7ef4609`, created a fresh directory with `git archive HEAD | tar -x`, verified it contained no `.lake` and no `.olean`, then built the six Stage 2 targets (`Stage2TidyCore`, `Stage2FrameComp`, `Stage2Proof`, `Stage2Certificate`, the umbrella `Stage2`, and `lean-ftml-stage2-cli`) in that extraction through the single-at-a-time wrapper: `Build completed successfully (17 jobs)`, exit 0. I also purged the 642 tracked `.lake` paths that were inherited from `main` and added a `.gitignore`, so no stale olean from another tree can manufacture a gate result here. The full commands, extraction path and logs are in `proof-stage2-audit/gate-results.md`.
+
+One recorded blocker: the unfiltered whole-project `lake build` from the same clean extraction exits 1 in the unrelated `LeanFtml/ProofNotesFootnote.lean` at lines 81 and 83, where a theorem is declared `:= rfl` but its sides are not definitionally equal. That file is byte-identical on the parent commit `f2d4316` and is outside this package's write scope, so the failure predates this work; the full log is `proof-stage2-audit/clean-extract-build.log`. The Stage 2 package's own targets build cleanly from the identical extraction.
+
+### Fidelity gates
+
+Port fidelity against the unmodified source model and the 266-case settled battery: `corpus=1557 mismatches=0`, `cases=266 portVOriginal=0 portVRecorded=0 origVRecorded=0`, plus an independent 2,387-case root harness with 0 mismatches. The certificate gate itself did not pass, as recorded above.
 
 ## 5. What remains and why
 
-<<REMAINDER SECTION>>
+### Proof remainder
 
-<<VERDICT>>
+Universal string-level fixed-point theorems for passes 1–3 are the missing antecedents of `stage2_wf_identity` and `stage2_idempotent`; those are differential facts about Tidy's external C scanners and are certified by the conformance record rather than forced in Lean. Lifting the T3/T4/T7 concrete fuel witnesses (2) and concrete repair-state shapes to every sufficient fuel needs a `repairInlineEnd` fuel-monotonicity lemma; T2, T8 and T10 have no separate universal string/tree-level theorem in this package, and full string commutation for `stage2_parametric_in_text` needs a tokenization-respects-substitution lemma. Each of these is named rather than papered over. None was discharged with an axiom.
+
+### Certificate remainder and coordinator actions
+
+The 1,023,010 divergences are the material open item. Ten minimal witnesses are in `proof-stage2-certificate/manifest.json`; the dominant families are libtidy implicit structural repair on bare fragments (bare `li` to `ul`, bare `td` to `table/tr`) and pruning of empty `a`/`ul`/`div`/`table`, with empty inline classes a further group. Per the brief, the model was not modified and no class or case was excluded; model repairs belong to the coordinator lane. Beyond the bound sit unbounded rescans and cascading crossings, the full 50k-LOC libtidy behavior, and the named U1–U5 remainders of the coordinator's Stage 2 record. Source-side replacement of `stage2/stage2-model/Stage2.lean` is likewise coordinator adoption work: this package adds the totalized modules under `lean-ftml/LeanFtml/Proof/`, with the old-to-new mapping in `totalization-notes.md`, and the coordinator wires the import. The unrelated pre-existing `ProofNotesFootnote` whole-build failure is recorded above and is not a Stage 2 action.
+
+### Verdict
+
+PARTIAL. Deliverables 1 and 2 are complete and gate-clean: the totalized, decoupled core has zero partial definitions and is byte-faithful to the settled model, and 26 axiom-clean kernel-checked theorems are delivered with explicit hypotheses and named remainders. Deliverable 3 is delivered and fully recorded but its zero-gap condition is NOT met: 1,023,010 genuine model-versus-oracle divergences remain inside the declared domain. That is the honest maximum for this external C boundary together with the 266-case conformance record, and it is reported as a PARTIAL certificate rather than a universal proof.
