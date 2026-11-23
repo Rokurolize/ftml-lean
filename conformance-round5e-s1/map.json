@@ -1,0 +1,112 @@
+{
+ "s01-list-ft-gap-footnoteblock": {
+  "fullname": "muse-probe-round5e-s1-s01-list-ft-gap-footnoteblock",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]gap[[/footnote]]\n[[footnoteblock]]\n[[LI]]B[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "s02-list-ft-gap-ff-body": {
+  "fullname": "muse-probe-round5e-s1-s02-list-ft-gap-ff-body",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]g\fap[[/footnote]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "s03-list-ft-gap-two-footnotes": {
+  "fullname": "muse-probe-round5e-s1-s03-list-ft-gap-two-footnotes",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]one[[/footnote]]\n[[footnote]]two[[/footnote]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "s04-list-nested-failed-closer-ft": {
+  "fullname": "muse-probe-round5e-s1-s04-list-nested-failed-closer-ft",
+  "source": "[[OL]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/OL]]\n[[footnote]]note[[/footnote]]\n[[LI]]tail[[/LI]]\n[[/UL]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "s05-fl-zwsp-described": {
+  "fullname": "muse-probe-round5e-s1-s05-fl-zwsp-described",
+  "source": "[[[​_default:x | Label]]]",
+  "action": "created"
+ },
+ "s06-fl-wj-described": {
+  "fullname": "muse-probe-round5e-s1-s06-fl-wj-described",
+  "source": "[[[⁠_default:x | Label]]]",
+  "action": "created"
+ },
+ "s07-fl-lead-in-described-label": {
+  "fullname": "muse-probe-round5e-s1-s07-fl-lead-in-described-label",
+  "source": "[[[_default:x | ​Label]]]",
+  "action": "created"
+ },
+ "s08-fl-multihash-described": {
+  "fullname": "muse-probe-round5e-s1-s08-fl-multihash-described",
+  "source": "[[[foo/#/bar#baz | L]]]",
+  "action": "created"
+ },
+ "s09-ff-footnote-in-quote-doublelf": {
+  "fullname": "muse-probe-round5e-s1-s09-ff-footnote-in-quote-doublelf",
+  "source": "[[quote]]\n[[footnote]]g\f\n\nh[[/footnote]]\n[[/quote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "s10-esc-footnote-nolf": {
+  "fullname": "muse-probe-round5e-s1-s10-esc-footnote-nolf",
+  "source": "[[footnote]]A\u001bB[[/footnote]][[footnoteblock]]",
+  "action": "created"
+ },
+ "s11-esc-footnote-doublelf": {
+  "fullname": "muse-probe-round5e-s1-s11-esc-footnote-doublelf",
+  "source": "[[footnote]]A\u001b\n\nB[[/footnote]][[footnoteblock]]",
+  "action": "created"
+ },
+ "s12-ff-bibitem-in-quote": {
+  "fullname": "muse-probe-round5e-s1-s12-ff-bibitem-in-quote",
+  "source": "[[quote]]\n[[bibliography]]\n[[bibitem k]]A\fB[[/bibitem]]\n[[/bibliography]]\n[[/quote]]",
+  "action": "created"
+ },
+ "s13-contdiv-in-quote": {
+  "fullname": "muse-probe-round5e-s1-s13-contdiv-in-quote",
+  "source": "[[quote]]\nalpha\\\n[[div]]\nbravo[[/div]]\n[[/quote]]",
+  "action": "created"
+ },
+ "s14-contdiv-in-listitem": {
+  "fullname": "muse-probe-round5e-s1-s14-contdiv-in-listitem",
+  "source": "[[UL]]\n[[LI]]alpha\\\n[[div]]\nbravo[[/div]][[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "s15-contdiv-in-footnote": {
+  "fullname": "muse-probe-round5e-s1-s15-contdiv-in-footnote",
+  "source": "[[footnote]]alpha\\\n[[div]]\nbravo[[/div]][[/footnote]][[footnoteblock]]",
+  "action": "created"
+ },
+ "s16-contdiv-lead-freelink": {
+  "fullname": "muse-probe-round5e-s1-s16-contdiv-lead-freelink",
+  "source": "[[[x]]]\\\n[[div]]\nbravo[[/div]]",
+  "action": "created"
+ },
+ "s17-image-link-trailws-caption": {
+  "fullname": "muse-probe-round5e-s1-s17-image-link-trailws-caption",
+  "source": "[[image IMG.png link=\"http://example.com/x \"]]caption",
+  "action": "created"
+ },
+ "s18-image-link-trailws-in-div-caption": {
+  "fullname": "muse-probe-round5e-s1-s18-image-link-trailws-in-div-caption",
+  "source": "[[div class=\"caption\"]]\n[[image IMG.png link=\"http://example.com/x \"]]\n[[/div]]",
+  "action": "created"
+ },
+ "s19-image-link-multitab-trailws": {
+  "fullname": "muse-probe-round5e-s1-s19-image-link-multitab-trailws",
+  "source": "[[image IMG.png link=\"http://example.com/x \t \"]]cap",
+  "action": "created"
+ },
+ "s20-math-type-plus-mathinline": {
+  "fullname": "muse-probe-round5e-s1-s20-math-type-plus-mathinline",
+  "source": "[[math type=\"align\"]]\nx\n[[/math]]\n[[$y$]]",
+  "action": "created"
+ },
+ "s21-math-absent-inline-date": {
+  "fullname": "muse-probe-round5e-s1-s21-math-absent-inline-date",
+  "source": "[[math]]\nx\n[[/math]]\n[[$ [[date 0]] $]]",
+  "action": "created"
+ },
+ "s22-fl-lead-inside-mathinline": {
+  "fullname": "muse-probe-round5e-s1-s22-fl-lead-inside-mathinline",
+  "source": "[[$ [[[​_default:x | L]]] $]]",
+  "action": "created"
+ }
+}

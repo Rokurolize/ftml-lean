@@ -1,0 +1,178 @@
+[
+ {
+  "id": "L1-TRAILPROSE",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "c5fa7fc05133c523631cfb010c0dd783f91a33ffca7152077672d2a61f7c270b",
+  "source_sha256": "56f60d331aafaa71ea567bf1704cc570aaa94f1a13bdb436a8125925cc558949",
+  "live_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]<br> ZZZ</li> </ul>",
+  "ref_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]</li> </ul><br> ZZZ",
+  "equal": false
+ },
+ {
+  "id": "L2-DBLCLOSER",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "e3232cf6ec7b99004e2123db9edd84a9ae5181fedb8c2cc35a1eaf7d481961db",
+  "source_sha256": "0ae2d7639a3fa627dbc0d9a8cae1de8decbec3499491872f2946463bcbeeb351",
+  "live_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/OL]]<br> [[LI]]C[[/LI]]<br> [[/UL]]</li> </ul>",
+  "ref_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/OL]]<br> [[LI]]C[[/LI]]<br> [[/UL]]</li> </ul>",
+  "equal": true
+ },
+ {
+  "id": "L3-NOLF",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "c4d87f83bea9dd4b152ee152a824e4523dad20eb3199c959c7a70a4be10a4c58",
+  "source_sha256": "18bc51091e1682053aa3184a349ee203850c57776683afc9cbf1171b96f73a70",
+  "live_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]</li> </ul>",
+  "ref_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]</li> </ul>",
+  "equal": true
+ },
+ {
+  "id": "L4-MULTILI",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "273f1daa2420613cb9e76da4e5fb1f6bc6abcab48e3b442c9fdd16e2daec1100",
+  "source_sha256": "63d98bf3a3508555f5ac36594f7c04615a92fb608997223f3b3f62fff0581890",
+  "live_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[LI]]C[[/LI]]<br> [[/UL]]</li> </ul>",
+  "ref_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[LI]]C[[/LI]]<br> [[/UL]]</li> </ul>",
+  "equal": true
+ },
+ {
+  "id": "L5-SCOREDTRAIL",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "c5fa7fc05133c523631cfb010c0dd783f91a33ffca7152077672d2a61f7c270b",
+  "source_sha256": "ea2914f5da47767bb0be588fe3d06c0c7a65818f4095b2d6e90fc14151dd0b9f",
+  "live_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]<br> ZZZ</li> </ul>",
+  "ref_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]</li> </ul><br> ZZZ",
+  "equal": false
+ },
+ {
+  "id": "C1-DIVSCORED",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "e82d5b8c3a78218eb0de410040845dc5e3c81a82b5d7d46c65f1aaceac83e7aa",
+  "source_sha256": "04944ccea1220111dac13d981cfab5a62d6f393c69db11436fade7ef097e732a",
+  "live_norm": "alpha <div>bravo</div>",
+  "ref_norm": "<p>alpha <div>bravo</div></p>",
+  "equal": false
+ },
+ {
+  "id": "C2-DIVUPPER",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "795ea723345c57ba8e0b604e82588a4b922d9213a54e26ef718829f8080dbe80",
+  "source_sha256": "bf25948db188dfe3c9cef32909d8182cd2f7e5bd7607d83b4b87c53c81d88220",
+  "live_norm": "alpha <div> <p>bravo</p> </div>",
+  "ref_norm": "alpha <div><p>bravo</p> </div>",
+  "equal": false
+ },
+ {
+  "id": "C3-DIVATTR",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "51d7abec91009afcd7fbf2e35868ffab5c9ff3723a37a757eec928f099d6e58d",
+  "source_sha256": "e9762d7598a6364b2fd1255d1b97867b12999df9dcbd96c46aa8014a3b3d758b",
+  "live_norm": "lead text <div class=\"c\" id=\"u-x\"> <p>body</p> </div>",
+  "ref_norm": "lead text <div class=\"c\" id=\"u-x\"><p>body</p> </div>",
+  "equal": false
+ },
+ {
+  "id": "C4-DIVRESID",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "e5e593105f0ef583ed468fa701b487ad64eb4590743dda0f78da0cb147c2d6ff",
+  "source_sha256": "f3bb9d32dc25c4693b4b81f9d698033fee0a242b1084387da7031cca0c5dcae2",
+  "live_norm": "<p>lead[[div]]]<br> body[[/div]]</p>",
+  "ref_norm": "<p>lead[[div]]]<br> body[[/div]]</p>",
+  "equal": true
+ },
+ {
+  "id": "C5-CHAIN",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "7336a35b04bcda85f3a4edb8f7b9c2396a8c140547c085fd7a1237f9bf5f623d",
+  "source_sha256": "008489d641768f318864d57f55be9ed9f287cda883e99762642d31f0fd6034a7",
+  "live_norm": "alphabeta <div> <p>body</p> </div>",
+  "ref_norm": "alphabeta <div><p>body</p> </div>",
+  "equal": false
+ },
+ {
+  "id": "C6-TOKENLEAD",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "d44f1ffda25e1ba9bf4e70453df29a833a2ac2ae182d92870a2c34cb5859c9c5",
+  "source_sha256": "9bbaa28b48994d6110c594d3fbef24bb25cc7491b51f31fb5cf8d427522ae47e",
+  "live_norm": "[[size 12px]]lead <div> <p>body</p> </div>",
+  "ref_norm": "[[size 12px]]lead <div><p>body</p> </div>",
+  "equal": false
+ },
+ {
+  "id": "F1-BQMIXED",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "be5c94af7759c83a9c4cbb746f82fc4615fab746f3a516de930d65c954ed61f7",
+  "source_sha256": "6048650caa5de2012904e112ec884b0b80f6e71d3e35ea6158610e3100ebde34",
+  "live_norm": "<blockquote> <blockquote> <p>x</p> </blockquote> </blockquote>",
+  "ref_norm": "<blockquote><blockquote><p>x</p> </blockquote> </blockquote>",
+  "equal": false
+ },
+ {
+  "id": "F2-COLLEMPTY",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "34ff361d8f7983c6709eb8bd37c408f5f845bf82d73194954c2759494a576a97",
+  "source_sha256": "0803eddd1d21ce18dd6a433c638b2fecef73fb64cf42d8db3d0e9cdb2202da45",
+  "live_norm": "<div class=\"collapsible-block\"> <div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+ show block</a></div> <div class=\"collapsible-block-unfolded\" style=\"display:none\"> <div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">– hide block</a></div> <div class=\"collapsible-block-content\"></div> </div> </div>",
+  "ref_norm": "<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+ show block</a></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">– hide block</a></div><div class=\"collapsible-block-content\"></div></div></div>",
+  "equal": false
+ },
+ {
+  "id": "F3-DIVC0",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "988454946065fe011427dde3078697c1fcf65e8dc03b72ee73072de7bd8a3503",
+  "source_sha256": "ef756ef1871e238a04ee354f825b4083f07729c5329e3ffa96d2cefb6f23e571",
+  "live_norm": "<p>[[div class=&quot;ab&quot;]]X[[/div]]</p>",
+  "ref_norm": "<p>[[div class=&quot;ab&quot;]]X[[/div]]</p>",
+  "equal": true
+ },
+ {
+  "id": "F4-DIVTABATTR",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "2dbcaec91c626612e263bcc5368ad5a60e60f27bbd7ba2f3e14f8f1ccd30ef27",
+  "source_sha256": "d4dbc0d9d133abdda6b7aba2c3e3d9d2255fb4a815e1b940fc53ef586d61f885",
+  "live_norm": "<p>[[div class=&quot;c&quot;]]X[[/div]]</p>",
+  "ref_norm": "<p>[[div class=&quot;c&quot;]]X[[/div]]</p>",
+  "equal": true
+ },
+ {
+  "id": "F5-BRKQUOTE",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "e3f1bbe46e75ed89267938833a5a9d033c8942f0e92e83246f31c4f7171a108a",
+  "source_sha256": "4144b8fcdcb9d02057b32409db1888d799c8cb1158359786fb5907a239dfd76a",
+  "live_norm": "<blockquote> <p>a<br> b</p> </blockquote>",
+  "ref_norm": "<blockquote><p>a<br> b</p> </blockquote>",
+  "equal": false
+ }
+]

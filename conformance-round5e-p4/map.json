@@ -1,0 +1,82 @@
+{
+ "R5E-P4-C01": {
+  "fullname": "muse-probe-round5e-p4-r5e-p4-c01",
+  "source": "alpha\u001bbravo",
+  "action": "created"
+ },
+ "R5E-P4-C02": {
+  "fullname": "muse-probe-round5e-p4-r5e-p4-c02",
+  "source": "alphabravo",
+  "action": "created"
+ },
+ "R5E-P4-C03": {
+  "fullname": "muse-probe-round5e-p4-r5e-p4-c03",
+  "source": "alpha\u000bbravo",
+  "action": "created"
+ },
+ "R5E-P4-C04": {
+  "fullname": "muse-probe-round5e-p4-r5e-p4-c04",
+  "source": "**a**\u000b//c//",
+  "action": "created"
+ },
+ "R5E-P4-C05": {
+  "fullname": "muse-probe-round5e-p4-r5e-p4-c05",
+  "source": "[[footnote]]A\u001bB[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R5E-P4-C06": {
+  "fullname": "muse-probe-round5e-p4-r5e-p4-c06",
+  "source": "[[footnote]]AB[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R5E-P4-C07": {
+  "fullname": "muse-probe-round5e-p4-r5e-p4-c07",
+  "source": "[[footnote]]@@@@\u000b@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R5E-P4-C08": {
+  "fullname": "muse-probe-round5e-p4-r5e-p4-c08",
+  "source": "[[footnote]]A\u001b\nB[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R5E-P4-C09": {
+  "fullname": "muse-probe-round5e-p4-r5e-p4-c09",
+  "source": "alpha\\\n[[div_]]\nbravo[[/div]]",
+  "action": "created"
+ },
+ "R5E-P4-C10": {
+  "fullname": "muse-probe-round5e-p4-r5e-p4-c10",
+  "source": "alpha\\\n[[DIV]]\nbravo[[/DIV]]",
+  "action": "created"
+ },
+ "R5E-P4-C11": {
+  "fullname": "muse-probe-round5e-p4-r5e-p4-c11",
+  "source": "alpha\\\n[[div  id=x]]\nbravo[[/div]]",
+  "action": "created"
+ },
+ "R5E-P4-C12": {
+  "fullname": "muse-probe-round5e-p4-r5e-p4-c12",
+  "source": "alpha --- bravo",
+  "action": "created"
+ },
+ "R5E-P4-C13": {
+  "fullname": "muse-probe-round5e-p4-r5e-p4-c13",
+  "source": "1 234",
+  "action": "created"
+ },
+ "R5E-P4-C14": {
+  "fullname": "muse-probe-round5e-p4-r5e-p4-c14",
+  "source": "2 kgx",
+  "action": "created"
+ },
+ "R5E-P4-C15": {
+  "fullname": "muse-probe-round5e-p4-r5e-p4-c15",
+  "source": "alpha­bravo",
+  "action": "created"
+ },
+ "R5E-P4-C16": {
+  "fullname": "muse-probe-round5e-p4-r5e-p4-c16",
+  "source": "alpha​bravo",
+  "action": "created"
+ }
+}

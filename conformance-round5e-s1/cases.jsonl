@@ -1,0 +1,22 @@
+{"id": "s01-list-ft-gap-footnoteblock", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]gap[[/footnote]]\n[[footnoteblock]]\n[[LI]]B[[/LI]]\n[[/UL]]"}
+{"id": "s02-list-ft-gap-ff-body", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]g\fap[[/footnote]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnoteblock]]"}
+{"id": "s03-list-ft-gap-two-footnotes", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]one[[/footnote]]\n[[footnote]]two[[/footnote]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnoteblock]]"}
+{"id": "s04-list-nested-failed-closer-ft", "source": "[[OL]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/OL]]\n[[footnote]]note[[/footnote]]\n[[LI]]tail[[/LI]]\n[[/UL]]\n[[footnoteblock]]"}
+{"id": "s05-fl-zwsp-described", "source": "[[[\u200b_default:x | Label]]]"}
+{"id": "s06-fl-wj-described", "source": "[[[\u2060_default:x | Label]]]"}
+{"id": "s07-fl-lead-in-described-label", "source": "[[[_default:x | \u200bLabel]]]"}
+{"id": "s08-fl-multihash-described", "source": "[[[foo/#/bar#baz | L]]]"}
+{"id": "s09-ff-footnote-in-quote-doublelf", "source": "[[quote]]\n[[footnote]]g\f\n\nh[[/footnote]]\n[[/quote]]\n[[footnoteblock]]"}
+{"id": "s10-esc-footnote-nolf", "source": "[[footnote]]A\u001bB[[/footnote]][[footnoteblock]]"}
+{"id": "s11-esc-footnote-doublelf", "source": "[[footnote]]A\u001b\n\nB[[/footnote]][[footnoteblock]]"}
+{"id": "s12-ff-bibitem-in-quote", "source": "[[quote]]\n[[bibliography]]\n[[bibitem k]]A\fB[[/bibitem]]\n[[/bibliography]]\n[[/quote]]"}
+{"id": "s13-contdiv-in-quote", "source": "[[quote]]\nalpha\\\n[[div]]\nbravo[[/div]]\n[[/quote]]"}
+{"id": "s14-contdiv-in-listitem", "source": "[[UL]]\n[[LI]]alpha\\\n[[div]]\nbravo[[/div]][[/LI]]\n[[/UL]]"}
+{"id": "s15-contdiv-in-footnote", "source": "[[footnote]]alpha\\\n[[div]]\nbravo[[/div]][[/footnote]][[footnoteblock]]"}
+{"id": "s16-contdiv-lead-freelink", "source": "[[[x]]]\\\n[[div]]\nbravo[[/div]]"}
+{"id": "s17-image-link-trailws-caption", "source": "[[image IMG.png link=\"http://example.com/x \"]]caption"}
+{"id": "s18-image-link-trailws-in-div-caption", "source": "[[div class=\"caption\"]]\n[[image IMG.png link=\"http://example.com/x \"]]\n[[/div]]"}
+{"id": "s19-image-link-multitab-trailws", "source": "[[image IMG.png link=\"http://example.com/x \t \"]]cap"}
+{"id": "s20-math-type-plus-mathinline", "source": "[[math type=\"align\"]]\nx\n[[/math]]\n[[$y$]]"}
+{"id": "s21-math-absent-inline-date", "source": "[[math]]\nx\n[[/math]]\n[[$ [[date 0]] $]]"}
+{"id": "s22-fl-lead-inside-mathinline", "source": "[[$ [[[\u200b_default:x | L]]] $]]"}

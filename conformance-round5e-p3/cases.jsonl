@@ -1,0 +1,16 @@
+{"id": "p3e-01-img-link-trailing-tab", "source": "[[image IMG.png link=\"http://example.com/x\t\"]]"}
+{"id": "p3e-02-img-link-trailing-mixed", "source": "[[image IMG.png link=\"http://example.com/x \t \"]]"}
+{"id": "p3e-03-img-local-link-trailing", "source": "[[image IMG.png link=\"SomePage \"]]"}
+{"id": "p3e-04-img-fragment-link-trailing", "source": "[[image IMG.png link=\"#anchor \"]]"}
+{"id": "p3e-05-img-star-link-trailing", "source": "[[image IMG.png link=\"*http://example.com/x \"]]"}
+{"id": "p3e-06-img-title-trailing", "source": "[[image IMG.png title=\"T \"]]"}
+{"id": "p3e-07-img-alt-trailing", "source": "[[image IMG.png alt=\"A \"]]"}
+{"id": "p3e-08-img-width-trailing", "source": "[[image IMG.png width=\"10 \"]]"}
+{"id": "p3e-09-img-class-trailing", "source": "[[image IMG.png class=\"thumb \"]]"}
+{"id": "p3e-10-img-other-attrs-no-link", "source": "[[image IMG.png title=\"T \" alt=\"A \" width=\"10 \"]]"}
+{"id": "p3e-11-img-star-local-trailing", "source": "[[image IMG.png link=\"*SomePage \"]]"}
+{"id": "p3e-12-img-link-two-trailing-spaces", "source": "[[image IMG.png link=\"http://example.com/x  \"]]"}
+{"id": "p3e-13-img-path-link-trailing", "source": "[[image IMG.png link=\"/Some/Page \"]]"}
+{"id": "p3e-14-gallery-size-trailing", "source": "[[gallery size=\"small \"]]\n: IMG.png\n: IMG2.png\n[[/gallery]]"}
+{"id": "p3e-15-include-value-trailing", "source": "[[include muse-probe-round5e-p3-t2 | a=X ]]"}
+{"id": "p3e-16-include-repeated-placeholder", "source": "[[include muse-probe-round5e-p3-t1 | a=VV]]"}

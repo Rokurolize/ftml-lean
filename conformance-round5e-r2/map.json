@@ -1,0 +1,92 @@
+{
+ "r2e-01-freelink-u200c": {
+  "fullname": "muse-probe-round5e-r2-r2e-01-freelink-u200c",
+  "source": "[[[‌_default:x]]]",
+  "action": "created"
+ },
+ "r2e-02-freelink-u200d": {
+  "fullname": "muse-probe-round5e-r2-r2e-02-freelink-u200d",
+  "source": "[[[‍_default:x]]]",
+  "action": "created"
+ },
+ "r2e-03-freelink-u2061": {
+  "fullname": "muse-probe-round5e-r2-r2e-03-freelink-u2061",
+  "source": "[[[⁡_default:x]]]",
+  "action": "created"
+ },
+ "r2e-04-freelink-u2064": {
+  "fullname": "muse-probe-round5e-r2-r2e-04-freelink-u2064",
+  "source": "[[[⁤_default:x]]]",
+  "action": "created"
+ },
+ "r2e-05-freelink-lead-mixed": {
+  "fullname": "muse-probe-round5e-r2-r2e-05-freelink-lead-mixed",
+  "source": "[[[​‌_default:x]]]",
+  "action": "created"
+ },
+ "r2e-06-freelink-double-hash-route": {
+  "fullname": "muse-probe-round5e-r2-r2e-06-freelink-double-hash-route",
+  "source": "[[[foo##/bar]]]",
+  "action": "created"
+ },
+ "r2e-07-freelink-route-twice-adjacent": {
+  "fullname": "muse-probe-round5e-r2-r2e-07-freelink-route-twice-adjacent",
+  "source": "[[[foo/#/#/bar]]]",
+  "action": "created"
+ },
+ "r2e-08-freelink-empty-base-anchor": {
+  "fullname": "muse-probe-round5e-r2-r2e-08-freelink-empty-base-anchor",
+  "source": "[[[/#/bar#baz]]]",
+  "action": "created"
+ },
+ "r2e-09-freelink-multihash-label": {
+  "fullname": "muse-probe-round5e-r2-r2e-09-freelink-multihash-label",
+  "source": "[[[foo/#/bar#baz|shown]]]",
+  "action": "created"
+ },
+ "r2e-10-freelink-leading-hash-route": {
+  "fullname": "muse-probe-round5e-r2-r2e-10-freelink-leading-hash-route",
+  "source": "[[[#foo/#/bar]]]",
+  "action": "created"
+ },
+ "r2e-11-freelink-route-trailing-hash": {
+  "fullname": "muse-probe-round5e-r2-r2e-11-freelink-route-trailing-hash",
+  "source": "[[[foo/#/bar/#]]]",
+  "action": "created"
+ },
+ "r2e-12-math-variant-gather": {
+  "fullname": "muse-probe-round5e-r2-r2e-12-math-variant-gather",
+  "source": "[[math TYPE=\"gather\"]]x\n[[/math]]",
+  "action": "created"
+ },
+ "r2e-13-math-bare-nonascii": {
+  "fullname": "muse-probe-round5e-r2-r2e-13-math-bare-nonascii",
+  "source": "[[math]]é\n[[/math]]",
+  "action": "created"
+ },
+ "r2e-14-math-lowercase-multline": {
+  "fullname": "muse-probe-round5e-r2-r2e-14-math-lowercase-multline",
+  "source": "[[math type=\"multline\"]]x\n[[/math]]",
+  "action": "created"
+ },
+ "r2e-15-url-nonascii-path": {
+  "fullname": "muse-probe-round5e-r2-r2e-15-url-nonascii-path",
+  "source": "https://example.com/café",
+  "action": "created"
+ },
+ "r2e-16-interwiki-nonascii-google": {
+  "fullname": "muse-probe-round5e-r2-r2e-16-interwiki-nonascii-google",
+  "source": "[google:café]",
+  "action": "created"
+ },
+ "r2e-17-image-fragment-nonascii-alt": {
+  "fullname": "muse-probe-round5e-r2-r2e-17-image-fragment-nonascii-alt",
+  "source": "[[image http://x/y.png link=\"#frag\" alt=\"café\"]]",
+  "action": "created"
+ },
+ "r2e-18-mathinline-escapes": {
+  "fullname": "muse-probe-round5e-r2-r2e-18-mathinline-escapes",
+  "source": "[[$ a & b < c > d \"e\" 'f' é $]]",
+  "action": "created"
+ }
+}

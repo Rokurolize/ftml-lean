@@ -1,0 +1,9 @@
+# MIRROR-CONSEQUENCE R5E-P4 — source-reading inferences only
+
+No Lean elaboration was run by this evidence-only unit; every mirror statement below is an inference from reading the current canonical mirror sources on the post-REFCORR11 ground.
+
+C-R5E-P4-1 (footnote ESC drop): lean-ftml/LeanFtml/NotesRules.lean:207-213 defines `isLiveDroppedControl (b) := b < 32 && b != 9 && b != 10 && b != 13` with the comment that form feed is the witness; byte 27 (ESC) satisfies this predicate. `stripLiveDroppedControls` filters with it, and `footnoteProcess` at lines 224-238 calls it unconditionally on the trimmed body before the single-break decision and visible projection. So the mirror transcribes the same over-broad class as Footnote.php:66 and, by source reading, carries the same divergence against live. A correction should narrow `isLiveDroppedControl` to the residual-text class used in Inline3Rules.lean `tightenBytes` (`b < 32 && b != 9 && b != 10 && b != 13 && b != 27`), mirroring a narrowed PHP filter, and should re-check the existing REFCORR11 footnote pins (`refcorr11_fn_*`) which are all form-feed based and therefore do not constrain ESC.
+
+Cleared residual-text siblings: lean-ftml/LeanFtml/Inline3Rules.lean `tightenBytes` filters only the discarded C0 class that excludes ESC, so C01 (ESC kept in residual text) matches the mirror reading; C02 (DEL), C03 (VT) and C04 (VT between tokens) are consistent with that byte predicate.
+
+Cleared scored-div frame: lean-ftml/LeanFtml/LinkRules.lean:117-129 `isDivOpenerLine` admits the optional underscore and uppercase spelling, `concatScan` at lines 144-149 joins the pair with one space, and `concatScanLeads` at lines 156-166 records the lead; lean-ftml/LeanFtml/ParaRules.lean:595-660 `runHasDivStart` plus `paraProcess` suppress the paragraph wrapper for a matching lead. The scored-div raw DIFFs C09/C17 are owned Stage 2 tidy frame differences, not mirror rule divergences, and require no mirror change.

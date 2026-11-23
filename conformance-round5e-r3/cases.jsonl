@@ -1,0 +1,15 @@
+{"id": "R3E-01", "source": "[[footnote]]\f\nX[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3E-02", "source": "[[footnote]]\u000b\nX[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3E-03", "source": "[[footnote]]\u0001\nX[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3E-04", "source": "[[footnote]]\f\n@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3E-05", "source": "[[footnote]]X\n\f[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3E-06", "source": "[[footnote]]@@@@\n\n@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3E-07", "source": "[[footnote]]@@@@\u001f\n\n@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3E-08", "source": "[[footnote]]@@@@\f\n\n@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3E-09", "source": "[[footnote]]@@@@\f@@@@[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3E-10", "source": "[[bibliography]]\n: a : @@@@\f@@@@\n[[/bibliography]]"}
+{"id": "R3E-11", "source": "+ Alpha\n\n[[toc]]\n\n+ Beta"}
+{"id": "R3E-12", "source": "[[toc]]\n\n+ Hea\fding"}
+{"id": "R3E-13", "source": "[[a id=\"a\fb\"]]x[[/a]]"}
+{"id": "R3E-14", "source": "[[# a\fb]]"}
+{"id": "R3E-15", "source": "[[toc]]\n\n+ Head[[footnote]]\f\n@@@@[[/footnote]]\n\n[[footnoteblock]]"}

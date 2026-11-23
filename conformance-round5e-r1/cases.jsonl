@@ -1,0 +1,17 @@
+{"id": "R5ER1-D1", "source": "[[div id=\"U-foo\"]]\nbody\n[[/div]]"}
+{"id": "R5ER1-D2", "source": "[[div id=\"  u-foo\"]]\nbody\n[[/div]]"}
+{"id": "R5ER1-D3", "source": "[[div id=\" [[size 12px]]x[[/size]]\"]]\nbody\n[[/div]]"}
+{"id": "R5ER1-D4", "source": "[[div data-x=\"[[size 12px]]q[[/size]]\"]]\nbody\n[[/div]]"}
+{"id": "R5ER1-D5", "source": "[[div style=\"a:[[size 12px]]q[[/size]]\"]]\nbody\n[[/div]]"}
+{"id": "R5ER1-D6", "source": "[[div type=\"  t  \"]]\nbody\n[[/div]]"}
+{"id": "R5ER1-L1", "source": "alpha\\\n[[div]]\na[[/div]]\nbeta\\\n[[div]]\nb[[/div]]"}
+{"id": "R5ER1-L2", "source": "alpha [[size 12px]]x[[/size]]\\\n[[div]]\nbody[[/div]]"}
+{"id": "R5ER1-L3", "source": "alpha\\\n[[DIV]]\nbody[[/DIV]]"}
+{"id": "R5ER1-L4", "source": "alpha   \\\n[[div]]\nbody[[/div]]"}
+{"id": "R5ER1-L5", "source": "alpha\\\n[[div]]   \nbody[[/div]]"}
+{"id": "R5ER1-S1", "source": "[[span data-x=\"[[size 12px]]q[[/size]]\"]]body[[/span]]"}
+{"id": "R5ER1-Z1", "source": "[[size 12PX]]x[[/size]]"}
+{"id": "R5ER1-K1", "source": "[[collapsible hideLocation=\"BOTH\"]]body[[/collapsible]]"}
+{"id": "R5ER1-T1", "source": "[[tabview]][[tab title=\"  hi  \"]]a[[/tab]][[/tabview]]"}
+{"id": "R5ER1-B1", "source": ">>> x"}
+{"id": "R5ER1-X1", "source": "[[ol type=\"a\"]]\n[[li]]A[[/li]]\n[[/ol]]"}

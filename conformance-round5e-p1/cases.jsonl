@@ -1,0 +1,16 @@
+{"id": "L1-TRAILPROSE", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\nZZZ"}
+{"id": "L2-DBLCLOSER", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/OL]]\n[[LI]]C[[/LI]]\n[[/UL]]"}
+{"id": "L3-NOLF", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]][[LI]]B[[/LI]]\n[[/UL]]"}
+{"id": "L4-MULTILI", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[LI]]C[[/LI]]\n[[/UL]]"}
+{"id": "L5-SCOREDTRAIL", "source": "[[UL_]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\nZZZ"}
+{"id": "C1-DIVSCORED", "source": "alpha\\\n[[div_]]\nbravo[[/div]]"}
+{"id": "C2-DIVUPPER", "source": "alpha\\\n[[DIV]]\nbravo[[/DIV]]"}
+{"id": "C3-DIVATTR", "source": "lead text\\\n[[div class=\"c\" id=\"u-x\"]]\nbody[[/div]]"}
+{"id": "C4-DIVRESID", "source": "lead\\\n[[div]]]\nbody[[/div]]"}
+{"id": "C5-CHAIN", "source": "alpha\\\nbeta\\\n[[div]]\nbody[[/div]]"}
+{"id": "C6-TOKENLEAD", "source": "[[size 12px]]lead\\\n[[div]]\nbody[[/div]]"}
+{"id": "F1-BQMIXED", "source": "> \n>> x"}
+{"id": "F2-COLLEMPTY", "source": "[[collapsible]][[/collapsible]]"}
+{"id": "F3-DIVC0", "source": "[[div class=\"a\fb\"]]X[[/div]]"}
+{"id": "F4-DIVTABATTR", "source": "[[div\tclass=\"c\"]]X[[/div]]"}
+{"id": "F5-BRKQUOTE", "source": "> a _\n> b"}

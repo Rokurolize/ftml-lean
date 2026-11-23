@@ -1,0 +1,18 @@
+{"id": "R5EP2-01", "source": "[[[\u200c_default:x]]]"}
+{"id": "R5EP2-02", "source": "[[[\u2061_default:x]]]"}
+{"id": "R5EP2-03", "source": "[[[\u200b\u2060_default:x]]]"}
+{"id": "R5EP2-04", "source": "[[[a/#/b##]]]"}
+{"id": "R5EP2-05", "source": "[[[a/#/b#c#d]]]"}
+{"id": "R5EP2-06", "source": "[[[a/#/b|lab#frag]]]"}
+{"id": "R5EP2-07", "source": "[[[a#b/#/c]]]"}
+{"id": "R5EP2-08", "source": "[[math types=\"align\"]]\nx\n[[/math]]"}
+{"id": "R5EP2-09", "source": "[[math a type=\"align\" tYpE=\"gather\"]]\nx\n[[/math]]"}
+{"id": "R5EP2-10", "source": "[[math type=\"gather\" type=\"align\"]]\nx\n[[/math]]"}
+{"id": "R5EP2-11", "source": "[[math type='align']]\nx\n[[/math]]"}
+{"id": "R5EP2-12", "source": "http://example.com/x[[[foo]]]"}
+{"id": "R5EP2-13", "source": "[wiki:Page a|b]"}
+{"id": "R5EP2-14", "source": "##red|a\nb##"}
+{"id": "R5EP2-15", "source": "[[code type=\"python\" name=\"x\"]]y[[/code]]"}
+{"id": "R5EP2-16", "source": "//a\u00a0b//"}
+{"id": "R5EP2-17", "source": "//a////b//"}
+{"id": "R5EP2-18", "source": "[[$ a [[[x|y]]] b $]]"}

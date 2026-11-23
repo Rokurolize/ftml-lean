@@ -1,0 +1,82 @@
+{
+ "p3e-01-img-link-trailing-tab": {
+  "fullname": "muse-probe-round5e-p3-p3e-01-img-link-trailing-tab",
+  "source": "[[image IMG.png link=\"http://example.com/x\t\"]]",
+  "action": "created"
+ },
+ "p3e-02-img-link-trailing-mixed": {
+  "fullname": "muse-probe-round5e-p3-p3e-02-img-link-trailing-mixed",
+  "source": "[[image IMG.png link=\"http://example.com/x \t \"]]",
+  "action": "created"
+ },
+ "p3e-03-img-local-link-trailing": {
+  "fullname": "muse-probe-round5e-p3-p3e-03-img-local-link-trailing",
+  "source": "[[image IMG.png link=\"SomePage \"]]",
+  "action": "created"
+ },
+ "p3e-04-img-fragment-link-trailing": {
+  "fullname": "muse-probe-round5e-p3-p3e-04-img-fragment-link-trailing",
+  "source": "[[image IMG.png link=\"#anchor \"]]",
+  "action": "created"
+ },
+ "p3e-05-img-star-link-trailing": {
+  "fullname": "muse-probe-round5e-p3-p3e-05-img-star-link-trailing",
+  "source": "[[image IMG.png link=\"*http://example.com/x \"]]",
+  "action": "created"
+ },
+ "p3e-06-img-title-trailing": {
+  "fullname": "muse-probe-round5e-p3-p3e-06-img-title-trailing",
+  "source": "[[image IMG.png title=\"T \"]]",
+  "action": "created"
+ },
+ "p3e-07-img-alt-trailing": {
+  "fullname": "muse-probe-round5e-p3-p3e-07-img-alt-trailing",
+  "source": "[[image IMG.png alt=\"A \"]]",
+  "action": "created"
+ },
+ "p3e-08-img-width-trailing": {
+  "fullname": "muse-probe-round5e-p3-p3e-08-img-width-trailing",
+  "source": "[[image IMG.png width=\"10 \"]]",
+  "action": "created"
+ },
+ "p3e-09-img-class-trailing": {
+  "fullname": "muse-probe-round5e-p3-p3e-09-img-class-trailing",
+  "source": "[[image IMG.png class=\"thumb \"]]",
+  "action": "created"
+ },
+ "p3e-10-img-other-attrs-no-link": {
+  "fullname": "muse-probe-round5e-p3-p3e-10-img-other-attrs-no-link",
+  "source": "[[image IMG.png title=\"T \" alt=\"A \" width=\"10 \"]]",
+  "action": "created"
+ },
+ "p3e-11-img-star-local-trailing": {
+  "fullname": "muse-probe-round5e-p3-p3e-11-img-star-local-trailing",
+  "source": "[[image IMG.png link=\"*SomePage \"]]",
+  "action": "created"
+ },
+ "p3e-12-img-link-two-trailing-spaces": {
+  "fullname": "muse-probe-round5e-p3-p3e-12-img-link-two-trailing-spaces",
+  "source": "[[image IMG.png link=\"http://example.com/x  \"]]",
+  "action": "created"
+ },
+ "p3e-13-img-path-link-trailing": {
+  "fullname": "muse-probe-round5e-p3-p3e-13-img-path-link-trailing",
+  "source": "[[image IMG.png link=\"/Some/Page \"]]",
+  "action": "created"
+ },
+ "p3e-14-gallery-size-trailing": {
+  "fullname": "muse-probe-round5e-p3-p3e-14-gallery-size-trailing",
+  "source": "[[gallery size=\"small \"]]\n: IMG.png\n: IMG2.png\n[[/gallery]]",
+  "action": "created"
+ },
+ "p3e-15-include-value-trailing": {
+  "fullname": "muse-probe-round5e-p3-p3e-15-include-value-trailing",
+  "source": "[[include muse-probe-round5e-p3-t2 | a=X ]]",
+  "action": "created"
+ },
+ "p3e-16-include-repeated-placeholder": {
+  "fullname": "muse-probe-round5e-p3-p3e-16-include-repeated-placeholder",
+  "source": "[[include muse-probe-round5e-p3-t1 | a=VV]]",
+  "action": "created"
+ }
+}

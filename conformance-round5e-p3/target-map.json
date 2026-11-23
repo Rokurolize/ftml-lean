@@ -1,0 +1,12 @@
+{
+ "t1": {
+  "fullname": "muse-probe-round5e-p3-t1",
+  "source": "A={$a} B={$a} C={$ab}",
+  "action": "created"
+ },
+ "t2": {
+  "fullname": "muse-probe-round5e-p3-t2",
+  "source": "A=[{$a}]",
+  "action": "created"
+ }
+}

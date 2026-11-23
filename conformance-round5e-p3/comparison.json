@@ -1,0 +1,154 @@
+{
+ "summary": {
+  "agree": 13,
+  "differ": 3,
+  "invalid": 0,
+  "missing": 0
+ },
+ "rows": [
+  {
+   "id": "p3e-01-img-link-trailing-tab",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5e-p3-p3e-01-img-link-trailing-tab",
+   "reference": "<a href=\"http://example.com/x\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live": "<a href=\"http://example.com/x\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live_sha256": "ac5094992c49299bdcf1e99d7c4bb6f432c231e3f966bbcd80ba4cb925b041ad",
+   "source": "[[image IMG.png link=\"http://example.com/x\t\"]]"
+  },
+  {
+   "id": "p3e-02-img-link-trailing-mixed",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5e-p3-p3e-02-img-link-trailing-mixed",
+   "reference": "<a href=\"http://example.com/x\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live": "<a href=\"http://example.com/x\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live_sha256": "b0da819db38cc5665a7d684e96b4d80e263554f0ce47638e377caad68e668f59",
+   "source": "[[image IMG.png link=\"http://example.com/x \t \"]]"
+  },
+  {
+   "id": "p3e-03-img-local-link-trailing",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5e-p3-p3e-03-img-local-link-trailing",
+   "reference": "<a href=\"/SomePage\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live": "<a href=\"/SomePage\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live_sha256": "605e00d57b62785c37a572b3d058ba241ac430a0c6b9b9d8dcddd34faa6a7478",
+   "source": "[[image IMG.png link=\"SomePage \"]]"
+  },
+  {
+   "id": "p3e-04-img-fragment-link-trailing",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5e-p3-p3e-04-img-fragment-link-trailing",
+   "reference": "<a href=\"#anchor\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live": "<a href=\"#anchor\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live_sha256": "e1b6b56f16031610c6909ab933ad240da93b2030f9013c381149f7adbdd4a0e1",
+   "source": "[[image IMG.png link=\"#anchor \"]]"
+  },
+  {
+   "id": "p3e-05-img-star-link-trailing",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5e-p3-p3e-05-img-star-link-trailing",
+   "reference": "<a href=\"http://example.com/x\" target=\"_blank\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live": "<a href=\"http://example.com/x\" target=\"_blank\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live_sha256": "44723ad634c5e7e7e1ffeff8ef578f6bf190359f78a183864d2b3570186c306b",
+   "source": "[[image IMG.png link=\"*http://example.com/x \"]]"
+  },
+  {
+   "id": "p3e-06-img-title-trailing",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5e-p3-p3e-06-img-title-trailing",
+   "reference": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" title=\"T \">",
+   "live": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" title=\"T \">",
+   "live_sha256": "ceac17552c8d8be49431823e6437e934b77153fa2a5d30a4a24130b4f8acd716",
+   "source": "[[image IMG.png title=\"T \"]]"
+  },
+  {
+   "id": "p3e-07-img-alt-trailing",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5e-p3-p3e-07-img-alt-trailing",
+   "reference": "<img alt=\"A \" class=\"image\" src=\"/local--files//IMG.png\">",
+   "live": "<img alt=\"A \" class=\"image\" src=\"/local--files//IMG.png\">",
+   "live_sha256": "6819ed64cf8a18c58d0f889112661ea6cbfef32a59138d50fab4ecc2d6e9126b",
+   "source": "[[image IMG.png alt=\"A \"]]"
+  },
+  {
+   "id": "p3e-08-img-width-trailing",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5e-p3-p3e-08-img-width-trailing",
+   "reference": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" width=\"10 \">",
+   "live": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" width=\"10\">",
+   "live_sha256": "5ba9cb3bf1de4861fc1bf970c573b191d89482e3b84a9bf4b266e880f13d150e",
+   "source": "[[image IMG.png width=\"10 \"]]"
+  },
+  {
+   "id": "p3e-09-img-class-trailing",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5e-p3-p3e-09-img-class-trailing",
+   "reference": "<img alt=\"IMG.png\" class=\"thumb \" src=\"/local--files//IMG.png\">",
+   "live": "<img alt=\"IMG.png\" class=\"thumb\" src=\"/local--files//IMG.png\">",
+   "live_sha256": "64e5779bc2c156779d28131c8341822a059d94a64667ab2f079d9ad199abbe2b",
+   "source": "[[image IMG.png class=\"thumb \"]]"
+  },
+  {
+   "id": "p3e-10-img-other-attrs-no-link",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5e-p3-p3e-10-img-other-attrs-no-link",
+   "reference": "<img alt=\"A \" class=\"image\" src=\"/local--files//IMG.png\" title=\"T \" width=\"10 \">",
+   "live": "<img alt=\"A \" class=\"image\" src=\"/local--files//IMG.png\" title=\"T \" width=\"10\">",
+   "live_sha256": "7498fb7e19c910e273fea912f0d14cc668fb5dd01ce746bc6dce09e2efaef33f",
+   "source": "[[image IMG.png title=\"T \" alt=\"A \" width=\"10 \"]]"
+  },
+  {
+   "id": "p3e-11-img-star-local-trailing",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5e-p3-p3e-11-img-star-local-trailing",
+   "reference": "<a href=\"/SomePage\" target=\"_blank\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live": "<a href=\"/SomePage\" target=\"_blank\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live_sha256": "b203dfd1d49bd4d8a420ad43ddd8f438396e40a06c94c2e45ccd8e19ce68354f",
+   "source": "[[image IMG.png link=\"*SomePage \"]]"
+  },
+  {
+   "id": "p3e-12-img-link-two-trailing-spaces",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5e-p3-p3e-12-img-link-two-trailing-spaces",
+   "reference": "<a href=\"http://example.com/x\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live": "<a href=\"http://example.com/x\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live_sha256": "6d56f509ab0ce62c9a2bf771f3db71718785ca9004cb9f58e72d99357aaf445a",
+   "source": "[[image IMG.png link=\"http://example.com/x  \"]]"
+  },
+  {
+   "id": "p3e-13-img-path-link-trailing",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5e-p3-p3e-13-img-path-link-trailing",
+   "reference": "<a href=\"/Some/Page\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live": "<a href=\"/Some/Page\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live_sha256": "677e1b5ecec5003a4807f1c457e41dc839c75c4a3eb70f72fed3f3dd35c955c0",
+   "source": "[[image IMG.png link=\"/Some/Page \"]]"
+  },
+  {
+   "id": "p3e-14-gallery-size-trailing",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5e-p3-p3e-14-gallery-size-trailing",
+   "reference": "<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//IMG.png\"><img alt src=\"/local--resized-images//IMG.png/thumbnail.jpg\"></a></td></tr></table></div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//IMG2.png\"><img alt src=\"/local--resized-images//IMG2.png/thumbnail.jpg\"></a></td></tr></table></div></div>",
+   "live": "<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//IMG.png\"><img alt src=\"/local--resized-images//IMG.png/thumbnail.jpg\"></a></td></tr></table></div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//IMG2.png\"><img alt src=\"/local--resized-images//IMG2.png/thumbnail.jpg\"></a></td></tr></table></div></div>",
+   "live_sha256": "b4da084abb1fa651d283ca1b1c1895432d52407ef06d4787666765b82681774b",
+   "source": "[[gallery size=\"small \"]]\n: IMG.png\n: IMG2.png\n[[/gallery]]"
+  },
+  {
+   "id": "p3e-15-include-value-trailing",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5e-p3-p3e-15-include-value-trailing",
+   "reference": "<p>A=[X]</p>",
+   "live": "<p>A=[X]</p>",
+   "live_sha256": "cba6b7ddc0e43d8e1643cc7a1e9217ee20c7ec96faf7860d8ca31f9385e368aa",
+   "source": "[[include muse-probe-round5e-p3-t2 | a=X ]]"
+  },
+  {
+   "id": "p3e-16-include-repeated-placeholder",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5e-p3-p3e-16-include-repeated-placeholder",
+   "reference": "<p>A=VV B=VV C={$ab}</p>",
+   "live": "<p>A=VV B=VV C={$ab}</p>",
+   "live_sha256": "09b579cdb2dc94b4e1c07279e64dcfc831b8c152ca899d446d433417717bc20e",
+   "source": "[[include muse-probe-round5e-p3-t1 | a=VV]]"
+  }
+ ]
+}

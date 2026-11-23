@@ -1,0 +1,182 @@
+{
+ "R5EP2-01": {
+  "fullname": "muse-probe-round5e-p2-r5ep2-01",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[‌_default:x]]]",
+  "source_sha256": "6decb45fbf327c16a3056afa799438bca4f87f009878cae8341c23bd632c1264",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5EP2-02": {
+  "fullname": "muse-probe-round5e-p2-r5ep2-02",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[⁡_default:x]]]",
+  "source_sha256": "040f0bcc6b02b8fcbe6afc7543625094ea07d76b54d8bd5348dc149ccd995384",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5EP2-03": {
+  "fullname": "muse-probe-round5e-p2-r5ep2-03",
+  "html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source": "[[[​⁠_default:x]]]",
+  "source_sha256": "660b9439c4c38cd386d1d7240e7a9aa926574e23bedbf3c85403c7ff3d9d5e14",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5EP2-04": {
+  "fullname": "muse-probe-round5e-p2-r5ep2-04",
+  "html": "<p>[[[a/#/b##]]]</p>",
+  "html_sha256": "86820b0eb5c705d57b1d6f51ab4fffa8855ffce39552ca026a4b8e0a0f74f796",
+  "source": "[[[a/#/b##]]]",
+  "source_sha256": "d54355bcee00ebc4cd1fd7b0ad72bc85d7c1e0b49750e0e8e30c9983631577cb",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5EP2-05": {
+  "fullname": "muse-probe-round5e-p2-r5ep2-05",
+  "html": "<p>[[[a/#/b#c#d]]]</p>",
+  "html_sha256": "2d56d73936227d43658e8f2d031912a25ea16d2657a37e7a250f6a69c93d5d6c",
+  "source": "[[[a/#/b#c#d]]]",
+  "source_sha256": "3499e5ef5e58d5f509728b89483d06d142054ca78c7e3928066db9684415a77c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5EP2-06": {
+  "fullname": "muse-probe-round5e-p2-r5ep2-06",
+  "html": "<p><a class=\"newpage\" href=\"/a#/b\">lab#frag</a></p>",
+  "html_sha256": "139df2a654c4146a64bdde0a5ed43a1f72e83e2df5e7d5d9a8c010400794b647",
+  "source": "[[[a/#/b|lab#frag]]]",
+  "source_sha256": "87fdaa25c9ab04bb9a49ad4c4efbc8d924f01db6a8b6ca89aadb99d6a4198887",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5EP2-07": {
+  "fullname": "muse-probe-round5e-p2-r5ep2-07",
+  "html": "<p>[[[a#b/#/c]]]</p>",
+  "html_sha256": "f265df54720b10a3b1a50e7cc83bed362c8f3e673e674ee9ba82b8647bb8d246",
+  "source": "[[[a#b/#/c]]]",
+  "source_sha256": "dc45d5e17e334b9950be11c83724ff25cbaa0207b453dd9d1453431c974cc5c5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5EP2-08": {
+  "fullname": "muse-probe-round5e-p2-r5ep2-08",
+  "html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+  "html_sha256": "e504bd63f5c257493a0bd835e3359b4574ca995dfdaf283fa88623fea08d5a1f",
+  "source": "[[math types=\"align\"]]\nx\n[[/math]]",
+  "source_sha256": "7327bc9eed4bb6ff6849db6eb9c34b1308d917fb7e2e2ec6602309a0cab743b3",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5EP2-09": {
+  "fullname": "muse-probe-round5e-p2-r5ep2-09",
+  "html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>",
+  "html_sha256": "e504bd63f5c257493a0bd835e3359b4574ca995dfdaf283fa88623fea08d5a1f",
+  "source": "[[math a type=\"align\" tYpE=\"gather\"]]\nx\n[[/math]]",
+  "source_sha256": "3cbec5cd894f43a9fd2d185c9586380f5c7be536d74debaac3c3cf1b2ae04cee",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5EP2-10": {
+  "fullname": "muse-probe-round5e-p2-r5ep2-10",
+  "html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{align} x \\end{align}</div>",
+  "html_sha256": "d2ff6a492fc9df7ae6a68927dc59ef71a7ba40629a33ea341a90113cdcf8ee69",
+  "source": "[[math type=\"gather\" type=\"align\"]]\nx\n[[/math]]",
+  "source_sha256": "30b7ac194eae95a24a2a5cc5c07e7e103b4025da153616f9ec440c7d63bbc199",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5EP2-11": {
+  "fullname": "muse-probe-round5e-p2-r5ep2-11",
+  "html": "<p>[[math type='align']]<br />\nx<br />\n[[/math]]</p>",
+  "html_sha256": "c13fca2a7edb86444c5abd6db13e74de62e083da7f007084bb57b8c7df95cd6d",
+  "source": "[[math type='align']]\nx\n[[/math]]",
+  "source_sha256": "dcee0e4a643ecf1b00ed115129dff553e3d8c4e718a23121986ff8cb5dcb2dca",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5EP2-12": {
+  "fullname": "muse-probe-round5e-p2-r5ep2-12",
+  "html": "<p><a href=\"http://example.com/x\">http://example.com/x</a><a class=\"newpage\" href=\"/foo\">foo</a></p>",
+  "html_sha256": "559ff70b8fa9638cbe51f39966e0db9bd6179e7e89fa91c1511841a003b91f97",
+  "source": "http://example.com/x[[[foo]]]",
+  "source_sha256": "3306fed936270554f4d7855fcc9fd6d3a061c4b9d1aae82d26fdbf04d84b49d2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5EP2-13": {
+  "fullname": "muse-probe-round5e-p2-r5ep2-13",
+  "html": "<p>a|b</p>",
+  "html_sha256": "3b73f15c98c8c6941ae2c7927fb657ada3fdff13d789e6c0f894cf62035e1d5b",
+  "source": "[wiki:Page a|b]",
+  "source_sha256": "39f4fc5c13f5a89f04261352dad055bf107d31c8f5dc1cea7e167c111f53f5cc",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5EP2-14": {
+  "fullname": "muse-probe-round5e-p2-r5ep2-14",
+  "html": "<p><span style=\"color: red\">a<br />\nb</span></p>",
+  "html_sha256": "3526c0afd22f12d5c4a8fb17992baf22938db5473845b208560cddfbd4b2dd6b",
+  "source": "##red|a\nb##",
+  "source_sha256": "be5dc7b46ef56538dbcc99b715e528d3e6c69b20d4e8ef4ad460b7a07d513c40",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5EP2-15": {
+  "fullname": "muse-probe-round5e-p2-r5ep2-15",
+  "html": "<div class=\"code\">\n<div class=\"hl-main\">\n<pre><span class=\"hl-identifier\">y</span></pre></div>\n</div>",
+  "html_sha256": "5af229746020d27cfb82865aef40d3b6842089be03e5017f5946e08a128674d2",
+  "source": "[[code type=\"python\" name=\"x\"]]y[[/code]]",
+  "source_sha256": "15f7db86a9609f23cd2628ab73f3e69c842d794f5e47b57761499214241c6d89",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5EP2-16": {
+  "fullname": "muse-probe-round5e-p2-r5ep2-16",
+  "html": "<p><em>a&nbsp;b</em></p>",
+  "html_sha256": "9d2bd9248a09c394b85ff0b977ab27d0e034e20051e5365f6b006de93a2ef657",
+  "source": "//a b//",
+  "source_sha256": "00cfa51bb357cd19c1d1b44091ebbf8d186e110e2a5f98f8cb7a9632634140e5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5EP2-17": {
+  "fullname": "muse-probe-round5e-p2-r5ep2-17",
+  "html": "<p><em>a</em><em>b</em></p>",
+  "html_sha256": "c451d2e9035a25eda64b11cc83e2fa6187449bf8dffa5dd8d7fe7b877fe5fd3b",
+  "source": "//a////b//",
+  "source_sha256": "b8f8c320c08b99281b854b2ad53d83505449734837cbc4b3b9c847921de2a9b0",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5EP2-18": {
+  "fullname": "muse-probe-round5e-p2-r5ep2-18",
+  "html": "<p><span class=\"math-inline\">$$</span></p>",
+  "html_sha256": "8119dd8e254d13e759b9ee65895322c26e3e6e9fd2c600c47fb9e0ed1270506a",
+  "source": "[[$ a [[[x|y]]] b $]]",
+  "source_sha256": "5e10dad4b063bf680b56a4f5153b41363327e2676fbdec69b088826583f88e54",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

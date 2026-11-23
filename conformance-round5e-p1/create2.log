@@ -1,0 +1,98 @@
+L1-TRAILPROSE -> muse-probe-round5e-p1-l1-trailprose (exists)
+L2-DBLCLOSER -> muse-probe-round5e-p1-l2-dblcloser (exists)
+L3-NOLF -> muse-probe-round5e-p1-l3-nolf (exists)
+L4-MULTILI -> muse-probe-round5e-p1-l4-multili (exists)
+L5-SCOREDTRAIL -> muse-probe-round5e-p1-l5-scoredtrail (exists)
+C1-DIVSCORED -> muse-probe-round5e-p1-c1-divscored (exists)
+C2-DIVUPPER -> muse-probe-round5e-p1-c2-divupper (exists)
+C3-DIVATTR -> muse-probe-round5e-p1-c3-divattr (exists)
+C4-DIVRESID -> muse-probe-round5e-p1-c4-divresid (exists)
+C5-CHAIN -> muse-probe-round5e-p1-c5-chain (exists)
+C6-TOKENLEAD -> muse-probe-round5e-p1-c6-tokenlead (exists)
+F1-BQMIXED -> muse-probe-round5e-p1-f1-bqmixed (exists)
+F2-COLLEMPTY -> muse-probe-round5e-p1-f2-collempty (exists)
+F3-DIVC0 -> muse-probe-round5e-p1-f3-divc0 (exists)
+F4-DIVTABATTR -> muse-probe-round5e-p1-f4-divtabattr (exists)
+F5-BRKQUOTE -> muse-probe-round5e-p1-f5-brkquote (created)
+{
+ "L1-TRAILPROSE": {
+  "fullname": "muse-probe-round5e-p1-l1-trailprose",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\nZZZ",
+  "action": "exists"
+ },
+ "L2-DBLCLOSER": {
+  "fullname": "muse-probe-round5e-p1-l2-dblcloser",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/OL]]\n[[LI]]C[[/LI]]\n[[/UL]]",
+  "action": "exists"
+ },
+ "L3-NOLF": {
+  "fullname": "muse-probe-round5e-p1-l3-nolf",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]][[LI]]B[[/LI]]\n[[/UL]]",
+  "action": "exists"
+ },
+ "L4-MULTILI": {
+  "fullname": "muse-probe-round5e-p1-l4-multili",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[LI]]C[[/LI]]\n[[/UL]]",
+  "action": "exists"
+ },
+ "L5-SCOREDTRAIL": {
+  "fullname": "muse-probe-round5e-p1-l5-scoredtrail",
+  "source": "[[UL_]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\nZZZ",
+  "action": "exists"
+ },
+ "C1-DIVSCORED": {
+  "fullname": "muse-probe-round5e-p1-c1-divscored",
+  "source": "alpha\\\n[[div_]]\nbravo[[/div]]",
+  "action": "exists"
+ },
+ "C2-DIVUPPER": {
+  "fullname": "muse-probe-round5e-p1-c2-divupper",
+  "source": "alpha\\\n[[DIV]]\nbravo[[/DIV]]",
+  "action": "exists"
+ },
+ "C3-DIVATTR": {
+  "fullname": "muse-probe-round5e-p1-c3-divattr",
+  "source": "lead text\\\n[[div class=\"c\" id=\"u-x\"]]\nbody[[/div]]",
+  "action": "exists"
+ },
+ "C4-DIVRESID": {
+  "fullname": "muse-probe-round5e-p1-c4-divresid",
+  "source": "lead\\\n[[div]]]\nbody[[/div]]",
+  "action": "exists"
+ },
+ "C5-CHAIN": {
+  "fullname": "muse-probe-round5e-p1-c5-chain",
+  "source": "alpha\\\nbeta\\\n[[div]]\nbody[[/div]]",
+  "action": "exists"
+ },
+ "C6-TOKENLEAD": {
+  "fullname": "muse-probe-round5e-p1-c6-tokenlead",
+  "source": "[[size 12px]]lead\\\n[[div]]\nbody[[/div]]",
+  "action": "exists"
+ },
+ "F1-BQMIXED": {
+  "fullname": "muse-probe-round5e-p1-f1-bqmixed",
+  "source": "> \n>> x",
+  "action": "exists"
+ },
+ "F2-COLLEMPTY": {
+  "fullname": "muse-probe-round5e-p1-f2-collempty",
+  "source": "[[collapsible]][[/collapsible]]",
+  "action": "exists"
+ },
+ "F3-DIVC0": {
+  "fullname": "muse-probe-round5e-p1-f3-divc0",
+  "source": "[[div class=\"a\fb\"]]X[[/div]]",
+  "action": "exists"
+ },
+ "F4-DIVTABATTR": {
+  "fullname": "muse-probe-round5e-p1-f4-divtabattr",
+  "source": "[[div\tclass=\"c\"]]X[[/div]]",
+  "action": "exists"
+ },
+ "F5-BRKQUOTE": {
+  "fullname": "muse-probe-round5e-p1-f5-brkquote",
+  "source": "> a _\n> b",
+  "action": "created"
+ }
+}

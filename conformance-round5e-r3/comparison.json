@@ -1,0 +1,810 @@
+[
+ {
+  "id": "R3E-01",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": false,
+  "stage2_only": false,
+  "ref_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</div></div>",
+  "live_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br> X</div></div>",
+  "ref_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</div></div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "1 Footnotes 1 . X"
+  },
+  "live_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br> X</div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"> <div class=\"title\">Footnotes</div> <div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br> X</div> </div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "1 Footnotes 1 . X"
+  },
+  "capture_id": "R3E-01"
+ },
+ {
+  "id": "R3E-02",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": false,
+  "stage2_only": false,
+  "ref_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</div></div>",
+  "live_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</div></div>",
+  "ref_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</div></div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "1 Footnotes 1 . X"
+  },
+  "live_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"> <div class=\"title\">Footnotes</div> <div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</div> </div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "1 Footnotes 1 . X"
+  },
+  "capture_id": "R3E-02"
+ },
+ {
+  "id": "R3E-03",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": false,
+  "stage2_only": false,
+  "ref_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</div></div>",
+  "live_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br> X</div></div>",
+  "ref_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</div></div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "1 Footnotes 1 . X"
+  },
+  "live_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br> X</div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"> <div class=\"title\">Footnotes</div> <div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br> X</div> </div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "1 Footnotes 1 . X"
+  },
+  "capture_id": "R3E-03"
+ },
+ {
+  "id": "R3E-04",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": false,
+  "stage2_only": false,
+  "ref_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>",
+  "live_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br></div></div>",
+  "ref_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "1 Footnotes 1 ."
+  },
+  "live_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br></div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"> <div class=\"title\">Footnotes</div> <div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br></div> </div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "1 Footnotes 1 ."
+  },
+  "capture_id": "R3E-04"
+ },
+ {
+  "id": "R3E-05",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": false,
+  "stage2_only": false,
+  "ref_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</div></div>",
+  "live_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X<br></div></div>",
+  "ref_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</div></div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "1 Footnotes 1 . X"
+  },
+  "live_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X<br></div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"> <div class=\"title\">Footnotes</div> <div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X<br></div> </div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "1 Footnotes 1 . X"
+  },
+  "capture_id": "R3E-05"
+ },
+ {
+  "id": "R3E-06",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": false,
+  "stage2_only": false,
+  "ref_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. </div></div>",
+  "live_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. </div></div>",
+  "ref_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. </div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. </div></div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "1 Footnotes 1 . "
+  },
+  "live_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. </div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"> <div class=\"title\">Footnotes</div> <div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. </div> </div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "1 Footnotes 1 . "
+  },
+  "capture_id": "R3E-06"
+ },
+ {
+  "id": "R3E-07",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": false,
+  "stage2_only": false,
+  "ref_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>",
+  "live_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>",
+  "ref_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "1 Footnotes 1 ."
+  },
+  "live_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"> <div class=\"title\">Footnotes</div> <div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div> </div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "1 Footnotes 1 ."
+  },
+  "capture_id": "R3E-07"
+ },
+ {
+  "id": "R3E-08",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": false,
+  "stage2_only": false,
+  "ref_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>",
+  "live_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>",
+  "ref_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "1 Footnotes 1 ."
+  },
+  "live_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"> <div class=\"title\">Footnotes</div> <div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div> </div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "1 Footnotes 1 ."
+  },
+  "capture_id": "R3E-08"
+ },
+ {
+  "id": "R3E-09",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": false,
+  "stage2_only": false,
+  "ref_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>",
+  "live_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>",
+  "ref_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "1 Footnotes 1 ."
+  },
+  "live_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"> <div class=\"title\">Footnotes</div> <div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div> </div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "1 Footnotes 1 ."
+  },
+  "capture_id": "R3E-09"
+ },
+ {
+  "id": "R3E-10",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "stage2_only": true,
+  "ref_canon": "<div class=\"bibitems\"><div class=\"title\">Bibliography</div><div class=\"bibitem\" id=\"bibitem-1\">1.</div></div>",
+  "live_canon": "<div class=\"bibitems\"><div class=\"title\">Bibliography</div><div class=\"bibitem\" id=\"bibitem-1\">1.</div></div>",
+  "ref_sig": {
+   "footnoteref": [],
+   "footfooter": [],
+   "footblock": [],
+   "bibitem": [
+    "<div class=\"bibitem\" id=\"bibitem-1\">1.</div>"
+   ],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Bibliography</div>"
+   ],
+   "anchors": [],
+   "text": "Bibliography 1."
+  },
+  "live_sig": {
+   "footnoteref": [],
+   "footfooter": [],
+   "footblock": [],
+   "bibitem": [
+    "<div class=\"bibitem\" id=\"bibitem-1\">1.</div>"
+   ],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [
+    "<div class=\"title\">Bibliography</div>"
+   ],
+   "anchors": [],
+   "text": "Bibliography 1."
+  },
+  "capture_id": "R3E-10"
+ },
+ {
+  "id": "R3E-11",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "stage2_only": true,
+  "ref_canon": "<h1 id=\"toc0\"><span>Alpha</span></h1><table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\" style=\"display: none\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\"><div style=\"margin-left: 1em;\"><a href=\"#toc0\">Alpha</a></div><div style=\"margin-left: 1em;\"><a href=\"#toc1\">Beta</a></div></div></div></td></tr></table><h1 id=\"toc1\"><span>Beta</span></h1>",
+  "live_canon": "<h1 id=\"toc0\"><span>Alpha</span></h1><table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\" style=\"display: none\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\"><div style=\"margin-left: 1em;\"><a href=\"#toc0\">Alpha</a></div><div style=\"margin-left: 1em;\"><a href=\"#toc1\">Beta</a></div></div></div></td></tr></table><h1 id=\"toc1\"><span>Beta</span></h1>",
+  "ref_sig": {
+   "footnoteref": [],
+   "footfooter": [],
+   "footblock": [],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [
+    "<div style=\"margin-left: 1em;\"><a href=\"#toc0\">Alpha</a></div>",
+    "<div style=\"margin-left: 1em;\"><a href=\"#toc1\">Beta</a></div>"
+   ],
+   "headings": [
+    "<h1 id=\"toc0\"><span>Alpha</span></h1>",
+    "<h1 id=\"toc1\"><span>Beta</span></h1>"
+   ],
+   "toc_title": [
+    "<div class=\"title\">Table of Contents</div>"
+   ],
+   "anchors": [
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\" style=\"display: none\">Unfold</a>",
+    "<a href=\"#toc0\">Alpha</a>",
+    "<a href=\"#toc1\">Beta</a>"
+   ],
+   "text": "Alpha Fold Unfold Table of Contents Alpha Beta Beta"
+  },
+  "live_sig": {
+   "footnoteref": [],
+   "footfooter": [],
+   "footblock": [],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [
+    "<div style=\"margin-left: 1em;\"><a href=\"#toc0\">Alpha</a></div>",
+    "<div style=\"margin-left: 1em;\"><a href=\"#toc1\">Beta</a></div>"
+   ],
+   "headings": [
+    "<h1 id=\"toc0\"><span>Alpha</span></h1>",
+    "<h1 id=\"toc1\"><span>Beta</span></h1>"
+   ],
+   "toc_title": [
+    "<div class=\"title\">Table of Contents</div>"
+   ],
+   "anchors": [
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\" style=\"display: none\">Unfold</a>",
+    "<a href=\"#toc0\">Alpha</a>",
+    "<a href=\"#toc1\">Beta</a>"
+   ],
+   "text": "Alpha Fold Unfold Table of Contents Alpha Beta Beta"
+  },
+  "capture_id": "R3E-11"
+ },
+ {
+  "id": "R3E-12",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "stage2_only": true,
+  "ref_canon": "<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\" style=\"display: none\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\"><div style=\"margin-left: 1em;\"><a href=\"#toc0\">Heading</a></div></div></div></td></tr></table><h1 id=\"toc0\"><span>Heading</span></h1>",
+  "live_canon": "<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\" style=\"display: none\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\"><div style=\"margin-left: 1em;\"><a href=\"#toc0\">Heading</a></div></div></div></td></tr></table><h1 id=\"toc0\"><span>Heading</span></h1>",
+  "ref_sig": {
+   "footnoteref": [],
+   "footfooter": [],
+   "footblock": [],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [
+    "<div style=\"margin-left: 1em;\"><a href=\"#toc0\">Heading</a></div>"
+   ],
+   "headings": [
+    "<h1 id=\"toc0\"><span>Heading</span></h1>"
+   ],
+   "toc_title": [
+    "<div class=\"title\">Table of Contents</div>"
+   ],
+   "anchors": [
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\" style=\"display: none\">Unfold</a>",
+    "<a href=\"#toc0\">Heading</a>"
+   ],
+   "text": "Fold Unfold Table of Contents Heading Heading"
+  },
+  "live_sig": {
+   "footnoteref": [],
+   "footfooter": [],
+   "footblock": [],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [
+    "<div style=\"margin-left: 1em;\"><a href=\"#toc0\">Heading</a></div>"
+   ],
+   "headings": [
+    "<h1 id=\"toc0\"><span>Heading</span></h1>"
+   ],
+   "toc_title": [
+    "<div class=\"title\">Table of Contents</div>"
+   ],
+   "anchors": [
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\" style=\"display: none\">Unfold</a>",
+    "<a href=\"#toc0\">Heading</a>"
+   ],
+   "text": "Fold Unfold Table of Contents Heading Heading"
+  },
+  "capture_id": "R3E-12"
+ },
+ {
+  "id": "R3E-13",
+  "status": "CLEAR",
+  "canon_equal": true,
+  "sig_equal": true,
+  "stage2_only": true,
+  "ref_canon": "<p><a href id=\"u-ab\">x</a></p>",
+  "live_canon": "<p><a href id=\"u-ab\">x</a></p>",
+  "ref_sig": {
+   "footnoteref": [],
+   "footfooter": [],
+   "footblock": [],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [],
+   "anchors": [
+    "<a href id=\"u-ab\">x</a>"
+   ],
+   "text": "x"
+  },
+  "live_sig": {
+   "footnoteref": [],
+   "footfooter": [],
+   "footblock": [],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [],
+   "anchors": [
+    "<a href id=\"u-ab\">x</a>"
+   ],
+   "text": "x"
+  },
+  "capture_id": "R3E-13"
+ },
+ {
+  "id": "R3E-14",
+  "status": "CLEAR-STAGE2-OWNED",
+  "canon_equal": false,
+  "sig_equal": false,
+  "stage2_only": true,
+  "ref_canon": "<p>[<a href=\"javascript:;\">a b</a>]</p>",
+  "live_canon": "<p>[<a href=\"javascript:;\">ab</a>]</p>",
+  "ref_sig": {
+   "footnoteref": [],
+   "footfooter": [],
+   "footblock": [],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [],
+   "anchors": [
+    "<a href=\"javascript:;\">a b</a>"
+   ],
+   "text": "[ a b ]"
+  },
+  "live_sig": {
+   "footnoteref": [],
+   "footfooter": [],
+   "footblock": [],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [],
+   "headings": [],
+   "toc_title": [],
+   "anchors": [
+    "<a href=\"javascript:;\">ab</a>"
+   ],
+   "text": "[ ab ]"
+  },
+  "capture_id": "R3E-14"
+ },
+ {
+  "id": "R3E-15",
+  "status": "DIFF",
+  "canon_equal": false,
+  "sig_equal": false,
+  "stage2_only": false,
+  "ref_canon": "<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\" style=\"display: none\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\"><div style=\"margin-left: 1em;\"><a href=\"#toc0\">Head1</a></div></div></div></td></tr></table><h1 id=\"toc0\"><span>Head<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></span></h1><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>",
+  "live_canon": "<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\" style=\"display: none\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\"><div style=\"margin-left: 1em;\"><a href=\"#toc0\">Head1</a></div></div></div></td></tr></table><h1 id=\"toc0\"><span>Head<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></span></h1><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br></div></div>",
+  "ref_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.</div></div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [
+    "<div style=\"margin-left: 1em;\"><a href=\"#toc0\">Head1</a></div>"
+   ],
+   "headings": [
+    "<h1 id=\"toc0\"><span>Head<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></span></h1>"
+   ],
+   "toc_title": [
+    "<div class=\"title\">Table of Contents</div>",
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\" style=\"display: none\">Unfold</a>",
+    "<a href=\"#toc0\">Head1</a>",
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "Fold Unfold Table of Contents Head1 Head 1 Footnotes 1 ."
+  },
+  "live_sig": {
+   "footnoteref": [
+    "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+   ],
+   "footfooter": [
+    "<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br></div>"
+   ],
+   "footblock": [
+    "<div class=\"footnotes-footer\"> <div class=\"title\">Footnotes</div> <div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br></div> </div>"
+   ],
+   "bibitem": [],
+   "bib_err": [],
+   "toc_items": [
+    "<div style=\"margin-left: 1em;\"><a href=\"#toc0\">Head1</a></div>"
+   ],
+   "headings": [
+    "<h1 id=\"toc0\"><span>Head<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></span></h1>"
+   ],
+   "toc_title": [
+    "<div class=\"title\">Table of Contents</div>",
+    "<div class=\"title\">Footnotes</div>"
+   ],
+   "anchors": [
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\" style=\"display: none\">Unfold</a>",
+    "<a href=\"#toc0\">Head1</a>",
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "text": "Fold Unfold Table of Contents Head1 Head 1 Footnotes 1 ."
+  },
+  "capture_id": "R3E-15"
+ }
+]

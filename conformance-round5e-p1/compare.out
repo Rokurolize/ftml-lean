@@ -1,0 +1,38 @@
+id     eq  live_norm / ref_norm
+L1-TRAILPROSE  DIFF
+   LIVE: <ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]<br> ZZZ</li> </ul>
+   REF : <ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]</li> </ul><br> ZZZ
+L2-DBLCLOSER   EQ  
+L3-NOLF        EQ  
+L4-MULTILI     EQ  
+L5-SCOREDTRAIL DIFF
+   LIVE: <ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]<br> ZZZ</li> </ul>
+   REF : <ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]</li> </ul><br> ZZZ
+C1-DIVSCORED   DIFF
+   LIVE: alpha <div>bravo</div>
+   REF : <p>alpha <div>bravo</div></p>
+C2-DIVUPPER    DIFF
+   LIVE: alpha <div> <p>bravo</p> </div>
+   REF : alpha <div><p>bravo</p> </div>
+C3-DIVATTR     DIFF
+   LIVE: lead text <div class="c" id="u-x"> <p>body</p> </div>
+   REF : lead text <div class="c" id="u-x"><p>body</p> </div>
+C4-DIVRESID    EQ  
+C5-CHAIN       DIFF
+   LIVE: alphabeta <div> <p>body</p> </div>
+   REF : alphabeta <div><p>body</p> </div>
+C6-TOKENLEAD   DIFF
+   LIVE: [[size 12px]]lead <div> <p>body</p> </div>
+   REF : [[size 12px]]lead <div><p>body</p> </div>
+F1-BQMIXED     DIFF
+   LIVE: <blockquote> <blockquote> <p>x</p> </blockquote> </blockquote>
+   REF : <blockquote><blockquote><p>x</p> </blockquote> </blockquote>
+F2-COLLEMPTY   DIFF
+   LIVE: <div class="collapsible-block"> <div class="collapsible-block-folded"><a class="collapsible-block-link" href="javascript:;">+ show block</a></div> <div class="collapsible-block-unfolded" style="display:none"> <div class="collapsible-block-unfolded-link"><a class="collapsible-block-link" href="javascript:;">– hide block</a></div> <div class="collapsible-block-content"></div> </div> </div>
+   REF : <div class="collapsible-block"><div class="collapsible-block-folded"><a class="collapsible-block-link" href="javascript:;">+ show block</a></div><div class="collapsible-block-unfolded" style="display:none"><div class="collapsible-block-unfolded-link"><a class="collapsible-block-link" href="javascript:;">– hide block</a></div><div class="collapsible-block-content"></div></div></div>
+F3-DIVC0       EQ  
+F4-DIVTABATTR  EQ  
+F5-BRKQUOTE    DIFF
+   LIVE: <blockquote> <p>a<br> b</p> </blockquote>
+   REF : <blockquote><p>a<br> b</p> </blockquote>
+equal: 6 / 16

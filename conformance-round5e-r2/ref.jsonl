@@ -1,0 +1,18 @@
+{"id":"r2e-01-freelink-u200c","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"r2e-02-freelink-u200d","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"r2e-03-freelink-u2061","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"r2e-04-freelink-u2064","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"r2e-05-freelink-lead-mixed","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"r2e-06-freelink-double-hash-route","output":"<p>[[[foo##\/bar]]]<\/p>\n\n"}
+{"id":"r2e-07-freelink-route-twice-adjacent","output":"<p>[[[foo\/#\/#\/bar]]]<\/p>\n\n"}
+{"id":"r2e-08-freelink-empty-base-anchor","output":"<p>[[[\/#\/bar#baz]]]<\/p>\n\n"}
+{"id":"r2e-09-freelink-multihash-label","output":"<p>[[[foo\/#\/bar#baz|shown]]]<\/p>\n\n"}
+{"id":"r2e-10-freelink-leading-hash-route","output":"<p>[[[#foo\/#\/bar]]]<\/p>\n\n"}
+{"id":"r2e-11-freelink-route-trailing-hash","output":"<p>[[[foo\/#\/bar\/#]]]<\/p>\n\n"}
+{"id":"r2e-12-math-variant-gather","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"r2e-13-math-bare-nonascii","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"r2e-14-math-lowercase-multline","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"r2e-15-url-nonascii-path","output":"<p><a href=\"https:\/\/example.com\/caf\">https:\/\/example.com\/caf<\/a>\u00e9<\/p>\n\n"}
+{"id":"r2e-16-interwiki-nonascii-google","output":"<p>[google:caf\u00e9]<\/p>\n\n"}
+{"id":"r2e-17-image-fragment-nonascii-alt","output":"<a href=\"#frag\"><img src=\"http:\/\/x\/y.png\" alt=\"caf\u00e9\" class=\"image\" \/><\/a>"}
+{"id":"r2e-18-mathinline-escapes","output":"<p><span class=\"math-inline\">$a &amp; b &lt; c &gt; d &quot;e&quot; &#39;f&#39; \u00e9$<\/span><\/p>\n\n"}

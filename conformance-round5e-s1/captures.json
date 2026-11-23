@@ -1,0 +1,222 @@
+{
+ "s01-list-ft-gap-footnoteblock": {
+  "fullname": "muse-probe-round5e-s1-s01-list-ft-gap-footnoteblock",
+  "html": "<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></li>\n</ul>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. gap</div>\n</div>\n<p>[[LI]]B[[/LI]]<br />\n[[/UL]]</p>",
+  "html_sha256": "7afe4c9a2813a11b6fbcb30500fbc51a3e4c951479d6f840726225f3f04583c0",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]gap[[/footnote]]\n[[footnoteblock]]\n[[LI]]B[[/LI]]\n[[/UL]]",
+  "source_sha256": "1de2842f4b0dd7f95613bda25da61ad1ad95df4eb15184f1635d4f7b1d1332f4",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s02-list-ft-gap-ff-body": {
+  "fullname": "muse-probe-round5e-s1-s02-list-ft-gap-ff-body",
+  "html": "<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n[[LI]]B[[/LI]]<br />\n[[/UL]]</li>\n</ul>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. gap</div>\n</div>",
+  "html_sha256": "b56c3285f3a1f0ba91217fb79e1d864638a06aff4269d71138f9576a50fe7ac5",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]g\fap[[/footnote]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnoteblock]]",
+  "source_sha256": "d7b945d0c520b1f4a98943b25f596b0e704ba7c16a901289c60682b8fb8f6bca",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s03-list-ft-gap-two-footnotes": {
+  "fullname": "muse-probe-round5e-s1-s03-list-ft-gap-two-footnotes",
+  "html": "<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><sup class=\"footnoteref\"><a id=\"footnoteref-2\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-2')\">2</a></sup><br />\n[[LI]]B[[/LI]]<br />\n[[/UL]]</li>\n</ul>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. one</div>\n<div class=\"footnote-footer\" id=\"footnote-2\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-2')\">2</a>. two</div>\n</div>",
+  "html_sha256": "3763dff03cd085752ba438e312a5ee7fa9e8a6a8658cca705ba045b090387e97",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]one[[/footnote]]\n[[footnote]]two[[/footnote]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnoteblock]]",
+  "source_sha256": "a95b4c0268eaf91fce07cfa1d3aac7f95decad930b85e9c49b8c6b49e29352e1",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s04-list-nested-failed-closer-ft": {
+  "fullname": "muse-probe-round5e-s1-s04-list-nested-failed-closer-ft",
+  "html": "<ul>\n<li>outer</li>\n<li>in<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n[[LI]]tail[[/LI]]<br />\n[[/UL]]</li>\n</ul>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. note</div>\n</div>",
+  "html_sha256": "d6d9a12b48675fc0960c5b6e57fec2ba1a206ccbe143b9c5b68ee0dab1e4fb3d",
+  "source": "[[OL]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/OL]]\n[[footnote]]note[[/footnote]]\n[[LI]]tail[[/LI]]\n[[/UL]]\n[[footnoteblock]]",
+  "source_sha256": "74161fa41eb05f787a6c8113831d235fde19ac160c8888dc3d69f66248a7635f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s05-fl-zwsp-described": {
+  "fullname": "muse-probe-round5e-s1-s05-fl-zwsp-described",
+  "html": "<p><a class=\"newpage\" href=\"/x\">Label</a></p>",
+  "html_sha256": "0e36d57f505020ddf88415b2fceb54d66c8a702572ccc4b7f4ffaf3be3e2d65a",
+  "source": "[[[​_default:x | Label]]]",
+  "source_sha256": "e06e295401445f41d27d69fcac032d93ba092ec42a91395b427f28c43cb25ad9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s06-fl-wj-described": {
+  "fullname": "muse-probe-round5e-s1-s06-fl-wj-described",
+  "html": "<p><a class=\"newpage\" href=\"/x\">Label</a></p>",
+  "html_sha256": "0e36d57f505020ddf88415b2fceb54d66c8a702572ccc4b7f4ffaf3be3e2d65a",
+  "source": "[[[⁠_default:x | Label]]]",
+  "source_sha256": "ebb351addfae51fa2750b79700ddf8e6dfc1c1ab373ddddb22b14ccbe2b8f76d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s07-fl-lead-in-described-label": {
+  "fullname": "muse-probe-round5e-s1-s07-fl-lead-in-described-label",
+  "html": "<p><a class=\"newpage\" href=\"/x\">​Label</a></p>",
+  "html_sha256": "75cbaa74d8e2d3c53ac1f6cd9540cf4e26e52844c70f0b615911eee43eb275af",
+  "source": "[[[_default:x | ​Label]]]",
+  "source_sha256": "df8e822166b783ac518c73b33f5894d9144c23b5aa12ac99834032999d022314",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s08-fl-multihash-described": {
+  "fullname": "muse-probe-round5e-s1-s08-fl-multihash-described",
+  "html": "<p>[[[foo/#/bar#baz | L]]]</p>",
+  "html_sha256": "4489601b4d170249bd107ad1931aae2a052335ceeb2a873854cd4e923460b2f3",
+  "source": "[[[foo/#/bar#baz | L]]]",
+  "source_sha256": "8139c5293b24d39cb96fce4cefb7f0901f524c63ce33330d5baa704d3a4dcb7e",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s09-ff-footnote-in-quote-doublelf": {
+  "fullname": "muse-probe-round5e-s1-s09-ff-footnote-in-quote-doublelf",
+  "html": "<p>[[quote]]<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n[[/quote]]</p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. g\n<p>h</p>\n</div>\n</div>",
+  "html_sha256": "b58533957aa1b33bef795bf0bf2a47a4e8be2e2913d8e8ce99f14cf29a9517a1",
+  "source": "[[quote]]\n[[footnote]]g\f\n\nh[[/footnote]]\n[[/quote]]\n[[footnoteblock]]",
+  "source_sha256": "e749a0f9836c0821495fd7163949b107f2b25584b7a3bfd2948b15958d885c2a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s10-esc-footnote-nolf": {
+  "fullname": "muse-probe-round5e-s1-s10-esc-footnote-nolf",
+  "html": "<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A\u001bB</div>\n</div>",
+  "html_sha256": "12735a85d0fa75984f4c4430e16932bf36ee8d1c67b564f935b2df0a264eb1f9",
+  "source": "[[footnote]]A\u001bB[[/footnote]][[footnoteblock]]",
+  "source_sha256": "122f5f894bf87b0274e5944d335c1517ceed3ca4fd592d72cd9689c9141e64b2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s11-esc-footnote-doublelf": {
+  "fullname": "muse-probe-round5e-s1-s11-esc-footnote-doublelf",
+  "html": "<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A\u001b\n<p>B</p>\n</div>\n</div>",
+  "html_sha256": "754824ec1ff17c87bcd9630ae67e55adb88a3c878c4c4edc7f33e8c4a2d26842",
+  "source": "[[footnote]]A\u001b\n\nB[[/footnote]][[footnoteblock]]",
+  "source_sha256": "4193f46e4263d16d712c73335d39edb12352f08a853935b6f4024067b930aca9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s12-ff-bibitem-in-quote": {
+  "fullname": "muse-probe-round5e-s1-s12-ff-bibitem-in-quote",
+  "html": "<p>[[quote]]</p>\n<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n[[bibitem k]]AB[[/bibitem]]</div>\n<p>[[/quote]]</p>",
+  "html_sha256": "db9f2ad79d6af818f51deb6e7efe157f43d784136bdfcbd38e4945ea224da2cb",
+  "source": "[[quote]]\n[[bibliography]]\n[[bibitem k]]A\fB[[/bibitem]]\n[[/bibliography]]\n[[/quote]]",
+  "source_sha256": "3be1f4a85e52c01feabecf3132d8066cb0bc6f871b50218620d329752e45b152",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s13-contdiv-in-quote": {
+  "fullname": "muse-probe-round5e-s1-s13-contdiv-in-quote",
+  "html": "[[quote]]<br />\nalpha\n<div>\n<p>bravo</p>\n</div>\n<br />\n[[/quote]]",
+  "html_sha256": "6f2026c4b3a3b0e5db405885e4d84c53ebb7c466b07b5dec91b5f8daf817ca11",
+  "source": "[[quote]]\nalpha\\\n[[div]]\nbravo[[/div]]\n[[/quote]]",
+  "source_sha256": "67c0ac9be850102818deae3545c603cce3fb24b2226b66434fb16ea1456091a8",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s14-contdiv-in-listitem": {
+  "fullname": "muse-probe-round5e-s1-s14-contdiv-in-listitem",
+  "html": "<ul>\n<li>alpha</li>\n</ul>\n<div>\n<p>bravo</p>\n</div>\n<br />",
+  "html_sha256": "f858e72c9a91409850a433c3ffd15474bd437f48598572295637385f4e420675",
+  "source": "[[UL]]\n[[LI]]alpha\\\n[[div]]\nbravo[[/div]][[/LI]]\n[[/UL]]",
+  "source_sha256": "4831f0dbd93eaa65605628177b2563b1479eb7eb0053e515efe01f7d9e8f88dc",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s15-contdiv-in-footnote": {
+  "fullname": "muse-probe-round5e-s1-s15-contdiv-in-footnote",
+  "html": "<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. alpha\n<div>\n<p>bravo</p>\n</div>\n</div>\n</div>",
+  "html_sha256": "5d9e92fa34d11457a16142746757abd08da60d349b87cfd74b4c4ca94990b4ed",
+  "source": "[[footnote]]alpha\\\n[[div]]\nbravo[[/div]][[/footnote]][[footnoteblock]]",
+  "source_sha256": "92ad38ceaa5d27a11b0feb8e9c990f88aa70a5a35e6e0341c2240c9627555575",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s16-contdiv-lead-freelink": {
+  "fullname": "muse-probe-round5e-s1-s16-contdiv-lead-freelink",
+  "html": "<a class=\"newpage\" href=\"/x\">x</a>\n<div>\n<p>bravo</p>\n</div>",
+  "html_sha256": "c57b41511fc6d9c7b02419b10814428ab84418baaeb16986c9fe266898a83ac2",
+  "source": "[[[x]]]\\\n[[div]]\nbravo[[/div]]",
+  "source_sha256": "3f4c5acc847eef0aa9149e52910a35cf7bf8a945c7045e2d1a99530ba1dfa9a3",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s17-image-link-trailws-caption": {
+  "fullname": "muse-probe-round5e-s1-s17-image-link-trailws-caption",
+  "html": "<a href=\"http://example.com/x\"><img src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5e-s1-s17-image-link-trailws-caption/IMG.png\" alt=\"IMG.png\" class=\"image\" /></a>caption",
+  "html_sha256": "0e7ab550195dc723240042b1b170ddde686c9e5c1dfdc7344e6968b59ae96ad3",
+  "source": "[[image IMG.png link=\"http://example.com/x \"]]caption",
+  "source_sha256": "994dfa13f846d76ecbb96de5991da90e8d7146a61685ef13cef9a696de914ea2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s18-image-link-trailws-in-div-caption": {
+  "fullname": "muse-probe-round5e-s1-s18-image-link-trailws-in-div-caption",
+  "html": "<div class=\"caption\"><a href=\"http://example.com/x\"><img src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5e-s1-s18-image-link-trailws-in-div-caption/IMG.png\" alt=\"IMG.png\" class=\"image\" /></a></div>",
+  "html_sha256": "84bb70b2820bfe23a3e479da4e6fdb97c9998c52fc2b5afae1989b1218c68a2f",
+  "source": "[[div class=\"caption\"]]\n[[image IMG.png link=\"http://example.com/x \"]]\n[[/div]]",
+  "source_sha256": "921e18a04020781777ab2c68beee578d500b1d194b57e662d3c341eb4ed34a89",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s19-image-link-multitab-trailws": {
+  "fullname": "muse-probe-round5e-s1-s19-image-link-multitab-trailws",
+  "html": "<a href=\"http://example.com/x\"><img src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5e-s1-s19-image-link-multitab-trailws/IMG.png\" alt=\"IMG.png\" class=\"image\" /></a>cap",
+  "html_sha256": "c67ad9e3f08607b257633913c8db5b4f1803863370b509d08afec2895a843971",
+  "source": "[[image IMG.png link=\"http://example.com/x \t \"]]cap",
+  "source_sha256": "29caebe453a9f4b64d7c4ed5341277b29cd6fcfbdd36c5e0fcf1fcae279e5eac",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s20-math-type-plus-mathinline": {
+  "fullname": "muse-probe-round5e-s1-s20-math-type-plus-mathinline",
+  "html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{align} x \\end{align}</div>\n<p><span class=\"math-inline\">$y$</span></p>",
+  "html_sha256": "cb67cc9d1de7124fcbdb37ac23fb0f4c9dac0f9f2dc044e9aafb81737d40f6dc",
+  "source": "[[math type=\"align\"]]\nx\n[[/math]]\n[[$y$]]",
+  "source_sha256": "3520f6a0235b2a71eb9c6f8868e6af2b4eaff0a5f488ec7ed9cc973e8a16954f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s21-math-absent-inline-date": {
+  "fullname": "muse-probe-round5e-s1-s21-math-absent-inline-date",
+  "html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>\n<p><span class=\"math-inline\">$$</span></p>",
+  "html_sha256": "7167e37b2199f9428acf078104c809217dc7306c727ac651259f30c88cb95a80",
+  "source": "[[math]]\nx\n[[/math]]\n[[$ [[date 0]] $]]",
+  "source_sha256": "f7842f663a23d720034886c683aec41e257237147d4e787f72d11f9887083b2b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s22-fl-lead-inside-mathinline": {
+  "fullname": "muse-probe-round5e-s1-s22-fl-lead-inside-mathinline",
+  "html": "<p><span class=\"math-inline\">$$</span></p>",
+  "html_sha256": "8119dd8e254d13e759b9ee65895322c26e3e6e9fd2c600c47fb9e0ed1270506a",
+  "source": "[[$ [[[​_default:x | L]]] $]]",
+  "source_sha256": "25d24b6f2b0afb4294e8f28d8f8d99dc0744e77ecfac4eccb5ded7ff1b14bd9c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

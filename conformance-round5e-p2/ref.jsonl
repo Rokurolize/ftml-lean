@@ -1,0 +1,18 @@
+{"id":"R5EP2-01","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5EP2-02","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5EP2-03","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"R5EP2-04","output":"<p>[[[a\/#\/b##]]]<\/p>\n\n"}
+{"id":"R5EP2-05","output":"<p>[[[a\/#\/b#c#d]]]<\/p>\n\n"}
+{"id":"R5EP2-06","output":"<p><a class=\"newpage\" href=\"\/a#\/b\">lab#frag<\/a><\/p>\n\n"}
+{"id":"R5EP2-07","output":"<p>[[[a#b\/#\/c]]]<\/p>\n\n"}
+{"id":"R5EP2-08","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"R5EP2-09","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"R5EP2-10","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"R5EP2-11","output":"<p>[[math type='align']]<br \/>\nx<br \/>\n[[\/math]]<\/p>\n\n"}
+{"id":"R5EP2-12","output":"<p><a href=\"http:\/\/example.com\/x\">http:\/\/example.com\/x<\/a><a class=\"newpage\" href=\"\/foo\">foo<\/a><\/p>\n\n"}
+{"id":"R5EP2-13","output":"<p>a|b<\/p>\n\n"}
+{"id":"R5EP2-14","output":"<p><span style=\"color: red\">a<br \/>\nb<\/span><\/p>\n\n"}
+{"id":"R5EP2-15","output":"\n<div class=\"code\">\n<div class=\"hl-main\">\n<pre><span class=\"hl-identifier\">y<\/span><\/pre><\/div>\n<\/div>\n\n"}
+{"id":"R5EP2-16","output":"<p><em>a\u00a0b<\/em><\/p>\n\n"}
+{"id":"R5EP2-17","output":"<p><em>a<\/em><em>b<\/em><\/p>\n\n"}
+{"id":"R5EP2-18","output":"<p><span class=\"math-inline\">$$<\/span><\/p>\n\n"}

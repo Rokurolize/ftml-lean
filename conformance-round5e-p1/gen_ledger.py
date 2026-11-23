@@ -1,0 +1,166 @@
+#!/usr/bin/env python3
+# R5E-P1 pre-probe ledger generator. Emits LEDGER.md and cases.jsonl from one
+# in-memory table so the case source identities cannot drift from the prose.
+# Run this BEFORE any page creation; re-running it after probing is forbidden.
+import json, os
+
+U = os.path.dirname(os.path.abspath(__file__))
+
+# (id, family, construct, why_the_reference_looks_wrong,
+#  confirm_live_byte, clear_byte, freshness_reason, source)
+ROWS = [
+ ("L1-TRAILPROSE", "List adjacency (REFCORR11 mechanism)",
+  "raw-case UL failed-closer adjacency with trailing prose after the surviving closer",
+  "REFCORR11 added the leftover11 split at List.php:511-517: the greedy /^(.*\\[\\[\\/(?:ul|ol)\\]\\])(.*)$/is split puts everything after the LAST surviving closer into $leftover11 and re-appends it after explicit_list_end (line 535). No cached capture exercises a non-empty trailing-prose leftover. Live may keep that prose inside the closed item or before the list end, which would make the new split a rule-level error.",
+  "a valid stable capture whose normalized page content places ZZZ after </ul> while the PHP reference places ZZZ inside the last <li> or before </ul>",
+  "byte-identical normalized content with ZZZ after </ul> on both sides",
+  "Third-order sibling of the REFCORR11 leftover split: all prior captures (L1-C1RESBR, L2-C1BLANK, S1-01) have empty leftover. Not a re-probe of a fixed shape.",
+  "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\nZZZ"),
+
+ ("L2-DBLCLOSER", "List adjacency (REFCORR11 mechanism)",
+  "tail carrying two surviving closers of different tag types, so the greedy last-closer split picks the second",
+  "The REFCORR11 leftover regex at List.php:512 is greedy and admits both ul and ol closers; with a nested [[/OL]] followed by a final [[/UL]] it keeps the [[/OL]] literal in the item and appends only post-[[/UL]] bytes. Live may close the list at the first surviving closer, leaving the final one as trailing literal text.",
+  "a valid stable capture where the item/list boundary differs from the reference by which closer survives (e.g. reference literal [[/OL]] in the item, live closing before it)",
+  "byte-identical normalized content with both closers handled identically on the two sides",
+  "Third-order sibling of the REFCORR11 last-closer split; cross-tag multi-closer tails were never probed.",
+  "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/OL]]\n[[LI]]C[[/LI]]\n[[/UL]]"),
+
+ ("L3-NOLF", "List adjacency (REFCORR11 mechanism)",
+  "failed closer immediately followed by the next LI marker on the same physical line (zero leading LF)",
+  "REFCORR11 consumes exactly one leading LF from $tail11 at List.php:503-505. With no LF between the failed closer and the following LI, that branch is skipped, so the literal tail begins directly with [[LI]]B. Live's adjacency rule is stated over bytes and may still drop a separator, producing a different literal tail or a different item count.",
+  "a valid stable capture where live emits one closed item with literal [[LI]]B but the reference emits a different item boundary, or vice versa",
+  "byte-identical normalized content for the zero-LF adjacency",
+  "Third-order sibling of the REFCORR11 one-leading-LF consumption; L1-C1RESBR had a residual bracket and L2-C1BLANK had two LFs, neither had zero LF.",
+  "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]][[LI]]B[[/LI]]\n[[/UL]]"),
+
+ ("L4-MULTILI", "List adjacency (REFCORR11 mechanism)",
+  "literal tail carrying two following LI markers before the surviving closer",
+  "The REFCORR11 C1 regex at List.php:501 uses a non-greedy (.*?) for the first item body and then (.*?[[li...]].*) for the tail, so a second following LI is absorbed literally into the single closed item. Live may start a second real item at that second marker, which would be a rule-level item-count divergence.",
+  "a valid stable capture where live has two real <li> elements and the reference has one <li> with a literal [[LI]] marker, or the reverse",
+  "byte-identical normalized content with a single item and literal second marker on both sides",
+  "Third-order sibling of the REFCORR11 general adjacency tail; no prior capture contains two post-failed-close LI markers.",
+  "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[LI]]C[[/LI]]\n[[/UL]]"),
+
+ ("L5-SCOREDTRAIL", "List adjacency (REFCORR11 mechanism)",
+  "scored UL_ opener combined with the REFCORR11 trailing-prose leftover",
+  "REFCORR11 appends $leftover11 after explicit_list_end (List.php:535) without regard to the opener's scored flag, while the scored UL_ form has its own trailing-break suppression elsewhere in List.php. The combination may place ZZZ and its preceding break differently on live than the new generic split does.",
+  "a valid stable capture where the scored opener's trailing break or ZZZ placement differs from the reference at rule level",
+  "byte-identical normalized content for the scored opener with the trailing-prose leftover",
+  "Third-order sibling of two REFCORR11-adjacent mechanisms (scored opener break handling plus the new leftover split); C-R5D-P1-7 was scored+nested but had no leftover.",
+  "[[UL_]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\nZZZ"),
+
+ ("C1-DIVSCORED", "Div/paragraph continued-lead (REFCORR11 mechanism)",
+  "backslash continuation whose next line is a standalone scored div opener [[div_]]",
+  "Concatlines.php:58 matches /^\\[\\[div_?(?:[ \\t].*)?\\]\\]$/i, so the scored opener is admitted to the new lead registry and Paragraph.php:234-239 suppresses the wrapper. The scored [[div_]] form also strips paragraphs inside Div.php:214-221, so the two newly-added mechanisms may disagree with live about whether the lead keeps a <p> wrapper.",
+  "a valid stable capture where live wraps the lead in <p> and the reference leaves it bare, or the inner-body paragraph handling differs",
+  "byte-identical normalized content with a bare lead and the scored div body on both sides",
+  "Third-order sibling of the REFCORR11 continued-div-opener mechanism; the confirmed C07 witness used a plain [[div]] only.",
+  "alpha\\\n[[div_]]\nbravo[[/div]]"),
+
+ ("C2-DIVUPPER", "Div/paragraph continued-lead (REFCORR11 mechanism)",
+  "backslash continuation whose next line is an uppercase standalone div opener [[DIV]]",
+  "The new Concatlines regex is ASCII-case-insensitive (/i at line 58) and Div.php's opener regex is also /msi (line 49), so both sides should record the lead and suppress the wrapper. Live's uppercase block-opener handling has a separate corrected path; the interaction with the new continued-lead registry was never measured.",
+  "a valid stable capture where the uppercase opener's lead wrapper or opener degradation differs from the reference at rule level",
+  "byte-identical normalized content for the uppercase continued opener on both sides",
+  "Third-order sibling of the REFCORR11 case-insensitive continued-opener regex; prior uppercase-opener confirmations did not involve a continuation.",
+  "alpha\\\n[[DIV]]\nbravo[[/DIV]]"),
+
+ ("C3-DIVATTR", "Div/paragraph continued-lead (REFCORR11 mechanism)",
+  "backslash continuation into an attributed standalone div opener [[div class=... id=...]]",
+  "Concatlines.php:58 admits an attribute tail via (?:[ \\t].*)? but records the lead from the raw $out before appending the join space (lines 59-64); Paragraph.php:236 strips only placeholder tokens and trims. An attributed opener exercises both the attribute branch and the new registry in one shape, which the plain C07 witness did not.",
+  "a valid stable capture where the lead wrapper or the emitted attributed div head differs from the reference at rule level",
+  "byte-identical normalized content with the same bare lead and the same attributed div head on both sides",
+  "Third-order sibling of the REFCORR11 continued-opener regex attribute arm.",
+  "lead text\\\n[[div class=\"c\" id=\"u-x\"]]\nbody[[/div]]"),
+
+ ("C4-DIVRESID", "Div/paragraph continued-lead (REFCORR11 mechanism)",
+  "backslash continuation into [[div]]] with a residual closing bracket, just outside the new regex",
+  "Concatlines.php:58 anchors the opener with \\]\\]$ so a residual bracket defeats the new continued-block-boundary branch and falls through to an ordinary continuation that joins with nothing. If live tolerates the residual bracket as an opener, the reference's lead registry and wrapper suppression are a rule-level error at this boundary.",
+  "a valid stable capture where live keeps a bare lead and a div block while the reference joins the text into one paragraph, or vice versa",
+  "byte-identical normalized content with the residual bracket handled identically on both sides",
+  "Third-order boundary sibling of the REFCORR11 regex anchor; no prior continued-lead capture used a residual bracket.",
+  "lead\\\n[[div]]]\nbody[[/div]]"),
+
+ ("C5-CHAIN", "Div/paragraph continued-lead (REFCORR11 mechanism)",
+  "two consecutive backslash continuations before the standalone div opener",
+  "Concatlines.php is a single left-to-right pass (lines 51-76); the second continuation records its lead from the whole accumulated $out, which by then contains the first continuation's text already joined with nothing. Live's continued-line semantics over a chain may differ in what text is treated as the lead and thus which run loses its wrapper.",
+  "a valid stable capture where the joined lead text or the presence of the <p> wrapper differs from the reference at rule level",
+  "byte-identical normalized content for the chained continuations on both sides",
+  "Third-order sibling of the REFCORR11 registry lead-capture step; only a single continuation was probed before.",
+  "alpha\\\nbeta\\\n[[div]]\nbody[[/div]]"),
+
+ ("C6-TOKENLEAD", "Div/paragraph continued-lead (REFCORR11 mechanism)",
+  "continued lead text that itself carries an inline [[size]] token placeholder",
+  "Concatlines.php:59-64 records the lead from the raw source stream, which may still contain the literal [[size 12px]] marker, while Paragraph.php:235-237 strips delimited placeholders before comparing against the registry. If the two stages see different spellings, the new suppression misses and the reference reintroduces a <p> wrapper where live keeps the lead bare.",
+  "a valid stable capture where the reference wraps the lead in <p> and live leaves it bare, or the size output itself differs",
+  "byte-identical normalized content with a bare lead and the same size output on both sides",
+  "Third-order sibling of the REFCORR11 lead-string comparison; all prior continued-lead captures used plain ASCII lead text.",
+  "[[size 12px]]lead\\\n[[div]]\nbody[[/div]]"),
+
+ ("F1-BQMIXED", "Blockquote (fresh code reading)",
+  "blockquote run that opens with an empty level-1 marker and jumps directly to level 2",
+  "Blockquote.php:101-110 drops only an all-empty run, but lines 130-150 push a level-1 start token for the empty marker before the level-2 opener. Live may discard the empty level-1 line entirely and open directly at depth two, changing the container nesting and break count.",
+  "a valid stable capture where live lacks the outer blockquote level or differs in break count from the reference",
+  "byte-identical normalized content with the same two-level container on both sides",
+  "Fresh code-reading shape in a changed R2-BLOCK rule region, not a prior confirmed shape.",
+  "> \n>> x"),
+
+ ("F2-COLLEMPTY", "Collapsible (fresh code reading)",
+  "byte-empty collapsible pair with no body",
+  "Div.php:190-209 has an explicit 'vanished' suppression branch for an empty attribute-less div, but Collapsible.php:63-78 has no such branch and always emits start/end tokens with doubled newlines. If live suppresses an empty collapsible the way it suppresses an empty div, the reference emits a spurious container.",
+  "a valid stable capture where live emits no collapsible container and the reference emits one, or the surrounding break count differs",
+  "byte-identical normalized content for the empty pair on both sides",
+  "Fresh code-reading shape; no prior P1 capture used a byte-empty collapsible.",
+  "[[collapsible]][[/collapsible]]"),
+
+ ("F3-DIVC0", "Div attribute control byte (fresh code reading)",
+  "div class value carrying an embedded form feed (0x0C)",
+  "Div.php:57-61 normalizeValue deletes every C0 byte with /[\\x00-\\x1F\\x7F]/ and then collapses whitespace, so a\\f b becomes the single class token 'a b'. Live purifyHtml may drop the control byte without inserting the separator, emitting class 'ab', or may treat it as a line break; either would be a rule-level attribute value divergence.",
+  "a valid stable capture where the emitted class attribute value differs from the reference by the presence of the collapsed separator",
+  "byte-identical normalized class value on both sides",
+  "Fresh byte-edge reading of normalizeValue; the REFCORR11 C0 work was in notes/Concatlines, not div attributes.",
+  "[[div class=\"a\x0cb\"]]X[[/div]]"),
+
+ ("F4-DIVTABATTR", "Div opener (fresh code reading)",
+  "div opener using a literal tab as the attribute separator",
+  "Div.php:49 opener regex uses (\\s.*?)? for the attribute tail, so a tab immediately after 'div' is admitted as an attribute separator. Live may require a space and leave the whole opener literal, which would be a rule-level block-recognition difference.",
+  "a valid stable capture where live leaves the opener literal while the reference emits a <div>, or the attribute set differs",
+  "byte-identical normalized content with the tab-separated attribute parsed identically on both sides",
+  "Fresh byte-edge reading of the corrected Div opener regex; prior Div captures used a space separator.",
+  "[[div\tclass=\"c\"]]X[[/div]]"),
+
+ ("F5-BRKQUOTE", "Break inside blockquote (fresh code reading)",
+  "explicit forced break ' _' at the end of a blockquote line",
+  "Break.php:51 matches exactly ' _\\n' and Newline.php:51 requires a preceding non-LF byte; inside a blockquote the line text retains the marker prefix, so the forced break and the implied break token can interact with the quote's own level-end break handling (Blockquote.php:187). Live may emit a different count of <br /> elements at the quote boundary.",
+  "a valid stable capture where the number or placement of <br /> elements inside the quote differs from the reference at rule level",
+  "byte-identical normalized content with the same break count on both sides",
+  "Fresh cross-rule block shape; no prior P1 capture combined Break with an indented quote line.",
+  "> a _\n> b"),
+]
+
+def main():
+    lines = []
+    lines.append("# LEDGER — R5E-P1, PARSE-SIDE BLOCK RULES, round 5e pre-probe suspicions")
+    lines.append("")
+    lines.append("Ground is post-REFCORR11 snapshot-35 on canonical base e53e7234. This ledger was written before any probe page was created and no suspicion may be added after probing without a new row and its own probe. Standing owned classes (four-adjacent U+FFFD digit runs, parity Email index digits, Stage 2 frame and serving surfaces, save-normalized sources) are applied without re-litigation. Prose is one flowing line per paragraph by campaign rule.")
+    lines.append("")
+    lines.append("Assignment seams: REFCORR11 generalized the post-failed-close adjacency rule in List.php (leftover split, one-leading-LF consumption, tolerant intervening bytes) and the continued-div-opener rule in Concatlines/Paragraph (lead registry, case-insensitive opener match, wrapper suppression). Rows L1-L5 and C1-C6 are third-order siblings of those two changed mechanisms only; no previously confirmed-and-fixed byte shape is re-probed verbatim. Rows F1-F5 are fresh code-reading shapes in other parse-side block rules.")
+    lines.append("")
+    for (rid, fam, construct, why, conf, clear, fresh, source) in ROWS:
+        lines.append("## %s — %s" % (rid, fam))
+        lines.append("")
+        lines.append("Construct: %s. Why the corrected reference looks wrong: %s Decisive live byte that CONFIRMS: %s Decisive byte that CLEARS: %s Freshness / ledger reason: %s" % (construct, why, conf, clear, fresh))
+        lines.append("")
+    lines.append("## Pre-probe predictions")
+    lines.append("")
+    lines.append("Each row predicts its own confirm and clear byte above; final verdicts are recorded after capture in verdicts.json and UNIT.md. A capture that is not valid, stable and source-matching is UNTESTABLE and is never counted as a clearance or a divergence.")
+    lines.append("")
+    open(os.path.join(U, "LEDGER.md"), "w", encoding="utf-8").write("\n".join(lines))
+
+    with open(os.path.join(U, "cases.jsonl"), "w", encoding="utf-8") as f:
+        for (rid, fam, construct, why, conf, clear, fresh, source) in ROWS:
+            f.write(json.dumps({"id": rid, "source": source}, ensure_ascii=False) + "\n")
+    print("ledger rows:", len(ROWS))
+
+if __name__ == "__main__":
+    main()

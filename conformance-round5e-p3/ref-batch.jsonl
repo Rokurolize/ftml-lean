@@ -1,0 +1,16 @@
+{"id":"p3e-01-img-link-trailing-tab","output":"<a href=\"http:\/\/example.com\/x\"><img src=\"\/local--files\/\/IMG.png\" alt=\"IMG.png\" class=\"image\" \/><\/a>"}
+{"id":"p3e-02-img-link-trailing-mixed","output":"<a href=\"http:\/\/example.com\/x\"><img src=\"\/local--files\/\/IMG.png\" alt=\"IMG.png\" class=\"image\" \/><\/a>"}
+{"id":"p3e-03-img-local-link-trailing","output":"<a href=\"\/SomePage\"><img src=\"\/local--files\/\/IMG.png\" alt=\"IMG.png\" class=\"image\" \/><\/a>"}
+{"id":"p3e-04-img-fragment-link-trailing","output":"<a href=\"#anchor\"><img src=\"\/local--files\/\/IMG.png\" alt=\"IMG.png\" class=\"image\" \/><\/a>"}
+{"id":"p3e-05-img-star-link-trailing","output":"<a href=\"http:\/\/example.com\/x\" target=\"_blank\"><img src=\"\/local--files\/\/IMG.png\" alt=\"IMG.png\" class=\"image\" \/><\/a>"}
+{"id":"p3e-06-img-title-trailing","output":"<img src=\"\/local--files\/\/IMG.png\" title=\"T \" alt=\"IMG.png\" class=\"image\" \/>"}
+{"id":"p3e-07-img-alt-trailing","output":"<img src=\"\/local--files\/\/IMG.png\" alt=\"A \" class=\"image\" \/>"}
+{"id":"p3e-08-img-width-trailing","output":"<img src=\"\/local--files\/\/IMG.png\" width=\"10 \" alt=\"IMG.png\" class=\"image\" \/>"}
+{"id":"p3e-09-img-class-trailing","output":"<img src=\"\/local--files\/\/IMG.png\" class=\"thumb \" alt=\"IMG.png\" \/>"}
+{"id":"p3e-10-img-other-attrs-no-link","output":"<img src=\"\/local--files\/\/IMG.png\" title=\"T \" alt=\"A \" width=\"10 \" class=\"image\" \/>"}
+{"id":"p3e-11-img-star-local-trailing","output":"<a href=\"\/SomePage\" target=\"_blank\"><img src=\"\/local--files\/\/IMG.png\" alt=\"IMG.png\" class=\"image\" \/><\/a>"}
+{"id":"p3e-12-img-link-two-trailing-spaces","output":"<a href=\"http:\/\/example.com\/x\"><img src=\"\/local--files\/\/IMG.png\" alt=\"IMG.png\" class=\"image\" \/><\/a>"}
+{"id":"p3e-13-img-path-link-trailing","output":"<a href=\"\/Some\/Page\"><img src=\"\/local--files\/\/IMG.png\" alt=\"IMG.png\" class=\"image\" \/><\/a>"}
+{"id":"p3e-14-gallery-size-trailing","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/IMG.png\" ><img src=\"\/local--resized-images\/\/IMG.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"\/local--files\/\/IMG2.png\" ><img src=\"\/local--resized-images\/\/IMG2.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"p3e-15-include-value-trailing","output":"<div class=\"error-block\"><p>Included page &quot;muse-probe-round5e-p3-t2&quot; does not exist (<a href=\"\/muse-probe-round5e-p3-t2\/edit\/true\">create it now<\/a>)<\/p>\n\n<\/div>"}
+{"id":"p3e-16-include-repeated-placeholder","output":"<div class=\"error-block\"><p>Included page &quot;muse-probe-round5e-p3-t1&quot; does not exist (<a href=\"\/muse-probe-round5e-p3-t1\/edit\/true\">create it now<\/a>)<\/p>\n\n<\/div>"}

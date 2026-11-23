@@ -1,0 +1,16 @@
+{"id":"L1-TRAILPROSE","output":"<ul>\n<li>A[[LI]]B[[\/LI]]<br \/>\n[[\/UL]]<\/li>\n<\/ul><br \/>\nZZZ"}
+{"id":"L2-DBLCLOSER","output":"<ul>\n<li>A[[LI]]B[[\/LI]]<br \/>\n[[\/OL]]<br \/>\n[[LI]]C[[\/LI]]<br \/>\n[[\/UL]]<\/li>\n<\/ul>"}
+{"id":"L3-NOLF","output":"<ul>\n<li>A[[LI]]B[[\/LI]]<br \/>\n[[\/UL]]<\/li>\n<\/ul>"}
+{"id":"L4-MULTILI","output":"<ul>\n<li>A[[LI]]B[[\/LI]]<br \/>\n[[LI]]C[[\/LI]]<br \/>\n[[\/UL]]<\/li>\n<\/ul>"}
+{"id":"L5-SCOREDTRAIL","output":"<ul>\n<li>A[[LI]]B[[\/LI]]<br \/>\n[[\/UL]]<\/li>\n<\/ul><br \/>\nZZZ"}
+{"id":"C1-DIVSCORED","output":"<p>alpha <div>bravo<\/div><\/p>\n\n"}
+{"id":"C2-DIVUPPER","output":"alpha <div><p>bravo<\/p>\n\n<\/div>"}
+{"id":"C3-DIVATTR","output":"lead text <div id=\"u-x\" class=\"c\"><p>body<\/p>\n\n<\/div>"}
+{"id":"C4-DIVRESID","output":"<p>lead[[div]]]<br \/>\nbody[[\/div]]<\/p>\n\n"}
+{"id":"C5-CHAIN","output":"alphabeta <div><p>body<\/p>\n\n<\/div>"}
+{"id":"C6-TOKENLEAD","output":"[[size 12px]]lead <div><p>body<\/p>\n\n<\/div>"}
+{"id":"F1-BQMIXED","output":"<blockquote><blockquote><p>x<\/p>\n\n<\/blockquote>\n<\/blockquote>\n"}
+{"id":"F2-COLLEMPTY","output":"<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block<\/a><\/div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">\u2013&nbsp;hide&nbsp;block<\/a><\/div><div class=\"collapsible-block-content\"><\/div><\/div><\/div>"}
+{"id":"F3-DIVC0","output":"<p>[[div class=&quot;ab&quot;]]X[[\/div]]<\/p>\n\n"}
+{"id":"F4-DIVTABATTR","output":"<p>[[div class=&quot;c&quot;]]X[[\/div]]<\/p>\n\n"}
+{"id":"F5-BRKQUOTE","output":"<blockquote><p>a<br \/>\nb<\/p>\n\n<\/blockquote>\n"}

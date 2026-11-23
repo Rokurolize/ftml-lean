@@ -1,0 +1,143 @@
+[
+ {
+  "id": "r2e-01-freelink-u200c",
+  "verdict": "CONFIRMED",
+  "candidate": "C-R5E-R2-1",
+  "reason": "rule-level href slug difference after standard mask",
+  "capture_id": "muse-probe-round5e-r2-r2e-01-freelink-u200c",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "ref_canon": "<p><a href=\"/_default:x\">x</a></p>",
+  "live_canon": "<p><a href=\"/x\">x</a></p>"
+ },
+ {
+  "id": "r2e-02-freelink-u200d",
+  "verdict": "CONFIRMED",
+  "candidate": "C-R5E-R2-2",
+  "reason": "rule-level href slug difference after standard mask",
+  "capture_id": "muse-probe-round5e-r2-r2e-02-freelink-u200d",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "ref_canon": "<p><a href=\"/_default:x\">x</a></p>",
+  "live_canon": "<p><a href=\"/x\">x</a></p>"
+ },
+ {
+  "id": "r2e-03-freelink-u2061",
+  "verdict": "CONFIRMED",
+  "candidate": "C-R5E-R2-3",
+  "reason": "rule-level href slug difference after standard mask",
+  "capture_id": "muse-probe-round5e-r2-r2e-03-freelink-u2061",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "ref_canon": "<p><a href=\"/_default:x\">x</a></p>",
+  "live_canon": "<p><a href=\"/x\">x</a></p>"
+ },
+ {
+  "id": "r2e-04-freelink-u2064",
+  "verdict": "CONFIRMED",
+  "candidate": "C-R5E-R2-4",
+  "reason": "rule-level href slug difference after standard mask",
+  "capture_id": "muse-probe-round5e-r2-r2e-04-freelink-u2064",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "ref_canon": "<p><a href=\"/_default:x\">x</a></p>",
+  "live_canon": "<p><a href=\"/x\">x</a></p>"
+ },
+ {
+  "id": "r2e-05-freelink-lead-mixed",
+  "verdict": "CONFIRMED",
+  "candidate": "C-R5E-R2-5",
+  "reason": "rule-level href slug difference after standard mask",
+  "capture_id": "muse-probe-round5e-r2-r2e-05-freelink-lead-mixed",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "ref_canon": "<p><a href=\"/_default:x\">x</a></p>",
+  "live_canon": "<p><a href=\"/x\">x</a></p>"
+ },
+ {
+  "id": "r2e-06-freelink-double-hash-route",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity",
+  "capture_id": "muse-probe-round5e-r2-r2e-06-freelink-double-hash-route",
+  "html_sha256": "4bd85b9e196b4bbae2d642ad989a4415541460e915e1f2ba3a999419ea9f533b"
+ },
+ {
+  "id": "r2e-07-freelink-route-twice-adjacent",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity",
+  "capture_id": "muse-probe-round5e-r2-r2e-07-freelink-route-twice-adjacent",
+  "html_sha256": "ef7e7cc90803d5518b96d4294c99e5d60c324c0bb427942978802ccfcf05f5ee"
+ },
+ {
+  "id": "r2e-08-freelink-empty-base-anchor",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity",
+  "capture_id": "muse-probe-round5e-r2-r2e-08-freelink-empty-base-anchor",
+  "html_sha256": "7a252200216d2ae26e360061c9762bd894ce5612b178fc217ae8781bab1358bd"
+ },
+ {
+  "id": "r2e-09-freelink-multihash-label",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity",
+  "capture_id": "muse-probe-round5e-r2-r2e-09-freelink-multihash-label",
+  "html_sha256": "e6464c5bb87a1d5c7a7bf33680f7546a76517788620c4168d9bc2a4bc641a460"
+ },
+ {
+  "id": "r2e-10-freelink-leading-hash-route",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity",
+  "capture_id": "muse-probe-round5e-r2-r2e-10-freelink-leading-hash-route",
+  "html_sha256": "7ceb2de537324bab654fcd50e266ae3adc415147b6fa776fb9e2aac94b6ee046"
+ },
+ {
+  "id": "r2e-11-freelink-route-trailing-hash",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity",
+  "capture_id": "muse-probe-round5e-r2-r2e-11-freelink-route-trailing-hash",
+  "html_sha256": "586cf72d6cdb17cd1432ba1558cff8e723496b2c58efe65c6d393725219b2cf0"
+ },
+ {
+  "id": "r2e-12-math-variant-gather",
+  "verdict": "CLEARED",
+  "reason": "owned PNG-stub serving boundary, Math token type/content/id agree",
+  "capture_id": "muse-probe-round5e-r2-r2e-12-math-variant-gather",
+  "html_sha256": "e504bd63f5c257493a0bd835e3359b4574ca995dfdaf283fa88623fea08d5a1f"
+ },
+ {
+  "id": "r2e-13-math-bare-nonascii",
+  "verdict": "CLEARED",
+  "reason": "owned PNG-stub serving boundary, Math token type/content/id agree",
+  "capture_id": "muse-probe-round5e-r2-r2e-13-math-bare-nonascii",
+  "html_sha256": "90e75e137a4f69c6ff1bca96a3a37c9ff86f1d2615b2d17cceec66a00d191e0a"
+ },
+ {
+  "id": "r2e-14-math-lowercase-multline",
+  "verdict": "CLEARED",
+  "reason": "owned PNG-stub serving boundary, Math token type/content/id agree",
+  "capture_id": "muse-probe-round5e-r2-r2e-14-math-lowercase-multline",
+  "html_sha256": "61c8e689de3a16d545b8852c4e6a39b7bf4eb58ac2049435046234f1b3ddbb0b"
+ },
+ {
+  "id": "r2e-15-url-nonascii-path",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity",
+  "capture_id": "muse-probe-round5e-r2-r2e-15-url-nonascii-path",
+  "html_sha256": "50062f569407eec6f7360487a353b5877d7cab6f6679fba8cf2ba54edd06ddf9"
+ },
+ {
+  "id": "r2e-16-interwiki-nonascii-google",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity",
+  "capture_id": "muse-probe-round5e-r2-r2e-16-interwiki-nonascii-google",
+  "html_sha256": "1dca6037976dcf9a120eb88cd85c6fedfc1c76fbb9394d26671f5678bfc95812"
+ },
+ {
+  "id": "r2e-17-image-fragment-nonascii-alt",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity",
+  "capture_id": "muse-probe-round5e-r2-r2e-17-image-fragment-nonascii-alt",
+  "html_sha256": "b8474d2c8085dd43d58b53d9519d33d1c75287e6fc90548c34200456e9c3751f"
+ },
+ {
+  "id": "r2e-18-mathinline-escapes",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity",
+  "capture_id": "muse-probe-round5e-r2-r2e-18-mathinline-escapes",
+  "html_sha256": "1e79c7e8ee390a5ba6ecaf14f6f50f65be06686298812c16d9bc0dd2fe5b056a"
+ }
+]

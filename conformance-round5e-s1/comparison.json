@@ -1,0 +1,1043 @@
+[
+ {
+  "id": "s01-list-ft-gap-footnoteblock",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]gap[[/footnote]]\n[[footnoteblock]]\n[[LI]]B[[/LI]]\n[[/UL]]",
+  "fullname": "muse-probe-round5e-s1-s01-list-ft-gap-footnoteblock",
+  "live_canon": "<ul><li>A<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></li></ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. gap</div></div><p>[[LI]]B[[/LI]]<br> [[/UL]]</p>",
+  "ref_canon": "<ul><li>A<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. gap</div></div>[[LI]]B[[/LI]]<br> [[/UL]]</li></ul>",
+  "live_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "A 1 Footnotes 1 . gap [[LI]]B[[/LI]] [[/UL]]"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "A 1 Footnotes 1 . gap [[LI]]B[[/LI]] [[/UL]]"
+  },
+  "live_html": "<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></li>\n</ul>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. gap</div>\n</div>\n<p>[[LI]]B[[/LI]]<br />\n[[/UL]]</p>",
+  "ref_html": "<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. gap</div></div>[[LI]]B[[/LI]]<br />\n[[/UL]]</li>\n</ul>",
+  "html_sha256": "7afe4c9a2813a11b6fbcb30500fbc51a3e4c951479d6f840726225f3f04583c0",
+  "source_sha256": "1de2842f4b0dd7f95613bda25da61ad1ad95df4eb15184f1635d4f7b1d1332f4",
+  "verdict": "CLEARED",
+  "reason": "serving/frame only; rule-level signature equal"
+ },
+ {
+  "id": "s02-list-ft-gap-ff-body",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]g\fap[[/footnote]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnoteblock]]",
+  "fullname": "muse-probe-round5e-s1-s02-list-ft-gap-ff-body",
+  "live_canon": "<ul><li>A<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br> [[LI]]B[[/LI]]<br> [[/UL]]</li></ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. gap</div></div>",
+  "ref_canon": "<ul><li>A<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br> [[LI]]B[[/LI]]<br> [[/UL]]</li></ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. gap</div></div>",
+  "live_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "A 1 [[LI]]B[[/LI]] [[/UL]] Footnotes 1 . gap"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "A 1 [[LI]]B[[/LI]] [[/UL]] Footnotes 1 . gap"
+  },
+  "live_html": "<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n[[LI]]B[[/LI]]<br />\n[[/UL]]</li>\n</ul>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. gap</div>\n</div>",
+  "ref_html": "<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n[[LI]]B[[/LI]]<br />\n[[/UL]]</li>\n</ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. gap</div></div>",
+  "html_sha256": "b56c3285f3a1f0ba91217fb79e1d864638a06aff4269d71138f9576a50fe7ac5",
+  "source_sha256": "d7b945d0c520b1f4a98943b25f596b0e704ba7c16a901289c60682b8fb8f6bca",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s03-list-ft-gap-two-footnotes",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]one[[/footnote]]\n[[footnote]]two[[/footnote]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnoteblock]]",
+  "fullname": "muse-probe-round5e-s1-s03-list-ft-gap-two-footnotes",
+  "live_canon": "<ul><li>A<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-2\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-2')\">2</a></sup><br> [[LI]]B[[/LI]]<br> [[/UL]]</li></ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. one</div><div class=\"footnote-footer\" id=\"footnote-2\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-2')\">2</a>. two</div></div>",
+  "ref_canon": "<ul><li>A<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-2\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-2')\">2</a></sup><br> [[LI]]B[[/LI]]<br> [[/UL]]</li></ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. one</div><div class=\"footnote-footer\" id=\"footnote-2\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-2')\">2</a>. two</div></div>",
+  "live_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;",
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-2\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-2')\">2</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-2')\">2</a>"
+   ],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">",
+    "<div class=\"footnote-footer\" id=\"footnote-2\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "A 1 2 [[LI]]B[[/LI]] [[/UL]] Footnotes 1 . one 2 . two"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;",
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-2\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-2')\">2</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-2')\">2</a>"
+   ],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">",
+    "<div class=\"footnote-footer\" id=\"footnote-2\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "A 1 2 [[LI]]B[[/LI]] [[/UL]] Footnotes 1 . one 2 . two"
+  },
+  "live_html": "<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><sup class=\"footnoteref\"><a id=\"footnoteref-2\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-2')\">2</a></sup><br />\n[[LI]]B[[/LI]]<br />\n[[/UL]]</li>\n</ul>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. one</div>\n<div class=\"footnote-footer\" id=\"footnote-2\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-2')\">2</a>. two</div>\n</div>",
+  "ref_html": "<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><sup class=\"footnoteref\"><a id=\"footnoteref-2\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-2')\">2</a></sup><br />\n[[LI]]B[[/LI]]<br />\n[[/UL]]</li>\n</ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. one</div><div class=\"footnote-footer\" id=\"footnote-2\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-2')\">2</a>. two</div></div>",
+  "html_sha256": "3763dff03cd085752ba438e312a5ee7fa9e8a6a8658cca705ba045b090387e97",
+  "source_sha256": "a95b4c0268eaf91fce07cfa1d3aac7f95decad930b85e9c49b8c6b49e29352e1",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s04-list-nested-failed-closer-ft",
+  "source": "[[OL]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/OL]]\n[[footnote]]note[[/footnote]]\n[[LI]]tail[[/LI]]\n[[/UL]]\n[[footnoteblock]]",
+  "fullname": "muse-probe-round5e-s1-s04-list-nested-failed-closer-ft",
+  "live_canon": "<ul><li>outer</li><li>in<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br> [[LI]]tail[[/LI]]<br> [[/UL]]</li></ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. note</div></div>",
+  "ref_canon": "<ul><li>outer<ul><li>in<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br> [[LI]]tail[[/LI]]<br> [[/UL]]</li></ul></li></ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. note</div></div>",
+  "live_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [
+    "<ul>",
+    "<li>",
+    "<li>"
+   ],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "outer in 1 [[LI]]tail[[/LI]] [[/UL]] Footnotes 1 . note"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [
+    "<ul>",
+    "<li>",
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "outer in 1 [[LI]]tail[[/LI]] [[/UL]] Footnotes 1 . note"
+  },
+  "live_html": "<ul>\n<li>outer</li>\n<li>in<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n[[LI]]tail[[/LI]]<br />\n[[/UL]]</li>\n</ul>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. note</div>\n</div>",
+  "ref_html": "<ul>\n<li>outer<ul>\n<li>in<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n[[LI]]tail[[/LI]]<br />\n[[/UL]]</li>\n</ul></li>\n</ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. note</div></div>",
+  "html_sha256": "d6d9a12b48675fc0960c5b6e57fec2ba1a206ccbe143b9c5b68ee0dab1e4fb3d",
+  "source_sha256": "74161fa41eb05f787a6c8113831d235fde19ac160c8888dc3d69f66248a7635f",
+  "verdict": "CANDIDATE",
+  "first_diff": 14,
+  "live_context": "<ul><li>outer</li><li>in<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br> [[LI]]tail[[/LI]]<br> [[/UL]]</li></ul><div class=\"footnotes-footer\"><div class=\"title",
+  "ref_context": "<ul><li>outer<ul><li>in<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br> [[LI]]tail[[/LI]]<br> [[/UL]]</li></ul></li></ul><div class=\"footnotes-footer\"><div cla"
+ },
+ {
+  "id": "s05-fl-zwsp-described",
+  "source": "[[[​_default:x | Label]]]",
+  "fullname": "muse-probe-round5e-s1-s05-fl-zwsp-described",
+  "live_canon": "<a href=\"/x\">Label</a>",
+  "ref_canon": "<a href=\"/x\">Label</a>",
+  "live_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">Label</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "Label"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">Label</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "Label"
+  },
+  "live_html": "<p><a class=\"newpage\" href=\"/x\">Label</a></p>",
+  "ref_html": "<p><a class=\"newpage\" href=\"/x\">Label</a></p>\n\n",
+  "html_sha256": "0e36d57f505020ddf88415b2fceb54d66c8a702572ccc4b7f4ffaf3be3e2d65a",
+  "source_sha256": "e06e295401445f41d27d69fcac032d93ba092ec42a91395b427f28c43cb25ad9",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s06-fl-wj-described",
+  "source": "[[[⁠_default:x | Label]]]",
+  "fullname": "muse-probe-round5e-s1-s06-fl-wj-described",
+  "live_canon": "<a href=\"/x\">Label</a>",
+  "ref_canon": "<a href=\"/x\">Label</a>",
+  "live_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">Label</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "Label"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">Label</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "Label"
+  },
+  "live_html": "<p><a class=\"newpage\" href=\"/x\">Label</a></p>",
+  "ref_html": "<p><a class=\"newpage\" href=\"/x\">Label</a></p>\n\n",
+  "html_sha256": "0e36d57f505020ddf88415b2fceb54d66c8a702572ccc4b7f4ffaf3be3e2d65a",
+  "source_sha256": "ebb351addfae51fa2750b79700ddf8e6dfc1c1ab373ddddb22b14ccbe2b8f76d",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s07-fl-lead-in-described-label",
+  "source": "[[[_default:x | ​Label]]]",
+  "fullname": "muse-probe-round5e-s1-s07-fl-lead-in-described-label",
+  "live_canon": "<a href=\"/x\">​Label</a>",
+  "ref_canon": "<a href=\"/x\">​Label</a>",
+  "live_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">​Label</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "​Label"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">​Label</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "​Label"
+  },
+  "live_html": "<p><a class=\"newpage\" href=\"/x\">​Label</a></p>",
+  "ref_html": "<p><a class=\"newpage\" href=\"/x\">​Label</a></p>\n\n",
+  "html_sha256": "75cbaa74d8e2d3c53ac1f6cd9540cf4e26e52844c70f0b615911eee43eb275af",
+  "source_sha256": "df8e822166b783ac518c73b33f5894d9144c23b5aa12ac99834032999d022314",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s08-fl-multihash-described",
+  "source": "[[[foo/#/bar#baz | L]]]",
+  "fullname": "muse-probe-round5e-s1-s08-fl-multihash-described",
+  "live_canon": "[[[foo/#/bar#baz | L]]]",
+  "ref_canon": "[[[foo/#/bar#baz | L]]]",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "[[[foo/#/bar#baz | L]]]"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "[[[foo/#/bar#baz | L]]]"
+  },
+  "live_html": "<p>[[[foo/#/bar#baz | L]]]</p>",
+  "ref_html": "<p>[[[foo/#/bar#baz | L]]]</p>\n\n",
+  "html_sha256": "4489601b4d170249bd107ad1931aae2a052335ceeb2a873854cd4e923460b2f3",
+  "source_sha256": "8139c5293b24d39cb96fce4cefb7f0901f524c63ce33330d5baa704d3a4dcb7e",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s09-ff-footnote-in-quote-doublelf",
+  "source": "[[quote]]\n[[footnote]]g\f\n\nh[[/footnote]]\n[[/quote]]\n[[footnoteblock]]",
+  "fullname": "muse-probe-round5e-s1-s09-ff-footnote-in-quote-doublelf",
+  "live_canon": "<p>[[quote]]<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br> [[/quote]]</p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. g <p>h</p></div></div>",
+  "ref_canon": "<p>[[quote]]<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br> [[/quote]]</p><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. g <p>h</p></div></div>",
+  "live_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "[[quote]] 1 [[/quote]] Footnotes 1 . g h"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "[[quote]] 1 [[/quote]] Footnotes 1 . g h"
+  },
+  "live_html": "<p>[[quote]]<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n[[/quote]]</p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. g\n<p>h</p>\n</div>\n</div>",
+  "ref_html": "<p>[[quote]]<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n[[/quote]]</p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. g\n<p>h</p>\n\n</div></div>",
+  "html_sha256": "b58533957aa1b33bef795bf0bf2a47a4e8be2e2913d8e8ce99f14cf29a9517a1",
+  "source_sha256": "e749a0f9836c0821495fd7163949b107f2b25584b7a3bfd2948b15958d885c2a",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s10-esc-footnote-nolf",
+  "source": "[[footnote]]A\u001bB[[/footnote]][[footnoteblock]]",
+  "fullname": "muse-probe-round5e-s1-s10-esc-footnote-nolf",
+  "live_canon": "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A\u001bB</div></div>",
+  "ref_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. AB</p></div></div>",
+  "live_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "1 Footnotes 1 . A\u001bB"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "1 Footnotes 1 . AB"
+  },
+  "live_html": "<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A\u001bB</div>\n</div>",
+  "ref_html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. AB</p>\n\n</div></div>",
+  "html_sha256": "12735a85d0fa75984f4c4430e16932bf36ee8d1c67b564f935b2df0a264eb1f9",
+  "source_sha256": "122f5f894bf87b0274e5944d335c1517ceed3ca4fd592d72cd9689c9141e64b2",
+  "verdict": "CANDIDATE",
+  "first_diff": 1,
+  "live_context": "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"f",
+  "ref_context": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id"
+ },
+ {
+  "id": "s11-esc-footnote-doublelf",
+  "source": "[[footnote]]A\u001b\n\nB[[/footnote]][[footnoteblock]]",
+  "fullname": "muse-probe-round5e-s1-s11-esc-footnote-doublelf",
+  "live_canon": "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A\u001b <p>B</p></div></div>",
+  "ref_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A </p><p>B</p></div></div>",
+  "live_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "1 Footnotes 1 . A\u001b B"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "1 Footnotes 1 . A B"
+  },
+  "live_html": "<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A\u001b\n<p>B</p>\n</div>\n</div>",
+  "ref_html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A\n</p>\n\n<p>B</p>\n\n</div></div>",
+  "html_sha256": "754824ec1ff17c87bcd9630ae67e55adb88a3c878c4c4edc7f33e8c4a2d26842",
+  "source_sha256": "4193f46e4263d16d712c73335d39edb12352f08a853935b6f4024067b930aca9",
+  "verdict": "CANDIDATE",
+  "first_diff": 1,
+  "live_context": "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"f",
+  "ref_context": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id"
+ },
+ {
+  "id": "s12-ff-bibitem-in-quote",
+  "source": "[[quote]]\n[[bibliography]]\n[[bibitem k]]A\fB[[/bibitem]]\n[[/bibliography]]\n[[/quote]]",
+  "fullname": "muse-probe-round5e-s1-s12-ff-bibitem-in-quote",
+  "live_canon": "<p>[[quote]]</p><div class=\"bibitems\"><div class=\"title\">Bibliography</div> [[bibitem k]]AB[[/bibitem]]</div><p>[[/quote]]</p>",
+  "ref_canon": "<p>[[quote]]</p><div class=\"bibitems\"><div class=\"title\">Bibliography</div> [[bibitem k]]A B[[/bibitem]]</div><p>[[/quote]]</p>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class=\"bibitems\">",
+    "<div class=\"title\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "[[quote]] Bibliography [[bibitem k]]AB[[/bibitem]] [[/quote]]"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class=\"bibitems\">",
+    "<div class=\"title\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "[[quote]] Bibliography [[bibitem k]]A B[[/bibitem]] [[/quote]]"
+  },
+  "live_html": "<p>[[quote]]</p>\n<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n[[bibitem k]]AB[[/bibitem]]</div>\n<p>[[/quote]]</p>",
+  "ref_html": "<p>[[quote]]</p>\n\n<div class=\"bibitems\"><div class=\"title\">Bibliography</div>\n[[bibitem k]]A B[[/bibitem]]</div><p>[[/quote]]</p>\n\n",
+  "html_sha256": "db9f2ad79d6af818f51deb6e7efe157f43d784136bdfcbd38e4945ea224da2cb",
+  "source_sha256": "3be1f4a85e52c01feabecf3132d8066cb0bc6f871b50218620d329752e45b152",
+  "verdict": "CANDIDATE",
+  "first_diff": 90,
+  "live_context": "<p>[[quote]]</p><div class=\"bibitems\"><div class=\"title\">Bibliography</div> [[bibitem k]]AB[[/bibitem]]</div><p>[[/quote]]</p>",
+  "ref_context": "<p>[[quote]]</p><div class=\"bibitems\"><div class=\"title\">Bibliography</div> [[bibitem k]]A B[[/bibitem]]</div><p>[[/quote]]</p>"
+ },
+ {
+  "id": "s13-contdiv-in-quote",
+  "source": "[[quote]]\nalpha\\\n[[div]]\nbravo[[/div]]\n[[/quote]]",
+  "fullname": "muse-probe-round5e-s1-s13-contdiv-in-quote",
+  "live_canon": "[[quote]]<br> alpha <div><p>bravo</p></div><br> [[/quote]]",
+  "ref_canon": "<p>[[quote]]<br> alpha <div></p><p>bravo</p></div><br> [[/quote]]",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div>"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "[[quote]] alpha bravo [[/quote]]"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div>"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "[[quote]] alpha bravo [[/quote]]"
+  },
+  "live_html": "[[quote]]<br />\nalpha\n<div>\n<p>bravo</p>\n</div>\n<br />\n[[/quote]]",
+  "ref_html": "<p>[[quote]]<br />\nalpha <div></p>\n\n<p>bravo</p>\n\n</div><br />\n[[/quote]]",
+  "html_sha256": "6f2026c4b3a3b0e5db405885e4d84c53ebb7c466b07b5dec91b5f8daf817ca11",
+  "source_sha256": "67c0ac9be850102818deae3545c603cce3fb24b2226b66434fb16ea1456091a8",
+  "verdict": "CLEARED",
+  "reason": "serving/frame only; rule-level signature equal"
+ },
+ {
+  "id": "s14-contdiv-in-listitem",
+  "source": "[[UL]]\n[[LI]]alpha\\\n[[div]]\nbravo[[/div]][[/LI]]\n[[/UL]]",
+  "fullname": "muse-probe-round5e-s1-s14-contdiv-in-listitem",
+  "live_canon": "<ul><li>alpha</li></ul><div><p>bravo</p></div><br>",
+  "ref_canon": "<ul><li>alpha <div><p>bravo</p></div><br>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [
+    "<div>"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "alpha bravo"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [
+    "<div>"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "alpha bravo"
+  },
+  "live_html": "<ul>\n<li>alpha</li>\n</ul>\n<div>\n<p>bravo</p>\n</div>\n<br />",
+  "ref_html": "<ul>\n<li>alpha <div><p>bravo</p>\n\n</div><br />",
+  "html_sha256": "f858e72c9a91409850a433c3ffd15474bd437f48598572295637385f4e420675",
+  "source_sha256": "4831f0dbd93eaa65605628177b2563b1479eb7eb0053e515efe01f7d9e8f88dc",
+  "verdict": "CLEARED",
+  "reason": "serving/frame only; rule-level signature equal"
+ },
+ {
+  "id": "s15-contdiv-in-footnote",
+  "source": "[[footnote]]alpha\\\n[[div]]\nbravo[[/div]][[/footnote]][[footnoteblock]]",
+  "fullname": "muse-probe-round5e-s1-s15-contdiv-in-footnote",
+  "live_canon": "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. alpha <div><p>bravo</p></div></div></div>",
+  "ref_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. alpha <div></p><p>bravo</p></div></div></div>",
+  "live_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">",
+    "<div>"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "1 Footnotes 1 . alpha bravo"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">",
+    "<div>"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "1 Footnotes 1 . alpha bravo"
+  },
+  "live_html": "<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. alpha\n<div>\n<p>bravo</p>\n</div>\n</div>\n</div>",
+  "ref_html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. alpha <div></p>\n\n<p>bravo</p>\n\n</div></div></div>",
+  "html_sha256": "5d9e92fa34d11457a16142746757abd08da60d349b87cfd74b4c4ca94990b4ed",
+  "source_sha256": "92ad38ceaa5d27a11b0feb8e9c990f88aa70a5a35e6e0341c2240c9627555575",
+  "verdict": "CLEARED",
+  "reason": "serving/frame only; rule-level signature equal"
+ },
+ {
+  "id": "s16-contdiv-lead-freelink",
+  "source": "[[[x]]]\\\n[[div]]\nbravo[[/div]]",
+  "fullname": "muse-probe-round5e-s1-s16-contdiv-lead-freelink",
+  "live_canon": "<a href=\"/x\">x</a><div><p>bravo</p></div>",
+  "ref_canon": "<p><a href=\"/x\">x</a><div></p><p>bravo</p></div>",
+  "live_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div>"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "x bravo"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div>"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "x bravo"
+  },
+  "live_html": "<a class=\"newpage\" href=\"/x\">x</a>\n<div>\n<p>bravo</p>\n</div>",
+  "ref_html": "<p><a class=\"newpage\" href=\"/x\">x</a> <div></p>\n\n<p>bravo</p>\n\n</div>",
+  "html_sha256": "c57b41511fc6d9c7b02419b10814428ab84418baaeb16986c9fe266898a83ac2",
+  "source_sha256": "3f4c5acc847eef0aa9149e52910a35cf7bf8a945c7045e2d1a99530ba1dfa9a3",
+  "verdict": "CLEARED",
+  "reason": "serving/frame only; rule-level signature equal"
+ },
+ {
+  "id": "s17-image-link-trailws-caption",
+  "source": "[[image IMG.png link=\"http://example.com/x \"]]caption",
+  "fullname": "muse-probe-round5e-s1-s17-image-link-trailws-caption",
+  "live_canon": "<a href=\"http://example.com/x\"><img alt=\"IMG.png\" class=\"image\" src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5e-s1-s17-image-link-trailws-caption/IMG.png\"></a>caption",
+  "ref_canon": "<a href=\"http://example.com/x\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>caption",
+  "live_sig": {
+   "hrefs": [
+    "http://example.com/x"
+   ],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "caption"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "http://example.com/x"
+   ],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "caption"
+  },
+  "live_html": "<a href=\"http://example.com/x\"><img src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5e-s1-s17-image-link-trailws-caption/IMG.png\" alt=\"IMG.png\" class=\"image\" /></a>caption",
+  "ref_html": "<a href=\"http://example.com/x\"><img src=\"/local--files//IMG.png\" alt=\"IMG.png\" class=\"image\" /></a>caption",
+  "html_sha256": "0e7ab550195dc723240042b1b170ddde686c9e5c1dfdc7344e6968b59ae96ad3",
+  "source_sha256": "994dfa13f846d76ecbb96de5991da90e8d7146a61685ef13cef9a696de914ea2",
+  "verdict": "CLEARED",
+  "reason": "serving/frame only; rule-level signature equal"
+ },
+ {
+  "id": "s18-image-link-trailws-in-div-caption",
+  "source": "[[div class=\"caption\"]]\n[[image IMG.png link=\"http://example.com/x \"]]\n[[/div]]",
+  "fullname": "muse-probe-round5e-s1-s18-image-link-trailws-in-div-caption",
+  "live_canon": "<div class=\"caption\"><a href=\"http://example.com/x\"><img alt=\"IMG.png\" class=\"image\" src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5e-s1-s18-image-link-trailws-in-div-caption/IMG.png\"></a></div>",
+  "ref_canon": "<div class=\"caption\"><a href=\"http://example.com/x\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a></div>",
+  "live_sig": {
+   "hrefs": [
+    "http://example.com/x"
+   ],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class=\"caption\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": ""
+  },
+  "ref_sig": {
+   "hrefs": [
+    "http://example.com/x"
+   ],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class=\"caption\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": ""
+  },
+  "live_html": "<div class=\"caption\"><a href=\"http://example.com/x\"><img src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5e-s1-s18-image-link-trailws-in-div-caption/IMG.png\" alt=\"IMG.png\" class=\"image\" /></a></div>",
+  "ref_html": "<div class=\"caption\"><a href=\"http://example.com/x\"><img src=\"/local--files//IMG.png\" alt=\"IMG.png\" class=\"image\" /></a></div>",
+  "html_sha256": "84bb70b2820bfe23a3e479da4e6fdb97c9998c52fc2b5afae1989b1218c68a2f",
+  "source_sha256": "921e18a04020781777ab2c68beee578d500b1d194b57e662d3c341eb4ed34a89",
+  "verdict": "CLEARED",
+  "reason": "serving/frame only; rule-level signature equal"
+ },
+ {
+  "id": "s19-image-link-multitab-trailws",
+  "source": "[[image IMG.png link=\"http://example.com/x \t \"]]cap",
+  "fullname": "muse-probe-round5e-s1-s19-image-link-multitab-trailws",
+  "live_canon": "<a href=\"http://example.com/x\"><img alt=\"IMG.png\" class=\"image\" src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5e-s1-s19-image-link-multitab-trailws/IMG.png\"></a>cap",
+  "ref_canon": "<a href=\"http://example.com/x\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>cap",
+  "live_sig": {
+   "hrefs": [
+    "http://example.com/x"
+   ],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "cap"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "http://example.com/x"
+   ],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "error": [],
+   "text": "cap"
+  },
+  "live_html": "<a href=\"http://example.com/x\"><img src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5e-s1-s19-image-link-multitab-trailws/IMG.png\" alt=\"IMG.png\" class=\"image\" /></a>cap",
+  "ref_html": "<a href=\"http://example.com/x\"><img src=\"/local--files//IMG.png\" alt=\"IMG.png\" class=\"image\" /></a>cap",
+  "html_sha256": "c67ad9e3f08607b257633913c8db5b4f1803863370b509d08afec2895a843971",
+  "source_sha256": "29caebe453a9f4b64d7c4ed5341277b29cd6fcfbdd36c5e0fcf1fcae279e5eac",
+  "verdict": "CLEARED",
+  "reason": "serving/frame only; rule-level signature equal"
+ },
+ {
+  "id": "s20-math-type-plus-mathinline",
+  "source": "[[math type=\"align\"]]\nx\n[[/math]]\n[[$y$]]",
+  "fullname": "muse-probe-round5e-s1-s20-math-type-plus-mathinline",
+  "live_canon": "<span class=\"equation-number\">(1)</span><div class=\"math-equation\" id=\"equation-1\">\\begin{align} x \\end{align}</div><p><span class=\"math-inline\">$y$</span></p>",
+  "ref_canon": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div><p><span class=\"math-inline\">$y$</span></p>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class=\"math-equation\" id=\"equation-1\">"
+   ],
+   "tables": [],
+   "spans": [
+    "<span class=\"equation-number\">(1)</span>",
+    "<span class=\"math-inline\">$y$</span>"
+   ],
+   "error": [],
+   "text": "(1) \\begin{align} x \\end{align} $y$"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class=\"error-block\">"
+   ],
+   "tables": [],
+   "spans": [
+    "<span class=\"math-inline\">$y$</span>"
+   ],
+   "error": [
+    "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>"
+   ],
+   "text": "The equation has not been processed correctly. Most prabably it has syntax error(s). $y$"
+  },
+  "live_html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{align} x \\end{align}</div>\n<p><span class=\"math-inline\">$y$</span></p>",
+  "ref_html": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div><p><span class=\"math-inline\">$y$</span></p>\n\n",
+  "html_sha256": "cb67cc9d1de7124fcbdb37ac23fb0f4c9dac0f9f2dc044e9aafb81737d40f6dc",
+  "source_sha256": "3520f6a0235b2a71eb9c6f8868e6af2b4eaff0a5f488ec7ed9cc973e8a16954f",
+  "verdict": "CLEARED",
+  "first_diff": 1,
+  "live_context": "<span class=\"equation-number\">(1)</span><div class=\"math-equation\" id=\"equation-1\">\\begin{align} x \\end{align}</div><p><span class=\"math-inline\">$y$</span></p>",
+  "ref_context": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div><p><span class=\"math-inline\">$y$</span></p>",
+  "raw_candidate": true,
+  "reason": "owned harness PNG-stub serving surface; math-tokens.jsonl row for this case shows reference token type 'align' matching the live \\begin{align} envelope, so the rule-level value agrees",
+  "adjudication": "serving-surface clearance (harness PNG stub vs live equation render)"
+ },
+ {
+  "id": "s21-math-absent-inline-date",
+  "source": "[[math]]\nx\n[[/math]]\n[[$ [[date 0]] $]]",
+  "fullname": "muse-probe-round5e-s1-s21-math-absent-inline-date",
+  "live_canon": "<span class=\"equation-number\">(1)</span><div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div><p><span class=\"math-inline\">$$</span></p>",
+  "ref_canon": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div><p><span class=\"math-inline\">$$</span></p>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class=\"math-equation\" id=\"equation-1\">"
+   ],
+   "tables": [],
+   "spans": [
+    "<span class=\"equation-number\">(1)</span>",
+    "<span class=\"math-inline\">$$</span>"
+   ],
+   "error": [],
+   "text": "(1) \\begin{equation} x \\end{equation} $$"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class=\"error-block\">"
+   ],
+   "tables": [],
+   "spans": [
+    "<span class=\"math-inline\">$$</span>"
+   ],
+   "error": [
+    "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>"
+   ],
+   "text": "The equation has not been processed correctly. Most prabably it has syntax error(s). $$"
+  },
+  "live_html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div>\n<p><span class=\"math-inline\">$$</span></p>",
+  "ref_html": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div><p><span class=\"math-inline\">$$</span></p>\n\n",
+  "html_sha256": "7167e37b2199f9428acf078104c809217dc7306c727ac651259f30c88cb95a80",
+  "source_sha256": "f7842f663a23d720034886c683aec41e257237147d4e787f72d11f9887083b2b",
+  "verdict": "CLEARED",
+  "first_diff": 1,
+  "live_context": "<span class=\"equation-number\">(1)</span><div class=\"math-equation\" id=\"equation-1\">\\begin{equation} x \\end{equation}</div><p><span class=\"math-inline\">$$</span></p>",
+  "ref_context": "<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div><p><span class=\"math-inline\">$$</span></p>",
+  "raw_candidate": true,
+  "reason": "owned harness PNG-stub serving surface; math-tokens.jsonl row for this case shows reference token type 'equation' matching the live \\begin{equation} envelope, so the rule-level value agrees",
+  "adjudication": "serving-surface clearance (harness PNG stub vs live equation render)"
+ },
+ {
+  "id": "s22-fl-lead-inside-mathinline",
+  "source": "[[$ [[[​_default:x | L]]] $]]",
+  "fullname": "muse-probe-round5e-s1-s22-fl-lead-inside-mathinline",
+  "live_canon": "<span class=\"math-inline\">$$</span>",
+  "ref_canon": "<span class=\"math-inline\">$$</span>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [
+    "<span class=\"math-inline\">$$</span>"
+   ],
+   "error": [],
+   "text": "$$"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [
+    "<span class=\"math-inline\">$$</span>"
+   ],
+   "error": [],
+   "text": "$$"
+  },
+  "live_html": "<p><span class=\"math-inline\">$$</span></p>",
+  "ref_html": "<p><span class=\"math-inline\">$$</span></p>\n\n",
+  "html_sha256": "8119dd8e254d13e759b9ee65895322c26e3e6e9fd2c600c47fb9e0ed1270506a",
+  "source_sha256": "25d24b6f2b0afb4294e8f28d8f8d99dc0744e77ecfac4eccb5ded7ff1b14bd9c",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ }
+]

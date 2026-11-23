@@ -1,0 +1,18 @@
+{"id": "r2e-01-freelink-u200c", "source": "[[[\u200c_default:x]]]"}
+{"id": "r2e-02-freelink-u200d", "source": "[[[\u200d_default:x]]]"}
+{"id": "r2e-03-freelink-u2061", "source": "[[[\u2061_default:x]]]"}
+{"id": "r2e-04-freelink-u2064", "source": "[[[\u2064_default:x]]]"}
+{"id": "r2e-05-freelink-lead-mixed", "source": "[[[\u200b\u200c_default:x]]]"}
+{"id": "r2e-06-freelink-double-hash-route", "source": "[[[foo##/bar]]]"}
+{"id": "r2e-07-freelink-route-twice-adjacent", "source": "[[[foo/#/#/bar]]]"}
+{"id": "r2e-08-freelink-empty-base-anchor", "source": "[[[/#/bar#baz]]]"}
+{"id": "r2e-09-freelink-multihash-label", "source": "[[[foo/#/bar#baz|shown]]]"}
+{"id": "r2e-10-freelink-leading-hash-route", "source": "[[[#foo/#/bar]]]"}
+{"id": "r2e-11-freelink-route-trailing-hash", "source": "[[[foo/#/bar/#]]]"}
+{"id": "r2e-12-math-variant-gather", "source": "[[math TYPE=\"gather\"]]x\n[[/math]]"}
+{"id": "r2e-13-math-bare-nonascii", "source": "[[math]]\u00e9\n[[/math]]"}
+{"id": "r2e-14-math-lowercase-multline", "source": "[[math type=\"multline\"]]x\n[[/math]]"}
+{"id": "r2e-15-url-nonascii-path", "source": "https://example.com/caf\u00e9"}
+{"id": "r2e-16-interwiki-nonascii-google", "source": "[google:caf\u00e9]"}
+{"id": "r2e-17-image-fragment-nonascii-alt", "source": "[[image http://x/y.png link=\"#frag\" alt=\"caf\u00e9\"]]"}
+{"id": "r2e-18-mathinline-escapes", "source": "[[$ a & b < c > d \"e\" 'f' \u00e9 $]]"}
