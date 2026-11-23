@@ -1,0 +1,187 @@
+{
+  "certificate_id": "TCB-5 Stage 2 bounded skeleton oracle certificate",
+  "unit": "u3-certificate (team task task-3)",
+  "status": "PARTIAL \u2014 genuine model-vs-oracle divergences inside the declared domain",
+  "generator_version": "1.0.0",
+  "generator_source": "generate.py",
+  "alphabet": {
+    "tag_class_count": 12,
+    "text_terminal_counted_in_12": false,
+    "tag_classes": {
+      "closable": [
+        "span",
+        "strong",
+        "em",
+        "a",
+        "div",
+        "p",
+        "table",
+        "td",
+        "ul",
+        "li",
+        "code"
+      ],
+      "void": [
+        "br"
+      ],
+      "token_forms": "open <t>, close </t>, void <br />, text terminal single character x"
+    },
+    "justification_source": "stage2/G2-SCOPE.md T1-T12 structural classes",
+    "bounds": {
+      "maxDepth": 4,
+      "maxLength": 8
+    },
+    "bound_justification": "T4 needs at least 2 elements above the target (3 matched pairs, 6 tokens, depth 3); the documented 3-element crossing (p15/q04) needs 4 pairs = 8 tokens and depth 4, so (4,8) is the smallest bound containing the T4 family."
+  },
+  "cardinality": 1058060,
+  "corpus_sha256": "0c01780e3ac0b30a1984e9bb5b1969a70ce7ec04a859ab0a043aebce62c64281",
+  "corpus_file": "skeletons.txt",
+  "corpus_order": "UTF-8 byte length, then UTF-8 byte value; one skeleton per newline-terminated line",
+  "comparison": {
+    "model": "lean-ftml-stage2-cli --framed, Stage2TidyCore.transformTotal (total port)",
+    "oracle": "oracle_batch.c, byte-identical wrapper/options/extraction to conformance-tidy-oracle/tidy_oracle.c against libtidy.so.58 (5.8.0)",
+    "normalization": "strip leading/trailing characters in ' \\t\\r\\n' on both sides, identical to conformance-tidy-oracle/three_way.py strip_ws",
+    "framing": "result + '\\n' + '@@S2CERT-SEP-7f3a9c@@'; compare.py strips the sentinel and exactly one trailing newline per piece",
+    "byte_for_byte": true,
+    "cases": 1058060
+  },
+  "mismatch_count": 1023010,
+  "agreement_count": 35050,
+  "certificate_sha256": "88f4920b2d491cf90c92885bbbddac3d6beb5ddfe91b05c0b82546034ff8449f",
+  "certificate_file": "certificate.jsonl",
+  "minimal_witnesses": [
+    {
+      "i": 3,
+      "m": "a812a69ba6858a54cefdb2fc3882e7ceb7d66aa1ed792562082872dd6ed4f921",
+      "o": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+      "ok": false,
+      "s": "<a></a>",
+      "model": "<a></a>",
+      "oracle": "\n\n"
+    },
+    {
+      "i": 12,
+      "m": "7a699939e86998380aed0de76e1abaf454d0f5a329c6d87d205ffcf264f93f6c",
+      "o": "0d72b553bc6cd92c72ccf8d5ce6420b2d6ab1d73c329a117f4dba58e813ef257",
+      "ok": false,
+      "s": "<li></li>",
+      "model": "<li></li>",
+      "oracle": "\n\n<ul>"
+    },
+    {
+      "i": 13,
+      "m": "f7bf8e81b76c19c1f82740611fa3933e377e1c77b1e6ce94edd2ab58067ce341",
+      "o": "12c689be5197572a1c4824867547376936aed77f94023a062f3c70fe483e398e",
+      "ok": false,
+      "s": "<td></td>",
+      "model": "<td></td>",
+      "oracle": "\n\n<table>\n<tr>\n<td></td>\n</tr>\n</table>\n"
+    },
+    {
+      "i": 14,
+      "m": "3c09b06842123856206b3f8b73142e20081ffb313bbfa18ca79ccd9b17a74cf3",
+      "o": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+      "ok": false,
+      "s": "<ul></ul>",
+      "model": "<ul></ul>",
+      "oracle": "\n\n"
+    },
+    {
+      "i": 27,
+      "m": "93636fa047400919d3a6fa2c57a114596546d97c9681645ed857fb014fb8fb18",
+      "o": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+      "ok": false,
+      "s": "<div></div>",
+      "model": "<div></div>",
+      "oracle": "\n\n"
+    },
+    {
+      "i": 83,
+      "m": "09a2c69280f088a29865714ff27fd0c5c32e07b145f51f8f538155357ac7bf92",
+      "o": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+      "ok": false,
+      "s": "<table></table>",
+      "model": "<table></table>",
+      "oracle": "\n\n"
+    },
+    {
+      "i": 5,
+      "m": "4083d7f96a4e34a037a4d9f10ced2bebc4d73cb20a4bcc3365e7c58886e16d41",
+      "o": "5a3e1aab82a935c2959797587a331e1ed416c07a305cf97dcea255f22ceb6efe",
+      "ok": false,
+      "s": "<a></a>x",
+      "model": "<a></a>x",
+      "oracle": "\n\nx"
+    },
+    {
+      "i": 9,
+      "m": "fbd1660bf3a710311caac935289fa02402beb49d14043cfdb19fd1b7fa1969cb",
+      "o": "5a3e1aab82a935c2959797587a331e1ed416c07a305cf97dcea255f22ceb6efe",
+      "ok": false,
+      "s": "x<a></a>",
+      "model": "x<a></a>",
+      "oracle": "\n\nx"
+    },
+    {
+      "i": 17,
+      "m": "bdb6bbf31f636979041f231a65f6ffd2ddb6b6c2fbfe4a5aa777fbd594467e60",
+      "o": "38ef9ca0c4127aae7cce5015c8c43444b8d42d16d0bfa8bb0012a7ddb98ab337",
+      "ok": false,
+      "s": "<li></li>x",
+      "model": "<li></li>\nx",
+      "oracle": "\n\n<ul>\n<li style=\"list-style: none\">x "
+    },
+    {
+      "i": 18,
+      "m": "fc6de9ac017c2ef308f984b9e4d2fff82e86932bafbda128909ef102e17c4f36",
+      "o": "c7a885b83891389375c85413d71b5c25432d7e72dfdb8a780250b8bfd1b8da8e",
+      "ok": false,
+      "s": "<li>x</li>",
+      "model": "<li>x</li>",
+      "oracle": "\n\n<ul>\n<li>x</li>\n"
+    }
+  ],
+  "witness_note": "Up to 10 minimal witnesses selected by (token count, byte length, bytes). Full per-case results are in certificate.jsonl; every divergence is recorded, none was excluded from the domain.",
+  "remainder": "Above depth 4 / length 8: unbounded tidy rescans and cascading multi-level crossings; the full 50,000-LOC libtidy.so.58 behavior is not a theorem. U1 (p15 tail after a dropped span), U2 (paragraph unwrap boundary p09 vs in2-x48), U3 (break-drop bounds), U4 (anchor boundary beyond depth 1), U5 (lone image/hr paragraphs) from stage2/REPORT-STAGE2.md are settled by separate probe batteries but sit outside this certificate domain. No universal claim beyond the bound is made.",
+  "files": [
+    "generate.py",
+    "skeletons.txt",
+    "oracle_batch.c",
+    "oracle_batch",
+    "compare.py",
+    "certificate.jsonl",
+    "compare-summary.json",
+    "manifest.json",
+    "README.md",
+    "model.out",
+    "oracle.bin"
+  ],
+  "durable_files": [
+    "generate.py",
+    "oracle_batch.c",
+    "compare.py",
+    "generate-run.json",
+    "compare-summary.json",
+    "manifest.json",
+    "README.md",
+    "skeletons.sample.txt",
+    ".gitignore"
+  ],
+  "generated_ignored_files": [
+    "skeletons.txt",
+    "model.out",
+    "oracle.bin",
+    "oracle-run.log",
+    "model-run.err",
+    "certificate.jsonl",
+    "oracle_batch",
+    "__pycache__/"
+  ],
+  "regeneration_commands": [
+    "python3 generate.py --emit skeletons.txt",
+    "gcc -O2 -Wall -Wextra -I../conformance-tidy-oracle/include -o oracle_batch oracle_batch.c /usr/lib/x86_64-linux-gnu/libtidy.so.58",
+    "./oracle_batch skeletons.txt oracle.bin 2> oracle-run.log",
+    "lean-build.sh <repo>/lean-ftml ./.lake/build/bin/lean-ftml-stage2-cli --framed < skeletons.txt > model.out",
+    "python3 compare.py --compare --framed sep"
+  ]
+}

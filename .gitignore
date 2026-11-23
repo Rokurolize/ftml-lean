@@ -1,0 +1,12 @@
+# Lean build artifacts are never part of this proof package: tracked oleans
+# copied between trees have already manufactured false gate results in the
+# programme, so every build artifact is regenerated from source in a clean
+# extraction at gate time.
+.lake/
+*.olean
+*.ilean
+*.trace
+*.hash
+*.export
+__pycache__/
+*.pyc
