@@ -186,7 +186,7 @@ theorem refRuleRegexes_length : refRuleRegexes.length = 68 := rfl
 /-- No rule's extracted primary entry is the old bogus empty pattern
     or an empty pattern list entry: every rule with a primary entry
     carries at least one non-empty pattern.  (Rules with no primary
-    entry at all are the eleven named in the header.) -/
+    entry at all are the eight named in the header.) -/
 theorem refPatternsOf_ne_bogus (r : RuleId) :
     refPatternsOf r ≠ [[]] := by
   cases r <;> decide
