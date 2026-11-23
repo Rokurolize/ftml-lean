@@ -1,0 +1,37 @@
+{
+  "adjudication": "round-5h unit R5H-S1; automated frame-mask comparison plus manual rule-level adjudication of serving boundaries",
+  "counts": {
+    "suspicions": 16,
+    "probed": 16,
+    "valid_stable_source_matching": 16,
+    "confirmed": 6,
+    "cleared": 10,
+    "untestable": 0
+  },
+  "rows": {
+    "s01-fl-url-frag-ctl": "CONFIRMED",
+    "s02-fl-star-url-esc": "CONFIRMED",
+    "s03-anchor-multi-attr": "CLEARED",
+    "s04-span-esc-del": "CLEARED",
+    "s05-img-src-ctl": "CONFIRMED",
+    "s06-btn-edit-padzero": "CONFIRMED",
+    "s07-btn-class-ctl": "CLEARED",
+    "s08-tabview-title-padzero": "CONFIRMED",
+    "s09-fn-lead-soh": "CLEARED",
+    "s10-fn-esc-break": "CLEARED",
+    "s11-math-trail-ctl": "CONFIRMED",
+    "s12-raw-multi-short": "CLEARED",
+    "s13-raw-xline-short": "CLEARED",
+    "s14-table-hdr-ctl": "CLEARED",
+    "s15-fl-mixedlead": "CLEARED",
+    "s16-div-id-nonascii": "CLEARED"
+  },
+  "confirmed_ids": {
+    "s01-fl-url-frag-ctl": "C-R5H-S1-1",
+    "s02-fl-star-url-esc": "C-R5H-S1-2",
+    "s05-img-src-ctl": "C-R5H-S1-3",
+    "s06-btn-edit-padzero": "C-R5H-S1-4",
+    "s08-tabview-title-padzero": "C-R5H-S1-5",
+    "s11-math-trail-ctl": "C-R5H-S1-6"
+  }
+}

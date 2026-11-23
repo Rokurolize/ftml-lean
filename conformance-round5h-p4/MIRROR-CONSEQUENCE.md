@@ -1,0 +1,9 @@
+# MIRROR-CONSEQUENCE R5H-P4 — inferred mirror consequences for confirmed C-R5H-P4-1
+
+All statements here are inferred by reading the canonical mirror source; no Lean elaboration was run by this unit, per the protocol's preference for static reading when a mechanism is established by source and artifacts.
+
+The confirmed divergence C-R5H-P4-1 concerns the Raw scanner's later-run consultation. In the mirror lean-ftml/LeanFtml/FormRawRules.lean the function hasLaterQuad (lines 187-199) scans the bytes after a short closer for a later run of two or more `@` bytes, lowering the guard from `4 <= n` to `2 <= n` under REFCORR14, but it terminates on `| 10 :: _ => false` (line 195), i.e. it stops at an authored LF and never sees a later run on the following line. The preOk helper (lines 291-317) calls hasLaterQuad on `afterRun.drop (c + closeRun)` in both the newline-free (`some c, none`) and newline-present (`some c, some l`) arms, so the mirror shares the PHP reference's line confinement.
+
+Consequently the mirror's rc_view / rawScan on the C08 source `@@@@a@@@b\n@@c@@` would take the non-early-exit path and emit literal `a@@@b`, a Newline witness and a separate Raw token with body `c`, matching ref.jsonl line 8 and disagreeing with the live capture's single Raw span with body `@b` plus literal `c@@`. The mirror is therefore divergent on this cell in the same way the PHP reference is.
+
+A future correction, if the coordinator opens one, would need to let the later-run consultation cross a single authored LF for the empty-Raw early-exit decision in both Raw.php (the `$p < $lineEnd` bound at line 81) and FormRawRules.lean (the `10 :: _ => false` stop at line 195), while preserving the verified same-line witnesses W-EQ `@@@@a@@@b@@` and W-WIT `@@@@a@@@b@@@@` and the seven REFCORR14 agreement pins. This unit proposes no mirror, spec, pin or gate change; the coordinator verifies and adopts.

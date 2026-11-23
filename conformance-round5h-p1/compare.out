@@ -1,0 +1,29 @@
+id     eq  live_norm / ref_norm
+RAW-L3               EQ   
+RAW-M2               EQ   
+RAW-OP5              EQ   
+RAW-TWOLATE          EQ   
+RAW-NL               EQ   
+RAW-LONE             EQ   
+L-ADJ-LOWOL          EQ   
+L-ADJ-SCOREALL       DIFF 
+   LIVE: <p>[[UL_]]<br> [[LI]]outer[[ul_]]<br> [[LI]]in[[/LI]]<br> [[/ul_]]<br> [[/LI]]<br> [[/UL_]]<br> [[LI]]tail[[/LI]]<br> [[/UL_]]</p>
+   REF : <ul> <li>outer[[ul_]]<br> [[LI]]in</li> <li>tail[[/UL_]]</li> </ul>
+L-ADJ-NESTATTR       DIFF 
+   LIVE: <ul> <li>outer</li> </ul> <ul class="x"> <li>in</li> </ul> [[LI]]tail[[/LI]]<br> [[/UL]]
+   REF : <ul> <li>outer</li> </ul><ul> <li>in</li> </ul> [[LI]]tail[[/LI]]<br> [[/UL]]
+L-ADJ-BLANK          DIFF 
+   LIVE: <ul> <li>A</li> </ul> <ul> <li>B</li> </ul> <br> [[LI]]tail[[/LI]]<br> [[/UL]]
+   REF : <ul> <li>A</li> </ul><ul> <li>B</li> </ul> <br> [[LI]]tail[[/LI]]<br> [[/UL]]
+L-ADJ-FTIN           DIFF 
+   LIVE: <ul> <li>A<sup class="footnoteref"><a class="footnoteref" href="javascript:;" id="footnoteref-X" onclick="WIKIDOT.page.utils.scrollToReference('footnote-X')">1</a></sup>P<br></li> </ul> <div class="footnotes-footer"> <div class="title">Footnotes</div> <div class="footnote-footer" id="footnote-X"><a href="javascript:;" onclick="WIKIDOT.page.utils.scrollToReference('footnoteref-X')">1</a>. n</div> </div> <br> Q[[LI]]tail[[/LI]]<br> [[/UL]]
+   REF : <ul> <li>A<sup class="footnoteref"><a class="footnoteref" href="javascript:;" id="footnoteref-X" onclick="WIKIDOT.page.utils.scrollToReference('footnote-X')">1</a></sup>P<br> <div class="footnotes-footer"><div class="title">Footnotes</div><div class="footnote-footer" id="footnote-X"><a href="javascript:;" onclick="WIKIDOT.page.utils.scrollToReference('footnoteref-X')">1</a>. n</div></div><br> Q[[LI]]tail[[/LI]]<br> [[/UL]]</li> </ul>
+CL-SPANTYPE          EQ   
+CL-DIVSTYLE          DIFF 
+   LIVE: alpha <div style="AB"> <p>bravo</p> </div>
+   REF : alpha <div style="AB"><p>bravo</p> </div>
+CL-DIVDATA           DIFF 
+   LIVE: alpha <div data-x="A B"> <p>bravo</p> </div>
+   REF : alpha <div data-x="A B"><p>bravo</p> </div>
+CL-SPANROLE          EQ   
+equal: 9 / 15

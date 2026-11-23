@@ -1,0 +1,10 @@
+{
+ "fullname": "muse-probe-round5h-p3-p3h-05-raw-4op-3cl-nextline",
+ "html": "<p>a<span style=\"white-space: pre-wrap;\">@b</span> @</p>",
+ "html_sha256": "61868697626c9e767e3ec9843578fd986ca73e929598036ea4deaeb3e8267d0c",
+ "source": "@@@@a@@@b\n@@@",
+ "source_sha256": "3d03d84131f8c2e9ec103430b960f697ec23ef365208da0fd62c90fbc450dacb",
+ "saved_source_matches": true,
+ "stable": true,
+ "valid": true
+}

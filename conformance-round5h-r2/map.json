@@ -1,0 +1,102 @@
+{
+ "r2h-01-fl-route-empty-pipe": {
+  "fullname": "muse-probe-round5h-r2-r2h-01-fl-route-empty-pipe",
+  "source": "[[[https://example.com/p/#/r|]]]",
+  "action": "created"
+ },
+ "r2h-02-fl-star-route": {
+  "fullname": "muse-probe-round5h-r2-r2h-02-fl-star-route",
+  "source": "[[[*https://example.com/p/#/r/é]]]",
+  "action": "created"
+ },
+ "r2h-03-fl-upper-scheme": {
+  "fullname": "muse-probe-round5h-r2-r2h-03-fl-upper-scheme",
+  "source": "[[[HTTPS://EXAMPLE.COM/café]]]",
+  "action": "created"
+ },
+ "r2h-04-fl-query-fragment": {
+  "fullname": "muse-probe-round5h-r2-r2h-04-fl-query-fragment",
+  "source": "[[[https://example.com/p?a=é#sé]]]",
+  "action": "created"
+ },
+ "r2h-05-fl-nonascii-host": {
+  "fullname": "muse-probe-round5h-r2-r2h-05-fl-nonascii-host",
+  "source": "[[[https://éxample.com/]]]",
+  "action": "created"
+ },
+ "r2h-06-fl-route-authored-label": {
+  "fullname": "muse-probe-round5h-r2-r2h-06-fl-route-authored-label",
+  "source": "[[[https://example.com/p/#/r|label]]]",
+  "action": "created"
+ },
+ "r2h-07-fl-route-two-segments": {
+  "fullname": "muse-probe-round5h-r2-r2h-07-fl-route-two-segments",
+  "source": "[[[https://example.com/#/é/ñ]]]",
+  "action": "created"
+ },
+ "r2h-08-embed-single-quote-vbscript": {
+  "fullname": "muse-probe-round5h-r2-r2h-08-embed-single-quote-vbscript",
+  "source": "[[embed]]\n<iframe src=\"https://example.com\" srcdoc='vbscript:msgbox(1)'></iframe>\n[[/embed]]",
+  "action": "created"
+ },
+ "r2h-09-embed-unquoted-scheme": {
+  "fullname": "muse-probe-round5h-r2-r2h-09-embed-unquoted-scheme",
+  "source": "[[embed]]\n<iframe src=\"https://example.com\" srcdoc=javascript:alert(1)></iframe>\n[[/embed]]",
+  "action": "created"
+ },
+ "r2h-10-embed-data-scheme": {
+  "fullname": "muse-probe-round5h-r2-r2h-10-embed-data-scheme",
+  "source": "[[embed]]\n<iframe src=\"https://example.com\" srcdoc=\"data:text/html,hi\"></iframe>\n[[/embed]]",
+  "action": "created"
+ },
+ "r2h-11-embed-src-single-quote": {
+  "fullname": "muse-probe-round5h-r2-r2h-11-embed-src-single-quote",
+  "source": "[[embed]]\n<iframe src='javascript:alert(1)'></iframe>\n[[/embed]]",
+  "action": "created"
+ },
+ "r2h-12-embed-event-upper-single": {
+  "fullname": "muse-probe-round5h-r2-r2h-12-embed-event-upper-single",
+  "source": "[[embed]]\n<iframe src=\"https://example.com\" ONMOUSEENTER='x()'></iframe>\n[[/embed]]",
+  "action": "created"
+ },
+ "r2h-13-gal-tab-scheme": {
+  "fullname": "muse-probe-round5h-r2-r2h-13-gal-tab-scheme",
+  "source": "[[gallery]]\n: a.png link=\"\tjavascript:alert(1)\"\n[[/gallery]]",
+  "action": "created"
+ },
+ "r2h-14-gal-star-tab-scheme": {
+  "fullname": "muse-probe-round5h-r2-r2h-14-gal-star-tab-scheme",
+  "source": "[[gallery]]\n: a.png link=\"*\tjavascript:alert(1)\"\n[[/gallery]]",
+  "action": "created"
+ },
+ "r2h-15-gal-vbscript-lead-space": {
+  "fullname": "muse-probe-round5h-r2-r2h-15-gal-vbscript-lead-space",
+  "source": "[[gallery]]\n: a.png link=\"  vbscript:msgbox(1)\"\n[[/gallery]]",
+  "action": "created"
+ },
+ "r2h-16-gal-external-source": {
+  "fullname": "muse-probe-round5h-r2-r2h-16-gal-external-source",
+  "source": "[[gallery]]\n: https://example.com/a.png link=\"javascript:alert(1)\"\n[[/gallery]]",
+  "action": "created"
+ },
+ "r2h-17-gal-page-link": {
+  "fullname": "muse-probe-round5h-r2-r2h-17-gal-page-link",
+  "source": "[[gallery]]\n: a.png link=\"SomePage\"\n[[/gallery]]",
+  "action": "created"
+ },
+ "r2h-18-img-js-link": {
+  "fullname": "muse-probe-round5h-r2-r2h-18-img-js-link",
+  "source": "[[image https://example.com/x.png link=\"javascript:alert(1)\"]]",
+  "action": "created"
+ },
+ "r2h-19-url-described-nonascii": {
+  "fullname": "muse-probe-round5h-r2-r2h-19-url-described-nonascii",
+  "source": "[https://example.com/é label é]",
+  "action": "created"
+ },
+ "r2h-20-img-src-href-nonascii": {
+  "fullname": "muse-probe-round5h-r2-r2h-20-img-src-href-nonascii",
+  "source": "[[image https://example.com/é.png link=\"https://example.com/ñ\"]]",
+  "action": "created"
+ }
+}

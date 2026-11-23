@@ -1,0 +1,244 @@
+{
+ "summary": {
+  "agree": 21,
+  "differ": 3,
+  "invalid": 2,
+  "missing": 0
+ },
+ "rows": [
+  {
+   "id": "p3h-01-raw-4op-2cl-later2",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-01-raw-4op-2cl-later2",
+   "reference": "<p>a<span style=\"white-space: pre-wrap;\">b</span></p>",
+   "live": "<p>a<span style=\"white-space: pre-wrap;\">b</span></p>",
+   "live_sha256": "6c8c3342ee6d7504abbcd00ad8fac1a1ab9f1a3aac83ea9007926d3d914685cf",
+   "source": "@@@@a@@b@@"
+  },
+  {
+   "id": "p3h-02-raw-4op-3cl-later3",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-02-raw-4op-3cl-later3",
+   "reference": "<p>a<span style=\"white-space: pre-wrap;\">@b</span>@</p>",
+   "live": "<p>a<span style=\"white-space: pre-wrap;\">@b</span>@</p>",
+   "live_sha256": "7ddfc8e249e277313a487b7bc8dfbadafc15ff299463e90a98590485d0c7fe8e",
+   "source": "@@@@a@@@b@@@"
+  },
+  {
+   "id": "p3h-03-raw-5op-2cl-later2",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-03-raw-5op-2cl-later2",
+   "reference": "<p>@a<span style=\"white-space: pre-wrap;\">b</span></p>",
+   "live": "<p>@a<span style=\"white-space: pre-wrap;\">b</span></p>",
+   "live_sha256": "6b010f74ad43f06c6deb819e9c56d48fe7b196ca148ac44c09b1d0923be8ca84",
+   "source": "@@@@@a@@b@@"
+  },
+  {
+   "id": "p3h-04-raw-4op-2cl-nextline",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5h-p3-p3h-04-raw-4op-2cl-nextline",
+   "reference": "<p>a@@b<br> @@</p>",
+   "live": "<p>a<span style=\"white-space: pre-wrap;\">b</span></p>",
+   "live_sha256": "6c8c3342ee6d7504abbcd00ad8fac1a1ab9f1a3aac83ea9007926d3d914685cf",
+   "source": "@@@@a@@b\n@@"
+  },
+  {
+   "id": "p3h-05-raw-4op-3cl-nextline",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5h-p3-p3h-05-raw-4op-3cl-nextline",
+   "reference": "<p>a@@@b<br> @@@</p>",
+   "live": "<p>a<span style=\"white-space: pre-wrap;\">@b</span> @</p>",
+   "live_sha256": "61868697626c9e767e3ec9843578fd986ca73e929598036ea4deaeb3e8267d0c",
+   "source": "@@@@a@@@b\n@@@"
+  },
+  {
+   "id": "p3h-06-raw-4op-2cl-intervening-at",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-06-raw-4op-2cl-intervening-at",
+   "reference": "<p>a<span style=\"white-space: pre-wrap;\">b@c</span></p>",
+   "live": "<p>a<span style=\"white-space: pre-wrap;\">b@c</span></p>",
+   "live_sha256": "52c5dbbb1903f9d94e3c7ee9314a8d2641e70a5999626a9b442f997992bd2f40",
+   "source": "@@@@a@@b@c@@"
+  },
+  {
+   "id": "p3h-07-raw-4op-2cl-then-more",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-07-raw-4op-2cl-then-more",
+   "reference": "<p>a<span style=\"white-space: pre-wrap;\">b</span>c@@</p>",
+   "live": "<p>a<span style=\"white-space: pre-wrap;\">b</span>c@@</p>",
+   "live_sha256": "8443f7ccfac0df547de8894bcad903ac00a821aa9c790d7ff01e3b78a8e6cfb4",
+   "source": "@@@@a@@b@@c@@"
+  },
+  {
+   "id": "p3h-08-raw-6op-3cl-later2",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-08-raw-6op-3cl-later2",
+   "reference": "<p>@@a<span style=\"white-space: pre-wrap;\">@b</span></p>",
+   "live": "<p>@@a<span style=\"white-space: pre-wrap;\">@b</span></p>",
+   "live_sha256": "b124f7a84755d901663df5e0f04d4f760e42b2daea549af25851c3a73f95a010",
+   "source": "@@@@@@a@@@b@@"
+  },
+  {
+   "id": "p3h-09-raw-4op-2cl-spaces",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-09-raw-4op-2cl-spaces",
+   "reference": "<p>a <span style=\"white-space: pre-wrap;\"> b </span></p>",
+   "live": "<p>a <span style=\"white-space: pre-wrap;\"> b </span></p>",
+   "live_sha256": "68ee6f35fcc2e771e341447f88c392eb7c9fef85d197b3da7b1fd608df21952b",
+   "source": "@@@@ a @@ b @@"
+  },
+  {
+   "id": "p3h-10-raw-4op-3cl-later2-then4",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-10-raw-4op-3cl-later2-then4",
+   "reference": "<p>a<span style=\"white-space: pre-wrap;\">@b</span>@@</p>",
+   "live": "<p>a<span style=\"white-space: pre-wrap;\">@b</span>@@</p>",
+   "live_sha256": "19dbf026ac8ff2b1f6cc1966daac5c60a25fb58575f30837a1b7703db98f241a",
+   "source": "@@@@a@@@b@@@@"
+  },
+  {
+   "id": "p3h-11-raw-4op-2cl-nl-after",
+   "verdict": "UNTESTABLE",
+   "flags": {
+    "valid": false,
+    "stable": true,
+    "saved_source_matches": false
+   }
+  },
+  {
+   "id": "p3h-12-raw-fix-hold-wit",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-12-raw-fix-hold-wit",
+   "reference": "<p>a<span style=\"white-space: pre-wrap;\">@b</span>@@</p>",
+   "live": "<p>a<span style=\"white-space: pre-wrap;\">@b</span>@@</p>",
+   "live_sha256": "19dbf026ac8ff2b1f6cc1966daac5c60a25fb58575f30837a1b7703db98f241a",
+   "source": "@@@@a@@@b@@@@"
+  },
+  {
+   "id": "p3h-13-img-alt-verbatim-spaces",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-13-img-alt-verbatim-spaces",
+   "reference": "<img alt=\" x \" class=\"image\" src=\"/local--files//IMG.png\">",
+   "live": "<img alt=\" x \" class=\"image\" src=\"/local--files//IMG.png\">",
+   "live_sha256": "efe4006d60785c73e5967e8f75090242f138872e1bb0e97339f7815eef115a2b",
+   "source": "[[image IMG.png alt=\" x \"]]"
+  },
+  {
+   "id": "p3h-14-img-width-tab",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-14-img-width-tab",
+   "reference": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" width=\"1 0\">",
+   "live": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" width=\"1 0\">",
+   "live_sha256": "ec4bc04c763d383fbde9be383bdfaaae49676a0f32566e52729a783fd292dd69",
+   "source": "[[image IMG.png width=\"1\t0\"]]"
+  },
+  {
+   "id": "p3h-15-anchor-href-ff",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-15-anchor-href-ff",
+   "reference": "<p><a href=\"#ab\">x</a></p>",
+   "live": "<p><a href=\"#ab\">x</a></p>",
+   "live_sha256": "aaf289c8fe1b31d4b2adc4e0d287cf9f2abec852ed61b54c64f888e67c57fc54",
+   "source": "[[a href=\"#a\fb\"]]x[[/a]]"
+  },
+  {
+   "id": "p3h-16-span-class-spaces",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-16-span-class-spaces",
+   "reference": "<p><span class=\"a\">x</span></p>",
+   "live": "<p><span class=\"a\">x</span></p>",
+   "live_sha256": "c81338506fbcc81f4ad45b027da3b199a6ff7c711060b2fbc4532140c4ad1b09",
+   "source": "[[span class=\" a \"]]x[[/span]]"
+  },
+  {
+   "id": "p3h-17-div-class-esc",
+   "verdict": "UNTESTABLE",
+   "flags": {
+    "valid": false,
+    "stable": true,
+    "saved_source_matches": false
+   }
+  },
+  {
+   "id": "p3h-18-embed-dot-onclick",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5h-p3-p3h-18-embed-dot-onclick",
+   "reference": "<p><div class=\"error-block\">Sorry, no match for the embedded content.</div></p>",
+   "live": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+   "live_sha256": "0d94a629bbda9bb7b87fcaf86579d5195ffef1ffcfd644fd09babead0f4c04b0",
+   "source": "[[embed]]<iframe src=\"http://wikimapia.org/s/x\" .onclick=\"evil()\"></iframe>[[/embed]]"
+  },
+  {
+   "id": "p3h-19-url-descr-dollar-only",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-19-url-descr-dollar-only",
+   "reference": "<p><a href=\"http://example.com\">$</a></p>",
+   "live": "<p><a href=\"http://example.com\">$</a></p>",
+   "live_sha256": "91a5945e751bf4aa19c8b62a58bc8461e7e922a141b8793471ee0395abfb02c3",
+   "source": "[http://example.com $]"
+  },
+  {
+   "id": "p3h-20-gallery-js-mixed",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-20-gallery-js-mixed",
+   "reference": "<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"#\"><img alt src=\"/local--resized-images//IMG.png/thumbnail.jpg\"></a></td></tr></table></div></div>",
+   "live": "<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"#\"><img alt src=\"/local--resized-images//IMG.png/thumbnail.jpg\"></a></td></tr></table></div></div>",
+   "live_sha256": "c08327a93c8afd622b432dccb70c6b63a0d32384f80e1b82f22b1e61b1085893",
+   "source": "[[gallery]]\n: IMG.png link=\"JaVaScRiPt:alert(1)\"\n[[/gallery]]"
+  },
+  {
+   "id": "p3h-21-module-fresh-run",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-21-module-fresh-run",
+   "reference": "<div class=\"error-block\">[[module <em>CSI</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>",
+   "live": "<div class=\"error-block\">[[module <em>CSI</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>",
+   "live_sha256": "15bd32d40d79321f6a9047289fcfeb31617c6a493a36b9a5c219116125b8c42a",
+   "source": "[[module CSI width=\"100%\"]]x[[/module]]"
+  },
+  {
+   "id": "p3h-22-raw-bare-eleven",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-22-raw-bare-eleven",
+   "reference": "<p>@@@@@@@</p>",
+   "live": "<p>@@@@@@@</p>",
+   "live_sha256": "6855a95b22d7e1e132f0b602b9423d86eb350aa378b4768fab73e61af611c8c7",
+   "source": "@@@@@@@@@@@"
+  },
+  {
+   "id": "p3h-23-tableadv-uppercase-key",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-23-tableadv-uppercase-key",
+   "reference": "<table data-a.b=\"v\"><tr><td>X</td></tr></table>",
+   "live": "<table data-a.b=\"v\"><tr><td>X</td></tr></table>",
+   "live_sha256": "1defc14d958498fb8997bb625ad6c4154581b371ed9316c2f308b35b44f0f990",
+   "source": "[[table data-A.B=\"v\"]]\n[[row]]\n[[cell]]X[[/cell]]\n[[/row]]\n[[/table]]"
+  },
+  {
+   "id": "p3h-24-include-two-placeholders",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-24-include-two-placeholders",
+   "reference": "<p>A=X;B=Y</p>",
+   "live": "<p>A=X;B=Y</p>",
+   "live_sha256": "266a965c3b4cc10f8b6026b47cc9a3ecadc84f3e29ffa3618edf79523aeb7fa7",
+   "source": "[[include muse-probe-round5h-p3-t1 | a=X | b=Y]]"
+  },
+  {
+   "id": "p3h-25-include-two-other",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-25-include-two-other",
+   "reference": "<p>P1Q2R</p>",
+   "live": "<p>P1Q2R</p>",
+   "live_sha256": "add5790c4eed97fb5f1937c7319a7b960cf81f275f5401aed4518c5f2d144b36",
+   "source": "[[include muse-probe-round5h-p3-t2 | x=1 | y=2]]"
+  },
+  {
+   "id": "p3h-26-include-fresh-values",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5h-p3-p3h-26-include-fresh-values",
+   "reference": "<p>A=hello;B=world</p>",
+   "live": "<p>A=hello;B=world</p>",
+   "live_sha256": "cbd71037a502e18216143c1915928d559dfd180da94ec2cd2733b642d3beadc7",
+   "source": "[[include muse-probe-round5h-p3-t1 | a=hello | b=world]]"
+  }
+ ]
+}

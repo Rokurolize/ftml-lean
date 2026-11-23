@@ -1,0 +1,82 @@
+{
+ "R5HR1-A1": {
+  "fullname": "muse-probe-round5h-r1-r5hr1-a1",
+  "source": "[[div class=\"a\u000bb\"]]\nbody\n[[/div]]",
+  "action": "created"
+ },
+ "R5HR1-A2": {
+  "fullname": "muse-probe-round5h-r1-r5hr1-a2",
+  "source": "[[span style=\"\tcolor:red\t\"]]body[[/span]]",
+  "action": "created"
+ },
+ "R5HR1-A3": {
+  "fullname": "muse-probe-round5h-r1-r5hr1-a3",
+  "source": "[[span type=\"AB\"]]body[[/span]]",
+  "action": "created"
+ },
+ "R5HR1-A4": {
+  "fullname": "muse-probe-round5h-r1-r5hr1-a4",
+  "source": "[[span role=\"A\u001bB\"]]body[[/span]]",
+  "action": "created"
+ },
+ "R5HR1-A5": {
+  "fullname": "muse-probe-round5h-r1-r5hr1-a5",
+  "source": "[[div DATA-X=\"  a  \" data-x=\"b  \"]]\nbody\n[[/div]]",
+  "action": "created"
+ },
+ "R5HR1-A6": {
+  "fullname": "muse-probe-round5h-r1-r5hr1-a6",
+  "source": "[[div class=\"   \"]]\nbody\n[[/div]]",
+  "action": "created"
+ },
+ "R5HR1-A7": {
+  "fullname": "muse-probe-round5h-r1-r5hr1-a7",
+  "source": "[[span data-x=\"a\u001cb\"]]body[[/span]]",
+  "action": "created"
+ },
+ "R5HR1-B1": {
+  "fullname": "muse-probe-round5h-r1-r5hr1-b1",
+  "source": "alpha\\\n[[div type=\"AB\"]]\nbody\n[[/div]]",
+  "action": "created"
+ },
+ "R5HR1-B2": {
+  "fullname": "muse-probe-round5h-r1-r5hr1-b2",
+  "source": "alpha **x**\\\n[[div class=\"a  \"]]\nbody\n[[/div]]",
+  "action": "created"
+ },
+ "R5HR1-B3": {
+  "fullname": "muse-probe-round5h-r1-r5hr1-b3",
+  "source": "alpha [[size 9px]]y[[/size]]\\\n[[div role=\"  r  \"]]\nbody\n[[/div]]",
+  "action": "created"
+ },
+ "R5HR1-B4": {
+  "fullname": "muse-probe-round5h-r1-r5hr1-b4",
+  "source": "alpha\\\n[[div_ type=\"A\u001bB\"]]\nbody\n[[/div]]",
+  "action": "created"
+ },
+ "R5HR1-C1": {
+  "fullname": "muse-probe-round5h-r1-r5hr1-c1",
+  "source": "[[tabview]][[tab title=\"0 \"]]x[[/tab]][[/tabview]]",
+  "action": "created"
+ },
+ "R5HR1-C2": {
+  "fullname": "muse-probe-round5h-r1-r5hr1-c2",
+  "source": "[[collapsible show=\"A\u001bB\"]]body[[/collapsible]]",
+  "action": "created"
+ },
+ "R5HR1-C3": {
+  "fullname": "muse-probe-round5h-r1-r5hr1-c3",
+  "source": "[[div]]\n[[/div]]\nafter",
+  "action": "created"
+ },
+ "R5HR1-C4": {
+  "fullname": "muse-probe-round5h-r1-r5hr1-c4",
+  "source": "[[span_ class=\"  a  \"]]X[[/span]]",
+  "action": "created"
+ },
+ "R5HR1-C5": {
+  "fullname": "muse-probe-round5h-r1-r5hr1-c5",
+  "source": "[[ul]]\n[[li]]A[[UL]]\n[[li]]B[[/UL]][[/li]]\n[[/ul]]",
+  "action": "created"
+ }
+}

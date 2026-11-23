@@ -1,0 +1,97 @@
+{
+ "R3H-01": {
+  "fullname": "muse-probe-round5h-r3-r3h-01",
+  "source": "[[footnote]]@@@@\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3H-02": {
+  "fullname": "muse-probe-round5h-r3-r3h-02",
+  "source": "[[footnote]]@@@@\n@@@@\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3H-03": {
+  "fullname": "muse-probe-round5h-r3-r3h-03",
+  "source": "[[footnote]]@@@@ @@@@\n@@@@[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3H-04": {
+  "fullname": "muse-probe-round5h-r3-r3h-04",
+  "source": "[[footnote]]@@@@\nX[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3H-05": {
+  "fullname": "muse-probe-round5h-r3-r3h-05",
+  "source": "[[footnote]]@@@@\u0001\nX[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3H-06": {
+  "fullname": "muse-probe-round5h-r3-r3h-06",
+  "source": "[[footnote]]\u001f\nX[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3H-07": {
+  "fullname": "muse-probe-round5h-r3-r3h-07",
+  "source": "[[footnote]]X\n\u000b[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3H-08": {
+  "fullname": "muse-probe-round5h-r3-r3h-08",
+  "source": "[[footnote]]\u001b\u0001\nX[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3H-09": {
+  "fullname": "muse-probe-round5h-r3-r3h-09",
+  "source": "[[footnote]]\u0001[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3H-10": {
+  "fullname": "muse-probe-round5h-r3-r3h-10",
+  "source": "[[footnote]]A[[/footnote]]\n[[footnote]]X\n\f\nY[[/footnote]]\n[[footnoteblock]]",
+  "action": "save-unverified"
+ },
+ "R3H-11": {
+  "fullname": "muse-probe-round5h-r3-r3h-11",
+  "source": "[[footnote]]X\n[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3H-12": {
+  "fullname": "muse-probe-round5h-r3-r3h-12",
+  "source": "[[a id=\"a\u001bb\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3H-13": {
+  "fullname": "muse-probe-round5h-r3-r3h-13",
+  "source": "[[a class=\"xy\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3H-14": {
+  "fullname": "muse-probe-round5h-r3-r3h-14",
+  "source": "[[a href=\"#a\u001bb\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3H-15": {
+  "fullname": "muse-probe-round5h-r3-r3h-15",
+  "source": "[[a data-x=\"p\fq\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3H-16": {
+  "fullname": "muse-probe-round5h-r3-r3h-16",
+  "source": "[[a id=\"a\u001bb\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3H-17": {
+  "fullname": "muse-probe-round5h-r3-r3h-17",
+  "source": "[[toc title=\"T\u001bX\"]]\n\n+ A",
+  "action": "created"
+ },
+ "R3H-18": {
+  "fullname": "muse-probe-round5h-r3-r3h-18",
+  "source": "[[toc]]\n\n+ Hea\fDing",
+  "action": "created"
+ },
+ "R3H-19": {
+  "fullname": "muse-probe-round5h-r3-r3h-19",
+  "source": "[[bibliography]]\n: a : A\n\f\n: b : B\n[[/bibliography]]",
+  "action": "save-unverified"
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "RAW-L3": {
+  "fullname": "muse-probe-round5h-p1-raw-l3",
+  "source": "@@@@a@@@b@@@",
+  "action": "exists"
+ },
+ "RAW-M2": {
+  "fullname": "muse-probe-round5h-p1-raw-m2",
+  "source": "@@@@a@@b@@",
+  "action": "exists"
+ },
+ "RAW-OP5": {
+  "fullname": "muse-probe-round5h-p1-raw-op5",
+  "source": "@@@@@a@@@b@@",
+  "action": "exists"
+ },
+ "RAW-TWOLATE": {
+  "fullname": "muse-probe-round5h-p1-raw-twolate",
+  "source": "@@@@a@@@b@@c@@",
+  "action": "exists"
+ },
+ "RAW-NL": {
+  "fullname": "muse-probe-round5h-p1-raw-nl",
+  "source": "@@@@a@@@\nb@@",
+  "action": "exists"
+ },
+ "RAW-LONE": {
+  "fullname": "muse-probe-round5h-p1-raw-lone",
+  "source": "@@@@a@@@b@x@@",
+  "action": "exists"
+ },
+ "L-ADJ-LOWOL": {
+  "fullname": "muse-probe-round5h-p1-l-adj-lowol",
+  "source": "[[ol]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/ol]]\n[[LI]]tail[[/LI]]\n[[/ol]]",
+  "action": "exists"
+ },
+ "L-ADJ-SCOREALL": {
+  "fullname": "muse-probe-round5h-p1-l-adj-scoreall",
+  "source": "[[UL_]]\n[[LI]]outer[[ul_]]\n[[LI]]in[[/LI]]\n[[/ul_]]\n[[/LI]]\n[[/UL_]]\n[[LI]]tail[[/LI]]\n[[/UL_]]",
+  "action": "exists"
+ },
+ "L-ADJ-NESTATTR": {
+  "fullname": "muse-probe-round5h-p1-l-adj-nestattr",
+  "source": "[[UL]]\n[[LI]]outer[[ul class=\"x\"]]\n[[li]]in[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "action": "exists"
+ },
+ "L-ADJ-BLANK": {
+  "fullname": "muse-probe-round5h-p1-l-adj-blank",
+  "source": "[[UL]]\n[[LI]]A[[ul]]\n[[li]]B[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]\n\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "action": "exists"
+ },
+ "L-ADJ-FTIN": {
+  "fullname": "muse-probe-round5h-p1-l-adj-ftin",
+  "source": "[[UL]]\n[[LI]]A[[footnote]]n[[/footnote]]P[[footnoteblock]]Q[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "action": "exists"
+ },
+ "CL-SPANTYPE": {
+  "fullname": "muse-probe-round5h-p1-cl-spantype",
+  "source": "alpha\\\n[[span_ type=\"A\u001bB\"]]bravo[[/span]]",
+  "action": "created"
+ },
+ "CL-DIVSTYLE": {
+  "fullname": "muse-probe-round5h-p1-cl-divstyle",
+  "source": "alpha\\\n[[div style=\"  AB  \"]]\nbravo[[/div]]",
+  "action": "created"
+ },
+ "CL-DIVDATA": {
+  "fullname": "muse-probe-round5h-p1-cl-divdata",
+  "source": "alpha\\\n[[div data-x=\"A\tB\"]]\nbravo[[/div]]",
+  "action": "created"
+ },
+ "CL-SPANROLE": {
+  "fullname": "muse-probe-round5h-p1-cl-spanrole",
+  "source": "alpha\\\n[[span_ role=\"A\u000bB\"]]bravo[[/span]]",
+  "action": "created"
+ }
+}

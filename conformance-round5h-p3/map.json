@@ -1,0 +1,132 @@
+{
+ "p3h-01-raw-4op-2cl-later2": {
+  "fullname": "muse-probe-round5h-p3-p3h-01-raw-4op-2cl-later2",
+  "source": "@@@@a@@b@@",
+  "action": "created"
+ },
+ "p3h-02-raw-4op-3cl-later3": {
+  "fullname": "muse-probe-round5h-p3-p3h-02-raw-4op-3cl-later3",
+  "source": "@@@@a@@@b@@@",
+  "action": "created"
+ },
+ "p3h-03-raw-5op-2cl-later2": {
+  "fullname": "muse-probe-round5h-p3-p3h-03-raw-5op-2cl-later2",
+  "source": "@@@@@a@@b@@",
+  "action": "created"
+ },
+ "p3h-04-raw-4op-2cl-nextline": {
+  "fullname": "muse-probe-round5h-p3-p3h-04-raw-4op-2cl-nextline",
+  "source": "@@@@a@@b\n@@",
+  "action": "created"
+ },
+ "p3h-05-raw-4op-3cl-nextline": {
+  "fullname": "muse-probe-round5h-p3-p3h-05-raw-4op-3cl-nextline",
+  "source": "@@@@a@@@b\n@@@",
+  "action": "created"
+ },
+ "p3h-06-raw-4op-2cl-intervening-at": {
+  "fullname": "muse-probe-round5h-p3-p3h-06-raw-4op-2cl-intervening-at",
+  "source": "@@@@a@@b@c@@",
+  "action": "created"
+ },
+ "p3h-07-raw-4op-2cl-then-more": {
+  "fullname": "muse-probe-round5h-p3-p3h-07-raw-4op-2cl-then-more",
+  "source": "@@@@a@@b@@c@@",
+  "action": "created"
+ },
+ "p3h-08-raw-6op-3cl-later2": {
+  "fullname": "muse-probe-round5h-p3-p3h-08-raw-6op-3cl-later2",
+  "source": "@@@@@@a@@@b@@",
+  "action": "created"
+ },
+ "p3h-09-raw-4op-2cl-spaces": {
+  "fullname": "muse-probe-round5h-p3-p3h-09-raw-4op-2cl-spaces",
+  "source": "@@@@ a @@ b @@",
+  "action": "created"
+ },
+ "p3h-10-raw-4op-3cl-later2-then4": {
+  "fullname": "muse-probe-round5h-p3-p3h-10-raw-4op-3cl-later2-then4",
+  "source": "@@@@a@@@b@@@@",
+  "action": "created"
+ },
+ "p3h-11-raw-4op-2cl-nl-after": {
+  "fullname": "muse-probe-round5h-p3-p3h-11-raw-4op-2cl-nl-after",
+  "source": "@@@@a@@b@@\n",
+  "action": "saved-unverified"
+ },
+ "p3h-12-raw-fix-hold-wit": {
+  "fullname": "muse-probe-round5h-p3-p3h-12-raw-fix-hold-wit",
+  "source": "@@@@a@@@b@@@@",
+  "action": "created"
+ },
+ "p3h-13-img-alt-verbatim-spaces": {
+  "fullname": "muse-probe-round5h-p3-p3h-13-img-alt-verbatim-spaces",
+  "source": "[[image IMG.png alt=\" x \"]]",
+  "action": "created"
+ },
+ "p3h-14-img-width-tab": {
+  "fullname": "muse-probe-round5h-p3-p3h-14-img-width-tab",
+  "source": "[[image IMG.png width=\"1\t0\"]]",
+  "action": "created"
+ },
+ "p3h-15-anchor-href-ff": {
+  "fullname": "muse-probe-round5h-p3-p3h-15-anchor-href-ff",
+  "source": "[[a href=\"#a\fb\"]]x[[/a]]",
+  "action": "created"
+ },
+ "p3h-16-span-class-spaces": {
+  "fullname": "muse-probe-round5h-p3-p3h-16-span-class-spaces",
+  "source": "[[span class=\" a \"]]x[[/span]]",
+  "action": "created"
+ },
+ "p3h-17-div-class-esc": {
+  "fullname": "muse-probe-round5h-p3-p3h-17-div-class-esc",
+  "source": "\n[[div class=\"A\u001bB\"]]\nx\n[[/div]]\n",
+  "action": "saved-unverified"
+ },
+ "p3h-18-embed-dot-onclick": {
+  "fullname": "muse-probe-round5h-p3-p3h-18-embed-dot-onclick",
+  "source": "[[embed]]<iframe src=\"http://wikimapia.org/s/x\" .onclick=\"evil()\"></iframe>[[/embed]]",
+  "action": "created"
+ },
+ "p3h-19-url-descr-dollar-only": {
+  "fullname": "muse-probe-round5h-p3-p3h-19-url-descr-dollar-only",
+  "source": "[http://example.com $]",
+  "action": "created"
+ },
+ "p3h-20-gallery-js-mixed": {
+  "fullname": "muse-probe-round5h-p3-p3h-20-gallery-js-mixed",
+  "source": "[[gallery]]\n: IMG.png link=\"JaVaScRiPt:alert(1)\"\n[[/gallery]]",
+  "action": "created"
+ },
+ "p3h-21-module-fresh-run": {
+  "fullname": "muse-probe-round5h-p3-p3h-21-module-fresh-run",
+  "source": "[[module CSI width=\"100%\"]]x[[/module]]",
+  "action": "created"
+ },
+ "p3h-22-raw-bare-eleven": {
+  "fullname": "muse-probe-round5h-p3-p3h-22-raw-bare-eleven",
+  "source": "@@@@@@@@@@@",
+  "action": "created"
+ },
+ "p3h-23-tableadv-uppercase-key": {
+  "fullname": "muse-probe-round5h-p3-p3h-23-tableadv-uppercase-key",
+  "source": "[[table data-A.B=\"v\"]]\n[[row]]\n[[cell]]X[[/cell]]\n[[/row]]\n[[/table]]",
+  "action": "created"
+ },
+ "p3h-24-include-two-placeholders": {
+  "fullname": "muse-probe-round5h-p3-p3h-24-include-two-placeholders",
+  "source": "[[include muse-probe-round5h-p3-t1 | a=X | b=Y]]",
+  "action": "created"
+ },
+ "p3h-25-include-two-other": {
+  "fullname": "muse-probe-round5h-p3-p3h-25-include-two-other",
+  "source": "[[include muse-probe-round5h-p3-t2 | x=1 | y=2]]",
+  "action": "created"
+ },
+ "p3h-26-include-fresh-values": {
+  "fullname": "muse-probe-round5h-p3-p3h-26-include-fresh-values",
+  "source": "[[include muse-probe-round5h-p3-t1 | a=hello | b=world]]",
+  "action": "created"
+ }
+}

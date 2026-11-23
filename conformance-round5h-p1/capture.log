@@ -1,0 +1,167 @@
+RAW-L3 -> muse-probe-round5h-p1-raw-l3 stable=True saved_source_matches=True valid=True
+RAW-M2 -> muse-probe-round5h-p1-raw-m2 stable=True saved_source_matches=True valid=True
+RAW-OP5 -> muse-probe-round5h-p1-raw-op5 stable=True saved_source_matches=True valid=True
+RAW-TWOLATE -> muse-probe-round5h-p1-raw-twolate stable=True saved_source_matches=True valid=True
+RAW-NL -> muse-probe-round5h-p1-raw-nl stable=True saved_source_matches=True valid=True
+RAW-LONE -> muse-probe-round5h-p1-raw-lone stable=True saved_source_matches=True valid=True
+L-ADJ-LOWOL -> muse-probe-round5h-p1-l-adj-lowol stable=True saved_source_matches=True valid=True
+L-ADJ-SCOREALL -> muse-probe-round5h-p1-l-adj-scoreall stable=True saved_source_matches=True valid=True
+L-ADJ-NESTATTR -> muse-probe-round5h-p1-l-adj-nestattr stable=True saved_source_matches=True valid=True
+L-ADJ-BLANK -> muse-probe-round5h-p1-l-adj-blank stable=True saved_source_matches=True valid=True
+L-ADJ-FTIN -> muse-probe-round5h-p1-l-adj-ftin stable=True saved_source_matches=True valid=True
+CL-SPANTYPE -> muse-probe-round5h-p1-cl-spantype stable=True saved_source_matches=True valid=True
+CL-DIVSTYLE -> muse-probe-round5h-p1-cl-divstyle stable=True saved_source_matches=True valid=True
+CL-DIVDATA -> muse-probe-round5h-p1-cl-divdata stable=True saved_source_matches=True valid=True
+CL-SPANROLE -> muse-probe-round5h-p1-cl-spanrole stable=True saved_source_matches=True valid=True
+{
+ "RAW-L3": {
+  "fullname": "muse-probe-round5h-p1-raw-l3",
+  "html": "<p>a<span style=\"white-space: pre-wrap;\">@b</span>@</p>",
+  "html_sha256": "7ddfc8e249e277313a487b7bc8dfbadafc15ff299463e90a98590485d0c7fe8e",
+  "source": "@@@@a@@@b@@@",
+  "source_sha256": "565be2e541747c2833a5828d4e088a38d323e0236f09fc7c67c3789da196ad60",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "RAW-M2": {
+  "fullname": "muse-probe-round5h-p1-raw-m2",
+  "html": "<p>a<span style=\"white-space: pre-wrap;\">b</span></p>",
+  "html_sha256": "6c8c3342ee6d7504abbcd00ad8fac1a1ab9f1a3aac83ea9007926d3d914685cf",
+  "source": "@@@@a@@b@@",
+  "source_sha256": "d5b9f955f63c7985b841e80e4fbe1517385eaa8a81689519d0c5871a222ce95b",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "RAW-OP5": {
+  "fullname": "muse-probe-round5h-p1-raw-op5",
+  "html": "<p>@a<span style=\"white-space: pre-wrap;\">@b</span></p>",
+  "html_sha256": "4c0a3ae9d20a2e951da38e7ff0244e879a34e66477d3f5f60015fab12cf6732a",
+  "source": "@@@@@a@@@b@@",
+  "source_sha256": "5b9b5b3e012570b6f9b7f83498927d774ebe50805180afcd18c8423c49ba64fe",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "RAW-TWOLATE": {
+  "fullname": "muse-probe-round5h-p1-raw-twolate",
+  "html": "<p>a<span style=\"white-space: pre-wrap;\">@b</span>c@@</p>",
+  "html_sha256": "37aa67b4f2b541120afc435fb2fb02b637f897c9bbd52d24e90c62b469b3bd26",
+  "source": "@@@@a@@@b@@c@@",
+  "source_sha256": "0bbe7a93f4fd5fc845ea45562668a335770e52f2f453fcd05256c6e8c7ca4ead",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "RAW-NL": {
+  "fullname": "muse-probe-round5h-p1-raw-nl",
+  "html": "<p>a@@@<br />\nb@@</p>",
+  "html_sha256": "996a7dec060cbe0f2b02d7565280edf2cee6572d455bd4dca2f79eefebcb55cb",
+  "source": "@@@@a@@@\nb@@",
+  "source_sha256": "cd1668d65b42b1ec25731019ee0c32a037e0fc5cce86e72dd67b62469e98a162",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "RAW-LONE": {
+  "fullname": "muse-probe-round5h-p1-raw-lone",
+  "html": "<p>a<span style=\"white-space: pre-wrap;\">@b@x</span></p>",
+  "html_sha256": "01b0072e1959965ddf35293707ea865c2d7138d1fec260137072bf7cee6b0732",
+  "source": "@@@@a@@@b@x@@",
+  "source_sha256": "0d1025aa2ceaaa06f93e3f140b95ae69367ba6f7aa9961af6db154038ccbccfd",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "L-ADJ-LOWOL": {
+  "fullname": "muse-probe-round5h-p1-l-adj-lowol",
+  "html": "<ol>\n<li>outer</li>\n<li>in</li>\n</ol>\n[[LI]]tail[[/LI]]<br />\n[[/ol]]",
+  "html_sha256": "95c6a8ae13af670aa067aa78d5cd48947ff9a0859b208dc570a564113dfc3ba9",
+  "source": "[[ol]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/ol]]\n[[LI]]tail[[/LI]]\n[[/ol]]",
+  "source_sha256": "1cd5a50cb6b77b56e4849de52e472ce1697380e78f6b03530da58f6884517497",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "L-ADJ-SCOREALL": {
+  "fullname": "muse-probe-round5h-p1-l-adj-scoreall",
+  "html": "<p>[[UL_]]<br />\n[[LI]]outer[[ul_]]<br />\n[[LI]]in[[/LI]]<br />\n[[/ul_]]<br />\n[[/LI]]<br />\n[[/UL_]]<br />\n[[LI]]tail[[/LI]]<br />\n[[/UL_]]</p>",
+  "html_sha256": "39f20d317e8134d78e2216eab3287beda0f093c49223c0d39a67e49bf5dfbc96",
+  "source": "[[UL_]]\n[[LI]]outer[[ul_]]\n[[LI]]in[[/LI]]\n[[/ul_]]\n[[/LI]]\n[[/UL_]]\n[[LI]]tail[[/LI]]\n[[/UL_]]",
+  "source_sha256": "d8ce09733fcda531caeff0e5ee8da22b9ee38538f9f2e3cb34b9382f76155052",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "L-ADJ-NESTATTR": {
+  "fullname": "muse-probe-round5h-p1-l-adj-nestattr",
+  "html": "<ul>\n<li>outer</li>\n</ul>\n<ul class=\"x\">\n<li>in</li>\n</ul>\n[[LI]]tail[[/LI]]<br />\n[[/UL]]",
+  "html_sha256": "d1e15ccbc91f219c492514a080870e78df7347849ae75bca0a0011349ae4d2ec",
+  "source": "[[UL]]\n[[LI]]outer[[ul class=\"x\"]]\n[[li]]in[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "source_sha256": "6052889019dd413095e7add857706d4d44697059689e49e607b52cc05f621eb8",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "L-ADJ-BLANK": {
+  "fullname": "muse-probe-round5h-p1-l-adj-blank",
+  "html": "<ul>\n<li>A</li>\n</ul>\n<ul>\n<li>B</li>\n</ul>\n<br />\n[[LI]]tail[[/LI]]<br />\n[[/UL]]",
+  "html_sha256": "b6c64916338b1a4e66d40f6b5a9d2de22fe8d0339b287b089f16575fe527c2d0",
+  "source": "[[UL]]\n[[LI]]A[[ul]]\n[[li]]B[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]\n\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "source_sha256": "761a98669721c80c5a0d17b185dff1a2c6b1133edb219ef40f66159376428e17",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "L-ADJ-FTIN": {
+  "fullname": "muse-probe-round5h-p1-l-adj-ftin",
+  "html": "<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>P<br /></li>\n</ul>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. n</div>\n</div>\n<br />\nQ[[LI]]tail[[/LI]]<br />\n[[/UL]]",
+  "html_sha256": "0dd7ed1f1172b2917a659104fca6dffcc18054c7ad007cb5c11c1a526f171552",
+  "source": "[[UL]]\n[[LI]]A[[footnote]]n[[/footnote]]P[[footnoteblock]]Q[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "source_sha256": "c09a1cdd93334cf7b533d3a226381d2c87d2d3231cdc9eb1afb72e47feb76c09",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "CL-SPANTYPE": {
+  "fullname": "muse-probe-round5h-p1-cl-spantype",
+  "html": "alpha<span type=\"A\u001bB\">bravo</span>",
+  "html_sha256": "bbf635cb9530b180c51e22d93d56c0f7bfd90e939b8e62dfc83c7c969819c600",
+  "source": "alpha\\\n[[span_ type=\"A\u001bB\"]]bravo[[/span]]",
+  "source_sha256": "981f34a514d1d406c0d65073647a8bb7db25d1f37b5d29501857d183e7fba342",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "CL-DIVSTYLE": {
+  "fullname": "muse-probe-round5h-p1-cl-divstyle",
+  "html": "alpha\n<div style=\"AB\">\n<p>bravo</p>\n</div>",
+  "html_sha256": "1a0820f01df06fe47f55736c5d1548860e0d1eedf51467e9934bc432354079d0",
+  "source": "alpha\\\n[[div style=\"  AB  \"]]\nbravo[[/div]]",
+  "source_sha256": "6a8998b180b7d9c1c2117770ae7766b3217ec6025db89f2e9e3e577add2a810a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "CL-DIVDATA": {
+  "fullname": "muse-probe-round5h-p1-cl-divdata",
+  "html": "alpha\n<div data-x=\"A B\">\n<p>bravo</p>\n</div>",
+  "html_sha256": "64eafe90e9a192f6022fc9a507b6aafb7a9cab931de7118601d8ce1320a28b80",
+  "source": "alpha\\\n[[div data-x=\"A\tB\"]]\nbravo[[/div]]",
+  "source_sha256": "72fcb1a83e05f82d4fe0b4168c39d1b567dd2a937fdbfc3121525aef5f73f062",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "CL-SPANROLE": {
+  "fullname": "muse-probe-round5h-p1-cl-spanrole",
+  "html": "alpha<span role=\"AB\">bravo</span>",
+  "html_sha256": "f8006968fc68c80b38fe646b53c73a81586a53151ea4e15478de69b822049e27",
+  "source": "alpha\\\n[[span_ role=\"A\u000bB\"]]bravo[[/span]]",
+  "source_sha256": "eb05dbbe5aceb58984b90d28e02a079620cece114ee27c4de24a26d7fba2b2ea",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

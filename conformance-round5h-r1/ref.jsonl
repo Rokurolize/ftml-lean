@@ -1,0 +1,16 @@
+{"id":"R5HR1-A1","output":"<div class=\"ab\"><p>body<\/p>\n\n<\/div>"}
+{"id":"R5HR1-A2","output":"<p><span style=\"color:red\">body<\/span><\/p>\n\n"}
+{"id":"R5HR1-A3","output":"<p><span type=\"AB\">body<\/span><\/p>\n\n"}
+{"id":"R5HR1-A4","output":"<p><span role=\"A\u001bB\">body<\/span><\/p>\n\n"}
+{"id":"R5HR1-A5","output":"<div data-x=\"b\"><p>body<\/p>\n\n<\/div>"}
+{"id":"R5HR1-A6","output":"<div class=\"\"><p>body<\/p>\n\n<\/div>"}
+{"id":"R5HR1-A7","output":"<p><span data-x=\"ab\">body<\/span><\/p>\n\n"}
+{"id":"R5HR1-B1","output":"alpha <div type=\"AB\"><p>body<\/p>\n\n<\/div>"}
+{"id":"R5HR1-B2","output":"alpha <strong>x<\/strong> <div class=\"a\"><p>body<\/p>\n\n<\/div>"}
+{"id":"R5HR1-B3","output":"<p>alpha <span style=\"font-size:9px;\">y<\/span> <div role=\"r\"><\/p>\n\n<p>body<\/p>\n\n<\/div>"}
+{"id":"R5HR1-B4","output":"<p>alpha <div type=\"A\u001bB\">body<\/div><\/p>\n\n"}
+{"id":"R5HR1-C1","output":"<script type=\"text\/javascript\" src=\"\/common--javascript\/yahooui\/element-beta-min.js\"><\/script>\n<script type=\"text\/javascript\" src=\"\/common--javascript\/yahooui\/tabview-min.js\"><\/script><div id=\"wiki-tabview-0\" class=\"yui-navset\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>untitled<\/em><\/a><\/li><\/ul><div class=\"yui-content\"><div id=\"wiki-tab-0-0\"><p>x<\/p>\n\n<\/div><\/div><\/div><script type=\"text\/javascript\">\n(function(){\n\tvar tabView0 = new YAHOO.widget.TabView('wiki-tabview-0');\n})();\n<\/script>"}
+{"id":"R5HR1-C2","output":"<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">AB<\/a><\/div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">\u2013&nbsp;hide&nbsp;block<\/a><\/div><div class=\"collapsible-block-content\"><p>body<\/p>\n\n<\/div><\/div><\/div>"}
+{"id":"R5HR1-C3","output":"<br \/>\nafter"}
+{"id":"R5HR1-C4","output":"<span class=\"a\">X<\/span>"}
+{"id":"R5HR1-C5","output":"<p>[[ul]]<br \/>\n[[li]]A<ul>\n<li>B<\/p>\n\n<br \/>"}

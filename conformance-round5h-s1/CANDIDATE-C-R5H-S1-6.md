@@ -1,0 +1,7 @@
+# C-R5H-S1-6 — math trailing SOH: live discards before validation, reference keeps in error text
+
+Suspicion S11, capture id `muse-probe-round5h-s1-s11-math-trail-ctl`, html_sha256 `926acef24634320b727e40b7dc53eeccfc8cc8f5879673322bdb87155bcae6c3`, ref.jsonl row 11. Minimal source `[[math type="align\u0001"]]\nx\n[[/math]]`. This composes the REFCORR13 discarded-D set with the AGY2 D08 strip-star allowlist at a trailing position; the earlier math control witness inserted an ESC inside the environment name and cleared, so a trailing discarded byte after an otherwise valid name is a distinct position.
+
+Decisive live bytes are `<div class="error-block">Unsupported math environment "align"</div>`, reference bytes are `<div class="error-block">Unsupported math environment "align\x01"</div>`; both reject the environment, so the differing rule-level value is the environment name rendered in the error block. Live discards the SOH before validation, the reference keeps it verbatim.
+
+Owning reference file `ref-php/text-wiki/Text/Wiki/Render/Xhtml/Math.php` lines 58-62, where `$env = str_replace('*', '', (string) $type)` strips only stars and the raw env is interpolated into the error block with no D-set filtering. Mirror consequence inferred by source reading, not by elaboration: `ServingRules.lean::renderMath` lines 277-283 computes `mathStripStar ty` and interpolates that env into the same error string, so the mirror transcribes the retained control byte and needs the same D-set discard as live.

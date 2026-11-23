@@ -1,0 +1,82 @@
+{
+ "s01-fl-url-frag-ctl": {
+  "fullname": "muse-probe-round5h-s1-s01-fl-url-frag-ctl",
+  "source": "[[[https://ex.test/a\u0001b#sec|L]]]",
+  "action": "created"
+ },
+ "s02-fl-star-url-esc": {
+  "fullname": "muse-probe-round5h-s1-s02-fl-star-url-esc",
+  "source": "[[[*https://ex.test/café\u001b|L]]]",
+  "action": "created"
+ },
+ "s03-anchor-multi-attr": {
+  "fullname": "muse-probe-round5h-s1-s03-anchor-multi-attr",
+  "source": "[[a href=\"#a\u001bb\" data-X=\"\u0001v\" id=\"q\u001b\"]]t[[/a]]",
+  "action": "created"
+ },
+ "s04-span-esc-del": {
+  "fullname": "muse-probe-round5h-s1-s04-span-esc-del",
+  "source": "[[span class=\"a\u001bb\" style=\"xy\"]]t[[/span]]",
+  "action": "created"
+ },
+ "s05-img-src-ctl": {
+  "fullname": "muse-probe-round5h-s1-s05-img-src-ctl",
+  "source": "[[image src=\"https://ex.test/a\u001bb.png\" alt=\"x\u001by\"]]",
+  "action": "created"
+ },
+ "s06-btn-edit-padzero": {
+  "fullname": "muse-probe-round5h-s1-s06-btn-edit-padzero",
+  "source": "[[button edit text=\" 0 \"]]",
+  "action": "created"
+ },
+ "s07-btn-class-ctl": {
+  "fullname": "muse-probe-round5h-s1-s07-btn-class-ctl",
+  "source": "[[button tags class=\"a\u001bb\" text=\"x\"]]",
+  "action": "created"
+ },
+ "s08-tabview-title-padzero": {
+  "fullname": "muse-probe-round5h-s1-s08-tabview-title-padzero",
+  "source": "[[tabview]][[tab title=\" 0 \" ]]x[[/tab]][[/tabview]]",
+  "action": "created"
+ },
+ "s09-fn-lead-soh": {
+  "fullname": "muse-probe-round5h-s1-s09-fn-lead-soh",
+  "source": "[[footnote]]\u0001X[[/footnote]][[footnoteblock]]",
+  "action": "created"
+ },
+ "s10-fn-esc-break": {
+  "fullname": "muse-probe-round5h-s1-s10-fn-esc-break",
+  "source": "[[footnote]]\u001bX\f\nY[[/footnote]][[footnoteblock]]",
+  "action": "created"
+ },
+ "s11-math-trail-ctl": {
+  "fullname": "muse-probe-round5h-s1-s11-math-trail-ctl",
+  "source": "[[math type=\"align\u0001\"]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "s12-raw-multi-short": {
+  "fullname": "muse-probe-round5h-s1-s12-raw-multi-short",
+  "source": "@@@@a@@@b@@@c@@",
+  "action": "created"
+ },
+ "s13-raw-xline-short": {
+  "fullname": "muse-probe-round5h-s1-s13-raw-xline-short",
+  "source": "@@@@\n@@a@@@b@@",
+  "action": "created"
+ },
+ "s14-table-hdr-ctl": {
+  "fullname": "muse-probe-round5h-s1-s14-table-hdr-ctl",
+  "source": "[[table]]\n|= h\u0001x | normal |\n| d_y | plain |\n[[/table]]",
+  "action": "created"
+ },
+ "s15-fl-mixedlead": {
+  "fullname": "muse-probe-round5h-s1-s15-fl-mixedlead",
+  "source": "[[[​\u001b_default:x|L]]]",
+  "action": "created"
+ },
+ "s16-div-id-nonascii": {
+  "fullname": "muse-probe-round5h-s1-s16-div-id-nonascii",
+  "source": "[[div id=\"café\"]]t[[/div]]",
+  "action": "created"
+ }
+}

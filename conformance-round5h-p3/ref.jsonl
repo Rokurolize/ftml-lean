@@ -1,0 +1,26 @@
+{"id":"p3h-01-raw-4op-2cl-later2","output":"<p>a<span style=\"white-space: pre-wrap;\">b<\/span><\/p>\n\n"}
+{"id":"p3h-02-raw-4op-3cl-later3","output":"<p>a<span style=\"white-space: pre-wrap;\">@b<\/span>@<\/p>\n\n"}
+{"id":"p3h-03-raw-5op-2cl-later2","output":"<p>@a<span style=\"white-space: pre-wrap;\">b<\/span><\/p>\n\n"}
+{"id":"p3h-04-raw-4op-2cl-nextline","output":"<p>a@@b<br \/>\n@@<\/p>\n\n"}
+{"id":"p3h-05-raw-4op-3cl-nextline","output":"<p>a@@@b<br \/>\n@@@<\/p>\n\n"}
+{"id":"p3h-06-raw-4op-2cl-intervening-at","output":"<p>a<span style=\"white-space: pre-wrap;\">b@c<\/span><\/p>\n\n"}
+{"id":"p3h-07-raw-4op-2cl-then-more","output":"<p>a<span style=\"white-space: pre-wrap;\">b<\/span>c@@<\/p>\n\n"}
+{"id":"p3h-08-raw-6op-3cl-later2","output":"<p>@@a<span style=\"white-space: pre-wrap;\">@b<\/span><\/p>\n\n"}
+{"id":"p3h-09-raw-4op-2cl-spaces","output":"<p>a <span style=\"white-space: pre-wrap;\">&#32;b&#32;<\/span><\/p>\n\n"}
+{"id":"p3h-10-raw-4op-3cl-later2-then4","output":"<p>a<span style=\"white-space: pre-wrap;\">@b<\/span>@@<\/p>\n\n"}
+{"id":"p3h-11-raw-4op-2cl-nl-after","output":"<p>a<span style=\"white-space: pre-wrap;\">b<\/span><\/p>\n\n"}
+{"id":"p3h-12-raw-fix-hold-wit","output":"<p>a<span style=\"white-space: pre-wrap;\">@b<\/span>@@<\/p>\n\n"}
+{"id":"p3h-13-img-alt-verbatim-spaces","output":"<img src=\"\/local--files\/\/IMG.png\" alt=\" x \" class=\"image\" \/>"}
+{"id":"p3h-14-img-width-tab","output":"<img src=\"\/local--files\/\/IMG.png\" width=\"1    0\" alt=\"IMG.png\" class=\"image\" \/>"}
+{"id":"p3h-15-anchor-href-ff","output":"<p><a href=\"#ab\">x<\/a><\/p>\n\n"}
+{"id":"p3h-16-span-class-spaces","output":"<p><span class=\"a\">x<\/span><\/p>\n\n"}
+{"id":"p3h-17-div-class-esc","output":"<div class=\"A\u001bB\"><p>x<\/p>\n\n<\/div>"}
+{"id":"p3h-18-embed-dot-onclick","output":"<p><div class=\"error-block\">Sorry, no match for the embedded content.<\/div><\/p>\n\n"}
+{"id":"p3h-19-url-descr-dollar-only","output":"<p><a href=\"http:\/\/example.com\">$<\/a><\/p>\n\n"}
+{"id":"p3h-20-gallery-js-mixed","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"#\" ><img src=\"\/local--resized-images\/\/IMG.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"p3h-21-module-fresh-run","output":"<div class=\"error-block\">[[module <em>CSI<\/em>]] No such module, please <a href=\"https:\/\/www.wikidot.com\/doc:modules\" target=\"_blank\">check available modules<\/a> and fix this page.<\/div>"}
+{"id":"p3h-22-raw-bare-eleven","output":"<p>@@@@@@@<\/p>\n\n"}
+{"id":"p3h-23-tableadv-uppercase-key","output":"<table data-a.b=\"v\">\n<tr>\n<td>X<\/td>\n<\/tr>\n<\/table>"}
+{"id":"p3h-24-include-two-placeholders","output":"<p>A=X;B=Y<\/p>\n\n"}
+{"id":"p3h-25-include-two-other","output":"<p>P1Q2R<\/p>\n\n"}
+{"id":"p3h-26-include-fresh-values","output":"<p>A=hello;B=world<\/p>\n\n"}

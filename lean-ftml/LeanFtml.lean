@@ -64,3 +64,4 @@ import LeanFtml.Proof.CodeRuleProof
 import LeanFtml.Proof.FrameIncludeAxiomAudit
 import LeanFtml.ProofNextFinal
 import LeanFtml.ProofBlockMiddle
+import LeanFtml.ProofParaInline

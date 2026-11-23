@@ -1,0 +1,18 @@
+{"id":"R5H-P4-C01","output":"<p>a<span style=\"white-space: pre-wrap;\">@b<\/span><\/p>\n\n"}
+{"id":"R5H-P4-C02","output":"<p>a@@@b@<\/p>\n\n"}
+{"id":"R5H-P4-C03","output":"<p>a<span style=\"white-space: pre-wrap;\">b<\/span>cd@@<\/p>\n\n"}
+{"id":"R5H-P4-C04","output":"<p>a<span style=\"white-space: pre-wrap;\">@b<\/span>@<\/p>\n\n"}
+{"id":"R5H-P4-C05","output":"<p>a b<span style=\"white-space: pre-wrap;\">@c<\/span><\/p>\n\n"}
+{"id":"R5H-P4-C06","output":"<p>ab<span style=\"white-space: pre-wrap;\">@c<\/span><\/p>\n\n"}
+{"id":"R5H-P4-C07","output":"<p>a&#8212;b<span style=\"white-space: pre-wrap;\">@c<\/span><\/p>\n\n"}
+{"id":"R5H-P4-C08","output":"<p>a@@@b<br \/>\n<span style=\"white-space: pre-wrap;\">c<\/span><\/p>\n\n"}
+{"id":"R5H-P4-C09","output":"<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1<\/a><\/sup><\/p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes<\/div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1<\/a>. A<br \/>\nB<\/div><\/div>"}
+{"id":"R5H-P4-C10","output":"<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1<\/a><\/sup><\/p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes<\/div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1<\/a>. A<br \/>\nB<\/div><\/div>"}
+{"id":"R5H-P4-C11","output":"<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1<\/a><\/sup><\/p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes<\/div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1<\/a>. A<br \/>\nB<\/div><\/div>"}
+{"id":"R5H-P4-C12","output":"<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1<\/a><\/sup><\/p>\n\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes<\/div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1<\/a>. A\u001b<br \/>\nB<\/div><\/div>"}
+{"id":"R5H-P4-C13","output":"<p>A B<\/p>\n\n"}
+{"id":"R5H-P4-C14","output":"<p>[[div]]a[[\/div]][[div]]b[[\/div]]<\/p>\n\n"}
+{"id":"R5H-P4-C15","output":"<p>1234<\/p>\n\n"}
+{"id":"R5H-P4-C16","output":"<p>A<span style=\"text-decoration: line-through;\"><\/span>B<\/p>\n\n"}
+{"id":"R5H-P4-C17","output":"<p>alpha\u2060bravo<\/p>\n\n"}
+{"id":"R5H-P4-C18","output":"<p>alpha\u200dbravo<\/p>\n\n"}

@@ -1,0 +1,16 @@
+{"id":"s01-fl-url-frag-ctl","output":"<p><a href=\"https:\/\/ex.test\/a\u0001b#sec\">L<\/a><\/p>\n\n"}
+{"id":"s02-fl-star-url-esc","output":"<p><a target=\"_blank\" href=\"https:\/\/ex.test\/caf%C3%A9\u001b\">L<\/a><\/p>\n\n"}
+{"id":"s03-anchor-multi-attr","output":"<p><a id=\"u-q\u001b\" data-x=\"v\" href=\"#a%1Bb\">t<\/a><\/p>\n\n"}
+{"id":"s04-span-esc-del","output":"<p><span class=\"a\u001bb\" style=\"xy\">t<\/span><\/p>\n\n"}
+{"id":"s05-img-src-ctl","output":"<img src=\"src=&quot;https:\/\/ex.test\/a\u001bb.png&quot;\" alt=\"x\u001by\" class=\"image\" \/>"}
+{"id":"s06-btn-edit-padzero","output":"<p><a class=\"wiki-standalone-button\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\" > 0 <\/a><\/p>\n\n"}
+{"id":"s07-btn-class-ctl","output":"<p><a class=\"a\u001bb\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editTags(event)\" >x<\/a><\/p>\n\n"}
+{"id":"s08-tabview-title-padzero","output":"<script type=\"text\/javascript\" src=\"\/common--javascript\/yahooui\/element-beta-min.js\"><\/script>\n<script type=\"text\/javascript\" src=\"\/common--javascript\/yahooui\/tabview-min.js\"><\/script><div id=\"wiki-tabview-0\" class=\"yui-navset\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>untitled<\/em><\/a><\/li><\/ul><div class=\"yui-content\"><div id=\"wiki-tab-0-0\"><p>x<\/p>\n\n<\/div><\/div><\/div><script type=\"text\/javascript\">\n(function(){\n\tvar tabView0 = new YAHOO.widget.TabView('wiki-tabview-0');\n})();\n<\/script>"}
+{"id":"s09-fn-lead-soh","output":"<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1<\/a><\/sup><br \/>\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes<\/div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1<\/a>. X<\/p>\n\n<\/div><\/div>"}
+{"id":"s10-fn-esc-break","output":"<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1<\/a><\/sup><br \/>\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes<\/div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1<\/a>. \u001bX<br \/>\nY<\/p>\n\n<\/div><\/div>"}
+{"id":"s11-math-trail-ctl","output":"<div class=\"error-block\">Unsupported math environment \"align\u0001\"<\/div>"}
+{"id":"s12-raw-multi-short","output":"<p>a<span style=\"white-space: pre-wrap;\">@b<\/span>@c@@<\/p>\n\n"}
+{"id":"s13-raw-xline-short","output":"<p><br \/>\n<span style=\"white-space: pre-wrap;\">a<\/span>@b@@<\/p>\n\n"}
+{"id":"s14-table-hdr-ctl","output":"<p>[[table]]<br \/>\n|= hx | normal |<br \/>\n| d_y | plain |<br \/>\n[[\/table]]<\/p>\n\n"}
+{"id":"s15-fl-mixedlead","output":"<p><a class=\"newpage\" href=\"\/x\">L<\/a><\/p>\n\n"}
+{"id":"s16-div-id-nonascii","output":"<p>[[div id=&quot;caf\u00e9&quot;]]t[[\/div]]<\/p>\n\n"}

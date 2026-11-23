@@ -1,0 +1,17 @@
+# HASHES — conformance-round5h-p2
+
+Generated last; each digest is sha256 over the exact file bytes copied into this conformance directory. HASHES.md does not hash itself. The coordinator should verify REPORT-ROUND5H-P2.md and this directory before adoption; no source files are included.
+
+- a6aed6d0264cab157749a5e030b5a510b96a910b3c21bb95d204a7292c519431 CANDIDATES.md
+- 205cdd4a0e169b9932fff6c0fa35c14b64f8f2592402fec450efb380227884ef LEDGER.md
+- 1b0260117023a7686c6b88147c1bbb3289b724ac418e48f6f377c756b4d16508 REPORT-ROUND5H-P2.md
+- e8b9916737f9c45da9c7f8c9a359c56d951064928d79f15409674db1cdc98229 captures.json
+- 99b99c9f9615fdc9804e4f5bccca473a7cd9ca054e5bb88a18ea8413f7f004ad cases.jsonl
+- 3ebb3b7d1020da2e9ddf50ea4218d444b898666068c4a9ff3cbd6298439c3bfb compare.py
+- 25700ab23fe64388d6d0fa75d1582bbc83b25c34f9dff41594c9a66d064dc2a0 comparison.json
+- ed150db20675cedc42605e321662c0e950c939262d2612a019f7c65db16919be gen_cases.py
+- 3f66f0d64547566d10b2ea6707132d0c8678f0aaf24f21cc9c4ca6cca96c9dc2 map.json
+- e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 ref-tokens.err
+- f5260d3496447972e616b985cc517b1793a172bbd14912b8cf9c1588a443b710 ref-tokens.jsonl
+- e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 ref.err
+- f4fc783e0eaa4dde9fe4ae7229de80faf92692639bc2debcc1394b72d01f5dcf ref.jsonl

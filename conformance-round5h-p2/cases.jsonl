@@ -1,0 +1,18 @@
+{"id": "R5HP2-01", "source": "[[[\u0001_default:x]]]"}
+{"id": "R5HP2-02", "source": "[[[\u0018_default:x]]]"}
+{"id": "R5HP2-03", "source": "[[[\u008d_default:x]]]"}
+{"id": "R5HP2-04", "source": "[[[\u009f_default:x]]]"}
+{"id": "R5HP2-05", "source": "[[[\ufff1_default:x]]]"}
+{"id": "R5HP2-06", "source": "[[[http://example.com/p#a?b|L]]]"}
+{"id": "R5HP2-07", "source": "[[[http://example.com/p?x=1#frag]]]"}
+{"id": "R5HP2-08", "source": "[[[http://example.com/a-b|\t]]]"}
+{"id": "R5HP2-09", "source": "[[[*http://example.com/p#frag|L]]]"}
+{"id": "R5HP2-10", "source": "[[math type=\"alignat*\"]]\nx\n[[/math]]"}
+{"id": "R5HP2-11", "source": "[[math type=\"aligned\"]]\nx\n[[/math]]"}
+{"id": "R5HP2-12", "source": "[[math type=\"alignedat\"]]\nx\n[[/math]]"}
+{"id": "R5HP2-13", "source": "[[math type=\"cases\"]]\nx\n[[/math]]"}
+{"id": "R5HP2-14", "source": "@@@@a@@b@@"}
+{"id": "R5HP2-15", "source": "@@@@@a@@b@@"}
+{"id": "R5HP2-16", "source": "@@@@a@@b@@@@"}
+{"id": "R5HP2-17", "source": "A @@@@ZQ@@ B @@@@ C"}
+{"id": "R5HP2-18", "source": "@@@@a@@b@@c@@"}

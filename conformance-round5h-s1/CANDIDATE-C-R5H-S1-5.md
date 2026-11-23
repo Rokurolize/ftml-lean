@@ -1,0 +1,7 @@
+# C-R5H-S1-5 — tabview space-padded zero title: live keeps 0, reference defaults to untitled
+
+Suspicion S08, capture id `muse-probe-round5h-s1-s08-tabview-title-padzero`, html_sha256 `1bc1aa560a3284dbe9fe7627f704df2a34124480c83d3593a5a2c27a891876d8`, ref.jsonl row 8. Minimal source `[[tabview]][[tab title=" 0 " ]]x[[/tab]][[/tabview]]`. This composes the REFCORR13 AGY2 D11 falsy-title default with the whitespace-collapse branch of `_tabTitle`; D11 was measured on the exact positional `0` and `title="0"` forms, not on a space-padded zero.
+
+Decisive live bytes are `<em>0</em>` in the selected tab anchor, reference bytes are `<em>untitled</em>`; the tab structure, tab ids and body are otherwise the same after the campaign frame mask. The script source host (cloudfront versus /common--javascript) and the random tabview id are owned serving surfaces and are not part of this finding; the tab label is the differing rule-level value.
+
+Owning reference file `ref-php/text-wiki/Text/Wiki/Parse/Default/Tabview.php` lines 107-116, where `_tabTitle` trims the text and then applies `if (! $text) { return 'untitled'; }`, so a space-padded zero becomes the falsy string `0` and defaults. Live keeps the padded value as a visible `0`. Mirror consequence inferred by source reading, not by elaboration: `ContainRules.lean::tabTitle` lines 1132-1136 computes `let t := trimBytes t0; if t.isEmpty || t == litBytes "0" then litBytes "untitled"`, transcribing the same over-aggressive default; the mirror needs the same adjustment as the reference to match live.

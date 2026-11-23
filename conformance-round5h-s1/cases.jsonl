@@ -1,0 +1,16 @@
+{"id": "s01-fl-url-frag-ctl", "source": "[[[https://ex.test/a\u0001b#sec|L]]]"}
+{"id": "s02-fl-star-url-esc", "source": "[[[*https://ex.test/caf\u00e9\u001b|L]]]"}
+{"id": "s03-anchor-multi-attr", "source": "[[a href=\"#a\u001bb\" data-X=\"\u0001v\" id=\"q\u001b\"]]t[[/a]]"}
+{"id": "s04-span-esc-del", "source": "[[span class=\"a\u001bb\" style=\"x\u007fy\"]]t[[/span]]"}
+{"id": "s05-img-src-ctl", "source": "[[image src=\"https://ex.test/a\u001bb.png\" alt=\"x\u001by\"]]"}
+{"id": "s06-btn-edit-padzero", "source": "[[button edit text=\" 0 \"]]"}
+{"id": "s07-btn-class-ctl", "source": "[[button tags class=\"a\u001bb\" text=\"x\"]]"}
+{"id": "s08-tabview-title-padzero", "source": "[[tabview]][[tab title=\" 0 \" ]]x[[/tab]][[/tabview]]"}
+{"id": "s09-fn-lead-soh", "source": "[[footnote]]\u0001X[[/footnote]][[footnoteblock]]"}
+{"id": "s10-fn-esc-break", "source": "[[footnote]]\u001bX\f\nY[[/footnote]][[footnoteblock]]"}
+{"id": "s11-math-trail-ctl", "source": "[[math type=\"align\u0001\"]]\nx\n[[/math]]"}
+{"id": "s12-raw-multi-short", "source": "@@@@a@@@b@@@c@@"}
+{"id": "s13-raw-xline-short", "source": "@@@@\n@@a@@@b@@"}
+{"id": "s14-table-hdr-ctl", "source": "[[table]]\n|= h\u0001x | normal |\n| d_y | plain |\n[[/table]]"}
+{"id": "s15-fl-mixedlead", "source": "[[[\u200b\u001b_default:x|L]]]"}
+{"id": "s16-div-id-nonascii", "source": "[[div id=\"caf\u00e9\"]]t[[/div]]"}

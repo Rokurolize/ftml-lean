@@ -1,0 +1,704 @@
+[
+ {
+  "id": "s01-fl-url-frag-ctl",
+  "source": "[[[https://ex.test/a\u0001b#sec|L]]]",
+  "fullname": "muse-probe-round5h-s1-s01-fl-url-frag-ctl",
+  "live_canon": "<a href=\"https://ex.test/ab#sec\">L</a>",
+  "ref_canon": "<a href=\"https://ex.test/a\u0001b#sec\">L</a>",
+  "live_sig": {
+   "hrefs": [
+    "https://ex.test/ab#sec"
+   ],
+   "anchors": [
+    "<a href=\"https://ex.test/ab#sec\">L</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "L"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "https://ex.test/a\u0001b#sec"
+   ],
+   "anchors": [
+    "<a href=\"https://ex.test/a\u0001b#sec\">L</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "L"
+  },
+  "live_html": "<p><a href=\"https://ex.test/ab#sec\">L</a></p>",
+  "ref_html": "<p><a href=\"https://ex.test/a\u0001b#sec\">L</a></p>\n\n",
+  "html_sha256": "1afff9d8f6317acb750eae66f2f088468daf0c4037fc97b5416fa127580cdbc7",
+  "source_sha256": "abf2372627812b02232b8ef55792cb0208cbe491a47e2bc72be3cd4c685f2e2d",
+  "verdict": "CANDIDATE",
+  "first_diff": 26,
+  "live_context": "<a href=\"https://ex.test/ab#sec\">L</a>",
+  "ref_context": "<a href=\"https://ex.test/a\u0001b#sec\">L</a>"
+ },
+ {
+  "id": "s02-fl-star-url-esc",
+  "source": "[[[*https://ex.test/café\u001b|L]]]",
+  "fullname": "muse-probe-round5h-s1-s02-fl-star-url-esc",
+  "live_canon": "<a href=\"https://ex.test/caf%C3%A9%1B\" target=\"_blank\">L</a>",
+  "ref_canon": "<a href=\"https://ex.test/caf%C3%A9\u001b\" target=\"_blank\">L</a>",
+  "live_sig": {
+   "hrefs": [
+    "https://ex.test/caf%C3%A9%1B"
+   ],
+   "anchors": [
+    "<a href=\"https://ex.test/caf%C3%A9%1B\" target=\"_blank\">L</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "L"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "https://ex.test/caf%C3%A9\u001b"
+   ],
+   "anchors": [
+    "<a href=\"https://ex.test/caf%C3%A9\u001b\" target=\"_blank\">L</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "L"
+  },
+  "live_html": "<p><a target=\"_blank\" href=\"https://ex.test/caf%C3%A9%1B\">L</a></p>",
+  "ref_html": "<p><a target=\"_blank\" href=\"https://ex.test/caf%C3%A9\u001b\">L</a></p>\n\n",
+  "html_sha256": "d3adfda3be97aa8654472045e38da2cc923e6f91da7d21dc6a43eb7476ee43a0",
+  "source_sha256": "e6d99c564cd8db22113f907616aa14a41ac7df0122aa027feab03d2941ddc0b4",
+  "verdict": "CANDIDATE",
+  "first_diff": 34,
+  "live_context": "<a href=\"https://ex.test/caf%C3%A9%1B\" target=\"_blank\">L</a>",
+  "ref_context": "<a href=\"https://ex.test/caf%C3%A9\u001b\" target=\"_blank\">L</a>"
+ },
+ {
+  "id": "s03-anchor-multi-attr",
+  "source": "[[a href=\"#a\u001bb\" data-X=\"\u0001v\" id=\"q\u001b\"]]t[[/a]]",
+  "fullname": "muse-probe-round5h-s1-s03-anchor-multi-attr",
+  "live_canon": "<a data-x=\"v\" href=\"#a%1Bb\" id=\"u-q\u001b\">t</a>",
+  "ref_canon": "<a data-x=\"v\" href=\"#a%1Bb\" id=\"u-q\u001b\">t</a>",
+  "live_sig": {
+   "hrefs": [
+    "#a%1Bb"
+   ],
+   "anchors": [
+    "<a data-x=\"v\" href=\"#a%1Bb\" id=\"u-q\u001b\">t</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "t"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "#a%1Bb"
+   ],
+   "anchors": [
+    "<a data-x=\"v\" href=\"#a%1Bb\" id=\"u-q\u001b\">t</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "t"
+  },
+  "live_html": "<p><a id=\"u-q\u001b\" data-x=\"v\" href=\"#a%1Bb\">t</a></p>",
+  "ref_html": "<p><a id=\"u-q\u001b\" data-x=\"v\" href=\"#a%1Bb\">t</a></p>\n\n",
+  "html_sha256": "665f8791e4d6a91af993b5a9c8fe0b1188ac5f208960622c048deac776cdab10",
+  "source_sha256": "73eac110a2e4a5a45e01a0de227a90aaf0342ed4b64cbbd792ac2d072e9ce179",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s04-span-esc-del",
+  "source": "[[span class=\"a\u001bb\" style=\"xy\"]]t[[/span]]",
+  "fullname": "muse-probe-round5h-s1-s04-span-esc-del",
+  "live_canon": "<span class=\"a\u001bb\" style=\"xy\">t</span>",
+  "ref_canon": "<span class=\"a\u001bb\" style=\"xy\">t</span>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [
+    "<span class=\"a\u001bb\" style=\"xy\">t</span>"
+   ],
+   "imgs": [],
+   "error": [],
+   "text": "t"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [
+    "<span class=\"a\u001bb\" style=\"xy\">t</span>"
+   ],
+   "imgs": [],
+   "error": [],
+   "text": "t"
+  },
+  "live_html": "<p><span class=\"a\u001bb\" style=\"xy\">t</span></p>",
+  "ref_html": "<p><span class=\"a\u001bb\" style=\"xy\">t</span></p>\n\n",
+  "html_sha256": "7ef67f2bee0eb6b09e7783cf01fc44d61a4146354cfcd3f7430c660a3538b2f9",
+  "source_sha256": "4d0f10db3820c3ba60b36871aaa5db04517269f2658cf25fb635d6c64587123c",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s05-img-src-ctl",
+  "source": "[[image src=\"https://ex.test/a\u001bb.png\" alt=\"x\u001by\"]]",
+  "fullname": "muse-probe-round5h-s1-s05-img-src-ctl",
+  "live_canon": "<img alt=\"x\u001by\" class=\"image\" src=\"src=&quot;https://ex.test/a%1Bb.png&quot;\">",
+  "ref_canon": "<img alt=\"x\u001by\" class=\"image\" src=\"src=&quot;https://ex.test/a\u001bb.png&quot;\">",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [
+    "<img alt=\"x\u001by\" class=\"image\" src=\"src=&quot;https://ex.test/a%1Bb.png&quot;\">"
+   ],
+   "error": [],
+   "text": ""
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [
+    "<img alt=\"x\u001by\" class=\"image\" src=\"src=&quot;https://ex.test/a\u001bb.png&quot;\">"
+   ],
+   "error": [],
+   "text": ""
+  },
+  "live_html": "<img src=\"src=&quot;https://ex.test/a%1Bb.png&quot;\" alt=\"x\u001by\" class=\"image\" />",
+  "ref_html": "<img src=\"src=&quot;https://ex.test/a\u001bb.png&quot;\" alt=\"x\u001by\" class=\"image\" />",
+  "html_sha256": "beeb84c9f11803376e6c465ff27072ca5112cbca96bead8c21c577d158efbdc2",
+  "source_sha256": "e7a1a8e015fa9eede4fd6b3c34d8d87a998bc5e1e2da9362abfc5ebf6d37e887",
+  "verdict": "CANDIDATE",
+  "first_diff": 61,
+  "live_context": "<img alt=\"x\u001by\" class=\"image\" src=\"src=&quot;https://ex.test/a%1Bb.png&quot;\">",
+  "ref_context": "<img alt=\"x\u001by\" class=\"image\" src=\"src=&quot;https://ex.test/a\u001bb.png&quot;\">"
+ },
+ {
+  "id": "s06-btn-edit-padzero",
+  "source": "[[button edit text=\" 0 \"]]",
+  "fullname": "muse-probe-round5h-s1-s06-btn-edit-padzero",
+  "live_canon": "<a class=\"wiki-standalone-button\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\">0</a>",
+  "ref_canon": "<a class=\"wiki-standalone-button\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\"> 0 </a>",
+  "live_sig": {
+   "hrefs": [
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"wiki-standalone-button\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\">0</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "0"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"wiki-standalone-button\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\"> 0 </a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "0"
+  },
+  "live_html": "<p><a class=\"wiki-standalone-button\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\">0</a></p>",
+  "ref_html": "<p><a class=\"wiki-standalone-button\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\" > 0 </a></p>\n\n",
+  "html_sha256": "7e133671b41e7ea58ee6232b1570499959c20b40a7bb6a3874505b9c8cf6da4a",
+  "source_sha256": "831a2fcc5054bd8f591a5246eefbd631c02a02b3cdab5426cfde321f41a2e07b",
+  "verdict": "CANDIDATE",
+  "first_diff": 104,
+  "live_context": "<a class=\"wiki-standalone-button\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\">0</a>",
+  "ref_context": "<a class=\"wiki-standalone-button\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\"> 0 </a>"
+ },
+ {
+  "id": "s07-btn-class-ctl",
+  "source": "[[button tags class=\"a\u001bb\" text=\"x\"]]",
+  "fullname": "muse-probe-round5h-s1-s07-btn-class-ctl",
+  "live_canon": "<a class=\"a\u001bb\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editTags(event)\">x</a>",
+  "ref_canon": "<a class=\"a\u001bb\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editTags(event)\">x</a>",
+  "live_sig": {
+   "hrefs": [
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"a\u001bb\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editTags(event)\">x</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "x"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"a\u001bb\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editTags(event)\">x</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "x"
+  },
+  "live_html": "<p><a class=\"a\u001bb\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editTags(event)\">x</a></p>",
+  "ref_html": "<p><a class=\"a\u001bb\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editTags(event)\" >x</a></p>\n\n",
+  "html_sha256": "4ff86923df067335bfb5cc6ac634999696fbe524341fb1575ec723f3ddc100e8",
+  "source_sha256": "a87dbd3ab451549877737230a9c7fbe2dbe579bfda27afb004a5bb30ed4d65b2",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s08-tabview-title-padzero",
+  "source": "[[tabview]][[tab title=\" 0 \" ]]x[[/tab]][[/tabview]]",
+  "fullname": "muse-probe-round5h-s1-s08-tabview-title-padzero",
+  "live_canon": "<div class=\"yui-navset\" id=\"wiki-tabview-X\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>0</em></a></li></ul><div class=\"yui-content\"><div id=\"wiki-tab-X\"><p>x</p></div></div></div>",
+  "ref_canon": "<div class=\"yui-navset\" id=\"wiki-tabview-X\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>untitled</em></a></li></ul><div class=\"yui-content\"><div id=\"wiki-tab-X\"><p>x</p></div></div></div>",
+  "live_sig": {
+   "hrefs": [
+    "javascript:;"
+   ],
+   "anchors": [],
+   "lists": [
+    "<ul class=\"yui-nav\">",
+    "<li class=\"selected\">"
+   ],
+   "divs": [
+    "<div class=\"yui-navset\" id=\"wiki-tabview-X\">",
+    "<div class=\"yui-content\">",
+    "<div id=\"wiki-tab-X\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "0 x"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "javascript:;"
+   ],
+   "anchors": [],
+   "lists": [
+    "<ul class=\"yui-nav\">",
+    "<li class=\"selected\">"
+   ],
+   "divs": [
+    "<div class=\"yui-navset\" id=\"wiki-tabview-X\">",
+    "<div class=\"yui-content\">",
+    "<div id=\"wiki-tab-X\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "untitled x"
+  },
+  "live_html": "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common--javascript/yahooui/tabview-min.js\"></script>\n<div id=\"wiki-tabview-953c7f7105cdd4805f03a1a833b21f27\" class=\"yui-navset\">\n<ul class=\"yui-nav\">\n<li class=\"selected\"><a href=\"javascript:;\"><em>0</em></a></li>\n</ul>\n<div class=\"yui-content\">\n<div id=\"wiki-tab-0-0\">\n<p>x</p>\n</div>\n</div>\n</div>\n<script type=\"text/javascript\">\n//<![CDATA[\nOZONE.dom.onDomReady(function(){\n        var tabView953c7f7105cdd4805f03a1a833b21f27 = new YAHOO.widget.TabView('wiki-tabview-953c7f7105cdd4805f03a1a833b21f27');\n                }, \"dummy-ondomready-block\");\n        \n//]]>\n</script>",
+  "ref_html": "<script type=\"text/javascript\" src=\"/common--javascript/yahooui/element-beta-min.js\"></script>\n<script type=\"text/javascript\" src=\"/common--javascript/yahooui/tabview-min.js\"></script><div id=\"wiki-tabview-0\" class=\"yui-navset\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>untitled</em></a></li></ul><div class=\"yui-content\"><div id=\"wiki-tab-0-0\"><p>x</p>\n\n</div></div></div><script type=\"text/javascript\">\n(function(){\n\tvar tabView0 = new YAHOO.widget.TabView('wiki-tabview-0');\n})();\n</script>",
+  "html_sha256": "1bc1aa560a3284dbe9fe7627f704df2a34124480c83d3593a5a2c27a891876d8",
+  "source_sha256": "05ab9b91a841572b06cfca830ebf9298ec51461044659f5f7434c9161966dfd5",
+  "verdict": "CANDIDATE",
+  "first_diff": 112,
+  "live_context": "<div class=\"yui-navset\" id=\"wiki-tabview-X\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>0</em></a></li></ul><div class=\"yui-content\"><div id=\"wiki-tab-X\"><p>x</p></div></div></div>",
+  "ref_context": "<div class=\"yui-navset\" id=\"wiki-tabview-X\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>untitled</em></a></li></ul><div class=\"yui-content\"><div id=\"wiki-tab-X\"><p>x</p></div></div></div>"
+ },
+ {
+  "id": "s09-fn-lead-soh",
+  "source": "[[footnote]]\u0001X[[/footnote]][[footnoteblock]]",
+  "fullname": "muse-probe-round5h-s1-s09-fn-lead-soh",
+  "live_canon": "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</div></div>",
+  "ref_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</p></div></div>",
+  "live_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "1 Footnotes 1 . X"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "1 Footnotes 1 . X"
+  },
+  "live_html": "<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</div>\n</div>",
+  "ref_html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X</p>\n\n</div></div>",
+  "html_sha256": "2b436edcac14672c0e762afa48a9b092449d2c55f1877f0329c0e2ef531c4b74",
+  "source_sha256": "d1e2929f5a7d3324157a303c39fcfc17c03f6a03806757f46aae26cd9db9af64",
+  "verdict": "CLEARED",
+  "reason": "serving/frame only; rule-level signature equal"
+ },
+ {
+  "id": "s10-fn-esc-break",
+  "source": "[[footnote]]\u001bX\f\nY[[/footnote]][[footnoteblock]]",
+  "fullname": "muse-probe-round5h-s1-s10-fn-esc-break",
+  "live_canon": "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. \u001bX<br> Y</div></div>",
+  "ref_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. \u001bX<br> Y</p></div></div>",
+  "live_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "1 Footnotes 1 . \u001bX Y"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "1 Footnotes 1 . \u001bX Y"
+  },
+  "live_html": "<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. \u001bX<br />\nY</div>\n</div>",
+  "ref_html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. \u001bX<br />\nY</p>\n\n</div></div>",
+  "html_sha256": "2cfcae2f43b0881933dca723446a63c9cece8bb1cb8773285a9c5d516bdd1f13",
+  "source_sha256": "581810f9dc760f8cd33c76aafcaceb0a110a6baf017478bce1a07f2706cb0a9d",
+  "verdict": "CLEARED",
+  "reason": "serving/frame only; rule-level signature equal"
+ },
+ {
+  "id": "s11-math-trail-ctl",
+  "source": "[[math type=\"align\u0001\"]]\nx\n[[/math]]",
+  "fullname": "muse-probe-round5h-s1-s11-math-trail-ctl",
+  "live_canon": "<div class=\"error-block\">Unsupported math environment \"align\"</div>",
+  "ref_canon": "<div class=\"error-block\">Unsupported math environment \"align\u0001\"</div>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class=\"error-block\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [
+    "<div class=\"error-block\">Unsupported math environment \"align\"</div>"
+   ],
+   "text": "Unsupported math environment \"align\""
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class=\"error-block\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [
+    "<div class=\"error-block\">Unsupported math environment \"align\u0001\"</div>"
+   ],
+   "text": "Unsupported math environment \"align\u0001\""
+  },
+  "live_html": "<div class=\"error-block\">Unsupported math environment \"align\"</div>",
+  "ref_html": "<div class=\"error-block\">Unsupported math environment \"align\u0001\"</div>",
+  "html_sha256": "926acef24634320b727e40b7dc53eeccfc8cc8f5879673322bdb87155bcae6c3",
+  "source_sha256": "afabb1cdb271dd108ebe77b3ae4babad1cf2672496989dbb774c9b229cfbcadb",
+  "verdict": "CANDIDATE",
+  "first_diff": 60,
+  "live_context": "<div class=\"error-block\">Unsupported math environment \"align\"</div>",
+  "ref_context": "<div class=\"error-block\">Unsupported math environment \"align\u0001\"</div>"
+ },
+ {
+  "id": "s12-raw-multi-short",
+  "source": "@@@@a@@@b@@@c@@",
+  "fullname": "muse-probe-round5h-s1-s12-raw-multi-short",
+  "live_canon": "a<span style=\"white-space: pre-wrap;\">@b</span>@c@@",
+  "ref_canon": "a<span style=\"white-space: pre-wrap;\">@b</span>@c@@",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [
+    "<span style=\"white-space: pre-wrap;\">@b</span>"
+   ],
+   "imgs": [],
+   "error": [],
+   "text": "a @b @c@@"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [
+    "<span style=\"white-space: pre-wrap;\">@b</span>"
+   ],
+   "imgs": [],
+   "error": [],
+   "text": "a @b @c@@"
+  },
+  "live_html": "<p>a<span style=\"white-space: pre-wrap;\">@b</span>@c@@</p>",
+  "ref_html": "<p>a<span style=\"white-space: pre-wrap;\">@b</span>@c@@</p>\n\n",
+  "html_sha256": "eb821a0431bb0c6d0f72d1685f8f205defa2d51d29ef767c57f28ec2fbc00547",
+  "source_sha256": "c34ebe3b3eb4f8cd7ed8633eaadfde2877c329a38a31058615c9ef53c15faec0",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s13-raw-xline-short",
+  "source": "@@@@\n@@a@@@b@@",
+  "fullname": "muse-probe-round5h-s1-s13-raw-xline-short",
+  "live_canon": "<br><span style=\"white-space: pre-wrap;\">a</span>@b@@",
+  "ref_canon": "<br><span style=\"white-space: pre-wrap;\">a</span>@b@@",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [
+    "<span style=\"white-space: pre-wrap;\">a</span>"
+   ],
+   "imgs": [],
+   "error": [],
+   "text": "a @b@@"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [
+    "<span style=\"white-space: pre-wrap;\">a</span>"
+   ],
+   "imgs": [],
+   "error": [],
+   "text": "a @b@@"
+  },
+  "live_html": "<p><br />\n<span style=\"white-space: pre-wrap;\">a</span>@b@@</p>",
+  "ref_html": "<p><br />\n<span style=\"white-space: pre-wrap;\">a</span>@b@@</p>\n\n",
+  "html_sha256": "9d7c04b2fa74eeab054fab7e8e01c4aaa6f7011e56edcf8bce7538844a2a2290",
+  "source_sha256": "be8df7592d5c941a186a352f1f575024fac4972fd6b9dde68a2761b37ff5ed72",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s14-table-hdr-ctl",
+  "source": "[[table]]\n|= h\u0001x | normal |\n| d_y | plain |\n[[/table]]",
+  "fullname": "muse-probe-round5h-s1-s14-table-hdr-ctl",
+  "live_canon": "[[table]]<br> |= hx | normal |<br> | d_y | plain |<br> [[/table]]",
+  "ref_canon": "[[table]]<br> |= hx | normal |<br> | d_y | plain |<br> [[/table]]",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "[[table]] |= hx | normal | | d_y | plain | [[/table]]"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "[[table]] |= hx | normal | | d_y | plain | [[/table]]"
+  },
+  "live_html": "<p>[[table]]<br />\n|= hx | normal |<br />\n| d_y | plain |<br />\n[[/table]]</p>",
+  "ref_html": "<p>[[table]]<br />\n|= hx | normal |<br />\n| d_y | plain |<br />\n[[/table]]</p>\n\n",
+  "html_sha256": "cc4cf17b9bb68a3956923347b3bbfdf0922d81519b55db7c1c3c7f61e432f576",
+  "source_sha256": "9d733116468997f23efb503b2bab083d8f3eeace32940aaf704a2c66ca24a8f6",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s15-fl-mixedlead",
+  "source": "[[[​\u001b_default:x|L]]]",
+  "fullname": "muse-probe-round5h-s1-s15-fl-mixedlead",
+  "live_canon": "<a href=\"/x\">L</a>",
+  "ref_canon": "<a href=\"/x\">L</a>",
+  "live_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">L</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "L"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">L</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "L"
+  },
+  "live_html": "<p><a class=\"newpage\" href=\"/x\">L</a></p>",
+  "ref_html": "<p><a class=\"newpage\" href=\"/x\">L</a></p>\n\n",
+  "html_sha256": "1e6d8913aa2889eb820761ffd61c584f4cfb97868606cdd3adf69439bb4bfc45",
+  "source_sha256": "8d35571f3c0194b43adaeda42eee6ed6a23098c9b524d094e67c06f18f8b6d39",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s16-div-id-nonascii",
+  "source": "[[div id=\"café\"]]t[[/div]]",
+  "fullname": "muse-probe-round5h-s1-s16-div-id-nonascii",
+  "live_canon": "[[div id=&quot;café&quot;]]t[[/div]]",
+  "ref_canon": "[[div id=&quot;café&quot;]]t[[/div]]",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "[[div id=&quot;café&quot;]]t[[/div]]"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "[[div id=&quot;café&quot;]]t[[/div]]"
+  },
+  "live_html": "<p>[[div id=&quot;café&quot;]]t[[/div]]</p>",
+  "ref_html": "<p>[[div id=&quot;café&quot;]]t[[/div]]</p>\n\n",
+  "html_sha256": "e05ea4d4526c04420f4d85bb2985f133492b836bce9bcfb23461d172b9ee0175",
+  "source_sha256": "d2c55327c4b3a733fec4384665461708f5183d10ed9a1bf53115a08eeb52ae05",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ }
+]

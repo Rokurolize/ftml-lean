@@ -1,0 +1,15 @@
+# CORRECTION-C-R5H-P3-1 — Raw later-run reassociation must cross a trailing newline (R5H-P3)
+
+Candidate: C-R5H-P3-1. Ledger row P3H-04 (Raw REFCORR14 line-confinement sibling). The suspicion was written before any live probe with the CONFIRM byte "live serves a Raw span across the newline such as a<span style=\"white-space: pre-wrap;\">b</span>" and the CLEAR byte "live serves a@@b<br /> then @@ on the next line with no span"; the CONFIRM byte is what was observed.
+
+Minimal source: `@@@@a@@b\n@@` — a four-byte @ opener, body `a`, a two-byte short closer, then body `b`, a newline and a two-byte later @ run.
+
+Decisive live bytes: capture `muse-probe-round5h-p3-p3h-04-raw-4op-2cl-nextline` (html_sha256 `6c8c3342ee6d7504abbcd00ad8fac1a1ab9f1a3aac83ea9007926d3d914685cf`) serves `<p>a<span style="white-space: pre-wrap;">b</span></p>`. Capture flags are valid=true, stable=true, saved_source_matches=true. The later two-byte run on the following line re-associates: the short closer is not final, `b` becomes the Raw span body and the newline is consumed into the reassociation.
+
+Reference bytes: `ref.jsonl` line 4 emits `<p>a@@b<br />\n@@</p>\n\n`, i.e. the closer stays final and the later run stays literal on the next line. After the standard probe.norm, campaign frame and owned-surface masks the comparison row is `<p>a@@b<br> @@</p>` against the live `<p>a<span style="white-space: pre-wrap;">b</span></p>`, a rule-level disagreement in exactly the reassociation value, not a serving surface, counter digit or Stage 2 frame.
+
+Owning reference file: `ref-php/text-wiki/Text/Wiki/Parse/Default/Raw.php`. The later-run scan at line 81 is `while (($p = strpos($src, '@@', $scan)) !== false && $p < $lineEnd)`, with `$lineEnd` set from the next newline at lines 53-54. The `$p < $lineEnd` term confines later-run detection to the opener's line, so a later run past a newline never sets `$laterQuad`; line 88 then declines the empty-Raw early exit and falls through to the final-closer shaping. REFCORR14 lowered the later-run length guard from four to two but did not remove this line-confinement term; ftml's finish_double_at_raw re-association is not line-confined.
+
+Mirror consequence inferred by source reading, no Lean elaboration run: `lean-ftml/LeanFtml/FormRawRules.lean::hasLaterQuad.go` stops at the first newline with `| 10 :: _ => false` (line 195), and the mirror's newline-bearing preOk arm at lines 308-316 computes `laterQuad := hasLaterQuad (afterRun.drop (c + closeRun))` and gates the early exit on `run < 4 || (c < l && !laterQuad)` (line 316). Both mirror paths are line-confined in the same way as the reference, so the mirror is inferred to emit the same non-reassociated `<p>a@@b<br />\n@@</p>` shape and therefore to diverge from live on this source. This is a source-reading inference only, not an elaboration claim.
+
+Adjudication: CONFIRMED. The coordinator should treat this as a fresh reference-and-mirror divergence opened by the REFCORR14 mechanism change and route a correction cycle; no source file is adopted by this unit.

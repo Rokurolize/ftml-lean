@@ -1,0 +1,16 @@
+{"id": "R5HR1-A1", "source": "[[div class=\"a\u000bb\"]]\nbody\n[[/div]]"}
+{"id": "R5HR1-A2", "source": "[[span style=\"\tcolor:red\t\"]]body[[/span]]"}
+{"id": "R5HR1-A3", "source": "[[span type=\"AB\"]]body[[/span]]"}
+{"id": "R5HR1-A4", "source": "[[span role=\"A\u001bB\"]]body[[/span]]"}
+{"id": "R5HR1-A5", "source": "[[div DATA-X=\"  a  \" data-x=\"b  \"]]\nbody\n[[/div]]"}
+{"id": "R5HR1-A6", "source": "[[div class=\"   \"]]\nbody\n[[/div]]"}
+{"id": "R5HR1-A7", "source": "[[span data-x=\"a\u001cb\"]]body[[/span]]"}
+{"id": "R5HR1-B1", "source": "alpha\\\n[[div type=\"AB\"]]\nbody\n[[/div]]"}
+{"id": "R5HR1-B2", "source": "alpha **x**\\\n[[div class=\"a  \"]]\nbody\n[[/div]]"}
+{"id": "R5HR1-B3", "source": "alpha [[size 9px]]y[[/size]]\\\n[[div role=\"  r  \"]]\nbody\n[[/div]]"}
+{"id": "R5HR1-B4", "source": "alpha\\\n[[div_ type=\"A\u001bB\"]]\nbody\n[[/div]]"}
+{"id": "R5HR1-C1", "source": "[[tabview]][[tab title=\"0 \"]]x[[/tab]][[/tabview]]"}
+{"id": "R5HR1-C2", "source": "[[collapsible show=\"A\u001bB\"]]body[[/collapsible]]"}
+{"id": "R5HR1-C3", "source": "[[div]]\n[[/div]]\nafter"}
+{"id": "R5HR1-C4", "source": "[[span_ class=\"  a  \"]]X[[/span]]"}
+{"id": "R5HR1-C5", "source": "[[ul]]\n[[li]]A[[UL]]\n[[li]]B[[/UL]][[/li]]\n[[/ul]]"}

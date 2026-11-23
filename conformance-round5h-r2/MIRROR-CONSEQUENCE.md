@@ -1,0 +1,15 @@
+# MIRROR-CONSEQUENCE R5H-R2 — inferred mirror effects from source reading
+
+No Lean invocation was made in this unit. Every statement below is a mirror consequence inferred by reading the canonical mirror sources in lean-ftml/LeanFtml/ at the post-REFCORR14 ground, not a claim of elaboration. Line numbers are the current canonical source lines.
+
+C-R5H-R2-1 and C-R5H-R2-3 (freelink hash-route auto label). LinkRules.lean freelinkProcess at lines 1135-1144 splits the `/#/` route with `raw.take i` for raw1 and keeps the consumed slash only in `textRaw = raw.take (i + 1)`; the external URL branch at lines 1151-1172 sets `text := if labelRaw.isEmpty then trimmed` from `trimmed = trimBytes raw1`, and `textRaw` is used only in the later local-page branch. Therefore the mirror is inferred to emit the no-slash auto label `https://example.com/p` where live emits `https://example.com/p/`, sharing the divergence.
+
+C-R5H-R2-2 (uppercase scheme URL classification). LinkRules.lean freelinkSchemes at lines 996-1003 lists the lowercase schemes and isUrlTarget at lines 1006-1007 tests them with `matchLitCI`, the case-insensitive literal matcher defined in FormRawRules.lean line 220. The mirror is therefore inferred to classify `HTTPS://EXAMPLE.COM/café` as a bare external URL and pass the case-insensitive scheme through the URL token, where live classifies it as a local page slug; the mirror shares the divergence.
+
+C-R5H-R2-4 (embed single-quoted vbscript value). CodeEmbedRules.lean attrMatchHere at lines 271-286 matches only a double-quote-delimited value (`34 :: r5 ... 34 :: r7`), and attrValues at lines 292-303 collects only those matches for the any-attribute scheme check. A single-quoted `srcdoc` value is never collected, so the mirror is inferred to pass the vbscript-bearing iframe through where live rejects it; the mirror shares the divergence.
+
+C-R5H-R2-5 (embed data scheme). CodeEmbedRules.lean valueHasBadScheme at lines 318-322 checks only the `javascript:` and `vbscript:` substrings after asciiLowerBytes, with no `data:` arm; srcHasBadScheme at lines 313-316 is likewise limited. The mirror is inferred to pass the double-quoted `data:text/html,hi` iframe through where live rejects it; the mirror shares the divergence.
+
+C-R5H-R2-6, C-R5H-R2-7 and C-R5H-R2-8 (gallery leading whitespace before a scheme). ServingRules.lean gallerySanitizeHref at lines 615-621 lowercases the href with asciiLowerBytes and applies `isPrefixOf` for the three dangerous schemes without trimming any leading tab or space, and galleryRowStep calls it at line 679 on the emitted href. The mirror is therefore inferred to keep the raw leading-whitespace href where live maps it to `#`, sharing all three divergences.
+
+Aggregate inference: all eight confirmed candidates have a mirror source transcription of the same mechanism, so a correction cycle would need coupled reference and mirror changes. This is source reading only; no theorem was elaborated and no axiom discipline claim is made here.

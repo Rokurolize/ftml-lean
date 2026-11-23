@@ -1,0 +1,18 @@
+{"id":"R5HP2-01","output":"<p><a class=\"newpage\" href=\"\/default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5HP2-02","output":"<p><a class=\"newpage\" href=\"\/default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5HP2-03","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5HP2-04","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5HP2-05","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5HP2-06","output":"<p><a href=\"http:\/\/example.com\/p#a?b\">L<\/a><\/p>\n\n"}
+{"id":"R5HP2-07","output":"<p><a href=\"http:\/\/example.com\/p?x=1#frag\">http:\/\/example.com\/p?x=1<\/a><\/p>\n\n"}
+{"id":"R5HP2-08","output":"<p><a href=\"http:\/\/example.com\/a-b\">http:example-com-a-b<\/a><\/p>\n\n"}
+{"id":"R5HP2-09","output":"<p><a target=\"_blank\" href=\"http:\/\/example.com\/p#frag\">L<\/a><\/p>\n\n"}
+{"id":"R5HP2-10","output":"<div class=\"error-block\">Unsupported math environment \"alignat\"<\/div>"}
+{"id":"R5HP2-11","output":"<div class=\"error-block\">Unsupported math environment \"aligned\"<\/div>"}
+{"id":"R5HP2-12","output":"<div class=\"error-block\">Unsupported math environment \"alignedat\"<\/div>"}
+{"id":"R5HP2-13","output":"<div class=\"error-block\">Unsupported math environment \"cases\"<\/div>"}
+{"id":"R5HP2-14","output":"<p>a<span style=\"white-space: pre-wrap;\">b<\/span><\/p>\n\n"}
+{"id":"R5HP2-15","output":"<p>@a<span style=\"white-space: pre-wrap;\">b<\/span><\/p>\n\n"}
+{"id":"R5HP2-16","output":"<p>a<span style=\"white-space: pre-wrap;\">b<\/span>@@<\/p>\n\n"}
+{"id":"R5HP2-17","output":"<p>A ZQ<span style=\"white-space: pre-wrap;\">&#32;B&#32;<\/span>@@ C<\/p>\n\n"}
+{"id":"R5HP2-18","output":"<p>a<span style=\"white-space: pre-wrap;\">b<\/span>c@@<\/p>\n\n"}

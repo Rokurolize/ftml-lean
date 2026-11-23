@@ -1,0 +1,182 @@
+{
+ "R5H-P4-C01": {
+  "fullname": "muse-probe-round5h-p4-r5h-p4-c01",
+  "html": "<p>a<span style=\"white-space: pre-wrap;\">@b</span></p>",
+  "html_sha256": "a14c1ec9a9e4a29fe60bd0a284b358105b4a0e0880b24c783e6e68475347f4b0",
+  "source": "@@@@a@@@b@@",
+  "source_sha256": "47ec3024052338e70b6aab0ea099be80c092263bdb46355d90024106958ada34",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5H-P4-C02": {
+  "fullname": "muse-probe-round5h-p4-r5h-p4-c02",
+  "html": "<p>a@@@b@</p>",
+  "html_sha256": "92a86cc9061045535cc5bdee7a194bd0e1a351d3ba99330cb456fc958d22bca5",
+  "source": "@@@@a@@@b@",
+  "source_sha256": "31bb864a9c63394739cbe291e5e535f1f52e23a73889556983b025a24813a746",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5H-P4-C03": {
+  "fullname": "muse-probe-round5h-p4-r5h-p4-c03",
+  "html": "<p>a<span style=\"white-space: pre-wrap;\">b</span>cd@@</p>",
+  "html_sha256": "392fd7e1813e1077eab81074f2b4ae7c0f21f7dc046837ced50a9eb92479469f",
+  "source": "@@@@a@@b@@cd@@",
+  "source_sha256": "3bf33fc8b5c945137158378d96386e7deb5d2fab1b210fac0f643ef8dae33a9c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5H-P4-C04": {
+  "fullname": "muse-probe-round5h-p4-r5h-p4-c04",
+  "html": "<p>a<span style=\"white-space: pre-wrap;\">@b</span>@</p>",
+  "html_sha256": "7ddfc8e249e277313a487b7bc8dfbadafc15ff299463e90a98590485d0c7fe8e",
+  "source": "@@@@a@@@b@@@",
+  "source_sha256": "565be2e541747c2833a5828d4e088a38d323e0236f09fc7c67c3789da196ad60",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5H-P4-C05": {
+  "fullname": "muse-probe-round5h-p4-r5h-p4-c05",
+  "html": "<p>a b<span style=\"white-space: pre-wrap;\">@c</span></p>",
+  "html_sha256": "2b1213e111133ca515f8ae0a8a60f97de54e5ffb754438c040e36eb661ff37b5",
+  "source": "@@@@a  b@@@c@@",
+  "source_sha256": "dcb10b29c3600174b7180046bedf573e890bb6fa4054cd6ef6d2fe739ee80bc8",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5H-P4-C06": {
+  "fullname": "muse-probe-round5h-p4-r5h-p4-c06",
+  "html": "<p>ab<span style=\"white-space: pre-wrap;\">@c</span></p>",
+  "html_sha256": "8ed6d6fc52b88168343505a50548ff6e0eed4e2064d493649bccfd4f65149916",
+  "source": "@@@@a\fb@@@c@@",
+  "source_sha256": "0666acc27d0531e0ad49f4d8480c60e1eba6192dbe42fb2f108b29e0621999c1",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5H-P4-C07": {
+  "fullname": "muse-probe-round5h-p4-r5h-p4-c07",
+  "html": "<p>a&#8212;b<span style=\"white-space: pre-wrap;\">@c</span></p>",
+  "html_sha256": "d461d816ddf0b5b5acd4f3c6be4b7936267fdf798780f174296dd82c279b2042",
+  "source": "@@@@a--b@@@c@@",
+  "source_sha256": "0de3abb86ece9879bc6807c8e08f2c1b38268f46e2a5249547926f1e82364223",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5H-P4-C08": {
+  "fullname": "muse-probe-round5h-p4-r5h-p4-c08",
+  "html": "<p>a<span style=\"white-space: pre-wrap;\">@b</span> c@@</p>",
+  "html_sha256": "9ae0b8b129632d6f6845e3e32c4b4350c1af31636c1027e7f45901ed97bdbd64",
+  "source": "@@@@a@@@b\n@@c@@",
+  "source_sha256": "8242916707d13029bd73f51ca1c9be50ad2c41fb7795508e8b079d495a793b43",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5H-P4-C09": {
+  "fullname": "muse-probe-round5h-p4-r5h-p4-c09",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A<br />\nB</div>\n</div>",
+  "html_sha256": "05a9750aeb1eb4cf5dba23da789c1ab1ae55e0f1ba03d36d5c2f1e8690fe60e4",
+  "source": "[[footnote]]A\u0003\nB[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "6e9a3e7dcaa6f6fd809d4f9d3ca9da08ca4e34ffd9bf1ad1686d355a3d2d39ec",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5H-P4-C10": {
+  "fullname": "muse-probe-round5h-p4-r5h-p4-c10",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A<br />\nB</div>\n</div>",
+  "html_sha256": "05a9750aeb1eb4cf5dba23da789c1ab1ae55e0f1ba03d36d5c2f1e8690fe60e4",
+  "source": "[[footnote]]A\u000e\nB[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "b247c8f317898b89d342b6ec386a32a705b16e071b9f892e1331b0958f4dcd1a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5H-P4-C11": {
+  "fullname": "muse-probe-round5h-p4-r5h-p4-c11",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A<br />\nB</div>\n</div>",
+  "html_sha256": "05a9750aeb1eb4cf5dba23da789c1ab1ae55e0f1ba03d36d5c2f1e8690fe60e4",
+  "source": "[[footnote]]A\u001d\nB[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "76ae92425645a268d5e4068884c79345b022dea7bc37a0108784798628e95bb6",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5H-P4-C12": {
+  "fullname": "muse-probe-round5h-p4-r5h-p4-c12",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A\u001b<br />\nB</div>\n</div>",
+  "html_sha256": "cbc8481210f14a13f82ea7c4d0461c21086ce1e2eb3508ff15d86f49b818509d",
+  "source": "[[footnote]]A\u001b\u0003\nB[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "245dd0f78351aa97441a3ab27853e629390fb84a4819a5a3ef69be35b62e9870",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5H-P4-C13": {
+  "fullname": "muse-probe-round5h-p4-r5h-p4-c13",
+  "html": "<p>A B</p>",
+  "html_sha256": "036156d0e73a072ff96f2631eb56732be5bb90733f7a01685ac90cb54344f72d",
+  "source": "A\t\u000e\tB",
+  "source_sha256": "ee708956f38662d1dcdc690fb971b5b90240bf1157f61311356eb5380be4be3c",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5H-P4-C14": {
+  "fullname": "muse-probe-round5h-p4-r5h-p4-c14",
+  "html": "<p>[[div]]a[[/div]][[div]]b[[/div]]</p>",
+  "html_sha256": "76eec5de29f0bd5a9d26d1090672499c509b14cbe955afc2c1dd2885b85d6b1d",
+  "source": "[[div]]a[[/div]]\u0003[[div]]b[[/div]]",
+  "source_sha256": "4948721d555e2666087b2293577bc879f2cd8b5ebff83aa0533195c8bcebf864",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5H-P4-C15": {
+  "fullname": "muse-probe-round5h-p4-r5h-p4-c15",
+  "html": "<p>1234</p>",
+  "html_sha256": "c506b70e3bf3258ae645320dd5a25003bbab53bf100268214a807403050c3a41",
+  "source": "1\u000e234",
+  "source_sha256": "07c9a4e4d400ec840c265ff361083515eb97c16e3fde920881a87c0b1bcb29a0",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5H-P4-C16": {
+  "fullname": "muse-probe-round5h-p4-r5h-p4-c16",
+  "html": "<p>AB</p>",
+  "html_sha256": "6b73f431390642accfdc7b050daf220cdec4f0b29226f270ad4b826d19807210",
+  "source": "A--\u000e--B",
+  "source_sha256": "e5ffc8612fe586b5d6b6ea5384401af21e0360f4299649f360c1f66b975dea79",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5H-P4-C17": {
+  "fullname": "muse-probe-round5h-p4-r5h-p4-c17",
+  "html": "<p>alpha⁠bravo</p>",
+  "html_sha256": "d024ec5e50434c83e1278799b917d74955397d3be30eeda72749a8402e0c0182",
+  "source": "alpha⁠bravo",
+  "source_sha256": "7b65cec1fe9ab133df8fbc5bb22b8690d72b15a571f3bb4013167f45dba54911",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R5H-P4-C18": {
+  "fullname": "muse-probe-round5h-p4-r5h-p4-c18",
+  "html": "<p>alpha‍bravo</p>",
+  "html_sha256": "387722ac2ffd9476cabc9d6686b3ab343f832373732d4d5be5c5bfac2577a173",
+  "source": "alpha‍bravo",
+  "source_sha256": "ee40276e05b896d437ce503f39102c1458ffc589d2386f75fa092bf657666cab",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

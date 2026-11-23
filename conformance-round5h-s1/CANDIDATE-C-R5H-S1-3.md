@@ -1,0 +1,7 @@
+# C-R5H-S1-3 — image src interior ESC: live percent-encodes, reference leaves raw
+
+Suspicion S05, capture id `muse-probe-round5h-s1-s05-img-src-ctl`, html_sha256 `beeb84c9f11803376e6c465ff27072ca5112cbca96bead8c21c577d158efbdc2`, ref.jsonl row 5. Minimal source `[[image src="https://ex.test/a\u001bb.png" alt="x\u001by"]]`. This combines the Image renderer's non-ASCII-only src encoder with the REFCORR13 D-set byte policy; the same interior-control seam was confirmed on the Freelink rule but the Image encoder is a separate transcription and had not been measured with a control byte in the src.
+
+Decisive live bytes `<img src="src=&quot;https://ex.test/a%1Bb.png&quot;" alt="x\x1by" class="image" />` versus reference bytes `<img src="src=&quot;https://ex.test/a\x1bb.png&quot;" alt="x\x1by" class="image" />`; the `alt` value keeps the raw ESC identically on both sides, so the differing rule-level value is the ESC byte in the emitted src. Live emits `%1B`, the reference leaves it raw.
+
+Owning reference file `ref-php/text-wiki/Text/Wiki/Render/Xhtml/Image.php` lines 55-60, where `encodeNonAscii` rewrites only bytes outside ASCII, applied at line 197 to the src. Mirror consequence inferred by source reading, not by elaboration: `ServingRules.lean::renderImage` line 456 applies `percentEncodeNonAscii` to the src, and `InlineSimpleRules.lean::percentEncodeNonAscii` lines 65-67 leaves the ESC byte alone; the mirror needs the same non-printable widening on the Image src path as the reference.

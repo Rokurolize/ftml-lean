@@ -1,0 +1,167 @@
+[
+ {
+  "id": "RAW-L3",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "7ddfc8e249e277313a487b7bc8dfbadafc15ff299463e90a98590485d0c7fe8e",
+  "source_sha256": "565be2e541747c2833a5828d4e088a38d323e0236f09fc7c67c3789da196ad60",
+  "live_norm": "<p>a<span style=\"white-space: pre-wrap;\">@b</span>@</p>",
+  "ref_norm": "<p>a<span style=\"white-space: pre-wrap;\">@b</span>@</p>",
+  "equal": true
+ },
+ {
+  "id": "RAW-M2",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "6c8c3342ee6d7504abbcd00ad8fac1a1ab9f1a3aac83ea9007926d3d914685cf",
+  "source_sha256": "d5b9f955f63c7985b841e80e4fbe1517385eaa8a81689519d0c5871a222ce95b",
+  "live_norm": "<p>a<span style=\"white-space: pre-wrap;\">b</span></p>",
+  "ref_norm": "<p>a<span style=\"white-space: pre-wrap;\">b</span></p>",
+  "equal": true
+ },
+ {
+  "id": "RAW-OP5",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "4c0a3ae9d20a2e951da38e7ff0244e879a34e66477d3f5f60015fab12cf6732a",
+  "source_sha256": "5b9b5b3e012570b6f9b7f83498927d774ebe50805180afcd18c8423c49ba64fe",
+  "live_norm": "<p>@a<span style=\"white-space: pre-wrap;\">@b</span></p>",
+  "ref_norm": "<p>@a<span style=\"white-space: pre-wrap;\">@b</span></p>",
+  "equal": true
+ },
+ {
+  "id": "RAW-TWOLATE",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "37aa67b4f2b541120afc435fb2fb02b637f897c9bbd52d24e90c62b469b3bd26",
+  "source_sha256": "0bbe7a93f4fd5fc845ea45562668a335770e52f2f453fcd05256c6e8c7ca4ead",
+  "live_norm": "<p>a<span style=\"white-space: pre-wrap;\">@b</span>c@@</p>",
+  "ref_norm": "<p>a<span style=\"white-space: pre-wrap;\">@b</span>c@@</p>",
+  "equal": true
+ },
+ {
+  "id": "RAW-NL",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "996a7dec060cbe0f2b02d7565280edf2cee6572d455bd4dca2f79eefebcb55cb",
+  "source_sha256": "cd1668d65b42b1ec25731019ee0c32a037e0fc5cce86e72dd67b62469e98a162",
+  "live_norm": "<p>a@@@<br> b@@</p>",
+  "ref_norm": "<p>a@@@<br> b@@</p>",
+  "equal": true
+ },
+ {
+  "id": "RAW-LONE",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "01b0072e1959965ddf35293707ea865c2d7138d1fec260137072bf7cee6b0732",
+  "source_sha256": "0d1025aa2ceaaa06f93e3f140b95ae69367ba6f7aa9961af6db154038ccbccfd",
+  "live_norm": "<p>a<span style=\"white-space: pre-wrap;\">@b@x</span></p>",
+  "ref_norm": "<p>a<span style=\"white-space: pre-wrap;\">@b@x</span></p>",
+  "equal": true
+ },
+ {
+  "id": "L-ADJ-LOWOL",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "95c6a8ae13af670aa067aa78d5cd48947ff9a0859b208dc570a564113dfc3ba9",
+  "source_sha256": "1cd5a50cb6b77b56e4849de52e472ce1697380e78f6b03530da58f6884517497",
+  "live_norm": "<ol> <li>outer</li> <li>in</li> </ol> [[LI]]tail[[/LI]]<br> [[/ol]]",
+  "ref_norm": "<ol> <li>outer</li> <li>in</li> </ol> [[LI]]tail[[/LI]]<br> [[/ol]]",
+  "equal": true
+ },
+ {
+  "id": "L-ADJ-SCOREALL",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "39f20d317e8134d78e2216eab3287beda0f093c49223c0d39a67e49bf5dfbc96",
+  "source_sha256": "d8ce09733fcda531caeff0e5ee8da22b9ee38538f9f2e3cb34b9382f76155052",
+  "live_norm": "<p>[[UL_]]<br> [[LI]]outer[[ul_]]<br> [[LI]]in[[/LI]]<br> [[/ul_]]<br> [[/LI]]<br> [[/UL_]]<br> [[LI]]tail[[/LI]]<br> [[/UL_]]</p>",
+  "ref_norm": "<ul> <li>outer[[ul_]]<br> [[LI]]in</li> <li>tail[[/UL_]]</li> </ul>",
+  "equal": false
+ },
+ {
+  "id": "L-ADJ-NESTATTR",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "d1e15ccbc91f219c492514a080870e78df7347849ae75bca0a0011349ae4d2ec",
+  "source_sha256": "6052889019dd413095e7add857706d4d44697059689e49e607b52cc05f621eb8",
+  "live_norm": "<ul> <li>outer</li> </ul> <ul class=\"x\"> <li>in</li> </ul> [[LI]]tail[[/LI]]<br> [[/UL]]",
+  "ref_norm": "<ul> <li>outer</li> </ul><ul> <li>in</li> </ul> [[LI]]tail[[/LI]]<br> [[/UL]]",
+  "equal": false
+ },
+ {
+  "id": "L-ADJ-BLANK",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "b6c64916338b1a4e66d40f6b5a9d2de22fe8d0339b287b089f16575fe527c2d0",
+  "source_sha256": "761a98669721c80c5a0d17b185dff1a2c6b1133edb219ef40f66159376428e17",
+  "live_norm": "<ul> <li>A</li> </ul> <ul> <li>B</li> </ul> <br> [[LI]]tail[[/LI]]<br> [[/UL]]",
+  "ref_norm": "<ul> <li>A</li> </ul><ul> <li>B</li> </ul> <br> [[LI]]tail[[/LI]]<br> [[/UL]]",
+  "equal": false
+ },
+ {
+  "id": "L-ADJ-FTIN",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "0dd7ed1f1172b2917a659104fca6dffcc18054c7ad007cb5c11c1a526f171552",
+  "source_sha256": "c09a1cdd93334cf7b533d3a226381d2c87d2d3231cdc9eb1afb72e47feb76c09",
+  "live_norm": "<ul> <li>A<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-X\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-X')\">1</a></sup>P<br></li> </ul> <div class=\"footnotes-footer\"> <div class=\"title\">Footnotes</div> <div class=\"footnote-footer\" id=\"footnote-X\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-X')\">1</a>. n</div> </div> <br> Q[[LI]]tail[[/LI]]<br> [[/UL]]",
+  "ref_norm": "<ul> <li>A<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-X\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-X')\">1</a></sup>P<br> <div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-X\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-X')\">1</a>. n</div></div><br> Q[[LI]]tail[[/LI]]<br> [[/UL]]</li> </ul>",
+  "equal": false
+ },
+ {
+  "id": "CL-SPANTYPE",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "bbf635cb9530b180c51e22d93d56c0f7bfd90e939b8e62dfc83c7c969819c600",
+  "source_sha256": "981f34a514d1d406c0d65073647a8bb7db25d1f37b5d29501857d183e7fba342",
+  "live_norm": "alpha<span type=\"A\u001bB\">bravo</span>",
+  "ref_norm": "alpha<span type=\"A\u001bB\">bravo</span>",
+  "equal": true
+ },
+ {
+  "id": "CL-DIVSTYLE",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "1a0820f01df06fe47f55736c5d1548860e0d1eedf51467e9934bc432354079d0",
+  "source_sha256": "6a8998b180b7d9c1c2117770ae7766b3217ec6025db89f2e9e3e577add2a810a",
+  "live_norm": "alpha <div style=\"AB\"> <p>bravo</p> </div>",
+  "ref_norm": "alpha <div style=\"AB\"><p>bravo</p> </div>",
+  "equal": false
+ },
+ {
+  "id": "CL-DIVDATA",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "64eafe90e9a192f6022fc9a507b6aafb7a9cab931de7118601d8ce1320a28b80",
+  "source_sha256": "72fcb1a83e05f82d4fe0b4168c39d1b567dd2a937fdbfc3121525aef5f73f062",
+  "live_norm": "alpha <div data-x=\"A B\"> <p>bravo</p> </div>",
+  "ref_norm": "alpha <div data-x=\"A B\"><p>bravo</p> </div>",
+  "equal": false
+ },
+ {
+  "id": "CL-SPANROLE",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "f8006968fc68c80b38fe646b53c73a81586a53151ea4e15478de69b822049e27",
+  "source_sha256": "eb05dbbe5aceb58984b90d28e02a079620cece114ee27c4de24a26d7fba2b2ea",
+  "live_norm": "alpha<span role=\"AB\">bravo</span>",
+  "ref_norm": "alpha<span role=\"AB\">bravo</span>",
+  "equal": true
+ }
+]

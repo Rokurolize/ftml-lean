@@ -1,0 +1,15 @@
+{"id": "RAW-L3", "source": "@@@@a@@@b@@@"}
+{"id": "RAW-M2", "source": "@@@@a@@b@@"}
+{"id": "RAW-OP5", "source": "@@@@@a@@@b@@"}
+{"id": "RAW-TWOLATE", "source": "@@@@a@@@b@@c@@"}
+{"id": "RAW-NL", "source": "@@@@a@@@\nb@@"}
+{"id": "RAW-LONE", "source": "@@@@a@@@b@x@@"}
+{"id": "L-ADJ-LOWOL", "source": "[[ol]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/ol]]\n[[LI]]tail[[/LI]]\n[[/ol]]"}
+{"id": "L-ADJ-SCOREALL", "source": "[[UL_]]\n[[LI]]outer[[ul_]]\n[[LI]]in[[/LI]]\n[[/ul_]]\n[[/LI]]\n[[/UL_]]\n[[LI]]tail[[/LI]]\n[[/UL_]]"}
+{"id": "L-ADJ-NESTATTR", "source": "[[UL]]\n[[LI]]outer[[ul class=\"x\"]]\n[[li]]in[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]"}
+{"id": "L-ADJ-BLANK", "source": "[[UL]]\n[[LI]]A[[ul]]\n[[li]]B[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]\n\n[[LI]]tail[[/LI]]\n[[/UL]]"}
+{"id": "L-ADJ-FTIN", "source": "[[UL]]\n[[LI]]A[[footnote]]n[[/footnote]]P[[footnoteblock]]Q[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]"}
+{"id": "CL-SPANTYPE", "source": "alpha\\\n[[span_ type=\"A\u001bB\"]]bravo[[/span]]"}
+{"id": "CL-DIVSTYLE", "source": "alpha\\\n[[div style=\"  AB  \"]]\nbravo[[/div]]"}
+{"id": "CL-DIVDATA", "source": "alpha\\\n[[div data-x=\"A\tB\"]]\nbravo[[/div]]"}
+{"id": "CL-SPANROLE", "source": "alpha\\\n[[span_ role=\"A\u000bB\"]]bravo[[/span]]"}
