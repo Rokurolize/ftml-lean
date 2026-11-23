@@ -1165,3 +1165,16 @@ def main : IO Unit :=
 #print axioms LeanFtml.r15_emphasis_quad_empty
 #print axioms LeanFtml.r15_strikethrough_skips_span_end
 #print axioms LeanFtml.r15_iftags_hash_if_d42
+
+-- Bundles wave 1 (2026-11-24): generic RuleProofBundle composition
+-- (runRules_eq_ref_of_bundles), the complete Delimiter bundle, and the
+-- WF composition prefix of pipelineFull extended to take 3.
+#print axioms LeanFtml.runRules_eq_ref_of_bundles
+#print axioms LeanFtml.delimiter_bundle
+#print axioms LeanFtml.delimiterBundleW1
+#print axioms LeanFtml.runRules_delimiter_eq_ref
+#print axioms LeanFtml.applyRule_prefilter_preserves_wf
+#print axioms LeanFtml.applyRule_delimiter_preserves_wf
+#print axioms LeanFtml.pipelineFull_take_three
+#print axioms LeanFtml.pipelineFull_wf_prefix3
+#print axioms LeanFtml.pipelineFull_wf_prefix3_of_wf
