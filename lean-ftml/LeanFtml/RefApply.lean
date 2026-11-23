@@ -28,12 +28,15 @@
   captures — is exact, and is the half F2 owns (certified against
   PHP 8.5 libpcre2 by conformance-pcre2/).
 
-  Rules with no extracted primary pattern (prefilter, delimiter,
-  concatlines, freelink, footnoteitem, footnoteblock, bibitem,
-  bibliography, url, typography, tighten) have `refParsed r = []`
-  and `applyRuleRef` is the identity on them: their real drivers
-  are inline `preg_*` calls or custom loops, recorded in RefTables'
-  inline table, and wiring those is likewise family-lane work.
+  Rules with no extracted primary pattern (prefilter, concatlines,
+  footnoteitem, footnoteblock, bibitem, bibliography, typography,
+  tighten) have `refParsed r = []` and `applyRuleRef` is the
+  identity on them: their real drivers are inline `preg_*` calls
+  or custom loops, recorded in RefTables' inline table, and wiring
+  those is likewise family-lane work.  Delimiter, freelink, and
+  url are not in this list: the extractor's resolution pass gives
+  them `php-resolved-dynamic` primaries, so `applyRuleRef` runs
+  those resolved patterns like any other rule's.
   Patterns carrying the `/u` flag parse here, but their byte-mode
   semantics are F3 UnicodeCore's responsibility, exactly as in
   PcreCore's own scope statement.

@@ -43,10 +43,14 @@
   i, s, m, U, D (u parsed and carried; its semantics are F3
   UnicodeCore's).  The extractor reports exactly this construct set
   for snapshot-39 (23 constructs, 6 flags); anything outside it
-  (atomic groups, possessive quantifiers, conditionals, \K, \G,
+  (atomic groups, possessive quantifiers, conditionals, \K,
   callouts, `(?1)` subroutines, `(?(DEFINE))`) is absent from the
   corpus and unimplemented, and the parser rejects it rather than
-  approximating it.  The do-notation `StateM` driver over this
+  approximating it.  The same rejection, never literalization,
+  applies to \A, \z, \Z and to every other letter escape outside
+  the fragment (\a, \e, \c, \h, \p, \Q, ...): no unrecognized
+  letter escape is silently read as the literal byte.  The
+  do-notation `StateM` driver over this
   engine, proved with vcgen per the pilot, lives in
   LeanFtml.PcreCoreScan.
 
@@ -55,10 +59,13 @@
   `/u` UTF-8 mode (4 rules: Include, Freelink, Div, Tableadv), which is F3's
   UnicodeCore responsibility; the `utf8` flag is parsed and carried but the
   byte matcher deliberately does not claim Unicode semantics.  Configured
-  pattern templates (Delimiter, Url) are instantiated by the caller.  No
-  atomic groups, possessive quantifiers, conditionals, `\K`, `\G`, callouts,
-  recursion-subroutine calls `(?1)`, or `(?(DEFINE))` are present in the
-  extracted corpus, so they are not implemented.  Fuel is a bounded
+  pattern templates (Delimiter, Url) are instantiated by the caller.
+  `\G` is implemented: it is the `.gpos` assertion against the anchor
+  threaded through `runMatch`, and the global drivers hold it at the
+  previous match end.  No atomic groups, possessive quantifiers,
+  conditionals, `\K`, callouts, recursion-subroutine calls `(?1)`, or
+  `(?(DEFINE))` are present in the extracted corpus, so they are not
+  implemented.  Fuel is a bounded
   certificate parameter; a universal fuel-sufficiency theorem is NOT
   claimed here — the bounded PCRE2 torture suite (conformance-pcre2/) is
   the honest maximum against external C code (policy §2.2 Class C).
@@ -478,6 +485,14 @@ def octByte : List Nat → Nat × List Nat
       if 48 ≤ c1 && c1 ≤ 55 then (c1 - 48, rest) else (0, c1 :: rest)
   | [] => (0, [])
 
+/-- One character-class item: a plain byte or a class escape.
+    Escape handling mirrors the atom level: the recognized escapes
+    are the class items, the control escapes, `\xHH` and octal; a
+    `\x` with no hex digit and every unrecognized letter escape
+    (`\a`, `\e`, `\h`, `\p`, `\K`, `\A`, ...) return `none`, never
+    the literal letter -- PCRE2 either rejects those itself or gives
+    them non-literal semantics.  Only non-letter identity escapes
+    (`\-`, `\]`, `\\`, ...) denote the literal byte. -/
 def classChar : List Nat → Option (ClassPiece × List Nat)
   | 92 :: c :: rest => match c with
       | 115 => some (.item .wsp, rest)
@@ -494,9 +509,10 @@ def classChar : List Nat → Option (ClassPiece × List Nat)
       | 98 => some (.chr 8, rest)
       | 120 => match hexByte rest with
         | some (v, r) => some (.chr v, r)
-        | none => some (.chr 120, rest)
+        | none => none
       | 48 => let (v, r) := octByte rest; some (.chr v, r)
-      | _ => some (.chr c, rest)
+      | _ => if (65 ≤ c && c ≤ 90) || (97 ≤ c && c ≤ 122) then none
+             else some (.chr c, rest)
   | c :: rest => some (.chr c, rest)
   | [] => none
 
@@ -575,6 +591,23 @@ def parseQuant (bs : List Nat) : (Option (Nat × Option Nat)) × List Nat × Boo
       | none => (none, bs, false)
   | _ => (none, bs, false)
 
+/-- PCRE2 compile-time rejections on the quantifier path, checked in
+    `parseGo`'s `.seq` case after `parseQuant` succeeds: a possessive
+    `+` mark following the quantifier (after any lazy `?` mark), an
+    inverted `{n,m}` range, and a bound above PCRE2's 65535 limit.
+    Possessive quantifiers are outside F_pcre and must fail the parse
+    outright; without this check the `+` fell through to the atom
+    parser and was silently read as a literal plus sign. -/
+def quantifierRejected (q : Option (Nat × Option Nat)) (rest : List Nat) :
+    Bool :=
+  match q, rest with
+  | some _, 43 :: _ => true
+  | some (mn, mx), _ =>
+      65535 < mn || (match mx with
+        | some m => m < mn || 65535 < m
+        | none => false)
+  | none, _ => false
+
 inductive ParseTask where
   | alt | seq | atom
 deriving Inhabited, Repr, DecidableEq, BEq
@@ -600,16 +633,17 @@ def parseGo (ungreedy : Bool) : ParseTask → Nat → Nat → List Nat →
         else match parseGo ungreedy .atom fuel g bs with
           | some (a, g1, rest1) =>
               let (q, rest2, lz) := parseQuant rest1
-              let a' := match q with
-                | some (mn, mx) =>
-                    let gr := !ungreedy
-                    RE.rep a mn mx (if lz then !gr else gr)
-                | none => a
-              match parseGo ungreedy .seq fuel g1 rest2 with
-                | some (s, g2, rest3) =>
-                    let combined : RE := match s with | .eps => a' | _ => .seq a' s
-                    some (combined, g2, rest3)
-                | none => none
+              if quantifierRejected q rest2 then none else
+                let a' := match q with
+                  | some (mn, mx) =>
+                      let gr := !ungreedy
+                      RE.rep a mn mx (if lz then !gr else gr)
+                  | none => a
+                match parseGo ungreedy .seq fuel g1 rest2 with
+                  | some (s, g2, rest3) =>
+                      let combined : RE := match s with | .eps => a' | _ => .seq a' s
+                      some (combined, g2, rest3)
+                  | none => none
           | none => none
   | .atom, fuel + 1, g, bs => match bs with
     | [] => none
@@ -640,6 +674,12 @@ def parseGo (ungreedy : Bool) : ParseTask → Nat → Nat → List Nat →
     | 91 :: _ => match parseClass fuel bs with
         | some (re, r) => some (re, g, r)
         | none => none
+    -- Escapes: the recognized set is the fragment's (class items,
+    -- \b \B \G, the control escapes, \xHH, octal, backreferences).
+    -- A `\x` with no hex digit fails, and every other letter escape
+    -- (\A \K \z \Z \a \e \c \h \p \Q ...) fails in the fallback arm
+    -- below rather than being read as the literal letter; only
+    -- non-letter identity escapes denote the literal byte.
     | 92 :: c :: rest => match c with
       | 115 => some (.cls false [.wsp], g, rest)
       | 83 => some (.cls true [.wsp], g, rest)
@@ -657,14 +697,23 @@ def parseGo (ungreedy : Bool) : ParseTask → Nat → Nat → List Nat →
       | 118 => some (.byte 11, g, rest)
       | 120 => match hexByte rest with
         | some (v, r) => some (.byte v, g, r)
-        | none => some (.byte 120, g, rest)
+        | none => none
       | 48 => let (v, r) := octByte rest; some (.byte v, g, r)
       | d => if 49 ≤ d && d ≤ 57
              then some (.back (d - 48), g, rest)
+             else if (65 ≤ d && d ≤ 90) || (97 ≤ d && d ≤ 122) then none
              else some (.byte d, g, rest)
     | 46 :: rest => some (.dot, g, rest)
     | 94 :: rest => some (.bol, g, rest)
     | 36 :: rest => some (.eol, g, rest)
+    -- A quantifier byte or a lone trailing backslash in atom
+    -- position is a PCRE2 compile error (a quantifier with nothing
+    -- to repeat, a possessive mark with no quantifier before it),
+    -- never a literal byte.
+    | 42 :: _ => none
+    | 43 :: _ => none
+    | 63 :: _ => none
+    | 92 :: _ => none
     | c :: rest => some (.byte c, g, rest)
 
 def flagsOfBytes (bs : List Nat) : Flags :=
