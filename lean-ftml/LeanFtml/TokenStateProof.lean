@@ -12,14 +12,14 @@
   bridge theorem a direct corollary of the first; it does not assume either
   bridge.
 
-  Honest bound: the two headline bridge theorems parseBytes_byteForm_id and
-  byteForm_parseBytes_id are NOT proved in this unit. Their exact statements
-  are recorded at the end of the file as obligations. What blocks them is
-  the list-level UTF-8 round trip: utf8Decode (cs.flatMap utf8Bytes) = cs and
-  utf8Valid bs -> (utf8Decode bs).flatMap utf8Bytes = bs. ByteCore proves
-  the singleton BMP case; the fuel-indexed generalisation to arbitrary
-  lists was not obtained inside the core-only budget. No proof is invented
-  and no axiom is introduced.
+  Discharge note (2026-11-24, unit F1-BRIDGES): the two headline bridge
+  theorems parseBytes_byteForm_id and byteForm_parseBytes_id are proved in
+  LeanFtml/Proof/F1Bridges.lean, under exactly the names and statements
+  recorded at the end of this file. The blocking list-level UTF-8 round
+  trips are proved there in full: utf8Decode (cs.flatMap utf8Bytes) = cs
+  for arbitrary cs, and (utf8Decode bs).flatMap utf8Bytes = bs for valid
+  bs with no delimiter byte, including the astral four-byte forms that
+  ByteCore's singleton BMP case left open.
 -/
 import LeanFtml.TokenState
 import LeanFtml.FormRawRules
@@ -153,17 +153,19 @@ theorem segsTokEquiv_length (σ : Nat → Nat) (as bs : List TSeg)
     | nil => contradiction
     | cons b bs => simp [segsTokEquiv] at h; simpa using ih bs h.2
 
-/-! ## Open headline obligations (NOT proved — see UNIT.md)
+/-! ## Headline bridge obligations (discharged in LeanFtml/Proof/F1Bridges.lean)
+
+The two theorems below were recorded here as open obligations in
+proof-base-v1. They are proved, under exactly these names and statements,
+in LeanFtml/Proof/F1Bridges.lean (unit F1-BRIDGES, 2026-11-24), together
+with the two list-level UTF-8 round trips they were blocked on. The
+statements are kept here verbatim as the record of what was owed:
 
 theorem parseBytes_byteForm_id (segs : List TSeg) (n : Nat) (h : WFSegs segs n) :
-    parseBytes (byteForm segs) = segs := by
-  -- requires utf8Decode (cs.flatMap utf8Bytes) = cs for arbitrary cs
-  _
+    parseBytes (byteForm segs) = segs
 
 theorem byteForm_parseBytes_id (bs : List Nat) (n : Nat) (h : WFBytes bs n) :
-    byteForm (parseBytes bs) = bs := by
-  -- follows from parseBytes_byteForm_id and h's image witness; not proved
-  _
+    byteForm (parseBytes bs) = bs
 -/
 
 end LeanFtml
