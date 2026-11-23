@@ -4,10 +4,13 @@
   DIFF module-mod-nested-two-openers
     fresh: ('output', '"\\u00femodule \\"css\\" +module_body%3D%22%25FF2086%25FF%22 \\u00fe"')
     hist:  ('output', '"\\u00femodule \\"css\\" +module_body%3D%22%25FF557%25FF%22 \\u00fe"')
-== modulex-: fresh 29 vs historical 29; disagreements 1
+== modulex-: fresh 29 vs historical 29; disagreements 2
   DIFF modulex-x-known-mod-body-654
-    fresh: ('output', '"\\u00femodule \\"CSS\\" +module_body%3D%22%25FF3587%25FF%22 \\u00fe"')
+    fresh: ('output', '"\\u00femodule \\"CSS\\" +module_body%3D%22%25FF3586%25FF%22 \\u00fe"')
     hist:  ('output', '"\\u00femodule \\"CSS\\" +module_body%3D%22%25FF425%25FF%22 \\u00fe"')
+  DIFF modulex-x-mod-body-654-inline
+    fresh: ('output', '"<div class=\\"error-block\\">[[module <em>UnknownModuleX</em>]] No such module, please <a href=\\"https://www.wikidot.com/doc:modules\\" target=\\"_blank\\">check available modules</a> and fix this page.</div>"')
+    hist:  ('output', '"<div class=\\"error-block\\">[[module <em>UnknownModuleX</em>]] No such module, please <a href=\\"https://www.wikidot.com/doc:modules\\" target=\\"_blank\\">check available modules</a> and fix this page.</div><p>[[/module]]</p>\\n\\n"')
 == module654-: fresh 59 vs historical 59; disagreements 0
 == image-: fresh 68 vs historical 68; disagreements 0
 == gallery-: fresh 88 vs historical 87; disagreements 1
@@ -18,4 +21,4 @@
 == user-: fresh 82 vs historical 82; disagreements 0
 == file-: fresh 83 vs historical 83; disagreements 0
 == filesupp-: fresh 6 vs historical 6; disagreements 0
-TOTAL DISAGREEMENTS 3
+TOTAL DISAGREEMENTS 4
