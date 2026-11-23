@@ -14,6 +14,17 @@ Usage:
   extract_ref_tables.py [--ref-php DIR] [--ref-repo DIR] [--out-dir DIR]
                         [--verify]
 
+Rules whose primary `$regex` is assembled at runtime (Iframe.php builds
+its pattern in `__construct` from the `schemes` config and the wiki
+delimiter) are resolved by executing the pinned PHP sources themselves:
+the extractor instantiates the rule class against a real `Text_Wiki`
+object under the system PHP and reads back the resolved `$regex`.  The
+PHP version is recorded in the payload (`php_version`) so the resolution
+is provenance-tagged, and a rule whose pattern came from this pass is
+marked `patterns_provenance = "php-resolved-dynamic"` in the payload and
+with a comment in the generated Lean module.  The verbatim assembly
+expressions remain recorded as `dynamic-template` inline entries.
+
 Exit 0 means every source matched snapshot-36 and the generated tables are
 byte-identical (in --verify mode) or freshly written (default mode).
 """
@@ -445,6 +456,64 @@ def extract_dynamic_regex(src: str):
     return out
 
 
+RESOLVE_PHP = r"""
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_WARNING & ~E_NOTICE);
+$base = $argv[1];
+require_once $base . '/Text/Wiki.php';
+require_once $base . '/Text/Wiki/Parse.php';
+$wiki = new Text_Wiki();
+foreach (json_decode($argv[2], true) as $cls) {
+    $file = $base . '/Text/Wiki/Parse/Default/' . $cls . '.php';
+    if (!file_exists($file)) { echo "RESOLVED $cls NULL\n"; continue; }
+    require_once $file;
+    $name = 'Text_Wiki_Parse_' . $cls;
+    try {
+        $rule = new $name($wiki);
+        $rx = $rule->regex;
+        if (is_string($rx) && $rx !== '') {
+            echo "RESOLVED $cls " . bin2hex($rx) . "\n";
+        } else {
+            echo "RESOLVED $cls NULL\n";
+        }
+    } catch (Throwable $e) {
+        echo "RESOLVED $cls NULL\n";
+    }
+}
+"""
+
+
+def php_version() -> str:
+    r = subprocess.run(["php", "-r", "echo PHP_VERSION;"],
+                       stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                       check=False)
+    if r.returncode != 0:
+        raise RuntimeError("php is required for dynamic-regex resolution")
+    return r.stdout.decode().strip()
+
+
+def resolve_dynamic_regexes(ref_php: pathlib.Path) -> dict:
+    """Instantiate every rule class under PHP and read its resolved
+    `$regex`.  Returns {class basename: pattern str} for classes whose
+    constructor produces a non-empty pattern.  Pattern bytes are carried
+    as a latin-1 string so `ord` is the byte value, matching byte_list.
+    Only the pinned sources under --ref-php are executed; verify_inputs
+    has already checked their SHA-256 against the snapshot tag."""
+    classes = [cls for _, cls in RULES]
+    r = subprocess.run(
+        ["php", "-r", RESOLVE_PHP, str(ref_php / "text-wiki"),
+         json.dumps(classes)],
+        stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False)
+    if r.returncode != 0:
+        raise RuntimeError("dynamic-regex resolution failed: "
+                           + r.stderr.decode(errors="replace")[:400])
+    out = {}
+    for line in r.stdout.decode(errors="replace").splitlines():
+        parts = line.split(" ")
+        if len(parts) == 3 and parts[0] == "RESOLVED" and parts[2] != "NULL":
+            out[parts[1]] = bytes.fromhex(parts[2]).decode("latin-1")
+    return out
+
+
 def construct_inventory(src: str):
     """Count every syntactic PCRE construct that occurs in a pattern body.
     This drives the honest coverage table in UNIT.md rather than a guess."""
@@ -532,6 +601,9 @@ def generate_lean(payload: dict) -> str:
     L.append("def refRuleRegexes : List (String × List (List Nat)) := [")
     for r in payload["rules"]:
         pats = ", ".join(byte_list(p) for p in r["patterns"])
+        if r.get("patterns_provenance") == "php-resolved-dynamic":
+            L.append(f'  -- {r["rule"]}: $regex assembled in __construct; pattern')
+            L.append(f'  -- resolved by executing the pinned PHP source (see extractor).')
         L.append(f'  ("{r["rule"]}", [{pats}]),')
     L.append("]")
     L.append("")
@@ -551,7 +623,8 @@ def generate_lean(payload: dict) -> str:
     return "\n".join(L)
 
 
-def build_payload(ref_php: pathlib.Path, checked):
+def build_payload(ref_php: pathlib.Path, checked, resolved: dict,
+                  php_ver: str):
     rules = []
     construct_set = set()
     flag_set = set()
@@ -570,8 +643,14 @@ def build_payload(ref_php: pathlib.Path, checked):
             _, fl, _ = pattern_flags(p)
             flag_set.update(fl)
             construct_set.update(construct_inventory(p))
+        provenance = "literal"
+        if (not pats or pats == [""]) and cls in resolved:
+            pats = [resolved[cls]]
+            provenance = "php-resolved-dynamic"
         rules.append({"rule": rid, "class": cls, "source": rel,
                       "literal": lit, "patterns": pats,
+                      "patterns_provenance": provenance,
+                      "resolved_regex": resolved.get(cls),
                       "inline": [{"api": f, "pattern": p} for f, p in inline]})
     embed = extract_embed_patterns((ref_php / EMBED_CONFIG).read_text(
         encoding="utf-8", errors="replace"))
@@ -580,6 +659,7 @@ def build_payload(ref_php: pathlib.Path, checked):
         flag_set.update(fl)
         construct_set.update(construct_inventory(p))
     payload = {
+        "php_version": php_ver,
         "snapshot_tag": SNAPSHOT_TAG,
         "snapshot_commit": SNAPSHOT_COMMIT,
         "source_count": len(checked),
@@ -608,7 +688,10 @@ def main() -> int:
     ref_repo = pathlib.Path(args.ref_repo)
     out = pathlib.Path(args.out_dir)
     json_path = out / "RefTables.json"
-    lean_path = out / "LeanFtml" / "RefTables.lean"
+    lean_root = out / "lean-ftml"
+    if not (lean_root / "LeanFtml").is_dir():
+        lean_root = out
+    lean_path = lean_root / "LeanFtml" / "RefTables.lean"
 
     checked, errors = verify_inputs(ref_repo, ref_php)
     print(f"[extract] tag={SNAPSHOT_TAG} commit={SNAPSHOT_COMMIT}")
@@ -621,7 +704,11 @@ def main() -> int:
     print("[extract] SHA-256 manifest re-derived from tag: OK")
     print("[extract] working copies match manifest: OK")
 
-    payload = build_payload(ref_php, checked)
+    resolved = resolve_dynamic_regexes(ref_php)
+    php_ver = php_version()
+    print(f"[extract] PHP {php_ver}: dynamically resolved $regex for "
+          f"{len(resolved)} rule class(es)")
+    payload = build_payload(ref_php, checked, resolved, php_ver)
     rules_with = [r for r in payload["rules"] if r["patterns"]]
     print(f"[extract] active rules: {len(payload['rules'])} "
           f"(with primary regex: {len(rules_with)})")
