@@ -1,0 +1,18 @@
+{"id":"s01-fl-esc-lead-url","output":"<p><a class=\"newpage\" href=\"\/https:example-com-x\">\/\/example.com\/x<\/a><\/p>\n\n"}
+{"id":"s02-fl-u2065-lead-url","output":"<p><a class=\"newpage\" href=\"\/https:example-com-y\">L<\/a><\/p>\n\n"}
+{"id":"s03-fl-esc-in-url","output":"<p><a href=\"https:\/\/example.com\/a\u001bb\">https:\/\/example.com\/a\u001bb<\/a><\/p>\n\n"}
+{"id":"s04-fl-esc-lead-route-pipe","output":"<p><a class=\"newpage\" href=\"\/x#\/sec\">x<\/a><\/p>\n\n"}
+{"id":"s05-fl-nonascii-frag-pipe","output":"<p><a href=\"https:\/\/example.com\/caf%C3%A9#sec\">https:example-com-cafe<\/a><\/p>\n\n"}
+{"id":"s06-fl-u2065-multihash","output":"<p>[[[\u2065foo#a#b]]]<\/p>\n\n"}
+{"id":"s07-fn-break-list-hoist","output":"<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1<\/a><\/sup><br \/>\n[[LI]]D[[\/LI]]<br \/>\n[[\/UL]]<\/li>\n<\/ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes<\/div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1<\/a>. B<br \/>\nC<\/div><\/div>"}
+{"id":"s08-fn-esc-sep-list","output":"<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1<\/a><\/sup><br \/>\n[[LI]]B[[\/LI]]<br \/>\n[[\/UL]]<\/li>\n<\/ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes<\/div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1<\/a>. \u001bX<\/div><\/div>"}
+{"id":"s09-list-closer-ff-break","output":"<ul>\n<li>A<ul>\n<li>in<\/li>\n<\/ul><br \/>\n[[LI]]out<br \/><\/li>\n<\/ul>"}
+{"id":"s10-math-esc-type","output":"<div class=\"error-block\">Unsupported math environment \"al\u001bign\"<\/div>"}
+{"id":"s11-math-multistar","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"s12-math-star-digit","output":"<div class=\"error-block\">Unsupported math environment \"align2\"<\/div>"}
+{"id":"s13-btn-settags-space0","output":"<p><a class=\"wiki-standalone-button\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.updateTagsByButton(event, '')\" > 0 <\/a><\/p>\n\n"}
+{"id":"s14-btn-settags-esc","output":"<p><a class=\"wiki-standalone-button\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.updateTagsByButton(event, '')\" >\u001b<\/a><\/p>\n\n"}
+{"id":"s15-tabview-space0","output":"<script type=\"text\/javascript\" src=\"\/common--javascript\/yahooui\/element-beta-min.js\"><\/script>\n<script type=\"text\/javascript\" src=\"\/common--javascript\/yahooui\/tabview-min.js\"><\/script><div id=\"wiki-tabview-0\" class=\"yui-navset\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>untitled<\/em><\/a><\/li><\/ul><div class=\"yui-content\"><div id=\"wiki-tab-0-0\"><p>body<\/p>\n\n<\/div><\/div><\/div><script type=\"text\/javascript\">\n(function(){\n\tvar tabView0 = new YAHOO.widget.TabView('wiki-tabview-0');\n})();\n<\/script>"}
+{"id":"s16-span-esc-type","output":"<p><span type=\"a\u001bb\">x<\/span><\/p>\n\n"}
+{"id":"s17-img-esc-class","output":"<img src=\"\/local--files\/\/IMG.png\" class=\"a\u001bb\" alt=\"IMG.png\" \/>cap"}
+{"id":"s18-div-esc-placeholder-id","output":"<div id=\"\"><p>body<\/p>\n\n<\/div>"}

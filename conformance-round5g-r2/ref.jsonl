@@ -1,0 +1,20 @@
+{"id":"r2g-01-fl-already-escaped","output":"<p><a href=\"https:\/\/example.com\/caf%C3%A9\">https:\/\/example.com\/caf%C3%A9<\/a><\/p>\n\n"}
+{"id":"r2g-02-fl-fragment-nonascii","output":"<p><a href=\"https:\/\/example.com\/p#s%C3%A9c\">https:\/\/example.com\/p<\/a><\/p>\n\n"}
+{"id":"r2g-03-fl-route-nonascii","output":"<p><a href=\"https:\/\/example.com\/p\/#\/route\/%C3%A9\">https:\/\/example.com\/p<\/a><\/p>\n\n"}
+{"id":"r2g-04-fl-label-nonascii","output":"<p><a href=\"https:\/\/example.com\/x\">caf\u00e9<\/a><\/p>\n\n"}
+{"id":"r2g-05-fl-query-amp","output":"<p><a href=\"https:\/\/example.com\/p?a=%C3%A9&amp;b=%C3%B1\">https:\/\/example.com\/p?a=\u00e9&amp;b=\u00f1<\/a><\/p>\n\n"}
+{"id":"r2g-06-fl-starred-url","output":"<p><a target=\"_blank\" href=\"https:\/\/example.com\/caf%C3%A9\">https:\/\/example.com\/caf\u00e9<\/a><\/p>\n\n"}
+{"id":"r2g-07-fl-empty-pipe-nonascii","output":"<p><a href=\"https:\/\/example.com\/caf%C3%A9\">https:example-com-cafe<\/a><\/p>\n\n"}
+{"id":"r2g-08-fl-nbsp-url","output":"<p><a href=\"https:\/\/example.com\/a%C2%A0b\">https:\/\/example.com\/a\u00a0b<\/a><\/p>\n\n"}
+{"id":"r2g-09-embed-onmouseover","output":"<p><div class=\"error-block\">Sorry, no match for the embedded content.<\/div><\/p>\n\n"}
+{"id":"r2g-10-embed-event-upper","output":"<p><div class=\"error-block\">Sorry, no match for the embedded content.<\/div><\/p>\n\n"}
+{"id":"r2g-11-embed-single-quote-scheme","output":"<p><iframe src=\"https:\/\/example.com\" srcdoc='javascript:alert(1)'><\/iframe><\/p>\n\n"}
+{"id":"r2g-12-embed-src-upper","output":"<p><\/p>\n\n"}
+{"id":"r2g-13-embed-onload-single","output":"<p><div class=\"error-block\">Sorry, no match for the embedded content.<\/div><\/p>\n\n"}
+{"id":"r2g-14-gal-link-lead-space","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"  javascript:alert(1)\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"r2g-15-gal-link-star-scheme","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"#\" target=\"_blank\"><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"r2g-16-gal-data-upper","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"#\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"r2g-17-gal-mailto-upper","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"MAILTO:a@b.com\" ><img src=\"\/local--resized-images\/\/a.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"r2g-18-img-fragment-nonascii","output":"<a href=\"#frag%C3%A9\"><img src=\"https:\/\/example.com\/x.png\" alt=\"x.png\" class=\"image\" \/><\/a>"}
+{"id":"r2g-19-url-img-alt-nonascii","output":"<p><a href=\"https:\/\/example.com\/%C3%A9.png\">https:\/\/example.com\/\u00e9.png<\/a><\/p>\n\n"}
+{"id":"r2g-20-mathinline-nonascii","output":"<p><span class=\"math-inline\">$\u03b1+\u03b2$<\/span><\/p>\n\n"}

@@ -1,0 +1,9 @@
+# OWNED-SURFACES — R5G-R2 mask accounting
+
+Every raw DIFF was adjudicated by artifact, never by intent. The campaign-standard probe.norm already drops script bodies, the newpage class, random wiki-tab ids, date attributes and numeric entities and sorts tag attributes. On top of that this unit applied only three owned surfaces, all recorded here.
+
+Stage 2 paragraph frame. Rows r2g-09, r2g-10, r2g-13 had a reference `<p><div class="error-block">…</div></p>` against a live `<div class="error-block">…</div>`, and row r2g-12 had a reference `<p></p>` against a live empty string. This is the owned Stage 2 tidy/paragraph frame already adjudicated in REPORT-ROUND5B-R2 (tidy-embed-stage2.html) and REPORT-ROUND5B-S1 (S17): Stage 1 wraps a block-level or empty token in a paragraph and Stage 2 hoists the div out and drops the empty paragraph. After masking those wrappers the error-block signature and the empty value agree byte-for-byte, so all four rows are CLEARED, not confirmed.
+
+Gallery serving wrappers. Rows r2g-14 through r2g-17 carry the live gallery serving surfaces: a random `gallery-box-<digits>` id, a `with-lb` class on the anchor, a `gallery-image-size-thumbnail` class on the image, a wdfiles-host absolute attachment src and the lightbox script (the script is dropped by probe.norm). None is a rule-level value. compare.py removes exactly those tokens and normalizes the residual frame space before `>`, leaving the anchor href as the only compared rule-level value under test. The R2G-15/16/17 hrefs agree after that mask and are CLEARED; R2G-14 survives on the href itself and is confirmed.
+
+No other surface was masked. The Freelink, Image, Url and Mathinline rows were compared on unmodified probe.norm plus campaign frame bytes. The four-adjacent U+FFFD digit class, the parity Email index family, token-counter digits and save-normalized sources do not appear in this unit's corpus and were not counted.

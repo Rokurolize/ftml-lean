@@ -1,0 +1,46 @@
+id     eq  live_norm / ref_norm
+N1-CROSSOL           DIFF 
+   LIVE: <ul> <li>outer</li> </ul> <ol> <li>in</li> </ol> [[LI]]tail[[/LI]]<br> [[/UL]]
+   REF : <ul> <li>outer</li> </ul><ol> <li>in</li> </ol> [[LI]]tail[[/LI]]<br> [[/UL]]
+N2-SCOREDRAW         DIFF 
+   LIVE: <ul> <li>outer</li> </ul> <ul> <li>in</li> </ul> [[LI]]tail[[/LI]]<br> [[/UL]]
+   REF : <ul> <li>outer</li> </ul><ul> <li>in</li> </ul> [[LI]]tail[[/LI]]<br> [[/UL]]
+N3-SCOREDNEST        DIFF 
+   LIVE: <ul> <li>outer</li> </ul> <ul> <li>in</li> </ul> [[LI]]tail[[/LI]]<br> [[/UL]]
+   REF : <ul> <li>outer</li> </ul><ul> <li>in</li> </ul> [[LI]]tail[[/LI]]<br> [[/UL]]
+N4-LOWERATTR         DIFF 
+   LIVE: <ul class="o"> <li>outer</li> <li>in</li> </ul> [[LI]]tail[[/LI]]<br> [[/ul]]
+   REF : <ul class="o"> <li>outer<ul> <li>in[[LI]]tail</li> </ul></li> </ul>
+N5-LOWERSCORED       DIFF 
+   LIVE: <ul> <li>outer</li> <li>in</li> </ul> [[LI]]tail[[/LI]]<br> [[/ul]]
+   REF : <ul> <li>outer<ul> <li>in[[LI]]tail</li> </ul></li> </ul>
+N6-THREELEVEL        DIFF 
+   LIVE: <ul> <li>A</li> </ul> <ul> <li>B</li> <li>C</li> </ul> [[LI]]D[[/LI]]<br> [[/UL]]
+   REF : <ul> <li>A</li> </ul><ul> <li>B<ul> <li>C[[LI]]D</li> </ul><br> </li> </ul>
+S2-TAB               DIFF 
+   LIVE: <ul> <li>outer</li> <li>in [[LI]]tail[[/LI]]<br> [[/UL]]</li> </ul>
+   REF : <ul> <li>outer</li> <li>in[[LI]]tail[[/LI]]<br> [[/UL]]</li> </ul>
+S2-FF                EQ   
+S2-SPACES            DIFF 
+   LIVE: <ul> <li>outer</li> <li>in [[LI]]tail[[/LI]]<br> [[/UL]]</li> </ul>
+   REF : <ul> <li>outer</li> <li>in[[LI]]tail[[/LI]]<br> [[/UL]]</li> </ul>
+S3-DBLFT             DIFF 
+   LIVE: <ul> <li>A<sup class="footnoteref"><a class="footnoteref" href="javascript:;" id="footnoteref-X" onclick="WIKIDOT.page.utils.scrollToReference('footnote-X')">1</a></sup>P1<br></li> </ul> <div class="footnotes-footer"> <div class="title">Footnotes</div> <div class="footnote-footer" id="footnote-X"><a href="javascript:;" onclick="WIKIDOT.page.utils.scrollToReference('footnoteref-X')">1</a>. n1</div> </div> <br> Q1<br> [[LI]]B[[/LI]]<br> [[footnoteblock]]Q2[[/UL]]<br> TAIL
+   REF : <ul> <li>A<sup class="footnoteref"><a class="footnoteref" href="javascript:;" id="footnoteref-X" onclick="WIKIDOT.page.utils.scrollToReference('footnote-X')">1</a></sup>P1<br> </li> </ul><div class="footnotes-footer"><div class="title">Footnotes</div><div class="footnote-footer" id="footnote-X"><a href="javascript:;" onclick="WIKIDOT.page.utils.scrollToReference('footnoteref-X')">1</a>. n1</div></div><br> Q1<br> [[LI]]B[[/LI]]<br> [[footnoteblock]]Q2[[/UL]]<br> TAIL
+S3-DOUBLELF          DIFF 
+   LIVE: <ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]<sup class="footnoteref"><a class="footnoteref" href="javascript:;" id="footnoteref-X" onclick="WIKIDOT.page.utils.scrollToReference('footnote-X')">1</a></sup>LEFT</li> </ul> <div class="footnotes-footer"> <div class="title">Footnotes</div> <div class="footnote-footer" id="footnote-X"><a href="javascript:;" onclick="WIKIDOT.page.utils.scrollToReference('footnoteref-X')">1</a>. n</div> </div> <br> RIGHT
+   REF : <ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]<sup class="footnoteref"><a class="footnoteref" href="javascript:;" id="footnoteref-X" onclick="WIKIDOT.page.utils.scrollToReference('footnote-X')">1</a></sup>LEFT</li> </ul><div class="footnotes-footer"><div class="title">Footnotes</div><div class="footnote-footer" id="footnote-X"><a href="javascript:;" onclick="WIKIDOT.page.utils.scrollToReference('footnoteref-X')">1</a>. n</div></div><br> RIGHT
+S3-CASEFT            DIFF 
+   LIVE: <ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]<sup class="footnoteref"><a class="footnoteref" href="javascript:;" id="footnoteref-X" onclick="WIKIDOT.page.utils.scrollToReference('footnote-X')">1</a></sup>LEFT[[FootnoteBlock]]RIGHT</li> </ul> <div class="footnotes-footer"> <div class="title">Footnotes</div> <div class="footnote-footer" id="footnote-X"><a href="javascript:;" onclick="WIKIDOT.page.utils.scrollToReference('footnoteref-X')">1</a>. n</div> </div>
+   REF : <ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]<sup class="footnoteref"><a class="footnoteref" href="javascript:;" id="footnoteref-X" onclick="WIKIDOT.page.utils.scrollToReference('footnote-X')">1</a></sup>LEFT[[FootnoteBlock]]RIGHT</li> </ul><div class="footnotes-footer"><div class="title">Footnotes</div><div class="footnote-footer" id="footnote-X"><a href="javascript:;" onclick="WIKIDOT.page.utils.scrollToReference('footnoteref-X')">1</a>. n</div></div>
+CL-ESCCLASS          DIFF 
+   LIVE: alpha <div class="AB"> <p>bravo</p> </div>
+   REF : alpha <div class="AB"><p>bravo</p> </div>
+CL-DELCLASS          DIFF 
+   LIVE: alpha <div class="AB"> <p>bravo</p> </div>
+   REF : alpha <div class="AB"><p>bravo</p> </div>
+CL-SPANTYPE          EQ   
+CL-DIVC0             DIFF 
+   LIVE: alpha <div data-x="AB"> <p>bravo</p> </div>
+   REF : alpha <div data-x="AB"><p>bravo</p> </div>
+equal: 2 / 16

@@ -1,0 +1,17 @@
+# HASHES R5G-P2 — round-5g parse-side inline conformance evidence
+
+Each line below is a data record of the form `sha256  filename`, computed over the exact bytes of the file in this conformance directory. These hashes are the manifest the coordinator should verify before adopting the evidence-only payload REPORT-ROUND5G-P2.md plus conformance-round5g-p2/. No source files are included.
+
+45500d708b6b67571a512b930ca4b2f2b91b1cedab7b7253e51f31e041236c32  CANDIDATES.md
+35fafc57bd2f54380829de356d08c2f2972a7b347ca5aecc10a0f6e08491aadd  LEDGER.md
+9341e17b6d1947dea8b5db4865f7ce622db60e0ec68cb185808206c306ff090d  gen_cases.py
+ca0dacf83ebc3933689428cded9bdf84611ca5ea78afabac98061136daa1edc0  cases.jsonl
+826f3bfed22e22ab8eb100e0ea07f44140fc64bb887495585fd4aed5b7feaa61  map.json
+7c70ba198600aa81751d4729faeda2c06e49e5d1bd94f910603153c5bb87dc85  captures.json
+7a053435185d270a39349027f7fbd5551dd85d0a6f63930f6b13407cacadca52  ref.jsonl
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ref.err
+eab25d6c623fe3325c07162785cff5e0c1d726f0b570a2f869bc2a5c8aced49f  ref-tokens.jsonl
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ref-tokens.err
+1c905cf03e3bb437d825f7f1e61c93373e8bb295740a94fc93ed2b1cb9707054  compare.py
+7620a26e6623931dacffd1a853c9c8359bba656bb0a84f34385d102e50ccbb4b  comparison.json
+20c8532b3b674afaab2f27ea5d9f3ae7fb89a26e58d3488cef0ad0a8936463f0  REPORT-ROUND5G-P2.md

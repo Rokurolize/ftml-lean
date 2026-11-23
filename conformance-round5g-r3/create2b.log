@@ -1,0 +1,44 @@
+R3G-18 -> muse-probe-round5g-r3-r3g-18 (created)
+R3G-19 -> muse-probe-round5g-r3-r3g-19 (created)
+R3G-20 -> muse-probe-round5g-r3-r3g-20 (created)
+R3G-21 -> muse-probe-round5g-r3-r3g-21 (created)
+R3G-22 -> muse-probe-round5g-r3-r3g-22 (created)
+R3G-23 -> muse-probe-round5g-r3-r3g-23 (created)
+R3G-24 -> muse-probe-round5g-r3-r3g-24 (created)
+{
+ "R3G-18": {
+  "fullname": "muse-probe-round5g-r3-r3g-18",
+  "source": "[[footnote]]X\n\u0001\nY[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3G-19": {
+  "fullname": "muse-probe-round5g-r3-r3g-19",
+  "source": "[[footnote]]\u001b\nX\n\u001b[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3G-20": {
+  "fullname": "muse-probe-round5g-r3-r3g-20",
+  "source": "[[toc]]\n\n+ Heading",
+  "action": "created"
+ },
+ "R3G-21": {
+  "fullname": "muse-probe-round5g-r3-r3g-21",
+  "source": "[[toc title=\"TX\"]]\n\n+ A",
+  "action": "created"
+ },
+ "R3G-22": {
+  "fullname": "muse-probe-round5g-r3-r3g-22",
+  "source": "[[a href=\"*#a\u001bb\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3G-23": {
+  "fullname": "muse-probe-round5g-r3-r3g-23",
+  "source": "[[a data-x=\"p\u001bq\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3G-24": {
+  "fullname": "muse-probe-round5g-r3-r3g-24",
+  "source": "[[footnote]]A[[/footnote]]\n[[footnote]]\u0001\nB[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ }
+}

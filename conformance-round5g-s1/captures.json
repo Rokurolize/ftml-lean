@@ -1,0 +1,182 @@
+{
+ "s01-fl-esc-lead-url": {
+  "fullname": "muse-probe-round5g-s1-s01-fl-esc-lead-url",
+  "html": "<p><a class=\"newpage\" href=\"/https:example-com-x\">//example.com/x</a></p>",
+  "html_sha256": "e7d4403ecbfc798b58ab36f843c1086f56c0ad4f4e7efafdff359b57908d0312",
+  "source": "[[[\u001bhttps://example.com/x]]]",
+  "source_sha256": "0203ac3f8cd4f36661a8b5c2e642af544942f99c9135ec6f250ad88f4dc24621",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s02-fl-u2065-lead-url": {
+  "fullname": "muse-probe-round5g-s1-s02-fl-u2065-lead-url",
+  "html": "<p><a class=\"newpage\" href=\"/https:example-com-y\">L</a></p>",
+  "html_sha256": "9748a4d4c6bff997b3021574507e49026622f6c62975caae62b1f6a6adc67f51",
+  "source": "[[[⁥https://example.com/y|L]]]",
+  "source_sha256": "690ea7be4a760a2301dcaa0eff664a2e3411be599a3ef6329a7abd4078c4ca96",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s03-fl-esc-in-url": {
+  "fullname": "muse-probe-round5g-s1-s03-fl-esc-in-url",
+  "html": "<p><a href=\"https://example.com/a%1Bb\">https://example.com/a\u001bb</a></p>",
+  "html_sha256": "4f0b158118672377b24f3712aaa00853c3b7b712ff916b40d3684c958a8688db",
+  "source": "[[[https://example.com/a\u001bb]]]",
+  "source_sha256": "890fbdbfbe4ddee1a2fde02d19c43fac0264fd3b96010f295c8b1a25fb7372d9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s04-fl-esc-lead-route-pipe": {
+  "fullname": "muse-probe-round5g-s1-s04-fl-esc-lead-route-pipe",
+  "html": "<p><a class=\"newpage\" href=\"/x#/sec\">x</a></p>",
+  "html_sha256": "f676dc1ff34e2510355aa3b6525b3e4f1d8126a7e9f50e5694f85189d724b15a",
+  "source": "[[[\u001b_default:x/#/sec|]]]",
+  "source_sha256": "568df5c51feeb80450a4ded6783e6bcf66a2e94184d133c32ee095ffa140ebb5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s05-fl-nonascii-frag-pipe": {
+  "fullname": "muse-probe-round5g-s1-s05-fl-nonascii-frag-pipe",
+  "html": "<p><a href=\"https://example.com/caf%C3%A9#sec\">https:example-com-cafe</a></p>",
+  "html_sha256": "7fd6dab9f30c3a92f300e83eeb56494b261bfbcf4bd929dbccb74b885f6644ff",
+  "source": "[[[https://example.com/café#sec|]]]",
+  "source_sha256": "8423dda3361562652a7bfc89dca2361446c0d14ddf351ce6c235e1c051ade7d9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s06-fl-u2065-multihash": {
+  "fullname": "muse-probe-round5g-s1-s06-fl-u2065-multihash",
+  "html": "<p>[[[⁥foo#a#b]]]</p>",
+  "html_sha256": "1cf61dff31acabb850cc8f9c62766a455ff919aa7dc735356564675006c75cd7",
+  "source": "[[[⁥foo#a#b]]]",
+  "source_sha256": "d510ecb9576563c35621a770ec9f2f3b39d5e58a0c01779257d018ca0d2ecfaf",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s07-fn-break-list-hoist": {
+  "fullname": "muse-probe-round5g-s1-s07-fn-break-list-hoist",
+  "html": "<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n[[LI]]D[[/LI]]<br />\n[[/UL]]</li>\n</ul>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. B<br />\nC</div>\n</div>",
+  "html_sha256": "ed4b718cf9116e86692d028e059ec353f45b6808062731c1aa464aaf29056b59",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]B\f\nC[[/footnote]]\n[[LI]]D[[/LI]]\n[[/UL]]\n[[footnoteblock]]",
+  "source_sha256": "bae752fbb71a05f1f144adee8762ad89625e9ef70d93cecc2d13e481cd939a52",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s08-fn-esc-sep-list": {
+  "fullname": "muse-probe-round5g-s1-s08-fn-esc-sep-list",
+  "html": "<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n[[LI]]B[[/LI]]<br />\n[[/UL]]</li>\n</ul>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. \u001bX</div>\n</div>",
+  "html_sha256": "84a68d89c1ad15db9d20e52e632dc3a8b75ac7e2d8c769d3b9e7b124adbb2668",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]\u001bX[[/footnote]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnoteblock]]",
+  "source_sha256": "781a7a3b19389094f5023e12670158ffa5ec0d2be64914e9f4173bf129c58ec0",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s09-list-closer-ff-break": {
+  "fullname": "muse-probe-round5g-s1-s09-list-closer-ff-break",
+  "html": "<ul>\n<li>A</li>\n</ul>\n<ul>\n<li>in</li>\n</ul>\n<br />\n[[LI]]out<br />",
+  "html_sha256": "a9eea0842836ee8dd637781d9ca0fa668d23a75c707745fd3716bd8f0d36cee7",
+  "source": "[[UL]]\n[[LI]]A[[ul]]\n[[LI]]in[[/LI]]\n[[/ul]]\f\n[[LI]]out[[/LI]]\n[[/UL]]",
+  "source_sha256": "04d9afd0179e495dc7121545749cac338e21fe593669974b44911e572c760b63",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s10-math-esc-type": {
+  "fullname": "muse-probe-round5g-s1-s10-math-esc-type",
+  "html": "<div class=\"error-block\">Unsupported math environment \"al\u001bign\"</div>",
+  "html_sha256": "2a5c959ee5a5579f86069d448c639f58112725e3deab15a44e0de508875d7140",
+  "source": "[[math type=\"al\u001bign\"]]\nx\n[[/math]]",
+  "source_sha256": "91b968c9d73bf5729785a1cb0de0e063ac4e51b878bd9069f98a2c4f0612f1f6",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s11-math-multistar": {
+  "fullname": "muse-probe-round5g-s1-s11-math-multistar",
+  "html": "<span class=\"equation-number\">(1)</span>\n<div class=\"math-equation\" id=\"equation-1\">\\begin{align} x \\end{align}</div>",
+  "html_sha256": "d2ff6a492fc9df7ae6a68927dc59ef71a7ba40629a33ea341a90113cdcf8ee69",
+  "source": "[[math type=\"**align**\"]]\nx\n[[/math]]",
+  "source_sha256": "1466f158bfdb736a307652f31719371738ceb2fe4cf29e065b3b0b697b02c7e5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s12-math-star-digit": {
+  "fullname": "muse-probe-round5g-s1-s12-math-star-digit",
+  "html": "<div class=\"error-block\">Unsupported math environment \"align2\"</div>",
+  "html_sha256": "0bed6e2ebe10e7645b596f75d1c9d5b4696e8f2c998bbb3eb7b9fe8b4ba5b623",
+  "source": "[[math type=\"align*2\"]]\nx\n[[/math]]",
+  "source_sha256": "c5f3381a7479fdb79a2f2be9ac8683c85105d743b02ea0d1a1633d6a5cd08c43",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s13-btn-settags-space0": {
+  "fullname": "muse-probe-round5g-s1-s13-btn-settags-space0",
+  "html": "<p><a class=\"wiki-standalone-button\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.updateTagsByButton(event, '')\">0</a></p>",
+  "html_sha256": "c1aed8183456b6a76315567d0367a40f9d59127d94c49811f875aaa4815abd17",
+  "source": "[[button set-tags text=\" 0 \"]]",
+  "source_sha256": "fde2b4df7115246b2e3cbd8e41b562667d2dd3f24fe18b9e9f9f0b84a23eb28f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s14-btn-settags-esc": {
+  "fullname": "muse-probe-round5g-s1-s14-btn-settags-esc",
+  "html": "<p><a class=\"wiki-standalone-button\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.updateTagsByButton(event, '')\">\u001b</a></p>",
+  "html_sha256": "726209ea21b89ad5730a39e2171b63202fa9ab6c19fa719241ea729c4dee5a28",
+  "source": "[[button set-tags text=\"\u001b\"]]",
+  "source_sha256": "021d6c3bb61dcbf33d84504a8da3de5afcfd4a85c37db1e0dbd1221837e29e8f",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s15-tabview-space0": {
+  "fullname": "muse-probe-round5g-s1-s15-tabview-space0",
+  "html": "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common--javascript/yahooui/tabview-min.js\"></script>\n<div id=\"wiki-tabview-858b50f39a9a81754a6817035bede96f\" class=\"yui-navset\">\n<ul class=\"yui-nav\">\n<li class=\"selected\"><a href=\"javascript:;\"><em>untitled</em></a></li>\n</ul>\n<div class=\"yui-content\">\n<div id=\"wiki-tab-0-0\">\n<p>body</p>\n</div>\n</div>\n</div>\n<script type=\"text/javascript\">\n//<![CDATA[\nOZONE.dom.onDomReady(function(){\n        var tabView858b50f39a9a81754a6817035bede96f = new YAHOO.widget.TabView('wiki-tabview-858b50f39a9a81754a6817035bede96f');\n                }, \"dummy-ondomready-block\");\n        \n//]]>\n</script>",
+  "html_sha256": "de747c8b23e05b1ddf29bd3006a65a92f2e5300e319c4c2e7269a59063faab2f",
+  "source": "[[tabview]][[tab 0 ]]body[[/tab]][[/tabview]]",
+  "source_sha256": "47bbff1762185075dc503a9657e3ee9a265240af07dd42be0983f054e17ea527",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s16-span-esc-type": {
+  "fullname": "muse-probe-round5g-s1-s16-span-esc-type",
+  "html": "<p><span type=\"a\u001bb\">x</span></p>",
+  "html_sha256": "851e92c66c6c4cc4fb2e8571847fe8041a149406aeae77a5e3f2ba320417e304",
+  "source": "[[span type=\"a\u001bb\"]]x[[/span]]",
+  "source_sha256": "bd2ee54946f477da2adfa360a54f9805c838b8deec194be599ba6e4eb6fcbd65",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s17-img-esc-class": {
+  "fullname": "muse-probe-round5g-s1-s17-img-esc-class",
+  "html": "<img src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5g-s1-s17-img-esc-class/IMG.png\" class=\"a\u001bb\" alt=\"IMG.png\" />cap",
+  "html_sha256": "ff5827669893c52f3b4df38accb85725b6c3719ff3093b4ef2fc41411151575b",
+  "source": "[[image IMG.png class=\"a\u001bb\"]]cap",
+  "source_sha256": "e5fd5916dbbe315f234c0b1164a8f90b11810e5e0d48e5231ae808432bda3415",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "s18-div-esc-placeholder-id": {
+  "fullname": "muse-probe-round5g-s1-s18-div-esc-placeholder-id",
+  "html": "<div id=\"\">\n<p>body</p>\n</div>",
+  "html_sha256": "2061a590abcadc604490830cf36c644802ef287f597b83cd98f5034bb4376101",
+  "source": "[[div id=\"a\u001b[[size 12px]]q[[/size]]\"]]\nbody\n[[/div]]",
+  "source_sha256": "c6dba295eed54d6125164b0207d7d3d5b331a9ab604dac6b6e6d883299dee3c2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

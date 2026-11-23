@@ -1,0 +1,72 @@
+{
+ "R3G-18": {
+  "fullname": "muse-probe-round5g-r3-r3g-18",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. X<br />\n<br />\nY</div>\n</div>",
+  "html_sha256": "0ac8074e051f93822d8fa3073f17b165ddba0b9b4fab9332f8e86cf611faf53b",
+  "source": "[[footnote]]X\n\u0001\nY[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "dd93e17fb9f0109a4387cf54ce409a324e540c6c981a9ea5425ad8eba55e948d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R3G-19": {
+  "fullname": "muse-probe-round5g-r3-r3g-19",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. \u001b<br />\nX<br />\n\u001b</div>\n</div>",
+  "html_sha256": "1fa4ed004b8d9335f4b2a27cebb707b0cb226a4880a97c1c6aaaff79e735e555",
+  "source": "[[footnote]]\u001b\nX\n\u001b[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "35898923fcc015723dce864ed1b3112e96bd51af945921e69a60fd668299c5bb",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R3G-20": {
+  "fullname": "muse-probe-round5g-r3-r3g-20",
+  "html": "<table style=\"margin:0; padding:0\">\n<tr>\n<td style=\"margin:0; padding:0\">\n<div id=\"toc\">\n<div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div>\n<div class=\"title\">Table of Contents</div>\n<div id=\"toc-list\">\n<div style=\"margin-left: 1em;\"><a href=\"#toc0\">Heading</a></div>\n</div>\n</div>\n</td>\n</tr>\n</table>\n<h1 id=\"toc0\"><span>Heading</span></h1>",
+  "html_sha256": "67dc0e3adb1f9c118b837b34283caee1f76c38d2e5f4ae4328bf69c04d969fe6",
+  "source": "[[toc]]\n\n+ Heading",
+  "source_sha256": "52484830c3c81955f9c29881c2f61cf2e3936a7ebd78a0bc02c7bf2b3746fbf7",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R3G-21": {
+  "fullname": "muse-probe-round5g-r3-r3g-21",
+  "html": "<table style=\"margin:0; padding:0\">\n<tr>\n<td style=\"margin:0; padding:0\">\n<div id=\"toc\">\n<div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div>\n<div class=\"title\">TX</div>\n<div id=\"toc-list\">\n<div style=\"margin-left: 1em;\"><a href=\"#toc0\">A</a></div>\n</div>\n</div>\n</td>\n</tr>\n</table>\n<h1 id=\"toc0\"><span>A</span></h1>",
+  "html_sha256": "ad02b8ccad4359ca2ae046ce8ba9051a8f52c7ff15a295daaca93dc38299e426",
+  "source": "[[toc title=\"TX\"]]\n\n+ A",
+  "source_sha256": "b56149e032ae13a80b3fcf128c7e8c8e6ef9cb6e72de3144790be56e9c41c39a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R3G-22": {
+  "fullname": "muse-probe-round5g-r3-r3g-22",
+  "html": "<p><a href=\"#a%1Bb\" target=\"_blank\">x</a></p>",
+  "html_sha256": "0dd40847234b71525cf16c83ebb3931f52435be394e92e943b8e661d1f2d352c",
+  "source": "[[a href=\"*#a\u001bb\"]]x[[/a]]",
+  "source_sha256": "ffcdb930651740692bc483e6313777239e6103ab73f7742bc4fc80b79f3081bf",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R3G-23": {
+  "fullname": "muse-probe-round5g-r3-r3g-23",
+  "html": "<p><a data-x=\"p\u001bq\" href=\"\">x</a></p>",
+  "html_sha256": "cf007e37424b888a46ea9d0be77f53f920878a8cd37f33251457e52a33c878d5",
+  "source": "[[a data-x=\"p\u001bq\"]]x[[/a]]",
+  "source_sha256": "820d44f645b68d6259928ecff5668d57b64f77defd121823eacf4fafb4215c30",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R3G-24": {
+  "fullname": "muse-probe-round5g-r3-r3g-24",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><sup class=\"footnoteref\"><a id=\"footnoteref-2\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-2')\">2</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A</div>\n<div class=\"footnote-footer\" id=\"footnote-2\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-2')\">2</a>.<br />\nB</div>\n</div>",
+  "html_sha256": "a1cd005cba5793c33e1d14af52f0847564f3c4c2195184c79fc6f5aaa9dceb35",
+  "source": "[[footnote]]A[[/footnote]]\n[[footnote]]\u0001\nB[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "1a9493384d316933bf5b186aa7acaa05df7bbd299e653e4129543a9cbfc4d363",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

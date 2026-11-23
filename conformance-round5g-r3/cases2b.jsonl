@@ -1,0 +1,7 @@
+{"id": "R3G-18", "source": "[[footnote]]X\n\u0001\nY[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3G-19", "source": "[[footnote]]\u001b\nX\n\u001b[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3G-20", "source": "[[toc]]\n\n+ Heading"}
+{"id": "R3G-21", "source": "[[toc title=\"TX\"]]\n\n+ A"}
+{"id": "R3G-22", "source": "[[a href=\"*#a\u001bb\"]]x[[/a]]"}
+{"id": "R3G-23", "source": "[[a data-x=\"p\u001bq\"]]x[[/a]]"}
+{"id": "R3G-24", "source": "[[footnote]]A[[/footnote]]\n[[footnote]]\u0001\nB[[/footnote]]\n[[footnoteblock]]"}

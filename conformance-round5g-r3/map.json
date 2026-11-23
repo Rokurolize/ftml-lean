@@ -1,0 +1,142 @@
+{
+ "R3G-01": {
+  "fullname": "muse-probe-round5g-r3-r3g-01",
+  "source": "[[footnote]]\u0001\nX[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3G-02": {
+  "fullname": "muse-probe-round5g-r3-r3g-02",
+  "source": "[[footnote]]\u000b\nX[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3G-03": {
+  "fullname": "muse-probe-round5g-r3-r3g-03",
+  "source": "[[footnote]]\nX[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3G-04": {
+  "fullname": "muse-probe-round5g-r3-r3g-04",
+  "source": "[[footnote]]X\n\f[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3G-05": {
+  "fullname": "muse-probe-round5g-r3-r3g-05",
+  "source": "[[footnote]]\u001b[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3G-06": {
+  "fullname": "muse-probe-round5g-r3-r3g-06",
+  "source": "[[footnote]][[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3G-07": {
+  "fullname": "muse-probe-round5g-r3-r3g-07",
+  "source": "[[footnote]]A[[/footnote]]\n[[footnote]]\f\nB[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3G-08": {
+  "fullname": "muse-probe-round5g-r3-r3g-08",
+  "source": "[[footnote]]@@@@\f\nX[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3G-09": {
+  "fullname": "muse-probe-round5g-r3-r3g-09",
+  "source": "[[a id=\"ab\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3G-10": {
+  "fullname": "muse-probe-round5g-r3-r3g-10",
+  "source": "[[a href=\"#ab\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3G-11": {
+  "fullname": "muse-probe-round5g-r3-r3g-11",
+  "source": "[[a href=\"a\u001bb\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3G-12": {
+  "fullname": "muse-probe-round5g-r3-r3g-12",
+  "source": "[[a href=\"ab\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3G-13": {
+  "fullname": "muse-probe-round5g-r3-r3g-13",
+  "source": "[[a class=\"x\u001by\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3G-14": {
+  "fullname": "muse-probe-round5g-r3-r3g-14",
+  "source": "[[a id=\"a\u000bb\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3G-15": {
+  "fullname": "muse-probe-round5g-r3-r3g-15",
+  "source": "[[toc]]\n\n+ Hea[[footnote]]\f\n@@@@[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3G-16": {
+  "fullname": "muse-probe-round5g-r3-r3g-16",
+  "source": "[[bibliography]]\n: a : A\n\u0001\n: b : B\n[[/bibliography]]",
+  "action": "created"
+ },
+ "R3G-17": {
+  "fullname": "muse-probe-round5g-r3-r3g-17",
+  "source": "[[footnote]]X\n\f\nY[[/footnote]]\n[[footnoteblock]]",
+  "action": "save-unverified"
+ },
+ "R3G-18": {
+  "fullname": "muse-probe-round5g-r3-r3g-18",
+  "source": "[[footnote]]X\n\u0001\nY[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3G-19": {
+  "fullname": "muse-probe-round5g-r3-r3g-19",
+  "source": "[[footnote]]\u001b\nX\n\u001b[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3G-20": {
+  "fullname": "muse-probe-round5g-r3-r3g-20",
+  "source": "[[toc]]\n\n+ Heading",
+  "action": "created"
+ },
+ "R3G-21": {
+  "fullname": "muse-probe-round5g-r3-r3g-21",
+  "source": "[[toc title=\"TX\"]]\n\n+ A",
+  "action": "created"
+ },
+ "R3G-22": {
+  "fullname": "muse-probe-round5g-r3-r3g-22",
+  "source": "[[a href=\"*#a\u001bb\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3G-23": {
+  "fullname": "muse-probe-round5g-r3-r3g-23",
+  "source": "[[a data-x=\"p\u001bq\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3G-24": {
+  "fullname": "muse-probe-round5g-r3-r3g-24",
+  "source": "[[footnote]]A[[/footnote]]\n[[footnote]]\u0001\nB[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3G-25": {
+  "fullname": "muse-probe-round5g-r3-r3g-25",
+  "source": "[[a href=\"#a\fb\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3G-26": {
+  "fullname": "muse-probe-round5g-r3-r3g-26",
+  "source": "[[a href=\"#a\u0001b\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3G-27": {
+  "fullname": "muse-probe-round5g-r3-r3g-27",
+  "source": "[[a class=\"x\fy\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3G-28": {
+  "fullname": "muse-probe-round5g-r3-r3g-28",
+  "source": "[[footnote]]\f\n\u001bX[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ }
+}

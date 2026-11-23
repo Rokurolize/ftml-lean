@@ -1,0 +1,16 @@
+{"id": "N1-CROSSOL", "source": "[[UL]]\n[[LI]]outer[[ol]]\n[[li]]in[[/li]]\n[[/ol]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]"}
+{"id": "N2-SCOREDRAW", "source": "[[UL_]]\n[[LI]]outer[[ul]]\n[[li]]in[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]"}
+{"id": "N3-SCOREDNEST", "source": "[[UL]]\n[[LI]]outer[[ul_]]\n[[li]]in[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]"}
+{"id": "N4-LOWERATTR", "source": "[[ul class=\"o\"]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/ul]]\n[[LI]]tail[[/LI]]\n[[/ul]]"}
+{"id": "N5-LOWERSCORED", "source": "[[ul_]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/ul]]\n[[LI]]tail[[/LI]]\n[[/ul]]"}
+{"id": "N6-THREELEVEL", "source": "[[UL]]\n[[LI]]A[[ul]]\n[[li]]B[[UL]]\n[[LI]]C[[/LI]]\n[[/UL]]\n[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]\n[[LI]]D[[/LI]]\n[[/UL]]"}
+{"id": "S2-TAB", "source": "[[UL]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\t\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]"}
+{"id": "S2-FF", "source": "[[UL]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\f\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]"}
+{"id": "S2-SPACES", "source": "[[UL]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]   \n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]"}
+{"id": "S3-DBLFT", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]n1[[/footnote]]P1[[footnoteblock]]Q1\n[[LI]]B[[/LI]]\n[[footnoteblock]]Q2[[/UL]]\nTAIL"}
+{"id": "S3-DOUBLELF", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnote]]n[[/footnote]]LEFT\n\n[[footnoteblock]]RIGHT"}
+{"id": "S3-CASEFT", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnote]]n[[/footnote]]LEFT[[FootnoteBlock]]RIGHT"}
+{"id": "CL-ESCCLASS", "source": "alpha\\\n[[div class=\"A\u001bB\"]]\nbravo[[/div]]"}
+{"id": "CL-DELCLASS", "source": "alpha\\\n[[div class=\"AB\"]]\nbravo[[/div]]"}
+{"id": "CL-SPANTYPE", "source": "alpha\\\n[[span_ class=\"t  \"]]bravo[[/span]]"}
+{"id": "CL-DIVC0", "source": "alpha\\\n[[div data-x=\"A\u000bB\"]]\nbravo[[/div]]"}

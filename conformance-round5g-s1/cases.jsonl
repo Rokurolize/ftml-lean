@@ -1,0 +1,18 @@
+{"id": "s01-fl-esc-lead-url", "source": "[[[\u001bhttps://example.com/x]]]"}
+{"id": "s02-fl-u2065-lead-url", "source": "[[[\u2065https://example.com/y|L]]]"}
+{"id": "s03-fl-esc-in-url", "source": "[[[https://example.com/a\u001bb]]]"}
+{"id": "s04-fl-esc-lead-route-pipe", "source": "[[[\u001b_default:x/#/sec|]]]"}
+{"id": "s05-fl-nonascii-frag-pipe", "source": "[[[https://example.com/caf\u00e9#sec|]]]"}
+{"id": "s06-fl-u2065-multihash", "source": "[[[\u2065foo#a#b]]]"}
+{"id": "s07-fn-break-list-hoist", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]B\f\nC[[/footnote]]\n[[LI]]D[[/LI]]\n[[/UL]]\n[[footnoteblock]]"}
+{"id": "s08-fn-esc-sep-list", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]\u001bX[[/footnote]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnoteblock]]"}
+{"id": "s09-list-closer-ff-break", "source": "[[UL]]\n[[LI]]A[[ul]]\n[[LI]]in[[/LI]]\n[[/ul]]\f\n[[LI]]out[[/LI]]\n[[/UL]]"}
+{"id": "s10-math-esc-type", "source": "[[math type=\"al\u001bign\"]]\nx\n[[/math]]"}
+{"id": "s11-math-multistar", "source": "[[math type=\"**align**\"]]\nx\n[[/math]]"}
+{"id": "s12-math-star-digit", "source": "[[math type=\"align*2\"]]\nx\n[[/math]]"}
+{"id": "s13-btn-settags-space0", "source": "[[button set-tags text=\" 0 \"]]"}
+{"id": "s14-btn-settags-esc", "source": "[[button set-tags text=\"\u001b\"]]"}
+{"id": "s15-tabview-space0", "source": "[[tabview]][[tab 0 ]]body[[/tab]][[/tabview]]"}
+{"id": "s16-span-esc-type", "source": "[[span type=\"a\u001bb\"]]x[[/span]]"}
+{"id": "s17-img-esc-class", "source": "[[image IMG.png class=\"a\u001bb\"]]cap"}
+{"id": "s18-div-esc-placeholder-id", "source": "[[div id=\"a\u001b[[size 12px]]q[[/size]]\"]]\nbody\n[[/div]]"}

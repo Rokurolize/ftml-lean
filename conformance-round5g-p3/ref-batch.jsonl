@@ -1,0 +1,22 @@
+{"id":"p3g-01-img-style-leading","output":"<img src=\"\/local--files\/\/IMG.png\" style=\" color:red\" alt=\"IMG.png\" class=\"image\" \/>"}
+{"id":"p3g-02-img-width-esc","output":"<img src=\"\/local--files\/\/IMG.png\" width=\"1\u001b0\" alt=\"IMG.png\" class=\"image\" \/>"}
+{"id":"p3g-03-img-class-esc","output":"<img src=\"\/local--files\/\/IMG.png\" class=\"th\u001bick\" alt=\"IMG.png\" \/>"}
+{"id":"p3g-04-img-height-del","output":"<img src=\"\/local--files\/\/IMG.png\" height=\"10\" alt=\"IMG.png\" class=\"image\" \/>"}
+{"id":"p3g-05-img-link-esc","output":"<a href=\"#a\u001bb\"><img src=\"\/local--files\/\/IMG.png\" alt=\"IMG.png\" class=\"image\" \/><\/a>"}
+{"id":"p3g-06-img-class-ff","output":"<img src=\"\/local--files\/\/IMG.png\" class=\"thck\" alt=\"IMG.png\" \/>"}
+{"id":"p3g-07-anchor-href-del","output":"<p><a href=\"#a%7Fb\">x<\/a><\/p>\n\n"}
+{"id":"p3g-08-anchor-href-tab","output":"<p><a href=\"#a%20b\">x<\/a><\/p>\n\n"}
+{"id":"p3g-09-anchor-class-esc","output":"<p><a class=\"a\u001bb\" href=\"\">x<\/a><\/p>\n\n"}
+{"id":"p3g-10-span-class-esc","output":"<p><span class=\"a\u001bb\">x<\/span><\/p>\n\n"}
+{"id":"p3g-11-span-id-spaces","output":"<p><span id=\"u- A B \">x<\/span><\/p>\n\n"}
+{"id":"p3g-12-div-role-del","output":"<div role=\"AB\"><p>x<\/p>\n\n<\/div>"}
+{"id":"p3g-13-gallery-data-mixed","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"#\" ><img src=\"\/local--resized-images\/\/IMG.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"p3g-14-gallery-vbscript","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"#\" ><img src=\"\/local--resized-images\/\/IMG.png\/thumbnail.jpg\" alt=\"\"\/><\/a><\/td><\/tr><\/table><\/div><\/div>"}
+{"id":"p3g-15-url-dollar-label","output":"<p><a href=\"http:\/\/example.com\">x$<\/a><\/p>\n\n"}
+{"id":"p3g-16-raw-nine-run","output":"<p>@@@@@<\/p>\n\n"}
+{"id":"p3g-17-raw-closer-7","output":"<p>ZQ@@@<\/p>\n\n"}
+{"id":"p3g-18-tableadv-dotted","output":"<table data-a..b=\"v\">\n<tr>\n<td>X<\/td>\n<\/tr>\n<\/table>"}
+{"id":"p3g-19-embed-underscore-on","output":"<p><iframe src=\"http:\/\/wikimapia.org\/s\/x\" _onclick=\"evil()\"><\/iframe><\/p>\n\n"}
+{"id":"p3g-20-embed-hyphen-on","output":"<p><div class=\"error-block\">Sorry, no match for the embedded content.<\/div><\/p>\n\n"}
+{"id":"p3g-21-include-two-placeholders","output":"<div class=\"error-block\"><p>Included page &quot;muse-probe-round5g-p3-t1&quot; does not exist (<a href=\"\/muse-probe-round5g-p3-t1\/edit\/true\">create it now<\/a>)<\/p>\n\n<\/div>"}
+{"id":"p3g-22-include-adjacent-literal","output":"<div class=\"error-block\"><p>Included page &quot;muse-probe-round5g-p3-t2&quot; does not exist (<a href=\"\/muse-probe-round5g-p3-t2\/edit\/true\">create it now<\/a>)<\/p>\n\n<\/div>"}

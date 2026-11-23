@@ -1,0 +1,208 @@
+{
+ "summary": {
+  "agree": 16,
+  "differ": 5,
+  "invalid": 1,
+  "missing": 0
+ },
+ "rows": [
+  {
+   "id": "p3g-01-img-style-leading",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5g-p3-p3g-01-img-style-leading",
+   "reference": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" style=\" color:red\">",
+   "live": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" style=\"color:red\">",
+   "live_sha256": "a901b7cec39f09f0732fe8318bbdedb30001df2da5b2b82777f368015abed0f9",
+   "source": "[[image IMG.png style=\" color:red\"]]"
+  },
+  {
+   "id": "p3g-02-img-width-esc",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5g-p3-p3g-02-img-width-esc",
+   "reference": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" width=\"1\u001b0\">",
+   "live": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" width=\"1\u001b0\">",
+   "live_sha256": "7e45405868ba79bace3ab5212a71836e92a12b1270a31f8d4b97b4a48bc8fa77",
+   "source": "[[image IMG.png width=\"1\u001b0\"]]"
+  },
+  {
+   "id": "p3g-03-img-class-esc",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5g-p3-p3g-03-img-class-esc",
+   "reference": "<img alt=\"IMG.png\" class=\"th\u001bick\" src=\"/local--files//IMG.png\">",
+   "live": "<img alt=\"IMG.png\" class=\"th\u001bick\" src=\"/local--files//IMG.png\">",
+   "live_sha256": "9b1ef13d78bc2f066d936141aab9f6d4135e3c40b15b7495ab23fc3b4b72ac64",
+   "source": "[[image IMG.png class=\"th\u001bick\"]]"
+  },
+  {
+   "id": "p3g-04-img-height-del",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5g-p3-p3g-04-img-height-del",
+   "reference": "<img alt=\"IMG.png\" class=\"image\" height=\"10\" src=\"/local--files//IMG.png\">",
+   "live": "<img alt=\"IMG.png\" class=\"image\" height=\"10\" src=\"/local--files//IMG.png\">",
+   "live_sha256": "3daa6cfd32e042812c8bea4cb51153d3b30f77ab85d6ab8a039262337f8e745c",
+   "source": "[[image IMG.png height=\"10\"]]"
+  },
+  {
+   "id": "p3g-05-img-link-esc",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5g-p3-p3g-05-img-link-esc",
+   "reference": "<a href=\"#a\u001bb\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live": "<a href=\"#a%1Bb\"><img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\"></a>",
+   "live_sha256": "044f02853ab044951abfc08dbb751ee5a597f85ce291ebf3cf3239b835729a15",
+   "source": "[[image IMG.png link=\"#a\u001bb\"]]"
+  },
+  {
+   "id": "p3g-06-img-class-ff",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5g-p3-p3g-06-img-class-ff",
+   "reference": "<img alt=\"IMG.png\" class=\"thck\" src=\"/local--files//IMG.png\">",
+   "live": "<img alt=\"IMG.png\" class=\"thck\" src=\"/local--files//IMG.png\">",
+   "live_sha256": "fee0ad73f638b31792cc4d5f57d9469c06342b99b76b73c2c8f762732fb2ce70",
+   "source": "[[image IMG.png class=\"th\fck\"]]"
+  },
+  {
+   "id": "p3g-07-anchor-href-del",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5g-p3-p3g-07-anchor-href-del",
+   "reference": "<p><a href=\"#a%7Fb\">x</a></p>",
+   "live": "<p><a href=\"#a%7Fb\">x</a></p>",
+   "live_sha256": "2a15124fab43112b6fbc8cad695c7644339b831ee4dc0fc034cec7d37b3f9d47",
+   "source": "[[a href=\"#ab\"]]x[[/a]]"
+  },
+  {
+   "id": "p3g-08-anchor-href-tab",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5g-p3-p3g-08-anchor-href-tab",
+   "reference": "<p><a href=\"#a%20b\">x</a></p>",
+   "live": "<p><a href=\"#a%20b\">x</a></p>",
+   "live_sha256": "82347a0269bd92327e27eaaefa2bea5f0bb11b2b85fcb5fc60190f5db90423ec",
+   "source": "[[a href=\"#a\tb\"]]x[[/a]]"
+  },
+  {
+   "id": "p3g-09-anchor-class-esc",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5g-p3-p3g-09-anchor-class-esc",
+   "reference": "<p><a class=\"a\u001bb\" href>x</a></p>",
+   "live": "<p><a class=\"a\u001bb\" href>x</a></p>",
+   "live_sha256": "0088d1cf2d8d82fd13cf4c7d96bd29a5f6cf80373ddb91ab9a2834fbb3bc1db4",
+   "source": "[[a class=\"a\u001bb\"]]x[[/a]]"
+  },
+  {
+   "id": "p3g-10-span-class-esc",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5g-p3-p3g-10-span-class-esc",
+   "reference": "<p><span class=\"a\u001bb\">x</span></p>",
+   "live": "<p><span class=\"a\u001bb\">x</span></p>",
+   "live_sha256": "d16fc0b93fe9135f9bfbccb3036c81b8b9560b31704e31760a7a961993b190cc",
+   "source": "[[span class=\"a\u001bb\"]]x[[/span]]"
+  },
+  {
+   "id": "p3g-11-span-id-spaces",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5g-p3-p3g-11-span-id-spaces",
+   "reference": "<p><span id=\"u- A B \">x</span></p>",
+   "live": "<p><span id=\"u- A B\">x</span></p>",
+   "live_sha256": "adeef5c42c1f53f8c17c30cd665bfc384408a76ca6344ea95362f053e5d0cd76",
+   "source": "[[span id=\" A B \"]]x[[/span]]"
+  },
+  {
+   "id": "p3g-12-div-role-del",
+   "verdict": "UNTESTABLE",
+   "flags": {
+    "valid": false,
+    "stable": true,
+    "saved_source_matches": false
+   }
+  },
+  {
+   "id": "p3g-13-gallery-data-mixed",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5g-p3-p3g-13-gallery-data-mixed",
+   "reference": "<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"#\"><img alt src=\"/local--resized-images//IMG.png/thumbnail.jpg\"></a></td></tr></table></div></div>",
+   "live": "<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"#\"><img alt src=\"/local--resized-images//IMG.png/thumbnail.jpg\"></a></td></tr></table></div></div>",
+   "live_sha256": "1f7e3779e18e864ad6df5c8eef070a3faeed8f0499dc7bb927556b0573e1466b",
+   "source": "[[gallery]]\n: IMG.png link=\"DaTa:text/html,x\"\n[[/gallery]]"
+  },
+  {
+   "id": "p3g-14-gallery-vbscript",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5g-p3-p3g-14-gallery-vbscript",
+   "reference": "<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"#\"><img alt src=\"/local--resized-images//IMG.png/thumbnail.jpg\"></a></td></tr></table></div></div>",
+   "live": "<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"#\"><img alt src=\"/local--resized-images//IMG.png/thumbnail.jpg\"></a></td></tr></table></div></div>",
+   "live_sha256": "2496b22b195516840f909701183f5b60e4dc3178ff2ff2a0bbe673a4015f5304",
+   "source": "[[gallery]]\n: IMG.png link=\"VBScript:msgbox(1)\"\n[[/gallery]]"
+  },
+  {
+   "id": "p3g-15-url-dollar-label",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5g-p3-p3g-15-url-dollar-label",
+   "reference": "<p><a href=\"http://example.com\">x$</a></p>",
+   "live": "<p><a href=\"http://example.com\">x$</a></p>",
+   "live_sha256": "d270664040c83be57df5ddf0c0529a014e7a1a4bbb8dd5e45bf48d44ce85e6a4",
+   "source": "[http://example.com x$]"
+  },
+  {
+   "id": "p3g-16-raw-nine-run",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5g-p3-p3g-16-raw-nine-run",
+   "reference": "<p>@@@@@</p>",
+   "live": "<p>@@@@@</p>",
+   "live_sha256": "926f79dbd11a14b8de919e1b0a120f446136d45b750939e84ba66c66f4b46a95",
+   "source": "@@@@@@@@@"
+  },
+  {
+   "id": "p3g-17-raw-closer-7",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5g-p3-p3g-17-raw-closer-7",
+   "reference": "<p>ZQ@@@</p>",
+   "live": "<p>ZQ@@@</p>",
+   "live_sha256": "29fbfbf5229fe9bd5af4a053dac639dbcf2ad8c47ded64f90ee6042dfe2f84dd",
+   "source": "@@@@ZQ@@@@@@@"
+  },
+  {
+   "id": "p3g-18-tableadv-dotted",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5g-p3-p3g-18-tableadv-dotted",
+   "reference": "<table data-a..b=\"v\"><tr><td>X</td></tr></table>",
+   "live": "<table data-a..b=\"v\"><tr><td>X</td></tr></table>",
+   "live_sha256": "17923cac74c5eee3c39df000fdfcb87277e317546a80775a1c83cb086fd15111",
+   "source": "[[table data-a..b=\"v\"]]\n[[row]]\n[[cell]]X[[/cell]]\n[[/row]]\n[[/table]]"
+  },
+  {
+   "id": "p3g-19-embed-underscore-on",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5g-p3-p3g-19-embed-underscore-on",
+   "reference": "<p><iframe _onclick=\"evil()\" src=\"http://wikimapia.org/s/x\"></iframe></p>",
+   "live": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+   "live_sha256": "0d94a629bbda9bb7b87fcaf86579d5195ffef1ffcfd644fd09babead0f4c04b0",
+   "source": "[[embed]]<iframe src=\"http://wikimapia.org/s/x\" _onclick=\"evil()\"></iframe>[[/embed]]"
+  },
+  {
+   "id": "p3g-20-embed-hyphen-on",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5g-p3-p3g-20-embed-hyphen-on",
+   "reference": "<p><div class=\"error-block\">Sorry, no match for the embedded content.</div></p>",
+   "live": "<div class=\"error-block\">Sorry, no match for the embedded content.</div>",
+   "live_sha256": "0d94a629bbda9bb7b87fcaf86579d5195ffef1ffcfd644fd09babead0f4c04b0",
+   "source": "[[embed]]<iframe src=\"http://wikimapia.org/s/x\" -onclick=\"evil()\"></iframe>[[/embed]]"
+  },
+  {
+   "id": "p3g-21-include-two-placeholders",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5g-p3-p3g-21-include-two-placeholders",
+   "reference": "<p>X|Y</p>",
+   "live": "<p>X|Y</p>",
+   "live_sha256": "aecfe887dd27ec404c41405599efd132783f83e38847f8a25263816eab16edff",
+   "source": "[[include muse-probe-round5g-p3-t1 | a=X | b=Y]]"
+  },
+  {
+   "id": "p3g-22-include-adjacent-literal",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5g-p3-p3g-22-include-adjacent-literal",
+   "reference": "<p>QZR</p>",
+   "live": "<p>QZR</p>",
+   "live_sha256": "0ad20583378f6953f68fbd9dc23bdfdf6c84a0127c5816d8357ef3ef1fca9f7c",
+   "source": "[[include muse-probe-round5g-p3-t2 | a=Z]]"
+  }
+ ]
+}

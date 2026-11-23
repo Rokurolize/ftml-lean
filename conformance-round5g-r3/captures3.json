@@ -1,0 +1,42 @@
+{
+ "R3G-25": {
+  "fullname": "muse-probe-round5g-r3-r3g-25",
+  "html": "<p><a href=\"#ab\">x</a></p>",
+  "html_sha256": "aaf289c8fe1b31d4b2adc4e0d287cf9f2abec852ed61b54c64f888e67c57fc54",
+  "source": "[[a href=\"#a\fb\"]]x[[/a]]",
+  "source_sha256": "6f9600a13f2c51354c2beb2f73bf0552b42711beef41d189efdfc1e1c34de2f6",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R3G-26": {
+  "fullname": "muse-probe-round5g-r3-r3g-26",
+  "html": "<p><a href=\"#ab\">x</a></p>",
+  "html_sha256": "aaf289c8fe1b31d4b2adc4e0d287cf9f2abec852ed61b54c64f888e67c57fc54",
+  "source": "[[a href=\"#a\u0001b\"]]x[[/a]]",
+  "source_sha256": "52c4b2d9bf5b35b721b4598ec639319ade2dd69502ab69fe0fba764539d636a9",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R3G-27": {
+  "fullname": "muse-probe-round5g-r3-r3g-27",
+  "html": "<p><a class=\"xy\" href=\"\">x</a></p>",
+  "html_sha256": "6b24f68983c13e7226ac2b0d5b33d08c07304ca26331952f5838614cea8dc667",
+  "source": "[[a class=\"x\fy\"]]x[[/a]]",
+  "source_sha256": "832a6aa16d31b811cf5905db57800574132457e1e70d5d2293a4623445b0b1aa",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "R3G-28": {
+  "fullname": "muse-probe-round5g-r3-r3g-28",
+  "html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup></p>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>.<br />\n\u001bX</div>\n</div>",
+  "html_sha256": "64814764c5a85920e2dd3fb5b1ffe81a4d2674cfaee2f9ff5373e19381b4ccd8",
+  "source": "[[footnote]]\f\n\u001bX[[/footnote]]\n[[footnoteblock]]",
+  "source_sha256": "c71e82d960c545ce2eb6e1963a1601279694be57fc27b3bb40bfc9fe7b7acae3",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

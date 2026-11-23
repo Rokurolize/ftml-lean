@@ -1,0 +1,92 @@
+{
+ "s01-fl-esc-lead-url": {
+  "fullname": "muse-probe-round5g-s1-s01-fl-esc-lead-url",
+  "source": "[[[\u001bhttps://example.com/x]]]",
+  "action": "created"
+ },
+ "s02-fl-u2065-lead-url": {
+  "fullname": "muse-probe-round5g-s1-s02-fl-u2065-lead-url",
+  "source": "[[[⁥https://example.com/y|L]]]",
+  "action": "created"
+ },
+ "s03-fl-esc-in-url": {
+  "fullname": "muse-probe-round5g-s1-s03-fl-esc-in-url",
+  "source": "[[[https://example.com/a\u001bb]]]",
+  "action": "created"
+ },
+ "s04-fl-esc-lead-route-pipe": {
+  "fullname": "muse-probe-round5g-s1-s04-fl-esc-lead-route-pipe",
+  "source": "[[[\u001b_default:x/#/sec|]]]",
+  "action": "created"
+ },
+ "s05-fl-nonascii-frag-pipe": {
+  "fullname": "muse-probe-round5g-s1-s05-fl-nonascii-frag-pipe",
+  "source": "[[[https://example.com/café#sec|]]]",
+  "action": "created"
+ },
+ "s06-fl-u2065-multihash": {
+  "fullname": "muse-probe-round5g-s1-s06-fl-u2065-multihash",
+  "source": "[[[⁥foo#a#b]]]",
+  "action": "created"
+ },
+ "s07-fn-break-list-hoist": {
+  "fullname": "muse-probe-round5g-s1-s07-fn-break-list-hoist",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]B\f\nC[[/footnote]]\n[[LI]]D[[/LI]]\n[[/UL]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "s08-fn-esc-sep-list": {
+  "fullname": "muse-probe-round5g-s1-s08-fn-esc-sep-list",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]\u001bX[[/footnote]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "s09-list-closer-ff-break": {
+  "fullname": "muse-probe-round5g-s1-s09-list-closer-ff-break",
+  "source": "[[UL]]\n[[LI]]A[[ul]]\n[[LI]]in[[/LI]]\n[[/ul]]\f\n[[LI]]out[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "s10-math-esc-type": {
+  "fullname": "muse-probe-round5g-s1-s10-math-esc-type",
+  "source": "[[math type=\"al\u001bign\"]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "s11-math-multistar": {
+  "fullname": "muse-probe-round5g-s1-s11-math-multistar",
+  "source": "[[math type=\"**align**\"]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "s12-math-star-digit": {
+  "fullname": "muse-probe-round5g-s1-s12-math-star-digit",
+  "source": "[[math type=\"align*2\"]]\nx\n[[/math]]",
+  "action": "created"
+ },
+ "s13-btn-settags-space0": {
+  "fullname": "muse-probe-round5g-s1-s13-btn-settags-space0",
+  "source": "[[button set-tags text=\" 0 \"]]",
+  "action": "created"
+ },
+ "s14-btn-settags-esc": {
+  "fullname": "muse-probe-round5g-s1-s14-btn-settags-esc",
+  "source": "[[button set-tags text=\"\u001b\"]]",
+  "action": "created"
+ },
+ "s15-tabview-space0": {
+  "fullname": "muse-probe-round5g-s1-s15-tabview-space0",
+  "source": "[[tabview]][[tab 0 ]]body[[/tab]][[/tabview]]",
+  "action": "created"
+ },
+ "s16-span-esc-type": {
+  "fullname": "muse-probe-round5g-s1-s16-span-esc-type",
+  "source": "[[span type=\"a\u001bb\"]]x[[/span]]",
+  "action": "created"
+ },
+ "s17-img-esc-class": {
+  "fullname": "muse-probe-round5g-s1-s17-img-esc-class",
+  "source": "[[image IMG.png class=\"a\u001bb\"]]cap",
+  "action": "created"
+ },
+ "s18-div-esc-placeholder-id": {
+  "fullname": "muse-probe-round5g-s1-s18-div-esc-placeholder-id",
+  "source": "[[div id=\"a\u001b[[size 12px]]q[[/size]]\"]]\nbody\n[[/div]]",
+  "action": "created"
+ }
+}

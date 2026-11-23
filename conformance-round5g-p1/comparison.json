@@ -1,0 +1,178 @@
+[
+ {
+  "id": "N1-CROSSOL",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "99eb0e72c11e3acffce9ce3ddbaa0b49036bc9eda3d96dfbee25e9763534b9be",
+  "source_sha256": "044d0cb00591f193b45054887e29285924e0c195e1f2fb9ccb711118d2aaec13",
+  "live_norm": "<ul> <li>outer</li> </ul> <ol> <li>in</li> </ol> [[LI]]tail[[/LI]]<br> [[/UL]]",
+  "ref_norm": "<ul> <li>outer</li> </ul><ol> <li>in</li> </ol> [[LI]]tail[[/LI]]<br> [[/UL]]",
+  "equal": false
+ },
+ {
+  "id": "N2-SCOREDRAW",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "31a2ba9c039f8298cefea630e95568075bd860da4323ff432617098e09c590a0",
+  "source_sha256": "36e11c6b0b7a6bbde2744e863c97536980a6e857f756b72f6dd80453cc7a938f",
+  "live_norm": "<ul> <li>outer</li> </ul> <ul> <li>in</li> </ul> [[LI]]tail[[/LI]]<br> [[/UL]]",
+  "ref_norm": "<ul> <li>outer</li> </ul><ul> <li>in</li> </ul> [[LI]]tail[[/LI]]<br> [[/UL]]",
+  "equal": false
+ },
+ {
+  "id": "N3-SCOREDNEST",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "31a2ba9c039f8298cefea630e95568075bd860da4323ff432617098e09c590a0",
+  "source_sha256": "205cce57677a6009fafa20ddb47b7d4c0356d771f9f21b13909331fad1450898",
+  "live_norm": "<ul> <li>outer</li> </ul> <ul> <li>in</li> </ul> [[LI]]tail[[/LI]]<br> [[/UL]]",
+  "ref_norm": "<ul> <li>outer</li> </ul><ul> <li>in</li> </ul> [[LI]]tail[[/LI]]<br> [[/UL]]",
+  "equal": false
+ },
+ {
+  "id": "N4-LOWERATTR",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "a201bb4bb33f184715d42e25cf66689ad4caae61a7ee76358a9aa7c11734ad38",
+  "source_sha256": "66dd1801be542b24ad0778d17a87ea190ad5a9515390b05f09923eb28dc8bcf9",
+  "live_norm": "<ul class=\"o\"> <li>outer</li> <li>in</li> </ul> [[LI]]tail[[/LI]]<br> [[/ul]]",
+  "ref_norm": "<ul class=\"o\"> <li>outer<ul> <li>in[[LI]]tail</li> </ul></li> </ul>",
+  "equal": false
+ },
+ {
+  "id": "N5-LOWERSCORED",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "ffef906d4d563835fe817ba50420e26fc94f93181a64164217b19a60c3c6b73f",
+  "source_sha256": "2888106944ba39c9ba95dc9cdc8ea37ae0c01bfccc16bfa71aa7bbeaebc271f7",
+  "live_norm": "<ul> <li>outer</li> <li>in</li> </ul> [[LI]]tail[[/LI]]<br> [[/ul]]",
+  "ref_norm": "<ul> <li>outer<ul> <li>in[[LI]]tail</li> </ul></li> </ul>",
+  "equal": false
+ },
+ {
+  "id": "N6-THREELEVEL",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "0df3e2b9d834ede80c3acc81bbd8629c624a703300974e34afba41c60517338d",
+  "source_sha256": "473dd8815c61b1434895a9b0a6d394590ade9bce7b0282cd77641a9ddb2d6bbf",
+  "live_norm": "<ul> <li>A</li> </ul> <ul> <li>B</li> <li>C</li> </ul> [[LI]]D[[/LI]]<br> [[/UL]]",
+  "ref_norm": "<ul> <li>A</li> </ul><ul> <li>B<ul> <li>C[[LI]]D</li> </ul><br> </li> </ul>",
+  "equal": false
+ },
+ {
+  "id": "S2-TAB",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "90a6248005f7f906429fa26429e271c939c3acdff3359f929740ed9eabd4a0b9",
+  "source_sha256": "d689c2bb05329533af93bb75a79a303d99500e9c572ed4eb854d45e3b6df884d",
+  "live_norm": "<ul> <li>outer</li> <li>in [[LI]]tail[[/LI]]<br> [[/UL]]</li> </ul>",
+  "ref_norm": "<ul> <li>outer</li> <li>in[[LI]]tail[[/LI]]<br> [[/UL]]</li> </ul>",
+  "equal": false
+ },
+ {
+  "id": "S2-FF",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "dc66490b1f59566322498f34576212ab27da4f2efcdae74c2e8eef76fba6617f",
+  "source_sha256": "8c259c94124d51ab95c330c0785db966ef446994e330f3db1bc76c1e12c36f3c",
+  "live_norm": "<ul> <li>outer</li> <li>in[[LI]]tail[[/LI]]<br> [[/UL]]</li> </ul>",
+  "ref_norm": "<ul> <li>outer</li> <li>in[[LI]]tail[[/LI]]<br> [[/UL]]</li> </ul>",
+  "equal": true
+ },
+ {
+  "id": "S2-SPACES",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "90a6248005f7f906429fa26429e271c939c3acdff3359f929740ed9eabd4a0b9",
+  "source_sha256": "dc0a3c795c1348932d2ed8c71c5259ca1a83c3ddf267493068fa727a7f34eeee",
+  "live_norm": "<ul> <li>outer</li> <li>in [[LI]]tail[[/LI]]<br> [[/UL]]</li> </ul>",
+  "ref_norm": "<ul> <li>outer</li> <li>in[[LI]]tail[[/LI]]<br> [[/UL]]</li> </ul>",
+  "equal": false
+ },
+ {
+  "id": "S3-DBLFT",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "783c9f55e8df2c362725365603d7d2fb76596eec77e05d5a70019027553d7596",
+  "source_sha256": "f89bbf6a8271389522f9993f51e0664d08aa205ef6da3d89532cce8ce211309d",
+  "live_norm": "<ul> <li>A<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-X\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-X')\">1</a></sup>P1<br></li> </ul> <div class=\"footnotes-footer\"> <div class=\"title\">Footnotes</div> <div class=\"footnote-footer\" id=\"footnote-X\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-X')\">1</a>. n1</div> </div> <br> Q1<br> [[LI]]B[[/LI]]<br> [[footnoteblock]]Q2[[/UL]]<br> TAIL",
+  "ref_norm": "<ul> <li>A<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-X\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-X')\">1</a></sup>P1<br> </li> </ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-X\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-X')\">1</a>. n1</div></div><br> Q1<br> [[LI]]B[[/LI]]<br> [[footnoteblock]]Q2[[/UL]]<br> TAIL",
+  "equal": false
+ },
+ {
+  "id": "S3-DOUBLELF",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "4a33142b187d1e7064163a518dc8d638cb6d3e2eda4d7b7039ff565f3019ac4c",
+  "source_sha256": "f10eedb8ede16c66c7408afea68bf6b082b70accd37149c62d5d575d816514c4",
+  "live_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-X\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-X')\">1</a></sup>LEFT</li> </ul> <div class=\"footnotes-footer\"> <div class=\"title\">Footnotes</div> <div class=\"footnote-footer\" id=\"footnote-X\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-X')\">1</a>. n</div> </div> <br> RIGHT",
+  "ref_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-X\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-X')\">1</a></sup>LEFT</li> </ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-X\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-X')\">1</a>. n</div></div><br> RIGHT",
+  "equal": false
+ },
+ {
+  "id": "S3-CASEFT",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "55864ee6b151420d5408de79656162a117574b99c6030a0b7414e5ea0fa85f7e",
+  "source_sha256": "2f472d062275599d7fe023e509d1f4a7a051a11e27312c56a38ea2f67f78e62f",
+  "live_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-X\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-X')\">1</a></sup>LEFT[[FootnoteBlock]]RIGHT</li> </ul> <div class=\"footnotes-footer\"> <div class=\"title\">Footnotes</div> <div class=\"footnote-footer\" id=\"footnote-X\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-X')\">1</a>. n</div> </div>",
+  "ref_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-X\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-X')\">1</a></sup>LEFT[[FootnoteBlock]]RIGHT</li> </ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-X\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-X')\">1</a>. n</div></div>",
+  "equal": false
+ },
+ {
+  "id": "CL-ESCCLASS",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "878d07ba679279c3ffe47aed07953efc4587e74adffe8d741a43cf3506474d2b",
+  "source_sha256": "4d419febc0a7069934a43989c2fefa20c1cd5046c92f6eb22048fc31a2f0ead2",
+  "live_norm": "alpha <div class=\"A\u001bB\"> <p>bravo</p> </div>",
+  "ref_norm": "alpha <div class=\"A\u001bB\"><p>bravo</p> </div>",
+  "equal": false
+ },
+ {
+  "id": "CL-DELCLASS",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "09e8e23269b0036b0003945a6dcc681c2eedaf50cea5129e8d8ba7ac51a3429e",
+  "source_sha256": "aa56fcdf43febadf592024e191da5505e55fcc5d5fc43d3c7a9b73f302e116fb",
+  "live_norm": "alpha <div class=\"AB\"> <p>bravo</p> </div>",
+  "ref_norm": "alpha <div class=\"AB\"><p>bravo</p> </div>",
+  "equal": false
+ },
+ {
+  "id": "CL-SPANTYPE",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "a47463b326d33ff5a1667996b23a5feb505942932965d68aaa18da47e90dcb56",
+  "source_sha256": "022f3ee65e65c3a969114ebfde64850593f569fba7e86a69d5380a7a852fcdd0",
+  "live_norm": "alpha<span class=\"t\">bravo</span>",
+  "ref_norm": "alpha<span class=\"t\">bravo</span>",
+  "equal": true
+ },
+ {
+  "id": "CL-DIVC0",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "5be751bc92ad87e68234589567ea6b7493fc30f4c51403db3db5fae515ad7c20",
+  "source_sha256": "6a61016e876319138b2452fcae1451633e910d1e8ed69c28637bd1621ae0c7ef",
+  "live_norm": "alpha <div data-x=\"AB\"> <p>bravo</p> </div>",
+  "ref_norm": "alpha <div data-x=\"AB\"><p>bravo</p> </div>",
+  "equal": false
+ }
+]

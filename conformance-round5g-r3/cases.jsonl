@@ -1,0 +1,16 @@
+{"id": "R3G-01", "source": "[[footnote]]\u0001\nX[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3G-02", "source": "[[footnote]]\u000b\nX[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3G-03", "source": "[[footnote]]\nX[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3G-04", "source": "[[footnote]]X\n\f[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3G-05", "source": "[[footnote]]\u001b[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3G-06", "source": "[[footnote]][[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3G-07", "source": "[[footnote]]A[[/footnote]]\n[[footnote]]\f\nB[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3G-08", "source": "[[footnote]]@@@@\f\nX[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3G-09", "source": "[[a id=\"ab\"]]x[[/a]]"}
+{"id": "R3G-10", "source": "[[a href=\"#ab\"]]x[[/a]]"}
+{"id": "R3G-11", "source": "[[a href=\"a\u001bb\"]]x[[/a]]"}
+{"id": "R3G-12", "source": "[[a href=\"ab\"]]x[[/a]]"}
+{"id": "R3G-13", "source": "[[a class=\"x\u001by\"]]x[[/a]]"}
+{"id": "R3G-14", "source": "[[a id=\"a\u000bb\"]]x[[/a]]"}
+{"id": "R3G-15", "source": "[[toc]]\n\n+ Hea[[footnote]]\f\n@@@@[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "R3G-16", "source": "[[bibliography]]\n: a : A\n\u0001\n: b : B\n[[/bibliography]]"}

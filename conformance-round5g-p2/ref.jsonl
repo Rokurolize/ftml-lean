@@ -1,0 +1,20 @@
+{"id":"R5GP2-01","output":"<p><a class=\"newpage\" href=\"\/default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5GP2-02","output":"<p><a class=\"newpage\" href=\"\/default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5GP2-03","output":"<p><a class=\"newpage\" href=\"\/default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5GP2-04","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5GP2-05","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"R5GP2-06","output":"<p><a href=\"http:\/\/example.com\/p#s%C3%A9ct\">L<\/a><\/p>\n\n"}
+{"id":"R5GP2-07","output":"<p><a href=\"http:\/\/example.com\/?x=1&amp;y=2\">L<\/a><\/p>\n\n"}
+{"id":"R5GP2-08","output":"<p><a href=\"http:\/\/example.com\/#\">L<\/a><\/p>\n\n"}
+{"id":"R5GP2-09","output":"<p><a href=\"http:\/\/example.com\/a-b\">http:example-com-a-b<\/a><\/p>\n\n"}
+{"id":"R5GP2-10","output":"<p><a target=\"_blank\" href=\"http:\/\/example.com\/a-b\">http:example-com-a-b<\/a><\/p>\n\n"}
+{"id":"R5GP2-11","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"R5GP2-12","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"R5GP2-13","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"R5GP2-14","output":"<div class=\"error-block\">Unsupported math environment \"alignat\"<\/div>"}
+{"id":"R5GP2-15","output":"<div class=\"error-block\">Unsupported math environment \"gathered\"<\/div>"}
+{"id":"R5GP2-16","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).<\/div>"}
+{"id":"R5GP2-17","output":"<div class=\"error-block\">Unsupported math environment \"ALIGN\"<\/div>"}
+{"id":"R5GP2-18","output":"<p><a href=\"http:\/\/example.com\/caf\">http:\/\/example.com\/caf<\/a>\u00e9<\/p>\n\n"}
+{"id":"R5GP2-19","output":"<p><a href=\"http:\/\/example.com\/caf%C3%A9\">label<\/a><\/p>\n\n"}
+{"id":"R5GP2-20","output":"<p><a href=\"https:\/\/en.wikipedia.org\/wiki\/Alpha#Beta\" onclick=\"window.open(this.href, '_blank'); return false;\">label<\/a><\/p>\n\n"}

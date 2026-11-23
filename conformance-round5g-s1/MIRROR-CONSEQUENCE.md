@@ -1,0 +1,9 @@
+# MIRROR-CONSEQUENCE — round-5g unit R5G-S1 (source-reading inference only)
+
+This unit ran no Lean elaboration. The two confirmed reference divergences were checked against the canonical mirror by reading source; the consequences below are inferred, not claimed as elaborations.
+
+C-R5G-S1-1 (Freelink external href raw ESC). `lean-ftml/LeanFtml/ServingRules.lean::renderFreelink` lines 355-357 emits `htmlSpecialCharsCompat (percentEncodeNonAscii (url ++ anchor ++ extra))`. `percentEncodeNonAscii` rewrites bytes >= 0x80 only (InlineSimpleRules), so an ASCII C0 byte such as ESC 0x1B passes through verbatim, matching the reference defect. A symmetric mirror fix widens the encoder to the non-printable byte class used by the Anchor verbatim-href path, so the href becomes `%1B`. The parse-side mirror `LinkRules.lean::freelinkProcess` is unaffected because the ESC sits in the URL interior, outside the lead predicate; the anchor and /#/ route suffixes are already carried correctly by the same expression.
+
+C-R5G-S1-2 (set-tags Button label spaces). `lean-ftml/LeanFtml/InteractiveRules.lean::renderButton` lines 735-758 computes `let txt := if phpTruthyBytes text then text else buttonDefaultText ty` and emits `htmlSpecialCharsCompat txt` with no trim, so a present `" 0 "` survives with both spaces, matching the reference defect. A symmetric mirror fix wraps the emitted label in `phpTrimBytes` (keeping the presence guard and the falsy-default decision on the untrimmed value) to reach the live label `0`. `CoverageServe.lean::buttonModeOf` classifies by attribute presence and PHP truthiness rather than label bytes and needs no change.
+
+All other 16 suspicions cleared on byte equality after the standard mask or on an owned serving surface (external LatexRenderer math stub, wdfiles image host), so no mirror consequence is claimed for them.

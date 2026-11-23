@@ -1,0 +1,98 @@
+N1-CROSSOL -> muse-probe-round5g-p1-n1-crossol (created)
+N2-SCOREDRAW -> muse-probe-round5g-p1-n2-scoredraw (created)
+N3-SCOREDNEST -> muse-probe-round5g-p1-n3-scorednest (created)
+N4-LOWERATTR -> muse-probe-round5g-p1-n4-lowerattr (created)
+N5-LOWERSCORED -> muse-probe-round5g-p1-n5-lowerscored (created)
+N6-THREELEVEL -> muse-probe-round5g-p1-n6-threelevel (created)
+S2-TAB -> muse-probe-round5g-p1-s2-tab (created)
+S2-FF -> muse-probe-round5g-p1-s2-ff (created)
+S2-SPACES -> muse-probe-round5g-p1-s2-spaces (created)
+S3-DBLFT -> muse-probe-round5g-p1-s3-dblft (created)
+S3-DOUBLELF -> muse-probe-round5g-p1-s3-doublelf (created)
+S3-CASEFT -> muse-probe-round5g-p1-s3-caseft (created)
+CL-ESCCLASS -> muse-probe-round5g-p1-cl-escclass (created)
+CL-DELCLASS -> muse-probe-round5g-p1-cl-delclass (created)
+CL-SPANTYPE -> muse-probe-round5g-p1-cl-spantype (created)
+CL-DIVC0 -> muse-probe-round5g-p1-cl-divc0 (created)
+{
+ "N1-CROSSOL": {
+  "fullname": "muse-probe-round5g-p1-n1-crossol",
+  "source": "[[UL]]\n[[LI]]outer[[ol]]\n[[li]]in[[/li]]\n[[/ol]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "N2-SCOREDRAW": {
+  "fullname": "muse-probe-round5g-p1-n2-scoredraw",
+  "source": "[[UL_]]\n[[LI]]outer[[ul]]\n[[li]]in[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "N3-SCOREDNEST": {
+  "fullname": "muse-probe-round5g-p1-n3-scorednest",
+  "source": "[[UL]]\n[[LI]]outer[[ul_]]\n[[li]]in[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "N4-LOWERATTR": {
+  "fullname": "muse-probe-round5g-p1-n4-lowerattr",
+  "source": "[[ul class=\"o\"]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/ul]]\n[[LI]]tail[[/LI]]\n[[/ul]]",
+  "action": "created"
+ },
+ "N5-LOWERSCORED": {
+  "fullname": "muse-probe-round5g-p1-n5-lowerscored",
+  "source": "[[ul_]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/ul]]\n[[LI]]tail[[/LI]]\n[[/ul]]",
+  "action": "created"
+ },
+ "N6-THREELEVEL": {
+  "fullname": "muse-probe-round5g-p1-n6-threelevel",
+  "source": "[[UL]]\n[[LI]]A[[ul]]\n[[li]]B[[UL]]\n[[LI]]C[[/LI]]\n[[/UL]]\n[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]\n[[LI]]D[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "S2-TAB": {
+  "fullname": "muse-probe-round5g-p1-s2-tab",
+  "source": "[[UL]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\t\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "S2-FF": {
+  "fullname": "muse-probe-round5g-p1-s2-ff",
+  "source": "[[UL]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\f\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "S2-SPACES": {
+  "fullname": "muse-probe-round5g-p1-s2-spaces",
+  "source": "[[UL]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]   \n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "S3-DBLFT": {
+  "fullname": "muse-probe-round5g-p1-s3-dblft",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]n1[[/footnote]]P1[[footnoteblock]]Q1\n[[LI]]B[[/LI]]\n[[footnoteblock]]Q2[[/UL]]\nTAIL",
+  "action": "created"
+ },
+ "S3-DOUBLELF": {
+  "fullname": "muse-probe-round5g-p1-s3-doublelf",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnote]]n[[/footnote]]LEFT\n\n[[footnoteblock]]RIGHT",
+  "action": "created"
+ },
+ "S3-CASEFT": {
+  "fullname": "muse-probe-round5g-p1-s3-caseft",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnote]]n[[/footnote]]LEFT[[FootnoteBlock]]RIGHT",
+  "action": "created"
+ },
+ "CL-ESCCLASS": {
+  "fullname": "muse-probe-round5g-p1-cl-escclass",
+  "source": "alpha\\\n[[div class=\"A\u001bB\"]]\nbravo[[/div]]",
+  "action": "created"
+ },
+ "CL-DELCLASS": {
+  "fullname": "muse-probe-round5g-p1-cl-delclass",
+  "source": "alpha\\\n[[div class=\"AB\"]]\nbravo[[/div]]",
+  "action": "created"
+ },
+ "CL-SPANTYPE": {
+  "fullname": "muse-probe-round5g-p1-cl-spantype",
+  "source": "alpha\\\n[[span_ class=\"t  \"]]bravo[[/span]]",
+  "action": "created"
+ },
+ "CL-DIVC0": {
+  "fullname": "muse-probe-round5g-p1-cl-divc0",
+  "source": "alpha\\\n[[div data-x=\"A\u000bB\"]]\nbravo[[/div]]",
+  "action": "created"
+ }
+}

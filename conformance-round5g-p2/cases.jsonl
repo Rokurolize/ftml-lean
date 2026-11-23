@@ -1,0 +1,20 @@
+{"id": "R5GP2-01", "source": "[[[\u001c_default:x]]]"}
+{"id": "R5GP2-02", "source": "[[[\u001f_default:x]]]"}
+{"id": "R5GP2-03", "source": "[[[\u007f_default:x]]]"}
+{"id": "R5GP2-04", "source": "[[[\u0080_default:x]]]"}
+{"id": "R5GP2-05", "source": "[[[\ufff0_default:x]]]"}
+{"id": "R5GP2-06", "source": "[[[http://example.com/p#s\u00e9ct|L]]]"}
+{"id": "R5GP2-07", "source": "[[[http://example.com/?x=1&y=2|L]]]"}
+{"id": "R5GP2-08", "source": "[[[http://example.com/#|L]]]"}
+{"id": "R5GP2-09", "source": "[[[http://example.com/a-b | ]]]"}
+{"id": "R5GP2-10", "source": "[[[*http://example.com/a-b|]]]"}
+{"id": "R5GP2-11", "source": "[[math type=\"align**\"]]\nx\n[[/math]]"}
+{"id": "R5GP2-12", "source": "[[math type=\"eq*narray\"]]\nx\n[[/math]]"}
+{"id": "R5GP2-13", "source": "[[math type=\"*align\"]]\nx\n[[/math]]"}
+{"id": "R5GP2-14", "source": "[[math type=\"alignat\"]]\nx\n[[/math]]"}
+{"id": "R5GP2-15", "source": "[[math type=\"gathered\"]]\nx\n[[/math]]"}
+{"id": "R5GP2-16", "source": "[[math type=\"multline*\"]]\nx\n[[/math]]"}
+{"id": "R5GP2-17", "source": "[[math type=\"ALIGN*\"]]\nx\n[[/math]]"}
+{"id": "R5GP2-18", "source": "http://example.com/caf\u00e9"}
+{"id": "R5GP2-19", "source": "[http://example.com/caf\u00e9 label]"}
+{"id": "R5GP2-20", "source": "[wikipedia:Alpha#Beta label]"}

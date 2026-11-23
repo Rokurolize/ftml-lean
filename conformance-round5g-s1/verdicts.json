@@ -1,0 +1,29 @@
+{
+  "adjudication": "round-5g unit R5G-S1; automated frame-mask comparison plus manual rule-level adjudication of serving boundaries",
+  "counts": {"suspicions": 18, "probed": 18, "valid_stable_source_matching": 18, "confirmed": 2, "cleared": 16, "untestable": 0},
+  "rows": {
+    "s01-fl-esc-lead-url": "CLEARED",
+    "s02-fl-u2065-lead-url": "CLEARED",
+    "s03-fl-esc-in-url": "CONFIRMED",
+    "s04-fl-esc-lead-route-pipe": "CLEARED",
+    "s05-fl-nonascii-frag-pipe": "CLEARED",
+    "s06-fl-u2065-multihash": "CLEARED",
+    "s07-fn-break-list-hoist": "CLEARED",
+    "s08-fn-esc-sep-list": "CLEARED",
+    "s09-list-closer-ff-break": "CLEARED",
+    "s10-math-esc-type": "CLEARED",
+    "s11-math-multistar": "CLEARED",
+    "s12-math-star-digit": "CLEARED",
+    "s13-btn-settags-space0": "CONFIRMED",
+    "s14-btn-settags-esc": "CLEARED",
+    "s15-tabview-space0": "CLEARED",
+    "s16-span-esc-type": "CLEARED",
+    "s17-img-esc-class": "CLEARED",
+    "s18-div-esc-placeholder-id": "CLEARED"
+  },
+  "manual_reclassifications": [
+    {"id": "s11-math-multistar", "auto": "CANDIDATE", "final": "CLEARED", "reason": "both live and reference accept the star-stripped align environment; the live math-equation stub and the reference LatexRenderer PNG failure block are the named external LatexRenderer serving boundary (REFCORR13 AGY2 D08), not a rule-level value"},
+    {"id": "s17-img-esc-class", "auto": "CANDIDATE", "final": "CLEARED", "reason": "the emitted class byte value a<ESC>b is identical on both sides; only the wdfiles image host and page path differ, an owned serving surface under PROTOCOL-R5"}
+  ],
+  "confirmed_candidates": ["C-R5G-S1-1", "C-R5G-S1-2"]
+}

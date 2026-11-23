@@ -1,0 +1,26 @@
+R3G-25 -> muse-probe-round5g-r3-r3g-25 (created)
+R3G-26 -> muse-probe-round5g-r3-r3g-26 (created)
+R3G-27 -> muse-probe-round5g-r3-r3g-27 (created)
+R3G-28 -> muse-probe-round5g-r3-r3g-28 (created)
+{
+ "R3G-25": {
+  "fullname": "muse-probe-round5g-r3-r3g-25",
+  "source": "[[a href=\"#a\fb\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3G-26": {
+  "fullname": "muse-probe-round5g-r3-r3g-26",
+  "source": "[[a href=\"#a\u0001b\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3G-27": {
+  "fullname": "muse-probe-round5g-r3-r3g-27",
+  "source": "[[a class=\"x\fy\"]]x[[/a]]",
+  "action": "created"
+ },
+ "R3G-28": {
+  "fullname": "muse-probe-round5g-r3-r3g-28",
+  "source": "[[footnote]]\f\n\u001bX[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ }
+}

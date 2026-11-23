@@ -1,0 +1,20 @@
+{"id": "r2g-01-fl-already-escaped", "source": "[[[https://example.com/caf%C3%A9]]]"}
+{"id": "r2g-02-fl-fragment-nonascii", "source": "[[[https://example.com/p#s\u00e9c]]]"}
+{"id": "r2g-03-fl-route-nonascii", "source": "[[[https://example.com/p/#/route/\u00e9]]]"}
+{"id": "r2g-04-fl-label-nonascii", "source": "[[[https://example.com/x|caf\u00e9]]]"}
+{"id": "r2g-05-fl-query-amp", "source": "[[[https://example.com/p?a=\u00e9&b=\u00f1]]]"}
+{"id": "r2g-06-fl-starred-url", "source": "[[[*https://example.com/caf\u00e9]]]"}
+{"id": "r2g-07-fl-empty-pipe-nonascii", "source": "[[[https://example.com/caf\u00e9|]]]"}
+{"id": "r2g-08-fl-nbsp-url", "source": "[[[https://example.com/a\u00a0b]]]"}
+{"id": "r2g-09-embed-onmouseover", "source": "[[embed]]\n<iframe src=\"https://example.com\" onmouseover=\"x()\"></iframe>\n[[/embed]]"}
+{"id": "r2g-10-embed-event-upper", "source": "[[embed]]\n<iframe src=\"https://example.com\" ONCLICK=\"x()\"></iframe>\n[[/embed]]"}
+{"id": "r2g-11-embed-single-quote-scheme", "source": "[[embed]]\n<iframe src=\"https://example.com\" srcdoc='javascript:alert(1)'></iframe>\n[[/embed]]"}
+{"id": "r2g-12-embed-src-upper", "source": "[[embed]]\n<iframe src=\"JAVASCRIPT:alert(1)\"></iframe>\n[[/embed]]"}
+{"id": "r2g-13-embed-onload-single", "source": "[[embed]]\n<iframe src=\"https://example.com\" onload='x()'></iframe>\n[[/embed]]"}
+{"id": "r2g-14-gal-link-lead-space", "source": "[[gallery]]\n: a.png link=\"  javascript:alert(1)\"\n[[/gallery]]"}
+{"id": "r2g-15-gal-link-star-scheme", "source": "[[gallery]]\n: a.png link=\"*javascript:alert(1)\"\n[[/gallery]]"}
+{"id": "r2g-16-gal-data-upper", "source": "[[gallery]]\n: a.png link=\"DATA:text/html,hi\"\n[[/gallery]]"}
+{"id": "r2g-17-gal-mailto-upper", "source": "[[gallery]]\n: a.png link=\"MAILTO:a@b.com\"\n[[/gallery]]"}
+{"id": "r2g-18-img-fragment-nonascii", "source": "[[image https://example.com/x.png link=\"#frag\u00e9\"]]"}
+{"id": "r2g-19-url-img-alt-nonascii", "source": "https://example.com/\u00e9.png"}
+{"id": "r2g-20-mathinline-nonascii", "source": "[[$ \u03b1+\u03b2 $]]"}

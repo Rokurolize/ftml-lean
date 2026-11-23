@@ -1,0 +1,22 @@
+{"id": "p3g-01-img-style-leading", "source": "[[image IMG.png style=\" color:red\"]]"}
+{"id": "p3g-02-img-width-esc", "source": "[[image IMG.png width=\"1\u001b0\"]]"}
+{"id": "p3g-03-img-class-esc", "source": "[[image IMG.png class=\"th\u001bick\"]]"}
+{"id": "p3g-04-img-height-del", "source": "[[image IMG.png height=\"10\"]]"}
+{"id": "p3g-05-img-link-esc", "source": "[[image IMG.png link=\"#a\u001bb\"]]"}
+{"id": "p3g-06-img-class-ff", "source": "[[image IMG.png class=\"th\fck\"]]"}
+{"id": "p3g-07-anchor-href-del", "source": "[[a href=\"#ab\"]]x[[/a]]"}
+{"id": "p3g-08-anchor-href-tab", "source": "[[a href=\"#a\tb\"]]x[[/a]]"}
+{"id": "p3g-09-anchor-class-esc", "source": "[[a class=\"a\u001bb\"]]x[[/a]]"}
+{"id": "p3g-10-span-class-esc", "source": "[[span class=\"a\u001bb\"]]x[[/span]]"}
+{"id": "p3g-11-span-id-spaces", "source": "[[span id=\" A B \"]]x[[/span]]"}
+{"id": "p3g-12-div-role-del", "source": "\n[[div role=\"AB\"]]\nx\n[[/div]]\n"}
+{"id": "p3g-13-gallery-data-mixed", "source": "[[gallery]]\n: IMG.png link=\"DaTa:text/html,x\"\n[[/gallery]]"}
+{"id": "p3g-14-gallery-vbscript", "source": "[[gallery]]\n: IMG.png link=\"VBScript:msgbox(1)\"\n[[/gallery]]"}
+{"id": "p3g-15-url-dollar-label", "source": "[http://example.com x$]"}
+{"id": "p3g-16-raw-nine-run", "source": "@@@@@@@@@"}
+{"id": "p3g-17-raw-closer-7", "source": "@@@@ZQ@@@@@@@"}
+{"id": "p3g-18-tableadv-dotted", "source": "[[table data-a..b=\"v\"]]\n[[row]]\n[[cell]]X[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3g-19-embed-underscore-on", "source": "[[embed]]<iframe src=\"http://wikimapia.org/s/x\" _onclick=\"evil()\"></iframe>[[/embed]]"}
+{"id": "p3g-20-embed-hyphen-on", "source": "[[embed]]<iframe src=\"http://wikimapia.org/s/x\" -onclick=\"evil()\"></iframe>[[/embed]]"}
+{"id": "p3g-21-include-two-placeholders", "source": "[[include muse-probe-round5g-p3-t1 | a=X | b=Y]]"}
+{"id": "p3g-22-include-adjacent-literal", "source": "[[include muse-probe-round5g-p3-t2 | a=Z]]"}

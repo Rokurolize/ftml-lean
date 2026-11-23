@@ -1,0 +1,16 @@
+{"id": "R5GR1-A1", "source": "[[span class=\"  a  \"]]body[[/span]]"}
+{"id": "R5GR1-A2", "source": "[[span style=\"color:  red\"]]body[[/span]]"}
+{"id": "R5GR1-A3", "source": "[[span type=\"A\u001bB\"]]body[[/span]]"}
+{"id": "R5GR1-A4", "source": "[[span data-x=\"AB\"]]body[[/span]]"}
+{"id": "R5GR1-A5", "source": "[[div class=\"a\u001b  \"]]\nbody\n[[/div]]"}
+{"id": "R5GR1-A6", "source": "[[span role=\"   \"]]body[[/span]]"}
+{"id": "R5GR1-A7", "source": "[[span data-X=\"  v  \"]]body[[/span]]"}
+{"id": "R5GR1-B1", "source": "alpha\\\n[[div type=\"A\u001bB\"]]\nbody\n[[/div]]"}
+{"id": "R5GR1-B2", "source": "alpha\\\n[[div_ class=\"  a  \"]]\nbody\n[[/div]]"}
+{"id": "R5GR1-B3", "source": "alpha [[size 12px]]x[[/size]]\\\n[[div class=\"a  \"]]\nbody\n[[/div]]"}
+{"id": "R5GR1-B4", "source": "alpha\\\n[[div type=\"AB\"]]\nX\n[[/div]]\nbeta\\\n[[div type=\"t  \"]]\nY\n[[/div]]"}
+{"id": "R5GR1-C1", "source": "[[collapsible show=\"0 \"]]body[[/collapsible]]"}
+{"id": "R5GR1-C2", "source": "[[tabview]][[tab title=\" 0 \"]]x[[/tab]][[/tabview]]"}
+{"id": "R5GR1-C3", "source": "[[tabview]][[tab 00]]x[[/tab]][[/tabview]]"}
+{"id": "R5GR1-C4", "source": "[[size 12px]]A\u001bB[[/size]]"}
+{"id": "R5GR1-C5", "source": "[[UL]]\n[[LI]]A[[ul]]\n[[li]]B[[/ul]][[/LI]]\n[[/UL]]"}
