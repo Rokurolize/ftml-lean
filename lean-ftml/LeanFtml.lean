@@ -54,3 +54,4 @@ import LeanFtml.CoverageTable
 import LeanFtml.CoverageServe
 import LeanFtml.ProofInclude
 import LeanFtml.ProofNotes
+import LeanFtml.RawProof
