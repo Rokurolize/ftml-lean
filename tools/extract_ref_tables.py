@@ -39,8 +39,8 @@ import re
 import subprocess
 import sys
 
-SNAPSHOT_TAG = "snapshot-39"
-SNAPSHOT_COMMIT = "75f7d9dc3045d02bd81ab1f7abaedf4085851b6b"
+SNAPSHOT_TAG = "snapshot-40"
+SNAPSHOT_COMMIT = "79bb3a1263450b3faaf9fa4e56965c3453e5507d"
 DEFAULT_REF_REPO = "/home/roku/.local/state/wikijump/muse-bhl/wikidot-php-reference"
 DEFAULT_REF_PHP = "/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/ref-php"
 
@@ -82,18 +82,18 @@ PINNED = {
     "text-wiki/Text/Wiki/Parse/Default/Include.php": "948551a863dca240ec92d292047b984dd306b473a306c48ac52aeb87c00e93f4",
     "text-wiki/Text/Wiki/Parse/Default/Prefilter.php": "b40ead6a2a0214b72e88eb96069d9fb873ce17efda18e28ed73074af7e88996f",
     "text-wiki/Text/Wiki/Parse/Default/Delimiter.php": "f57e57ade2019071fa0447f428385a1df1a876cebf73f6b4fac02912135de233",
-    "text-wiki/Text/Wiki/Parse/Default/Code.php": "fe39cd265d7f27cf14d148ee65d7f5ab82e59e3ecef4bd87a43724c164c1391b",
+    "text-wiki/Text/Wiki/Parse/Default/Code.php": "95ae1d881b495a39827f25f27c5130a84030922b2c8fc6f0b122c5c83a856a81",
     "text-wiki/Text/Wiki/Parse/Default/Form.php": "cde34fee2c6c4d7543e6013e27b32879f36716b91ac399a0db42a4050e6246bb",
     "text-wiki/Text/Wiki/Parse/Default/Raw.php": "6655a51665eceb52fae5effeb39e810251b57bdc5b4ed1c37a66759f72822ae5",
     "text-wiki/Text/Wiki/Parse/Default/Rawold.php": "0b2989a253420b508738aca076244a149dbd1851085a3d4df11b3ad153b2a708",
     "text-wiki/Text/Wiki/Parse/Default/Modulepre.php": "1d5336676e8e8e5484161540d989f49bf710209447cb117311fc6c8b98c1c6b4",
     "text-wiki/Text/Wiki/Parse/Default/Module.php": "b12b3715fe1ab466e831dd6c68be1b614245279476f6b6b147724c0edb48394d",
     "text-wiki/Text/Wiki/Parse/Default/Module654.php": "73f5137bcf8e483fa931140096827b6ae7824cd403da2bc885f71af99d2028ab",
-    "text-wiki/Text/Wiki/Parse/Default/Iftags.php": "62edf55f7a122e2f729798b8b31ce598b957da4d82228f4f3d3ec6420cf597a6",
+    "text-wiki/Text/Wiki/Parse/Default/Iftags.php": "dcb098b4f99903e1731aac4a9445e9d1d7a08fb0da4e177591160172d27b449c",
     "text-wiki/Text/Wiki/Parse/Default/Comment.php": "0fd39be074f3a3d0dbafdc0ad5254c46a6ec3a56e9c458394bb17ab723d28439",
     "text-wiki/Text/Wiki/Parse/Default/Iframe.php": "bf76dfd40cdb13f8bfa63dbd22bc04f2bcb3168b4fa4461897bcf4cd52d5a0c1",
     "text-wiki/Text/Wiki/Parse/Default/Date.php": "ff7cd510709557da4a7c4afe847f51801e31a41ed8ec7c66e20a9da4b7950c86",
-    "text-wiki/Text/Wiki/Parse/Default/Math.php": "100821c1cf0ca90d4ed186facf715d0631a13240adce77bc9bacded6037df6a3",
+    "text-wiki/Text/Wiki/Parse/Default/Math.php": "250f7ad18a70a067d046caabd5c299b4f68d2b3eb0673338b59f341314a14d25",
     "text-wiki/Text/Wiki/Parse/Default/Concatlines.php": "c8d4367a2f798d3b03c9327bc31a01b8511dd962c4f908029014b6299a3ebce0",
     "text-wiki/Text/Wiki/Parse/Default/Freelink.php": "1a9441a6ad6b9c79b24d2526aedec8b50d616602e1bb2157a9cea81c538b6a39",
     "text-wiki/Text/Wiki/Parse/Default/Equationreference.php": "e8d2fbd52057ba71bed2cbf6637f0adb3423038d4168f020df956dcf5bf786db",
@@ -113,27 +113,27 @@ PINNED = {
     "text-wiki/Text/Wiki/Parse/Default/Separator.php": "3501b01b94274b125a804c167565b84fe89a0801c745e5ba7a29f0049cba7ca7",
     "text-wiki/Text/Wiki/Parse/Default/Clearfloat.php": "782a388aea4fc2717b37d472d58d9ddbf2ad6c8d607b31a343e1adf3d2086662",
     "text-wiki/Text/Wiki/Parse/Default/Break.php": "c7b95838f81e268478593642d23b43d59316498d589651363c7bd9c0dbfe31be",
-    "text-wiki/Text/Wiki/Parse/Default/Span.php": "91f91c3ae760b2ef4cfd064ba5d3fa52edb1139ea144c9222f7d856a1687f6f5",
-    "text-wiki/Text/Wiki/Parse/Default/Size.php": "3aad982e73868d08841d20ab5a3bd4451e92fbeb266c16761eb5f1531e526258",
+    "text-wiki/Text/Wiki/Parse/Default/Span.php": "af9fd221d7db43ad8502248d34ae6464106804b8c17657e1b445f44cb48f6678",
+    "text-wiki/Text/Wiki/Parse/Default/Size.php": "6cbceef88528e398c53dfd2617c3344df7700bdbb84baeb90471f193795c9cdf",
     "text-wiki/Text/Wiki/Parse/Default/Div.php": "7429eb4d8b8ef06c71a7810d58f43e5f9557bbfb95b79418ba34b38096e6d1e6",
-    "text-wiki/Text/Wiki/Parse/Default/Divalign.php": "900dff149423cb4cf9d2ed668a97b356a98cda1d94e950ac99bebae917c8bec8",
+    "text-wiki/Text/Wiki/Parse/Default/Divalign.php": "7d4739cd3b575dae8cdaf352e17975fd40775cc3d5a9b022e86deaf4d0978f86",
     "text-wiki/Text/Wiki/Parse/Default/Collapsible.php": "5af5aac07a67edc48f3a8776965551aad115e7679007e8601830e9a752945cf4",
     "text-wiki/Text/Wiki/Parse/Default/Tabview.php": "396879903379ca03f0bbfe814857cdb29988453a632da5c8c0f76e74c72d0034",
     "text-wiki/Text/Wiki/Parse/Default/Note.php": "b79cc1650735f0d7400298f45c03fdee54bc9f3bf0fc2131a8c59b2390d36d56",
     "text-wiki/Text/Wiki/Parse/Default/Gallery.php": "85407fafba2fd8828d2c451755bf3acf62cf3cf6c211ce8ccaef2af145977a06",
-    "text-wiki/Text/Wiki/Parse/Default/List.php": "6e0a394f3bf0d11bc2d87e944049b2d0aad6b7c945b931f366667081aebd0c02",
+    "text-wiki/Text/Wiki/Parse/Default/List.php": "cede6c11a7a9fa3835db7b7b6238fbf09ea88630816d281d354e1c563afdbef6",
     "text-wiki/Text/Wiki/Parse/Default/Deflist.php": "1ccdb5730dc8e4317932e652ffd4622e8c53d0bbef3c95a2b43675ee706343df",
     "text-wiki/Text/Wiki/Parse/Default/Table.php": "347244881ef295a412822785d562797059769d457ba2786a13944329f3eaa6b2",
-    "text-wiki/Text/Wiki/Parse/Default/Tableadv.php": "9314a58ba4bf835df13be125523a704fa7d2a01c09691d4224b100ba651f9ecb",
+    "text-wiki/Text/Wiki/Parse/Default/Tableadv.php": "1722b8c77e3ca9d3dfffcfc6e920cfe2fa0428d8a4c7b8631dde80983320acdb",
     "text-wiki/Text/Wiki/Parse/Default/Button.php": "0856673d7d13b1eac56af6bc037ab7b452acca8997971e66d6134492f435cedf",
     "text-wiki/Text/Wiki/Parse/Default/Image.php": "a8ff7338f3614a18ac4b762f4ccd1c2cd246b5beccf5ea87a07f530a2c145ef6",
     "text-wiki/Text/Wiki/Parse/Default/Embed.php": "2b2bfd5a71e02ee4bd837cd4dda449338081a350d44b41ccdf06dc7a7921b86f",
     "text-wiki/Text/Wiki/Parse/Default/Social.php": "81c6b1af88320331f9b94bad2545b0f7433a7aee7791d49b58e0a8686c3cab62",
     "text-wiki/Text/Wiki/Parse/Default/File.php": "45f323c0e4c1de2dc70ce44d0bc6f31e8d66cc421feca1202beb3b332ba23e6c",
     "text-wiki/Text/Wiki/Parse/Default/Center.php": "d558f00c75354bfe064028ec1ea5ab48c35f2ae264d63ab6489acd1cfa8972b7",
-    "text-wiki/Text/Wiki/Parse/Default/Newline.php": "0db2ebefe86ceb74289ff92e564e93535ad9201326d25e5c11069b63974ca26d",
-    "text-wiki/Text/Wiki/Parse/Default/Paragraph.php": "697ecc0627854a06678deeafce93a36759edc91b146993b35da1163f115ef106",
-    "text-wiki/Text/Wiki/Parse/Default/Url.php": "aa50fdf2b0e88179472423e5c42b6235ebe63804a88a5bbe24cba2ae01b28a27",
+    "text-wiki/Text/Wiki/Parse/Default/Newline.php": "a826517e1ca305448da8ed668d7354b828a7ff63915fe30c80d2e97c1bfcfed4",
+    "text-wiki/Text/Wiki/Parse/Default/Paragraph.php": "339e962265cde31dd4b1bbe9e99a0300f423304ee3f06a039aff42256360f282",
+    "text-wiki/Text/Wiki/Parse/Default/Url.php": "33aa045d00fe572eda8d4c7a43b3eb57645db5ca183b71b298d14ae6db6bb033",
     "text-wiki/Text/Wiki/Parse/Default/Email.php": "b3098d5463cb8f598e1722db2b84d2be587381e12742f6a796fb344a6c914121",
     "text-wiki/Text/Wiki/Parse/Default/Mathinline.php": "0d02f3280fed8d6244e6769e63d3dee343d1ee65b8d0042cc25bdc3f667e3320",
     "text-wiki/Text/Wiki/Parse/Default/Interwiki.php": "ca191fa743b7b72bff0a853aeb736039a747c6e6f317046ac58f1a5ff6b10de6",
