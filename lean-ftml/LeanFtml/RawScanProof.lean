@@ -220,6 +220,10 @@ theorem rs_long_open
   have hsrc := rs_replicate_at_cons n rest (by omega)
   have hhead := rs_head_after_at n rest (by omega)
   have hpB := rs_option_bne_some (n := 64) hp
+  have hangle :
+      (64 == 64 && (List.replicate (n - 1) 64 ++ rest).head? == some 60 &&
+        prev != some 64) = false := by
+    simp [hhead]
   have hcond :
       (64 == 64 && (List.replicate (n - 1) 64 ++ rest).head? == some 64 &&
         prev != some 64) = true := by
@@ -246,7 +250,8 @@ theorem rs_long_open
   have hne3 : (n == 3) = false := (beq_eq_false_iff_ne).mpr (by omega)
   have hdropN : (64 :: (List.replicate (n - 1) 64 ++ rest)).drop n = rest := by
     simpa [hcount'] using hdrop'
-  simp only [rawScan, hnot, hcount', hdropN, hfind, hne3, hclaim]
+  simp only [rawScan, hangle, hnot, hcount', hdropN, hfind, hne3, hclaim]
+  rw [ite_eq_right (by decide : ¬(false = true))]
   rw [ite_eq_right (by decide : ¬(false = true))]
   rw [ite_eq_left (by omega : n > 2)]
   have hd : decide (n > 2) = true := decide_eq_true (by omega)
@@ -307,6 +312,9 @@ theorem rs_rawScan_skip_no_at :
       have hf' : xs.length ≤ fuel := by
         simp at hf
         omega
+      have hangle :
+          (x == 64 && (xs ++ rest).head? == some 60 && prev != some 64) = false := by
+        simp [hx]
       have hcond :
           (x == 64 && (xs ++ rest).head? == some 64 && prev != some 64) = false := by
         simp [hx]
@@ -316,8 +324,9 @@ theorem rs_rawScan_skip_no_at :
           (!(x == 64 && (xs ++ rest).head? == some 64 && prev != some 64)) = true := by
         rw [hcond]
         rfl
-      simp only [List.cons_append, rawScan, hnot, rs_prevAfter, hstep, List.length_cons]
+      simp only [List.cons_append, rawScan, hangle, hnot, rs_prevAfter, hstep, List.length_cons]
       rw [hsub]
+      rw [ite_eq_right (by decide : ¬(false = true))]
       rw [ite_eq_left (by trivial : True)]
 
 /-- A long opener followed by a fully `@`-free tail emits exactly one empty token, `n - 4` literal `@` bytes and the copied tail. -/

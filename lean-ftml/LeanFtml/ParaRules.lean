@@ -280,6 +280,11 @@ def rtrimImageAttrWs (bs : List Nat) : List Nat :=
 def rtrimImageHrefWs (bs : List Nat) : List Nat :=
   rtrimImageAttrWs bs
 
+/-- Trim both leading and trailing PCRE `\s` whitespace from an Image
+    `style` attribute value (REFCORR15 C-R5G-P3-1 / `rise-of-the-wave`). -/
+def trimImageAttrWs (bs : List Nat) : List Nat :=
+  rtrimImageAttrWs (bs.dropWhile isWsByte)
+
 /-- REFCORR13: the live-discarded C0 class D is the shared
     `isLiveDroppedControl` (below 0x20 except TAB, LF, CR and ESC; DEL is
     kept). Applying it to an accepted Image technical value explains the
@@ -297,9 +302,10 @@ def dropImageDroppedControls (v : List Nat) : List Nat :=
     C-R5F-S1-3 adds the interior D drop. Byte twin of the PHP consumer loop,
     placed after every acceptance guard so those guards see authored bytes. -/
 def imageTrimAttr (k : List Nat) (v : List Nat) : List Nat :=
-  if k == litBytes "link" || k == litBytes "width" ||
-      k == litBytes "class" || k == litBytes "style" ||
-      k == litBytes "height" then rtrimImageAttrWs (dropImageDroppedControls v)
+  if k == litBytes "style" then trimImageAttrWs (dropImageDroppedControls v)
+  else if k == litBytes "link" || k == litBytes "width" ||
+      k == litBytes "class" || k == litBytes "height" then
+    rtrimImageAttrWs (dropImageDroppedControls v)
   else v
 
 /-- process() for one Image match: the whole match, the

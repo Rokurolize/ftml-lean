@@ -367,14 +367,61 @@ theorem parainline_inline2_pregScan_append
   unfold pregScan
   exact pregScan_go_append m hmtok hmrest (bs.length + 1) bs toks (by omega)
 
+private theorem strikethroughMatch_tokens_append (bs : List Nat) (toks : List TokenEntry)
+    (rest repl : List Nat) (toks2 : List TokenEntry)
+    (h : strikethroughMatch bs toks = some (rest, repl, toks2)) :
+    ∃ add, toks2 = toks ++ add := by
+  unfold strikethroughMatch at h
+  cases bs with
+  | nil => simp at h
+  | cons b1 bs1 =>
+      cases bs1 with
+      | nil => simp at h
+      | cons b2 rest0 =>
+          by_cases h45 : b1 = 45 ∧ b2 = 45
+          · rcases h45 with ⟨rfl, rfl⟩
+            simp only at h
+            rcases hpbl : pairBodyLen 45 rest0 with _ | l
+            · simp [hpbl] at h
+            · simp only [hpbl] at h
+              by_cases hsp : startsWithSpanEndTok (rest0.take l) toks
+              · simp only [hsp, ↓reduceIte, Option.some.injEq] at h
+                rcases h with ⟨_, _, rfl⟩
+                exact ⟨[], by simp⟩
+              · simp only [hsp, Bool.false_eq_true, ↓reduceIte, Option.some.injEq] at h
+                rcases h with ⟨_, _, rfl⟩
+                exact ⟨[{ rule := "Strikethrough", opts := [("type".toList, OptVal.str "start".toList)] },
+                        { rule := "Strikethrough", opts := [("type".toList, OptVal.str "end".toList)] }], by
+                  simp [claimTok, List.append_assoc]⟩
+          · split at h <;> simp_all
+
+private theorem strikethroughMatch_rest_lt (bs : List Nat) (toks : List TokenEntry)
+    (rest repl : List Nat) (toks2 : List TokenEntry)
+    (h : strikethroughMatch bs toks = some (rest, repl, toks2)) :
+    rest.length < bs.length := by
+  unfold strikethroughMatch at h
+  split at h
+  · simp at h
+    rename_i rest0
+    rcases hpbl : pairBodyLen 45 rest0 with _ | l
+    · simp [hpbl] at h
+    · simp only [hpbl] at h
+      split at h
+      · simp at h
+        rcases h with ⟨rfl, _, _⟩
+        simp; omega
+      · simp at h
+        rcases h with ⟨rfl, _, _⟩
+        simp only [List.length_cons, List.length_drop]
+        omega
+  · simp at h
+
 theorem parainline_inline2_strikethroughRule_tokens_append (st : ParseState) :
     ∃ add, (strikethroughRule st).tokens = st.tokens ++ add := by
   simp only [strikethroughRule, applyByteRule]
   apply parainline_inline2_pregScan_append
-  · intro bs toks rest repl ts h
-    exact parainline_inline2_pairClaim_tokens_append "Strikethrough" 45 bs toks (rest, repl, ts) h
-  · intro bs toks rest repl ts h
-    exact pairClaim_rest_lt "Strikethrough" 45 bs toks rest repl ts h
+  · exact strikethroughMatch_tokens_append
+  · exact strikethroughMatch_rest_lt
 
 theorem parainline_inline2_rules_doc_fatal (st : ParseState) :
     (colortextRule st).doc = st.doc ∧ (colortextRule st).fatal = st.fatal ∧

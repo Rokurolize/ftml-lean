@@ -389,7 +389,7 @@ theorem freelinkDefaultToken_process (lead suf : List Nat)
       (freelinkProcess (freelinkDefaultTokenFull lead suf)
         (freelinkDefaultTokenRaw lead suf) [] []).2 =
           [{ rule := "Freelink", opts := opts }] ∧
-      omGet opts "page".toList = some (textVal (toUnixName suf)) := by
+      omGet opts "page".toList = some (textVal (capSlug60 (toUnixName suf))) := by
   have hlead35 : 35 ∉ lead :=
     freelinkDefaultToken_lead_notMem 35 (fun b h => freelinkDefaultToken_lead_ne35 h) lead hlead
   have hlead255 : 255 ∉ lead :=
@@ -442,6 +442,8 @@ theorem freelinkDefaultToken_process (lead suf : List Nat)
     decide
   have hurl : isUrlTarget (trimBytes (freelinkDefaultTokenRaw lead suf)) = false :=
     freelinkDefaultToken_isUrlTarget_of_head95 _ htrimHead
+  have habs : isAbsPathTarget (trimBytes (freelinkDefaultTokenRaw lead suf)) = false := by
+    simp [isAbsPathTarget, htrimHead]
   have hskip : skipDefaultLead (freelinkDefaultTokenRaw lead suf) =
       litBytes "_default:" ++ suf := by
     simpa [freelinkDefaultTokenRaw] using freelinkDefaultToken_skipDefaultLead lead suf hlead
@@ -457,7 +459,7 @@ theorem freelinkDefaultToken_process (lead suf : List Nat)
     exact (freelinkDefaultToken_noBigMem hsufLt) h.1
   unfold freelinkProcess
   simp [hfull255, hrawNotEmpty, hheadNe124, hheadNe35, hhash2, hcount, hroute, hhash1,
-    hstarNe, hurl, hskip, hstrip, hgate, hgateProp, omGet]
+    hstarNe, hurl, habs, hskip, hstrip, hgate, hgateProp, omGet]
 
 -- cps-framed version of the full token-shape law.
 theorem freelinkDefaultToken_process_cps (cps suf : List Nat)
@@ -469,7 +471,7 @@ theorem freelinkDefaultToken_process_cps (cps suf : List Nat)
         (freelinkDefaultTokenFull (freelinkDefaultTokenEncodeCps cps) suf)
         (freelinkDefaultTokenRaw (freelinkDefaultTokenEncodeCps cps) suf) [] []).2 =
           [{ rule := "Freelink", opts := opts }] ∧
-      omGet opts "page".toList = some (textVal (toUnixName suf)) := by
+      omGet opts "page".toList = some (textVal (capSlug60 (toUnixName suf))) := by
   exact freelinkDefaultToken_process (freelinkDefaultTokenEncodeCps cps) suf
     (freelinkDefaultToken_encode_all freelinkDefaultTokenIsTrimLead (fun _ h => h) hcps)
     hsufLt hsuf35 hsuf255

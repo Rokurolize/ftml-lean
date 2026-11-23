@@ -253,7 +253,7 @@
 {"id":"inline1-url\/u65-bold-star","output":"<p>bold *<a href=\"http:\/\/example.com\/b\" target=\"_blank\">http:\/\/example.com\/b<\/a>** end<\/p>\n\n"}
 {"id":"inline1-url\/u66-star-killed-fallback","output":"<p>[<a href=\"https:\/\/a.example\" target=\"_blank\">https:\/\/a.example<\/a> <span style=\"white-space: pre-wrap;\">x<\/span> <a href=\"https:\/\/b.example\">https:\/\/b.example<\/a>]<\/p>\n\n"}
 {"id":"inline1-url\/u67-raw-adjacency","output":"<p><a href=\"https:\/\/example.com\/a@@b\">https:\/\/example.com\/a@@b<\/a> end<\/p>\n\n"}
-{"id":"inline1-url\/u68-raw-alt-terminates","output":"<p><a href=\"https:\/\/example.com\/@&lt;x\">https:\/\/example.com\/@&lt;x<\/a>&gt;@ end<\/p>\n\n"}
+{"id":"inline1-url\/u68-raw-alt-terminates","output":"<p><a href=\"https:\/\/example.com\/\">https:\/\/example.com\/<\/a><span style=\"white-space: pre-wrap;\">x<\/span> end<\/p>\n\n"}
 {"id":"inline1-url\/u69-nonascii-terminates","output":"<p><a href=\"http:\/\/example.com\/page\">http:\/\/example.com\/page<\/a>\u3059 here<\/p>\n\n"}
 {"id":"inline1-url\/u70-block-syntax-stops","output":"<p><a href=\"https:\/\/example.com\/video\">https:\/\/example.com\/video<\/a>[[\/embedvideo]]<\/p>\n\n"}
 {"id":"inline1-url\/u71-empty-after-scheme","output":"<p><a href=\"javascript:;\">Label<\/a><\/p>\n\n"}

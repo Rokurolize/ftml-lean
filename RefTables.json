@@ -24,7 +24,7 @@
     "positive-lookbehind",
     "quantifier"
   ],
-  "digest": "91b105161a48f72aca08c7009d1d9bcb53b992777fc3e84d970dcf33f4f762c6",
+  "digest": "1431060f68c3856a5bd47a08f1de37c9b5c1b19882857288b9cabb7b843adf91",
   "embed_patterns": [
     [
       "del_feed",
@@ -1122,6 +1122,18 @@
           "pattern": "/\\n[ \\t]*(?:\\n[ \\t]*)+/"
         },
         {
+          "api": "preg_match",
+          "pattern": "/\\G\\[\\[\\/div\\]\\] */i"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\G\\[\\[div(_?)(\\s.*?)?\\]\\] *\\n/msi"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\G\\[\\[div_?\\s/i"
+        },
+        {
           "api": "dynamic-template",
           "pattern": "'/(\\n)?\\[\\[div(_?)(\\s.*?)?\\]\\] *\\n((?:(?R)|.)*?)\\[\\[\\/div\\]\\] */msi'"
         }
@@ -1773,12 +1785,12 @@
         },
         {
           "api": "dynamic-template",
-          "pattern": "\"/\\/\\/(.*)\\/\\//U\""
+          "pattern": "\"/\\/\\/\\/\\/|\\/\\/([^\\s](?:.*[^\\s])?)\\/\\//U\""
         }
       ],
       "literal": "public $regex =",
       "patterns": [
-        "/\\/\\/(.*)\\/\\//U"
+        "/\\/\\/\\/\\/|\\/\\/([^\\s](?:.*[^\\s])?)\\/\\//U"
       ],
       "rule": "emphasis",
       "source": "text-wiki/Text/Wiki/Parse/Default/Emphasis.php"
@@ -1965,8 +1977,8 @@
       "source": "text-wiki/Text/Wiki/Parse/Default/Tighten.php"
     }
   ],
-  "snapshot_commit": "64c0009379835d7da808fade6361b6e8cbdfd8be",
-  "snapshot_tag": "snapshot-38",
+  "snapshot_commit": "75f7d9dc3045d02bd81ab1f7abaedf4085851b6b",
+  "snapshot_tag": "snapshot-39",
   "source_count": 70,
   "sources": [
     {
@@ -1991,7 +2003,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Raw.php",
-      "sha256": "6447af83f9042b276475b9c7f37d14224aa52112fb2e5cfcc56b984cebb389b2"
+      "sha256": "6655a51665eceb52fae5effeb39e810251b57bdc5b4ed1c37a66759f72822ae5"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Rawold.php",
@@ -2011,7 +2023,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Iftags.php",
-      "sha256": "44d94537b7714fb5a73e9eb7de2ee93814c00e36f7462f6f17b03fbf29387794"
+      "sha256": "62edf55f7a122e2f729798b8b31ce598b957da4d82228f4f3d3ec6420cf597a6"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Comment.php",
@@ -2035,7 +2047,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Freelink.php",
-      "sha256": "49baed274bd7737b66080282251d95a2756ad3205b0c9e2a9aa9b90792d79a8c"
+      "sha256": "1a9441a6ad6b9c79b24d2526aedec8b50d616602e1bb2157a9cea81c538b6a39"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Equationreference.php",
@@ -2115,7 +2127,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Div.php",
-      "sha256": "3d5f74509b67266e36af7cdff6ad31e121ae72250bc7da04164e95dc54f575f7"
+      "sha256": "7429eb4d8b8ef06c71a7810d58f43e5f9557bbfb95b79418ba34b38096e6d1e6"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Divalign.php",
@@ -2159,7 +2171,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Image.php",
-      "sha256": "a9a9fc461c2f5e15f42eb3add70fe0c5a084e799f790ddf6f940df45615c0cff"
+      "sha256": "a8ff7338f3614a18ac4b762f4ccd1c2cd246b5beccf5ea87a07f530a2c145ef6"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Embed.php",
@@ -2211,7 +2223,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Emphasis.php",
-      "sha256": "fee79e8e3c00e02196e9b1ab3dcb0db6c0e812c3327510691c583bc7d78331a7"
+      "sha256": "5aac1bf1879202c6dd0e8c8fbe0682074b6d5660c46717b5f16393e0e24c04a8"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Underline.php",
@@ -2219,7 +2231,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Strikethrough.php",
-      "sha256": "5e2319640c26ffb22489f5e47f080689412528b25c3eefec179365c193140266"
+      "sha256": "6035cef0bcb9db639381564a97b9108ff85bb97267f52fd3548d07bd95e9d35d"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Tt.php",

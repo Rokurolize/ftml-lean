@@ -115,10 +115,11 @@ theorem spec_embed_single_quote_language_kept :
     litBytes "<iframe language='JavaScript1.2' src=\"http://x/\"></iframe>" := by
   decide
 
-/-- Probe es-single-attr-js: the any-attribute scan is double-quote-only;
-    `x='javascript:foo'` is invisible to it on live as well. -/
-theorem spec_embed_single_quote_attr_invisible :
-    attrValues (litBytes "<iframe x='javascript:foo'></iframe>") 40 = [] := by
+/-- REFCORR15: the any-attribute scan accepts both single and double quotes,
+    capturing single-quoted `x='javascript:foo'` cleanly. -/
+theorem spec_embed_single_quote_attr_captured :
+    attrValues (litBytes "<iframe x='javascript:foo'></iframe>") 40 =
+      [litBytes "javascript:foo"] := by
   decide
 
 /- Probe es-gmaps-color: the configuration's `googlemaps` pattern carries

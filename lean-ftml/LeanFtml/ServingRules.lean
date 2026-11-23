@@ -255,7 +255,9 @@ def renderModule (opts : OptMap) : List Nat :=
     rejected `align*` and `gather*`, which live accepts after stripping `*`. -/
 def mathAmsEnvironments : List (List Nat) :=
   [ litBytes "equation", litBytes "align", litBytes "gather",
-    litBytes "eqnarray", litBytes "multline", litBytes "split" ]
+    litBytes "eqnarray", litBytes "multline", litBytes "split",
+    litBytes "alignat", litBytes "gathered", litBytes "aligned",
+    litBytes "alignedat", litBytes "cases" ]
 
 /-- Every `*` byte is stripped first (witness `a*b` is reported as `ab`),
     with no trim and no case folding (`align ` and `ALIGN` stay invalid). -/
@@ -613,7 +615,7 @@ def galleryRowSrc (row : List Nat) : Option (List Nat) :=
     and leaves `mailto:` and every other scheme intact. The test is
     on the emitted href after any external-source link override. -/
 def gallerySanitizeHref (href : List Nat) : List Nat :=
-  let lv := asciiLowerBytes href
+  let lv := asciiLowerBytes (href.dropWhile phpTrimSet)
   if (litBytes "javascript:").isPrefixOf lv ||
       (litBytes "vbscript:").isPrefixOf lv ||
       (litBytes "data:").isPrefixOf lv then

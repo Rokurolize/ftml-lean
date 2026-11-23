@@ -36,7 +36,7 @@ inductive ServeClass where
   | btStyle | btClassCustom | btTextCustom
   /- Embed.php: allowlist miss, then the rejection cascade, then passthrough. -/
   | emNoMatch | emEvent | emSrcJavascript | emSrcVbscript
-  | emAttrJavascript | emAttrVbscript | emPass | emLangStrip
+  | emAttrJavascript | emAttrVbscript | emAttrData | emPass | emLangStrip
   deriving DecidableEq, Repr
 
 /-- The declared class set, in reference rule order and then in the order of the branches in each PHP `token()`. -/
@@ -53,11 +53,11 @@ def serveAllClasses : List ServeClass :=
     .btInvalid, .btSetTagsEmpty,
     .btStyle, .btClassCustom, .btTextCustom,
     .emNoMatch, .emEvent, .emSrcJavascript, .emSrcVbscript,
-    .emAttrJavascript, .emAttrVbscript, .emPass, .emLangStrip ]
+    .emAttrJavascript, .emAttrVbscript, .emAttrData, .emPass, .emLangStrip ]
 
 theorem serveAllClasses_nodup : serveAllClasses.Nodup := by decide
 
-theorem serveAllClasses_length : serveAllClasses.length = 47 := by decide
+theorem serveAllClasses_length : serveAllClasses.length = 48 := by decide
 
 /-! ## Decision shapes -/
 
@@ -115,6 +115,7 @@ inductive EmMode where
   | srcVbscript
   | attrJavascript
   | attrVbscript
+  | attrData
   | pass (langStrip : Bool)
   deriving DecidableEq, Repr
 
@@ -221,6 +222,7 @@ def emClasses : EmMode → List ServeClass
   | .srcVbscript => [.emSrcVbscript]
   | .attrJavascript => [.emAttrJavascript]
   | .attrVbscript => [.emAttrVbscript]
+  | .attrData => [.emAttrData]
   | .pass false => [.emPass]
   | .pass true => [.emPass, .emLangStrip]
 
@@ -299,6 +301,7 @@ theorem serve_classify_nonempty (s : ServeShape) : ∃ c, c ∈ serveClassify s 
       | srcVbscript => exact ⟨.emSrcVbscript, by simp [serveClassify, emClasses]⟩
       | attrJavascript => exact ⟨.emAttrJavascript, by simp [serveClassify, emClasses]⟩
       | attrVbscript => exact ⟨.emAttrVbscript, by simp [serveClassify, emClasses]⟩
+      | attrData => exact ⟨.emAttrData, by simp [serveClassify, emClasses]⟩
       | pass b =>
           cases b <;> exact ⟨.emPass, by simp [serveClassify, emClasses]⟩
 
@@ -357,6 +360,7 @@ def serveWitnessShape : ServeClass → ServeShape
   | .emSrcVbscript => .embed .srcVbscript
   | .emAttrJavascript => .embed .attrJavascript
   | .emAttrVbscript => .embed .attrVbscript
+  | .emAttrData => .embed .attrData
   | .emPass => .embed (.pass false)
   | .emLangStrip => .embed (.pass true)
 
@@ -432,6 +436,8 @@ theorem em_src_vbscript_single : emClasses .srcVbscript = [.emSrcVbscript] := rf
 theorem em_attr_javascript_single : emClasses .attrJavascript = [.emAttrJavascript] := rfl
 
 theorem em_attr_vbscript_single : emClasses .attrVbscript = [.emAttrVbscript] := rfl
+
+theorem em_attr_data_single : emClasses .attrData = [.emAttrData] := rfl
 
 theorem em_pass_base (b : Bool) : .emPass ∈ emClasses (.pass b) := by
   cases b <;> simp [emClasses]
@@ -522,11 +528,12 @@ def buttonModeOf (opts : OptMap) : BtMode :=
           (phpTruthyBytes (optStrBytes opts "class".toList))
           (phpTruthyBytes text)
 
-/-- Which bad scheme a lowered attribute value carries. `javascript:` wins when both occur, because that is the first disjunct in the reference. -/
+/-- Which bad scheme a lowered attribute value carries. `javascript:` wins, then `vbscript:`, then `data:`. -/
 def attrScheme (val : List Nat) : Option EmMode :=
   let lv := asciiLowerBytes val
   if bytesContainsSub (litBytes "javascript:") lv then some .attrJavascript
   else if bytesContainsSub (litBytes "vbscript:") lv then some .attrVbscript
+  else if bytesContainsSub (litBytes "data:") lv then some .attrData
   else none
 
 /-- First non-`src` attribute value that carries a script scheme, in match order. -/
@@ -730,6 +737,7 @@ theorem emClasses_nonempty (m : EmMode) : ∃ c, c ∈ emClasses m := by
   | srcVbscript => exact ⟨.emSrcVbscript, by simp [emClasses]⟩
   | attrJavascript => exact ⟨.emAttrJavascript, by simp [emClasses]⟩
   | attrVbscript => exact ⟨.emAttrVbscript, by simp [emClasses]⟩
+  | attrData => exact ⟨.emAttrData, by simp [emClasses]⟩
   | pass b => cases b <;> exact ⟨.emPass, by simp [emClasses]⟩
 
 theorem btClasses_nonempty (m : BtMode) : ∃ c, c ∈ btClasses m := by

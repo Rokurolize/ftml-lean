@@ -294,17 +294,123 @@ def iftagsScan (tags : List (List Nat)) (src : List Nat) :
             repl ++ iftagsScan tags r fuel
         | none => b :: iftagsScan tags rest fuel
 
-/-- The Iftags rule mirror. The page's tags are document state
-    (the Lean driver reads the case's "tags" array into
-    `DocState.page`, exactly as the PHP drivers construct the
-    RefPage from it); the fallback to `pageName`, the site object,
-    and the page table runs only when no page object is set, which
-    the harness never does, so the tag list is the only page field
-    the mirror reads. -/
+/-- Trim leading and trailing ASCII space/tab bytes (`" \t"`). -/
+def trimIfSpaceTab (bs : List Nat) : List Nat :=
+  let a := bs.dropWhile (fun b => b == 32 || b == 9)
+  (a.reverse.dropWhile (fun b => b == 32 || b == 9)).reverse
+
+/-- Trim leading and trailing ASCII spaces (`' ' = 32` only). -/
+def trimAsciiSpaces (bs : List Nat) : List Nat :=
+  let a := bs.dropWhile (fun b => b == 32)
+  (a.reverse.dropWhile (fun b => b == 32)).reverse
+
+/-- Structural helper for `hashIfSeps` avoiding nested/overlapping `where` patterns. -/
+def hashIfSepsGo (idx prev : Nat) : List Nat → List Nat
+  | [] => []
+  | b :: rest =>
+      match rest with
+      | [] => []
+      | nxt :: _ =>
+          if b == 124 && (prev == 32 || prev == 9) && (nxt == 32 || nxt == 9) then
+            idx :: hashIfSepsGo (idx + 1) b rest
+          else
+            hashIfSepsGo (idx + 1) b rest
+
+/-- Collect 0-based indices of `|` inside `interior` flanked on both sides by `' '` or `'\t'`. -/
+def hashIfSeps (interior : List Nat) : List Nat :=
+  match interior with
+  | [] => []
+  | first :: tail => hashIfSepsGo 1 first tail
+
+/-- Evaluate one flat `[[#if ...]]` interior body, matching PHP `Iftags::evalHashIf()`. -/
+def hashIfEvalInterior (interior : List Nat) : Option (List Nat) :=
+  let seps := hashIfSeps interior
+  if seps.isEmpty then
+    let condTrim := trimIfSpaceTab interior
+    if condTrim.isEmpty || condTrim == [48] || condTrim == [49] ||
+        [48, 124].isPrefixOf condTrim || [49, 124].isPrefixOf condTrim ||
+        [48, 32, 124].isPrefixOf condTrim || [49, 32, 124].isPrefixOf condTrim then
+      some []
+    else none
+  else
+    let firstSep := seps.headD 0
+    let lastSep := seps.getLastD 0
+    let sepCount := seps.length
+    let cond := interior.take firstSep
+    let authored :=
+      match cond.getLast? with
+      | some b => if b == 32 || b == 9 then cond.dropLast else cond
+      | none => cond
+    let semantic := trimIfSpaceTab cond
+    let truth :=
+      !authored.isEmpty && semantic != [48] && semantic != litBytes "null" &&
+      !ciBytesEq semantic (litBytes "false")
+    let whenTrue :=
+      if 1 < sepCount then (interior.take lastSep).drop (firstSep + 1)
+      else interior.drop (firstSep + 1)
+    let whenFalse :=
+      if 1 < sepCount then interior.drop (lastSep + 1) else []
+    some (trimAsciiSpaces (if truth then whenTrue else whenFalse))
+
+/-- One left-to-right pass evaluating flat `[[#if ...]]` conditionals. -/
+def evalHashIfPass : Nat → List Nat → Bool × List Nat
+  | 0, src => (false, src)
+  | fuel + 1, src =>
+      if (litBytes "[[#if").isPrefixOf src then
+        match src.drop 5 with
+        | sep :: body =>
+            if sep == 32 || sep == 9 then
+              match findSub [93, 93] body with
+              | none => (false, src)
+              | some closePos =>
+                  let interior := body.take closePos
+                  let after := body.drop (closePos + 2)
+                  match findSub (litBytes "[[#if") interior with
+                  | some innerPos =>
+                      let (ch, restOut) := evalHashIfPass fuel (body.drop innerPos)
+                      (ch, src.take (6 + innerPos) ++ restOut)
+                  | none =>
+                      if (findSub [91, 91] interior).isSome then
+                        let (ch, restOut) := evalHashIfPass fuel (sep :: body)
+                        (ch, src.take 5 ++ restOut)
+                      else
+                        match hashIfEvalInterior interior with
+                        | some repl =>
+                            let (_, restOut) := evalHashIfPass fuel after
+                            (true, repl ++ restOut)
+                        | none =>
+                            let (ch, restOut) := evalHashIfPass fuel (sep :: body)
+                            (ch, src.take 5 ++ restOut)
+            else
+              let (ch, restOut) := evalHashIfPass fuel (sep :: body)
+              (ch, src.take 5 ++ restOut)
+        | [] => (false, src)
+      else
+        match findSub (litBytes "[[#if") src with
+        | none => (false, src)
+        | some pos =>
+            if pos == 0 then (false, src)
+            else
+              let (ch, restOut) := evalHashIfPass fuel (src.drop pos)
+              (ch, src.take pos ++ restOut)
+
+/-- Iterative helper for `evalHashIf`. -/
+def evalHashIfGo : Nat → List Nat → List Nat
+  | 0, s => s
+  | n + 1, s =>
+      let (changed, s') := evalHashIfPass (s.length + 1) s
+      if changed then evalHashIfGo n s' else s'
+
+/-- Iterative REFCORR15 `[[#if cond | true | false]]` preprocessor (up to 64 passes). -/
+def evalHashIf (src : List Nat) : List Nat :=
+  evalHashIfGo 64 src
+
+/-- The Iftags rule mirror (REFCORR15: runs `evalHashIf` first, matching `Iftags::parse()`). -/
 def iftagsRule (st : ParseState) : ParseState :=
   applyByteRule st (fun src toks =>
+    let src' := evalHashIf src
     (iftagsScan (st.doc.page.tags.map (fun cs => cs.flatMap utf8Bytes))
-      src (src.length + 1), toks))
+      src' (src'.length + 1), toks))
 
 /-! ## Comment -/
 

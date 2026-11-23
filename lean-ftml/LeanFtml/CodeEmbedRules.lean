@@ -184,16 +184,16 @@ def languageStripPattern : PcreParsed :=
   | some p => p
   | none => { ast := .eps, ci := true, dotall := false }
 
-/-- REFCORR13 D01: the event check is a bounded byte scan, not the
-    old `;<[^>]*\s*on[a-z]+\s*=[^>]+>;si` regex. The PCRE subset in
-    `LeanFtml.Pcre` has no word-boundary assertion, so the mirror
-    spells out PHP's `\b`: an `on` is an event name only when the
-    preceding byte inside the tag is not `[A-Za-z0-9_]`. This keeps
-    `style=""/onclick=` rejected (REFCORR4 C-SUSPECT-CODEEMBED-6)
-    while admitting `longdesc`, `content` and `1onclick`, whose
-    `on` is glued to a preceding word byte, exactly as live does. -/
+/-- ASCII alphanumeric byte predicate `[A-Za-z0-9]` (excludes `_`). -/
+def isAsciiAlnum (b : Nat) : Bool :=
+  (48 ≤ b && b ≤ 57) || (65 ≤ b && b ≤ 90) || (97 ≤ b && b ≤ 122)
+
+/-- REFCORR13 D01 + REFCORR15 (C-R5G-P3-4): an `on[a-z]+=` event name matches
+    when the preceding byte inside the tag is not `[A-Za-z0-9]`
+    (`(?<![A-Za-z0-9])`), catching `_onclick=` alongside glued/delimited forms
+    while admitting `longdesc`, `content`, and `1onclick`. -/
 def eventAttrAt (tag : List Nat) (pos : Nat) : Bool :=
-  let prevOk : Bool := pos == 0 || !(isWrdByte (tag.getD (pos - 1) 0))
+  let prevOk : Bool := pos == 0 || !(isAsciiAlnum (tag.getD (pos - 1) 0))
   if !prevOk then false
   else
     match tag.drop pos with
@@ -277,11 +277,13 @@ def attrMatchHere (bs : List Nat) : Option (List Nat × List Nat × List Nat) :=
     | 61 :: r3 =>
         let r4 := r3.dropWhile pcreIsWsByte
         match r4 with
-        | 34 :: r5 =>
-            let (val, r6) := r5.span (fun x => x != 34)
-            match r6 with
-            | 34 :: r7 => some (name, val, r7)
-            | _ => none
+        | q :: r5 =>
+            if q == 34 || q == 39 then
+              let (val, r6) := r5.span (fun x => x != q)
+              match r6 with
+              | q2 :: r7 => if q2 == q then some (name, val, r7) else none
+              | _ => none
+            else none
         | _ => none
     | _ => none
 
@@ -315,12 +317,13 @@ def srcHasBadScheme (val : List Nat) : Bool :=
   (litBytes "javascript:").isPrefixOf lv ||
     (litBytes "vbscript:").isPrefixOf lv
 
-/-- A value contains `javascript:` or `vbscript:` after
+/-- A value contains `javascript:`, `vbscript:`, or `data:` after
     `strtolower` (the any-attribute check). -/
 def valueHasBadScheme (val : List Nat) : Bool :=
   let lv := asciiLowerBytes val
   bytesContainsSub (litBytes "javascript:") lv ||
-    bytesContainsSub (litBytes "vbscript:") lv
+    bytesContainsSub (litBytes "vbscript:") lv ||
+    bytesContainsSub (litBytes "data:") lv
 
 /-- Mirror of `Text_Wiki_Render_Xhtml_Embed::token`,
     parameterized over the allowlist so theorems can use small
@@ -341,11 +344,12 @@ def renderEmbedWith (pats : List PcreParsed) (opts : OptMap) :
                else finishEmbed stripped
            | none => finishEmbed stripped
 where
-  /-- The any-attribute scheme check on attributes other than src,
+  /-- The any-attribute scheme check on attributes other than src
+      (returns `[]` per REFCORR15 C-R5G-R2-2, C-R5H-R2-4, C-R5H-R2-5),
       then the passthrough. -/
   finishEmbed (c : List Nat) : List Nat :=
     if (attrValues c (c.length + 1)).any valueHasBadScheme then
-      embedError
+      []
     else c
 
 /-- Mirror of `Text_Wiki_Render_Xhtml_Embed::token` with the
