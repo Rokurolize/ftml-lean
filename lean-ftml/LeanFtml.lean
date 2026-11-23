@@ -69,3 +69,5 @@ import LeanFtml.ProofEmail
 import LeanFtml.Proof.AlphaComposition
 import LeanFtml.Proof.WfComposition
 import LeanFtml.Proof.ByteBridge
+import LeanFtml.TableadvProof
+import LeanFtml.TableadvCertificate

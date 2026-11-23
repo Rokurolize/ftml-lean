@@ -42,8 +42,8 @@ What is proved, in `LeanFtml/TableadvEnum.lean`, is the counterexample on output
 
 ```
 theorem tableadv_dfs_ne_enum :
-    (tableadvScanGo tableadvWitness [] (tableFuel tableadvWitness.length)).1 ≠
-    (tableadvEnumScan tableadvWitness [] (tableFuel tableadvWitness.length)).1
+    (tableadvDfsScanGo tableadvWitness [] (tableFuel tableadvWitness.length)).1 ≠
+    (tableadvScanGo tableadvWitness [] (tableFuel tableadvWitness.length)).1
 ```
 
 `Main.lean` prints the axioms. The build reports
