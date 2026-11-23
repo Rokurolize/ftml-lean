@@ -366,3 +366,5 @@ The owner aligned the fleet operating model explicitly. (1) Boilerplate steering
 - 2026-11-23 (main-build repair): clean-archive full build green at 395 jobs on main 0666029 after landing missed REFCORR13 mirror edits, the three proof repairs, the decBytes collision fix and the ProofEmail/composition wiring; the four previously failing theorems audit without sorryAx. The closeout record was corrected where it overclaimed wiring.
 
 - 2026-11-23 (wiring repair): the stage2/module/middle2 imports were live only in an unimported inner umbrella; the root now imports it, the duplicate tableadv scanner proof is retired, certificate hashes are in file headers, and the Gallery header is corrected. The earlier statement that the full fleet was wired at 56b0b49 was wrong and is superseded by the verified clean-build result recorded in GAP-LEDGER.md.
+
+- 2026-11-23 (wiring repair verified): clean full build green at 530 jobs on head 9fc275d with Stage2, Module and ProofMiddle2 modules present; prior overclaimed wiring record corrected.
