@@ -57,3 +57,8 @@ import LeanFtml.ProofNotes
 import LeanFtml.RawProof
 import LeanFtml.DivAttrProof
 import LeanFtml.Proof.Freelink
+import LeanFtml.Proof.FramePrefilterProof
+import LeanFtml.Proof.FrameDelimiterProof
+import LeanFtml.Proof.IncludeRuleProof
+import LeanFtml.Proof.CodeRuleProof
+import LeanFtml.Proof.FrameIncludeAxiomAudit
