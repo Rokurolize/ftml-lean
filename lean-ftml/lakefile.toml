@@ -152,3 +152,7 @@ root = "ConformanceR310Legacy"
 [[lean_exe]]
 name = "lean-ftml-conformance-r45-legacy"
 root = "ConformanceR45Legacy"
+
+[[lean_exe]]
+name = "lean-ftml-conformance-listcert"
+root = "ListCertDriver"

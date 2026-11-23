@@ -1182,3 +1182,14 @@ def main : IO Unit :=
 #print axioms LeanFtml.flatMap_utf8Bytes_utf8Decode_of_valid
 #print axioms LeanFtml.parseBytes_byteForm_id
 #print axioms LeanFtml.byteForm_parseBytes_id
+#print axioms LeanFtml.lst_findPairOpener_eq_some_iff
+#print axioms LeanFtml.lst_findPairOpener_none_iff
+#print axioms LeanFtml.lst_pairing_depends_only_on_classes
+#print axioms LeanFtml.lst_nativeRunAt_spec
+#print axioms LeanFtml.lst_lineItem_spec
+#print axioms LeanFtml.lst_collectRawItems_typ
+#print axioms LeanFtml.lst_filterNativeItems_of_all_nonempty
+#print axioms LeanFtml.lst_closeListLevel_stack
+#print axioms LeanFtml.lst_listRule_wf_conditional
+#print axioms LeanFtml.lst_skelSeqs_length
+#print axioms LeanFtml.lst_partA_cardinality
