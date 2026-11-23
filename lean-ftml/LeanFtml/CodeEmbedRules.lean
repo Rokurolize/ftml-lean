@@ -184,15 +184,42 @@ def languageStripPattern : PcreParsed :=
   | some p => p
   | none => { ast := .eps, ci := true, dotall := false }
 
-/-- The renderer's event-handler pattern
-    (`';<[^>]*\s*on[a-z]+\s*=[^>]+>;si'`). REFCORR4
-    C-SUSPECT-CODEEMBED-6 dropped the required whitespace before
-    `on...`, so a glued `style=""/onclick=` is rejected. Same
-    unreachable fallback note as `languageStripPattern`. -/
-def embedEventPattern : PcreParsed :=
-  match parsePcre ";<[^>]*\\s*on[a-z]+\\s*=[^>]+>;si" with
-  | some p => p
-  | none => { ast := .eps, ci := true, dotall := true }
+/-- REFCORR13 D01: the event check is a bounded byte scan, not the
+    old `;<[^>]*\s*on[a-z]+\s*=[^>]+>;si` regex. The PCRE subset in
+    `LeanFtml.Pcre` has no word-boundary assertion, so the mirror
+    spells out PHP's `\b`: an `on` is an event name only when the
+    preceding byte inside the tag is not `[A-Za-z0-9_]`. This keeps
+    `style=""/onclick=` rejected (REFCORR4 C-SUSPECT-CODEEMBED-6)
+    while admitting `longdesc`, `content` and `1onclick`, whose
+    `on` is glued to a preceding word byte, exactly as live does. -/
+def eventAttrAt (tag : List Nat) (pos : Nat) : Bool :=
+  let prevOk : Bool := pos == 0 || !(isWrdByte (tag.getD (pos - 1) 0))
+  if !prevOk then false
+  else
+    match tag.drop pos with
+    | a :: b :: rest =>
+        if byteMatchCI true 111 a && byteMatchCI true 110 b then
+          let (letters, r1) := rest.span fun x =>
+            (97 <= x && x <= 122) || (65 <= x && x <= 90)
+          if letters.isEmpty then false
+          else
+            match r1.dropWhile pcreIsWsByte with
+            | 61 :: _ => true
+            | _ => false
+        else false
+    | _ => false
+
+/-- Does any `<...>` segment of `subj` contain an event attribute
+    under the D01 word-boundary rule? A `<` opens a segment and the
+    first `>` closes it, mirroring the `<[^>]*` prefix of the PHP
+    pattern. -/
+def hasEventAttr (subj : List Nat) : Bool :=
+  (List.range (subj.length + 1)).any fun s =>
+    match subj.drop s with
+    | 60 :: rest =>
+        let tag := rest.takeWhile fun b => b != 62
+        (List.range (tag.length + 1)).any fun p => eventAttrAt tag p
+    | _ => false
 
 /-- The no-match / rejected-content error block. -/
 def embedError : List Nat :=
@@ -307,7 +334,7 @@ def renderEmbedWith (pats : List PcreParsed) (opts : OptMap) :
       let stripped := pcreReplaceAll languageStripPattern content
       -- C-SUSPECT-CODEEMBED-2: the event check wins over the src
       -- check when both fire.
-      if pcreMatch embedEventPattern stripped then embedError
+      if hasEventAttr stripped then embedError
       else match findSrcValue stripped with
            | some v =>
                if srcHasBadScheme v then []

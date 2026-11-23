@@ -12,7 +12,7 @@ def tokGo (σ : Nat → Nat) : List Nat → Nat → List Nat
   | 255 :: rest, fuel + 1 =>
       let ds := rest.takeWhile emailIsDigitByte
       match rest.drop ds.length with
-      | 255 :: tail => [255] ++ decBytes (σ (digitsVal ds)) ++ [255] ++ tokGo σ tail fuel
+      | 255 :: tail => [255] ++ emailDecBytes (σ (digitsVal ds)) ++ [255] ++ tokGo σ tail fuel
       | _ => 255 :: tokGo σ rest fuel
   | b :: rest, fuel + 1 => b :: tokGo σ rest fuel
 
@@ -46,7 +46,7 @@ theorem tokGo_ph (σ : Nat → Nat) (k : Nat) :
   | nil =>
       intro post fuel hpre hpost hfuel
       simp only [List.nil_append] at hfuel ⊢
-      have hrest : phBytes k ++ post = 255 :: (decBytes k ++ (255 :: post)) := by
+      have hrest : phBytes k ++ post = 255 :: (emailDecBytes k ++ (255 :: post)) := by
         rw [phBytes_digits]
         simp [List.append_assoc]
       rw [hrest] at hfuel ⊢
@@ -55,11 +55,11 @@ theorem tokGo_ph (σ : Nat → Nat) (k : Nat) :
       cases fuel with
       | zero => omega
       | succ fuel =>
-          have hds : (decBytes k ++ (255 :: post)).takeWhile emailIsDigitByte = decBytes k :=
+          have hds : (emailDecBytes k ++ (255 :: post)).takeWhile emailIsDigitByte = emailDecBytes k :=
             takeWhile_decBytes_255 k post
-          have hdrop : (decBytes k ++ (255 :: post)).drop (decBytes k).length = 255 :: post :=
-            drop_prefix_append (decBytes k) (255 :: post)
-          have hdigits : digitsVal (decBytes k) = k := digitsVal_decBytes k
+          have hdrop : (emailDecBytes k ++ (255 :: post)).drop (emailDecBytes k).length = 255 :: post :=
+            drop_prefix_append (emailDecBytes k) (255 :: post)
+          have hdigits : digitsVal (emailDecBytes k) = k := digitsVal_decBytes k
           have hfuel' : post.length ≤ fuel := by omega
           have hpostgo : tokGo σ post fuel = post := tokGo_id_of_no_ff σ post fuel hpost hfuel'
           simp [tokGo, hds, hdrop, hdigits, hpostgo, List.append_assoc]

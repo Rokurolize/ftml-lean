@@ -126,7 +126,15 @@ def footnoteVisibleBody (lookup : Nat → Option TokenEntry) (body : List Nat) :
    test, which wrongly spaced a leading break followed by literal text. -/
 def footnoteLeadVisible (lookup : Nat → Option TokenEntry) (body : List Nat) : List Nat :=
   let vis := stripEmptyRawPhNotes body (footnoteToks lookup body)
-  (vis.takeWhile (fun b => b != 10)).filter (fun b => ! isTrimByte b)
+  -- REFCORR13 C-R5F-R3-3: once the single-break branch keeps a discarded C0
+  -- byte as its inline break witness, the separator must not count that byte
+  -- as visible text. Live excludes the whole discarded set D = [\x00-\x08
+  -- \x0B\x0C\x0E-\x1A\x1C-\x1F] plus TAB/LF/CR/space, and keeps ESC 0x1B
+  -- verbatim (C-R5E-P4-1). A visible lead byte is therefore ESC or any byte
+  -- above 0x20; this mirrors Footnoteitem.php's revised separator class and
+  -- removes the stray separator space on the SOH witness R3E-03.
+  (vis.takeWhile (fun b => b != 10)).filter
+    (fun b => b == 27 || b > 32)
 
 /-- Mirror of `Text_Wiki_Render_Xhtml_Footnoteitem::token`. -/
 def renderFootnoteitem (conf : RenderConf) (doc : DocState) (opts : OptMap)

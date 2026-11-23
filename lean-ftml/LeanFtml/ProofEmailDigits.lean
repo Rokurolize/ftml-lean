@@ -19,13 +19,13 @@ theorem digitsVal_append_single (ds : List Nat) (d : Nat) :
   rw [List.foldl_append]
   simp
 
-theorem digitsVal_decBytes (k : Nat) : digitsVal (decBytes k) = k := by
+theorem digitsVal_decBytes (k : Nat) : digitsVal (emailDecBytes k) = k := by
   induction k using Nat.strongRecOn with
   | ind k ih =>
       by_cases hk : k < 10
       · have ht : Nat.toDigits 10 k = [Nat.digitChar k] := Nat.toDigits_of_lt_base hk
-        have hd : decBytes k = [48 + k] := by
-          rw [decBytes, ht]
+        have hd : emailDecBytes k = [48 + k] := by
+          rw [emailDecBytes, ht]
           simp [digitChar_toNat k hk]
         rw [hd]
         simp [digitsVal]
@@ -33,8 +33,8 @@ theorem digitsVal_decBytes (k : Nat) : digitsVal (decBytes k) = k := by
         have hdiv : k / 10 < k := Nat.div_lt_self (by omega) (by omega)
         have ht : Nat.toDigits 10 k = Nat.toDigits 10 (k / 10) ++ [Nat.digitChar (k % 10)] :=
           Nat.toDigits_of_base_le (by omega) hk10
-        have hd : decBytes k = decBytes (k / 10) ++ [48 + k % 10] := by
-          simp [decBytes, ht, digitChar_toNat (k % 10) (Nat.mod_lt k (by omega))]
+        have hd : emailDecBytes k = emailDecBytes (k / 10) ++ [48 + k % 10] := by
+          simp [emailDecBytes, ht, digitChar_toNat (k % 10) (Nat.mod_lt k (by omega))]
         rw [hd, digitsVal_append_single, ih (k / 10) hdiv]
         have hsub : 48 + k % 10 - 48 = k % 10 := by omega
         rw [hsub, Nat.mul_comm]
@@ -51,7 +51,7 @@ theorem takeWhile_eq_self_append_cons (p : Nat → Bool) (ds : List Nat) (t : Na
       simp [List.takeWhile, hd, ih hds']
 
 theorem takeWhile_decBytes_255 (k : Nat) (post : List Nat) :
-    (decBytes k ++ (255 :: post)).takeWhile emailIsDigitByte = decBytes k := by
+    (emailDecBytes k ++ (255 :: post)).takeWhile emailIsDigitByte = emailDecBytes k := by
   apply takeWhile_eq_self_append_cons
   · intro b hb
     have hr := decBytes_range k b hb

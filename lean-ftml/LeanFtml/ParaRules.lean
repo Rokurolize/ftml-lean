@@ -280,12 +280,27 @@ def rtrimImageAttrWs (bs : List Nat) : List Nat :=
 def rtrimImageHrefWs (bs : List Nat) : List Nat :=
   rtrimImageAttrWs bs
 
-/-- REFCORR12 selective trim: the technical keys link, width and class are
-    right-trimmed; the text/label keys title, alt, style, height and size
-    keep their authored bytes. Byte twin of the PHP consumer loop. -/
+/-- REFCORR13: the live-discarded C0 class D is the shared
+    `isLiveDroppedControl` (below 0x20 except TAB, LF, CR and ESC; DEL is
+    kept). Applying it to an accepted Image technical value explains the
+    interior form feed that live discards from `class="thi\fck"` while the
+    reference kept it (C-R5F-S1-3); the text/label values title and alt are
+    not passed through this filter (S12 keeps an ESC-bearing title raw). -/
+def dropImageDroppedControls (v : List Nat) : List Nat :=
+  v.filter (fun b => ! isLiveDroppedControl b)
+
+/-- REFCORR13 selective normalization: the technical/presentation keys link,
+    width, class, style and height drop the shared C0 class D and then lose
+    one trailing ctype_space / PCRE `\s` run; title and alt stay byte-verbatim
+    and size is dropped by both sides. REFCORR12 trimmed only link, width and
+    class; C-R5F-P3-1/2 and C-R5F-R2-2/3 add style and height, and
+    C-R5F-S1-3 adds the interior D drop. Byte twin of the PHP consumer loop,
+    placed after every acceptance guard so those guards see authored bytes. -/
 def imageTrimAttr (k : List Nat) (v : List Nat) : List Nat :=
   if k == litBytes "link" || k == litBytes "width" ||
-      k == litBytes "class" then rtrimImageAttrWs v else v
+      k == litBytes "class" || k == litBytes "style" ||
+      k == litBytes "height" then rtrimImageAttrWs (dropImageDroppedControls v)
+  else v
 
 /-- process() for one Image match: the whole match, the
     alignment group, the body, and the current table, returning

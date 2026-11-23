@@ -174,6 +174,15 @@ theorem math_unsupported_uppercase :
       litBytes "<div class=\"error-block\">Unsupported math " ++
         litBytes "environment \"ALIGN\"</div>" := rfl
 
+/-- REFCORR13 C-R5F-P2-2: a lower-case environment name carrying a decimal
+    digit (first cached witness `align2`) is rejected the same way; live
+    serves the same `Unsupported math environment` rule-level block. -/
+theorem math_unsupported_digit_bearing :
+    renderMath [("content".toList, .str "x".toList),
+        ("type".toList, .str "align2".toList)] =
+      litBytes "<div class=\"error-block\">Unsupported math " ++
+        litBytes "environment \"align2\"</div>" := rfl
+
 /-- REFCORR3 C-SUSPECT-SERVING-1: an empty environment type is
     rejected the same way. -/
 theorem math_unsupported_empty :

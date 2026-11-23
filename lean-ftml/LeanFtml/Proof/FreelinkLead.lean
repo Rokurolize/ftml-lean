@@ -19,10 +19,25 @@ def freelinkLeadRoster : List (Nat × Nat) :=
 
 def freelinkIsAsciiLetter (b : Nat) : Bool := (65 <= b && b <= 90) || (97 <= b && b <= 122)
 
+-- Genuine kernel proof of the roster equivalence: the predicate side is reduced to the certified 196-point class isFreelinkLead plus the two REFCORR13 siblings, the roster side is reduced structurally to the same class plus the two REFCORR13 singleton ranges, and the two reductions are identified, so no axiom or native decision procedure is involved beyond the standard logical axioms.
 theorem isDefaultLeadCp_iff_mem (cp : Nat) : isDefaultLeadCp cp = true ↔ inScalarRanges freelinkLeadRoster cp = true := by
-  simp [isDefaultLeadCp, isUnicodeFormatCp, isUnicodeWhiteSpaceCp, freelinkLeadRoster,
-    freelinkLeadRanges, inScalarRanges, scalarSpaceRanges, scalarCfRanges]
-  omega
+  have beqt (a b : Bool) : a = b ↔ (a = true ↔ b = true) := by cases a <;> cases b <;> simp
+  have hSingle (a n : Nat) : inScalarRanges [(a, a)] n = (n == a) := by
+    rw [beqt]
+    simp [inScalarRanges]
+    omega
+  have hPair : inScalarRanges [(0x2065, 0x2065), (0x1B, 0x1B)] cp = (cp == 0x2065 || cp == 0x1B) := by
+    change inScalarRanges ([(0x2065, 0x2065)] ++ [(0x1B, 0x1B)]) cp = (cp == 0x2065 || cp == 0x1B)
+    rw [inScalarRanges_append, hSingle, hSingle]
+  have hRosterBool : inScalarRanges freelinkLeadRoster cp = (isFreelinkLead cp || cp == 0x2065 || cp == 0x1B) := by
+    rw [freelinkLeadRoster, inScalarRanges_append, hPair]
+    simp [isFreelinkLead, Bool.or_assoc]
+  have hGuard : isDefaultLeadCp cp = (isFreelinkLead cp || cp == 0x2065 || cp == 0x1B) := by
+    rw [beqt]
+    simp [isDefaultLeadCp, isUnicodeFormatCp, isUnicodeWhiteSpaceCp, isFreelinkLead,
+      freelinkLeadRanges, inScalarRanges]
+    omega
+  rw [hGuard, ← hRosterBool]
 
 theorem isDefaultLeadCp_not_asciiLetter (cp : Nat) (h : isDefaultLeadCp cp = true) : freelinkIsAsciiLetter cp = false := by
   simp [isDefaultLeadCp, isUnicodeFormatCp, isUnicodeWhiteSpaceCp] at h
@@ -146,8 +161,14 @@ theorem regLeadCf_2061_admitted : isDefaultLeadCp 0x2061 = true := by decide
 theorem regLeadCf_2062_admitted : isDefaultLeadCp 0x2062 = true := by decide
 theorem regLeadCf_2063_admitted : isDefaultLeadCp 0x2063 = true := by decide
 theorem regLeadCf_2064_admitted : isDefaultLeadCp 0x2064 = true := by decide
-theorem regLeadR13_2065_admitted : isDefaultLeadCp 0x2065 = true := by decide
-theorem regLeadR13_001B_admitted : isDefaultLeadCp 0x1B = true := by decide
+-- The two REFCORR13 siblings are admitted through their explicit singleton ranges in the rebased roster, mirroring the two added PHP regex branches, and the derived proof is kernel-checked rather than a bare decision.
+theorem regLeadR13_2065_admitted : isDefaultLeadCp 0x2065 = true := by
+  rw [isDefaultLeadCp_iff_mem]
+  simp [freelinkLeadRoster, inScalarRanges]
+
+theorem regLeadR13_001B_admitted : isDefaultLeadCp 0x1B = true := by
+  rw [isDefaultLeadCp_iff_mem]
+  simp [freelinkLeadRoster, inScalarRanges]
 theorem regLead_nul_excluded : isDefaultLeadCp 0x00 = false := by decide
 theorem regLead_001A_excluded : isDefaultLeadCp 0x1A = false := by decide
 
@@ -159,5 +180,7 @@ theorem regLead_001A_excluded : isDefaultLeadCp 0x1A = false := by decide
 #print axioms isUrlTarget_false_of_nonLetter_head
 #print axioms isUrlTarget_nil
 #print axioms regLeadCf_200B_admitted
+#print axioms regLeadR13_2065_admitted
+#print axioms regLeadR13_001B_admitted
 
 end LeanFtml

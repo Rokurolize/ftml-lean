@@ -1063,9 +1063,11 @@ def isUnicodeWhiteSpaceCp (cp : Nat) : Bool :=
   cp == 0x205F ||
   cp == 0x3000
 
+/-- REFCORR13 (C-R5F-P2-1 / C-R5F-R2-1 / C-R5F-S2-1): two evidence-bounded lead members beyond the certified Cf + White_Space + BOM + star class. U+2065 is the unassigned gap inside the pinned Cf block and U+001B ESC is a Cc control that live strips before `_default:`. The certified isUnicodeFormatCp is left unchanged; these two code points are explicit siblings added here only, symmetric with the two added PHP regex branches, so F3's 196-code-point certification of the base class is not disturbed. Byte-zero NUL remains excluded and no other C0/C1 control is admitted. -/
 def isDefaultLeadCp (cp : Nat) : Bool :=
   cp != 0x00 &&
-  (isUnicodeFormatCp cp || isUnicodeWhiteSpaceCp cp || cp == 0xFEFF || cp == 0x2A)
+  (isUnicodeFormatCp cp || isUnicodeWhiteSpaceCp cp || cp == 0xFEFF || cp == 0x2A ||
+   cp == 0x2065 || cp == 0x1B)
 
 /-- The code point beginning a byte list and the number of bytes it occupies,
     using the same UTF-8 decoding as `utf8Decode`; a byte that does not open
@@ -1150,16 +1152,21 @@ def freelinkProcess (full raw labelRaw : List Nat)
     let starUrl := !leadingSpace && trimmed0.head? == some 42
     let trimmed := if starUrl then trimmed0.tail else trimmed0
     if !leadingSpace && isUrlTarget trimmed then
+      -- REFCORR13 D06/D07: carry the peeled anchor/route into the URL token
+      -- and fall back to the slugified URL text on an empty pipe label.
+      let emptyPipe := trimBytes labelRaw == [124]
+      let urlPage := toUnixName trimmed
       let text := if labelRaw.isEmpty then trimmed
+                  else if emptyPipe then []
                   else labelRaw.drop 1
       let opts : OptMap :=
         [("site".toList, OptVal.null),
-         ("page".toList, OptVal.str []),
+         ("page".toList, if emptyPipe then textVal urlPage else OptVal.str []),
          ("text".toList, textVal text),
-         ("anchor".toList, OptVal.str []),
-         ("extra".toList, OptVal.str []),
+         ("anchor".toList, if anchor.isEmpty then OptVal.str [] else textVal anchor),
+         ("extra".toList, if extra.isEmpty then OptVal.str [] else textVal ([47] ++ extra)),
          ("url".toList, textVal trimmed),
-         ("textFromTitle".toList, OptVal.null)] ++
+         ("textFromTitle".toList, if emptyPipe then OptVal.bool true else OptVal.null)] ++
         (if starUrl then [("target".toList, OptVal.str "_blank".toList)] else [])
       (phBytes toks.length,
        toks ++ [{ rule := "Freelink", opts := opts }])

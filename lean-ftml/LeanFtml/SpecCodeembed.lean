@@ -144,13 +144,21 @@ theorem spec_embed_data_src_not_captured :
     findSrcValue (litBytes "<img data-src=\"javascript:alert(1)\">") = none := by
   decide
 
-/-- REFCORR4 C-SUSPECT-CODEEMBED-6: the event regex no longer requires a
-    preceding whitespace byte, so a glued `/onclick=` is rejected on the
-    mirror side too. -/
+/-- REFCORR4 C-SUSPECT-CODEEMBED-6 kept by REFCORR13 D01: a glued
+    `/onclick=` is still an event (the preceding `/` is a word
+    boundary), while `longdesc`, `content` and `1onclick` become
+    ordinary attributes because their `on` is glued to a preceding
+    word byte. -/
 theorem spec_embed_glued_event_rejected :
-    pcreMatch embedEventPattern
+    hasEventAttr
       (litBytes "<iframe src=\"http://x/\" style=\"\"/onclick=\"go()\"></iframe>") =
       true := by
+  decide
+
+theorem spec_embed_d01_word_boundary :
+    hasEventAttr (litBytes "<iframe src=\"http://x/\" longdesc=\"d\"></iframe>") = false ∧
+    hasEventAttr (litBytes "<iframe src=\"http://x/\" content=\"c\"></iframe>") = false ∧
+    hasEventAttr (litBytes "<iframe src=\"http://x/\" 1onclick=\"1\"></iframe>") = false := by
   decide
 
 /-- REFCORR4 C-SUSPECT-CODEEMBED-3: a single-quoted script-scheme src is

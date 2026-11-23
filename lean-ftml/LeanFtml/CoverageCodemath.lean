@@ -23,11 +23,15 @@
     token is built, but the counter has already moved; otherwise a
     missing exact lower-case `type` key (whether genuinely absent or
     present only as a case variant of the name) defaults to `equation`,
-    a present value matching `^[a-z][a-z0-9]*$` is kept, and any other
-    present value is kept and rejected by the renderer. The three type
-    outcomes and the fatal guard are exclusive. Under the harness the
-    valid arm is the fossil failure block, because the PNG never
-    exists.
+    a present value whose `*` bytes have been stripped and which is a member
+    of the fixed AMS allowlist (equation, align, gather, eqnarray, multline,
+    split) is accepted (REFCORR13 R13-AGY2 D08 SUPERSEDES the R13-MATHNOTES
+    `^[a-z]+$` rule: live rejects `foobar`, `flalign` and `align2` but accepts
+    `align*`, `gather*` and `equation*` after stripping), and any other present
+    value is rejected by the renderer using the stripped name. The three type
+    outcomes and the fatal guard are exclusive. Under the harness the valid
+    arm is the fossil failure block, because the PNG never exists; the live
+    MathJax wrapper is the named external LatexRenderer serving boundary.
   * Mathinline (`Inline1Rules.mathResolve` / `mathSuppressRule`, the
     mirror of REFCORR6 `expandSource`): no placeholder is the plain
     body; a depth/fuel guard returns the bytes unchanged; an unknown
@@ -462,7 +466,7 @@ theorem cm_math_png_nonclass (opts : OptMap) :
       (let ty := optStrBytes opts "type".toList
        if !mathTypeValid ty then
          litBytes "<div class=\"error-block\">Unsupported math " ++
-         litBytes "environment \"" ++ ty ++ litBytes "\"</div>"
+         litBytes "environment \"" ++ mathStripStar ty ++ litBytes "\"</div>"
        else
          litBytes "<div class=\"error-block\">The equation has not " ++
          litBytes "been processed correctly. Most prabably it has " ++

@@ -441,10 +441,14 @@ def isAlnumByteB (b : Nat) : Bool :=
 def lowerByteB (b : Nat) : Nat :=
   if 65 ≤ b && b ≤ 90 then b + 32 else b
 
-/-- Percent-encode the non-ASCII bytes of a verbatim href,
-    one `%XX` (uppercase hex) per byte. -/
+/-- REFCORR13: a verbatim href percent-encodes every non-printable byte —
+    C0 controls, DEL and non-ASCII — as one uppercase `%XX` per byte; the
+    printable ASCII bytes and the leading `#` pass through. The former
+    ASCII-only encoder left an ESC that the narrowed `normalizeAttrValue`
+    now preserves, but live emits `#a%1Bb` for `#a\x1bb` (C-R5F-R3-2); the
+    name `pctEncodeNonAscii` is kept for existing pins. -/
 def pctEncodeNonAscii (bs : List Nat) : List Nat :=
-  bs.flatMap (fun b => if b ≥ 128 then
+  bs.flatMap (fun b => if b < 32 || b >= 127 then
     [37, hexDigitB (b / 16), hexDigitB (b % 16)] else [b])
 
 /-- `isVerbatimHref`: the empty string is not verbatim; a

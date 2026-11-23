@@ -65,3 +65,7 @@ import LeanFtml.Proof.FrameIncludeAxiomAudit
 import LeanFtml.ProofNextFinal
 import LeanFtml.ProofBlockMiddle
 import LeanFtml.ProofParaInline
+import LeanFtml.ProofEmail
+import LeanFtml.Proof.AlphaComposition
+import LeanFtml.Proof.WfComposition
+import LeanFtml.Proof.ByteBridge

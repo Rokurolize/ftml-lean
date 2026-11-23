@@ -74,14 +74,19 @@ theorem renderButton_invalid_type_law (opts : OptMap) (h : buttonAllowed (asciiL
 theorem renderButton_settags_no_text_law (opts : OptMap) (hallow : buttonAllowed (asciiLowerBytes (optStrBytes opts "type".toList)) = true) (hty : (asciiLowerBytes (optStrBytes opts "type".toList) == litBytes "set-tags") = true) (htext : (omGet opts "text".toList).isNone = true) : renderButton opts = litBytes "<div class=\"error-block\">" ++ litBytes "You need to set text for set-tags button.</div>" := by
   unfold renderButton
   dsimp only
-  rw [hallow, hty, htext]
-  simp
+  first
+  | rw [hallow, hty, htext]
+    simp
+  | have hget : omGet opts "text".toList = none := by simpa using htext
+    have hopt : optStrBytes opts "text".toList = [] := by rw [optStrBytes, hget]
+    rw [hallow, hty, hopt]
+    simp [phpTruthyBytes]
 
 /-- Button output determinism: for arbitrary option maps, equal bytes for the four options type, text, style and class plus equal text-option presence (the canonical D10 set-tags guard reads `omGet ... .isNone`) force identical rendered output, so no other option key can influence any Button branch. -/
 theorem renderButton_option_determinism (opts₁ opts₂ : OptMap) (hTy : optStrBytes opts₁ "type".toList = optStrBytes opts₂ "type".toList) (hText : optStrBytes opts₁ "text".toList = optStrBytes opts₂ "text".toList) (hStyle : optStrBytes opts₁ "style".toList = optStrBytes opts₂ "style".toList) (hClass : optStrBytes opts₁ "class".toList = optStrBytes opts₂ "class".toList) (hTextPres : (omGet opts₁ "text".toList).isNone = (omGet opts₂ "text".toList).isNone) : renderButton opts₁ = renderButton opts₂ := by
   unfold renderButton
   dsimp only
-  rw [hTy, hText, hStyle, hClass, hTextPres]
+  simp only [hTy, hText, hStyle, hClass, hTextPres]
 
 /-- Date general empty-timestamp law: for an arbitrary option map whose timestamp option is empty, Date renders no bytes at all, independently of the format option and every other key. -/
 theorem renderDate_empty_timestamp_law (opts : OptMap) (h : (optStrBytes opts "timestamp".toList).isEmpty = true) : renderDate opts = [] := by

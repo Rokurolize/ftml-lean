@@ -367,12 +367,12 @@ theorem pcre_match_a_plus_false :
 theorem anyiframe_fixture_in_table :
     embedPatternStrings[35]? =
     some ("anyiframe",
-      ";^<iframe(\\s+[a-z0-9_]+\\s*=\\s*['\"][^'\"]*['\"])+>\\s*</iframe>$;si") := rfl
+      ";^<iframe(\\s+[a-z0-9]+(\\s*=\\s*(\"[^\"]*\"|'[^']*'))?)+>\\s*</iframe>$;si") := rfl
 
 /-- The parsed `anyiframe` fixture. -/
 def anyiframeFixture : PcreParsed :=
   match parsePcre
-      ";^<iframe(\\s+[a-z0-9_]+\\s*=\\s*['\"][^'\"]*['\"])+>\\s*</iframe>$;si" with
+      ";^<iframe(\\s+[a-z0-9]+(\\s*=\\s*(\"[^\"]*\"|'[^']*'))?)+>\\s*</iframe>$;si" with
   | some p => p
   | none => { ast := .eps, ci := true, dotall := true }
 

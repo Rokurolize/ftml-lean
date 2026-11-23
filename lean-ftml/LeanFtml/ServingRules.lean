@@ -202,12 +202,17 @@ def containsSubFrom1 (pat subj : List Nat) : Bool :=
 
 /-! ## Module / Module654 -/
 
-/-- The ModuleManager stub's available-module list
-    (`ozone-stubs.php`), compared after byte-wise `strtolower`. -/
+/-- The ModuleManager stub's available-module list (`ozone-stubs.php`),
+    compared after byte-wise `strtolower`. REFCORR13 R13-AGY2 D14 adds the
+    nine standard modules measured live in REPORT-AGY-HUNT.md D14; the
+    rendered body of each remains an external serving boundary. -/
 def moduleAvailableNames : List (List Nat) :=
   [ litBytes "backlinks", litBytes "categories", litBytes "css",
     litBytes "join", litBytes "listpages", litBytes "pagetree",
-    litBytes "rate", litBytes "redirect", litBytes "tagcloud" ]
+    litBytes "rate", litBytes "redirect", litBytes "tagcloud",
+    litBytes "newpage", litBytes "childpages", litBytes "pagecalendar",
+    litBytes "wantedpages", litBytes "orphanedpages", litBytes "countpages",
+    litBytes "search", litBytes "members", litBytes "files" ]
 
 /-- The fossil handoff marker byte: `utf8_encode("\xFE")`. -/
 def moduleMarkerByte : List Nat := [195, 190]
@@ -242,14 +247,24 @@ def renderModule (opts : OptMap) : List Nat :=
 
 /-! ## Math -/
 
-/-- REFCORR3 C-SUSPECT-SERVING-1: the renderer validates the
-    environment type as `^[a-z][a-z0-9]*$`; an empty or
-    upper-case value is rejected before any LatexRenderer call. -/
-def mathTypeValid : List Nat → Bool
-  | [] => false
-  | b :: rest =>
-      (97 <= b && b <= 122) &&
-        rest.all (fun c => (97 <= c && c <= 122) || (48 <= c && c <= 57))
+/-- The fixed AMS/LaTeX environment allowlist measured on live by
+    REPORT-AGY-HUNT.md D08 (equation, align, gather, eqnarray, multline,
+    split). REFCORR13 R13-AGY2 D08 SUPERSEDES the R13-MATHNOTES
+    `^[a-z]+$` acceptance rule: that rule rejected the round-5f `align2`
+    witness but accepted `foobar` and `flalign`, which live rejects, and
+    rejected `align*` and `gather*`, which live accepts after stripping `*`. -/
+def mathAmsEnvironments : List (List Nat) :=
+  [ litBytes "equation", litBytes "align", litBytes "gather",
+    litBytes "eqnarray", litBytes "multline", litBytes "split" ]
+
+/-- Every `*` byte is stripped first (witness `a*b` is reported as `ab`),
+    with no trim and no case folding (`align ` and `ALIGN` stay invalid). -/
+def mathStripStar (ty : List Nat) : List Nat :=
+  ty.filter (fun b => b != 42)
+
+/-- The validator is exact allowlist membership of the stripped name. -/
+def mathTypeValid (ty : List Nat) : Bool :=
+  mathAmsEnvironments.contains (mathStripStar ty)
 
 /-- Mirror of `Text_Wiki_Render_Xhtml_Math::token`. An invalid
     environment type returns the "Unsupported math environment"
@@ -261,9 +276,10 @@ def mathTypeValid : List Nat → Bool
     file header). -/
 def renderMath (opts : OptMap) : List Nat :=
   let ty := optStrBytes opts "type".toList
+  let env := mathStripStar ty
   if !mathTypeValid ty then
     litBytes "<div class=\"error-block\">Unsupported math " ++
-      litBytes "environment \"" ++ ty ++ litBytes "\"</div>"
+      litBytes "environment \"" ++ env ++ litBytes "\"</div>"
   else
     litBytes "<div class=\"error-block\">The equation has not " ++
       litBytes "been processed correctly. Most prabably it has " ++
@@ -325,6 +341,8 @@ def renderFreelink (opts : OptMap) : List Nat :=
   let nonbr := !(phpEmptyOpt (omGet opts "nonbr".toList))
   let textFromTitle := !(phpEmptyOpt (omGet opts "textFromTitle".toList))
   if phpTruthyBytes url then
+    -- REFCORR13 D07: empty-pipe external URL falls back to the slugified page text.
+    let text := if textFromTitle && (phpTrimBytes text).isEmpty then page else text
     let t := htmlSpecialCharsCompat (phpTrimBytes text)
     let t := if nonbr then nbspSpaces t else t
     -- MIRROR-FIX Item 2 (REFCORR3 C-SUSPECT-SERVING-2): the parse rule
@@ -334,8 +352,9 @@ def renderFreelink (opts : OptMap) : List Nat :=
     let target := optStrBytes opts "target".toList
     let targetAttr := if target.isEmpty then [] else
       litBytes " target=\"" ++ htmlSpecialCharsCompat target ++ litBytes "\""
+    -- REFCORR13 C-R5F-R2-4 plus D06: percent-encode the external target and keep the peeled #fragment / #/route suffix in the href.
     litBytes "<a" ++ targetAttr ++ litBytes " href=\"" ++
-      htmlSpecialCharsCompat url ++
+      htmlSpecialCharsCompat (percentEncodeNonAscii (url ++ anchor ++ extra)) ++
       litBytes "\">" ++ t ++ litBytes "</a>"
   else if phpTruthyBytes site then
     litBytes "<a href=\"http://" ++ site ++ litBytes "." ++
@@ -589,6 +608,18 @@ def galleryRowSrc (row : List Nat) : Option (List Nat) :=
     some (if startsWithBytes [42] src then src.drop 1 else src)
   else none
 
+/-- REFCORR13 D09: live maps a `link=` whose value starts with
+    `javascript:`, `vbscript:` or `data:` to `#`, case-insensitively,
+    and leaves `mailto:` and every other scheme intact. The test is
+    on the emitted href after any external-source link override. -/
+def gallerySanitizeHref (href : List Nat) : List Nat :=
+  let lv := asciiLowerBytes href
+  if (litBytes "javascript:").isPrefixOf lv ||
+      (litBytes "vbscript:").isPrefixOf lv ||
+      (litBytes "data:").isPrefixOf lv then
+    [35]
+  else href
+
 /-- The full per-row processing of `renderGallery`, as a fold
     step over `(target, osrc, out)`. PHP's `$target` and
     `$osrc` are never reset inside one `token()` call: a `*`
@@ -633,7 +664,7 @@ def galleryRowStep (size : List Nat)
           (osrc, if size == litBytes "original" then osrc else resized,
            attrs0)
         else (osrc, src1, attrs0 ++ [(litBytes "link", src1)])
-      let (href, target2) :=
+      let (href0, target2) :=
         match galleryAttrGet attrs (litBytes "link") with
         | some l =>
             let (l, t) :=
@@ -645,6 +676,7 @@ def galleryRowStep (size : List Nat)
             -- in this harness, so both arms are the bare link.
             (l, t)
         | none => (osrc1, target1)
+      let href := gallerySanitizeHref href0
       let alt := match galleryAttrGet attrs (litBytes "alt") with
         | some a => htmlSpecialCharsCompat a
         | none => []

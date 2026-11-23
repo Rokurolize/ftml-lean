@@ -230,15 +230,20 @@ def footnoteProcess (body : List Nat) (doc : DocState)
   -- the emitted body on every shape. PHP trim (and isTrimByte) exclude form
   -- feed 12, so the old REFCORR10 fallback branch left FF in the stored body
   -- before a double-LF run or with no authored LF (C-R5D-R3-1 / R3D-F2).
-  -- Drop the class once, before the break decision and the visible projection,
-  -- so both branches store an already-pure body. Empty-Raw placeholders
-  -- (0xFF<id>0xFF) and TAB/LF/CR are untouched, so the single-authored-break
-  -- witness R3D-F3 still keeps its placeholders and renders its <br />.
+  -- REFCORR13 C-R5F-R3-3: the authored-break predicate is evaluated on the
+  -- control-BEARING trimmed body, and the discarded class is dropped only on
+  -- the fallback branch. Live stores the raw trimmed body, so a bare FF (or
+  -- any discarded C0 byte) immediately before a single LF is a real inline
+  -- witness for the Newline rule and yields a rule-level <br />. The old
+  -- order stripped D before hasSingleBreakByte, erasing that sole witness.
+  -- Empty-Raw placeholders (0xFF<id>0xFF) and TAB/LF/CR are untouched, so
+  -- the single-authored-break witness R3D-F3 still keeps its placeholders
+  -- and renders its <br />; every double-LF, bare-LF and no-LF cached shape
+  -- still takes the control-pure fallback branch unchanged.
   let preStrip := trimBytes body
-  let pure := stripLiveDroppedControls preStrip
-  let stripped := stripEmptyRawPhNotes pure toks
+  let stripped := stripEmptyRawPhNotes (stripLiveDroppedControls preStrip) toks
   let content :=
-    if hasSingleBreakByte pure then pure
+    if hasSingleBreakByte preStrip then preStrip
     else trimBytes stripped
   let id := doc.footnotes.length + 1
   (phBytes toks.length,
@@ -790,9 +795,12 @@ theorem refcorr10_fn_nbsp_flank_keeps_placeholders :
       [phBytes 0 ++ [194, 160] ++ litBytes "\n" ++ phBytes 1] := by
   rfl
 
-theorem refcorr10_fn_formfeed_flank_drops_control :
+/- REFCORR13 C-R5F-R3-3 restates this REFCORR10 pin: the FF is now the
+   authored-break witness live keeps in the stored body, not a control the
+   parse side drops before the predicate. -/
+theorem refcorr13_fn_formfeed_flank_keeps_break_witness :
     (footnoteProcess (phBytes 0 ++ [12] ++ litBytes "\n" ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes =
-      [phBytes 0 ++ litBytes "\n" ++ phBytes 1] := by
+      [phBytes 0 ++ [12] ++ litBytes "\n" ++ phBytes 1] := by
   rfl
 
 /- REFCORR10 controls: a bare LF, a double-LF run and a horizontal-only
@@ -803,13 +811,15 @@ theorem refcorr10_fn_controls_still_fold :
     (footnoteProcess (litBytes "  ") {} r9hEmptyRaw2).2.2.footnotes = [[]] :=
   ⟨rfl, rfl, rfl⟩
 
-/- REFCORR11 pins. The C0-control filter is unconditional, so a form feed on
-   the old branch-local fallback (double-LF run, or no authored LF at all) now
-   folds to an empty stored body exactly as live purifyHtml does. The
-   single-authored-break witness is preserved: the FF is dropped but the
-   placeholder-bearing LF body is still stored, so Newline emits <br />. The
-   bibitem FF between empty-Raw placeholders now emits an empty body and an
-   empty flag, settling the entry as `1.` with no separator space. -/
+/- REFCORR11 pins (with the REFCORR13 C-R5F-R3-3 restatement of the
+   single-break witness). The discarded-class filter is unconditional on the
+   fallback branch, so a form feed on a double-LF run, or with no authored LF
+   at all, folds to an empty stored body exactly as live purifyHtml does. The
+   single-authored-break witness is kept verbatim: REFCORR13 evaluates the
+   predicate on the control-bearing body, so the FF survives as the inline
+   witness Newline needs to emit <br />. The bibitem FF between empty-Raw
+   placeholders still emits an empty body and an empty flag, settling the
+   entry as `1.` with no separator space. -/
 theorem refcorr11_fn_formfeed_double_lf_folds :
     (footnoteProcess (phBytes 0 ++ [12] ++ litBytes "\n\n" ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes = [[]] := by
   rfl
@@ -818,9 +828,9 @@ theorem refcorr11_fn_formfeed_no_break_folds :
     (footnoteProcess (phBytes 0 ++ [12] ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes = [[]] := by
   rfl
 
-theorem refcorr11_fn_single_break_still_keeps_placeholders :
+theorem refcorr13_fn_single_break_keeps_control_witness :
     (footnoteProcess (phBytes 0 ++ [12] ++ litBytes "\n" ++ phBytes 1) {} r9hEmptyRaw2).2.2.footnotes =
-      [phBytes 0 ++ litBytes "\n" ++ phBytes 1] := by
+      [phBytes 0 ++ [12] ++ litBytes "\n" ++ phBytes 1] := by
   rfl
 
 theorem refcorr11_bib_formfeed_emits_empty_body :

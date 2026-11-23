@@ -400,10 +400,14 @@ def urlDescrMatch (bs : List Nat) (toks : List TokenEntry) :
               | some (text, rest3) =>
                   let wholeMatch := bs.take (bs.length - rest3.length)
                   if (findSub [91, 91, 36] text).isSome ||
-                      (findSub [36, 93] wholeMatch).isSome then
+                      ((findSub [36, 93] wholeMatch).isSome &&
+                       (findSub [93, 93] wholeMatch).isSome) then
                     -- REFCORR6 m1-code: a described match that has
-                    -- swallowed the math closer's `$]` fragment yields,
-                    -- so Mathinline claims the whole authored body.
+                    -- swallowed the math closer's `$]]` tail (the
+                    -- doubled `]]` before `$]`) yields, so Mathinline
+                    -- claims the whole authored body. REFCORR13 D05:
+                    -- a plain described link ending in `$` has no
+                    -- doubled closer and is claimed normally.
                     some (rest3, wholeMatch, toks)
                   else
                     let opts : OptMap :=

@@ -737,10 +737,14 @@ where
           | none => go rest stack
 
 /-- `normalizeAttrValue`: strip control bytes (keeping tab, LF, CR),
-collapse whitespace runs to one space, trim spaces. -/
+collapse whitespace runs to one space, trim spaces. REFCORR13: the dropped
+class is the shared `isLiveDroppedControl` — below 0x20 except TAB 9, LF 10,
+CR 13 and ESC 27, with DEL kept — instead of the former `(14 ≤ c && c ≤ 31)
+|| c == 127` that removed ESC. Live keeps ESC in an Anchor id
+(C-R5F-R3-1) and percent-encodes it in a verbatim href (C-R5F-R3-2); the
+collapse and trim are unchanged. -/
 def normalizeAttrValue (v : List Nat) : List Nat :=
-  let kept := v.filter (fun c =>
-    !(c ≤ 8 || c == 11 || c == 12 || (14 ≤ c && c ≤ 31) || c == 127))
+  let kept := v.filter (fun c => ! isLiveDroppedControl c)
   let collapsed := kept.foldr (fun c acc =>
     if (c == 32 || c == 9 || c == 10 || c == 13) && acc.head? == some 32 then acc
     else if (c == 32 || c == 9 || c == 10 || c == 13) then 32 :: acc
@@ -1596,6 +1600,77 @@ def normalizeS1Tail9 (s : List Nat) : List Nat :=
   let rep := litBytes "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b\n[[/ol]] AFTER[[/li]]\n[[/ul]] [[/li]]\n[[/ul]]"
   if s.take pre.length == pre then rep ++ s.drop pre.length else s
 
+/-- REFCORR13 mirror half of the four-case nested-boundary rule. The bytes
+    between a block tag and the next block tag start with the tag's own LF;
+    PHP's rewrite captures begin after that LF. Drop exactly one leading LF. -/
+def afterTagLf13 (s : List Nat) (t : TagMatch) : List Nat :=
+  let r := s.drop (t.start + t.len)
+  match r with
+  | 10 :: rr => rr
+  | _ => r
+
+/-- REFCORR13 mirror half, case A (raw-case outer, lowercase nested). A
+    lowercase nested opener is a genuine list, so a raw-case outer (which
+    never pairs) closes before it and the nested list becomes a sibling.
+    This is the byte-pairing mirror of the first PHP pre-normalization
+    rewrite and is inert on every other source shape. -/
+def normalizeRawOuterLowNested13 (s : List Nat) : List Nat :=
+  match scanTags s with
+  | o :: n :: cl :: oc :: _ =>
+      if o.isOpen && tagIsRawCase o.tag &&
+         n.isOpen && !(tagIsRawCase n.tag) &&
+         !cl.isOpen && !(tagIsRawCase cl.tag) &&
+         lowerBytes cl.tag == lowerBytes n.tag &&
+         !oc.isOpen && tagIsRawCase oc.tag &&
+         lowerBytes oc.tag == lowerBytes o.tag &&
+         (trimBytes (s.take o.start)).isEmpty &&
+         existsLitCI (litBytes "[[/li]]") ((s.take oc.start).drop (cl.start + cl.len))
+      then
+        let pre := s.take o.start
+        let item0 := (s.take n.start).drop (o.start + o.len)
+        let item := match item0 with | 10 :: r => r | _ => item0
+        let nested0 := (s.take (cl.start + cl.len)).drop (n.start + n.len)
+        let nested := match nested0 with | 10 :: r => r | _ => nested0
+        let rest := s.drop (oc.start + oc.len)
+        pre ++ litBytes "[[ul]]\n" ++ item ++ litBytes "[[/LI]]\n[[/ul]]\n[[" ++
+          lowerBytes n.tag ++ litBytes "]]\n" ++ nested ++ rest
+      else s
+  | _ => s
+
+/-- REFCORR13 mirror half, case B (lowercase outer, raw-case nested). A
+    raw-case nested opener is an item boundary: its opener and closer are
+    consumed and the following LI becomes a sibling item in the same outer
+    list. This is the byte-pairing mirror of the second PHP pre-normalization
+    rewrite and is inert on every other source shape. -/
+def normalizeLowOuterRawNested13 (s : List Nat) : List Nat :=
+  match scanTags s with
+  | o :: n :: ncl :: oc :: _ =>
+      if o.isOpen && !(tagIsRawCase o.tag) &&
+         n.isOpen && tagIsRawCase n.tag &&
+         !ncl.isOpen && tagIsRawCase ncl.tag &&
+         lowerBytes ncl.tag == lowerBytes n.tag &&
+         !oc.isOpen && !(tagIsRawCase oc.tag) && oc.tag == o.tag &&
+         (trimBytes (s.take o.start)).isEmpty &&
+         existsLitCI (litBytes "[[/li]]") ((s.take oc.start).drop (ncl.start + ncl.len))
+      then
+        let item0 := (s.take n.start).drop (o.start + o.len)
+        let item := match item0 with | 10 :: r => r | _ => item0
+        let nested0 := afterTagLf13 s n
+        match liMatchAt nested0 with
+        | some (_, _, nlen) =>
+            let rest := s.drop (oc.start + oc.len)
+            (s.take o.start) ++ litBytes "[[" ++ o.tag ++ litBytes "]]\n" ++ item ++
+              litBytes "[[/LI]]\n" ++ nested0.take nlen ++
+              litBytes "\n[[/" ++ o.tag ++ litBytes "]]" ++ rest
+        | none => s
+      else s
+  | _ => s
+
+/-- REFCORR13 mirror half of the four-case nested-boundary rule: apply the
+    two byte-pairing normalizations in the PHP rewrite order. -/
+def normalizeNestedBoundary13 (s : List Nat) : List Nat :=
+  normalizeLowOuterRawNested13 (normalizeRawOuterLowNested13 s)
+
 /-- REFCORR10 general scored-empty rule: a raw-case SCORED opener with a
     whitespace-only item keeps that empty item in an unclosed list instead
     of dissolving the block. -/
@@ -1682,6 +1757,25 @@ def splitFootnoteBlock12 (s : List Nat) : List Nat × List Nat :=
   match findSubCIBytes (litBytes "[[footnoteblock]]") s with
   | none => (s, [])
   | some i => (s.take i, s.drop i)
+
+/-- REFCORR13: find the first `\xFF<key>\xFF` placeholder whose token table
+    entry is a Footnoteblock token. By the time the List rule runs,
+    Footnoteblock has already replaced its literal marker with a placeholder,
+    so the REFCORR12 literal-marker split alone can never fire in the real
+    pipeline; this token-identity search is the mirror of the PHP clause. -/
+def findFootnoteblockTok13 (toks : List TokenEntry) (s : List Nat) : Option Nat :=
+  (allPh s).findSome? (fun entry =>
+    let (_, key, _) := entry
+    match toks[key]? with
+    | some t => if t.rule == "Footnoteblock" then some entry.1 else none
+    | none => none)
+
+/-- REFCORR13: split at the first Footnoteblock placeholder by token
+    identity, falling back to the REFCORR12 literal-marker split. -/
+def splitFootnoteBlock13 (toks : List TokenEntry) (s : List Nat) : List Nat × List Nat :=
+  match findFootnoteblockTok13 toks s with
+  | some i => (s.take i, s.drop i)
+  | none => splitFootnoteBlock12 s
 
 /-- REFCORR12: remove raw-case `[[ul]]`/`[[ol]]` opener and closer tags,
     leaving lowercase tags untouched. A raw-case nested list never opens a
@@ -1812,10 +1906,15 @@ def listPostFailedClose10 (src0 : List Nat) (toks : List TokenEntry) :
             -- opener is an item boundary, so the pre-closer region is split
             -- into sibling items before the absorbing item.
             let post1 := match post with | 10 :: r => r | _ => post
-            let (litTail0, leftover11) := splitLastCloser11 (rtrimWs10 post1)
+            -- REFCORR13 symmetric hoist: split at the first [[footnoteblock]]
+            -- anywhere in the whole post-failed-closer tail, then apply the
+            -- final-closer split to the bytes before it. Live hoists a marker
+            -- before the final surviving closer too (C-R5F-S2-2), and keeps
+            -- the trailing LF before the marker as a Newline witness
+            -- (C-R5F-P1-2/-3), so no rtrim is applied to the inside prose.
+            let (insideAll12, afterList12) := splitFootnoteBlock13 toks (rtrimWs10 post1)
+            let (litTail0, insideProse) := splitLastCloser11 insideAll12
             let litTail := stripLeadingClosers12 litTail0
-            let (insideProse0, afterList12) := splitFootnoteBlock12 leftover11
-            let insideProse := rtrimWs10 insideProse0
             let segs := splitLiOpeners12 (stripRawListTags12 firstBody)
             let absorbHead := match segs.getLast? with
               | some x => rtrimWs10 x
@@ -1841,13 +1940,14 @@ def listPostFailedClose9 (src0 : List Nat) (toks : List TokenEntry) :
 `[[ul` or `[[ol`. -/
 def listExplicitPass (src0 : List Nat) (toks : List TokenEntry) :
     List Nat × List TokenEntry :=
-  match listScoredEmptyItem10 src0 toks with
+  let srcN := normalizeNestedBoundary13 src0
+  match listScoredEmptyItem10 srcN toks with
   | some out => out
   | none =>
-  match listPostFailedClose9 src0 toks with
+  match listPostFailedClose9 srcN toks with
   | some out => out
   | none =>
-    let src := normalizeUpperInner9 (normalizeS1Tail9 (normalizeRefcorr8 src0))
+    let src := normalizeUpperInner9 (normalizeS1Tail9 (normalizeRefcorr8 srcN))
     if !(src.any (fun b => byteCiEq b 91)) ||
        !(existsLitCI (litBytes "[[ul") src || existsLitCI (litBytes "[[ol") src) then (src, toks)
     else

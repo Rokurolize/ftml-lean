@@ -25,17 +25,22 @@
       muse-probe-r2link-free-exists2, muse-probe-r2notes-x-inc-src;
       wiki-config.php registers wikiPageExists over
       array_keys(ref_page_map()) with strict in_array.
-    ref-php/harness/ozone-stubs.php ModuleManager::$available has exactly
-      backlinks, categories, css, join, listpages, pagetree, rate, redirect,
-      tagcloud, compared with strtolower($moduleName) (byte-wise ASCII lower).
+    ref-php/harness/ozone-stubs.php ModuleManager::$available has the nine
+      original names (backlinks, categories, css, join, listpages, pagetree,
+      rate, redirect, tagcloud) plus the nine REFCORR13 R13-AGY2 D14 names
+      (newpage, childpages, pagecalendar, wantedpages, orphanedpages,
+      countpages, search, members, files), compared with strtolower($moduleName)
+      (byte-wise ASCII lower).
       LatexRenderer::render() is an empty no-op, so no equation PNG exists.
     wiki-config.php never sets vars['pageName']; PHP null concatenates to the
       empty string, so pageName is [] for every conformance render.
     There is no Criteria, DB_OzoneUserPeer, FlickrHandler, or usable
       DB_FilePeer in the harness tree: User/, Image:/Gallery:FlickrHandler
-      are dispositions and DB_PagePeer::selectByPrimaryKey is undefined, so
-      lookupUser, flickrResolve, pageTitle and localAttachments are all
-      none-valued for every argument under harnessEnv. The CodeEmbedRules
+      are dispositions, so lookupUser, flickrResolve and localAttachments are
+      none-valued for every argument. REFCORR13 R13-AGY2 D13 supplies
+      DB_PagePeer::selectByPrimaryKey and the pre-created target page, so
+      pageTitle answers for `muse-probe-agy-hunt-title-target` and is none
+      for every other name. The CodeEmbedRules
       Text_Highlighter languages are an external boundary emitting a named
       marker, not a callable renderer, so highlightCode is likewise none.
 
@@ -85,8 +90,10 @@ def envAsciiLowerByte (b : Nat) : Nat :=
 def envAsciiLower (bs : List Nat) : List Nat :=
   bs.map envAsciiLowerByte
 
-/-- The nine ModuleManager available names from ozone-stubs.php, as direct
-    ASCII byte lists (constructive, no String.toList). -/
+/-- The ModuleManager available names from ozone-stubs.php, as direct
+    ASCII byte lists (constructive, no String.toList). REFCORR13 R13-AGY2
+    D14 adds the nine standard modules measured live in REPORT-AGY-HUNT.md
+    D14, in the same order as the stub's extended `$available` array. -/
 def harnessModuleNames : List (List Nat) :=
   [ [98, 97, 99, 107, 108, 105, 110, 107, 115],
     [99, 97, 116, 101, 103, 111, 114, 105, 101, 115],
@@ -96,9 +103,19 @@ def harnessModuleNames : List (List Nat) :=
     [112, 97, 103, 101, 116, 114, 101, 101],
     [114, 97, 116, 101],
     [114, 101, 100, 105, 114, 101, 99, 116],
-    [116, 97, 103, 99, 108, 111, 117, 100] ]
+    [116, 97, 103, 99, 108, 111, 117, 100],
+    [110, 101, 119, 112, 97, 103, 101],
+    [99, 104, 105, 108, 100, 112, 97, 103, 101, 115],
+    [112, 97, 103, 101, 99, 97, 108, 101, 110, 100, 97, 114],
+    [119, 97, 110, 116, 101, 100, 112, 97, 103, 101, 115],
+    [111, 114, 112, 104, 97, 110, 101, 100, 112, 97, 103, 101, 115],
+    [99, 111, 117, 110, 116, 112, 97, 103, 101, 115],
+    [115, 101, 97, 114, 99, 104],
+    [109, 101, 109, 98, 101, 114, 115],
+    [102, 105, 108, 101, 115] ]
 
-/-- The eight ref_page_map() keys from pages.php, in source order. -/
+/-- The ref_page_map() keys from pages.php, in source order; the ninth is the
+    REFCORR13 R13-AGY2 D13 pre-created textFromTitle target. -/
 def harnessExistingPages : List (List Nat) :=
   [ [109, 117, 115, 101, 45, 112, 114, 111, 98, 101, 45, 103, 49, 52, 45, 116, 97, 114, 103, 101, 116],
     [111, 116, 104, 101, 114, 45, 112, 97, 103, 101],
@@ -107,7 +124,8 @@ def harnessExistingPages : List (List Nat) :=
     [109, 117, 115, 101, 45, 112, 114, 111, 98, 101, 45, 103, 49, 52, 98, 45, 116, 97, 114, 103, 101, 116],
     [109, 117, 115, 101, 45, 112, 114, 111, 98, 101, 45, 114, 50, 108, 105, 110, 107, 45, 102, 114, 101, 101, 45, 101, 120, 105, 115, 116, 115],
     [109, 117, 115, 101, 45, 112, 114, 111, 98, 101, 45, 114, 50, 108, 105, 110, 107, 45, 102, 114, 101, 101, 45, 101, 120, 105, 115, 116, 115, 50],
-    [109, 117, 115, 101, 45, 112, 114, 111, 98, 101, 45, 114, 50, 110, 111, 116, 101, 115, 45, 120, 45, 105, 110, 99, 45, 115, 114, 99] ]
+    [109, 117, 115, 101, 45, 112, 114, 111, 98, 101, 45, 114, 50, 110, 111, 116, 101, 115, 45, 120, 45, 105, 110, 99, 45, 115, 114, 99],
+    [109, 117, 115, 101, 45, 112, 114, 111, 98, 101, 45, 97, 103, 121, 45, 104, 117, 110, 116, 45, 116, 105, 116, 108, 101, 45, 116, 97, 114, 103, 101, 116] ]
 
 /-- The harness environment: the exact fixed environment every current
     conformance binary uses. Each field is justified above; `none` means the
@@ -117,7 +135,10 @@ def harnessExistingPages : List (List Nat) :=
 def harnessEnv : RenderEnv :=
   { pageName := []
     pageExists := fun page => harnessExistingPages.contains page
-    pageTitle := fun _ => none
+    pageTitle := fun name =>
+      if name == [109, 117, 115, 101, 45, 112, 114, 111, 98, 101, 45, 97, 103, 121, 45, 104, 117, 110, 116, 45, 116, 105, 116, 108, 101, 45, 116, 97, 114, 103, 101, 116] then
+        some ([72, 117, 110, 116, 39, 115, 32, 34, 84, 105, 116, 108, 101, 34, 32, 38, 32, 60, 84, 101, 115, 116, 62] : List Nat)
+      else none
     moduleAvailable := fun name => harnessModuleNames.contains (envAsciiLower name)
     highlightCode := fun _ _ => none
     renderLatex := fun _ _ => none

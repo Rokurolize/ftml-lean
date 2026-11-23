@@ -666,8 +666,10 @@ def buttonAllowed (ty : List Nat) : Bool :=
     "set-tags" ].any (fun s => ty == litBytes s)
 
 /-- The Button default texts (`$defaultText`), under the
-    harness's identity gettext stub. `set-tags` has no entry (it
-    is unreachable: a textless `set-tags` returns earlier). -/
+    harness's identity gettext stub. `set-tags` has no entry: after
+    REFCORR13 R13-AGY2 D10 a present-but-falsy `text` (`"0"` or `""`)
+    reaches this lookup and yields the empty label, while an absent
+    `text` still returns the dedicated error earlier. -/
 def buttonDefaultText (ty : List Nat) : List Nat :=
   if ty == litBytes "edit" then litBytes "edit"
   else if ty == litBytes "edit-append" then litBytes "append"
@@ -738,7 +740,7 @@ def renderButton (opts : OptMap) : List Nat :=
   if !buttonAllowed ty then
     litBytes "<div class=\"error-block\"><em>" ++ ty ++
       litBytes "</em> is not a valid button type</div>"
-  else if ty == litBytes "set-tags" && !phpTruthyBytes text then
+  else if ty == litBytes "set-tags" && (omGet opts "text".toList).isNone then
     litBytes "<div class=\"error-block\">" ++
       litBytes "You need to set text for set-tags button.</div>"
   else

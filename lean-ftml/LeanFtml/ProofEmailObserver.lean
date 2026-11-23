@@ -8,7 +8,7 @@ set_option maxHeartbeats 2000000
 
 /-! ## The showcase observer law (Hard Core #2) -/
 
-/-- `email_index_observer_law (base k)`: under the cumulative-base token renumbering `σ(j) = base + j`, an Email claim for token `k` renders exactly the original span, reversed address, literal `#`, and reversed literal label bytes around `U+FFFD ++ (decBytes (base + k)).reverse ++ U+FFFD`. The claimed index is observed, not hidden: the digit run is the exact decimal of the renumbered index. For `base = 0` this is the canonical per-document reference; for `base = 1` it is the owned live +1 counter class measured in rounds 5b–5e. -/
+/-- `email_index_observer_law (base k)`: under the cumulative-base token renumbering `σ(j) = base + j`, an Email claim for token `k` renders exactly the original span, reversed address, literal `#`, and reversed literal label bytes around `U+FFFD ++ (emailDecBytes (base + k)).reverse ++ U+FFFD`. The claimed index is observed, not hidden: the digit run is the exact decimal of the renumbered index. For `base = 0` this is the canonical per-document reference; for `base = 1` it is the owned live +1 counter class measured in rounds 5b–5e. -/
 theorem email_index_observer_law (base k : Nat) (email pre post : List Nat)
     (he : ∀ b ∈ email, b < 128 ∧ (b = 64 ∨ (b ≠ 38 ∧ b ≠ 60 ∧ b ≠ 62)))
     (hp : ∀ b ∈ pre ++ post, b < 128 ∧ b ≠ 38 ∧ b ≠ 60 ∧ b ≠ 62 ∧ b ≠ 64)
@@ -18,7 +18,7 @@ theorem email_index_observer_law (base k : Nat) (email pre post : List Nat)
       litBytes "<span class=\"wiki-email\">" ++
         (email.reverse.map atPipe) ++ [35] ++
         (post.reverse.map atPipe) ++
-        utf8Fffd ++ (decBytes (base + k)).reverse ++ utf8Fffd ++
+        utf8Fffd ++ (emailDecBytes (base + k)).reverse ++ utf8Fffd ++
         (pre.reverse.map atPipe) ++
         litBytes "</span>" := by
   rw [tokRenumberBytes_phBytes (fun j => base + j) k pre post hpre hpost]
@@ -36,7 +36,7 @@ theorem email_index_observer_plus_one (k : Nat) (email pre post : List Nat)
       litBytes "<span class=\"wiki-email\">" ++
         (email.reverse.map atPipe) ++ [35] ++
         (post.reverse.map atPipe) ++
-        utf8Fffd ++ (decBytes (k + 1)).reverse ++ utf8Fffd ++
+        utf8Fffd ++ (emailDecBytes (k + 1)).reverse ++ utf8Fffd ++
         (pre.reverse.map atPipe) ++
         litBytes "</span>" := by
   have hshift : (fun j : Nat => j + 1) = (fun j : Nat => 1 + j) := by

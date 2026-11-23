@@ -196,23 +196,23 @@ def btTypeClass : BtType → ServeClass
   | .watchers => .btWatchers
   | .setTags => .btSetTags
 
-/-- The one primary class of a button mode. Modifiers are extra. A textless `set-tags`, including an `ok` shape that says so, is the empty-text error. -/
+/-- The one primary class of a button mode. Modifiers are extra. After
+    REFCORR13 R13-AGY2 D10 only `.setTagsEmpty` (an ABSENT `text` key) is
+    the empty-text error; a present-but-falsy `text` (`"0"` or `""`) is an
+    ordinary `.ok .setTags` with an empty label. -/
 def btPrimary : BtMode → ServeClass
   | .invalid => .btInvalid
   | .setTagsEmpty => .btSetTagsEmpty
-  | .ok ty _ _ tc =>
-      if ty == .setTags && !tc then .btSetTagsEmpty else btTypeClass ty
+  | .ok ty _ _ _ => btTypeClass ty
 
 def btClasses : BtMode → List ServeClass
   | .invalid => [.btInvalid]
   | .setTagsEmpty => [.btSetTagsEmpty]
   | .ok ty style cc tc =>
-      if ty == .setTags && !tc then [.btSetTagsEmpty]
-      else
-        [btTypeClass ty] ++
-          (if style then [.btStyle] else []) ++
-          (if cc then [.btClassCustom] else []) ++
-          (if tc then [.btTextCustom] else [])
+      [btTypeClass ty] ++
+        (if style then [.btStyle] else []) ++
+        (if cc then [.btClassCustom] else []) ++
+        (if tc then [.btTextCustom] else [])
 
 def emClasses : EmMode → List ServeClass
   | .noMatch => [.emNoMatch]
@@ -238,7 +238,7 @@ def serveClassify : ServeShape → List ServeClass
 theorem bt_ok_nonempty (ty : BtType) (style cc tc : Bool) :
     ∃ c, c ∈ btClasses (.ok ty style cc tc) := by
   match ty, tc with
-  | .setTags, false => exact ⟨.btSetTagsEmpty, by simp [btClasses]⟩
+  | .setTags, false => exact ⟨.btSetTags, by simp [btClasses, btTypeClass, List.mem_cons]⟩
   | .setTags, true => exact ⟨.btSetTags, by simp [btClasses, btTypeClass, List.mem_cons]⟩
   | .edit, _ => exact ⟨.btEdit, by simp [btClasses, btTypeClass, List.mem_cons]⟩
   | .editAppend, _ => exact ⟨.btEditAppend, by simp [btClasses, btTypeClass, List.mem_cons]⟩
@@ -515,7 +515,7 @@ def buttonModeOf (opts : OptMap) : BtMode :=
   match btTypeOf ty with
   | none => .invalid
   | some t =>
-      if t == .setTags && !phpTruthyBytes text then .setTagsEmpty
+      if t == .setTags && (omGet opts "text".toList).isNone then .setTagsEmpty
       else
         .ok t
           (phpTruthyBytes (optStrBytes opts "style".toList))
@@ -552,7 +552,7 @@ def embedModeOf (opts : OptMap) : EmMode :=
   | some _ =>
       let stripped := pcreReplaceAll languageStripPattern content
       let lang := stripped != content
-      if pcreMatch embedEventPattern stripped then .event
+      if hasEventAttr stripped then .event
       else
         match findSrcValue stripped with
         | some v =>

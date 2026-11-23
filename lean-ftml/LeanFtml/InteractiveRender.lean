@@ -814,9 +814,13 @@ theorem button_settags_text :
     rfl
   have hon : buttonOnclick (litBytes "set-tags") =
       litBytes "WIKIDOT.page.listeners.updateTagsByButton(event, '')" := rfl
+  -- REFCORR13 R13-AGY2 D10: the guard is now an absent-key test.
+  have hpresent :
+      (omGet [("text".toList, OptVal.str "Tag it".toList),
+        ("type".toList, OptVal.str "set-tags".toList)] "text".toList).isNone = false := rfl
   unfold renderButton
   simp only [hty, hallow, hst, htext, hstyle, hclass, htruth, htruthE,
-    hqs, hqc, hon, Bool.not_true, Bool.not_false, Bool.true_and,
+    hqs, hqc, hon, hpresent, Bool.not_true, Bool.not_false, Bool.true_and,
     Bool.false_eq_true, ↓reduceIte, List.append_nil, List.append_assoc]
 
 /-- `Iframe` with a `src` and a `null` attribute: every option

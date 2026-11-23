@@ -13,7 +13,7 @@ set_option maxHeartbeats 2000000
 /-! ## Decimal placeholder bytes and HTML substitution (inherited keepers) -/
 
 /-- Decimal ASCII bytes of `n`, the same digits `phBytes` splices between the `0xFF` delimiters. -/
-def decBytes (n : Nat) : List Nat :=
+def emailDecBytes (n : Nat) : List Nat :=
   (Nat.toDigits 10 n).map Char.toNat
 
 /-- Pipe substitution `renderEmail` runs over the joined reversed bytes (`@` is byte 64, `|` is byte 124). -/
@@ -51,9 +51,9 @@ theorem toDigitsCore_range {fuel n : Nat} {acc : List Char}
           · exact hacc c hm
         · omega
 
-theorem decBytes_range (n : Nat) : ∀ b ∈ decBytes n, 48 ≤ b ∧ b ≤ 57 := by
+theorem decBytes_range (n : Nat) : ∀ b ∈ emailDecBytes n, 48 ≤ b ∧ b ≤ 57 := by
   intro b hb
-  simp [decBytes, Nat.toDigits] at hb
+  simp [emailDecBytes, Nat.toDigits] at hb
   rcases hb with ⟨c, hc, rfl⟩
   have h := toDigitsCore_range (fuel := n + 1) (n := n) (acc := []) (hacc := by simp) (hf := Nat.lt_succ_self n) c hc
   exact h
@@ -66,11 +66,11 @@ theorem toString_toDigits (n : Nat) :
   exact String.toList_ofList
 
 theorem phBytes_digits (n : Nat) :
-    phBytes n = [255] ++ decBytes n ++ [255] := by
-  unfold phBytes decBytes
+    phBytes n = [255] ++ emailDecBytes n ++ [255] := by
+  unfold phBytes emailDecBytes
   rw [toString_toDigits]
 
-theorem decBytes_safe (n : Nat) : ∀ b ∈ decBytes n, b < 128 ∧ b ≠ 38 ∧ b ≠ 60 ∧ b ≠ 62 ∧ b ≠ 64 ∧ b ≠ 10 ∧ b ≠ 93 ∧ b ≠ 255 := by
+theorem decBytes_safe (n : Nat) : ∀ b ∈ emailDecBytes n, b < 128 ∧ b ≠ 38 ∧ b ≠ 60 ∧ b ≠ 62 ∧ b ≠ 64 ∧ b ≠ 10 ∧ b ≠ 93 ∧ b ≠ 255 := by
   intro b hb
   have hr := decBytes_range n b hb
   omega
@@ -139,7 +139,7 @@ theorem flatMap_not255 (bs : List Nat) (h : ∀ b ∈ bs, b ≠ 255) :
       simp [h b (List.mem_cons_self ..), ih (fun c hc => h c (List.mem_cons_of_mem _ hc))]
 
 theorem phBytes_reverse (n : Nat) :
-    (phBytes n).reverse = [255] ++ (decBytes n).reverse ++ [255] := by
+    (phBytes n).reverse = [255] ++ (emailDecBytes n).reverse ++ [255] := by
   rw [phBytes_digits]
   simp [List.reverse_append]
 
@@ -197,7 +197,7 @@ theorem renderEmail_claimed_placeholder
       litBytes "<span class=\"wiki-email\">" ++
         (email.reverse.map atPipe) ++ [35] ++
         (post.reverse.map atPipe) ++
-        utf8Fffd ++ (decBytes n).reverse ++ utf8Fffd ++
+        utf8Fffd ++ (emailDecBytes n).reverse ++ utf8Fffd ++
         (pre.reverse.map atPipe) ++
         litBytes "</span>" := by
   let opts : OptMap := [("email".toList, OptVal.bytes email),
@@ -218,11 +218,11 @@ theorem renderEmail_claimed_placeholder
         (phBytes n).reverse.map atPipe ++ pre.reverse.map atPipe := by
     simp [List.map_append]
   have h35 : atPipe 35 = 35 := by simp [atPipe]
-  have hph : (phBytes n).reverse.map atPipe = [255] ++ (decBytes n).reverse ++ [255] := by
+  have hph : (phBytes n).reverse.map atPipe = [255] ++ (emailDecBytes n).reverse ++ [255] := by
     rw [phBytes_reverse]
     simp only [List.map_append, List.map_cons, List.map_nil]
     have h255 : atPipe 255 = 255 := by simp [atPipe]
-    rw [h255, map_atPipe_id (decBytes n).reverse
+    rw [h255, map_atPipe_id (emailDecBytes n).reverse
       (fun b hb => (decBytes_safe n b (List.mem_reverse.mp hb)).2.2.2.2.1)]
   rw [hmap, h35, hph]
   have hpostm : post.reverse.map atPipe = post.reverse := map_atPipe_id _ (fun b hb => by
@@ -242,7 +242,7 @@ theorem renderEmail_claimed_placeholder
     · simp [byteSafe]
     · have hp' := hp b (List.mem_append.mpr (Or.inr (List.mem_reverse.mp hb)))
       exact ⟨hp'.1, hp'.2.1, hp'.2.2.1, hp'.2.2.2.1⟩
-  have hd : ∀ b ∈ (decBytes n).reverse, byteSafe b := by
+  have hd : ∀ b ∈ (emailDecBytes n).reverse, byteSafe b := by
     intro b hb
     have hr := decBytes_safe n b (List.mem_reverse.mp hb)
     exact ⟨hr.1, hr.2.1, hr.2.2.1, hr.2.2.2.1⟩
@@ -253,9 +253,9 @@ theorem renderEmail_claimed_placeholder
   have hs := subst_wrapped _ _ _ hl hd hr
   have hassoc :
       email.reverse.map atPipe ++ [35] ++ post.reverse ++
-        ([255] ++ (decBytes n).reverse ++ [255]) ++ pre.reverse =
+        ([255] ++ (emailDecBytes n).reverse ++ [255]) ++ pre.reverse =
       email.reverse.map atPipe ++ [35] ++ post.reverse ++ [255] ++
-        (decBytes n).reverse ++ [255] ++ pre.reverse := by
+        (emailDecBytes n).reverse ++ [255] ++ pre.reverse := by
     simp [List.append_assoc]
   rw [hassoc, hs]
   simp [List.append_assoc]
