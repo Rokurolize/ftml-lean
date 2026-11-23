@@ -165,10 +165,10 @@ theorem refcorr10_pins_fn_nbsp_flank :
       [phBytes 0 ++ [194, 160] ++ litBytes "\n" ++ phBytes 1] := by
   rfl
 
-/- C-R5C-P4-2: a form-feed-flanked lone newline keeps the body but the control byte is dropped as live purifyHtml drops it. -/
-theorem refcorr10_pins_fn_formfeed_flank :
+/- C-R5C-P4-2 restated by REFCORR13 C-R5F-R3-3: a form-feed-flanked lone newline keeps the body INCLUDING the FF as the authored-break witness; Stage 2 purifyHtml drops the byte from emitted text after Newline has emitted its <br />. -/
+theorem refcorr13_pins_fn_formfeed_flank_witness :
     (footnoteProcess (phBytes 0 ++ [12] ++ litBytes "\n" ++ phBytes 1) {} r10pEmptyRaw2).2.2.footnotes =
-      [phBytes 0 ++ litBytes "\n" ++ phBytes 1] := by
+      [phBytes 0 ++ [12] ++ litBytes "\n" ++ phBytes 1] := by
   rfl
 
 /- C-R5C-R1-2: a non-empty Raw token before the interior newline keeps the body; the mirror-order footer sibling keeps its rule-level break. -/
@@ -246,12 +246,13 @@ theorem refcorr10_module_nested_consumption :
         litBytes "\n[[/module]]", []) := by
   rfl
 
-/- C-R5C-S1-2: the general surplus-closer formula is f(c)=c for c in {2,3} and c-4 for c>=4, with re-association when a same-line later 4+-run follows a short run; the three-closer run before text is the round-5c witness. -/
+/- C-R5C-S1-2 with the REFCORR14 threshold correction: the general surplus-closer formula is f(c)=c for c in {2,3} and c-4 for c>=4, with re-association when a same-line later 2+-run follows a short run; the three-closer run before text is the round-5c witness and the two-run later tail is the live W-EQ witness. The old `hasLaterQuad " B @@@ C" = false` pin encoded the now-retired four-byte threshold and is replaced by the live-matching true pin plus a two-run sibling. -/
 theorem refcorr10_raw_surplus_closer_formula :
     rawSurplusClose 2 = 2 ∧ rawSurplusClose 3 = 3 ∧ rawSurplusClose 4 = 0 ∧
     rawSurplusClose 5 = 1 ∧ rawSurplusClose 6 = 2 ∧
     hasLaterQuad (litBytes " B @@@@ C") = true ∧
-    hasLaterQuad (litBytes " B @@@ C") = false := by
+    hasLaterQuad (litBytes " B @@@ C") = true ∧
+    hasLaterQuad (litBytes " B @@ C") = true := by
   decide
 
 /- ## Parity padded-source pins (coord-units/PARITY-MIRROR): two pins for the uppercase-[[LI]] padded shape. prefilter/framePad inserts one leading LF before the uppercase [[UL]] opener, so the exact REFCORR9 guard is evaluated on the padded source and, after the adopted three-line guard repair, fires and emits the live token/work shape. -/

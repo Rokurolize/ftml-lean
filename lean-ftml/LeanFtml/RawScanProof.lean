@@ -421,7 +421,8 @@ theorem rs_hasLaterQuad_go_quad (fuel : Nat) (pre : List Nat) (tail : List Nat)
     | nil =>
       have hc : 4 ≤ countRun 64 (64 :: 64 :: 64 :: 64 :: tail) := by
         simp [countRun]
-      simp [hasLaterQuad.go, hc]
+      have hc2 : 2 ≤ countRun 64 (64 :: 64 :: 64 :: 64 :: tail) := by omega
+      simp [hasLaterQuad.go, hc2]
     | cons x xs =>
       have hx64 : x ≠ 64 := rs_ne_head_byte hpre64
       have hx10 : x ≠ 10 := rs_ne_head_byte hpre10
@@ -449,18 +450,29 @@ theorem rs_hasLaterQuad_of_quad (pre : List Nat) (tail : List Nat)
   exact rs_hasLaterQuad_go_quad ((pre ++ List.replicate 4 64 ++ tail).length + 1)
     pre tail hpre64 hpre10 (by omega)
 
-/-- When no LF follows the opener run, the mirror's `preOk` ignores `hasLaterQuad`: the presence of a `@@` pair alone makes it true. -/
-theorem rs_preOk_ignores_laterQuad_without_nl (run : Nat) (afterRun : List Nat)
+/-- REFCORR14 companion restatement: when no LF follows the opener run and a closer is present, the corrected `preOk` arm consults `hasLaterQuad` on the closer-free tail instead of returning true unconditionally. The former `rs_preOk_ignores_laterQuad_without_nl` pinned the now-retired newline-blind arm and is replaced by this restatement of the corrected arm; it is a structural identity under `hnl`, not a universal equivalence law. -/
+theorem rs_preOk_no_nl_uses_laterQuad (run : Nat) (afterRun : List Nat)
     (hpair : ∃ cc, findSub [64, 64] afterRun = some cc)
     (hnl : findSub [10] afterRun = none) :
     (if run > 2 then
       match findSub [64, 64] afterRun, findSub [10] afterRun with
       | none, _ => false
-      | some _, none => true
+      | some cc, none =>
+          let closeRun := countRun 64 (afterRun.drop cc)
+          let laterQuad := if closeRun <= 3 then hasLaterQuad (afterRun.drop (cc + closeRun)) else false
+          run < 4 || !laterQuad
       | some cc, some ll =>
           run < 4 || (cc < ll &&
             !hasLaterQuad (afterRun.drop (cc + countRun 64 (afterRun.drop cc))))
-     else true) = true := by
+     else true) =
+    (if run > 2 then
+      match findSub [64, 64] afterRun with
+      | none => false
+      | some cc =>
+          let closeRun := countRun 64 (afterRun.drop cc)
+          let laterQuad := if closeRun <= 3 then hasLaterQuad (afterRun.drop (cc + closeRun)) else false
+          run < 4 || !laterQuad
+     else true) := by
   rcases hpair with ⟨cc, hcc⟩
   by_cases hr : run > 2
   · simp [hr, hcc, hnl]
@@ -519,7 +531,7 @@ theorem rs_rawSurplusClose_le (c : Nat) : rawSurplusClose c ≤ c := by
 #print axioms rs_hasLaterQuad_no_at_before_nl
 #print axioms rs_hasLaterQuad_go_quad
 #print axioms rs_hasLaterQuad_of_quad
-#print axioms rs_preOk_ignores_laterQuad_without_nl
+#print axioms rs_preOk_no_nl_uses_laterQuad
 #print axioms rs_rawSurplusClose_small
 #print axioms rs_rawSurplusClose_large
 #print axioms rs_rawSurplusClose_le

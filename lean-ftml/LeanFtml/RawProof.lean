@@ -15,7 +15,7 @@ import LeanFtml.RawCert
     2. RawoldProof — general scan and emit laws for rawoldBody / rawoldScan / renderRawold: safe-alphabet bodies, lookbehind, leftmost claim, placeholder emission, escape identity;
     3. RawEquivProof — composite emit laws (empty Raw renders nothing) and the processRef-shaped equivalence the current tree allows: claimText equals the locally defined PHP-shaped process() spec, with the scanner half explicitly left as the mirror's TCB-4 code;
     4. RawBridgeProof — rule-level emit bridge: rawRule / rawoldRule are applyByteRule on byteForm, placeholder decoding and placeholder inertness under the Raw scanner;
-    5. RawCert — the labelled bounded certificate (generator, cardinality 147, SHA-256, named remainder) and the later-quad divergence and regression records, never counted as equivalence proofs.
+    5. RawCert — the labelled bounded certificate (generator, cardinality 147, SHA-256, named remainder) and the seven REFCORR14 agreement pins plus regression records, never counted as equivalence proofs.
 
   Policy status of the inherited draft is adjudicated in REPORT-DSH-PROOF-RAW.md: its general results survive in modules 1 and 5; its ground pins and unlabelled enumeration were demoted to module 5's explicit certificate and regression classes. No theorem here uses sorry, native_decide, bv_decide or Lean.ofReduceBool; the axiom audit is at the foot of this file and in each module.
 -/
@@ -49,8 +49,14 @@ abbrev raw_family_rule_tokens (st : ParseState) := RawBridge.rb_rawRule_tokens s
 /-- Headline bounded certificate: the composite prediction law holds on all 147 generated cases. -/
 abbrev raw_family_certificate_zero_mismatch := RawCert.rc_span_enum_zero_mismatch
 
-/-- Headline divergence record: the later-quad mirror bytes differ from the reference shape; coordinator-owned. -/
-abbrev raw_family_divergence_witness := RawCert.rc_div_later_quad_ne_reference
+/-- Headline REFCORR14 seven-case agreement records: the fixed mirror's rawScan view matches the reference token shape on every WITNESS-RAW source (W-WIT, W-C2, W-B3, W-2Q, W-EQ, W-R5, W-PL). Regression pins only; excluded from the proof count under policy G4. -/
+abbrev raw_family_agree_w_wit := RawCert.rc_agree_w_wit
+abbrev raw_family_agree_w_c2 := RawCert.rc_agree_w_c2
+abbrev raw_family_agree_w_b3 := RawCert.rc_agree_w_b3
+abbrev raw_family_agree_w_2q := RawCert.rc_agree_w_2q
+abbrev raw_family_agree_w_eq := RawCert.rc_agree_w_eq
+abbrev raw_family_agree_w_r5 := RawCert.rc_agree_w_r5
+abbrev raw_family_agree_w_pl := RawCert.rc_agree_w_pl
 
 #print axioms raw_family_scan_bare_threshold
 #print axioms raw_family_scan_bare_token_iff
@@ -61,6 +67,12 @@ abbrev raw_family_divergence_witness := RawCert.rc_div_later_quad_ne_reference
 #print axioms raw_family_processRef_rawold
 #print axioms raw_family_rule_tokens
 #print axioms raw_family_certificate_zero_mismatch
-#print axioms raw_family_divergence_witness
+#print axioms raw_family_agree_w_wit
+#print axioms raw_family_agree_w_c2
+#print axioms raw_family_agree_w_b3
+#print axioms raw_family_agree_w_2q
+#print axioms raw_family_agree_w_eq
+#print axioms raw_family_agree_w_r5
+#print axioms raw_family_agree_w_pl
 
 end LeanFtml

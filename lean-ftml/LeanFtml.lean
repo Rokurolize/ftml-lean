@@ -56,3 +56,4 @@ import LeanFtml.ProofInclude
 import LeanFtml.ProofNotes
 import LeanFtml.RawProof
 import LeanFtml.DivAttrProof
+import LeanFtml.Proof.Freelink

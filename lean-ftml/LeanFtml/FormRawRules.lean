@@ -175,11 +175,15 @@ def countRun (b : Nat) : List Nat → Nat
   | [] => 0
   | x :: rest => if x == b then countRun b rest + 1 else 0
 
-/-- REFCORR10: does a run of four or more '@' bytes occur before the first
-    newline in `src`, i.e. on the same line? This is the "later 4+ run" that
-    makes ftml's finish_double_at_raw re-associate a short (two- or
-    three-byte) closer run: intervening text belongs to a Raw span closed at
-    the later run, and the short run is not a final closer (C-R5C-S1-2). -/
+/-- REFCORR10, threshold corrected by REFCORR14: does a run of two or more
+    '@' bytes occur before the first newline in `src`, i.e. on the same line?
+    This is the "later run" that makes ftml's finish_double_at_raw
+    re-associate a short (two- or three-byte) closer run: intervening text
+    belongs to a Raw span closed at the later run, and the short run is not a
+    final closer (C-R5C-S1-2). The live W-EQ capture (`@@@@a@@@b@@`,
+    `<p>a<span style="white-space: pre-wrap;">@b</span></p>`) shows the later
+    run need only be two bytes; the reference's REFCORR10 `$q - $p >= 4` and
+    this mirror's old `4 <= n` were both too strict and are lowered to two. -/
 def hasLaterQuad (src : List Nat) : Bool :=
   go (src.length + 1) src
 where
@@ -191,7 +195,7 @@ where
       | 10 :: _ => false
       | ys@(64 :: 64 :: _) =>
           let n := countRun 64 ys
-          if 4 <= n then true else go fuel (ys.drop n)
+          if 2 <= n then true else go fuel (ys.drop n)
       | _ :: rest => go fuel rest
 
 /-- REFCORR10: the general surplus-closer formula for a FINAL closer run of
@@ -288,9 +292,21 @@ def rawScan (prev : Option Nat) (src : List Nat) (toks : List TokenEntry) :
           if run > 2 then
             match findSub [64, 64] afterRun, findSub [10] afterRun with
             | none, _ => false
-            | some _, none => true
+            | some c, none =>
+                -- REFCORR14 W-WIT: a closer on a newline-free tail is final
+                -- only when no later 2+ run follows it on the same line. The
+                -- old `some _, none => true` ignored hasLaterQuad here, so
+                -- `@@@@a@@@b@@@@` fell through to the lead>=2 branch and
+                -- emitted literal a@@@b plus an empty token; the reference
+                -- takes the empty-Raw early exit and re-scans, yielding
+                -- ph0, a, ph1(text @b), @@. Mirror Raw.php lines 72-82.
+                let closeRun := countRun 64 (afterRun.drop c)
+                let laterQuad :=
+                  if closeRun <= 3 then hasLaterQuad (afterRun.drop (c + closeRun))
+                  else false
+                run < 4 || !laterQuad
             | some c, some l =>
-                -- REFCORR10: a short closer with a later 4+ run on the same
+                -- REFCORR10: a short closer with a later 2+ run on the same
                 -- line is not final, so the opener takes the empty-Raw exit
                 -- and is re-scanned (C-R5C-S1-2).
                 let closeRun := countRun 64 (afterRun.drop c)

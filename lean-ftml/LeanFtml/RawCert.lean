@@ -8,8 +8,8 @@ import LeanFtml.RawHeadingRules
   The span domain is single-span, newline-free, short runs: opener run 0..6, closer run 0..6, body in {empty, Z, ZZ}, giving 7*7*3 = 147 cases.
   The prediction law is the composite reading of the corrected scanner: a bare merged run under the four-byte threshold, a short opener claiming the body, a 4+ opener cancelling against a two- or three-run closer, and a 4+ opener meeting a 4+ closer as two empty tokens.
   The zero-mismatch theorem checks the mirror's observed view against that prediction on every generated case by `decide`, and the observed-view table is emitted below for an external SHA-256 digest.
-  NAMED REMAINDER: this certificate does NOT cover cross-line families, multiple spans, runs of length seven or more, later-quad re-association, or placeholder-bearing bodies. Other units prove general laws for some of those families; none of them is claimed here.
-  The later-quad divergence is recorded below as a regression/divergence witness only, never as a proof of equivalence; the fix belongs to the coordinator's REFCORR lane and the mirror was not edited.
+  NAMED REMAINDER: this certificate does NOT cover cross-line families, multiple spans, runs of length seven or more, later-quad re-association beyond the seven cached witnesses, or placeholder-bearing bodies. Other units prove general laws for some of those families; none of them is claimed here.
+  The former later-quad divergence record was retired by REFCORR14 after the mirror fix; seven-case agreement pins are recorded below as regression witnesses only, never as a proof of equivalence.
 -/
 
 namespace LeanFtml
@@ -102,20 +102,46 @@ def rc_table : List Nat :=
 -- Dump the canonical table for the external digest; the emitted block is the hash input.
 #eval! rc_table
 
-/-! ## Divergence witness (regression/divergence record, not an equivalence proof)
+/-! ## REFCORR14 seven-case agreement pins (former divergence record retired)
 
-`@@@@a@@@b@@@@` is the shortest source with a 4+ opener, a one-byte body, a three-run closer, a non-'@' separator and a later 4-run on one line. The mirror's `preOk` arm `some _, none => true` ignores `hasLaterQuad` when the tail has no newline, so the lead>=2 branch fires; the reference takes the empty-Raw early exit instead. The right-hand side of the inequality is the reference byte shape from PHP 8.5.4 `state-restricted.php Raw` on this source: one empty Raw, the literal `a`, one Raw whose text is `@b`, then `@@`. This is a divergence record only. The fix belongs to the coordinator's REFCORR lane and the mirror was not edited by this unit.
+The former `rc_div_later_quad_mirror` (which pinned the pre-fix span-free `a@@@b` plus empty-token shaping) and `rc_div_later_quad_ne_reference` (which pinned the mirror byte stream as unequal to the reference shape) are retired: both became false when the REFCORR14 mirror fix made the newline-free `preOk` arm consult `hasLaterQuad` and lowered that predicate's later-run threshold from four to two. In their place, seven ground pins record that the fixed mirror's `rawScan` agrees with the canonical PHP reference on every WITNESS-RAW source. The parity chat verified all seven against live on ftml fad94476d (fixture PR #1577), so for the two discriminating sources W-WIT and W-EQ these are also live-agreement pins. These are regression pins only, excluded from the proof count under policy G4, and establish no universal law.
 -/
 
-/-- The mirror's exact byte/token result on the later-quad divergence shape, by kernel computation. -/
-theorem rc_div_later_quad_mirror :
-    rawScan none (litBytes "@@@@a@@@b@@@@") [] 14 =
-      (litBytes "a@@@b" ++ phBytes 0, [rc_emptyToken]) := by rfl
+/-- REGRESSION-ONLY: W-WIT `@@@@a@@@b@@@@` agrees with the reference shape ph0, a, ph1(@b), @@. -/
+theorem rc_agree_w_wit :
+    rc_view (rawScan none (litBytes "@@@@a@@@b@@@@") [] 14) =
+      (phBytes 0 ++ litBytes "a" ++ phBytes 1 ++ litBytes "@@", [[], litBytes "@b"]) := by decide
 
-/-- The mirror's output bytes differ from the reference byte shape, by `decide`. -/
-theorem rc_div_later_quad_ne_reference :
-    (rawScan none (litBytes "@@@@a@@@b@@@@") [] 14).1 ≠
-      phBytes 0 ++ litBytes "a" ++ phBytes 1 ++ litBytes "@@" := by decide
+/-- REGRESSION-ONLY: W-C2 `@@@@a@@b@@@@` agrees with the reference shape ph0, a, ph1(b), @@. -/
+theorem rc_agree_w_c2 :
+    rc_view (rawScan none (litBytes "@@@@a@@b@@@@") [] 13) =
+      (phBytes 0 ++ litBytes "a" ++ phBytes 1 ++ litBytes "@@", [[], litBytes "b"]) := by decide
+
+/-- REGRESSION-ONLY: W-B3 `@@@@a@@@b` agrees with the reference's literal a@@@b and no token. -/
+theorem rc_agree_w_b3 :
+    rc_view (rawScan none (litBytes "@@@@a@@@b") [] 10) =
+      (litBytes "a@@@b", []) := by decide
+
+/-- REGRESSION-ONLY: W-2Q `@@@@a@@@@` agrees with the reference's two empty Raw tokens and literal a. -/
+theorem rc_agree_w_2q :
+    rc_view (rawScan none (litBytes "@@@@a@@@@") [] 10) =
+      (phBytes 0 ++ litBytes "a" ++ phBytes 1, [[], []]) := by decide
+
+/-- REGRESSION-ONLY: W-EQ `@@@@a@@@b@@` agrees with the reference's live-matching shape ph0, a, ph1(@b). -/
+theorem rc_agree_w_eq :
+    rc_view (rawScan none (litBytes "@@@@a@@@b@@") [] 12) =
+      (phBytes 0 ++ litBytes "a" ++ phBytes 1, [[], litBytes "@b"]) := by decide
+
+/-- REGRESSION-ONLY: W-R5 `A @@@@ZQ@@@ B @@@@ C` agrees with the reference's two-token shape. -/
+theorem rc_agree_w_r5 :
+    rc_view (rawScan none (litBytes "A @@@@ZQ@@@ B @@@@ C") [] 21) =
+      (litBytes "A " ++ phBytes 0 ++ litBytes "ZQ" ++ phBytes 1 ++ litBytes "@@" ++ litBytes " C",
+       [[], litBytes "@ B "]) := by decide
+
+/-- REGRESSION-ONLY: W-PL `@@x@@` agrees with the reference's single Raw(x) token. -/
+theorem rc_agree_w_pl :
+    rc_view (rawScan none (litBytes "@@x@@") [] 6) =
+      (phBytes 0, [litBytes "x"]) := by decide
 
 /-! ## REGRESSION-ONLY pins
 
@@ -141,8 +167,13 @@ theorem rc_reg_crossline_body :
 #print axioms rc_card
 #print axioms rc_card_factors
 #print axioms rc_span_enum_zero_mismatch
-#print axioms rc_div_later_quad_mirror
-#print axioms rc_div_later_quad_ne_reference
+#print axioms rc_agree_w_wit
+#print axioms rc_agree_w_c2
+#print axioms rc_agree_w_b3
+#print axioms rc_agree_w_2q
+#print axioms rc_agree_w_eq
+#print axioms rc_agree_w_r5
+#print axioms rc_agree_w_pl
 #print axioms rc_reg_bare3_no_token
 #print axioms rc_reg_bare4_one_empty
 #print axioms rc_reg_render_elision
