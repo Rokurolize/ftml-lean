@@ -1,7 +1,7 @@
 import LeanFtml.TableadvEnum
 
 /-!
-TableadvProof.lean — enumeration equivalence for the mirror's own Tableadv functions. `tableadv_mirror_eq_enum_scan` identifies `tableadvScanGo` with the duplicate scanner. This file states what that search returns. Extra fuel does not change `advHeadRuns`. On every head built from non-bracket runs and quoted runs, `tableadvEnumMatchFirst` returns that whole head, and `tableadvScanGo` on the one-cell body returns the six Tableadv tokens with `buildAttrsAdv` of the head. The REFCORR8 fold and the REFCORR10 class `[a-z0-9._-]` are theorems of `advAttrStep` for every suffix. The quote-trick witness is a whole parse state of `tableadvScanGo`.
+TableadvProof.lean — proof-grade head-group identities for the Tableadv mirror. The inherited advHeadRuns laws are kept and repaired here: extra fuel does not change advHeadRuns, a plain (non-quote, non-bracket) prefix extends a head run, a closed quoted run is taken whole, and a chunk head followed by `]]` is the first run. The REFCORR8 fold and the REFCORR10 class `[a-z0-9._-]` are theorems of advAttrStep for every suffix, and the quote-trick witness is a whole parse state of tableadvScanGo. The duplicate-copy equality `tableadv_mirror_eq_enum_scan` is not restated or relied upon here: it lives in the mirror's TableadvEnum.lean and is outside this family proof file. The universal recursive (?R) equivalence waits for the PcreCore kernel; the bounded certificate and alphabet quotient are separate family proof files.
 -/
 
 namespace LeanFtml
@@ -27,16 +27,18 @@ def headStep (b : Nat) (rest : List Nat)
 theorem go_cons_step (b : Nat) (rest : List Nat) (fuel : Nat) :
     advHeadRuns.go (b :: rest) (Nat.succ fuel) =
       headStep b rest
-        (advHeadRuns.go (rest.drop (rest.takeWhile (fun x => x != 34)).length).tail fuel)
+        (advHeadRuns.go (rest.drop ((rest.takeWhile (fun x => x != 34)).length + 1)) fuel)
         (advHeadRuns.go rest fuel) := by
   rw [advHeadRuns.go]
   simp only [headStep]
-  cases hdrop : rest.drop (rest.takeWhile (fun x => x != 34)).length with
+  cases hd : rest.drop (rest.takeWhile (fun x => x != 34)).length with
   | nil => simp
-  | cons c rest' =>
+  | cons c cs =>
       by_cases hc : c = 34
-      · subst hc
-        simp
+      · subst c
+        have hdtail : rest.drop ((rest.takeWhile (fun x => x != 34)).length + 1) = cs := by
+          simpa using congrArg List.tail hd
+        simp [hdtail]
       · simp [hc]
 
 theorem go_nil (fuel : Nat) : advHeadRuns.go ([] : List Nat) fuel = [([], [])] := by
@@ -44,16 +46,9 @@ theorem go_nil (fuel : Nat) : advHeadRuns.go ([] : List Nat) fuel = [([], [])] :
 
 /-- The quote-continuation suffix is no longer than the text it was dropped from. -/
 theorem drop_tail_le (rest : List Nat) :
-    (rest.drop (rest.takeWhile (fun x => x != 34)).length).tail.length ≤ rest.length := by
-  have hdrop : (rest.drop (rest.takeWhile (fun x => x != 34)).length).length ≤ rest.length := by
-    simp only [List.length_drop]
-    exact Nat.sub_le _ _
-  refine Nat.le_trans ?_ hdrop
-  cases rest.drop (rest.takeWhile (fun x => x != 34)).length with
-  | nil => simp
-  | cons _ cs =>
-      simp
-      exact Nat.le_succ cs.length
+    (rest.drop ((rest.takeWhile (fun x => x != 34)).length + 1)).length ≤ rest.length := by
+  simp only [List.length_drop]
+  exact Nat.sub_le _ _
 
 /-- Any fuel at least `src.length` agrees with `advHeadRuns`. The zero-fuel cutoff is not reachable on that budget, because every recursive call consumes a byte. -/
 theorem go_ge : (src : List Nat) → (fuel : Nat) → src.length ≤ fuel →
@@ -65,28 +60,31 @@ theorem go_ge : (src : List Nat) → (fuel : Nat) → src.length ≤ fuel →
       have hrest : rest.length ≤ fuel := by
         have hlen : (b :: rest).length = rest.length + 1 := rfl
         omega
-      have htail : (rest.drop (rest.takeWhile (fun x => x != 34)).length).tail.length ≤ fuel :=
+      have htail : (rest.drop ((rest.takeWhile (fun x => x != 34)).length + 1)).length ≤ fuel :=
         Nat.le_trans (drop_tail_le rest) hrest
       have ihR := go_ge rest fuel hrest
-      have ihT := go_ge (rest.drop (rest.takeWhile (fun x => x != 34)).length).tail fuel htail
+      have ihT := go_ge (rest.drop ((rest.takeWhile (fun x => x != 34)).length + 1)) fuel htail
       have ihR1 := go_ge rest (rest.length + 1) (Nat.le_succ _)
-      have ihT1 := go_ge (rest.drop (rest.takeWhile (fun x => x != 34)).length).tail
+      have ihT1 := go_ge (rest.drop ((rest.takeWhile (fun x => x != 34)).length + 1))
         (rest.length + 1) (Nat.le_trans (drop_tail_le rest) (Nat.le_succ _))
-      refine Eq.trans ?_ ?_
-      · rw [go_cons_step, ihT, ihR]
-      · rw [advHeadRuns, go_cons_step, ihT1, ihR1]
+      have hstep : advHeadRuns.go (b :: rest) (fuel + 1) =
+          headStep b rest
+            (advHeadRuns (rest.drop ((rest.takeWhile (fun x => x != 34)).length + 1)))
+            (advHeadRuns rest) := by
+        simpa [ihT, ihR] using go_cons_step b rest fuel
+      have hfull : advHeadRuns (b :: rest) =
+          headStep b rest
+            (advHeadRuns (rest.drop ((rest.takeWhile (fun x => x != 34)).length + 1)))
+            (advHeadRuns rest) := by
+        change advHeadRuns.go (b :: rest) ((b :: rest).length + 1) = _
+        simpa [ihT1, ihR1] using go_cons_step b rest (rest.length + 1)
+      exact hstep.trans hfull.symm
 termination_by src => src.length
 decreasing_by
   simp_wf
-  · have : (b :: rest).length = rest.length + 1 := rfl
-    omega
-  · have : (b :: rest).length = rest.length + 1 := rfl
+  all_goals
     have hle := drop_tail_le rest
-    omega
-  · have : (b :: rest).length = rest.length + 1 := rfl
-    omega
-  · have : (b :: rest).length = rest.length + 1 := rfl
-    have hle := drop_tail_le rest
+    have hlen : (b :: rest).length = rest.length + 1 := rfl
     omega
 
 /-- A byte the unquoted alternative `[^\]]` may consume. -/
@@ -110,9 +108,9 @@ theorem advHeadRuns_plain_byte (b : Nat) (rest run rr : List Nat)
   rw [advHeadRuns, hk, go_cons_step]
   have htail : advHeadRuns.go rest (rest.length + 1) = advHeadRuns rest :=
     go_ge rest (rest.length + 1) (by omega)
-  have hquote : advHeadRuns.go (rest.drop (rest.takeWhile (fun x => x != 34)).length).tail
+  have hquote : advHeadRuns.go (rest.drop ((rest.takeWhile (fun x => x != 34)).length + 1))
       (rest.length + 1) = advHeadRuns
-      (rest.drop (rest.takeWhile (fun x => x != 34)).length).tail :=
+      (rest.drop ((rest.takeWhile (fun x => x != 34)).length + 1)) :=
     go_ge _ (rest.length + 1) (Nat.le_trans (drop_tail_le rest) (Nat.le_succ _))
   simp [headStep, h34, h93, htail, hquote, h]
 
@@ -153,8 +151,12 @@ theorem take_quote_closed (inner tail : List Nat) :
   have hinner : (inner ++ (34 :: tail)).take (inner.length + 1) = inner ++ [34] := by
     rw [happ, ← hlen]
     exact @List.take_left Nat (inner ++ [34]) tail
-  rw [List.take_cons, hinner]
-  simp
+  calc
+    (34 :: (inner ++ (34 :: tail))).take (inner.length + 2)
+        = 34 :: (inner ++ (34 :: tail)).take (inner.length + 1) := by
+            rw [show inner.length + 2 = Nat.succ (inner.length + 1) by omega]
+            simp
+    _ = 34 :: inner ++ [34] := by simpa [hinner]
 
 theorem advHeadRuns_quote_front (inner tail run rr : List Nat)
     (more : List (List Nat × List Nat))
@@ -168,8 +170,10 @@ theorem advHeadRuns_quote_front (inner tail run rr : List Nat)
   have hk : (34 :: (inner ++ (34 :: tail))).length + 1 =
       Nat.succ ((inner ++ (34 :: tail)).length + 1) := rfl
   let rest := inner ++ (34 :: tail)
-  have hdrop : rest.drop (rest.takeWhile (fun x => x != 34)).length = 34 :: tail := by
+  have hdrop0 : rest.drop (rest.takeWhile (fun x => x != 34)).length = 34 :: tail := by
     simp [rest, htake]
+  have hdrop : rest.drop ((rest.takeWhile (fun x => x != 34)).length + 1) = tail := by
+    simpa using congrArg List.tail hdrop0
   have hfuel : (inner ++ (34 :: tail)).length + 1 =
       inner.length + (tail.length + 1) + 1 := by
     simp [List.length_append]
@@ -185,12 +189,20 @@ theorem advHeadRuns_quote_front (inner tail run rr : List Nat)
       (((34 :: rest).take (inner.length + 2) ++ run), rr) ::
         (more.map (fun x => ((34 :: rest).take (inner.length + 2) ++ x.1, x.2)) ++
           ((advHeadRuns rest).map (fun x => (34 :: x.1, x.2)) ++ [([], 34 :: rest)])) := by
-    rw [advHeadRuns, hk, go_cons_step, hfuel, hdrop, htailGo, hrestGo, h]
-    simp only [headStep, rest, show (34 == 34) = true by rfl,
-      show (34 == 93) = false by decide]
-  refine ⟨more.map (fun x => ((34 :: rest).take (inner.length + 2) ++ x.1, x.2)) ++
-      ((advHeadRuns rest).map (fun x => (34 :: x.1, x.2)) ++ [([], 34 :: rest)]), ?_⟩
-  simpa [rest, take_quote_closed] using hstep
+    change advHeadRuns.go (34 :: (inner ++ (34 :: tail)))
+        ((34 :: (inner ++ (34 :: tail))).length + 1) = _
+    rw [hk, go_cons_step, hfuel]
+    simp only [headStep]
+    rw [hdrop, hdrop0, htailGo, hrestGo, h]
+    rw [htake]
+    simp [rest, show (34 == 34) = true by rfl, show (34 == 93) = false by decide]
+  have htakeHead : (34 :: rest).take (inner.length + 2) = 34 :: inner ++ [34] := by
+    simpa [rest] using take_quote_closed inner tail
+  rw [htakeHead] at hstep
+  refine ⟨more.map (fun x => ((34 :: inner ++ [34]) ++ x.1, x.2)) ++
+      ((advHeadRuns (inner ++ (34 :: tail))).map (fun x => (34 :: x.1, x.2)) ++
+        [([], 34 :: (inner ++ (34 :: tail)))]), ?_⟩
+  simpa [rest, List.append_assoc] using hstep
 
 inductive TadvChunk where
   | plain : List Nat → TadvChunk
@@ -395,14 +407,18 @@ theorem tadvClosed_cons (head body after : List Nat) :
         litBytes "[[/table]]" ++ after) := by
   have h : litBytes "[[table" = 91 :: (litBytes "[[table").drop 1 := by decide
   calc tadvClosed head body after
-      = litBytes "[[table" ++ (head ++ (litBytes "]]" ++ (body ++ (litBytes "[[/table]]" ++ after)))) := by
-        simp [tadvClosed, List.append_assoc]
+      = litBytes "[[table" ++
+          (head ++ litBytes "]]" ++ body ++ litBytes "[[/table]]" ++ after) := by
+          simp [tadvClosed, List.append_assoc]
     _ = (91 :: (litBytes "[[table").drop 1) ++
-          (head ++ (litBytes "]]" ++ (body ++ (litBytes "[[/table]]" ++ after)))) := by
-        rw [h]
+          (head ++ litBytes "]]" ++ body ++ litBytes "[[/table]]" ++ after) := by
+          rw (occs := .pos [1]) [h]
     _ = 91 :: ((litBytes "[[table").drop 1 ++
-          (head ++ (litBytes "]]" ++ (body ++ (litBytes "[[/table]]" ++ after))))) := by
-        simp [List.cons_append]
+          (head ++ litBytes "]]" ++ body ++ litBytes "[[/table]]" ++ after)) := by
+          rfl
+    _ = 91 :: ((litBytes "[[table").drop 1 ++ head ++ litBytes "]]" ++ body ++
+          litBytes "[[/table]]" ++ after) := by
+          simp [List.append_assoc]
 
 theorem scan_match_step (src head rest' rep tailOut : List Nat)
     (toks toks1 : List TokenEntry) (b : Nat) (rtail : List Nat) (fuel : Nat)
@@ -467,7 +483,14 @@ theorem advDataKeyOk_suffix (s : List Nat) :
   simp only [advDataKeyOk, isPrefixOf_self_append, drop_app]
   apply congrArg (fun f => s.all f)
   funext x
-  simp [tableadvDataClass]
+  apply Bool.eq_iff_iff.mpr
+  constructor <;> intro h
+  · unfold tableadvDataClass at h ⊢
+    simp only [Bool.and_eq_true, Bool.or_eq_true, beq_iff_eq, decide_eq_true_eq] at h ⊢
+    omega
+  · unfold tableadvDataClass at h
+    simp only [Bool.and_eq_true, Bool.or_eq_true, beq_iff_eq, decide_eq_true_eq] at h ⊢
+    omega
 
 theorem lower_data_prefix (s : List Nat) :
     lowerBytes (litBytes "data-" ++ s) = litBytes "data-" ++ lowerBytes s := by
@@ -559,9 +582,11 @@ def tadvExact : Nat → List (List Nat)
 def tadvUpTo (n : Nat) : List (List Nat) :=
   (List.range (n + 1)).flatMap tadvExact
 
+set_option maxRecDepth 100000 in
 theorem tadvUpTo_two_length : (tadvUpTo 2).length = 157 := by decide
 
 set_option maxHeartbeats 2000000 in
+set_option maxRecDepth 100000 in
 theorem tadv_suffix_domain :
     (tadvUpTo 2).all (fun s =>
       let keep := (lowerBytes s).all tableadvDataClass
@@ -763,3 +788,98 @@ theorem tableadvScanGo_witness_fuel :
   exact tableadvScanGo_witness (tableFuel tableadvWitness.length - 1) (by omega)
 
 end LeanFtml
+
+/-! ## Axiom audit (all headline theorems in this file) -/
+#print axioms LeanFtml.go_cons_step
+#print axioms LeanFtml.go_nil
+#print axioms LeanFtml.drop_tail_le
+#print axioms LeanFtml.go_ge
+#print axioms LeanFtml.advHeadRuns_plain_byte
+#print axioms LeanFtml.advHeadRuns_plain_prefix
+#print axioms LeanFtml.takeWhile_append_ok
+#print axioms LeanFtml.take_quote_closed
+#print axioms LeanFtml.advHeadRuns_quote_front
+#print axioms LeanFtml.advHeadRuns_chunks
+#print axioms LeanFtml.brackets_bytes
+#print axioms LeanFtml.enum_body_after_clear
+#print axioms LeanFtml.enum_match_chunks
+#print axioms LeanFtml.plainBody_len
+#print axioms LeanFtml.plainBody_edges
+#print axioms LeanFtml.plainBody_noTable
+#print axioms LeanFtml.plain_row_match
+#print axioms LeanFtml.plain_rows
+#print axioms LeanFtml.drop_app
+#print axioms LeanFtml.take_app
+#print axioms LeanFtml.advBodyOf_closed
+#print axioms LeanFtml.plain_process
+#print axioms LeanFtml.tadvClosed_cons
+#print axioms LeanFtml.scan_match_step
+#print axioms LeanFtml.tableadvScanGo_chunks
+#print axioms LeanFtml.isPrefixOf_self_append
+#print axioms LeanFtml.advDataKeyOk_suffix
+#print axioms LeanFtml.lower_data_prefix
+#print axioms LeanFtml.fold_data_suffix
+#print axioms LeanFtml.data_lit
+#print axioms LeanFtml.data_pref_ne
+#print axioms LeanFtml.data_pref_beq_false
+#print axioms LeanFtml.norm_UB
+#print axioms LeanFtml.ub_nonempty
+#print axioms LeanFtml.advAttrStep_data_keep
+#print axioms LeanFtml.advAttrStep_data_drop
+#print axioms LeanFtml.data_prefix_upper_rejected
+#print axioms LeanFtml.advAttrStep_DATA_drop
+#print axioms LeanFtml.tableadvDataClass_members
+#print axioms LeanFtml.tadvUpTo_two_length
+#print axioms LeanFtml.tadv_suffix_domain
+#print axioms LeanFtml.chunksFoo_ok
+#print axioms LeanFtml.chunksDot_ok
+#print axioms LeanFtml.chunksUnder_ok
+#print axioms LeanFtml.chunksDATA_ok
+#print axioms LeanFtml.chunksCLASS_ok
+#print axioms LeanFtml.chunksPlus_ok
+#print axioms LeanFtml.chunksEmptySuffix_ok
+#print axioms LeanFtml.chunksDotEdge_ok
+#print axioms LeanFtml.chunksLast_ok
+#print axioms LeanFtml.chunksId_ok
+#print axioms LeanFtml.chunksAlign_ok
+#print axioms LeanFtml.chunks_nil_ok
+#print axioms LeanFtml.chunksFoo_bytes
+#print axioms LeanFtml.chunksDot_bytes
+#print axioms LeanFtml.chunksUnder_bytes
+#print axioms LeanFtml.chunksDATA_bytes
+#print axioms LeanFtml.chunksCLASS_bytes
+#print axioms LeanFtml.chunksPlus_bytes
+#print axioms LeanFtml.chunksEmpty_bytes
+#print axioms LeanFtml.chunksDotEdge_bytes
+#print axioms LeanFtml.chunksLast_bytes
+#print axioms LeanFtml.chunksId_bytes
+#print axioms LeanFtml.chunksAlign_bytes
+#print axioms LeanFtml.attrsFoo
+#print axioms LeanFtml.attrsDot
+#print axioms LeanFtml.attrsUnder
+#print axioms LeanFtml.attrsDATA
+#print axioms LeanFtml.attrsCLASS
+#print axioms LeanFtml.attrsPlus
+#print axioms LeanFtml.attrsEmptySuffix
+#print axioms LeanFtml.attrsDotEdge
+#print axioms LeanFtml.attrsLast
+#print axioms LeanFtml.attrsId
+#print axioms LeanFtml.attrsAlign
+#print axioms LeanFtml.attrsEmptyHead
+#print axioms LeanFtml.scan_of_chunks
+#print axioms LeanFtml.scan_empty_head
+#print axioms LeanFtml.scan_data_foo
+#print axioms LeanFtml.scan_data_dot
+#print axioms LeanFtml.scan_data_under
+#print axioms LeanFtml.scan_DATA_drop
+#print axioms LeanFtml.scan_CLASS_drop
+#print axioms LeanFtml.scan_plus_drop
+#print axioms LeanFtml.scan_empty_suffix
+#print axioms LeanFtml.scan_dot_edge
+#print axioms LeanFtml.scan_last_wins
+#print axioms LeanFtml.scan_id_isolate
+#print axioms LeanFtml.scan_align_drop
+#print axioms LeanFtml.witness_rows
+#print axioms LeanFtml.witness_process
+#print axioms LeanFtml.tableadvScanGo_witness
+#print axioms LeanFtml.tableadvScanGo_witness_fuel
