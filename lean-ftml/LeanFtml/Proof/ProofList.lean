@@ -445,28 +445,65 @@ theorem lst_findPairOpener_absorb_spec {stack : List TagMatch}
 `findPair` walks the tag list with an opener stack. Its one general
 law set: a returned pair's opener is never raw-case, is an opener,
 and both partners occur in the tag list, the closer as a non-opener;
-a tag list of nothing but openers pairs nothing. -/
+a tag list of nothing but openers pairs nothing. REFCORR16: the
+walk takes the source as well, and a closer whose partner is an
+inner opener may instead pair with the stack's outermost opener
+(the same-type, item-less override); the outermost opener is in
+the stack, is an opener, and is never raw-case under the override's
+own condition, so the law set is unchanged. -/
 
-theorem lst_findPair_go_spec : ∀ (ts : List TagMatch)
+/-- Membership of the stack's last element (the REFCORR16
+    override returns it as a pair opener). -/
+theorem lst_getLast_mem : ∀ {l : List TagMatch} {a : TagMatch},
+    l.getLast? = some a → a ∈ l := by
+  intro l
+  induction l with
+  | nil =>
+      intro a h
+      simp at h
+  | cons x xs ih =>
+      intro a h
+      cases xs with
+      | nil =>
+          simp at h
+          subst h
+          exact List.mem_cons_self
+      | cons y ys =>
+          have h' : (x :: y :: ys).getLast? = (y :: ys).getLast? := rfl
+          rw [h'] at h
+          exact List.mem_cons_of_mem x (ih h)
+
+theorem lst_findPair_go_spec : ∀ (src : List Nat) (ts : List TagMatch)
     (stack : List TagMatch) (o c : TagMatch),
     (∀ x ∈ stack, x.isOpen = true) →
-    findPair.go ts stack = some (o, c) →
+    findPair.go src ts stack = some (o, c) →
     tagIsRawCase o.tag = false ∧ o.isOpen = true ∧ c.isOpen = false ∧
     (o ∈ stack ∨ o ∈ ts) ∧ c ∈ ts := by
-  intro ts
+  intro src ts
   induction ts with
   | nil =>
       intro stack o c _ h
       simp [findPair.go] at h
   | cons t rest ih =>
       intro stack o c hstack h
-      have hstep : findPair.go (t :: rest) stack =
-          if t.isOpen then findPair.go rest (t :: stack)
+      have hstep : findPair.go src (t :: rest) stack =
+          if t.isOpen then findPair.go src rest (t :: stack)
           else match findPairOpener stack (lowerBytes t.tag)
               (tagIsRawCase t.tag) with
-            | some (op, true) => findPair.go rest stack
-            | some (op, false) => some (op, t)
-            | none => findPair.go rest stack := rfl
+            | some (op, true) => findPair.go src rest stack
+            | some (op, false) =>
+                match stack.getLast? with
+                | some bottom =>
+                    if bottom.start != op.start &&
+                        !tagIsRawCase bottom.tag &&
+                        lowerBytes t.tag == bottom.tag &&
+                        !(existsLitCI (litBytes "[[/li]]")
+                          ((src.drop bottom.start).take
+                            (t.start - bottom.start))) then
+                      some (bottom, t)
+                    else some (op, t)
+                | none => some (op, t)
+            | none => findPair.go src rest stack := rfl
       rw [hstep] at h
       by_cases ht : t.isOpen = true
       · rw [if_pos ht] at h
@@ -506,43 +543,74 @@ theorem lst_findPair_go_spec : ∀ (ts : List TagMatch)
                   List.mem_cons_of_mem t h5⟩
             | false =>
                 rw [hpo] at h
-                dsimp only at h
-                simp only [Option.some.injEq, Prod.mk.injEq] at h
-                obtain ⟨h1, h2⟩ := h
-                subst h1; subst h2
-                refine ⟨lst_findPairOpener_pair_not_rawCase hpo,
-                  hstack op (lst_findPairOpener_mem hpo), htf,
-                  Or.inl (lst_findPairOpener_mem hpo),
-                  List.mem_cons_self⟩
+                cases hlast : stack.getLast? with
+                | none =>
+                    try rw [hlast] at h
+                    dsimp only at h
+                    simp only [Option.some.injEq, Prod.mk.injEq] at h
+                    obtain ⟨h1, h2⟩ := h
+                    subst h1; subst h2
+                    refine ⟨lst_findPairOpener_pair_not_rawCase hpo,
+                      hstack op (lst_findPairOpener_mem hpo), htf,
+                      Or.inl (lst_findPairOpener_mem hpo),
+                      List.mem_cons_self⟩
+                | some bottom =>
+                    try rw [hlast] at h
+                    dsimp only at h
+                    by_cases hcond : (bottom.start != op.start &&
+                        !tagIsRawCase bottom.tag &&
+                        lowerBytes t.tag == bottom.tag &&
+                        !(existsLitCI (litBytes "[[/li]]")
+                          ((src.drop bottom.start).take
+                            (t.start - bottom.start)))) = true
+                    · rw [if_pos hcond] at h
+                      simp only [Option.some.injEq, Prod.mk.injEq] at h
+                      obtain ⟨h1, h2⟩ := h
+                      subst h1; subst h2
+                      have hmem : bottom ∈ stack := lst_getLast_mem hlast
+                      have hnotraw : tagIsRawCase bottom.tag = false := by
+                        cases htr : tagIsRawCase bottom.tag with
+                        | false => rfl
+                        | true => simp [htr] at hcond
+                      refine ⟨hnotraw, hstack bottom hmem, htf,
+                        Or.inl hmem, List.mem_cons_self⟩
+                    · rw [if_neg hcond] at h
+                      simp only [Option.some.injEq, Prod.mk.injEq] at h
+                      obtain ⟨h1, h2⟩ := h
+                      subst h1; subst h2
+                      refine ⟨lst_findPairOpener_pair_not_rawCase hpo,
+                        hstack op (lst_findPairOpener_mem hpo), htf,
+                        Or.inl (lst_findPairOpener_mem hpo),
+                        List.mem_cons_self⟩
 
-theorem lst_findPair_pair_not_rawCase {tags : List TagMatch}
-    {o c : TagMatch} (h : findPair tags = some (o, c)) :
+theorem lst_findPair_pair_not_rawCase {src : List Nat} {tags : List TagMatch}
+    {o c : TagMatch} (h : findPair src tags = some (o, c)) :
     tagIsRawCase o.tag = false :=
-  (lst_findPair_go_spec tags [] o c (fun x hx => by simp at hx) h).1
+  (lst_findPair_go_spec src tags [] o c (fun x hx => by simp at hx) h).1
 
-theorem lst_findPair_opener_isOpen {tags : List TagMatch}
-    {o c : TagMatch} (h : findPair tags = some (o, c)) :
+theorem lst_findPair_opener_isOpen {src : List Nat} {tags : List TagMatch}
+    {o c : TagMatch} (h : findPair src tags = some (o, c)) :
     o.isOpen = true :=
-  (lst_findPair_go_spec tags [] o c (fun x hx => by simp at hx) h).2.1
+  (lst_findPair_go_spec src tags [] o c (fun x hx => by simp at hx) h).2.1
 
-theorem lst_findPair_closer_not_open {tags : List TagMatch}
-    {o c : TagMatch} (h : findPair tags = some (o, c)) :
+theorem lst_findPair_closer_not_open {src : List Nat} {tags : List TagMatch}
+    {o c : TagMatch} (h : findPair src tags = some (o, c)) :
     c.isOpen = false :=
-  (lst_findPair_go_spec tags [] o c (fun x hx => by simp at hx) h).2.2.1
+  (lst_findPair_go_spec src tags [] o c (fun x hx => by simp at hx) h).2.2.1
 
-theorem lst_findPair_mem {tags : List TagMatch} {o c : TagMatch}
-    (h : findPair tags = some (o, c)) : o ∈ tags ∧ c ∈ tags := by
-  have hspec := lst_findPair_go_spec tags [] o c
+theorem lst_findPair_mem {src : List Nat} {tags : List TagMatch} {o c : TagMatch}
+    (h : findPair src tags = some (o, c)) : o ∈ tags ∧ c ∈ tags := by
+  have hspec := lst_findPair_go_spec src tags [] o c
     (fun x hx => by simp at hx) h
   exact ⟨hspec.2.2.2.1.elim (fun hx => by simp at hx) id, hspec.2.2.2.2⟩
 
-theorem lst_findPair_none_of_all_open {tags : List TagMatch}
-    (h : ∀ t ∈ tags, t.isOpen = true) : findPair tags = none := by
-  cases hfind : findPair tags with
+theorem lst_findPair_none_of_all_open {src : List Nat} {tags : List TagMatch}
+    (h : ∀ t ∈ tags, t.isOpen = true) : findPair src tags = none := by
+  cases hfind : findPair src tags with
   | none => rfl
   | some p =>
       obtain ⟨o, c⟩ := p
-      have hspec := lst_findPair_go_spec tags [] o c
+      have hspec := lst_findPair_go_spec src tags [] o c
         (fun x hx => by simp at hx) hfind
       have hct := h c hspec.2.2.2.2
       rw [hspec.2.2.1] at hct
