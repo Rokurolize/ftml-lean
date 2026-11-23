@@ -1,0 +1,82 @@
+{
+ "R3F-01": {
+  "fullname": "muse-probe-round5f-r3-r3f-01",
+  "source": "[[footnote]]\u001b\nX[[/footnote]]\n[[footnoteblock]]",
+  "action": "created/existing (log-attested)"
+ },
+ "R3F-02": {
+  "fullname": "muse-probe-round5f-r3-r3f-02",
+  "source": "[[footnote]]X\n\u001b[[/footnote]]\n[[footnoteblock]]",
+  "action": "created/existing (log-attested)"
+ },
+ "R3F-03": {
+  "fullname": "muse-probe-round5f-r3-r3f-03",
+  "source": "[[footnote]]\f\u001b\nX[[/footnote]]\n[[footnoteblock]]",
+  "action": "created/existing (log-attested)"
+ },
+ "R3F-04": {
+  "fullname": "muse-probe-round5f-r3-r3f-04",
+  "source": "[[bibliography]]\n: a : @@@@\u001b@@@@\n[[/bibliography]]",
+  "action": "created/existing (log-attested)"
+ },
+ "R3F-05": {
+  "fullname": "muse-probe-round5f-r3-r3f-05",
+  "source": "[[bibliography]]\n: a : A\n\f\n: b : B\n[[/bibliography]]",
+  "action": "save-unverified"
+ },
+ "R3F-06": {
+  "fullname": "muse-probe-round5f-r3-r3f-06",
+  "source": "[[bibliography]]\n: a : A\n\u000b\n: b : B\n[[/bibliography]]",
+  "action": "created/existing (log-attested)"
+ },
+ "R3F-07": {
+  "fullname": "muse-probe-round5f-r3-r3f-07",
+  "source": "[[bibliography]]\n: a : A\n\u001b\n: b : B\n[[/bibliography]]",
+  "action": "created/existing (log-attested)"
+ },
+ "R3F-08": {
+  "fullname": "muse-probe-round5f-r3-r3f-08",
+  "source": "[[bibliography]]\n: a : \tA\u001b\f B\n[[/bibliography]]",
+  "action": "created/existing (log-attested)"
+ },
+ "R3F-09": {
+  "fullname": "muse-probe-round5f-r3-r3f-09",
+  "source": "[[a id=\"a\u001bb\"]]x[[/a]]",
+  "action": "created/existing (log-attested)"
+ },
+ "R3F-10": {
+  "fullname": "muse-probe-round5f-r3-r3f-10",
+  "source": "[[a href=\"#a\u001bb\"]]x[[/a]]",
+  "action": "created/existing (log-attested)"
+ },
+ "R3F-11": {
+  "fullname": "muse-probe-round5f-r3-r3f-11",
+  "source": "[[toc title=\"T\u001bX\"]]\n\n+ A",
+  "action": "created"
+ },
+ "R3F-12": {
+  "fullname": "muse-probe-round5f-r3-r3f-12",
+  "source": "[[toc]]\n\n+ Hea\u001bding",
+  "action": "created"
+ },
+ "R3F-13": {
+  "fullname": "muse-probe-round5f-r3-r3f-13",
+  "source": "+ A\n\n+* B\n\n+ C",
+  "action": "created"
+ },
+ "R3F-14": {
+  "fullname": "muse-probe-round5f-r3-r3f-14",
+  "source": "[[toc]]\n\n+ A\n\n[[toc]]\n\n+ B",
+  "action": "created"
+ },
+ "R3F-15": {
+  "fullname": "muse-probe-round5f-r3-r3f-15",
+  "source": "[[toc]]\n\n+ Head[[footnote]]\u001b\n@@@@[[/footnote]]\n\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "R3F-16": {
+  "fullname": "muse-probe-round5f-r3-r3f-16",
+  "source": "[[footnote]]\f\nX[[/footnote]]\n[[footnoteblock]]",
+  "action": "created"
+ }
+}

@@ -1,0 +1,18 @@
+{"id":"s01-fl-astral-cf-lead","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"s02-fl-tag-cf-lead","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"s03-fl-ufff9-cf-lead","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"s04-fl-cf-route-described","output":"<p><a class=\"newpage\" href=\"\/x#\/sec\">L<\/a><\/p>\n\n"}
+{"id":"s05-fl-cf-multihash","output":"<p>[[[\u200cfoo#a#b]]]<\/p>\n\n"}
+{"id":"s06-fl-u2028-lead","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"s07-div-attr-esc","output":"<div type=\"AB\"><p>body<\/p>\n\n<\/div>"}
+{"id":"s08-div-attr-del","output":"<div data-x=\"AB\"><p>body<\/p>\n\n<\/div>"}
+{"id":"s09-span-data-trailws","output":"<p><span data-x=\"  x  \">b<\/span><\/p>\n\n"}
+{"id":"s10-span-class-trailws","output":"<p><span class=\"  c  \">b<\/span><\/p>\n\n"}
+{"id":"s11-span-ph-data-trailws","output":"<p><span data-x=\"\">q[<a href=\"\/size]]\"> &quot;<\/a>]b<\/span><\/p>\n\n"}
+{"id":"s12-image-title-esc","output":"<img src=\"\/local--files\/\/IMG.png\" title=\"T\u001bZ\" alt=\"IMG.png\" class=\"image\" \/>cap"}
+{"id":"s13-image-class-ff","output":"<img src=\"\/local--files\/\/IMG.png\" class=\"thi\fck\" alt=\"IMG.png\" \/>cap"}
+{"id":"s14-list-trail-fl-cf","output":"<ul>\n<li>A<a class=\"newpage\" href=\"\/x\">x<\/a><br \/>\n[[LI]]B[[\/LI]]<br \/>\n[[\/UL]]<\/li>\n<\/ul>"}
+{"id":"s15-list-trail-esc-footnote","output":"<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1<\/a><\/sup><br \/>\n[[LI]]B[[\/LI]]<br \/>\n[[\/UL]]<\/li>\n<\/ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes<\/div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1<\/a>. E\u001bF<\/div><\/div>"}
+{"id":"s16-list-lower-nested-rawcase","output":"<ul>\n<li>outer<ul>\n<li>in<\/li>\n<\/ul>[[LI]]tail[[\/LI]]<br \/>\n[[\/UL]]<\/li>\n<\/ul>"}
+{"id":"s17-bibitem-esc","output":"<div class=\"bibitems\"><div class=\"title\">Bibliography<\/div>\n[[bibitem k]]A\u001bB[[\/bibitem]]<\/div><p>[[bibcite k]]<\/p>\n\n"}
+{"id":"s18-footnote-nel","output":"<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1<\/a><\/sup><br \/>\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes<\/div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1<\/a>. A\u0085B<\/p>\n\n<\/div><\/div>"}

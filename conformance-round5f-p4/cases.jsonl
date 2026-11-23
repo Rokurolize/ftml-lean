@@ -1,0 +1,18 @@
+{"id": "R5F-P4-C01", "source": "[[footnote]]A\u001bB[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R5F-P4-C02", "source": "[[footnote]]A\u001b\nB[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R5F-P4-C03", "source": "[[footnote]]\u001bA\u001b[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R5F-P4-C04", "source": "[[footnote]]\u001b[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R5F-P4-C05", "source": "[[bibliography]]\n: k : A\u001bB\n[[/bibliography]]"}
+{"id": "R5F-P4-C06", "source": "[[bibliography]]\nA\fB\n[[/bibliography]]"}
+{"id": "R5F-P4-C07", "source": "[[bibliography]]\nA\u000bB\n[[/bibliography]]"}
+{"id": "R5F-P4-C08", "source": "[[bibliography]]\nA\u001bB\n[[/bibliography]]"}
+{"id": "R5F-P4-C09", "source": "[[footnote]]A\u001b\fB[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R5F-P4-C10", "source": "[[footnote]]A\u001fB[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R5F-P4-C11", "source": "alpha\n\u001b\nbravo"}
+{"id": "R5F-P4-C12", "source": "alpha\n\f\nbravo"}
+{"id": "R5F-P4-C13", "source": "[[div]]a[[/div]]\u001b[[div]]b[[/div]]"}
+{"id": "R5F-P4-C14", "source": "alpha ---- bravo"}
+{"id": "R5F-P4-C15", "source": "alpha .... bravo"}
+{"id": "R5F-P4-C16", "source": "1\u00a0234"}
+{"id": "R5F-P4-C17", "source": "alpha\u0085bravo"}
+{"id": "R5F-P4-C18", "source": "alpha\ufeffbravo"}

@@ -1,0 +1,16 @@
+{"id": "LA1-OLTRAIL", "source": "[[OL]]\n[[LI]]A[[/LI]]\n[[/OL]]\n[[LI]]B[[/LI]]\n[[/OL]]\nZZZ"}
+{"id": "LA2-SCOREDOL", "source": "[[OL_]]\n[[LI]]A[[/LI]]\n[[/OL]]\n[[LI]]B[[/LI]]\n[[/OL]]\nZZZ"}
+{"id": "LA3-LOWERLI", "source": "[[UL]]\n[[LI]]outer[[ul]]\n[[li]]in[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]"}
+{"id": "LA4-FTDOUBLE", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnote]]n1[[/footnote]]X[[footnoteblock]]Y[[footnote]]n2[[/footnote]]Z[[footnoteblock]]W"}
+{"id": "LA5-FTPROSE", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnote]]n[[/footnote]]LEFT[[footnoteblock]]RIGHT"}
+{"id": "LA6-NESTATTR", "source": "[[UL]]\n[[LI]]outer[[UL class=\"c\"]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]"}
+{"id": "LA7-DBLFAIL", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[LI]]C[[/LI]]\n[[/UL]]\nZZZ"}
+{"id": "LA8-RESIDBR", "source": "[[UL]]\n[[LI]]outer[[UL]]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]"}
+{"id": "LA9-LOWERCTRL", "source": "[[ul]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/ul]]\n[[LI]]tail[[/LI]]\n[[/ul]]"}
+{"id": "CL1-TRAILATTR", "source": "alpha\\\n[[div class=\"t  \"]]\nbravo[[/div]]"}
+{"id": "CL2-UPPERATTR", "source": "alpha\\\n[[DIV type=\"  t  \"]]\nbravo[[/DIV]]"}
+{"id": "CL3-MULTATTR", "source": "alpha\\\n[[div class=\"a  \" data-x=\"b  \"]]\nbravo[[/div]]"}
+{"id": "F1-BQJUMP3", "source": "> a\n>>> c\n> d"}
+{"id": "F2-COLNEST", "source": "[[collapsible]]\n[[UL]]\n[[LI]]x[[/LI]]\n[[/UL]]\n[[/collapsible]]"}
+{"id": "F3-DBLSPACEBREAK", "source": "a  _\nb"}
+{"id": "F4-TABUNMATCH", "source": "[[tabview]]\n[[tab A]]alpha\n[[tab B]]beta[[/tab]]\n[[/tabview]]"}

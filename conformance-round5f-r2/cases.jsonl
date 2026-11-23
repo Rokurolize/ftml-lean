@@ -1,0 +1,18 @@
+{"id": "r2f-01-fl-astral-1d173", "source": "[[[\ud834\udd73_default:x]]]"}
+{"id": "r2f-02-fl-astral-e0001", "source": "[[[\udb40\udc01_default:x]]]"}
+{"id": "r2f-03-fl-cf-180e", "source": "[[[\u180e_default:x]]]"}
+{"id": "r2f-04-fl-cf-00ad", "source": "[[[\u00ad_default:x]]]"}
+{"id": "r2f-05-fl-ws-202a", "source": "[[[\u202a_default:x]]]"}
+{"id": "r2f-06-fl-cf-2066", "source": "[[[\u2066_default:x]]]"}
+{"id": "r2f-07-fl-unassigned-2065", "source": "[[[\u2065_default:x]]]"}
+{"id": "r2f-08-fl-mixed-fff9-200c", "source": "[[[\ufff9\u200c_default:x]]]"}
+{"id": "r2f-09-img-height-trail", "source": "[[image http://x/y.png height=\"10 \"]]"}
+{"id": "r2f-10-img-style-trail", "source": "[[image http://x/y.png style=\"color:red \"]]"}
+{"id": "r2f-11-img-title-tab", "source": "[[image http://x/y.png title=\"T\t\"]]"}
+{"id": "r2f-12-img-class-tab", "source": "[[image http://x/y.png class=\"thumb\t\"]]"}
+{"id": "r2f-13-img-width-tab", "source": "[[image http://x/y.png width=\"10\t\"]]"}
+{"id": "r2f-14-img-link-tab", "source": "[[image http://x/y.png link=\"http://x/y\t\"]]"}
+{"id": "r2f-15-span-data-y", "source": "[[span data-y=\"[[size 12px]]q[[/size]]\"]]body[[/span]]"}
+{"id": "r2f-16-url-nonascii-query", "source": "https://example.com/\u00e9?x=\u00f1"}
+{"id": "r2f-17-fl-url-nonascii", "source": "[[[https://example.com/caf\u00e9]]]"}
+{"id": "r2f-18-mathinline-preescaped", "source": "[[$ &lt; &gt; &quot; &#39; $]]"}

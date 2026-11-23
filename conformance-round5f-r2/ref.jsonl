@@ -1,0 +1,18 @@
+{"id":"r2f-01-fl-astral-1d173","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"r2f-02-fl-astral-e0001","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"r2f-03-fl-cf-180e","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"r2f-04-fl-cf-00ad","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"r2f-05-fl-ws-202a","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"r2f-06-fl-cf-2066","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"r2f-07-fl-unassigned-2065","output":"<p><a class=\"newpage\" href=\"\/_default:x\">x<\/a><\/p>\n\n"}
+{"id":"r2f-08-fl-mixed-fff9-200c","output":"<p><a class=\"newpage\" href=\"\/x\">x<\/a><\/p>\n\n"}
+{"id":"r2f-09-img-height-trail","output":"<img src=\"http:\/\/x\/y.png\" height=\"10 \" alt=\"y.png\" class=\"image\" \/>"}
+{"id":"r2f-10-img-style-trail","output":"<img src=\"http:\/\/x\/y.png\" style=\"color:red \" alt=\"y.png\" class=\"image\" \/>"}
+{"id":"r2f-11-img-title-tab","output":"<img src=\"http:\/\/x\/y.png\" title=\"T    \" alt=\"y.png\" class=\"image\" \/>"}
+{"id":"r2f-12-img-class-tab","output":"<img src=\"http:\/\/x\/y.png\" class=\"thumb\" alt=\"y.png\" \/>"}
+{"id":"r2f-13-img-width-tab","output":"<img src=\"http:\/\/x\/y.png\" width=\"10\" alt=\"y.png\" class=\"image\" \/>"}
+{"id":"r2f-14-img-link-tab","output":"<a href=\"http:\/\/x\/y\"><img src=\"http:\/\/x\/y.png\" alt=\"y.png\" class=\"image\" \/><\/a>"}
+{"id":"r2f-15-span-data-y","output":"<p><span data-y=\"\">q[[\/size]]&quot;]]body<\/span><\/p>\n\n"}
+{"id":"r2f-16-url-nonascii-query","output":"<p><a href=\"https:\/\/example.com\/%C3%A9?x=\">https:\/\/example.com\/\u00e9?x=<\/a>\u00f1<\/p>\n\n"}
+{"id":"r2f-17-fl-url-nonascii","output":"<p><a href=\"https:\/\/example.com\/caf\u00e9\">https:\/\/example.com\/caf\u00e9<\/a><\/p>\n\n"}
+{"id":"r2f-18-mathinline-preescaped","output":"<p><span class=\"math-inline\">$&amp;lt; &amp;gt; &amp;quot; &amp;#39;$<\/span><\/p>\n\n"}

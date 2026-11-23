@@ -1,0 +1,92 @@
+{
+ "s01-fl-astral-cf-lead": {
+  "fullname": "muse-probe-round5f-s1-s01-fl-astral-cf-lead",
+  "source": "[[[𝅳_default:x]]]",
+  "action": "created"
+ },
+ "s02-fl-tag-cf-lead": {
+  "fullname": "muse-probe-round5f-s1-s02-fl-tag-cf-lead",
+  "source": "[[[󠀠_default:x]]]",
+  "action": "created"
+ },
+ "s03-fl-ufff9-cf-lead": {
+  "fullname": "muse-probe-round5f-s1-s03-fl-ufff9-cf-lead",
+  "source": "[[[￹_default:x]]]",
+  "action": "created"
+ },
+ "s04-fl-cf-route-described": {
+  "fullname": "muse-probe-round5f-s1-s04-fl-cf-route-described",
+  "source": "[[[​_default:x/#/sec | L]]]",
+  "action": "created"
+ },
+ "s05-fl-cf-multihash": {
+  "fullname": "muse-probe-round5f-s1-s05-fl-cf-multihash",
+  "source": "[[[‌foo#a#b]]]",
+  "action": "created"
+ },
+ "s06-fl-u2028-lead": {
+  "fullname": "muse-probe-round5f-s1-s06-fl-u2028-lead",
+  "source": "[[[ _default:x]]]",
+  "action": "created"
+ },
+ "s07-div-attr-esc": {
+  "fullname": "muse-probe-round5f-s1-s07-div-attr-esc",
+  "source": "[[div type=\"A\u001bB\"]]\nbody\n[[/div]]",
+  "action": "created"
+ },
+ "s08-div-attr-del": {
+  "fullname": "muse-probe-round5f-s1-s08-div-attr-del",
+  "source": "[[div data-x=\"AB\"]]\nbody\n[[/div]]",
+  "action": "created"
+ },
+ "s09-span-data-trailws": {
+  "fullname": "muse-probe-round5f-s1-s09-span-data-trailws",
+  "source": "[[span data-x=\"  x  \"]]b[[/span]]",
+  "action": "created"
+ },
+ "s10-span-class-trailws": {
+  "fullname": "muse-probe-round5f-s1-s10-span-class-trailws",
+  "source": "[[span class=\"  c  \"]]b[[/span]]",
+  "action": "created"
+ },
+ "s11-span-ph-data-trailws": {
+  "fullname": "muse-probe-round5f-s1-s11-span-ph-data-trailws",
+  "source": "[[span data-x=\"[[size 12px]]q[[/size]]  \"]]b[[/span]]",
+  "action": "created"
+ },
+ "s12-image-title-esc": {
+  "fullname": "muse-probe-round5f-s1-s12-image-title-esc",
+  "source": "[[image IMG.png title=\"T\u001bZ\"]]cap",
+  "action": "created"
+ },
+ "s13-image-class-ff": {
+  "fullname": "muse-probe-round5f-s1-s13-image-class-ff",
+  "source": "[[image IMG.png class=\"thi\fck\"]]cap",
+  "action": "created"
+ },
+ "s14-list-trail-fl-cf": {
+  "fullname": "muse-probe-round5f-s1-s14-list-trail-fl-cf",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[[‌_default:x]]]\n[[LI]]B[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "s15-list-trail-esc-footnote": {
+  "fullname": "muse-probe-round5f-s1-s15-list-trail-esc-footnote",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]E\u001bF[[/footnote]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnoteblock]]",
+  "action": "created"
+ },
+ "s16-list-lower-nested-rawcase": {
+  "fullname": "muse-probe-round5f-s1-s16-list-lower-nested-rawcase",
+  "source": "[[UL]]\n[[LI]]outer[[ul]]\n[[LI]]in[[/LI]]\n[[/ul]][[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "s17-bibitem-esc": {
+  "fullname": "muse-probe-round5f-s1-s17-bibitem-esc",
+  "source": "[[bibliography]]\n[[bibitem k]]A\u001bB[[/bibitem]]\n[[/bibliography]]\n[[bibcite k]]",
+  "action": "created"
+ },
+ "s18-footnote-nel": {
+  "fullname": "muse-probe-round5f-s1-s18-footnote-nel",
+  "source": "[[footnote]]AB[[/footnote]][[footnoteblock]]",
+  "action": "created"
+ }
+}

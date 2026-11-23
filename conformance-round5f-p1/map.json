@@ -1,0 +1,82 @@
+{
+ "LA1-OLTRAIL": {
+  "fullname": "muse-probe-round5f-p1-la1-oltrail",
+  "source": "[[OL]]\n[[LI]]A[[/LI]]\n[[/OL]]\n[[LI]]B[[/LI]]\n[[/OL]]\nZZZ",
+  "action": "created"
+ },
+ "LA2-SCOREDOL": {
+  "fullname": "muse-probe-round5f-p1-la2-scoredol",
+  "source": "[[OL_]]\n[[LI]]A[[/LI]]\n[[/OL]]\n[[LI]]B[[/LI]]\n[[/OL]]\nZZZ",
+  "action": "created"
+ },
+ "LA3-LOWERLI": {
+  "fullname": "muse-probe-round5f-p1-la3-lowerli",
+  "source": "[[UL]]\n[[LI]]outer[[ul]]\n[[li]]in[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "LA4-FTDOUBLE": {
+  "fullname": "muse-probe-round5f-p1-la4-ftdouble",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnote]]n1[[/footnote]]X[[footnoteblock]]Y[[footnote]]n2[[/footnote]]Z[[footnoteblock]]W",
+  "action": "created"
+ },
+ "LA5-FTPROSE": {
+  "fullname": "muse-probe-round5f-p1-la5-ftprose",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnote]]n[[/footnote]]LEFT[[footnoteblock]]RIGHT",
+  "action": "created"
+ },
+ "LA6-NESTATTR": {
+  "fullname": "muse-probe-round5f-p1-la6-nestattr",
+  "source": "[[UL]]\n[[LI]]outer[[UL class=\"c\"]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "LA7-DBLFAIL": {
+  "fullname": "muse-probe-round5f-p1-la7-dblfail",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[LI]]C[[/LI]]\n[[/UL]]\nZZZ",
+  "action": "created"
+ },
+ "LA8-RESIDBR": {
+  "fullname": "muse-probe-round5f-p1-la8-residbr",
+  "source": "[[UL]]\n[[LI]]outer[[UL]]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "action": "created"
+ },
+ "LA9-LOWERCTRL": {
+  "fullname": "muse-probe-round5f-p1-la9-lowerctrl",
+  "source": "[[ul]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/ul]]\n[[LI]]tail[[/LI]]\n[[/ul]]",
+  "action": "created"
+ },
+ "CL1-TRAILATTR": {
+  "fullname": "muse-probe-round5f-p1-cl1-trailattr",
+  "source": "alpha\\\n[[div class=\"t  \"]]\nbravo[[/div]]",
+  "action": "created"
+ },
+ "CL2-UPPERATTR": {
+  "fullname": "muse-probe-round5f-p1-cl2-upperattr",
+  "source": "alpha\\\n[[DIV type=\"  t  \"]]\nbravo[[/DIV]]",
+  "action": "created"
+ },
+ "CL3-MULTATTR": {
+  "fullname": "muse-probe-round5f-p1-cl3-multattr",
+  "source": "alpha\\\n[[div class=\"a  \" data-x=\"b  \"]]\nbravo[[/div]]",
+  "action": "created"
+ },
+ "F1-BQJUMP3": {
+  "fullname": "muse-probe-round5f-p1-f1-bqjump3",
+  "source": "> a\n>>> c\n> d",
+  "action": "created"
+ },
+ "F2-COLNEST": {
+  "fullname": "muse-probe-round5f-p1-f2-colnest",
+  "source": "[[collapsible]]\n[[UL]]\n[[LI]]x[[/LI]]\n[[/UL]]\n[[/collapsible]]",
+  "action": "created"
+ },
+ "F3-DBLSPACEBREAK": {
+  "fullname": "muse-probe-round5f-p1-f3-dblspacebreak",
+  "source": "a  _\nb",
+  "action": "created"
+ },
+ "F4-TABUNMATCH": {
+  "fullname": "muse-probe-round5f-p1-f4-tabunmatch",
+  "source": "[[tabview]]\n[[tab A]]alpha\n[[tab B]]beta[[/tab]]\n[[/tabview]]",
+  "action": "created"
+ }
+}

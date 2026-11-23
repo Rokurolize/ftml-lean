@@ -1,0 +1,15 @@
+{"id": "R3F-01", "source": "[[footnote]]\u001b\nX[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3F-02", "source": "[[footnote]]X\n\u001b[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3F-03", "source": "[[footnote]]\f\u001b\nX[[/footnote]]\n[[footnoteblock]]"}
+{"id": "R3F-04", "source": "[[bibliography]]\n: a : @@@@\u001b@@@@\n[[/bibliography]]"}
+{"id": "R3F-06", "source": "[[bibliography]]\n: a : A\n\u000b\n: b : B\n[[/bibliography]]"}
+{"id": "R3F-07", "source": "[[bibliography]]\n: a : A\n\u001b\n: b : B\n[[/bibliography]]"}
+{"id": "R3F-08", "source": "[[bibliography]]\n: a : \tA\u001b\f B\n[[/bibliography]]"}
+{"id": "R3F-09", "source": "[[a id=\"a\u001bb\"]]x[[/a]]"}
+{"id": "R3F-10", "source": "[[a href=\"#a\u001bb\"]]x[[/a]]"}
+{"id": "R3F-11", "source": "[[toc title=\"T\u001bX\"]]\n\n+ A"}
+{"id": "R3F-12", "source": "[[toc]]\n\n+ Hea\u001bding"}
+{"id": "R3F-13", "source": "+ A\n\n+* B\n\n+ C"}
+{"id": "R3F-14", "source": "[[toc]]\n\n+ A\n\n[[toc]]\n\n+ B"}
+{"id": "R3F-15", "source": "[[toc]]\n\n+ Head[[footnote]]\u001b\n@@@@[[/footnote]]\n\n[[footnoteblock]]"}
+{"id": "R3F-16", "source": "[[footnote]]\f\nX[[/footnote]]\n[[footnoteblock]]"}

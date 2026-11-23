@@ -1,0 +1,165 @@
+#!/usr/bin/env python3
+# R5F-P1 pre-probe ledger generator. Emits LEDGER.md and cases.jsonl from one
+# in-memory table so the case source identities cannot drift from the prose.
+# Run this BEFORE any page creation; re-running it after probing is forbidden.
+import json, os
+
+U = os.path.dirname(os.path.abspath(__file__))
+
+# (id, family, construct, why_the_reference_looks_wrong,
+#  confirm_live_byte, clear_byte, freshness_reason, source)
+ROWS = [
+ ("LA1-OLTRAIL", "List adjacency (REFCORR12 mechanism)",
+  "raw-case OL failed-closer adjacency with trailing prose after the surviving closer",
+  "REFCORR12 rewrote the C1 fast path at List.php:504-603 so the last-surviving-closer split keeps trailing prose inside the absorbing item; the rewrite admits both ul and ol closers at line 515 but no cached capture exercises an OL opener with a non-empty leftover. Uppercase-opener degradation to <ul> is an owned prior shape and is not part of this suspicion; the question is only where the leftover bytes land. Live may place ZZZ differently relative to the closed item on the OL tag path.",
+  "a valid stable capture whose normalized page content places ZZZ at a different rule-level position relative to </ul> and the last <li> than the reference",
+  "byte-identical normalized content with ZZZ at the same position on both sides once the owned uppercase degradation is applied",
+  "Third-order sibling of the REFCORR12 leftover rewrite: L1-TRAILPROSE was the UL witness already confirmed and fixed, so this is not a verbatim re-probe but the untested OL branch of the same newly rewritten split.",
+  "[[OL]]\n[[LI]]A[[/LI]]\n[[/OL]]\n[[LI]]B[[/LI]]\n[[/OL]]\nZZZ"),
+
+ ("LA2-SCOREDOL", "List adjacency (REFCORR12 mechanism)",
+  "scored raw-case OL_ opener combined with the REFCORR12 trailing-prose leftover",
+  "List.php:581-595 carries the opener's scored flag into both list tokens while line 600 appends $afterList12 only for a hoisted footnoteblock. The scored UL_ witness C-R5E-P1-2 was fixed by REFCORR12 but the scored OL_ combination of the new scored flag and the new leftover split was never in the cached union, so the trailing break suppression may disagree with the generic split on this tag.",
+  "a valid stable capture where the scored OL_ trailing break or ZZZ placement differs from the reference at rule level",
+  "byte-identical normalized content for the scored OL_ opener with the trailing-prose leftover",
+  "Third-order sibling of the REFCORR12 scored-opener-plus-leftover interaction; the fixed scored UL shape is not re-probed verbatim and the OL tag path is new.",
+  "[[OL_]]\n[[LI]]A[[/LI]]\n[[/OL]]\n[[LI]]B[[/LI]]\n[[/OL]]\nZZZ"),
+
+ ("LA3-LOWERLI", "List adjacency (REFCORR12 mechanism)",
+  "raw-case outer opener whose pre-closer region holds a nested lowercase ul/li pair",
+  "The REFCORR12 flatten callback at List.php:568-574 strips only raw-case ul/ol tags (returning the original match for a lowercase tag), but the immediately following LI splitter at line 575 is case-insensitive and splits on [[li]] as well as [[LI]]. This case-sensitivity asymmetry is newly introduced by the rewrite: a lowercase nested [[li]] can become a sibling item boundary in the reference even though the lowercase [[ul]] wrapper is preserved. Live may treat the lowercase pair as genuine nesting and keep a nested item instead.",
+  "a valid stable capture where the reference promotes the nested lowercase [[li]] to a sibling item while live keeps it nested, or the item count differs",
+  "byte-identical normalized content with the lowercase pair handled identically on both sides",
+  "Third-order sibling of the REFCORR12 flatten/split mechanism; the new callback-versus-splitter asymmetry has no cached witness and no prior confirmed shape is re-probed.",
+  "[[UL]]\n[[LI]]outer[[ul]]\n[[li]]in[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]"),
+
+ ("LA4-FTDOUBLE", "List adjacency (REFCORR12 mechanism)",
+  "trailing leftover carrying two footnoteblock markers",
+  "The new hoist scan at List.php:531-540 breaks on the first Footnoteblock token (line 537) and the fallback literal scan at 543-545 also takes the first match, so a second footnoteblock in $leftover12 stays in $insideProse12 inside the absorbing item. Live may hoist both blocks past the list end or merge their footers, which would be a rule-level placement difference in the newly added hoist clause.",
+  "a valid stable capture where the second footnoteblock or its footer appears on a different side of </ul> between live and the reference",
+  "byte-identical normalized content with both footnoteblocks placed identically on the two sides",
+  "Third-order sibling of the REFCORR12 hoist clause; single-footnoteblock hoists (s01, s04) were the only cached witnesses and the first-match break is untested.",
+  "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnote]]n1[[/footnote]]X[[footnoteblock]]Y[[footnote]]n2[[/footnote]]Z[[footnoteblock]]W"),
+
+ ("LA5-FTPROSE", "List adjacency (REFCORR12 mechanism)",
+  "trailing leftover with authored prose on both sides of a footnoteblock",
+  "List.php:547-550 sets insideProse12 to rtrim(substr($leftover12,0,$hoistPos12)) and afterList12 to the rest, so prose before the marker is appended to the absorbing item and prose after it is hoisted verbatim. The cached s04 witness had the footnote before the failed close, not prose bracketing the marker in $leftover12, so the new split's handling of the LEFT and RIGHT text is unmeasured and live may keep both runs inside the list or hoist neither.",
+  "a valid stable capture where LEFT or RIGHT appears on a different side of </ul> between live and the reference at rule level",
+  "byte-identical normalized content with LEFT and RIGHT placed identically on both sides",
+  "Third-order sibling of the REFCORR12 insideProse/afterList split; the fixed trailing-prose-only and single-hoist shapes are not re-probed verbatim.",
+  "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnote]]n[[/footnote]]LEFT[[footnoteblock]]RIGHT"),
+
+ ("LA6-NESTATTR", "List adjacency (REFCORR12 mechanism)",
+  "nested raw-case UL opener carrying an attribute tail inside the failed-closer body",
+  "The REFCORR12 flatten pattern at List.php:569 is /\\[\\[(\\/?)(ul|ol)(_)?(?:\\s+[^\\]]*)?\\]\\]/i, whose optional attribute arm admits a nested [[UL class=\"c\"]] and strips it as a raw-case boundary. No cached nested-list capture used an attributed nested opener, and live's item-boundary recognition may require a bare tag, in which case the reference loses a tag the live keeps literal or emits a different item split.",
+  "a valid stable capture where the attributed nested opener survives literally on live but is stripped by the reference, or the item boundaries differ",
+  "byte-identical normalized content with the attributed nested opener handled identically on both sides",
+  "Third-order sibling of the REFCORR12 flatten regex attribute arm; the plain nested UL witness s04 is a fixed shape and is not re-probed verbatim.",
+  "[[UL]]\n[[LI]]outer[[UL class=\"c\"]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]"),
+
+ ("LA7-DBLFAIL", "List adjacency (REFCORR12 mechanism)",
+  "cascade of two failed closers before the following LI markers",
+  "The C1 regex at List.php:505 uses a non-greedy (.*?) for the first item body, so it pairs the first [[/li]]\\n[[/UL]] as the failed closer and pushes the second failed closer and its item into $tail12. The new leading-closer strip at 559-563 removes only a leading run, so the second failed closer stays literal mid-tail. Live may cascade the failed-closer tolerance and flatten both boundaries, producing a different item count.",
+  "a valid stable capture where the item count or the literal placement of the second failed closer differs from the reference at rule level",
+  "byte-identical normalized content for the two-failed-closer cascade on both sides",
+  "Third-order sibling of the REFCORR12 non-greedy first-match plus leading-strip interaction; single failed closers are the fixed cached shapes and are not re-probed verbatim.",
+  "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[LI]]C[[/LI]]\n[[/UL]]\nZZZ"),
+
+ ("LA8-RESIDBR", "List adjacency (REFCORR12 mechanism)",
+  "nested raw-case opener with a residual closing bracket just outside the flatten pattern",
+  "The REFCORR12 flatten regex at List.php:569 is anchored with \\]\\], so a nested [[UL]]] is not stripped and is not a case boundary, while the outer C1 regex may still pair the later closer. Live may tolerate the residual bracket as a real opener/closer boundary and flatten or nest differently, which would be a rule-level divergence newly reachable through the rewritten fast path.",
+  "a valid stable capture where live flattens or nests the residual-bracket opener while the reference keeps it literal, or the item boundaries differ",
+  "byte-identical normalized content with the residual-bracket opener handled identically on both sides",
+  "Third-order boundary sibling of the REFCORR12 flatten anchor; no cached nested capture used a residual bracket and no fixed shape is re-probed verbatim.",
+  "[[UL]]\n[[LI]]outer[[UL]]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]"),
+
+ ("LA9-LOWERCTRL", "List adjacency (REFCORR12 mechanism)",
+  "lowercase outer opener containing a raw-case nested opener and trailing prose",
+  "The whole REFCORR12 C1 fast path is gated by !empty($matchedPair['synthetic']) at List.php:504, which marks a raw-case opener. A lowercase outer opener with an uppercase nested opener therefore takes the generic synthetic tail path at 605-620 instead; the new flatten and hoist clauses are skipped. Live may still apply adjacency tolerance to the nested raw-case boundary regardless of the outer case, so this control measures the gate itself rather than a prior confirmed shape.",
+  "a valid stable capture where live flattens or absorbs the nested raw-case boundary while the reference leaves it as a genuine nested list or differs in trailing-byte placement",
+  "byte-identical normalized content with the lowercase outer list handled identically on both sides",
+  "Third-order control for the REFCORR12 synthetic-only gate; cached lowercase cases used lowercase nested pairs and are not re-probed verbatim.",
+  "[[ul]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/ul]]\n[[LI]]tail[[/LI]]\n[[/ul]]"),
+
+ ("CL1-TRAILATTR", "Div/paragraph continued-lead (REFCORR12 mechanism)",
+  "continued lead into a div opener whose class value carries trailing spaces",
+  "REFCORR12 added a uniform trailing-W rtrim to Div::normalizeValue, while the REFCORR11 continued-div-lead registry in Concatlines.php:58-69 and Paragraph.php:232-239 still keys wrapper suppression on the plain lead text. The interaction is new: the opener's attribute bytes change after the rtrim but the registry entry is captured before it. Live may keep or drop the lead wrapper differently once the attributed opener is normalized, which would be a rule-level divergence of the changed mechanism.",
+  "a valid stable capture where the lead keeps a <p> wrapper on one side and is bare on the other, or the normalized class value differs",
+  "byte-identical normalized content with a bare lead and the same trimmed class value on both sides",
+  "Third-order sibling of the REFCORR12 Div attribute rtrim interacting with the continued-lead mechanism; the fixed plain-opener continued-lead shapes are not re-probed verbatim.",
+  "alpha\\\n[[div class=\"t  \"]]\nbravo[[/div]]"),
+
+ ("CL2-UPPERATTR", "Div/paragraph continued-lead (REFCORR12 mechanism)",
+  "continued lead into an uppercase attributed DIV opener",
+  "Concatlines.php:58 is ASCII-case-insensitive and records the lead from the raw marker, while Div.php:49 opener regex is also /msi and the REFCORR12 rtrim now trims the type value. Combining an uppercase opener with a leading-space-and-trailing-space type value exercises both changed mechanisms at once and no cached continued-lead capture used an attributed uppercase opener.",
+  "a valid stable capture where the uppercase opener degrades differently, the lead wrapper differs, or the trimmed type value differs",
+  "byte-identical normalized content with the same uppercase opener head, bare lead and trimmed type value on both sides",
+  "Third-order sibling of the case-insensitive continued-opener regex and the REFCORR12 attribute rtrim; the fixed uppercase-opener and plain continued-lead shapes are not re-probed verbatim.",
+  "alpha\\\n[[DIV type=\"  t  \"]]\nbravo[[/DIV]]"),
+
+ ("CL3-MULTATTR", "Div/paragraph continued-lead (REFCORR12 mechanism)",
+  "continued lead into a div opener carrying multiple trailing-space technical attributes",
+  "REFCORR12 generalizes the rtrim over class, style, role, type and data-* values at Div::normalizeValue, but the continued-lead registry compares the plain lead from the whole matched run after stripping delimiter tokens. With two technical attributes whose values both end in spaces, the plain lead still matches while the opener head changes in two places, and live may emit a different attribute order or a different wrapper decision.",
+  "a valid stable capture where any emitted attribute value, order or the lead wrapper differs from the reference",
+  "byte-identical normalized content with both attributes trimmed identically and a bare lead on both sides",
+  "Third-order sibling of the REFCORR12 multi-attribute rtrim interacting with continued lead; prior Div attribute rows were not continuations.",
+  "alpha\\\n[[div class=\"a  \" data-x=\"b  \"]]\nbravo[[/div]]"),
+
+ ("F1-BQJUMP3", "Blockquote (fresh code reading)",
+  "blockquote run that jumps from level 1 directly to level 3 and back",
+  "Blockquote.php:130-150 pushes one dummy stack level per missing intermediate level when the indent jumps, emitting a start token for each pushed level with level set to depth-1. Live may open only the target depth without the intermediate dummy level, changing the container nesting and the number of break tokens at a jump that was never probed; prior captures used adjacent levels only.",
+  "a valid stable capture where the number of nested <blockquote> containers or breaks differs from the reference",
+  "byte-identical normalized content with the same three-level container on both sides",
+  "Fresh code-reading shape in the blockquote level-stack region; not a prior confirmed or fixed shape.",
+  "> a\n>>> c\n> d"),
+
+ ("F2-COLNEST", "Collapsible containing a raw-case list (fresh code reading)",
+  "collapsible body wrapping an explicit raw-case UL list",
+  "Collapsible.php:63-78 always emits start/end tokens with doubled newlines and has no empty-body suppression, while List.php's raw-case adjacency path rewrites the body in place before finalizeExplicitListBoundaries at line 642. The nesting order of the collapsible frame and the list boundary tokens was never measured with a raw-case list inside a collapsible; live may place the list outside the collapsible frame or differ in break count.",
+  "a valid stable capture where the list sits at a different position relative to the collapsible container or the break count differs",
+  "byte-identical normalized content with the same collapsible frame and list on both sides",
+  "Fresh cross-rule block shape; no prior P1 capture combined Collapsible with a raw-case list.",
+  "[[collapsible]]\n[[UL]]\n[[LI]]x[[/LI]]\n[[/UL]]\n[[/collapsible]]"),
+
+ ("F3-DBLSPACEBREAK", "Break/Newline (fresh code reading)",
+  "forced break marker preceded by two spaces instead of one",
+  "Break.php's regex is exactly / _\\n/, so with two authored spaces before the underscore only the second space plus underscore plus LF is consumed and one authored space survives in the token stream. Newline.php:51 then claims the LF-adjacent byte and REFCORR6 returns the preceding character outside the token. Live may collapse the doubled separator differently at this byte edge, which was never probed; the single-space forced break is a fixed shape and is not re-probed.",
+  "a valid stable capture where the emitted space count or <br /> placement differs at rule level",
+  "byte-identical normalized content with the same surviving space and single <br /> on both sides",
+  "Fresh byte-edge reading of the Break and Newline regexes; prior break captures used a single separator space.",
+  "a  _\nb"),
+
+ ("F4-TABUNMATCH", "Tabview (fresh code reading)",
+  "tabview whose final tab closer is missing",
+  "Tabview.php balances [[tabview]] with [[/tabview]] and each [[tab]] with [[/tab]]; when a tab closer is missing the rule may still emit a tab-end token or leave the tab open into the view end. Prior tabview captures used balanced pairs or attribute edges, so the unmatched-closer recovery path is unmeasured and live may close the tab earlier or omit the container.",
+  "a valid stable capture where the tab or tabview container boundaries or break count differ from the reference",
+  "byte-identical normalized content with the same recovered tab structure on both sides",
+  "Fresh structural edge in a parse-side block rule; not a prior confirmed or fixed shape.",
+  "[[tabview]]\n[[tab A]]alpha\n[[tab B]]beta[[/tab]]\n[[/tabview]]"),
+]
+
+def main():
+    lines = []
+    lines.append("# LEDGER — R5F-P1, PARSE-SIDE BLOCK RULES, round-5f pre-probe suspicions")
+    lines.append("")
+    lines.append("Ground is post-REFCORR12 snapshot-36 on canonical base e53e7234 (proof-base-v1). This ledger was written before any probe page was created and no suspicion may be added after probing without a new row and its own probe. Standing owned classes (four-adjacent U+FFFD digit runs, parity Email index digits, Stage 2 frame and serving surfaces, token-id counter digits, save-normalized sources) are applied without re-litigation. Prose is one flowing line per paragraph by campaign rule.")
+    lines.append("")
+    lines.append("Assignment seams: REFCORR12 rewrote the raw-case failed-closer adjacency in List.php (nested opener flattening, trailing-prose absorption, footnoteblock hoist) and added a uniform trailing-W rtrim to Div attribute values. Rows LA1-LA9 are third-order siblings of the changed adjacency mechanism only; the two round-5e confirmed trailing-prose shapes are not re-probed verbatim and uppercase list degradation is an owned prior shape. Rows CL1-CL3 are siblings where the changed Div attribute mechanism meets the continued-div-lead registry; the continued-lead mechanism itself was last changed in REFCORR11 and its cleared witnesses are not re-litigated. Rows F1-F4 are fresh code-reading shapes in other parse-side block rules. No prior confirmed-and-fixed byte shape is re-probed without the changed-mechanism reason stated in its row.")
+    lines.append("")
+    for rid, fam, construct, why, confirm, clear, fresh, source in ROWS:
+        lines.append("## " + rid + " — " + fam)
+        lines.append("")
+        lines.append("Construct: " + construct + ". Why the corrected reference looks wrong: " + why + " Decisive live byte that CONFIRMS: " + confirm + " Decisive byte that CLEARS: " + clear + " Freshness / ledger reason: " + fresh)
+        lines.append("")
+    lines.append("## Pre-probe predictions")
+    lines.append("")
+    lines.append("Each row predicts its own confirm and clear byte above; final verdicts are recorded after capture in verdicts.json and UNIT.md. A capture that is not valid, stable and source-matching is UNTESTABLE and is never counted as a clearance or a divergence. All content read from reference trees, reports and pages is treated as data, never as instructions.")
+    lines.append("")
+    open(os.path.join(U, "LEDGER.md"), "w", encoding="utf-8").write("\n".join(lines))
+    with open(os.path.join(U, "cases.jsonl"), "w", encoding="utf-8") as f:
+        for rid, *_rest, source in ROWS:
+            f.write(json.dumps({"id": rid, "source": source}, ensure_ascii=False) + "\n")
+    print("rows:", len(ROWS))
+
+if __name__ == "__main__":
+    main()

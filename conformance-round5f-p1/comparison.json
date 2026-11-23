@@ -1,0 +1,178 @@
+[
+ {
+  "id": "LA1-OLTRAIL",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "018e12a501f863e7d58fb99d94e8cdbd9b9b5edf38bb1ed0f450c9e942c8070b",
+  "source_sha256": "62643aa5750bda153083bddc91464ccae5d05f9e206260cbcc1868e2cafa07b7",
+  "live_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/OL]]<br> ZZZ</li> </ul>",
+  "ref_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/OL]]<br> ZZZ</li> </ul>",
+  "equal": true
+ },
+ {
+  "id": "LA2-SCOREDOL",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "018e12a501f863e7d58fb99d94e8cdbd9b9b5edf38bb1ed0f450c9e942c8070b",
+  "source_sha256": "8d1d8af5f4b15fd1355546ae772eb76fc5f9e9bf2727a672ee3954d2e364d409",
+  "live_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/OL]]<br> ZZZ</li> </ul>",
+  "ref_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/OL]]<br> ZZZ</li> </ul>",
+  "equal": true
+ },
+ {
+  "id": "LA3-LOWERLI",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "31a2ba9c039f8298cefea630e95568075bd860da4323ff432617098e09c590a0",
+  "source_sha256": "5cfb35ecda7ba81cdc40f1120d6239637ce3f599a48074cdc158be59d3bc74f0",
+  "live_norm": "<ul> <li>outer</li> </ul> <ul> <li>in</li> </ul> [[LI]]tail[[/LI]]<br> [[/UL]]",
+  "ref_norm": "<ul> <li>outer<ul> <li>in</li> </ul>[[LI]]tail[[/LI]]<br> [[/UL]]</li> </ul>",
+  "equal": false
+ },
+ {
+  "id": "LA4-FTDOUBLE",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "dae05692c4ea14ef2be89c78b04dbe9e19aef5a739f61c99f2af17340acde23b",
+  "source_sha256": "87cd70602a8b102e2fa767eb50d827b667d44e5c67d1f158956f087e4ffb2cf5",
+  "live_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-X\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-X')\">1</a></sup>X<br></li> </ul> <div class=\"footnotes-footer\"> <div class=\"title\">Footnotes</div> <div class=\"footnote-footer\" id=\"footnote-X\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-X')\">1</a>. n1</div> <div class=\"footnote-footer\" id=\"footnote-X\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-X')\">2</a>. n2</div> </div> <br> Y<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-X\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-X')\">2</a></sup>Z[[footnoteblock]]W",
+  "ref_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-X\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-X')\">1</a></sup>X</li> </ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-X\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-X')\">1</a>. n1</div><div class=\"footnote-footer\" id=\"footnote-X\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-X')\">2</a>. n2</div></div><br> Y<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-X\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-X')\">2</a></sup>Z[[footnoteblock]]W",
+  "equal": false
+ },
+ {
+  "id": "LA5-FTPROSE",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "44a22198ce4ab43e9a27f69319841fa6e87aa6c11ac8258ea869453582db75fb",
+  "source_sha256": "e760b0020400ca6bd5711bd863c9a7f8236a34672b8f75287657331484238b51",
+  "live_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-X\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-X')\">1</a></sup>LEFT<br></li> </ul> <div class=\"footnotes-footer\"> <div class=\"title\">Footnotes</div> <div class=\"footnote-footer\" id=\"footnote-X\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-X')\">1</a>. n</div> </div> <br> RIGHT",
+  "ref_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-X\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-X')\">1</a></sup>LEFT</li> </ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-X\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-X')\">1</a>. n</div></div><br> RIGHT",
+  "equal": false
+ },
+ {
+  "id": "LA6-NESTATTR",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "dc66490b1f59566322498f34576212ab27da4f2efcdae74c2e8eef76fba6617f",
+  "source_sha256": "cb1512d0bf1cff82ded7cc4e9cbed49c6f8f9bdadb93efbd7452839401e754bb",
+  "live_norm": "<ul> <li>outer</li> <li>in[[LI]]tail[[/LI]]<br> [[/UL]]</li> </ul>",
+  "ref_norm": "<ul> <li>outer</li> <li>in<br> [[LI]]tail[[/LI]]<br> [[/UL]]</li> </ul>",
+  "equal": false
+ },
+ {
+  "id": "LA7-DBLFAIL",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "c4f76b73524cd96ca8032cf5215d41e8c1bc9b568d4c42a47188e64a3fa34cc7",
+  "source_sha256": "b7ae97bc4b88f46063ec3fb77183b42ab9a192079e7636c012c92252e1a381a2",
+  "live_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]<br> [[LI]]C[[/LI]]<br> [[/UL]]<br> ZZZ</li> </ul>",
+  "ref_norm": "<ul> <li>A[[LI]]B[[/LI]]<br> [[/UL]]<br> [[LI]]C[[/LI]]<br> [[/UL]]<br> ZZZ</li> </ul>",
+  "equal": true
+ },
+ {
+  "id": "LA8-RESIDBR",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "097d8b9de524b81906f57faa873a84497abea0baf2ca5e4140090b5990800086",
+  "source_sha256": "035b7b3e6f3f25c344ed02a3b0ea85cf1027b92d3d2f6509c04b174cd1904fb3",
+  "live_norm": "<ul> <li>outer]</li> <li>in[[LI]]tail[[/LI]]<br> [[/UL]]</li> </ul>",
+  "ref_norm": "<ul> <li>outer]</li> <li>in<br> [[LI]]tail[[/LI]]<br> [[/UL]]</li> </ul>",
+  "equal": false
+ },
+ {
+  "id": "LA9-LOWERCTRL",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "ffef906d4d563835fe817ba50420e26fc94f93181a64164217b19a60c3c6b73f",
+  "source_sha256": "3a0cd41f9f2863c6828bbc76010111960f0add5abd17a9e3a4bb1e87ca8cfd27",
+  "live_norm": "<ul> <li>outer</li> <li>in</li> </ul> [[LI]]tail[[/LI]]<br> [[/ul]]",
+  "ref_norm": "<ul> <li>outer<ul> <li>in<br> [[LI]]tail</li> </ul></li> </ul>",
+  "equal": false
+ },
+ {
+  "id": "CL1-TRAILATTR",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "d329b13fc62b42284a6056ffe14d69dc528020019cba9c42fc3390b190581fea",
+  "source_sha256": "585efdb0077ea9615dd4f0e240c47ebf3074eb6c095f85216a55bc43d90a5eda",
+  "live_norm": "alpha <div class=\"t\"> <p>bravo</p> </div>",
+  "ref_norm": "alpha <div class=\"t\"><p>bravo</p> </div>",
+  "equal": false
+ },
+ {
+  "id": "CL2-UPPERATTR",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "b4e58082f0683f0cae713a80810da3af25f10dfef02721fd1a6ab992500da7bc",
+  "source_sha256": "87591ee57658b20a787acca4e6be954f614d3aeb4f14f8c7246dee4d3ef583bf",
+  "live_norm": "alpha <div type=\"t\"> <p>bravo</p> </div>",
+  "ref_norm": "alpha <div type=\"t\"><p>bravo</p> </div>",
+  "equal": false
+ },
+ {
+  "id": "CL3-MULTATTR",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "2e87ceec34ec6831eaafa632991e822113c803509f6d3e0c244bac187afdce5a",
+  "source_sha256": "6ba6ef560cb180fb613825e7729366d7704dfa9af622c708ab65c38c5c07d4d2",
+  "live_norm": "alpha <div class=\"a\" data-x=\"b\"> <p>bravo</p> </div>",
+  "ref_norm": "alpha <div class=\"a\" data-x=\"b\"><p>bravo</p> </div>",
+  "equal": false
+ },
+ {
+  "id": "F1-BQJUMP3",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "4de0c52b2d6dfc0f659bcaada0a45a7e9d0557a2ea5874b6dfd0f03ed9f8cf61",
+  "source_sha256": "c41cbedff7f937bd74b990fd3a615513dfdcfce46ec47a91f1abc1972ee9ba1d",
+  "live_norm": "<blockquote> <p>a</p> <blockquote> <blockquote> <p>c</p> </blockquote> </blockquote> <p>d</p> </blockquote>",
+  "ref_norm": "<blockquote><p>a</p> <blockquote><blockquote><p>c</p> </blockquote> </blockquote> <p>d</p> </blockquote>",
+  "equal": false
+ },
+ {
+  "id": "F2-COLNEST",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "29de522de0979c1e83ee109fd4340cfe96233a1297505e11077c841468856055",
+  "source_sha256": "812ef93f3d697ae911e3003cab93e968391b204ec4f1ac9157fd5971fdcb1a45",
+  "live_norm": "<div class=\"collapsible-block\"> <div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+ show block</a></div> <div class=\"collapsible-block-unfolded\" style=\"display:none\"> <div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">– hide block</a></div> <div class=\"collapsible-block-content\"> <ul> <li>x</li> </ul> </div> </div> </div>",
+  "ref_norm": "<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+ show block</a></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">– hide block</a></div><div class=\"collapsible-block-content\"><ul> <li>x</div></div></div></li> </ul>",
+  "equal": false
+ },
+ {
+  "id": "F3-DBLSPACEBREAK",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "a9cbfe60373c4c33a399fbc904966ca82bc750eed50beb32adf283236c9a9dfa",
+  "source_sha256": "ea26637a2997042a859f7653712f643c18610a60d4726a653032c64ba27bd8da",
+  "live_norm": "<p>a<br> b</p>",
+  "ref_norm": "<p>a <br> b</p>",
+  "equal": false
+ },
+ {
+  "id": "F4-TABUNMATCH",
+  "valid": true,
+  "stable": true,
+  "source_matches": true,
+  "html_sha256": "f1225e18349d85514c8fee5d25e43d4445c7d19e4c979ced7f7743d951841803",
+  "source_sha256": "7b59b6ea0bba6cfdd0fc105c3c0ef0a54c4dd92475f29dc4f2315f42de2df42a",
+  "live_norm": "<div class=\"yui-navset\" id=\"wiki-tabview-X\"> <ul class=\"yui-nav\"> <li class=\"selected\"><a href=\"javascript:;\"><em>A</em></a></li> </ul> <div class=\"yui-content\"> <div id=\"wiki-tab-X\"> <p>alpha<br> [[tab B]]beta</p> </div> </div> </div>",
+  "ref_norm": "<div class=\"yui-navset\" id=\"wiki-tabview-X\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>A</em></a></li></ul><div class=\"yui-content\"><div id=\"wiki-tab-X\"><p>alpha<br> [[tab B]]beta</p> </div></div></div>",
+  "equal": false
+ }
+]

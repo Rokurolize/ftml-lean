@@ -1,0 +1,16 @@
+{"id":"p3f-01-img-style-trailing","output":"<img src=\"\/local--files\/\/IMG.png\" style=\"color:red \" alt=\"IMG.png\" class=\"image\" \/>"}
+{"id":"p3f-02-img-size-trailing","output":"<img src=\"\/local--files\/\/IMG.png\" alt=\"IMG.png\" class=\"image\" \/>"}
+{"id":"p3f-03-img-height-trailing","output":"<img src=\"\/local--files\/\/IMG.png\" height=\"20 \" alt=\"IMG.png\" class=\"image\" \/>"}
+{"id":"p3f-04-img-width-trailing-tab","output":"<img src=\"\/local--files\/\/IMG.png\" width=\"10\" alt=\"IMG.png\" class=\"image\" \/>"}
+{"id":"p3f-05-img-class-mixed-run","output":"<img src=\"\/local--files\/\/IMG.png\" class=\"thumb\" alt=\"IMG.png\" \/>"}
+{"id":"p3f-06-img-width-whitespace-only","output":"<img src=\"\/local--files\/\/IMG.png\" width=\"\" alt=\"IMG.png\" class=\"image\" \/>"}
+{"id":"p3f-07-img-title-leading-space","output":"<img src=\"\/local--files\/\/IMG.png\" title=\" T\" alt=\"IMG.png\" class=\"image\" \/>"}
+{"id":"p3f-08-img-mixed-attrs-trailing","output":"<img src=\"\/local--files\/\/IMG.png\" title=\"T \" class=\"thumb\" width=\"10\" alt=\"IMG.png\" \/>"}
+{"id":"p3f-09-tableadv-data-dotted","output":"<table data-foo.bar-baz_9=\"v\">\n<tr>\n<td>X<\/td>\n<\/tr>\n<\/table>"}
+{"id":"p3f-10-tableadv-data-empty-suffix","output":"<table data-=\"v\">\n<tr>\n<td>X<\/td>\n<\/tr>\n<\/table>"}
+{"id":"p3f-11-raw-bare-8run","output":"<p>@@@@<\/p>\n\n"}
+{"id":"p3f-12-raw-closer-6","output":"<p>ZQ@@<\/p>\n\n"}
+{"id":"p3f-13-module-inline-nested","output":"<p>[[module a]][[module b]]x[[\/module]][[\/module]]<\/p>\n\n"}
+{"id":"p3f-14-include-leading-space","output":"<div class=\"error-block\"><p>Included page &quot;muse-probe-round5f-p3-t1&quot; does not exist (<a href=\"\/muse-probe-round5f-p3-t1\/edit\/true\">create it now<\/a>)<\/p>\n\n<\/div>"}
+{"id":"p3f-15-include-prefix-lookalike","output":"<div class=\"error-block\"><p>Included page &quot;muse-probe-round5f-p3-t2&quot; does not exist (<a href=\"\/muse-probe-round5f-p3-t2\/edit\/true\">create it now<\/a>)<\/p>\n\n<\/div>"}
+{"id":"p3f-16-include-raw-placeholder","output":"<div class=\"error-block\"><p>Included page &quot;muse-probe-round5f-p3-t3&quot; does not exist (<a href=\"\/muse-probe-round5f-p3-t3\/edit\/true\">create it now<\/a>)<\/p>\n\n<\/div>"}

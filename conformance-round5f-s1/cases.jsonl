@@ -1,0 +1,18 @@
+{"id": "s01-fl-astral-cf-lead", "source": "[[[\ud834\udd73_default:x]]]"}
+{"id": "s02-fl-tag-cf-lead", "source": "[[[\udb40\udc20_default:x]]]"}
+{"id": "s03-fl-ufff9-cf-lead", "source": "[[[\ufff9_default:x]]]"}
+{"id": "s04-fl-cf-route-described", "source": "[[[\u200b_default:x/#/sec | L]]]"}
+{"id": "s05-fl-cf-multihash", "source": "[[[\u200cfoo#a#b]]]"}
+{"id": "s06-fl-u2028-lead", "source": "[[[\u2028_default:x]]]"}
+{"id": "s07-div-attr-esc", "source": "[[div type=\"A\u001bB\"]]\nbody\n[[/div]]"}
+{"id": "s08-div-attr-del", "source": "[[div data-x=\"A\u007fB\"]]\nbody\n[[/div]]"}
+{"id": "s09-span-data-trailws", "source": "[[span data-x=\"  x  \"]]b[[/span]]"}
+{"id": "s10-span-class-trailws", "source": "[[span class=\"  c  \"]]b[[/span]]"}
+{"id": "s11-span-ph-data-trailws", "source": "[[span data-x=\"[[size 12px]]q[[/size]]  \"]]b[[/span]]"}
+{"id": "s12-image-title-esc", "source": "[[image IMG.png title=\"T\u001bZ\"]]cap"}
+{"id": "s13-image-class-ff", "source": "[[image IMG.png class=\"thi\fck\"]]cap"}
+{"id": "s14-list-trail-fl-cf", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[[\u200c_default:x]]]\n[[LI]]B[[/LI]]\n[[/UL]]"}
+{"id": "s15-list-trail-esc-footnote", "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]E\u001bF[[/footnote]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnoteblock]]"}
+{"id": "s16-list-lower-nested-rawcase", "source": "[[UL]]\n[[LI]]outer[[ul]]\n[[LI]]in[[/LI]]\n[[/ul]][[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]"}
+{"id": "s17-bibitem-esc", "source": "[[bibliography]]\n[[bibitem k]]A\u001bB[[/bibitem]]\n[[/bibliography]]\n[[bibcite k]]"}
+{"id": "s18-footnote-nel", "source": "[[footnote]]A\u0085B[[/footnote]][[footnoteblock]]"}

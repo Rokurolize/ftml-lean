@@ -1,0 +1,162 @@
+{
+ "LA1-OLTRAIL": {
+  "fullname": "muse-probe-round5f-p1-la1-oltrail",
+  "html": "<ul>\n<li>A[[LI]]B[[/LI]]<br />\n[[/OL]]<br />\nZZZ</li>\n</ul>",
+  "html_sha256": "018e12a501f863e7d58fb99d94e8cdbd9b9b5edf38bb1ed0f450c9e942c8070b",
+  "source": "[[OL]]\n[[LI]]A[[/LI]]\n[[/OL]]\n[[LI]]B[[/LI]]\n[[/OL]]\nZZZ",
+  "source_sha256": "62643aa5750bda153083bddc91464ccae5d05f9e206260cbcc1868e2cafa07b7",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "LA2-SCOREDOL": {
+  "fullname": "muse-probe-round5f-p1-la2-scoredol",
+  "html": "<ul>\n<li>A[[LI]]B[[/LI]]<br />\n[[/OL]]<br />\nZZZ</li>\n</ul>",
+  "html_sha256": "018e12a501f863e7d58fb99d94e8cdbd9b9b5edf38bb1ed0f450c9e942c8070b",
+  "source": "[[OL_]]\n[[LI]]A[[/LI]]\n[[/OL]]\n[[LI]]B[[/LI]]\n[[/OL]]\nZZZ",
+  "source_sha256": "8d1d8af5f4b15fd1355546ae772eb76fc5f9e9bf2727a672ee3954d2e364d409",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "LA3-LOWERLI": {
+  "fullname": "muse-probe-round5f-p1-la3-lowerli",
+  "html": "<ul>\n<li>outer</li>\n</ul>\n<ul>\n<li>in</li>\n</ul>\n[[LI]]tail[[/LI]]<br />\n[[/UL]]",
+  "html_sha256": "31a2ba9c039f8298cefea630e95568075bd860da4323ff432617098e09c590a0",
+  "source": "[[UL]]\n[[LI]]outer[[ul]]\n[[li]]in[[/li]]\n[[/ul]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "source_sha256": "5cfb35ecda7ba81cdc40f1120d6239637ce3f599a48074cdc158be59d3bc74f0",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "LA4-FTDOUBLE": {
+  "fullname": "muse-probe-round5f-p1-la4-ftdouble",
+  "html": "<ul>\n<li>A[[LI]]B[[/LI]]<br />\n[[/UL]]<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>X<br /></li>\n</ul>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. n1</div>\n<div class=\"footnote-footer\" id=\"footnote-2\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-2')\">2</a>. n2</div>\n</div>\n<br />\nY<sup class=\"footnoteref\"><a id=\"footnoteref-2\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-2')\">2</a></sup>Z[[footnoteblock]]W",
+  "html_sha256": "dae05692c4ea14ef2be89c78b04dbe9e19aef5a739f61c99f2af17340acde23b",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnote]]n1[[/footnote]]X[[footnoteblock]]Y[[footnote]]n2[[/footnote]]Z[[footnoteblock]]W",
+  "source_sha256": "87cd70602a8b102e2fa767eb50d827b667d44e5c67d1f158956f087e4ffb2cf5",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "LA5-FTPROSE": {
+  "fullname": "muse-probe-round5f-p1-la5-ftprose",
+  "html": "<ul>\n<li>A[[LI]]B[[/LI]]<br />\n[[/UL]]<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>LEFT<br /></li>\n</ul>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. n</div>\n</div>\n<br />\nRIGHT",
+  "html_sha256": "44a22198ce4ab43e9a27f69319841fa6e87aa6c11ac8258ea869453582db75fb",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnote]]n[[/footnote]]LEFT[[footnoteblock]]RIGHT",
+  "source_sha256": "e760b0020400ca6bd5711bd863c9a7f8236a34672b8f75287657331484238b51",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "LA6-NESTATTR": {
+  "fullname": "muse-probe-round5f-p1-la6-nestattr",
+  "html": "<ul>\n<li>outer</li>\n<li>in[[LI]]tail[[/LI]]<br />\n[[/UL]]</li>\n</ul>",
+  "html_sha256": "dc66490b1f59566322498f34576212ab27da4f2efcdae74c2e8eef76fba6617f",
+  "source": "[[UL]]\n[[LI]]outer[[UL class=\"c\"]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "source_sha256": "cb1512d0bf1cff82ded7cc4e9cbed49c6f8f9bdadb93efbd7452839401e754bb",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "LA7-DBLFAIL": {
+  "fullname": "muse-probe-round5f-p1-la7-dblfail",
+  "html": "<ul>\n<li>A[[LI]]B[[/LI]]<br />\n[[/UL]]<br />\n[[LI]]C[[/LI]]<br />\n[[/UL]]<br />\nZZZ</li>\n</ul>",
+  "html_sha256": "c4f76b73524cd96ca8032cf5215d41e8c1bc9b568d4c42a47188e64a3fa34cc7",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[LI]]C[[/LI]]\n[[/UL]]\nZZZ",
+  "source_sha256": "b7ae97bc4b88f46063ec3fb77183b42ab9a192079e7636c012c92252e1a381a2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "LA8-RESIDBR": {
+  "fullname": "muse-probe-round5f-p1-la8-residbr",
+  "html": "<ul>\n<li>outer]</li>\n<li>in[[LI]]tail[[/LI]]<br />\n[[/UL]]</li>\n</ul>",
+  "html_sha256": "097d8b9de524b81906f57faa873a84497abea0baf2ca5e4140090b5990800086",
+  "source": "[[UL]]\n[[LI]]outer[[UL]]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "source_sha256": "035b7b3e6f3f25c344ed02a3b0ea85cf1027b92d3d2f6509c04b174cd1904fb3",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "LA9-LOWERCTRL": {
+  "fullname": "muse-probe-round5f-p1-la9-lowerctrl",
+  "html": "<ul>\n<li>outer</li>\n<li>in</li>\n</ul>\n[[LI]]tail[[/LI]]<br />\n[[/ul]]",
+  "html_sha256": "ffef906d4d563835fe817ba50420e26fc94f93181a64164217b19a60c3c6b73f",
+  "source": "[[ul]]\n[[LI]]outer[[UL]]\n[[LI]]in[[/LI]]\n[[/UL]]\n[[/LI]]\n[[/ul]]\n[[LI]]tail[[/LI]]\n[[/ul]]",
+  "source_sha256": "3a0cd41f9f2863c6828bbc76010111960f0add5abd17a9e3a4bb1e87ca8cfd27",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "CL1-TRAILATTR": {
+  "fullname": "muse-probe-round5f-p1-cl1-trailattr",
+  "html": "alpha\n<div class=\"t\">\n<p>bravo</p>\n</div>",
+  "html_sha256": "d329b13fc62b42284a6056ffe14d69dc528020019cba9c42fc3390b190581fea",
+  "source": "alpha\\\n[[div class=\"t  \"]]\nbravo[[/div]]",
+  "source_sha256": "585efdb0077ea9615dd4f0e240c47ebf3074eb6c095f85216a55bc43d90a5eda",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "CL2-UPPERATTR": {
+  "fullname": "muse-probe-round5f-p1-cl2-upperattr",
+  "html": "alpha\n<div type=\"t\">\n<p>bravo</p>\n</div>",
+  "html_sha256": "b4e58082f0683f0cae713a80810da3af25f10dfef02721fd1a6ab992500da7bc",
+  "source": "alpha\\\n[[DIV type=\"  t  \"]]\nbravo[[/DIV]]",
+  "source_sha256": "87591ee57658b20a787acca4e6be954f614d3aeb4f14f8c7246dee4d3ef583bf",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "CL3-MULTATTR": {
+  "fullname": "muse-probe-round5f-p1-cl3-multattr",
+  "html": "alpha\n<div class=\"a\" data-x=\"b\">\n<p>bravo</p>\n</div>",
+  "html_sha256": "2e87ceec34ec6831eaafa632991e822113c803509f6d3e0c244bac187afdce5a",
+  "source": "alpha\\\n[[div class=\"a  \" data-x=\"b  \"]]\nbravo[[/div]]",
+  "source_sha256": "6ba6ef560cb180fb613825e7729366d7704dfa9af622c708ab65c38c5c07d4d2",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "F1-BQJUMP3": {
+  "fullname": "muse-probe-round5f-p1-f1-bqjump3",
+  "html": "<blockquote>\n<p>a</p>\n<blockquote>\n<blockquote>\n<p>c</p>\n</blockquote>\n</blockquote>\n<p>d</p>\n</blockquote>",
+  "html_sha256": "4de0c52b2d6dfc0f659bcaada0a45a7e9d0557a2ea5874b6dfd0f03ed9f8cf61",
+  "source": "> a\n>>> c\n> d",
+  "source_sha256": "c41cbedff7f937bd74b990fd3a615513dfdcfce46ec47a91f1abc1972ee9ba1d",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "F2-COLNEST": {
+  "fullname": "muse-probe-round5f-p1-f2-colnest",
+  "html": "<div class=\"collapsible-block\">\n<div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block</a></div>\n<div class=\"collapsible-block-unfolded\" style=\"display:none\">\n<div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">–&nbsp;hide&nbsp;block</a></div>\n<div class=\"collapsible-block-content\">\n<ul>\n<li>x</li>\n</ul>\n</div>\n</div>\n</div>",
+  "html_sha256": "29de522de0979c1e83ee109fd4340cfe96233a1297505e11077c841468856055",
+  "source": "[[collapsible]]\n[[UL]]\n[[LI]]x[[/LI]]\n[[/UL]]\n[[/collapsible]]",
+  "source_sha256": "812ef93f3d697ae911e3003cab93e968391b204ec4f1ac9157fd5971fdcb1a45",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "F3-DBLSPACEBREAK": {
+  "fullname": "muse-probe-round5f-p1-f3-dblspacebreak",
+  "html": "<p>a<br />\nb</p>",
+  "html_sha256": "a9cbfe60373c4c33a399fbc904966ca82bc750eed50beb32adf283236c9a9dfa",
+  "source": "a  _\nb",
+  "source_sha256": "ea26637a2997042a859f7653712f643c18610a60d4726a653032c64ba27bd8da",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ },
+ "F4-TABUNMATCH": {
+  "fullname": "muse-probe-round5f-p1-f4-tabunmatch",
+  "html": "<script type=\"text/javascript\" src=\"https://d3g0gp89917ko0.cloudfront.net/v--1e049c54eb7c/common--javascript/yahooui/tabview-min.js\"></script>\n<div id=\"wiki-tabview-8841b792f31d4af4b20e953e8d868082\" class=\"yui-navset\">\n<ul class=\"yui-nav\">\n<li class=\"selected\"><a href=\"javascript:;\"><em>A</em></a></li>\n</ul>\n<div class=\"yui-content\">\n<div id=\"wiki-tab-0-0\">\n<p>alpha<br />\n[[tab B]]beta</p>\n</div>\n</div>\n</div>\n<script type=\"text/javascript\">\n//<![CDATA[\nOZONE.dom.onDomReady(function(){\n        var tabView8841b792f31d4af4b20e953e8d868082 = new YAHOO.widget.TabView('wiki-tabview-8841b792f31d4af4b20e953e8d868082');\n                }, \"dummy-ondomready-block\");\n        \n//]]>\n</script>",
+  "html_sha256": "f1225e18349d85514c8fee5d25e43d4445c7d19e4c979ced7f7743d951841803",
+  "source": "[[tabview]]\n[[tab A]]alpha\n[[tab B]]beta[[/tab]]\n[[/tabview]]",
+  "source_sha256": "7b59b6ea0bba6cfdd0fc105c3c0ef0a54c4dd92475f29dc4f2315f42de2df42a",
+  "saved_source_matches": true,
+  "stable": true,
+  "valid": true
+ }
+}

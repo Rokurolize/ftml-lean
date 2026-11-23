@@ -1,0 +1,154 @@
+{
+ "summary": {
+  "agree": 14,
+  "differ": 2,
+  "invalid": 0,
+  "missing": 0
+ },
+ "rows": [
+  {
+   "id": "p3f-01-img-style-trailing",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5f-p3-p3f-01-img-style-trailing",
+   "reference": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" style=\"color:red \">",
+   "live": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" style=\"color:red\">",
+   "live_sha256": "cef17556e1be0ca780737852278704c4bff4dff81ff78e6b635a351cd023ebae",
+   "source": "[[image IMG.png style=\"color:red \"]]"
+  },
+  {
+   "id": "p3f-02-img-size-trailing",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5f-p3-p3f-02-img-size-trailing",
+   "reference": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\">",
+   "live": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\">",
+   "live_sha256": "661f5ae7911567ba5e9d1ad8b62b870feae8b44ecd20ddf73825fd34f28e02a9",
+   "source": "[[image IMG.png size=\"50% \"]]"
+  },
+  {
+   "id": "p3f-03-img-height-trailing",
+   "verdict": "DIFFER",
+   "capture_id": "muse-probe-round5f-p3-p3f-03-img-height-trailing",
+   "reference": "<img alt=\"IMG.png\" class=\"image\" height=\"20 \" src=\"/local--files//IMG.png\">",
+   "live": "<img alt=\"IMG.png\" class=\"image\" height=\"20\" src=\"/local--files//IMG.png\">",
+   "live_sha256": "e2ebef59b82f99472391ce9deba9b8d0a051669e4acf99b47d4c63fd9fe048b5",
+   "source": "[[image IMG.png height=\"20 \"]]"
+  },
+  {
+   "id": "p3f-04-img-width-trailing-tab",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5f-p3-p3f-04-img-width-trailing-tab",
+   "reference": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" width=\"10\">",
+   "live": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" width=\"10\">",
+   "live_sha256": "fa484a5f18fe346e35482e2742e4ed100d2bf9aea57e36fa327d8bf10058875b",
+   "source": "[[image IMG.png width=\"10\t\"]]"
+  },
+  {
+   "id": "p3f-05-img-class-mixed-run",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5f-p3-p3f-05-img-class-mixed-run",
+   "reference": "<img alt=\"IMG.png\" class=\"thumb\" src=\"/local--files//IMG.png\">",
+   "live": "<img alt=\"IMG.png\" class=\"thumb\" src=\"/local--files//IMG.png\">",
+   "live_sha256": "457ff1f61829a2740ad5f37176708dd6fc134ba7a88d511319ce62ba0c0abe56",
+   "source": "[[image IMG.png class=\"thumb \t \"]]"
+  },
+  {
+   "id": "p3f-06-img-width-whitespace-only",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5f-p3-p3f-06-img-width-whitespace-only",
+   "reference": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" width>",
+   "live": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" width>",
+   "live_sha256": "6662eb780913318ae8fcdd0e619013051d0b9760e1bc9659f5f6b296d2f089ee",
+   "source": "[[image IMG.png width=\"   \"]]"
+  },
+  {
+   "id": "p3f-07-img-title-leading-space",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5f-p3-p3f-07-img-title-leading-space",
+   "reference": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" title=\" T\">",
+   "live": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" title=\" T\">",
+   "live_sha256": "7732222c812c1999c630430c27a69e92ffebdfb117753a3ec10d4818510eeed8",
+   "source": "[[image IMG.png title=\" T\"]]"
+  },
+  {
+   "id": "p3f-08-img-mixed-attrs-trailing",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5f-p3-p3f-08-img-mixed-attrs-trailing",
+   "reference": "<img alt=\"IMG.png\" class=\"thumb\" src=\"/local--files//IMG.png\" title=\"T \" width=\"10\">",
+   "live": "<img alt=\"IMG.png\" class=\"thumb\" src=\"/local--files//IMG.png\" title=\"T \" width=\"10\">",
+   "live_sha256": "08f8764589d41a61855fbb5d5c5a64e60476484a9c0dc2606ad1ca8625525245",
+   "source": "[[image IMG.png width=\"10 \" class=\"thumb \" title=\"T \"]]"
+  },
+  {
+   "id": "p3f-09-tableadv-data-dotted",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5f-p3-p3f-09-tableadv-data-dotted",
+   "reference": "<table data-foo.bar-baz_9=\"v\"><tr><td>X</td></tr></table>",
+   "live": "<table data-foo.bar-baz_9=\"v\"><tr><td>X</td></tr></table>",
+   "live_sha256": "aaee061ae1d7d689e07974c5b1ff7f6ed5064df0759754f3a2c4025f1a87db3d",
+   "source": "[[table data-foo.bar-baz_9=\"v\"]]\n[[row]]\n[[cell]]X[[/cell]]\n[[/row]]\n[[/table]]"
+  },
+  {
+   "id": "p3f-10-tableadv-data-empty-suffix",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5f-p3-p3f-10-tableadv-data-empty-suffix",
+   "reference": "<table data-=\"v\"><tr><td>X</td></tr></table>",
+   "live": "<table data-=\"v\"><tr><td>X</td></tr></table>",
+   "live_sha256": "4d245d3654236ae108d5ec7ebda75ada567c344a528a6df0531b3dd1a4e44a68",
+   "source": "[[table data-=\"v\"]]\n[[row]]\n[[cell]]X[[/cell]]\n[[/row]]\n[[/table]]"
+  },
+  {
+   "id": "p3f-11-raw-bare-8run",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5f-p3-p3f-11-raw-bare-8run",
+   "reference": "<p>@@@@</p>",
+   "live": "<p>@@@@</p>",
+   "live_sha256": "d850598159a1ee644e3d80ea7c2eb6e1aa64ee566da4ed18e8f62cde544bbb10",
+   "source": "@@@@@@@@"
+  },
+  {
+   "id": "p3f-12-raw-closer-6",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5f-p3-p3f-12-raw-closer-6",
+   "reference": "<p>ZQ@@</p>",
+   "live": "<p>ZQ@@</p>",
+   "live_sha256": "177007760e16ebf18923a8f002cf3a3d53474fec77c526a439f2ca63855a6a03",
+   "source": "@@@@ZQ@@@@@@"
+  },
+  {
+   "id": "p3f-13-module-inline-nested",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5f-p3-p3f-13-module-inline-nested",
+   "reference": "<p>[[module a]][[module b]]x[[/module]][[/module]]</p>",
+   "live": "<p>[[module a]][[module b]]x[[/module]][[/module]]</p>",
+   "live_sha256": "ea4aa075a951e621a8844fc3c72f6c8311f32a755e6865d1755b40b9adcbad3b",
+   "source": "[[module a]][[module b]]x[[/module]][[/module]]"
+  },
+  {
+   "id": "p3f-14-include-leading-space",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5f-p3-p3f-14-include-leading-space",
+   "reference": "<p>A=X B=X</p>",
+   "live": "<p>A=X B=X</p>",
+   "live_sha256": "a72ff5c95750ae13b9dc21eec27a47f67e663344a135cc1c946154dd7d2adba7",
+   "source": "[[include muse-probe-round5f-p3-t1 | a= X ]]"
+  },
+  {
+   "id": "p3f-15-include-prefix-lookalike",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5f-p3-p3f-15-include-prefix-lookalike",
+   "reference": "<p>Q{$ab}</p>",
+   "live": "<p>Q{$ab}</p>",
+   "live_sha256": "d363b4a5b340fc3ee7451db40409308285ce56dec02b6cebec5a92b463626966",
+   "source": "[[include muse-probe-round5f-p3-t2 | a=Q]]"
+  },
+  {
+   "id": "p3f-16-include-raw-placeholder",
+   "verdict": "AGREE",
+   "capture_id": "muse-probe-round5f-p3-p3f-16-include-raw-placeholder",
+   "reference": "<p><span style=\"white-space: pre-wrap;\">ZZ</span></p>",
+   "live": "<p><span style=\"white-space: pre-wrap;\">ZZ</span></p>",
+   "live_sha256": "41ce3394835682540ab6d22dffda7b8874dd4650805de5d913a750b4d7a64045",
+   "source": "[[include muse-probe-round5f-p3-t3 | a=ZZ]]"
+  }
+ ]
+}

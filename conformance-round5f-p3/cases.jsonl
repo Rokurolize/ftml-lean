@@ -1,0 +1,16 @@
+{"id": "p3f-01-img-style-trailing", "source": "[[image IMG.png style=\"color:red \"]]"}
+{"id": "p3f-02-img-size-trailing", "source": "[[image IMG.png size=\"50% \"]]"}
+{"id": "p3f-03-img-height-trailing", "source": "[[image IMG.png height=\"20 \"]]"}
+{"id": "p3f-04-img-width-trailing-tab", "source": "[[image IMG.png width=\"10\t\"]]"}
+{"id": "p3f-05-img-class-mixed-run", "source": "[[image IMG.png class=\"thumb \t \"]]"}
+{"id": "p3f-06-img-width-whitespace-only", "source": "[[image IMG.png width=\"   \"]]"}
+{"id": "p3f-07-img-title-leading-space", "source": "[[image IMG.png title=\" T\"]]"}
+{"id": "p3f-08-img-mixed-attrs-trailing", "source": "[[image IMG.png width=\"10 \" class=\"thumb \" title=\"T \"]]"}
+{"id": "p3f-09-tableadv-data-dotted", "source": "[[table data-foo.bar-baz_9=\"v\"]]\n[[row]]\n[[cell]]X[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3f-10-tableadv-data-empty-suffix", "source": "[[table data-=\"v\"]]\n[[row]]\n[[cell]]X[[/cell]]\n[[/row]]\n[[/table]]"}
+{"id": "p3f-11-raw-bare-8run", "source": "@@@@@@@@"}
+{"id": "p3f-12-raw-closer-6", "source": "@@@@ZQ@@@@@@"}
+{"id": "p3f-13-module-inline-nested", "source": "[[module a]][[module b]]x[[/module]][[/module]]"}
+{"id": "p3f-14-include-leading-space", "source": "[[include muse-probe-round5f-p3-t1 | a= X ]]"}
+{"id": "p3f-15-include-prefix-lookalike", "source": "[[include muse-probe-round5f-p3-t2 | a=Q]]"}
+{"id": "p3f-16-include-raw-placeholder", "source": "[[include muse-probe-round5f-p3-t3 | a=ZZ]]"}

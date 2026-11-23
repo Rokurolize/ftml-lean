@@ -1,0 +1,815 @@
+[
+ {
+  "id": "s01-fl-astral-cf-lead",
+  "source": "[[[𝅳_default:x]]]",
+  "fullname": "muse-probe-round5f-s1-s01-fl-astral-cf-lead",
+  "live_canon": "<a href=\"/x\">x</a>",
+  "ref_canon": "<a href=\"/x\">x</a>",
+  "live_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "x"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "x"
+  },
+  "live_html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "ref_html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>\n\n",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source_sha256": "a3e870098f4cac82ae3b02327e40b00e50ebce5ca077fc80ad0e315b8eda53a0",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s02-fl-tag-cf-lead",
+  "source": "[[[󠀠_default:x]]]",
+  "fullname": "muse-probe-round5f-s1-s02-fl-tag-cf-lead",
+  "live_canon": "<a href=\"/x\">x</a>",
+  "ref_canon": "<a href=\"/x\">x</a>",
+  "live_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "x"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "x"
+  },
+  "live_html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "ref_html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>\n\n",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source_sha256": "987daf32166518741fa42c597704a171032fbb5a58386bafea6bd99da1230e65",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s03-fl-ufff9-cf-lead",
+  "source": "[[[￹_default:x]]]",
+  "fullname": "muse-probe-round5f-s1-s03-fl-ufff9-cf-lead",
+  "live_canon": "<a href=\"/x\">x</a>",
+  "ref_canon": "<a href=\"/x\">x</a>",
+  "live_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "x"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "x"
+  },
+  "live_html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "ref_html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>\n\n",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source_sha256": "25081c1a7ba9573fc5c6f626d54edc6b116c6d0850f937d4916415fa16c2178d",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s04-fl-cf-route-described",
+  "source": "[[[​_default:x/#/sec | L]]]",
+  "fullname": "muse-probe-round5f-s1-s04-fl-cf-route-described",
+  "live_canon": "<a href=\"/x#/sec\">L</a>",
+  "ref_canon": "<a href=\"/x#/sec\">L</a>",
+  "live_sig": {
+   "hrefs": [
+    "/x#/sec"
+   ],
+   "anchors": [
+    "<a href=\"/x#/sec\">L</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "L"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "/x#/sec"
+   ],
+   "anchors": [
+    "<a href=\"/x#/sec\">L</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "L"
+  },
+  "live_html": "<p><a class=\"newpage\" href=\"/x#/sec\">L</a></p>",
+  "ref_html": "<p><a class=\"newpage\" href=\"/x#/sec\">L</a></p>\n\n",
+  "html_sha256": "b4e39db4c64276cbb4ca802ecd7c5d91e6ec411d0f12819623dfcf5a0a9a50c1",
+  "source_sha256": "862427a68e1907753a888491297d10c94de61a8f985d3d1aa3a0dbc866b44d22",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s05-fl-cf-multihash",
+  "source": "[[[‌foo#a#b]]]",
+  "fullname": "muse-probe-round5f-s1-s05-fl-cf-multihash",
+  "live_canon": "[[[‌foo#a#b]]]",
+  "ref_canon": "[[[‌foo#a#b]]]",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "[[[‌foo#a#b]]]"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "[[[‌foo#a#b]]]"
+  },
+  "live_html": "<p>[[[‌foo#a#b]]]</p>",
+  "ref_html": "<p>[[[‌foo#a#b]]]</p>\n\n",
+  "html_sha256": "7d3702fe0b1e59a4f31b922c53c6d9079b6f546ba128080b348d626be5778ece",
+  "source_sha256": "c1588f3b6f0d7c2a1293033c856689b56c07761e787cdc28e390ceebb15dab60",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s06-fl-u2028-lead",
+  "source": "[[[ _default:x]]]",
+  "fullname": "muse-probe-round5f-s1-s06-fl-u2028-lead",
+  "live_canon": "<a href=\"/x\">x</a>",
+  "ref_canon": "<a href=\"/x\">x</a>",
+  "live_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "x"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "x"
+  },
+  "live_html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>",
+  "ref_html": "<p><a class=\"newpage\" href=\"/x\">x</a></p>\n\n",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source_sha256": "e99f77d672cd6dd6bf8de7269f71eb0517714ffb5b0dae9247d42e2869e6ac1b",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s07-div-attr-esc",
+  "source": "[[div type=\"A\u001bB\"]]\nbody\n[[/div]]",
+  "fullname": "muse-probe-round5f-s1-s07-div-attr-esc",
+  "live_canon": "<div type=\"A\u001bB\"><p>body</p></div>",
+  "ref_canon": "<div type=\"AB\"><p>body</p></div>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div type=\"A\u001bB\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "body"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div type=\"AB\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "body"
+  },
+  "live_html": "<div type=\"A\u001bB\">\n<p>body</p>\n</div>",
+  "ref_html": "<div type=\"AB\"><p>body</p>\n\n</div>",
+  "html_sha256": "d88f3e6ef211544782d1f1bbc6a0babe2a387bd2b5b4638a82ce941694b9739f",
+  "source_sha256": "cfdc75154cd6f2b784d96f85bb5080548c0ac977877516a8a4857745bf95745b",
+  "verdict": "CONFIRMED",
+  "first_diff": 12,
+  "live_context": "<div type=\"A\u001bB\"><p>body</p></div>",
+  "ref_context": "<div type=\"AB\"><p>body</p></div>",
+  "raw_candidate": true,
+  "reason": "rule-level attribute value difference surviving the campaign frame and serving masks",
+  "adjudication": "confirmed reference divergence"
+ },
+ {
+  "id": "s08-div-attr-del",
+  "source": "[[div data-x=\"AB\"]]\nbody\n[[/div]]",
+  "fullname": "muse-probe-round5f-s1-s08-div-attr-del",
+  "live_canon": "<div data-x=\"AB\"><p>body</p></div>",
+  "ref_canon": "<div data-x=\"AB\"><p>body</p></div>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div data-x=\"AB\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "body"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div data-x=\"AB\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "body"
+  },
+  "live_html": "<div data-x=\"AB\">\n<p>body</p>\n</div>",
+  "ref_html": "<div data-x=\"AB\"><p>body</p>\n\n</div>",
+  "html_sha256": "93fad04fe2d3a1a8c110226caee8aec8b51faacdb7d21760f5ffb7844d0a3125",
+  "source_sha256": "cba96d5f52209bee1d8805ca2c7c63f34e7fb08681e2e70a891440d1880ee3a6",
+  "verdict": "CONFIRMED",
+  "first_diff": 14,
+  "live_context": "<div data-x=\"AB\"><p>body</p></div>",
+  "ref_context": "<div data-x=\"AB\"><p>body</p></div>",
+  "raw_candidate": true,
+  "reason": "rule-level attribute value difference surviving the campaign frame and serving masks",
+  "adjudication": "confirmed reference divergence"
+ },
+ {
+  "id": "s09-span-data-trailws",
+  "source": "[[span data-x=\"  x  \"]]b[[/span]]",
+  "fullname": "muse-probe-round5f-s1-s09-span-data-trailws",
+  "live_canon": "<span data-x=\"x\">b</span>",
+  "ref_canon": "<span data-x=\" x \">b</span>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [
+    "<span data-x=\"x\">b</span>"
+   ],
+   "imgs": [],
+   "error": [],
+   "text": "b"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [
+    "<span data-x=\" x \">b</span>"
+   ],
+   "imgs": [],
+   "error": [],
+   "text": "b"
+  },
+  "live_html": "<p><span data-x=\"x\">b</span></p>",
+  "ref_html": "<p><span data-x=\"  x  \">b</span></p>\n\n",
+  "html_sha256": "0f7390135f0d06a0d999559c8fc525321ffe942545731e7f007ee97cbe5cd46f",
+  "source_sha256": "8d6823eef03d71256a71d1be426107e60bf8276f826cdb1c50c64a955969a291",
+  "verdict": "CONFIRMED",
+  "first_diff": 14,
+  "live_context": "<span data-x=\"x\">b</span>",
+  "ref_context": "<span data-x=\" x \">b</span>",
+  "raw_candidate": true,
+  "reason": "rule-level attribute value difference surviving the campaign frame and serving masks",
+  "adjudication": "confirmed reference divergence"
+ },
+ {
+  "id": "s10-span-class-trailws",
+  "source": "[[span class=\"  c  \"]]b[[/span]]",
+  "fullname": "muse-probe-round5f-s1-s10-span-class-trailws",
+  "live_canon": "<span class=\"c\">b</span>",
+  "ref_canon": "<span class=\" c \">b</span>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [
+    "<span class=\"c\">b</span>"
+   ],
+   "imgs": [],
+   "error": [],
+   "text": "b"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [
+    "<span class=\" c \">b</span>"
+   ],
+   "imgs": [],
+   "error": [],
+   "text": "b"
+  },
+  "live_html": "<p><span class=\"c\">b</span></p>",
+  "ref_html": "<p><span class=\"  c  \">b</span></p>\n\n",
+  "html_sha256": "73290068b81ad4e7059a0ca0192897f8597f76d4dbcbed46b598c55c6ae46bf0",
+  "source_sha256": "17b86ca35158ade59889fe673edcff1f129ab78634b9498642068740bd570487",
+  "verdict": "CONFIRMED",
+  "first_diff": 13,
+  "live_context": "<span class=\"c\">b</span>",
+  "ref_context": "<span class=\" c \">b</span>",
+  "raw_candidate": true,
+  "reason": "rule-level attribute value difference surviving the campaign frame and serving masks",
+  "adjudication": "confirmed reference divergence"
+ },
+ {
+  "id": "s11-span-ph-data-trailws",
+  "source": "[[span data-x=\"[[size 12px]]q[[/size]]  \"]]b[[/span]]",
+  "fullname": "muse-probe-round5f-s1-s11-span-ph-data-trailws",
+  "live_canon": "<span data-x>q[ <a href=\"/size]]\">&quot;</a>]b</span>",
+  "ref_canon": "<span data-x>q[<a href=\"/size]]\"> &quot;</a>]b</span>",
+  "live_sig": {
+   "hrefs": [
+    "/size]]"
+   ],
+   "anchors": [
+    "<a href=\"/size]]\">&quot;</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "q[ &quot; ]b"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "/size]]"
+   ],
+   "anchors": [
+    "<a href=\"/size]]\"> &quot;</a>"
+   ],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "q[ &quot; ]b"
+  },
+  "live_html": "<p><span data-x=\"\">q[ <a href=\"/size]]\">&quot;</a>]b</span></p>",
+  "ref_html": "<p><span data-x=\"\">q[<a href=\"/size]]\"> &quot;</a>]b</span></p>\n\n",
+  "html_sha256": "46077ff671d297d85cae5d28e05b8c406abd8746a070502d0b2ba053d8f2ac7f",
+  "source_sha256": "efe1be6142ecf466310e411b9a083ae5e22fb3996dfa5afebe1a7a4f9568ab76",
+  "verdict": "CLEARED",
+  "first_diff": 15,
+  "live_context": "<span data-x>q[ <a href=\"/size]]\">&quot;</a>]b</span>",
+  "ref_context": "<span data-x>q[<a href=\"/size]]\"> &quot;</a>]b</span>",
+  "raw_candidate": true,
+  "reason": "owned Stage 2 inter-element whitespace frame; the rule-level attribute signature (data-x key kept, empty value) is identical on both sides after the campaign norm, and stripping space adjacent to a token boundary makes the degenerate nested-rule body byte-identical",
+  "adjudication": "Stage 2 frame clearance (inter-token separator space)"
+ },
+ {
+  "id": "s12-image-title-esc",
+  "source": "[[image IMG.png title=\"T\u001bZ\"]]cap",
+  "fullname": "muse-probe-round5f-s1-s12-image-title-esc",
+  "live_canon": "<img alt=\"IMG.png\" class=\"image\" src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5f-s1-s12-image-title-esc/IMG.png\" title=\"T\u001bZ\">cap",
+  "ref_canon": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" title=\"T\u001bZ\">cap",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [
+    "<img alt=\"IMG.png\" class=\"image\" src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5f-s1-s12-image-title-esc/IMG.png\" title=\"T\u001bZ\">"
+   ],
+   "error": [],
+   "text": "cap"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [
+    "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" title=\"T\u001bZ\">"
+   ],
+   "error": [],
+   "text": "cap"
+  },
+  "live_html": "<img src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5f-s1-s12-image-title-esc/IMG.png\" title=\"T\u001bZ\" alt=\"IMG.png\" class=\"image\" />cap",
+  "ref_html": "<img src=\"/local--files//IMG.png\" title=\"T\u001bZ\" alt=\"IMG.png\" class=\"image\" />cap",
+  "html_sha256": "77db57cab2888434eba0fa4e0f9a272d4bf424d512e6ccb2b33bca9adf1f0302",
+  "source_sha256": "8caa84f587aa4321137a8d5da0cd6ac27ac49c31f48301538b44c74e77d726d4",
+  "verdict": "CLEARED",
+  "first_diff": 38,
+  "live_context": "<img alt=\"IMG.png\" class=\"image\" src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5f-s1-s12-image-title-esc/IMG.png\" title=\"T\u001bZ\">cap",
+  "ref_context": "<img alt=\"IMG.png\" class=\"image\" src=\"/local--files//IMG.png\" title=\"T\u001bZ\">cap",
+  "raw_candidate": true,
+  "reason": "owned wdfiles-host serving surface; after replacing the live absolute wdfiles src with the harness stub path the img tags are byte-identical and title=\"T\\x1bZ\" is identical on both sides",
+  "adjudication": "serving-surface clearance (wdfiles host vs harness stub)"
+ },
+ {
+  "id": "s13-image-class-ff",
+  "source": "[[image IMG.png class=\"thi\fck\"]]cap",
+  "fullname": "muse-probe-round5f-s1-s13-image-class-ff",
+  "live_canon": "<img alt=\"IMG.png\" class=\"thick\" src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5f-s1-s13-image-class-ff/IMG.png\">cap",
+  "ref_canon": "<img alt=\"IMG.png\" class=\"thi ck\" src=\"/local--files//IMG.png\">cap",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [
+    "<img alt=\"IMG.png\" class=\"thick\" src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5f-s1-s13-image-class-ff/IMG.png\">"
+   ],
+   "error": [],
+   "text": "cap"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [
+    "<img alt=\"IMG.png\" class=\"thi ck\" src=\"/local--files//IMG.png\">"
+   ],
+   "error": [],
+   "text": "cap"
+  },
+  "live_html": "<img src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5f-s1-s13-image-class-ff/IMG.png\" class=\"thick\" alt=\"IMG.png\" />cap",
+  "ref_html": "<img src=\"/local--files//IMG.png\" class=\"thi\fck\" alt=\"IMG.png\" />cap",
+  "html_sha256": "1068c5ff1677282bd1390e09ba3a59c3f0d1c14027478fa79bb1ff2f1a032dbe",
+  "source_sha256": "2261819780206410ca654369a0d18e77de5f4c068b1677caafac992f2e4c66d3",
+  "verdict": "CONFIRMED",
+  "first_diff": 29,
+  "live_context": "<img alt=\"IMG.png\" class=\"thick\" src=\"https://sandbox-for-codex.wdfiles.com/local--files/muse-probe-round5f-s1-s13-image-class-ff/IMG.png\">cap",
+  "ref_context": "<img alt=\"IMG.png\" class=\"thi ck\" src=\"/local--files//IMG.png\">cap",
+  "raw_candidate": true,
+  "reason": "rule-level attribute value difference surviving the campaign frame and serving masks",
+  "adjudication": "confirmed reference divergence"
+ },
+ {
+  "id": "s14-list-trail-fl-cf",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[[‌_default:x]]]\n[[LI]]B[[/LI]]\n[[/UL]]",
+  "fullname": "muse-probe-round5f-s1-s14-list-trail-fl-cf",
+  "live_canon": "<ul><li>A<a href=\"/x\">x</a><br> [[LI]]B[[/LI]]<br> [[/UL]]</li></ul>",
+  "ref_canon": "<ul><li>A<a href=\"/x\">x</a><br> [[LI]]B[[/LI]]<br> [[/UL]]</li></ul>",
+  "live_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "A x [[LI]]B[[/LI]] [[/UL]]"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "/x"
+   ],
+   "anchors": [
+    "<a href=\"/x\">x</a>"
+   ],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "A x [[LI]]B[[/LI]] [[/UL]]"
+  },
+  "live_html": "<ul>\n<li>A<a class=\"newpage\" href=\"/x\">x</a><br />\n[[LI]]B[[/LI]]<br />\n[[/UL]]</li>\n</ul>",
+  "ref_html": "<ul>\n<li>A<a class=\"newpage\" href=\"/x\">x</a><br />\n[[LI]]B[[/LI]]<br />\n[[/UL]]</li>\n</ul>",
+  "html_sha256": "53bb02affdc93d467044793c2d7e17ecdd106d0c08dd2f5fb9370365c0e230e5",
+  "source_sha256": "2877f864b6a4f3a06c2d50c0a6798451651834f633840c31c42ff5f54df3a763",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s15-list-trail-esc-footnote",
+  "source": "[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\n[[footnote]]E\u001bF[[/footnote]]\n[[LI]]B[[/LI]]\n[[/UL]]\n[[footnoteblock]]",
+  "fullname": "muse-probe-round5f-s1-s15-list-trail-esc-footnote",
+  "live_canon": "<ul><li>A<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br> [[LI]]B[[/LI]]<br> [[/UL]]</li></ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. E\u001bF</div></div>",
+  "ref_canon": "<ul><li>A<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br> [[LI]]B[[/LI]]<br> [[/UL]]</li></ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. E\u001bF</div></div>",
+  "live_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "A 1 [[LI]]B[[/LI]] [[/UL]] Footnotes 1 . E\u001bF"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "A 1 [[LI]]B[[/LI]] [[/UL]] Footnotes 1 . E\u001bF"
+  },
+  "live_html": "<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n[[LI]]B[[/LI]]<br />\n[[/UL]]</li>\n</ul>\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. E\u001bF</div>\n</div>",
+  "ref_html": "<ul>\n<li>A<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n[[LI]]B[[/LI]]<br />\n[[/UL]]</li>\n</ul><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. E\u001bF</div></div>",
+  "html_sha256": "281426812ff35a5a05c3a9a857fcfcce3056420ccd703dd1b5f7e6f79c01da23",
+  "source_sha256": "70dbf8ead25d88eccf14570eef54f12395fc2042043727bc7bbd8c96e8248724",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s16-list-lower-nested-rawcase",
+  "source": "[[UL]]\n[[LI]]outer[[ul]]\n[[LI]]in[[/LI]]\n[[/ul]][[/LI]]\n[[/UL]]\n[[LI]]tail[[/LI]]\n[[/UL]]",
+  "fullname": "muse-probe-round5f-s1-s16-list-lower-nested-rawcase",
+  "live_canon": "<ul><li>outer</li></ul><ul><li>in</li></ul> [[LI]]tail[[/LI]]<br> [[/UL]]",
+  "ref_canon": "<ul><li>outer<ul><li>in</li></ul>[[LI]]tail[[/LI]]<br> [[/UL]]</li></ul>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [
+    "<ul>",
+    "<li>",
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "outer in [[LI]]tail[[/LI]] [[/UL]]"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [
+    "<ul>",
+    "<li>",
+    "<ul>",
+    "<li>"
+   ],
+   "divs": [],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "outer in [[LI]]tail[[/LI]] [[/UL]]"
+  },
+  "live_html": "<ul>\n<li>outer</li>\n</ul>\n<ul>\n<li>in</li>\n</ul>\n[[LI]]tail[[/LI]]<br />\n[[/UL]]",
+  "ref_html": "<ul>\n<li>outer<ul>\n<li>in</li>\n</ul>[[LI]]tail[[/LI]]<br />\n[[/UL]]</li>\n</ul>",
+  "html_sha256": "31a2ba9c039f8298cefea630e95568075bd860da4323ff432617098e09c590a0",
+  "source_sha256": "dc03e0fb445f0105963dec65be4d2fa5215e4b37d32a95ffc2b93fd38c267ba4",
+  "verdict": "CLEARED",
+  "reason": "serving/frame only; rule-level signature equal"
+ },
+ {
+  "id": "s17-bibitem-esc",
+  "source": "[[bibliography]]\n[[bibitem k]]A\u001bB[[/bibitem]]\n[[/bibliography]]\n[[bibcite k]]",
+  "fullname": "muse-probe-round5f-s1-s17-bibitem-esc",
+  "live_canon": "<div class=\"bibitems\"><div class=\"title\">Bibliography</div> [[bibitem k]]A\u001bB[[/bibitem]]</div><p>[[bibcite k]]</p>",
+  "ref_canon": "<div class=\"bibitems\"><div class=\"title\">Bibliography</div> [[bibitem k]]A\u001bB[[/bibitem]]</div><p>[[bibcite k]]</p>",
+  "live_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class=\"bibitems\">",
+    "<div class=\"title\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "Bibliography [[bibitem k]]A\u001bB[[/bibitem]] [[bibcite k]]"
+  },
+  "ref_sig": {
+   "hrefs": [],
+   "anchors": [],
+   "lists": [],
+   "divs": [
+    "<div class=\"bibitems\">",
+    "<div class=\"title\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "Bibliography [[bibitem k]]A\u001bB[[/bibitem]] [[bibcite k]]"
+  },
+  "live_html": "<div class=\"bibitems\">\n<div class=\"title\">Bibliography</div>\n[[bibitem k]]A\u001bB[[/bibitem]]</div>\n<p>[[bibcite k]]</p>",
+  "ref_html": "<div class=\"bibitems\"><div class=\"title\">Bibliography</div>\n[[bibitem k]]A\u001bB[[/bibitem]]</div><p>[[bibcite k]]</p>\n\n",
+  "html_sha256": "b6d81e4e687fc8ea060063896b791aaf2167e22f31aaf512e1611c253983ff3f",
+  "source_sha256": "ca892fc4fce572a8f28f596ba7070bcee3dddc95fc5b58e0e56e0218ed93f299",
+  "verdict": "CLEARED",
+  "reason": "frame-mask equal"
+ },
+ {
+  "id": "s18-footnote-nel",
+  "source": "[[footnote]]AB[[/footnote]][[footnoteblock]]",
+  "fullname": "muse-probe-round5f-s1-s18-footnote-nel",
+  "live_canon": "<sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A B</div></div>",
+  "ref_canon": "<p><sup class=\"footnoteref\"><a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br><div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. A B</p></div></div>",
+  "live_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "1 Footnotes 1 . A B"
+  },
+  "ref_sig": {
+   "hrefs": [
+    "javascript:;",
+    "javascript:;"
+   ],
+   "anchors": [
+    "<a class=\"footnoteref\" href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a>",
+    "<a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>"
+   ],
+   "lists": [],
+   "divs": [
+    "<div class=\"footnotes-footer\">",
+    "<div class=\"title\">",
+    "<div class=\"footnote-footer\" id=\"footnote-1\">"
+   ],
+   "tables": [],
+   "spans": [],
+   "imgs": [],
+   "error": [],
+   "text": "1 Footnotes 1 . A B"
+  },
+  "live_html": "<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n<div class=\"footnotes-footer\">\n<div class=\"title\">Footnotes</div>\n<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. AB</div>\n</div>",
+  "ref_html": "<p><sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup><br />\n<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div><div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. AB</p>\n\n</div></div>",
+  "html_sha256": "69e8e1d1c7f57a63069abf7d269b7d6eb7384f028faf05644506e3d43474cc4e",
+  "source_sha256": "34368e9dceb97112258647a8734976df35e8e1050a5773b81aa734fc12179772",
+  "verdict": "CLEARED",
+  "reason": "serving/frame only; rule-level signature equal"
+ }
+]

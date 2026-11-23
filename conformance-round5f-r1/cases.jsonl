@@ -1,0 +1,16 @@
+{"id": "R5FR1-D1", "source": "[[div type=\"t\t\"]]\nbody\n[[/div]]"}
+{"id": "R5FR1-D2", "source": "[[div role=\"note  \"]]\nbody\n[[/div]]"}
+{"id": "R5FR1-D3", "source": "[[div data-z=\"v  \"]]\nbody\n[[/div]]"}
+{"id": "R5FR1-D4", "source": "[[div style=\"color:red  \" class=\"a  \"]]\nbody\n[[/div]]"}
+{"id": "R5FR1-D5", "source": "[[div type=\"  \"]]\nbody\n[[/div]]"}
+{"id": "R5FR1-D6", "source": "[[div type=\"a  b  c  \"]]\nbody\n[[/div]]"}
+{"id": "R5FR1-S1", "source": "[[span data-y=\"[[size 12px]]q[[/size]]\"]]body[[/span]]"}
+{"id": "R5FR1-S2", "source": "[[span class=\"a  \"]]body[[/span]]"}
+{"id": "R5FR1-S3", "source": "[[span id=\"[[size 12px]]q[[/size]]\"]]body[[/span]]"}
+{"id": "R5FR1-S4", "source": "[[span data-X=\"v  \"]]body[[/span]]"}
+{"id": "R5FR1-S5", "source": "[[span type=\"t  \"]]body[[/span]]"}
+{"id": "R5FR1-K1", "source": "[[collapsible folded=\"NO\"]]body[[/collapsible]]"}
+{"id": "R5FR1-K2", "source": "[[collapsible hideLocation=\"Bottom\"]]body[[/collapsible]]"}
+{"id": "R5FR1-T1", "source": "[[tabview]][[tab title=\"a'b\"]]x[[/tab]][[/tabview]]"}
+{"id": "R5FR1-Z1", "source": "[[size -12px]]x[[/size]]"}
+{"id": "R5FR1-X1", "source": "[[ol type=\"  a  \"]]\n[[li]]A[[/li]]\n[[/ol]]"}

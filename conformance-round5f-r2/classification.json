@@ -1,0 +1,144 @@
+[
+ {
+  "id": "r2f-01-fl-astral-1d173",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity after probe.norm and campaign frame mask",
+  "capture_id": "muse-probe-round5f-r2-r2f-01-fl-astral-1d173",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5"
+ },
+ {
+  "id": "r2f-02-fl-astral-e0001",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity after probe.norm and campaign frame mask",
+  "capture_id": "muse-probe-round5f-r2-r2f-02-fl-astral-e0001",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5"
+ },
+ {
+  "id": "r2f-03-fl-cf-180e",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity after probe.norm and campaign frame mask",
+  "capture_id": "muse-probe-round5f-r2-r2f-03-fl-cf-180e",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5"
+ },
+ {
+  "id": "r2f-04-fl-cf-00ad",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity after probe.norm and campaign frame mask",
+  "capture_id": "muse-probe-round5f-r2-r2f-04-fl-cf-00ad",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5"
+ },
+ {
+  "id": "r2f-05-fl-ws-202a",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity after probe.norm and campaign frame mask",
+  "capture_id": "muse-probe-round5f-r2-r2f-05-fl-ws-202a",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5"
+ },
+ {
+  "id": "r2f-06-fl-cf-2066",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity after probe.norm and campaign frame mask",
+  "capture_id": "muse-probe-round5f-r2-r2f-06-fl-cf-2066",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5"
+ },
+ {
+  "id": "r2f-07-fl-unassigned-2065",
+  "verdict": "CONFIRMED",
+  "candidate": "C-R5F-R2-1",
+  "reason": "rule-level difference after standard mask",
+  "capture_id": "muse-probe-round5f-r2-r2f-07-fl-unassigned-2065",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5",
+  "source_sha256": "9edeb4c232620e3940016790696daae25e22f4be9b91bba2ec25741cc31fc530",
+  "ref_canon": "<p><a href=\"/_default:x\">x</a></p>",
+  "live_canon": "<p><a href=\"/x\">x</a></p>"
+ },
+ {
+  "id": "r2f-08-fl-mixed-fff9-200c",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity after probe.norm and campaign frame mask",
+  "capture_id": "muse-probe-round5f-r2-r2f-08-fl-mixed-fff9-200c",
+  "html_sha256": "f365d5c54ea25bc0fb7bcba5523e4ca8278e7ebdecb4e36571015b74cdf3d6c5"
+ },
+ {
+  "id": "r2f-09-img-height-trail",
+  "verdict": "CONFIRMED",
+  "candidate": "C-R5F-R2-2",
+  "reason": "rule-level difference after standard mask",
+  "capture_id": "muse-probe-round5f-r2-r2f-09-img-height-trail",
+  "html_sha256": "cd64f6354aaeb41d5c84f2fc2e1c395cab06a61383d0a0df913946c04c7957ad",
+  "source_sha256": "34971a3d985a878c87dbf0da2c96a2a834e2b808a95ccd4bb79db0dc55f016e4",
+  "ref_canon": "<img alt=\"y.png\" class=\"image\" height=\"10 \" src=\"http://x/y.png\">",
+  "live_canon": "<img alt=\"y.png\" class=\"image\" height=\"10\" src=\"http://x/y.png\">"
+ },
+ {
+  "id": "r2f-10-img-style-trail",
+  "verdict": "CONFIRMED",
+  "candidate": "C-R5F-R2-3",
+  "reason": "rule-level difference after standard mask",
+  "capture_id": "muse-probe-round5f-r2-r2f-10-img-style-trail",
+  "html_sha256": "31d57799e25024f235bd93e0f7fa64e87cc173ae48fb1f9fad974d555ab344da",
+  "source_sha256": "861d0a59fc4876942da4eab7dab799af652ea22f8fe5c1ff14c169e1695de9cc",
+  "ref_canon": "<img alt=\"y.png\" class=\"image\" src=\"http://x/y.png\" style=\"color:red \">",
+  "live_canon": "<img alt=\"y.png\" class=\"image\" src=\"http://x/y.png\" style=\"color:red\">"
+ },
+ {
+  "id": "r2f-11-img-title-tab",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity after probe.norm and campaign frame mask",
+  "capture_id": "muse-probe-round5f-r2-r2f-11-img-title-tab",
+  "html_sha256": "36eb3334fcb47fad0a7a33152cdd1b8f12f42a99edb4d9d093c7ccb56bdc9b1d"
+ },
+ {
+  "id": "r2f-12-img-class-tab",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity after probe.norm and campaign frame mask",
+  "capture_id": "muse-probe-round5f-r2-r2f-12-img-class-tab",
+  "html_sha256": "fc5b37be4f156c1f49c59b2d714762e6d9ccd3650d6a700f069ca2433d9bec8b"
+ },
+ {
+  "id": "r2f-13-img-width-tab",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity after probe.norm and campaign frame mask",
+  "capture_id": "muse-probe-round5f-r2-r2f-13-img-width-tab",
+  "html_sha256": "28addb3b8eba66d22c943a65b462d9aa3e3f94e6d68d4dca480d2d8d7f4dc6f1"
+ },
+ {
+  "id": "r2f-14-img-link-tab",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity after probe.norm and campaign frame mask",
+  "capture_id": "muse-probe-round5f-r2-r2f-14-img-link-tab",
+  "html_sha256": "ba68aea97234e0c4f691b9248f29d91582b46a8c09cb3daa2b27d6fdfa6cab02"
+ },
+ {
+  "id": "r2f-15-span-data-y",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity after probe.norm and campaign frame mask",
+  "capture_id": "muse-probe-round5f-r2-r2f-15-span-data-y",
+  "html_sha256": "bd44ea915ea7cdeebb6def9496c661074f6cd9f7338865db893d1def7612c1e5"
+ },
+ {
+  "id": "r2f-16-url-nonascii-query",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity after probe.norm and campaign frame mask",
+  "capture_id": "muse-probe-round5f-r2-r2f-16-url-nonascii-query",
+  "html_sha256": "6d4b2b9bab85e4ab253076b39567400d2fcbdb8052ba8d7847cc025d2a6e621a"
+ },
+ {
+  "id": "r2f-17-fl-url-nonascii",
+  "verdict": "CONFIRMED",
+  "candidate": "C-R5F-R2-4",
+  "reason": "rule-level difference after standard mask",
+  "capture_id": "muse-probe-round5f-r2-r2f-17-fl-url-nonascii",
+  "html_sha256": "f23055a053a8436d5b9c15992c8048f8bf68d14045472b6b4297835a6e5a3da9",
+  "source_sha256": "d2b6ac906f31b63374411e761464121cc617a67704975739dfd866408a1c0d59",
+  "ref_canon": "<p><a href=\"https://example.com/café\">https://example.com/café</a></p>",
+  "live_canon": "<p><a href=\"https://example.com/caf%C3%A9\">https://example.com/café</a></p>"
+ },
+ {
+  "id": "r2f-18-mathinline-preescaped",
+  "verdict": "CLEARED",
+  "reason": "masked byte identity after probe.norm and campaign frame mask",
+  "capture_id": "muse-probe-round5f-r2-r2f-18-mathinline-preescaped",
+  "html_sha256": "c2397228f52ae46707f918613103880de10df6583c0769b4f1ad710642259a09"
+ }
+]
