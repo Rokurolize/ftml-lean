@@ -57,10 +57,11 @@ def fixTokenFingerprint : List TokenEntry → String
   | t :: rest => t.rule ++ "(" ++ fixOptPairs t.opts ++ ");" ++
       fixTokenFingerprint rest
 
+/- The retired tableadvEnumScan was a duplicate of the repaired mirror scanner. This driver now compares the legacy depth-first scanner against the repaired mirror, so a DIFF records the F-TABLEADV-1 shape rather than a mirror-versus-reference claim. -/
 def fixCompare (src : List Nat) : String :=
   let fuel := tableFuel src.length
   let m := tableadvScanGo src [] fuel
-  let e := tableadvEnumScan src [] fuel
+  let e := tableadvDfsScanGo src [] fuel
   if m.1 = e.1 && fixTokenFingerprint m.2 == fixTokenFingerprint e.2 then
     "OK " ++ fixBytesHex m.1
   else "DIFF " ++ fixBytesHex m.1 ++ " " ++ fixBytesHex e.1 ++

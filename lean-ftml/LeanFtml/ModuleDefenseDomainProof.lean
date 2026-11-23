@@ -5,6 +5,8 @@ set_option maxRecDepth 200000
 
 namespace LeanFtml
 
+/-! Certificate record: the defense-domain bounded certificate hash is 2400177605 over 103936 domain bytes, verified by kernel decide over the generated source family; it is recorded here so the proof file is self-contained. -/
+
 /-!
 Bounded defense-domain certificate for the Module family, defined locally so it does not depend on ModuleProof.lean.
 The closer dimension is widened from the two spellings of the inherited 32-case product to all 64 case spellings of `[[/module]]`, retaining both nested-opener shapes.

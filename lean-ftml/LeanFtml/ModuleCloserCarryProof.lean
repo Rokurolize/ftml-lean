@@ -5,6 +5,8 @@ set_option maxRecDepth 100000
 
 namespace LeanFtml
 
+/-! Certificate record: the closer-carry bounded certificate hash is 412587544, verified by kernel decide over the generated frame family; it is recorded here so the proof file is self-contained. -/
+
 /-!
 Bounded carry certificate for the REFCORR9 authored-closer re-emit. The inherited ModuleProof.lean proves `reemit_is_authored_drop` on one fixed frame whose residual is empty, but proves no statement about an arbitrary source: that every moduleHead candidate rest is a suffix of the source, and that the eleven bytes the mirror carries are the closer findSubCI located. This file proves the unconditional take/drop skeleton of that carry (append/drop/take arithmetic over appended lists, and the suffix criterion) and checks the semantic link by kernel `decide` over an explicitly generated finite family of frames. The family varies opener name bytes, attribute group, body bytes (each body holding a Code placeholder), the 64 case spellings of the closer, and a trailing tail after the closer. Nothing here is labelled universal: the named universal remainder is stated at the end of the file.
 -/

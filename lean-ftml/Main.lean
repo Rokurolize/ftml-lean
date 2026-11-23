@@ -802,10 +802,9 @@ def main : IO Unit :=
 -- R3.10 Tableadv: F-TABLEADV-1 repair (2026-11-22). The mirror now
 -- uses the reference enumeration search. The restated counterexample
 -- compares the legacy first-parse scanner against the repaired
--- mirror; the equality and pin theorems quantify over the repair.
+-- mirror; the pin theorem quantifies over the repair.
 #print axioms LeanFtml.tableadv_dfs_ne_enum
 #print axioms LeanFtml.tableadvWitness_length
-#print axioms LeanFtml.tableadv_mirror_eq_enum_scan
 #print axioms LeanFtml.mirror_enum_witness_family
 #print axioms LeanFtml.tableadvWitnessFamily_length
 #print axioms LeanFtml.tableadvWitnessFamily_nodup

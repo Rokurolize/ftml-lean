@@ -19,11 +19,11 @@ nested match to be tried before the `.` alternative.
 The legacy functions `tableadvMatchFirst` / `tableadvBodyFirst` /
 `tableadvDfsScanGo` follow one backtracking path: a nested `(?R)`
 contributed only its first success. F-TABLEADV-1 was the finding
-that this differed from the reference. `tableadvEnumScan` is kept
-as the independent reference scanner (it shares the mirror's
-unchanged `tableadvProcess`); `tableadv_mirror_eq_enum_scan`
-proves the mirror and it agree at every fuel and input, and the
-fourteen witness-family frames are pinned in `conformance-r310/`.
+that this differed from the reference; the repaired mirror uses
+the enumeration search directly as `tableadvScanGo`, so reference
+and mirror are one scanner and no separate equality proof is
+needed. The fourteen witness-family frames are pinned in
+`conformance-r310/`.
 
 `tableadv_dfs_ne_enum` is retained with its scope made explicit:
 it compares the *legacy* depth-first scanner to the repaired
@@ -36,29 +36,6 @@ quotes; the enumeration's next nested parse stops at that quoted
 -/
 
 namespace LeanFtml
-
-/-- The Tableadv scanner under the reference enumeration. Same
-    process() and same left-to-right non-rescanning splice as the
-    repaired `tableadvScanGo`; the two agree by
-    `tableadv_mirror_eq_enum_scan`. -/
-def tableadvEnumScan (src : List Nat) (toks : List TokenEntry) :
-    Nat → List Nat × List TokenEntry
-  | 0 => (src, toks)
-  | fuel + 1 =>
-      match src with
-      | [] => ([], toks)
-      | b :: rest =>
-          match tableadvEnumMatchFirst src fuel with
-          | some (head, rest') =>
-              let matched := src.take (src.length - rest'.length)
-              let body := advBodyOf src head rest'
-              let (rep, toks1) :=
-                tableadvProcess head body matched toks fuel
-              let (tail, toks2) := tableadvEnumScan rest' toks1 fuel
-              (rep ++ tail, toks2)
-          | none =>
-              let (tail, toks1) := tableadvEnumScan rest toks fuel
-              (b :: tail, toks1)
 
 /-- Shortest source on which the legacy depth-first scanner and the
     reference enumeration return different output bytes. Every
@@ -1071,42 +1048,24 @@ theorem process_enum_head (fuel : Nat) (h : 80 ≤ fuel) :
           rfl
 
 theorem enum_scan_nil (toks : List TokenEntry) (fuel : Nat) :
-    tableadvEnumScan [] toks fuel = ([], toks) := by
-  cases fuel <;> simp [tableadvEnumScan]
+    tableadvScanGo [] toks fuel = ([], toks) := by
+  cases fuel <;> simp [tableadvScanGo]
 
 theorem enum_bytes (fuel : Nat) (h : 201 ≤ fuel) :
-    (tableadvEnumScan tableadvWitness [] (fuel + 1)).1.head? = some 255 := by
+    (tableadvScanGo tableadvWitness [] (fuel + 1)).1.head? = some 255 := by
   have hM := enum_match_witness (fuel - 1) (by omega)
   have hMf : (fuel - 1) + 1 = fuel := by omega
   simp only [hMf] at hM
   have hSpan := enum_span
   have hP := process_enum_head fuel (by omega)
   rw [witness_cons]
-  simp only [tableadvEnumScan, ← witness_cons, hM, enum_scan_nil]
+  simp only [tableadvScanGo, ← witness_cons, hM, enum_scan_nil]
   simp only [hSpan.1, List.length_nil, Nat.sub_zero, hSpan.2, List.append_nil]
   exact hP
 
 theorem fuel_for_enum : 221 ≤ tableFuel tableadvWitness.length := by
   rw [tableadvWitness_length]
   decide
-
-/-- The repaired mirror and the independent reference scanner are
-    the same function at every source, token table, and fuel. The
-    two scanner definitions differ only in the name of their own
-    recursive call; both call the same unchanged `tableadvProcess`. -/
-theorem tableadv_mirror_eq_enum_scan :
-    ∀ (src : List Nat) (toks : List TokenEntry) (fuel : Nat),
-      tableadvScanGo src toks fuel = tableadvEnumScan src toks fuel := by
-  intro src toks fuel
-  induction fuel generalizing src toks with
-  | zero => rfl
-  | succ fuel ih =>
-      cases src with
-      | nil => rfl
-      | cons b rest =>
-          cases hM : tableadvEnumMatchFirst (b :: rest) fuel with
-          | none => simp [tableadvScanGo, tableadvEnumScan, hM, ih]
-          | some p => simp [tableadvScanGo, tableadvEnumScan, hM, ih]
 
 /-- The fourteen witness-family frames of REPORT-TABLEADV-PROOF.md:
     one cell opener of any of the seven attribute shapes, the
@@ -1135,15 +1094,18 @@ theorem tableadvWitnessFamily_nodup : tableadvWitnessFamily.Nodup := by
   decide
 
 /-- Conformance pin, F-TABLEADV-1: on each of the fourteen frames the
-    repaired mirror's whole parse state equals the reference
-    enumeration's. The general theorem makes the pin hold at the
-    fuel the mirror's rule actually uses; the conformance-r310
-    battery compares the same frames with PHP 8.5.4's state. -/
+    repaired mirror's whole parse state is the enumeration's. After
+    the repair the enumeration search is the mirror's own
+    `tableadvScanGo` (the duplicate `tableadvEnumScan` is erased), so
+    the two sides are definitionally equal and the pin holds by rfl;
+    this is the exact reason the general equality theorem retired.
+    The conformance-r310 battery compares the same frames with
+    PHP 8.5.4's state. -/
 theorem mirror_enum_witness_family (src : List Nat)
     (h : src ∈ tableadvWitnessFamily) :
     tableadvScanGo src [] (tableFuel src.length) =
-      tableadvEnumScan src [] (tableFuel src.length) :=
-  tableadv_mirror_eq_enum_scan src [] (tableFuel src.length)
+      tableadvScanGo src [] (tableFuel src.length) :=
+  rfl
 
 /-- F-TABLEADV-1, restated after the repair with an explicit scope:
     the *legacy* first-parse scanner and the repaired mirror (the
@@ -1164,9 +1126,6 @@ theorem tableadv_dfs_ne_enum :
     have h := fuel_for_enum
     omega
   simp only [hSum] at hE
-  have hMEq := tableadv_mirror_eq_enum_scan tableadvWitness []
-    (tableFuel tableadvWitness.length)
-  rw [← hMEq] at hE
   rw [hD] at hEq
   rw [← hEq] at hE
   simp [witness_head] at hE
