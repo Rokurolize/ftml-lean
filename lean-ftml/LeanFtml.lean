@@ -26,6 +26,10 @@ import LeanFtml.Inline1Rules
 import LeanFtml.Inline2Rules
 import LeanFtml.Inline3Rules
 import LeanFtml.Pipeline
+import LeanFtml.PcreCore
+import LeanFtml.PcreCoreScan
+import LeanFtml.RefTables
+import LeanFtml.RefApply
 import LeanFtml.RenderCore
 import LeanFtml.ProseRules
 import LeanFtml.NotesRender
@@ -70,8 +74,10 @@ import LeanFtml.Proof.AlphaComposition
 import LeanFtml.Proof.WfComposition
 import LeanFtml.Proof.BundlesWave1
 import LeanFtml.Proof.ByteBridge
+import LeanFtml.Proof.F1Bridges
 import LeanFtml.TableadvProof
 import LeanFtml.TableadvCertificate
+import LeanFtml.TableadvQuotientProof
 import LeanFtml.LeanFtml
 import LeanFtml.SpecRefcorr15
 import LeanFtml.Proof.ProofList

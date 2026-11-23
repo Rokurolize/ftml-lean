@@ -1178,6 +1178,10 @@ def main : IO Unit :=
 #print axioms LeanFtml.pipelineFull_take_three
 #print axioms LeanFtml.pipelineFull_wf_prefix3
 #print axioms LeanFtml.pipelineFull_wf_prefix3_of_wf
+#print axioms LeanFtml.utf8Decode_flatMap_utf8Bytes
+#print axioms LeanFtml.flatMap_utf8Bytes_utf8Decode_of_valid
+#print axioms LeanFtml.parseBytes_byteForm_id
+#print axioms LeanFtml.byteForm_parseBytes_id
 #print axioms LeanFtml.lst_findPairOpener_eq_some_iff
 #print axioms LeanFtml.lst_findPairOpener_none_iff
 #print axioms LeanFtml.lst_pairing_depends_only_on_classes
