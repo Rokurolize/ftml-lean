@@ -617,7 +617,7 @@ theorem cov_center_keeps_trailing_equals :
     (probe para-sep). -/
 theorem cov_separator_run_unwrapped :
     paraProcess (phBytes 0 ++ litBytes "x\n\n")
-        [{ rule := "Separator", opts := [] }] [] [] =
+        [{ rule := "Separator", opts := [] }] [] [] [] =
       (phBytes 0 ++ litBytes "x\n\n",
         [{ rule := "Separator", opts := [] }]) := rfl
 
@@ -628,7 +628,7 @@ theorem cov_concatlines_join :
 
 theorem cov_concatlines_div_opener :
     concatScan (litBytes "a\\\n[[div]]\nb")
-      = litBytes "a\n[[div]]\nb" := rfl
+      = litBytes "a [[div]]\nb" := rfl
 
 /-- Divprefilter joins on the bare prefix, case-insensitively
     (probe dp-bare-prefix). -/

@@ -253,6 +253,12 @@ structure ParseState where
       emits the stage's fatal record for it. States built by the
       earlier stages' rules never set it. -/
   fatal : Bool := false
+  /-- R11-CONCAT: plain lead texts of lines joined into a standalone div
+      opener by a backslash continuation. A non-compared side channel that
+      mirrors PHP `$wiki->vars['continued_div_leads']`, written by
+      concatlinesRule and read by paragraphRule; serState deliberately omits
+      it, as it omits `fatal`. -/
+  continuedDivLeads : List (List Nat) := []
 
 /-- The state a fresh document starts in: the source as one text
     segment, an empty token table, default document state. -/
