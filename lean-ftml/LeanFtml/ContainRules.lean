@@ -262,6 +262,31 @@ def spanAuthoredNonEmptyEq (g : List Nat) (k : List Nat) : Bool :=
       | b :: _ => b != 34
       | [] => false
 
+/-- REFCORR12 general rule: right-trim the whole ctype_space / PCRE `\s`
+    byte set {space 0x20, tab 0x09, LF 0x0A, VT 0x0B, FF 0x0C, CR 0x0D}
+    from an attribute value. This is the byte twin of PHP's
+    `rtrim($v, " \t\n\r\f\v")` and shares `isWsByte` with the Image trim. -/
+def rtrimAttrWs (bs : List Nat) : List Nat :=
+  (bs.reverse.dropWhile isWsByte).reverse
+
+/-- The shared attribute-value normalizer used by Div and, since REFCORR13,
+    by Span's technical values: the live-discarded C0 class D is removed
+    (below 0x20 except TAB 9, LF 10, CR 13 and ESC 27; DEL is kept), runs of
+    space, tab, CR and LF collapse to one space, and both ends are trimmed.
+    REFCORR12 added the trailing rtrim; REFCORR13 narrowed the dropped class
+    so ESC and DEL survive (C-R5F-S1-1). `rtrimSpaceTab` on the Div class
+    caller is now redundant but retained so cached class rows stay exact. -/
+def normalizeValue (v : List Nat) : List Nat :=
+  let v1 := v.filter (fun b => ! isLiveDroppedControl b)
+  rtrimAttrWs ((go v1 false).dropWhile (· == 32))
+where
+  go : List Nat → Bool → List Nat
+    | [], _ => []
+    | b :: rest, inRun =>
+        if b == 32 || b == 9 || b == 13 || b == 10 then
+          (if inRun then go rest true else 32 :: go rest true)
+        else b :: go rest false
+
 /-- process() for a Span match: the body trimmed of edge
     spaces and tabs, the attribute group through getAttrs,
     and the args built by the live whitelist — `id` first
@@ -295,9 +320,14 @@ def spanProcess (g1 : Option (List Nat)) (body : List Nat)
       else acc
     else if k == litBytes "class" || k == litBytes "style" ||
         k == litBytes "role" || k == litBytes "type" then
-      omSet acc (utf8Decode k) (textVal v)
+      -- REFCORR13: a Span technical value passes through the same shared
+      -- normalizer as Div's (drop D, collapse W runs, trim both ends);
+      -- REFCORR12 stored it raw, so authored leading/trailing W survived
+      -- (C-R5F-R1-1/2/3, C-R5F-S1-2). The empty-value retention arm above
+      -- and the render 0xFF clear arm are untouched.
+      omSet acc (utf8Decode k) (textVal (normalizeValue v))
     else if (litBytes "data-").isPrefixOf k then
-      omSet acc (utf8Decode (asciiLower k)) (textVal v)
+      omSet acc (utf8Decode (asciiLower k)) (textVal (normalizeValue v))
     else acc) []
   let args := idArg ++ restArgs
   if (trimBytes content).isEmpty && args.isEmpty then ([], toks)
@@ -560,35 +590,6 @@ def isolateId (v : List Nat) : Option (List Nat) :=
       some (litBytes "u-" ++ (if leading then [32] else []) ++
         collapsed.flatMap utf8Bytes)
 
-/-- REFCORR12 general rule: right-trim the whole ctype_space / PCRE `\s`
-    byte set {space 0x20, tab 0x09, LF 0x0A, VT 0x0B, FF 0x0C, CR 0x0D}
-    from an attribute value. This is the byte twin of PHP's
-    `rtrim($v, " \t\n\r\f\v")` and shares `isWsByte` with the Image trim. -/
-def rtrimAttrWs (bs : List Nat) : List Nat :=
-  (bs.reverse.dropWhile isWsByte).reverse
-
-/-- Div's attribute value normalization: control bytes
-    (0x00–0x1F and 0x7F) are removed, runs of space, tab,
-    CR, and LF collapse to a single space, and leading and
-    trailing spaces are stripped. REFCORR12: the former shape
-    only ltrimmed, leaving a trailing space on every normalized
-    key except class (whose caller rtrimmed separately); live
-    right-trims the whole family, so type/style/role/data-*
-    carried one byte live does not (C-R5E-R1-1). The final
-    `rtrimAttrWs` completes the collapse-and-ltrim pipeline for
-    every key uniformly; the class caller's `rtrimSpaceTab` is
-    now redundant but retained so cached class rows stay exact. -/
-def normalizeValue (v : List Nat) : List Nat :=
-  let v1 := v.filter (fun b => !(b < 32 || b == 127))
-  rtrimAttrWs ((go v1 false).dropWhile (· == 32))
-where
-  go : List Nat → Bool → List Nat
-    | [], _ => []
-    | b :: rest, inRun =>
-        if b == 32 || b == 9 || b == 13 || b == 10 then
-          (if inRun then go rest true else 32 :: go rest true)
-        else b :: go rest false
-
 /-- Strip trailing space and tab bytes (class's
     `rtrim($value, " \t")`). -/
 def rtrimSpaceTab (bs : List Nat) : List Nat :=
@@ -652,7 +653,7 @@ def divArgsOrder (built : List (List Nat × Option (List Nat))) :
     removes), the exact keys class (additionally rtrimmed
     of spaces and tabs), style, role, type through the
     value normalization, and the `data-*` keys lower-cased
-    with a first-wins guard; the result is then put in
+    with a last-wins guard; the result is then put in
     live's emission order by `divArgsOrder` (the
     reference's `ksort` stood until REFCORR2 correction
     C-STAGE2-1). Entries carry their (decoded key, value)
@@ -1122,14 +1123,15 @@ def rawCodeShape (t : List Nat) : Bool :=
    | some hi, some lo => hi ≥ lo + 2
    | _, _ => false)
 
-/-- `_tabTitle`: trim; the empty title becomes
-    `untitled`; a title carrying raw-code delimiters or
-    a placeholder byte becomes the empty string; any
-    other has its whitespace runs collapsed to single
-    spaces. -/
+/-- `_tabTitle`: trim; a PHP-falsy title (`""` or `"0"`) becomes
+    `untitled` — REFCORR13 R13-AGY2 D11 replaces the strict empty-string
+    test with live's falsy test, so `[[tab 0]]` and `[[tab title="0"]]`
+    both default. A title carrying raw-code delimiters or a placeholder
+    byte becomes the empty string; any other has its whitespace runs
+    collapsed to single spaces. -/
 def tabTitle (t0 : List Nat) : List Nat :=
   let t := trimBytes t0
-  if t.isEmpty then litBytes "untitled"
+  if t.isEmpty || t == litBytes "0" then litBytes "untitled"
   else if rawCodeShape t || t.contains 255 then []
   else collapseWsBytes t
 
