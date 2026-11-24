@@ -1932,7 +1932,7 @@ def rw82 (s0 : List Nat) : List Nat :=
         match lazyToLit [litBytes "[[/li]]"] r7 with
         | none => s0
         | some (span, r8) =>
-          let g4 := litBytes "[[li]]" ++ span.take (span.length - 8)
+          let g4 := litBytes "[[li]]" ++ span.take (span.length - 7)
           match eatLit (litBytes "\n") r8 with
           | none => s0
           | some r9 =>
