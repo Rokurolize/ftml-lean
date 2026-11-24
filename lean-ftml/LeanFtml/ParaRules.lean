@@ -765,7 +765,12 @@ where
     opener, or a standalone block token such as a horizontal
     rule or a module, which opens no span), and no literal text
     stands at depth zero after it (depth is tracked over the
-    skip set's start/end-typed tokens). This is the reference's
+    skip set's start/end-typed tokens). REFCORR18: the separator
+    token is excluded by name beside the image exclusion, because
+    live wraps a break lead ahead of a separator (raw capture
+    muse-probe-refcorr17-sep) while baring it ahead of a
+    horizontal rule; the separator and the rule are the only two
+    run-joining type-absent members of the skip set. This is the reference's
     runIsEmptyLeadBlockLead (snapshot-41 R-BR-BLOCK; REFCORR17
     fresh holdout h257 and h273, probes V3, V5, V8, V10, V11,
     V14 and V19) transcribed onto the byte model. -/
@@ -798,6 +803,7 @@ where
                       let ty := tokenTypeBytes toks n
                       if paraSkipNoAlign.contains rule &&
                           rule != litBytes "image" &&
+                          rule != litBytes "separator" &&
                           (ty == litBytes "start" ||
                             bytesEndsWith ty (litBytes "_start") ||
                             ty.isEmpty) then

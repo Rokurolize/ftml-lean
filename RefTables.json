@@ -24,7 +24,7 @@
     "positive-lookbehind",
     "quantifier"
   ],
-  "digest": "7def87ce9318abe191754548479f634c13dd11d65afc79cf0f1532a802070e4e",
+  "digest": "afdab94d7da91890f24b2f44b9aa0547f12d8402bba1fb5a7cc99c27d886cf46",
   "embed_patterns": [
     [
       "del_feed",
@@ -2240,8 +2240,8 @@
       "source": "text-wiki/Text/Wiki/Parse/Default/Tighten.php"
     }
   ],
-  "snapshot_commit": "19afa925e2cf06c9f07fbf22191293f31cc99e7e",
-  "snapshot_tag": "snapshot-42",
+  "snapshot_commit": "b7d46411538debe1adb21538d7a6f8788b20662d",
+  "snapshot_tag": "snapshot-43",
   "source_count": 70,
   "sources": [
     {
@@ -2458,7 +2458,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Paragraph.php",
-      "sha256": "39d7bbfe1530fbbd8ce7aec42e61047c37daf0fe8cb4469e83e7a545be7e87b9"
+      "sha256": "3d9336ce4ac3c32fdae6640c0be31394d2ec99bbd5ac063fb762912664792947"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Url.php",

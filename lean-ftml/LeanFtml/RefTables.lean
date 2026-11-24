@@ -2,18 +2,18 @@ set_option maxRecDepth 100000
 /-
   LeanFtml.RefTables — GENERATED FILE. DO NOT EDIT BY HAND.
   Produced by tools/extract_ref_tables.py from wikidot-php-reference
-  snapshot-42 (19afa925e2cf06c9f07fbf22191293f31cc99e7e). Re-run the extractor with --verify
+  snapshot-43 (b7d46411538debe1adb21538d7a6f8788b20662d). Re-run the extractor with --verify
   in CI (gate G2). Patterns are emitted as List Nat byte literals so no
   String.toList / Classical.choice leaks into the trusted computing base.
 -/
 
 namespace LeanFtml
 
-def refTablesSnapshotTag : String := "snapshot-42"
-def refTablesSnapshotCommit : String := "19afa925e2cf06c9f07fbf22191293f31cc99e7e"
+def refTablesSnapshotTag : String := "snapshot-43"
+def refTablesSnapshotCommit : String := "b7d46411538debe1adb21538d7a6f8788b20662d"
 def refTablesRuleCount : Nat := 68
 def refTablesEmbedCount : Nat := 75
-def refTablesDigest : String := "7def87ce9318abe191754548479f634c13dd11d65afc79cf0f1532a802070e4e"
+def refTablesDigest : String := "afdab94d7da91890f24b2f44b9aa0547f12d8402bba1fb5a7cc99c27d886cf46"
 
 def refRuleRegexes : List (String × List (List Nat)) := [
   ("include", [[47, 94, 92, 91, 92, 91, 105, 110, 99, 108, 117, 100, 101, 32, 40, 91, 97, 45, 122, 65, 45, 90, 48, 45, 57, 92, 115, 92, 45, 58, 93, 43, 63, 41, 40, 92, 115, 43, 46, 42, 63, 41, 63, 40, 63, 58, 92, 93, 92, 93, 41, 36, 47, 105, 109, 115]]),

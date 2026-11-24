@@ -39,8 +39,8 @@ import re
 import subprocess
 import sys
 
-SNAPSHOT_TAG = "snapshot-42"
-SNAPSHOT_COMMIT = "19afa925e2cf06c9f07fbf22191293f31cc99e7e"
+SNAPSHOT_TAG = "snapshot-43"
+SNAPSHOT_COMMIT = "b7d46411538debe1adb21538d7a6f8788b20662d"
 DEFAULT_REF_REPO = "/home/roku/.local/state/wikijump/muse-bhl/wikidot-php-reference"
 DEFAULT_REF_PHP = "/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/ref-php"
 
@@ -132,7 +132,7 @@ PINNED = {
     "text-wiki/Text/Wiki/Parse/Default/File.php": "45f323c0e4c1de2dc70ce44d0bc6f31e8d66cc421feca1202beb3b332ba23e6c",
     "text-wiki/Text/Wiki/Parse/Default/Center.php": "d558f00c75354bfe064028ec1ea5ab48c35f2ae264d63ab6489acd1cfa8972b7",
     "text-wiki/Text/Wiki/Parse/Default/Newline.php": "a826517e1ca305448da8ed668d7354b828a7ff63915fe30c80d2e97c1bfcfed4",
-    "text-wiki/Text/Wiki/Parse/Default/Paragraph.php": "39d7bbfe1530fbbd8ce7aec42e61047c37daf0fe8cb4469e83e7a545be7e87b9",
+    "text-wiki/Text/Wiki/Parse/Default/Paragraph.php": "3d9336ce4ac3c32fdae6640c0be31394d2ec99bbd5ac063fb762912664792947",
     "text-wiki/Text/Wiki/Parse/Default/Url.php": "33aa045d00fe572eda8d4c7a43b3eb57645db5ca183b71b298d14ae6db6bb033",
     "text-wiki/Text/Wiki/Parse/Default/Email.php": "b3098d5463cb8f598e1722db2b84d2be587381e12742f6a796fb344a6c914121",
     "text-wiki/Text/Wiki/Parse/Default/Mathinline.php": "0d02f3280fed8d6244e6769e63d3dee343d1ee65b8d0042cc25bdc3f667e3320",
