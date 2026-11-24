@@ -556,18 +556,24 @@ def renderCollapsible (opts : OptMap) : List Nat :=
         else if bs == litBytes "both" then litBytes "both"
         else litBytes "top"
     | none => litBytes "top"
+  let lsOpen : List Nat :=
+    if phpEmptyOpt (omGet opts "label_size".toList) then []
+    else litBytes "<span style=\"font-size:" ++ optStrBytes opts "label_size".toList ++ litBytes ";\">"
+  let wrapLabel (html : List Nat) : List Nat :=
+    if lsOpen.isEmpty then html else lsOpen ++ html ++ litBytes "</span>"
   let hideB :=
     litBytes "<div class=\"collapsible-block-unfolded-link\">" ++
-      litBytes "<a class=\"collapsible-block-link\" " ++
-      litBytes "href=\"javascript:;\">" ++ hide ++
-      litBytes "</a></div>"
+      wrapLabel (litBytes "<a class=\"collapsible-block-link\" " ++
+        litBytes "href=\"javascript:;\">" ++ hide ++ litBytes "</a>") ++
+      litBytes "</div>"
   if intTypeIs opts (litBytes "start") then
     litBytes "<div class=\"collapsible-block\">" ++
       litBytes "<div class=\"collapsible-block-folded\"" ++
       (if folded then [] else litBytes " style=\"display:none\"") ++
-      litBytes "><a class=\"collapsible-block-link\" " ++
-      litBytes "href=\"javascript:;\">" ++ showLbl ++
-      litBytes "</a></div>" ++
+      litBytes ">" ++
+      wrapLabel (litBytes "<a class=\"collapsible-block-link\" " ++
+        litBytes "href=\"javascript:;\">" ++ showLbl ++ litBytes "</a>") ++
+      litBytes "</div>" ++
       litBytes "<div class=\"collapsible-block-unfolded\"" ++
       (if folded then litBytes " style=\"display:none\"" else []) ++
       litBytes ">" ++
@@ -939,9 +945,10 @@ def encodeFilePath (bs : List Nat) : List Nat :=
     else [b])
 
 /-- Mirror of `Text_Wiki_Render_Xhtml_File::token` under the
-    harness configuration (the `no_local` conf unset, the
-    `base` conf the class default `/`). -/
-def renderFile (opts : OptMap) : List Nat :=
+    harness configuration (REFCORR19 F1: unqualified file names use
+    `/local--files/<pageSegment>/<file>`, where `pageSegment` is `[]`
+    under the unset harness `pageName`). -/
+def renderFile (opts : OptMap) (pageName : List Nat := []) : List Nat :=
   let file := optStrBytes opts "file".toList
   let anchor := optStrBytes opts "anchor".toList
   let href :=
@@ -950,10 +957,34 @@ def renderFile (opts : OptMap) : List Nat :=
         | 47 :: r => r
         | _ => file
       litBytes "/local--files/" ++ encodeFilePath stripped
-    else litBytes "/" ++ encodeFilePath file
+    else litBytes "/local--files/" ++ pageName ++ [47] ++ encodeFilePath file
   litBytes "<a href=\"" ++ htmlSpecialCharsCompat href ++
     litBytes "\">" ++ htmlSpecialCharsCompat anchor ++
     litBytes "</a>"
+
+private def htmlTrimBytes (bs : List Nat) : List Nat :=
+  let isT (b : Nat) : Bool :=
+    b == 32 || b == 9 || b == 10 || b == 13 || b == 0 || b == 11
+  let a := bs.dropWhile isT
+  (a.reverse.dropWhile isT).reverse
+
+/-- Mirror of `Text_Wiki_Render_Xhtml_Html::token` (REFCORR19 F2):
+    renders `[[html]]` blocks as `html-block-iframe` with default
+    `src = "https://example.com/"` and optional authored `class`/`style`. -/
+def renderHtml (opts : OptMap) : List Nat :=
+  let src := litBytes "https://example.com/"
+  let cls0 := litBytes "html-block-iframe"
+  let cls :=
+    if phpEmptyOpt (omGet opts "class".toList) then cls0
+    else htmlTrimBytes (optStrBytes opts "class".toList ++ [32] ++ cls0)
+  let styPart :=
+    if phpEmptyOpt (omGet opts "style".toList) then []
+    else litBytes " style=\"" ++ htmlSpecialCharsCompat (optStrBytes opts "style".toList) ++ litBytes "\""
+  litBytes "<iframe src=\"" ++ htmlSpecialCharsCompat src ++
+    litBytes "\" allowtransparency=\"true\" frameborder=\"0\"" ++
+    styPart ++
+    litBytes " class=\"" ++ htmlSpecialCharsCompat cls ++
+    litBytes "\"></iframe>"
 
 /-! ## Size, Span, Div -/
 

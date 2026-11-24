@@ -37,22 +37,25 @@ def moduleErrorBlock (name : List Nat) : List Nat :=
 /-- renderModule with the hardcoded availability check replaced by a call on the foundation RenderEnv.moduleAvailable field. Every other byte is identical to the mirror's renderModule in LeanFtml/ServingRules.lean. -/
 def renderModuleWithEnv (env : RenderEnv) (opts : OptMap) : List Nat :=
   let name := optStrBytes opts "moduleName".toList
-  let attr0 := optStrBytes opts "attr".toList
-  let body := optStrBytes opts "module_body".toList
-  let attr := if phpEmptyOpt (omGet opts "module_body".toList) then attr0
-    else attr0 ++ litBytes " module_body=\"" ++ urlencodeBytes body ++
-      litBytes "\""
-  if env.moduleAvailable name then
-    moduleMarkerByte ++ litBytes "module \"" ++ name ++ litBytes "\"" ++
-      (if attr.isEmpty then [] else
-        [32] ++ urlencodeBytes attr ++ [32]) ++
-      moduleMarkerByte
+  if callerRuntimeModules.contains (asciiLowerBytes name) then
+    []
   else
-    litBytes "<div class=\"error-block\">[[module <em>" ++ name ++
-      litBytes "</em>]] No such module, please " ++
-      litBytes "<a href=\"https://www.wikidot.com/doc:modules\" " ++
-      litBytes "target=\"_blank\">check available modules</a> " ++
-      litBytes "and fix this page.</div>"
+    let attr0 := optStrBytes opts "attr".toList
+    let body := optStrBytes opts "module_body".toList
+    let attr := if phpEmptyOpt (omGet opts "module_body".toList) then attr0
+      else attr0 ++ litBytes " module_body=\"" ++ urlencodeBytes body ++
+        litBytes "\""
+    if env.moduleAvailable name then
+      moduleMarkerByte ++ litBytes "module \"" ++ name ++ litBytes "\"" ++
+        (if attr.isEmpty then [] else
+          [32] ++ urlencodeBytes attr ++ [32]) ++
+        moduleMarkerByte
+    else
+      litBytes "<div class=\"error-block\">[[module <em>" ++ name ++
+        litBytes "</em>]] No such module, please " ++
+        litBytes "<a href=\"https://www.wikidot.com/doc:modules\" " ++
+        litBytes "target=\"_blank\">check available modules</a> " ++
+        litBytes "and fix this page.</div>"
 
 /-! ## Agreement with the mirror and pointwise independence -/
 
@@ -83,8 +86,9 @@ theorem renderModuleWithEnv_env_independent (e1 e2 : RenderEnv)
 
 /-! ## The handoff branch -/
 
-/-- Available name: the output is exactly the \xFE-delimited marker with the RAW name (case preserved) and the urlencoded effective attribute. -/
+/-- Available non-caller-runtime name: the output is exactly the \xFE-delimited marker with the RAW name (case preserved) and the urlencoded effective attribute. -/
 theorem renderModuleWithEnv_available (env : RenderEnv) (opts : OptMap)
+    (hcr : callerRuntimeModules.contains (asciiLowerBytes (moduleNameBytes opts)) = false)
     (h : env.moduleAvailable
         (optStrBytes opts "moduleName".toList) = true) :
     renderModuleWithEnv env opts =
@@ -97,11 +101,14 @@ theorem renderModuleWithEnv_available (env : RenderEnv) (opts : OptMap)
       (optStrBytes opts
         ['m', 'o', 'd', 'u', 'l', 'e', 'N', 'a', 'm', 'e']) = true := by
     simpa using h
-  simp [renderModuleWithEnv, moduleAttr, moduleNameBytes, h']
+  dsimp only [renderModuleWithEnv]
+  rw [show callerRuntimeModules.contains (asciiLowerBytes (optStrBytes opts "moduleName".toList)) = false from hcr]
+  simp [moduleAttr, moduleNameBytes, h']
 
 /-- The available-name output coincides with the named marker expression. -/
 theorem renderModuleWithEnv_available_marker (env : RenderEnv)
     (opts : OptMap)
+    (hcr : callerRuntimeModules.contains (asciiLowerBytes (moduleNameBytes opts)) = false)
     (h : env.moduleAvailable
         (optStrBytes opts "moduleName".toList) = true) :
     renderModuleWithEnv env opts =
@@ -110,12 +117,15 @@ theorem renderModuleWithEnv_available_marker (env : RenderEnv)
       (optStrBytes opts
         ['m', 'o', 'd', 'u', 'l', 'e', 'N', 'a', 'm', 'e']) = true := by
     simpa using h
-  simp [renderModuleWithEnv, moduleHandoffMarker, moduleAttr, moduleNameBytes, h']
+  dsimp only [renderModuleWithEnv]
+  rw [show callerRuntimeModules.contains (asciiLowerBytes (optStrBytes opts "moduleName".toList)) = false from hcr]
+  simp [moduleHandoffMarker, moduleAttr, moduleNameBytes, h']
 
 /-! ## The error branch -/
 
-/-- Unavailable name: the exact "No such module" error block with the raw name. -/
+/-- Unavailable non-caller-runtime name: the exact "No such module" error block with the raw name. -/
 theorem renderModuleWithEnv_unavailable (env : RenderEnv) (opts : OptMap)
+    (hcr : callerRuntimeModules.contains (asciiLowerBytes (moduleNameBytes opts)) = false)
     (h : env.moduleAvailable
         (optStrBytes opts "moduleName".toList) = false) :
     renderModuleWithEnv env opts = moduleErrorBlock (moduleNameBytes opts) := by
@@ -123,7 +133,9 @@ theorem renderModuleWithEnv_unavailable (env : RenderEnv) (opts : OptMap)
       (optStrBytes opts
         ['m', 'o', 'd', 'u', 'l', 'e', 'N', 'a', 'm', 'e']) = false := by
     simpa using h
-  simp [renderModuleWithEnv, moduleErrorBlock, moduleNameBytes, h']
+  dsimp only [renderModuleWithEnv]
+  rw [show callerRuntimeModules.contains (asciiLowerBytes (optStrBytes opts "moduleName".toList)) = false from hcr]
+  simp [moduleErrorBlock, moduleNameBytes, h']
 
 /-- The fixed template around the raw name, split into the part before and the part after the name splice. -/
 def moduleErrorPrefix : List Nat :=

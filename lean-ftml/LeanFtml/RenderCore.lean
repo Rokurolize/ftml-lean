@@ -131,6 +131,7 @@ inductive RenderRuleId where
   | image
   | gallery
   | user
+  | html
 deriving DecidableEq, Inhabited, Repr
 
 /-- Canonical reference rule name for each mirrored `RenderRuleId`. -/
@@ -196,6 +197,7 @@ def renderRuleName : RenderRuleId → String
   | .image => "Image"
   | .gallery => "Gallery"
   | .user => "User"
+  | .html => "Html"
 
 /-- Map a reference token rule name to a mirrored `RenderRuleId`, or
     `none` when that render rule is not yet mirrored. -/
@@ -261,6 +263,7 @@ def renderRuleOfName : String → Option RenderRuleId
   | "Image" => some .image
   | "Gallery" => some .gallery
   | "User" => some .user
+  | "Html" => some .html
   | _ => none
 
 /-- The exact list of rule names mirrored by this build (self-declared

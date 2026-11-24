@@ -1225,7 +1225,8 @@ def freelinkProcess (full raw labelRaw : List Nat)
          ("anchor".toList, textVal anchor),
          ("extra".toList, textVal extra),
          ("url".toList, OptVal.null),
-         ("textFromTitle".toList, tft)]
+         ("textFromTitle".toList, tft)] ++
+        (if starUrl then [("star".toList, OptVal.bool true)] else [])
       (phBytes toks.length,
        toks ++ [{ rule := "Freelink", opts := opts }])
 

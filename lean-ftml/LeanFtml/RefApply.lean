@@ -62,6 +62,8 @@ def ruleName : RuleId → String
   | .module654 => "module654"
   | .iftags => "iftags"
   | .comment => "comment"
+  | .expr => "expr"
+  | .ifexpr => "ifexpr"
   | .iframe => "iframe"
   | .date => "date"
   | .math => "math"
@@ -74,6 +76,7 @@ def ruleName : RuleId → String
   | .bibitem => "bibitem"
   | .bibliography => "bibliography"
   | .bibcite => "bibcite"
+  | .html => "html"
   | .divprefilter => "divprefilter"
   | .anchor => "anchor"
   | .user => "user"
@@ -180,8 +183,8 @@ def runRulesRef (rules : List RuleId) (st : ParseState) : ParseState :=
 
 /-! ## Wiring theorems -/
 
-/-- The extracted table covers all 68 rules. -/
-theorem refRuleRegexes_length : refRuleRegexes.length = 68 := rfl
+/-- The extracted table covers all 71 rules. -/
+theorem refRuleRegexes_length : refRuleRegexes.length = 71 := rfl
 
 /-- No rule's extracted primary entry is the old bogus empty pattern
     or an empty pattern list entry: every rule with a primary entry

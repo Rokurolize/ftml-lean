@@ -731,6 +731,136 @@ def bibciteScan (src : List Nat) (toks : List TokenEntry) :
 def bibciteRule (st : ParseState) : ParseState :=
   applyByteRule st (fun src toks => bibciteScan src toks (src.length + 1))
 
+/-! ## Html (REFCORR19 F2) -/
+
+/-- Case-insensitive prefix match on bytes (mirroring PCRE `/i`). -/
+private def htmlMatchLitCI (pat src : List Nat) : Option (List Nat) :=
+  if src.length < pat.length then none
+  else
+    let pfx := src.take pat.length
+    if (pfx.zip pat).all (fun (a, b) => byteCiEq a b) then
+      some (src.drop pat.length)
+    else none
+
+/-- All `(body, rest)` splits at case-insensitive occurrences of `pat` in `s`,
+    in ascending order of occurrence. -/
+private def htmlOccurrencesCI (pat s : List Nat) :
+    List (List Nat × List Nat) :=
+  go s []
+where
+  go : List Nat → List Nat → List (List Nat × List Nat)
+    | [], _ => []
+    | s@(b :: rest), pre =>
+        (match htmlMatchLitCI pat s with
+         | some after => [(pre.reverse, after)]
+         | none => []) ++
+        go rest (b :: pre)
+
+/-- Extract `key="value"` (case-insensitive key with `\b` word boundary before
+    the key) from the `[[html ...]]` attribute slice, matching `Html.php`'s
+    `preg_match('/\b<key>\s*=\s*"([^"]*)"/i', ...)`. -/
+private def htmlExtractAttr (key attrs : List Nat) : Option (List Nat) :=
+  go attrs none
+where
+  isWordByte (b : Nat) : Bool :=
+    (48 ≤ b && b ≤ 57) || (65 ≤ b && b ≤ 90) || (97 ≤ b && b ≤ 122) || b == 95
+  isPcreWs (b : Nat) : Bool :=
+    b == 32 || b == 9 || b == 10 || b == 11 || b == 12 || b == 13
+  go : List Nat → Option Nat → Option (List Nat)
+    | [], _ => none
+    | s@(b :: rest), prev =>
+        let wbOk := match prev with
+          | none => true
+          | some p => !isWordByte p
+        if wbOk then
+          match htmlMatchLitCI key s with
+          | some r1 =>
+              let r2 := r1.dropWhile isPcreWs
+              match r2 with
+              | 61 :: r3 =>
+                  let r4 := r3.dropWhile isPcreWs
+                  match r4 with
+                  | 34 :: r5 =>
+                      let val := r5.takeWhile (fun x => x != 34)
+                      if (r5.drop val.length).head? == some 34 then some val
+                      else go rest (some b)
+                  | _ => go rest (some b)
+              | _ => go rest (some b)
+          | none => go rest (some b)
+        else go rest (some b)
+
+/-- Match `/\[\[html(?:\s+[^\]\n]*)?\]\][ \t]*\n?(.*?)\n?[ \t]*\[\[\/html\]\](\s|$)/Umsi`
+    at the head of `src`. Under `/U`, the optional leading/trailing `[ \t]*\n?`
+    quantifiers are lazy (matching empty) and `(.*?)` is greedy (matching up to
+    the last `[[/html]]` followed by `\s` or end-of-input). Returns
+    `(openerAttrs, text, trailer, rest)`. -/
+def htmlMatchAt (src : List Nat) :
+    Option (Option (List Nat) × List Nat × List Nat × List Nat) :=
+  let isPcreWs (b : Nat) : Bool :=
+    b == 32 || b == 9 || b == 10 || b == 11 || b == 12 || b == 13
+  match htmlMatchLitCI (litBytes "[[html") src with
+  | none => none
+  | some r0 =>
+      let opener : Option (Option (List Nat) × List Nat) :=
+        match r0 with
+        | 93 :: 93 :: r1 => some (none, r1)
+        | w :: rest =>
+            if isPcreWs w then
+              let run := rest.takeWhile (fun b => b != 93 && b != 10)
+              match rest.drop run.length with
+              | 93 :: 93 :: r1 => some (some (w :: run), r1)
+              | _ => none
+            else none
+        | [] => none
+      match opener with
+      | none => none
+      | some (attrsOpt, afterOpen) =>
+          let cands := htmlOccurrencesCI (litBytes "[[/html]]") afterOpen
+          cands.reverse.findSome? fun (body, afterClose) =>
+            match afterClose with
+            | [] => some (attrsOpt, body, [], [])
+            | b :: rest =>
+                if isPcreWs b then some (attrsOpt, body, [b], rest)
+                else none
+
+/-- Scanner for the `Html` parse rule (`preg_replace_callback` semantics). -/
+def htmlScan (src : List Nat) (toks : List TokenEntry) :
+    Nat → List Nat × List TokenEntry
+  | 0 => ([], toks)
+  | fuel + 1 =>
+    match src with
+    | [] => ([], toks)
+    | b :: rest =>
+        match htmlMatchAt src with
+        | some (attrsOpt, body, trailer, r) =>
+            let attrStr := match attrsOpt with
+              | some a =>
+                  let ws := a.takeWhile (fun x =>
+                    x == 32 || x == 9 || x == 10 || x == 11 || x == 12 || x == 13)
+                  if ws.isEmpty then none else some (a.drop ws.length)
+              | none => none
+            let clsOpt := attrStr.bind (htmlExtractAttr (litBytes "class"))
+            let styOpt := attrStr.bind (htmlExtractAttr (litBytes "style"))
+            let opts : OptMap :=
+              [("text".toList, textVal body)] ++
+              (match clsOpt with
+               | some c => [("class".toList, textVal c)]
+               | none => []) ++
+              (match styOpt with
+               | some s => [("style".toList, textVal s)]
+               | none => [])
+            let ph := phBytes toks.length
+            let t1 := toks ++ [{ rule := "Html", opts := opts }]
+            let (o, t2) := htmlScan r t1 fuel
+            (ph ++ trailer ++ o, t2)
+        | none =>
+            let (o, t1) := htmlScan rest toks fuel
+            (b :: o, t1)
+
+/-- The `Html` parse rule mirror (`REFCORR19 F2`). -/
+def htmlRule (st : ParseState) : ParseState :=
+  applyByteRule st (fun src toks => htmlScan src toks (src.length + 1))
+
 /-! ## Theorems -/
 
 /-- Footnoteitem claims nothing and changes nothing: its rule is

@@ -60,6 +60,8 @@ inductive RuleId where
   | module654
   | iftags
   | comment
+  | expr
+  | ifexpr
   | iframe
   | date
   | math
@@ -72,6 +74,7 @@ inductive RuleId where
   | bibitem
   | bibliography
   | bibcite
+  | html
   | divprefilter
   | anchor
   | user
@@ -132,6 +135,8 @@ def applyRule : RuleId → ParseState → ParseState
   | .module654 => module654Rule
   | .iftags => iftagsRule
   | .comment => commentRule
+  | .expr => exprRule
+  | .ifexpr => ifexprRule
   | .iframe => iframeRule
   | .date => dateRule
   | .math => mathRule
@@ -144,6 +149,7 @@ def applyRule : RuleId → ParseState → ParseState
   | .bibitem => bibitemRule
   | .bibliography => bibliographyRule
   | .bibcite => bibciteRule
+  | .html => htmlRule
   | .divprefilter => divprefilterRule
   | .anchor => anchorRule
   | .user => userRule
@@ -406,10 +412,11 @@ def pipelineR316 : List RuleId :=
     Prefilter,Delimiter,Code,Form,Raw,Rawold,Modulepre,Module,Module654,Iftags,Comment,Iframe,Date,Math,Concatlines,Freelink,Equationreference,Footnote,Footnoteitem,Footnoteblock,Bibitem,Bibliography,Bibcite,Divprefilter,Anchor,User,Blockquote,Heading,Toc,Horiz,Separator,Clearfloat,Break,Span,Size,Div,Divalign,Collapsible,Tabview,Note,Gallery,List,Deflist,Table,Tableadv,Button,Image,Embed,Social,File,Center,Newline,Paragraph,Url,Email,Mathinline,Interwiki,Colortext,Strong,Emphasis,Underline,Strikethrough,Tt,Superscript,Subscript,Typography,Tighten`. -/
 def pipelineR317 : List RuleId :=
   [.prefilter, .delimiter, .code, .form, .raw, .rawold,
-   .modulepre, .module, .module654, .iftags, .comment, .iframe,
+   .modulepre, .module, .module654, .iftags, .comment, .expr,
+   .ifexpr, .iframe,
    .date, .math, .concatlines, .freelink, .equationreference,
    .footnote, .footnoteitem, .footnoteblock, .bibitem,
-   .bibliography, .bibcite, .divprefilter, .anchor, .user,
+   .bibliography, .bibcite, .html, .divprefilter, .anchor, .user,
    .blockquote, .heading, .toc, .horiz, .separator, .clearfloat,
    .break, .span, .size, .div, .divalign, .collapsible, .tabview,
    .note, .gallery, .list, .deflist,
@@ -419,136 +426,93 @@ def pipelineR317 : List RuleId :=
    .emphasis, .underline, .strikethrough, .tt, .superscript,
    .subscript, .typography, .tighten]
 
-/-- The R4.2 render-stage prefix: the first fifty-four rules of the
+/-- The R4.2 render-stage prefix: the first fifty-seven rules of the
     full pipeline, in pipeline order, ending at `Paragraph` (pipeline
-    position 54), the last prose-core render rule. Every rule of the
-    R4.2 family (Delimiter 3, Comment 12, Blockquote 28, Horiz 31,
-    Separator 32, Clearfloat 33, Break 34, Divalign 38, Note 41,
-    Center 52, Newline 53, Paragraph 54) sits inside this prefix; the
-    fourteen rules after it (Url through Tighten) tokenize only
-    inline spans inside already-formed paragraphs and cannot create,
-    remove, or reshape a prose-core token. The matching PHP oracle is
-    `state-restricted.php` over the same fifty-four names. -/
+    position 57), the last prose-core render rule. -/
 def pipelineR42 : List RuleId :=
   [.include, .prefilter, .delimiter, .code, .form, .raw, .rawold,
-   .modulepre, .module, .module654, .iftags, .comment, .iframe,
+   .modulepre, .module, .module654, .iftags, .comment, .expr,
+   .ifexpr, .iframe,
    .date, .math, .concatlines, .freelink, .equationreference,
    .footnote, .footnoteitem, .footnoteblock, .bibitem,
-   .bibliography, .bibcite, .divprefilter, .anchor, .user,
+   .bibliography, .bibcite, .html, .divprefilter, .anchor, .user,
    .blockquote, .heading, .toc, .horiz, .separator, .clearfloat,
    .break, .span, .size, .div, .divalign, .collapsible, .tabview,
    .note, .gallery, .list, .deflist,
    .table, .tableadv, .button, .image, .embed, .social, .file,
    .center, .newline, .paragraph]
 
-theorem pipelineR42_length : pipelineR42.length = 54 := rfl
+theorem pipelineR42_length : pipelineR42.length = 57 := rfl
 
-/-- The full sixty-eight-rule pipeline (CAPSTONE): `Include` at
-    pipeline position 1 followed by the sixty-seven rules of
+/-- The full seventy-one-rule pipeline (snapshot-44): `Include` at
+    pipeline position 1 followed by the seventy rules of
     `pipelineR317`, in the exact order of `Text_Wiki::$rules` in
-    `ref-php/text-wiki/Text/Wiki.php`. The matching PHP oracle is
-    `state-restricted.php` over `RULES_FULL` (`run_oracle.py full`). -/
+    `ref-php/text-wiki/Text/Wiki.php`. -/
 def pipelineFull : List RuleId :=
   .include :: pipelineR317
 
-theorem pipelineFull_length : pipelineFull.length = 68 := rfl
+theorem pipelineFull_length : pipelineFull.length = 71 := rfl
 
-/-- The R4.2 prefix is exactly the full pipeline's first fifty-four
+/-- The R4.2 prefix is exactly the full pipeline's first fifty-seven
     rules. -/
-theorem pipelineR42_prefix : pipelineFull.take 54 = pipelineR42 := rfl
+theorem pipelineR42_prefix : pipelineFull.take 57 = pipelineR42 := rfl
 
-/-- The R4.3 render-stage prefix: the complete sixty-eight-rule
-    pipeline. The family's fourteen rules sit at positions 55 (Url),
-    56 (Email), 57 (Mathinline), 58 (Interwiki), 59 (Colortext),
-    60 (Strong), 61 (Emphasis), 62 (Underline), 63 (Strikethrough),
-    64 (Tt), 65 (Superscript), 66 (Subscript), 67 (Typography) and
-    68 (Tighten), so the prefix that contains them all is the full
-    pipeline: Tighten, the last rule, rewrites the whole residual
-    stream (newline deletion, residual space-run collapse, Colortext
-    edge-space hoisting and ejection, Paragraph/Newline edge trims),
-    and Typography's tokens are claimed inside already-formed
-    paragraph text, so no shorter prefix exercises this family's
-    render branches against the states the full pipeline produces.
-    This closes the prefix question for the render tier: every
-    later stage's family also ends at or before Tighten, and its
-    stage prefix is likewise the full pipeline. The matching PHP
-    oracle is `state-restricted.php` over all sixty-eight names
-    (`RULES_FULL`). -/
+/-- The R4.3 render-stage prefix: the complete seventy-one-rule
+    pipeline. -/
 def pipelineR43 : List RuleId :=
   pipelineFull
 
-theorem pipelineR43_length : pipelineR43.length = 68 := rfl
+theorem pipelineR43_length : pipelineR43.length = 71 := rfl
 
 /-- The R4.3 prefix is the full pipeline itself. -/
 theorem pipelineR43_full : pipelineR43 = pipelineFull := rfl
 
-/-- The R4.4 render-stage prefix: the complete sixty-eight-rule
-    pipeline, by the closure `pipelineR43`'s doc comment records
-    (every render stage's prefix is the full pipeline, since Tighten
-    at position 68 shapes the residual stream every family's states
-    carry). The family's rules sit at positions 5 (Form), 6 (Raw),
-    7 (Rawold), 29 (Heading) and 30 (Toc). -/
+/-- The R4.4 render-stage prefix: the complete seventy-one-rule
+    pipeline. -/
 def pipelineR44 : List RuleId :=
   pipelineFull
 
-theorem pipelineR44_length : pipelineR44.length = 68 := rfl
+theorem pipelineR44_length : pipelineR44.length = 71 := rfl
 
 /-- The R4.4 prefix is the full pipeline itself. -/
 theorem pipelineR44_full : pipelineR44 = pipelineFull := rfl
 
-/-- The R4.5 render-stage prefix: the complete sixty-eight-rule
-    pipeline, by the closure `pipelineR43`'s doc comment records.
-    The family's rules sit at positions 43 (List), 44 (Deflist),
-    45 (Table), and 46 (Tableadv). -/
+/-- The R4.5 render-stage prefix: the complete seventy-one-rule
+    pipeline. -/
 def pipelineR45 : List RuleId :=
   pipelineFull
 
-theorem pipelineR45_length : pipelineR45.length = 68 := rfl
+theorem pipelineR45_length : pipelineR45.length = 71 := rfl
 
 /-- The R4.5 prefix is the full pipeline itself. -/
 theorem pipelineR45_full : pipelineR45 = pipelineFull := rfl
 
-/-- The R4.6 render-stage prefix: the complete sixty-eight-rule
-    pipeline, by the closure `pipelineR43`'s doc comment records.
-    The family's rules sit at positions 13 (Iframe), 14 (Date),
-    18 (Equationreference), 26 (Anchor), 35 (Span), 36 (Size),
-    37 (Div), 39 (Collapsible), 40 (Tabview), 47 (Button), and
-    51 (File). -/
+/-- The R4.6 render-stage prefix: the complete seventy-one-rule
+    pipeline. -/
 def pipelineR46 : List RuleId :=
   pipelineFull
 
-theorem pipelineR46_length : pipelineR46.length = 68 := rfl
+theorem pipelineR46_length : pipelineR46.length = 71 := rfl
 
 /-- The R4.6 prefix is the full pipeline itself. -/
 theorem pipelineR46_full : pipelineR46 = pipelineFull := rfl
 
-/-- The R4.7 render-stage prefix: the complete sixty-eight-rule
-    pipeline, by the closure `pipelineR43`'s doc comment records.
-    The family's parse rules sit at positions 4 (Code) and 50
-    (Embed); both render rules are stateless over their token
-    options. -/
+/-- The R4.7 render-stage prefix: the complete seventy-one-rule
+    pipeline. -/
 def pipelineR47 : List RuleId :=
   pipelineFull
 
-theorem pipelineR47_length : pipelineR47.length = 68 := rfl
+theorem pipelineR47_length : pipelineR47.length = 71 := rfl
 
 /-- The R4.7 prefix is the full pipeline itself. -/
 theorem pipelineR47_full : pipelineR47 = pipelineFull := rfl
 
-/-- The R4.8 render-stage prefix: the complete sixty-eight-rule
-    pipeline, by the closure `pipelineR43`'s doc comment records.
-    The family's parse rules sit at positions 9 (Module), 10
-    (Module654), 15 (Math), 17 (Freelink), 27 (User), 42
-    (Gallery), and 48 (Image); their render rules read token
-    options plus fixed harness environment (the Freelink
-    existence set, the ModuleManager stub list, the unset page
-    name), all baked into `LeanFtml/ServingRules.lean`. With
-    this stage every render rule in the pipeline has a mirror
-    or a named disposition. -/
+/-- The R4.8 render-stage prefix: the complete seventy-one-rule
+    pipeline. -/
 def pipelineR48 : List RuleId :=
   pipelineFull
 
-theorem pipelineR48_length : pipelineR48.length = 68 := rfl
+theorem pipelineR48_length : pipelineR48.length = 71 := rfl
 
 /-- The R4.8 prefix is the full pipeline itself. -/
 theorem pipelineR48_full : pipelineR48 = pipelineFull := rfl

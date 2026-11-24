@@ -102,18 +102,21 @@ theorem readPlaceholder_rest_length {s : List Nat} {n : Nat} {r : List Nat}
         exact absurd h (by simp)
 
 /-- The one-step emission law at a literal byte head (no placeholder
-    begins there): on a window match the scanner claims one Newline
-    token after the byte and consumes the LF; otherwise it copies the
-    byte. This is the REFCORR16 scanner's byte branch, unchanged from
-    the original mirror. -/
+    begins there): on a window match the scanner suppresses the LF when
+    `beforeBlockClose` holds, otherwise claims one Newline token after
+    the byte and consumes the LF; otherwise it copies the byte. -/
 theorem parainline_newline_go_step_emission (b : Nat) (rest : List Nat)
     (toks : List TokenEntry) (fuel : Nat)
     (h : readPlaceholder (b :: rest) = none) :
     newlineScan.go (b :: rest) toks (fuel + 1) =
       if nlWindowMatch b rest then
-        let (ph, toks1) := claimTok "Newline" [] toks
-        let (o, toks2) := newlineScan.go rest.tail toks1 fuel
-        (b :: (ph ++ o), toks2)
+        if newlineScan.beforeBlockClose rest.tail toks then
+          let (o, toks1) := newlineScan.go rest.tail toks fuel
+          (b :: o, toks1)
+        else
+          let (ph, toks1) := claimTok "Newline" [] toks
+          let (o, toks2) := newlineScan.go rest.tail toks1 fuel
+          (b :: (ph ++ o), toks2)
       else
         let (o, toks1) := newlineScan.go rest toks fuel
         (b :: o, toks1) := by
@@ -127,29 +130,33 @@ theorem parainline_newline_go_step_byte (b : Nat) (rest : List Nat)
     (h : readPlaceholder (b :: rest) = none) :
     newlineScan.go (b :: rest) toks (fuel + 1) =
       if (b ≠ 10 ∧ rest.head? = some 10) ∧ rest.tail.head? ≠ some 10 then
-        (b :: ((claimTok "Newline" [] toks).1 ++
-          (newlineScan.go rest.tail (claimTok "Newline" [] toks).2 fuel).1),
-         (newlineScan.go rest.tail (claimTok "Newline" [] toks).2 fuel).2)
+        if newlineScan.beforeBlockClose rest.tail toks = true then
+          (b :: (newlineScan.go rest.tail toks fuel).1,
+           (newlineScan.go rest.tail toks fuel).2)
+        else
+          (b :: ((claimTok "Newline" [] toks).1 ++
+            (newlineScan.go rest.tail (claimTok "Newline" [] toks).2 fuel).1),
+           (newlineScan.go rest.tail (claimTok "Newline" [] toks).2 fuel).2)
       else
         (b :: (newlineScan.go rest toks fuel).1,
          (newlineScan.go rest toks fuel).2) := by
   rw [newlineScan.go.eq_def]
   simp [h]
 
-/-- REFCORR16: the one-step law at a placeholder head. The scanner
-    consumes the placeholder as a unit and re-emits its original
-    bytes; the newline after it is claimed exactly when the window
-    matches and the junction exception does not apply (a skip-list
-    block token directly before a Tableadv token: the newline is
-    layout and is emitted literally with no claim). The statement
-    is in the scanner's step normal form (the form its equation
-    lemma produces). -/
+/-- REFCORR16 / REFCORR19 F4(b): the one-step law at a placeholder head. The
+    scanner consumes the placeholder as a unit and re-emits its original bytes;
+    the newline after it is absorbed by `beforeBlockClose` (F4(b)), emitted
+    literally by `junction` (REFCORR16), or claimed as Newline. -/
 theorem parainline_newline_go_step_placeholder (src : List Nat) (n : Nat)
     (rest : List Nat) (toks : List TokenEntry) (fuel : Nat)
     (h : readPlaceholder src = some (n, rest)) :
     newlineScan.go src toks (fuel + 1) =
       if rest.head? = some 10 ∧ rest.tail.head? ≠ some 10 then
-        if newlineScan.junction n rest.tail toks = true then
+        if newlineScan.beforeBlockClose rest.tail toks = true then
+          (src.take (src.length - rest.length) ++
+            (newlineScan.go rest.tail toks fuel).1,
+           (newlineScan.go rest.tail toks fuel).2)
+        else if newlineScan.junction n rest.tail toks = true then
           (src.take (src.length - rest.length) ++ 10 ::
             (newlineScan.go rest.tail toks fuel).1,
            (newlineScan.go rest.tail toks fuel).2)
@@ -171,12 +178,7 @@ theorem parainline_newline_go_step_placeholder (src : List Nat) (n : Nat)
 /-! ## 2. Fuel-indexed reference scanner and totality / correctness -/
 
 /-- The fuel-indexed reference scanner: the same step structure as
-    the mirror's `newlineScan.go` (placeholder units consumed whole
-    and re-emitted byte-for-byte, the REFCORR16 junction exception,
-    the two-byte window at literal bytes), written independently so
-    the agreement theorem below is a genuine two-implementation
-    check at the level of the step law. The canonical fuel is the
-    input length plus one, exactly the mirror's own bound. -/
+    the mirror's `newlineScan.go`. -/
 def nlSpecF : List Nat → List TokenEntry → Nat → List Nat × List TokenEntry
   | src, toks, 0 => (src, toks)
   | src, toks, fuel + 1 =>
@@ -184,7 +186,10 @@ def nlSpecF : List Nat → List TokenEntry → Nat → List Nat × List TokenEnt
       | some (n, rest) =>
           let origPh := src.take (src.length - rest.length)
           if rest.head? == some 10 && (rest.tail.head? != some 10) then
-            if newlineScan.junction n rest.tail toks then
+            if newlineScan.beforeBlockClose rest.tail toks then
+              let (o, toks1) := nlSpecF rest.tail toks fuel
+              (origPh ++ o, toks1)
+            else if newlineScan.junction n rest.tail toks then
               let (o, toks1) := nlSpecF rest.tail toks fuel
               (origPh ++ [10] ++ o, toks1)
             else
@@ -200,9 +205,13 @@ def nlSpecF : List Nat → List TokenEntry → Nat → List Nat × List TokenEnt
           | b :: rest =>
               if b != 10 && rest.head? == some 10 &&
                   (rest.tail.head? != some 10) then
-                let (ph, toks1) := claimTok "Newline" [] toks
-                let (o, toks2) := nlSpecF rest.tail toks1 fuel
-                (b :: (ph ++ o), toks2)
+                if newlineScan.beforeBlockClose rest.tail toks then
+                  let (o, toks1) := nlSpecF rest.tail toks fuel
+                  (b :: o, toks1)
+                else
+                  let (ph, toks1) := claimTok "Newline" [] toks
+                  let (o, toks2) := nlSpecF rest.tail toks1 fuel
+                  (b :: (ph ++ o), toks2)
               else
                 let (o, toks1) := nlSpecF rest toks fuel
                 (b :: o, toks1)
@@ -220,7 +229,11 @@ theorem nlSpecF_step_placeholder (src : List Nat) (n : Nat)
     (h : readPlaceholder src = some (n, rest)) :
     nlSpecF src toks (fuel + 1) =
       if rest.head? = some 10 ∧ rest.tail.head? ≠ some 10 then
-        if newlineScan.junction n rest.tail toks = true then
+        if newlineScan.beforeBlockClose rest.tail toks = true then
+          (src.take (src.length - rest.length) ++
+            (nlSpecF rest.tail toks fuel).1,
+           (nlSpecF rest.tail toks fuel).2)
+        else if newlineScan.junction n rest.tail toks = true then
           (src.take (src.length - rest.length) ++ 10 ::
             (nlSpecF rest.tail toks fuel).1,
            (nlSpecF rest.tail toks fuel).2)
@@ -246,9 +259,13 @@ theorem nlSpecF_step_byte (b : Nat) (rest : List Nat)
     (h : readPlaceholder (b :: rest) = none) :
     nlSpecF (b :: rest) toks (fuel + 1) =
       if (b ≠ 10 ∧ rest.head? = some 10) ∧ rest.tail.head? ≠ some 10 then
-        (b :: ((claimTok "Newline" [] toks).1 ++
-          (nlSpecF rest.tail (claimTok "Newline" [] toks).2 fuel).1),
-         (nlSpecF rest.tail (claimTok "Newline" [] toks).2 fuel).2)
+        if newlineScan.beforeBlockClose rest.tail toks = true then
+          (b :: (nlSpecF rest.tail toks fuel).1,
+           (nlSpecF rest.tail toks fuel).2)
+        else
+          (b :: ((claimTok "Newline" [] toks).1 ++
+            (nlSpecF rest.tail (claimTok "Newline" [] toks).2 fuel).1),
+           (nlSpecF rest.tail (claimTok "Newline" [] toks).2 fuel).2)
       else
         (b :: (nlSpecF rest toks fuel).1,
          (nlSpecF rest toks fuel).2) := by
@@ -293,6 +310,7 @@ theorem parainline_newline_go_eq_spec (fuel : Nat) :
               have hb2 : rest.length + 1 ≤ fuel := by omega
               rw [parainline_newline_go_step_byte b rest toks fuel hph,
                 nlSpecF_step_byte b rest toks fuel hph,
+                ih rest.tail toks hb1,
                 ih rest.tail (claimTok "Newline" [] toks).2 hb1,
                 ih rest toks hb2]
 
@@ -451,48 +469,54 @@ theorem parainline_newlineScan_tokens_shape (src : List Nat) (toks : List TokenE
         | some nr =>
             obtain ⟨n, rest⟩ := nr
             by_cases hw : rest.head? = some 10 ∧ rest.tail.head? ≠ some 10
-            · by_cases hj : newlineScan.junction n rest.tail toks = true
+            · by_cases hbc : newlineScan.beforeBlockClose rest.tail toks = true
               · obtain ⟨k, hk⟩ := ih rest.tail toks
                 refine ⟨k, ?_⟩
                 rw [parainline_newline_go_step_placeholder src n rest toks fuel hph,
-                  if_pos hw, if_pos hj]
-                show (newlineScan.go rest.tail toks fuel).2 =
-                  toks ++ List.replicate k nlToken
+                  if_pos hw, if_pos hbc]
                 exact hk
-              · obtain ⟨k, hk⟩ := ih rest.tail (toks ++ [nlToken])
-                refine ⟨k + 1, ?_⟩
-                rw [parainline_newline_go_step_placeholder src n rest toks fuel hph,
-                  if_pos hw, if_neg hj]
-                show (newlineScan.go rest.tail (toks ++ [nlToken]) fuel).2 =
-                  toks ++ List.replicate (k + 1) nlToken
-                rw [hk]
-                simp [List.append_assoc, List.replicate_succ]
+              · by_cases hj : newlineScan.junction n rest.tail toks = true
+                · obtain ⟨k, hk⟩ := ih rest.tail toks
+                  refine ⟨k, ?_⟩
+                  rw [parainline_newline_go_step_placeholder src n rest toks fuel hph,
+                    if_pos hw, if_neg hbc, if_pos hj]
+                  exact hk
+                · obtain ⟨k, hk⟩ := ih rest.tail (toks ++ [nlToken])
+                  refine ⟨k + 1, ?_⟩
+                  rw [parainline_newline_go_step_placeholder src n rest toks fuel hph,
+                    if_pos hw, if_neg hbc, if_neg hj]
+                  show (newlineScan.go rest.tail (toks ++ [nlToken]) fuel).2 =
+                    toks ++ List.replicate (k + 1) nlToken
+                  rw [hk]
+                  simp [List.append_assoc, List.replicate_succ]
             · obtain ⟨k, hk⟩ := ih rest toks
               refine ⟨k, ?_⟩
               rw [parainline_newline_go_step_placeholder src n rest toks fuel hph,
                 if_neg hw]
-              show (newlineScan.go rest toks fuel).2 =
-                toks ++ List.replicate k nlToken
               exact hk
         | none =>
             cases src with
             | nil => exact ⟨0, by simp [newlineScan.go, hph]⟩
             | cons b rest =>
                 by_cases hw : nlWindowMatch b rest = true
-                · obtain ⟨k, hk⟩ := ih rest.tail (toks ++ [nlToken])
-                  refine ⟨k + 1, ?_⟩
-                  rw [parainline_newline_go_step_emission b rest toks fuel hph,
-                    if_pos hw]
-                  show (newlineScan.go rest.tail (toks ++ [nlToken]) fuel).2 =
-                    toks ++ List.replicate (k + 1) nlToken
-                  rw [hk]
-                  simp [List.append_assoc, List.replicate_succ]
+                · by_cases hbc : newlineScan.beforeBlockClose rest.tail toks = true
+                  · obtain ⟨k, hk⟩ := ih rest.tail toks
+                    refine ⟨k, ?_⟩
+                    rw [parainline_newline_go_step_emission b rest toks fuel hph,
+                      if_pos hw, if_pos hbc]
+                    exact hk
+                  · obtain ⟨k, hk⟩ := ih rest.tail (toks ++ [nlToken])
+                    refine ⟨k + 1, ?_⟩
+                    rw [parainline_newline_go_step_emission b rest toks fuel hph,
+                      if_pos hw, if_neg hbc]
+                    show (newlineScan.go rest.tail (toks ++ [nlToken]) fuel).2 =
+                      toks ++ List.replicate (k + 1) nlToken
+                    rw [hk]
+                    simp [List.append_assoc, List.replicate_succ]
                 · obtain ⟨k, hk⟩ := ih rest toks
                   refine ⟨k, ?_⟩
                   rw [parainline_newline_go_step_emission b rest toks fuel hph,
                     if_neg hw]
-                  show (newlineScan.go rest toks fuel).2 =
-                    toks ++ List.replicate k nlToken
                   exact hk
   unfold newlineScan
   exact key (src.length + 1) src toks

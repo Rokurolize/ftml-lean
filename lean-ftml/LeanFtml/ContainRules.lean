@@ -921,30 +921,110 @@ def collMatchAt (s : List Nat) :
           (fun (body, r3) =>
             (g1, g2, body, r3.drop ((r3.takeWhile (· == 32)).length))))))).head?
 
+/-- Read one `0xFF<digits>0xFF` token index at the head of `s`, if present. -/
+private def collReadPh (s : List Nat) : Option (Nat × List Nat) :=
+  match s with
+  | 0xFF :: rest =>
+      let ds := rest.takeWhile (fun b => 48 ≤ b && b ≤ 57)
+      if ds.isEmpty then none
+      else match rest.drop ds.length with
+        | 0xFF :: after =>
+            some (ds.foldl (fun a b => a * 10 + (b - 48)) 0, after)
+        | _ => none
+  | _ => none
+
+/-- Collect all token ids referenced by `0xFF<digits>0xFF` placeholders in `s`,
+    in left-to-right order. -/
+private def collScanPhIds (s : List Nat) : List Nat :=
+  go s (s.length + 1) []
+where
+  go : List Nat → Nat → List Nat → List Nat
+    | [], _, acc => acc.reverse
+    | _, 0, acc => acc.reverse
+    | s@(_ :: rest), fuel + 1, acc =>
+        match collReadPh s with
+        | some (k, after) => go after fuel (k :: acc)
+        | none => go rest fuel acc
+
+private def collIsSizeType (toks : List TokenEntry) (idx : Nat) (want : List Char) : Bool :=
+  match toks[idx]? with
+  | some t => t.rule == "Size" &&
+      match omGet t.opts "type".toList with
+      | some (.str s) => s == want
+      | _ => false
+  | none => false
+
+private def collSetTokTypeSuppressed (toks : List TokenEntry) (idx : Nat) : List TokenEntry :=
+  match toks[idx]? with
+  | some t => toks.set idx { t with opts := omSet t.opts "type".toList (.str "suppressed".toList) }
+  | none => toks
+
+/-- REFCORR19 F11/#03: find matching `Size` `start` token backwards from `eid - 1`
+    down to `sid`. Returns `some j` when depth reaches 0 at `j >= sid`. -/
+private def collMatchSizeStart (toks : List TokenEntry) (sid eid : Nat) : Option Nat :=
+  if eid ≤ sid then none
+  else go (eid - 1) 0 (eid - sid)
+where
+  go (j depth : Nat) : Nat → Option Nat
+    | 0 => none
+    | fuel + 1 =>
+        let (depth', hit) : Nat × Option Nat :=
+          if collIsSizeType toks j "end".toList then (depth + 1, none)
+          else if collIsSizeType toks j "start".toList then
+            if depth == 0 then (0, some j) else (depth - 1, none)
+          else (depth, none)
+        match hit with
+        | some m => some m
+        | none => if j ≤ sid then none else go (j - 1) depth' fuel
+
 /-- process() for a Collapsible match: the attribute
-    group through getAttrs, kept whole; both tokens carry
-    the attribute map, their type, and the class static's
-    pre-increment value as `count`, which the process then
-    increments; the replacement doubles the captured
-    leading newline and wraps the verbatim body in blank
-    lines. -/
+    group through getAttrs, kept whole; REFCORR19 F11/#03 generalized
+    size/opener reattachment (only when `toks` ends with a `Size` `start`
+    token `sid`, finding its matching `Size` `end` anywhere in `body`);
+    both tokens carry `args`, `type`, `count`, and `label_size`. -/
 def collProcess (g1 : List Nat) (g2 : Option (List Nat))
     (body : List Nat) (doc : DocState) (toks : List TokenEntry) :
     List Nat × List TokenEntry × DocState :=
+  let sidOpt : Option Nat :=
+    if toks.isEmpty then none
+    else
+      let lastId := toks.length - 1
+      if collIsSizeType toks lastId "start".toList then some lastId else none
+  let (labelSizeOpt, toks0) : Option OptVal × List TokenEntry :=
+    match sidOpt with
+    | none => (none, toks)
+    | some sid =>
+        let cands := collScanPhIds body
+        let hit := cands.findSome? fun eid =>
+          if collIsSizeType toks eid "end".toList &&
+              collMatchSizeStart toks sid eid == some sid then
+            some eid
+          else none
+        match hit with
+        | none => (none, toks)
+        | some eid =>
+            let sz := match toks[sid]? with
+              | some st => omGet st.opts "size".toList
+              | none => none
+            let t' := collSetTokTypeSuppressed (collSetTokTypeSuppressed toks sid) eid
+            (sz, t')
+  let labelSizeVal : OptVal := labelSizeOpt.getD OptVal.null
   let attr := getAttrsBytes (g2.getD [])
   let argsOpt : OptVal := OptVal.map
     (attr.map (fun (k, v) => (utf8Decode k, textVal v)))
   let count := doc.collapsibleCount
-  let startPh := phBytes toks.length
-  let t1 := toks ++ [{ rule := "Collapsible", opts :=
+  let startPh := phBytes toks0.length
+  let t1 := toks0 ++ [{ rule := "Collapsible", opts :=
     [("args".toList, argsOpt),
      ("type".toList, OptVal.str "start".toList),
-     ("count".toList, OptVal.int (count : Int))] }]
+     ("count".toList, OptVal.int (count : Int)),
+     ("label_size".toList, labelSizeVal)] }]
   let endPh := phBytes t1.length
   let t2 := t1 ++ [{ rule := "Collapsible", opts :=
     [("args".toList, argsOpt),
      ("type".toList, OptVal.str "end".toList),
-     ("count".toList, OptVal.int (count : Int))] }]
+     ("count".toList, OptVal.int (count : Int)),
+     ("label_size".toList, labelSizeVal)] }]
   (g1 ++ g1 ++ startPh ++ [10, 10] ++ body ++ [10, 10] ++ endPh,
    t2, { doc with collapsibleCount := count + 1 })
 
@@ -1459,10 +1539,12 @@ theorem collProcess_count_example :
     ((collProcess [10] none (litBytes "x") {} []).2.1.map (·.opts)) =
       [[("args".toList, OptVal.map []),
         ("type".toList, OptVal.str "start".toList),
-        ("count".toList, OptVal.int 0)],
+        ("count".toList, OptVal.int 0),
+        ("label_size".toList, OptVal.null)],
        [("args".toList, OptVal.map []),
         ("type".toList, OptVal.str "end".toList),
-        ("count".toList, OptVal.int 0)]] := ⟨rfl, rfl⟩
+        ("count".toList, OptVal.int 0),
+        ("label_size".toList, OptVal.null)]] := ⟨rfl, rfl⟩
 
 /-- A nested collapsible is claimed once, at the first
     closer: the match at the head ends there, leaving the

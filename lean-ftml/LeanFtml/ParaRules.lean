@@ -439,6 +439,21 @@ where
           asciiLower ((tokenRuleAt toks n2).toList.map Char.toNat) ==
             litBytes "tableadv"
       | none => false
+  /-- REFCORR19 F4(b): true when `after` starts (after horizontal whitespace
+      only: space, tab, CR) with a `Div` token whose `type` option is `end`. -/
+  beforeBlockClose (after : List Nat) (toks : List TokenEntry) : Bool :=
+    let trimmed := after.dropWhile (fun c => c == 32 || c == 9 || c == 13)
+    match readPlaceholder trimmed with
+    | some (n2, _) =>
+        match (toks.drop n2).head? with
+        | some t =>
+            asciiLower (t.rule.toList.map Char.toNat) == litBytes "div" &&
+              match omGet t.opts "type".toList with
+              | some (.str s) => s == "end".toList
+              | some (.bytes bs) => bs == litBytes "end"
+              | _ => false
+        | none => false
+    | none => false
   go : List Nat → List TokenEntry → Nat → List Nat × List TokenEntry
     | [], toks, _ => ([], toks)
     | src, toks, 0 => (src, toks)
@@ -451,7 +466,10 @@ where
             -- untouched; only the newline decision is the rule's.
             let origPh := src.take (src.length - rest.length)
             if rest.head? == some 10 && (rest.tail.head? != some 10) then
-              if junction n rest.tail toks then
+              if beforeBlockClose rest.tail toks then
+                let (o, toks1) := go rest.tail toks fuel
+                (origPh ++ o, toks1)
+              else if junction n rest.tail toks then
                 let (o, toks1) := go rest.tail toks fuel
                 (origPh ++ [10] ++ o, toks1)
               else
@@ -467,9 +485,13 @@ where
             | b :: rest =>
                 if b != 10 && rest.head? == some 10 &&
                     (rest.tail.head? != some 10) then
-                  let (ph, toks1) := claimTok "Newline" [] toks
-                  let (o, toks2) := go rest.tail toks1 fuel
-                  (b :: (ph ++ o), toks2)
+                  if beforeBlockClose rest.tail toks then
+                    let (o, toks1) := go rest.tail toks fuel
+                    (b :: o, toks1)
+                  else
+                    let (ph, toks1) := claimTok "Newline" [] toks
+                    let (o, toks2) := go rest.tail toks1 fuel
+                    (b :: (ph ++ o), toks2)
                 else
                   let (o, toks1) := go rest toks fuel
                   (b :: o, toks1)
@@ -829,6 +851,36 @@ where
                 go rest seenBlock depth
                   (segNonWs || !isTrimByte b) fuel
 
+/-- Standing mirror remainder closed in Stage 1: live Wikidot unwraps
+    any paragraph run containing an unaligned `[[image ...]]` token
+    (see `Paragraph::runHasUnalignedImage`). Aligned images carry a
+    non-empty `align` option and keep block separation. -/
+def runHasUnalignedImage (m : List Nat) (toks : List TokenEntry) : Bool :=
+  go m (m.length + 1)
+where
+  isEmptyAlign : Option OptVal → Bool
+    | none => true
+    | some .null => true
+    | some (.bool b) => !b
+    | some (.int n) => n == 0
+    | some (.str cs) => cs.isEmpty || cs == ['0']
+    | some (.bytes bs) => bs.isEmpty || bs == [48]
+    | some (.list xs) => xs.isEmpty
+    | some (.map xs) => xs.isEmpty
+  go : List Nat → Nat → Bool
+    | [], _ => false
+    | _, 0 => false
+    | s@(_ :: rest), fuel + 1 =>
+        match readPlaceholder s with
+        | some (id, after) =>
+            let hit := match (toks.drop id).head? with
+              | some t =>
+                  asciiLower (t.rule.toList.map Char.toNat) == litBytes "image" &&
+                    isEmptyAlign (omGet t.opts "align".toList)
+              | none => false
+            if hit then true else go after fuel
+        | none => go rest fuel
+
 /-- process() for one Paragraph match: a run that leads from
     text into a block span, or whose only depth-zero content is
     an empty lead ahead of a block token, is returned unchanged;
@@ -850,6 +902,8 @@ def paraProcess (m : List Nat) (toks : List TokenEntry)
   then (m, toks)
   -- REFCORR16: a run that leads from text into a block span stays bare.
   else if runIsBlockLead m toks then (m, toks)
+  -- Standing mirror remainder: a run containing an unaligned Image stays bare.
+  else if runHasUnalignedImage m toks then (m, toks)
   -- Snapshot-41 R-BR-BLOCK, REFCORR17: an empty lead into a block
   -- span (Newline, Break and empty Raw tokens only) stays bare.
   else if runIsEmptyLeadBlockLead m toks then (m, toks)
@@ -978,6 +1032,28 @@ theorem newlineScan_example :
     newlineScan (litBytes "a\nb") [] =
       ([97] ++ phBytes 0 ++ [98],
        [{ rule := "Newline", opts := [] }]) := rfl
+
+theorem newlineScan_beforeBlockClose_example :
+    newlineScan (litBytes "x\n" ++ phBytes 0)
+      [{ rule := "Div", opts := [("type".toList, OptVal.str "end".toList)] }] =
+      (litBytes "x" ++ phBytes 0,
+       [{ rule := "Div", opts := [("type".toList, OptVal.str "end".toList)] }]) := rfl
+
+theorem paraProcess_unaligned_image_example :
+    paraProcess (phBytes 0 ++ litBytes "\n\n")
+        [{ rule := "Image", opts :=
+            [("src".toList, OptVal.str "a.png".toList),
+             ("attr".toList, OptVal.map [])] }] [] [] [] =
+      (phBytes 0 ++ litBytes "\n\n",
+       [{ rule := "Image", opts :=
+           [("src".toList, OptVal.str "a.png".toList),
+            ("attr".toList, OptVal.map [])] }]) := rfl
+
+theorem runHasUnalignedImage_aligned_false :
+    runHasUnalignedImage (phBytes 0 ++ litBytes "\n\n")
+      [{ rule := "Image", opts :=
+          [("src".toList, OptVal.str "a.png".toList),
+           ("align".toList, OptVal.str ">".toList)] }] = false := rfl
 
 theorem paraMatchAt_example :
     paraMatchAt (litBytes "foo\n\nbar") =

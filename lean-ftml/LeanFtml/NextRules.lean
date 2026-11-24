@@ -493,6 +493,405 @@ def commentRule (st : ParseState) : ParseState :=
         (([], toks, 0) : List Nat × List TokenEntry × Nat)
       (out ++ src.drop cursor, t1))
 
+/-! ## Expr and Ifexpr (REFCORR19 F10) -/
+
+/-- Exact rational value for `Expr` / `Ifexpr` evaluation (kernel-total,
+    no `Float` axioms). -/
+structure ExprRat where
+  num : Int
+  den : Nat
+  deriving DecidableEq, Inhabited
+
+private def exprPow10 : Nat → Nat
+  | 0 => 1
+  | n + 1 => 10 * exprPow10 n
+
+private def exprRatNorm (n : Int) (d : Nat) : ExprRat :=
+  if d == 0 then { num := 0, den := 1 }
+  else if n == 0 then { num := 0, den := 1 }
+  else
+    let g := Nat.gcd n.natAbs d
+    { num := n / (g : Int), den := d / g }
+
+private def exprRatAdd (a b : ExprRat) : ExprRat :=
+  exprRatNorm (a.num * (b.den : Int) + b.num * (a.den : Int)) (a.den * b.den)
+
+private def exprRatSub (a b : ExprRat) : ExprRat :=
+  exprRatNorm (a.num * (b.den : Int) - b.num * (a.den : Int)) (a.den * b.den)
+
+private def exprRatMul (a b : ExprRat) : ExprRat :=
+  exprRatNorm (a.num * b.num) (a.den * b.den)
+
+private def exprRatDiv (a b : ExprRat) : ExprRat :=
+  if b.num == 0 then { num := 0, den := 1 }
+  else
+    let s : Int := if b.num < 0 then -1 else 1
+    exprRatNorm (a.num * s * (b.den : Int)) (a.den * b.num.natAbs)
+
+private def exprRatNeg (a : ExprRat) : ExprRat :=
+  { num := -a.num, den := a.den }
+
+private def exprRatAbs (a : ExprRat) : ExprRat :=
+  { num := (a.num.natAbs : Int), den := a.den }
+
+private def exprRatCmp (a b : ExprRat) : Ordering :=
+  compare (a.num * (b.den : Int)) (b.num * (a.den : Int))
+
+private def exprFindExpPos (n d : Nat) (e fuel : Nat) : Nat :=
+  match fuel with
+  | 0 => e
+  | fuel + 1 =>
+      if d * exprPow10 (e + 1) ≤ n then exprFindExpPos n d (e + 1) fuel
+      else e
+
+private def exprFindExpNeg (n d : Nat) (k fuel : Nat) : Nat :=
+  match fuel with
+  | 0 => k
+  | fuel + 1 =>
+      if d ≤ n * exprPow10 k then k
+      else exprFindExpNeg n d (k + 1) fuel
+
+private def exprDigits14 (q : Nat) : List Nat :=
+  go 14 q []
+where
+  go : Nat → Nat → List Nat → List Nat
+    | 0, _, acc => acc
+    | k + 1, v, acc => go k (v / 10) ((48 + (v % 10)) :: acc)
+
+private def exprStripTrailingZeros (ds : List Nat) : List Nat :=
+  match ds.reverse.dropWhile (· == 48) with
+  | [] => [48]
+  | rev => rev.reverse
+
+private def exprNatBytes (n : Nat) : List Nat :=
+  if n == 0 then [48]
+  else go n [] (n + 1)
+where
+  go : Nat → List Nat → Nat → List Nat
+    | 0, acc, _ => acc
+    | _, acc, 0 => acc
+    | m, acc, fuel + 1 => go (m / 10) ((48 + m % 10) :: acc) fuel
+
+/-- Format a rational matching PHP 8.5 `(string)` with `precision = 14`. -/
+def exprRatToBytes (r : ExprRat) : List Nat :=
+  if r.num == 0 then [48]
+  else
+    let sign : List Nat := if r.num < 0 then [45] else []
+    let n := r.num.natAbs
+    let d := if r.den == 0 then 1 else r.den
+    if n % d == 0 && n / d < exprPow10 14 then
+      sign ++ exprNatBytes (n / d)
+    else
+      let e : Int :=
+        if n ≥ d then (exprFindExpPos n d 0 500 : Int)
+        else -((exprFindExpNeg n d 1 500 : Int))
+      let (numS, denS) : Nat × Nat :=
+        if e ≤ 13 then
+          let shift := (13 - e).toNat
+          (n * exprPow10 shift, d)
+        else
+          let shift := (e - 13).toNat
+          (n, d * exprPow10 shift)
+      let q0 := numS / denS
+      let rem := numS % denS
+      let q1 := if 2 * rem > denS || (2 * rem == denS && q0 % 2 == 1)
+                then q0 + 1 else q0
+      let (q, eFinal) : Nat × Int :=
+        if q1 ≥ exprPow10 14 then (q1 / 10, e + 1) else (q1, e)
+      let ds := exprStripTrailingZeros (exprDigits14 q)
+      if eFinal ≥ 14 || eFinal < -4 then
+        let mantissa := match ds with
+          | [] => [48, 46, 48]
+          | [d0] => [d0, 46, 48]
+          | d0 :: rest => d0 :: 46 :: rest
+        let expSign := if eFinal ≥ 0 then [43] else [45]
+        sign ++ mantissa ++ [69] ++ expSign ++ exprNatBytes eFinal.natAbs
+      else if eFinal < 0 then
+        let zeros := List.replicate ((-eFinal - 1).toNat) 48
+        sign ++ [48, 46] ++ zeros ++ ds
+      else
+        let intLen := eFinal.toNat + 1
+        if ds.length ≤ intLen then
+          sign ++ ds ++ List.replicate (intLen - ds.length) 48
+        else
+          sign ++ ds.take intLen ++ [46] ++ ds.drop intLen
+
+private inductive ExprTok where
+  | num : List Nat → ExprTok
+  | ident : List Nat → ExprTok
+  | op : Nat → ExprTok
+  deriving DecidableEq, Inhabited
+
+private def exprTokBytes : ExprTok → List Nat
+  | .num bs => bs
+  | .ident bs => bs
+  | .op b => [b]
+
+private def exprNear (t : ExprTok) : List Nat :=
+  litBytes "syntax error near `" ++ (exprTokBytes t).take 10 ++ [96]
+
+private def isExprWs (b : Nat) : Bool :=
+  b == 32 || b == 9 || b == 10 || b == 11 || b == 12 || b == 13
+
+private def isExprAlpha (b : Nat) : Bool :=
+  (65 ≤ b && b ≤ 90) || (97 ≤ b && b ≤ 122)
+
+private def isExprIdentStart (b : Nat) : Bool :=
+  isExprAlpha b || b == 95 || b == 37 || b == 36 || b == 123 || b == 125
+
+private def isExprIdentCont (b : Nat) : Bool :=
+  isExprAlpha b || isDigitByte b || b == 95 || b == 37 || b == 36 ||
+  b == 123 || b == 125 || b == 45
+
+private def isExprOpByte (b : Nat) : Bool :=
+  b == 43 || b == 45 || b == 42 || b == 47 || b == 37 || b == 40 || b == 41
+
+/-- Parse a decimal number token `[0-9]*\.?[0-9]+` into an `ExprRat`. -/
+private def parseNumRat (bs : List Nat) : ExprRat :=
+  let intPart := bs.takeWhile isDigitByte
+  let rest := bs.drop intPart.length
+  let fracPart := match rest with
+    | 46 :: r => r.takeWhile isDigitByte
+    | _ => []
+  let intVal := intPart.foldl (fun a b => a * 10 + (b - 48)) 0
+  let fracVal := fracPart.foldl (fun a b => a * 10 + (b - 48)) 0
+  let scale := exprPow10 fracPart.length
+  exprRatNorm ((intVal * scale + fracVal : Nat) : Int) scale
+
+/-- Mirror of `Text_Wiki_Parse_Expr::tokenize`. Matches `Expr.php` order
+    verbatim (in particular `%` is caught by the ident branch before ops). -/
+private def exprTokenize (bs : List Nat) : Sum (List Nat) (List ExprTok) :=
+  go bs [] (bs.length + 1)
+where
+  go : List Nat → List ExprTok → Nat → Sum (List Nat) (List ExprTok)
+    | [], acc, _ => Sum.inr acc.reverse
+    | _, acc, 0 => Sum.inr acc.reverse
+    | s@(b :: rest), acc, fuel + 1 =>
+        if isExprWs b then
+          go rest acc fuel
+        else if isDigitByte b || (b == 46 && match rest with | c :: _ => isDigitByte c | [] => false) then
+          let lead := s.takeWhile isDigitByte
+          let afterLead := s.drop lead.length
+          let tokBytes := match afterLead with
+            | 46 :: r2 =>
+                let frac := r2.takeWhile isDigitByte
+                if frac.isEmpty then lead else lead ++ (46 :: frac)
+            | _ => lead
+          go (s.drop tokBytes.length) (.num tokBytes :: acc) fuel
+        else if isExprIdentStart b then
+          let tokBytes := s.takeWhile isExprIdentCont
+          go (s.drop tokBytes.length) (.ident tokBytes :: acc) fuel
+        else if isExprOpByte b then
+          go rest (.op b :: acc) fuel
+        else
+          Sum.inl (litBytes "syntax error near `" ++ s.take 10 ++ [96])
+
+mutual
+
+private def exprEvalSum (ts : List ExprTok) : Nat → Sum (List Nat) (ExprRat × List ExprTok)
+  | 0 => Sum.inl (litBytes "syntax error")
+  | fuel + 1 =>
+      match exprEvalProd ts fuel with
+      | Sum.inl e => Sum.inl e
+      | Sum.inr (l, rem) => exprEvalSumLoop l rem fuel
+
+private def exprEvalSumLoop (l : ExprRat) : List ExprTok → Nat → Sum (List Nat) (ExprRat × List ExprTok)
+  | ts, 0 => Sum.inr (l, ts)
+  | ExprTok.op 43 :: rest, fuel + 1 =>
+      match exprEvalProd rest fuel with
+      | Sum.inl e => Sum.inl e
+      | Sum.inr (r, rem) => exprEvalSumLoop (exprRatAdd l r) rem fuel
+  | ExprTok.op 45 :: rest, fuel + 1 =>
+      match exprEvalProd rest fuel with
+      | Sum.inl e => Sum.inl e
+      | Sum.inr (r, rem) => exprEvalSumLoop (exprRatSub l r) rem fuel
+  | ts, _ => Sum.inr (l, ts)
+
+private def exprEvalProd (ts : List ExprTok) : Nat → Sum (List Nat) (ExprRat × List ExprTok)
+  | 0 => Sum.inl (litBytes "syntax error")
+  | fuel + 1 =>
+      match exprEvalUnary ts fuel with
+      | Sum.inl e => Sum.inl e
+      | Sum.inr (l, rem) => exprEvalProdLoop l rem fuel
+
+private def exprEvalProdLoop (l : ExprRat) : List ExprTok → Nat → Sum (List Nat) (ExprRat × List ExprTok)
+  | ts, 0 => Sum.inr (l, ts)
+  | ExprTok.op 42 :: rest, fuel + 1 =>
+      match exprEvalUnary rest fuel with
+      | Sum.inl e => Sum.inl e
+      | Sum.inr (r, rem) => exprEvalProdLoop (exprRatMul l r) rem fuel
+  | ExprTok.op 47 :: rest, fuel + 1 =>
+      match exprEvalUnary rest fuel with
+      | Sum.inl e => Sum.inl e
+      | Sum.inr (r, rem) =>
+          if r.num == 0 then Sum.inl (litBytes "division by zero")
+          else exprEvalProdLoop (exprRatDiv l r) rem fuel
+  | ExprTok.op 37 :: rest, fuel + 1 =>
+      match exprEvalUnary rest fuel with
+      | Sum.inl e => Sum.inl e
+      | Sum.inr (r, rem) =>
+          if r.num == 0 then Sum.inl (litBytes "division by zero")
+          else
+            let li := l.num / (l.den : Int)
+            let ri := r.num / (r.den : Int)
+            if ri == 0 then Sum.inl (litBytes "division by zero")
+            else exprEvalProdLoop (exprRatNorm (li % ri) 1) rem fuel
+  | ts, _ => Sum.inr (l, ts)
+
+private def exprEvalUnary : List ExprTok → Nat → Sum (List Nat) (ExprRat × List ExprTok)
+  | _, 0 => Sum.inl (litBytes "syntax error")
+  | [], _ => Sum.inl (litBytes "syntax error")
+  | ExprTok.op 45 :: rest, fuel + 1 =>
+      match exprEvalUnary rest fuel with
+      | Sum.inl e => Sum.inl e
+      | Sum.inr (v, rem) => Sum.inr (exprRatNeg v, rem)
+  | ExprTok.op 43 :: rest, fuel + 1 => exprEvalUnary rest fuel
+  | ExprTok.num bs :: rest, _ => Sum.inr (parseNumRat bs, rest)
+  | ExprTok.op 40 :: rest, fuel + 1 =>
+      match exprEvalSum rest fuel with
+      | Sum.inl e => Sum.inl e
+      | Sum.inr (v, ExprTok.op 41 :: rem) => Sum.inr (v, rem)
+      | Sum.inr _ => Sum.inl (litBytes "syntax error near `)`")
+  | ExprTok.ident bs :: rest, fuel + 1 =>
+      if ciBytesEq bs (litBytes "abs") then
+        match rest with
+        | ExprTok.op 40 :: r2 =>
+            match exprEvalSum r2 fuel with
+            | Sum.inl e => Sum.inl e
+            | Sum.inr (v, rem) =>
+                let rem' := match rem with
+                  | ExprTok.op 41 :: r3 => r3
+                  | _ => rem
+                Sum.inr (exprRatAbs v, rem')
+        | _ => Sum.inl (litBytes "syntax error near `abs`")
+      else Sum.inl (exprNear (.ident bs))
+  | t :: _, _ => Sum.inl (exprNear t)
+
+end
+
+/-- Clean `Expr` evaluator mirroring `Text_Wiki_Parse_Expr::evaluate`. -/
+private def exprParseEval (toks : List ExprTok) : Sum (List Nat) ExprRat :=
+  match exprEvalSum toks (toks.length + 2) with
+  | Sum.inl e => Sum.inl e
+  | Sum.inr (v, []) => Sum.inr v
+  | Sum.inr (_, t :: _) => Sum.inl (exprNear t)
+
+/-- Mirror of `Text_Wiki_Parse_Expr::evaluate`. -/
+def exprEvaluate (expression : List Nat) : List Nat :=
+  match exprTokenize expression with
+  | Sum.inl err => err
+  | Sum.inr toks =>
+      match exprParseEval toks with
+      | Sum.inl err => err
+      | Sum.inr v => exprRatToBytes v
+
+private def exprSplitTop (text op : List Nat) : Option (List Nat × List Nat) :=
+  go 0 0 text
+where
+  go (idx : Nat) (depth : Int) : List Nat → Option (List Nat × List Nat)
+    | [] => none
+    | s@(b :: rest) =>
+        if b == 40 || b == 91 || b == 123 then go (idx + 1) (depth + 1) rest
+        else if b == 41 || b == 93 || b == 125 then go (idx + 1) (depth - 1) rest
+        else if depth == 0 && op.isPrefixOf s then
+          some (text.take idx, text.drop (idx + op.length))
+        else go (idx + 1) depth rest
+
+private def exprEvalOpt (expression : List Nat) : Sum (List Nat) ExprRat :=
+  match exprTokenize expression with
+  | Sum.inl err => Sum.inl err
+  | Sum.inr toks => exprParseEval toks
+
+/-- Mirror of `Text_Wiki_Parse_Expr::condition`. -/
+def exprCondition (expression : List Nat) : List Nat × Bool :=
+  let ops := ["==", "!=", ">=", "<=", ">", "<"].map litBytes
+  match ops.findSome? (fun op => (exprSplitTop expression op).map (fun p => (op, p))) with
+  | some (op, aRaw, bRaw) =>
+      match exprEvalOpt aRaw, exprEvalOpt bRaw with
+      | Sum.inr va, Sum.inr vb =>
+          let c := exprRatCmp va vb
+          let truth :=
+            if op == litBytes "==" then c == .eq
+            else if op == litBytes "!=" then c != .eq
+            else if op == litBytes ">=" then c != .lt
+            else if op == litBytes "<=" then c != .gt
+            else if op == litBytes ">" then c == .gt
+            else c == .lt
+          (if truth then [49] else [48], truth)
+      | Sum.inl err, _ => (err, false)
+      | _, Sum.inl err => (err, false)
+  | none =>
+      match exprEvalOpt expression with
+      | Sum.inl err => (err, false)
+      | Sum.inr v => (exprRatToBytes v, v.num != 0)
+
+/-- Match `/\[\[#<tag>\s+([^\]]*?)\]\]/i` at head of `src`. -/
+private def exprTagMatchAt (tag src : List Nat) : Option (List Nat × List Nat) :=
+  match matchLitCI tag src with
+  | none => none
+  | some r0 =>
+      let ws := r0.takeWhile isExprWs
+      if ws.isEmpty then none
+      else
+        let r1 := r0.drop ws.length
+        let body := r1.takeWhile (fun b => b != 93)
+        match r1.drop body.length with
+        | 93 :: 93 :: rest => some (body, rest)
+        | _ => none
+
+def exprScan (src : List Nat) : Nat → List Nat
+  | 0 => src
+  | fuel + 1 =>
+    match src with
+    | [] => []
+    | b :: rest =>
+        match exprTagMatchAt (litBytes "[[#expr") src with
+        | some (body, r) => exprEvaluate body ++ exprScan r fuel
+        | none => b :: exprScan rest fuel
+
+/-- The `Expr` parse rule mirror (`REFCORR19 F10`). -/
+def exprRule (st : ParseState) : ParseState :=
+  applyByteRule st (fun src toks => (exprScan src (src.length + 1), toks))
+
+private def ifexprSplitPipes (body : List Nat) : List (List Nat) :=
+  go body 0 [] []
+where
+  go : List Nat → Int → List Nat → List (List Nat) → List (List Nat)
+    | [], _, cur, acc => (cur.reverse :: acc).reverse
+    | b :: rest, depth, cur, acc =>
+        let depth' : Int :=
+          if b == 40 || b == 91 || b == 123 then depth + 1
+          else if b == 41 || b == 93 || b == 125 then depth - 1
+          else depth
+        if b == 124 && depth' == 0 then
+          go rest depth' [] (cur.reverse :: acc)
+        else
+          go rest depth' (b :: cur) acc
+
+def ifexprProcess (body : List Nat) : List Nat :=
+  let fields := ifexprSplitPipes body
+  let cond := match fields with | c :: _ => trimBytes c | [] => []
+  let (val, truth) := exprCondition cond
+  if (litBytes "syntax error").isPrefixOf val then val
+  else if truth then
+    match fields.drop 1 with | t :: _ => trimBytes t | [] => []
+  else
+    match fields.drop 2 with | f :: _ => trimBytes f | [] => []
+
+def ifexprScan (src : List Nat) : Nat → List Nat
+  | 0 => src
+  | fuel + 1 =>
+    match src with
+    | [] => []
+    | b :: rest =>
+        match exprTagMatchAt (litBytes "[[#ifexpr") src with
+        | some (body, r) => ifexprProcess body ++ ifexprScan r fuel
+        | none => b :: ifexprScan rest fuel
+
+/-- The `Ifexpr` parse rule mirror (`REFCORR19 F10`). -/
+def ifexprRule (st : ParseState) : ParseState :=
+  applyByteRule st (fun src toks => (ifexprScan src (src.length + 1), toks))
+
 /-! ## Iframe -/
 
 /-- The Iframe URL's intermediate-segment byte class: anything but
@@ -1225,5 +1624,21 @@ theorem mathProcess_lowercase_type_wins_over_variant :
     (match (mathProcess none (litBytes "type=\"gather\" tYpE=\"align\"") (litBytes "x") {}).1 with
      | some e => omGet e.opts "type".toList
      | none => none) = some (OptVal.str "gather".toList) := rfl
+
+theorem exprEvaluate_examples :
+    exprEvaluate (litBytes "1 + 2") = litBytes "3" ∧
+    exprEvaluate (litBytes "10 / 2") = litBytes "5" ∧
+    exprEvaluate (litBytes "1 / 2") = litBytes "0.5" ∧
+    exprEvaluate (litBytes "7 % 3") = litBytes "syntax error near `%`" ∧
+    exprEvaluate (litBytes "-abs(-5)") = litBytes "-5" ∧
+    exprEvaluate (litBytes "%%rating%%") = litBytes "syntax error near `%%rating%%`" :=
+  ⟨rfl, rfl, rfl, rfl, rfl, rfl⟩
+
+theorem ifexprProcess_examples :
+    ifexprProcess (litBytes "3 > 2 | yes | no") = litBytes "yes" ∧
+    ifexprProcess (litBytes "0 | yes | no") = litBytes "no" ∧
+    ifexprProcess (litBytes "%%rating%% > 0 | y | n") =
+      litBytes "syntax error near `%%rating%%`" :=
+  ⟨rfl, rfl, rfl⟩
 
 end LeanFtml
