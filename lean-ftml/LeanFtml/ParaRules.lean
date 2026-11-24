@@ -687,6 +687,19 @@ def tokenTypeBytes (toks : List TokenEntry) (n : Nat) : List Nat :=
       | _ => []
   | none => []
 
+/-- Whether token `n` may stand in an empty lead as a Raw
+    token: the reference's empty-lead branch admits a Raw token
+    whose `text` option is unset or the empty string. -/
+def rawLeadAdmits (toks : List TokenEntry) (n : Nat) : Bool :=
+  match (toks.drop n).head? with
+  | some t =>
+      match omGet t.opts "text".toList with
+      | none => true
+      | some (OptVal.str v) => v.isEmpty
+      | some (OptVal.bytes v) => v.isEmpty
+      | some _ => false
+  | none => false
+
 /-- The block-lead skip set: the Paragraph skip list without
     the divalign family (REFCORR16: a lead before an alignment
     block wraps on live, diag d31/d43 and holdout h019/h101,
@@ -742,8 +755,84 @@ where
                 go rest seenBlock seenLead depth
                   (segNonWs || !isTrimByte b) fuel
 
-/-- process() for one Paragraph match: empty after trimming
-    means the empty string; a trimmed match that ends with a
+/-- Snapshot-41 R-BR-BLOCK with the REFCORR17 widening: whether
+    a Paragraph run is an empty lead into a block span and so
+    stays bare. A run qualifies when no literal text stands at
+    depth zero ahead of the first qualifying block token (the
+    lead is only Newline tokens, Break tokens and empty Raw
+    tokens), the qualifying token belongs to the block-lead skip
+    set, is not an image and is not end-typed (a start-typed
+    opener, or a standalone block token such as a horizontal
+    rule or a module, which opens no span), and no literal text
+    stands at depth zero after it (depth is tracked over the
+    skip set's start/end-typed tokens). REFCORR18: the separator
+    token is excluded by name beside the image exclusion, because
+    live wraps a break lead ahead of a separator (raw capture
+    muse-probe-refcorr17-sep) while baring it ahead of a
+    horizontal rule; the separator and the rule are the only two
+    run-joining type-absent members of the skip set. This is the reference's
+    runIsEmptyLeadBlockLead (snapshot-41 R-BR-BLOCK; REFCORR17
+    fresh holdout h257 and h273, probes V3, V5, V8, V10, V11,
+    V14 and V19) transcribed onto the byte model. -/
+def runIsEmptyLeadBlockLead (m : List Nat) (toks : List TokenEntry) :
+    Bool :=
+  go m false 0 false (m.length + 1)
+where
+  go : List Nat → Bool → Nat → Bool → Nat → Bool
+    | [], seenBlock, depth, segNonWs, _ =>
+        !(segNonWs && !(seenBlock && depth > 0)) && seenBlock
+    | _, _, _, _, 0 => false
+    | src, seenBlock, depth, segNonWs, fuel + 1 =>
+        match readPlaceholder src with
+        | some (n, rest) =>
+            if segNonWs && !(seenBlock && depth > 0) then false
+            else
+              match (toks.drop n).head? with
+              | none => go rest seenBlock depth false fuel
+              | some t =>
+                  let rule :=
+                    asciiLower (t.rule.toList.map Char.toNat)
+                  if !seenBlock then
+                    if rule == litBytes "newline" ||
+                        rule == litBytes "break" then
+                      go rest seenBlock depth false fuel
+                    else if rule == litBytes "raw" &&
+                        rawLeadAdmits toks n then
+                      go rest seenBlock depth false fuel
+                    else
+                      let ty := tokenTypeBytes toks n
+                      if paraSkipNoAlign.contains rule &&
+                          rule != litBytes "image" &&
+                          rule != litBytes "separator" &&
+                          (ty == litBytes "start" ||
+                            bytesEndsWith ty (litBytes "_start") ||
+                            ty.isEmpty) then
+                        go rest true
+                          (if ty.isEmpty then depth else 1) false fuel
+                      else false
+                  else if paraSkipNoAlign.contains rule then
+                    let ty := tokenTypeBytes toks n
+                    if ty == litBytes "start" ||
+                        bytesEndsWith ty (litBytes "_start") then
+                      go rest seenBlock (depth + 1) false fuel
+                    else if ty == litBytes "end" ||
+                        bytesEndsWith ty (litBytes "_end") then
+                      go rest seenBlock (depth - 1) false fuel
+                    else
+                      go rest seenBlock depth false fuel
+                  else
+                    go rest seenBlock depth false fuel
+        | none =>
+            match src with
+            | [] => false
+            | b :: rest =>
+                go rest seenBlock depth
+                  (segNonWs || !isTrimByte b) fuel
+
+/-- process() for one Paragraph match: a run that leads from
+    text into a block span, or whose only depth-zero content is
+    an empty lead ahead of a block token, is returned unchanged;
+    empty after trimming means the empty string; a trimmed match that ends with a
     scored anchor's end placeholder and contains its start
     placeholder is returned unchanged (the reference's
     scored-anchors branch, R3.17); a match opening with a
@@ -761,6 +850,9 @@ def paraProcess (m : List Nat) (toks : List TokenEntry)
   then (m, toks)
   -- REFCORR16: a run that leads from text into a block span stays bare.
   else if runIsBlockLead m toks then (m, toks)
+  -- Snapshot-41 R-BR-BLOCK, REFCORR17: an empty lead into a block
+  -- span (Newline, Break and empty Raw tokens only) stays bare.
+  else if runIsEmptyLeadBlockLead m toks then (m, toks)
   else if (trimBytes m).isEmpty then ([], toks)
   else if anchors.any (fun (e, s) =>
       bytesEndsWith (trimBytes m) e && bytesContains (trimBytes m) s)

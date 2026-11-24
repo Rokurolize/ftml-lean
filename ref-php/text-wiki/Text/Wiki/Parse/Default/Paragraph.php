@@ -177,8 +177,30 @@ class Text_Wiki_Parse_Paragraph extends Text_Wiki_Parse {
             ? $this->filterBreakRun($matches[4]) : $matches[4];
         // Span::process expects the attribute capture with its leading
         // whitespace; the scored underscore is not part of that grammar.
+        // Live joins leading/trailing line-break runs inside scored spans too,
+        // so strip leading/trailing CR/LF and Newline tokens from the body.
+        $inner = $matches[3];
+        $delimQ = preg_quote($this->wiki->delim, '/');
+        while (preg_match('/^(' . $delimQ . '([0-9]+)' . $delimQ . '|[\r\n])/', $inner, $em)) {
+            if (isset($em[2]) && $em[2] !== '') {
+                $id = (int)$em[2];
+                if (!isset($this->wiki->tokens[$id]) || $this->wiki->tokens[$id][0] !== 'Newline') {
+                    break;
+                }
+            }
+            $inner = substr($inner, strlen($em[0]));
+        }
+        while (preg_match('/(' . $delimQ . '([0-9]+)' . $delimQ . '|[\r\n])$/', $inner, $em)) {
+            if (isset($em[2]) && $em[2] !== '') {
+                $id = (int)$em[2];
+                if (!isset($this->wiki->tokens[$id]) || $this->wiki->tokens[$id][0] !== 'Newline') {
+                    break;
+                }
+            }
+            $inner = substr($inner, 0, -strlen($em[0]));
+        }
         $pair = $this->wiki->parseObj['Span']->process(
-            array('', ' ' . $matches[2], $matches[3]));
+            array('', ' ' . $matches[2], $inner));
         $delim = preg_quote($this->wiki->delim, '/');
         if (preg_match('/^' . $delim . '([0-9]+)' . $delim . '/', $pair, $id)) {
             $this->scoredSpans[$id[1]] = $pair;
@@ -282,6 +304,135 @@ class Text_Wiki_Parse_Paragraph extends Text_Wiki_Parse {
         return $seenBlock && $seenLead;
     }
 
+    /**
+     * Live Wikidot unwraps any paragraph run containing an unaligned
+     * [[image ...]] token (see ftml wikidot_element_contains_unaligned_image).
+     * Aligned images carry an 'align' option and keep block separation.
+     */
+    protected function runHasUnalignedImage($run) {
+        $delim = preg_quote($this->wiki->delim, '/');
+        if (! preg_match_all('/' . $delim . '([0-9]+)' . $delim . '/', $run, $ms)) {
+            return false;
+        }
+        foreach ($ms[1] as $id) {
+            $tok = isset($this->wiki->tokens[(int)$id])
+                ? $this->wiki->tokens[(int)$id] : null;
+            if ($tok !== null
+                && strtolower($tok[0]) === 'image'
+                && empty($tok[1]['align'])) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * R-BR-BLOCK: a run with no literal text at depth zero before a
+     * non-divalign skipped block opener is layout (empty @@@@ Raw tokens and
+     * Newline break tokens leading into [[tabview]]/[[div]] etc.), not a <p>.
+     * REFCORR17: explicit Break tokens (` _` lines) are layout in the lead
+     * too. A run whose only depth-zero content ahead of the block opener is
+     * break lines is left bare by live Wikidot (fresh holdout h257, a break
+     * line between an opening [[div]] and a nested [[div]]; h273, break
+     * lines running into the footnoteblock at page end), where the fossil
+     * wrapped the breaks in a paragraph. A break-only run with no block
+     * opener inside the run still wraps (corpus page file-scp-9224-194b,
+     * whose blank-line-bounded break live serves as <p><br /></p>), so the
+     * block-opener requirement stands; only the lead's token class widens.
+     * The qualifying block token is any non-divalign skipped token that is
+     * not end-typed and not an image: a start-typed opener, or a standalone
+     * block token such as a horizontal rule (probe V3, where live serves
+     * the breaks bare ahead of the rule) or a module. A break run ahead of
+     * a bare block end still wraps (probe V1), and scored contexts are
+     * unaffected (probe V12: inside [[div_]] no paragraph forms at all).
+     * REFCORR18: the type-absent standalone class was enumerated over the
+     * whole skip list after the REFCORR17 adjudication found the Separator
+     * token unmeasured. Among run-joining tokens (whose replacement does
+     * not isolate them behind a blank line) exactly two are type-absent:
+     * the horizontal rule and the separator. Live bares a break lead ahead
+     * of a horizontal rule (probe V3) but WRAPS it ahead of a separator:
+     * the raw live capture of muse-probe-refcorr17-sep serves
+     * <p><br /><br /><br /></p> ahead of the content-separator div, where
+     * snapshot-42 left the breaks bare. The separator is therefore
+     * excluded by name beside the image exclusion below. Every other skip
+     * kind is either start-typed (the measured opener class), isolated
+     * behind "\n\n" by its own process() replacement so it can never
+     * share a run with a break lead (code, math, module, module654,
+     * clearfloat, toc, gallery, center), or not yet tokenized when the
+     * Paragraph rule runs (plain tables, definition lists, bullet lists),
+     * so no other kind can reach this test in the lead position.
+     */
+    protected function runIsEmptyLeadBlockLead($run) {
+        $delim = $this->wiki->delim;
+        $quoted = preg_quote($delim, '/');
+        $parts = preg_split('/(' . $quoted . '[0-9]+' . $quoted . ')/',
+            $run, -1, PREG_SPLIT_DELIM_CAPTURE);
+        $skip = $this->getConf('skip', array());
+        $skip = array_diff($skip, array('divalign', 'divalignleft',
+            'divalignright', 'divaligncenter', 'divalignjustify'));
+        $seenBlockStart = false;
+        $depth = 0;
+        foreach ($parts as $part) {
+            if ($part === '') {
+                continue;
+            }
+            if (preg_match('/^' . $quoted . '([0-9]+)' . $quoted . '$/', $part, $km)) {
+                $tok = isset($this->wiki->tokens[(int)$km[1]])
+                    ? $this->wiki->tokens[(int)$km[1]] : null;
+                if ($tok === null) {
+                    continue;
+                }
+                $rule = strtolower($tok[0]);
+                if (! $seenBlockStart) {
+                    if ($rule === 'newline' || $rule === 'break') {
+                        continue;
+                    }
+                    if ($rule === 'raw' && (!isset($tok[1]['text']) || $tok[1]['text'] === '')) {
+                        continue;
+                    }
+                    $sub = isset($tok[1]['type']) ? $tok[1]['type'] : '';
+                    if (in_array($rule, $skip, true)
+                        && $rule !== 'image'
+                        && $rule !== 'separator'
+                        && ($sub === 'start' || substr($sub, -6) === '_start'
+                            || $sub === '')) {
+                        // A start-typed token opens a span (depth 1); a
+                        // standalone block token (a horizontal rule, a
+                        // module) opens none but still ends the lead:
+                        // live leaves break lines bare ahead of it too
+                        // (REFCORR17 probe V3). An end-typed token does
+                        // not qualify (probe V1: a break run ahead of a
+                        // bare [[/div]] still wraps).
+                        $seenBlockStart = true;
+                        if ($sub !== '') {
+                            $depth = 1;
+                        }
+                        continue;
+                    }
+                    return false;
+                }
+                if (in_array($rule, $skip, true)) {
+                    $sub = isset($tok[1]['type']) ? $tok[1]['type'] : '';
+                    if ($sub === 'start' || substr($sub, -6) === '_start') {
+                        $depth++;
+                    } elseif ($sub === 'end' || substr($sub, -4) === '_end') {
+                        if ($depth > 0) {
+                            $depth--;
+                        }
+                    }
+                }
+                continue;
+            }
+            if (trim($part) === '') {
+                continue;
+            }
+            if (! $seenBlockStart || $depth === 0) {
+                return false;
+            }
+        }
+        return $seenBlockStart;
+    }
+
     function process($matches) {
         $delim = $this->wiki->delim;
 
@@ -309,6 +460,12 @@ class Text_Wiki_Parse_Paragraph extends Text_Wiki_Parse {
         // live, where the fossil wrapped any run not starting with a
         // delimiter.
         if ($this->runIsBlockLead($matches[0])) {
+            return $matches[0];
+        }
+        if ($this->runHasUnalignedImage($matches[0])) {
+            return $matches[0];
+        }
+        if ($this->runIsEmptyLeadBlockLead($matches[0])) {
             return $matches[0];
         }
 
