@@ -73,6 +73,7 @@ import LeanFtml.ProofEmail
 import LeanFtml.Proof.AlphaComposition
 import LeanFtml.Proof.WfComposition
 import LeanFtml.Proof.BundlesWave1
+import LeanFtml.Proof.BundlesWave2
 import LeanFtml.Proof.ByteBridge
 import LeanFtml.Proof.F1Bridges
 import LeanFtml.TableadvProof
