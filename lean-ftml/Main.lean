@@ -1193,3 +1193,41 @@ def main : IO Unit :=
 #print axioms LeanFtml.lst_listRule_wf_conditional
 #print axioms LeanFtml.lst_skelSeqs_length
 #print axioms LeanFtml.lst_partA_cardinality
+
+-- Module termination (2026-11-24): the ModuleLexStepProof step law,
+-- its conditional fixpoint driver, and the chain3 witness family.
+#print axioms LeanFtml.count91_append
+#print axioms LeanFtml.count91_cons
+#print axioms LeanFtml.count91_cons_ten
+#print axioms LeanFtml.count91_phBytes
+#print axioms LeanFtml.count91_nil
+#print axioms LeanFtml.count91_take_le
+#print axioms LeanFtml.swapByteCase_eq_91
+#print axioms LeanFtml.byteCiEq_eq_91
+#print axioms LeanFtml.matchLitCI_count91_take
+#print axioms LeanFtml.matchLitCI_two_91
+#print axioms LeanFtml.go_props_aux
+#print axioms LeanFtml.insertInlineOpenerNewlines_count91
+#print axioms LeanFtml.insertInlineOpenerNewlines_length_ge
+#print axioms LeanFtml.insertInlineOpenerNewlines_eq_of_length_eq
+#print axioms LeanFtml.rewriteModulePrefix_count91
+#print axioms LeanFtml.rewriteModulePrefix_length_ge
+#print axioms LeanFtml.defense_count91
+#print axioms LeanFtml.defense_length_ge
+#print axioms LeanFtml.defense_strict_length
+#print axioms LeanFtml.moduleTail_spec
+#print axioms LeanFtml.takeWhile_drop
+#print axioms LeanFtml.moduleHead_cand_decomp
+#print axioms LeanFtml.take_two_append
+#print axioms LeanFtml.moduleTryCands_lex
+#print axioms LeanFtml.moduleMatch_lex
+#print axioms LeanFtml.moduleScanPass_lex_aux
+#print axioms LeanFtml.moduleScanPass_lex_step
+#print axioms LeanFtml.moduleScanPass_count91_le
+#print axioms LeanFtml.moduleScanPass_claim_drops_aux
+#print axioms LeanFtml.moduleScanPass_stable_of_bytes_eq
+#print axioms LeanFtml.modulePasses_reaches_fixpoint_of_lex_aux
+#print axioms LeanFtml.modulePasses_reaches_fixpoint_of_lex
+#print axioms LeanFtml.chain3_measure_rises
+#print axioms LeanFtml.chain3_pass_structure
+#print axioms LeanFtml.chain3_fixpoint_stable

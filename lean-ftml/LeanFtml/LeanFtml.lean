@@ -22,3 +22,4 @@ import LeanFtml.ModuleMeasureStepProof
 import LeanFtml.ModuleCandidatesProof
 import LeanFtml.ModuleDefenseRewriteProof
 import LeanFtml.ProofMiddle2
+import LeanFtml.ModuleLexStepProof
