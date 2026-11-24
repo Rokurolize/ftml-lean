@@ -73,7 +73,7 @@ theorem renderWithR42_lookup_ext (lookup₁ lookup₂ : Nat → Option TokenEntr
 
 theorem dispatchRenderR42_eq_tokenAware_of_not_footnoteitem
     (lookup : Nat → Option TokenEntry) (rid : RenderRuleId)
-    (h : rid ≠ .footnoteitem) (conf : RenderConf) (doc : DocState) (opts : OptMap) :
+    (h : rid ≠ .footnoteitem ∧ rid ≠ .gallery) (conf : RenderConf) (doc : DocState) (opts : OptMap) :
     dispatchRenderR42 rid conf doc opts =
       dispatchRenderR41TokenAware lookup rid conf doc opts := by
   cases rid <;> simp [dispatchRenderR42, dispatchRenderR41, dispatchRenderR41TokenAware] at h ⊢
@@ -81,14 +81,16 @@ theorem dispatchRenderR42_eq_tokenAware_of_not_footnoteitem
 private theorem renderSegsLoop_R42_eq_R41ta (lookup : Nat → Option TokenEntry)
     (conf : RenderConf) (doc : DocState) (work : List TSeg)
     (hnoFi : ∀ k, TSeg.tok k ∈ work →
-      (lookup k).bind (fun e => renderRuleOfName e.rule) ≠ some .footnoteitem) :
+      (lookup k).bind (fun e => renderRuleOfName e.rule) ≠ some .footnoteitem ∧
+      (lookup k).bind (fun e => renderRuleOfName e.rule) ≠ some .gallery) :
     renderSegsLoop dispatchRenderR42 lookup conf doc work =
     renderSegsLoop (dispatchRenderR41TokenAware lookup) lookup conf doc work := by
   induction work with
   | nil => rfl
   | cons seg rest ih =>
       have hrest : ∀ k, TSeg.tok k ∈ rest →
-          (lookup k).bind (fun e => renderRuleOfName e.rule) ≠ some .footnoteitem :=
+          (lookup k).bind (fun e => renderRuleOfName e.rule) ≠ some .footnoteitem ∧
+          (lookup k).bind (fun e => renderRuleOfName e.rule) ≠ some .gallery :=
         fun k hk => hnoFi k (List.mem_cons_of_mem _ hk)
       have htail := ih hrest
       have ho := congrArg RenderOutcome.output htail
@@ -103,11 +105,16 @@ private theorem renderSegsLoop_R42_eq_R41ta (lookup : Nat → Option TokenEntry)
               cases hr : renderRuleOfName entry.rule with
               | none => simp [renderSegsLoop, hlk, hr, ho, hu, hm]
               | some rid =>
-                  have hne : rid ≠ .footnoteitem := by
-                    intro hrid
-                    have hb : (lookup k).bind (fun e => renderRuleOfName e.rule) =
-                        some .footnoteitem := by simp [hlk, hr, hrid]
-                    exact hnoFi k (by simp) hb
+                  have hne : rid ≠ .footnoteitem ∧ rid ≠ .gallery := by
+                    constructor
+                    · intro hrid
+                      have hb : (lookup k).bind (fun e => renderRuleOfName e.rule) =
+                          some .footnoteitem := by simp [hlk, hr, hrid]
+                      exact (hnoFi k (by simp)).1 hb
+                    · intro hrid
+                      have hb : (lookup k).bind (fun e => renderRuleOfName e.rule) =
+                          some .gallery := by simp [hlk, hr, hrid]
+                      exact (hnoFi k (by simp)).2 hb
                   have hagree := dispatchRenderR42_eq_tokenAware_of_not_footnoteitem
                     lookup rid hne conf doc entry.opts
                   simp [renderSegsLoop, hlk, hr, hagree, ho, hu, hm]
@@ -116,7 +123,8 @@ theorem renderWithR42_eq_renderWithR41_no_ufffd (lookup : Nat → Option TokenEn
     (conf : RenderConf) (work : List TSeg) (doc : DocState)
     (hno : work.any segHasUfffd = false)
     (hnoFi : ∀ k, TSeg.tok k ∈ work →
-      (lookup k).bind (fun e => renderRuleOfName e.rule) ≠ some .footnoteitem) :
+      (lookup k).bind (fun e => renderRuleOfName e.rule) ≠ some .footnoteitem ∧
+      (lookup k).bind (fun e => renderRuleOfName e.rule) ≠ some .gallery) :
     renderWithR42 lookup conf work doc = renderWithR41 lookup conf work doc := by
   have hloop := renderSegsLoop_R42_eq_R41ta lookup conf doc work hnoFi
   simp [renderWithR42, renderWithR41, renderWith, hno, hloop]

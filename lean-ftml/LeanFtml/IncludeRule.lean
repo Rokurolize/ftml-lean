@@ -165,14 +165,18 @@ def byteToBits8 (b : Nat) : List Bool :=
 def crc32ByteStep (reg : List Bool) (b : Nat) : List Bool :=
   (byteToBits8 b).foldl crc32BitStep reg
 
-/-- Compute `crc32($str) % 1000` directly by Horner evaluation modulo
-    1000 over the final inverted 32-bit register (since `acc < 1000`,
-    `acc * 2 + b < 2000`, so one subtraction replaces `Nat.mod`). -/
-def crc32Mod1000 (bs : List Nat) : Nat :=
+/-- Compute `crc32($str) % m` (for `m ≥ 2`) directly by Horner evaluation modulo
+    `m` over the final inverted 32-bit register (since `acc < m`,
+    `acc * 2 + b < 2 * m`, so one subtraction replaces `Nat.mod`). -/
+def crc32Mod (m : Nat) (bs : List Nat) : Nat :=
   let fin := bs.foldl crc32ByteStep crc32InitBits
   fin.foldr (fun bit acc =>
     let v := acc * 2 + (if !bit then 1 else 0)
-    if v ≥ 1000 then v - 1000 else v) 0
+    if v ≥ m then v - m else v) 0
+
+/-- Compute `crc32($str) % 1000` directly by Horner evaluation modulo 1000. -/
+def crc32Mod1000 (bs : List Nat) : Nat :=
+  crc32Mod 1000 bs
 
 /-- `DB_PagePeer` page ID formula in `ref-php/harness/ozone-stubs.php`:
     `1000 + crc32($key) % 1000`. -/

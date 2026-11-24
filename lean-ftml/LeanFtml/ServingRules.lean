@@ -212,38 +212,46 @@ def moduleAvailableNames : List (List Nat) :=
     litBytes "rate", litBytes "redirect", litBytes "tagcloud",
     litBytes "newpage", litBytes "childpages", litBytes "pagecalendar",
     litBytes "wantedpages", litBytes "orphanedpages", litBytes "countpages",
-    litBytes "search", litBytes "members", litBytes "files" ]
+    litBytes "search", litBytes "members", litBytes "files",
+    litBytes "listusers", litBytes "mailform", litBytes "comments",
+    litBytes "themepreviewer" ]
+
+/-- REFCORR19 F3: caller-runtime modules whose offline output is empty. -/
+def callerRuntimeModules : List (List Nat) :=
+  [ litBytes "listusers", litBytes "mailform",
+    litBytes "comments", litBytes "themepreviewer" ]
 
 /-- The fossil handoff marker byte: `utf8_encode("\xFE")`. -/
 def moduleMarkerByte : List Nat := [195, 190]
 
 /-- Mirror of `Text_Wiki_Render_Xhtml_Module::token` (shared by
-    Module654, whose renderer extends this class). An available
-    name renders the `\xFE module "Name" <urlencoded attr> \xFE`
-    handoff marker (the attr segment, space-padded, only when
-    the effective attr is nonempty; a truthy `module_body` first
-    appends ` module_body="<urlencoded body>"` to the attr and
-    the whole is urlencoded as one string); any other name
-    renders the R2-corrected "No such module" error block with
-    the name raw. -/
+    Module654, whose renderer extends this class). REFCORR19 F3:
+    caller-runtime modules (`listusers`, `mailform`, `comments`,
+    `themepreviewer`) return empty offline before checking ModuleManager.
+    An available name renders the `\xFE module "Name" <urlencoded attr> \xFE`
+    handoff marker; any other name renders the R2-corrected "No such module"
+    error block with the name raw. -/
 def renderModule (opts : OptMap) : List Nat :=
   let name := optStrBytes opts "moduleName".toList
-  let attr0 := optStrBytes opts "attr".toList
-  let body := optStrBytes opts "module_body".toList
-  let attr := if phpEmptyOpt (omGet opts "module_body".toList) then attr0
-    else attr0 ++ litBytes " module_body=\"" ++ urlencodeBytes body ++
-      litBytes "\""
-  if moduleAvailableNames.contains (asciiLowerBytes name) then
-    moduleMarkerByte ++ litBytes "module \"" ++ name ++ litBytes "\"" ++
-      (if attr.isEmpty then [] else
-        [32] ++ urlencodeBytes attr ++ [32]) ++
-      moduleMarkerByte
+  if callerRuntimeModules.contains (asciiLowerBytes name) then
+    []
   else
-    litBytes "<div class=\"error-block\">[[module <em>" ++ name ++
-      litBytes "</em>]] No such module, please " ++
-      litBytes "<a href=\"https://www.wikidot.com/doc:modules\" " ++
-      litBytes "target=\"_blank\">check available modules</a> " ++
-      litBytes "and fix this page.</div>"
+    let attr0 := optStrBytes opts "attr".toList
+    let body := optStrBytes opts "module_body".toList
+    let attr := if phpEmptyOpt (omGet opts "module_body".toList) then attr0
+      else attr0 ++ litBytes " module_body=\"" ++ urlencodeBytes body ++
+        litBytes "\""
+    if moduleAvailableNames.contains (asciiLowerBytes name) then
+      moduleMarkerByte ++ litBytes "module \"" ++ name ++ litBytes "\"" ++
+        (if attr.isEmpty then [] else
+          [32] ++ urlencodeBytes attr ++ [32]) ++
+        moduleMarkerByte
+    else
+      litBytes "<div class=\"error-block\">[[module <em>" ++ name ++
+        litBytes "</em>]] No such module, please " ++
+        litBytes "<a href=\"https://www.wikidot.com/doc:modules\" " ++
+        litBytes "target=\"_blank\">check available modules</a> " ++
+        litBytes "and fix this page.</div>"
 
 /-! ## Math -/
 
@@ -622,6 +630,100 @@ def gallerySanitizeHref (href : List Nat) : List Nat :=
     [35]
   else href
 
+/-- Minimal PHP `strip_tags` on rendered XHTML bytes (drops `<...>`). -/
+def galleryStripTags (bs : List Nat) : List Nat :=
+  go bs false
+where
+  go : List Nat → Bool → List Nat
+    | [], _ => []
+    | 60 :: rest, false => go rest true
+    | 62 :: rest, true => go rest false
+    | _ :: rest, true => go rest true
+    | b :: rest, false => b :: go rest false
+
+/-- Reconstruct `$tokenSource[$id]` for parse rules that register it, or
+    `none` when the rule does not supply a source span. -/
+def galleryTokenSource (tok : TokenEntry) : Option (List Nat) :=
+  match tok.rule with
+  | "Raw" =>
+      let txt := optStrBytes tok.opts "text".toList
+      if txt.isEmpty then some (litBytes "@@@@")
+      else some (litBytes "@@" ++ txt ++ litBytes "@@")
+  | "Code" =>
+      let txt := optStrBytes tok.opts "text".toList
+      some (litBytes "[[code]]" ++ txt ++ litBytes "[[/code]]")
+  | "Url" =>
+      let href := optStrBytes tok.opts "href".toList
+      let text := optStrBytes tok.opts "text".toList
+      let star := match omGet tok.opts "target".toList with
+        | some (.str s) => if s == "_blank".toList then [42] else []
+        | _ => []
+      if optStrBytes tok.opts "type".toList == litBytes "descr" then
+        some ([91] ++ star ++ href ++ [32] ++ text ++ [93])
+      else
+        some (star ++ href)
+  | "Email" =>
+      let addr := optStrBytes tok.opts "email".toList
+      let text := optStrBytes tok.opts "text".toList
+      if addr == text then some addr
+      else some ([91] ++ addr ++ [32] ++ text ++ [93])
+  | "Freelink" =>
+      let url := optStrBytes tok.opts "url".toList
+      let page := optStrBytes tok.opts "page".toList
+      let text := optStrBytes tok.opts "text".toList
+      let anchor := optStrBytes tok.opts "anchor".toList
+      let extra := optStrBytes tok.opts "extra".toList
+      let star := if !(phpEmptyOpt (omGet tok.opts "star".toList)) ||
+          optStrBytes tok.opts "target".toList == litBytes "_blank" then [42] else []
+      let tft := !(phpEmptyOpt (omGet tok.opts "textFromTitle".toList))
+      if phpTruthyBytes url then
+        let lbl := if tft then [124] else if text == url then [] else [124] ++ text
+        some (litBytes "[[[" ++ star ++ url ++ anchor ++ extra ++ lbl ++ litBytes "]]]")
+      else
+        let lbl := if tft then [124] else if text == page then [] else [124] ++ text
+        some (litBytes "[[[" ++ star ++ page ++ anchor ++ extra ++ lbl ++ litBytes "]]]")
+  | "Newline" => some [10]
+  | "Image" =>
+      let src := optStrBytes tok.opts "src".toList
+      some (litBytes "[[image " ++ src ++ litBytes "]]")
+  | _ => none
+
+/-- Mirror of `Text_Wiki_Render_Xhtml_Gallery::itemText` (REFCORR19 F8):
+    resolve any `\xFF(\d+)\xFF` placeholder in `value` to its token source,
+    else its `text` option (if string/bytes), else `strip_tags(renderToken)`. -/
+def galleryItemText (renderTok : TokenEntry → List Nat)
+    (lookup : Nat → Option TokenEntry) (value : List Nat) : List Nat :=
+  if !(value.contains 0xFF) then value
+  else go value (value.length + 1)
+where
+  readPh : List Nat → Option (Nat × List Nat)
+    | 0xFF :: rest =>
+        let ds := rest.takeWhile (fun b => 48 ≤ b && b ≤ 57)
+        if ds.isEmpty then none
+        else match rest.drop ds.length with
+          | 0xFF :: after =>
+              some (ds.foldl (fun a b => a * 10 + (b - 48)) 0, after)
+          | _ => none
+    | _ => none
+  resolveId (id : Nat) : List Nat :=
+    match lookup id with
+    | none => []
+    | some tok =>
+        match galleryTokenSource tok with
+        | some s => s
+        | none =>
+            match omGet tok.opts "text".toList with
+            | some (.str cs) => cs.flatMap utf8Bytes
+            | some (.bytes bs) => bs
+            | _ => galleryStripTags (renderTok tok)
+  go : List Nat → Nat → List Nat
+    | [], _ => []
+    | s, 0 => s
+    | s@(b :: rest), fuel + 1 =>
+        match readPh s with
+        | some (id, after) => resolveId id ++ go after fuel
+        | none => b :: go rest fuel
+
 /-- The full per-row processing of `renderGallery`, as a fold
     step over `(target, osrc, out)`. PHP's `$target` and
     `$osrc` are never reset inside one `token()` call: a `*`
@@ -635,7 +737,9 @@ def gallerySanitizeHref (href : List Nat) : List Nat :=
     scan excludes any token containing one, so the skip here
     is never observed. -/
 def galleryRowStep (size : List Nat)
-    (st : List Nat × List Nat × List Nat) (row : List Nat) :
+    (st : List Nat × List Nat × List Nat) (row : List Nat)
+    (renderTok : TokenEntry → List Nat := fun _ => [])
+    (lookup : Nat → Option TokenEntry := fun _ => none) :
     List Nat × List Nat × List Nat :=
   let (_, osrc, out) := st
   -- REFCORR5 Batch 8 (p20): the star target is per row, never carried in.
@@ -643,7 +747,8 @@ def galleryRowStep (size : List Nat)
   if !(startsWithBytes [58, 32] row) then st
   else
     let body := phpTrimBytes (row.drop 2)
-    let (src0, attrs0) := gallerySplitRow body
+    let (src0raw, attrs0) := gallerySplitRow body
+    let src0 := galleryItemText renderTok lookup src0raw
     let (src1, target1) :=
       if startsWithBytes [42] src0 then
         (src0.drop 1, litBytes "target=\"_blank\"")
@@ -689,23 +794,23 @@ def galleryRowStep (size : List Nat)
         litBytes "\" alt=\"" ++ alt ++
         litBytes "\"/></a></td></tr></table></div>")
 
-/-- Mirror of `Text_Wiki_Render_Xhtml_Gallery::token` under
-    the harness conf (no `no_local`; `vars['pageName']` unset).
-    With truthy `sources`, each `": "`-prefixed line renders
-    one gallery item (see `galleryRowStep`). With falsy
-    `sources` the rule takes its local mode, whose page lookup
-    keys on the unset page name and misses, rendering the
-    constant `Error selecting page.` block; the attachment
-    branch behind a found page is unreachable in the harness
-    and recorded in REPORT-R48.md. -/
-def renderGallery (opts : OptMap) : List Nat :=
+/-- Token-aware mirror of `Text_Wiki_Render_Xhtml_Gallery::token`
+    (REFCORR19 F8 `itemText()`). -/
+def renderGalleryCore (renderTok : TokenEntry → List Nat)
+    (lookup : Nat → Option TokenEntry) (opts : OptMap) : List Nat :=
   let size := gallerySize (optStrBytes opts "size".toList)
   let sources := optStrBytes opts "sources".toList
   if phpTruthyBytes sources then
     let (_, _, out) := (explodeByte 10 sources).foldl
-      (galleryRowStep size) ([], [], litBytes "<div class=\"gallery-box\">")
+      (fun st row => galleryRowStep size st row renderTok lookup)
+      ([], [], litBytes "<div class=\"gallery-box\">")
     out ++ litBytes "</div>"
   else
     litBytes "<div class=\"error-block\">Error selecting page.</div>"
+
+/-- Mirror of `Text_Wiki_Render_Xhtml_Gallery::token` under
+    the harness conf (no `no_local`; `vars['pageName']` unset). -/
+def renderGallery (opts : OptMap) : List Nat :=
+  renderGalleryCore (fun _ => []) (fun _ => none) opts
 
 end LeanFtml

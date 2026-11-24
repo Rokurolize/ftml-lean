@@ -206,7 +206,13 @@ def renderBibliography (opts : OptMap) : List Nat :=
   else
     []
 
-/-- Mirror of `Text_Wiki_Render_Xhtml_Bibcite::token`. -/
+/-- REFCORR19 F6: deterministic crc32-derived bibcite suffix in `1000..99999`,
+    reusing `IncludeRule.crc32Mod` (`1000 + crc32(label) % 99000`). -/
+def bibciteSuffix (label : List Nat) : List Nat :=
+  natBytes (1000 + crc32Mod 99000 label)
+
+/-- Mirror of `Text_Wiki_Render_Xhtml_Bibcite::token` (REFCORR19 F6:
+    `id="bibcite-<index>-<suffix>a"`). -/
 def renderBibcite (conf : RenderConf) (doc : DocState) (opts : OptMap) :
     List Nat :=
   let label := optStrBytes opts "label".toList
@@ -218,8 +224,9 @@ def renderBibcite (conf : RenderConf) (doc : DocState) (opts : OptMap) :
         label ++ litBytes "</em> not found.</span>"
   | some id =>
       let idBytes := natBytes id
+      let sfx := bibciteSuffix label
       litBytes "<a href=\"javascript:;\" class=\"bibcite\" " ++
-        litBytes "id=\"bibcite-" ++ idBytes ++
+        litBytes "id=\"bibcite-" ++ idBytes ++ [45] ++ sfx ++ [97] ++
         litBytes "\" onclick=\"WIKIDOT.page.utils." ++
         litBytes "scrollToReference('bibitem-" ++
         pfx ++ idBytes ++ litBytes "')\">" ++ idBytes ++ litBytes "</a>"
@@ -312,13 +319,19 @@ def dispatchRenderR41 :
   | .image, _, _, opts => renderImage opts
   | .gallery, _, _, opts => renderGallery opts
   | .user, _, _, opts => renderUser opts
+  | .html, _, _, opts => renderHtml opts
 
-/-- REFCORR9: the R4.1 dispatcher with the render-phase token lookup threaded
-    into the one rule that now needs it. Every other rule delegates unchanged,
-    so the dispatcher type, token table shape and DocState are untouched. -/
+/-- REFCORR9 / REFCORR19 F8: the R4.1 dispatcher with the render-phase
+    token lookup threaded into `Footnoteitem` and `Gallery` (`itemText`). -/
 def dispatchRenderR41TokenAware (lookup : Nat → Option TokenEntry) :
     RenderRuleId → RenderConf → DocState → OptMap → List Nat
   | .footnoteitem, conf, doc, opts => renderFootnoteitem conf doc opts lookup
+  | .gallery, conf, doc, opts =>
+      renderGalleryCore
+        (fun e => match renderRuleOfName e.rule with
+          | some rid => dispatchRenderR41 rid conf doc e.opts
+          | none => [])
+        lookup opts
   | rid, conf, doc, opts => dispatchRenderR41 rid conf doc opts
 
 /-- Render from an arbitrary token lookup function (used directly by
@@ -648,17 +661,27 @@ theorem bibcite_not_found (conf : RenderConf) (doc : DocState) (label : List Nat
 
 /-- `Bibcite` resolution (defined label): when `label` maps to `id` in
     `doc.bibitemIds`, renders the exact scrollToReference anchor with
-    `conf.bibitemIdPrefix` (`REPORT-R36.md`). -/
+    REFCORR19 F6's deterministic crc32-derived suffix and `conf.bibitemIdPrefix`. -/
 theorem bibcite_found (conf : RenderConf) (doc : DocState) (label : List Nat)
     (id : Nat) (hfound : bibLookup doc.bibitemIds label = some id) :
     renderBibcite conf doc [("label".toList, OptVal.bytes label)] =
     litBytes "<a href=\"javascript:;\" class=\"bibcite\" " ++
-      litBytes "id=\"bibcite-" ++ natBytes id ++
+      litBytes "id=\"bibcite-" ++ natBytes id ++ [45] ++ bibciteSuffix label ++ [97] ++
       litBytes "\" onclick=\"WIKIDOT.page.utils." ++
       litBytes "scrollToReference('bibitem-" ++
       conf.bibitemIdPrefix ++ natBytes id ++ litBytes "')\">" ++
       natBytes id ++ litBytes "</a>" := by
   simp [renderBibcite, optStrBytes, omGet, renderOptValBytes, hfound]
+
+set_option maxRecDepth 10000 in
+theorem bibciteSuffix_bell :
+    bibciteSuffix (litBytes "bell") = litBytes "32943" := by
+  have h1 : crc32Mod 99000 (litBytes "bell") = 31943 := rfl
+  have h2 : natBytes (1000 + 31943) = litBytes "32943" := rfl
+  simp [bibciteSuffix, h1, h2]
+
+theorem bibciteSuffix_a :
+    bibciteSuffix (litBytes "a") = litBytes "93907" := rfl
 
 /-! ## Worked end-to-end parse+render examples (R3.6 → R4.1)
 
@@ -748,7 +771,7 @@ theorem notes_e2e_bibcite_duplicate_example :
     out.isComplete = true ∧
     out.output =
       litBytes "<a href=\"javascript:;\" class=\"bibcite\" " ++
-      litBytes "id=\"bibcite-" ++ natBytes 2 ++
+      litBytes "id=\"bibcite-" ++ natBytes 2 ++ [45] ++ litBytes "93907" ++ [97] ++
       litBytes "\" onclick=\"WIKIDOT.page.utils." ++
       litBytes "scrollToReference('bibitem-" ++ natBytes 2 ++
       litBytes "')\">" ++ natBytes 2 ++ litBytes "</a>" ++
@@ -853,7 +876,7 @@ theorem notes_e2e_bibcite_duplicate_example :
          .tok 4, .text ['Z'], .tok 5,
          .tok 7, .text ['\n']]).output =
       litBytes "<a href=\"javascript:;\" class=\"bibcite\" " ++
-      litBytes "id=\"bibcite-" ++ natBytes 2 ++
+      litBytes "id=\"bibcite-" ++ natBytes 2 ++ [45] ++ litBytes "93907" ++ [97] ++
       litBytes "\" onclick=\"WIKIDOT.page.utils." ++
       litBytes "scrollToReference('bibitem-" ++ natBytes 2 ++
       litBytes "')\">" ++ natBytes 2 ++ litBytes "</a>" ++
@@ -873,6 +896,7 @@ theorem notes_e2e_bibcite_duplicate_example :
       litBytes "</div>" ++ litBytes "\n" := by
       have ha : bibLookup [(litBytes "a", 2), (litBytes "b", 2)] (optStrBytes [("label".toList, .str ['a'])] "label".toList) = some 2 := rfl
       have hrb : optStrBytes [("label".toList, .str ['z'])] "label".toList = litBytes "z" := rfl
+      have hsfx : bibciteSuffix (optStrBytes [("label".toList, .str ['a'])] "label".toList) = litBytes "93907" := rfl
       have hz : bibLookup [(litBytes "a", 2), (litBytes "b", 2)] (litBytes "z") = none := rfl
       have hm1 : renderBibitem {} [("label".toList, .str ['a']), ("id".toList, .int 1),
           ("type".toList, .str "start".toList), ("empty".toList, .bool false)] =
@@ -919,7 +943,7 @@ theorem notes_e2e_bibcite_duplicate_example :
       simp only [renderSegsLoop, List.getElem?_cons_zero, List.getElem?_cons_succ,
                  renderRuleOfName, dispatchRenderR41TokenAware, dispatchRenderR41,
                  bibliography_title_default, bibliography_end, bibitem_end,
-                 renderBibcite, hm1, hm2, hm3, ha, hz, hrb,
+                 renderBibcite, hm1, hm2, hm3, ha, hz, hrb, hsfx,
                  hnl, hsp, hnl2, hx, hy, hzt,
                  List.append_nil, List.append_assoc]
     rw [hloop]

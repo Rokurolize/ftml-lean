@@ -341,4 +341,21 @@ theorem gallery_one_local_row :
         litBytes "<img src=\"/local--resized-images//a.png/thumbnail.jpg\" " ++
         litBytes "alt=\"\"/></a></td></tr></table></div></div>" := rfl
 
+set_option maxRecDepth 32768 in
+theorem gallery_itemText_span_example :
+    let toks : List TokenEntry :=
+      [{ rule := "Span", opts := [("args".toList, .map []), ("type".toList, .str "start".toList)] },
+       { rule := "Span", opts := [("type".toList, .str "end".toList)] }]
+    renderGalleryCore
+      (fun e => match renderRuleOfName e.rule with
+        | some rid => dispatchRenderR41 rid {} {} e.opts
+        | none => [])
+      (fun k => toks[k]?)
+      [("sources".toList, .bytes (litBytes "\n: " ++ phBytes 0 ++ litBytes "x" ++ phBytes 1))] =
+      litBytes "<div class=\"gallery-box\">" ++
+        litBytes "<div class=\"gallery-item thumbnail\">" ++
+        litBytes "<table><tr><td><a href=\"/local--files//x\" >" ++
+        litBytes "<img src=\"/local--resized-images//x/thumbnail.jpg\" " ++
+        litBytes "alt=\"\"/></a></td></tr></table></div></div>" := rfl
+
 end LeanFtml

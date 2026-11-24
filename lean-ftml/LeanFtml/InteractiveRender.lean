@@ -364,10 +364,16 @@ theorem collapsible_start_default :
       true := rfl
   have hloc : (litBytes "top" == litBytes "top" ||
       litBytes "top" == litBytes "both") = true := rfl
+  have hls : phpEmptyOpt (omGet [("args".toList, OptVal.map []),
+      ("type".toList, OptVal.str "start".toList)] "label_size".toList) = true := rfl
+  have hclose : litBytes "</a>" ++ litBytes "</div>" = litBytes "</a></div>" := rfl
+  have hopen (xs : List Nat) :
+      litBytes ">" ++ (litBytes "<a class=\"collapsible-block-link\" " ++ xs) =
+        litBytes "><a class=\"collapsible-block-link\" " ++ xs := rfl
   unfold renderCollapsible
-  simp only [hom, hoptShow, hoptHide, hoptFold, hoptLoc, ht1, hloc,
-    ↓reduceIte, collapsible_label_default_show,
-    collapsible_label_default_hide, List.append_nil, List.append_assoc]
+  simp only [hom, hoptShow, hoptHide, hoptFold, hoptLoc, ht1, hloc, hls,
+    ↓reduceIte, List.isEmpty_nil, collapsible_label_default_show,
+    collapsible_label_default_hide, List.append_nil, List.append_assoc, hclose, hopen]
 
 /-- `Collapsible` `start` with `folded="no"`: the folded link
     is hidden and the unfolded block is not. -/
@@ -411,11 +417,18 @@ theorem collapsible_start_unfolded :
       true := rfl
   have hloc : (litBytes "top" == litBytes "top" ||
       litBytes "top" == litBytes "both") = true := rfl
+  have hls : phpEmptyOpt (omGet [("args".toList, OptVal.map
+        [("folded".toList, OptVal.str "no".toList)]),
+      ("type".toList, OptVal.str "start".toList)] "label_size".toList) = true := rfl
+  have hclose : litBytes "</a>" ++ litBytes "</div>" = litBytes "</a></div>" := rfl
+  have hopen (xs : List Nat) :
+      litBytes ">" ++ (litBytes "<a class=\"collapsible-block-link\" " ++ xs) =
+        litBytes "><a class=\"collapsible-block-link\" " ++ xs := rfl
   unfold renderCollapsible
-  simp only [hom, hoptShow, hoptHide, hoptFold, hoptLoc, hdisj, ht1, hloc,
-    Bool.not_true, Bool.false_eq_true, ↓reduceIte,
+  simp only [hom, hoptShow, hoptHide, hoptFold, hoptLoc, hdisj, ht1, hloc, hls,
+    Bool.not_true, Bool.false_eq_true, ↓reduceIte, List.isEmpty_nil,
     collapsible_label_default_show, collapsible_label_default_hide,
-    List.append_nil, List.append_assoc]
+    List.append_nil, List.append_assoc, hclose, hopen]
 
 /-- `Collapsible` `end` with `hideLocation="bottom"`: the
     unfolded-link block follows the content close. -/
@@ -453,10 +466,14 @@ theorem collapsible_end_bottom :
   have hlocv : (litBytes "bottom" == litBytes "bottom") = true := rfl
   have hloc2 : (litBytes "bottom" == litBytes "bottom" ||
       litBytes "bottom" == litBytes "both") = true := rfl
+  have hls : phpEmptyOpt (omGet [("args".toList, OptVal.map
+        [("hideLocation".toList, OptVal.str "bottom".toList)]),
+      ("type".toList, OptVal.str "end".toList)] "label_size".toList) = true := rfl
+  have hclose : litBytes "</a>" ++ litBytes "</div>" = litBytes "</a></div>" := rfl
   unfold renderCollapsible
-  simp only [hom, hoptHide, hoptLoc, ht1, ht2, hlocv, hloc2,
-    Bool.true_or, Bool.false_eq_true, ↓reduceIte,
-    collapsible_label_default_hide, List.append_nil, List.append_assoc]
+  simp only [hom, hoptHide, hoptLoc, ht1, ht2, hlocv, hloc2, hls,
+    Bool.true_or, Bool.false_eq_true, ↓reduceIte, List.isEmpty_nil,
+    collapsible_label_default_hide, List.append_nil, List.append_assoc, hclose]
 
 /-- `Collapsible` `end`, default (top): no link block. -/
 theorem collapsible_end_top :
@@ -477,9 +494,11 @@ theorem collapsible_end_top :
       true := rfl
   have hlocF : (litBytes "top" == litBytes "bottom" ||
       litBytes "top" == litBytes "both") = false := rfl
+  have hls : phpEmptyOpt (omGet [("args".toList, OptVal.map []),
+      ("type".toList, OptVal.str "end".toList)] "label_size".toList) = true := rfl
   unfold renderCollapsible
-  simp only [hom, hoptFold, hoptLoc, ht1, ht2, hlocF,
-    Bool.false_eq_true, ↓reduceIte, List.append_nil, List.append_assoc]
+  simp only [hom, hoptFold, hoptLoc, ht1, ht2, hlocF, hls,
+    Bool.false_eq_true, ↓reduceIte, List.isEmpty_nil, List.append_nil, List.append_assoc]
 
 set_option maxRecDepth 8192 in
 /- `Tabview` `start` with one selected tab: the two script
@@ -965,14 +984,13 @@ theorem date_canon_clamp :
 theorem date_canon_leading_zeros :
     canonTimestamp (litBytes "-000123") = litBytes "-123" := rfl
 
-/-- `File` with a plain name: the base slash plus the name.
-    The two `ENT_COMPAT` escapes are discharged through
-    `htmlSpecialCharsCompat_ascii`. -/
+/-- `File` with a plain name (REFCORR19 F1): `/local--files/<pageName>/<name>`,
+    where `pageName` defaults to empty under the unset harness conf. -/
 theorem file_plain :
     renderFile [("file".toList, OptVal.str "a.txt".toList),
       ("anchor".toList, OptVal.str "a.txt".toList)] =
     litBytes "<a href=\"" ++
-      litBytes "/a.txt" ++
+      litBytes "/local--files//a.txt" ++
       litBytes "\">" ++
       litBytes "a.txt" ++
       litBytes "</a>" := by
@@ -986,12 +1004,12 @@ theorem file_plain :
   have henc : encodeFilePath (litBytes "a.txt") =
       litBytes "a.txt" := rfl
   have hqc1 : htmlSpecialCharsCompat
-      (litBytes "/" ++ encodeFilePath (litBytes "a.txt")) =
-      litBytes "/a.txt" := by
+      (litBytes "/local--files/" ++ ([47] ++ encodeFilePath (litBytes "a.txt"))) =
+      litBytes "/local--files//a.txt" := by
     rw [henc]
-    show htmlSpecialCharsCompat (litBytes "/a.txt") = litBytes "/a.txt"
-    have hascii : ∀ b ∈ litBytes "/a.txt", b < 0x80 := fun b hb => by
-      have hall : (litBytes "/a.txt").all
+    show htmlSpecialCharsCompat (litBytes "/local--files//a.txt") = litBytes "/local--files//a.txt"
+    have hascii : ∀ b ∈ litBytes "/local--files//a.txt", b < 0x80 := fun b hb => by
+      have hall : (litBytes "/local--files//a.txt").all
           (fun x => decide (x < 0x80)) = true := rfl
       exact of_decide_eq_true (List.all_eq_true.mp hall b hb)
     rw [htmlSpecialCharsCompat_ascii _ hascii]
@@ -1054,12 +1072,12 @@ theorem file_path :
   simp only [hfile, hanchor, hcont, hcont', hcons, hqc1, hqc2,
     ↓reduceIte, List.append_nil, List.append_assoc]
 
-/-- `File`: a space in the name is percent-encoded. -/
+/-- `File`: a space in the name is percent-encoded (REFCORR19 F1 path). -/
 theorem file_space :
     renderFile [("file".toList, OptVal.str "a b.txt".toList),
       ("anchor".toList, OptVal.str "a b.txt".toList)] =
     litBytes "<a href=\"" ++
-      litBytes "/a%20b.txt" ++
+      litBytes "/local--files//a%20b.txt" ++
       litBytes "\">" ++
       litBytes "a b.txt" ++
       litBytes "</a>" := by
@@ -1073,13 +1091,13 @@ theorem file_space :
   have henc : encodeFilePath (litBytes "a b.txt") =
       litBytes "a%20b.txt" := rfl
   have hqc1 : htmlSpecialCharsCompat
-      (litBytes "/" ++ encodeFilePath (litBytes "a b.txt")) =
-      litBytes "/a%20b.txt" := by
+      (litBytes "/local--files/" ++ ([47] ++ encodeFilePath (litBytes "a b.txt"))) =
+      litBytes "/local--files//a%20b.txt" := by
     rw [henc]
-    show htmlSpecialCharsCompat (litBytes "/a%20b.txt") =
-      litBytes "/a%20b.txt"
-    have hascii : ∀ b ∈ litBytes "/a%20b.txt", b < 0x80 := fun b hb => by
-      have hall : (litBytes "/a%20b.txt").all
+    show htmlSpecialCharsCompat (litBytes "/local--files//a%20b.txt") =
+      litBytes "/local--files//a%20b.txt"
+    have hascii : ∀ b ∈ litBytes "/local--files//a%20b.txt", b < 0x80 := fun b hb => by
+      have hall : (litBytes "/local--files//a%20b.txt").all
           (fun x => decide (x < 0x80)) = true := rfl
       exact of_decide_eq_true (List.all_eq_true.mp hall b hb)
     rw [htmlSpecialCharsCompat_ascii _ hascii]
@@ -1095,6 +1113,19 @@ theorem file_space :
   unfold renderFile
   simp only [hfile, hanchor, hcont, hqc1, hqc2, Bool.false_eq_true,
     ↓reduceIte, List.append_nil, List.append_assoc]
+
+/-- REFCORR19 F2: `Html` renders as `html-block-iframe`. -/
+theorem html_iframe_default :
+    renderHtml [("text".toList, OptVal.str "<b>x</b>".toList)] =
+      litBytes "<iframe src=\"https://example.com/\" allowtransparency=\"true\" frameborder=\"0\" class=\"html-block-iframe\"></iframe>" := by
+  rfl
+
+theorem html_iframe_class_style :
+    renderHtml [("text".toList, OptVal.str "<b>x</b>".toList),
+        ("class".toList, OptVal.str "foo".toList),
+        ("style".toList, OptVal.str "color:red".toList)] =
+      litBytes "<iframe src=\"https://example.com/\" allowtransparency=\"true\" frameborder=\"0\" style=\"color:red\" class=\"foo html-block-iframe\"></iframe>" := by
+  rfl
 
 /-- `Size` `start` and `end`. -/
 theorem size_shapes :
