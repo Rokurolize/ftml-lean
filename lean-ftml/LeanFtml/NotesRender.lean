@@ -306,7 +306,7 @@ def dispatchRenderR41 :
   | .button, _, _, opts => renderButton opts
   | .iframe, _, _, opts => renderIframe opts
   | .date, _, _, opts => renderDate opts
-  | .file, _, _, opts => renderFile opts
+  | .file, conf, doc, opts => renderFile opts (docPageSegment conf doc)
   | .size, _, _, opts => renderSize opts
   | .span, _, _, opts => renderSpan opts
   | .div, _, _, opts => renderDiv opts
@@ -316,7 +316,7 @@ def dispatchRenderR41 :
   | .module, _, _, opts => renderModule opts
   | .module654, _, _, opts => renderModule opts
   | .math, _, _, opts => renderMath opts
-  | .image, _, _, opts => renderImage opts
+  | .image, conf, doc, opts => renderImageWithPage (docPageSegment conf doc) opts
   | .gallery, _, _, opts => renderGallery opts
   | .user, _, _, opts => renderUser opts
   | .html, _, _, opts => renderHtml opts
@@ -682,6 +682,15 @@ theorem bibciteSuffix_bell :
 
 theorem bibciteSuffix_a :
     bibciteSuffix (litBytes "a") = litBytes "93907" := rfl
+
+/-- Stage 1 harvest repair (3): among the eight PHP 4-arg `addToken(..., false, ...)`
+    `tokenSource` writer rules, only `Code`, `Raw`, and `Freelink` precede `Gallery`
+    in `pipelineFull`; `Image`, `Newline`, `Url`, `Email`, and `Mathinline` run after. -/
+theorem gallery_pipeline_preceding_writers :
+    let writers : List RuleId :=
+      [.code, .raw, .freelink, .image, .newline, .url, .email, .mathinline]
+    (pipelineFull.takeWhile (fun r => r != .gallery)).filter (fun r => writers.contains r) =
+      [.code, .raw, .freelink] := rfl
 
 /-! ## Worked end-to-end parse+render examples (R3.6 → R4.1)
 

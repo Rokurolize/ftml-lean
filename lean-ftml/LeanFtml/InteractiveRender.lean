@@ -1245,4 +1245,38 @@ theorem div_vanished_end :
     renderDiv [("type".toList, OptVal.str "end".toList),
       ("vanished".toList, OptVal.bool true)] = [] := rfl
 
+/- When a collapsible `start` token carries a non-empty `label_size`, both the
+   folded show link and unfolded hide link are wrapped in
+   `<span style="font-size:...;">...</span>` (mirroring
+   `Render/Xhtml/Collapsible.php`). -/
+set_option maxRecDepth 16384 in
+theorem collapsible_label_size_render_witness :
+    renderCollapsible
+      [("args".toList, .map
+         [("show".toList, .str "a".toList), ("hide".toList, .str "b".toList)]),
+       ("type".toList, .str "start".toList),
+       ("label_size".toList, .str "120%".toList)] =
+      litBytes "<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><span style=\"font-size:120%;\"><a class=\"collapsible-block-link\" href=\"javascript:;\">a</a></span></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><span style=\"font-size:120%;\"><a class=\"collapsible-block-link\" href=\"javascript:;\">b</a></span></div><div class=\"collapsible-block-content\">" :=
+  rfl
+
+/-- Unqualified `renderFile` splices the non-empty `pageSegment` returned by
+    `docPageSegment` ahead of `/<file>`. -/
+theorem file_with_pageName :
+    renderFile [("file".toList, .str "a.txt".toList),
+        ("anchor".toList, .str "a.txt".toList)] (litBytes "scp-173") =
+      litBytes "<a href=\"/local--files/scp-173/a.txt\">a.txt</a>" := by
+  unfold renderFile
+  dsimp
+  repeat rw [htmlSpecialCharsCompat_ascii _ (by decide)]
+  rfl
+
+/-- `docPageSegment` prefers explicit `conf.pageName`, falling back to
+    `doc.page.name` UTF-8 bytes and finally `[]`. -/
+theorem docPageSegment_fallback_example :
+    docPageSegment { pageName := litBytes "override" }
+        { page := { name := "fallback".toList } } = litBytes "override" ∧
+    docPageSegment {} { page := { name := "fallback".toList } } =
+      litBytes "fallback" ∧
+    docPageSegment {} {} = [] := ⟨rfl, rfl, rfl⟩
+
 end LeanFtml

@@ -45,7 +45,16 @@ structure RenderConf where
   bibitemIdPrefix : List Nat := []
   /-- `getRenderConf('xhtml', 'math', 'id_prefix')` (Equationreference, Math). -/
   mathIdPrefix : List Nat := []
+  /-- `vars['pageName']` when explicitly supplied by the caller/config (REFCORR19 F1). -/
+  pageName : List Nat := []
 deriving Inhabited
+
+/-- Mirror of `Text_Wiki_Render_Xhtml_{File,Image}::pageSegment` (REFCORR19 F1):
+    uses `conf.pageName` when non-empty, falling back to `doc.page.name` (UTF-8 encoded)
+    and finally empty `[]`. -/
+def docPageSegment (conf : RenderConf) (doc : DocState) : List Nat :=
+  if !conf.pageName.isEmpty then conf.pageName
+  else doc.page.name.flatMap utf8Bytes
 
 /-- The render rules mirrored in Lean so far.
     Pilot (R4.1): the six NOTES family render rules.

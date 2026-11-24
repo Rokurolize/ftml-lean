@@ -462,8 +462,12 @@ def imageAttrEmit (kv : List Char × OptVal) : List Nat :=
     with the original-file link filled in when no link is set;
     the emitted `src` and `href` are percent-encoded for
     non-ASCII bytes (correction C6) and escaped under
-    `ENT_COMPAT` (the HTMLCHARS correction). -/
-def renderImage (opts : OptMap) : List Nat :=
+    `ENT_COMPAT` (the HTMLCHARS correction).
+
+    Parameterized by the REFCORR19 F1 `pageSegment` (`vars['pageName']`, else
+    `vars['page']->name`, else `""`). When `pageName = []` (harness default),
+    emits the `//` separator. -/
+def renderImageWithPage (pageName : List Nat) (opts : OptMap) : List Nat :=
   let src0 := optStrBytes opts "src".toList
   let attr := imageAttrMap opts
   if startsWithBytes (litBytes ":first") src0 then []
@@ -498,13 +502,13 @@ def renderImage (opts : OptMap) : List Nat :=
         else
           match size2 with
           | some sz =>
-              (litBytes "/local--resized-images//" ++ src0 ++
+              (litBytes "/local--resized-images/" ++ pageName ++ [47] ++ src0 ++
                 litBytes "/" ++ sz ++ litBytes ".jpg",
                if linkLooseNull attr then
-                 some (litBytes "/local--files//" ++
+                 some (litBytes "/local--files/" ++ pageName ++ [47] ++
                    stripOneLeadingSlash src0)
                else link0)
-          | none => (litBytes "/local--files//" ++ src0, link0)
+          | none => (litBytes "/local--files/" ++ pageName ++ [47] ++ src0, link0)
     let href : Option (List Nat) := link.map imageHref
     let img :=
       litBytes "<img src=\"" ++
@@ -546,6 +550,10 @@ def renderImage (opts : OptMap) : List Nat :=
       litBytes "<div class=\"image-container" ++ suffix ++
         litBytes "\">" ++ anchored ++ litBytes "</div>"
     else anchored
+
+/-- Harness-default specialization of `renderImageWithPage` with `pageName = []`. -/
+def renderImage (opts : OptMap) : List Nat :=
+  renderImageWithPage [] opts
 
 /-! ## Gallery -/
 
@@ -641,8 +649,13 @@ where
     | _ :: rest, true => go rest true
     | b :: rest, false => b :: go rest false
 
-/-- Reconstruct `$tokenSource[$id]` for parse rules that register it, or
-    `none` when the rule does not supply a source span. -/
+/-- Reconstruct `$tokenSource[$id]` for the eight PHP 4-argument
+    `addToken(..., false, ...)` writer rules (`Raw`, `Code`, `Url`, `Email`,
+    `Freelink`, `Newline`, `Image`, `Mathinline`), or `none` when a rule does not
+    register a source span. In `pipelineFull` (`Gallery` at index 42), only `Code`,
+    `Raw`, and `Freelink` precede `Gallery`; the remaining five writers run after
+    `Gallery` and cannot appear as tokens inside a gallery block during normal
+    parse order. -/
 def galleryTokenSource (tok : TokenEntry) : Option (List Nat) :=
   match tok.rule with
   | "Raw" =>
@@ -686,6 +699,9 @@ def galleryTokenSource (tok : TokenEntry) : Option (List Nat) :=
   | "Image" =>
       let src := optStrBytes tok.opts "src".toList
       some (litBytes "[[image " ++ src ++ litBytes "]]")
+  | "Mathinline" =>
+      let txt := optStrBytes tok.opts "text".toList
+      some (litBytes "[[$" ++ txt ++ litBytes "$]]")
   | _ => none
 
 /-- Mirror of `Text_Wiki_Render_Xhtml_Gallery::itemText` (REFCORR19 F8):

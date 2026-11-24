@@ -819,7 +819,7 @@ def exprCondition (expression : List Nat) : List Nat × Bool :=
             else c == .lt
           (if truth then [49] else [48], truth)
       | Sum.inl err, _ => (err, false)
-      | _, Sum.inl err => (err, false)
+      | Sum.inr va, Sum.inl _ => (exprRatToBytes va, false)
   | none =>
       match exprEvalOpt expression with
       | Sum.inl err => (err, false)
@@ -1640,5 +1640,13 @@ theorem ifexprProcess_examples :
     ifexprProcess (litBytes "%%rating%% > 0 | y | n") =
       litBytes "syntax error near `%%rating%%`" :=
   ⟨rfl, rfl, rfl⟩
+
+/-- Stage 1 harvest repair (1): when the RHS of a comparison errors in `Expr::condition`,
+    PHP returns `array($lhs_numeric, false)` so `[[#ifexpr]]` selects the false branch
+    rather than emitting the RHS syntax error. -/
+theorem ifexprProcess_rhs_error_witness :
+    exprCondition (litBytes "1 < %%x%%") = (litBytes "1", false) ∧
+    ifexprProcess (litBytes "1 < %%x%% | y | n") = litBytes "n" :=
+  ⟨rfl, rfl⟩
 
 end LeanFtml
