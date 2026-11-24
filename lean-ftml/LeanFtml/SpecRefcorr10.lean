@@ -51,7 +51,7 @@ private def r10pEmptyRaw3 : List TokenEntry :=
 private def r10pNonEmptyRaw : List TokenEntry :=
   [{ rule := "Raw", opts := [("text".toList, OptVal.str "x".toList)] }]
 
-/- ## List-family general mechanism (R10-LIST): ten pins for the ten distinct round-5c confirmed sources. The general case- and attribute-agnostic post-failed-close predicate listPostFailedClose10 and the scored-empty predicate listScoredEmptyItem10 replace the narrow exact-byte C1/C4 skeletons; the remaining cross-case normalizer shapes are recorded with their disclosed mirror limitation (the attribute/multiline generalizations of the S1-01/S1-02 normalizers are verified on the PHP side by the 4,639-source re-render and the byte-level mirror keeps its recorded exact-byte forms). -/
+/- ## List-family general mechanism (R10-LIST): ten pins for the ten distinct round-5c confirmed sources. The general case- and attribute-agnostic post-failed-close predicate listPostFailedClose10 and the scored-empty predicate listScoredEmptyItem10 replace the narrow exact-byte C1/C4 skeletons; the cross-case pre-normalization rewrites are implemented in the mirror as faithful general forms of the reference's five preg_replace patterns (rw81, rw82, rw91, rw131, rw132 in ListRules.lean), replacing the earlier exact-byte forms. -/
 
 /- C-R5C-P1-1 = C-R5C-S1-3 (S18, identical source and capture): the lowercase second item after a failed uppercase closer stays literal inside one closed item; the mirror emits four List rule tokens plus one Newline. C-R5C-S1-3 is the recorded dedupe, not a second distinct source. -/
 set_option maxRecDepth 200000 in

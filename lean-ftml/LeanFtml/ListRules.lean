@@ -1200,24 +1200,41 @@ where
     | acc, s@(b :: rest), fuel + 1 =>
         match blockOpenerAt s with
         | some (tag, _, _, olen) =>
-            if tagIsRawCase tag then
-              let afterOpen := s.drop olen
-              let closePat := litBytes "[[" ++ litBytes "/" ++ tag ++ litBytes "]]"
-              match findSubCIBytes closePat afterOpen with
-              | some idx =>
-                  let middle := afterOpen.take idx
-                  let r := afterOpen.drop (idx + closePat.length)
+            let afterOpen := s.drop olen
+            let closePat := litBytes "[[/" ++ lowerBytes tag ++ litBytes "]]"
+            match findSubCIBytes closePat afterOpen with
+            | some idx =>
+                let middle := afterOpen.take idx
+                let r := afterOpen.drop (idx + closePat.length)
+                if tagIsRawCase tag then
                   let ws := (r.takeWhile isWsByte).length
                   let afterWs := r.drop ws
                   let afterMatch := match matchLitCI (litBytes "[[/li]]") afterWs with
                     | some rli => rli
                     | none => r
-                  let added := afterMatch.reverse ++ middle.reverse ++
-                    (litBytes "[[/li]]").reverse
-                  go (added ++ acc) afterMatch fuel
-              | none => go (b :: acc) rest fuel
-            else go (b :: acc) rest fuel
+                  let seg := litBytes "[[/li]]" ++ middle
+                  go (seg.reverse ++ acc) afterMatch fuel
+                else
+                  let seg := s.take (olen + idx + closePat.length)
+                  go (seg.reverse ++ acc) r fuel
+            | none => go (b :: acc) rest fuel
         | none => go (b :: acc) rest fuel
+
+/-- Whether `s` is empty once every EXPLIST masking placeholder and
+    every whitespace byte is removed: the reference's `$bodyNoPh`
+    test in `buildExplicitListBlock`
+    (`preg_replace('/\s|\x02EXPLIST_\d+\x03/', '', $body)`).
+    NATLIST placeholders are not removed by that test. -/
+def bodyOnlyExplOrWs (s : List Nat) : Bool :=
+  go s (s.length + 1)
+where
+  go : List Nat → Nat → Bool
+    | [], _ => true
+    | _, 0 => true
+    | s'@(b :: rest), fuel + 1 =>
+        match maskPhAt s' "EXPLIST_" with
+        | some (_, len) => go (s'.drop len) fuel
+        | none => if isWsByte b then go rest fuel else false
 
 /-- `buildExplicitListBlock`: build one paired block. The body is
 masked (nested explicit blocks first, then native list spans), then
@@ -1263,20 +1280,47 @@ def buildExplicit (tag : List Nat) (scored : Bool) (attrStr : List Nat)
            ("newline".toList, OptVal.bool false),
            ("lead_nl".toList, OptVal.bool false)] tk
         (o ++ wS ++ e.2.1 ++ wE, tk)) ([], toks)
-    let (itemsOut, toks, surviving, _) := lis.foldl
-      (fun (st : List Nat × List TokenEntry × Nat × Nat) e =>
-        let (o, tk, surv, i) := st
-        let (fmt, tk) := formatItem e.2.2.1 (buildListAttrs e.2.1)
-          (attachedOf i) nmap natmap unclosed tk
-        (o ++ fmt, tk, surv + (if fmt.isEmpty then 0 else 1), i + 1))
-      ([], toks, 0, 0)
+    let (itemsOut, toks, surviving, siblingAfter, _) := lis.foldl
+      (fun (st : List Nat × List TokenEntry × Nat × List Nat × Nat) e =>
+        let (o, tk, surv, sib, i) := st
+        let att := attachedOf i
+        let nestedHere := nmapEntries e.2.2.1 nmap ++ att
+        if bodyOnlyExplOrWs e.2.2.1 && !nestedHere.isEmpty then
+          let (brPh, tk) := addTok "List"
+            [("type".toList, textVal (litBytes "explicit_br_no_nl"))] tk
+          let (liS, tk) := addTok "List"
+            [("type".toList, textVal (litBytes "explicit_item_start")),
+             ("attrs".toList,
+               OptVal.map (attrsToOpts (buildListAttrs e.2.1))),
+             ("lead".toList, textVal [])] tk
+          let (liE, tk) := if unclosed then ([], tk)
+            else addTok "List"
+              [("type".toList, textVal (litBytes "explicit_item_end")),
+               ("lead".toList, textVal [])] tk
+          let (tk, sib) := nestedHere.foldl
+            (fun (st2 : List TokenEntry × List Nat) en =>
+              (setTrail st2.1 en.2.2 [10], st2.2 ++ en.2.1)) (tk, sib)
+          (o ++ liS ++ brPh ++ liE, tk, surv + 1, sib, i + 1)
+        else
+          let (fmt, tk) := formatItem e.2.2.1 (buildListAttrs e.2.1)
+            att nmap natmap unclosed tk
+          (o ++ fmt, tk, surv + (if fmt.isEmpty then 0 else 1), sib,
+            i + 1))
+      ([], toks, 0, [], 0)
     if surviving == 0 && preNested.isEmpty then dissolveBlock toks blocks1
     else if unclosed then
       let (repl, tk) := wrapListTokensUnclosed tag scored attrs
         (preOut ++ itemsOut) toks
       (repl, tk, blocks1)
-    else wrapListTokens tag scored isSynth attrs (preOut ++ itemsOut)
-      trailAfterClose toks blocks1
+    else
+      let (repl, tk, blks) := wrapListTokens tag scored isSynth attrs
+        (preOut ++ itemsOut) trailAfterClose toks blocks1
+      if siblingAfter.isEmpty then (repl, tk, blks)
+      else
+        let (rawPh, tk) := addTok "List"
+          [("type".toList, textVal (litBytes "explicit_raw_nl"))] tk
+        let (nlPh, tk) := addTok "Newline" [] tk
+        (repl ++ rawPh ++ siblingAfter ++ nlPh, tk, blks)
   else
     let trimmedBody := trimBytes body
     if trimmedBody.isEmpty then dissolveBlock toks blocks1
@@ -1418,20 +1462,77 @@ where
             some (pre ++ (if nls >= 2 then [10] else []) ++ r2.drop nls)
         | none => go (s.head! :: acc) rest fuel
 
-/-- REFCORR7: strip every swallowed block closer from a degraded body. -/
-def degradeRawBody (bs : List Nat) : List Nat :=
-  go bs bs.length
+/-- Whether a block closer (`[[/ul]]` or `[[/ol]]`, any case) sits at
+    the head of `s`; returns the closer's length. -/
+def degradeCloserAt (s : List Nat) : Option Nat :=
+  match matchLitCI (litBytes "[[/ul]]") s with
+  | some _ => some 7
+  | none => (matchLitCI (litBytes "[[/ol]]") s).map (fun _ => 7)
+
+/-- One degrade replacement pass of the reference's branch `kind`
+    (0 = A: newline + closer + 2-or-more newlines, replaced by one
+    newline; 1 = B: newline + closer + newline, removed; 2 = C: every
+    closer with optional surrounding newlines, removed), applied
+    left to right, non-overlapping. -/
+def degradePass (kind : Nat) (bs : List Nat) : List Nat :=
+  go bs (bs.length + 1)
 where
   go : List Nat → Nat → List Nat
-    | s, 0 => s
-    | s, fuel + 1 =>
-        match degradeOneBody s with
-        | none => s
-        | some out =>
-            let out' := if out.any (· == 255) then
-              ((out.dropWhile (· == 10)).reverse.dropWhile (· == 10)).reverse
-              else out
-            if out' == s then out' else go out' fuel
+    | [], _ => []
+    | _, 0 => []
+    | s@(b :: rest), fuel + 1 =>
+        if b == 10 then
+          match degradeCloserAt rest with
+          | some clen =>
+              let after := rest.drop clen
+              let run := (after.takeWhile (· == 10)).length
+              if kind == 0 && run ≥ 2 then
+                10 :: go (after.drop run) fuel
+              else if kind == 1 && run ≥ 1 then
+                go (after.drop 1) fuel
+              else if kind == 2 then
+                go (after.drop (min run 1)) fuel
+              else b :: go rest fuel
+          | none =>
+              if kind == 2 then b :: go rest fuel
+              else b :: go rest fuel
+        else
+          match degradeCloserAt s with
+          | some clen =>
+              if kind == 2 then
+                let after := s.drop clen
+                let run := (after.takeWhile (· == 10)).length
+                go (after.drop (min run 1)) fuel
+              else b :: go rest fuel
+          | none => b :: go rest fuel
+
+/-- Whether degrade branch `kind`'s pattern matches anywhere in `bs`
+    (branch A: newline + closer + 2-or-more newlines; branch B:
+    newline + closer + newline). -/
+def degradeHas (kind : Nat) (bs : List Nat) : Bool :=
+  go bs
+where
+  go : List Nat → Bool
+    | [] => false
+    | 10 :: rest =>
+        match degradeCloserAt rest with
+        | some clen =>
+            let run := ((rest.drop clen).takeWhile (· == 10)).length
+            (if kind == 0 then run ≥ 2 else run ≥ 1) || go rest
+        | none => go rest
+    | _ :: rest => go rest
+
+/-- REFCORR7 C-SUSPECT4A-4: degrade a synthetic body that has no item
+    but does hold a swallowed block closer, by the one replacement
+    pass the reference selects (see `degradePass`); a result holding
+    a placeholder byte is trimmed of newlines at both ends. -/
+def degradeRawBody (bs : List Nat) : List Nat :=
+  let out := if degradeHas 0 bs then degradePass 0 bs
+    else if degradeHas 1 bs then degradePass 1 bs
+    else degradePass 2 bs
+  if out.any (· == 255) then
+    ((out.dropWhile (· == 10)).reverse.dropWhile (· == 10)).reverse
+  else out
 
 /-- REFCORR7 C-SUSPECT4A-3: an unscored synthetic opener whose would-be
 closer is the last non-whitespace content leaves an unclosed list. -/
@@ -1488,7 +1589,8 @@ def explLoop (src : List Nat) (toks : List TokenEntry)
                 let body := if op.scored && tagIsRawCase op.tag then
                   absorbTailTrimScored stripped else absorbTailTrim stripped
                 let hasNestedBlock := blocks.any (fun b => (findFrom b.startPh rawBody 0).isSome)
-                let unclosed := syntheticUnclosed op.scored (tagIsRawCase op.tag) src && !hasNestedBlock
+                let hasNestedOpener := (scanTags rawBody).any (·.isOpen)
+                let unclosed := syntheticUnclosed op.scored (tagIsRawCase op.tag) src && !hasNestedBlock && !hasNestedOpener
                 let (repl, toks', blocks') := buildExplicit op.tag op.scored
                   op.attrs body false unclosed true toks blocks
                 explLoop ((src.take op.start) ++ repl) toks' blocks' proseOpeners fuel
@@ -1497,7 +1599,7 @@ def explLoop (src : List Nat) (toks : List TokenEntry)
           let body := (src.drop (op.start + op.len)).take
             (cl.start - (op.start + op.len))
           let (repl, toks', blocks') := buildExplicit op.tag op.scored
-            op.attrs body cl.residual false (tagIsRawCase cl.tag) toks blocks
+            op.attrs body cl.residual false false toks blocks
           let repl' := if tagIsRawCase cl.tag &&
               cl.start + cl.len < src.length &&
               src[cl.start + cl.len]? != some 10 then repl ++ [10] else repl
@@ -1617,111 +1719,406 @@ def finalizeExplicit (src : List Nat) (toks : List TokenEntry)
   blocks.foldl (fun (st : List Nat × List TokenEntry) blk =>
     finalizeOne st.1 st.2 blk blocks) (src, toks)
 
-/-- REFCORR8 C-R5-S1-01 and C-R5-S1-02: normalize the two confirmed
-    nested-cross-case skeletons into the form the existing pairing and
-    block builder already render as live. Both rewrites are exact-byte
-    and touch only a full source carrying that skeleton. -/
-def normalizeRefcorr8 (s : List Nat) : List Nat :=
-  let s1 := replaceFirst
-    (litBytes "[[UL class=\"c\" id=\"i\" data-x=\"1\"]]\n[[li]]a\n[[ol]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]AFTER")
-    (litBytes "[[ul]]\n[[li]]a\n[[/li]]\n[[/ul]]\n[[ol]]\n[[li]]b[[/li]]\n[[/OL]]AFTER") s
-  replaceFirst
-    (litBytes "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b[[/li]]\n[[/UL]]AFTER\n[[/ol]]\n[[/li]]\n[[/ul]]")
-    (litBytes "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b\n[[/ol]] AFTER[[/li]]\n[[/ul]] [[/li]]\n[[/ul]]") s1
+/-- Match an exact literal at the head of `s`; return the rest. -/
+def eatLit (lit : List Nat) (s : List Nat) : Option (List Nat) :=
+  matchLitBytes lit s
 
+/-- Match a literal at the head of `s` case-insensitively. -/
+def eatLitCI (lit : List Nat) (s : List Nat) : Option (List Nat) :=
+  matchLitCI lit s
 
-/-- REFCORR9 C-R5B-P1-2: a raw-case inner opener with lowercase items
-is dissolved into ONE closed, scored outer list whose items are
-siblings and whose trailing prose is absorbed into the last item. The
-scored opener keeps finalize from adding a trailing Newline, matching
-live's closed list with no following break. -/
-def normalizeUpperInner9 (s : List Nat) : List Nat :=
-  let pre := litBytes "[[UL class=\"c\"]]\n[[li]]a\n[[OL]]\n[[li]]b[[/li]]\n[[/OL]]\n[[/li]]\n[[/ul]]"
-  let rep := litBytes "[[ul_]]\n[[li]]a\n[[/li]]\n[[li]]b"
-  if s.take pre.length == pre then
-    rep ++ (s.drop pre.length).takeWhile (fun b => b != 10) ++
-      litBytes "[[/li]]\n[[/ul]]"
-  else s
+/-- A block opener at the head of `s` with a tag from `tags` (exact
+    bytes), optional scored `_` when `scoredOk`, and the reference's
+    attribute group `(?:\s+[^\]]*)?`: either `]]` immediately, or a
+    whitespace byte followed by non-`]` bytes up to `]]`. Returns the
+    tag and the rest. -/
+def eatOpenTag (tags : List (List Nat)) (scoredOk : Bool) (s : List Nat) :
+    Option (List Nat × List Nat) :=
+  match matchLitBytes (litBytes "[[") s with
+  | none => none
+  | some r =>
+      tags.findSome? (fun t =>
+        match matchLitBytes t r with
+        | none => none
+        | some r1 =>
+            let r2 := if scoredOk then match r1 with
+              | 95 :: rr => rr
+              | _ => r1
+              else r1
+            match matchLitBytes (litBytes "]]") r2 with
+            | some r3 => some (t, r3)
+            | none =>
+                match r2 with
+                | w :: _ =>
+                    if isWsByte w then
+                      let j := (r2.takeWhile (· != 93)).length
+                      match r2.drop j with
+                      | 93 :: 93 :: r4 => some (t, r4)
+                      | _ => none
+                    else none
+                | [] => none)
 
-/-- REFCORR9 C-R5B-P1-3: the C-R5-S1-02 skeleton with trailing prose
-after its final closer is normalized with that prose preserved; the
-REFCORR8 exact-byte rewrite only matched a source ending at the closer.
-The inter-token spacing follows the REFCORR8 S1-02 replacement. -/
-def normalizeS1Tail9 (s : List Nat) : List Nat :=
-  let pre := litBytes "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b[[/li]]\n[[/UL]]AFTER\n[[/ol]]\n[[/li]]\n[[/ul]]"
-  let rep := litBytes "[[ul]]\n[[li]]a\n[[ol]]\n[[li]]b\n[[/ol]] AFTER[[/li]]\n[[/ul]] [[/li]]\n[[/ul]]"
-  if s.take pre.length == pre then rep ++ s.drop pre.length else s
+/-- The attribute-group tail of an opener whose `[[tag` prefix was
+    already consumed: `]]`, or whitespace then non-`]` bytes to `]]`. -/
+def eatOpenTail (r : List Nat) : Option (List Nat) :=
+  match matchLitBytes (litBytes "]]") r with
+  | some r2 => some r2
+  | none =>
+      match r with
+      | w :: _ =>
+          if isWsByte w then
+            let j := (r.takeWhile (· != 93)).length
+            match r.drop j with
+            | 93 :: 93 :: r4 => some r4
+            | _ => none
+          else none
+      | [] => none
 
-/-- REFCORR13 mirror half of the four-case nested-boundary rule. The bytes
-    between a block tag and the next block tag start with the tag's own LF;
-    PHP's rewrite captures begin after that LF. Drop exactly one leading LF. -/
-def afterTagLf13 (s : List Nat) (t : TagMatch) : List Nat :=
-  let r := s.drop (t.start + t.len)
-  match r with
-  | 10 :: rr => rr
-  | _ => r
+/-- A `[[li]]`-family opener at the head of `s`, the tag letters
+    matched case-insensitively, with the reference's attribute group.
+    Returns the rest after `]]`. -/
+def eatLiOpenCI (s : List Nat) : Option (List Nat) :=
+  match matchLitCI (litBytes "[[li") s with
+  | none => none
+  | some r => eatOpenTail r
 
-/-- REFCORR13 mirror half, case A (raw-case outer, lowercase nested). A
-    lowercase nested opener is a genuine list, so a raw-case outer (which
-    never pairs) closes before it and the nested list becomes a sibling.
-    This is the byte-pairing mirror of the first PHP pre-normalization
-    rewrite and is inert on every other source shape. -/
-def normalizeRawOuterLowNested13 (s : List Nat) : List Nat :=
-  match scanTags s with
-  | o :: n :: cl :: oc :: _ =>
-      if o.isOpen && tagIsRawCase o.tag &&
-         n.isOpen && !(tagIsRawCase n.tag) &&
-         !cl.isOpen && !(tagIsRawCase cl.tag) &&
-         lowerBytes cl.tag == lowerBytes n.tag &&
-         !oc.isOpen && tagIsRawCase oc.tag &&
-         lowerBytes oc.tag == lowerBytes o.tag &&
-         (trimBytes (s.take o.start)).isEmpty &&
-         existsLitCI (litBytes "[[/li]]") ((s.take oc.start).drop (cl.start + cl.len))
-      then
-        let pre := s.take o.start
-        let item0 := (s.take n.start).drop (o.start + o.len)
-        let item := match item0 with | 10 :: r => r | _ => item0
-        let nested0 := (s.take (cl.start + cl.len)).drop (n.start + n.len)
-        let nested := match nested0 with | 10 :: r => r | _ => nested0
-        let rest := s.drop (oc.start + oc.len)
-        pre ++ litBytes "[[ul]]\n" ++ item ++ litBytes "[[/LI]]\n[[/ul]]\n[[" ++
-          lowerBytes n.tag ++ litBytes "]]\n" ++ nested ++ rest
-      else s
-  | _ => s
+/-- A `[[LI]]` opener at the head of `s` (uppercase tag exactly), with
+    the reference's attribute group. Returns the rest after `]]`. -/
+def eatLiOpenUpper (s : List Nat) : Option (List Nat) :=
+  match matchLitBytes (litBytes "[[LI") s with
+  | none => none
+  | some r => eatOpenTail r
 
-/-- REFCORR13 mirror half, case B (lowercase outer, raw-case nested). A
-    raw-case nested opener is an item boundary: its opener and closer are
-    consumed and the following LI becomes a sibling item in the same outer
-    list. This is the byte-pairing mirror of the second PHP pre-normalization
-    rewrite and is inert on every other source shape. -/
-def normalizeLowOuterRawNested13 (s : List Nat) : List Nat :=
-  match scanTags s with
-  | o :: n :: ncl :: oc :: _ =>
-      if o.isOpen && !(tagIsRawCase o.tag) &&
-         n.isOpen && tagIsRawCase n.tag &&
-         !ncl.isOpen && tagIsRawCase ncl.tag &&
-         lowerBytes ncl.tag == lowerBytes n.tag &&
-         !oc.isOpen && !(tagIsRawCase oc.tag) && oc.tag == o.tag &&
-         (trimBytes (s.take o.start)).isEmpty &&
-         existsLitCI (litBytes "[[/li]]") ((s.take oc.start).drop (ncl.start + ncl.len))
-      then
-        let item0 := (s.take n.start).drop (o.start + o.len)
-        let item := match item0 with | 10 :: r => r | _ => item0
-        let nested0 := afterTagLf13 s n
-        match liMatchAt nested0 with
-        | some (_, _, nlen) =>
-            let rest := s.drop (oc.start + oc.len)
-            (s.take o.start) ++ litBytes "[[" ++ o.tag ++ litBytes "]]\n" ++ item ++
-              litBytes "[[/LI]]\n" ++ nested0.take nlen ++
-              litBytes "\n[[/" ++ o.tag ++ litBytes "]]" ++ rest
-        | none => s
-      else s
-  | _ => s
+/-- The span from the head of `s` through the first occurrence of an
+    exact literal in `lits` (span includes the literal), and the rest
+    after it: the `(.*?)` lazy dotall of the reference's regexps. -/
+def lazyToLit (lits : List (List Nat)) (s : List Nat) :
+    Option (List Nat × List Nat) :=
+  go s (s.length + 1)
+where
+  go : List Nat → Nat → Option (List Nat × List Nat)
+    | [], _ => none
+    | _, 0 => none
+    | s'@(b :: rest), fuel + 1 =>
+        match lits.findSome? (fun lit => matchLitBytes lit s') with
+        | some r => some (s.take (s.length - r.length), r)
+        | none => go rest fuel
 
-/-- REFCORR13 mirror half of the four-case nested-boundary rule: apply the
-    two byte-pairing normalizations in the PHP rewrite order. -/
-def normalizeNestedBoundary13 (s : List Nat) : List Nat :=
-  normalizeLowOuterRawNested13 (normalizeRawOuterLowNested13 s)
+/-- The same lazy span, with the literal matched case-insensitively. -/
+def lazyToLitCI (lit : List Nat) (s : List Nat) :
+    Option (List Nat × List Nat) :=
+  go s (s.length + 1)
+where
+  go : List Nat → Nat → Option (List Nat × List Nat)
+    | [], _ => none
+    | _, 0 => none
+    | s'@(b :: rest), fuel + 1 =>
+        match matchLitCI lit s' with
+        | some r => some (s.take (s.length - r.length), r)
+        | none => go rest fuel
+
+/-- The first newline in `s` at which the REFCORR8 S1-02 tail can
+    continue: after it, a lowercase block closer, a newline, `[[li]]`,
+    a newline, and a lowercase block closer. Returns the bytes before
+    that newline (the `$5` capture) and the rest after the final
+    closer (the `$6` capture). -/
+def rw82Tail (s : List Nat) : Option (List Nat × List Nat) :=
+  go [] s
+where
+  tailOk : List Nat → Option (List Nat)
+    | r =>
+        match (matchLitBytes (litBytes "[[/ul]]") r) <|>
+              (matchLitBytes (litBytes "[[/ol]]") r) with
+        | some r1 =>
+            match matchLitBytes (litBytes "\n") r1 with
+            | some r2 =>
+                match matchLitBytes (litBytes "[[/li]]") r2 with
+                | some r3 =>
+                    match matchLitBytes (litBytes "\n") r3 with
+                    | some r4 =>
+                        (matchLitBytes (litBytes "[[/ul]]") r4) <|>
+                          (matchLitBytes (litBytes "[[/ol]]") r4)
+                    | none => none
+                | none => none
+            | none => none
+        | none => none
+  go : List Nat → List Nat → Option (List Nat × List Nat)
+    | _, [] => none
+    | acc, 10 :: rest =>
+        match tailOk rest with
+        | some r5 => some (acc.reverse, r5)
+        | none => go (10 :: acc) rest
+    | acc, b :: rest => go (b :: acc) rest
+
+/-- REFCORR8 C-R5-S1-01, the reference's first pre-normalization
+    rewrite (List.php `parseExplicitLists`): a raw-case outer opener
+    whose body holds a lowercase nested list closed by a cross-case
+    uppercase closer, followed by the outer's own closers, is
+    rewritten to two sibling lists. -/
+def rw81 (s0 : List Nat) : List Nat :=
+  let s := s0.drop (s0.takeWhile isWsByte).length
+  match eatOpenTag [litBytes "UL", litBytes "OL"] true s with
+  | none => s0
+  | some (_, r1) =>
+  match eatLit (litBytes "\n") r1 with
+  | none => s0
+  | some r2 =>
+  match eatLit (litBytes "[[li]]") r2 with
+  | none => s0
+  | some r3 =>
+    let line := r3.takeWhile (· != 10)
+    let g2 := litBytes "[[li]]" ++ line
+    match eatLit (litBytes "\n") (r3.drop line.length) with
+    | none => s0
+    | some r4 =>
+    match (eatLit (litBytes "[[ul]]") r4) <|> (eatLit (litBytes "[[ol]]") r4) with
+    | none => s0
+    | some r5 =>
+    match eatLit (litBytes "\n") r5 with
+    | none => s0
+    | some r6 =>
+    match lazyToLit [litBytes "[[/UL]]", litBytes "[[/OL]]"] r6 with
+    | none => s0
+    | some (_, r7) =>
+      let g3 := r4.take (r4.length - r7.length)
+      match eatLit (litBytes "\n") r7 with
+      | none => s0
+      | some r8 =>
+      match eatLit (litBytes "[[/li]]") r8 with
+      | none => s0
+      | some r9 =>
+      match eatLit (litBytes "\n") r9 with
+      | none => s0
+      | some r10 =>
+      match (eatLit (litBytes "[[/ul]]") r10) <|> (eatLit (litBytes "[[/ol]]") r10) with
+      | none => s0
+      | some r11 =>
+        litBytes "[[ul]]\n" ++ g2 ++ litBytes "\n[[/li]]\n[[/ul]]\n" ++ g3 ++ r11
+
+/-- REFCORR8 C-R5-S1-02, the reference's second pre-normalization
+    rewrite: a lowercase outer and inner list closed by a cross-case
+    uppercase closer at depth two, with a later lowercase inner closer
+    and the outer's closers left literal, is rewritten with a
+    none-item inner list and literal trailing closers (the
+    replacement's two closing `[[ /ul]]` are the reference's own
+    hardcoded bytes). -/
+def rw82 (s0 : List Nat) : List Nat :=
+  let s := s0.drop (s0.takeWhile isWsByte).length
+  match (eatLit (litBytes "[[ul]]") s) <|> (eatLit (litBytes "[[ol]]") s) with
+  | none => s0
+  | some r1 =>
+    let g1 := s.take (s.length - r1.length)
+    match eatLit (litBytes "\n") r1 with
+    | none => s0
+    | some r2 =>
+    match eatLit (litBytes "[[li]]") r2 with
+    | none => s0
+    | some r3 =>
+      let line := r3.takeWhile (· != 10)
+      let g2 := litBytes "[[li]]" ++ line
+      match eatLit (litBytes "\n") (r3.drop line.length) with
+      | none => s0
+      | some r4 =>
+      match (eatLit (litBytes "[[ul]]") r4) <|> (eatLit (litBytes "[[ol]]") r4) with
+      | none => s0
+      | some r5 =>
+        let g3 := ((r4.take (r4.length - r5.length)).drop 2).take 2
+        match eatLit (litBytes "\n") r5 with
+        | none => s0
+        | some r6 =>
+        match eatLit (litBytes "[[li]]") r6 with
+        | none => s0
+        | some r7 =>
+        match lazyToLit [litBytes "[[/li]]"] r7 with
+        | none => s0
+        | some (span, r8) =>
+          let g4 := litBytes "[[li]]" ++ span.take (span.length - 8)
+          match eatLit (litBytes "\n") r8 with
+          | none => s0
+          | some r9 =>
+          match (eatLit (litBytes "[[/UL]]") r9) <|> (eatLit (litBytes "[[/OL]]") r9) with
+          | none => s0
+          | some r10 =>
+          match rw82Tail r10 with
+          | none => s0
+          | some (g5, r11) =>
+            g1 ++ litBytes "\n" ++ g2 ++ litBytes "\n[[" ++ g3 ++
+              litBytes "]]\n" ++ g4 ++ litBytes "\n[[/" ++ g3 ++
+              litBytes "]] " ++ g5 ++
+              litBytes "[[/li]]\n[[/ul]] [[/li]]\n[[/ul]]" ++ r11
+
+/-- REFCORR9 C-R5B-P1-2, the reference's third pre-normalization
+    rewrite: a raw-case outer opener whose body holds a raw-case
+    nested list with lowercase items, closed by its own uppercase
+    closer and the outer closers, is rewritten to one scored list
+    whose lowercase items are siblings and whose trailing text is
+    absorbed into the last item. The whole source must match. -/
+def rw91 (s0 : List Nat) : List Nat :=
+  let s := s0.drop (s0.takeWhile isWsByte).length
+  match eatOpenTag [litBytes "UL", litBytes "OL"] true s with
+  | none => s0
+  | some (_, r1) =>
+  match eatLit (litBytes "\n") r1 with
+  | none => s0
+  | some r2 =>
+  match eatLit (litBytes "[[li]]") r2 with
+  | none => s0
+  | some r3 =>
+    let line1 := r3.takeWhile (· != 10)
+    let g1 := litBytes "[[li]]" ++ line1
+    match eatLit (litBytes "\n") (r3.drop line1.length) with
+    | none => s0
+    | some r4 =>
+    match eatOpenTag [litBytes "UL", litBytes "OL"] true r4 with
+    | none => s0
+    | some (_, r5) =>
+    match eatLit (litBytes "\n") r5 with
+    | none => s0
+    | some r6 =>
+    match eatLit (litBytes "[[li]]") r6 with
+    | none => s0
+    | some r7 =>
+      let line2 := r7.takeWhile (· != 10)
+      let closer := litBytes "[[/li]]"
+      if line2.length < closer.length ||
+          line2.drop (line2.length - closer.length) != closer then s0
+      else
+        let g2 := litBytes "[[li]]" ++
+          line2.take (line2.length - closer.length)
+        match eatLit (litBytes "\n") (r7.drop line2.length) with
+        | none => s0
+        | some r8 =>
+        match (eatLit (litBytes "[[/UL]]") r8) <|> (eatLit (litBytes "[[/OL]]") r8) with
+        | none => s0
+        | some r9 =>
+        match eatLit (litBytes "\n") r9 with
+        | none => s0
+        | some r10 =>
+        match eatLit (litBytes "[[/li]]") r10 with
+        | none => s0
+        | some r11 =>
+        match eatLit (litBytes "\n") r11 with
+        | none => s0
+        | some r12 =>
+        match (eatLit (litBytes "[[/ul]]") r12) <|> (eatLit (litBytes "[[/ol]]") r12) with
+        | none => s0
+        | some r13 =>
+          let g3 := (r13.reverse.dropWhile isWsByte).reverse
+          litBytes "[[ul_]]\n" ++ g1 ++ litBytes "\n[[/li]]\n" ++ g2 ++
+            g3 ++ litBytes "[[/li]]\n[[/ul]]"
+
+/-- REFCORR13 symmetric nested-boundary rule, first rewrite (raw-case
+    outer, lowercase nested): the reference's fourth
+    pre-normalization. A lowercase nested opener is a genuine list,
+    so the raw-case outer closes before it and the nested list
+    becomes a sibling. -/
+def rw131 (s0 : List Nat) : List Nat :=
+  let preLen := (s0.takeWhile isWsByte).length
+  let pre := s0.take preLen
+  let s := s0.drop preLen
+  match eatOpenTag [litBytes "UL", litBytes "OL"] true s with
+  | none => s0
+  | some (_, r1) =>
+  match eatLit (litBytes "\n") r1 with
+  | none => s0
+  | some r2 =>
+  match eatLiOpenUpper r2 with
+  | none => s0
+  | some r3 =>
+    let itemBody := r3.takeWhile (fun b => b != 10 && b != 91)
+    let g3 := r2.take (r2.length - (r3.drop itemBody.length).length)
+    match eatOpenTag [litBytes "ul", litBytes "ol"] true (r3.drop itemBody.length) with
+    | none => s0
+    | some (ntag, r4) =>
+    match eatLit (litBytes "\n") r4 with
+    | none => s0
+    | some r5 =>
+    match eatLiOpenCI r5 with
+    | none => s0
+    | some r6 =>
+    match lazyToLit [litBytes "[[/ul]]", litBytes "[[/ol]]"] r6 with
+    | none => s0
+    | some (span, r7) =>
+      let g5 := r5.take (r5.length - r7.length)
+      let r8 := r7.drop (r7.takeWhile isWsByte).length
+      match eatLitCI (litBytes "[[/li]]") r8 with
+      | none => s0
+      | some r9 =>
+      match eatLit (litBytes "\n") r9 with
+      | none => s0
+      | some r10 =>
+      match (eatLit (litBytes "[[/UL]]") r10) <|> (eatLit (litBytes "[[/OL]]") r10) with
+      | none => s0
+      | some r11 =>
+        pre ++ litBytes "[[ul]]\n" ++ g3 ++ litBytes "[[/LI]]\n[[/ul]]\n[[" ++
+          ntag ++ litBytes "]]\n" ++ g5 ++ r11
+
+/-- REFCORR13 symmetric nested-boundary rule, second rewrite
+    (lowercase outer, raw-case nested): the reference's fifth
+    pre-normalization. A raw-case nested opener is an item boundary
+    whose tags are consumed and whose following LI becomes a sibling
+    item. -/
+def rw132 (s0 : List Nat) : List Nat :=
+  let preLen := (s0.takeWhile isWsByte).length
+  let pre := s0.take preLen
+  let s := s0.drop preLen
+  match (eatLit (litBytes "[[ul]]") s) <|> (eatLit (litBytes "[[ol]]") s) with
+  | none => s0
+  | some r1 =>
+    let otag := ((s.take (s.length - r1.length)).drop 2).take 2
+    match eatLit (litBytes "\n") r1 with
+    | none => s0
+    | some r2 =>
+    match eatLiOpenCI r2 with
+    | none => s0
+    | some r3 =>
+      let itemBody := r3.takeWhile (fun b => b != 10 && b != 91)
+      let g3 := r2.take (r2.length - (r3.drop itemBody.length).length)
+      match eatOpenTag [litBytes "UL", litBytes "OL"] true (r3.drop itemBody.length) with
+      | none => s0
+      | some (_, r4) =>
+      match eatLit (litBytes "\n") r4 with
+      | none => s0
+      | some r5 =>
+      match eatLiOpenCI r5 with
+      | none => s0
+      | some r6 =>
+      match lazyToLitCI (litBytes "[[/li]]") r6 with
+      | none => s0
+      | some (span, r7) =>
+        let g5 := r5.take (r5.length - r7.length)
+        match eatLit (litBytes "\n") r7 with
+        | none => s0
+        | some r8 =>
+        match (eatLit (litBytes "[[/UL]]") r8) <|> (eatLit (litBytes "[[/OL]]") r8) with
+        | none => s0
+        | some r9 =>
+        match eatLit (litBytes "\n") r9 with
+        | none => s0
+        | some r10 =>
+        match eatLitCI (litBytes "[[/li]]") r10 with
+        | none => s0
+        | some r10b =>
+          match eatLit (litBytes "\n") r10b with
+          | none => s0
+          | some r11 =>
+          match (eatLit (litBytes "[[/ul]]") r11) <|> (eatLit (litBytes "[[/ol]]") r11) with
+          | none => s0
+          | some r12 =>
+            pre ++ litBytes "[[" ++ otag ++ litBytes "]]\n" ++ g3 ++
+              litBytes "[[/LI]]\n" ++ g5 ++ litBytes "\n[[/" ++ otag ++
+              litBytes "]]" ++ r12
+
+/-- The reference's five pre-normalization rewrites of
+    `parseExplicitLists`, in the reference's own order (REFCORR8
+    S1-01, REFCORR8 S1-02, REFCORR9 P1-2, REFCORR13 case A,
+    REFCORR13 case B). `listExplicitPass` applies the same five
+    passes staged around its whole-source pre-pass checks: the
+    REFCORR13 pair first (the position the mirror's earlier
+    nested-boundary normalization held), then the REFCORR8/9 passes
+    once the checks have declined. -/
+def normalizeExplicit (s : List Nat) : List Nat :=
+  rw132 (rw131 (rw91 (rw82 (rw81 s))))
 
 /-- REFCORR10 general scored-empty rule: a raw-case SCORED opener with a
     whitespace-only item keeps that empty item in an unclosed list instead
@@ -1920,12 +2317,40 @@ def emitFailedCloseWire12 (tag : List Nat) (scored : Bool)
   let sibWire := sibPhs.foldl (fun acc ph => acc ++ liS ++ ph ++ liE) []
   (sPh ++ sibWire ++ liS ++ absorbPh ++ liE ++ ePh ++ after, toks)
 
-/-- REFCORR10 GENERAL post-failed-close rule. When a raw-case opener has no
-    pairing closer and an item marker (any case or attributes) follows its
-    first failed block closer, the first item stays open and the whole tail
-    after the failed closer stays LITERAL inside it; the list is closed.
-    This replaces the exact-byte C1 skeleton with a case- and attribute-
-    agnostic, multiline-tolerant predicate. -/
+/-- The reference's C1 fast-path shape (List.php, the REFCORR9/11/12
+    synthetic-body regexp): the synthetic body must open with a newline
+    and a complete `[[li]]` item, that item's closer must be followed
+    by a newline and a block closer, and the tail after that closer
+    carries a further `[[li]]` opener. Returns (pre, post): the bytes
+    through the item and its trailing newline, and the tail after the
+    block closer; a residual `]` after the closer stays in the tail,
+    as the regexp consumes only `[[/ul]]`. -/
+def c1PrePost (body : List Nat) : Option (List Nat × List Nat) :=
+  match body with
+  | 10 :: _ =>
+      match liOpenerAt (body.drop 1) with
+      | some (_, olen) =>
+          match findSubCIBytes (litBytes "[[/li]]") (body.drop (1 + olen)) with
+          | some q =>
+              let itemEnd := 1 + olen + q + 7
+              if body[itemEnd]? != some 10 then none
+              else
+                match blockCloserAt (body.drop (itemEnd + 1)) with
+                | some (_, cres, clen) =>
+                    let clStart := itemEnd + 1
+                    some (body.take clStart,
+                      body.drop (clStart + clen - (if cres then 1 else 0)))
+                | none => none
+          | none => none
+      | none => none
+  | _ => none
+
+/-- REFCORR10 post-failed-close rule, restricted to the reference's
+    C1 shape: when a raw-case opener has no pairing closer and its
+    synthetic body matches `c1PrePost`, the first item stays open and
+    the whole tail after the failed closer stays LITERAL inside it;
+    the list is closed. Shapes outside the C1 regexp fall through to
+    the generic synthetic path in `explLoop`, as in the reference. -/
 def listPostFailedClose10 (src0 : List Nat) (toks : List TokenEntry) :
     Option (List Nat × List TokenEntry) :=
   if (findPair src0 (pairTags src0 toks)).isSome then none
@@ -1934,15 +2359,9 @@ def listPostFailedClose10 (src0 : List Nat) (toks : List TokenEntry) :
     | none => none
     | some op =>
       let body := src0.drop (op.start + op.len)
-      match (scanTags body).find? (fun t => !t.isOpen) with
+      match c1PrePost body with
       | none => none
-      | some cl =>
-        let pre := body.take cl.start
-        -- REFCORR11: keep a residual `]` after the closer in the literal
-        -- tail, matching the PHP regex which consumes only `[[/ul]]`.
-        let post := body.drop (cl.start + cl.len - (if cl.residual then 1 else 0))
-        -- REFCORR11 GENERAL adjacency: search every offset, not only the
-        -- whitespace prefix, for the following LI opener.
+      | some (pre, post) =>
         if (firstLiAt post).isNone then none
         else
           match scanLi pre with
@@ -1975,15 +2394,13 @@ def listPostFailedClose10 (src0 : List Nat) (toks : List TokenEntry) :
             let absorb := absorbHead ++ litTail ++ insideProse
             emitFailedCloseWire12 tag op.scored siblings absorb afterList12 toks
 
-/-- AUDIT-R10-LISTGEN GENERALIZATION: this guard is the REFCORR10/11/12
-general post-failed-close adjacency predicate, not an exact-source matcher.
-The former REFCORR9 shape-specific matcher, which keyed on a fixed uppercase
-opener prefix and hard-coded A and B item texts, is removed. Cached evidence shows the general
-predicate emits the byte-identical live wire for that source both unpadded and
-prefilter-padded, and re-rendering all 55 cached list captures of rounds
-5..5e changes no output. The historical name `listPostFailedClose9` is kept
-only so the existing closed pins in SpecRefcorr10.lean continue to elaborate;
-its body now delegates to the one general mechanism. -/
+/-- The historical name `listPostFailedClose9` is kept only so the
+existing closed pins in SpecRefcorr10.lean continue to elaborate; its
+body delegates to `listPostFailedClose10`, whose predicate is the
+reference's own C1 regexp shape (see `c1PrePost`). An earlier, looser
+adjacency predicate fired the C1 wire on shapes the reference routes
+to its generic synthetic path; the List bounded certificate measured
+the difference as an allocation-order divergence family. -/
 def listPostFailedClose9 (src0 : List Nat) (toks : List TokenEntry) :
     Option (List Nat × List TokenEntry) :=
   listPostFailedClose10 src0 toks
@@ -1992,14 +2409,14 @@ def listPostFailedClose9 (src0 : List Nat) (toks : List TokenEntry) :
 `[[ul` or `[[ol`. -/
 def listExplicitPass (src0 : List Nat) (toks : List TokenEntry) :
     List Nat × List TokenEntry :=
-  let srcN := normalizeNestedBoundary13 src0
+  let srcN := rw132 (rw131 src0)
   match listScoredEmptyItem10 srcN toks with
   | some out => out
   | none =>
   match listPostFailedClose9 srcN toks with
   | some out => out
   | none =>
-    let src := normalizeUpperInner9 (normalizeS1Tail9 (normalizeRefcorr8 srcN))
+    let src := rw91 (rw82 (rw81 srcN))
     if !(src.any (fun b => byteCiEq b 91)) ||
        !(existsLitCI (litBytes "[[ul") src || existsLitCI (litBytes "[[ol") src) then (src, toks)
     else
