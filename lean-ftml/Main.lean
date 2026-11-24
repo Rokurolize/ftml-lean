@@ -1166,18 +1166,34 @@ def main : IO Unit :=
 #print axioms LeanFtml.r15_strikethrough_skips_span_end
 #print axioms LeanFtml.r15_iftags_hash_if_d42
 
--- Bundles wave 1 (2026-11-24): generic RuleProofBundle composition
--- (runRules_eq_ref_of_bundles), the complete Delimiter bundle, and the
--- WF composition prefix of pipelineFull extended to take 3.
+-- Bundles wave 1 & wave 2 (2026-11-24/25): generic RuleProofBundle composition,
+-- retired W1 scaffold (re-targeted directly to RefApply.applyRuleRef / runRulesRef),
+-- scoped Delimiter & List & Break bundles, List remainders (R-LIST-GROWTH,
+-- R-LIST-OPTS, sharpened R-LIST-WF, R-LIST-TOKEQUIV boundary), Break Boundary-B
+-- PcreCore equivalence, and 8-family processRef correspondences.
 #print axioms LeanFtml.runRules_eq_ref_of_bundles
-#print axioms LeanFtml.delimiter_bundle
-#print axioms LeanFtml.delimiterBundleW1
+#print axioms LeanFtml.runRules_eq_ref_of_scoped_bundles
+#print axioms LeanFtml.delimiter_applyRuleRef_ne_on_tokenized_wf
+#print axioms LeanFtml.delimiterScopedBundleRef
+#print axioms LeanFtml.delimiterTokenFreeBundleRef
 #print axioms LeanFtml.runRules_delimiter_eq_ref
 #print axioms LeanFtml.applyRule_prefilter_preserves_wf
 #print axioms LeanFtml.applyRule_delimiter_preserves_wf
 #print axioms LeanFtml.pipelineFull_take_three
 #print axioms LeanFtml.pipelineFull_wf_prefix3
 #print axioms LeanFtml.pipelineFull_wf_prefix3_of_wf
+#print axioms LeanFtml.pipelineFull_prefix2_tokenFree
+#print axioms LeanFtml.pipelineFull_pos3_delimiter_eq_ref
+#print axioms LeanFtml.applyRuleRefWith_bare_eq_applyRuleRef
+#print axioms LeanFtml.listRule_tokens_length_le
+#print axioms LeanFtml.listRule_tokens_wfOptMap
+#print axioms LeanFtml.lst_listRule_wf_of_work
+#print axioms LeanFtml.list_applyRule_ne_applyRuleRef_on_native
+#print axioms LeanFtml.listScopedBundleRef
+#print axioms LeanFtml.listRule_tokEquiv_no_match
+#print axioms LeanFtml.listRule_not_tokEquiv_unconstrained
+#print axioms LeanFtml.applyRule_break_eq_refWith
+#print axioms LeanFtml.breakScopedBundleRef
 #print axioms LeanFtml.utf8Decode_flatMap_utf8Bytes
 #print axioms LeanFtml.flatMap_utf8Bytes_utf8Decode_of_valid
 #print axioms LeanFtml.parseBytes_byteForm_id
