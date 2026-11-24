@@ -36,6 +36,25 @@ structure RuleProofBundle (r : RuleId) where
     ∀ (st : ParseState), WFState st → ReachableState st →
       ReachableState (applyRule r st)
 
+/-- Scoped parse-rule proof bundle: holds for every well-formed state satisfying
+    side-condition `P` (e.g., token-free or `0xFF`-free states for `delimiter`). -/
+structure ScopedRuleProofBundle (P : ParseState → Prop) (r : RuleId) where
+  preserves_wf :
+    ∀ (st : ParseState), WFState st → P st → WFState (applyRule r st)
+  eq_ref :
+    ∀ (st : ParseState), WFState st → P st → applyRule r st = applyRuleRef r st
+  reachable_tokens :
+    ∀ (st : ParseState), WFState st → P st → ReachableState st →
+      ReachableState (applyRule r st)
+
+/-- Any unconditional `RuleProofBundle` lifts to a `ScopedRuleProofBundle` for any
+    scope predicate `P`. -/
+def RuleProofBundle.toScoped {r : RuleId} (b : RuleProofBundle applyRuleRef r)
+    (P : ParseState → Prop) : ScopedRuleProofBundle applyRuleRef P r where
+  preserves_wf := fun st hwf _ => b.preserves_wf st hwf
+  eq_ref := fun st hwf _ => b.eq_ref st hwf
+  reachable_tokens := fun st hwf _ hr => b.reachable_tokens st hwf hr
+
 end ParseProof
 
 /-! ## Tier 2 — per-rule render proof contract -/
