@@ -1591,4 +1591,23 @@ theorem tabviewProcess_token_order_example :
       (litBytes "[[tab One]]body[[/tab]]\n") {} []).2.2.tabviewCounter = 1 :=
   ⟨rfl, rfl⟩
 
+/-- Because `collProcess` sets `sid := toks.length - 1` (mirroring
+    `Collapsible.php` at snapshot-44) while every existing `Size` `end` token
+    index in `body` satisfies `eid < toks.length`, `eid ≤ sid` holds for every
+    valid placeholder `eid` in `body`, so `collMatchSizeStart` returns `none`
+    and `collProcess` preserves `Size` tokens without reattaching `label_size`. -/
+theorem collProcess_lastId_no_reattach_witness :
+    let toks : List TokenEntry :=
+      [{ rule := "Size",
+         opts := [("size".toList, .str "120%".toList),
+                  ("type".toList, .str "start".toList)] },
+       { rule := "Size",
+         opts := [("type".toList, .str "end".toList)] },
+       { rule := "Size",
+         opts := [("size".toList, .str "80%".toList),
+                  ("type".toList, .str "start".toList)] }]
+    let res := collProcess [10] none [255, 49, 255] {} toks
+    (res.2.1.take 3).map (·.opts) = toks.map (·.opts) ∧
+    omGet (res.2.1[3]!).opts "label_size".toList = some .null := ⟨rfl, rfl⟩
+
 end LeanFtml

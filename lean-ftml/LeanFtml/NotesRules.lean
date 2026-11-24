@@ -789,38 +789,62 @@ where
           | none => go rest (some b)
         else go rest (some b)
 
+private def htmlIsPcreWsByte (b : Nat) : Bool :=
+  b == 32 || b == 9 || b == 10 || b == 11 || b == 12 || b == 13
+
+/-- Match `/\[\[html\s+([^\]\n]*)\]\]/i` anywhere inside `$matches[0]`, matching
+    `Html::process`'s full-match attribute scan (including body-inner openers
+    when the outer opener carries no attributes). -/
+private def htmlFindOpenerAttrs (s : List Nat) : Option (List Nat) :=
+  go s
+where
+  go : List Nat → Option (List Nat)
+    | [] => none
+    | s'@(_ :: rest) =>
+        match htmlMatchLitCI (litBytes "[[html") s' with
+        | some r0 =>
+            let ws := r0.takeWhile htmlIsPcreWsByte
+            if ws.isEmpty then go rest
+            else
+              let r1 := r0.drop ws.length
+              let run := r1.takeWhile (fun b => b != 93 && b != 10)
+              match r1.drop run.length with
+              | 93 :: 93 :: _ => some run
+              | _ => go rest
+        | none => go rest
+
 /-- Match `/\[\[html(?:\s+[^\]\n]*)?\]\][ \t]*\n?(.*?)\n?[ \t]*\[\[\/html\]\](\s|$)/Umsi`
     at the head of `src`. Under `/U`, the optional leading/trailing `[ \t]*\n?`
     quantifiers are lazy (matching empty) and `(.*?)` is greedy (matching up to
     the last `[[/html]]` followed by `\s` or end-of-input). Returns
-    `(openerAttrs, text, trailer, rest)`. -/
+    `(fullMatch, body, trailer, rest)`. -/
 def htmlMatchAt (src : List Nat) :
-    Option (Option (List Nat) × List Nat × List Nat × List Nat) :=
-  let isPcreWs (b : Nat) : Bool :=
-    b == 32 || b == 9 || b == 10 || b == 11 || b == 12 || b == 13
+    Option (List Nat × List Nat × List Nat × List Nat) :=
   match htmlMatchLitCI (litBytes "[[html") src with
   | none => none
   | some r0 =>
-      let opener : Option (Option (List Nat) × List Nat) :=
+      let afterOpener : Option (List Nat) :=
         match r0 with
-        | 93 :: 93 :: r1 => some (none, r1)
+        | 93 :: 93 :: r1 => some r1
         | w :: rest =>
-            if isPcreWs w then
+            if htmlIsPcreWsByte w then
               let run := rest.takeWhile (fun b => b != 93 && b != 10)
               match rest.drop run.length with
-              | 93 :: 93 :: r1 => some (some (w :: run), r1)
+              | 93 :: 93 :: r1 => some r1
               | _ => none
             else none
         | [] => none
-      match opener with
+      match afterOpener with
       | none => none
-      | some (attrsOpt, afterOpen) =>
+      | some afterOpen =>
           let cands := htmlOccurrencesCI (litBytes "[[/html]]") afterOpen
           cands.reverse.findSome? fun (body, afterClose) =>
             match afterClose with
-            | [] => some (attrsOpt, body, [], [])
+            | [] => some (src, body, [], [])
             | b :: rest =>
-                if isPcreWs b then some (attrsOpt, body, [b], rest)
+                if htmlIsPcreWsByte b then
+                  let consumed := src.length - rest.length
+                  some (src.take consumed, body, [b], rest)
                 else none
 
 /-- Scanner for the `Html` parse rule (`preg_replace_callback` semantics). -/
@@ -832,13 +856,8 @@ def htmlScan (src : List Nat) (toks : List TokenEntry) :
     | [] => ([], toks)
     | b :: rest =>
         match htmlMatchAt src with
-        | some (attrsOpt, body, trailer, r) =>
-            let attrStr := match attrsOpt with
-              | some a =>
-                  let ws := a.takeWhile (fun x =>
-                    x == 32 || x == 9 || x == 10 || x == 11 || x == 12 || x == 13)
-                  if ws.isEmpty then none else some (a.drop ws.length)
-              | none => none
+        | some (fullMatch, body, trailer, r) =>
+            let attrStr := htmlFindOpenerAttrs fullMatch
             let clsOpt := attrStr.bind (htmlExtractAttr (litBytes "class"))
             let styOpt := attrStr.bind (htmlExtractAttr (litBytes "style"))
             let opts : OptMap :=
@@ -1027,5 +1046,15 @@ theorem bibitemProcess_state_example :
 theorem bibciteMatchAt_example :
     bibciteMatchAt (litBytes "((bibcite bell))x")
       = some (litBytes "bell", litBytes "x") := rfl
+
+/-- Stage 1 harvest repair (2): `Html` attribute extraction scans the full match
+    `$matches[0]` (including the block body when the outer opener is bare `[[html]]`). -/
+theorem htmlScan_body_opener_attrs_witness :
+    (htmlScan (litBytes "[[html]]\n[[html class=\"inner\" style=\"color:red\"]]\n[[/html]]") [] 80).2 =
+      [{ rule := "Html",
+         opts :=
+           [("text".toList, OptVal.str "\n[[html class=\"inner\" style=\"color:red\"]]\n".toList),
+            ("class".toList, OptVal.str "inner".toList),
+            ("style".toList, OptVal.str "color:red".toList)] }] := rfl
 
 end LeanFtml

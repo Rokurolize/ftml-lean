@@ -309,7 +309,7 @@ theorem image_plain_local :
         ("attr".toList, .map [])] =
       litBytes "<img src=\"/local--files//a.png\" alt=\"a.png\" " ++
         litBytes "class=\"image\" />" := by
-  unfold renderImage
+  unfold renderImage renderImageWithPage
   dsimp
   rw [htmlSpecialCharsCompat_ascii _ (by decide),
     htmlSpecialCharsCompat_ascii _ (by decide)]
@@ -357,5 +357,18 @@ theorem gallery_itemText_span_example :
         litBytes "<table><tr><td><a href=\"/local--files//x\" >" ++
         litBytes "<img src=\"/local--resized-images//x/thumbnail.jpg\" " ++
         litBytes "alt=\"\"/></a></td></tr></table></div></div>" := rfl
+
+/-- Stage 1 harvest repair (4): `renderImageWithPage` emits the configured/page
+    segment in both resized-image `src` and original-file `href` when `src` is a
+    local page-relative file name. -/
+theorem image_with_pageName :
+    renderImageWithPage (litBytes "scp-173")
+      [("src".toList, .str "a.png".toList),
+       ("attr".toList, .map [("size".toList, .str "thumbnail".toList)])] =
+      litBytes "<a href=\"/local--files/scp-173/a.png\"><img src=\"/local--resized-images/scp-173/a.png/thumbnail.jpg\" alt=\"a.png\" class=\"image\" /></a>" := by
+  unfold renderImageWithPage
+  dsimp
+  repeat rw [htmlSpecialCharsCompat_ascii _ (by decide)]
+  rfl
 
 end LeanFtml
