@@ -8,9 +8,17 @@
   ListTable 4, Interactive 11, CodeEmbed 2, Serving 7, Html 1 = 62 total) receives an
   explicit `RenderProofBundle` instance proving `eq_ref` parametrically in `env : RenderEnv`.
 
-  Standing Tier-2 remainders (named cleanly, not claimed here):
-  1. `dispatchRenderR41TokenAware`: threading lookup into `.footnoteitem` and `.gallery`.
-  2. `RenderCore.ufffdWalk` pre-Tidy / `Stage2_TidyCore` composition.
+  Token-table proof-strength note: `renderRefSpec` now has a trailing optional
+  token-table lookup consumed only by `.footnoteitem` and `.gallery`. The 62
+  bundles below remain the single-token/no-lookup equality instances: they do
+  not claim that the deliberately unchanged `renderMirrorEnv` agrees with the
+  token-aware spec under a nonempty lookup. The separate token-aware bridge
+  theorems state exactly that shallower consistency claim. Residual Gallery
+  limitations are the shallow (nonrecursive) `renderTokenId` fallback and
+  reconstruction of `tokenSource` from parse-reachable token entries.
+
+  Standing Tier-2 remainder (named cleanly, not claimed here):
+  `RenderCore.ufffdWalk` pre-Tidy / `Stage2_TidyCore` composition.
 
   Axioms: `[propext, Classical.choice, Quot.sound]` only; no `sorry`, no `native_decide`,
   no `bv_decide`, no `ofReduceBool`.
@@ -83,6 +91,19 @@ def bundle_footnoteitem : RenderProofBundle renderMirrorEnv renderRefSpec Reacha
     unfold renderMirrorEnv renderRefSpec dispatchRenderR41 renderFootnoteitem refXhtmlFootnoteitem
     dsimp only
     simp only [List.append_assoc, lb_fni1]⟩
+
+/-- Token-aware Footnoteitem bridge. Proof-strength note: this theorem says the
+    reference spec and the existing token-aware mirror dispatch compute the same
+    bytes for every lookup; because both sides share the mirrored footnote
+    helpers, it is a consistency bridge, not independent evidence of PHP correctness. -/
+theorem renderRefSpec_footnoteitem_tokenAware_eq
+    (env : RenderEnv) (lookup : Nat → Option TokenEntry) (conf : RenderConf)
+    (doc : DocState) (opts : OptMap) :
+    renderRefSpec env .footnoteitem conf doc opts lookup =
+      dispatchRenderR41TokenAware lookup .footnoteitem conf doc opts := by
+  unfold renderRefSpec dispatchRenderR41TokenAware refXhtmlFootnoteitem renderFootnoteitem
+  dsimp only
+  simp only [List.append_assoc, lb_fni1]
 def bundle_footnoteblock : RenderProofBundle renderMirrorEnv renderRefSpec ReachableTok .footnoteblock :=
   ⟨fun _ _ _ _ _ => rfl⟩
 def bundle_bibitem : RenderProofBundle renderMirrorEnv renderRefSpec ReachableTok .bibitem :=
@@ -322,8 +343,69 @@ def bundle_math : RenderProofBundle renderMirrorEnv renderRefSpec ReachableTok .
     rfl⟩
 def bundle_image : RenderProofBundle renderMirrorEnv renderRefSpec ReachableTok .image :=
   ⟨fun _ _ _ _ _ => rfl⟩
+/- The Gallery bundle below is the single-token/no-lookup equality. Under the
+   default `lookup := fun _ => none`, `galleryItemText` never consults its token
+   renderer, so the mirror's no-context renderer and the spec's parse-reachable
+   renderer are extensionally equal; this needs a proof because the two functions
+   are not definitionally equal. The token-aware claim is carried by the separate
+   `renderRefSpec_harness_gallery_tokenAware_eq` bridge, not by this bundle. -/
+private theorem galleryItemText_noLookup_go (r1 r2 : TokenEntry → List Nat)
+    (s : List Nat) (n : Nat) :
+    galleryItemText.go r1 (fun _ => none) s n = galleryItemText.go r2 (fun _ => none) s n := by
+  induction n generalizing s with
+  | zero =>
+      cases s with
+      | nil => rw [galleryItemText.go.eq_1, galleryItemText.go.eq_1]
+      | cons b rest =>
+          rw [galleryItemText.go.eq_2 r1 (fun _ => none) (b :: rest) (by simp),
+              galleryItemText.go.eq_2 r2 (fun _ => none) (b :: rest) (by simp)]
+  | succ n ih =>
+      cases s with
+      | nil => rw [galleryItemText.go.eq_1, galleryItemText.go.eq_1]
+      | cons b rest =>
+          rw [galleryItemText.go.eq_3, galleryItemText.go.eq_3]
+          split <;> rename_i h
+          · simp only [galleryItemText.resolveId, List.nil_append]
+            exact ih _
+          · exact congrArg (fun t => b :: t) (ih rest)
+
+private theorem galleryItemText_noLookup_canonical (r : TokenEntry → List Nat) (v : List Nat) :
+    galleryItemText r (fun _ => none) v = galleryItemText (fun _ => []) (fun _ => none) v := by
+  unfold galleryItemText
+  split
+  · rfl
+  · rename_i h
+    exact galleryItemText_noLookup_go r (fun _ => []) v (v.length + 1)
+
+private theorem galleryRowStepEnv_noLookup_canonical (env : RenderEnv) (size : List Nat)
+    (st : List Nat × List Nat × List Nat) (row : List Nat) (r : TokenEntry → List Nat) :
+    galleryRowStepEnv env size st row (fun _ => []) (fun _ => none) =
+      galleryRowStepEnv env size st row r (fun _ => none) := by
+  simp [galleryRowStepEnv, galleryRowStep, galleryItemText_noLookup_canonical]
+
+private theorem galleryBundle_equiv (env : RenderEnv) (conf : RenderConf)
+    (doc : DocState) (opts : OptMap) :
+    renderMirrorEnv env .gallery conf doc opts = renderRefSpec env .gallery conf doc opts := by
+  unfold renderMirrorEnv renderRefSpec refXhtmlGallery renderGalleryWithEnv
+  dsimp only
+  cases hsrc : phpTruthyBytes (optStrBytes opts "sources".toList) with
+  | false => simp only [Bool.false_eq_true, ↓reduceIte]
+  | true =>
+      simp only [↓reduceIte]
+      apply congrArg (fun p : List Nat × List Nat × List Nat => p.2.2 ++ litBytes "</div>")
+      have hf : (fun st row => galleryRowStepEnv env (gallerySize (optStrBytes opts "size".toList)) st row
+            (fun _ => []) (fun _ => none)) =
+          (fun st row => galleryRowStepEnv env (gallerySize (optStrBytes opts "size".toList)) st row
+            (fun e => match renderRuleOfName e.rule with
+              | some rid => dispatchRenderR41 rid conf doc e.opts
+              | none => []) (fun _ => none)) := by
+        funext st row
+        exact galleryRowStepEnv_noLookup_canonical env (gallerySize (optStrBytes opts "size".toList)) st row _
+      rw [hf]
+      rfl
+
 def bundle_gallery : RenderProofBundle renderMirrorEnv renderRefSpec ReachableTok .gallery :=
-  ⟨fun _ _ _ _ _ => rfl⟩
+  refEq_of_env_eq .gallery galleryBundle_equiv
 def bundle_user : RenderProofBundle renderMirrorEnv renderRefSpec ReachableTok .user :=
   ⟨fun _ _ _ _ _ => rfl⟩
 

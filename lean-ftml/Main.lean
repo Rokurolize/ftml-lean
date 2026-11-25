@@ -1259,6 +1259,8 @@ def main : IO Unit :=
 #print axioms LeanFtml.renderMirrorEnv_pure_env_irrelevant
 #print axioms LeanFtml.renderBundleAll
 #print axioms LeanFtml.renderWith_eq_ref
+#print axioms LeanFtml.renderRefSpec_footnoteitem_tokenAware_eq
+#print axioms LeanFtml.renderRefSpec_harness_gallery_tokenAware_eq
 #print axioms LeanFtml.normSegs_idem
 #print axioms LeanFtml.parseBytes_wfSegs_of_phSeg
 #print axioms LeanFtml.breakRule_preserves_wf

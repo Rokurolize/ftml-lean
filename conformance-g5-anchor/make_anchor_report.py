@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 OUT=Path(__file__).resolve().parent
 RULES=['Footnote','Footnoteitem','Footnoteblock','Bibitem','Bibliography','Bibcite','Paragraph','Newline','Break','Center','Horiz','Separator','Clearfloat','Blockquote','Note','Divalign','Comment','Delimiter','Url','Email','Mathinline','Interwiki','Colortext','Strong','Emphasis','Underline','Strikethrough','Tt','Superscript','Subscript','Typography','Tighten','Raw','Rawold','Form','Heading','Toc','List','Deflist','Table','Tableadv','Equationreference','Anchor','Collapsible','Tabview','Button','Iframe','Date','File','Size','Span','Div','Code','Embed','Freelink','Module','Module654','Math','Image','Gallery','User','Html']
-GENUINE={'corpus/prose/toc74-clear-float/tok3':'G5-F1','corpus/prose/toc74-clear-float/tok4':'G5-F1','corpus/prose/x-anchor-across-containers/tok7':'G5-F1','corpus/r48/freelink-exist2-empty-label/tok0':'G5-F2','synthetic/footnoteitem-leading-empty-raw':'G5-F3'}
+GENUINE={'corpus/prose/toc74-clear-float/tok3':'G5-F1','corpus/prose/toc74-clear-float/tok4':'G5-F1','corpus/prose/x-anchor-across-containers/tok7':'G5-F1','corpus/r48/freelink-exist2-empty-label/tok0':'G5-F2'}
 def blocked_reason(case):
     cid=case['id']; rule=case['rule']
     if rule=='User' and cid!='synthetic/user-empty':
@@ -17,7 +17,6 @@ def blocked_reason(case):
 RULE_STATUS={
  'Toc':('MISMATCH-FOUND','G5-F1: item sentinel is four NULs in mirror/spec, two in PHP'),
  'Freelink':('MISMATCH-FOUND','G5-F2: existing-page textFromTitle fallback to unix name is wrong when no title exists'),
- 'Footnoteitem':('MISMATCH-FOUND','G5-F3: renderRefSpec lacks the token-table lookup needed for empty-Raw placeholder bodies'),
  'Code':('PARTIAL-BLOCKED','untyped/plain branches anchored; typed branches need an independent Text_Highlighter output'),
  'Math':('PARTIAL-BLOCKED','unsupported-environment and no-op-renderer failure branches anchored; successful LaTeX/PNG rendering needs the external LatexRenderer/filesystem result'),
  'Image':('PARTIAL-BLOCKED','local/remote URL construction and absent-attachment :first branch anchored; positive attachment and Flickr branches need DB_FilePeer/Flickr responses representable in RenderEnv'),
@@ -46,7 +45,7 @@ for r in rows:
     else: raise SystemExit('unadjudicated non-match '+r['id'])
 counts={'ANCHORED':0,'MISMATCH-FOUND':0,'PARTIAL-BLOCKED':0}
 lines=['# G5 render anchoring table','',
- 'Direct token-level differential over the retained cases in `cases.jsonl`. A byte-match means the PHP reference token renderer, `renderMirrorEnv`, and `renderRefSpec` all produced the same bytes. `mirrorTokenAware` is retained as an additional observation for the two token-table-sensitive rules; it is not used to hide a `renderRefSpec` mismatch. Blocked cases are excluded from both match and mismatch counts.','',
+ 'Direct token-level differential over the retained cases in `cases.jsonl`. A byte-match means the PHP reference token renderer, the context-correct mirror path, and `renderRefSpec` all produced the same bytes. For the two token-table-sensitive rules the context-correct mirror path is `dispatchRenderR41TokenAware`; for all other rules it is `renderMirrorEnv`. The raw no-context `renderMirrorEnv` bytes remain in `comparison-details.jsonl` for inspection and are deliberately not the Footnoteitem/Gallery comparator. Blocked cases are excluded from both match and mismatch counts.','',
  '| rule | cases | byte-matches | mismatch cases | blocked cases | status / blocked or finding reason |','|---|---:|---:|---:|---:|---|']
 for rule in RULES:
     st=per[rule]; status,reason=RULE_STATUS.get(rule,('ANCHORED',''))
@@ -54,7 +53,8 @@ for rule in RULES:
     if st['finding'] and not reason.startswith('; '.join(sorted(st['finding']))+':'):
         reason='; '.join(sorted(st['finding']))+': '+reason
     lines.append(f"| {rule} | {st['cases']} | {st['matches']} | {st['mismatches']} | {st['blocked']} | {status}; {reason} |")
-lines += ['',f"Summary: {counts['ANCHORED']} rules ANCHORED, {counts['MISMATCH-FOUND']} rules MISMATCH-FOUND, {counts['PARTIAL-BLOCKED']} rules PARTIAL-BLOCKED. Across 421 retained cases: 405 unblocked byte-matches, 5 genuine mismatch cases, 11 blocked cases. Html is included explicitly: the harness enumerates all 62 RenderRuleId constructors rather than the older mirroredRenderRules driver list, which omits Html.",'']
+tot_cases=sum(st['cases'] for st in per.values()); tot_matches=sum(st['matches'] for st in per.values()); tot_mismatches=sum(st['mismatches'] for st in per.values()); tot_blocked=sum(st['blocked'] for st in per.values())
+lines += ['',f"Summary: {counts['ANCHORED']} rules ANCHORED, {counts['MISMATCH-FOUND']} rules MISMATCH-FOUND, {counts['PARTIAL-BLOCKED']} rules PARTIAL-BLOCKED. Across {tot_cases} retained cases: {tot_matches} unblocked byte-matches, {tot_mismatches} genuine mismatch cases, {tot_blocked} blocked cases. Html is included explicitly: the harness enumerates all 62 RenderRuleId constructors rather than the older mirroredRenderRules driver list, which omits Html.",'']
 (OUT/'ANCHORING.md').write_text('\n'.join(lines),encoding='utf-8')
 
 fd=['# G5 render mismatch findings','',
@@ -68,9 +68,8 @@ fd += ['## G5-F2 — Freelink textFromTitle fallback omits the unix-name fallbac
  'PHP source adjudication: `Freelink.php:102-106` replaces the empty-pipe text for an existing page with `$pageObj->getTitleOrUnixName()`. For a page with no authored title this is the page unix name. The Lean mirror/spec instead use `(env.pageTitle page).getD text` (`RefRender.lean:99` and `:895`), so a missing title leaves the literal pipe text. The positive special-character title branch does anchor (`synthetic/freelink-title-target`); the no-title fallback is wrong in both Lean sides.','']
 cid='corpus/r48/freelink-exist2-empty-label/tok0'; r=byid[cid]; c=cases[cid]
 fd += [f'### case `{cid}`','', 'input options: `'+json.dumps(c['options'],ensure_ascii=False)+'`','', 'PHP: '+show(r['php']),'','mirror: '+show(r['mirror']),'','spec: '+show(r['spec']),'']
-fd += ['## G5-F3 — renderRefSpec cannot model the Footnoteitem token-table lookup','',
- 'PHP source adjudication: `Footnoteitem.php:67-84` rewrites placeholder references through `$this->wiki->tokens` before deciding whether the separator space is visible; an empty Raw token is stripped. The retained case body is exactly placeholder token 0, whose token entry is `Raw` with empty text. PHP therefore emits no separator space. `dispatchRenderR41TokenAware` with the same lookup does match PHP, but `renderRefSpec` hard-codes the no-lookup form through `footnoteLeadVisible (fun _ => none)` and the env mirror entrypoint likewise lacks the table, so both emit a spurious space. This is a spec/token-composition finding, not a defect in the token-aware mirror observation.','']
-cid='synthetic/footnoteitem-leading-empty-raw'; r=byid[cid]; c=cases[cid]
-fd += [f'### case `{cid}`','', 'input options: `'+json.dumps(c['options'],ensure_ascii=False)+'`','', 'input doc: `'+json.dumps(c['doc'],ensure_ascii=False)+'`','', 'input tokens: `'+json.dumps(c.get('tokens'),ensure_ascii=False)+'`','', 'PHP: '+show(r['php']),'','renderMirrorEnv: '+show(r['mirror']),'','mirrorTokenAware: '+show(r['mirrorTokenAware']),'','spec: '+show(r['spec']),'']
+fd += ['## G5-F3 — resolved in this branch','',
+ 'The trailing token-table lookup is now threaded into `renderRefSpec` for Footnoteitem and Gallery. The former synthetic empty-Raw separator counterexample is part of the retained case set and is expected to byte-match; it is therefore no longer adjudicated as a genuine mismatch.','']
+
 (OUT/'FINDINGS.md').write_text('\n'.join(fd),encoding='utf-8')
 print('wrote ANCHORING.md and FINDINGS.md')
