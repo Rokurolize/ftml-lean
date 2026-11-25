@@ -1320,3 +1320,20 @@ def main : IO Unit :=
 #print axioms LeanFtml.clearfloatRule_shiftEquiv
 #print axioms LeanFtml.centerRule_shiftEquiv
 #print axioms LeanFtml.covered8_parse_render_shift_invariant
+
+-- Stage 2(e): Tableadv PCRE (?R) recursive boundary & step correspondence.
+#print axioms LeanFtml.tableadv_ref_pattern
+#print axioms LeanFtml.tableadv_parse_pin
+#print axioms LeanFtml.tableadv_refParsed
+#print axioms LeanFtml.tableadv_pcreFirst_eq
+#print axioms LeanFtml.byteCiEq_eq_byteMatchCI
+#print axioms LeanFtml.runMatch_recurse_step
+#print axioms LeanFtml.runMatch_literal_prefix
+#print axioms LeanFtml.runMatch_literal_suffix
+#print axioms LeanFtml.getCap_setCap_twice
+#print axioms LeanFtml.tableadv_bodyRep_first_recursion_boundary
+#print axioms LeanFtml.tableadv_headRep_first_token_boundary
+#print axioms LeanFtml.tableadv_open_literal_step
+#print axioms LeanFtml.tableadv_close_literal_step
+#print axioms LeanFtml.tableadv_scan_miss_boundary
+#print axioms LeanFtml.tableadv_scan_match_boundary
