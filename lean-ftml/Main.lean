@@ -1287,9 +1287,12 @@ def main : IO Unit :=
 #print axioms LeanFtml.linkRules_transliterate_eq_flatMap
 #print axioms LeanFtml.containRules_isWsU_eq_unicodeCore
 #print axioms LeanFtml.containRules_collapseWsU_step_isSpaceU
+#print axioms LeanFtml.containRules_collapseWsU_go_step_isSpaceU
 #print axioms LeanFtml.containRules_isolateId_leading_isSpaceU
 #print axioms LeanFtml.tableRules_normalizeValueAdv_contains_ff
+#print axioms LeanFtml.trimBytes_flatMap_utf8Bytes
 #print axioms LeanFtml.tableRules_normalizeValueAdv_valid
+#print axioms LeanFtml.tableRules_normalizeValueAdv_valid_trimBytesForm
 #print axioms LeanFtml.includeRule_isIncNormKeep_eq_unicodeCore
 #print axioms LeanFtml.includeRule_isIncNormKeep_asciiLower
 #print axioms LeanFtml.includeRule_refNormalize_step

@@ -710,8 +710,49 @@ theorem containRules_isWsU_eq_unicodeCore (c : Char) :
   simp [isWsU, isSpaceU, scalarSpaceRanges, inScalarRanges]
   omega
 
-/-- `collapseWsU.go` merges maximal `isSpaceU` runs into a single ASCII space. -/
-theorem containRules_collapseWsU_step_isSpaceU (c : Char) (rest : List Char) (inRun : Bool) :
+private theorem collapseWsU_go_true_dropWhile :
+    ∀ rest : List Char,
+      collapseWsU.go rest true = collapseWsU (rest.dropWhile isWsU)
+  | [] => rfl
+  | c :: rest => by
+      cases hw : isWsU c with
+      | true =>
+          simp [collapseWsU, collapseWsU.go, hw, collapseWsU_go_true_dropWhile rest]
+      | false =>
+          simp [collapseWsU, collapseWsU.go, hw]
+
+private theorem dropWhile_isWsU_eq_dropWhile_isSpaceU (xs : List Char) :
+    xs.dropWhile isWsU = xs.dropWhile (fun c => isSpaceU c.toNat) := by
+  induction xs with
+  | nil => rfl
+  | cons c rest ih =>
+      simp [List.dropWhile, containRules_isWsU_eq_unicodeCore, ih]
+
+/-- `collapseWsU` implements the maximal-run `/\s+/u → ' '` recurrence, not
+    merely the one-step state-machine unfolding: after a Unicode whitespace
+    character, the whole following `isSpaceU` run is consumed before recursion
+    resumes.  This is the strengthened form of the former hypothesis-gated
+    one-step bridge. -/
+theorem containRules_collapseWsU_step_isSpaceU (c : Char) (rest : List Char) :
+    collapseWsU (c :: rest) =
+      if isSpaceU c.toNat then
+        ' ' :: collapseWsU (rest.dropWhile (fun d => isSpaceU d.toNat))
+      else c :: collapseWsU rest := by
+  cases hw : isWsU c with
+  | true =>
+      have hu : isSpaceU c.toNat = true := by
+        rw [← containRules_isWsU_eq_unicodeCore c, hw]
+      simp [collapseWsU, collapseWsU.go, hw, hu,
+        collapseWsU_go_true_dropWhile, dropWhile_isWsU_eq_dropWhile_isSpaceU]
+  | false =>
+      have hu : isSpaceU c.toNat = false := by
+        rw [← containRules_isWsU_eq_unicodeCore c, hw]
+      simp [collapseWsU, collapseWsU.go, hw, hu]
+
+/-- Compatibility form of the original one-step state-machine unfolding.  It
+    is retained so the Stage 2(c) local fact remains available verbatim while
+    the named bridge above carries the strengthened maximal-run content. -/
+theorem containRules_collapseWsU_go_step_isSpaceU (c : Char) (rest : List Char) (inRun : Bool) :
     collapseWsU.go (c :: rest) inRun =
       if isSpaceU c.toNat then
         (if inRun then collapseWsU.go rest true else ' ' :: collapseWsU.go rest true)
@@ -757,9 +798,245 @@ theorem tableRules_normalizeValueAdv_contains_ff (v : List Nat)
   rw [hinv]
   rfl
 
-/-- On UTF-8-valid stripped attribute bytes, `TableRules.normalizeValueAdv`
-    reduces to `trimBytes` of `collapseWsU` (whose predicate is `isSpaceU`). -/
-theorem tableRules_normalizeValueAdv_valid (v : List Nat)
+private theorem char_eq_iff_toNat (c d : Char) : c = d ↔ c.toNat = d.toNat := by
+  constructor
+  · intro h
+    rw [h]
+  · intro h
+    rw [← Char.ofNat_toNat c, ← Char.ofNat_toNat d, h]
+
+private theorem isPhpTrim_eq_false_of_ge80 (c : Char) (hge : 0x80 ≤ c.toNat) :
+    isPhpTrim c = false := by
+  cases hp : isPhpTrim c with
+  | false => rfl
+  | true =>
+      exfalso
+      simp [isPhpTrim, Bool.or_eq_true, beq_iff_eq, char_eq_iff_toNat] at hp
+      omega
+
+private theorem trimByte_toNat_eq_isPhpTrim_fin :
+    ∀ k : Fin 128, isTrimByte k.1 = isPhpTrim (Char.ofNat k.1) := by
+  decide
+
+private theorem isTrimByte_toNat_eq_isPhpTrim_of_lt80 (c : Char) (hlt : c.toNat < 0x80) :
+    isTrimByte c.toNat = isPhpTrim c := by
+  have hfin := trimByte_toNat_eq_isPhpTrim_fin ⟨c.toNat, hlt⟩
+  have hcc : Char.ofNat c.toNat = c := Char.ofNat_toNat c
+  rw [hcc] at hfin
+  exact hfin
+
+private theorem dropWhile_isTrimByte_utf8Bytes_append (c : Char) (tail : List Nat) :
+    (utf8Bytes c ++ tail).dropWhile isTrimByte =
+      if isPhpTrim c then tail.dropWhile isTrimByte else utf8Bytes c ++ tail := by
+  by_cases htrim : isPhpTrim c = true
+  · have hlt : c.toNat < 0x80 := by
+      by_cases hlt0 : c.toNat < 0x80
+      · exact hlt0
+      · have hge : 0x80 ≤ c.toNat := by omega
+        have hf := isPhpTrim_eq_false_of_ge80 c hge
+        rw [hf] at htrim
+        cases htrim
+    have hbyte : isTrimByte c.toNat = true := by
+      rw [isTrimByte_toNat_eq_isPhpTrim_of_lt80 c hlt]
+      exact htrim
+    have hb : utf8Bytes c = [c.toNat] := by simp [utf8Bytes, hlt]
+    rw [hb]
+    simp [List.dropWhile, hbyte, htrim]
+  · have htrimfalse : isPhpTrim c = false := by
+      cases hp : isPhpTrim c
+      · rfl
+      · exact False.elim (htrim hp)
+    by_cases hlt : c.toNat < 0x80
+    · have hbytefalse : isTrimByte c.toNat = false := by
+        rw [isTrimByte_toNat_eq_isPhpTrim_of_lt80 c hlt]
+        exact htrimfalse
+      have hb : utf8Bytes c = [c.toNat] := by simp [utf8Bytes, hlt]
+      rw [hb]
+      simp [List.dropWhile, hbytefalse, htrimfalse]
+    · have hn1 : ¬ c.toNat < 0x80 := hlt
+      by_cases h2 : c.toNat < 0x800
+      · have hb : utf8Bytes c = [0xC0 + c.toNat / 0x40, 0x80 + c.toNat % 0x40] := by
+          simp [utf8Bytes, hn1, h2]
+        have hfirstfalse : isTrimByte (0xC0 + c.toNat / 0x40) = false := by
+          simp [isTrimByte]
+          omega
+        rw [hb]
+        simp [List.dropWhile, hfirstfalse, htrimfalse]
+      · by_cases h3 : c.toNat < 0x10000
+        · have hb : utf8Bytes c =
+              [0xE0 + c.toNat / 0x1000, 0x80 + (c.toNat / 0x40) % 0x40,
+               0x80 + c.toNat % 0x40] := by
+            simp [utf8Bytes, hn1, h2, h3]
+          have hfirstfalse : isTrimByte (0xE0 + c.toNat / 0x1000) = false := by
+            simp [isTrimByte]
+            omega
+          rw [hb]
+          simp [List.dropWhile, hfirstfalse, htrimfalse]
+        · have hb : utf8Bytes c =
+              [0xF0 + c.toNat / 0x40000, 0x80 + (c.toNat / 0x1000) % 0x40,
+               0x80 + (c.toNat / 0x40) % 0x40, 0x80 + c.toNat % 0x40] := by
+            simp [utf8Bytes, hn1, h2, h3]
+          have hfirstfalse : isTrimByte (0xF0 + c.toNat / 0x40000) = false := by
+            simp [isTrimByte]
+            omega
+          rw [hb]
+          simp [List.dropWhile, hfirstfalse, htrimfalse]
+
+private theorem dropWhile_isTrimByte_reverseUtf8Bytes_append (c : Char) (tail : List Nat) :
+    ((utf8Bytes c).reverse ++ tail).dropWhile isTrimByte =
+      if isPhpTrim c then tail.dropWhile isTrimByte else (utf8Bytes c).reverse ++ tail := by
+  by_cases htrim : isPhpTrim c = true
+  · have hlt : c.toNat < 0x80 := by
+      by_cases hlt0 : c.toNat < 0x80
+      · exact hlt0
+      · have hge : 0x80 ≤ c.toNat := by omega
+        have hf := isPhpTrim_eq_false_of_ge80 c hge
+        rw [hf] at htrim
+        cases htrim
+    have hbyte : isTrimByte c.toNat = true := by
+      rw [isTrimByte_toNat_eq_isPhpTrim_of_lt80 c hlt]
+      exact htrim
+    have hb : utf8Bytes c = [c.toNat] := by simp [utf8Bytes, hlt]
+    rw [hb]
+    simp [List.dropWhile, hbyte, htrim]
+  · have htrimfalse : isPhpTrim c = false := by
+      cases hp : isPhpTrim c
+      · rfl
+      · exact False.elim (htrim hp)
+    by_cases hlt : c.toNat < 0x80
+    · have hbytefalse : isTrimByte c.toNat = false := by
+        rw [isTrimByte_toNat_eq_isPhpTrim_of_lt80 c hlt]
+        exact htrimfalse
+      have hb : utf8Bytes c = [c.toNat] := by simp [utf8Bytes, hlt]
+      rw [hb]
+      simp [List.dropWhile, hbytefalse, htrimfalse]
+    · have hn1 : ¬ c.toNat < 0x80 := hlt
+      by_cases h2 : c.toNat < 0x800
+      · have hb : utf8Bytes c = [0xC0 + c.toNat / 0x40, 0x80 + c.toNat % 0x40] := by
+          simp [utf8Bytes, hn1, h2]
+        have hfirstfalse : isTrimByte (0x80 + c.toNat % 0x40) = false := by
+          simp [isTrimByte]
+          omega
+        rw [hb]
+        simp [List.dropWhile, hfirstfalse, htrimfalse]
+      · by_cases h3 : c.toNat < 0x10000
+        · have hb : utf8Bytes c =
+              [0xE0 + c.toNat / 0x1000, 0x80 + (c.toNat / 0x40) % 0x40,
+               0x80 + c.toNat % 0x40] := by
+            simp [utf8Bytes, hn1, h2, h3]
+          have hfirstfalse : isTrimByte (0x80 + c.toNat % 0x40) = false := by
+            simp [isTrimByte]
+            omega
+          rw [hb]
+          simp [List.dropWhile, hfirstfalse, htrimfalse]
+        · have hb : utf8Bytes c =
+              [0xF0 + c.toNat / 0x40000, 0x80 + (c.toNat / 0x1000) % 0x40,
+               0x80 + (c.toNat / 0x40) % 0x40, 0x80 + c.toNat % 0x40] := by
+            simp [utf8Bytes, hn1, h2, h3]
+          have hfirstfalse : isTrimByte (0x80 + c.toNat % 0x40) = false := by
+            simp [isTrimByte]
+            omega
+          rw [hb]
+          simp [List.dropWhile, hfirstfalse, htrimfalse]
+
+private theorem list_snoc_induction {α : Type} {motive : List α → Prop}
+    (hnil : motive [])
+    (hsnoc : ∀ xs x, motive xs → motive (xs ++ [x])) :
+    ∀ xs, motive xs := by
+  intro xs
+  have hrev : ∀ ys : List α, motive ys.reverse := by
+    intro ys
+    induction ys with
+    | nil => simpa using hnil
+    | cons x tail ih =>
+        simpa [List.reverse_cons] using hsnoc tail.reverse x ih
+  have hx := hrev xs.reverse
+  simpa using hx
+
+private theorem dropWhile_isTrimByte_flatMap_utf8Bytes (cs : List Char) :
+    (cs.flatMap utf8Bytes).dropWhile isTrimByte =
+      (cs.dropWhile isPhpTrim).flatMap utf8Bytes := by
+  induction cs with
+  | nil => rfl
+  | cons c rest ih =>
+      rw [List.flatMap_cons]
+      rw [dropWhile_isTrimByte_utf8Bytes_append c (rest.flatMap utf8Bytes)]
+      by_cases htrim : isPhpTrim c = true
+      · simp [List.dropWhile, htrim, ih]
+      · have htrimfalse : isPhpTrim c = false := by
+          cases hp : isPhpTrim c
+          · rfl
+          · exact False.elim (htrim hp)
+        simp [List.dropWhile, htrimfalse, List.flatMap_cons]
+
+private theorem trimRight_utf8Bytes_snoc (cs : List Char) (c : Char) :
+    (((cs.flatMap utf8Bytes) ++ utf8Bytes c).reverse.dropWhile isTrimByte).reverse =
+      if isPhpTrim c then
+        ((cs.flatMap utf8Bytes).reverse.dropWhile isTrimByte).reverse
+      else
+        (cs.flatMap utf8Bytes) ++ utf8Bytes c := by
+  rw [List.reverse_append]
+  rw [dropWhile_isTrimByte_reverseUtf8Bytes_append c ((cs.flatMap utf8Bytes).reverse)]
+  by_cases htrim : isPhpTrim c = true
+  · simp [htrim]
+  · have htrimfalse : isPhpTrim c = false := by
+      cases hp : isPhpTrim c
+      · rfl
+      · exact False.elim (htrim hp)
+    simp [htrimfalse, List.reverse_append]
+
+private theorem trimRight_isTrimByte_flatMap_utf8Bytes (cs : List Char) :
+    ((cs.flatMap utf8Bytes).reverse.dropWhile isTrimByte).reverse =
+      ((cs.reverse.dropWhile isPhpTrim).reverse).flatMap utf8Bytes := by
+  induction cs using list_snoc_induction with
+  | hnil => rfl
+  | hsnoc xs x ih =>
+      have hcat : (xs ++ [x]).flatMap utf8Bytes =
+          xs.flatMap utf8Bytes ++ utf8Bytes x := by
+        simp [List.flatMap_append]
+      rw [hcat]
+      rw [trimRight_utf8Bytes_snoc xs x]
+      by_cases htrim : isPhpTrim x = true
+      · simp [List.reverse_append, List.dropWhile, htrim, ih]
+      · have htrimfalse : isPhpTrim x = false := by
+          cases hp : isPhpTrim x
+          · rfl
+          · exact False.elim (htrim hp)
+        simp [List.reverse_append, List.dropWhile, htrimfalse, List.flatMap_append]
+
+/-- Byte-level PHP `trimBytes` is exactly character-level PHP `trimChars`
+    transported through UTF-8 encoding.  The proof is inductive at both edges:
+    ASCII trim bytes are precisely the one-byte PHP trim characters, while all
+    bytes of a non-ASCII UTF-8 sequence lie outside the trim byte set. -/
+theorem trimBytes_flatMap_utf8Bytes (cs : List Char) :
+    trimBytes (cs.flatMap utf8Bytes) = (trimChars cs).flatMap utf8Bytes := by
+  unfold trimBytes trimChars
+  rw [dropWhile_isTrimByte_flatMap_utf8Bytes cs]
+  exact trimRight_isTrimByte_flatMap_utf8Bytes (cs.dropWhile isPhpTrim)
+
+
+/-- For stripped attribute bytes, `TableRules.normalizeValueAdv` is,
+    on the UTF-8-valid branch, the UTF-8 encoding of the character-level PHP trim of the Unicode
+    whitespace collapse.  This replaces the former thin `trimBytes` unfolding:
+    the byte/character trim transport is proved inductively above, and the
+    collapse predicate is the certified `isSpaceU` through the strengthened
+    whitespace bridge.  The statement is unconditional: the invalid-UTF-8
+    branch is the exact empty-output implementation branch. -/
+theorem tableRules_normalizeValueAdv_valid (v : List Nat) :
+    normalizeValueAdv v =
+      if utf8Valid (v.filter (fun b => !(b < 0x20 || b == 0x7F))) = true then
+        (trimChars (collapseWsU (utf8Decode (v.filter (fun b => !(b < 0x20 || b == 0x7F)))))).flatMap
+          utf8Bytes
+      else [] := by
+  dsimp only [normalizeValueAdv]
+  cases hv : utf8Valid (v.filter (fun b => !(b < 0x20 || b == 0x7F))) with
+  | true => simp [hv, trimBytes_flatMap_utf8Bytes]
+  | false => simp [hv]
+
+/-- Compatibility form of the original Stage 2(c) reduction.  The strengthened
+    theorem immediately implies this byte-level shape, so no prior content is
+    lost. -/
+theorem tableRules_normalizeValueAdv_valid_trimBytesForm (v : List Nat)
     (hvalid : utf8Valid (v.filter (fun b => !(b < 0x20 || b == 0x7F))) = true) :
     normalizeValueAdv v =
       trimBytes ((collapseWsU (utf8Decode (v.filter (fun b => !(b < 0x20 || b == 0x7F))))).flatMap
@@ -893,9 +1170,12 @@ theorem includeRule_refNormalize_step (s1 : List Char) :
 #print axioms linkRules_transliterate_eq_flatMap
 #print axioms containRules_isWsU_eq_unicodeCore
 #print axioms containRules_collapseWsU_step_isSpaceU
+#print axioms containRules_collapseWsU_go_step_isSpaceU
 #print axioms containRules_isolateId_leading_isSpaceU
 #print axioms tableRules_normalizeValueAdv_contains_ff
+#print axioms trimBytes_flatMap_utf8Bytes
 #print axioms tableRules_normalizeValueAdv_valid
+#print axioms tableRules_normalizeValueAdv_valid_trimBytesForm
 #print axioms includeRule_isIncNormKeep_eq_unicodeCore
 #print axioms includeRule_isIncNormKeep_asciiLower
 #print axioms includeRule_refNormalize_step
