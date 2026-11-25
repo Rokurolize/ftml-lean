@@ -984,6 +984,73 @@ def ufffdBytes
   else
     ufffdWalk dispatch conf doc (atoms.length + 1) atoms false none []
 
+/-! ## REFCORR22: document-local placeholder digits and Embed frame repair
+
+    Snapshot-47 moved `addToken`'s counter from a process-global function
+    static to per-document instance state starting at one. The mirror's
+    token table is already per-document, but its indices are zero-based, so
+    a placeholder digit that leaks into rendered option bytes (Email
+    labels, Date format attributes) is one lower than live. Bump those
+    digit runs at the render boundary: this is the exact observable of the
+    numbering reset and leaves the token table indices untouched.
+
+    Snapshot-47 also retired the fossil HTML-only statcounter Embed
+    allowlist (see EmbedPatterns.lean) and repaired the pure-paragraph case
+    where `render()` would otherwise leave a standalone block-level Embed
+    no-match div inside a `<p>`. -/
+
+/-- Increment the decimal digits of one matched placeholder by one. -/
+def bumpPhDigitRun (ds : List Nat) : List Nat :=
+  let n := ds.foldl (fun a b => a * 10 + (b - 48)) 0 + 1
+  (toString n).toList.map Char.toNat
+
+/-- REFCORR22 R1: bump every `0xFF<digits>0xFF` run by one, scanning
+    left-to-right at placeholder boundaries so the closing delimiter of one
+    placeholder is never re-read as the opening delimiter of the next. -/
+partial def bumpPhDigits (bs : List Nat) : List Nat :=
+  go bs bs.length
+where
+  go : List Nat → Nat → List Nat
+    | [], _ => []
+    | _, 0 => []
+    | 0xFF :: rest, fuel + 1 =>
+        let ds := rest.takeWhile (fun b => 48 <= b && b <= 57)
+        match rest.drop ds.length with
+        | 0xFF :: after =>
+            if ds.isEmpty then 0xFF :: go rest fuel
+            else 0xFF :: bumpPhDigitRun ds ++ 0xFF :: go after fuel
+        | _ => 0xFF :: go rest fuel
+    | b :: rest, fuel + 1 => b :: go rest fuel
+
+partial def bumpOptVal : OptVal → OptVal
+  | .bytes bs => .bytes (bumpPhDigits bs)
+  | .map m => .map (m.map fun (k, v) => (k, bumpOptVal v))
+  | .list xs => .list (xs.map bumpOptVal)
+  | v => v
+
+def bumpOpts (m : OptMap) : OptMap :=
+  m.map fun (k, v) => (k, bumpOptVal v)
+
+/-- Replace every occurrence of `pat` with `rep` (placeholder repair). -/
+def replaceLitAll (pat rep : List Nat) (bs : List Nat) : List Nat :=
+  go bs (bs.length + 1)
+where
+  go : List Nat → Nat → List Nat
+    | [], _ => []
+    | _, 0 => []
+    | s, fuel + 1 =>
+        if pat.isEmpty then s
+        else if s.take pat.length == pat then
+          rep ++ go (s.drop pat.length) fuel
+        else s.head! :: go s.tail fuel
+
+/-- REFCORR22 R3: drop the `<p>` wrapper around a standalone Embed no-match
+    error div, exactly the narrow `str_replace` repair in `Text_Wiki::render()`. -/
+def repairPureEmbedParagraph (bs : List Nat) : List Nat :=
+  let noMatch := litBytes
+    "<div class=\"error-block\">Sorry, no match for the embedded content.</div>"
+  replaceLitAll (litBytes "<p>" ++ noMatch ++ litBytes "</p>") noMatch bs
+
 /-- Single-pass segment expansion (`Text_Wiki::render()` loop), generic
     over the rule dispatcher and token-table lookup function. -/
 def renderSegsLoop
@@ -1036,6 +1103,19 @@ def renderWith
   else
     let raw := renderSegsLoop dispatch lookup conf doc work
     { raw with output := postStripToc raw.output }
+
+/-- REFCORR22 helpers applied at the E2E driver boundary: bump leaked
+    placeholder digits to the document-local one-based numbering, and
+    drop the `<p>` wrapper around a pure Embed no-match block. Keeping
+    these outside `renderWith` preserves the core renderer's structural
+    theorems while making the full-pipeline conformance drivers agree
+    byte-exactly with the snapshot-47 PHP harness. -/
+def bumpStateOpts (st : ParseState) : ParseState :=
+  let ts := st.tokens.map (fun t => { t with opts := bumpOpts t.opts })
+  { st with tokens := ts }
+
+def applyRefcorr22 (o : RenderOutcome) : RenderOutcome :=
+  { o with output := repairPureEmbedParagraph o.output }
 
 /-! ## Core structural theorems -/
 

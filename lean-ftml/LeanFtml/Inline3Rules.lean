@@ -601,7 +601,13 @@ where
             let id := digits.foldl (fun a b => a * 10 + (b - 48)) 0
             if !digits.isEmpty && isEmptyRawTok toks id
             then go rest2 fuel toks
-            else 0xFF :: go rest fuel toks
+            -- REFCORR22 R1 (Tighten boundary scan): emit the whole matched
+            -- placeholder at once and continue AFTER it. The former
+            -- `0xFF :: go rest` re-examined the closing delimiter as a new
+            -- opening delimiter, so in `\xFF92\xFF10\xFF93\xFF` it deleted
+            -- the false empty-Raw 10 overlap spanning tokens 92 and 93,
+            -- welding them into a nonexistent placeholder.
+            else 0xFF :: digits ++ 0xFF :: go rest2 fuel toks
         | _ => 0xFF :: go rest fuel toks
     | b :: rest, fuel + 1, toks => b :: go rest fuel toks
 

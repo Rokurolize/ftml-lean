@@ -425,7 +425,7 @@ partial def processE2eR47Line (line : String) : String :=
             "{\"id\":" ++ escapeJsonR3 id.toList ++
             ",\"status\":\"fatal\",\"fatal\":\"ProcessException: Invalid LaTeX expression(s) found.\"}"
           else
-            serRenderOutcome id (renderStateR47 {} st)
+            serRenderOutcome id (applyRefcorr22 (renderStateR47 {} (bumpStateOpts st)))
       | _, _ => "{\"id\":\"?\",\"status\":\"error\",\"error\":\"bad-e2e-input\"}"
   | _ => "{\"id\":\"?\",\"status\":\"error\",\"error\":\"invalid-json\"}"
 

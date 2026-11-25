@@ -1,0 +1,5 @@
+{"id":"agy-f06-ul-upper-after","output":"<ul>\n<li>A<\/li>\n<li>B<br \/>\nAFTER<\/li>\n<\/ul>"}
+{"id":"s4a-l3b-adjacent-control","output":"<ul>\n<li>aAFTER<\/li>\n<\/ul>"}
+{"id":"agy-f06-ol-upper-after","output":"<ul>\n<li>A<\/li>\n<li>B<br \/>\nAFTER<\/li>\n<\/ul>"}
+{"id":"upper-ul-single-newline","output":"<ul>\n<li>AAFTER<\/li>\n<\/ul>"}
+{"id":"upper-ol-adjacent-control","output":"<ul>\n<li>aAFTER<\/li>\n<\/ul>"}

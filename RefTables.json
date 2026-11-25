@@ -24,7 +24,7 @@
     "positive-lookbehind",
     "quantifier"
   ],
-  "digest": "d34ba13009cd1b365066c03c14d7f1b920a76033da61540d02e2c31705aa2c01",
+  "digest": "2603771be2884145cac2f03eaa073e8ba96bada26d424c5f91d1a275e61feec0",
   "embed_patterns": [
     [
       "del_feed",
@@ -41,10 +41,6 @@
     [
       "statcounter",
       ";^(<!\\-\\- Start of StatCounter Code \\-\\->\\s*)?<script type=\"text/javascript\"( language=\"javascript\")?>\\s*(<!\\-\\-)?\\s*(\\s*var sc_[a-z0-9_ =\",]+ *\\;)*\\s*(//\\-\\->)?\\s*</script>\\s*<script type=\"text/javascript\"( language=\"javascript\")?\\s*src=\"https?://(secure|www)\\.statcounter\\.com/[^\"]+\"></script>\\s*<noscript>(<div class=\"statcounter\">)?(<a\\s+(class=\"statcounter\")?\\s*href=\"http://www\\.statcounter\\.com/\"( target=\"_blank\")?>)?<img[^>]*>(</a>)?\\s*(</div>)?\\s*</noscript>\\s*(<!\\-\\- End of StatCounter Code \\-\\->)?(\\s*<br/?>\\s*<a href=\"http://[a-z0-9]+\\.statcounter\\.com/project/standard/stats\\.php[^\"]+\">[^<]*</a>)?$;si"
-    ],
-    [
-      "statcounter_html",
-      ";^(<!\\-\\- Start of StatCounter Code \\-\\->\\s*)?\\s*(<a\\s+href=\"http://www\\.statcounter\\.com/\" target=\"_blank\">)?<img[^>]*>(</a>)?\\s*(<!\\-\\- End of StatCounter Code \\-\\->)?(\\s*<br/?>\\s*<a href=\"http://[a-z0-9]+\\.statcounter\\.com/project/standard/stats\\.php[^\"]+\">[^<]*</a>)?$;si"
     ],
     [
       "fb",
@@ -1592,6 +1588,10 @@
           "pattern": "/\\[\\[\\/li\\]\\]/i"
         },
         {
+          "api": "preg_match",
+          "pattern": "/\\[\\[\\/li\\]\\]\\s*\\[\\[\\/(?:ul|ol)\\]\\][^\\S\\n]*\\n[^\\S\\n]*\\n/is"
+        },
+        {
           "api": "preg_replace",
           "pattern": "/\\[\\[\\/(?:ul|ol)\\]\\]/i"
         },
@@ -2295,6 +2295,10 @@
           "pattern": "/[\\x00-\\x08\\x0B\\x0C\\x0E-\\x1A\\x1C-\\x1F]/"
         },
         {
+          "api": "preg_replace_callback",
+          "pattern": "/\\xFF(\\d+)\\xFF/"
+        },
+        {
           "api": "preg_replace",
           "pattern": "/[ \\t]+/"
         },
@@ -2335,8 +2339,8 @@
       "source": "text-wiki/Text/Wiki/Parse/Default/Tighten.php"
     }
   ],
-  "snapshot_commit": "5853c01f9b47102de2448ecccf985437df17ed2c",
-  "snapshot_tag": "snapshot-46",
+  "snapshot_commit": "8db5ba8f244fe43ba2cc7239985eeeddc7528962",
+  "snapshot_tag": "snapshot-47",
   "source_count": 73,
   "sources": [
     {
@@ -2521,7 +2525,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/List.php",
-      "sha256": "cede6c11a7a9fa3835db7b7b6238fbf09ea88630816d281d354e1c563afdbef6"
+      "sha256": "953eb297793e8013a50ab9bf425650ca90df8c2096cee228689575f4c2a92c1d"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Deflist.php",
@@ -2533,7 +2537,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Tableadv.php",
-      "sha256": "ecc1caef41c260fa9b7dd35138b5dbb5012a7e82bda2141f671528f9817e9e09"
+      "sha256": "e9d33f6cd68a39aa76b59f3900e4c5182d03f685130ce05cd1b101cfa5d4608d"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Button.php",
@@ -2621,7 +2625,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Tighten.php",
-      "sha256": "0520ce49ccfacf6071debef082a26db995cf1e15b235f5c5beda5eb7d47fa408"
+      "sha256": "ab21c75a31cf2928933dfde7d0c2ef55abd8b72a306ab34fff2565368bf9adbb"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse.php",
@@ -2629,7 +2633,7 @@
     },
     {
       "path": "wikidot-root/conf/wikiparser/embed/default.php",
-      "sha256": "8d7ddce216e8f7fef5e166ab69dc70bea8b40efd259bf3cf38d79614536f0df1"
+      "sha256": "811dbee7c0e5fdf986f317f43ff6191d540a68e9d0a43122b2dc1c3778ec611f"
     }
   ]
 }

@@ -299,6 +299,21 @@ theorem parainline_tighten_isEmptyRawTok_empty_str :
 theorem parainline_tighten_isEmptyRawTok_nonraw :
     isEmptyRawTok [{ rule := "Tt", opts := [] }] 0 = false := rfl
 
+/-- The two components of `List.span` reconstruct the input. `List.span`
+    is implemented through `span.loop` with a reversed accumulator, so this
+    is the convenient accumulator-general form. -/
+private theorem spanLoopAppend (p : Nat → Bool) : ∀ (l acc : List Nat),
+    (List.span.loop p l acc).1 ++ (List.span.loop p l acc).2 = acc.reverse ++ l := by
+  intro l
+  induction l with
+  | nil => intro acc; rfl
+  | cons a as ih =>
+      intro acc
+      by_cases h : p a = true
+      · simp only [List.span.loop, h]
+        simpa using ih (a :: acc)
+      · simp only [List.span.loop, h]
+
 private theorem parainline_tighten_stripEmptyRawPh_go_eq_self (toks : List TokenEntry)
     (hno : ∀ id, isEmptyRawTok toks id = false) :
     ∀ (bs : List Nat) (fuel : Nat), bs.length ≤ fuel →
@@ -328,7 +343,26 @@ private theorem parainline_tighten_stripEmptyRawPh_go_eq_self (toks : List Token
                     by_cases ht : t = 0xFF
                     · have hid : isEmptyRawTok toks
                           (digits.foldl (fun a d => a * 10 + (d - 48)) 0) = false := hno _
-                      simp [hspan, ht, hid, ih rest hrest]
+                      -- REFCORR22: the keep branch now emits the whole
+                      -- placeholder and continues after it, so the no-op
+                      -- law must reconstruct `rest` from the span parts.
+                      have hspanEq : digits ++ (255 :: tail2) = rest := by
+                        have h := spanLoopAppend
+                          (fun b => 48 <= b && b <= 57) rest []
+                        simp only [List.reverse_nil, List.nil_append] at h
+                        have hspanLoop := hspan
+                        simp only [List.span] at hspanLoop
+                        rw [hspanLoop] at h
+                        rw [ht] at h
+                        simpa using h
+                      have hrest_eq : rest = digits ++ (255 :: tail2) := hspanEq.symm
+                      have htail2 : tail2.length ≤ fuel := by
+                        rw [hrest_eq] at hrest
+                        simp [List.length_append] at hrest
+                        omega
+                      have hgo := ih tail2 htail2
+                      simp [hspan, ht, hid, hgo]
+                      rw [hrest_eq]
                     · simp [hspan, ht, ih rest hrest]
           · simp [hb, ih rest hrest]
 

@@ -363,9 +363,10 @@ theorem pcre_match_a_plus_false :
 /-! ## Embed theorems -/
 
 /-- The `anyiframe` fixture used below is the configuration
-    table's own entry (index 35 of `embedPatternStrings`). -/
+    table's own entry (index 34 of `embedPatternStrings`; REFCORR22 R3
+    retired the `statcounter_html` entry at former index 34). -/
 theorem anyiframe_fixture_in_table :
-    embedPatternStrings[35]? =
+    embedPatternStrings[34]? =
     some ("anyiframe",
       ";^<iframe(\\s+[a-z0-9]+(\\s*=\\s*(\"[^\"]*\"|'[^']*'))?)+>\\s*</iframe>$;si") := rfl
 

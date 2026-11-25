@@ -1,0 +1,5 @@
+{"id":"agy-f06-ul-upper-after","source":"[[UL]]\n[[LI]]A[[/LI]]\n[[LI]]B[[/LI]]\n[[/UL]]\n\nAFTER"}
+{"id":"s4a-l3b-adjacent-control","source":"[[OL data-x=\"1\"]]\n[[li]]a[[/li]]\n[[/OL]]AFTER"}
+{"id":"agy-f06-ol-upper-after","source":"[[OL]]\n[[LI]]A[[/LI]]\n[[LI]]B[[/LI]]\n[[/OL]]\n\nAFTER"}
+{"id":"upper-ul-single-newline","source":"[[UL]]\n[[LI]]A[[/LI]]\n[[/UL]]\nAFTER"}
+{"id":"upper-ol-adjacent-control","source":"[[OL]]\n[[li]]a[[/li]]\n[[/OL]]AFTER"}

@@ -1,0 +1,9 @@
+{"id": "img-bare", "verdict": "pass", "reason": ""}
+{"id": "img-data-src-http", "verdict": "pass", "reason": ""}
+{"id": "img-data-src-js", "verdict": "pass", "reason": ""}
+{"id": "img-src-http", "verdict": "pass", "reason": ""}
+{"id": "img-src-js", "verdict": "pass", "reason": ""}
+{"id": "img-statcounter", "verdict": "pass", "reason": ""}
+{"id": "img-stat-anchored", "verdict": "pass", "reason": ""}
+{"id": "img-stat-full", "verdict": "pass", "reason": ""}
+{"id": "embed-valid-iframe", "verdict": "pass", "reason": ""}

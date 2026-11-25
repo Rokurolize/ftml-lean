@@ -894,11 +894,138 @@ def tableadvProcess (head body matched : List Nat)
 
 end
 
-/-- The Tableadv rule mirror: the scanner over the byte form,
-    with the family fuel sized by the subject. -/
+/-! ### REFCORR22 R2: the large-input linear scanner
+
+    Above 8192 bytes the reference does not backtrack inside an ambiguous
+    quoted head: `_scanTableadv` takes the first complete head, the first
+    nested block at a body position (demoting a nested block that leaves the
+    enclosing block unclosable), and preserves the source newlines around a
+    successful replacement. These two functions model that scanner directly;
+    `tableadvProcessLinear` is `tableadvProcess` with the same nested scan. -/
+
+private def findLitCIFrom (pat : List Nat) (s : List Nat) : Nat → Nat → Option Nat
+  | _, 0 => none
+  | start, fuel + 1 =>
+      if start >= s.length then none
+      else if (matchLitCI pat (s.drop start)).isSome then some start
+      else findLitCIFrom pat s (start + 1) fuel
+
+mutual
+
+private def tableadvLinearBody (src : List Nat) (pos : Nat) : Nat → Option (Nat × Nat)
+  | 0 => none
+  | fuel + 1 =>
+      match matchLitCI (litBytes "[[/table]]") (src.drop pos) with
+      | some rest =>
+          let after := src.length - (rest.dropWhile (fun b => b == 32 || b == 9)).length
+          some (pos, after)
+      | none =>
+          let nested :=
+            if (matchLitCI (litBytes "[[table") (src.drop pos)).isSome then
+              match tableadvLinearBlock src pos fuel with
+              | some (e, _, _, _) => tableadvLinearBody src e fuel
+              | none => none
+            else none
+          match nested with
+          | some r => some r
+          | none =>
+              match findLitCIFrom (litBytes "[[") src (pos + 1) fuel with
+              | some j => tableadvLinearBody src j fuel
+              | none => none
+
+/-- The linear scanner's head parse: `[[table` followed by the first
+    head run whose `]]` terminates the opener. Unlike `tableadvMatchFirst`
+    this stops at the head, not after a whole body search. -/
+private def tableadvLinearHead (src : List Nat) (pos : Nat) : Nat → Option (List Nat × Nat)
+  | 0 => none
+  | fuel + 1 =>
+      match matchLitCI (litBytes "[[table") (src.drop pos) with
+      | none => none
+      | some r1 =>
+          (advHeadRuns r1).findSome? (fun (head, r2) =>
+            match r2 with
+            | 93 :: 93 :: r3 => some (head, src.length - r3.length)
+            | _ => none)
+
+private def tableadvLinearBlock (src : List Nat) (pos : Nat) :
+    Nat → Option (Nat × List Nat × List Nat × List Nat)
+  | 0 => none
+  | fuel + 1 =>
+      match tableadvLinearHead src pos fuel with
+      | some (head, bodyStart) =>
+          if (findLitCIFrom (litBytes "[[/table]]") src bodyStart fuel).isNone then none
+          else
+            match tableadvLinearBody src bodyStart fuel with
+            | some (closeStart, endPos) =>
+                let matched := (src.drop pos).take (endPos - pos)
+                let body := (src.drop bodyStart).take (closeStart - bodyStart)
+                some (endPos, head, body, matched)
+            | none => none
+      | none => none
+
+end
+
+mutual
+
+private def tableadvLinearScanGo (src : List Nat) (toks : List TokenEntry)
+    (pos last : Nat) (out : List Nat) : Nat → List Nat × List TokenEntry
+  | 0 => (out ++ src.drop last, toks)
+  | fuel + 1 =>
+      if pos >= src.length then (out ++ src.drop last, toks)
+      else
+        match findLitCIFrom (litBytes "[[table") src pos fuel with
+        | none => (out ++ src.drop last, toks)
+        | some cand =>
+            match tableadvLinearBlock src cand fuel with
+            | none => tableadvLinearScanGo src toks (cand + 1) last out fuel
+            | some (endPos, head, body, matched) =>
+                let (rep, toks1) := tableadvProcessLinear head body matched toks fuel
+                let rep' :=
+                  if rep == matched then rep
+                  else
+                    let a := if src[cand - 1]? == some 10 then 10 :: rep else rep
+                    if src[endPos]? == some 10 then a ++ [10] else a
+                let out' := out ++ (src.drop last).take (cand - last) ++ rep'
+                tableadvLinearScanGo src toks1 endPos endPos out' fuel
+
+private def tableadvProcessLinear (head body matched : List Nat)
+    (toks : List TokenEntry) : Nat → List Nat × List TokenEntry
+  | 0 => (matched, toks)
+  | fuel + 1 =>
+      let (body', toks1) := tableadvLinearScanGo body toks 0 0 [] fuel
+      let (rows, residue) := advMatchAll advRowMatch body'
+      if rows.isEmpty then (matched, toks1)
+      else if !(trimBytes residue).isEmpty then (matched, toks1)
+      else
+        match advRowsGo rows toks1 with
+        | (none, toksF) => (matched, toksF)
+        | (some rowsOut, toks2) =>
+            let (phS, toks3) := claimTok "Tableadv"
+              [("type".toList, OptVal.str "start".toList),
+               ("attrs".toList, attrsOpt (buildAttrsAdv head "table"))]
+              toks2
+            let (phE, toks4) := claimTok "Tableadv"
+              [("type".toList, OptVal.str "end".toList)] toks3
+            (phS ++ rowsOut ++ phE, toks4)
+
+end
+
+/-- The Tableadv rule mirror at snapshot-47 (REFCORR22 R2). The
+    definitional recursive grammar is the behavioral rule for documents up
+    to 8192 bytes; above that threshold the reference falls back to the
+    REFCORR16 linear scanner, which takes the first complete nested block
+    rather than backtracking inside an ambiguous quoted head. The mirror
+    keeps both searches: `tableadvScanGo` is the grammar-faithful repaired
+    scanner, and `tableadvLinearScanGo` (the first-nested-match search with
+    the reference's boundary-newline preservation) is the large-input
+    fallback. The split itself was removed later by
+    REFCORR24 at snapshot-49; this transcribes snapshot-47 as it stood. -/
 def tableadvRule (st : ParseState) : ParseState :=
   applyByteRule st (fun src toks =>
-    tableadvScanGo src toks (tableFuel src.length))
+    if src.length <= 8192 then
+      tableadvScanGo src toks (tableFuel src.length)
+    else
+      tableadvLinearScanGo src toks 0 0 [] (tableFuel src.length))
 
 /-! ## Worked examples (the stage's theorems)
 
