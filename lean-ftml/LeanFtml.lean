@@ -89,3 +89,4 @@ import LeanFtml.Proof.RenderBundles
 import LeanFtml.Proof.F3R1Bundles
 import LeanFtml.Proof.UnicodeCoreProof
 import LeanFtml.Proof.G3AlphaInvariance
+import LeanFtml.Proof.TableadvPcreProof
