@@ -20,8 +20,8 @@
     * `spec`: `renderRefSpec harnessEnv`
 
   `--list-rules` enumerates all 62 `RenderRuleId` constructors directly.
-  This deliberately does not use the older `mirroredRenderRules` driver
-  list, which omits Html.
+  This deliberately does not rely on the older `mirroredRenderRules`
+  driver list for the coverage claim.
 -/
 
 
@@ -324,7 +324,7 @@ def lookupTokList (m : List (Nat × TokenEntry)) (k : Nat) : Option TokenEntry :
 /-! ## G5 direct-render serialization and input decoding -/
 
 /-- All sixty-two `RenderRuleId` constructors, enumerated directly rather
-    than through the older `mirroredRenderRules` driver list. -/
+    than relying on the older `mirroredRenderRules` driver list. -/
 def g5RenderRuleIds : List RenderRuleId :=
   [.footnote, .footnoteitem, .footnoteblock, .bibitem, .bibliography, .bibcite,
    .paragraph, .newline, .break, .center, .horiz, .separator, .clearfloat,
