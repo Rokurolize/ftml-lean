@@ -58,23 +58,25 @@ theorem claimModule_length (rule : String) (name attr body : List Nat)
 theorem moduleTryCands_defense_exact (src name : List Nat) (toks : List TokenEntry)
     (attrRaw rest bodyRaw rest' : List Nat) (more : List (List Nat × List Nat))
     (htail : moduleTail rest = some (bodyRaw, rest'))
+    (hhtml : ¬(bodyRaw ≠ [] ∧ bodyHasHtmlToken bodyRaw toks 0 = true))
     (hdef : countModuleOpeners none (src.take (src.length - rest'.length))
               (src.length - rest'.length + 1) > 1) :
     moduleTryCands src name toks ((attrRaw, rest) :: more) =
       some (rewriteModulePrefix (insertInlineOpenerNewlines
         (src.take (src.length - rest'.length))), rest', toks) := by
-  simp [moduleTryCands, htail, hdef]
+  simp [moduleTryCands, htail, hhtml, hdef]
 
 /-- The same branch stated only about the token component: any successful result's table equals the incoming table. -/
 theorem moduleTryCands_defense_tokens (src name : List Nat) (toks : List TokenEntry)
     (attrRaw rest bodyRaw rest' : List Nat) (more : List (List Nat × List Nat))
     (htail : moduleTail rest = some (bodyRaw, rest'))
+    (hhtml : ¬(bodyRaw ≠ [] ∧ bodyHasHtmlToken bodyRaw toks 0 = true))
     (hdef : countModuleOpeners none (src.take (src.length - rest'.length))
               (src.length - rest'.length + 1) > 1) :
     ∀ res : List Nat × List Nat × List TokenEntry,
       moduleTryCands src name toks ((attrRaw, rest) :: more) = some res → res.2.2 = toks := by
   intro res hres
-  rw [moduleTryCands_defense_exact src name toks attrRaw rest bodyRaw rest' more htail hdef] at hres
+  rw [moduleTryCands_defense_exact src name toks attrRaw rest bodyRaw rest' more htail hhtml hdef] at hres
   cases hres
   rfl
 
@@ -96,19 +98,23 @@ theorem moduleTryCands_extend (src name : List Nat) (toks : List TokenEntry) :
           exact ih res h
       | some br =>
           rcases br with ⟨bodyRaw, rest'⟩
-          by_cases hdef : countModuleOpeners none (src.take (src.length - rest'.length))
-              (src.length - rest'.length + 1) > 1
-          · rw [moduleTryCands_defense_exact src name toks attrRaw rest bodyRaw rest' more htail hdef] at h
+          by_cases hhtml : bodyRaw ≠ [] ∧ bodyHasHtmlToken bodyRaw toks 0 = true
+          · simp [moduleTryCands, htail, hhtml] at h
             cases h
-            exact extendBy_empty 1 toks
-          · simp [moduleTryCands, htail, hdef] at h
-            cases h
-            exact extendBy_claim "Module" name (trimBytes attrRaw) (trimBytes bodyRaw) toks
+            exact extendBy_claim "Module" name (trimBytes attrRaw) [] toks
+          · by_cases hdef : countModuleOpeners none (src.take (src.length - rest'.length))
+                (src.length - rest'.length + 1) > 1
+            · rw [moduleTryCands_defense_exact src name toks attrRaw rest bodyRaw rest' more htail hhtml hdef] at h
+              cases h
+              exact extendBy_empty 1 toks
+            · simp [moduleTryCands, htail, hhtml, hdef] at h
+              cases h
+              exact extendBy_claim "Module" name (trimBytes attrRaw) (trimBytes bodyRaw) toks
 
 /-- Module654 has no defense: every successful candidate claims exactly one token. -/
-theorem module654TryCands_extend (name : List Nat) (toks : List TokenEntry) :
+theorem module654TryCands_extend (src name : List Nat) (toks : List TokenEntry) :
     ∀ (cands : List (List Nat × List Nat)) (res : List Nat × List Nat × List TokenEntry),
-      module654TryCands name toks cands = some res → TokensExtendBy 1 toks res.2.2 := by
+      module654TryCands src name toks cands = some res → TokensExtendBy 1 toks res.2.2 := by
   intro cands
   induction cands with
   | nil =>
@@ -123,9 +129,13 @@ theorem module654TryCands_extend (name : List Nat) (toks : List TokenEntry) :
           exact ih res h
       | some br =>
           rcases br with ⟨bodyRaw, rest'⟩
-          simp [module654TryCands, htail] at h
-          cases h
-          exact extendBy_claim "Module654" name (trimBytes attrRaw) (trimBytes bodyRaw) toks
+          by_cases hhtml : bodyRaw ≠ [] ∧ bodyHasHtmlToken bodyRaw toks 0 = true
+          · simp [module654TryCands, htail, hhtml] at h
+            cases h
+            exact extendBy_claim "Module654" name (trimBytes attrRaw) [] toks
+          · simp [module654TryCands, htail, hhtml] at h
+            cases h
+            exact extendBy_claim "Module654" name (trimBytes attrRaw) (trimBytes bodyRaw) toks
 
 theorem moduleMatch_extend (src : List Nat) (toks : List TokenEntry) :
     ∀ res : List Nat × List Nat × List TokenEntry,
@@ -147,7 +157,7 @@ theorem module654Match_extend (src : List Nat) (toks : List TokenEntry) :
   | some hd =>
       rcases hd with ⟨name, cands⟩
       simp [module654Match, hhead] at h
-      exact module654TryCands_extend name toks cands res h
+      exact module654TryCands_extend src name toks cands res h
 
 /-- One Module scan pass of fuel `fuel` appends at most `fuel` entries: induction on fuel, with the claim branch paying one unit and the recursive scan paying the rest. -/
 theorem moduleScanPass_extend (prev : Option Nat) (src : List Nat) (toks : List TokenEntry) :

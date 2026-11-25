@@ -74,14 +74,19 @@ theorem moduleTryCands_tokens_or_head (src name : List Nat) (toks : List TokenEn
           exact ih repl rest' t1 h
       | some pair =>
           rcases pair with ⟨bodyRaw, r'⟩
-          by_cases hdef : 1 < countModuleOpeners none
-              (src.take (src.length - r'.length)) (src.length - r'.length + 1)
-          · simp [moduleTryCands, htail, hdef] at h
-            exact Or.inl h.2.2.symm
-          · simp [moduleTryCands, htail, hdef, claimModule] at h
+          by_cases hhtml : (bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0) = true
+          · simp [moduleTryCands, htail, hhtml, claimModule] at h
             right
             rw [← h.1]
             simp
+          · by_cases hdef : 1 < countModuleOpeners none
+                (src.take (src.length - r'.length)) (src.length - r'.length + 1)
+            · simp [moduleTryCands, htail, hhtml, hdef] at h
+              exact Or.inl h.2.2.symm
+            · simp [moduleTryCands, htail, hhtml, hdef, claimModule] at h
+              right
+              rw [← h.1]
+              simp
 
 theorem moduleTryCands_claim_appends (src name : List Nat) (toks : List TokenEntry) :
     ∀ (cands : List (List Nat × List Nat)) (repl rest' : List Nat) (t1 : List TokenEntry),
@@ -101,12 +106,15 @@ theorem moduleTryCands_claim_appends (src name : List Nat) (toks : List TokenEnt
           exact ih repl rest' t1 h ht1
       | some pair =>
           rcases pair with ⟨bodyRaw, r'⟩
-          by_cases hdef : 1 < countModuleOpeners none
-              (src.take (src.length - r'.length)) (src.length - r'.length + 1)
-          · simp [moduleTryCands, htail, hdef] at h
-            exact False.elim (ht1 h.2.2.symm)
-          · simp [moduleTryCands, htail, hdef, claimModule] at h
+          by_cases hhtml : (bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0) = true
+          · simp [moduleTryCands, htail, hhtml, claimModule] at h
             exact ⟨_, h.2.2.symm⟩
+          · by_cases hdef : 1 < countModuleOpeners none
+                (src.take (src.length - r'.length)) (src.length - r'.length + 1)
+            · simp [moduleTryCands, htail, hhtml, hdef] at h
+              exact False.elim (ht1 h.2.2.symm)
+            · simp [moduleTryCands, htail, hhtml, hdef, claimModule] at h
+              exact ⟨_, h.2.2.symm⟩
 
 theorem moduleMatch_claim_head {src toks repl rest' t1}
     (h : moduleMatch src toks = some (repl, rest', t1)) (ht1 : t1 ≠ toks) :

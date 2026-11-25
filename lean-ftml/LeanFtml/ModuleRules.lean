@@ -356,6 +356,16 @@ def bodyHasCodeToken (body : List Nat) : List TokenEntry → Nat → Bool
       (t.rule == "Code" && bytesContain (phBytes i) body) ||
         bodyHasCodeToken body ts (i + 1)
 
+/-- snapshot-45 `Parse::textHasTokenRule($rawBody, 'Html')`: whether
+    `body` holds the placeholder bytes `phBytes i` of a token in `toks`
+    whose claiming rule is Html. The scan is over the untrimmed raw body,
+    before Module's nested-opener defense. -/
+def bodyHasHtmlToken (body : List Nat) : List TokenEntry → Nat → Bool
+  | [], _ => false
+  | t :: ts, i =>
+      (t.rule == "Html" && bytesContain (phBytes i) body) ||
+        bodyHasHtmlToken body ts (i + 1)
+
 /-- Module's attribute candidates, in PCRE priority order: the
     first candidate whose tail matches decides the match. On a
     match, the defense runs over the whole matched text: more
@@ -370,7 +380,17 @@ def moduleTryCands (src name : List Nat) (toks : List TokenEntry) :
     | none => moduleTryCands src name toks more
     | some (bodyRaw, rest') =>
         let matched := src.take (src.length - rest'.length)
-        if countModuleOpeners none matched (matched.length + 1) > 1 then
+        if bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0 then
+          -- snapshot-45: a complete Html token inside the raw body makes the
+          -- module opaque before the nested-opener defense. The claimed token
+          -- has an empty module_body, while the untrimmed raw body and the
+          -- authored closer bytes remain in the source after the placeholder.
+          let (ph, t1) := claimModule "Module" name
+            (trimBytes attrRaw) [] toks
+          let authoredCloser := matched.drop (matched.length - 11)
+          some ([10, 10] ++ ph ++ [10, 10] ++ bodyRaw ++ authoredCloser,
+            rest', t1)
+        else if countModuleOpeners none matched (matched.length + 1) > 1 then
           -- REFCORR10-MODFIX: mirror PHP exactly. The defense rewrites the
           -- leading `[[module` to `[[module654` and claims nothing; the
           -- inline-opener newline insertion makes a C-R5C-P3-2 nested
@@ -421,16 +441,27 @@ def moduleMatch (src : List Nat) (toks : List TokenEntry) :
 /-- Module654's attribute candidates, in PCRE priority order: the
     first candidate whose tail matches claims the Module654 token
     with trimmed attr and body. No defense, no loop. -/
-def module654TryCands (name : List Nat) (toks : List TokenEntry) :
+def module654TryCands (src name : List Nat) (toks : List TokenEntry) :
     List (List Nat × List Nat) → Option (List Nat × List Nat × List TokenEntry)
   | [] => none
   | (attrRaw, rest) :: more =>
     match module654Tail rest with
-    | none => module654TryCands name toks more
+    | none => module654TryCands src name toks more
     | some (bodyRaw, rest') =>
-        let (ph, t1) := claimModule "Module654" name
-          (trimBytes attrRaw) (trimBytes bodyRaw) toks
-        some ([10, 10] ++ ph ++ [10, 10], rest', t1)
+        let matched := src.take (src.length - rest'.length)
+        if bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0 then
+          -- snapshot-45: the same complete-Html opacity as Module, with the
+          -- empty module_body and the untrimmed body plus authored closer
+          -- left after the placeholder.
+          let (ph, t1) := claimModule "Module654" name
+            (trimBytes attrRaw) [] toks
+          let authoredCloser := matched.drop (matched.length - 11)
+          some ([10, 10] ++ ph ++ [10, 10] ++ bodyRaw ++ authoredCloser,
+            rest', t1)
+        else
+          let (ph, t1) := claimModule "Module654" name
+            (trimBytes attrRaw) (trimBytes bodyRaw) toks
+          some ([10, 10] ++ ph ++ [10, 10], rest', t1)
 
 /-- A Module654 match at the head of `src`, with process()
     applied (see module654TryCands). -/
@@ -438,7 +469,7 @@ def module654Match (src : List Nat) (toks : List TokenEntry) :
     Option (List Nat × List Nat × List TokenEntry) :=
   match moduleHead (litBytes "[[module654") src with
   | none => none
-  | some (name, cands) => module654TryCands name toks cands
+  | some (name, cands) => module654TryCands src name toks cands
 
 /-! ## Scanners and rule mirrors
 

@@ -214,12 +214,24 @@ def moduleAvailableNames : List (List Nat) :=
     litBytes "wantedpages", litBytes "orphanedpages", litBytes "countpages",
     litBytes "search", litBytes "members", litBytes "files",
     litBytes "listusers", litBytes "mailform", litBytes "comments",
-    litBytes "themepreviewer" ]
+    litBytes "themepreviewer",
+    litBytes "whoinvited", litBytes "recentthreads", litBytes "recentposts",
+    litBytes "managesite", litBytes "forumcategory", litBytes "forumnewthread",
+    litBytes "forumstart", litBytes "forumthread", litBytes "frontforum",
+    litBytes "membershipapply", litBytes "sitechanges", litBytes "userinfo",
+    litBytes "listdrafts", litBytes "watchers", litBytes "miniactivethreads",
+    litBytes "minirecentposts", litBytes "minirecentthreads" ]
 
 /-- REFCORR19 F3: caller-runtime modules whose offline output is empty. -/
 def callerRuntimeModules : List (List Nat) :=
   [ litBytes "listusers", litBytes "mailform",
-    litBytes "comments", litBytes "themepreviewer" ]
+    litBytes "comments", litBytes "themepreviewer",
+    litBytes "whoinvited", litBytes "recentthreads", litBytes "recentposts",
+    litBytes "managesite", litBytes "forumcategory", litBytes "forumnewthread",
+    litBytes "forumstart", litBytes "forumthread", litBytes "frontforum",
+    litBytes "membershipapply", litBytes "sitechanges", litBytes "userinfo",
+    litBytes "listdrafts", litBytes "watchers", litBytes "miniactivethreads",
+    litBytes "minirecentposts", litBytes "minirecentthreads" ]
 
 /-- The fossil handoff marker byte: `utf8_encode("\xFE")`. -/
 def moduleMarkerByte : List Nat := [195, 190]

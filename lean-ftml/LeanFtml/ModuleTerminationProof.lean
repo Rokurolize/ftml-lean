@@ -249,16 +249,21 @@ theorem moduleTryCands_rest_shorter_aux (src name : List Nat) (toks : List Token
           rcases pair with ⟨bodyRaw, r'⟩
           have hrshort : r'.length < r.length := moduleTail_rest_shorter htail
           simp [moduleTryCands, htail] at h
-          by_cases hdef : 1 < countModuleOpeners none
-              (src.take (src.length - r'.length)) (src.length - r'.length + 1)
-          · simp [hdef] at h
+          by_cases hhtml : ¬bodyRaw = [] ∧ bodyHasHtmlToken bodyRaw toks 0 = true
+          · simp [hhtml] at h
             have hsr : rest' = r' := h.2.1.symm
             subst rest'
             omega
-          · simp [hdef] at h
-            have hsr : rest' = r' := h.2.1.symm
-            subst rest'
-            omega
+          · by_cases hdef : 1 < countModuleOpeners none
+                (src.take (src.length - r'.length)) (src.length - r'.length + 1)
+            · simp [hhtml, hdef] at h
+              have hsr : rest' = r' := h.2.1.symm
+              subst rest'
+              omega
+            · simp [hhtml, hdef] at h
+              have hsr : rest' = r' := h.2.1.symm
+              subst rest'
+              omega
 
 theorem moduleMatch_rest_shorter {src : List Nat} {toks : List TokenEntry}
     {repl rest' : List Nat} {t1 : List TokenEntry}
