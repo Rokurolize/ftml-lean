@@ -1,0 +1,9 @@
+{"id":"img-bare","output":"<div class=\"error-block\">Sorry, no match for the embedded content.<\/div>\n\n"}
+{"id":"img-data-src-http","output":"<div class=\"error-block\">Sorry, no match for the embedded content.<\/div>\n\n"}
+{"id":"img-data-src-js","output":"<div class=\"error-block\">Sorry, no match for the embedded content.<\/div>\n\n"}
+{"id":"img-src-http","output":"<div class=\"error-block\">Sorry, no match for the embedded content.<\/div>\n\n"}
+{"id":"img-src-js","output":"<div class=\"error-block\">Sorry, no match for the embedded content.<\/div>\n\n"}
+{"id":"img-statcounter","output":"<div class=\"error-block\">Sorry, no match for the embedded content.<\/div>\n\n"}
+{"id":"img-stat-anchored","output":"<div class=\"error-block\">Sorry, no match for the embedded content.<\/div>\n\n"}
+{"id":"img-stat-full","output":"<div class=\"error-block\">Sorry, no match for the embedded content.<\/div>\n\n"}
+{"id":"embed-valid-iframe","output":"<p><iframe src=\"http:\/\/example.com\"><\/iframe><\/p>\n\n"}

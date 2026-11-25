@@ -1,0 +1,42 @@
+{
+  "embed": {
+    "cases": 9,
+    "excluded": 0,
+    "fail": 0,
+    "fatal_agree": 0,
+    "pass": 9,
+    "php_error": 0
+  },
+  "numbering": {
+    "cases": 6,
+    "excluded": 0,
+    "fail": 0,
+    "fatal_agree": 0,
+    "pass": 6,
+    "php_error": 0
+  },
+  "tableadv": {
+    "cases": 24,
+    "excluded": 0,
+    "fail": 0,
+    "fatal_agree": 0,
+    "pass": 24,
+    "php_error": 0
+  },
+  "tighten": {
+    "cases": 6,
+    "excluded": 0,
+    "fail": 0,
+    "fatal_agree": 0,
+    "pass": 6,
+    "php_error": 0
+  },
+  "uppercase-list": {
+    "cases": 5,
+    "excluded": 0,
+    "fail": 0,
+    "fatal_agree": 0,
+    "pass": 5,
+    "php_error": 0
+  }
+}

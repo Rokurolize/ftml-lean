@@ -1418,28 +1418,66 @@ def absorbLastLiTail (bs : List Nat) : List Nat :=
       let tail := foldNewlineRun3 (bs.drop (i + 7))
       bs.take i ++ tail ++ close
 
+/-- REFCORR22 R5: horizontal whitespace (`[^\S\n]`), i.e. PCRE whitespace
+    except the newline. -/
+def isHorizontalWsByte (b : Nat) : Bool :=
+  b == 32 || b == 9 || b == 11 || b == 12 || b == 13
+
+def isPcreWsByte (b : Nat) : Bool :=
+  b == 32 || b == 9 || b == 10 || b == 11 || b == 12 || b == 13
+
+/-- REFCORR22 R5: does this synthetic-opener body have the blank-line-after-
+    swallowed-closer form `[[/li]]\s*[[/(ul|ol)]]\h*\n\h*\n`? The settled
+    REFCORR7 sibling `[[/OL]]AFTER` has no newline after the closer and so
+    concatenates, while the f06 shape preserves one item-internal break. -/
+def hasBlankAfterSwallowedClose (bs : List Nat) : Bool :=
+  go bs bs.length
+where
+  go : List Nat → Nat → Bool
+    | [], _ => false
+    | _, 0 => false
+    | s@(_ :: rest), fuel + 1 =>
+        match matchLitCI (litBytes "[[/li]]") s with
+        | some r1 =>
+            let r2 := r1.dropWhile isPcreWsByte
+            let afterClose := matchLitCI (litBytes "[[/ul]]") r2 <|>
+                              matchLitCI (litBytes "[[/ol]]") r2
+            match afterClose with
+            | some r3 =>
+                let r4 := r3.dropWhile isHorizontalWsByte
+                match r4 with
+                | 10 :: r5 =>
+                    match r5.dropWhile isHorizontalWsByte with
+                    | 10 :: _ => true
+                    | _ => false
+                | _ => false
+            | none => go rest fuel
+        | none => go rest fuel
+
 /-- REFCORR7 C-SUSPECT4A-3: absorb the residual tail into the last item,
 trimming both ends of the tail when it carries visible text. A
 whitespace-only tail is kept verbatim so the unclosed item's <br />
-survives. -/
-def absorbTailTrim (bs : List Nat) : List Nat :=
+survives. REFCORR22 R5: when the swallowed closer was followed by a blank
+line, reintroduce exactly one newline before the trimmed prose. -/
+def absorbTailTrim (blankAfter : Bool) (bs : List Nat) : List Nat :=
   match lastLiCloseIdx bs with
   | none => bs
   | some i =>
       let close := (bs.drop i).take 7
       let tail := bs.drop (i + 7)
       let t := trimBytes tail
-      bs.take i ++ (if t.isEmpty then tail else t) ++ close
+      bs.take i ++ (if t.isEmpty then tail else (if blankAfter then [10] else []) ++ t) ++ close
 
 /-- REFCORR8 C-R5-P1-3: for a scored raw-case opener the residual tail
     after the last item close is trimmed even when it is whitespace-only,
     so the unclosed item carries no trailing <br />. -/
-def absorbTailTrimScored (bs : List Nat) : List Nat :=
+def absorbTailTrimScored (blankAfter : Bool) (bs : List Nat) : List Nat :=
   match lastLiCloseIdx bs with
   | none => bs
   | some i =>
       let close := (bs.drop i).take 7
-      bs.take i ++ trimBytes (bs.drop (i + 7)) ++ close
+      let t := trimBytes (bs.drop (i + 7))
+      bs.take i ++ (if blankAfter && !t.isEmpty then [10] else []) ++ t ++ close
 
 /-- REFCORR7 C-SUSPECT4A-4: split at the first block closer, folding the
 three reference branches (blank line after closer, single newline after
@@ -1586,8 +1624,10 @@ def explLoop (src : List Nat) (toks : List TokenEntry)
                 -- MIRROR-FIX Item 1 plus REFCORR7 C-SUSPECT4A-3: swallow the
                 -- would-be block closer and absorb the trimmed residual tail.
                 let stripped := stripBlockCloserTag rawBody
+                let blankAfter := hasBlankAfterSwallowedClose rawBody
                 let body := if op.scored && tagIsRawCase op.tag then
-                  absorbTailTrimScored stripped else absorbTailTrim stripped
+                  absorbTailTrimScored blankAfter stripped else
+                  absorbTailTrim blankAfter stripped
                 let hasNestedBlock := blocks.any (fun b => (findFrom b.startPh rawBody 0).isSome)
                 let hasNestedOpener := (scanTags rawBody).any (·.isOpen)
                 let unclosed := syntheticUnclosed op.scored (tagIsRawCase op.tag) src && !hasNestedBlock && !hasNestedOpener
