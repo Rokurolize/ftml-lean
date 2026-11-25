@@ -1,0 +1,421 @@
+{"id":"corpus/notes/a-fn-define/tok0","output":"<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"}
+{"id":"corpus/notes/b14-nested-footnote/tok0","output":"<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"}
+{"id":"corpus/notes/b38-adjacent-footnoteblock/tok0","output":"<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"}
+{"id":"corpus/notes/bib45-footnote-then-bibliography/tok0","output":"<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"}
+{"id":"corpus/notes/bib47-bibliography-inside-footnote/tok0","output":"<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"}
+{"id":"corpus/notes/bib48-footnote-opened-in-bib-body/tok0","output":"<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"}
+{"id":"corpus/notes/bibc-45-footnote-adjacency/tok0","output":"<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"}
+{"id":"corpus/notes/bibc-54-nested-in-note/tok0","output":"<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"}
+{"id":"corpus/notes/a-fn-define/tok1","output":"<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. "}
+{"id":"corpus/notes/a-fn-define/tok2","output":"</div>"}
+{"id":"corpus/notes/b14-nested-footnote/tok1","output":"<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. "}
+{"id":"corpus/notes/b14-nested-footnote/tok2","output":"</div>"}
+{"id":"corpus/notes/b38-adjacent-footnoteblock/tok1","output":"<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. "}
+{"id":"corpus/notes/b38-adjacent-footnoteblock/tok2","output":"</div>"}
+{"id":"corpus/notes/bib45-footnote-then-bibliography/tok1","output":"<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. "}
+{"id":"corpus/notes/bib45-footnote-then-bibliography/tok2","output":"</div>"}
+{"id":"corpus/notes/a-fn-define/tok3","output":"<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div>"}
+{"id":"corpus/notes/a-fn-define/tok4","output":"</div>"}
+{"id":"corpus/notes/b14-nested-footnote/tok3","output":"<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div>"}
+{"id":"corpus/notes/b14-nested-footnote/tok4","output":"</div>"}
+{"id":"corpus/notes/b38-adjacent-footnoteblock/tok3","output":"<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div>"}
+{"id":"corpus/notes/b38-adjacent-footnoteblock/tok4","output":"</div>"}
+{"id":"corpus/notes/bib45-footnote-then-bibliography/tok3","output":"<div class=\"footnotes-footer\"><div class=\"title\">Footnotes</div>"}
+{"id":"corpus/notes/bib45-footnote-then-bibliography/tok4","output":"</div>"}
+{"id":"corpus/notes/b01-single/tok0","output":"<div class=\"bibitem\" id=\"bibitem-1\">1. "}
+{"id":"corpus/notes/b01-single/tok1","output":"</div>"}
+{"id":"corpus/notes/b02-two/tok0","output":"<div class=\"bibitem\" id=\"bibitem-1\">1. "}
+{"id":"corpus/notes/b02-two/tok1","output":"</div>"}
+{"id":"corpus/notes/b02-two/tok2","output":"<div class=\"bibitem\" id=\"bibitem-2\">2. "}
+{"id":"corpus/notes/b03-three/tok0","output":"<div class=\"bibitem\" id=\"bibitem-1\">1. "}
+{"id":"corpus/notes/b03-three/tok1","output":"</div>"}
+{"id":"corpus/notes/b03-three/tok2","output":"<div class=\"bibitem\" id=\"bibitem-2\">2. "}
+{"id":"corpus/notes/b01-single/tok2","output":"<div class=\"bibitems\"><div class=\"title\">Bibliography</div>"}
+{"id":"corpus/notes/b01-single/tok3","output":"</div>"}
+{"id":"corpus/notes/b02-two/tok4","output":"<div class=\"bibitems\"><div class=\"title\">Bibliography</div>"}
+{"id":"corpus/notes/b02-two/tok5","output":"</div>"}
+{"id":"corpus/notes/b03-three/tok6","output":"<div class=\"bibitems\"><div class=\"title\">Bibliography</div>"}
+{"id":"corpus/notes/b03-three/tok7","output":"</div>"}
+{"id":"corpus/notes/b04-dup-adjacent/tok4","output":"<div class=\"bibitems\"><div class=\"title\">Bibliography</div>"}
+{"id":"corpus/notes/b04-dup-adjacent/tok5","output":"</div>"}
+{"id":"corpus/notes/b06-dup-then-third/tok8","output":"<a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-2-32943a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-2')\">2</a>"}
+{"id":"corpus/notes/b13-self-cite/tok4","output":"<a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-1-93907a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-1')\">1</a>"}
+{"id":"corpus/notes/b16-forward-cite/tok4","output":"<a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-1-93907a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-1')\">1</a>"}
+{"id":"corpus/notes/b18-undefined-cite/tok4","output":"<span class=\"error-inline\">Bibliography item <em>zzz</em> not found.</span>"}
+{"id":"corpus/notes/b19-cite-only/tok0","output":"<span class=\"error-inline\">Bibliography item <em>a</em> not found.</span>"}
+{"id":"corpus/notes/b40-two-blocks/tok4","output":"<a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-1-93907a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-1')\">1</a>"}
+{"id":"corpus/notes/b40-two-blocks/tok5","output":"<span class=\"error-inline\">Bibliography item <em>b</em> not found.</span>"}
+{"id":"corpus/notes/b43-multiple-cites/tok6","output":"<a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-1-93907a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-1')\">1</a>"}
+{"id":"corpus/r48/freelink-exist-target-labeled/tok1","output":"<p>"}
+{"id":"corpus/r48/freelink-exist-target-labeled/tok2","output":"</p>\n\n"}
+{"id":"corpus/r48/freelink-second-line/tok1","output":"<br />\n"}
+{"id":"corpus/prose/b03-continuation-lines/tok0","output":"<br />\n"}
+{"id":"corpus/notes/fn47-header-note/tok5","output":"<p style=\"text-align: center;\">"}
+{"id":"corpus/notes/fn47-header-note/tok6","output":"</p>\n"}
+{"id":"corpus/prose/adj-before-heading/tok0","output":"<p style=\"text-align: center;\">"}
+{"id":"corpus/prose/adj-before-heading/tok1","output":"</p>\n"}
+{"id":"corpus/prose/ce-29/tok5","output":"<p style=\"text-align: center;\">"}
+{"id":"corpus/prose/ce-29/tok6","output":"</p>\n"}
+{"id":"corpus/prose/b08-list-hr-list/tok0","output":"<hr />\n"}
+{"id":"corpus/prose/br-36/tok0","output":"<div class=\"content-separator\" style=\"display: none:\"></div>\n"}
+{"id":"corpus/prose/br-37/tok0","output":"<div style=\"clear:both; height: 0px; font-size: 1px\"></div>\n"}
+{"id":"corpus/prose/cf-03/tok0","output":"<div style=\"clear:right; height: 0px; font-size: 1px\"></div>\n"}
+{"id":"corpus/prose/cf-04/tok0","output":"<div style=\"clear:left; height: 0px; font-size: 1px\"></div>\n"}
+{"id":"corpus/r48/math-in-blockquote/tok0","output":"<blockquote>"}
+{"id":"corpus/r48/math-in-blockquote/tok1","output":"</blockquote>\n"}
+{"id":"corpus/notes/fn13-quote-body/tok5","output":"<blockquote>"}
+{"id":"corpus/notes/fn13-quote-body/tok6","output":"</blockquote>\n"}
+{"id":"corpus/notes/fn38-quote-wrapped/tok5","output":"<blockquote>"}
+{"id":"corpus/notes/fn38-quote-wrapped/tok6","output":"</blockquote>\n"}
+{"id":"corpus/notes/fni-14-blockquote-body/tok5","output":"<blockquote>"}
+{"id":"corpus/notes/fni-14-blockquote-body/tok6","output":"</blockquote>\n"}
+{"id":"corpus/r48/user-us-39/tok1","output":"<div class=\"wiki-note\">"}
+{"id":"corpus/r48/user-us-39/tok2","output":"</div>"}
+{"id":"corpus/prose/da-01/tok0","output":"<div style=\"text-align: center;\">"}
+{"id":"corpus/prose/da-01/tok1","output":"</div>"}
+{"id":"corpus/prose/da-02/tok0","output":"<div style=\"text-align: left;\">"}
+{"id":"corpus/prose/da-03/tok0","output":"<div style=\"text-align: right;\">"}
+{"id":"corpus/prose/da-04/tok0","output":"<div style=\"text-align: justify;\">"}
+{"id":"corpus/pooled/nl-indented-spaces/tok0","output":""}
+{"id":"corpus/r48/image-i37-47-link-leading-space-literal/tok2","output":"<a href=\"https://example.com/\">https://example.com/</a>"}
+{"id":"corpus/r48/image-i37-58-double-float/tok2","output":"<a href=\"https://example.com/a.png\">https://example.com/a.png</a>"}
+{"id":"corpus/notes/b12-link/tok4","output":"<a href=\"http://example.com\">example</a>"}
+{"id":"corpus/notes/b45-colon-in-body/tok4","output":"<a href=\"http://example.com:8080/x\">http://example.com:8080/x</a>"}
+{"id":"corpus/notes/bib53-tabview-residue/tok5","output":"<a href=\"/tab]]\">[[/tabview</a>"}
+{"id":"corpus/notes/bibc-41-external-link-label/tok3","output":"<a href=\"https://example.com\">https://example.com</a>"}
+{"id":"corpus/notes/fn09-link-body/tok7","output":"<a href=\"http://example.com\">the site</a>"}
+{"id":"corpus/notes/fn17-mixed-case-tag/tok2","output":"<a href=\"/footnote]]\">B[[footnote</a>"}
+{"id":"corpus/pooled/e41-01-bare-simple/tok2","output":"<span class=\"wiki-email\">moc.elpmaxe|cba#moc.elpmaxe|cba</span>"}
+{"id":"corpus/pooled/e41-02-bare-in-prose/tok2","output":"<span class=\"wiki-email\">ten.elpmaxe|ofni#ten.elpmaxe|ofni</span>"}
+{"id":"corpus/pooled/e41-03-bare-two-in-line/tok2","output":"<span class=\"wiki-email\">moc.eno|a#moc.eno|a</span>"}
+{"id":"corpus/pooled/e41-03-bare-two-in-line/tok3","output":"<span class=\"wiki-email\">gro.owt|b#gro.owt|b</span>"}
+{"id":"corpus/pooled/e41-04-bare-uppercase/tok2","output":"<span class=\"wiki-email\">MOC.elpmaxE|emaN.resU#MOC.elpmaxE|emaN.resU</span>"}
+{"id":"corpus/pooled/e41-05-bare-one-char/tok2","output":"<span class=\"wiki-email\">oi.y|x#oi.y|x</span>"}
+{"id":"corpus/pooled/e41-06-bare-plus/tok2","output":"<span class=\"wiki-email\">moc.elpmaxe|gat#moc.elpmaxe|gat</span>"}
+{"id":"corpus/pooled/e41-07-bare-underscore/tok2","output":"<span class=\"wiki-email\">moc.elpmaxe|tsal_tsrif#moc.elpmaxe|tsal_tsrif</span>"}
+{"id":"corpus/r48/math-mathinline-after/tok3","output":"<span class=\"math-inline\">$y$</span>"}
+{"id":"corpus/pooled/adjacent/tok2","output":"<span class=\"math-inline\">$a$</span>"}
+{"id":"corpus/pooled/adjacent/tok3","output":"<span class=\"math-inline\">$b$</span>"}
+{"id":"corpus/pooled/attr-like/tok2","output":"<span class=\"math-inline\">$type=&quot;align&quot;$</span>"}
+{"id":"corpus/pooled/backslash-commands/tok2","output":"<span class=\"math-inline\">$\\alpha + \\beta$</span>"}
+{"id":"corpus/pooled/before-heading/tok4","output":"<span class=\"math-inline\">$x$</span>"}
+{"id":"corpus/pooled/comment-inside/tok2","output":"<span class=\"math-inline\">$ab$</span>"}
+{"id":"corpus/pooled/comment-markers/tok2","output":"<span class=\"math-inline\">$$</span>"}
+{"id":"corpus/notes/fn09-link-body/tok8","output":"<a href=\"https://en.wikipedia.org/wiki/Footnote\" onclick=\"window.open(this.href, '_blank'); return false;\">Footnote</a>"}
+{"id":"corpus/prose/iw43-70-interwiki-in-heading/tok2","output":"<a href=\"https://en.wikipedia.org/wiki/Albert_Einstein\" onclick=\"window.open(this.href, '_blank'); return false;\">Albert</a>"}
+{"id":"corpus/pooled/iw43-02-wikipedia-unlabeled/tok2","output":"<a href=\"https://en.wikipedia.org/wiki/Albert_Einstein\" onclick=\"window.open(this.href, '_blank'); return false;\">Albert_Einstein</a>"}
+{"id":"corpus/pooled/iw43-03-wikipedia-upper-labeled/tok2","output":"<a href=\"https://en.wikipedia.org/wiki/Albert_Einstein\" onclick=\"window.open(this.href, '_blank'); return false;\">Upper</a>"}
+{"id":"corpus/pooled/iw43-05-wikipedia-mixed-labeled/tok2","output":"<a href=\"https://en.wikipedia.org/wiki/Albert_Einstein\" onclick=\"window.open(this.href, '_blank'); return false;\">Mixed</a>"}
+{"id":"corpus/pooled/iw43-06-wikipedia-pl-labeled/tok2","output":"<a href=\"https://pl.wikipedia.org/wiki/Test\" onclick=\"window.open(this.href, '_blank'); return false;\">Polski</a>"}
+{"id":"corpus/pooled/iw43-07-wikipedia-pl-unlabeled/tok2","output":"<a href=\"https://pl.wikipedia.org/wiki/Test\" onclick=\"window.open(this.href, '_blank'); return false;\">Test</a>"}
+{"id":"corpus/pooled/iw43-08-pl-wikipedia-labeled/tok2","output":"<a href=\"https://pl.wikipedia.org/wiki/Test\" onclick=\"window.open(this.href, '_blank'); return false;\">Pol</a>"}
+{"id":"corpus/prose/x03-span-color-nested/tok4","output":"<span style=\"color: red\">"}
+{"id":"corpus/prose/x03-span-color-nested/tok5","output":"</span>"}
+{"id":"corpus/pooled/c02/tok2","output":"<span style=\"color: blue\">"}
+{"id":"corpus/pooled/c02/tok3","output":"</span>"}
+{"id":"corpus/pooled/c03/tok2","output":"<span style=\"color: orange\">"}
+{"id":"corpus/pooled/c03/tok3","output":"</span>"}
+{"id":"corpus/pooled/c04/tok2","output":"<span style=\"color: darkred\">"}
+{"id":"corpus/pooled/c04/tok3","output":"</span>"}
+{"id":"corpus/notes/b11-bold/tok4","output":"<strong>"}
+{"id":"corpus/notes/b11-bold/tok5","output":"</strong>"}
+{"id":"corpus/notes/b41-mixed-markup/tok4","output":"<strong>"}
+{"id":"corpus/notes/b41-mixed-markup/tok5","output":"</strong>"}
+{"id":"corpus/notes/b47-dup-nested-markup/tok8","output":"<strong>"}
+{"id":"corpus/notes/b47-dup-nested-markup/tok9","output":"</strong>"}
+{"id":"corpus/notes/bib33-inline-strong-em/tok7","output":"<strong>"}
+{"id":"corpus/notes/bib33-inline-strong-em/tok8","output":"</strong>"}
+{"id":"corpus/notes/b10-italic/tok4","output":"<em>"}
+{"id":"corpus/notes/b10-italic/tok5","output":"</em>"}
+{"id":"corpus/notes/b41-mixed-markup/tok6","output":"<em>"}
+{"id":"corpus/notes/b41-mixed-markup/tok7","output":"</em>"}
+{"id":"corpus/notes/b47-dup-nested-markup/tok10","output":"<em>"}
+{"id":"corpus/notes/b47-dup-nested-markup/tok11","output":"</em>"}
+{"id":"corpus/notes/bib01-canonical-two/tok11","output":"<em>"}
+{"id":"corpus/notes/bib01-canonical-two/tok12","output":"</em>"}
+{"id":"corpus/notes/fn08-bold-italic-body/tok11","output":"<span style=\"text-decoration: underline;\">"}
+{"id":"corpus/notes/fn08-bold-italic-body/tok12","output":"</span>"}
+{"id":"corpus/prose/x53/tok8","output":"<span style=\"text-decoration: underline;\">"}
+{"id":"corpus/prose/x53/tok9","output":"</span>"}
+{"id":"corpus/prose/x05-strike-span-cross/tok4","output":"<span style=\"text-decoration: line-through;\">"}
+{"id":"corpus/prose/x05-strike-span-cross/tok5","output":"</span>"}
+{"id":"corpus/pooled/strike-s48/tok7","output":"<span style=\"text-decoration: line-through;\">"}
+{"id":"corpus/pooled/strike-s48/tok8","output":"</span>"}
+{"id":"corpus/notes/b15-nested-code/tok4","output":"<tt>"}
+{"id":"corpus/notes/b15-nested-code/tok5","output":"</tt>"}
+{"id":"corpus/notes/b41-mixed-markup/tok8","output":"<tt>"}
+{"id":"corpus/notes/b41-mixed-markup/tok9","output":"</tt>"}
+{"id":"corpus/prose/tt51/tok2","output":"<tt>"}
+{"id":"corpus/prose/tt51/tok3","output":"</tt>"}
+{"id":"corpus/prose/sup44/tok4","output":"<sup>"}
+{"id":"corpus/prose/sup44/tok5","output":"</sup>"}
+{"id":"corpus/prose/sub46/tok2","output":"<sub>"}
+{"id":"corpus/prose/sub46/tok3","output":"</sub>"}
+{"id":"corpus/r48/freelink-exist-target-labeled/tok3","output":"&#8220;"}
+{"id":"corpus/r48/freelink-exist-target-labeled/tok4","output":"&#8221;"}
+{"id":"corpus/r48/freelink-exist-target-labeled/tok5","output":"&#8222;"}
+{"id":"corpus/r48/freelink-exist-target-labeled/tok7","output":"&#8216;"}
+{"id":"corpus/r48/freelink-exist-target-labeled/tok8","output":"&#8217;"}
+{"id":"corpus/r48/freelink-exist-target-labeled/tok9","output":"&#171;"}
+{"id":"corpus/r48/freelink-exist-target-labeled/tok10","output":"&#187;"}
+{"id":"corpus/r48/freelink-exist-target-labeled/tok11","output":"&#160;"}
+{"id":"corpus/r48/freelink-exist-target-labeled/tok13","output":"&#8230;"}
+{"id":"corpus/r48/freelink-exist-target-labeled/tok14","output":"&#8212;"}
+{"id":"corpus/r48/freelink-exist-target-labeled/tok15","output":"&#8212;"}
+{"id":"corpus/r48/image-i37-67-raw-head-literal/tok0","output":"<span style=\"white-space: pre-wrap;\">a</span>"}
+{"id":"corpus/notes/bibc-37-raw-owner/tok0","output":"<span style=\"white-space: pre-wrap;\">((bibcite&#32;alpha))</span>"}
+{"id":"corpus/prose/x17-code-inline-div/tok0","output":"<span style=\"white-space: pre-wrap;\">[[div&#32;class=x]]&#32;inside&#32;[[/div]]</span>"}
+{"id":"corpus/prose/x19-code-inline-coll/tok0","output":"<span style=\"white-space: pre-wrap;\">[[collapsible]]body[[/collapsible]]</span>"}
+{"id":"corpus/prose/x20-span-code-div/tok0","output":"<span style=\"white-space: pre-wrap;\">[[div]]x[[/div]]</span>"}
+{"id":"corpus/pooled/adj-inside-raw/tok0","output":"<span style=\"white-space: pre-wrap;\">A[!--&#32;c&#32;--]B</span>"}
+{"id":"corpus/pooled/code-in-raw/tok0","output":"<span style=\"white-space: pre-wrap;\">[[code]]x[[/code]]</span>"}
+{"id":"corpus/pooled/e41-57-in-raw/tok0","output":"<span style=\"white-space: pre-wrap;\">user@example.com</span>"}
+{"id":"corpus/notes/fni-16-code-body/tok0","output":"some &lt;code&gt; &amp; raw"}
+{"id":"corpus/pooled/old-adjacent/tok0","output":"one"}
+{"id":"corpus/pooled/old-and-raw/tok1","output":"old"}
+{"id":"corpus/pooled/old-basic/tok0","output":"raw **bold**"}
+{"id":"corpus/pooled/old-multiline/tok0","output":"line one\nline two"}
+{"id":"corpus/pooled/old-quote-run/tok0","output":"x"}
+{"id":"corpus/pooled/old-quote-run/tok1","output":"y"}
+{"id":"corpus/pooled/old-triple/tok0","output":"`x"}
+{"id":"corpus/pooled/code-in-form/tok0","output":"<span style=\"white-space: pre-wrap;\">[[form]]</span>"}
+{"id":"corpus/pooled/code-in-form/tok1","output":"<span style=\"white-space: pre-wrap;\">fields:</span>"}
+{"id":"corpus/pooled/code-in-form/tok2","output":"<span style=\"white-space: pre-wrap;\">&nbsp;&#32;note:</span>"}
+{"id":"corpus/pooled/code-in-form/tok3","output":"<span style=\"white-space: pre-wrap;\">&nbsp;&#32;&nbsp;&#32;type:&#32;wiki</span>"}
+{"id":"corpus/pooled/code-in-form/tok4","output":"<span style=\"white-space: pre-wrap;\">---</span>"}
+{"id":"corpus/pooled/code-in-form/tok5","output":"<span style=\"white-space: pre-wrap;\">note:&#32;[[code]]x[[/code]]</span>"}
+{"id":"corpus/pooled/code-in-form/tok6","output":"<span style=\"white-space: pre-wrap;\">[[/form]]</span>"}
+{"id":"corpus/pooled/form-basic/tok2","output":"<span style=\"white-space: pre-wrap;\">&nbsp;&#32;name:</span>"}
+{"id":"corpus/r48/user-us-35/tok1","output":"\n<h1 id=\"toc0\"><span>"}
+{"id":"corpus/r48/user-us-35/tok2","output":"</span></h1>\n"}
+{"id":"corpus/notes/bibc-38-heading-owner/tok1","output":"\n<h1 id=\"toc0\"><span>"}
+{"id":"corpus/prose/bq29-quote-then-heading/tok2","output":"\n<h1 id=\"toc0\"><span>"}
+{"id":"corpus/prose/br-27/tok0","output":"\n<h1 id=\"toc0\"><span>"}
+{"id":"corpus/prose/n38-17-before-heading/tok0","output":"\n<h1 id=\"toc0\"><span>"}
+{"id":"corpus/prose/n38-59-heading-then-text-blank/tok0","output":"\n<h1 id=\"toc0\"><span>"}
+{"id":"corpus/prose/toc74-clear-float/tok0","output":"\n<h1 id=\"toc0\"><span>"}
+{"id":"corpus/prose/ce-22/tok0","output":"<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\">"}
+{"id":"corpus/prose/ce-22/tok1","output":"\n</div></div></td></tr></table>\n\n"}
+{"id":"corpus/prose/toc74-clear-float/tok2","output":"<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\">"}
+{"id":"corpus/prose/toc74-clear-float/tok3","output":"\n\t<div style=\"margin-left: 1em;\"><a href=\"#toc0\">\u0000\u0000"}
+{"id":"corpus/prose/toc74-clear-float/tok4","output":"\u0000\u0000</a></div>"}
+{"id":"corpus/prose/toc74-clear-float/tok5","output":"\n</div></div></td></tr></table>\n\n"}
+{"id":"corpus/prose/x-anchor-across-containers/tok7","output":"\n\t<div style=\"margin-left: 1em;\"><a href=\"#toc1\">\u0000\u0000"}
+{"id":"corpus/prose/x-anchor-head-footnote/tok7","output":"<table style=\"margin:0; padding:0\"><tr><td style=\"margin:0; padding:0\"><div id=\"toc\"><div id=\"toc-action-bar\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.foldToc(event)\">Fold</a><a style=\"display: none\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.unfoldToc(event)\">Unfold</a></div><div class=\"title\">Table of Contents</div><div id=\"toc-list\">"}
+{"id":"corpus/r48/file-fi-32/tok0","output":"<ul>\n"}
+{"id":"corpus/r48/file-fi-32/tok1","output":"<li>"}
+{"id":"corpus/r48/file-fi-32/tok2","output":""}
+{"id":"corpus/r48/file-fi-32/tok3","output":"</li>\n</ul>"}
+{"id":"corpus/notes/bib49-bibliography-inside-list/tok4","output":"<br />"}
+{"id":"corpus/notes/bib49-bibliography-inside-list/tok5","output":"<li>"}
+{"id":"corpus/notes/bib49-bibliography-inside-list/tok6","output":"</li>\n"}
+{"id":"corpus/notes/bib49-bibliography-inside-list/tok7","output":"<ul>\n"}
+{"id":"corpus/notes/b29-unterminated/tok0","output":"<dl>\n"}
+{"id":"corpus/notes/b29-unterminated/tok1","output":"<dt>"}
+{"id":"corpus/notes/b29-unterminated/tok2","output":"</dt>\n"}
+{"id":"corpus/notes/b29-unterminated/tok3","output":"<dd>"}
+{"id":"corpus/notes/b29-unterminated/tok4","output":"</dd>\n"}
+{"id":"corpus/notes/b29-unterminated/tok5","output":"</dl>\n"}
+{"id":"corpus/notes/b40-two-blocks/tok6","output":"<dl>\n"}
+{"id":"corpus/notes/b40-two-blocks/tok7","output":"<dt>"}
+{"id":"corpus/r48/file-fi-31/tok0","output":"<tr>\n"}
+{"id":"corpus/r48/file-fi-31/tok1","output":"<td>"}
+{"id":"corpus/r48/file-fi-31/tok2","output":"</td>\n"}
+{"id":"corpus/r48/file-fi-31/tok3","output":"</tr>\n"}
+{"id":"corpus/r48/file-fi-31/tok4","output":"<table class=\"wiki-content-table\">\n"}
+{"id":"corpus/r48/file-fi-31/tok5","output":"</table>"}
+{"id":"corpus/notes/fn46-table-cell/tok5","output":"<tr>\n"}
+{"id":"corpus/notes/fn46-table-cell/tok6","output":"<td>"}
+{"id":"corpus/notes/b37-in-table/tok4","output":"<td>"}
+{"id":"corpus/notes/b37-in-table/tok5","output":"</td>\n"}
+{"id":"corpus/notes/b37-in-table/tok6","output":"<tr>\n"}
+{"id":"corpus/notes/b37-in-table/tok7","output":"</tr>\n"}
+{"id":"corpus/notes/b37-in-table/tok8","output":"<table>\n"}
+{"id":"corpus/notes/b37-in-table/tok9","output":"</table>"}
+{"id":"corpus/notes/bib50-item-inside-table/tok12","output":"<td>"}
+{"id":"corpus/notes/bib50-item-inside-table/tok13","output":"</td>\n"}
+{"id":"corpus/r48/linkx-x-concat-eref-join/tok0","output":"<a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-')\"></a>"}
+{"id":"corpus/r48/linkx-x-free-math-label/tok2","output":"<a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-')\"></a>"}
+{"id":"corpus/r48/linkx-x-eref-backward/tok1","output":"<a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-1')\">1</a>"}
+{"id":"corpus/r48/linkx-x-eref-duplicate/tok2","output":"<a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-2')\">2</a>"}
+{"id":"corpus/r48/linkx-x-eref-suppressed-math/tok0","output":"<a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-')\"></a>"}
+{"id":"corpus/r48/linkx-x-eref-two-labels/tok2","output":"<a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-1')\">1</a>"}
+{"id":"corpus/r48/linkx-x-eref-two-labels/tok3","output":"<a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-2')\">2</a>"}
+{"id":"corpus/r48/linkx-x-eref-nested-freelink/tok2","output":"<a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-')\"></a>"}
+{"id":"corpus/r48/user-us-38/tok0","output":"<a href=\"/x\">"}
+{"id":"corpus/r48/user-us-38/tok1","output":"</a>"}
+{"id":"corpus/notes/bibc-52-anchor-adjacency/tok5","output":"<a href=\"/A\">"}
+{"id":"corpus/notes/bibc-52-anchor-adjacency/tok6","output":"</a>"}
+{"id":"corpus/pooled/a01/tok0","output":"<a name=\"strawberry\"></a>"}
+{"id":"corpus/pooled/a02/tok0","output":"<a name=\"_lemon-lime.2%20\"></a>"}
+{"id":"corpus/pooled/a05/tok0","output":"[ <a href=\"javascript:;\">a</a>]"}
+{"id":"corpus/pooled/a06/tok0","output":"[ <a href=\"javascript:;\">a</a>  ]"}
+{"id":"corpus/r48/math-in-collapsible/tok1","output":"<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block</a></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">\u2013&nbsp;hide&nbsp;block</a></div><div class=\"collapsible-block-content\">"}
+{"id":"corpus/r48/math-in-collapsible/tok2","output":"</div></div></div>"}
+{"id":"corpus/notes/b36-in-collapsible/tok4","output":"<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">+&nbsp;show&nbsp;block</a></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">\u2013&nbsp;hide&nbsp;block</a></div><div class=\"collapsible-block-content\">"}
+{"id":"corpus/notes/b36-in-collapsible/tok5","output":"</div></div></div>"}
+{"id":"corpus/notes/fn39-collapsible-wrapped/tok5","output":"<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">open</a></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">\u2013&nbsp;hide&nbsp;block</a></div><div class=\"collapsible-block-content\">"}
+{"id":"corpus/notes/fn39-collapsible-wrapped/tok6","output":"</div></div></div>"}
+{"id":"corpus/notes/fni-47-note-in-collapsible/tok5","output":"<div class=\"collapsible-block\"><div class=\"collapsible-block-folded\"><a class=\"collapsible-block-link\" href=\"javascript:;\">open</a></div><div class=\"collapsible-block-unfolded\" style=\"display:none\"><div class=\"collapsible-block-unfolded-link\"><a class=\"collapsible-block-link\" href=\"javascript:;\">\u2013&nbsp;hide&nbsp;block</a></div><div class=\"collapsible-block-content\">"}
+{"id":"corpus/notes/fni-47-note-in-collapsible/tok6","output":"</div></div></div>"}
+{"id":"corpus/prose/x21-div-in-coll-in-tab/tok4","output":"<div id=\"wiki-tab-0-\">"}
+{"id":"corpus/prose/x21-div-in-coll-in-tab/tok5","output":"</div>"}
+{"id":"corpus/prose/x21-div-in-coll-in-tab/tok6","output":"<div id=\"wiki-tab-0-0\">"}
+{"id":"corpus/prose/x21-div-in-coll-in-tab/tok7","output":"<script type=\"text/javascript\" src=\"/common--javascript/yahooui/element-beta-min.js\"></script>\n<script type=\"text/javascript\" src=\"/common--javascript/yahooui/tabview-min.js\"></script><div id=\"wiki-tabview-0\" class=\"yui-navset\"><ul class=\"yui-nav\"><li class=\"selected\"><a href=\"javascript:;\"><em>title=A</em></a></li></ul><div class=\"yui-content\">"}
+{"id":"corpus/prose/x21-div-in-coll-in-tab/tok8","output":"</div></div><script type=\"text/javascript\">\n(function(){\n\tvar tabView0 = new YAHOO.widget.TabView('wiki-tabview-0');\n})();\n</script>"}
+{"id":"corpus/prose/x29-footnote-in-tab/tok5","output":"<div id=\"wiki-tab-0-\">"}
+{"id":"corpus/prose/x29-footnote-in-tab/tok6","output":"</div>"}
+{"id":"corpus/prose/x29-footnote-in-tab/tok7","output":"<div id=\"wiki-tab-0-0\">"}
+{"id":"corpus/pooled/bt-01/tok0","output":"<a class=\"wiki-standalone-button\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\" >edit</a>"}
+{"id":"corpus/pooled/bt-02/tok0","output":"<a class=\"wiki-standalone-button\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\" >Edit</a>"}
+{"id":"corpus/pooled/bt-03/tok0","output":"<a class=\"c\" style=\"s\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\" >Edit</a>"}
+{"id":"corpus/pooled/bt-05/tok0","output":"<div class=\"error-block\"><em>edit-button</em> is not a valid button type</div>"}
+{"id":"corpus/pooled/bt-06/tok0","output":"<a class=\"wiki-standalone-button\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\" >edit</a>"}
+{"id":"corpus/pooled/bt-07/tok0","output":"<div class=\"error-block\"><em>edit-type</em> is not a valid button type</div>"}
+{"id":"corpus/pooled/bt-08/tok0","output":"<a class=\"wiki-standalone-button\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\" >b</a>"}
+{"id":"corpus/pooled/bt-13/tok0","output":"<a class=\"c\" href=\"javascript:;\" onclick=\"WIKIDOT.page.listeners.editClick(event)\" >a b</a>"}
+{"id":"corpus/pooled/adj-before-iframe/tok0","output":"<iframe src=\"https://example.com\" align=\"\" frameborder=\"\" height=\"\" scrolling=\"\" width=\"\" class=\"\" style=\"\"></iframe>"}
+{"id":"corpus/pooled/body-iframe/tok0","output":"<iframe src=\"https://example.com/\" align=\"\" frameborder=\"\" height=\"\" scrolling=\"\" width=\"\" class=\"\" style=\"\"></iframe>"}
+{"id":"corpus/pooled/d55-iframe-then-date/tok0","output":"<iframe src=\"https://example.com/a\" align=\"\" frameborder=\"\" height=\"\" scrolling=\"\" width=\"\" class=\"\" style=\"\"></iframe>"}
+{"id":"corpus/pooled/if-adj-anchor-around/tok0","output":"<iframe src=\"http://example.org/embed\" align=\"\" frameborder=\"\" height=\"\" scrolling=\"\" width=\"1\" class=\"\" style=\"\"></iframe>"}
+{"id":"corpus/pooled/if-adj-comment-before/tok0","output":"<iframe src=\"http://example.com/\" align=\"\" frameborder=\"\" height=\"\" scrolling=\"\" width=\"\" class=\"\" style=\"\"></iframe>"}
+{"id":"corpus/pooled/if-adj-freelink-tail/tok0","output":"<iframe src=\"https://example.com/a]][[https://example.com/b\" align=\"\" frameborder=\"\" height=\"\" scrolling=\"\" width=\"\" class=\"\" style=\"\"></iframe>"}
+{"id":"corpus/pooled/if-adj-greedy-iftags-failing/tok0","output":"<iframe src=\"http://e.com/]][[/div\" align=\"\" frameborder=\"\" height=\"\" scrolling=\"\" width=\"\" class=\"\" style=\"\"></iframe>"}
+{"id":"corpus/pooled/if-adj-iftags-seam-url/tok0","output":"<iframe src=\"http://a.example/bc\" align=\"\" frameborder=\"\" height=\"\" scrolling=\"\" width=\"\" class=\"\" style=\"\"></iframe>"}
+{"id":"corpus/r48/math-after-date/tok0","output":"<span class=\"odate time_1216153821\">15 Jul 2008 20:30</span>"}
+{"id":"corpus/pooled/adj-before-date/tok0","output":"<span class=\"odate time_0\">01 Jan 1970 00:00</span>"}
+{"id":"corpus/pooled/d01-basic/tok0","output":"<span class=\"odate time_1216153821\">15 Jul 2008 20:30</span>"}
+{"id":"corpus/pooled/d02-basic-format/tok0","output":"<span class=\"odate time_1216153821 format_%25Y\">15 Jul 2008 20:30</span>"}
+{"id":"corpus/pooled/d03-leading-zeros/tok0","output":"<span class=\"odate time_1216153821 format_%25Y\">15 Jul 2008 20:30</span>"}
+{"id":"corpus/pooled/d05-one/tok0","output":"<span class=\"odate time_1\">01 Jan 1970 00:00</span>"}
+{"id":"corpus/pooled/d06-negative/tok0","output":"<span class=\"odate time_-1000\">31 Dec 1969 23:43</span>"}
+{"id":"corpus/pooled/d07-negative-one/tok0","output":"<span class=\"odate time_-1\">31 Dec 1969 23:59</span>"}
+{"id":"corpus/r48/file-fi-01/tok0","output":"<a href=\"/local--files//a.txt\">a.txt</a>"}
+{"id":"corpus/r48/file-fi-02/tok0","output":"<a href=\"/local--files//a.txt\">Label</a>"}
+{"id":"corpus/r48/file-fi-03/tok0","output":"<a href=\"/local--files//a.txt|\">a.txt|</a>"}
+{"id":"corpus/r48/file-fi-08/tok0","output":"<a href=\"/local--files//a.txt\">a|b</a>"}
+{"id":"corpus/r48/file-fi-12/tok1","output":"<a href=\"/local--files//b.txt\">L</a>"}
+{"id":"corpus/r48/file-fi-14/tok2","output":"<a href=\"/local--files//a.txt\">L</a>"}
+{"id":"corpus/r48/file-fi-16/tok0","output":"<a href=\"/local--files//my%20file.txt\">my file.txt</a>"}
+{"id":"corpus/r48/file-fi-17/tok0","output":"<a href=\"/local--files//a.txt\">Label With Spaces</a>"}
+{"id":"corpus/notes/b50-size-inline/tok4","output":"<span style=\"font-size:150%;\">"}
+{"id":"corpus/notes/b50-size-inline/tok5","output":"</span>"}
+{"id":"corpus/notes/bib34-inline-size-span/tok10","output":"<span style=\"font-size:150%;\">"}
+{"id":"corpus/notes/bib34-inline-size-span/tok11","output":"</span>"}
+{"id":"corpus/prose/sz70-size-crosses-div/tok0","output":"<span style=\"font-size:larger;\">"}
+{"id":"corpus/prose/sz70-size-crosses-div/tok1","output":"</span>"}
+{"id":"corpus/prose/x01-span-size-cross/tok2","output":"<span style=\"font-size:12px;\">"}
+{"id":"corpus/prose/x09-size-nested-same/tok2","output":"<span style=\"font-size:14px;\">"}
+{"id":"corpus/r48/gallery-ga-24/tok0","output":"<span>"}
+{"id":"corpus/r48/gallery-ga-24/tok1","output":"</span>"}
+{"id":"corpus/notes/b49-span-inline/tok4","output":"<span>"}
+{"id":"corpus/notes/b49-span-inline/tok5","output":"</span>"}
+{"id":"corpus/notes/bib34-inline-size-span/tok8","output":"<span>"}
+{"id":"corpus/notes/bib34-inline-size-span/tok9","output":"</span>"}
+{"id":"corpus/prose/pg55-score-class-span-alone/tok0","output":"<span class=\"score\">"}
+{"id":"corpus/prose/x31-span-in-footnote/tok5","output":"<span>"}
+{"id":"corpus/r48/math-in-div/tok1","output":"<div class=\"box\">"}
+{"id":"corpus/r48/math-in-div/tok2","output":"</div>"}
+{"id":"corpus/r48/user-us-x16/tok1","output":"<div>"}
+{"id":"corpus/r48/user-us-x16/tok2","output":"</div>"}
+{"id":"corpus/notes/b35-in-div/tok4","output":"<div>"}
+{"id":"corpus/notes/b35-in-div/tok5","output":"</div>"}
+{"id":"corpus/notes/bibc-53-div-adjacency/tok5","output":"<div class=\"x\">"}
+{"id":"corpus/notes/bibc-53-div-adjacency/tok6","output":"</div>"}
+{"id":"corpus/r48/linkx-x-concat-code-inside/tok0","output":"\n<div class=\"code\">\n<pre><code>a\\\nb</code></pre></div>\n\n"}
+{"id":"corpus/r48/linkx-x-concat-code-before-open/tok0","output":"\n<div class=\"code\">\n<pre><code>x</code></pre></div>\n\n"}
+{"id":"corpus/r48/linkx-x-free-inside-code/tok0","output":"\n<div class=\"code\">\n<pre><code>[[[muse-probe-r2link-free-exists]]]</code></pre></div>\n\n"}
+{"id":"corpus/r48/linkx-x-eref-inside-code/tok0","output":"\n<div class=\"code\">\n<pre><code>[[eref E]]</code></pre></div>\n\n"}
+{"id":"corpus/r48/user-us-29/tok0","output":"\n<div class=\"code\">\n<pre><code>[[user a]]</code></pre></div>\n\n"}
+{"id":"corpus/r48/user-p20/tok0","output":"\n<div class=\"code\">\n<pre><code>[[user michal-frackowiak]]</code></pre></div>\n\n"}
+{"id":"corpus/r48/file-fi-15/tok0","output":"\n<div class=\"code\">\n<pre><code>[[file a.txt]]</code></pre></div>\n\n"}
+{"id":"corpus/notes/bibc-36-code-owner/tok0","output":"\n<div class=\"code\">\n<pre><code>((bibcite alpha))</code></pre></div>\n\n"}
+{"id":"corpus/r48/file-fi-38/tok0","output":"<div class=\"error-block\">Sorry, no match for the embedded content.</div>"}
+{"id":"corpus/pooled/eb-01/tok0","output":"<div class=\"error-block\">Sorry, no match for the embedded content.</div>"}
+{"id":"corpus/pooled/eb-06/tok0","output":"<div class=\"error-block\">Sorry, no match for the embedded content.</div>"}
+{"id":"corpus/pooled/eb-07/tok0","output":"<div class=\"error-block\">Sorry, no match for the embedded content.</div>"}
+{"id":"corpus/pooled/eb-08/tok0","output":"<div class=\"error-block\">Sorry, no match for the embedded content.</div>"}
+{"id":"corpus/pooled/eb-11/tok0","output":"<div class=\"error-block\">Sorry, no match for the embedded content.</div>"}
+{"id":"corpus/pooled/eb-12/tok0","output":"<div class=\"error-block\">Sorry, no match for the embedded content.</div>"}
+{"id":"corpus/pooled/eb-14/tok1","output":"<div class=\"error-block\">Sorry, no match for the embedded content.</div>"}
+{"id":"corpus/r48/freelink-exist-target-labeled/tok0","output":"<a href=\"/muse-probe-r2link-free-exists\">shown</a>"}
+{"id":"corpus/r48/freelink-exist2-target-labeled/tok0","output":"<a href=\"/muse-probe-r2link-free-exists2\">Second</a>"}
+{"id":"corpus/r48/freelink-exist-target-bare/tok0","output":"<a href=\"/muse-probe-r2link-free-exists\">muse-probe-r2link-free-exists</a>"}
+{"id":"corpus/r48/freelink-exist2-empty-label/tok0","output":"<a href=\"/muse-probe-r2link-free-exists2\">muse-probe-r2link-free-exists2</a>"}
+{"id":"corpus/r48/freelink-new-target-labeled/tok0","output":"<a class=\"newpage\" href=\"/missing-page\">Wanted</a>"}
+{"id":"corpus/r48/freelink-new-target-bare/tok0","output":"<a class=\"newpage\" href=\"/missing-page\">missing-page</a>"}
+{"id":"corpus/r48/freelink-new-target-empty-label/tok0","output":"<a class=\"newpage\" href=\"/missing-page\">missing-page</a>"}
+{"id":"corpus/r48/freelink-exist-target-anchor/tok0","output":"<a href=\"/muse-probe-r2link-free-exists#sec\">shown</a>"}
+{"id":"corpus/r48/module-mod-basic/tok0","output":"\u00femodule \"backlinks\"\u00fe"}
+{"id":"corpus/r48/module-mod-known-uppercase/tok0","output":"\u00femodule \"BACKLINKS\"\u00fe"}
+{"id":"corpus/r48/module-mod-known-mixed/tok0","output":"\u00femodule \"BackLinks\"\u00fe"}
+{"id":"corpus/r48/module-mod-unknown/tok0","output":"<div class=\"error-block\">[[module <em>UnknownOracleModule</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>"}
+{"id":"corpus/r48/module-mod-unknown-mixed/tok0","output":"<div class=\"error-block\">[[module <em>Unknown_Oracle-2</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>"}
+{"id":"corpus/r48/module-mod-name-leading-digit/tok0","output":"<div class=\"error-block\">[[module <em>123abc</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>"}
+{"id":"corpus/r48/module-mod-name-leading-underscore/tok0","output":"<div class=\"error-block\">[[module <em>_foo</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>"}
+{"id":"corpus/r48/module-mod-name-leading-hyphen/tok0","output":"<div class=\"error-block\">[[module <em>-foo</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>"}
+{"id":"corpus/r48/module-mod-nested-two-openers/tok1","output":"\u00femodule \"css\" +module_body%3D%22%25FF0%25FF%22 \u00fe"}
+{"id":"corpus/r48/module-mod-nested-unknown-in-body/tok1","output":"<div class=\"error-block\">[[module <em>UnknownOracleModule</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>"}
+{"id":"corpus/r48/module-mod-two-adjacent-body/tok1","output":"\u00femodule \"css\"\u00fe"}
+{"id":"corpus/r48/module654-m654-case-opener-upper/tok0","output":"\u00femodule \"CSS\" +module_body%3D%22body%22 \u00fe"}
+{"id":"corpus/r48/module654-m654-nested-module/tok1","output":"\u00femodule \"CSS\"\u00fe"}
+{"id":"corpus/r48/module654-m654-module-then-654/tok1","output":"\u00femodule \"Rate\"\u00fe"}
+{"id":"corpus/r48/modulex-x-654-body-module/tok1","output":"<div class=\"error-block\">[[module <em>UnknownModuleX</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>"}
+{"id":"corpus/r48/modulex-x-654-body-module-attr/tok1","output":"<div class=\"error-block\">[[module <em>UnknownModuleX</em>]] No such module, please <a href=\"https://www.wikidot.com/doc:modules\" target=\"_blank\">check available modules</a> and fix this page.</div>"}
+{"id":"corpus/r48/linkx-x-concat-math-inside/tok0","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>"}
+{"id":"corpus/r48/linkx-x-free-math-body/tok0","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>"}
+{"id":"corpus/r48/linkx-x-eref-backward/tok0","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>"}
+{"id":"corpus/r48/linkx-x-eref-duplicate/tok0","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>"}
+{"id":"corpus/r48/linkx-x-eref-duplicate/tok1","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>"}
+{"id":"corpus/r48/linkx-x-eref-two-labels/tok0","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>"}
+{"id":"corpus/r48/linkx-x-eref-two-labels/tok1","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>"}
+{"id":"corpus/r48/math-basic/tok0","output":"<div class=\"error-block\">The equation has not been processed correctly. Most prabably it has syntax error(s).</div>"}
+{"id":"corpus/r48/image-i37-01-plain/tok0","output":"<img src=\"/local--files//photo.png\" alt=\"photo.png\" class=\"image\" />"}
+{"id":"corpus/r48/image-i37-02-align-center/tok0","output":"<div class=\"image-container aligncenter\"><img src=\"/local--files//photo.png\" alt=\"photo.png\" class=\"image\" /></div>"}
+{"id":"corpus/r48/image-i37-03-align-left/tok0","output":"<div class=\"image-container alignleft\"><img src=\"/local--files//photo.png\" alt=\"photo.png\" class=\"image\" /></div>"}
+{"id":"corpus/r48/image-i37-04-align-right/tok0","output":"<div class=\"image-container alignright\"><img src=\"/local--files//photo.png\" alt=\"photo.png\" class=\"image\" /></div>"}
+{"id":"corpus/r48/image-i37-05-float-left/tok0","output":"<div class=\"image-container floatleft\"><img src=\"/local--files//photo.png\" alt=\"photo.png\" class=\"image\" /></div>"}
+{"id":"corpus/r48/image-i37-06-float-center/tok0","output":"<div class=\"image-container\"><img src=\"/local--files//photo.png\" alt=\"photo.png\" class=\"image\" /></div>"}
+{"id":"corpus/r48/image-i37-07-float-right/tok0","output":"<div class=\"image-container floatright\"><img src=\"/local--files//photo.png\" alt=\"photo.png\" class=\"image\" /></div>"}
+{"id":"corpus/r48/image-i37-08-uppercase-name/tok0","output":"<img src=\"https://example.com/a.png\" alt=\"a.png\" class=\"image\" />"}
+{"id":"corpus/r48/gallery-ga-01/tok0","output":"<div class=\"error-block\">Error selecting page.</div>"}
+{"id":"corpus/r48/gallery-ga-02/tok0","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//a.png\" ><img src=\"/local--resized-images//a.png/thumbnail.jpg\" alt=\"\"/></a></td></tr></table></div></div>"}
+{"id":"corpus/r48/gallery-ga-03/tok0","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//a.png\" ><img src=\"/local--resized-images//a.png/thumbnail.jpg\" alt=\"\"/></a></td></tr></table></div><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//b.png\" ><img src=\"/local--resized-images//b.png/thumbnail.jpg\" alt=\"\"/></a></td></tr></table></div></div>"}
+{"id":"corpus/r48/gallery-ga-04/tok0","output":"<div class=\"gallery-box\"><div class=\"gallery-item small\"><table><tr><td><a href=\"/local--files//a.png\" ><img src=\"/local--resized-images//a.png/small.jpg\" alt=\"\"/></a></td></tr></table></div></div>"}
+{"id":"corpus/r48/gallery-ga-05/tok0","output":"<div class=\"error-block\">Error selecting page.</div>"}
+{"id":"corpus/r48/gallery-ga-09/tok0","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//a\" ><img src=\"/local--resized-images//a/thumbnail.jpg\" alt=\"\"/></a></td></tr></table></div></div>"}
+{"id":"corpus/r48/gallery-ga-12/tok0","output":"<div class=\"gallery-box\"><div class=\"gallery-item small\"><table><tr><td><a href=\"/local--files//a\" ><img src=\"/local--resized-images//a/small.jpg\" alt=\"\"/></a></td></tr></table></div></div>"}
+{"id":"corpus/r48/gallery-ga-19/tok0","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//double\" ><img src=\"/local--resized-images//double/thumbnail.jpg\" alt=\"\"/></a></td></tr></table></div></div>"}
+{"id":"corpus/r48/user-us-01/tok0","output":"<span class=\"printuser\"><a href=\"https://www.wikidot.com/user:info/john\" onclick=\"WIKIDOT.page.listeners.userInfo(2238774); return false;\">john</a></span>","stub_mediated":true,"stubs":["user"]}
+{"id":"corpus/r48/user-us-02/tok0","output":"<span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/john\" onclick=\"WIKIDOT.page.listeners.userInfo(2238774); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=2238774&amp;amp;size=small&amp;amp;timestamp=0\" alt=\"john\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=2238774)\" /></a><a href=\"https://www.wikidot.com/user:info/john\" onclick=\"WIKIDOT.page.listeners.userInfo(2238774); return false;\">john</a></span>","stub_mediated":true,"stubs":["user"]}
+{"id":"corpus/r48/user-us-03/tok0","output":"<span class=\"printuser\"><a href=\"https://www.wikidot.com/user:info/john-doe\" onclick=\"WIKIDOT.page.listeners.userInfo(6214349); return false;\">john-doe</a></span>","stub_mediated":true,"stubs":["user"]}
+{"id":"corpus/r48/user-us-04/tok0","output":"<span class=\"printuser\"><a href=\"https://www.wikidot.com/user:info/bob\" onclick=\"WIKIDOT.page.listeners.userInfo(5383456); return false;\">bob</a></span>","stub_mediated":true,"stubs":["user"]}
+{"id":"corpus/r48/user-us-06/tok0","output":"<span class=\"printuser avatarhover\"><a href=\"https://www.wikidot.com/user:info/bob\" onclick=\"WIKIDOT.page.listeners.userInfo(5383456); return false;\"><img class=\"small\" src=\"https://www.wikidot.com/avatar.php?userid=5383456&amp;amp;size=small&amp;amp;timestamp=0\" alt=\"bob\" style=\"background-image:url(https://www.wikidot.com/userkarma.php?u=5383456)\" /></a><a href=\"https://www.wikidot.com/user:info/bob\" onclick=\"WIKIDOT.page.listeners.userInfo(5383456); return false;\">bob</a></span>","stub_mediated":true,"stubs":["user"]}
+{"id":"corpus/r48/user-us-09/tok0","output":"<span class=\"printuser\"><a href=\"https://www.wikidot.com/user:info/a\" onclick=\"WIKIDOT.page.listeners.userInfo(1972259); return false;\">a</a></span>","stub_mediated":true,"stubs":["user"]}
+{"id":"corpus/r48/user-us-11/tok0","output":"<span class=\"printuser\"><a href=\"https://www.wikidot.com/user:info/double\" onclick=\"WIKIDOT.page.listeners.userInfo(4250447); return false;\">double</a></span>","stub_mediated":true,"stubs":["user"]}
+{"id":"corpus/r48/user-us-12/tok0","output":"<span class=\"printuser\"><a href=\"https://www.wikidot.com/user:info/a-b\" onclick=\"WIKIDOT.page.listeners.userInfo(2015294); return false;\">a-b</a></span>","stub_mediated":true,"stubs":["user"]}
+{"id":"corpus/extra/html-plain/tok0","output":"<iframe src=\"https://example.com/\" allowtransparency=\"true\" frameborder=\"0\" class=\"html-block-iframe\"></iframe>"}
+{"id":"corpus/extra/html-class-style/tok0","output":"<iframe src=\"https://example.com/\" allowtransparency=\"true\" frameborder=\"0\" style=\"width: 320px\" class=\"extra html-block-iframe\"></iframe>"}
+{"id":"synthetic/delimiter-ff","output":{"$bytes":[255]}}
+{"id":"synthetic/delimiter-text","output":"plain"}
+{"id":"synthetic/tighten-empty","output":""}
+{"id":"synthetic/user-missing","output":"<span class=\"printuser\"><a href=\"https://www.wikidot.com/user:info/no-such-user-g5\" onclick=\"WIKIDOT.page.listeners.userInfo(8860033); return false;\">no-such-user-g5</a></span>","stub_mediated":true,"stubs":["user"]}
+{"id":"synthetic/user-empty","output":"<span class=\"error-inline\"><em></em> does not match any existing user name</span>","stub_mediated":true,"stubs":["user"]}
+{"id":"synthetic/footnoteitem-leading-empty-raw","output":"<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>."}
+{"id":"synthetic/math-invalid-env","output":"<div class=\"error-block\">Unsupported math environment \"foobar\"</div>"}
+{"id":"synthetic/code-type-php","output":"\n<div class=\"code\">\n<div class=\"hl-main\">\n<pre><span class=\"hl-code\">$x = 1;</span></pre></div>\n</div>\n\n"}
+{"id":"synthetic/footnoteitem-parabreak","output":"\n"}
+{"id":"synthetic/footnoteblock-empty-start","output":""}
+{"id":"synthetic/footnoteblock-empty-end","output":""}
+{"id":"synthetic/bibcite-missing","output":"<span class=\"error-inline\">Bibliography item <em>missing</em> not found.</span>"}
+{"id":"synthetic/bibcite-defined","output":"<a href=\"javascript:;\" class=\"bibcite\" id=\"bibcite-3-53690a\" onclick=\"WIKIDOT.page.utils.scrollToReference('bibitem-3')\">3</a>"}
+{"id":"synthetic/equationreference-missing","output":"<a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-')\"></a>"}
+{"id":"synthetic/equationreference-defined","output":"<a class=\"eref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('equation-4')\">4</a>"}
+{"id":"synthetic/file-pagename-space","output":"<a href=\"/local--files/case-page/my%20file.txt\">my file.txt</a>"}
+{"id":"synthetic/file-page-qualified","output":"<a href=\"/local--files/other-page/a%20file.txt\">label</a>"}
+{"id":"synthetic/image-local-pagename","output":"<img src=\"/local--files/case-page/photo.png\" alt=\"photo.png\" class=\"image\" />"}
+{"id":"synthetic/freelink-title-target","output":"<a href=\"/muse-probe-agy-hunt-title-target\">Hunt's &quot;Title&quot; &amp; &lt;Test&gt;</a>"}
+{"id":"synthetic/image-first-pagename","output":"","stub_mediated":true,"stubs":["file:first"]}
+{"id":"synthetic/gallery-local-pagename","output":"<div class=\"error-block\">Sorry, we couldn't find any images attached to this page.</div>","stub_mediated":true,"stubs":["file:gallery"]}
+{"id":"synthetic/module-runtime-listusers","output":""}
+{"id":"synthetic/module654-runtime-listusers","output":""}

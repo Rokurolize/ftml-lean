@@ -1,0 +1,632 @@
+{
+  "perRule": {
+    "Anchor": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Bibcite": {
+      "bothMatch": 10,
+      "cases": 10,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 10,
+      "phpSpecMatch": 10,
+      "phpTokenAwareMatch": 10,
+      "stubMediated": 0
+    },
+    "Bibitem": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Bibliography": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Blockquote": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Break": {
+      "bothMatch": 1,
+      "cases": 1,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 1,
+      "phpSpecMatch": 1,
+      "phpTokenAwareMatch": 1,
+      "stubMediated": 0
+    },
+    "Button": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Center": {
+      "bothMatch": 6,
+      "cases": 6,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 6,
+      "phpSpecMatch": 6,
+      "phpTokenAwareMatch": 6,
+      "stubMediated": 0
+    },
+    "Clearfloat": {
+      "bothMatch": 3,
+      "cases": 3,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 3,
+      "phpSpecMatch": 3,
+      "phpTokenAwareMatch": 3,
+      "stubMediated": 0
+    },
+    "Code": {
+      "bothMatch": 8,
+      "cases": 9,
+      "errors": 0,
+      "mismatch": 1,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Collapsible": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Colortext": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Comment": {
+      "bothMatch": 1,
+      "cases": 1,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 1,
+      "phpSpecMatch": 1,
+      "phpTokenAwareMatch": 1,
+      "stubMediated": 0
+    },
+    "Date": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Deflist": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Delimiter": {
+      "bothMatch": 2,
+      "cases": 2,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 2,
+      "phpSpecMatch": 2,
+      "phpTokenAwareMatch": 2,
+      "stubMediated": 0
+    },
+    "Div": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Divalign": {
+      "bothMatch": 5,
+      "cases": 5,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 5,
+      "phpSpecMatch": 5,
+      "phpTokenAwareMatch": 5,
+      "stubMediated": 0
+    },
+    "Email": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Embed": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Emphasis": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Equationreference": {
+      "bothMatch": 10,
+      "cases": 10,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 10,
+      "phpSpecMatch": 10,
+      "phpTokenAwareMatch": 10,
+      "stubMediated": 0
+    },
+    "File": {
+      "bothMatch": 10,
+      "cases": 10,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 10,
+      "phpSpecMatch": 10,
+      "phpTokenAwareMatch": 10,
+      "stubMediated": 0
+    },
+    "Footnote": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Footnoteblock": {
+      "bothMatch": 10,
+      "cases": 10,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 10,
+      "phpSpecMatch": 10,
+      "phpTokenAwareMatch": 10,
+      "stubMediated": 0
+    },
+    "Footnoteitem": {
+      "bothMatch": 9,
+      "cases": 10,
+      "errors": 0,
+      "mismatch": 1,
+      "phpMirrorMatch": 9,
+      "phpSpecMatch": 9,
+      "phpTokenAwareMatch": 10,
+      "stubMediated": 0
+    },
+    "Form": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Freelink": {
+      "bothMatch": 8,
+      "cases": 9,
+      "errors": 0,
+      "mismatch": 1,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Gallery": {
+      "bothMatch": 8,
+      "cases": 9,
+      "errors": 0,
+      "mismatch": 1,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 1
+    },
+    "Heading": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Horiz": {
+      "bothMatch": 1,
+      "cases": 1,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 1,
+      "phpSpecMatch": 1,
+      "phpTokenAwareMatch": 1,
+      "stubMediated": 0
+    },
+    "Html": {
+      "bothMatch": 2,
+      "cases": 2,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 2,
+      "phpSpecMatch": 2,
+      "phpTokenAwareMatch": 2,
+      "stubMediated": 0
+    },
+    "Iframe": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Image": {
+      "bothMatch": 10,
+      "cases": 10,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 10,
+      "phpSpecMatch": 10,
+      "phpTokenAwareMatch": 10,
+      "stubMediated": 1
+    },
+    "Interwiki": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "List": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Math": {
+      "bothMatch": 9,
+      "cases": 9,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 9,
+      "phpSpecMatch": 9,
+      "phpTokenAwareMatch": 9,
+      "stubMediated": 0
+    },
+    "Mathinline": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Module": {
+      "bothMatch": 9,
+      "cases": 9,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 9,
+      "phpSpecMatch": 9,
+      "phpTokenAwareMatch": 9,
+      "stubMediated": 0
+    },
+    "Module654": {
+      "bothMatch": 9,
+      "cases": 9,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 9,
+      "phpSpecMatch": 9,
+      "phpTokenAwareMatch": 9,
+      "stubMediated": 0
+    },
+    "Newline": {
+      "bothMatch": 1,
+      "cases": 1,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 1,
+      "phpSpecMatch": 1,
+      "phpTokenAwareMatch": 1,
+      "stubMediated": 0
+    },
+    "Note": {
+      "bothMatch": 2,
+      "cases": 2,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 2,
+      "phpSpecMatch": 2,
+      "phpTokenAwareMatch": 2,
+      "stubMediated": 0
+    },
+    "Paragraph": {
+      "bothMatch": 2,
+      "cases": 2,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 2,
+      "phpSpecMatch": 2,
+      "phpTokenAwareMatch": 2,
+      "stubMediated": 0
+    },
+    "Raw": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Rawold": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Separator": {
+      "bothMatch": 1,
+      "cases": 1,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 1,
+      "phpSpecMatch": 1,
+      "phpTokenAwareMatch": 1,
+      "stubMediated": 0
+    },
+    "Size": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Span": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Strikethrough": {
+      "bothMatch": 4,
+      "cases": 4,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 4,
+      "phpSpecMatch": 4,
+      "phpTokenAwareMatch": 4,
+      "stubMediated": 0
+    },
+    "Strong": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Subscript": {
+      "bothMatch": 2,
+      "cases": 2,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 2,
+      "phpSpecMatch": 2,
+      "phpTokenAwareMatch": 2,
+      "stubMediated": 0
+    },
+    "Superscript": {
+      "bothMatch": 2,
+      "cases": 2,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 2,
+      "phpSpecMatch": 2,
+      "phpTokenAwareMatch": 2,
+      "stubMediated": 0
+    },
+    "Table": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Tableadv": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Tabview": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "Tighten": {
+      "bothMatch": 1,
+      "cases": 1,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 1,
+      "phpSpecMatch": 1,
+      "phpTokenAwareMatch": 1,
+      "stubMediated": 0
+    },
+    "Toc": {
+      "bothMatch": 5,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 3,
+      "phpMirrorMatch": 5,
+      "phpSpecMatch": 5,
+      "phpTokenAwareMatch": 5,
+      "stubMediated": 0
+    },
+    "Tt": {
+      "bothMatch": 6,
+      "cases": 6,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 6,
+      "phpSpecMatch": 6,
+      "phpTokenAwareMatch": 6,
+      "stubMediated": 0
+    },
+    "Typography": {
+      "bothMatch": 11,
+      "cases": 11,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 11,
+      "phpSpecMatch": 11,
+      "phpTokenAwareMatch": 11,
+      "stubMediated": 0
+    },
+    "Underline": {
+      "bothMatch": 4,
+      "cases": 4,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 4,
+      "phpSpecMatch": 4,
+      "phpTokenAwareMatch": 4,
+      "stubMediated": 0
+    },
+    "Url": {
+      "bothMatch": 8,
+      "cases": 8,
+      "errors": 0,
+      "mismatch": 0,
+      "phpMirrorMatch": 8,
+      "phpSpecMatch": 8,
+      "phpTokenAwareMatch": 8,
+      "stubMediated": 0
+    },
+    "User": {
+      "bothMatch": 1,
+      "cases": 10,
+      "errors": 0,
+      "mismatch": 9,
+      "phpMirrorMatch": 1,
+      "phpSpecMatch": 1,
+      "phpTokenAwareMatch": 1,
+      "stubMediated": 10
+    }
+  },
+  "totalCases": 421,
+  "totals": {
+    "bothMatch": 405,
+    "cases": 421,
+    "errors": 0,
+    "mismatch": 16,
+    "stubMediated": 12
+  }
+}
