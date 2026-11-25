@@ -237,6 +237,7 @@ theorem gate_append_cancel_left {a b c : List Nat} (h : a ++ b = a ++ c) : b = c
 theorem moduleTryCands_single_code_reemit
     (src name attrRaw rest bodyRaw : List Nat) (toks : List TokenEntry)
     (hTail : moduleTail rest = some (bodyRaw, []))
+    (hNoHtml : (bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0) = false)
     (hDef : countModuleOpeners none src (src.length + 1) ≤ 1)
     (hGate : bodyHasCodeToken bodyRaw toks 0 = true) :
     moduleTryCands src name toks [(attrRaw, rest)] =
@@ -244,22 +245,24 @@ theorem moduleTryCands_single_code_reemit
               (bodyRaw ++ src.drop (src.length - 11)),
             [], (claimModule "Module" name (trimBytes attrRaw) (trimBytes bodyRaw) toks).2) := by
   have hnot : ¬ countModuleOpeners none src (src.length + 1) > 1 := by omega
-  simp [moduleTryCands, hTail, hnot, gatePrefix, hGate, List.take_length, List.append_assoc]
+  simp [moduleTryCands, hTail, hNoHtml, hnot, gatePrefix, hGate, List.take_length, List.append_assoc]
 
 theorem moduleTryCands_single_no_code_no_reemit
     (src name attrRaw rest bodyRaw : List Nat) (toks : List TokenEntry)
     (hTail : moduleTail rest = some (bodyRaw, []))
+    (hNoHtml : (bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0) = false)
     (hDef : countModuleOpeners none src (src.length + 1) ≤ 1)
     (hGate : bodyHasCodeToken bodyRaw toks 0 = false) :
     moduleTryCands src name toks [(attrRaw, rest)] =
       some (gatePrefix name (trimBytes attrRaw) (trimBytes bodyRaw) toks,
             [], (claimModule "Module" name (trimBytes attrRaw) (trimBytes bodyRaw) toks).2) := by
   have hnot : ¬ countModuleOpeners none src (src.length + 1) > 1 := by omega
-  simp [moduleTryCands, hTail, hnot, gatePrefix, hGate, List.take_length, List.append_assoc]
+  simp [moduleTryCands, hTail, hNoHtml, hnot, gatePrefix, hGate, List.take_length, List.append_assoc]
 
 theorem moduleTryCands_single_code_reemit_iff
     (src name attrRaw rest bodyRaw : List Nat) (toks : List TokenEntry)
     (hTail : moduleTail rest = some (bodyRaw, []))
+    (hNoHtml : (bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0) = false)
     (hDef : countModuleOpeners none src (src.length + 1) ≤ 1)
     (hsrc : 11 ≤ src.length) :
     moduleTryCands src name toks [(attrRaw, rest)] =
@@ -278,7 +281,7 @@ theorem moduleTryCands_single_code_reemit_iff
           gatePrefix name (trimBytes attrRaw) (trimBytes bodyRaw) toks ++ ([] : List Nat) =
           gatePrefix name (trimBytes attrRaw) (trimBytes bodyRaw) toks ++
             (bodyRaw ++ src.drop (src.length - 11)) := by
-        simpa [moduleTryCands, hTail, hnot, gatePrefix, hgf, List.take_length] using hEq
+        simpa [moduleTryCands, hTail, hNoHtml, hnot, gatePrefix, hgf, List.take_length] using hEq
       have hnil : ([] : List Nat) = bodyRaw ++ src.drop (src.length - 11) :=
         gate_append_cancel_left hprefEq
       have hlen := congrArg List.length hnil
@@ -287,7 +290,7 @@ theorem moduleTryCands_single_code_reemit_iff
         omega
       simp [List.length_append, hcloser] at hlen
   · intro hg
-    exact moduleTryCands_single_code_reemit src name attrRaw rest bodyRaw toks hTail hDef hg
+    exact moduleTryCands_single_code_reemit src name attrRaw rest bodyRaw toks hTail hNoHtml hDef hg
 
 /-! ## Axiom audit -/
 

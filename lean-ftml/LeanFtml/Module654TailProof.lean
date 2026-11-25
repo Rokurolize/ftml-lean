@@ -268,14 +268,15 @@ theorem claimModule654_shape (name attr body : List Nat) (toks : List TokenEntry
           ("attr".toList, textVal attr), ("module_body".toList, textVal body)] }]) := by
   rfl
 
-theorem module654TryCands_single (name attrRaw rest bodyRaw rest' : List Nat) (toks : List TokenEntry)
-    (h : module654Tail rest = some (bodyRaw, rest')) :
-    module654TryCands name toks [(attrRaw, rest)] =
+theorem module654TryCands_single (src name attrRaw rest bodyRaw rest' : List Nat) (toks : List TokenEntry)
+    (h : module654Tail rest = some (bodyRaw, rest'))
+    (hhtml : (bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0) = false) :
+    module654TryCands src name toks [(attrRaw, rest)] =
       some ([10, 10] ++ phBytes toks.length ++ [10, 10], rest',
         toks ++ [{ rule := "Module654", opts := [("moduleName".toList, textVal name),
           ("attr".toList, textVal (trimBytes attrRaw)),
           ("module_body".toList, textVal (trimBytes bodyRaw))] }]) := by
-  simp [module654TryCands, h, claimModule]
+  simp [module654TryCands, h, hhtml, claimModule]
 
 def simpleFrame (name body : List Nat) : List Nat :=
   litBytes "[[module654 " ++ name ++ litBytes "]]" ++ [10] ++ body
@@ -339,9 +340,9 @@ theorem module654Match_simpleFrame (name body : List Nat)
   rw [moduleHead_simpleFrame name body hname]
   cases h : findSubCI (litBytes "[[/module]]") body with
   | none =>
-      simp [module654TryCands, module654Tail, closerPat, claimModule, trimBytes, h]
+      simp [module654TryCands, module654Tail, closerPat, claimModule, trimBytes, bodyHasHtmlToken, h]
   | some k =>
-      simp [module654TryCands, module654Tail, closerPat, claimModule, trimBytes, h, List.drop_drop]
+      simp [module654TryCands, module654Tail, closerPat, claimModule, trimBytes, bodyHasHtmlToken, h, List.drop_drop]
 
 #print axioms closerPat_len
 #print axioms matchLitCI_append

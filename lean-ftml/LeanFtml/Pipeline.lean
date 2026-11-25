@@ -411,12 +411,12 @@ def pipelineR316 : List RuleId :=
     PHP oracle is `state-restricted.php
     Prefilter,Delimiter,Code,Form,Raw,Rawold,Modulepre,Module,Module654,Iftags,Comment,Iframe,Date,Math,Concatlines,Freelink,Equationreference,Footnote,Footnoteitem,Footnoteblock,Bibitem,Bibliography,Bibcite,Divprefilter,Anchor,User,Blockquote,Heading,Toc,Horiz,Separator,Clearfloat,Break,Span,Size,Div,Divalign,Collapsible,Tabview,Note,Gallery,List,Deflist,Table,Tableadv,Button,Image,Embed,Social,File,Center,Newline,Paragraph,Url,Email,Mathinline,Interwiki,Colortext,Strong,Emphasis,Underline,Strikethrough,Tt,Superscript,Subscript,Typography,Tighten`. -/
 def pipelineR317 : List RuleId :=
-  [.prefilter, .delimiter, .code, .form, .raw, .rawold,
+  [.prefilter, .delimiter, .code, .form, .raw, .rawold, .html,
    .modulepre, .module, .module654, .iftags, .comment, .expr,
    .ifexpr, .iframe,
    .date, .math, .concatlines, .freelink, .equationreference,
    .footnote, .footnoteitem, .footnoteblock, .bibitem,
-   .bibliography, .bibcite, .html, .divprefilter, .anchor, .user,
+   .bibliography, .bibcite, .divprefilter, .anchor, .user,
    .blockquote, .heading, .toc, .horiz, .separator, .clearfloat,
    .break, .span, .size, .div, .divalign, .collapsible, .tabview,
    .note, .gallery, .list, .deflist,
@@ -430,12 +430,12 @@ def pipelineR317 : List RuleId :=
     full pipeline, in pipeline order, ending at `Paragraph` (pipeline
     position 57), the last prose-core render rule. -/
 def pipelineR42 : List RuleId :=
-  [.include, .prefilter, .delimiter, .code, .form, .raw, .rawold,
+  [.include, .prefilter, .delimiter, .code, .form, .raw, .rawold, .html,
    .modulepre, .module, .module654, .iftags, .comment, .expr,
    .ifexpr, .iframe,
    .date, .math, .concatlines, .freelink, .equationreference,
    .footnote, .footnoteitem, .footnoteblock, .bibitem,
-   .bibliography, .bibcite, .html, .divprefilter, .anchor, .user,
+   .bibliography, .bibcite, .divprefilter, .anchor, .user,
    .blockquote, .heading, .toc, .horiz, .separator, .clearfloat,
    .break, .span, .size, .div, .divalign, .collapsible, .tabview,
    .note, .gallery, .list, .deflist,
@@ -444,7 +444,7 @@ def pipelineR42 : List RuleId :=
 
 theorem pipelineR42_length : pipelineR42.length = 57 := rfl
 
-/-- The full seventy-one-rule pipeline (snapshot-44): `Include` at
+/-- The full seventy-one-rule pipeline (snapshot-45): `Include` at
     pipeline position 1 followed by the seventy rules of
     `pipelineR317`, in the exact order of `Text_Wiki::$rules` in
     `ref-php/text-wiki/Text/Wiki.php`. -/

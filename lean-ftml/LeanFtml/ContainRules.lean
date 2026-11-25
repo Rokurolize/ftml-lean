@@ -486,12 +486,54 @@ where
         else if b == 10 then 10 :: go rest []
         else acc ++ b :: go rest []
 
+/-- Whether a whole line is exactly the placeholder of an empty Raw token
+    (snapshot-45 `Size.php`'s `Raw`/`text === ''` line test). -/
+def sizeLineIsEmptyRaw (line : List Nat) (toks : List TokenEntry) : Bool :=
+  match readPlaceholder line with
+  | some (idx, rest) =>
+      if !rest.isEmpty then false
+      else
+        match toks[idx]? with
+        | some t =>
+            t.rule == "Raw" &&
+            match omGet t.opts "text".toList with
+            | some (.str txt) => txt.isEmpty
+            | _ => false
+        | none => false
+  | none => false
+
+/-- snapshot-45 Size boundary #17. Scan the corrected content line by line;
+    once visible text has been seen, an empty-Raw line immediately followed by
+    a line starting `= ` splits at the newline before the empty-Raw line
+    (`lineStart - 1` in the PHP byte index). -/
+def sizeFindSplit (content : List Nat) (toks : List TokenEntry) : Option Nat :=
+  go content 0 false (content.length + 1)
+where
+  go : List Nat → Nat → Bool → Nat → Option Nat
+    | [], _, _, _ => none
+    | _, _, _, 0 => none
+    | xs, pos, seen, fuel + 1 =>
+        let line := xs.takeWhile (· != 10)
+        let after := xs.drop line.length
+        let isEmptyRaw := sizeLineIsEmptyRaw line toks
+        let hit := match after with
+          | 10 :: rest => seen && isEmptyRaw && ((rest.take 2) == [61, 32])
+          | _ => false
+        if hit then some (pos - 1)
+        else
+          let seen' := seen || (!isEmptyRaw && trimBytes line != [])
+          match after with
+          | 10 :: rest => go rest (pos + line.length + 1) seen' fuel
+          | _ => none
+
 /-- process() for a Size match: an invalid value returns
     the whole match unchanged (no tokens); otherwise the
     body takes the two corrections (control bytes removed,
     line-end space/tab runs removed), an empty corrected
     body is elided, and any other body is claimed with the
-    trimmed value in the start token. -/
+    trimmed value in the start token. Snapshot-45 boundary #17
+    then inserts the end token before the empty-Raw/`= ` boundary
+    when `sizeFindSplit` fires. -/
 def sizeProcess (g1 body full : List Nat)
     (toks : List TokenEntry) : List Nat × List TokenEntry :=
   let size := trimBytes g1
@@ -501,6 +543,7 @@ def sizeProcess (g1 body full : List Nat)
     let c2 := dropLineEndRuns c1
     if c2.isEmpty then ([], toks)
     else
+      let split := sizeFindSplit c2 toks
       let startPh := phBytes toks.length
       let t1 := toks ++ [{ rule := "Size", opts :=
         [("size".toList, textVal size),
@@ -508,7 +551,9 @@ def sizeProcess (g1 body full : List Nat)
       let endPh := phBytes t1.length
       let t2 := t1 ++ [{ rule := "Size", opts :=
         [("type".toList, OptVal.str "end".toList)] }]
-      (startPh ++ c2 ++ endPh, t2)
+      match split with
+      | some n => (startPh ++ c2.take n ++ endPh ++ c2.drop n, t2)
+      | none => (startPh ++ c2 ++ endPh, t2)
 
 /-- One Size pass: preg_replace_callback semantics over
     the byte form. -/
@@ -901,25 +946,30 @@ def divRule (st : ParseState) : ParseState :=
 
 /-! ## Collapsible -/
 
-/-- A Collapsible match at the head of `s`: the optional
-    leading newline, the opener with its attribute group,
-    the plain lazy body up to the first closer (the
-    discipline G1.2 recorded for this family: the base
-    pass runs once and a nested opener is never rescanned),
-    and the closer's forced trailing space run. The first
-    attribute-group candidate with a closer after it wins,
-    and for it the first closer. -/
+/-- A Collapsible match at the head of `s`, snapshot-45 shape: an optional
+    leading token placeholder `(\xFF\d+\xFF)?`, the optional leading newline,
+    the opener with its attribute group, the plain lazy body up to the first
+    closer, and the closer's forced trailing space run. The placeholder group
+    is returned with its exact bytes (decimal spelling included) so process()
+    can both validate it as a Size start token and preserve it in the
+    replacement. -/
 def collMatchAt (s : List Nat) :
-    Option (List Nat × Option (List Nat) × List Nat × List Nat) :=
-  let g1cands : List (List Nat × List Nat) := match s with
-    | 10 :: r => [([10], r)]
-    | _ => [([], s)]
-  (g1cands.flatMap (fun (g1, r0) =>
+    Option (Option (Nat × List Nat) × List Nat × Option (List Nat) × List Nat × List Nat) :=
+  let (g0, r00) : Option (Nat × List Nat) × List Nat :=
+    match readPlaceholder s with
+    | some (idx, after) => (some (idx, s.take (s.length - after.length)), after)
+    | none => (none, s)
+  let (g1, r0) : List Nat × List Nat :=
+    match r00 with
+    | 10 :: r => ([10], r)
+    | _ => ([], r00)
+  let ms :=
     (matchLitCI (litBytes "[[collapsible") r0).toList.flatMap (fun r1 =>
       (attrGroupCands r1).flatMap (fun (g2, r2) =>
         (occurrencesCI (litBytes "[[/collapsible]]") r2).head?.toList.map
           (fun (body, r3) =>
-            (g1, g2, body, r3.drop ((r3.takeWhile (· == 32)).length))))))).head?
+            (g0, g1, g2, body, r3.drop ((r3.takeWhile (· == 32)).length)))))
+  ms.head?
 
 /-- Read one `0xFF<digits>0xFF` token index at the head of `s`, if present. -/
 private def collReadPh (s : List Nat) : Option (Nat × List Nat) :=
@@ -934,17 +984,21 @@ private def collReadPh (s : List Nat) : Option (Nat × List Nat) :=
   | _ => none
 
 /-- Collect all token ids referenced by `0xFF<digits>0xFF` placeholders in `s`,
-    in left-to-right order. -/
-private def collScanPhIds (s : List Nat) : List Nat :=
-  go s (s.length + 1) []
+    in left-to-right order, with each placeholder's byte offset. This is the
+    `preg_match_all(..., PREG_OFFSET_CAPTURE)` input snapshot-45 Collapsible
+    uses for its Size-depth walk. -/
+private def collScanPhIdsPos (s : List Nat) : List (Nat × Nat) :=
+  go s (s.length + 1) 0 []
 where
-  go : List Nat → Nat → List Nat → List Nat
-    | [], _, acc => acc.reverse
-    | _, 0, acc => acc.reverse
-    | s@(_ :: rest), fuel + 1, acc =>
-        match collReadPh s with
-        | some (k, after) => go after fuel (k :: acc)
-        | none => go rest fuel acc
+  go : List Nat → Nat → Nat → List (Nat × Nat) → List (Nat × Nat)
+    | [], _, _, acc => acc.reverse
+    | _, 0, _, acc => acc.reverse
+    | xs@(_ :: rest), fuel + 1, pos, acc =>
+        match collReadPh xs with
+        | some (k, after) =>
+            let consumed := xs.length - after.length
+            go after fuel (pos + consumed) ((k, pos) :: acc)
+        | none => go rest fuel (pos + 1) acc
 
 private def collIsSizeType (toks : List TokenEntry) (idx : Nat) (want : List Char) : Bool :=
   match toks[idx]? with
@@ -954,52 +1008,62 @@ private def collIsSizeType (toks : List TokenEntry) (idx : Nat) (want : List Cha
       | _ => false
   | none => false
 
+private def collSizeType (toks : List TokenEntry) (idx : Nat) : Option (List Char) :=
+  match toks[idx]? with
+  | some t =>
+      if t.rule == "Size" then
+        match omGet t.opts "type".toList with
+        | some (.str s) => some s
+        | _ => none
+      else none
+  | none => none
+
 private def collSetTokTypeSuppressed (toks : List TokenEntry) (idx : Nat) : List TokenEntry :=
   match toks[idx]? with
   | some t => toks.set idx { t with opts := omSet t.opts "type".toList (.str "suppressed".toList) }
   | none => toks
 
-/-- REFCORR19 F11/#03: find matching `Size` `start` token backwards from `eid - 1`
-    down to `sid`. Returns `some j` when depth reaches 0 at `j >= sid`. -/
-private def collMatchSizeStart (toks : List TokenEntry) (sid eid : Nat) : Option Nat :=
-  if eid ≤ sid then none
-  else go (eid - 1) 0 (eid - sid)
-where
-  go (j depth : Nat) : Nat → Option Nat
-    | 0 => none
-    | fuel + 1 =>
-        let (depth', hit) : Nat × Option Nat :=
-          if collIsSizeType toks j "end".toList then (depth + 1, none)
-          else if collIsSizeType toks j "start".toList then
-            if depth == 0 then (0, some j) else (depth - 1, none)
-          else (depth, none)
-        match hit with
-        | some m => some m
-        | none => if j ≤ sid then none else go (j - 1) depth' fuel
+/-- snapshot-45 Collapsible #03: walk placeholders in the body left-to-right
+    with `sizeDepth` initially 1. Size starts increment it; Size ends decrement
+    it. The first end that reaches zero terminates the walk whether or not the
+    guard passes. Reattachment happens only when the byte prefix strictly
+    before that end placeholder trims to empty. -/
+private def collFindOpenerSizeEnd (toks : List TokenEntry) (body : List Nat) :
+    List (Nat × Nat) → Nat → Option Nat
+  | [], _ => none
+  | (eid, pos) :: rest, depth =>
+      match collSizeType toks eid with
+      | some ty =>
+          if ty == "start".toList then
+            collFindOpenerSizeEnd toks body rest (depth + 1)
+          else if ty == "end".toList then
+            let depth' := depth - 1
+            if depth' == 0 then
+              if (trimBytes (body.take pos)).isEmpty then some eid else none
+            else collFindOpenerSizeEnd toks body rest depth'
+          else collFindOpenerSizeEnd toks body rest depth
+      | none => collFindOpenerSizeEnd toks body rest depth
 
 /-- process() for a Collapsible match: the attribute
-    group through getAttrs, kept whole; REFCORR19 F11/#03 generalized
-    size/opener reattachment (only when `toks` ends with a `Size` `start`
-    token `sid`, finding its matching `Size` `end` anywhere in `body`);
-    both tokens carry `args`, `type`, `count`, and `label_size`. -/
-def collProcess (g1 : List Nat) (g2 : Option (List Nat))
-    (body : List Nat) (doc : DocState) (toks : List TokenEntry) :
-    List Nat × List TokenEntry × DocState :=
+    group through getAttrs, kept whole. Snapshot-45 #03 validates the optional
+    leading placeholder captured by the regex as a Size `start` token, walks
+    the body with Size depth 1, transfers its size to `label_size`, and
+    suppresses the dangling pair only when the prefix before the closing Size
+    token trims empty; both tokens carry `args`, `type`, `count`, and
+    `label_size`. -/
+def collProcess (g0 : Option (Nat × List Nat)) (g1 : List Nat)
+    (g2 : Option (List Nat)) (body : List Nat) (doc : DocState)
+    (toks : List TokenEntry) : List Nat × List TokenEntry × DocState :=
   let sidOpt : Option Nat :=
-    if toks.isEmpty then none
-    else
-      let lastId := toks.length - 1
-      if collIsSizeType toks lastId "start".toList then some lastId else none
+    match g0 with
+    | some (cand, _) =>
+        if collIsSizeType toks cand "start".toList then some cand else none
+    | none => none
   let (labelSizeOpt, toks0) : Option OptVal × List TokenEntry :=
     match sidOpt with
     | none => (none, toks)
     | some sid =>
-        let cands := collScanPhIds body
-        let hit := cands.findSome? fun eid =>
-          if collIsSizeType toks eid "end".toList &&
-              collMatchSizeStart toks sid eid == some sid then
-            some eid
-          else none
+        let hit := collFindOpenerSizeEnd toks body (collScanPhIdsPos body) 1
         match hit with
         | none => (none, toks)
         | some eid =>
@@ -1025,7 +1089,10 @@ def collProcess (g1 : List Nat) (g2 : Option (List Nat))
      ("type".toList, OptVal.str "end".toList),
      ("count".toList, OptVal.int (count : Int)),
      ("label_size".toList, labelSizeVal)] }]
-  (g1 ++ g1 ++ startPh ++ [10, 10] ++ body ++ [10, 10] ++ endPh,
+  let g0bytes := match g0 with
+    | some (_, bytes) => bytes
+    | none => []
+  (g0bytes ++ g1 ++ g1 ++ startPh ++ [10, 10] ++ body ++ [10, 10] ++ endPh,
    t2, { doc with collapsibleCount := count + 1 })
 
 /-- The Collapsible pass: the base class's single
@@ -1039,8 +1106,8 @@ def collScan (src : List Nat) (toks : List TokenEntry)
     | [] => ([], toks, doc)
     | b :: rest =>
         match collMatchAt src with
-        | some (g1, g2, body, r) =>
-            let (repl, t1, d1) := collProcess g1 g2 body doc toks
+        | some (g0, g1, g2, body, r) =>
+            let (repl, t1, d1) := collProcess g0 g1 g2 body doc toks
             let (o, t, d) := collScan r t1 d1 fuel
             (repl ++ o, t, d)
         | none =>
@@ -1535,8 +1602,8 @@ theorem divArgs_emission_order :
     pre-increment value and leaves the counter one
     higher. -/
 theorem collProcess_count_example :
-    (collProcess [10] none (litBytes "x") {} []).2.2.collapsibleCount = 1 ∧
-    ((collProcess [10] none (litBytes "x") {} []).2.1.map (·.opts)) =
+    (collProcess none [10] none (litBytes "x") {} []).2.2.collapsibleCount = 1 ∧
+    ((collProcess none [10] none (litBytes "x") {} []).2.1.map (·.opts)) =
       [[("args".toList, OptVal.map []),
         ("type".toList, OptVal.str "start".toList),
         ("count".toList, OptVal.int 0),
@@ -1552,7 +1619,7 @@ theorem collProcess_count_example :
 theorem collMatchAt_first_closer_example :
     collMatchAt (litBytes
       "[[collapsible]]a[[collapsible]]b[[/collapsible]]c[[/collapsible]]") =
-      some ([], none, litBytes "a[[collapsible]]b",
+      some (none, [], none, litBytes "a[[collapsible]]b",
         litBytes "c[[/collapsible]]") := rfl
 
 /-- The tab title rule: the empty title is `untitled`,
@@ -1591,23 +1658,64 @@ theorem tabviewProcess_token_order_example :
       (litBytes "[[tab One]]body[[/tab]]\n") {} []).2.2.tabviewCounter = 1 :=
   ⟨rfl, rfl⟩
 
-/-- Because `collProcess` sets `sid := toks.length - 1` (mirroring
-    `Collapsible.php` at snapshot-44) while every existing `Size` `end` token
-    index in `body` satisfies `eid < toks.length`, `eid ≤ sid` holds for every
-    valid placeholder `eid` in `body`, so `collMatchSizeStart` returns `none`
-    and `collProcess` preserves `Size` tokens without reattaching `label_size`. -/
-theorem collProcess_lastId_no_reattach_witness :
+/-- snapshot-45 #17: once visible content has been seen, an empty-Raw line
+    followed by an `= ` heading line moves the Size end token before the
+    newline preceding the empty Raw placeholder. -/
+theorem sizeProcess_emptyraw_heading_split_witness :
+    let rawToks : List TokenEntry :=
+      [{ rule := "Raw", opts := [("text".toList, OptVal.str [])] }]
+    let body := litBytes "visible\n" ++ phBytes 0 ++ litBytes "\n= heading"
+    sizeProcess (litBytes " 120%") body (litBytes "full") rawToks =
+      (phBytes 1 ++ litBytes "visible" ++ phBytes 2 ++
+        litBytes "\n" ++ phBytes 0 ++ litBytes "\n= heading",
+       rawToks ++
+        [{ rule := "Size", opts :=
+          [("size".toList, OptVal.str "120%".toList),
+           ("type".toList, OptVal.str "start".toList)] },
+         { rule := "Size", opts :=
+          [("type".toList, OptVal.str "end".toList)] }]) := rfl
+
+/-- snapshot-45 #03 positive opener-only crossing: the placeholder captured
+    before the Collapsible opener is a Size start, the first Size end at depth
+    zero has only whitespace before it in the body, so its size is transferred
+    to both Collapsible tokens and the dangling Size pair is suppressed. -/
+theorem collProcess_openeronly_size_reattach_witness :
     let toks : List TokenEntry :=
       [{ rule := "Size",
          opts := [("size".toList, .str "120%".toList),
                   ("type".toList, .str "start".toList)] },
        { rule := "Size",
-         opts := [("type".toList, .str "end".toList)] },
+         opts := [("type".toList, .str "end".toList)] }]
+    let res := collProcess (some (0, phBytes 0)) [] none
+      ([10] ++ phBytes 1 ++ [10] ++ litBytes "body") {} toks
+    omGet (res.2.1[0]!).opts "type".toList = some (.str "suppressed".toList) ∧
+    omGet (res.2.1[1]!).opts "type".toList = some (.str "suppressed".toList) ∧
+    omGet (res.2.1[2]!).opts "label_size".toList = some (.str "120%".toList) ∧
+    omGet (res.2.1[3]!).opts "label_size".toList = some (.str "120%".toList) :=
+  ⟨rfl, rfl, rfl, rfl⟩
+
+/-- Negative news-03-2017-style guard: unrelated nested Size spans and visible
+    body bytes before the depth-zero end prevent reattachment, leave every Size
+    token unchanged, and keep `label_size` null. -/
+theorem collProcess_news03_guard_no_reattach_witness :
+    let toks : List TokenEntry :=
+      [{ rule := "Size",
+         opts := [("size".toList, .str "120%".toList),
+                  ("type".toList, .str "start".toList)] },
        { rule := "Size",
          opts := [("size".toList, .str "80%".toList),
-                  ("type".toList, .str "start".toList)] }]
-    let res := collProcess [10] none [255, 49, 255] {} toks
-    (res.2.1.take 3).map (·.opts) = toks.map (·.opts) ∧
-    omGet (res.2.1[3]!).opts "label_size".toList = some .null := ⟨rfl, rfl⟩
+                  ("type".toList, .str "start".toList)] },
+       { rule := "Size",
+         opts := [("type".toList, .str "end".toList)] },
+       { rule := "Size",
+         opts := [("type".toList, .str "end".toList)] }]
+    let body := phBytes 1 ++ litBytes "visible" ++ phBytes 2 ++ phBytes 3
+    let res := collProcess (some (0, phBytes 0)) [] none body {} toks
+    (res.2.1.take 4).map (·.opts) = toks.map (·.opts) ∧
+    omGet (res.2.1[4]!).opts "label_size".toList = some .null := ⟨rfl, rfl⟩
+
+#print axioms sizeProcess_emptyraw_heading_split_witness
+#print axioms collProcess_openeronly_size_reattach_witness
+#print axioms collProcess_news03_guard_no_reattach_witness
 
 end LeanFtml

@@ -929,10 +929,12 @@ theorem moduleTryCands_lex (src name : List Nat) (toks : List TokenEntry)
                 = src.take (src.length - r'.length) ++ r' := by
               rw [hmatched, hr'eq]
               exact hsrcPB
+            have hnohtml : ¬(bodyRaw ≠ [] ∧ bodyHasHtmlToken bodyRaw toks 0 = true) := by
+              simp [hbody]
             by_cases hdef : 1 < countModuleOpeners none
                 (src.take (src.length - r'.length)) (src.length - r'.length + 1)
             · have hdefx := moduleTryCands_defense_exact src name toks attrRaw r
-                bodyRaw r' more htail hdef
+                bodyRaw r' more htail hnohtml hdef
               rw [hdefx] at h
               have hinj := Option.some.inj h
               have hrepeq : repl
@@ -953,7 +955,7 @@ theorem moduleTryCands_lex (src name : List Nat) (toks : List TokenEntry)
               · rw [hrepeq]
                 intro hne
                 exact defense_strict_length hne
-            · simp [moduleTryCands, htail, hdef, claimModule] at h
+            · simp [moduleTryCands, htail, hnohtml, hdef, claimModule] at h
               have ht1 : t1 ≠ toks := by
                 intro hcon
                 have e := h.2.2.symm
@@ -1089,30 +1091,8 @@ theorem moduleTryCands_lex (src name : List Nat) (toks : List TokenEntry)
               rw [hmatched]
               simp only [List.length_append]
               omega
-            by_cases hdef : 1 < countModuleOpeners none
-                (src.take (src.length - r'.length)) (src.length - r'.length + 1)
-            · have hdefx := moduleTryCands_defense_exact src name toks attrRaw r
-                bodyRaw r' more htail hdef
-              rw [hdefx] at h
-              have hinj := Option.some.inj h
-              have hrepeq : repl
-                  = rewriteModulePrefix (insertInlineOpenerNewlines
-                      (src.take (src.length - r'.length))) :=
-                (congrArg Prod.fst hinj).symm
-              have hresteq : r' = rest' :=
-                congrArg Prod.fst (congrArg Prod.snd hinj)
-              have ht1eq : t1 = toks :=
-                (congrArg Prod.snd (congrArg Prod.snd hinj)).symm
-              subst hresteq
-              refine ⟨src.take (src.length - r'.length), hsrcdecomp,
-                hmatchedlen, ?_, Or.inl ⟨ht1eq, ?_, ?_, ?_⟩⟩
-              · omega
-              · rw [hrepeq]; exact defense_count91 _
-              · rw [hrepeq]; exact defense_length_ge _
-              · rw [hrepeq]
-                intro hne
-                exact defense_strict_length hne
-            · simp [moduleTryCands, htail, hdef, claimModule] at h
+            by_cases hhtml : bodyRaw ≠ [] ∧ bodyHasHtmlToken bodyRaw toks 0 = true
+            · simp [moduleTryCands, htail, hhtml, claimModule] at h
               have ht1 : t1 ≠ toks := by
                 intro hcon
                 have e := h.2.2.symm
@@ -1123,35 +1103,91 @@ theorem moduleTryCands_lex (src name : List Nat) (toks : List TokenEntry)
                 hmatchedlen, ?_, Or.inr ⟨ht1, ?_⟩⟩
               · omega
               · rw [← h.1]
-                by_cases hcode : bodyHasCodeToken bodyRaw toks 0 = true
-                · rw [if_pos hcode]
-                  rw [count91_cons_ten, count91_cons_ten, count91_append,
-                    count91_phBytes, count91_cons_ten, count91_cons_ten,
-                    count91_append]
-                  have hauth : (src.take (src.length - r'.length)).drop
-                        (src.length - r'.length - 11)
-                      = closerVar := by
-                    have hidx2 : src.length - r'.length - 11
-                        = ((A ++ [93, 93] ++ wsPre ++ [10]) ++ bodyRaw).length := by
-                      have e1 : (src.take (src.length - r'.length)).length
-                          = src.length - r'.length := by
-                        rw [List.length_take]
-                        exact Nat.min_eq_left (Nat.sub_le _ _)
-                      have e2 : (src.take (src.length - r'.length)).length
-                          = ((A ++ [93, 93] ++ wsPre ++ [10]) ++ bodyRaw).length
-                            + 11 := by
-                        rw [hmatched]
-                        simp only [List.length_append, hcloserlen]
-                      omega
-                    rw [hidx2, hmatched]
-                    exact List.drop_left
-                  rw [hauth, hcloser91]
-                  omega
-                · rw [if_neg hcode]
-                  rw [count91_cons_ten, count91_cons_ten, count91_append,
-                    count91_phBytes, count91_cons_ten, count91_cons_ten,
-                    count91_nil]
-                  omega
+                rw [count91_cons_ten, count91_cons_ten, count91_append,
+                  count91_phBytes, count91_cons_ten, count91_cons_ten,
+                  count91_append]
+                have hauth : (src.take (src.length - r'.length)).drop
+                      (src.length - r'.length - 11)
+                    = closerVar := by
+                  have hidx2 : src.length - r'.length - 11
+                      = ((A ++ [93, 93] ++ wsPre ++ [10]) ++ bodyRaw).length := by
+                    have e1 : (src.take (src.length - r'.length)).length
+                        = src.length - r'.length := by
+                      rw [List.length_take]
+                      exact Nat.min_eq_left (Nat.sub_le _ _)
+                    have e2 : (src.take (src.length - r'.length)).length
+                        = ((A ++ [93, 93] ++ wsPre ++ [10]) ++ bodyRaw).length
+                          + 11 := by
+                      rw [hmatched]
+                      simp only [List.length_append, hcloserlen]
+                    omega
+                  rw [hidx2, hmatched]
+                  exact List.drop_left
+                rw [hauth, hcloser91]
+                omega
+            · by_cases hdef : 1 < countModuleOpeners none
+                  (src.take (src.length - r'.length)) (src.length - r'.length + 1)
+              · have hdefx := moduleTryCands_defense_exact src name toks attrRaw r
+                  bodyRaw r' more htail hhtml hdef
+                rw [hdefx] at h
+                have hinj := Option.some.inj h
+                have hrepeq : repl
+                    = rewriteModulePrefix (insertInlineOpenerNewlines
+                        (src.take (src.length - r'.length))) :=
+                  (congrArg Prod.fst hinj).symm
+                have hresteq : r' = rest' :=
+                  congrArg Prod.fst (congrArg Prod.snd hinj)
+                have ht1eq : t1 = toks :=
+                  (congrArg Prod.snd (congrArg Prod.snd hinj)).symm
+                subst hresteq
+                refine ⟨src.take (src.length - r'.length), hsrcdecomp,
+                  hmatchedlen, ?_, Or.inl ⟨ht1eq, ?_, ?_, ?_⟩⟩
+                · omega
+                · rw [hrepeq]; exact defense_count91 _
+                · rw [hrepeq]; exact defense_length_ge _
+                · rw [hrepeq]
+                  intro hne
+                  exact defense_strict_length hne
+              · simp [moduleTryCands, htail, hhtml, hdef, claimModule] at h
+                have ht1 : t1 ≠ toks := by
+                  intro hcon
+                  have e := h.2.2.symm
+                  rw [hcon] at e
+                  have hl := congrArg List.length e
+                  simp at hl
+                refine ⟨src.take (src.length - r'.length), hsrcdecomp.trans (congrArg (fun x => src.take (src.length - r'.length) ++ x) h.2.1),
+                  hmatchedlen, ?_, Or.inr ⟨ht1, ?_⟩⟩
+                · omega
+                · rw [← h.1]
+                  by_cases hcode : bodyHasCodeToken bodyRaw toks 0 = true
+                  · rw [if_pos hcode]
+                    rw [count91_cons_ten, count91_cons_ten, count91_append,
+                      count91_phBytes, count91_cons_ten, count91_cons_ten,
+                      count91_append]
+                    have hauth : (src.take (src.length - r'.length)).drop
+                          (src.length - r'.length - 11)
+                        = closerVar := by
+                      have hidx2 : src.length - r'.length - 11
+                          = ((A ++ [93, 93] ++ wsPre ++ [10]) ++ bodyRaw).length := by
+                        have e1 : (src.take (src.length - r'.length)).length
+                            = src.length - r'.length := by
+                          rw [List.length_take]
+                          exact Nat.min_eq_left (Nat.sub_le _ _)
+                        have e2 : (src.take (src.length - r'.length)).length
+                            = ((A ++ [93, 93] ++ wsPre ++ [10]) ++ bodyRaw).length
+                              + 11 := by
+                          rw [hmatched]
+                          simp only [List.length_append, hcloserlen]
+                        omega
+                      rw [hidx2, hmatched]
+                      exact List.drop_left
+                    rw [hauth, hcloser91]
+                    omega
+                  · rw [if_neg hcode]
+                    rw [count91_cons_ten, count91_cons_ten, count91_append,
+                      count91_phBytes, count91_cons_ten, count91_cons_ten,
+                      count91_nil]
+                    omega
 
 
 /-- Inversion of a successful candidate scan into its defense or claiming
@@ -1168,7 +1204,8 @@ theorem moduleTryCands_repl_shape (src name : List Nat) (toks : List TokenEntry)
               (src.take (src.length - r'.length)))) ∨
           (t1 ≠ toks ∧ rest' = r' ∧
             repl = [10, 10] ++ phBytes toks.length ++ [10, 10] ++
-              (if bodyHasCodeToken bodyRaw toks 0 then
+              (if (bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0) ||
+                  bodyHasCodeToken bodyRaw toks 0 then
                  bodyRaw ++ (src.take (src.length - r'.length)).drop
                    (src.length - r'.length - 11)
                else [])) := by
@@ -1187,17 +1224,8 @@ theorem moduleTryCands_repl_shape (src name : List Nat) (toks : List TokenEntry)
           exact ih' h
       | some pair =>
           rcases pair with ⟨bodyRaw, r'⟩
-          by_cases hdef : 1 < countModuleOpeners none
-              (src.take (src.length - r'.length)) (src.length - r'.length + 1)
-          · have hdefx := moduleTryCands_defense_exact src name toks attrRaw r
-              bodyRaw r' more htail hdef
-            rw [hdefx] at h
-            have hinj := Option.some.inj h
-            refine ⟨bodyRaw, r', Or.inl ⟨?_, ?_, ?_⟩⟩
-            · exact (congrArg Prod.snd (congrArg Prod.snd hinj)).symm
-            · exact (congrArg Prod.fst (congrArg Prod.snd hinj)).symm
-            · exact (congrArg Prod.fst hinj).symm
-          · simp [moduleTryCands, htail, hdef, claimModule] at h
+          by_cases hhtml : bodyRaw ≠ [] ∧ bodyHasHtmlToken bodyRaw toks 0 = true
+          · simp [moduleTryCands, htail, hhtml, claimModule] at h
             have ht1 : t1 ≠ toks := by
               intro hcon
               have e := h.2.2.symm
@@ -1205,7 +1233,32 @@ theorem moduleTryCands_repl_shape (src name : List Nat) (toks : List TokenEntry)
               have hl := congrArg List.length e
               simp at hl
             refine ⟨bodyRaw, r', Or.inr ⟨ht1, h.2.1.symm, ?_⟩⟩
+            have hh : (bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0) = true := by
+              simpa using hhtml
+            rw [hh]
             simpa [List.append_assoc] using h.1.symm
+          · have hh : (bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0) = false := by
+              simpa using hhtml
+            by_cases hdef : 1 < countModuleOpeners none
+                (src.take (src.length - r'.length)) (src.length - r'.length + 1)
+            · have hdefx := moduleTryCands_defense_exact src name toks attrRaw r
+                bodyRaw r' more htail hhtml hdef
+              rw [hdefx] at h
+              have hinj := Option.some.inj h
+              refine ⟨bodyRaw, r', Or.inl ⟨?_, ?_, ?_⟩⟩
+              · exact (congrArg Prod.snd (congrArg Prod.snd hinj)).symm
+              · exact (congrArg Prod.fst (congrArg Prod.snd hinj)).symm
+              · exact (congrArg Prod.fst hinj).symm
+            · simp [moduleTryCands, htail, hhtml, hdef, claimModule] at h
+              have ht1 : t1 ≠ toks := by
+                intro hcon
+                have e := h.2.2.symm
+                rw [hcon] at e
+                have hl := congrArg List.length e
+                simp at hl
+              refine ⟨bodyRaw, r', Or.inr ⟨ht1, h.2.1.symm, ?_⟩⟩
+              rw [hh]
+              simpa [List.append_assoc] using h.1.symm
 
 /-- The per-match law at the `moduleMatch` level. -/
 theorem moduleMatch_lex {src : List Nat} {toks : List TokenEntry}
@@ -2795,10 +2848,12 @@ theorem moduleTryCands_term_measure (src name : List Nat) (toks : List TokenEntr
               exact hP91
             have hMlower : 3 ≤ moduleTermMeasure (src.take (src.length - r'.length)) :=
               moduleTermMeasure_lower_of_moduleHead_prefix hhead hsrcdecomp hmlen0 hm91two
+            have hnohtml : ¬(bodyRaw ≠ [] ∧ bodyHasHtmlToken bodyRaw toks 0 = true) := by
+              simp [hbody]
             by_cases hdef : 1 < countModuleOpeners none
                 (src.take (src.length - r'.length)) (src.length - r'.length + 1)
             · have hdefx := moduleTryCands_defense_exact src name toks attrRaw r
-                bodyRaw r' more htail hdef
+                bodyRaw r' more htail hnohtml hdef
               rw [hdefx] at h
               have hinj := Option.some.inj h
               have hrepeq : repl
@@ -2819,7 +2874,7 @@ theorem moduleTryCands_term_measure (src name : List Nat) (toks : List TokenEntr
               · rw [hrepeq]
                 intro hne
                 exact defense_strict_length hne
-            · simp [moduleTryCands, htail, hdef, claimModule] at h
+            · simp [moduleTryCands, htail, hnohtml, hdef, claimModule] at h
               have ht1 : t1 ≠ toks := by
                 intro hcon
                 have e := h.2.2.symm
@@ -2974,30 +3029,8 @@ theorem moduleTryCands_term_measure (src name : List Nat) (toks : List TokenEntr
               omega
             have hMlower : 3 ≤ moduleTermMeasure (src.take (src.length - r'.length)) :=
               moduleTermMeasure_lower_of_moduleHead_prefix hhead hsrcdecomp hmatchedlen hm91two
-            by_cases hdef : 1 < countModuleOpeners none
-                (src.take (src.length - r'.length)) (src.length - r'.length + 1)
-            · have hdefx := moduleTryCands_defense_exact src name toks attrRaw r
-                bodyRaw r' more htail hdef
-              rw [hdefx] at h
-              have hinj := Option.some.inj h
-              have hrepeq : repl
-                  = rewriteModulePrefix (insertInlineOpenerNewlines
-                      (src.take (src.length - r'.length))) :=
-                (congrArg Prod.fst hinj).symm
-              have hresteq : r' = rest' :=
-                congrArg Prod.fst (congrArg Prod.snd hinj)
-              have ht1eq : t1 = toks :=
-                (congrArg Prod.snd (congrArg Prod.snd hinj)).symm
-              subst hresteq
-              refine ⟨src.take (src.length - r'.length), hsrcdecomp,
-                hmatchedlen, ?_, hMlower, Or.inl ⟨ht1eq, ?_, ?_, ?_⟩⟩
-              · omega
-              · rw [hrepeq]; exact defense_count91 _
-              · rw [hrepeq]; exact defense_length_ge _
-              · rw [hrepeq]
-                intro hne
-                exact defense_strict_length hne
-            · simp [moduleTryCands, htail, hdef, claimModule] at h
+            by_cases hhtml : bodyRaw ≠ [] ∧ bodyHasHtmlToken bodyRaw toks 0 = true
+            · simp [moduleTryCands, htail, hhtml, claimModule] at h
               have ht1 : t1 ≠ toks := by
                 intro hcon
                 have e := h.2.2.symm
@@ -3008,94 +3041,194 @@ theorem moduleTryCands_term_measure (src name : List Nat) (toks : List TokenEntr
                 hmatchedlen, ?_, hMlower, Or.inr ⟨ht1, ?_, ?_⟩⟩
               · omega
               · rw [← h.1]
-                by_cases hcode : bodyHasCodeToken bodyRaw toks 0 = true
-                · rw [if_pos hcode]
-                  rw [count91_cons_ten, count91_cons_ten, count91_append,
-                    count91_phBytes, count91_cons_ten, count91_cons_ten,
-                    count91_append]
-                  have hauth : (src.take (src.length - r'.length)).drop
-                        (src.length - r'.length - 11)
-                      = closerVar := by
-                    have hidx2 : src.length - r'.length - 11
-                        = ((A ++ [93, 93] ++ wsPre ++ [10]) ++ bodyRaw).length := by
-                      have e1 : (src.take (src.length - r'.length)).length
-                          = src.length - r'.length := by
-                        rw [List.length_take]
-                        exact Nat.min_eq_left (Nat.sub_le _ _)
-                      have e2 : (src.take (src.length - r'.length)).length
-                          = ((A ++ [93, 93] ++ wsPre ++ [10]) ++ bodyRaw).length
-                            + 11 := by
-                        rw [hmatched]
-                        simp only [List.length_append, hcloserlen]
-                      omega
-                    rw [hidx2, hmatched]
-                    exact List.drop_left
-                  rw [hauth, hcloser91]
-                  omega
-                · rw [if_neg hcode]
-                  rw [count91_cons_ten, count91_cons_ten, count91_append,
-                    count91_phBytes, count91_cons_ten, count91_cons_ten,
-                    count91_nil]
-                  omega
-              · -- Width-two measure slack: the invisible wrapper contributes
-                -- nothing, and any re-emitted body-plus-closer is already a
-                -- contiguous suffix of the consumed match.
-                rw [← h.1]
-                by_cases hcode : bodyHasCodeToken bodyRaw toks 0 = true
-                · rw [if_pos hcode]
-                  have hauth : (src.take (src.length - r'.length)).drop
-                        (src.length - r'.length - 11)
-                      = closerVar := by
-                    have hidx2 : src.length - r'.length - 11
-                        = ((A ++ [93, 93] ++ wsPre ++ [10]) ++ bodyRaw).length := by
-                      have e1 : (src.take (src.length - r'.length)).length
-                          = src.length - r'.length := by
-                        rw [List.length_take]
-                        exact Nat.min_eq_left (Nat.sub_le _ _)
-                      have e2 : (src.take (src.length - r'.length)).length
-                          = ((A ++ [93, 93] ++ wsPre ++ [10]) ++ bodyRaw).length
-                            + 11 := by
-                        rw [hmatched]
-                        simp only [List.length_append, hcloserlen]
-                      omega
-                    rw [hidx2, hmatched]
-                    exact List.drop_left
-                  rw [hauth]
-                  have hmatched2 : src.take (src.length - r'.length)
-                      = ((A ++ [93, 93] ++ wsPre) ++ [10]) ++ (bodyRaw ++ closerVar) := by
-                    rw [hmatched]
-                    simp [List.append_assoc]
-                  have hadd := moduleTermMeasure_append_snoc_lf
-                    (A ++ [93, 93] ++ wsPre) (bodyRaw ++ closerVar)
-                  have hMm : moduleTermMeasure (src.take (src.length - r'.length))
-                      = moduleTermMeasure ((A ++ [93, 93] ++ wsPre) ++ [10]) +
-                        moduleTermMeasure (bodyRaw ++ closerVar) := by
-                    rw [hmatched2, hadd]
-                  have hreplM := moduleTermMeasure_claimPrefix_append
-                    toks.length (bodyRaw ++ closerVar)
-                  have hMP0 := moduleTermMeasure_lower_of_moduleHead_prefix
-                    hhead hsrcPB hPlen hP91
-                  have hpassoc : A ++ [93, 93] ++ wsPre ++ [10]
-                      = (A ++ [93, 93] ++ wsPre) ++ [10] := by
-                    simp [List.append_assoc]
-                  rw [hpassoc] at hMP0
-                  have hreplShape :
-                      (([10, 10] ++ phBytes toks.length ++ [10, 10]) ++
-                        (bodyRaw ++ closerVar)) =
-                        10 :: 10 :: (phBytes toks.length ++ 10 :: 10 :: (bodyRaw ++ closerVar)) := by
-                    simp
-                  rw [hreplShape] at hreplM
-                  omega
-                · rw [if_neg hcode]
-                  have hzero0 : moduleTermMeasure
-                      (10 :: 10 :: (phBytes toks.length ++ [10, 10])) = 0 := by
-                    calc moduleTermMeasure (10 :: 10 :: (phBytes toks.length ++ [10, 10]))
-                        = moduleTermMeasure (([10, 10] ++ phBytes toks.length ++ [10, 10]) ++ ([] : List Nat)) := by simp
-                      _ = moduleTermMeasure ([] : List Nat) :=
-                          moduleTermMeasure_claimPrefix_append toks.length ([] : List Nat)
-                      _ = 0 := rfl
-                  rw [hzero0]
-                  omega
+                rw [count91_cons_ten, count91_cons_ten, count91_append,
+                  count91_phBytes, count91_cons_ten, count91_cons_ten,
+                  count91_append]
+                have hauth : (src.take (src.length - r'.length)).drop
+                      (src.length - r'.length - 11)
+                    = closerVar := by
+                  have hidx2 : src.length - r'.length - 11
+                      = ((A ++ [93, 93] ++ wsPre ++ [10]) ++ bodyRaw).length := by
+                    have e1 : (src.take (src.length - r'.length)).length
+                        = src.length - r'.length := by
+                      rw [List.length_take]
+                      exact Nat.min_eq_left (Nat.sub_le _ _)
+                    have e2 : (src.take (src.length - r'.length)).length
+                        = ((A ++ [93, 93] ++ wsPre ++ [10]) ++ bodyRaw).length
+                          + 11 := by
+                      rw [hmatched]
+                      simp only [List.length_append, hcloserlen]
+                    omega
+                  rw [hidx2, hmatched]
+                  exact List.drop_left
+                rw [hauth, hcloser91]
+                omega
+              · rw [← h.1]
+                have hauth : (src.take (src.length - r'.length)).drop
+                      (src.length - r'.length - 11)
+                    = closerVar := by
+                  have hidx2 : src.length - r'.length - 11
+                      = ((A ++ [93, 93] ++ wsPre ++ [10]) ++ bodyRaw).length := by
+                    have e1 : (src.take (src.length - r'.length)).length
+                        = src.length - r'.length := by
+                      rw [List.length_take]
+                      exact Nat.min_eq_left (Nat.sub_le _ _)
+                    have e2 : (src.take (src.length - r'.length)).length
+                        = ((A ++ [93, 93] ++ wsPre ++ [10]) ++ bodyRaw).length
+                          + 11 := by
+                      rw [hmatched]
+                      simp only [List.length_append, hcloserlen]
+                    omega
+                  rw [hidx2, hmatched]
+                  exact List.drop_left
+                rw [hauth]
+                have hmatched2 : src.take (src.length - r'.length)
+                    = ((A ++ [93, 93] ++ wsPre) ++ [10]) ++ (bodyRaw ++ closerVar) := by
+                  rw [hmatched]
+                  simp [List.append_assoc]
+                have hadd := moduleTermMeasure_append_snoc_lf
+                  (A ++ [93, 93] ++ wsPre) (bodyRaw ++ closerVar)
+                have hMm : moduleTermMeasure (src.take (src.length - r'.length))
+                    = moduleTermMeasure ((A ++ [93, 93] ++ wsPre) ++ [10]) +
+                      moduleTermMeasure (bodyRaw ++ closerVar) := by
+                  rw [hmatched2, hadd]
+                have hreplM := moduleTermMeasure_claimPrefix_append
+                  toks.length (bodyRaw ++ closerVar)
+                have hMP0 := moduleTermMeasure_lower_of_moduleHead_prefix
+                  hhead hsrcPB hPlen hP91
+                have hpassoc : A ++ [93, 93] ++ wsPre ++ [10]
+                    = (A ++ [93, 93] ++ wsPre) ++ [10] := by
+                  simp [List.append_assoc]
+                rw [hpassoc] at hMP0
+                have hreplShape :
+                    (([10, 10] ++ phBytes toks.length ++ [10, 10]) ++
+                      (bodyRaw ++ closerVar)) =
+                      10 :: 10 :: (phBytes toks.length ++ 10 :: 10 :: (bodyRaw ++ closerVar)) := by
+                  simp
+                rw [hreplShape] at hreplM
+                omega
+            · by_cases hdef : 1 < countModuleOpeners none
+                  (src.take (src.length - r'.length)) (src.length - r'.length + 1)
+              · have hdefx := moduleTryCands_defense_exact src name toks attrRaw r
+                  bodyRaw r' more htail hhtml hdef
+                rw [hdefx] at h
+                have hinj := Option.some.inj h
+                have hrepeq : repl
+                    = rewriteModulePrefix (insertInlineOpenerNewlines
+                        (src.take (src.length - r'.length))) :=
+                  (congrArg Prod.fst hinj).symm
+                have hresteq : r' = rest' :=
+                  congrArg Prod.fst (congrArg Prod.snd hinj)
+                have ht1eq : t1 = toks :=
+                  (congrArg Prod.snd (congrArg Prod.snd hinj)).symm
+                subst hresteq
+                refine ⟨src.take (src.length - r'.length), hsrcdecomp,
+                  hmatchedlen, ?_, hMlower, Or.inl ⟨ht1eq, ?_, ?_, ?_⟩⟩
+                · omega
+                · rw [hrepeq]; exact defense_count91 _
+                · rw [hrepeq]; exact defense_length_ge _
+                · rw [hrepeq]
+                  intro hne
+                  exact defense_strict_length hne
+              · simp [moduleTryCands, htail, hhtml, hdef, claimModule] at h
+                have ht1 : t1 ≠ toks := by
+                  intro hcon
+                  have e := h.2.2.symm
+                  rw [hcon] at e
+                  have hl := congrArg List.length e
+                  simp at hl
+                refine ⟨src.take (src.length - r'.length), hsrcdecomp.trans (congrArg (fun x => src.take (src.length - r'.length) ++ x) h.2.1),
+                  hmatchedlen, ?_, hMlower, Or.inr ⟨ht1, ?_, ?_⟩⟩
+                · omega
+                · rw [← h.1]
+                  by_cases hcode : bodyHasCodeToken bodyRaw toks 0 = true
+                  · rw [if_pos hcode]
+                    rw [count91_cons_ten, count91_cons_ten, count91_append,
+                      count91_phBytes, count91_cons_ten, count91_cons_ten,
+                      count91_append]
+                    have hauth : (src.take (src.length - r'.length)).drop
+                          (src.length - r'.length - 11)
+                        = closerVar := by
+                      have hidx2 : src.length - r'.length - 11
+                          = ((A ++ [93, 93] ++ wsPre ++ [10]) ++ bodyRaw).length := by
+                        have e1 : (src.take (src.length - r'.length)).length
+                            = src.length - r'.length := by
+                          rw [List.length_take]
+                          exact Nat.min_eq_left (Nat.sub_le _ _)
+                        have e2 : (src.take (src.length - r'.length)).length
+                            = ((A ++ [93, 93] ++ wsPre ++ [10]) ++ bodyRaw).length
+                              + 11 := by
+                          rw [hmatched]
+                          simp only [List.length_append, hcloserlen]
+                        omega
+                      rw [hidx2, hmatched]
+                      exact List.drop_left
+                    rw [hauth, hcloser91]
+                    omega
+                  · rw [if_neg hcode]
+                    rw [count91_cons_ten, count91_cons_ten, count91_append,
+                      count91_phBytes, count91_cons_ten, count91_cons_ten,
+                      count91_nil]
+                    omega
+                · -- Width-two measure slack: the invisible wrapper contributes
+                  -- nothing, and any re-emitted body-plus-closer is already a
+                  -- contiguous suffix of the consumed match.
+                  rw [← h.1]
+                  by_cases hcode : bodyHasCodeToken bodyRaw toks 0 = true
+                  · rw [if_pos hcode]
+                    have hauth : (src.take (src.length - r'.length)).drop
+                          (src.length - r'.length - 11)
+                        = closerVar := by
+                      have hidx2 : src.length - r'.length - 11
+                          = ((A ++ [93, 93] ++ wsPre ++ [10]) ++ bodyRaw).length := by
+                        have e1 : (src.take (src.length - r'.length)).length
+                            = src.length - r'.length := by
+                          rw [List.length_take]
+                          exact Nat.min_eq_left (Nat.sub_le _ _)
+                        have e2 : (src.take (src.length - r'.length)).length
+                            = ((A ++ [93, 93] ++ wsPre ++ [10]) ++ bodyRaw).length
+                              + 11 := by
+                          rw [hmatched]
+                          simp only [List.length_append, hcloserlen]
+                        omega
+                      rw [hidx2, hmatched]
+                      exact List.drop_left
+                    rw [hauth]
+                    have hmatched2 : src.take (src.length - r'.length)
+                        = ((A ++ [93, 93] ++ wsPre) ++ [10]) ++ (bodyRaw ++ closerVar) := by
+                      rw [hmatched]
+                      simp [List.append_assoc]
+                    have hadd := moduleTermMeasure_append_snoc_lf
+                      (A ++ [93, 93] ++ wsPre) (bodyRaw ++ closerVar)
+                    have hMm : moduleTermMeasure (src.take (src.length - r'.length))
+                        = moduleTermMeasure ((A ++ [93, 93] ++ wsPre) ++ [10]) +
+                          moduleTermMeasure (bodyRaw ++ closerVar) := by
+                      rw [hmatched2, hadd]
+                    have hreplM := moduleTermMeasure_claimPrefix_append
+                      toks.length (bodyRaw ++ closerVar)
+                    have hMP0 := moduleTermMeasure_lower_of_moduleHead_prefix
+                      hhead hsrcPB hPlen hP91
+                    have hpassoc : A ++ [93, 93] ++ wsPre ++ [10]
+                        = (A ++ [93, 93] ++ wsPre) ++ [10] := by
+                      simp [List.append_assoc]
+                    rw [hpassoc] at hMP0
+                    have hreplShape :
+                        (([10, 10] ++ phBytes toks.length ++ [10, 10]) ++
+                          (bodyRaw ++ closerVar)) =
+                          10 :: 10 :: (phBytes toks.length ++ 10 :: 10 :: (bodyRaw ++ closerVar)) := by
+                      simp
+                    rw [hreplShape] at hreplM
+                    omega
+                  · rw [if_neg hcode]
+                    have hzero0 : moduleTermMeasure
+                        (10 :: 10 :: (phBytes toks.length ++ [10, 10])) = 0 := by
+                      calc moduleTermMeasure (10 :: 10 :: (phBytes toks.length ++ [10, 10]))
+                          = moduleTermMeasure (([10, 10] ++ phBytes toks.length ++ [10, 10]) ++ ([] : List Nat)) := by simp
+                        _ = moduleTermMeasure ([] : List Nat) :=
+                            moduleTermMeasure_claimPrefix_append toks.length ([] : List Nat)
+                        _ = 0 := rfl
+                    rw [hzero0]
+                    omega
 
 
 
@@ -3906,7 +4039,8 @@ theorem moduleTryCands_process_shape (src name : List Nat) (toks : List TokenEnt
                 (src.take (src.length - r'.length)))) ∨
             (t1 ≠ toks ∧
               repl = [10, 10] ++ phBytes toks.length ++ [10, 10] ++
-                (if bodyHasCodeToken bodyRaw toks 0 then
+                (if (bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0) ||
+                    bodyHasCodeToken bodyRaw toks 0 then
                    bodyRaw ++ (src.take (src.length - r'.length)).drop
                      (src.length - r'.length - 11)
                  else []))) := by
@@ -3927,18 +4061,8 @@ theorem moduleTryCands_process_shape (src name : List Nat) (toks : List TokenEnt
             htail0, hrest0, hrepl0⟩
       | some pair =>
           rcases pair with ⟨bodyRaw, r'⟩
-          by_cases hdef : 1 < countModuleOpeners none
-              (src.take (src.length - r'.length)) (src.length - r'.length + 1)
-          · have hdefx := moduleTryCands_defense_exact src name toks attrRaw r
-              bodyRaw r' more htail hdef
-            rw [hdefx] at h
-            have hinj := Option.some.inj h
-            refine ⟨attrRaw, r, bodyRaw, r', List.mem_cons_self, htail,
-              (congrArg Prod.fst (congrArg Prod.snd hinj)).symm,
-              Or.inl ⟨?_, ?_⟩⟩
-            · exact (congrArg Prod.snd (congrArg Prod.snd hinj)).symm
-            · exact (congrArg Prod.fst hinj).symm
-          · simp [moduleTryCands, htail, hdef, claimModule] at h
+          by_cases hhtml : bodyRaw ≠ [] ∧ bodyHasHtmlToken bodyRaw toks 0 = true
+          · simp [moduleTryCands, htail, hhtml, claimModule] at h
             have ht1 : t1 ≠ toks := by
               intro hcon
               have e := h.2.2.symm
@@ -3947,7 +4071,34 @@ theorem moduleTryCands_process_shape (src name : List Nat) (toks : List TokenEnt
               simp at hl
             refine ⟨attrRaw, r, bodyRaw, r', List.mem_cons_self, htail,
               h.2.1.symm, Or.inr ⟨ht1, ?_⟩⟩
+            have hh : (bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0) = true := by
+              simpa using hhtml
+            rw [hh]
             simpa [List.append_assoc] using h.1.symm
+          · have hh : (bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0) = false := by
+              simpa using hhtml
+            by_cases hdef : 1 < countModuleOpeners none
+                (src.take (src.length - r'.length)) (src.length - r'.length + 1)
+            · have hdefx := moduleTryCands_defense_exact src name toks attrRaw r
+                bodyRaw r' more htail hhtml hdef
+              rw [hdefx] at h
+              have hinj := Option.some.inj h
+              refine ⟨attrRaw, r, bodyRaw, r', List.mem_cons_self, htail,
+                (congrArg Prod.fst (congrArg Prod.snd hinj)).symm,
+                Or.inl ⟨?_, ?_⟩⟩
+              · exact (congrArg Prod.snd (congrArg Prod.snd hinj)).symm
+              · exact (congrArg Prod.fst hinj).symm
+            · simp [moduleTryCands, htail, hhtml, hdef, claimModule] at h
+              have ht1 : t1 ≠ toks := by
+                intro hcon
+                have e := h.2.2.symm
+                rw [hcon] at e
+                have hl := congrArg List.length e
+                simp at hl
+              refine ⟨attrRaw, r, bodyRaw, r', List.mem_cons_self, htail,
+                h.2.1.symm, Or.inr ⟨ht1, ?_⟩⟩
+              rw [hh]
+              simpa [List.append_assoc] using h.1.symm
 
 theorem moduleMatch_process_shape {src repl rest' : List Nat}
     {toks t1 : List TokenEntry}
@@ -3960,7 +4111,8 @@ theorem moduleMatch_process_shape {src repl rest' : List Nat}
             (src.take (src.length - r'.length)))) ∨
         (t1 ≠ toks ∧
           repl = [10, 10] ++ phBytes toks.length ++ [10, 10] ++
-            (if bodyHasCodeToken bodyRaw toks 0 then
+            (if (bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0) ||
+                bodyHasCodeToken bodyRaw toks 0 then
                bodyRaw ++ (src.take (src.length - r'.length)).drop
                  (src.length - r'.length - 11)
              else []))) := by
@@ -4775,8 +4927,7 @@ theorem moduleMatch_repl_preserves_lower {src repl rest' : List Nat}
     obtain ⟨wsPre, B, hrB, htailCases⟩ := moduleTail_end_spec htail
     rcases htailCases with ⟨hbody, hr'eq, -⟩ | ⟨c, closerVar, hf, hbody, hBdrop, hcloserlen, hcloserend⟩
     · subst bodyRaw
-      have hcodefalse : bodyHasCodeToken ([] : List Nat) toks 0 = false := bodyHasCodeToken_nil toks
-      rw [hcodefalse]
+      simp [bodyHasCodeToken_nil toks]
       simpa using hWlower
     · have hB : B = bodyRaw ++ closerVar ++ rest' := by
         calc B = B.take (c + 1) ++ B.drop (c + 1) :=
@@ -4805,7 +4956,8 @@ theorem moduleMatch_repl_preserves_lower {src repl rest' : List Nat}
           omega
         rw [hidx]
         exact List.drop_left
-      by_cases hcode : bodyHasCodeToken bodyRaw toks 0 = true
+      by_cases hcode : ((bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0) ||
+          bodyHasCodeToken bodyRaw toks 0) = true
       · rw [if_pos hcode, hauth]
         have hlowerMatched : allModuleOpenersLower ((X ++ bodyRaw) ++ closerVar) := by
           rw [← htakeMatched]
@@ -4862,8 +5014,7 @@ theorem moduleMatch_repl_end_table {src repl rest' : List Nat}
     obtain ⟨wsPre, B, hrB, htailCases⟩ := moduleTail_end_spec htail
     rcases htailCases with ⟨hbody, hr'eq, -⟩ | ⟨c, closerVar, hf, hbody, hBdrop, hcloserlen, hcloserend⟩
     · subst bodyRaw
-      rw [bodyHasCodeToken_nil toks]
-      simp
+      simp [bodyHasCodeToken_nil toks]
       exact Or.inl (claimWrapper_end10 toks.length)
     · have hB : B = bodyRaw ++ closerVar ++ rest' := by
         calc B = B.take (c + 1) ++ B.drop (c + 1) :=
@@ -4892,7 +5043,8 @@ theorem moduleMatch_repl_end_table {src repl rest' : List Nat}
           omega
         rw [hidx]
         exact List.drop_left
-      by_cases hcode : bodyHasCodeToken bodyRaw toks 0 = true
+      by_cases hcode : ((bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0) ||
+          bodyHasCodeToken bodyRaw toks 0) = true
       · rw [if_pos hcode, hauth]
         right
         have hcloserne : closerVar ≠ [] := by
@@ -5270,11 +5422,35 @@ private theorem moduleNonTermBase_count :
     1 < countModuleOpeners none moduleNonTermBase (moduleNonTermBase.length + 1) := by
   decide
 
+private theorem bytesContain_cons_false_of_not_mem (p : Nat) (ps body : List Nat)
+    (hno : p ∉ body) : bytesContain (p :: ps) body = false := by
+  induction body with
+  | nil => simp [bytesContain]
+  | cons b bs ih =>
+      have hne : p ≠ b := fun h => hno (by simp [h])
+      have hno' : p ∉ bs := fun h => hno (by simp [h])
+      have hpref : (p :: ps).isPrefixOf (b :: bs) = false := by
+        simp [List.isPrefixOf, hne]
+      simp [bytesContain, hpref, ih hno']
+
+private theorem bodyHasHtmlToken_false_of_no_255 (body : List Nat) (hno : 255 ∉ body)
+    (toks : List TokenEntry) (i : Nat) : bodyHasHtmlToken body toks i = false := by
+  induction toks generalizing i with
+  | nil => rfl
+  | cons t ts ih =>
+      have hb : bytesContain (phBytes i) body = false := by
+        unfold phBytes
+        exact bytesContain_cons_false_of_not_mem 255 _ body hno
+      simp [bodyHasHtmlToken, hb, ih (i + 1)]
+
 private theorem moduleNonTermBase_match (tail : List Nat) (toks : List TokenEntry) :
     moduleMatch (moduleNonTermBase ++ tail) toks =
       some (moduleNonTermBase ++ [10], tail, toks) := by
+  have hno255 : 255 ∉ moduleNonTermBodyPre := by decide
+  have hhtml : bodyHasHtmlToken moduleNonTermBodyPre toks 0 = false :=
+    bodyHasHtmlToken_false_of_no_255 _ hno255 toks 0
   rw [moduleMatch, moduleNonTermBase_head]
-  simp [moduleTryCands, moduleNonTermBase_tail, moduleNonTermBase_insert,
+  simp [moduleTryCands, moduleNonTermBase_tail, hhtml, moduleNonTermBase_insert,
     moduleNonTermBase_rewrite, moduleNonTermBase_count]
 
 private theorem moduleMatch_lf_head_none (tail : List Nat) (toks : List TokenEntry) :

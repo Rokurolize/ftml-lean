@@ -813,11 +813,30 @@ where
               | _ => go rest
         | none => go rest
 
-/-- Match `/\[\[html(?:\s+[^\]\n]*)?\]\][ \t]*\n?(.*?)\n?[ \t]*\[\[\/html\]\](\s|$)/Umsi`
-    at the head of `src`. Under `/U`, the optional leading/trailing `[ \t]*\n?`
-    quantifiers are lazy (matching empty) and `(.*?)` is greedy (matching up to
-    the last `[[/html]]` followed by `\s` or end-of-input). Returns
-    `(fullMatch, body, trailer, rest)`. -/
+/-- The greedy `[ \t]*\n?` immediately after the `[[html ...]]` opener
+    under the snapshot-45 `/msi` pattern: all horizontal whitespace, then at
+    most one LF. -/
+private def htmlDropOpenWs (s : List Nat) : List Nat :=
+  let s1 := s.dropWhile (fun b => b == 32 || b == 9)
+  match s1 with
+  | 10 :: rest => rest
+  | _ => s1
+
+/-- The greedy suffix matched by `\n?[ \t]*` immediately before a fixed
+    `[[/html]]` closer. Equivalently, strip the trailing space/tab run and
+    one LF when that run is immediately preceded by LF. Bytes in the other
+    order (spaces before a final LF) keep the spaces in the body, exactly as
+    the regex's left-to-right `\n?` then `[ \t]*` requires. -/
+private def htmlStripCloseWs (body : List Nat) : List Nat :=
+  let revNoWs := body.reverse.dropWhile (fun b => b == 32 || b == 9)
+  match revNoWs with
+  | 10 :: revRest => revRest.reverse
+  | _ => revNoWs.reverse
+
+/-- Match `/\[\[html(?:\s+[^\]\n]*)?\]\][ \t]*\n?(.*?)\n?[ \t]*\[\[\/html\]\](\s|$)/msi`
+    at the head of `src`. Without `/U`, the whitespace quantifiers around the
+    lazy body are greedy while `(.*?)` still selects the first closer that is
+    followed by `\s` or end-of-input. Returns `(fullMatch, body, trailer, rest)`. -/
 def htmlMatchAt (src : List Nat) :
     Option (List Nat × List Nat × List Nat × List Nat) :=
   match htmlMatchLitCI (litBytes "[[html") src with
@@ -836,9 +855,11 @@ def htmlMatchAt (src : List Nat) :
         | [] => none
       match afterOpener with
       | none => none
-      | some afterOpen =>
+      | some afterOpen0 =>
+          let afterOpen := htmlDropOpenWs afterOpen0
           let cands := htmlOccurrencesCI (litBytes "[[/html]]") afterOpen
-          cands.reverse.findSome? fun (body, afterClose) =>
+          cands.findSome? fun (body0, afterClose) =>
+            let body := htmlStripCloseWs body0
             match afterClose with
             | [] => some (src, body, [], [])
             | b :: rest =>
@@ -1053,7 +1074,7 @@ theorem htmlScan_body_opener_attrs_witness :
     (htmlScan (litBytes "[[html]]\n[[html class=\"inner\" style=\"color:red\"]]\n[[/html]]") [] 80).2 =
       [{ rule := "Html",
          opts :=
-           [("text".toList, OptVal.str "\n[[html class=\"inner\" style=\"color:red\"]]\n".toList),
+           [("text".toList, OptVal.str "[[html class=\"inner\" style=\"color:red\"]]".toList),
             ("class".toList, OptVal.str "inner".toList),
             ("style".toList, OptVal.str "color:red".toList)] }] := rfl
 

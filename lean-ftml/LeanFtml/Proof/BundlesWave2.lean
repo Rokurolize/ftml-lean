@@ -2669,7 +2669,7 @@ def htmlProcessRef : ProcessCallback :=
 
 theorem html_processRef_witness :
     let full := litBytes "[[html]]\n[[html class=\"c\" style=\"s\"]]\n[[/html]]\n"
-    let body := litBytes "\n[[html class=\"c\" style=\"s\"]]\n"
+    let body := litBytes "[[html class=\"c\" style=\"s\"]]"
     let trailer := [10]
     let (rep, toks1) := htmlProcessRef full [some body, some trailer] []
     htmlScan full [] (full.length + 1) = (rep, toks1) := by

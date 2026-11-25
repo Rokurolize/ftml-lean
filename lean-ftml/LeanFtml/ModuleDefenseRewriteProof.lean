@@ -63,12 +63,13 @@ theorem moduleTryCands_defense_unchanged_tokens
     (src name : List Nat) (toks : List TokenEntry)
     (attrRaw rest bodyRaw rest' : List Nat) (more : List (List Nat × List Nat))
     (htail : moduleTail rest = some (bodyRaw, rest'))
+    (hNoHtml : (bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0) = false)
     (hdef : countModuleOpeners none (src.take (src.length - rest'.length))
               (src.length - rest'.length + 1) > 1) :
     moduleTryCands src name toks ((attrRaw, rest) :: more) =
       some (rewriteModulePrefix (insertInlineOpenerNewlines (src.take (src.length - rest'.length))),
         rest', toks) := by
-  simp [moduleTryCands, htail, hdef]
+  simp [moduleTryCands, htail, hNoHtml, hdef]
 
 /-- Lifting (a) to `moduleMatch`: a head that presents the first candidate in the defense condition makes the whole match return the rewritten text, the residual, and the original token table. -/
 theorem moduleMatch_defense_unchanged_tokens
@@ -76,6 +77,7 @@ theorem moduleMatch_defense_unchanged_tokens
     (name attrRaw rest bodyRaw rest' : List Nat) (more : List (List Nat × List Nat))
     (hhead : moduleHead (litBytes "[[module") src = some (name, (attrRaw, rest) :: more))
     (htail : moduleTail rest = some (bodyRaw, rest'))
+    (hNoHtml : (bodyRaw != [] && bodyHasHtmlToken bodyRaw toks 0) = false)
     (hdef : countModuleOpeners none (src.take (src.length - rest'.length))
               (src.length - rest'.length + 1) > 1) :
     moduleMatch src toks =
@@ -83,7 +85,7 @@ theorem moduleMatch_defense_unchanged_tokens
         rest', toks) := by
   unfold moduleMatch
   rw [hhead]
-  exact moduleTryCands_defense_unchanged_tokens src name toks attrRaw rest bodyRaw rest' more htail hdef
+  exact moduleTryCands_defense_unchanged_tokens src name toks attrRaw rest bodyRaw rest' more htail hNoHtml hdef
 
 /-! ## (b) New consequences of `rewriteModulePrefix` -/
 
