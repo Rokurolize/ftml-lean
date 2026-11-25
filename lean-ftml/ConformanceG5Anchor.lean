@@ -17,7 +17,8 @@
     * `mirrorTokenAware`: `dispatchRenderR41TokenAware` for the two
       token-table-sensitive rules Footnoteitem and Gallery, otherwise
       the same bytes as `mirror` (an observation, not a pass criterion)
-    * `spec`: `renderRefSpec harnessEnv`
+    * `spec`: `renderRefSpec harnessEnv` with the case token lookup supplied;
+      only Footnoteitem and Gallery consult that trailing argument
 
   `--list-rules` enumerates all 62 `RenderRuleId` constructors directly.
   This deliberately does not use the older `mirroredRenderRules` driver
@@ -397,7 +398,7 @@ partial def processG5Line (line : String) : String :=
                 if r == .footnoteitem || r == .gallery then
                   dispatchRenderR41TokenAware lookup r conf doc opts
                 else mirror
-              let spec := renderRefSpec harnessEnv r conf doc opts
+              let spec := renderRefSpec harnessEnv r conf doc opts lookup
               "{\"id\":" ++ escapeJsonR3 id.toList ++
               ",\"rule\":" ++ escapeJsonR3 ruleName.toList ++
               ",\"mirror\":" ++ serBytes mirror ++

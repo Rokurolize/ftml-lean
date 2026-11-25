@@ -30,9 +30,11 @@
 
   Standing Tier-2 remainders (named cleanly):
   1. Shared low-level sub-helpers listed above are reused on both sides rather than duplicated.
-  2. `dispatchRenderR41TokenAware`: threading token-table `lookup : Nat → Option TokenEntry` into
-     `.footnoteitem` (`footnoteLeadVisible`) and `.gallery` (`galleryItemText`); the single-token
-     `RenderProofBundle` signature models single-token `dispatchRenderR41` (`lookup := fun _ => none`).
+  2. Token-table threading is now part of `renderRefSpec` through its trailing optional
+     `lookup : Nat → Option TokenEntry`, consumed only by `.footnoteitem` and `.gallery`;
+     the single-token `RenderProofBundle` signature uses the default no-lookup form.
+     Residual Gallery token-composition limits are the shallow (nonrecursive)
+     `renderTokenId` fallback and reconstructed rather than independent `tokenSource` state.
   3. `RenderCore.ufffdWalk` / `Stage2_TidyCore`: literal U+FFFD recovery rescanning and
      `purifyRecoveredHtml` (`Stage2` boundary).
 
@@ -256,9 +258,14 @@ def renderImageWithEnv (env : RenderEnv) (conf : RenderConf) (doc : DocState)
           | none => (litBytes "/local--files/" ++ seg ++ [47] ++ src0, link0)
     assembleImageHtml attr opts src0 src link
 
-/-- Environment-parametric Gallery row step (`Gallery.php`, REFCORR19 F8 `itemText`). -/
+/-- Environment-parametric Gallery row step (`Gallery.php`, REFCORR19 F8 `itemText`).
+    The optional token-renderer and token-table lookup default to the old no-context
+    row behavior; `renderRefSpec` supplies them, while `renderMirrorEnv` leaves the
+    defaults untouched. -/
 def galleryRowStepEnv (env : RenderEnv) (size : List Nat)
-    (st : List Nat × List Nat × List Nat) (row : List Nat) :
+    (st : List Nat × List Nat × List Nat) (row : List Nat)
+    (renderTok : TokenEntry → List Nat := fun _ => [])
+    (lookup : Nat → Option TokenEntry := fun _ => none) :
     List Nat × List Nat × List Nat :=
   let (_, osrc, out) := st
   let target : List Nat := []
@@ -266,7 +273,7 @@ def galleryRowStepEnv (env : RenderEnv) (size : List Nat)
   else
     let body := phpTrimBytes (row.drop 2)
     let (src0raw, attrs0) := gallerySplitRow body
-    let src0 := galleryItemText (fun _ => []) (fun _ => none) src0raw
+    let src0 := galleryItemText renderTok lookup src0raw
     let (src1, target1) :=
       if startsWithBytes [42] src0 then
         (src0.drop 1, litBytes "target=\"_blank\"")
@@ -285,7 +292,7 @@ def galleryRowStepEnv (env : RenderEnv) (size : List Nat)
             litBytes "\" alt=\"" ++ alt ++
             litBytes "\"/></a></td></tr></table></div>")
     else
-      galleryRowStep size st row
+      galleryRowStep size st row renderTok lookup
 
 /-- Environment-parametric Gallery mirror (`Gallery.php`). -/
 def renderGalleryWithEnv (env : RenderEnv) (opts : OptMap) : List Nat :=
@@ -330,14 +337,18 @@ def refXhtmlFootnote (conf : RenderConf) (opts : OptMap) : List Nat :=
     litBytes "scrollToReference('footnote-" ++ conf.footnoteIdPrefix ++ idB ++
     litBytes "')\">" ++ idB ++ litBytes "</a></sup>"
 
-/-- Direct PHP-traceable spec for `Footnoteitem.php` (single-token path). -/
-def refXhtmlFootnoteitem (conf : RenderConf) (doc : DocState) (opts : OptMap) : List Nat :=
+/-- Direct PHP-traceable spec for `Footnoteitem.php`. The optional lookup is the
+    render-phase token table used by PHP when empty-Raw placeholders are stripped
+    before the separator-space decision; omitting it gives the legacy single-token
+    no-context form. -/
+def refXhtmlFootnoteitem (conf : RenderConf) (doc : DocState) (opts : OptMap)
+    (lookup : Nat → Option TokenEntry := fun _ => none) : List Nat :=
   if optTypeIs opts (litBytes "parabreak") then [10]
   else if optTypeIs opts (litBytes "start") then
     let idB := optStrBytes opts "id".toList
     let idN := (optNat opts "id".toList).getD 0
     let body := if idN > 0 then (doc.footnotes[idN - 1]?).getD [] else []
-    let sep := if (footnoteLeadVisible (fun _ => none) body).isEmpty then [] else [32]
+    let sep := if (footnoteLeadVisible lookup body).isEmpty then [] else [32]
     litBytes "<div class=\"footnote-footer\" id=\"footnote-" ++ conf.footnoteIdPrefix ++ idB ++
       litBytes "\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference(" ++
       litBytes "'footnoteref-" ++ conf.footnoteIdPrefix ++ idB ++ litBytes "')\">" ++
@@ -974,13 +985,20 @@ def refXhtmlImage (env : RenderEnv) (conf : RenderConf) (doc : DocState) (opts :
           | none => (litBytes "/local--files/" ++ seg ++ [47] ++ src0, link0)
     assembleImageHtml attr opts src0 src link
 
-/-- Direct PHP-traceable spec for `Gallery.php`. -/
-def refXhtmlGallery (env : RenderEnv) (opts : OptMap) : List Nat :=
+/-- Direct PHP-traceable spec for `Gallery.php`. The optional token renderer and
+    lookup model `Gallery::itemText`: authored-source/text resolution first, then
+    PHP's one-level `renderTokenId` fallback. As in `dispatchRenderR41TokenAware`,
+    that fallback is shallow (it is not itself token-table recursive), and
+    `tokenSource` is reconstructed from parse-reachable token entries rather than
+    represented as independent state. -/
+def refXhtmlGallery (env : RenderEnv) (opts : OptMap)
+    (renderTok : TokenEntry → List Nat := fun _ => [])
+    (lookup : Nat → Option TokenEntry := fun _ => none) : List Nat :=
   let size := gallerySize (optStrBytes opts "size".toList)
   let sources := optStrBytes opts "sources".toList
   if phpTruthyBytes sources then
     let (_, _, out) := (explodeByte 10 sources).foldl
-      (fun st row => galleryRowStepEnv env size st row)
+      (fun st row => galleryRowStepEnv env size st row renderTok lookup)
       ([], [], litBytes "<div class=\"gallery-box\">")
     out ++ litBytes "</div>"
   else
@@ -996,12 +1014,17 @@ def refXhtmlUser (env : RenderEnv) (opts : OptMap) : List Nat :=
         litBytes "</em> does not match any existing user name</span>"
 
 /-- Concrete TCB-4 reference render specification (`renderRefSpec`) for all 62
-    `RenderRuleId`s, parametric in `RenderEnv`. -/
+    `RenderRuleId`s, parametric in `RenderEnv`. The trailing optional lookup is the
+    render-phase token table. Exactly the two renderers audited as token-table
+    consumers use it: `.footnoteitem` for the empty-Raw separator decision and
+    `.gallery` for token-composed item rows. Every other branch ignores it, and
+    omitting it preserves the prior single-token/no-context behavior. -/
 def renderRefSpec (env : RenderEnv) (r : RenderRuleId)
-    (conf : RenderConf) (doc : DocState) (opts : OptMap) : List Nat :=
+    (conf : RenderConf) (doc : DocState) (opts : OptMap)
+    (lookup : Nat → Option TokenEntry := fun _ => none) : List Nat :=
   match r with
   | .footnote => refXhtmlFootnote conf opts
-  | .footnoteitem => refXhtmlFootnoteitem conf doc opts
+  | .footnoteitem => refXhtmlFootnoteitem conf doc opts lookup
   | .footnoteblock => refXhtmlFootnoteblock doc opts
   | .bibitem => refXhtmlBibitem conf opts
   | .bibliography => refXhtmlBibliography opts
@@ -1059,7 +1082,12 @@ def renderRefSpec (env : RenderEnv) (r : RenderRuleId)
   | .module654 => refXhtmlModule env opts
   | .math => refXhtmlMath env opts
   | .image => refXhtmlImage env conf doc opts
-  | .gallery => refXhtmlGallery env opts
+  | .gallery =>
+      refXhtmlGallery env opts
+        (fun e => match renderRuleOfName e.rule with
+          | some rid => dispatchRenderR41 rid conf doc e.opts
+          | none => [])
+        lookup
   | .user => refXhtmlUser env opts
   | .html => refXhtmlHtml opts
 
@@ -1164,6 +1192,86 @@ private theorem galleryRowStepEnv_harness_eq (size : List Nat)
               simp only [hrow, Bool.not_true, Bool.false_eq_true, ↓reduceIte, hstar,
                 Bool.false_eq_true, hfk]
           | false => simp only [hfk, Bool.false_eq_true, ↓reduceIte]
+
+/-- Token-aware form of `galleryRowStepEnv_harness_eq`. At `harnessEnv` the
+    Flickr boundary is absent, so the env-parametric row step agrees with the
+    shared shallow row step for any supplied token renderer and lookup. -/
+private theorem galleryRowStepEnv_harness_tokenAware_eq (size : List Nat)
+    (st : List Nat × List Nat × List Nat) (row : List Nat)
+    (renderTok : TokenEntry → List Nat) (lookup : Nat → Option TokenEntry) :
+    galleryRowStepEnv harnessEnv size st row renderTok lookup =
+      galleryRowStep size st row renderTok lookup := by
+  unfold galleryRowStepEnv
+  dsimp only
+  cases hrow : startsWithBytes [58, 32] row with
+  | false =>
+      simp only [hrow, Bool.not_false, ↓reduceIte]
+      unfold galleryRowStep
+      simp only [hrow, Bool.not_false, ↓reduceIte]
+  | true =>
+      simp only [hrow, Bool.not_true, Bool.false_eq_true, ↓reduceIte]
+      cases hstar : startsWithBytes [42]
+          (galleryItemText renderTok lookup
+            (gallerySplitRow (phpTrimBytes (row.drop 2))).1) with
+      | true =>
+          simp only [hstar, ↓reduceIte]
+          cases hfk : bytesContainsSub (litBytes "flickr:")
+              ((galleryItemText renderTok lookup
+                (gallerySplitRow (phpTrimBytes (row.drop 2))).1).drop 1) with
+          | true =>
+              simp only [hfk, ↓reduceIte, harnessEnv]
+              unfold galleryRowStep
+              dsimp only
+              simp only [hrow, Bool.not_true, Bool.false_eq_true, ↓reduceIte, hstar, hfk]
+          | false => simp only [hfk, Bool.false_eq_true, ↓reduceIte]
+      | false =>
+          simp only [hstar, Bool.false_eq_true, ↓reduceIte]
+          cases hfk : bytesContainsSub (litBytes "flickr:")
+              (galleryItemText renderTok lookup
+                (gallerySplitRow (phpTrimBytes (row.drop 2))).1) with
+          | true =>
+              simp only [hfk, ↓reduceIte, harnessEnv]
+              unfold galleryRowStep
+              dsimp only
+              simp only [hrow, Bool.not_true, Bool.false_eq_true, ↓reduceIte, hstar,
+                Bool.false_eq_true, hfk]
+          | false => simp only [hfk, Bool.false_eq_true, ↓reduceIte]
+
+private theorem foldl_galleryRowStepEnv_tokenAware (sz : List Nat)
+    (rows : List (List Nat)) (acc : List Nat × List Nat × List Nat)
+    (renderTok : TokenEntry → List Nat) (lookup : Nat → Option TokenEntry) :
+    rows.foldl (fun st row => galleryRowStepEnv harnessEnv sz st row renderTok lookup) acc =
+      rows.foldl (fun st row => galleryRowStep sz st row renderTok lookup) acc := by
+  have hfn : (fun st row => galleryRowStepEnv harnessEnv sz st row renderTok lookup) =
+      (fun st row => galleryRowStep sz st row renderTok lookup) :=
+    funext fun st => funext fun row =>
+      galleryRowStepEnv_harness_tokenAware_eq sz st row renderTok lookup
+  rw [hfn]
+
+/-- Harness-specialized token-aware Gallery bridge. Proof-strength note: this is
+    a consistency theorem between the reference spec and the existing shallow
+    token-aware mirror dispatch under `harnessEnv`; it does not model recursive
+    token-table-aware `renderTokenId` fallback or independent `tokenSource` state. -/
+theorem renderRefSpec_harness_gallery_tokenAware_eq
+    (lookup : Nat → Option TokenEntry) (conf : RenderConf)
+    (doc : DocState) (opts : OptMap) :
+    renderRefSpec harnessEnv .gallery conf doc opts lookup =
+      dispatchRenderR41TokenAware lookup .gallery conf doc opts := by
+  unfold renderRefSpec dispatchRenderR41TokenAware refXhtmlGallery renderGalleryCore
+  dsimp only
+  cases hsrc : phpTruthyBytes (optStrBytes opts "sources".toList) with
+  | false => simp only [Bool.false_eq_true, ↓reduceIte]
+  | true =>
+      simp only [↓reduceIte]
+      have hf := foldl_galleryRowStepEnv_tokenAware
+        (gallerySize (optStrBytes opts "size".toList))
+        (explodeByte 10 (optStrBytes opts "sources".toList))
+        ([], [], litBytes "<div class=\"gallery-box\">")
+        (fun e => match renderRuleOfName e.rule with
+          | some rid => dispatchRenderR41 rid conf doc e.opts
+          | none => [])
+        lookup
+      exact congrArg (fun p : List Nat × List Nat × List Nat => p.2.2 ++ litBytes "</div>") hf
 
 private theorem renderCodeWithEnv_harness_eq (opts : OptMap) :
     renderCodeWithEnv harnessEnv opts = renderCode opts := by

@@ -8,9 +8,17 @@
   ListTable 4, Interactive 11, CodeEmbed 2, Serving 7, Html 1 = 62 total) receives an
   explicit `RenderProofBundle` instance proving `eq_ref` parametrically in `env : RenderEnv`.
 
-  Standing Tier-2 remainders (named cleanly, not claimed here):
-  1. `dispatchRenderR41TokenAware`: threading lookup into `.footnoteitem` and `.gallery`.
-  2. `RenderCore.ufffdWalk` pre-Tidy / `Stage2_TidyCore` composition.
+  Token-table proof-strength note: `renderRefSpec` now has a trailing optional
+  token-table lookup consumed only by `.footnoteitem` and `.gallery`. The 62
+  bundles below remain the single-token/no-lookup equality instances: they do
+  not claim that the deliberately unchanged `renderMirrorEnv` agrees with the
+  token-aware spec under a nonempty lookup. The separate token-aware bridge
+  theorems state exactly that shallower consistency claim. Residual Gallery
+  limitations are the shallow (nonrecursive) `renderTokenId` fallback and
+  reconstruction of `tokenSource` from parse-reachable token entries.
+
+  Standing Tier-2 remainder (named cleanly, not claimed here):
+  `RenderCore.ufffdWalk` pre-Tidy / `Stage2_TidyCore` composition.
 
   Axioms: `[propext, Classical.choice, Quot.sound]` only; no `sorry`, no `native_decide`,
   no `bv_decide`, no `ofReduceBool`.
@@ -83,6 +91,19 @@ def bundle_footnoteitem : RenderProofBundle renderMirrorEnv renderRefSpec Reacha
     unfold renderMirrorEnv renderRefSpec dispatchRenderR41 renderFootnoteitem refXhtmlFootnoteitem
     dsimp only
     simp only [List.append_assoc, lb_fni1]⟩
+
+/-- Token-aware Footnoteitem bridge. Proof-strength note: this theorem says the
+    reference spec and the existing token-aware mirror dispatch compute the same
+    bytes for every lookup; because both sides share the mirrored footnote
+    helpers, it is a consistency bridge, not independent evidence of PHP correctness. -/
+theorem renderRefSpec_footnoteitem_tokenAware_eq
+    (env : RenderEnv) (lookup : Nat → Option TokenEntry) (conf : RenderConf)
+    (doc : DocState) (opts : OptMap) :
+    renderRefSpec env .footnoteitem conf doc opts lookup =
+      dispatchRenderR41TokenAware lookup .footnoteitem conf doc opts := by
+  unfold renderRefSpec dispatchRenderR41TokenAware refXhtmlFootnoteitem renderFootnoteitem
+  dsimp only
+  simp only [List.append_assoc, lb_fni1]
 def bundle_footnoteblock : RenderProofBundle renderMirrorEnv renderRefSpec ReachableTok .footnoteblock :=
   ⟨fun _ _ _ _ _ => rfl⟩
 def bundle_bibitem : RenderProofBundle renderMirrorEnv renderRefSpec ReachableTok .bibitem :=
