@@ -119,6 +119,7 @@ import LeanFtml.TokenState
 import LeanFtml.Include
 import LeanFtml.IncludeGrammar
 import LeanFtml.IncludeExpr
+import LeanFtml.UnicodeCore
 
 namespace LeanFtml
 
@@ -239,7 +240,7 @@ def asciiLowerC (c : Char) : Char :=
 def isIncNormKeep (c : Char) : Bool :=
   ('a' ≤ c && c ≤ 'z') || ('0' ≤ c && c ≤ '9') ||
   c == ' ' || c == ':' || c == '-' || c == '_' ||
-  (c.toNat ≥ 0x80 && (c.isAlpha || c.isDigit))
+  (c.toNat ≥ 0x80 && isIncNormKeepU c.toNat)
 
 /-- First index at or after `fromPos` where `pat` occurs in `s`. -/
 def findSubChar (s : List Char) (pat : List Char) (fromPos : Nat) :

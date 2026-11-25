@@ -78,6 +78,13 @@
  },
  {
   "bare": false,
+  "flags": "",
+  "hex": "2f283f3a5e7c5c6e295b205c745d2a5b2a235d2b5b205c745d2b242f",
+  "php_hex": "2f283f3a5e7c5c6e295b205c745d2a5b2a235d2b5b205c745d2b242f",
+  "recursive": false
+ },
+ {
+  "bare": false,
   "flags": "U",
   "hex": "2f283f3c2140294040282e2a5b5e405d3f2940402f55",
   "php_hex": "2f283f3c2140294040282e2a5b5e405d3f2940402f55",
@@ -268,6 +275,20 @@
  {
   "bare": false,
   "flags": "",
+  "hex": "2f5b302d395d2a5c2e3f5b302d395d2b2f",
+  "php_hex": "2f5b302d395d2a5c2e3f5b302d395d2b2f",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "",
+  "hex": "2f5b412d5a612d7a302d395f25247b7d5c2d5d2b2f",
+  "php_hex": "2f5b412d5a612d7a302d395f25247b7d5c2d5d2b2f",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "",
   "hex": "2f5b5c7830302d5c7830385c7830425c7830435c7830452d5c7831415c7831432d5c7831465d2f",
   "php_hex": "2f5b5c7830302d5c7830385c7830425c7830435c7830452d5c7831415c7831432d5c7831465d2f",
   "recursive": false
@@ -324,8 +345,8 @@
  {
   "bare": false,
   "flags": "U",
-  "hex": "2f5c2a5c2a285b5e5c730a5d283f3a2e2a5b5e5c730a5d293f7c295c2a5c2a2f55",
-  "php_hex": "2f5c2a5c2a285b5e5c730a5d283f3a2e2a5b5e5c730a5d293f7c295c2a5c2a2f55",
+  "hex": "2f5c2a5c2a5c2a5c2a7c5c2a5c2a285b5e5c730a5d283f3a2e2a5b5e5c730a5d293f295c2a5c2a2f55",
+  "php_hex": "2f5c2a5c2a5c2a5c2a7c5c2a5c2a285b5e5c730a5d283f3a2e2a5b5e5c730a5d293f295c2a5c2a2f55",
   "recursive": false
  },
  {
@@ -358,9 +379,58 @@
  },
  {
   "bare": false,
+  "flags": "",
+  "hex": "2f5c475c5b5c5b283d7c3c7c3e7c3d3d295c5d5c5d5c6e2f",
+  "php_hex": "2f5c475c5b5c5b283d7c3c7c3e7c3d3d295c5d5c5d5c6e2f",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "msi",
+  "hex": "2f5c475c5b5c5b5c2f636f64655c5d5c5d285c737c24292f6d7369",
+  "php_hex": "2f5c475c5b5c5b5c2f636f64655c5d5c5d285c737c24292f6d7369",
+  "recursive": false
+ },
+ {
+  "bare": false,
   "flags": "i",
   "hex": "2f5c475c5b5c5b5c2f6469765c5d5c5d202a2f69",
   "php_hex": "2f5c475c5b5c5b5c2f6469765c5d5c5d202a2f69",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "i",
+  "hex": "2f5c475c5b5c5b5c2f6966746167735c5d5c5d2f69",
+  "php_hex": "2f5c475c5b5c5b5c2f6966746167735c5d5c5d2f69",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "i",
+  "hex": "2f5c475c5b5c5b5c2f73697a655c5d5c5d2f69",
+  "php_hex": "2f5c475c5b5c5b5c2f73697a655c5d5c5d2f69",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "i",
+  "hex": "2f5c475c5b5c5b5c2f7370616e5c5d5c5d2f69",
+  "php_hex": "2f5c475c5b5c5b5c2f7370616e5c5d5c5d2f69",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "i",
+  "hex": "2f5c475c5b5c5b5c2f7461626c655c5d5c5d5b205c745d2a2f69",
+  "php_hex": "2f5c475c5b5c5b5c2f7461626c655c5d5c5d5b205c745d2a2f69",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "i",
+  "hex": "2f5c475c5b5c5b636f6465285c735b5e5c5d5d2a293f5c5d5c5d2f69",
+  "php_hex": "2f5c475c5b5c5b636f6465285c735b5e5c5d5d2a293f5c5d5c5d2f69",
   "recursive": false
  },
  {
@@ -375,6 +445,69 @@
   "flags": "i",
   "hex": "2f5c475c5b5c5b6469765f3f5c732f69",
   "php_hex": "2f5c475c5b5c5b6469765f3f5c732f69",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "i",
+  "hex": "2f5c475c5b5c5b696674616773285c735b5e5c5d5d2a293f5c5d5c5d2f69",
+  "php_hex": "2f5c475c5b5c5b696674616773285c735b5e5c5d5d2a293f5c5d5c5d2f69",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "i",
+  "hex": "2f5c475c5b5c5b6d617468285c732b5b612d7a302d395f5d2a3f293f28283f3a5c732b5b612d7a302d395d2b3d225b5e225d2a2229292a5c732a5c5d5c5d2f69",
+  "php_hex": "2f5c475c5b5c5b6d617468285c732b5b612d7a302d395f5d2a3f293f28283f3a5c732b5b612d7a302d395d2b3d225b5e225d2a2229292a5c732a5c5d5c5d2f69",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "i",
+  "hex": "2f5c475c5b5c5b73697a655c73285b5e5c5d5d2b295c5d5c5d2f69",
+  "php_hex": "2f5c475c5b5c5b73697a655c73285b5e5c5d5d2b295c5d5c5d2f69",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "si",
+  "hex": "2f5c475c5b5c5b7370616e285c732e5b5e5c5d5d2a293f5c5d5c5d2f7369",
+  "php_hex": "2f5c475c5b5c5b7370616e285c732e5b5e5c5d5d2a293f5c5d5c5d2f7369",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "si",
+  "hex": "2f5c475c5b5c5b7461626c6528283f3a225b5e225d2a227c5b5e5c5d5d292a295c5d5c5d2f7369",
+  "php_hex": "2f5c475c5b5c5b7461626c6528283f3a225b5e225d2a227c5b5e5c5d5d292a295c5d5c5d2f7369",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "msi",
+  "hex": "2f5c475c6e5c5b5c5b5c2f6d6174685c5d5c5d285c737c24292f6d7369",
+  "php_hex": "2f5c475c6e5c5b5c5b5c2f6d6174685c5d5c5d285c737c24292f6d7369",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "",
+  "hex": "2f5c475c732a5c5b5c5b5c2f6d6174685c5d5c5d2f",
+  "php_hex": "2f5c475c732a5c5b5c5b5c2f6d6174685c5d5c5d2f",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "i",
+  "hex": "2f5c5b5c5b23657870725c732b285b5e5c5d5d2a3f295c5d5c5d2f69",
+  "php_hex": "2f5c5b5c5b23657870725c732b285b5e5c5d5d2a3f295c5d5c5d2f69",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "i",
+  "hex": "2f5c5b5c5b236966657870725c732b285b5e5c5d5d2a3f295c5d5c5d2f69",
+  "php_hex": "2f5c5b5c5b236966657870725c732b285b5e5c5d5d2a3f295c5d5c5d2f69",
   "recursive": false
  },
  {
@@ -484,6 +617,20 @@
  },
  {
   "bare": false,
+  "flags": "Umsi",
+  "hex": "2f5c5b5c5b68746d6c283f3a5c732b5b5e5c5d5c6e5d2a293f5c5d5c5d5b205c745d2a5c6e3f282e2a3f295c6e3f5b205c745d2a5c5b5c5b5c2f68746d6c5c5d5c5d285c737c24292f556d7369",
+  "php_hex": "2f5c5b5c5b68746d6c283f3a5c732b5b5e5c5d5c6e5d2a293f5c5d5c5d5b205c745d2a5c6e3f282e2a3f295c6e3f5b205c745d2a5c5b5c5b5c2f68746d6c5c5d5c5d285c737c24292f556d7369",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "i",
+  "hex": "2f5c5b5c5b68746d6c5c732b285b5e5c5d5c6e5d2a295c5d5c5d2f69",
+  "php_hex": "2f5c5b5c5b68746d6c5c732b285b5e5c5d5c6e5d2a295c5d5c5d2f69",
+  "recursive": false
+ },
+ {
+  "bare": false,
   "flags": "i",
   "hex": "2f5c5b5c5b6c69283f3a5c732b5b5e5c5d5d2a293f5c5d5c5d2f69",
   "php_hex": "2f5c5b5c5b6c69283f3a5c732b5b5e5c5d5d2a293f5c5d5c5d2f69",
@@ -515,6 +662,20 @@
   "flags": "U",
   "hex": "2f5c5e5c5e5c5e5c5e7c5c5e5c5e285b5e5c735d283f3a2e2a5b5e5c735d293f295c5e5c5e2f55",
   "php_hex": "2f5c5e5c5e5c5e5c5e7c5c5e5c5e285b5e5c735d283f3a2e2a5b5e5c735d293f295c5e5c5e2f55",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "i",
+  "hex": "2f5c62636c6173735c732a3d5c732a22285b5e225d2a29222f69",
+  "php_hex": "2f5c62636c6173735c732a3d5c732a22285b5e225d2a29222f69",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "i",
+  "hex": "2f5c627374796c655c732a3d5c732a22285b5e225d2a29222f69",
+  "php_hex": "2f5c627374796c655c732a3d5c732a22285b5e225d2a29222f69",
   "recursive": false
  },
  {
@@ -641,6 +802,13 @@
   "flags": "",
   "hex": "2f5e235b5e205c745d2f",
   "php_hex": "2f5e235b5e205c745d2f",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "",
+  "hex": "2f5e28",
+  "php_hex": "2f5e28",
   "recursive": false
  },
  {
@@ -998,6 +1166,13 @@
   "flags": "smi",
   "hex": "2f5e5c5b5c5b6d6f64756c655c73285b612d7a302d395f5c2d5c2f5d2b29285c732b2e2a3f293f5c5d5c5d2f736d69",
   "php_hex": "2f5e5c5b5c5b6d6f64756c655c73285b612d7a302d395f5c2d5c2f5d2b29285c732b2e2a3f293f5c5d5c5d2f736d69",
+  "recursive": false
+ },
+ {
+  "bare": false,
+  "flags": "",
+  "hex": "2f5e5c642b242f",
+  "php_hex": "2f5e5c642b242f",
   "recursive": false
  },
  {
@@ -1748,5 +1923,12 @@
   "hex": "7e5c5b5c5b7461626c6528283f3a225b5e225d2a227c5b5e5c5d5d292a295c5d5c5d28283f3a283f52297c2e292a3f295c5b5c5b2f7461626c655c5d5c5d7e7369",
   "php_hex": "7e5c5b5c5b7461626c6528283f3a225b5e225d2a227c5b5e5c5d5d292a295c5d5c5d28283f3a283f52297c2e292a3f295c5b5c5b2f7461626c655c5d5c5d7e7369",
   "recursive": true
+ },
+ {
+  "bare": false,
+  "flags": "si",
+  "hex": "7e5c5b5c5b7461626c65283f3a225b5e225d2a227c5b5e5c5d5d292a5c5d5c5d7e7369",
+  "php_hex": "7e5c5b5c5b7461626c65283f3a225b5e225d2a227c5b5e5c5d5d292a5c5d5c5d7e7369",
+  "recursive": false
  }
 ]

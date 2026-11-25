@@ -1,14 +1,14 @@
 {
- "patterns": 250,
+ "patterns": 276,
  "subjects_a": 343,
  "subjects_c": 2122,
  "part_counts": {
-  "A": 85750,
-  "B": 24055,
+  "A": 94668,
+  "B": 25837,
   "C": 16976
  },
- "total_cases": 126781,
- "cases_sha256": "23f4b821c4bcc9c297910a05b98db1415ca1aa18abbcb0c4fea0bb8fbf24c61c",
+ "total_cases": 137481,
+ "cases_sha256": "5736896f1cfbac9cbf42c1c45987c4803710baf6c5d5e8f358f20d803b56a264",
  "sigma": [
   97,
   98,

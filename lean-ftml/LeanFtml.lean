@@ -87,3 +87,4 @@ import LeanFtml.Proof.ProofListCert
 import LeanFtml.RefRender
 import LeanFtml.Proof.RenderBundles
 import LeanFtml.Proof.F3R1Bundles
+import LeanFtml.Proof.UnicodeCoreProof

@@ -551,7 +551,7 @@ def sizeRule (st : ParseState) : ParseState :=
 def isWsU (c : Char) : Bool :=
   let n := c.toNat
   n == 9 || n == 10 || n == 11 || n == 12 || n == 13 || n == 32 ||
-  n == 133 || n == 160 || n == 5760 ||
+  n == 133 || n == 160 || n == 5760 || n == 6158 ||
   (8192 ≤ n && n ≤ 8202) || n == 8232 || n == 8233 ||
   n == 8239 || n == 8287 || n == 12288
 

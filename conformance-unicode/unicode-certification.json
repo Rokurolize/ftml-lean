@@ -1,23 +1,25 @@
 {
     "unit": "FOUNDATION-F3",
     "artifact": "UnicodeCore.lean",
-    "generator": "/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/coord-units/FOUNDATION-F3/conformance-unicode/certify_unicode.php",
-    "generator_sha256": "3506914cf800942da5ae3222d1b1b0b468103242207ab13800ca1f43e2453dc5",
-    "reference_file": "/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/ref-php/text-wiki/Text/Wiki/Parse/Default/Freelink.php",
-    "reference_sha256": "a7dc5f27d719a04391f9403a4d9d65ec5ec02be6f5c228fd1fccc37a4586d4bd",
-    "lean_output": "/home/roku/.local/state/wikijump/muse-bhl/lean-ftml-coordinator/coord-units/FOUNDATION-F3/LeanFtml/UnicodeCore.lean",
-    "lean_sha256": "219002b756588db56ef9b4de06737bebba8e33a30e4bb67027c2e597192be13f",
+    "generator": "/home/roku/.local/state/wikijump/muse-bhl/agy-finish/ftml-lean/conformance-unicode/certify_unicode.php",
+    "generator_sha256": "ffcc5e451b0d6a04fb8f218bf90bf509d4d886870910f62322fa2771193b8c1a",
+    "reference_file": "/home/roku/.local/state/wikijump/muse-bhl/agy-finish/ftml-lean/ref-php/text-wiki/Text/Wiki/Parse/Default/Freelink.php",
+    "reference_sha256": "e7674afd0aa0e6d56b78ba5867422e3cee3da4fb8312ee33ef6a58e56cda03cd",
+    "lean_output": "/home/roku/.local/state/wikijump/muse-bhl/agy-finish/ftml-lean/lean-ftml/LeanFtml/UnicodeCore.lean",
+    "lean_sha256": "56213e8740c8030bea309b88b008d0df4b7792b799d9c31186909353724815a1",
     "php_version": "8.5.4",
     "pcre_version": "10.46 2025-08-27",
-    "timestamp_utc": "2026-11-23T05:27:27Z",
+    "timestamp_utc": "2026-11-25T00:29:33Z",
     "scalar_count": 1112064,
     "counts": {
         "space_u": 26,
         "space_ranges": 11,
         "cf": 170,
         "cf_ranges": 21,
-        "freelink_lead": 196,
+        "freelink_lead": 198,
         "lead_ranges": 28,
+        "inc_norm_keep": 142943,
+        "inc_norm_keep_ranges": 773,
         "translit_entries": 468,
         "map_function_disagreements": 0
     },
@@ -25,11 +27,12 @@
         "space_u": 0,
         "cf": 0,
         "freelink_lead": 0,
+        "inc_norm_keep": 0,
         "transliteration": 0,
         "lead_union_identity": 0
     },
     "total_mismatches": 0,
     "verdict": "ZERO-MISMATCH",
     "examples": [],
-    "method": "Pass 1 measures PHP 8.5 and emits Lean tables; pass 2 re-reads the emitted file, parses the tables, and re-measures PHP for all 1,112,064 scalars (byte-exact on transliteration). lead_union_identity checks lead = space union Cf union {U+002A}."
+    "method": "Pass 1 measures PHP 8.5 and emits Lean tables; pass 2 re-reads the emitted file, parses the tables, and re-measures PHP for all 1,112,064 scalars (byte-exact on transliteration). lead_union_identity checks lead = space union Cf union {U+002A, U+001B, U+2065}."
 }
