@@ -402,6 +402,7 @@
 {"id":"synthetic/user-missing","output":"<span class=\"printuser\"><a href=\"https://www.wikidot.com/user:info/no-such-user-g5\" onclick=\"WIKIDOT.page.listeners.userInfo(8860033); return false;\">no-such-user-g5</a></span>","stub_mediated":true,"stubs":["user"]}
 {"id":"synthetic/user-empty","output":"<span class=\"error-inline\"><em></em> does not match any existing user name</span>","stub_mediated":true,"stubs":["user"]}
 {"id":"synthetic/footnoteitem-leading-empty-raw","output":"<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>."}
+{"id":"synthetic/gallery-token-composed-raw","output":"<div class=\"gallery-box\"><div class=\"gallery-item thumbnail\"><table><tr><td><a href=\"/local--files//@@x.png@@\" ><img src=\"/local--resized-images//@@x.png@@/thumbnail.jpg\" alt=\"\"/></a></td></tr></table></div></div>"}
 {"id":"synthetic/math-invalid-env","output":"<div class=\"error-block\">Unsupported math environment \"foobar\"</div>"}
 {"id":"synthetic/code-type-php","output":"\n<div class=\"code\">\n<div class=\"hl-main\">\n<pre><span class=\"hl-code\">$x = 1;</span></pre></div>\n</div>\n\n"}
 {"id":"synthetic/footnoteitem-parabreak","output":"\n"}

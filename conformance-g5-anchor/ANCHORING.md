@@ -1,11 +1,11 @@
 # G5 render anchoring table
 
-Direct token-level differential over the retained cases in `cases.jsonl`. A byte-match means the PHP reference token renderer, `renderMirrorEnv`, and `renderRefSpec` all produced the same bytes. `mirrorTokenAware` is retained as an additional observation for the two token-table-sensitive rules; it is not used to hide a `renderRefSpec` mismatch. Blocked cases are excluded from both match and mismatch counts.
+Direct token-level differential over the retained cases in `cases.jsonl`. A byte-match means the PHP reference token renderer, the context-correct mirror path, and `renderRefSpec` all produced the same bytes. For the two token-table-sensitive rules the context-correct mirror path is `dispatchRenderR41TokenAware`; for all other rules it is `renderMirrorEnv`. The raw no-context `renderMirrorEnv` bytes remain in `comparison-details.jsonl` for inspection and are deliberately not the Footnoteitem/Gallery comparator. Blocked cases are excluded from both match and mismatch counts.
 
 | rule | cases | byte-matches | mismatch cases | blocked cases | status / blocked or finding reason |
 |---|---:|---:|---:|---:|---|
 | Footnote | 8 | 8 | 0 | 0 | ANCHORED;  |
-| Footnoteitem | 10 | 9 | 1 | 0 | MISMATCH-FOUND; G5-F3: renderRefSpec lacks the token-table lookup needed for empty-Raw placeholder bodies |
+| Footnoteitem | 10 | 10 | 0 | 0 | ANCHORED;  |
 | Footnoteblock | 10 | 10 | 0 | 0 | ANCHORED;  |
 | Bibitem | 8 | 8 | 0 | 0 | ANCHORED;  |
 | Bibliography | 8 | 8 | 0 | 0 | ANCHORED;  |
@@ -63,8 +63,8 @@ Direct token-level differential over the retained cases in `cases.jsonl`. A byte
 | Module654 | 9 | 9 | 0 | 0 | ANCHORED;  |
 | Math | 9 | 9 | 0 | 0 | PARTIAL-BLOCKED; unsupported-environment and no-op-renderer failure branches anchored; successful LaTeX/PNG rendering needs the external LatexRenderer/filesystem result |
 | Image | 10 | 10 | 0 | 0 | PARTIAL-BLOCKED; local/remote URL construction and absent-attachment :first branch anchored; positive attachment and Flickr branches need DB_FilePeer/Flickr responses representable in RenderEnv |
-| Gallery | 9 | 8 | 0 | 1 | PARTIAL-BLOCKED; explicit sources rows anchored; local attachment and Flickr branches need DB_FilePeer/Flickr/page state representable in RenderEnv |
+| Gallery | 10 | 9 | 0 | 1 | PARTIAL-BLOCKED; explicit sources rows anchored; local attachment and Flickr branches need DB_FilePeer/Flickr/page state representable in RenderEnv |
 | User | 10 | 1 | 0 | 9 | PARTIAL-BLOCKED; degenerate negative lookup anchored; positive user rendering needs DB_OzoneUserPeer plus full WDRenderUtils user record/output state |
 | Html | 2 | 2 | 0 | 0 | ANCHORED;  |
 
-Summary: 54 rules ANCHORED, 3 rules MISMATCH-FOUND, 5 rules PARTIAL-BLOCKED. Across 421 retained cases: 405 unblocked byte-matches, 5 genuine mismatch cases, 11 blocked cases. Html is included explicitly: the harness enumerates all 62 RenderRuleId constructors rather than the older mirroredRenderRules driver list, which omits Html.
+Summary: 55 rules ANCHORED, 2 rules MISMATCH-FOUND, 5 rules PARTIAL-BLOCKED. Across 422 retained cases: 407 unblocked byte-matches, 4 genuine mismatch cases, 11 blocked cases. Html is included explicitly: the harness enumerates all 62 RenderRuleId constructors rather than the older mirroredRenderRules driver list, which omits Html.

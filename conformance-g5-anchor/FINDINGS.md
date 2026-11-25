@@ -62,26 +62,6 @@ hex: `3c6120687265663d222f6d7573652d70726f62652d72326c696e6b2d667265652d65786973
 spec: utf8/escaped: `"<a href=\"/muse-probe-r2link-free-exists2\">|</a>"`
 hex: `3c6120687265663d222f6d7573652d70726f62652d72326c696e6b2d667265652d65786973747332223e7c3c2f613e`
 
-## G5-F3 — renderRefSpec cannot model the Footnoteitem token-table lookup
+## G5-F3 — resolved in this branch
 
-PHP source adjudication: `Footnoteitem.php:67-84` rewrites placeholder references through `$this->wiki->tokens` before deciding whether the separator space is visible; an empty Raw token is stripped. The retained case body is exactly placeholder token 0, whose token entry is `Raw` with empty text. PHP therefore emits no separator space. `dispatchRenderR41TokenAware` with the same lookup does match PHP, but `renderRefSpec` hard-codes the no-lookup form through `footnoteLeadVisible (fun _ => none)` and the env mirror entrypoint likewise lacks the table, so both emit a spurious space. This is a spec/token-composition finding, not a defect in the token-aware mirror observation.
-
-### case `synthetic/footnoteitem-leading-empty-raw`
-
-input options: `{"type": "start", "id": 1}`
-
-input doc: `{"footnotes": [{"$bytes": [255, 48, 255]}], "bibitems": {}, "bibitemIds": {}, "equations": {}, "mathId": null, "pageName": "", "page": {"name": "", "tags": {}}}`
-
-input tokens: `[["Raw", {"text": ""}], ["Footnoteitem", {"type": "start", "id": 1}]]`
-
-PHP: utf8/escaped: `"<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>."`
-hex: `3c64697620636c6173733d22666f6f746e6f74652d666f6f746572222069643d22666f6f746e6f74652d31223e3c6120687265663d226a6176617363726970743a3b22206f6e636c69636b3d2257494b49444f542e706167652e7574696c732e7363726f6c6c546f5265666572656e63652827666f6f746e6f74657265662d312729223e313c2f613e2e`
-
-renderMirrorEnv: utf8/escaped: `"<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. "`
-hex: `3c64697620636c6173733d22666f6f746e6f74652d666f6f746572222069643d22666f6f746e6f74652d31223e3c6120687265663d226a6176617363726970743a3b22206f6e636c69636b3d2257494b49444f542e706167652e7574696c732e7363726f6c6c546f5265666572656e63652827666f6f746e6f74657265662d312729223e313c2f613e2e20`
-
-mirrorTokenAware: utf8/escaped: `"<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>."`
-hex: `3c64697620636c6173733d22666f6f746e6f74652d666f6f746572222069643d22666f6f746e6f74652d31223e3c6120687265663d226a6176617363726970743a3b22206f6e636c69636b3d2257494b49444f542e706167652e7574696c732e7363726f6c6c546f5265666572656e63652827666f6f746e6f74657265662d312729223e313c2f613e2e`
-
-spec: utf8/escaped: `"<div class=\"footnote-footer\" id=\"footnote-1\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnoteref-1')\">1</a>. "`
-hex: `3c64697620636c6173733d22666f6f746e6f74652d666f6f746572222069643d22666f6f746e6f74652d31223e3c6120687265663d226a6176617363726970743a3b22206f6e636c69636b3d2257494b49444f542e706167652e7574696c732e7363726f6c6c546f5265666572656e63652827666f6f746e6f74657265662d312729223e313c2f613e2e20`
+The trailing token-table lookup is now threaded into `renderRefSpec` for Footnoteitem and Gallery. The former synthetic empty-Raw separator counterexample is part of the retained case set and is expected to byte-match; it is therefore no longer adjudicated as a genuine mismatch.
