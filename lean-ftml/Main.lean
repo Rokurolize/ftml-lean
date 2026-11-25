@@ -1293,3 +1293,30 @@ def main : IO Unit :=
 #print axioms LeanFtml.includeRule_isIncNormKeep_eq_unicodeCore
 #print axioms LeanFtml.includeRule_isIncNormKeep_asciiLower
 #print axioms LeanFtml.includeRule_refNormalize_step
+
+-- Stage 2(d): G3 remainders (TokEquiv/ShiftEquiv algebra, render_alpha_invariant +
+-- Reflection Surface 2 boundary, codeRule WF + 4-rule prefix, PhPair + 9-rule alpha-invariance).
+#print axioms LeanFtml.tokEquiv_comp
+#print axioms LeanFtml.tokEquiv_symm
+#print axioms LeanFtml.runRules_shiftEquiv
+#print axioms LeanFtml.runRules_tokEquiv_exists
+#print axioms LeanFtml.renderWith_alpha_invariant
+#print axioms LeanFtml.renderWith_alpha_invariant_mirrorEnv
+#print axioms LeanFtml.renderWith_alpha_invariant_refSpec
+#print axioms LeanFtml.renderWith_alpha_invariant_bijection
+#print axioms LeanFtml.renderWith_alpha_invariant_shift
+#print axioms LeanFtml.renderWith_ufffd_not_alpha_invariant
+#print axioms LeanFtml.codeRule_preserves_wf
+#print axioms LeanFtml.pipelineFull_wf_prefix4
+#print axioms LeanFtml.reachableState_prefix4
+#print axioms LeanFtml.phPair_imp_parseBytes_segsTokEquiv
+#print axioms LeanFtml.includeRule_shiftEquiv
+#print axioms LeanFtml.prefilterRule_shiftEquiv
+#print axioms LeanFtml.delimiterRule_shiftEquiv
+#print axioms LeanFtml.codeRule_shiftEquiv
+#print axioms LeanFtml.breakRule_shiftEquiv
+#print axioms LeanFtml.horizRule_shiftEquiv
+#print axioms LeanFtml.separatorRule_shiftEquiv
+#print axioms LeanFtml.clearfloatRule_shiftEquiv
+#print axioms LeanFtml.centerRule_shiftEquiv
+#print axioms LeanFtml.covered8_parse_render_shift_invariant
