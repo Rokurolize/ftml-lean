@@ -1,0 +1,53 @@
+{"id":"battery/bq01-simple","source":"> quote"}
+{"id":"battery/bq02-two-lines","source":"> one\n> two"}
+{"id":"battery/bq03-nospace","source":">no space"}
+{"id":"battery/bq04-marker-only","source":">"}
+{"id":"battery/bq05-marker-space","source":"> "}
+{"id":"battery/bq06-at-doc-start","source":"> first line"}
+{"id":"battery/bq07-leading-blank","source":"\n> quote"}
+{"id":"battery/bq08-tab-after-marker","source":">\tquote"}
+{"id":"battery/bq09-space-nested","source":"> > nested"}
+{"id":"battery/bq10-tight-nested","source":">> nested"}
+{"id":"battery/bq11-depth3-space","source":"> > > three"}
+{"id":"battery/bq12-depth3-tight","source":">>> three"}
+{"id":"battery/bq13-mixed-up","source":"> one\n>> two\n>>> three"}
+{"id":"battery/bq14-mixed-down","source":">>> three\n>> two\n> one"}
+{"id":"battery/bq15-mixed-updown","source":"> one\n>> two\n> three\n>>> four\n>> five\n> six"}
+{"id":"battery/bq16-depth-skip","source":"> one\n>>> three"}
+{"id":"battery/bq17-depth4","source":"> one\n>> two\n>>> three\n>>>> four"}
+{"id":"battery/bq18-block-basic","source":"[[blockquote]]\ntext\n[[/blockquote]]"}
+{"id":"battery/bq19-block-quote-alias","source":"[[quote]]\ntext\n[[/quote]]"}
+{"id":"battery/bq20-block-attr-class","source":"[[blockquote class=\"bq\"]]\ntext\n[[/blockquote]]"}
+{"id":"battery/bq21-block-attr-style","source":"[[blockquote style=\"color: red;\"]]\ntext\n[[/blockquote]]"}
+{"id":"battery/bq22-block-attr-id","source":"[[blockquote id=\"q1\"]]\ntext\n[[/blockquote]]"}
+{"id":"battery/bq23-block-unterminated","source":"[[blockquote]]\ntext"}
+{"id":"battery/bq24-block-with-marker","source":"[[blockquote]]\n> quote\n[[/blockquote]]"}
+{"id":"battery/bq25-block-inline","source":"[[blockquote]]text[[/blockquote]]"}
+{"id":"battery/bq26-block-empty","source":"[[blockquote]][[/blockquote]]"}
+{"id":"battery/bq27-block-mixed-case","source":"[[Blockquote]]\ntext\n[[/blockquote]]"}
+{"id":"battery/bq28-block-bogus-attr","source":"[[blockquote bogus=\"x\"]]\ntext\n[[/blockquote]]"}
+{"id":"battery/bq29-quote-then-heading","source":"> quote\n+ heading"}
+{"id":"battery/bq30-heading-then-quote","source":"+ heading\n> quote"}
+{"id":"battery/bq31-quote-then-list","source":"> quote\n* item"}
+{"id":"battery/bq32-list-then-quote","source":"* item\n> quote"}
+{"id":"battery/bq33-quote-then-div","source":"> quote\n[[div]]\ninside\n[[/div]]"}
+{"id":"battery/bq34-div-then-quote","source":"[[div]]\ninside\n[[/div]]\n> quote"}
+{"id":"battery/bq35-quote-then-code","source":"> quote\n[[code]]\ncode\n[[/code]]"}
+{"id":"battery/bq36-blank-in-run","source":"> one\n\n> two"}
+{"id":"battery/bq37-quote-then-para","source":"> quote\nplain paragraph"}
+{"id":"battery/bq38-para-then-quote","source":"plain paragraph\n> quote"}
+{"id":"battery/bq39-space-prefixed-marker","source":" > quote"}
+{"id":"battery/bq40-quote-midline","source":"text > quote"}
+{"id":"battery/bq41-double-space-after-marker","source":">  quote"}
+{"id":"battery/bq42-inline-bold","source":"> **bold** quote"}
+{"id":"battery/bq43-inline-link","source":"> [http://example.com label]"}
+{"id":"battery/bq44-wikitext-body","source":"> a [[div]] b"}
+{"id":"battery/bq45-unterminated-deep","source":">>> three\n>> two"}
+{"id":"battery/bq46-shallower-after-run","source":"> one\n>> two\nplain"}
+{"id":"battery/bq47-entities","source":"> &amp; &lt; &#39;"}
+{"id":"battery/bq48-unicode","source":"> café 日本語"}
+{"id":"battery/bq49-quote-around-block","source":"> before\n[[blockquote]]\ninner\n[[/blockquote]]\n> after"}
+{"id":"battery/bq50-block-around-quote","source":"[[blockquote]]\n> inner quote\n[[/blockquote]]"}
+{"id":"probe-refcorr21/bq-blank-plain-two-space","source":"> a\n>  \n> b"}
+{"id":"probe-refcorr21/bq-blank-plain-one-space","source":"> a\n> \n> b"}
+{"id":"probe-refcorr21/bq-blank-plain-three-space","source":"> a\n>   \n> b"}

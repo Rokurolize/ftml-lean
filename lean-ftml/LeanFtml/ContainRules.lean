@@ -472,19 +472,34 @@ def sizeDropByte (b : Nat) : Bool :=
   b ≤ 8 || b == 11 || b == 12 || (14 ≤ b && b ≤ 26) ||
   (28 ≤ b && b ≤ 31)
 
-/-- Remove space/tab runs that stand at a line end or at
-    the end of the string (the reference's
-    `/[ \t]+(?=\n|$)/` replacement): a pending run is
-    dropped when a newline or the end follows it, and
-    kept otherwise. -/
-def dropLineEndRuns (s : List Nat) : List Nat := go s []
+/-- Strip space and tab bytes at the right end of one line
+    (the per-line `preg_replace('/[ \t]+$/', '', $line)` arm of
+    snapshot-46 Size). -/
+def sizeRtrimSpaceTab (bs : List Nat) : List Nat :=
+  (bs.reverse.dropWhile (fun b => b == 32 || b == 9)).reverse
+
+/-- Normalize corrected Size content line by line. A line made
+    entirely of at least one space/tab byte and ending in a newline
+    normalizes to one space byte plus that newline; every other line
+    has its trailing space/tab run stripped, whether the line ends at
+    a newline or at the end of the string. Empty lines stay empty. -/
+def normalizeSizeLines (s : List Nat) : List Nat := go s (s.length + 1)
 where
-  go : List Nat → List Nat → List Nat
+  go : List Nat → Nat → List Nat
     | [], _ => []
-    | b :: rest, acc =>
-        if b == 32 || b == 9 then go rest (acc ++ [b])
-        else if b == 10 then 10 :: go rest []
-        else acc ++ b :: go rest []
+    | _, 0 => []
+    | xs, fuel + 1 =>
+        let line := xs.takeWhile (· != 10)
+        let after := xs.drop line.length
+        let hasNewline := after.head? == some 10
+        let line' :=
+          if hasNewline && !line.isEmpty &&
+              line.all (fun b => b == 32 || b == 9) then
+            [32]
+          else sizeRtrimSpaceTab line
+        if hasNewline then
+          line' ++ [10] ++ go (after.drop 1) fuel
+        else line'
 
 /-- Whether a whole line is exactly the placeholder of an empty Raw token
     (snapshot-45 `Size.php`'s `Raw`/`text === ''` line test). -/
@@ -505,7 +520,7 @@ def sizeLineIsEmptyRaw (line : List Nat) (toks : List TokenEntry) : Bool :=
 /-- snapshot-45 Size boundary #17. Scan the corrected content line by line;
     once visible text has been seen, an empty-Raw line immediately followed by
     a line starting `= ` splits at the newline before the empty-Raw line
-    (`lineStart - 1` in the PHP byte index). -/
+    (`lineStart` in the PHP byte index, after the preceding newline). -/
 def sizeFindSplit (content : List Nat) (toks : List TokenEntry) : Option Nat :=
   go content 0 false (content.length + 1)
 where
@@ -519,7 +534,7 @@ where
         let hit := match after with
           | 10 :: rest => seen && isEmptyRaw && ((rest.take 2) == [61, 32])
           | _ => false
-        if hit then some (pos - 1)
+        if hit then some pos
         else
           let seen' := seen || (!isEmptyRaw && trimBytes line != [])
           match after with
@@ -528,19 +543,19 @@ where
 
 /-- process() for a Size match: an invalid value returns
     the whole match unchanged (no tokens); otherwise the
-    body takes the two corrections (control bytes removed,
-    line-end space/tab runs removed), an empty corrected
-    body is elided, and any other body is claimed with the
-    trimmed value in the start token. Snapshot-45 boundary #17
-    then inserts the end token before the empty-Raw/`= ` boundary
-    when `sizeFindSplit` fires. -/
+    body takes the control-byte correction and snapshot-46's
+    line normalization, an empty corrected body is elided, and
+    any other body is claimed with the trimmed value in the start
+    token. When `sizeFindSplit` fires, the first end token stands
+    after the newline preceding the empty-Raw/`= ` boundary and a
+    second end token is appended at the consumed close position. -/
 def sizeProcess (g1 body full : List Nat)
     (toks : List TokenEntry) : List Nat × List TokenEntry :=
   let size := trimBytes g1
   if !sizeValid size then (full, toks)
   else
     let c1 := body.filter (fun b => !sizeDropByte b)
-    let c2 := dropLineEndRuns c1
+    let c2 := normalizeSizeLines c1
     if c2.isEmpty then ([], toks)
     else
       let split := sizeFindSplit c2 toks
@@ -552,7 +567,11 @@ def sizeProcess (g1 body full : List Nat)
       let t2 := t1 ++ [{ rule := "Size", opts :=
         [("type".toList, OptVal.str "end".toList)] }]
       match split with
-      | some n => (startPh ++ c2.take n ++ endPh ++ c2.drop n, t2)
+      | some n =>
+          let closePh := phBytes t2.length
+          let t3 := t2 ++ [{ rule := "Size", opts :=
+            [("type".toList, OptVal.str "end".toList)] }]
+          (startPh ++ c2.take n ++ endPh ++ c2.drop n ++ closePh, t3)
       | none => (startPh ++ c2 ++ endPh, t2)
 
 /-- One Size pass: preg_replace_callback semantics over
@@ -1023,34 +1042,63 @@ private def collSetTokTypeSuppressed (toks : List TokenEntry) (idx : Nat) : List
   | some t => toks.set idx { t with opts := omSet t.opts "type".toList (.str "suppressed".toList) }
   | none => toks
 
-/-- snapshot-45 Collapsible #03: walk placeholders in the body left-to-right
-    with `sizeDepth` initially 1. Size starts increment it; Size ends decrement
-    it. The first end that reaches zero terminates the walk whether or not the
-    guard passes. Reattachment happens only when the byte prefix strictly
-    before that end placeholder trims to empty. -/
-private def collFindOpenerSizeEnd (toks : List TokenEntry) (body : List Nat) :
-    List (Nat × Nat) → Nat → Option Nat
+/-- Walk placeholders in the body left-to-right with `sizeDepth`
+    initially 1. Size starts increment it; Size ends decrement it.
+    The first end that reaches zero is returned with its byte offset;
+    unlike snapshot-45, reaching zero does not itself commit the rule
+    to any re-scoping decision. -/
+private def collFindSizeEnd (toks : List TokenEntry) :
+    List (Nat × Nat) → Nat → Option (Nat × Nat)
   | [], _ => none
   | (eid, pos) :: rest, depth =>
       match collSizeType toks eid with
       | some ty =>
           if ty == "start".toList then
-            collFindOpenerSizeEnd toks body rest (depth + 1)
+            collFindSizeEnd toks rest (depth + 1)
           else if ty == "end".toList then
             let depth' := depth - 1
-            if depth' == 0 then
-              if (trimBytes (body.take pos)).isEmpty then some eid else none
-            else collFindOpenerSizeEnd toks body rest depth'
-          else collFindOpenerSizeEnd toks body rest depth
-      | none => collFindOpenerSizeEnd toks body rest depth
+            if depth' == 0 then some (eid, pos)
+            else collFindSizeEnd toks rest depth'
+          else collFindSizeEnd toks rest depth
+      | none => collFindSizeEnd toks rest depth
+
+/-- First byte offset whose byte is outside PCRE's byte-mode `\s`
+    (the `/\S/` first-match offset used by snapshot-46 Collapsible). -/
+private def collFirstNonWsPos (s : List Nat) : Option Nat := go s (s.length + 1) 0
+where
+  go : List Nat → Nat → Nat → Option Nat
+    | [], _, _ => none
+    | _, 0, _ => none
+    | b :: rest, fuel + 1, pos =>
+        if isWsByte b then go rest fuel (pos + 1) else some pos
+
+/-- First non-whitespace offset and the end offset just after the last
+    non-whitespace byte, both in the original byte string. -/
+private def collNonWsBounds (s : List Nat) : Option (Nat × Nat) :=
+  match collFirstNonWsPos s with
+  | none => none
+  | some first =>
+      let trailing := (s.reverse.takeWhile isWsByte).length
+      some (first, s.length - trailing)
+
+/-- snapshot-46 Collapsible's simple visible-body class: PHP-trimming
+    the body leaves a non-empty string containing neither LF nor CR. -/
+private def collSimpleBody (body : List Nat) : Bool :=
+  let t := trimBytes body
+  !t.isEmpty && !(t.contains 10) && !(t.contains 13)
 
 /-- process() for a Collapsible match: the attribute
-    group through getAttrs, kept whole. Snapshot-45 #03 validates the optional
-    leading placeholder captured by the regex as a Size `start` token, walks
-    the body with Size depth 1, transfers its size to `label_size`, and
-    suppresses the dangling pair only when the prefix before the closing Size
-    token trims empty; both tokens carry `args`, `type`, `count`, and
-    `label_size`. -/
+    group through getAttrs, kept whole. Snapshot-46 validates the optional
+    leading placeholder captured by the regex as a Size `start` token and
+    walks the body with Size depth 1. An opener-only crossing keeps the
+    snapshot-45 suppression. A simple single-line visible body is
+    re-scoped instead: when the outer Size end lies inside the body, a
+    fresh inner Size start is inserted at the first visible byte before
+    that end; when it does not, the visible body is wrapped in a fresh
+    Size pair and a fresh outer Size start is appended after the
+    Collapsible end token. Complex bodies stay on the previous
+    non-transfer path. Both Collapsible tokens carry `args`, `type`,
+    `count`, and `label_size`. -/
 def collProcess (g0 : Option (Nat × List Nat)) (g1 : List Nat)
     (g2 : Option (List Nat)) (body : List Nat) (doc : DocState)
     (toks : List TokenEntry) : List Nat × List TokenEntry × DocState :=
@@ -1059,19 +1107,62 @@ def collProcess (g0 : Option (Nat × List Nat)) (g1 : List Nat)
     | some (cand, _) =>
         if collIsSizeType toks cand "start".toList then some cand else none
     | none => none
-  let (labelSizeOpt, toks0) : Option OptVal × List TokenEntry :=
+  let (labelSizeOpt, toks0, body0, outerStartBytes) :
+      Option OptVal × List TokenEntry × List Nat × List Nat :=
     match sidOpt with
-    | none => (none, toks)
+    | none => (none, toks, body, [])
     | some sid =>
-        let hit := collFindOpenerSizeEnd toks body (collScanPhIdsPos body) 1
-        match hit with
-        | none => (none, toks)
-        | some eid =>
-            let sz := match toks[sid]? with
-              | some st => omGet st.opts "size".toList
-              | none => none
-            let t' := collSetTokTypeSuppressed (collSetTokTypeSuppressed toks sid) eid
-            (sz, t')
+        let endHit := collFindSizeEnd toks (collScanPhIdsPos body) 1
+        let simpleBody := collSimpleBody body
+        let openerOnly :=
+          match endHit with
+          | some (_, endPos) => (trimBytes (body.take endPos)).isEmpty
+          | none => false
+        let rescopeBody := !openerOnly && simpleBody
+        if !(openerOnly || rescopeBody) then (none, toks, body, [])
+        else
+          let sz := match toks[sid]? with
+            | some st => omGet st.opts "size".toList
+            | none => none
+          let sizeVal := sz.getD OptVal.null
+          let sizeStartEntry : TokenEntry :=
+            { rule := "Size", opts :=
+              [("size".toList, sizeVal),
+               ("type".toList, OptVal.str "start".toList)] }
+          let sizeEndEntry : TokenEntry :=
+            { rule := "Size", opts :=
+              [("type".toList, OptVal.str "end".toList)] }
+          let tsupp := collSetTokTypeSuppressed toks sid
+          if openerOnly then
+            match endHit with
+            | some (eid, _) =>
+                (sz, collSetTokTypeSuppressed tsupp eid, body, [])
+            | none => (sz, tsupp, body, [])
+          else
+            match endHit with
+            | some (_, endPos) =>
+                let beforeEnd := body.take endPos
+                match collFirstNonWsPos beforeEnd with
+                | some insertAt =>
+                    let innerStartPh := phBytes tsupp.length
+                    let t' := tsupp ++ [sizeStartEntry]
+                    let body' := body.take insertAt ++ innerStartPh ++ body.drop insertAt
+                    (sz, t', body', [])
+                | none => (sz, tsupp, body, [])
+            | none =>
+                match collNonWsBounds body with
+                | some (insertStart, lastPos) =>
+                    let innerStartPh := phBytes tsupp.length
+                    let t1s := tsupp ++ [sizeStartEntry]
+                    let innerEndPh := phBytes t1s.length
+                    let t2s := t1s ++ [sizeEndEntry]
+                    let outerStartPh := phBytes t2s.length
+                    let t3s := t2s ++ [sizeStartEntry]
+                    let body' := body.take insertStart ++ innerStartPh ++
+                      (body.drop insertStart).take (lastPos - insertStart) ++
+                      innerEndPh ++ body.drop lastPos
+                    (sz, t3s, body', outerStartPh)
+                | none => (sz, tsupp, body, [])
   let labelSizeVal : OptVal := labelSizeOpt.getD OptVal.null
   let attr := getAttrsBytes (g2.getD [])
   let argsOpt : OptVal := OptVal.map
@@ -1092,7 +1183,8 @@ def collProcess (g0 : Option (Nat × List Nat)) (g1 : List Nat)
   let g0bytes := match g0 with
     | some (_, bytes) => bytes
     | none => []
-  (g0bytes ++ g1 ++ g1 ++ startPh ++ [10, 10] ++ body ++ [10, 10] ++ endPh,
+  (g0bytes ++ g1 ++ g1 ++ startPh ++ [10, 10] ++ body0 ++ [10, 10] ++ endPh ++
+   outerStartBytes,
    t2, { doc with collapsibleCount := count + 1 })
 
 /-- The Collapsible pass: the base class's single
@@ -1658,20 +1750,30 @@ theorem tabviewProcess_token_order_example :
       (litBytes "[[tab One]]body[[/tab]]\n") {} []).2.2.tabviewCounter = 1 :=
   ⟨rfl, rfl⟩
 
-/-- snapshot-45 #17: once visible content has been seen, an empty-Raw line
-    followed by an `= ` heading line moves the Size end token before the
-    newline preceding the empty Raw placeholder. -/
+/-- snapshot-46: a whitespace-only line ending in a newline normalizes
+    to one space byte, while trailing runs after visible content and at
+    the final close are still stripped. -/
+theorem normalizeSizeLines_snapshot46_witness :
+    normalizeSizeLines ([32, 9, 10] ++ litBytes "x  \n" ++ litBytes "y \t") =
+      [32, 10] ++ litBytes "x\ny" := rfl
+
+/-- snapshot-46 #21: once visible content has been seen, an empty-Raw line
+    followed by an `= ` heading line places the first Size end token after
+    the preceding newline and appends a second end token at the consumed
+    close position. -/
 theorem sizeProcess_emptyraw_heading_split_witness :
     let rawToks : List TokenEntry :=
       [{ rule := "Raw", opts := [("text".toList, OptVal.str [])] }]
     let body := litBytes "visible\n" ++ phBytes 0 ++ litBytes "\n= heading"
     sizeProcess (litBytes " 120%") body (litBytes "full") rawToks =
-      (phBytes 1 ++ litBytes "visible" ++ phBytes 2 ++
-        litBytes "\n" ++ phBytes 0 ++ litBytes "\n= heading",
+      (phBytes 1 ++ litBytes "visible\n" ++ phBytes 2 ++
+        phBytes 0 ++ litBytes "\n= heading" ++ phBytes 3,
        rawToks ++
         [{ rule := "Size", opts :=
           [("size".toList, OptVal.str "120%".toList),
            ("type".toList, OptVal.str "start".toList)] },
+         { rule := "Size", opts :=
+          [("type".toList, OptVal.str "end".toList)] },
          { rule := "Size", opts :=
           [("type".toList, OptVal.str "end".toList)] }]) := rfl
 
@@ -1694,9 +1796,10 @@ theorem collProcess_openeronly_size_reattach_witness :
     omGet (res.2.1[3]!).opts "label_size".toList = some (.str "120%".toList) :=
   ⟨rfl, rfl, rfl, rfl⟩
 
-/-- Negative news-03-2017-style guard: unrelated nested Size spans and visible
-    body bytes before the depth-zero end prevent reattachment, leave every Size
-    token unchanged, and keep `label_size` null. -/
+/-- Negative news-03-2017-style guard on a complex multi-line body:
+    unrelated nested Size spans and the newline-containing body keep the
+    previous non-transfer path, leave every Size token unchanged, and keep
+    `label_size` null. -/
 theorem collProcess_news03_guard_no_reattach_witness :
     let toks : List TokenEntry :=
       [{ rule := "Size",
@@ -1709,11 +1812,12 @@ theorem collProcess_news03_guard_no_reattach_witness :
          opts := [("type".toList, .str "end".toList)] },
        { rule := "Size",
          opts := [("type".toList, .str "end".toList)] }]
-    let body := phBytes 1 ++ litBytes "visible" ++ phBytes 2 ++ phBytes 3
+    let body := phBytes 1 ++ litBytes "visible\nmore" ++ phBytes 2 ++ phBytes 3
     let res := collProcess (some (0, phBytes 0)) [] none body {} toks
     (res.2.1.take 4).map (·.opts) = toks.map (·.opts) ∧
     omGet (res.2.1[4]!).opts "label_size".toList = some .null := ⟨rfl, rfl⟩
 
+#print axioms normalizeSizeLines_snapshot46_witness
 #print axioms sizeProcess_emptyraw_heading_split_witness
 #print axioms collProcess_openeronly_size_reattach_witness
 #print axioms collProcess_news03_guard_no_reattach_witness

@@ -1,0 +1,26 @@
+{
+  "blockquote": {
+    "cases": 53,
+    "excluded": 0,
+    "fail": 0,
+    "fatal_agree": 0,
+    "pass": 53,
+    "php_error": 0
+  },
+  "collapsible": {
+    "cases": 60,
+    "excluded": 0,
+    "fail": 0,
+    "fatal_agree": 0,
+    "pass": 60,
+    "php_error": 0
+  },
+  "size": {
+    "cases": 82,
+    "excluded": 0,
+    "fail": 0,
+    "fatal_agree": 0,
+    "pass": 82,
+    "php_error": 0
+  }
+}
