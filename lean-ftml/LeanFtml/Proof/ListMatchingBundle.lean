@@ -31,7 +31,6 @@ def listExplicitInertAfterNative (st : ParseState) : Prop :=
 
 def ListMatchingResidueScope (st : ParseState) : Prop :=
   listScanFires st ∧
-  (refWork .list st).2 ≠ [] ∧
   listScanSpliceAgrees st ∧
   listExplicitInertAfterNative st ∧
   WFSegs (listRule st).work (listRule st).tokens.length
@@ -60,7 +59,7 @@ theorem applyByteRule_const_refWith (st : ParseState)
   unfold applyByteRule applyRuleRefWith
   rw [if_neg href]
 
-theorem applyRule_list_eq_refWith_of_residue (st : ParseState)
+theorem applyRule_list_eq_refWith_when_ref_fires (st : ParseState)
     (href : (refWork .list st).2 ≠ [])
     (hscan : listScanSpliceAgrees st)
     (hexp : listExplicitInertAfterNative st) :
@@ -86,13 +85,58 @@ theorem applyRule_list_eq_refWith_of_residue (st : ParseState)
     _ = applyRuleRefWith listNativeProcessRef .list st :=
       applyByteRule_const_refWith st href
 
+/-- The reference-fire branch is redundant: when the bare reference makes no
+    claims the sole List pattern necessarily has no matches, so scan agreement
+    collapses the native pass to the identity and WF gives back the input
+    segments exactly. -/
+theorem applyRule_list_eq_refWith_of_residue (st : ParseState)
+    (hwf : WFState st)
+    (hscan : listScanSpliceAgrees st)
+    (hexp : listExplicitInertAfterNative st) :
+    applyRule .list st = applyRuleRefWith listNativeProcessRef .list st := by
+  cases hc : (refWork .list st).2 == [] with
+  | true =>
+      have h0 : (refWork .list st).2 = [] := beq_iff_eq.mp hc
+      rw [applyRuleRefWith_of_no_claims listNativeProcessRef .list st h0]
+      have hms : PcreCore.pregMatchAll listPcre (byteForm st.work) = [] := by
+        unfold refWork at h0
+        rw [refParsed_list] at h0
+        dsimp only [List.foldl, spliceMatches] at h0
+        cases hm : PcreCore.pregMatchAll listPcre (byteForm st.work) with
+        | nil => rfl
+        | cons x xs =>
+            exfalso
+            have hne := spliceMatches_snd_ne_nil (bs := byteForm st.work)
+              (base := st.tokens.length) (x :: xs) [] 0 [] (Or.inr (by simp))
+            rw [← hm] at hne
+            exact hne h0
+      unfold listScanSpliceAgrees at hscan
+      rw [refWorkWith_list_eq_splice st, hms] at hscan
+      simp only [spliceMatchesWith, List.foldl_nil, List.nil_append, List.drop_zero] at hscan
+      unfold listExplicitInertAfterNative at hexp
+      have hbyte : (fun src toks =>
+            let (s1, t1) := listNative src toks
+            listExplicitPass s1 t1) (byteForm st.work) st.tokens =
+          (byteForm st.work, st.tokens) := by
+        change listExplicitPass (listNative (byteForm st.work) st.tokens).1
+          (listNative (byteForm st.work) st.tokens).2 = _
+        exact hexp.trans hscan
+      change applyByteRule st (fun src toks =>
+        let (s1, t1) := listNative src toks
+        listExplicitPass s1 t1) = st
+      exact applyByteRule_eq_self st hwf _ hbyte
+  | false =>
+      have href : (refWork .list st).2 ≠ [] := by
+        intro h0; simp [h0] at hc
+      exact applyRule_list_eq_refWith_when_ref_fires st href hscan hexp
+
 theorem listMatchingResidueBundle :
     ScopedRuleProofBundle (applyRuleRefWith listNativeProcessRef)
       ListMatchingResidueScope .list where
   preserves_wf := fun st hwf hp => by
-    exact lst_listRule_wf_of_work st hp.2.2.2.2 hwf
+    exact lst_listRule_wf_of_work st hp.2.2.2 hwf
   eq_ref := fun st hwf hp => by
-    exact applyRule_list_eq_refWith_of_residue st hp.2.1 hp.2.2.1 hp.2.2.2.1
+    exact applyRule_list_eq_refWith_of_residue st hwf hp.2.1 hp.2.2.1
   reachable_tokens := fun st hwf hp hr => by
     exact ReachableState.step .list st hwf hr
 

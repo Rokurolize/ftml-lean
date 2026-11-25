@@ -1910,7 +1910,7 @@ def NoListMatchState (st : ParseState) : Prop :=
   lstListByteFn (byteForm st.work) st.tokens = (byteForm st.work, st.tokens) ∧
   (refWork .list st).2 = []
 
-private theorem applyByteRule_eq_self (st : ParseState) (hwf : WFState st)
+theorem applyByteRule_eq_self (st : ParseState) (hwf : WFState st)
     (fn : List Nat → List TokenEntry → List Nat × List TokenEntry)
     (hfn : fn (byteForm st.work) st.tokens = (byteForm st.work, st.tokens)) :
     applyByteRule st fn = st := by
@@ -2338,7 +2338,7 @@ theorem breakScan_eq_spliceMatchesWith (src : List Nat) (toks : List TokenEntry)
   simp only [List.drop_zero, List.nil_append, Nat.sub_zero] at h
   exact (Eq.trans h (Prod.eta _).symm).symm
 
-private theorem spliceMatches_snd_ne_nil {bs : List Nat} {base : Nat}
+theorem spliceMatches_snd_ne_nil {bs : List Nat} {base : Nat}
     (ms : List (Nat × Nat × List (Option (List Nat)))) (out : List Nat) (cur : Nat)
     (claims : List (List Nat × List (Option (List Nat))))
     (h : claims ≠ [] ∨ ms ≠ []) :
