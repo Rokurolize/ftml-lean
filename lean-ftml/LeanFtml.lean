@@ -84,3 +84,6 @@ import LeanFtml.SpecRefcorr15
 import LeanFtml.Proof.ProofList
 import LeanFtml.Proof.ProofListQuotient
 import LeanFtml.Proof.ProofListCert
+import LeanFtml.RefRender
+import LeanFtml.Proof.RenderBundles
+import LeanFtml.Proof.F3R1Bundles

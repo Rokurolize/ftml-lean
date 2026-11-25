@@ -68,13 +68,16 @@ def WFState (st : ParseState) : Prop :=
 /-! ## Reachability -/
 
 /-- States reachable from a fresh document by the state-forming operations
-    the model exposes: ofSource and addToken. Per-rule bundles extend this
-    relation with their own state-transition constructors. -/
+    the model exposes (`ofSource` and `addToken`) and by verified rule
+    applications (`step`) over well-formed states. -/
 inductive ReachableState : ParseState → Prop where
   | initial (cs : List Char) : ReachableState (ParseState.ofSource cs)
   | addToken (st : ParseState) (h : ReachableState st)
       (rule : String) (opts : OptMap) :
       ReachableState (ParseState.addToken st rule opts).1
+  | step (r : RuleId) (st : ParseState) (hwf : WFState st)
+      (h : ReachableState st) :
+      ReachableState (applyRule r st)
 
 /-! ## Token-index alpha-equivalence (TokEquiv) -/
 
@@ -152,6 +155,34 @@ theorem segsTokEquiv_length (σ : Nat → Nat) (as bs : List TSeg)
     cases bs with
     | nil => contradiction
     | cons b bs => simp [segsTokEquiv] at h; simpa using ih bs h.2
+
+theorem reachableState_ofSource (cs : List Char) :
+    ReachableState (ParseState.ofSource cs) :=
+  ReachableState.initial cs
+
+theorem reachableState_step (r : RuleId) (st : ParseState)
+    (hwf : WFState st) (hr : ReachableState st) :
+    ReachableState (applyRule r st) :=
+  ReachableState.step r st hwf hr
+
+theorem reachableState_runRules (rules : List RuleId)
+    (hwf_rules : ∀ r ∈ rules, ∀ s, WFState s → WFState (applyRule r s))
+    (st : ParseState) (hwf : WFState st) (hr : ReachableState st) :
+    ReachableState (runRules rules st) := by
+  induction rules generalizing st with
+  | nil => simpa [runRules] using hr
+  | cons r rs ih =>
+      have hwf_sub : ∀ r' ∈ rs, ∀ s, WFState s → WFState (applyRule r' s) :=
+        fun r' hr' => hwf_rules r' (List.mem_cons_of_mem r hr')
+      cases hf : st.fatal with
+      | true =>
+          simpa [runRules, hf] using ih hwf_sub st hwf hr
+      | false =>
+          have hwf' : WFState (applyRule r st) :=
+            hwf_rules r List.mem_cons_self st hwf
+          have hr' : ReachableState (applyRule r st) :=
+            ReachableState.step r st hwf hr
+          simpa [runRules, hf] using ih hwf_sub (applyRule r st) hwf' hr'
 
 /-! ## Headline bridge obligations (discharged in LeanFtml/Proof/F1Bridges.lean)
 

@@ -1247,3 +1247,31 @@ def main : IO Unit :=
 #print axioms LeanFtml.chain3_measure_rises
 #print axioms LeanFtml.chain3_pass_structure
 #print axioms LeanFtml.chain3_fixpoint_stable
+
+-- Stage 2(b): F3 (renderRefSpec), R1 (ReachableState.step), G5 (62/62 RenderProofBundles),
+-- and G4 (Break unconditional RuleProofBundle + Middle/Frame/Comment WF & ScopedBundles).
+#print axioms LeanFtml.reachableState_ofSource
+#print axioms LeanFtml.reachableState_step
+#print axioms LeanFtml.reachableState_runRules
+#print axioms LeanFtml.renderFreelinkWithEnv_harness_eq_of_ne
+#print axioms LeanFtml.renderFreelinkWithEnv_d13_witness
+#print axioms LeanFtml.renderMirrorEnv_harness_eq
+#print axioms LeanFtml.renderMirrorEnv_pure_env_irrelevant
+#print axioms LeanFtml.renderBundleAll
+#print axioms LeanFtml.renderWith_eq_ref
+#print axioms LeanFtml.normSegs_idem
+#print axioms LeanFtml.parseBytes_wfSegs_of_phSeg
+#print axioms LeanFtml.breakRule_preserves_wf
+#print axioms LeanFtml.breakBundleRefWith
+#print axioms LeanFtml.horizRule_preserves_wf
+#print axioms LeanFtml.separatorRule_preserves_wf
+#print axioms LeanFtml.clearfloatRule_preserves_wf
+#print axioms LeanFtml.centerRule_preserves_wf
+#print axioms LeanFtml.includeScopedBundleRef
+#print axioms LeanFtml.prefilterScopedBundleRef
+#print axioms LeanFtml.horizScopedBundleRef
+#print axioms LeanFtml.separatorScopedBundleRef
+#print axioms LeanFtml.clearfloatScopedBundleRef
+#print axioms LeanFtml.centerScopedBundleRef
+#print axioms LeanFtml.commentScopedBundleRef
+#print axioms LeanFtml.reachableState_prefix3
