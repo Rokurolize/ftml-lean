@@ -24,7 +24,7 @@
     "positive-lookbehind",
     "quantifier"
   ],
-  "digest": "aee14b655af0f44c5ea7378ee4ab2cded1bddfcc81c09802508b90855dd74188",
+  "digest": "5fe4cb429474a36e8c570ea6fccd99c8a7853277ef29393b7ae51f2467e2be73",
   "embed_patterns": [
     [
       "del_feed",
@@ -511,6 +511,35 @@
       "source": "text-wiki/Text/Wiki/Parse/Default/Rawold.php"
     },
     {
+      "class": "Html",
+      "inline": [
+        {
+          "api": "preg_match",
+          "pattern": "/\\[\\[html\\s+([^\\]\\n]*)\\]\\]/i"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\bclass\\s*=\\s*\"([^\"]*)\"/i"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\bstyle\\s*=\\s*\"([^\"]*)\"/i"
+        },
+        {
+          "api": "dynamic-template",
+          "pattern": "'/\\[\\[html(?:\\s+[^\\]\\n]*)?\\]\\][ \\t]*\\n?(.*?)\\n?[ \\t]*\\[\\[\\/html\\]\\](\\s|$)/msi'"
+        }
+      ],
+      "literal": "public $regex =",
+      "patterns": [
+        "/\\[\\[html(?:\\s+[^\\]\\n]*)?\\]\\][ \\t]*\\n?(.*?)\\n?[ \\t]*\\[\\[\\/html\\]\\](\\s|$)/msi"
+      ],
+      "patterns_provenance": "literal",
+      "resolved_regex": "/\\[\\[html(?:\\s+[^\\]\\n]*)?\\]\\][ \\t]*\\n?(.*?)\\n?[ \\t]*\\[\\[\\/html\\]\\](\\s|$)/msi",
+      "rule": "html",
+      "source": "text-wiki/Text/Wiki/Parse/Default/Html.php"
+    },
+    {
       "class": "Modulepre",
       "inline": [
         {
@@ -954,35 +983,6 @@
       "source": "text-wiki/Text/Wiki/Parse/Default/Bibcite.php"
     },
     {
-      "class": "Html",
-      "inline": [
-        {
-          "api": "preg_match",
-          "pattern": "/\\[\\[html\\s+([^\\]\\n]*)\\]\\]/i"
-        },
-        {
-          "api": "preg_match",
-          "pattern": "/\\bclass\\s*=\\s*\"([^\"]*)\"/i"
-        },
-        {
-          "api": "preg_match",
-          "pattern": "/\\bstyle\\s*=\\s*\"([^\"]*)\"/i"
-        },
-        {
-          "api": "dynamic-template",
-          "pattern": "'/\\[\\[html(?:\\s+[^\\]\\n]*)?\\]\\][ \\t]*\\n?(.*?)\\n?[ \\t]*\\[\\[\\/html\\]\\](\\s|$)/Umsi'"
-        }
-      ],
-      "literal": "public $regex =",
-      "patterns": [
-        "/\\[\\[html(?:\\s+[^\\]\\n]*)?\\]\\][ \\t]*\\n?(.*?)\\n?[ \\t]*\\[\\[\\/html\\]\\](\\s|$)/Umsi"
-      ],
-      "patterns_provenance": "literal",
-      "resolved_regex": "/\\[\\[html(?:\\s+[^\\]\\n]*)?\\]\\][ \\t]*\\n?(.*?)\\n?[ \\t]*\\[\\[\\/html\\]\\](\\s|$)/Umsi",
-      "rule": "html",
-      "source": "text-wiki/Text/Wiki/Parse/Default/Html.php"
-    },
-    {
       "class": "Divprefilter",
       "inline": [
         {
@@ -1384,20 +1384,24 @@
       "class": "Collapsible",
       "inline": [
         {
+          "api": "preg_match",
+          "pattern": "/^"
+        },
+        {
           "api": "preg_match_all",
           "pattern": "/"
         },
         {
           "api": "dynamic-template",
-          "pattern": "'/(\\n)?\\[\\[collapsible(\\s.*?)?\\]\\](.*?)\\[\\[\\/collapsible\\]\\] */msi'"
+          "pattern": "'/(\\xFF\\d+\\xFF)?(\\n)?\\[\\[collapsible(\\s.*?)?\\]\\](.*?)\\[\\[\\/collapsible\\]\\] */msi'"
         }
       ],
       "literal": "public $regex =",
       "patterns": [
-        "/(\\n)?\\[\\[collapsible(\\s.*?)?\\]\\](.*?)\\[\\[\\/collapsible\\]\\] */msi"
+        "/(\\xFF\\d+\\xFF)?(\\n)?\\[\\[collapsible(\\s.*?)?\\]\\](.*?)\\[\\[\\/collapsible\\]\\] */msi"
       ],
       "patterns_provenance": "literal",
-      "resolved_regex": "/(\\n)?\\[\\[collapsible(\\s.*?)?\\]\\](.*?)\\[\\[\\/collapsible\\]\\] */msi",
+      "resolved_regex": "/(\\xFF\\d+\\xFF)?(\\n)?\\[\\[collapsible(\\s.*?)?\\]\\](.*?)\\[\\[\\/collapsible\\]\\] */msi",
       "rule": "collapsible",
       "source": "text-wiki/Text/Wiki/Parse/Default/Collapsible.php"
     },
@@ -2315,8 +2319,8 @@
       "source": "text-wiki/Text/Wiki/Parse/Default/Tighten.php"
     }
   ],
-  "snapshot_commit": "55136c886e4b03586f06bfa2fe2954d80f2d5a93",
-  "snapshot_tag": "snapshot-44",
+  "snapshot_commit": "f2641455d1481fdc489a4bd35d0ccda5ab7b96e6",
+  "snapshot_tag": "snapshot-45",
   "source_count": 73,
   "sources": [
     {
@@ -2353,11 +2357,11 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Module.php",
-      "sha256": "b12b3715fe1ab466e831dd6c68be1b614245279476f6b6b147724c0edb48394d"
+      "sha256": "1fcbf1af1679f2e49f39dceaf8394f158b34f092db65d54cf1ef2496ad1619b2"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Module654.php",
-      "sha256": "73f5137bcf8e483fa931140096827b6ae7824cd403da2bc885f71af99d2028ab"
+      "sha256": "740a4e82985a87cee2bf33d604c4623a3ad9660aefa7eb1f3fa305d6784bfec4"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Iftags.php",
@@ -2425,7 +2429,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Html.php",
-      "sha256": "7082f33cc636ff9d00d25fff6cf2f1103dcc6b1b7a1e6a158303de29c2c60b2e"
+      "sha256": "46275979b34cf21295c5b62d4700d55bf8a4550672e03f00d208adb8ad226188"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Divprefilter.php",
@@ -2473,7 +2477,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Size.php",
-      "sha256": "6cbceef88528e398c53dfd2617c3344df7700bdbb84baeb90471f193795c9cdf"
+      "sha256": "d780c6c5e848bb5e6c5df5d9a753ad395a2d8644c246a7e29b6a26a7c08068de"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Div.php",
@@ -2485,7 +2489,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Collapsible.php",
-      "sha256": "51c5dd4eee781bed87f489f419874518d3b67eb740bb9a58dec1738c782cd319"
+      "sha256": "1f17f224cae87dfa252b595dad0c61c5cfcc8c10e147cd548869165b971db43c"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Tabview.php",
@@ -2605,7 +2609,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse.php",
-      "sha256": "61d1fe5900b0fabc07642c30859846700fe02c89b44f0660e6b6b4d4545c9877"
+      "sha256": "00984e5b741f3a2a7c71313aeae17925b95857799226e05795b14ba8501ab3e3"
     },
     {
       "path": "wikidot-root/conf/wikiparser/embed/default.php",
