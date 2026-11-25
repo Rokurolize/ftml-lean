@@ -39,14 +39,14 @@ import re
 import subprocess
 import sys
 
-SNAPSHOT_TAG = "snapshot-45"
-SNAPSHOT_COMMIT = "f2641455d1481fdc489a4bd35d0ccda5ab7b96e6"
-DEFAULT_REF_REPO = "/home/roku/.local/state/wikijump/muse-bhl/agy-finish/wikidot-php-reference"
+SNAPSHOT_TAG = "snapshot-46"
+SNAPSHOT_COMMIT = "5853c01f9b47102de2448ecccf985437df17ed2c"
+DEFAULT_REF_REPO = "/home/roku/.local/state/wikijump/muse-bhl/post-agy-finish/r1-reference"
 DEFAULT_REF_PHP = str(pathlib.Path(__file__).resolve().parent.parent / "ref-php")
 
 # 71 active rules, in the exact order of LeanFtml.Pipeline.pipelineFull.
 # (rule id, PHP class basename).  Generated from `inductive RuleId` at
-# proof-base-v1 (4bf28f7) and updated to snapshot-45 (REFCORR20: Html before Modulepre).
+# proof-base-v1 (4bf28f7) and updated to snapshot-46 (REFCORR21: Size and Collapsible residuals).
 RULES = [
     ("include", "Include"), ("prefilter", "Prefilter"), ("delimiter", "Delimiter"),
     ("code", "Code"), ("form", "Form"), ("raw", "Raw"), ("rawold", "Rawold"),
@@ -119,10 +119,10 @@ PINNED = {
     "text-wiki/Text/Wiki/Parse/Default/Clearfloat.php": "782a388aea4fc2717b37d472d58d9ddbf2ad6c8d607b31a343e1adf3d2086662",
     "text-wiki/Text/Wiki/Parse/Default/Break.php": "c7b95838f81e268478593642d23b43d59316498d589651363c7bd9c0dbfe31be",
     "text-wiki/Text/Wiki/Parse/Default/Span.php": "17ec99bd07911c95a4612b3425d87cbb4aa1fa6fab90b800eb57d76d4ca437f6",
-    "text-wiki/Text/Wiki/Parse/Default/Size.php": "d780c6c5e848bb5e6c5df5d9a753ad395a2d8644c246a7e29b6a26a7c08068de",
+    "text-wiki/Text/Wiki/Parse/Default/Size.php": "7a2ab35ac664010bfe9480eed008718ab5f99a94cd75f3c48e4de47b70afbf98",
     "text-wiki/Text/Wiki/Parse/Default/Div.php": "6df83c004f2b63769aa54fcf0df0a64938352b5a4689ae7c1b24a3d1fd1ab007",
     "text-wiki/Text/Wiki/Parse/Default/Divalign.php": "7d4739cd3b575dae8cdaf352e17975fd40775cc3d5a9b022e86deaf4d0978f86",
-    "text-wiki/Text/Wiki/Parse/Default/Collapsible.php": "1f17f224cae87dfa252b595dad0c61c5cfcc8c10e147cd548869165b971db43c",
+    "text-wiki/Text/Wiki/Parse/Default/Collapsible.php": "668dac8d166f0257bc99df6e8aa90d3632c1d4f57014b2986905ea88f654a7d8",
     "text-wiki/Text/Wiki/Parse/Default/Tabview.php": "396879903379ca03f0bbfe814857cdb29988453a632da5c8c0f76e74c72d0034",
     "text-wiki/Text/Wiki/Parse/Default/Note.php": "b79cc1650735f0d7400298f45c03fdee54bc9f3bf0fc2131a8c59b2390d36d56",
     "text-wiki/Text/Wiki/Parse/Default/Gallery.php": "85407fafba2fd8828d2c451755bf3acf62cf3cf6c211ce8ccaef2af145977a06",

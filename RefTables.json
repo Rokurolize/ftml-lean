@@ -24,7 +24,7 @@
     "positive-lookbehind",
     "quantifier"
   ],
-  "digest": "5fe4cb429474a36e8c570ea6fccd99c8a7853277ef29393b7ae51f2467e2be73",
+  "digest": "d34ba13009cd1b365066c03c14d7f1b920a76033da61540d02e2c31705aa2c01",
   "embed_patterns": [
     [
       "del_feed",
@@ -1277,8 +1277,12 @@
           "pattern": "/[\\x00-\\x08\\x0B\\x0C\\x0E-\\x1A\\x1C-\\x1F]/"
         },
         {
+          "api": "preg_match",
+          "pattern": "/^[ \\t]+$/"
+        },
+        {
           "api": "preg_replace",
-          "pattern": "/[ \\t]+(?=\\n|$)/"
+          "pattern": "/[ \\t]+$/"
         },
         {
           "api": "preg_match",
@@ -1390,6 +1394,18 @@
         {
           "api": "preg_match_all",
           "pattern": "/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\S/"
+        },
+        {
+          "api": "preg_match",
+          "pattern": "/\\S/"
+        },
+        {
+          "api": "preg_match_all",
+          "pattern": "/\\S/"
         },
         {
           "api": "dynamic-template",
@@ -2319,8 +2335,8 @@
       "source": "text-wiki/Text/Wiki/Parse/Default/Tighten.php"
     }
   ],
-  "snapshot_commit": "f2641455d1481fdc489a4bd35d0ccda5ab7b96e6",
-  "snapshot_tag": "snapshot-45",
+  "snapshot_commit": "5853c01f9b47102de2448ecccf985437df17ed2c",
+  "snapshot_tag": "snapshot-46",
   "source_count": 73,
   "sources": [
     {
@@ -2477,7 +2493,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Size.php",
-      "sha256": "d780c6c5e848bb5e6c5df5d9a753ad395a2d8644c246a7e29b6a26a7c08068de"
+      "sha256": "7a2ab35ac664010bfe9480eed008718ab5f99a94cd75f3c48e4de47b70afbf98"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Div.php",
@@ -2489,7 +2505,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Collapsible.php",
-      "sha256": "1f17f224cae87dfa252b595dad0c61c5cfcc8c10e147cd548869165b971db43c"
+      "sha256": "668dac8d166f0257bc99df6e8aa90d3632c1d4f57014b2986905ea88f654a7d8"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Tabview.php",

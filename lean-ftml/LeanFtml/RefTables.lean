@@ -2,18 +2,18 @@ set_option maxRecDepth 100000
 /-
   LeanFtml.RefTables — GENERATED FILE. DO NOT EDIT BY HAND.
   Produced by tools/extract_ref_tables.py from wikidot-php-reference
-  snapshot-45 (f2641455d1481fdc489a4bd35d0ccda5ab7b96e6). Re-run the extractor with --verify
+  snapshot-46 (5853c01f9b47102de2448ecccf985437df17ed2c). Re-run the extractor with --verify
   in CI (gate G2). Patterns are emitted as List Nat byte literals so no
   String.toList / Classical.choice leaks into the trusted computing base.
 -/
 
 namespace LeanFtml
 
-def refTablesSnapshotTag : String := "snapshot-45"
-def refTablesSnapshotCommit : String := "f2641455d1481fdc489a4bd35d0ccda5ab7b96e6"
+def refTablesSnapshotTag : String := "snapshot-46"
+def refTablesSnapshotCommit : String := "5853c01f9b47102de2448ecccf985437df17ed2c"
 def refTablesRuleCount : Nat := 71
 def refTablesEmbedCount : Nat := 75
-def refTablesDigest : String := "5fe4cb429474a36e8c570ea6fccd99c8a7853277ef29393b7ae51f2467e2be73"
+def refTablesDigest : String := "d34ba13009cd1b365066c03c14d7f1b920a76033da61540d02e2c31705aa2c01"
 
 def refRuleRegexes : List (String × List (List Nat)) := [
   ("include", [[47, 94, 92, 91, 92, 91, 105, 110, 99, 108, 117, 100, 101, 32, 40, 91, 97, 45, 122, 65, 45, 90, 48, 45, 57, 92, 115, 92, 45, 58, 93, 43, 63, 41, 40, 92, 115, 43, 46, 42, 63, 41, 63, 40, 63, 58, 92, 93, 92, 93, 41, 36, 47, 105, 109, 115]]),
@@ -289,7 +289,8 @@ def refInlineRegexes : List (String × String × List Nat) := [
   ("span", "preg_match", [47, 92, 71, 92, 91, 92, 91, 92, 47, 115, 112, 97, 110, 92, 93, 92, 93, 47, 105]),
   ("span", "dynamic-template", [39, 47, 92, 91, 92, 91, 115, 112, 97, 110, 40, 92, 115, 46, 91, 94, 92, 93, 93, 42, 41, 63, 92, 93, 92, 93, 40, 40, 63, 58, 40, 63, 82, 41, 124, 46, 41, 42, 63, 41, 92, 91, 92, 91, 92, 47, 115, 112, 97, 110, 92, 93, 92, 93, 47, 109, 115, 105, 39]),
   ("size", "preg_replace", [47, 91, 92, 120, 48, 48, 45, 92, 120, 48, 56, 92, 120, 48, 66, 92, 120, 48, 67, 92, 120, 48, 69, 45, 92, 120, 49, 65, 92, 120, 49, 67, 45, 92, 120, 49, 70, 93, 47]),
-  ("size", "preg_replace", [47, 91, 32, 92, 116, 93, 43, 40, 63, 61, 92, 110, 124, 36, 41, 47]),
+  ("size", "preg_match", [47, 94, 91, 32, 92, 116, 93, 43, 36, 47]),
+  ("size", "preg_replace", [47, 91, 32, 92, 116, 93, 43, 36, 47]),
   ("size", "preg_match", [47, 92, 71, 92, 91, 92, 91, 115, 105, 122, 101, 92, 115, 40, 91, 94, 92, 93, 93, 43, 41, 92, 93, 92, 93, 47, 105]),
   ("size", "preg_match", [47, 92, 71, 92, 91, 92, 91, 92, 47, 115, 105, 122, 101, 92, 93, 92, 93, 47, 105]),
   ("size", "dynamic-template", [39, 47, 92, 91, 92, 91, 115, 105, 122, 101, 92, 115, 40, 91, 94, 92, 93, 93, 43, 41, 92, 93, 92, 93, 40, 40, 63, 58, 40, 63, 82, 41, 124, 46, 41, 42, 63, 41, 92, 91, 92, 91, 92, 47, 115, 105, 122, 101, 92, 93, 92, 93, 47, 109, 115, 105, 39]),
@@ -308,6 +309,9 @@ def refInlineRegexes : List (String × String × List Nat) := [
   ("divalign", "dynamic-template", [39, 47, 94, 92, 91, 92, 91, 40, 61, 124, 60, 124, 62, 124, 61, 61, 41, 92, 93, 92, 93, 92, 110, 40, 40, 63, 58, 40, 63, 82, 41, 124, 46, 41, 42, 63, 41, 92, 91, 92, 91, 92, 47, 92, 92, 49, 92, 93, 92, 93, 36, 47, 109, 115, 105, 39]),
   ("collapsible", "preg_match", [47, 94]),
   ("collapsible", "preg_match_all", [47]),
+  ("collapsible", "preg_match", [47, 92, 83, 47]),
+  ("collapsible", "preg_match", [47, 92, 83, 47]),
+  ("collapsible", "preg_match_all", [47, 92, 83, 47]),
   ("collapsible", "dynamic-template", [39, 47, 40, 92, 120, 70, 70, 92, 100, 43, 92, 120, 70, 70, 41, 63, 40, 92, 110, 41, 63, 92, 91, 92, 91, 99, 111, 108, 108, 97, 112, 115, 105, 98, 108, 101, 40, 92, 115, 46, 42, 63, 41, 63, 92, 93, 92, 93, 40, 46, 42, 63, 41, 92, 91, 92, 91, 92, 47, 99, 111, 108, 108, 97, 112, 115, 105, 98, 108, 101, 92, 93, 92, 93, 32, 42, 47, 109, 115, 105, 39]),
   ("tabview", "preg_replace_callback", [59, 92, 91, 92, 91, 116, 97, 98, 40, 92, 115, 43, 91, 94, 92, 93, 93, 43, 63, 41, 63, 40, 40, 63, 58, 92, 115, 43, 91, 97, 45, 122, 48, 45, 57, 92, 45, 95, 93, 43, 61, 34, 91, 94, 34, 93, 43, 34, 41, 43, 41, 63, 92, 93, 92, 93, 40, 46, 42, 63, 41, 92, 91, 92, 91, 92, 47, 116, 97, 98, 92, 93, 92, 93, 92, 110, 42, 59, 109, 115, 105]),
   ("tabview", "preg_match", [47, 64, 64, 46, 42, 64, 64, 124, 64, 60, 46, 42, 62, 64, 47, 115]),

@@ -1,0 +1,60 @@
+{"id":"battery/c01-basic-line","source":"[[collapsible]]\nApple\n[[/collapsible]]"}
+{"id":"battery/c02-inline","source":"[[collapsible]]Banana[[/collapsible]]"}
+{"id":"battery/c03-empty","source":"[[collapsible]]\n[[/collapsible]]"}
+{"id":"battery/c04-empty-inline","source":"[[collapsible]][[/collapsible]]"}
+{"id":"battery/c05-leading-text","source":"Before\n[[collapsible]]\nBody\n[[/collapsible]]\nAfter"}
+{"id":"battery/c06-trailing-space","source":"[[collapsible]] \nBody\n[[/collapsible]]  "}
+{"id":"battery/c07-uppercase","source":"[[COLLAPSIBLE id=\"up\" show=\"UPPER\" hide=\"lower\"]]\nBODY\n[[/COLLAPSIBLE]]"}
+{"id":"battery/c08-internal-space","source":"[[ collapsible show=\"+ S\" hide=\"- H\" ]]\nBODY\n[[/collapsible]]"}
+{"id":"battery/c09-two-blocks","source":"[[collapsible]]A[[/collapsible]]\n[[collapsible]]B[[/collapsible]]"}
+{"id":"battery/c10-adjacent-inline","source":"[[collapsible]]A[[/collapsible]][[collapsible]]B[[/collapsible]]"}
+{"id":"battery/c11-show-only","source":"[[collapsible show=\"+ Expand\"]]B[[/collapsible]]"}
+{"id":"battery/c12-hide-only","source":"[[collapsible hide=\"- Collapse\"]]B[[/collapsible]]"}
+{"id":"battery/c13-show-hide","source":"[[collapsible show=\"+ Open\" hide=\"- Close\"]]B[[/collapsible]]"}
+{"id":"battery/c14-showtext","source":"[[collapsible showText=\"OPEN\" hideText=\"CLOSE\"]]B[[/collapsible]]"}
+{"id":"battery/c15-empty-labels","source":"[[collapsible show=\"\" hide=\"\"]]B[[/collapsible]]"}
+{"id":"battery/c16-label-nbsp-tab","source":"[[collapsible show=\"a\tb\" hide=\"x  y\"]]B[[/collapsible]]"}
+{"id":"battery/c17-label-entities","source":"[[collapsible show=\"A &amp; B &lt;x&gt;\" hide=\"C &quot;d&quot;\"]]B[[/collapsible]]"}
+{"id":"battery/c18-label-newline","source":"[[collapsible show=\"one\ntwo\"]]B[[/collapsible]]"}
+{"id":"battery/c19-folded-no","source":"[[collapsible folded=\"no\"]]B[[/collapsible]]"}
+{"id":"battery/c20-folded-false","source":"[[collapsible folded=\"false\"]]B[[/collapsible]]"}
+{"id":"battery/c21-folded-yes","source":"[[collapsible folded=\"yes\"]]B[[/collapsible]]"}
+{"id":"battery/c22-hideloc-top","source":"[[collapsible hideLocation=\"top\"]]B[[/collapsible]]"}
+{"id":"battery/c23-hideloc-bottom","source":"[[collapsible hideLocation=\"bottom\"]]B[[/collapsible]]"}
+{"id":"battery/c24-hideloc-both","source":"[[collapsible hideLocation=\"both\"]]B[[/collapsible]]"}
+{"id":"battery/c25-hideloc-neither","source":"[[collapsible hideLocation=\"neither\"]]B[[/collapsible]]"}
+{"id":"battery/c26-hideloc-unknown","source":"[[collapsible hideLocation=\"sideways\"]]B[[/collapsible]]"}
+{"id":"battery/c27-class","source":"[[collapsible class=\"myc\"]]B[[/collapsible]]"}
+{"id":"battery/c28-id","source":"[[collapsible id=\"hider\"]]B[[/collapsible]]"}
+{"id":"battery/c29-style","source":"[[collapsible style=\"color: teal\"]]B[[/collapsible]]"}
+{"id":"battery/c30-data-unknown","source":"[[collapsible data-x=\"ya\" bogus=\"z\"]]B[[/collapsible]]"}
+{"id":"battery/c31-single-quotes","source":"[[collapsible show='+ SQ' hide='- SQ']]B[[/collapsible]]"}
+{"id":"battery/c32-unquoted-values","source":"[[collapsible show=OPEN hide=CLOSE]]B[[/collapsible]]"}
+{"id":"battery/c33-duplicate-folded","source":"[[collapsible folded=\"yes\" folded=\"no\"]]B[[/collapsible]]"}
+{"id":"battery/c34-unknown-key-only","source":"[[collapsible bananas=\"yes\"]]B[[/collapsible]]"}
+{"id":"battery/c35-nested-same","source":"[[collapsible show=\"L1\"]]\nA\n[[collapsible show=\"L2\"]]\nB\n[[/collapsible]]\nC\n[[/collapsible]]"}
+{"id":"battery/c36-nested-same-four","source":"[[collapsible]]\nA\n[[collapsible]]\nB\n[[collapsible]]\nC\n[[/collapsible]]\n[[/collapsible]]\n[[/collapsible]]"}
+{"id":"battery/c37-first-closer-tail","source":"[[collapsible]]\nA\n[[/collapsible]]\nTAIL\n[[/collapsible]]"}
+{"id":"battery/c38-opener-after-closer","source":"[[collapsible]]A[[/collapsible]]\n[[collapsible]]B[[/collapsible]]\n[[collapsible]]C[[/collapsible]]"}
+{"id":"battery/c39-cross-div-in","source":"[[collapsible]]\n[[div class=\"d\"]]\ninside\n[[/div]]\n[[/collapsible]]"}
+{"id":"battery/c40-div-out","source":"[[div class=\"d\"]]\n[[collapsible]]\ninside\n[[/collapsible]]\n[[/div]]"}
+{"id":"battery/c41-cross-tab-in","source":"[[collapsible]]\n[[tabview]]\n[[tab]]One[[/tab]]\n[[/tabview]]\n[[/collapsible]]"}
+{"id":"battery/c42-cross-footnote","source":"[[collapsible]]\nA footnote [[footnote]]note[[/footnote]] here\n[[/collapsible]]"}
+{"id":"battery/c43-bold-inside","source":"[[collapsible]]\n**bold** and //italic//\n[[/collapsible]]"}
+{"id":"battery/c44-link-inside","source":"[[collapsible]]\n[[http://example.com|link]]\n[[/collapsible]]"}
+{"id":"battery/c45-heading-inside","source":"[[collapsible]]\n= Heading =\nBody\n[[/collapsible]]"}
+{"id":"battery/c46-list-inside","source":"[[collapsible]]\n* one\n* two\n[[/collapsible]]"}
+{"id":"battery/c47-quote-inside","source":"[[collapsible]]\n> quoted\n[[/collapsible]]"}
+{"id":"battery/c48-code-inside","source":"[[collapsible]]\n[[code]]\ncode body\n[[/code]]\n[[/collapsible]]"}
+{"id":"battery/c49-unterminated","source":"[[collapsible]]\nNever closed\nmore text"}
+{"id":"battery/c50-stray-closer","source":"text [[/collapsible]] more"}
+{"id":"battery/c51-closer-only-line","source":"[[/collapsible]]"}
+{"id":"battery/c52-missing-opener","source":"plain\n[[/collapsible]]\nplain"}
+{"id":"battery/c53-malformed-opener","source":"[[collapsible show=BROKEN]]B[[/collapsible]]"}
+{"id":"battery/c54-unclosed-inline","source":"before [[collapsible]] body after"}
+{"id":"battery/c55-wrong-closer","source":"[[collapsible]]B[[/div]]"}
+{"id":"battery/c56-empty-attr-braces","source":"[[collapsible ]]B[[/collapsible]]"}
+{"id":"battery/c57-newline-in-head","source":"[[collapsible\n show=\"+ X\"\n]]\nB\n[[/collapsible]]"}
+{"id":"probe-refcorr21/coll-cross-inner","source":"[[size 120%]][[collapsible]]hello[[/size]][[/collapsible]]"}
+{"id":"probe-refcorr21/coll-nested-whole","source":"[[size 120%]][[collapsible]]hello[[/collapsible]][[/size]]"}
+{"id":"probe-refcorr21/coll-generalized-late","source":"[[size 120%]][[collapsible show=\"S\" hide=\"H\"]]\nhello\n[[/collapsible]]\n[[/size]]"}
