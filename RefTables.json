@@ -24,7 +24,7 @@
     "positive-lookbehind",
     "quantifier"
   ],
-  "digest": "2603771be2884145cac2f03eaa073e8ba96bada26d424c5f91d1a275e61feec0",
+  "digest": "4f113c446f98c455d8cdff76f7e7a2312e9c0e4953eac8fddfc69a72b00c35c4",
   "embed_patterns": [
     [
       "del_feed",
@@ -2339,8 +2339,8 @@
       "source": "text-wiki/Text/Wiki/Parse/Default/Tighten.php"
     }
   ],
-  "snapshot_commit": "8db5ba8f244fe43ba2cc7239985eeeddc7528962",
-  "snapshot_tag": "snapshot-47",
+  "snapshot_commit": "09bb79184b23641e878e72deb7f7ebe0a8284d2d",
+  "snapshot_tag": "snapshot-48",
   "source_count": 73,
   "sources": [
     {
@@ -2409,7 +2409,7 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Math.php",
-      "sha256": "250f7ad18a70a067d046caabd5c299b4f68d2b3eb0673338b59f341314a14d25"
+      "sha256": "1bd28795017cd432083526fb4ebb61c008538640b6182e08f5d97688a6d08f82"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Concatlines.php",
@@ -2509,11 +2509,11 @@
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Collapsible.php",
-      "sha256": "668dac8d166f0257bc99df6e8aa90d3632c1d4f57014b2986905ea88f654a7d8"
+      "sha256": "1f8b8d24f4cce2ffa37cfe694eb224fbb6b6598939ac30338f6a91462b6839fb"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Tabview.php",
-      "sha256": "396879903379ca03f0bbfe814857cdb29988453a632da5c8c0f76e74c72d0034"
+      "sha256": "95295688379378a45f82001d06236beb03d19df90ead75ff42b3a0204dda2366"
     },
     {
       "path": "text-wiki/Text/Wiki/Parse/Default/Note.php",

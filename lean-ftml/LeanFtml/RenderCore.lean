@@ -884,18 +884,21 @@ def swallowedBreaks : List Nat :=
     whole adjacent run, not just the first two tokens. A pending
     heading-end swallow keeps the old two-token shape so the heading
     merge is unchanged. -/
-def ufffdLeakRun : List UfffdAtom → List Nat × List UfffdAtom
+def ufffdLeakRunOff (idxOff : Nat) : List UfffdAtom → List Nat × List UfffdAtom
   | .tok k _ :: rest =>
-      let (leaked, tail) := ufffdLeakRun rest
-      (natBytes k ++ leaked, tail)
+      let (leaked, tail) := ufffdLeakRunOff idxOff rest
+      (natBytes (k + idxOff) ++ leaked, tail)
   | atoms => ([], atoms)
+
+def ufffdLeakRun (atoms : List UfffdAtom) : List Nat × List UfffdAtom :=
+  ufffdLeakRunOff 0 atoms
 
 /-- Rescan a flattened stream. `edge` trims text exposed at a block
     start by a removed fake delimiter. `owe` is a heading-end token
     whose close was delayed so a following paragraph could be swallowed. -/
-def ufffdWalk
+def ufffdWalkOff
     (dispatch : RenderRuleId → RenderConf → DocState → OptMap → List Nat)
-    (conf : RenderConf) (doc : DocState) :
+    (conf : RenderConf) (doc : DocState) (idxOff : Nat) :
     Nat → List UfffdAtom → Bool → Option (Nat × Option TokenEntry) → List Nat → List Nat
   | 0, _, _, _, acc => acc
   | _ + 1, [], _, owe, acc =>
@@ -907,7 +910,7 @@ def ufffdWalk
       let cs := if edge then lstripWs cs else cs
       let cs := if saw then ufffdCollapseWs cs else cs
       let acc := if cs.isEmpty then acc else acc ++ xhtmlPreText cs
-      ufffdWalk dispatch conf doc fuel rest false owe acc
+      ufffdWalkOff dispatch conf doc idxOff fuel rest false owe acc
   | fuel + 1, .fake :: rest, edge, owe, acc =>
       match skipFakes (.fake :: rest) with
       | .tok k e :: rest2 =>
@@ -919,37 +922,37 @@ def ufffdWalk
                     match ufffdTokInfo e2 with
                     | some info2 =>
                         if ufffdIsBlockStart info2 then
-                          let acc := acc ++ natBytes k ++ natBytes k2
+                          let acc := acc ++ natBytes (k + idxOff) ++ natBytes (k2 + idxOff)
                           let owe' :=
                             if ufffdIsHeadingEnd info && ufffdIsParaStart info2 then
                               some (k, e)
                             else
                               owe
                           let (leaked, tail) :=
-                            if owe'.isNone then ufffdLeakRun rest3 else ([], rest3)
-                          ufffdWalk dispatch conf doc fuel tail false owe' (acc ++ leaked)
+                            if owe'.isNone then ufffdLeakRunOff idxOff rest3 else ([], rest3)
+                          ufffdWalkOff dispatch conf doc idxOff fuel tail false owe' (acc ++ leaked)
                         else
-                          let acc := acc ++ natBytes k ++ renderCaptured dispatch conf doc k e
-                          ufffdWalk dispatch conf doc fuel rest2 false owe acc
+                          let acc := acc ++ natBytes (k + idxOff) ++ renderCaptured dispatch conf doc k e
+                          ufffdWalkOff dispatch conf doc idxOff fuel rest2 false owe acc
                     | none =>
-                        let acc := acc ++ natBytes k ++ renderCaptured dispatch conf doc k e
-                        ufffdWalk dispatch conf doc fuel rest2 false owe acc
+                        let acc := acc ++ natBytes (k + idxOff) ++ renderCaptured dispatch conf doc k e
+                        ufffdWalkOff dispatch conf doc idxOff fuel rest2 false owe acc
                 | _ =>
-                    let acc := acc ++ natBytes k ++ renderCaptured dispatch conf doc k e
-                    ufffdWalk dispatch conf doc fuel rest2 false owe acc
+                    let acc := acc ++ natBytes (k + idxOff) ++ renderCaptured dispatch conf doc k e
+                    ufffdWalkOff dispatch conf doc idxOff fuel rest2 false owe acc
               else if ufffdIsInlineStart info then
                 match takeInline info.1 rest2 with
                 | some (inner, endK, _, rest3) =>
-                    let acc := acc ++ natBytes endK ++ xhtmlPreText inner
-                    ufffdWalk dispatch conf doc fuel rest3 false owe acc
+                    let acc := acc ++ natBytes (endK + idxOff) ++ xhtmlPreText inner
+                    ufffdWalkOff dispatch conf doc idxOff fuel rest3 false owe acc
                 | none =>
-                    ufffdWalk dispatch conf doc fuel rest edge owe acc
+                    ufffdWalkOff dispatch conf doc idxOff fuel rest edge owe acc
               else
-                ufffdWalk dispatch conf doc fuel rest edge owe acc
+                ufffdWalkOff dispatch conf doc idxOff fuel rest edge owe acc
           | none =>
-              ufffdWalk dispatch conf doc fuel rest edge owe acc
+              ufffdWalkOff dispatch conf doc idxOff fuel rest edge owe acc
       | _ =>
-          ufffdWalk dispatch conf doc fuel rest edge owe acc
+          ufffdWalkOff dispatch conf doc idxOff fuel rest edge owe acc
   | fuel + 1, .tok k e :: rest, _, owe, acc =>
       match owe with
       | some (hk, he) =>
@@ -957,24 +960,30 @@ def ufffdWalk
           | some info =>
               if ufffdIsParaEnd info then
                 let acc := acc ++ swallowedBreaks ++ renderCaptured dispatch conf doc hk he
-                ufffdWalk dispatch conf doc fuel rest false none acc
+                ufffdWalkOff dispatch conf doc idxOff fuel rest false none acc
               else
                 let acc := acc ++ renderCaptured dispatch conf doc k e
                 let edge := ufffdIsBlockStart info
-                ufffdWalk dispatch conf doc fuel rest edge owe acc
+                ufffdWalkOff dispatch conf doc idxOff fuel rest edge owe acc
           | none =>
               let acc := acc ++ renderCaptured dispatch conf doc k e
-              ufffdWalk dispatch conf doc fuel rest false owe acc
+              ufffdWalkOff dispatch conf doc idxOff fuel rest false owe acc
       | none =>
           let acc := acc ++ renderCaptured dispatch conf doc k e
           let edge :=
             match ufffdTokInfo e with
             | some info => ufffdIsBlockStart info
             | none => false
-          ufffdWalk dispatch conf doc fuel rest edge none acc
+          ufffdWalkOff dispatch conf doc idxOff fuel rest edge none acc
+
+def ufffdWalk
+    (dispatch : RenderRuleId → RenderConf → DocState → OptMap → List Nat)
+    (conf : RenderConf) (doc : DocState) :
+    Nat → List UfffdAtom → Bool → Option (Nat × Option TokenEntry) → List Nat → List Nat :=
+  ufffdWalkOff dispatch conf doc 0
 
 /-- Render bytes of a segment list after the U+FFFD rescan. -/
-def ufffdBytes
+def ufffdBytesOff (idxOff : Nat)
     (dispatch : RenderRuleId → RenderConf → DocState → OptMap → List Nat)
     (lookup : Nat → Option TokenEntry)
     (conf : RenderConf) (doc : DocState) (work : List TSeg) : List Nat :=
@@ -982,7 +991,13 @@ def ufffdBytes
   if ufffdOnlyFakesPara atoms then
     []
   else
-    ufffdWalk dispatch conf doc (atoms.length + 1) atoms false none []
+    ufffdWalkOff dispatch conf doc idxOff (atoms.length + 1) atoms false none []
+
+def ufffdBytes
+    (dispatch : RenderRuleId → RenderConf → DocState → OptMap → List Nat)
+    (lookup : Nat → Option TokenEntry)
+    (conf : RenderConf) (doc : DocState) (work : List TSeg) : List Nat :=
+  ufffdBytesOff 0 dispatch lookup conf doc work
 
 /-! ## REFCORR22: document-local placeholder digits and Embed frame repair
 
@@ -1104,6 +1119,23 @@ def renderWith
     let raw := renderSegsLoop dispatch lookup conf doc work
     { raw with output := postStripToc raw.output }
 
+/-- Snapshot-48 / REFCORR22 U+FFFD residue: the same full render as
+    `renderWith`, but leaked placeholder indices in the U+FFFD recovery walk
+    are presented with the document-local one-based numbering offset. Core
+    `renderWith` and its structural theorems are unchanged. -/
+def renderWithOff (idxOff : Nat)
+    (dispatch : RenderRuleId → RenderConf → DocState → OptMap → List Nat)
+    (lookup : Nat → Option TokenEntry)
+    (conf : RenderConf) (work : List TSeg) (doc : DocState) : RenderOutcome :=
+  if work.any segHasUfffd then
+    let flags := renderSegsLoop dispatch lookup conf doc work
+    { output := postStripToc (ufffdBytesOff idxOff dispatch lookup conf doc work),
+      unmirrored := flags.unmirrored,
+      missingKeys := flags.missingKeys }
+  else
+    let raw := renderSegsLoop dispatch lookup conf doc work
+    { raw with output := postStripToc raw.output }
+
 /-- REFCORR22 helpers applied at the E2E driver boundary: bump leaked
     placeholder digits to the document-local one-based numbering, and
     drop the `<p>` wrapper around a pure Embed no-match block. Keeping
@@ -1116,6 +1148,18 @@ def bumpStateOpts (st : ParseState) : ParseState :=
 
 def applyRefcorr22 (o : RenderOutcome) : RenderOutcome :=
   { o with output := repairPureEmbedParagraph o.output }
+
+/-- `renderLiteralUfffdRecovery()` returns its HTML trimmed the way a page
+    content capture is stripped (PHP `trim`). Documents taking that path
+    lose their trailing paragraph separator; ordinary documents do not. -/
+def trimRecoveryOutput (bs : List Nat) : List Nat :=
+  (bs.reverse.dropWhile (fun b =>
+    b == 32 || b == 9 || b == 10 || b == 13 || b == 0 || b == 11)).reverse
+
+def applyUfffdTrim (st : ParseState) (o : RenderOutcome) : RenderOutcome :=
+  if st.work.any segHasUfffd then
+    { o with output := trimRecoveryOutput o.output }
+  else o
 
 /-! ## Core structural theorems -/
 
@@ -1310,7 +1354,7 @@ theorem renderWith_lookup_ext
             have hk := hagree k (List.mem_cons_self ..)
             simp [flattenUfffd, hk, htail]
   cases hff : work.any segHasUfffd with
-  | true => simp [renderWith, ufffdBytes, hff, hloop, hflat]
+  | true => simp [renderWith, ufffdBytes, ufffdBytesOff, hff, hloop, hflat]
   | false => simp [renderWith, hff, hloop]
 
 /-- `postStripToc.go` is the identity on any byte list containing no NUL

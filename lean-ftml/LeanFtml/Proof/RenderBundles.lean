@@ -647,8 +647,8 @@ private theorem ufffdWalk_ext
       (owe : Option (Nat × Option TokenEntry)) (acc : List Nat),
       (∀ a ∈ atoms, AtomOk lookup a) →
       (∀ hk he, owe = some (hk, he) → he = lookup hk) →
-      ufffdWalk d1 conf doc fuel atoms edge owe acc =
-        ufffdWalk d2 conf doc fuel atoms edge owe acc := by
+      ufffdWalkOff d1 conf doc 0 fuel atoms edge owe acc =
+        ufffdWalkOff d2 conf doc 0 fuel atoms edge owe acc := by
   intro fuel
   induction fuel with
   | zero => intro _ _ _ _ _ _; rfl
@@ -656,7 +656,7 @@ private theorem ufffdWalk_ext
       intro atoms edge owe acc hall howe
       cases atoms with
       | nil =>
-          dsimp only [ufffdWalk]
+          dsimp only [ufffdWalkOff]
           cases owe with
           | none => rfl
           | some p =>
@@ -667,11 +667,11 @@ private theorem ufffdWalk_ext
       | cons a rest =>
           cases a with
           | text cs =>
-              dsimp only [ufffdWalk]
+              dsimp only [ufffdWalkOff]
               exact ih (gatherUfffd (.text cs :: rest)).2.2 false owe _
                 (atomOk_gatherUfffd lookup _ hall) howe
           | fake =>
-              dsimp only [ufffdWalk]
+              dsimp only [ufffdWalkOff]
               have hskip := atomOk_skipFakes lookup (.fake :: rest) hall
               cases hsk : skipFakes (.fake :: rest) with
               | nil =>
@@ -766,7 +766,7 @@ private theorem ufffdWalk_ext
               have he : e = lookup k := hall (.tok k e) List.mem_cons_self
               have hrest : ∀ x ∈ rest, AtomOk lookup x :=
                 fun x hx => hall x (List.mem_cons_of_mem _ hx)
-              dsimp only [ufffdWalk]
+              dsimp only [ufffdWalkOff]
               cases owe with
               | none =>
                   subst he
@@ -806,7 +806,7 @@ theorem renderWith_ext
   · rw [hseg]
     congr 1
     congr 1
-    dsimp only [ufffdBytes]
+    dsimp only [ufffdBytes, ufffdBytesOff]
     split
     · rfl
     · exact ufffdWalk_ext d1 d2 lookup conf doc h _ _ false none []
