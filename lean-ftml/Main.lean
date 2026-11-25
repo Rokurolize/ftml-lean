@@ -1354,3 +1354,21 @@ def main : IO Unit :=
 #print axioms LeanFtml.ModuleTerminationUncondProof.modulePasses_not_uncond_fixpoint
 #print axioms LeanFtml.ModuleTerminationUncondProof.moduleScanPass_no_universal_strict_measure
 #print axioms LeanFtml.ModuleTerminationUncondProof.moduleTermMeasure_stutter_witness
+
+-- Tableadv reformulation (route (a)): capture save/restore in PcreCore,
+-- the capture-overwrite obstruction pinned with its minimal instance, and
+-- the first-match correspondence on the fourteen-frame witness family.
+#print axioms LeanFtml.PcreCore.runMatch_restore_step
+#print axioms LeanFtml.capture_overwrite_mechanism
+#print axioms LeanFtml.minimal_recursion_parse
+#print axioms LeanFtml.tableadv_minimal_recursion_restore
+#print axioms LeanFtml.tableadv_minimal_recursion_restore_deep
+#print axioms LeanFtml.enum_wafter_gen
+#print axioms LeanFtml.enum_long_none_gen
+#print axioms LeanFtml.enum_body_inner_gen
+#print axioms LeanFtml.enum_body_frame_gen
+#print axioms LeanFtml.enum_match_frame_gen
+#print axioms LeanFtml.enum_match_witness_family
+#print axioms LeanFtml.tableadv_witness_family_pcre
+#print axioms LeanFtml.tableadv_witness_family_correspondence
+#print axioms LeanFtml.tableadv_witness_family_agreement

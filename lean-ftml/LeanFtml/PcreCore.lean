@@ -163,14 +163,7 @@ inductive RE where
   | recurse : RE
 deriving Inhabited, Repr, DecidableEq, BEq
 
-/-- Internal continuation-stack task.  `close i s` records the end position
-    of capture group `i` whose start was `s`. -/
-inductive Task where
-  | node : RE → Task
-  | close : Nat → Nat → Task
-deriving Inhabited, Repr, DecidableEq, BEq
-
-/-! ## Capture environments and results -/
+/-! ## Capture environments, continuation tasks, and results -/
 
 structure Cap where
   idx : Nat
@@ -179,6 +172,20 @@ structure Cap where
 deriving Inhabited, Repr, DecidableEq, BEq
 
 abbrev Caps := List Cap
+
+/-- Internal continuation-stack task.  `close i s` records the end position
+    of capture group `i` whose start was `s`.  `restore saved` is the
+    capture snapshot pushed by whole-pattern recursion: when the recursive
+    invocation finishes, the capture environment in force at recursion entry
+    is restored before the caller's continuation resumes.  The environment
+    is immutable otherwise, so failure/backtracking already discards capture
+    writes made inside a rejected branch; this task is specifically the
+    successful-recursion boundary. -/
+inductive Task where
+  | node : RE → Task
+  | close : Nat → Nat → Task
+  | restore : Caps → Task
+deriving Inhabited, Repr, DecidableEq, BEq
 
 structure MResult where
   pos : Nat
@@ -219,6 +226,7 @@ def runMatch (fl : Flags) (whole : RE) (subj : List Nat) (anchor : Nat)
   | fuel + 1 => match todo with
     | [] => [{ pos := pos, caps := caps }]
     | .close i s :: rest => runMatch fl whole subj anchor rest pos (setCap i s pos caps) fuel
+    | .restore saved :: rest => runMatch fl whole subj anchor rest pos saved fuel
     | .node re :: rest => match re with
       | .eps => runMatch fl whole subj anchor rest pos caps fuel
       | .byte pb =>
@@ -325,7 +333,9 @@ def runMatch (fl : Flags) (whole : RE) (subj : List Nat) (anchor : Nat)
             (runMatch fl whole subj anchor [.node r] s caps fuel).filter
               (fun res => res.pos == pos)
           if hits.isEmpty then runMatch fl whole subj anchor rest pos caps fuel else []
-      | .recurse => runMatch fl whole subj anchor (.node whole :: rest) pos caps fuel
+      | .recurse =>
+          runMatch fl whole subj anchor
+            (.node whole :: .restore caps :: rest) pos caps fuel
 
 /-- Certificate bound.  Exceeds pattern atoms × subject length for every
     snapshot-39 pattern; the torture suite exercises the bound explicitly. -/
@@ -775,6 +785,14 @@ theorem runMatch_eps_step (fl : Flags) (whole : RE) (subj : List Nat)
     (fuel : Nat) :
     runMatch fl whole subj anchor (.node .eps :: rest) pos caps (fuel + 1) =
       runMatch fl whole subj anchor rest pos caps fuel := rfl
+
+/-- A restore task discards the recursive invocation's capture writes and
+    resumes the caller with the snapshot taken at recursion entry. -/
+theorem runMatch_restore_step (fl : Flags) (whole : RE) (subj : List Nat)
+    (anchor : Nat) (saved : Caps) (rest : List Task) (pos : Nat) (caps : Caps)
+    (fuel : Nat) :
+    runMatch fl whole subj anchor (.restore saved :: rest) pos caps (fuel + 1) =
+      runMatch fl whole subj anchor rest pos saved fuel := rfl
 
 theorem parseQuant_lazy_consumed (bs : List Nat) :
     (parseQuant (63 :: 63 :: bs)).2.2 = true := by

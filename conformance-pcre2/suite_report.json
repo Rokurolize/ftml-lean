@@ -1,8 +1,8 @@
 {
- "total_cases": 137481,
+ "total_cases": 137497,
  "patterns": 276,
  "buckets": {
-  "main": 131933,
+  "main": 131949,
   "u-boundary": 1932,
   "php-error": 0,
   "parse-gap": 0,
@@ -11,7 +11,7 @@
  "u_boundary_agreements": 1377,
  "compared_by_part": {
   "A": 89866,
-  "B": 25091,
+  "B": 25107,
   "C": 16976
  },
  "mismatches_total": 0,
@@ -35,5 +35,5 @@
  },
  "php_version": "8.5.4",
  "pcre_version": "10.46 2025-08-27",
- "cases_sha256": "5736896f1cfbac9cbf42c1c45987c4803710baf6c5d5e8f358f20d803b56a264"
+ "cases_sha256": "9b7d6bba4a54f61d162ab6807eb1cce5422bdd9f2eec7ca106a8b7340f6ffcb5"
 }

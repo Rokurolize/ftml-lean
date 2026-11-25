@@ -228,7 +228,8 @@ theorem runMatch_recurse_step (fl : Flags) (whole : RE) (subj : List Nat)
     (anchor : Nat) (rest : List Task) (pos : Nat) (caps : Caps)
     (fuel : Nat) :
     runMatch fl whole subj anchor (.node .recurse :: rest) pos caps (fuel + 1) =
-      runMatch fl whole subj anchor (.node whole :: rest) pos caps fuel := rfl
+      runMatch fl whole subj anchor
+        (.node whole :: .restore caps :: rest) pos caps fuel := rfl
 
 theorem runMatch_byte_step_hit (fl : Flags) (whole : RE) (subj : List Nat)
     (anchor : Nat) (p x : Nat) (xs : List Nat) (rest : List Task) (pos : Nat)
@@ -438,7 +439,7 @@ theorem tableadv_bodyToken_first_recurse_step (subj : List Nat)
     (runMatch tableadvFlagsExpected tableadvAstExpected subj anchor
         (.node tadvBodyTokenRE :: rest) pos caps (fuel + 2)).head? =
       match (runMatch tableadvFlagsExpected tableadvAstExpected subj anchor
-          (.node tableadvAstExpected :: rest) pos caps fuel).head? with
+          (.node tableadvAstExpected :: .restore caps :: rest) pos caps fuel).head? with
       | some r => some r
       | none =>
           (runMatch tableadvFlagsExpected tableadvAstExpected subj anchor
@@ -456,7 +457,7 @@ theorem tableadv_bodyRep_first_recursion_boundary (subj : List Nat)
       | none =>
           (((dedupResults
                 (runMatch tableadvFlagsExpected tableadvAstExpected subj anchor
-                    [.node tableadvAstExpected] pos caps fuel ++
+                    [.node tableadvAstExpected, .restore caps] pos caps fuel ++
                  runMatch tableadvFlagsExpected tableadvAstExpected subj anchor
                     [.node .dot] pos caps (fuel + 1))).filter
               (fun res => res.pos > pos || res.caps != caps)).findSome?
