@@ -1190,6 +1190,12 @@ def main : IO Unit :=
 #print axioms LeanFtml.lst_listRule_wf_of_work
 #print axioms LeanFtml.list_applyRule_ne_applyRuleRef_on_native
 #print axioms LeanFtml.listScopedBundleRef
+#print axioms LeanFtml.listMatchingResidueBundle
+#print axioms LeanFtml.applyRule_list_eq_refWith_of_residue
+#print axioms LeanFtml.refParsed_list
+#print axioms LeanFtml.refWorkWith_list_eq_splice
+#print axioms LeanFtml.listExplicitInertness_hypothesis_necessary
+#print axioms LeanFtml.listExplicitCounter_apply_ne_refWith
 #print axioms LeanFtml.listRule_tokEquiv_no_match
 #print axioms LeanFtml.listRule_not_tokEquiv_unconstrained
 #print axioms LeanFtml.applyRule_break_eq_refWith
