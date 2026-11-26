@@ -15,7 +15,7 @@
      each mirrored rule's renderer (leaving unreferenced entries in
      `tokens`, such as `Typography`'s 13 constant entries, untouched);
   3. `Text_Wiki::render()`'s post-pass (`Wiki.php:963–972`), stripping
-     HTML tags inside `üü...üü` (`\xC3\xBC\xC3\xBC`) delimiter pairs.
+     HTML tags inside NUL-pair (`\x00\x00...\x00\x00`) delimiter pairs.
 
   ## No-silent-stand-in discipline (the R3 precedent)
 
@@ -338,7 +338,8 @@ def mirroredRenderRules : List String :=
     renderRuleName .math,
     renderRuleName .image,
     renderRuleName .gallery,
-    renderRuleName .user ]
+    renderRuleName .user,
+    renderRuleName .html ]
 
 /-! ## Byte and option coercion helpers (matching PHP semantics) -/
 
@@ -582,13 +583,15 @@ theorem reconvertFffdBytes_ascii :
 
 /-! ## Post-render TOC NUL-pair `strip_tags` pass (REFCORR4 C-SUSPECT-XRULE-4; `Wiki.php`) -/
 
-/-- The unforgeable 4-byte marker: two NUL pairs. The old marker was the
-    authorable UTF-8 pair `üü`; REFCORR4 C-SUSPECT-XRULE-4 replaced both
-    the Toc renderer emission and this post-pass sentinel together. -/
-def tocStripDelim : List Nat := [0, 0, 0, 0]
+/-- The unforgeable NUL-pair marker emitted by `Toc.php` as `$d$d`. The
+    old marker was the authorable UTF-8 pair `üü`; REFCORR4
+    C-SUSPECT-XRULE-4 replaced both the Toc renderer emission and this
+    post-pass sentinel together. -/
+def tocStripDelim : List Nat := [0, 0]
 
-/-- Strip `<...>` HTML tags from a byte span (used inside `üü...üü` pairs
-    by `Text_Wiki::render()`'s `strip_tags` post-pass). Tail-recursive. -/
+/-- Strip `<...>` HTML tags from a byte span (used inside NUL-pair
+    delimiters by `Text_Wiki::render()`'s `strip_tags` post-pass).
+    Tail-recursive. -/
 def stripHtmlTags (bs : List Nat) : List Nat :=
   go bs false 0 []
 where
@@ -611,9 +614,9 @@ def findTocDelim (bs : List Nat) : Option Nat :=
 where
   go : List Nat → Nat → Option Nat
     | [], _ => none
-    | b1 :: b2 :: b3 :: b4 :: rest, idx =>
-        if b1 == 0 && b2 == 0 && b3 == 0 && b4 == 0 then some idx
-        else go (b2 :: b3 :: b4 :: rest) (idx + 1)
+    | b1 :: b2 :: rest, idx =>
+        if b1 == 0 && b2 == 0 then some idx
+        else go (b2 :: rest) (idx + 1)
     | _ :: rest, idx => go rest (idx + 1)
 
 /-- Post-render `preg_replace_callback("/\0\0(.*?)\0\0/s", strip_tags,
@@ -628,10 +631,10 @@ where
     | b1 :: rest, fuel + 1, acc =>
         if b1 == 0 then
           match rest with
-          | 0 :: 0 :: 0 :: after =>
+          | 0 :: after =>
               match findTocDelim after with
               | some j =>
-                  go (after.drop (j + 4)) fuel
+                  go (after.drop (j + 2)) fuel
                     ((stripHtmlTags (after.take j)).reverse ++ acc)
               | none =>
                   acc.reverse ++ (b1 :: rest)

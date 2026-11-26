@@ -25,8 +25,9 @@
   `ServingRules.freelinkExistingPages` (8 entries). Consequently,
   `renderMirrorEnv harnessEnv r conf doc opts = dispatchRenderR41 r conf doc opts`
   holds unconditionally on 61 of the 62 rules and on `.freelink` whenever
-  `optStrBytes opts "page".toList ≠ d13TitleTargetPage`, while `renderFreelinkWithEnv_d13_witness`
-  records the separating D13 token.
+  `optStrBytes opts "page".toList ≠ d13TitleTargetPage` and any existing-page
+  `textFromTitle` label already agrees with the unix-name fallback, while
+  `renderFreelinkWithEnv_d13_witness` records the separating D13 token.
 
   Standing Tier-2 remainders (named cleanly):
   1. Shared low-level sub-helpers listed above are reused on both sides rather than duplicated.
@@ -98,7 +99,7 @@ def renderFreelinkWithEnv (env : RenderEnv) (opts : OptMap) : List Nat :=
     let pageExists := env.pageExists page
     let text :=
       if textFromTitle then
-        if pageExists then (env.pageTitle page).getD text else page
+        if pageExists then (env.pageTitle page).getD page else page
       else text
     let pageE := htmlSpecialCharsCompat (phpTrimBytes page)
     let suffix := htmlSpecialCharsCompat (phpTrimBytes anchor) ++
@@ -903,7 +904,7 @@ def refXhtmlFreelink (env : RenderEnv) (opts : OptMap) : List Nat :=
     let pageExists := env.pageExists page
     let text :=
       if textFromTitle then
-        if pageExists then (env.pageTitle page).getD text else page
+        if pageExists then (env.pageTitle page).getD page else page
       else text
     let pageE := htmlSpecialCharsCompat (phpTrimBytes page)
     let suffix := htmlSpecialCharsCompat (phpTrimBytes anchor) ++
@@ -1121,7 +1122,10 @@ private theorem harnessEnv_pageTitle_none_of_ne (page : List Nat)
   simp [hbeq]
 
 theorem renderFreelinkWithEnv_harness_eq_of_ne (opts : OptMap)
-    (hne : optStrBytes opts "page".toList ≠ d13TitleTargetPage) :
+    (hne : optStrBytes opts "page".toList ≠ d13TitleTargetPage)
+    (hlabel : !(phpEmptyOpt (omGet opts "textFromTitle".toList)) = true →
+      freelinkExistingPages.contains (optStrBytes opts "page".toList) = true →
+      optStrBytes opts "text".toList = optStrBytes opts "page".toList) :
     renderFreelinkWithEnv harnessEnv opts = renderFreelink opts := by
   dsimp only [renderFreelinkWithEnv, renderFreelink]
   cases hu : phpTruthyBytes (optStrBytes opts "url".toList) with
@@ -1135,9 +1139,17 @@ theorem renderFreelinkWithEnv_harness_eq_of_ne (opts : OptMap)
           have hex := harnessEnv_pageExists_eq_of_ne (optStrBytes opts "page".toList) hne
           have hti := harnessEnv_pageTitle_none_of_ne (optStrBytes opts "page".toList) hne
           rw [hex, hti]
-          cases hft : !(phpEmptyOpt (omGet opts "textFromTitle".toList)) <;>
-            cases hf : freelinkExistingPages.contains (optStrBytes opts "page".toList) <;>
-            simp [hft, hf]
+          cases hft : !(phpEmptyOpt (omGet opts "textFromTitle".toList)) with
+          | true =>
+              cases hf : freelinkExistingPages.contains (optStrBytes opts "page".toList) with
+              | true =>
+                  have htxt : optStrBytes opts ['t', 'e', 'x', 't'] =
+                      optStrBytes opts ['p', 'a', 'g', 'e'] := hlabel hft hf
+                  simp [hft, hf, htxt]
+              | false => simp [hft, hf]
+          | false =>
+              cases hf : freelinkExistingPages.contains (optStrBytes opts "page".toList) <;>
+                simp [hft, hf]
 
 /-- Explicit REFCORR13 D13 witness separating `renderMirrorEnv harnessEnv .freelink` from
     legacy `dispatchRenderR41 .freelink` (`ServingRules.freelinkExistingPages`). -/
@@ -1329,13 +1341,20 @@ private theorem renderGalleryWithEnv_harness_eq (opts : OptMap) :
       exact congrArg (fun p : List Nat × List Nat × List Nat => p.2.2 ++ litBytes "</div>") hf
 
 /-- At `harnessEnv`, `renderMirrorEnv` agrees with `dispatchRenderR41` across all 61
-    non-freelink rules (and on `.freelink` away from `d13TitleTargetPage`). -/
+    non-freelink rules. On `.freelink` the agreement is away from
+    `d13TitleTargetPage` and outside the legacy existing-page `textFromTitle`
+    disposition: when that branch is taken, the label must already be the page
+    name (the no-title unix-name fallback the legacy dispatcher did not model). -/
 theorem renderMirrorEnv_harness_eq (r : RenderRuleId) (conf : RenderConf)
     (doc : DocState) (opts : OptMap)
-    (hd13 : r = .freelink → optStrBytes opts "page".toList ≠ d13TitleTargetPage) :
+    (hd13 : r = .freelink → optStrBytes opts "page".toList ≠ d13TitleTargetPage)
+    (hlabel : r = .freelink →
+      !(phpEmptyOpt (omGet opts "textFromTitle".toList)) = true →
+      freelinkExistingPages.contains (optStrBytes opts "page".toList) = true →
+      optStrBytes opts "text".toList = optStrBytes opts "page".toList) :
     renderMirrorEnv harnessEnv r conf doc opts = dispatchRenderR41 r conf doc opts := by
   cases r with
-  | freelink => exact renderFreelinkWithEnv_harness_eq_of_ne opts (hd13 rfl)
+  | freelink => exact renderFreelinkWithEnv_harness_eq_of_ne opts (hd13 rfl) (hlabel rfl)
   | module => exact renderModuleWithEnv_harness opts
   | module654 => exact renderModuleWithEnv_harness opts
   | code => exact renderCodeWithEnv_harness_eq opts

@@ -941,11 +941,10 @@ theorem cov_toc_depth_level1 :
     litBytes "\n\t<div style=\"margin-left: 1em;\"><a href=\"#toc0\">" ++
       tocStripDelim := rfl
 
-/-- The mirror's sentinel is four NUL bytes. The reference emits the
-    two-byte `$d$d` pair (`Render/Xhtml/Toc.php`); `postStripToc` is
-    matched to this four-byte marker. The width is the recorded
-    remainder, not a second class. -/
-theorem cov_toc_sentinel_width : tocStripDelim = [0, 0, 0, 0] := rfl
+/-- The mirror's sentinel is the reference's two-byte `$d$d` pair
+    (`Render/Xhtml/Toc.php`); `postStripToc` is matched to this
+    two-byte marker. -/
+theorem cov_toc_sentinel_width : tocStripDelim = [0, 0] := rfl
 
 /-- REFCORR4 C-SUSPECT-XRULE-6: a name containing the placeholder byte
     is returned unchanged and claims no token. -/
