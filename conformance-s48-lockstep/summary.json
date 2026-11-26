@@ -1,0 +1,18 @@
+{
+  "statics": {
+    "cases": 10,
+    "excluded": 0,
+    "fail": 0,
+    "fatal_agree": 0,
+    "pass": 10,
+    "php_error": 0
+  },
+  "ufffd": {
+    "cases": 6,
+    "excluded": 0,
+    "fail": 0,
+    "fatal_agree": 0,
+    "pass": 6,
+    "php_error": 0
+  }
+}

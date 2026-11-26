@@ -39,8 +39,8 @@ import re
 import subprocess
 import sys
 
-SNAPSHOT_TAG = "snapshot-47"
-SNAPSHOT_COMMIT = "8db5ba8f244fe43ba2cc7239985eeeddc7528962"
+SNAPSHOT_TAG = "snapshot-48"
+SNAPSHOT_COMMIT = "09bb79184b23641e878e72deb7f7ebe0a8284d2d"
 DEFAULT_REF_REPO = "/home/roku/.local/state/wikijump/muse-bhl/post-agy-finish/r1-reference"
 DEFAULT_REF_PHP = str(pathlib.Path(__file__).resolve().parent.parent / "ref-php")
 
@@ -97,7 +97,7 @@ PINNED = {
     "text-wiki/Text/Wiki/Parse/Default/Ifexpr.php": "6857048c25ed8bb360868e8b528cc66d5025eb3e1fa39948aac1f32d1f15b838",
     "text-wiki/Text/Wiki/Parse/Default/Iframe.php": "bf76dfd40cdb13f8bfa63dbd22bc04f2bcb3168b4fa4461897bcf4cd52d5a0c1",
     "text-wiki/Text/Wiki/Parse/Default/Date.php": "ff7cd510709557da4a7c4afe847f51801e31a41ed8ec7c66e20a9da4b7950c86",
-    "text-wiki/Text/Wiki/Parse/Default/Math.php": "250f7ad18a70a067d046caabd5c299b4f68d2b3eb0673338b59f341314a14d25",
+    "text-wiki/Text/Wiki/Parse/Default/Math.php": "1bd28795017cd432083526fb4ebb61c008538640b6182e08f5d97688a6d08f82",
     "text-wiki/Text/Wiki/Parse/Default/Concatlines.php": "c8d4367a2f798d3b03c9327bc31a01b8511dd962c4f908029014b6299a3ebce0",
     "text-wiki/Text/Wiki/Parse/Default/Freelink.php": "e7674afd0aa0e6d56b78ba5867422e3cee3da4fb8312ee33ef6a58e56cda03cd",
     "text-wiki/Text/Wiki/Parse/Default/Equationreference.php": "e8d2fbd52057ba71bed2cbf6637f0adb3423038d4168f020df956dcf5bf786db",
@@ -122,8 +122,8 @@ PINNED = {
     "text-wiki/Text/Wiki/Parse/Default/Size.php": "7a2ab35ac664010bfe9480eed008718ab5f99a94cd75f3c48e4de47b70afbf98",
     "text-wiki/Text/Wiki/Parse/Default/Div.php": "6df83c004f2b63769aa54fcf0df0a64938352b5a4689ae7c1b24a3d1fd1ab007",
     "text-wiki/Text/Wiki/Parse/Default/Divalign.php": "7d4739cd3b575dae8cdaf352e17975fd40775cc3d5a9b022e86deaf4d0978f86",
-    "text-wiki/Text/Wiki/Parse/Default/Collapsible.php": "668dac8d166f0257bc99df6e8aa90d3632c1d4f57014b2986905ea88f654a7d8",
-    "text-wiki/Text/Wiki/Parse/Default/Tabview.php": "396879903379ca03f0bbfe814857cdb29988453a632da5c8c0f76e74c72d0034",
+    "text-wiki/Text/Wiki/Parse/Default/Collapsible.php": "1f8b8d24f4cce2ffa37cfe694eb224fbb6b6598939ac30338f6a91462b6839fb",
+    "text-wiki/Text/Wiki/Parse/Default/Tabview.php": "95295688379378a45f82001d06236beb03d19df90ead75ff42b3a0204dda2366",
     "text-wiki/Text/Wiki/Parse/Default/Note.php": "b79cc1650735f0d7400298f45c03fdee54bc9f3bf0fc2131a8c59b2390d36d56",
     "text-wiki/Text/Wiki/Parse/Default/Gallery.php": "85407fafba2fd8828d2c451755bf3acf62cf3cf6c211ce8ccaef2af145977a06",
     "text-wiki/Text/Wiki/Parse/Default/List.php": "953eb297793e8013a50ab9bf425650ca90df8c2096cee228689575f4c2a92c1d",

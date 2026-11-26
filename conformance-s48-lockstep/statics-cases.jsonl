@@ -1,0 +1,10 @@
+{"id":"statics-a-defines","source":"[[math eq]]\nx=1\n[[/math]]"}
+{"id":"statics-b-uses","source":"ref [[eref eq]]\n\n[[tabview]]\n[[tab One]]\nfirst\n[[/tab]]\n[[/tabview]]\n\n[[collapsible]]\nApple\n[[/collapsible]]"}
+{"id":"statics-c-uses-again","source":"ref [[eref eq]]\n\n[[tabview]]\n[[tab One]]\nfirst\n[[/tab]]\n[[/tabview]]\n\n[[collapsible]]\nApple\n[[/collapsible]]"}
+{"id":"statics-tabview-two-in-one-doc","source":"[[tabview]]\n[[tab One]]\na\n[[/tab]]\n[[tab Two]]\nb\n[[/tab]]\n[[/tabview]]"}
+{"id":"statics-forward-eref","source":"[[eref E]]\n[[math E]]\nx\n[[/math]]"}
+{"id":"statics-duplicate-label-last-wins","source":"[[math E]]\nx=1\n[[/math]]\n[[math E]]\nx=2\n[[/math]]\n[[eref E]]"}
+{"id":"statics-tabview-doc-a","source":"[[tabview]]\n[[tab A]]\na\n[[/tab]]\n[[/tabview]]"}
+{"id":"statics-tabview-doc-b","source":"[[tabview]]\n[[tab B]]\nb\n[[/tab]]\n[[/tabview]]"}
+{"id":"statics-collapsible-doc-a","source":"[[collapsible]]\nApple\n[[/collapsible]]"}
+{"id":"statics-collapsible-doc-b","source":"[[collapsible]]\nBanana\n[[/collapsible]]"}

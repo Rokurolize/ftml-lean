@@ -106,6 +106,14 @@ def renderWithR47 (lookup : Nat → Option TokenEntry) (conf : RenderConf)
 def renderStateR47 (conf : RenderConf) (st : ParseState) : RenderOutcome :=
   renderWithR47 (fun k => st.tokens[k]?) conf st.work st.doc
 
+/-- Snapshot-48 U+FFFD numbering offset variant of `renderWithR47`, used by
+    the E2E conformance driver; the boundary-name audit is unchanged. -/
+def renderWithR47Off (idxOff : Nat) (lookup : Nat → Option TokenEntry)
+    (conf : RenderConf) (work : List TSeg) (doc : DocState) : RenderOutcome :=
+  let base := renderWithOff idxOff dispatchRenderR47 lookup conf work doc
+  { base with
+    unmirrored := (boundaryNamesIn lookup work).foldl pushUnique base.unmirrored }
+
 /-- End-to-end Lean parse+render on top of the R4.7 stage prefix
     (`convCRLF` → `pipelineR47`, the full pipeline →
     `renderStateR47`). -/

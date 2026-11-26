@@ -1,0 +1,10 @@
+{"id": "statics-a-defines", "verdict": "pass", "reason": ""}
+{"id": "statics-b-uses", "verdict": "pass", "reason": ""}
+{"id": "statics-c-uses-again", "verdict": "pass", "reason": ""}
+{"id": "statics-tabview-two-in-one-doc", "verdict": "pass", "reason": ""}
+{"id": "statics-forward-eref", "verdict": "pass", "reason": ""}
+{"id": "statics-duplicate-label-last-wins", "verdict": "pass", "reason": ""}
+{"id": "statics-tabview-doc-a", "verdict": "pass", "reason": ""}
+{"id": "statics-tabview-doc-b", "verdict": "pass", "reason": ""}
+{"id": "statics-collapsible-doc-a", "verdict": "pass", "reason": ""}
+{"id": "statics-collapsible-doc-b", "verdict": "pass", "reason": ""}
